@@ -12,7 +12,7 @@
         "desc": "Check whether client is using a mobile browser using ua."
     },
     "loadJs": {
-        "keyword": ["load", "js", "script"],
+        "keywords": ["load", "js", "script"],
         "desc": "Inject script tag into page with given src value."
     },
     "stripCmts": {
