@@ -1,0 +1,26 @@
+{
+    "extractBlockCmts": {
+        "keywords": ["extract", "block", "comment"],
+        "desc": "Extract block comments from source code."
+    },
+    "evalCss": {
+        "keywords": ["eval", "css", "style", "load"],
+        "desc": "Load css into page."
+    },
+    "isMobile": {
+        "keywords": ["mobile", "ua"],
+        "desc": "Check whether client is using a mobile browser using ua."
+    },
+    "loadJs": {
+        "keyword": ["load", "js", "script"],
+        "desc": "Inject script tag into page with given src value."
+    },
+    "stripCmts": {
+        "keywords": ["strip", "comment"],
+        "desc": "Strip comments from source code."
+    },
+    "topoSort": {
+        "keywords": ["topological", "sort"],
+        "desc": "Topological sorting algorithm."
+    }
+}
