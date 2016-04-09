@@ -1,0 +1,4 @@
+module.exports = {
+    library: '$_abcdefghijklmnopqrstuvwxyz'.split(''),
+    format: 'commonjs'
+};

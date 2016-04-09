@@ -1,3 +1,6 @@
+/* Strip comments from source code.
+ */
+
 stripCmts = function (str)
 {
     str = ('__' + str + '__').split('');

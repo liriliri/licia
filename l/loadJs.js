@@ -1,3 +1,6 @@
+/* Inject script tag into page with given src value.
+ */
+
 loadJs = function (url, cb)
 {
     var script = document.createElement('script');

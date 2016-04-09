@@ -1,6 +1,8 @@
-/* function
- * evalCss: Load css into page.
- * css(string): Css code.
+/* Load css into page.
+ *
+ * |Name|Type|Desc|
+ * |--------------|
+ * |css|string|Css code|
  *
  * ```javascript
  * evalCss('body{background:#08c}');

@@ -1,0 +1,30 @@
+{
+  "name": "eris",
+  "version": "0.0.1",
+  "description": "Eustia modules",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liriliri/eris.git"
+  },
+  "keywords": [
+    "eustia"
+  ],
+  "author": "redhoodsu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liriliri/eris/issues"
+  },
+  "homepage": "https://github.com/liriliri/eris#readme",
+  "devDependencies": {
+    "async": "^2.0.0-rc.3",
+    "eustia": "^0.1.12",
+    "glob": "^7.0.3",
+    "tape": "^4.5.1"
+  }
+}

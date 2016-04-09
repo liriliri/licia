@@ -1,4 +1,7 @@
-include('map trim');
+/* Extract block comments from source code.
+ */
+
+_('map trim');
 
 var regBlockCmt = /(\/\*[\s\S]*?\*\/)/mg;
 

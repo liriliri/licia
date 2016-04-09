@@ -1,3 +1,6 @@
+/* Topological sorting algorithm.
+ */
+
 function uniqueNodes(arr)
 {
     var ret = [];
