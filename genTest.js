@@ -10,9 +10,9 @@ function main()
     var modName = readModName();
     if (!modName) return console.log('A module name must be given.');
 
-    var modPath = path.resolve(__dirname, modName[0], modName + '.js'),
+    var modPath = path.resolve(__dirname, modName[0].toLowerCase(), modName + '.js'),
         modTestPath = modPath.replace('.js', '.test.js'),
-        testOutputPath = path.resolve(__dirname, 'test.js');
+        testOutputPath = path.resolve(__dirname, 'test/' + modName + '.js');
 
     async.waterfall([
         fileExist.bind(null, modPath),
@@ -25,7 +25,7 @@ function main()
     {
         if (err) return console.log(err);
 
-        console.log('Run "node test" to execute test:)');
+        console.log('Run "mocha" to execute test:)');
     });
 }
 
@@ -41,10 +41,11 @@ function readModName()
 function wrapTestFile(modName, data, cb)
 {
     cb(null, [
-        'var util = require("./test.util"),',
-        '    test = require("tape");\n',
+        'var util = require("./' + modName + '.util"),',
+        '    chai = require("chai");\n',
+        'var expect = chai.expect;\n',
         'var ' + modName + ' = util.' + modName + ';\n',
-        'test("' + modName +'", function (assert) {\n',
+        'describe("' + modName +'", function () {\n',
         data,
         '});'
     ].join('\n'));
@@ -54,7 +55,7 @@ function genTestUtil(modName, cb)
 {
     eustia.build({
         files: [],
-        output: 'test.util\.js',
+        output: 'test/' + modName + '.util\.js',
         library: '$_abcdefghijklmnopqrstuvwxyz'.split(''),
         include: modName
     }, function (err)

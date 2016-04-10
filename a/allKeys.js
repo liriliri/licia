@@ -3,12 +3,12 @@
  * |Name|Type|Desc|
  * |--------------|
  * |object|object|The object to query|
- * |return|array|Returns the array of all property names|
+ * |return|array|The array of all property names|
  *
  * ```javascript
  * var obj = Object.create({ a: 0 });
  * obj.b = 1;
- * _.allKeys(obj) // -> ['a', 'b']
+ * allKeys(obj) // -> ['a', 'b']
  * ```
  *
  * > Members of Object's prototype won't be retrieved.

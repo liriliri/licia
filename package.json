@@ -23,8 +23,8 @@
   "homepage": "https://github.com/liriliri/eris#readme",
   "devDependencies": {
     "async": "^2.0.0-rc.3",
-    "eustia": "^0.1.12",
-    "glob": "^7.0.3",
-    "tape": "^4.5.1"
+    "chai": "^3.5.0",
+    "eustia": "^0.2.1",
+    "glob": "^7.0.3"
   }
 }
