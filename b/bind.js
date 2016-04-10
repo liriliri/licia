@@ -1,12 +1,14 @@
-/* function
- * bind: Create a function bound to a given object.
- * function(function): The function to bind.
- * context(*): This binding of given function.
- * [rest](...*): Optional arguments.
- * return(function): Returns the new bound function.
+/* Create a function bound to a given object.
+ *
+ * |Name  |Type    |Desc                          |
+ * |----------------------------------------------|
+ * |fn    |function|The function to bind          |
+ * |ctx   |*       |This binding of given function|
+ * |[rest]|...*    |Optional arguments            |
+ * |return|function|The new bound function        |
  *
  * ```javascript
- * var fn = _.bind(function (msg)
+ * var fn = bind(function (msg)
  * {
  *     console.log(this.name + ':' + msg);
  * }, {name: 'eustia'}, 'I am a utility library.');

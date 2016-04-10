@@ -1,7 +1,7 @@
-// TODO
-
-/* function
- * camelCase: Convert string to "camelCase" text.
+/* Convert string to "camelCase" text.
+ *
+ * |Name|Type|Desc|
+ * |--------------|
  */
 
 camelize = function (str, char)
