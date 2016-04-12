@@ -1,9 +1,15 @@
-/* Checks if value is classified as a boolean primitive or object.
+/* Check if value is a boolean primitive.
  *
- * |Name|Type|Desc|
- * |--------------|
- * |value|*|The value to check|
- * |return|boolean|Returns true if value is correctly classified, else false|
+ * |Name  |Type   |Desc                      |
+ * |-----------------------------------------|
+ * |val   |*      |The value to check        |
+ * |return|boolean|True if value is a boolean|
+ *
+ * ```javascript
+ * isBool(true); // -> true
+ * isBool(false); // -> true
+ * isBool(1); // -> false
+ * ```
  */
 
 isBool = function (val)
