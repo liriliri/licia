@@ -1,5 +1,7 @@
-// TODO
+/*
+ *
+ */
 
-_('_createAssigner allKeys');
+_('createAssigner allKeys');
 
-extend = _createAssigner(allKeys);
+extend = createAssigner(allKeys);

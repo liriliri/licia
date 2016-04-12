@@ -1,5 +1,4 @@
-/* Gets the number of milliseconds that have elapsed since the Unix epoch.
- */
+/* Gets the number of milliseconds that have elapsed since the Unix epoch. */
 
 now = Date.now || function ()
 {

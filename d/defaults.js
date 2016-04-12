@@ -1,5 +1,5 @@
 // TODO
 
-_('_createAssigner allKeys');
+_('createAssigner allKeys');
 
-defaults = _createAssigner(allKeys, true);
+defaults = createAssigner(allKeys, true);

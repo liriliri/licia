@@ -1,3 +1,4 @@
-assert.plan(1);
-
-assert.equal(now(), Date.now(), 'now() === Date.now()');
+it('equals with calling Date.now', function ()
+{
+    expect(now()).to.equal(Date.now());
+});

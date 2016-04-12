@@ -2,4 +2,4 @@
 
 _('keys _createAssigner');
 
-extendOwn = _createAssigner(keys);
+extendOwn = createAssigner(keys);
