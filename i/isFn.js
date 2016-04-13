@@ -1,9 +1,13 @@
 /* Check if value is a function.
  *
- * |Name|Type|Desc|
- * |--------------|
- * |value|*|The value to check|
- * |return|boolean|True if value is a function, else false|
+ * |Name  |Type   |Desc                       |
+ * |------------------------------------------|
+ * |val   |*      |The value to check         |
+ * |return|boolean|True if value is a function|
+ *
+ * ```javascript
+ * isFn(function() {}); // -> true
+ * ```
  */
 
 _('objToStr');
