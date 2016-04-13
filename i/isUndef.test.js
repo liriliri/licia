@@ -1,8 +1,12 @@
-it('should return `true` for undefined', function ()
+it('return `true` for undefined', function ()
 {
-    var a, b = 1;
+    expect(isUndef(void 0)).to.be.true;
+});
 
-    expect(isUndef(a)).to.be.true;
+it('return `false` for non-undefined', function ()
+{
+    var b = 1;
+
     expect(isUndef(b)).to.be.false;
     expect(isUndef(null)).to.be.false;
 });

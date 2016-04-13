@@ -1,17 +1,14 @@
-/* Checks if value is undefined.
+/* Check if value is undefined.
  *
- * |Name|Type|Desc|
- * |--------------|
- * |value|*|The value to check|
- * |return|boolean|Returns true if value is undefined, else false|
+ * |Name  |Type   |Desc                      |
+ * |-----------------------------------------|
+ * |val   |*      |The value to check        |
+ * |return|boolean|True if value is undefined|
  *
  * ```javascript
- * _.isUndef(void 0) // -> true
- * _.isUndef(null) // -> false
+ * isUndef(void 0); // -> true
+ * isUndef(null); // -> false
  * ```
- *
- * Just a shortcut for **x === undefined**, doesn't matter that much whether you
- * use it or not.
  */
 
 isUndef = function (val)
