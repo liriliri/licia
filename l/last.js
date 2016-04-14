@@ -1,9 +1,13 @@
-/* Gets the last element of array.
+/* Get the last element of array.
  *
- * |Name|Type|Desc|
- * |--------------|
- * |arr|array|The array to query|
- * |return|*|Returns the last element of array|
+ * |Name  |Type |Desc                     |
+ * |--------------------------------------|
+ * |arr   |array|The array to query       |
+ * |return|*    |The last element of array|
+ *
+ * ```javascript
+ * last([1, 2]); // -> 2
+ * ```
  */
 
 last = function (arr)
