@@ -1,9 +1,13 @@
-/* Checks if value is an Error.
+/* Check if value is an error.
  *
- * |Name|Type|Desc|
- * |--------------|
- * |value|*|The value to check|
- * |return|boolean|True if value is an error object, else false|
+ * |Name  |Type   |Desc                     |
+ * |----------------------------------------|
+ * |val   |*      |The value to check       |
+ * |return|boolean|True if value is an error|
+ *
+ * ```javascript
+ * isErr(new Error()); // -> true
+ * ```
  */
 
 _('objToStr');
