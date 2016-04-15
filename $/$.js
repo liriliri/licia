@@ -33,7 +33,7 @@ Select.methods({
     },
     eq: function (idx)
     {
-        return $(idx);
+        return $(this[idx]);
     },
     on: function (event, selector, handler)
     {
@@ -128,6 +128,10 @@ Select.methods({
     hasClass: function (name)
     {
         return $class.has(this, name);
+    },
+    parent: function ()
+    {
+        return $(this[0].parentNode);
     },
     append: function (val)
     {
