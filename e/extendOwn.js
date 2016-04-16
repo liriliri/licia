@@ -1,5 +1,5 @@
 // TODO
 
-_('keys _createAssigner');
+_('keys createAssigner');
 
 exports = createAssigner(keys);
