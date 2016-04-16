@@ -4,7 +4,7 @@ _('ltrim rtrim');
 
 var regSpace = /^\s+|\s+$/g;
 
-trim = function (str, chars)
+exports = function (str, chars)
 {
     if (chars == null) return str.replace(regSpace, '');
 
