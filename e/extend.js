@@ -13,4 +13,4 @@
 
 _('createAssigner allKeys');
 
-extend = createAssigner(allKeys);
+exports = createAssigner(allKeys);

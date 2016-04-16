@@ -1,6 +1,6 @@
 _('isUndef each $safeNodes');
 
-$property = {
+exports = {
     html: propFactory('innerHTML'),
     text: propFactory('textContent'),
     val: propFactory('value')

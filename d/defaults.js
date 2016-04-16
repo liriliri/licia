@@ -2,4 +2,4 @@
 
 _('createAssigner allKeys');
 
-defaults = createAssigner(allKeys, true);
+exports = createAssigner(allKeys, true);

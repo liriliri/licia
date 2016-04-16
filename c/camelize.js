@@ -4,7 +4,7 @@
  * |--------------|
  */
 
-camelize = function (str, char)
+exports = function (str, char)
 {
     char = char || '-';
 

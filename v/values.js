@@ -10,7 +10,7 @@
 
 _('each');
 
-values = function (obj)
+exports = function (obj)
 {
     var ret = [];
 

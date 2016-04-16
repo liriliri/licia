@@ -8,7 +8,7 @@
 
 var ObjToStr = Object.prototype.toString;
 
-objToStr = function (val)
+exports = function (val)
 {
     return ObjToStr.call(val);
 };

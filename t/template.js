@@ -24,7 +24,7 @@ var escapeChar = function(match) {
     return '\\' + escapes[match];
 };
 
-template = function (text) {
+exports = function (text) {
     var index = 0,
         source = "__p+='";
 

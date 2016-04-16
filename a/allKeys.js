@@ -14,7 +14,7 @@
  * ```
  */
 
-allKeys = function (obj)
+exports = function (obj)
 {
     var ret = [], key;
 

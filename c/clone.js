@@ -2,7 +2,7 @@
 
 _('isObj isArr extend');
 
-clone = function (obj)
+exports = function (obj)
 {
     if (!isObj(obj)) return obj;
 

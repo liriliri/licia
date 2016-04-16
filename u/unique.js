@@ -2,7 +2,7 @@ _('filter');
 
 function isEqual(a, b) { return a === b }
 
-unique = function (arr, compare)
+exports = function (arr, compare)
 {
     compare = compare || isEqual;
 

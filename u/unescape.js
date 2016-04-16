@@ -2,4 +2,4 @@
 
 _('_createEscaper');
 
-unescape = _createEscaper(1);
+exports = _createEscaper(1);

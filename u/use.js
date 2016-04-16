@@ -24,7 +24,7 @@ function _require(name)
     return _[name];
 }
 
-use = function (requires, method)
+exports = function (requires, method)
 {
     if (method == null)
     {

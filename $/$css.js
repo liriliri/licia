@@ -1,6 +1,6 @@
 _('isStr isObj camelize dasherize isUndef contain isNum $safeNodes');
 
-$css = function (nodes, name, val)
+exports = function (nodes, name, val)
 {
     nodes = $safeNodes(nodes);
 

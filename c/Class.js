@@ -47,7 +47,7 @@ function makeClass(parent, methods, statics)
     return ctor;
 }
 
-Class = function (methods, statics) { return Base.extend(methods, statics) };
+exports = function (methods, statics) { return Base.extend(methods, statics) };
 
 var Base = Class.Base = makeClass(Object, {
     className: 'Base',

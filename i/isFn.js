@@ -15,7 +15,7 @@
 
 _('objToStr');
 
-isFn = function (val)
+exports = function (val)
 {
     var objStr = objToStr(val);
 

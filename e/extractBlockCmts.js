@@ -5,7 +5,7 @@ _('map trim');
 
 var regBlockCmt = /(\/\*[\s\S]*?\*\/)/mg;
 
-extractBlockCmts = function (str)
+exports = function (str)
 {
     var ret = str.match(regBlockCmt);
 

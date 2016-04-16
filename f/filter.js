@@ -2,7 +2,7 @@
 
 _('safeCb each');
 
-filter = function (obj, predicate, ctx)
+exports = function (obj, predicate, ctx)
 {
     var ret = [];
 

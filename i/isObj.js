@@ -13,7 +13,7 @@
  * ```
  */
 
-isObj = function (val)
+exports = function (val)
 {
     var type = typeof val;
 

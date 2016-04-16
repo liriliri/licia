@@ -9,7 +9,7 @@
 
 _('isUndef each');
 
-createAssigner = function (keysFn, defaults)
+exports = function (keysFn, defaults)
 {
     return function (obj)
     {

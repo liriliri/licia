@@ -13,7 +13,7 @@
 
 var hasOwnProp = Object.prototype.hasOwnProperty;
 
-has = function (obj, key)
+exports = function (obj, key)
 {
     return hasOwnProp.call(obj, key);
 };

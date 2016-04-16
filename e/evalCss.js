@@ -9,7 +9,7 @@
  * ```
  */
 
-evalCss = function (css)
+exports = function (css)
 {
     var style = document.createElement('style');
     style.textContent = css;

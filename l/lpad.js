@@ -9,7 +9,7 @@
 
 _('repeat');
 
-lpad = function (str, len, chars)
+exports = function (str, len, chars)
 {
     var strLen = str.length;
 

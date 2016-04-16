@@ -1,6 +1,6 @@
 _('toArr some $safeNodes');
 
-$class = {
+exports = {
     add: function (nodes, name)
     {
         nodes = $safeNodes(nodes);

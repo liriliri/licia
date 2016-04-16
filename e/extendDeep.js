@@ -2,7 +2,7 @@
 
 _('isPlainObj each deepClone');
 
-extendDeep = function (obj)
+exports = function (obj)
 {
     var i   = 0,
         ret = obj,

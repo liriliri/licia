@@ -1,6 +1,6 @@
 _('isArrLike isStr map isArr');
 
-toArr = function (obj)
+exports = function (obj)
 {
     if (isArr(obj)) return obj;
 

@@ -2,7 +2,7 @@
 
 _('isArrLike keys');
 
-each = function (obj, iteratee, ctx)
+exports = function (obj, iteratee, ctx)
 {
     var i, len;
 

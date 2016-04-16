@@ -10,7 +10,7 @@
 
 _('keys each');
 
-invert = function (obj)
+exports = function (obj)
 {
     var ret = {};
 

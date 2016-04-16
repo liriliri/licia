@@ -2,7 +2,7 @@
 
 _('isObj isArr');
 
-isPlainObj = function (obj)
+exports = function (obj)
 {
     return isObj(obj) && !isArr(obj);
 };

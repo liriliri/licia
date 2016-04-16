@@ -69,4 +69,4 @@ function eq(a, b, aStack, bStack)
     return deepEq(a, b, aStack, bStack);
 }
 
-isEqual = function (a, b) { return eq(a, b) };
+exports = function (a, b) { return eq(a, b) };

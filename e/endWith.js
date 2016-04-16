@@ -7,7 +7,7 @@
  * |return|boolean|True if string ends with target, else false|
  */
 
-endWith = function (str, suffix)
+exports = function (str, suffix)
 {
     var idx = str.length - suffix.length;
 

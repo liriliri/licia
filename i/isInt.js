@@ -8,7 +8,7 @@
 
 _('isNum');
 
-isInt = function (val)
+exports = function (val)
 {
     return isNum(val) && (val % 1 === 0);
 };

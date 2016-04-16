@@ -2,7 +2,7 @@
 
 _('safeCb isArrLike keys');
 
-some = function (obj, predicate, ctx)
+exports = function (obj, predicate, ctx)
 {
     predicate = safeCb(predicate, ctx);
 

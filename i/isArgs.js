@@ -8,7 +8,7 @@
 
 _('objToStr');
 
-isArgs = function (val)
+exports = function (val)
 {
     return objToStr(val) === '[object Arguments]';
 };

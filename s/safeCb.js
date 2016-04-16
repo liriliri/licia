@@ -4,7 +4,7 @@
 
 _('isFn isObj optimizeCb matcher');
 
-safeCb = function (val, ctx, argCount)
+exports = function (val, ctx, argCount)
 {
     if (val == null) return function (val) { return val };
 

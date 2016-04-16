@@ -1,6 +1,6 @@
 _('Class has each slice');
 
-Emitter = Class({
+exports = Class({
     initialize: function ()
     {
         this._events = this._events || {};

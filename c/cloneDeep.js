@@ -16,7 +16,7 @@ function mapObject(obj, iteratee)
     return newObj;
 }
 
-cloneDeep = function (obj)
+exports = function (obj)
 {
     if (isArr(obj))
     {

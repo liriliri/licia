@@ -7,7 +7,7 @@
  * |return|number|The random number|
  */
 
-random = function (min, max)
+exports = function (min, max)
 {
     if (max == null)
     {

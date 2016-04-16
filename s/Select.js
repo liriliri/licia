@@ -18,7 +18,7 @@ function mergeArr(first, second)
     return first;
 }
 
-Select = Class({
+exports = Class({
     className: 'Select',
     initialize: function (selector)
     {

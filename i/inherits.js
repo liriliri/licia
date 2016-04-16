@@ -10,7 +10,7 @@ var objCreate = Object.create;
 
 function noop() {}
 
-inherits = function (Class, SuperClass)
+exports = function (Class, SuperClass)
 {
     if (objCreate) return Class.prototype = objCreate(SuperClass.prototype);
 

@@ -8,7 +8,7 @@
 
 _('objToStr');
 
-isDate = function (val)
+exports = function (val)
 {
     return objToStr(val) === '[object Date]';
 };

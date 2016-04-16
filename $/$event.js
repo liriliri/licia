@@ -1,6 +1,6 @@
 _('delegate isUndef $safeNodes');
 
-$event = {
+exports = {
     on: eventFactory('add'),
     off: eventFactory('remove')
 };

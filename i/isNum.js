@@ -8,7 +8,7 @@
 
 _('objToStr');
 
-isNum = function (val)
+exports = function (val)
 {
     return objToStr(val) === '[object Number]';
 };

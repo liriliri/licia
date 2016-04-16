@@ -8,7 +8,7 @@
 
 _('has');
 
-keys = Object.keys || function (obj)
+exports = Object.keys || function (obj)
 {
     var ret = [], key;
 

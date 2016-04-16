@@ -1,7 +1,7 @@
 /* Strip comments from source code.
  */
 
-stripCmts = function (str)
+exports = function (str)
 {
     str = ('__' + str + '__').split('');
     var mode = {

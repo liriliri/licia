@@ -1,6 +1,6 @@
 _('$safeNodes');
 
-$offset = function (nodes)
+exports = function (nodes)
 {
     nodes = $safeNodes(nodes);
 

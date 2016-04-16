@@ -2,7 +2,7 @@
 
 _('indexOf isArrLike values');
 
-contain = function (arr, val)
+exports = function (arr, val)
 {
     if (!isArrLike(arr)) arr = values(arr);
 

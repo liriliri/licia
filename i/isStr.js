@@ -12,7 +12,7 @@
 
 _('objToStr');
 
-isStr = function (val)
+exports = function (val)
 {
     return objToStr(val) === '[object String]';
 };

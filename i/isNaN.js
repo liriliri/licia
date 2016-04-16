@@ -15,7 +15,7 @@
 
 _('isNum');
 
-isNaN = function (val)
+exports = function (val)
 {
     return isNum(val) && val !== +val;
 };

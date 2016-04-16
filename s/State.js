@@ -21,7 +21,7 @@ function buildEvent(name, event)
     };
 }
 
-State = Emitter.extend({
+exports = Emitter.extend({
     className: 'State',
     initialize: function (initial, events)
     {

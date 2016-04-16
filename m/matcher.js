@@ -2,7 +2,7 @@
 
 _('extendOwn isMatch');
 
-matcher = function (attrs)
+exports = function (attrs)
 {
     attrs = extendOwn({}, attrs);
 

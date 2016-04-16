@@ -7,7 +7,7 @@
  * |return|string|Repeated string|
  */
 
-repeat = function (str, n)
+exports = function (str, n)
 {
     var ret = '';
 

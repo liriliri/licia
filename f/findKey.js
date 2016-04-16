@@ -2,7 +2,7 @@
 
 _('safeCb keys');
 
-findKey = function (obj, predicate, ctx)
+exports = function (obj, predicate, ctx)
 {
     predicate = safeCb(predicate, ctx);
 

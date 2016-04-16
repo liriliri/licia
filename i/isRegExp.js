@@ -12,7 +12,7 @@
 
 _('objToStr');
 
-isRegExp = function (val)
+exports = function (val)
 {
     return objToStr(val) === '[object RegExp]';
 };

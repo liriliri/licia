@@ -1,6 +1,6 @@
 _('toArr isObj isStr each isUndef $safeNodes');
 
-$attr = function (nodes, name, val)
+exports = function (nodes, name, val)
 {
     nodes = $safeNodes(nodes);
 

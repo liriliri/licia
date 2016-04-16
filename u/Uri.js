@@ -43,7 +43,7 @@ function getQueryParameter(url, name)
     return results == null ? null : decodeURIComponent(results[1]);
 }
 
-Uri = Class({
+exports = Class({
     className: 'Uri',
     initialize: function (url)
     {

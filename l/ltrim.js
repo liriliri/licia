@@ -2,7 +2,7 @@
 
 var regSpace = /^\s+/;
 
-ltrim = function (str, chars)
+exports = function (str, chars)
 {
     if (chars == null) return str.replace(regSpace, '');
 

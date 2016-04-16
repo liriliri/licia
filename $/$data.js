@@ -1,6 +1,6 @@
 _('$attr isStr isObj each');
 
-$data = function (nodes, name, val)
+exports = function (nodes, name, val)
 {
     var dataName = name;
 

@@ -1,6 +1,6 @@
 _('each $safeNodes');
 
-$insert = {
+exports = {
     before: insertFactory('beforebegin'),
     after: insertFactory('afterend'),
     append: insertFactory('beforeend'),

@@ -13,7 +13,7 @@
 
 _('objToStr');
 
-isArr = Array.isArray || function (val)
+exports = Array.isArray || function (val)
 {
     return objToStr(val) === '[object Array]';
 };

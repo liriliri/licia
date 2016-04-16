@@ -2,7 +2,7 @@
 
 _('safeCb keys isArrLike');
 
-map = function (obj, iteratee, ctx)
+exports = function (obj, iteratee, ctx)
 {
     iteratee = safeCb(iteratee, ctx);
 

@@ -12,7 +12,7 @@
 
 _('objToStr');
 
-isErr = function (val)
+exports = function (val)
 {
     return objToStr(val) === '[object Error]';
 };

@@ -1,6 +1,6 @@
 _('isUndef');
 
-optimizeCb = function (func, ctx, argCount)
+exports = function (func, ctx, argCount)
 {
     if (isUndef(ctx)) return func;
 

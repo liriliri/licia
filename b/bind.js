@@ -18,7 +18,7 @@
 
 _('restArgs');
 
-bind = restArgs(function (fn, ctx, rest)
+exports = restArgs(function (fn, ctx, rest)
 {
     return restArgs(function (callArgs)
     {

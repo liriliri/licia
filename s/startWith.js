@@ -7,7 +7,7 @@
  * |return|boolean|Returns true if string starts with prefix, else false|
  */
 
-startWith = function (str, prefix)
+exports = function (str, prefix)
 {
     return str.indexOf(prefix) === 0;
 };

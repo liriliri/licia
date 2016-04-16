@@ -1,6 +1,6 @@
 _('each $safeNodes');
 
-$remove = function (nodes)
+exports = function (nodes)
 {
     nodes = $safeNodes(nodes);
 

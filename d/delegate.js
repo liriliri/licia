@@ -67,7 +67,7 @@ function formatHandlers(e, handlers)
     return ret;
 }
 
-delegate = {
+exports = {
     add: function (el, type, selector, fn)
     {
         var handler = {

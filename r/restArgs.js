@@ -12,7 +12,7 @@
  * ```
  */
 
-restArgs = function (fn, startIdx)
+exports = function (fn, startIdx)
 {
     startIdx = startIdx == null ? fn.length - 1 : +startIdx;
 

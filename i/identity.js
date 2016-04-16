@@ -1,4 +1,4 @@
-identity = function (val)
+exports = function (val)
 {
     return val;
 };
