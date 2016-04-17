@@ -6,7 +6,7 @@
  * |return|string|Globally-unique id|
  *
  * ```javascript
- * uniqueId('eusita_'); // -> eustia_xxx
+ * uniqueId('eusita_'); // -> 'eustia_xxx'
  * ```
  */
 

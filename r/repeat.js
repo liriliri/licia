@@ -1,10 +1,16 @@
 /* Repeat string n-times.
  *
- * |Name|Type|Desc|
- * |--------------|
- * |string|string|The string to repeat|
- * |n|number|Repeat times|
- * |return|string|Repeated string|
+ * |Name  |Type  |Desc                |
+ * |----------------------------------|
+ * |str   |string|The string to repeat|
+ * |n     |number|Repeat times        |
+ * |return|string|Repeated string     |
+ *
+ * ```javascript
+ * repeat('a', 3); // -> 'aaa'
+ * repeat('ab', 2); // -> 'abab'
+ * repeat('*', 0); // -> ''
+ * ```
  */
 
 exports = function (str, n)
