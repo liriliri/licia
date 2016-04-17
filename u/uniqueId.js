@@ -1,4 +1,14 @@
-// TODO
+/* Generate a globally-unique id.
+ *
+ * |Name  |Type  |Desc              |
+ * |--------------------------------|
+ * |prefix|string|Id prefix         |
+ * |return|string|Globally-unique id|
+ *
+ * ```javascript
+ * uniqueId('eusita_'); // -> eustia_xxx
+ * ```
+ */
 
 var idCounter = 0;
 
