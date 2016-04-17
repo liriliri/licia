@@ -1,8 +1,4 @@
-// TODO
-
-/* function
- *
- * dasherize:  Convert string to "dashCase".
+/* Convert string to "dashCase".
  */
 
 exports = function (str)

@@ -1,12 +1,11 @@
-// TODO
-
-/* function
+/* Pads string on the right side if it's shorter than length.
  *
- * rpad: Pads string on the right side if it's shorter than length.
- * string(string): The string to pad.
- * length(number): Padding length.
- * chars(string): String used as padding.
- * return(string): Resulted string.
+ * |Name  |Type  |Desc                  |
+ * |------------------------------------|
+ * |str   |string|The string to pad     |
+ * |len   |number|Padding length        |
+ * |chars |string|String used as padding|
+ * |return|string|Resulted string       |
  */
 
 _('repeat');

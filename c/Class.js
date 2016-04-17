@@ -1,11 +1,10 @@
-// TODO
-
-/* function
+/* Create JavaScript class.
  *
- * Class: Create JavaScript class.
- * methods(object): Public methods.
- * statics(object): Static methods.
- * return(function): Return function used to create instances.
+ * |Name   |Type    |Desc                                    |
+ * |---------------------------------------------------------|
+ * |methods|object  |Public methods                          |
+ * |statics|object  |Static methods                          |
+ * |return |function|Return function used to create instances|
  */
 
 _('extend toArr inherits has');

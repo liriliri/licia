@@ -1,7 +1,4 @@
-// TODO
-
-/* class
- * Select: jQuery like dom manipulator.
+/* jQuery like dom manipulator.
  */
 
 _('Class isStr each isObj some camelize isNum dasherize');
