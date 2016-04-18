@@ -26,9 +26,9 @@ it('inherit prototype methods', function ()
         return 'Student';
     };
 
-    var s = new Student('redhood');
+    var s = new Student('RedHood');
 
-    expect(s.getName()).to.equal('redhood');
+    expect(s.getName()).to.equal('RedHood');
     expect(s.is()).to.equal('Student');
     expect(s instanceof People).to.be.true;
 });

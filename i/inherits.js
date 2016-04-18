@@ -21,8 +21,8 @@
  *     this._name = name;
  * }
  * inherits(Student, People);
- * var s = new Student('redhood');
- * s.getName(); // -> 'redhood'
+ * var s = new Student('RedHood');
+ * s.getName(); // -> 'RedHood'
  * ```
  */
 
