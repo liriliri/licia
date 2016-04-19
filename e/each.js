@@ -1,4 +1,15 @@
-// TODO
+/* Iterates over elements of collection and invokes iteratee for each element.
+ *
+ * |Name    |Type         |Desc                          |
+ * |-----------------------------------------------------|
+ * |obj     |object\|array|Collection to iterate over    |
+ * |iteratee|function     |Function invoked per iteration|
+ * |[ctx]   |*            |Function context              |
+ *
+ * ```javascript
+ * each({'a': 1, 'b': 2}, function (val, key) {});
+ * ```
+ */
 
 _('isArrLike keys');
 
