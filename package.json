@@ -24,7 +24,7 @@
   "devDependencies": {
     "async": "^2.0.0-rc.3",
     "chai": "^3.5.0",
-    "eustia": "^0.2.2",
+    "eustia": "^0.2.3",
     "glob": "^7.0.3"
   }
 }

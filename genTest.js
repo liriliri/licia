@@ -45,7 +45,7 @@ function wrapTestFile(modName, data, cb)
         '    chai = require("chai");\n',
         'var expect = chai.expect;\n',
         'var ' + modName + ' = util.' + modName + ';\n',
-        'describe("' + modName +'", function () {\n',
+        'describe("' + modName +'", function () \n{\n',
         data,
         '});'
     ].join('\n'));
