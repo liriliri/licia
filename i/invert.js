@@ -1,12 +1,16 @@
-/* Creates an object composed of the inverted keys and values of object.
+/* Create an object composed of the inverted keys and values of object.
  *
- * |Name  |Type  |Desc                           |
- * |---------------------------------------------|
- * |obj   |object|The object to invert           |
- * |return|object|Returns the new inverted object|
+ * |Name  |Type  |Desc               |
+ * |---------------------------------|
+ * |obj   |object|Object to invert   |
+ * |return|object|New inverted object|
  *
  * If object contains duplicate values, subsequent values overwrite property
  * assignments of previous values unless multiValue is true.
+ *
+ * ```javascript
+ * invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
+ * ```
  */
 
 _('keys each');
