@@ -1,4 +1,4 @@
-/* Convert the first character to upper case.
+/* Convert the first character to upper case and the remaining to lower case.
  *
  * |Name  |Type  |Desc                    |
  * |--------------------------------------|
@@ -6,11 +6,11 @@
  * |return|string|The capitalized string  |
  *
  * ```
- * capitalize('red'); // -> Red
+ * capitalize('rED'); // -> Red
  * ```
  */
 
 exports = function (str)
 {
-    return str.charAt(0).toUpperCase() + str.substring(1);
+    return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
 };
