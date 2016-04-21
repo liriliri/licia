@@ -54,4 +54,7 @@ function sort(nodes, edges)
     return sorted;
 }
 
-exports = function(edges) { return sort(uniqueNodes(edges), edges) };
+exports = function(edges)
+{
+    return sort(uniqueNodes(edges), edges);
+};
