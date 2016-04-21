@@ -1,10 +1,10 @@
 // TODO
 
-_('indexOf isArrLike values');
+_('idxOf isArrLike values');
 
 exports = function (arr, val)
 {
     if (!isArrLike(arr)) arr = values(arr);
 
-    return indexOf(arr, val) >= 0;
+    return idxOf(arr, val) >= 0;
 };

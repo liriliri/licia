@@ -1,4 +1,13 @@
 /* Strip comments from source code.
+ *
+ * |Name  |Type  |Desc                 |
+ * |-----------------------------------|
+ * |str   |string|Source code          |
+ * |return|string|Code without comments|
+ *
+ * ```javascript
+ * stripCmts('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
+ * ```
  */
 
 exports = function (str)
