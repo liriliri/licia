@@ -7,17 +7,22 @@
  * |return  |function|New partially applied function          |
  *
  * ```javascript
- * var sub5 = partial(function (a, b) { return b - a}, 5);
+ * var sub5 = partial(function (a, b) { return b - a }, 5);
  * sub(20); // -> 15
  * ```
  */
 
-_('bind');
+_('restArgs toArr');
 
-exports = function (fn)
+exports = restArgs(function (fn, partials)
 {
     return function ()
     {
+        var args = [];
 
+        args = args.concat(partials);
+        args = args.concat(toArr(arguments));
+
+        return fn.apply(this, args);
     };
-};
+});
