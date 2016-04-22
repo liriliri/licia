@@ -2,10 +2,10 @@
  *
  * |Name  |Type    |Desc                          |
  * |----------------------------------------------|
- * |fn    |function|The function to bind          |
+ * |fn    |function|Function to bind              |
  * |ctx   |*       |This binding of given function|
  * |[rest]|...*    |Optional arguments            |
- * |return|function|The new bound function        |
+ * |return|function|New bound function            |
  *
  * ```javascript
  * var fn = bind(function (msg)
