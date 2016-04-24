@@ -21,9 +21,12 @@ exports = function (min, max, floating)
         min = 0;
     }
 
-    var ret = Math.random() * (max - min + 1);
+    var rand = Math.random();
 
-    if (!floating) ret = Math.floor(ret);
+    if (floating || min % 1 || max % 1)
+    {
+        return Math.min(min + (rand * (max - min + parseFloat('1e-' + ((rand + '').length - 1)))), max);
+    }
 
-    return min + ret;
+    return min + Math.floor(rand * (max - min + 1));
 };
