@@ -1,7 +1,34 @@
-// TODO
-
-/* module
- * cookie: Simple api for handling browser cookies.
+/* Simple api for handling browser cookies.
+ *
+ * ## get: get cookie value.
+ *
+ * |Name  |Type  |Desc                      |
+ * |----------------------------------------|
+ * |key   |string|Cookie key                |
+ * |return|string|Corresponding cookie value|
+ *
+ * ## set: set cookie value.
+ *
+ * |Name     |Type   |Desc            |
+ * |----------------------------------|
+ * |key      |string |Cookie key      |
+ * |val      |string |Cookie value    |
+ * |[options]|object |Cookie options  |
+ * |return   |exports|Module namespace|
+ *
+ * ## remove: remove cookie value.
+ *
+ * |Name     |Type   |Desc            |
+ * |----------------------------------|
+ * |key      |string |Cookie key      |
+ * |[options]|object |Cookie options  |
+ * |return   |exports|Module namespace|
+ *
+ * ```javascript
+ * cookie.set('a', '1', {path: '/'});
+ * cookie.get('a'); // -> '1'
+ * cookie.remove('a');
+ * ```
  */
 
 _('extend isNum');
