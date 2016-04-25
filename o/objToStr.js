@@ -1,8 +1,8 @@
 /* Alias of Object.prototype.toString.
  *
- * |Name|Type|Desc|
- * |--------------|
- * |value|*|The source value|
+ * |Name  |Type  |Desc                                    |
+ * |------------------------------------------------------|
+ * |value |*     |Source value                            |
  * |return|string|String representation of the given value|
  */
 
