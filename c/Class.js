@@ -48,7 +48,7 @@ function makeClass(parent, methods, statics)
 
 exports = function (methods, statics) { return Base.extend(methods, statics) };
 
-var Base = Class.Base = makeClass(Object, {
+var Base = exports.Base = makeClass(Object, {
     className: 'Base',
     callSuper: function (name)
     {

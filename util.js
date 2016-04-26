@@ -5,111 +5,69 @@ module.exports = (function ()
 
     /* ------------------------------ isUndef ------------------------------ */
 
-    var isUndef;
-
-    _.isUndef = (function ()
+    var isUndef = _.isUndef = (function (exports)
     {
-        /* Checks if value is undefined.
+        /* Check if value is undefined.
          *
-         * |Name|Type|Desc|
-         * |--------------|
-         * |value|*|The value to check|
-         * |return|boolean|Returns true if value is undefined, else false|
+         * |Name  |Type   |Desc                      |
+         * |-----------------------------------------|
+         * |val   |*      |The value to check        |
+         * |return|boolean|True if value is undefined|
          *
          * ```javascript
-         * _.isUndef(void 0) // -> true
-         * _.isUndef(null) // -> false
+         * isUndef(void 0); // -> true
+         * isUndef(null); // -> false
          * ```
-         *
-         * Just a shortcut for **x === undefined**, doesn't matter that much whether you
-         * use it or not.
          */
 
-        isUndef = function (val)
+        exports = function (val)
         {
             return val === void 0;
         };
 
-        return isUndef;
-    })();
-
-    /* ------------------------------ _createAssigner ------------------------------ */
-
-    var _createAssigner;
-
-    _._createAssigner = (function ()
-    {
-
-        _createAssigner = function (keysFunc, defaults)
-        {
-            return function (obj)
-            {
-                var len = arguments.length;
-
-                if (defaults) obj = Object(obj);
-
-                if (len < 2 || obj == null) return obj;
-
-                for (var i = 1; i < len; i++)
-                {
-                    var src     = arguments[i],
-                        keys    = keysFunc(src),
-                        keysLen = keys.length;
-
-                    for (var j = 0; j < keysLen; j++)
-                    {
-                        var key = keys[j];
-                        if (!defaults || isUndef(obj[key])) obj[key] = src[key];
-                    }
-                }
-
-                return obj;
-            };
-        };
-
-        return _createAssigner;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ has ------------------------------ */
 
-    var has;
-
-    _.has = (function ()
+    var has = _.has = (function (exports)
     {
         /* Checks if key is a direct property.
          *
-         * |Name|Type|Desc|
-         * |--------------|
-         * |object|object|The object to query|
-         * |key|string|The path to check|
-         * |return|boolean|True if key is a direct property, else false|
+         * |Name  |Type   |Desc                            |
+         * |-----------------------------------------------|
+         * |obj   |object |The object to query             |
+         * |key   |string |The path to check               |
+         * |return|boolean|True if key is a direct property|
+         *
+         * ```javascript
+         * has({one: 1}, 'one'); // -> true
+         * ```
          */
 
         var hasOwnProp = Object.prototype.hasOwnProperty;
 
-        has = function (obj, key)
+        exports = function (obj, key)
         {
             return hasOwnProp.call(obj, key);
         };
 
-        return has;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ keys ------------------------------ */
 
-    var keys;
-
-    _.keys = (function ()
+    var keys = _.keys = (function (exports)
     {
-        /* Creates an array of the own enumerable property names of object.
+        /* Create an array of the own enumerable property names of object.
          *
-         * |Name|Type|Desc|
-         * |--------------|
-         * |object|object|The object to query|
-         * |return|array|The array of property names|
+         * |Name  |Type  |Desc                       |
+         * |-----------------------------------------|
+         * |obj   |object|The object to query        |
+         * |return|array |The array of property names|
          */
 
-        keys = Object.keys || function (obj)
+        exports = Object.keys || function (obj)
         {
             var ret = [], key;
 
@@ -121,73 +79,87 @@ module.exports = (function ()
             return ret;
         };
 
-        return keys;
-    })();
+        return exports;
+    })({});
 
-    /* ------------------------------ extendOwn ------------------------------ */
+    /* ------------------------------ identity ------------------------------ */
 
-    var extendOwn;
-
-    _.extendOwn = (function ()
+    var identity = _.identity = (function (exports)
     {
-        // TODO
+        /* Return the first argument given.
+         *
+         * |Name  |Type|Desc       |
+         * |-----------------------|
+         * |val   |*   |Any value  |
+         * |return|*   |Given value|
+         *
+         * ```javascript
+         * identity('a'); // -> 'a'
+         * ```
+         */
 
-        extendOwn = _createAssigner(keys);
+        exports = function (val)
+        {
+            return val;
+        };
 
-        return extendOwn;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ objToStr ------------------------------ */
 
-    var objToStr;
-
-    _.objToStr = (function ()
+    var objToStr = _.objToStr = (function (exports)
     {
         /* Alias of Object.prototype.toString.
          *
-         * |Name|Type|Desc|
-         * |--------------|
-         * |value|*|The source value|
+         * |Name  |Type  |Desc                                    |
+         * |------------------------------------------------------|
+         * |value |*     |Source value                            |
          * |return|string|String representation of the given value|
          */
 
         var ObjToStr = Object.prototype.toString;
 
-        objToStr = function (val)
+        exports = function (val)
         {
             return ObjToStr.call(val);
         };
 
-        return objToStr;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ isFn ------------------------------ */
 
-    var isFn;
-
-    _.isFn = (function ()
+    var isFn = _.isFn = (function (exports)
     {
         /* Check if value is a function.
          *
-         * |Name|Type|Desc|
-         * |--------------|
-         * |value|*|The value to check|
-         * |return|boolean|True if value is a function, else false|
+         * |Name  |Type   |Desc                       |
+         * |------------------------------------------|
+         * |val   |*      |The value to check         |
+         * |return|boolean|True if value is a function|
+         *
+         * Generator function is also classified as true.
+         *
+         * ```javascript
+         * isFn(function() {}); // -> true
+         * isFn(function*() {}); // -> true
+         * ```
          */
 
-        isFn = function (val)
+        exports = function (val)
         {
-            return objToStr(val) === '[object Function]';
+            var objStr = objToStr(val);
+
+            return objStr === '[object Function]' || objStr === '[object GeneratorFunction]';
         };
 
-        return isFn;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ isNum ------------------------------ */
 
-    var isNum;
-
-    _.isNum = (function ()
+    var isNum = _.isNum = (function (exports)
     {
         /* Checks if value is classified as a Number primitive or object.
          *
@@ -197,25 +169,23 @@ module.exports = (function ()
          * |return|boolean|True if value is correctly classified, else false|
          */
 
-        isNum = function (val)
+        exports = function (val)
         {
             return objToStr(val) === '[object Number]';
         };
 
-        return isNum;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ isArrLike ------------------------------ */
 
-    var isArrLike;
-
-    _.isArrLike = (function ()
+    var isArrLike = _.isArrLike = (function (exports)
     {
         // TODO
 
         var MAX_ARR_IDX = Math.pow(2, 53) - 1;
 
-        isArrLike = function (val)
+        exports = function (val)
         {
             if (!has(val, 'length')) return false;
 
@@ -224,18 +194,27 @@ module.exports = (function ()
             return isNum(len) && len >= 0 && len <= MAX_ARR_IDX;
         };
 
-        return isArrLike;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ each ------------------------------ */
 
-    var each;
-
-    _.each = (function ()
+    var each = _.each = (function (exports)
     {
-        // TODO
+        /* Iterates over elements of collection and invokes iteratee for each element.
+         *
+         * |Name    |Type         |Desc                          |
+         * |-----------------------------------------------------|
+         * |obj     |object\|array|Collection to iterate over    |
+         * |iteratee|function     |Function invoked per iteration|
+         * |[ctx]   |*            |Function context              |
+         *
+         * ```javascript
+         * each({'a': 1, 'b': 2}, function (val, key) {});
+         * ```
+         */
 
-        each = function (obj, iteratee, ctx)
+        exports = function (obj, iteratee, ctx)
         {
             var i, len;
 
@@ -254,21 +233,88 @@ module.exports = (function ()
             return obj;
         };
 
-        return each;
-    })();
+        return exports;
+    })({});
+
+    /* ------------------------------ createAssigner ------------------------------ */
+
+    var createAssigner = _.createAssigner = (function (exports)
+    {
+        /* Used to create extend, extendOwn and defaults.
+         *
+         * |Name    |Type    |Desc                          |
+         * |------------------------------------------------|
+         * |keysFn  |function|Function to get object keys   |
+         * |defaults|boolean |No override when set to true  |
+         * |return  |function|The result function, extend...|
+         */
+
+        exports = function (keysFn, defaults)
+        {
+            return function (obj)
+            {
+                each(arguments, function (src, idx)
+                {
+                    if (idx === 0) return;
+
+                    var keys = keysFn(src);
+
+                    each(keys, function (key)
+                    {
+                        if (!defaults || isUndef(obj[key])) obj[key] = src[key];
+                    });
+                });
+
+                return obj;
+            };
+        };
+
+        return exports;
+    })({});
+
+    /* ------------------------------ extendOwn ------------------------------ */
+
+    var extendOwn = _.extendOwn = (function (exports)
+    {
+        /* Like extend, but only copies own properties over to the destination object.
+         *
+         * |Name  |Type  |Desc              |
+         * |--------------------------------|
+         * |obj   |object|Destination object|
+         * |*src  |object|Sources objects   |
+         * |return|object|Destination object|
+         *
+         * ```javascript
+         * extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
+         * ```
+         */
+
+        exports = createAssigner(keys);
+
+        return exports;
+    })({});
 
     /* ------------------------------ isMatch ------------------------------ */
 
-    var isMatch;
-
-    _.isMatch = (function ()
+    var isMatch = _.isMatch = (function (exports)
     {
-        // TODO
+        /* Check if keys and values in src are contained in obj.
+         *
+         * |Name  |Type  |Desc                               |
+         * |-------------------------------------------------|
+         * |obj   |object |Object to inspect                 |
+         * |src   |object |Object of property values to match|
+         * |return|boolean|True if object is match           |
+         *
+         * ```javascript
+         * isMatch({a: 1, b: 2}, {a: 1}); // -> true
+         * ```
+         */
 
-        isMatch = function (obj, attrs)
+        exports = function (obj, src)
         {
-            var _keys = keys(attrs),
-                len   = _keys.length;
+            var _keys = keys(src),
+                len = _keys.length;
 
             if (obj == null) return !len;
 
@@ -276,75 +322,93 @@ module.exports = (function ()
 
             for (var i = 0; i < len; i++)
             {
-                var key = keys[i];
-                if (attrs[key] !== obj[key] || !(key in obj)) return false;
+                var key = _keys[i];
+                if (src[key] !== obj[key] || !(key in obj)) return false;
             }
 
             return true;
         };
 
-        return isMatch;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ isObj ------------------------------ */
 
-    var isObj;
-
-    _.isObj = (function ()
+    var isObj = _.isObj = (function (exports)
     {
-        // TODO
-
-        /* function
-         * isObj: Checks if value is the language type of Object.
-         * value(*): The value to check.
-         * return(boolean): Returns true if value is an object, else false.
+        /* Check if value is the language type of Object.
+         *
+         * |Name  |Type   |Desc                      |
+         * |-----------------------------------------|
+         * |val   |*      |The value to check        |
+         * |return|boolean|True if value is an object|
+         *
+         * [Language Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
+         *
+         * ```javascript
+         * isObj({}); // -> true
+         * isObj([]); // -> true
+         * ```
          */
 
-        isObj = function (val)
+        exports = function (val)
         {
             var type = typeof val;
 
-            return type === 'function' || type === 'object';
+            return !!val && (type === 'function' || type === 'object');
         };
 
-        return isObj;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ last ------------------------------ */
 
-    var last;
-
-    _.last = (function ()
+    var last = _.last = (function (exports)
     {
-        /* Gets the last element of array.
+        /* Get the last element of array.
          *
-         * |Name|Type|Desc|
-         * |--------------|
-         * |array|array|The array to query|
-         * |return|*|Returns the last element of array|
+         * |Name  |Type |Desc                     |
+         * |--------------------------------------|
+         * |arr   |array|The array to query       |
+         * |return|*    |The last element of array|
+         *
+         * ```javascript
+         * last([1, 2]); // -> 2
+         * ```
          */
 
-        last = function (arr)
+        exports = function (arr)
         {
             var len = arr ? arr.length : 0;
 
-            return len ? arr[len - 1] : undefined;
+            if (len) return arr[len - 1];
         };
 
-        return last;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ ltrim ------------------------------ */
 
-    var ltrim;
-
-    _.ltrim = (function ()
+    var ltrim = _.ltrim = (function (exports)
     {
-        // TODO
+        /* Remove chars or white-spaces from beginning of string.
+         *
+         * |Name  |Type         |Desc                  |
+         * |-------------------------------------------|
+         * |str   |string       |The string to trim    |
+         * |chars |string\|array|The characters to trim|
+         * |return|string       |The trimmed string    |
+         *
+         * ```javascript
+         * ltrim(' abc  '); // -> 'abc  '
+         * ltrim('_abc_', '_'); // -> 'abc_'
+         * ltrim('_abc_', ['a', '_']); // -> 'bc_'
+         * ```
+         */
 
         var regSpace = /^\s+/;
 
-        ltrim = function (str, chars)
+        exports = function (str, chars)
         {
             if (chars == null) return str.replace(regSpace, '');
 
@@ -374,18 +438,16 @@ module.exports = (function ()
             return (start >= len) ? '' : str.substr(start, len);
         };
 
-        return ltrim;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ matcher ------------------------------ */
 
-    var matcher;
-
-    _.matcher = (function ()
+    var matcher = _.matcher = (function (exports)
     {
         // TODO
 
-        matcher = function (attrs)
+        exports = function (attrs)
         {
             attrs = extendOwn({}, attrs);
 
@@ -395,17 +457,14 @@ module.exports = (function ()
             };
         };
 
-        return matcher;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ optimizeCb ------------------------------ */
 
-    var optimizeCb;
-
-    _.optimizeCb = (function ()
+    var optimizeCb = _.optimizeCb = (function (exports)
     {
-
-        optimizeCb = function (func, ctx, argCount)
+        exports = function (func, ctx, argCount)
         {
             if (isUndef(ctx)) return func;
 
@@ -431,22 +490,20 @@ module.exports = (function ()
             };
         };
 
-        return optimizeCb;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ safeCb ------------------------------ */
 
-    var safeCb;
-
-    _.safeCb = (function ()
+    var safeCb = _.safeCb = (function (exports)
     {
         /* function
          * safeCb: Create callback based on input value.
          */
 
-        safeCb = function (val, ctx, argCount)
+        exports = function (val, ctx, argCount)
         {
-            if (val == null) return function (val) { return val };
+            if (val == null) return identity;
 
             if (isFn(val)) return optimizeCb(val, ctx, argCount);
 
@@ -461,23 +518,33 @@ module.exports = (function ()
             };
         };
 
-        return safeCb;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ map ------------------------------ */
 
-    var map;
-
-    _.map = (function ()
+    var map = _.map = (function (exports)
     {
-        // TODO
+        /* Create an array of values by running each element in collection through iteratee.
+         *
+         * |Name    |Type         |Desc                          |
+         * |-----------------------------------------------------|
+         * |obj     |array\|object|Collection to iterate over    |
+         * |iteratee|function     |Function invoked per iteration|
+         * |[ctx]   |*            |Function context              |
+         * |return  |array        |New mapped array              |
+         *
+         * ```javascript
+         * map([4, 8], function (n) { return n * n; }); // -> [16, 64]
+         * ```
+         */
 
-        map = function (obj, iteratee, ctx)
+        exports = function (obj, iteratee, ctx)
         {
             iteratee = safeCb(iteratee, ctx);
 
-            var _keys   = !isArrLike(obj) && keys(obj),
-                len     = (_keys || obj).length,
+            var _keys = !isArrLike(obj) && keys(obj),
+                len = (_keys || obj).length,
                 results = Array(len);
 
             for (var i = 0; i < len; i++)
@@ -489,26 +556,37 @@ module.exports = (function ()
             return results;
         };
 
-        return map;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ rtrim ------------------------------ */
 
-    var rtrim;
-
-    _.rtrim = (function ()
+    var rtrim = _.rtrim = (function (exports)
     {
-        // TODO
+        /* Remove chars or white-spaces from end of string.
+         *
+         * |Name  |Type         |Desc                  |
+         * |-------------------------------------------|
+         * |str   |string       |The string to trim    |
+         * |chars |string\|array|The characters to trim|
+         * |return|string       |The trimmed string    |
+         *
+         * ```javascript
+         * rtrim(' abc  '); // -> ' abc'
+         * rtrim('_abc_', '_'); // -> '_abc'
+         * rtrim('_abc_', ['c', '_']); // -> '_ab'
+         * ```
+         */
 
         var regSpace = /\s+$/;
 
-        rtrim = function (str, chars)
+        exports = function (str, chars)
         {
             if (chars == null) return str.replace(regSpace, '');
 
-            var end     = str.length - 1,
+            var end = str.length - 1,
                 charLen = chars.length,
-                found   = true,
+                found = true,
                 i, c;
 
             while (found && end >= 0)
@@ -531,41 +609,50 @@ module.exports = (function ()
             return (end >= 0) ? str.substring(0, end + 1) : '';
         };
 
-        return rtrim;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ trim ------------------------------ */
 
-    var trim;
-
-    _.trim = (function ()
+    var trim = _.trim = (function (exports)
     {
-        // TODO
+        /* Remove chars or white-spaces from beginning end of string.
+         *
+         * |Name  |Type         |Desc                  |
+         * |-------------------------------------------|
+         * |str   |string       |The string to trim    |
+         * |chars |string\|array|The characters to trim|
+         * |return|string       |The trimmed string    |
+         *
+         * ```javascript
+         * trim(' abc  '); // -> 'abc'
+         * trim('_abc_', '_'); // -> 'abc'
+         * trim('_abc_', ['a', 'c', '_']); // -> 'b'
+         * ```
+         */
 
         var regSpace = /^\s+|\s+$/g;
 
-        trim = function (str, chars)
+        exports = function (str, chars)
         {
             if (chars == null) return str.replace(regSpace, '');
 
             return ltrim(rtrim(str, chars), chars);
         };
 
-        return trim;
-    })();
+        return exports;
+    })({});
 
     /* ------------------------------ extractBlockCmts ------------------------------ */
 
-    var extractBlockCmts;
-
-    _.extractBlockCmts = (function ()
+    var extractBlockCmts = _.extractBlockCmts = (function (exports)
     {
         /* Extract block comments from source code.
          */
 
         var regBlockCmt = /(\/\*[\s\S]*?\*\/)/mg;
 
-        extractBlockCmts = function (str)
+        exports = function (str)
         {
             var ret = str.match(regBlockCmt);
 
@@ -582,8 +669,8 @@ module.exports = (function ()
             return ret;
         };
 
-        return extractBlockCmts;
-    })();
+        return exports;
+    })({});
 
     return _;
 })();

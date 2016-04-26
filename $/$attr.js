@@ -17,7 +17,7 @@ exports = function (nodes, name, val)
     setAttr(nodes, attrs);
 };
 
-$attr.remove = function (nodes, names)
+exports.remove = function (nodes, names)
 {
     nodes = $safeNodes(nodes);
     names = toArr(names);

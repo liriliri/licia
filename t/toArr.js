@@ -6,14 +6,14 @@
  * |return|array|Converted array |
  *
  * ```javascript
- * toArr({a: 1, b: 2}); // -> [1, 2]
- * toArr('abc'); // -> ['a', 'b', 'c']
+ * toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
+ * toArr('abc'); // -> ['abc']
  * toArr(1); // -> []
  * toArr(null); // -> []
  * ```
  */
 
-_('isArrLike isStr map isArr identity');
+_('isArrLike map isArr isStr');
 
 exports = function (val)
 {
@@ -21,7 +21,7 @@ exports = function (val)
 
     if (isArr(val)) return val;
 
-    if (isArrLike(val) || isObj(val)) return map(val);
+    if (isArrLike(val) && !isStr(val)) return map(val);
 
     return [val];
 };

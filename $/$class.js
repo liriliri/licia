@@ -12,7 +12,7 @@ exports = {
 
             each(names, function (name)
             {
-                if (!$class.has(node, name)) classList.push(name);
+                if (!exports.has(node, name)) classList.push(name);
             });
 
             if (classList.length !== 0) node.className += ' ' + classList.join(' ');
@@ -35,9 +35,9 @@ exports = {
 
         each(nodes, function (node)
         {
-            if (!$class.has(node, name)) return $class.add(node, name);
+            if (!exports.has(node, name)) return exports.add(node, name);
 
-            $class.remove(node, name);
+            exports.remove(node, name);
         });
     },
     remove: function (nodes, name)

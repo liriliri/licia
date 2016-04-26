@@ -1,7 +1,7 @@
 /* jQuery like dom manipulator.
  */
 
-_('Class isStr each isObj some camelize isNum dasherize');
+_('Class isStr each');
 
 function mergeArr(first, second)
 {
@@ -53,4 +53,4 @@ exports = Class({
     }
 });
 
-var rootSelect = new Select(document);
+var rootSelect = new exports(document);
