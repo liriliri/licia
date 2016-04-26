@@ -1,4 +1,4 @@
-_('isStr isObj camelize dasherize isUndef contain isNum $safeNodes');
+_('isStr isObj camelCase dasherize isUndef contain isNum $safeNodes');
 
 exports = function (nodes, name, val)
 {
@@ -19,7 +19,7 @@ exports = function (nodes, name, val)
 
 function getCss(node, name)
 {
-    return node.style[camelize(name)];
+    return node.style[camelCase(name)];
 }
 
 function setCss(nodes, css)

@@ -1,3 +1,6 @@
+/* jQuery like style dom manipulator.
+ */
+
 _('Select $offset $show $css $attr $property last $remove $data $event $class $insert isUndef isStr');
 
 exports = function (selector)
