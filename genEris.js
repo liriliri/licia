@@ -27,6 +27,7 @@ function main(files)
     {
         if (err) return console.log(err);
 
+        sortEris();
         outputEris();
     });
 }
@@ -59,6 +60,34 @@ function genCbs(files)
     });
 
     return ret;
+}
+
+function sortEris()
+{
+    var newOutput = [];
+
+    util.each(output, function (val, key)
+    {
+        newOutput.push({
+            key: key,
+            val: val
+        });
+    });
+
+    newOutput.sort(function (a, b)
+    {
+        if (a.key < b.key) return -1;
+        if (a.key > b.key) return 1;
+
+        return 0;
+    });
+
+    output = {};
+
+    util.each(newOutput, function (val)
+    {
+        output[val.key] = val.val;
+    });
 }
 
 function outputEris()
