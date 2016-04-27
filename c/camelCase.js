@@ -1,9 +1,9 @@
-/* Convert string to "camelCase" text.
+/* Convert string to "camelCase".
  *
- * |Name  |Type  |Desc                  |
- * |------------------------------------|
- * |str   |string|The string to convert |
- * |return|string|The camel cased string|
+ * |Name  |Type  |Desc              |
+ * |--------------------------------|
+ * |str   |string|String to convert |
+ * |return|string|Camel cased string|
  *
  * ```javascript
  * camelCase('foo-bar'); // -> fooBar
@@ -13,12 +13,25 @@
  * ```
  */
 
-exports = function (str)
+_('splitCase');
+
+function exports(str)
 {
-    return str.replace(/^[_.\- ]+/, '')
-              .toLowerCase()
-              .replace(/[_.\- ]+(\w|$)/g, function (m, p1)
-              {
-                  return p1.toUpperCase();
-              });
-};
+    var arr = splitCase(str);
+
+    var ret = arr[0];
+    arr.shift();
+
+    arr.forEach(capitalize, arr);
+    ret += arr.join('');
+
+    return ret;
+}
+
+function capitalize(val, idx)
+{
+    this[idx] = val.replace(/\w/, function (match)
+    {
+        return match.toUpperCase();
+    });
+}
