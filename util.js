@@ -106,6 +106,44 @@ module.exports = (function ()
         return exports;
     })({});
 
+    /* ------------------------------ repeat ------------------------------ */
+
+    var repeat = _.repeat = (function (exports)
+    {
+        /* Repeat string n-times.
+         *
+         * |Name  |Type  |Desc                |
+         * |----------------------------------|
+         * |str   |string|The string to repeat|
+         * |n     |number|Repeat times        |
+         * |return|string|Repeated string     |
+         *
+         * ```javascript
+         * repeat('a', 3); // -> 'aaa'
+         * repeat('ab', 2); // -> 'abab'
+         * repeat('*', 0); // -> ''
+         * ```
+         */
+
+        exports = function (str, n)
+        {
+            var ret = '';
+
+            if (n < 1) return '';
+
+            while (n > 0)
+            {
+                if (n & 1) ret += str;
+                n >>= 1;
+                str += str;
+            }
+
+            return ret;
+        };
+
+        return exports;
+    })({});
+
     /* ------------------------------ objToStr ------------------------------ */
 
     var objToStr = _.objToStr = (function (exports)
@@ -173,6 +211,44 @@ module.exports = (function ()
         {
             return objToStr(val) === '[object Number]';
         };
+
+        return exports;
+    })({});
+
+    /* ------------------------------ indent ------------------------------ */
+
+    var indent = _.indent = (function (exports)
+    {
+        /* Indent each line in a string.
+         *
+         * |Name  |Type  |Desc                |
+         * |----------------------------------|
+         * |str   |string|String to indent    |
+         * |[char]|string|Character to prepend|
+         * |[len] |number|Indent length       |
+         * |return|string|Indented string     |
+         *
+         * ```javascript
+         * indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
+         * ```
+         */
+
+        var regLineBegin = /^(?!\s*$)/mg;
+
+        function exports(str, char, len)
+        {
+            if (isNum(char))
+            {
+                len = char;
+                char = ' ';
+            }
+            if (isUndef(len)) len = 4;
+            if (isUndef(char)) char = ' ';
+
+            char = repeat(char, len);
+
+            return str.replace(regLineBegin, char);
+        }
 
         return exports;
     })({});

@@ -1,9 +1,10 @@
 var path = require('path'),
     fs = require('fs'),
+    handlebars = require('handlebars'),
     eustia = require('eustia'),
     async = require('async');
 
-main();
+var util = require('./util');
 
 function main()
 {
@@ -17,8 +18,9 @@ function main()
     async.waterfall([
         fileExist.bind(null, modPath),
         fileExist.bind(null, modTestPath),
+        readTpl.bind(null, 'mocha.test'),
         readFile.bind(null, modTestPath),
-        wrapTestFile.bind(null, modName),
+        genTestFile.bind(null, modName),
         writeFile.bind(null, testOutputPath),
         genTestUtil.bind(null, modName)
     ], function (err)
@@ -38,17 +40,12 @@ function readModName()
     return argv[2];
 }
 
-function wrapTestFile(modName, data, cb)
+function genTestFile(modName, data, cb)
 {
-    cb(null, [
-        'var util = require("./' + modName + '.util"),',
-        '    chai = require("chai");\n',
-        'var expect = chai.expect;\n',
-        'var ' + modName + ' = util.' + modName + ';\n',
-        'describe("' + modName +'", function () \n{\n',
-        data,
-        '});'
-    ].join('\n'));
+    cb(null, tpl['mocha.test']({
+        modName: modName,
+        data: util.indent(data)
+    }));
 }
 
 function genTestUtil(modName, cb)
@@ -61,6 +58,20 @@ function genTestUtil(modName, cb)
     }, function (err)
     {
         if (err) return cb(err);
+
+        cb();
+    });
+}
+
+var tpl = {};
+
+function readTpl(name, cb)
+{
+    fs.readFile('./' + name + '.hbs', 'utf-8', function (err, data)
+    {
+        if (err) return cb(err);
+
+        tpl[name] = handlebars.compile(data);
 
         cb();
     });
@@ -94,4 +105,4 @@ function writeFile(path, data, cb)
     });
 }
 
-
+main();
