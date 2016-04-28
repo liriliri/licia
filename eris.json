@@ -31,6 +31,7 @@
     "define": "No description.",
     "delay": "Invoke function after certain milliseconds.",
     "delegate": "No description.",
+    "difference": "Create an array of unique array values not included in the other given array.",
     "dotCase": "Convert string to \"dotCase\".",
     "each": "Iterates over elements of collection and invokes iteratee for each element.",
     "endWith": "Check if string ends with the given target string.",
