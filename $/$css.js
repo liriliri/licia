@@ -1,4 +1,4 @@
-_('isStr isObj camelCase dashCase isUndef contain isNum $safeNodes');
+_('isStr isObj camelCase kebabCase isUndef contain isNum $safeNodes');
 
 exports = function (nodes, name, val)
 {
@@ -29,7 +29,7 @@ function setCss(nodes, css)
         var cssText = ';';
         each(css, function (val, key)
         {
-            cssText += dashCase(key) + ':' + addPx(key, val) + ';';
+            cssText += kebabCase(key) + ':' + addPx(key, val) + ';';
         });
         node.style.cssText += cssText;
     });
@@ -47,7 +47,7 @@ var cssNumProps = [
 
 function addPx(key, val)
 {
-    var needPx = isNum(val) && !contain(cssNumProps, dashCase(key));
+    var needPx = isNum(val) && !contain(cssNumProps, kebabCase(key));
 
     return needPx ? val + 'px' : val;
 }
