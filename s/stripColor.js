@@ -1,4 +1,4 @@
-/* Strip ansi characters from a string.
+/* Strip ansi color codes from a string.
  *
  * |Name  |Type  |Desc           |
  * |-----------------------------|
@@ -6,7 +6,7 @@
  * |return|string|Resulted string|
  *
  * ```javascript
- * stripColor('\u001b[31mred\u001b[39m'); // -> red
+ * stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
  * ```
  */
 
