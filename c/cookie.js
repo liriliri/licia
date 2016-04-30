@@ -31,7 +31,7 @@
  * ```
  */
 
-_('extend isNum isUndef');
+_('defaults isNum isUndef');
 
 var defOpts = { path: '/' };
 
@@ -39,7 +39,8 @@ function setCookie(key, val, options)
 {
     if (!isUndef(val))
     {
-        options = extend(defOpts, options);
+        options = options || {};
+        options = defaults(options, defOpts);
 
         if (isNum(options.expires))
         {
