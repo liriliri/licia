@@ -1,7 +1,39 @@
 // Built by eustia.
 module.exports = (function ()
 {
-    var _ = {};
+        var _ = {};
+
+    /* ------------------------------ allKeys ------------------------------ */
+
+    var allKeys = _.allKeys = (function (exports)
+    {
+        /* Retrieve all the names of object's own and inherited properties.
+         *
+         * |Name  |Type  |Desc                           |
+         * |---------------------------------------------|
+         * |obj   |object|The object to query            |
+         * |return|array |The array of all property names|
+         *
+         * > Members of Object's prototype won't be retrieved.
+         *
+         * ```javascript
+         * var obj = Object.create({zero: 0});
+         * obj.one = 1;
+         * allKeys(obj) // -> ['zero', 'one']
+         * ```
+         */
+
+        exports = function (obj)
+        {
+            var ret = [], key;
+
+            for (key in obj) ret.push(key);
+
+            return ret;
+        };
+
+        return exports;
+    })({});
 
     /* ------------------------------ isUndef ------------------------------ */
 
@@ -166,30 +198,26 @@ module.exports = (function ()
         return exports;
     })({});
 
-    /* ------------------------------ isFn ------------------------------ */
+    /* ------------------------------ isArr ------------------------------ */
 
-    var isFn = _.isFn = (function (exports)
+    var isArr = _.isArr = (function (exports)
     {
-        /* Check if value is a function.
+        /* Check if value is an `Array` object.
          *
-         * |Name  |Type   |Desc                       |
-         * |------------------------------------------|
-         * |val   |*      |The value to check         |
-         * |return|boolean|True if value is a function|
-         *
-         * Generator function is also classified as true.
+         * |Name  |Type   |Desc                              |
+         * |-------------------------------------------------|
+         * |val   |*      |The value to check                |
+         * |return|boolean|True if value is an `Array` object|
          *
          * ```javascript
-         * isFn(function() {}); // -> true
-         * isFn(function*() {}); // -> true
+         * isArr([]); // -> true
+         * isArr({}); // -> false
          * ```
          */
 
-        exports = function (val)
+        exports = Array.isArray || function (val)
         {
-            var objStr = objToStr(val);
-
-            return objStr === '[object Function]' || objStr === '[object GeneratorFunction]';
+            return objToStr(val) === '[object Array]';
         };
 
         return exports;
@@ -348,6 +376,28 @@ module.exports = (function ()
         return exports;
     })({});
 
+    /* ------------------------------ defaults ------------------------------ */
+
+    var defaults = _.defaults = (function (exports)
+    {
+        /* Fill in undefined properties in object with the first value present in the following list of defaults objects.
+         *
+         * |Name  |Type  |Desc              |
+         * |--------------------------------|
+         * |obj   |object|Destination object|
+         * |*src  |object|Sources objects   |
+         * |return|object|Destination object|
+         *
+         * ```javascript
+         * defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood', age: 24}
+         * ```
+         */
+
+        exports = createAssigner(allKeys, true);
+
+        return exports;
+    })({});
+
     /* ------------------------------ extendOwn ------------------------------ */
 
     var extendOwn = _.extendOwn = (function (exports)
@@ -366,6 +416,35 @@ module.exports = (function ()
          */
 
         exports = createAssigner(keys);
+
+        return exports;
+    })({});
+
+    /* ------------------------------ isFn ------------------------------ */
+
+    var isFn = _.isFn = (function (exports)
+    {
+        /* Check if value is a function.
+         *
+         * |Name  |Type   |Desc                       |
+         * |------------------------------------------|
+         * |val   |*      |The value to check         |
+         * |return|boolean|True if value is a function|
+         *
+         * Generator function is also classified as true.
+         *
+         * ```javascript
+         * isFn(function() {}); // -> true
+         * isFn(function*() {}); // -> true
+         * ```
+         */
+
+        exports = function (val)
+        {
+            var objStr = objToStr(val);
+
+            return objStr === '[object Function]' || objStr === '[object GeneratorFunction]';
+        };
 
         return exports;
     })({});
@@ -432,6 +511,30 @@ module.exports = (function ()
             var type = typeof val;
 
             return !!val && (type === 'function' || type === 'object');
+        };
+
+        return exports;
+    })({});
+
+    /* ------------------------------ isStr ------------------------------ */
+
+    var isStr = _.isStr = (function (exports)
+    {
+        /* Check if value is a string primitive.
+         *
+         * |Name  |Type   |Desc                               |
+         * |--------------------------------------------------|
+         * |val   |*      |The value to check                 |
+         * |return|boolean|True if value is a string primitive|
+         *
+         * ```javascript
+         * isStr('eris'); // -> true
+         * ```
+         */
+
+        exports = function (val)
+        {
+            return objToStr(val) === '[object String]';
         };
 
         return exports;
@@ -631,6 +734,124 @@ module.exports = (function ()
 
             return results;
         };
+
+        return exports;
+    })({});
+
+    /* ------------------------------ restArgs ------------------------------ */
+
+    var restArgs = _.restArgs = (function (exports)
+    {
+        /* This accumulates the arguments passed into an array, after a given index.
+         *
+         * |Name|Type|Desc|
+         * |--------------|
+         * |function|function|Function that needs rest parameters|
+         * |startIndex|number|The start index to accumulates|
+         * |return|function|Generated function with rest parameters|
+         *
+         * ```javascript
+         * var paramArr = _.restArgs(function (rest) { return rest });
+         * paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
+         * ```
+         */
+
+        exports = function (fn, startIdx)
+        {
+            startIdx = startIdx == null ? fn.length - 1 : +startIdx;
+
+            return function ()
+            {
+                var len = Math.max(arguments.length - startIdx, 0),
+                    rest = new Array(len),
+                    i;
+
+                for (i = 0; i < len; i++) rest[i] = arguments[i + startIdx];
+
+                // Call runs faster than apply.
+                switch (startIdx)
+                {
+                    case 0: return fn.call(this, rest);
+                    case 1: return fn.call(this, arguments[0], rest);
+                    case 2: return fn.call(this, arguments[0], arguments[1], rest);
+                }
+
+                var args = new Array(startIdx + 1);
+
+                for (i = 0; i < startIdx; i++) args[i] = arguments[i];
+
+                args[startIdx] = rest;
+
+                return fn.apply(this, args);
+            };
+        };
+
+        return exports;
+    })({});
+
+    /* ------------------------------ toArr ------------------------------ */
+
+    var toArr = _.toArr = (function (exports)
+    {
+        /* Convert value to an array.
+         *
+         * |Name  |Type |Desc            |
+         * |-----------------------------|
+         * |val   |*    |Value to convert|
+         * |return|array|Converted array |
+         *
+         * ```javascript
+         * toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
+         * toArr('abc'); // -> ['abc']
+         * toArr(1); // -> []
+         * toArr(null); // -> []
+         * ```
+         */
+
+        exports = function (val)
+        {
+            if (!val) return [];
+
+            if (isArr(val)) return val;
+
+            if (isArrLike(val) && !isStr(val)) return map(val);
+
+            return [val];
+        };
+
+        return exports;
+    })({});
+
+    /* ------------------------------ partial ------------------------------ */
+
+    var partial = _.partial = (function (exports)
+    {
+        /* Partially apply a function by filling in given arguments.
+         *
+         * |Name    |Type    |Desc                                    |
+         * |----------------------------------------------------------|
+         * |fn      |function|Function to partially apply arguments to|
+         * |partials|...*    |Arguments to be partially applied       |
+         * |return  |function|New partially applied function          |
+         *
+         * ```javascript
+         * var sub5 = partial(function (a, b) { return b - a }, 5);
+         * sub(20); // -> 15
+         * ```
+         */
+
+        exports = restArgs(function (fn, partials)
+        {
+            return function ()
+            {
+                var args = [];
+
+                args = args.concat(partials);
+                args = args.concat(toArr(arguments));
+
+                return fn.apply(this, args);
+            };
+        });
 
         return exports;
     })({});

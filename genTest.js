@@ -2,49 +2,77 @@ var path = require('path'),
     fs = require('fs'),
     handlebars = require('handlebars'),
     eustia = require('eustia'),
+    nopt = require('nopt'),
     async = require('async');
 
 var util = require('./util');
 
+var options = {
+    type: 'mocha'
+};
+
 function main()
 {
-    var modName = readModName();
+    readOpts();
+    var modName = options.argv.remain[0];
     if (!modName) return console.log('A module name must be given.');
 
-    var modPath = path.resolve(__dirname, modName[0].toLowerCase(), modName + '.js'),
+    var modPath = resolvePath(modName[0].toLowerCase(), modName + '.js'),
         modTestPath = modPath.replace('.js', '.test.js'),
-        testOutputPath = path.resolve(__dirname, 'test/' + modName + '.js');
+        testOutputPath = resolvePath('test/' + modName + '.js');
 
-    async.waterfall([
-        fileExist.bind(null, modPath),
-        fileExist.bind(null, modTestPath),
-        readTpl.bind(null, 'mocha.test'),
-        readFile.bind(null, modTestPath),
-        genTestFile.bind(null, modName),
-        writeFile.bind(null, testOutputPath),
-        genTestUtil.bind(null, modName)
-    ], function (err)
+    var partial = util.partial;
+
+    var callbacks = [
+        partial(fileExist, modPath),
+        partial(fileExist, modTestPath),
+        partial(readTpl, options.type + '.test'),
+        partial(readFile, modTestPath),
+        partial(genTestFile, modName),
+        partial(writeFile, testOutputPath),
+        partial(genTestUtil, modName)
+    ];
+
+    if (options.type === 'karma')
+    {
+        callbacks = callbacks.concat([
+            partial(readTpl, 'karma.conf'),
+            partial(genKarmaConf, modName),
+            partial(writeFile, resolvePath('karma.conf.js'))
+        ]);
+    }
+
+
+    async.waterfall(callbacks, function (err)
     {
         if (err) return console.log(err);
 
-        console.log('Run "mocha" to execute test:)');
+        console.log('Run "' + (options.type === 'mocha' ? 'mocha test/' + modName : 'karma start') +
+                    '" to execute test:)');
     });
 }
 
-function readModName()
+function resolvePath()
 {
-    var argv = process.argv;
+    var args = util.toArr(arguments);
 
-    if (argv.length < 3) return;
+    args.unshift(__dirname);
 
-    return argv[2];
+    return path.resolve.apply(path, args);
 }
 
 function genTestFile(modName, data, cb)
 {
-    cb(null, tpl['mocha.test']({
+    cb(null, tpl[options.type + '.test']({
         modName: modName,
-        data: util.indent(data)
+        data: util.indent(util.trim(data))
+    }));
+}
+
+function genKarmaConf(modName, cb)
+{
+    cb(null, tpl['karma.conf']({
+        modName: modName
     }));
 }
 
@@ -54,7 +82,8 @@ function genTestUtil(modName, cb)
         files: [],
         output: 'test/' + modName + '.util\.js',
         library: '$_abcdefghijklmnopqrstuvwxyz'.split(''),
-        include: modName
+        include: modName,
+        format: options.type === 'mocha' ? 'commonjs' : 'global'
     }, function (err)
     {
         if (err) return cb(err);
@@ -103,6 +132,17 @@ function writeFile(path, data, cb)
 
         cb();
     });
+}
+
+function readOpts()
+{
+    options = util.defaults(nopt({
+        karma: Boolean
+    }, {
+        k: '--karma'
+    }, process.argv, 2), options);
+
+    if (options.karma) options.type = 'karma';
 }
 
 main();
