@@ -9,20 +9,20 @@
  *
  * ## set: set cookie value.
  *
- * |Name     |Type   |Desc            |
- * |----------------------------------|
- * |key      |string |Cookie key      |
- * |val      |string |Cookie value    |
- * |[options]|object |Cookie options  |
- * |return   |exports|Module namespace|
+ * |Name     |Type   |Desc          |
+ * |--------------------------------|
+ * |key      |string |Cookie key    |
+ * |val      |string |Cookie value  |
+ * |[options]|object |Cookie options|
+ * |return   |exports|Module cookie |
  *
  * ## remove: remove cookie value.
  *
- * |Name     |Type   |Desc            |
- * |----------------------------------|
- * |key      |string |Cookie key      |
- * |[options]|object |Cookie options  |
- * |return   |exports|Module namespace|
+ * |Name     |Type   |Desc          |
+ * |--------------------------------|
+ * |key      |string |Cookie key    |
+ * |[options]|object |Cookie options|
+ * |return   |exports|Module cookie |
  *
  * ```javascript
  * cookie.set('a', '1', {path: '/'});
@@ -31,13 +31,13 @@
  * ```
  */
 
-_('extend isNum');
+_('extend isNum isUndef');
 
 var defOpts = { path: '/' };
 
 function setCookie(key, val, options)
 {
-    if (arguments.length > 1)
+    if (!isUndef(val))
     {
         options = extend(defOpts, options);
 
@@ -48,13 +48,13 @@ function setCookie(key, val, options)
             options.expires = expires;
         }
 
-        val = encodeURIComponent(String(val));
+        val = encodeURIComponent(val);
         key = encodeURIComponent(key);
 
         document.cookie = [
             key, '=', val,
             options.expires && '; expires=' + options.expires.toUTCString(),
-            options.path    && '; path=' + options.path,
+            options.path && '; path=' + options.path,
             options.domain  && '; domain=' + options.domain,
             options.secure ? '; secure' : ''
         ].join('');
@@ -63,7 +63,7 @@ function setCookie(key, val, options)
     }
 
     var cookies = document.cookie ? document.cookie.split('; ') : [],
-        result  = key ? undefined : {};
+        result = key ? undefined : {};
 
     for (var i = 0, len = cookies.length; i < len; i++)
     {
@@ -87,18 +87,7 @@ function setCookie(key, val, options)
 }
 
 exports = {
-    /* member
-     * cookie.get: Read cookie.
-     * key(string): The cookie name.
-     * return(string): Returns cookie value if exists, eles undefined.
-     */
     get: setCookie,
-    /* member
-     * cookie.set: Set cookie.
-     * key(string): The cookie name.
-     * val(string): The cookie value.
-     * options(Object): Options.
-     */
     set: setCookie,
     remove: function (key, options)
     {

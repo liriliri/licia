@@ -1,10 +1,10 @@
 /* Create JavaScript class.
  *
- * |Name   |Type    |Desc                                    |
- * |---------------------------------------------------------|
- * |methods|object  |Public methods                          |
- * |statics|object  |Static methods                          |
- * |return |function|Return function used to create instances|
+ * |Name   |Type    |Desc                             |
+ * |--------------------------------------------------|
+ * |methods|object  |Public methods                   |
+ * |statics|object  |Static methods                   |
+ * |return |function|Function used to create instances|
  */
 
 _('extend toArr inherits has');
@@ -36,17 +36,34 @@ function makeClass(parent, methods, statics)
     inherits(ctor, parent);
     ctor.superclass = ctor.prototype.superclass = parent;
 
-    ctor.extend   = function (methods, statics) { return makeClass(ctor, methods, statics) };
-    ctor.inherits = function (Class) { inherits(Class, ctor) };
-    ctor.methods  = function (methods) { extend(ctor.prototype, methods); return ctor };
-    ctor.statics  = function (statics) { extend(ctor, statics); return ctor };
+    ctor.extend = function (methods, statics)
+    {
+        return makeClass(ctor, methods, statics);
+    };
+    ctor.inherits = function (Class)
+    {
+        inherits(Class, ctor);
+    };
+    ctor.methods = function (methods)
+    {
+        extend(ctor.prototype, methods);
+        return ctor;
+    };
+    ctor.statics = function (statics)
+    {
+        extend(ctor, statics);
+        return ctor;
+    };
 
     ctor.methods(methods).statics(statics);
 
     return ctor;
 }
 
-exports = function (methods, statics) { return Base.extend(methods, statics) };
+exports = function (methods, statics)
+{
+    return Base.extend(methods, statics);
+};
 
 var Base = exports.Base = makeClass(Object, {
     className: 'Base',
