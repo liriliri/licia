@@ -88,6 +88,7 @@
     "max": "Get maximum value of given numbers.",
     "memoize": "No description.",
     "min": "Get minimum value of given numbers.",
+    "negate": "Create a function that negates the result of the predicate function.",
     "noop": "A no-operation function.",
     "now": "Gets the number of milliseconds that have elapsed since the Unix epoch.",
     "objToStr": "Alias of Object.prototype.toString.",
