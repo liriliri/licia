@@ -1,11 +1,20 @@
 /* Extract block comments from source code.
+ *
+ * |Name  |Type  |Desc             |
+ * |-------------------------------|
+ * |str   |string|String to extract|
+ * |return|array |Block comments   |
+ *
+ * ```javascript
+ * extractBlockCmts('\/*eris*\/'); // -> ['eris']
+ * ```
  */
 
 _('map trim');
 
 var regBlockCmt = /(\/\*[\s\S]*?\*\/)/mg;
 
-exports = function (str)
+function exports(str)
 {
     var ret = str.match(regBlockCmt);
 
@@ -20,4 +29,4 @@ exports = function (str)
     });
 
     return ret;
-};
+}
