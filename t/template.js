@@ -1,4 +1,4 @@
-// TODO
+_('escape');
 
 var regEvaluate = /<%([\s\S]+?)%>/g,
     regInterpolate = /<%=([\s\S]+?)%>/g,
