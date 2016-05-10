@@ -27,7 +27,7 @@ function getDefDisplay(nodeName)
     if (!elDisplay[nodeName])
     {
         el = document.createElement(nodeName);
-        document.body.appendChild(el);
+        document.documentElement.appendChild(el);
         display = getComputedStyle(el, '').getPropertyValue("display");
         el.parentNode.removeChild(el);
         display == "none" && (display = "block");
