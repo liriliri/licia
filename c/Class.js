@@ -5,6 +5,42 @@
  * |methods|object  |Public methods                   |
  * |statics|object  |Static methods                   |
  * |return |function|Function used to create instances|
+ *
+ * ```javascript
+ * var People = Class({
+ *     initialize: function (name, age)
+ *     {
+ *         this.name = name;
+ *         this.age = age;
+ *     },
+ *     introduce: function ()
+ *     {
+ *         return 'I am ' + this.name + ', ' + this.age + ' years old.'.
+ *     }
+ * });
+ *
+ * var Student = People.extend({
+ *     initialize: function (name, age, school)
+ *     {
+ *         this.callSuper('initialize', name, age);
+ *
+ *         this.school = school.
+ *     },
+ *     introduce: function ()
+ *     {
+ *         return this.callSuper('introduce') + '\n I study at ' + this.school + '.'.
+ *     }
+ * }, {
+ *     is: function (obj)
+ *     {
+ *         return obj instanceof Student;
+  *    }
+ * });
+ *
+ * var a = new Student('allen', 17, 'Hogwarts');
+ * a.introduce(); // -> 'I am allen, 17 years old. \n I study at Hogwarts.'
+ * Student.is(a); // -> true
+ * ```
  */
 
 _('extend toArr inherits has');
