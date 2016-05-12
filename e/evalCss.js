@@ -9,10 +9,10 @@
  * ```
  */
 
-exports = function (css)
+function exports(css)
 {
     var style = document.createElement('style');
     style.textContent = css;
     style.type = 'text/css';
-    document.body.appendChild(style);
-};
+    document.head.appendChild(style);
+}
