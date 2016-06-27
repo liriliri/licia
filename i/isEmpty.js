@@ -1,7 +1,7 @@
 /* Check if value is an empty object or array.
  *
  * |Name  |Type   |Desc                  |
- * |-------------------------------------|
+ * |------|-------|----------------------|
  * |val   |*      |Value to check        |
  * |return|boolean|True if value is empty|
  *

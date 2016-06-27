@@ -1,7 +1,7 @@
 /* Convert value to a string.
  *
  * |Name  |Type  |Desc            |
- * |------------------------------|
+ * |------|------|----------------|
  * |val   |*     |Value to convert|
  * |return|string|Resulted string |
  *

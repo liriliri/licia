@@ -1,7 +1,7 @@
 /* Create a function that invokes less than n times.
  *
  * |Name  |Type    |Desc                                            |
- * |----------------------------------------------------------------|
+ * |------|--------|------------------------------------------------|
  * |n     |number  |Number of calls at which fn is no longer invoked|
  * |fn    |function|Function to restrict                            |
  * |return|function|New restricted function                         |

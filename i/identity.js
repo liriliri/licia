@@ -1,7 +1,7 @@
 /* Return the first argument given.
  *
  * |Name  |Type|Desc       |
- * |-----------------------|
+ * |------|----|-----------|
  * |val   |*   |Any value  |
  * |return|*   |Given value|
  *

@@ -1,7 +1,7 @@
 /* Create an object composed of the inverted keys and values of object.
  *
  * |Name  |Type  |Desc               |
- * |---------------------------------|
+ * |------|------|-------------------|
  * |obj   |object|Object to invert   |
  * |return|object|New inverted object|
  *

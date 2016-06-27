@@ -1,7 +1,7 @@
 /* Convert string to "kebabCase".
  *
  * |Name  |Type  |Desc              |
- * |--------------------------------|
+ * |------|------|------------------|
  * |str   |string|String to convert |
  * |return|string|Kebab cased string|
  *

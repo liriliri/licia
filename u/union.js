@@ -1,7 +1,7 @@
 /* Create an array of unique values, in order, from all given arrays.
  *
  * |Name  |Type    |Desc                        |
- * |--------------------------------------------|
+ * |------|--------|----------------------------|
  * |arr   |...array|Arrays to inspect           |
  * |return|array   |New array of combined values|
  *

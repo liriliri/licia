@@ -1,7 +1,7 @@
 /* Get minimum value of given numbers.
  *
  * |Name  |Type     |Desc                |
- * |-------------------------------------|
+ * |------|---------|--------------------|
  * |num   |...number|Numbers to calculate|
  * |return|number   |Minimum value       |
  *

@@ -1,7 +1,7 @@
 /* Get maximum value of given numbers.
  *
  * |Name  |Type     |Desc                |
- * |-------------------------------------|
+ * |------|---------|--------------------|
  * |num   |...number|Numbers to calculate|
  * |return|number   |Maximum value       |
  *

@@ -1,7 +1,7 @@
 /* Create a function that invokes once it's called n or more times.
  *
  * |Name  |Type    |Desc                                |
- * |----------------------------------------------------|
+ * |------|--------|------------------------------------|
  * |n     |number  |Number of calls before fn is invoked|
  * |fn    |function|Function to restrict                |
  * |return|function|The new restricted function         |

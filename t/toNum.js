@@ -1,7 +1,7 @@
 /* Convert value to a number.
  *
  * |Name  |Type  |Desc            |
- * |------------------------------|
+ * |------|------|----------------|
  * |val   |*     |Value to process|
  * |return|number|Resulted number |
  *

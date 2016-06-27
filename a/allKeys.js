@@ -1,7 +1,7 @@
 /* Retrieve all the names of object's own and inherited properties.
  *
  * |Name  |Type  |Desc                           |
- * |---------------------------------------------|
+ * |------|------|-------------------------------|
  * |obj   |object|The object to query            |
  * |return|array |The array of all property names|
  *

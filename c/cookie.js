@@ -3,14 +3,14 @@
  * ## get: get cookie value.
  *
  * |Name  |Type  |Desc                      |
- * |----------------------------------------|
+ * |------|------|--------------------------|
  * |key   |string|Cookie key                |
  * |return|string|Corresponding cookie value|
  *
  * ## set: set cookie value.
  *
  * |Name     |Type   |Desc          |
- * |--------------------------------|
+ * |---------|-------|--------------|
  * |key      |string |Cookie key    |
  * |val      |string |Cookie value  |
  * |[options]|object |Cookie options|
@@ -19,7 +19,7 @@
  * ## remove: remove cookie value.
  *
  * |Name     |Type   |Desc          |
- * |--------------------------------|
+ * |---------|-------|--------------|
  * |key      |string |Cookie key    |
  * |[options]|object |Cookie options|
  * |return   |exports|Module cookie |

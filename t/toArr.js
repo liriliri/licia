@@ -1,7 +1,7 @@
 /* Convert value to an array.
  *
  * |Name  |Type |Desc            |
- * |-----------------------------|
+ * |------|-----|----------------|
  * |val   |*    |Value to convert|
  * |return|array|Converted array |
  *

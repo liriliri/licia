@@ -1,7 +1,7 @@
 /* Pad string on the right side if it's shorter than length.
  *
  * |Name  |Type  |Desc                  |
- * |------------------------------------|
+ * |------|------|----------------------|
  * |str   |string|The string to pad     |
  * |len   |number|Padding length        |
  * |chars |string|String used as padding|

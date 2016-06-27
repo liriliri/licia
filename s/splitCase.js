@@ -1,7 +1,7 @@
 /* Split different string case to an array.
  *
  * |Name  |Type  |Desc           |
- * |-----------------------------|
+ * |------|------|---------------|
  * |str   |string|String to split|
  * |return|array |Result array   |
  *

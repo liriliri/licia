@@ -1,7 +1,7 @@
 /* Creates an array of the own enumerable property values of object.
  *
  * |Name  |Type  |Desc                    |
- * |--------------------------------------|
+ * |------|------|------------------------|
  * |obj   |object|Object to query         |
  * |return|array |Array of property values|
  *

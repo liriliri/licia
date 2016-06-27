@@ -1,7 +1,7 @@
 /* Strip comments from source code.
  *
  * |Name  |Type  |Desc                 |
- * |-----------------------------------|
+ * |------|------|---------------------|
  * |str   |string|Source code          |
  * |return|string|Code without comments|
  *

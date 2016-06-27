@@ -1,7 +1,7 @@
 /* Extract block comments from source code.
  *
  * |Name  |Type  |Desc             |
- * |-------------------------------|
+ * |------|------|-----------------|
  * |str   |string|String to extract|
  * |return|array |Block comments   |
  *

@@ -1,7 +1,7 @@
 /* Get the longest item in an array.
  *
  * |Name  |Type |Desc            |
- * |-----------------------------|
+ * |------|-----|----------------|
  * |arr   |array|Array to inspect|
  * |return|*    |Longest item    |
  *

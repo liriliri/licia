@@ -1,7 +1,7 @@
 /* Repeat string n-times.
  *
  * |Name  |Type  |Desc                |
- * |----------------------------------|
+ * |------|------|--------------------|
  * |str   |string|The string to repeat|
  * |n     |number|Repeat times        |
  * |return|string|Repeated string     |

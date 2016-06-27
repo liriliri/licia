@@ -1,7 +1,7 @@
 /* Wrap the function inside a wrapper function, passing it as the first argument.
  *
  * |Name   |Type    |Desc            |
- * |---------------------------------|
+ * |-------|--------|----------------|
  * |fn     |*       |Function to wrap|
  * |wrapper|function|Wrapper function|
  * |return |function|New function    |

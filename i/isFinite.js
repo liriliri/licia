@@ -1,7 +1,7 @@
 /* Check if value is a finite primitive number.
  *
  * |Name  |Type   |Desc                            |
- * |-----------------------------------------------|
+ * |------|-------|--------------------------------|
  * |val   |*      |Value to check                  |
  * |return|boolean|True if value is a finite number|
  *

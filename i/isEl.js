@@ -1,7 +1,7 @@
 /* Check if value is a DOM element.
  *
  * |Name  |Type   |Desc                          |
- * |---------------------------------------------|
+ * |------|-------|------------------------------|
  * |val   |*      |Value to check                |
  * |return|boolean|True if value is a DOM element|
  *

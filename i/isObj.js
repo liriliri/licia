@@ -1,7 +1,7 @@
 /* Check if value is the language type of Object.
  *
  * |Name  |Type   |Desc                      |
- * |-----------------------------------------|
+ * |------|-------|--------------------------|
  * |val   |*      |The value to check        |
  * |return|boolean|True if value is an object|
  *

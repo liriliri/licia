@@ -1,7 +1,7 @@
 /* Like extend, but only copies own properties over to the destination object.
  *
  * |Name  |Type  |Desc              |
- * |--------------------------------|
+ * |------|------|------------------|
  * |obj   |object|Destination object|
  * |*src  |object|Sources objects   |
  * |return|object|Destination object|

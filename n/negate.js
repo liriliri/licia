@@ -1,7 +1,7 @@
 /* Create a function that negates the result of the predicate function.
  *
  * |Name     |Type    |Desc               |
- * |--------------------------------------|
+ * |---------|--------|-------------------|
  * |predicate|function|Predicate to negate|
  * |return   |function|New function       |
  *

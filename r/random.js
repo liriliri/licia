@@ -1,7 +1,7 @@
 /* Produces a random number between min and max(inclusive).
  *
  * |Name  |Type  |Desc                      |
- * |----------------------------------------|
+ * |------|------|--------------------------|
  * |min   |number|The minimum possible value|
  * |max   |number|The maximum possible value|
  * |return|number|The random number         |

@@ -1,7 +1,7 @@
 /* Create an array of unique array values not included in the other given array.
  *
  * |Name  |Type    |Desc                        |
- * |--------------------------------------------|
+ * |------|--------|----------------------------|
  * |arr   |array   |Array to inspect            |
  * |[rest]|...array|Values to exclude           |
  * |return|array   |New array of filtered values|

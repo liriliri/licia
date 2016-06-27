@@ -1,8 +1,8 @@
 /* Load css into page.
  *
- * |Name|Type|Desc|
- * |--------------|
- * |css|string|Css code|
+ * |Name|Type  |Desc    |
+ * |----|------|--------|
+ * |css |string|Css code|
  *
  * ```javascript
  * evalCss('body{background:#08c}');

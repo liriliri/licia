@@ -1,7 +1,7 @@
 /* Recursively flatten an array.
  *
  * |Name  |Type |Desc               |
- * |--------------------------------|
+ * |------|-----|-------------------|
  * |arr   |array|Array to flatten   |
  * |return|array|New flattened array|
  *

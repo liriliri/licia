@@ -1,7 +1,7 @@
 /* Iterates over elements of collection, returning an array of all the values that pass a truth test.
  *
  * |Name     |Type    |Desc                                   |
- * |----------------------------------------------------------|
+ * |---------|--------|---------------------------------------|
  * |obj      |array   |Collection to iterate over             |
  * |predicate|function|Function invoked per iteration         |
  * |[ctx]    |*       |Predicate context                      |

@@ -1,7 +1,7 @@
 /* Convert the first character of string to upper case.
  *
  * |Name  |Type  |Desc             |
- * |-------------------------------|
+ * |------|------|-----------------|
  * |str   |string|String to convert|
  * |return|string|Converted string |
  *

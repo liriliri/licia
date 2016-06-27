@@ -1,7 +1,7 @@
 /* Get the last element of array.
  *
  * |Name  |Type |Desc                     |
- * |--------------------------------------|
+ * |------|-----|-------------------------|
  * |arr   |array|The array to query       |
  * |return|*    |The last element of array|
  *

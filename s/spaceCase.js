@@ -1,7 +1,7 @@
 /* Convert string to "spaceCase".
  *
  * |Name  |Type  |Desc              |
- * |--------------------------------|
+ * |------|------|------------------|
  * |str   |string|String to convert |
  * |return|string|Space cased string|
  *

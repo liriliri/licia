@@ -1,7 +1,7 @@
 /* Check if path appears to be relative.
  *
  * |Name  |Type   |Desc                               |
- * |--------------------------------------------------|
+ * |------|-------|-----------------------------------|
  * |path  |string |Path to check                      |
  * |return|boolean|True if path appears to be relative|
  *

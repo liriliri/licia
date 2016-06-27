@@ -1,7 +1,7 @@
 /* Invoke function after certain milliseconds.
  *
  * |Name  |Type    |Desc                                      |
- * |----------------------------------------------------------|
+ * |------|--------|------------------------------------------|
  * |fn    |function|Function to delay                         |
  * |wait  |number  |Number of milliseconds to delay invocation|
  * |[args]|...*    |Arguments to invoke fn with               |

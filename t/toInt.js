@@ -1,7 +1,7 @@
 /* Convert value to an integer.
  *
  * |Name  |Type  |Desc             |
- * |-------------------------------|
+ * |------|------|-----------------|
  * |val   |*     |Value to convert |
  * |return|number|Converted integer|
  *

@@ -1,7 +1,7 @@
 /* Check if predicate return truthy for all elements.
  *
  * |Name     |Type         |Desc                                         |
- * |---------------------------------------------------------------------|
+ * |---------|-------------|---------------------------------------------|
  * |obj      |array\|object|Collection to iterate over                   |
  * |predicate|function     |Function invoked per iteration               |
  * |ctx      |*            |Predicate context                            |

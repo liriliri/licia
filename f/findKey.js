@@ -1,7 +1,7 @@
 /* Return the key where the predicate truth test passes or undefined.
  *
  * |Name     |Type    |Desc                          |
- * |-------------------------------------------------|
+ * |---------|--------|------------------------------|
  * |obj      |object  |Object to search              |
  * |predicate|function|Function invoked per iteration|
  * |return   |string  |The key of matched element    |

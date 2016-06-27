@@ -1,9 +1,9 @@
 /* Checks if value is classified as a Integer.
  *
- * |Name|Type|Desc|
- * |--------------|
- * |value|*|The value to check|
- * |return|boolean|Returns true if value is correctly classified, else false|
+ * |Name  |Type   |Desc                                             |
+ * |------|-------|-------------------------------------------------|
+ * |value |*      |The value to check                               |
+ * |return|boolean|True if value is correctly classified, else false|
  */
 
 _('isNum');

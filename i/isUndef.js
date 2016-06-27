@@ -1,7 +1,7 @@
 /* Check if value is undefined.
  *
  * |Name  |Type   |Desc                      |
- * |-----------------------------------------|
+ * |------|-------|--------------------------|
  * |val   |*      |The value to check        |
  * |return|boolean|True if value is undefined|
  *

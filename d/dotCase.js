@@ -1,7 +1,7 @@
 /* Convert string to "dotCase".
  *
  * |Name  |Type  |Desc             |
- * |-------------------------------|
+ * |------|------|-----------------|
  * |str   |string|String to convert|
  * |return|string|Dot cased string |
  *

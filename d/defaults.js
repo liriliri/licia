@@ -1,7 +1,7 @@
 /* Fill in undefined properties in object with the first value present in the following list of defaults objects.
  *
  * |Name  |Type  |Desc              |
- * |--------------------------------|
+ * |------|------|------------------|
  * |obj   |object|Destination object|
  * |*src  |object|Sources objects   |
  * |return|object|Destination object|

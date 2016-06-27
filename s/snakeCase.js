@@ -1,7 +1,7 @@
 /* Convert string to "snakeCase".
  *
  * |Name  |Type  |Desc              |
- * |--------------------------------|
+ * |------|------|------------------|
  * |str   |string|String to convert |
  * |return|string|Snake cased string|
  *

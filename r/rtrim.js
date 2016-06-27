@@ -1,7 +1,7 @@
 /* Remove chars or white-spaces from end of string.
  *
  * |Name  |Type         |Desc                  |
- * |-------------------------------------------|
+ * |------|-------------|----------------------|
  * |str   |string       |The string to trim    |
  * |chars |string\|array|The characters to trim|
  * |return|string       |The trimmed string    |

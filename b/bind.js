@@ -1,7 +1,7 @@
 /* Create a function bound to a given object.
  *
  * |Name  |Type    |Desc                          |
- * |----------------------------------------------|
+ * |------|--------|------------------------------|
  * |fn    |function|Function to bind              |
  * |ctx   |*       |This binding of given function|
  * |[rest]|...*    |Optional arguments            |

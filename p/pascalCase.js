@@ -1,7 +1,7 @@
 /* Convert string to "pascalCase".
  *
  * |Name  |Type  |Desc               |
- * |---------------------------------|
+ * |------|------|-------------------|
  * |str   |string|String to convert  |
  * |return|string|Pascal cased string|
  *

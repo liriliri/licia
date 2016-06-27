@@ -1,7 +1,7 @@
 /* Check if value is string, number, boolean or null.
  *
  * |Name  |Type   |Desc                        |
- * |-------------------------------------------|
+ * |------|-------|----------------------------|
  * |val   |*      |Value to check              |
  * |return|boolean|True if value is a primitive|
  *

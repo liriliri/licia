@@ -1,7 +1,7 @@
 /* Indent each line in a string.
  *
  * |Name  |Type  |Desc                |
- * |----------------------------------|
+ * |------|------|--------------------|
  * |str   |string|String to indent    |
  * |[char]|string|Character to prepend|
  * |[len] |number|Indent length       |

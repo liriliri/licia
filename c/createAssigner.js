@@ -1,7 +1,7 @@
 /* Used to create extend, extendOwn and defaults.
  *
  * |Name    |Type    |Desc                          |
- * |------------------------------------------------|
+ * |--------|--------|------------------------------|
  * |keysFn  |function|Function to get object keys   |
  * |defaults|boolean |No override when set to true  |
  * |return  |function|The result function, extend...|
