@@ -1,10 +1,10 @@
 /* Remove chars or white-spaces from end of string.
  *
- * |Name  |Type         |Desc                  |
- * |------|-------------|----------------------|
- * |str   |string       |The string to trim    |
- * |chars |string\|array|The characters to trim|
- * |return|string       |The trimmed string    |
+ * |Name  |Type        |Desc              |
+ * |------|------------|------------------|
+ * |str   |string      |String to trim    |
+ * |chars |string array|Characters to trim|
+ * |return|string      |Trimmed string    |
  *
  * ```javascript
  * rtrim(' abc  '); // -> ' abc'
@@ -15,7 +15,7 @@
 
 var regSpace = /\s+$/;
 
-exports = function (str, chars)
+function exports(str, chars)
 {
     if (chars == null) return str.replace(regSpace, '');
 
@@ -42,4 +42,4 @@ exports = function (str, chars)
     }
 
     return (end >= 0) ? str.substring(0, end + 1) : '';
-};
+}

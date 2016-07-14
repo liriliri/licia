@@ -86,7 +86,7 @@
     "map": "Create an array of values by running each element in collection through iteratee.",
     "matcher": "No description.",
     "max": "Get maximum value of given numbers.",
-    "memoize": "No description.",
+    "memoize": "Create a function that memoizes the result of fn.",
     "min": "Get minimum value of given numbers.",
     "negate": "Create a function that negates the result of the predicate function.",
     "noop": "A no-operation function.",
