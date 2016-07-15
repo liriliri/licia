@@ -1,6 +1,6 @@
 // TODO
 
-_('isPlainObj each deepClone');
+_('isPlainObj each cloneDeep');
 
 exports = function (obj)
 {

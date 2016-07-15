@@ -6,7 +6,7 @@ _('Class isStr each');
 function mergeArr(first, second)
 {
     var len = second.length,
-        i   = first.length;
+        i = first.length;
 
     for (var j = 0; j < len; j++) first[i++] = second[j];
 
@@ -27,7 +27,7 @@ exports = Class({
 
         if (selector.nodeType)
         {
-            this[0]     = selector;
+            this[0] = selector;
             this.length = 1;
         }
     },
