@@ -481,11 +481,11 @@ No documentation.
 
 Iterates over elements of collection and invokes iteratee for each element.
 
-|Name    |Type         |Desc                          |
-|--------|-------------|------------------------------|
-|obj     |object\|array|Collection to iterate over    |
-|iteratee|function     |Function invoked per iteration|
-|[ctx]   |*            |Function context              |
+|Name    |Type        |Desc                          |
+|--------|------------|------------------------------|
+|obj     |object array|Collection to iterate over    |
+|iteratee|function    |Function invoked per iteration|
+|[ctx]   |*           |Function context              |
 
 ```javascript
 each({'a': 1, 'b': 2}, function (val, key) {});
@@ -830,10 +830,10 @@ Inject script tag into page with given src value.
 
 Get size of object, length of array like object or the number of keys.
 
-|Name  |Type         |Desc                 |
-|------|-------------|---------------------|
-|obj   |array\|object|Collection to inspect|
-|return|number       |Collection size      |
+|Name  |Type        |Desc                 |
+|------|------------|---------------------|
+|obj   |array object|Collection to inspect|
+|return|number      |Collection size      |
 
 ```javascript
 size({a: 1, b: 2}); // -> 2
@@ -926,12 +926,12 @@ safeCb: Create callback based on input value.
 
 Check if predicate return truthy for all elements.
 
-|Name     |Type         |Desc                                         |
-|---------|-------------|---------------------------------------------|
-|obj      |array\|object|Collection to iterate over                   |
-|predicate|function     |Function invoked per iteration               |
-|ctx      |*            |Predicate context                            |
-|return   |boolean      |True if all elements pass the predicate check|
+|Name     |Type        |Desc                                         |
+|---------|------------|---------------------------------------------|
+|obj      |array object|Collection to iterate over                   |
+|predicate|function    |Function invoked per iteration               |
+|ctx      |*           |Predicate context                            |
+|return   |boolean     |True if all elements pass the predicate check|
 
 ```javascript
 every([2, 4], function (val)
@@ -993,12 +993,12 @@ findKey({a: 1, b: 2}, function (val)
 
 Create an array of values by running each element in collection through iteratee.
 
-|Name    |Type         |Desc                          |
-|--------|-------------|------------------------------|
-|obj     |array\|object|Collection to iterate over    |
-|iteratee|function     |Function invoked per iteration|
-|[ctx]   |*            |Function context              |
-|return  |array        |New mapped array              |
+|Name    |Type        |Desc                          |
+|--------|------------|------------------------------|
+|obj     |array object|Collection to iterate over    |
+|iteratee|function    |Function invoked per iteration|
+|[ctx]   |*           |Function context              |
+|return  |array       |New mapped array              |
 
 ```javascript
 map([4, 8], function (n) { return n * n; }); // -> [16, 64]
@@ -1183,12 +1183,12 @@ initOnce(); // -> init is invoked once
 
 Check if predicate return truthy for any element.
 
-|Name     |Type         |Desc                                          |
-|---------|-------------|----------------------------------------------|
-|obj      |array\|object|Collection to iterate over                    |
-|predicate|function     |Function to invoked per iteration             |
-|ctx      |*            |Predicate context                             |
-|return   |boolean      |True if any element passes the predicate check|
+|Name     |Type        |Desc                                          |
+|---------|------------|----------------------------------------------|
+|obj      |array object|Collection to iterate over                    |
+|predicate|function    |Function to invoked per iteration             |
+|ctx      |*           |Predicate context                             |
+|return   |boolean     |True if any element passes the predicate check|
 
 ```javascript
 some([2, 5], function (val)

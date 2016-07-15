@@ -1,9 +1,9 @@
 /* Get size of object, length of array like object or the number of keys.
  *
- * |Name  |Type         |Desc                 |
- * |------|-------------|---------------------|
- * |obj   |array\|object|Collection to inspect|
- * |return|number       |Collection size      |
+ * |Name  |Type        |Desc                 |
+ * |------|------------|---------------------|
+ * |obj   |array object|Collection to inspect|
+ * |return|number      |Collection size      |
  *
  * ```javascript
  * size({a: 1, b: 2}); // -> 2

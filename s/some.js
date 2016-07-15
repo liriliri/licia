@@ -1,11 +1,11 @@
 /* Check if predicate return truthy for any element.
  *
- * |Name     |Type         |Desc                                          |
- * |---------|-------------|----------------------------------------------|
- * |obj      |array\|object|Collection to iterate over                    |
- * |predicate|function     |Function to invoked per iteration             |
- * |ctx      |*            |Predicate context                             |
- * |return   |boolean      |True if any element passes the predicate check|
+ * |Name     |Type        |Desc                                          |
+ * |---------|------------|----------------------------------------------|
+ * |obj      |array object|Collection to iterate over                    |
+ * |predicate|function    |Function to invoked per iteration             |
+ * |ctx      |*           |Predicate context                             |
+ * |return   |boolean     |True if any element passes the predicate check|
  *
  * ```javascript
  * some([2, 5], function (val)

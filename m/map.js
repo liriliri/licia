@@ -1,11 +1,11 @@
 /* Create an array of values by running each element in collection through iteratee.
  *
- * |Name    |Type         |Desc                          |
- * |--------|-------------|------------------------------|
- * |obj     |array\|object|Collection to iterate over    |
- * |iteratee|function     |Function invoked per iteration|
- * |[ctx]   |*            |Function context              |
- * |return  |array        |New mapped array              |
+ * |Name    |Type        |Desc                          |
+ * |--------|------------|------------------------------|
+ * |obj     |array object|Collection to iterate over    |
+ * |iteratee|function    |Function invoked per iteration|
+ * |[ctx]   |*           |Function context              |
+ * |return  |array       |New mapped array              |
  *
  * ```javascript
  * map([4, 8], function (n) { return n * n; }); // -> [16, 64]

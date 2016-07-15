@@ -1,11 +1,11 @@
 /* Check if predicate return truthy for all elements.
  *
- * |Name     |Type         |Desc                                         |
- * |---------|-------------|---------------------------------------------|
- * |obj      |array\|object|Collection to iterate over                   |
- * |predicate|function     |Function invoked per iteration               |
- * |ctx      |*            |Predicate context                            |
- * |return   |boolean      |True if all elements pass the predicate check|
+ * |Name     |Type        |Desc                                         |
+ * |---------|------------|---------------------------------------------|
+ * |obj      |array object|Collection to iterate over                   |
+ * |predicate|function    |Function invoked per iteration               |
+ * |ctx      |*           |Predicate context                            |
+ * |return   |boolean     |True if all elements pass the predicate check|
  *
  * ```javascript
  * every([2, 4], function (val)
