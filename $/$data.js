@@ -1,6 +1,13 @@
+/* Data manipulation
+ *
+ * ```javascript
+ * $data('#test', 'attr1', 'eustia');
+ * ```
+ */
+
 _('$attr isStr isObj each');
 
-exports = function (nodes, name, val)
+function exports(nodes, name, val)
 {
     var dataName = name;
 
@@ -15,4 +22,4 @@ exports = function (nodes, name, val)
     }
 
     return $attr(nodes, dataName, val);
-};
+}

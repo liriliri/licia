@@ -1,6 +1,15 @@
+/* Attributes manipulation.
+ *
+ * ```javascript
+ * $attr('#test', 'attr1', 'test');
+ * $attr('#test', 'attr1'); // -> test
+ * $attr.remove('#test', 'attr1');
+ * ```
+ */
+
 _('toArr isObj isStr each isUndef $safeNodes');
 
-exports = function (nodes, name, val)
+function exports(nodes, name, val)
 {
     nodes = $safeNodes(nodes);
 
@@ -15,7 +24,7 @@ exports = function (nodes, name, val)
     }
 
     setAttr(nodes, attrs);
-};
+}
 
 exports.remove = function (nodes, names)
 {

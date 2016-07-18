@@ -1,6 +1,13 @@
+/* Show elements.
+ *
+ * ```javascript
+ * $show('#test');
+ * ```
+ */
+
 _('each $safeNodes');
 
-exports = function (nodes)
+function exports(nodes)
 {
     nodes = $safeNodes(nodes);
 
@@ -11,7 +18,7 @@ exports = function (nodes)
             node.style.display = getDefDisplay(node.nodeName);
         }
     });
-};
+}
 
 function isHidden(node)
 {

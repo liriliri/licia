@@ -4,29 +4,71 @@
 
 jQuery like style dom manipulator.
 
+```javascript
+var $btn = $('#btn');
+$btn.html('eustia');
+```
+
 ## $attr 
 
-No documentation.
+Attributes manipulation.
+
+```javascript
+$attr('#test', 'attr1', 'test');
+$attr('#test', 'attr1'); // -> test
+$attr.remove('#test', 'attr1');
+```
 
 ## $class 
 
-No documentation.
+Class manipulation.
+
+```javascript
+$class.add('#test', 'class1');
+$class.has('#test', 'class1'); // -> true
+$class.remove('#test', 'class1');
+$class.has('#test', 'class1'); // -> false
+$class.toggle('#test', 'class1');
+$class.has('#test', 'class1'); // -> true
+```
 
 ## $css 
 
-No documentation.
+Css manipulation.
+
+```javascript
+$css('#test', {
+    'color': '#fff',
+    'background': 'black'
+});
+```
 
 ## $data 
 
-No documentation.
+Data manipulation
+
+```javascript
+$data('#test', 'attr1', 'eustia');
+```
 
 ## $event 
 
-No documentation.
+bind events to certain dom elements.
+
+```javascript
+event.on('#test', 'click', function ()
+{
+    // ...
+});
+```
 
 ## $insert 
 
-No documentation.
+Insert html on different position.
+
+```javascript
+$insert.append('#test', '<div>test</div>');
+```
 
 ## $offset 
 
@@ -46,7 +88,11 @@ No documentation.
 
 ## $show 
 
-No documentation.
+Show elements.
+
+```javascript
+$show('#test');
+```
 
 ## Class 
 
@@ -225,14 +271,14 @@ No documentation.
 
 Simple api for handling browser cookies.
 
-## get: get cookie value.
+### get: get cookie value.
 
 |Name  |Type  |Desc                      |
 |------|------|--------------------------|
 |key   |string|Cookie key                |
 |return|string|Corresponding cookie value|
 
-## set: set cookie value.
+### set: set cookie value.
 
 |Name     |Type   |Desc          |
 |---------|-------|--------------|
@@ -241,7 +287,7 @@ Simple api for handling browser cookies.
 |[options]|object |Cookie options|
 |return   |exports|Module cookie |
 
-## remove: remove cookie value.
+### remove: remove cookie value.
 
 |Name     |Type   |Desc          |
 |---------|-------|--------------|
@@ -1051,18 +1097,30 @@ filter([1, 2, 3, 4, 5, 6], negate(even)); // -> [1, 3, 5]
 
 A no-operation function.
 
+```javascript
+noop(); // Does nothing
+```
+
 ## now 
 
 Gets the number of milliseconds that have elapsed since the Unix epoch.
+
+```javascript
+now(); // -> 1468826678701
+```
 
 ## objToStr 
 
 Alias of Object.prototype.toString.
 
-|Name  |Type  |Desc                                    |
-|------|------|----------------------------------------|
-|value |*     |Source value                            |
-|return|string|String representation of the given value|
+|Name  |Type  |Desc                                |
+|------|------|------------------------------------|
+|value |*     |Source value                        |
+|return|string|String representation of given value|
+
+```javascript
+objToStr(5); // -> '[object Number]'
+```
 
 ## once 
 
@@ -1221,8 +1279,7 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 
 ## safeCb 
 
-function
-safeCb: Create callback based on input value.
+Create callback based on input value.
 
 ## size 
 

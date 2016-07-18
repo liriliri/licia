@@ -1,3 +1,15 @@
+/* Class manipulation.
+ *
+ * ```javascript
+ * $class.add('#test', 'class1');
+ * $class.has('#test', 'class1'); // -> true
+ * $class.remove('#test', 'class1');
+ * $class.has('#test', 'class1'); // -> false
+ * $class.toggle('#test', 'class1');
+ * $class.has('#test', 'class1'); // -> true
+ * ```
+ */
+
 _('toArr some $safeNodes');
 
 exports = {

@@ -1,6 +1,16 @@
+/* Css manipulation.
+ *
+ * ```javascript
+ * $css('#test', {
+ *     'color': '#fff',
+ *     'background': 'black'
+ * });
+ * ```
+ */
+
 _('isStr isObj camelCase kebabCase isUndef contain isNum $safeNodes');
 
-exports = function (nodes, name, val)
+function exports(nodes, name, val)
 {
     nodes = $safeNodes(nodes);
 
@@ -15,7 +25,7 @@ exports = function (nodes, name, val)
     }
 
     setCss(nodes, css);
-};
+}
 
 function getCss(node, name)
 {

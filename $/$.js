@@ -1,12 +1,17 @@
 /* jQuery like style dom manipulator.
+ *
+ * ```javascript
+ * var $btn = $('#btn');
+ * $btn.html('eustia');
+ * ```
  */
 
 _('Select $offset $show $css $attr $property last $remove $data $event $class $insert isUndef isStr');
 
-exports = function (selector)
+function exports(selector)
 {
     return new Select(selector);
-};
+}
 
 Select.methods({
     offset: function ()

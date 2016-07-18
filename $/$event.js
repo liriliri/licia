@@ -1,3 +1,13 @@
+/* bind events to certain dom elements.
+ *
+ * ```javascript
+ * event.on('#test', 'click', function ()
+ * {
+ *     // ...
+ * });
+ * ```
+ */
+
 _('delegate isUndef $safeNodes');
 
 exports = {

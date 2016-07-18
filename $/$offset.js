@@ -10,7 +10,7 @@ exports = function (nodes)
 
     return {
         left: clientRect.left + window.pageXOffset,
-        top : clientRect.top  + window.pageYOffset,
+        top : clientRect.top + window.pageYOffset,
         width : Math.round(clientRect.width),
         height: Math.round(clientRect.height)
     };

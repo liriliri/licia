@@ -1,5 +1,4 @@
-/* function
- * safeCb: Create callback based on input value.
+/* Create callback based on input value.
  */
 
 _('isFn isObj optimizeCb matcher identity');

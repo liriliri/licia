@@ -1,3 +1,10 @@
+/* Insert html on different position.
+ *
+ * ```javascript
+ * $insert.append('#test', '<div>test</div>');
+ * ```
+ */
+
 _('each $safeNodes');
 
 exports = {
