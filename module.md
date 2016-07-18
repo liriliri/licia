@@ -1,92 +1,112 @@
 # Eustia Documentation
 
-## last 
+## $ 
 
-Get the last element of array.
+jQuery like style dom manipulator.
 
-|Name  |Type |Desc                     |
-|------|-----|-------------------------|
-|arr   |array|The array to query       |
-|return|*    |The last element of array|
+## $attr 
+
+No documentation.
+
+## $class 
+
+No documentation.
+
+## $css 
+
+No documentation.
+
+## $data 
+
+No documentation.
+
+## $event 
+
+No documentation.
+
+## $insert 
+
+No documentation.
+
+## $offset 
+
+No documentation.
+
+## $property 
+
+No documentation.
+
+## $remove 
+
+No documentation.
+
+## $safeNodes 
+
+No documentation.
+
+## $show 
+
+No documentation.
+
+## Class 
+
+Create JavaScript class.
+
+|Name   |Type    |Desc                             |
+|-------|--------|---------------------------------|
+|methods|object  |Public methods                   |
+|statics|object  |Static methods                   |
+|return |function|Function used to create instances|
 
 ```javascript
-last([1, 2]); // -> 2
-```
-
-## isUndef 
-
-Check if value is undefined.
-
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
-|val   |*      |The value to check        |
-|return|boolean|True if value is undefined|
-
-```javascript
-isUndef(void 0); // -> true
-isUndef(null); // -> false
-```
-
-## isObj 
-
-Check if value is the language type of Object.
-
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
-|val   |*      |The value to check        |
-|return|boolean|True if value is an object|
-
-[Language Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
-
-```javascript
-isObj({}); // -> true
-isObj([]); // -> true
-```
-
-## inherits 
-
-Inherit the prototype methods from one constructor into another.
-
-|Name      |Type    |Desc       |
-|----------|--------|-----------|
-|Class     |function|Child Class|
-|SuperClass|function|Super Class|
-
-```javascript
-function People(name)
-{
-    this._name = name;
-}
-People.prototype = {
-    getName: function ()
+var People = Class({
+    initialize: function (name, age)
     {
-        return this._name;
+        this.name = name;
+        this.age = age;
+    },
+    introduce: function ()
+    {
+        return 'I am ' + this.name + ', ' + this.age + ' years old.'.
     }
-};
-function Student(name)
-{
-    this._name = name;
-}
-inherits(Student, People);
-var s = new Student('RedHood');
-s.getName(); // -> 'RedHood'
+});
+
+var Student = People.extend({
+    initialize: function (name, age, school)
+    {
+        this.callSuper('initialize', name, age);
+
+        this.school = school.
+    },
+    introduce: function ()
+    {
+        return this.callSuper('introduce') + '\n I study at ' + this.school + '.'.
+    }
+}, {
+    is: function (obj)
+    {
+        return obj instanceof Student;
+   }
+});
+
+var a = new Student('allen', 17, 'Hogwarts');
+a.introduce(); // -> 'I am allen, 17 years old. \n I study at Hogwarts.'
+Student.is(a); // -> true
 ```
 
-## has 
+## Emitter 
 
-Checks if key is a direct property.
+No documentation.
 
-|Name  |Type   |Desc                            |
-|------|-------|--------------------------------|
-|obj   |object |The object to query             |
-|key   |string |The path to check               |
-|return|boolean|True if key is a direct property|
+## Select 
 
-```javascript
-has({one: 1}, 'one'); // -> true
-```
+jQuery like dom manipulator.
 
-## slice 
+## State 
+
+No documentation.
+
+## Uri 
 
 No documentation.
 
@@ -141,21 +161,6 @@ $(element).on('click', before(5, function() {}));
 // -> allow function to be call 4 times at last.
 ```
 
-## restArgs 
-
-This accumulates the arguments passed into an array, after a given index.
-
-|Name      |Type    |Desc                                   |
-|----------|--------|---------------------------------------|
-|function  |function|Function that needs rest parameters    |
-|startIndex|number  |The start index to accumulates         |
-|return    |function|Generated function with rest parameters|
-
-```javascript
-var paramArr = _.restArgs(function (rest) { return rest });
-paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
-```
-
 ## bind 
 
 Create a function bound to a given object.
@@ -175,24 +180,6 @@ var fn = bind(function (msg)
 fn(); // -> 'eustia: I am a utility library.'
 ```
 
-## splitCase 
-
-Split different string case to an array.
-
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|str   |string|String to split|
-|return|array |Result array   |
-
-```javascript
-splitCase('foo-bar'); // -> ['foo', 'bar']
-splitCase('foo bar'); // -> ['foo', 'bar']
-splitCase('foo_bar'); // -> ['foo', 'bar']
-splitCase('foo.bar'); // -> ['foo', 'bar']
-splitCase('fooBar'); // -> ['foo', 'bar']
-splitCase('foo-Bar'); // -> ['foo', 'bar']
-```
-
 ## camelCase 
 
 Convert string to "camelCase".
@@ -209,22 +196,6 @@ camelCase('foo_bar'); // -> fooBar
 camelCase('foo.bar'); // -> fooBar
 ```
 
-## kebabCase 
-
-Convert string to "kebabCase".
-
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|str   |string|String to convert |
-|return|string|Kebab cased string|
-
-```javascript
-kebabCase('fooBar'); // -> foo-bar
-kebabCase('foo bar'); // -> foo-bar
-kebabCase('foo_bar'); // -> foo-bar
-kebabCase('foo.bar'); // -> foo-bar
-```
-
 ## capitalize 
 
 Convert the first character to upper case and the remaining to lower case.
@@ -238,27 +209,74 @@ Convert the first character to upper case and the remaining to lower case.
 capitalize('rED'); // -> Red
 ```
 
-## keys 
+## clone 
 
-Create an array of the own enumerable property names of object.
+No documentation.
 
-|Name  |Type  |Desc                       |
-|------|------|---------------------------|
-|obj   |object|The object to query        |
-|return|array |The array of property names|
+## cloneDeep 
 
-## idxOf 
+No documentation.
 
-Get the index at which the first occurrence of value.
+## contain 
 
-|Name       |Type  |Desc                |
-|-----------|------|--------------------|
-|arr        |array |Array to search     |
-|val        |*     |Value to search for |
-|[fromIdx=0]|number|Index to search from|
+No documentation.
+
+## cookie 
+
+Simple api for handling browser cookies.
+
+## get: get cookie value.
+
+|Name  |Type  |Desc                      |
+|------|------|--------------------------|
+|key   |string|Cookie key                |
+|return|string|Corresponding cookie value|
+
+## set: set cookie value.
+
+|Name     |Type   |Desc          |
+|---------|-------|--------------|
+|key      |string |Cookie key    |
+|val      |string |Cookie value  |
+|[options]|object |Cookie options|
+|return   |exports|Module cookie |
+
+## remove: remove cookie value.
+
+|Name     |Type   |Desc          |
+|---------|-------|--------------|
+|key      |string |Cookie key    |
+|[options]|object |Cookie options|
+|return   |exports|Module cookie |
 
 ```javascript
-idxOf([1, 2, 1, 2], 2, 2); // -> 3
+cookie.set('a', '1', {path: '/'});
+cookie.get('a'); // -> '1'
+cookie.remove('a');
+```
+
+## createAssigner 
+
+Used to create extend, extendOwn and defaults.
+
+|Name    |Type    |Desc                          |
+|--------|--------|------------------------------|
+|keysFn  |function|Function to get object keys   |
+|defaults|boolean |No override when set to true  |
+|return  |function|The result function, extend...|
+
+## defaults 
+
+Fill in undefined properties in object with the first value present in the following list of defaults objects.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|obj   |object|Destination object|
+|*src  |object|Sources objects   |
+|return|object|Destination object|
+
+```javascript
+defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood', age: 24}
 ```
 
 ## define 
@@ -283,6 +301,24 @@ delay(function (text)
 // -> Logs 'later' after one second
 ```
 
+## delegate 
+
+No documentation.
+
+## difference 
+
+Create an array of unique array values not included in the other given array.
+
+|Name  |Type    |Desc                        |
+|------|--------|----------------------------|
+|arr   |array   |Array to inspect            |
+|[rest]|...array|Values to exclude           |
+|return|array   |New array of filtered values|
+
+```javascript
+difference([3, 2, 1], [4, 2]); // -> [3, 1]
+```
+
 ## dotCase 
 
 Convert string to "dotCase".
@@ -295,6 +331,20 @@ Convert string to "dotCase".
 ```javascript
 dotCase('fooBar'); // -> foo.bar
 dotCase('foo bar'); // -> foo.bar
+```
+
+## each 
+
+Iterates over elements of collection and invokes iteratee for each element.
+
+|Name    |Type        |Desc                          |
+|--------|------------|------------------------------|
+|obj     |object array|Collection to iterate over    |
+|iteratee|function    |Function invoked per iteration|
+|[ctx]   |*           |Function context              |
+
+```javascript
+each({'a': 1, 'b': 2}, function (val, key) {});
 ```
 
 ## endWith 
@@ -349,6 +399,131 @@ Load css into page.
 evalCss('body{background:#08c}');
 ```
 
+## every 
+
+Check if predicate return truthy for all elements.
+
+|Name     |Type        |Desc                                         |
+|---------|------------|---------------------------------------------|
+|obj      |array object|Collection to iterate over                   |
+|predicate|function    |Function invoked per iteration               |
+|ctx      |*           |Predicate context                            |
+|return   |boolean     |True if all elements pass the predicate check|
+
+```javascript
+every([2, 4], function (val)
+{
+    return val % 2 === 0;
+}); // -> false
+```
+
+## extend 
+
+Copy all of the properties in the source objects over to the destination object.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|obj   |object|Destination object|
+|*src  |object|Sources objects   |
+|return|object|Destination object|
+
+```javascript
+extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
+```
+
+## extendDeep 
+
+No documentation.
+
+## extendOwn 
+
+Like extend, but only copies own properties over to the destination object.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|obj   |object|Destination object|
+|*src  |object|Sources objects   |
+|return|object|Destination object|
+
+```javascript
+extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
+```
+
+## extractBlockCmts 
+
+Extract block comments from source code.
+
+|Name  |Type  |Desc             |
+|------|------|-----------------|
+|str   |string|String to extract|
+|return|array |Block comments   |
+
+```javascript
+extractBlockCmts('\/*eris*\/'); // -> ['eris']
+```
+
+## filter 
+
+Iterates over elements of collection, returning an array of all the values that pass a truth test.
+
+|Name     |Type    |Desc                                   |
+|---------|--------|---------------------------------------|
+|obj      |array   |Collection to iterate over             |
+|predicate|function|Function invoked per iteration         |
+|[ctx]    |*       |Predicate context                      |
+|return   |array   |Array of all values that pass predicate|
+
+```javascript
+filter([1, 2, 3, 4, 5], function (val)
+{
+    return val % 2 === 0;
+}); // -> [2, 4]
+```
+
+## findKey 
+
+Return the key where the predicate truth test passes or undefined.
+
+|Name     |Type    |Desc                          |
+|---------|--------|------------------------------|
+|obj      |object  |Object to search              |
+|predicate|function|Function invoked per iteration|
+|return   |string  |The key of matched element    |
+
+```javascript
+findKey({a: 1, b: 2}, function (val)
+{
+    return val === 1;
+}); // -> a
+```
+
+## flatten 
+
+Recursively flatten an array.
+
+|Name  |Type |Desc               |
+|------|-----|-------------------|
+|arr   |array|Array to flatten   |
+|return|array|New flattened array|
+
+```javascript
+flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
+```
+
+## has 
+
+Checks if key is a direct property.
+
+|Name  |Type   |Desc                            |
+|------|-------|--------------------------------|
+|obj   |object |The object to query             |
+|key   |string |The path to check               |
+|return|boolean|True if key is a direct property|
+
+```javascript
+has({one: 1}, 'one'); // -> true
+```
+
 ## identity 
 
 Return the first argument given.
@@ -362,30 +537,79 @@ Return the first argument given.
 identity('a'); // -> 'a'
 ```
 
-## repeat 
+## idxOf 
 
-Repeat string n-times.
+Get the index at which the first occurrence of value.
+
+|Name       |Type  |Desc                |
+|-----------|------|--------------------|
+|arr        |array |Array to search     |
+|val        |*     |Value to search for |
+|[fromIdx=0]|number|Index to search from|
+
+```javascript
+idxOf([1, 2, 1, 2], 2, 2); // -> 3
+```
+
+## indent 
+
+Indent each line in a string.
 
 |Name  |Type  |Desc                |
 |------|------|--------------------|
-|str   |string|The string to repeat|
-|n     |number|Repeat times        |
-|return|string|Repeated string     |
+|str   |string|String to indent    |
+|[char]|string|Character to prepend|
+|[len] |number|Indent length       |
+|return|string|Indented string     |
 
 ```javascript
-repeat('a', 3); // -> 'aaa'
-repeat('ab', 2); // -> 'abab'
-repeat('*', 0); // -> ''
+indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
 ```
 
-## objToStr 
+## inherits 
 
-Alias of Object.prototype.toString.
+Inherit the prototype methods from one constructor into another.
 
-|Name  |Type  |Desc                                    |
-|------|------|----------------------------------------|
-|value |*     |Source value                            |
-|return|string|String representation of the given value|
+|Name      |Type    |Desc       |
+|----------|--------|-----------|
+|Class     |function|Child Class|
+|SuperClass|function|Super Class|
+
+```javascript
+function People(name)
+{
+    this._name = name;
+}
+People.prototype = {
+    getName: function ()
+    {
+        return this._name;
+    }
+};
+function Student(name)
+{
+    this._name = name;
+}
+inherits(Student, People);
+var s = new Student('RedHood');
+s.getName(); // -> 'RedHood'
+```
+
+## invert 
+
+Create an object composed of the inverted keys and values of object.
+
+|Name  |Type  |Desc               |
+|------|------|-------------------|
+|obj   |object|Object to invert   |
+|return|object|New inverted object|
+
+If object contains duplicate values, subsequent values overwrite property
+assignments of previous values unless multiValue is true.
+
+```javascript
+invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
+```
 
 ## isArgs 
 
@@ -416,224 +640,9 @@ isArr([]); // -> true
 isArr({}); // -> false
 ```
 
-## flatten 
-
-Recursively flatten an array.
-
-|Name  |Type |Desc               |
-|------|-----|-------------------|
-|arr   |array|Array to flatten   |
-|return|array|New flattened array|
-
-```javascript
-flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
-```
-
-## isPlainObj 
-
-No documentation.
-
-## isFn 
-
-Check if value is a function.
-
-|Name  |Type   |Desc                       |
-|------|-------|---------------------------|
-|val   |*      |The value to check         |
-|return|boolean|True if value is a function|
-
-Generator function is also classified as true.
-
-```javascript
-isFn(function() {}); // -> true
-isFn(function*() {}); // -> true
-```
-
-## isNum 
-
-Checks if value is classified as a Number primitive or object.
-
-|Name  |Type   |Desc                                             |
-|------|-------|-------------------------------------------------|
-|value |*      |The value to check                               |
-|return|boolean|True if value is correctly classified, else false|
-
-## indent 
-
-Indent each line in a string.
-
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|str   |string|String to indent    |
-|[char]|string|Character to prepend|
-|[len] |number|Indent length       |
-|return|string|Indented string     |
-
-```javascript
-indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
-```
-
 ## isArrLike 
 
 No documentation.
-
-## each 
-
-Iterates over elements of collection and invokes iteratee for each element.
-
-|Name    |Type        |Desc                          |
-|--------|------------|------------------------------|
-|obj     |object array|Collection to iterate over    |
-|iteratee|function    |Function invoked per iteration|
-|[ctx]   |*           |Function context              |
-
-```javascript
-each({'a': 1, 'b': 2}, function (val, key) {});
-```
-
-## cloneDeep 
-
-No documentation.
-
-## createAssigner 
-
-Used to create extend, extendOwn and defaults.
-
-|Name    |Type    |Desc                          |
-|--------|--------|------------------------------|
-|keysFn  |function|Function to get object keys   |
-|defaults|boolean |No override when set to true  |
-|return  |function|The result function, extend...|
-
-## defaults 
-
-Fill in undefined properties in object with the first value present in the following list of defaults objects.
-
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|obj   |object|Destination object|
-|*src  |object|Sources objects   |
-|return|object|Destination object|
-
-```javascript
-defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood', age: 24}
-```
-
-## cookie 
-
-Simple api for handling browser cookies.
-
-## get: get cookie value.
-
-|Name  |Type  |Desc                      |
-|------|------|--------------------------|
-|key   |string|Cookie key                |
-|return|string|Corresponding cookie value|
-
-## set: set cookie value.
-
-|Name     |Type   |Desc          |
-|---------|-------|--------------|
-|key      |string |Cookie key    |
-|val      |string |Cookie value  |
-|[options]|object |Cookie options|
-|return   |exports|Module cookie |
-
-## remove: remove cookie value.
-
-|Name     |Type   |Desc          |
-|---------|-------|--------------|
-|key      |string |Cookie key    |
-|[options]|object |Cookie options|
-|return   |exports|Module cookie |
-
-```javascript
-cookie.set('a', '1', {path: '/'});
-cookie.get('a'); // -> '1'
-cookie.remove('a');
-```
-
-## extend 
-
-Copy all of the properties in the source objects over to the destination object.
-
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|obj   |object|Destination object|
-|*src  |object|Sources objects   |
-|return|object|Destination object|
-
-```javascript
-extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
-```
-
-## clone 
-
-No documentation.
-
-## extendOwn 
-
-Like extend, but only copies own properties over to the destination object.
-
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|obj   |object|Destination object|
-|*src  |object|Sources objects   |
-|return|object|Destination object|
-
-```javascript
-extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
-```
-
-## extendDeep 
-
-No documentation.
-
-## invert 
-
-Create an object composed of the inverted keys and values of object.
-
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|obj   |object|Object to invert   |
-|return|object|New inverted object|
-
-If object contains duplicate values, subsequent values overwrite property
-assignments of previous values unless multiValue is true.
-
-```javascript
-invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
-```
-
-## values 
-
-Creates an array of the own enumerable property values of object.
-
-|Name  |Type  |Desc                    |
-|------|------|------------------------|
-|obj   |object|Object to query         |
-|return|array |Array of property values|
-
-```javascript
-values({one: 1, two: 2}); // -> [1, 2]
-```
-
-## contain 
-
-No documentation.
-
-## isStr 
-
-Check if value is a string primitive.
-
-|Name  |Type   |Desc                               |
-|------|-------|-----------------------------------|
-|val   |*      |The value to check                 |
-|return|boolean|True if value is a string primitive|
-
-```javascript
-isStr('eris'); // -> true
-```
 
 ## isBool 
 
@@ -720,10 +729,6 @@ Check if value is an error.
 isErr(new Error()); // -> true
 ```
 
-## root 
-
-Root object reference, `global` in nodeJs, `window` in browser.
-
 ## isFinite 
 
 Check if value is a finite primitive number.
@@ -736,6 +741,22 @@ Check if value is a finite primitive number.
 ```javascript
 isFinite(3); // -> true
 isFinite(Infinity); // -> false
+```
+
+## isFn 
+
+Check if value is a function.
+
+|Name  |Type   |Desc                       |
+|------|-------|---------------------------|
+|val   |*      |The value to check         |
+|return|boolean|True if value is a function|
+
+Generator function is also classified as true.
+
+```javascript
+isFn(function() {}); // -> true
+isFn(function*() {}); // -> true
 ```
 
 ## isInt 
@@ -781,6 +802,35 @@ isNaN(0); // -> false
 isNaN(NaN); // -> true
 ```
 
+## isNum 
+
+Checks if value is classified as a Number primitive or object.
+
+|Name  |Type   |Desc                                             |
+|------|-------|-------------------------------------------------|
+|value |*      |The value to check                               |
+|return|boolean|True if value is correctly classified, else false|
+
+## isObj 
+
+Check if value is the language type of Object.
+
+|Name  |Type   |Desc                      |
+|------|-------|--------------------------|
+|val   |*      |The value to check        |
+|return|boolean|True if value is an object|
+
+[Language Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
+
+```javascript
+isObj({}); // -> true
+isObj([]); // -> true
+```
+
+## isPlainObj 
+
+No documentation.
+
 ## isPrimitive 
 
 Check if value is string, number, boolean or null.
@@ -822,23 +872,74 @@ Check if path appears to be relative.
 isRelative('README.md'); // -> true
 ```
 
+## isStr 
+
+Check if value is a string primitive.
+
+|Name  |Type   |Desc                               |
+|------|-------|-----------------------------------|
+|val   |*      |The value to check                 |
+|return|boolean|True if value is a string primitive|
+
+```javascript
+isStr('eris'); // -> true
+```
+
+## isUndef 
+
+Check if value is undefined.
+
+|Name  |Type   |Desc                      |
+|------|-------|--------------------------|
+|val   |*      |The value to check        |
+|return|boolean|True if value is undefined|
+
+```javascript
+isUndef(void 0); // -> true
+isUndef(null); // -> false
+```
+
+## kebabCase 
+
+Convert string to "kebabCase".
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|str   |string|String to convert |
+|return|string|Kebab cased string|
+
+```javascript
+kebabCase('fooBar'); // -> foo-bar
+kebabCase('foo bar'); // -> foo-bar
+kebabCase('foo_bar'); // -> foo-bar
+kebabCase('foo.bar'); // -> foo-bar
+```
+
+## keys 
+
+Create an array of the own enumerable property names of object.
+
+|Name  |Type  |Desc                       |
+|------|------|---------------------------|
+|obj   |object|The object to query        |
+|return|array |The array of property names|
+
+## last 
+
+Get the last element of array.
+
+|Name  |Type |Desc                     |
+|------|-----|-------------------------|
+|arr   |array|The array to query       |
+|return|*    |The last element of array|
+
+```javascript
+last([1, 2]); // -> 2
+```
+
 ## loadJs 
 
 Inject script tag into page with given src value.
-
-## size 
-
-Get size of object, length of array like object or the number of keys.
-
-|Name  |Type        |Desc                 |
-|------|------------|---------------------|
-|obj   |array object|Collection to inspect|
-|return|number      |Collection size      |
-
-```javascript
-size({a: 1, b: 2}); // -> 2
-size([1, 2, 3]); // -> 3
-```
 
 ## longest 
 
@@ -887,108 +988,6 @@ ltrim('_abc_', '_'); // -> 'abc_'
 ltrim('_abc_', ['a', '_']); // -> 'bc_'
 ```
 
-## matcher 
-
-No documentation.
-
-## negate 
-
-Create a function that negates the result of the predicate function.
-
-|Name     |Type    |Desc               |
-|---------|--------|-------------------|
-|predicate|function|Predicate to negate|
-|return   |function|New function       |
-
-```javascript
-function even(n) { return n % 2 === 0 }
-filter([1, 2, 3, 4, 5, 6], negate(even)); // -> [1, 3, 5]
-```
-
-## noop 
-
-A no-operation function.
-
-## now 
-
-Gets the number of milliseconds that have elapsed since the Unix epoch.
-
-## optimizeCb 
-
-No documentation.
-
-## safeCb 
-
-function
-safeCb: Create callback based on input value.
-
-## every 
-
-Check if predicate return truthy for all elements.
-
-|Name     |Type        |Desc                                         |
-|---------|------------|---------------------------------------------|
-|obj      |array object|Collection to iterate over                   |
-|predicate|function    |Function invoked per iteration               |
-|ctx      |*           |Predicate context                            |
-|return   |boolean     |True if all elements pass the predicate check|
-
-```javascript
-every([2, 4], function (val)
-{
-    return val % 2 === 0;
-}); // -> false
-```
-
-## filter 
-
-Iterates over elements of collection, returning an array of all the values that pass a truth test.
-
-|Name     |Type    |Desc                                   |
-|---------|--------|---------------------------------------|
-|obj      |array   |Collection to iterate over             |
-|predicate|function|Function invoked per iteration         |
-|[ctx]    |*       |Predicate context                      |
-|return   |array   |Array of all values that pass predicate|
-
-```javascript
-filter([1, 2, 3, 4, 5], function (val)
-{
-    return val % 2 === 0;
-}); // -> [2, 4]
-```
-
-## difference 
-
-Create an array of unique array values not included in the other given array.
-
-|Name  |Type    |Desc                        |
-|------|--------|----------------------------|
-|arr   |array   |Array to inspect            |
-|[rest]|...array|Values to exclude           |
-|return|array   |New array of filtered values|
-
-```javascript
-difference([3, 2, 1], [4, 2]); // -> [3, 1]
-```
-
-## findKey 
-
-Return the key where the predicate truth test passes or undefined.
-
-|Name     |Type    |Desc                          |
-|---------|--------|------------------------------|
-|obj      |object  |Object to search              |
-|predicate|function|Function invoked per iteration|
-|return   |string  |The key of matched element    |
-
-```javascript
-findKey({a: 1, b: 2}, function (val)
-{
-    return val === 1;
-}); // -> a
-```
-
 ## map 
 
 Create an array of values by running each element in collection through iteratee.
@@ -1004,121 +1003,7 @@ Create an array of values by running each element in collection through iteratee
 map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 ```
 
-## toArr 
-
-Convert value to an array.
-
-|Name  |Type |Desc            |
-|------|-----|----------------|
-|val   |*    |Value to convert|
-|return|array|Converted array |
-
-```javascript
-toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
-toArr('abc'); // -> ['abc']
-toArr(1); // -> []
-toArr(null); // -> []
-```
-
-## Class 
-
-Create JavaScript class.
-
-|Name   |Type    |Desc                             |
-|-------|--------|---------------------------------|
-|methods|object  |Public methods                   |
-|statics|object  |Static methods                   |
-|return |function|Function used to create instances|
-
-```javascript
-var People = Class({
-    initialize: function (name, age)
-    {
-        this.name = name;
-        this.age = age;
-    },
-    introduce: function ()
-    {
-        return 'I am ' + this.name + ', ' + this.age + ' years old.'.
-    }
-});
-
-var Student = People.extend({
-    initialize: function (name, age, school)
-    {
-        this.callSuper('initialize', name, age);
-
-        this.school = school.
-    },
-    introduce: function ()
-    {
-        return this.callSuper('introduce') + '\n I study at ' + this.school + '.'.
-    }
-}, {
-    is: function (obj)
-    {
-        return obj instanceof Student;
-   }
-});
-
-var a = new Student('allen', 17, 'Hogwarts');
-a.introduce(); // -> 'I am allen, 17 years old. \n I study at Hogwarts.'
-Student.is(a); // -> true
-```
-
-## Emitter 
-
-No documentation.
-
-## Select 
-
-jQuery like dom manipulator.
-
-## $safeNodes 
-
-No documentation.
-
-## $attr 
-
-No documentation.
-
-## $data 
-
-No documentation.
-
-## $css 
-
-No documentation.
-
-## $insert 
-
-No documentation.
-
-## $offset 
-
-No documentation.
-
-## $property 
-
-No documentation.
-
-## $remove 
-
-No documentation.
-
-## $show 
-
-No documentation.
-
-## Uri 
-
-No documentation.
-
-## delegate 
-
-No documentation.
-
-## $event 
+## matcher 
 
 No documentation.
 
@@ -1148,20 +1033,36 @@ Get minimum value of given numbers.
 min(2.3, 1, 4.5, 2); // 1
 ```
 
-## partial 
+## negate 
 
-Partially apply a function by filling in given arguments.
+Create a function that negates the result of the predicate function.
 
-|Name    |Type    |Desc                                    |
-|--------|--------|----------------------------------------|
-|fn      |function|Function to partially apply arguments to|
-|partials|...*    |Arguments to be partially applied       |
-|return  |function|New partially applied function          |
+|Name     |Type    |Desc               |
+|---------|--------|-------------------|
+|predicate|function|Predicate to negate|
+|return   |function|New function       |
 
 ```javascript
-var sub5 = partial(function (a, b) { return b - a }, 5);
-sub(20); // -> 15
+function even(n) { return n % 2 === 0 }
+filter([1, 2, 3, 4, 5, 6], negate(even)); // -> [1, 3, 5]
 ```
+
+## noop 
+
+A no-operation function.
+
+## now 
+
+Gets the number of milliseconds that have elapsed since the Unix epoch.
+
+## objToStr 
+
+Alias of Object.prototype.toString.
+
+|Name  |Type  |Desc                                    |
+|------|------|----------------------------------------|
+|value |*     |Source value                            |
+|return|string|String representation of the given value|
 
 ## once 
 
@@ -1179,33 +1080,7 @@ initOnce();
 initOnce(); // -> init is invoked once
 ```
 
-## some 
-
-Check if predicate return truthy for any element.
-
-|Name     |Type        |Desc                                          |
-|---------|------------|----------------------------------------------|
-|obj      |array object|Collection to iterate over                    |
-|predicate|function    |Function to invoked per iteration             |
-|ctx      |*           |Predicate context                             |
-|return   |boolean     |True if any element passes the predicate check|
-
-```javascript
-some([2, 5], function (val)
-{
-    return val % 2 === 0;
-}); // -> true
-```
-
-## $class 
-
-No documentation.
-
-## $ 
-
-jQuery like style dom manipulator.
-
-## State 
+## optimizeCb 
 
 No documentation.
 
@@ -1228,17 +1103,19 @@ pad('abc', 5, 'ab'); // -> 'babca'
 pad('ab', 5, 'ab'); // -> 'ababa'
 ```
 
-## upperFirst 
+## partial 
 
-Convert the first character of string to upper case.
+Partially apply a function by filling in given arguments.
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|str   |string|String to convert|
-|return|string|Converted string |
+|Name    |Type    |Desc                                    |
+|--------|--------|----------------------------------------|
+|fn      |function|Function to partially apply arguments to|
+|partials|...*    |Arguments to be partially applied       |
+|return  |function|New partially applied function          |
 
 ```javascript
-upperFirst('red'); // -> RED
+var sub5 = partial(function (a, b) { return b - a }, 5);
+sub(20); // -> 15
 ```
 
 ## pascalCase 
@@ -1272,6 +1149,41 @@ random(1, 5); // -> an integer between 0 and 5
 random(5); // -> an integer between 0 and 5
 random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
 ```
+
+## repeat 
+
+Repeat string n-times.
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|str   |string|The string to repeat|
+|n     |number|Repeat times        |
+|return|string|Repeated string     |
+
+```javascript
+repeat('a', 3); // -> 'aaa'
+repeat('ab', 2); // -> 'abab'
+repeat('*', 0); // -> ''
+```
+
+## restArgs 
+
+This accumulates the arguments passed into an array, after a given index.
+
+|Name      |Type    |Desc                                   |
+|----------|--------|---------------------------------------|
+|function  |function|Function that needs rest parameters    |
+|startIndex|number  |The start index to accumulates         |
+|return    |function|Generated function with rest parameters|
+
+```javascript
+var paramArr = _.restArgs(function (rest) { return rest });
+paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
+```
+
+## root 
+
+Root object reference, `global` in nodeJs, `window` in browser.
 
 ## rpad 
 
@@ -1307,34 +1219,28 @@ rtrim('_abc_', '_'); // -> '_abc'
 rtrim('_abc_', ['c', '_']); // -> '_ab'
 ```
 
-## trim 
+## safeCb 
 
-Remove chars or white-spaces from beginning end of string.
+function
+safeCb: Create callback based on input value.
 
-|Name  |Type        |Desc              |
-|------|------------|------------------|
-|str   |string      |String to trim    |
-|chars |string array|Characters to trim|
-|return|string      |Trimmed string    |
+## size 
 
-```javascript
-trim(' abc  '); // -> 'abc'
-trim('_abc_', '_'); // -> 'abc'
-trim('_abc_', ['a', 'c', '_']); // -> 'b'
-```
+Get size of object, length of array like object or the number of keys.
 
-## extractBlockCmts 
-
-Extract block comments from source code.
-
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|str   |string|String to extract|
-|return|array |Block comments   |
+|Name  |Type        |Desc                 |
+|------|------------|---------------------|
+|obj   |array object|Collection to inspect|
+|return|number      |Collection size      |
 
 ```javascript
-extractBlockCmts('\/*eris*\/'); // -> ['eris']
+size({a: 1, b: 2}); // -> 2
+size([1, 2, 3]); // -> 3
 ```
+
+## slice 
+
+No documentation.
 
 ## snakeCase 
 
@@ -1351,6 +1257,24 @@ snakeCase('foo bar'); // -> foo_bar
 snakeCase('foo.bar'); // -> foo_bar
 ```
 
+## some 
+
+Check if predicate return truthy for any element.
+
+|Name     |Type        |Desc                                          |
+|---------|------------|----------------------------------------------|
+|obj      |array object|Collection to iterate over                    |
+|predicate|function    |Function to invoked per iteration             |
+|ctx      |*           |Predicate context                             |
+|return   |boolean     |True if any element passes the predicate check|
+
+```javascript
+some([2, 5], function (val)
+{
+    return val % 2 === 0;
+}); // -> true
+```
+
 ## spaceCase 
 
 Convert string to "spaceCase".
@@ -1364,6 +1288,24 @@ Convert string to "spaceCase".
 spaceCase('fooBar'); // -> foo bar
 spaceCase('foo.bar'); // -> foo bar
 spaceCase('foo.bar'); // -> foo bar
+```
+
+## splitCase 
+
+Split different string case to an array.
+
+|Name  |Type  |Desc           |
+|------|------|---------------|
+|str   |string|String to split|
+|return|array |Result array   |
+
+```javascript
+splitCase('foo-bar'); // -> ['foo', 'bar']
+splitCase('foo bar'); // -> ['foo', 'bar']
+splitCase('foo_bar'); // -> ['foo', 'bar']
+splitCase('foo.bar'); // -> ['foo', 'bar']
+splitCase('fooBar'); // -> ['foo', 'bar']
+splitCase('foo-Bar'); // -> ['foo', 'bar']
 ```
 
 ## startWith 
@@ -1436,17 +1378,20 @@ stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 
 No documentation.
 
-## toNum 
+## toArr 
 
-Convert value to a number.
+Convert value to an array.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|val   |*     |Value to process|
-|return|number|Resulted number |
+|Name  |Type |Desc            |
+|------|-----|----------------|
+|val   |*    |Value to convert|
+|return|array|Converted array |
 
 ```javascript
-toNum('5'); // -> 5
+toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
+toArr('abc'); // -> ['abc']
+toArr(1); // -> []
+toArr(null); // -> []
 ```
 
 ## toInt 
@@ -1460,6 +1405,19 @@ Convert value to an integer.
 
 ```javascript
 toInt(1.1); // -> 1
+```
+
+## toNum 
+
+Convert value to a number.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|val   |*     |Value to process|
+|return|number|Resulted number |
+
+```javascript
+toNum('5'); // -> 5
 ```
 
 ## toStr 
@@ -1482,6 +1440,22 @@ toStr([1, 2, 3]); // -> '1,2,3'
 
 Topological sorting algorithm.
 
+## trim 
+
+Remove chars or white-spaces from beginning end of string.
+
+|Name  |Type        |Desc              |
+|------|------------|------------------|
+|str   |string      |String to trim    |
+|chars |string array|Characters to trim|
+|return|string      |Trimmed string    |
+
+```javascript
+trim(' abc  '); // -> 'abc'
+trim('_abc_', '_'); // -> 'abc'
+trim('_abc_', ['a', 'c', '_']); // -> 'b'
+```
+
 ## unescape 
 
 Convert HTML entities back, the inverse of escape.
@@ -1493,20 +1467,6 @@ Convert HTML entities back, the inverse of escape.
 
 ```javascript
 unescape('You &amp; Me'); -> // -> 'You & Me'
-```
-
-## unique 
-
-Create duplicate-free version of an array.
-
-|Name     |Type    |Desc                         |
-|---------|--------|-----------------------------|
-|arr      |array   |Array to inspect             |
-|[compare]|function|Function for comparing values|
-|return   |array   |New duplicate free array     |
-
-```javascript
-unique([1, 2, 3, 1]); // -> [1, 2, 3]
 ```
 
 ## union 
@@ -1535,9 +1495,49 @@ Generate a globally-unique id.
 uniqueId('eusita_'); // -> 'eustia_xxx'
 ```
 
+## unique 
+
+Create duplicate-free version of an array.
+
+|Name     |Type    |Desc                         |
+|---------|--------|-----------------------------|
+|arr      |array   |Array to inspect             |
+|[compare]|function|Function for comparing values|
+|return   |array   |New duplicate free array     |
+
+```javascript
+unique([1, 2, 3, 1]); // -> [1, 2, 3]
+```
+
+## upperFirst 
+
+Convert the first character of string to upper case.
+
+|Name  |Type  |Desc             |
+|------|------|-----------------|
+|str   |string|String to convert|
+|return|string|Converted string |
+
+```javascript
+upperFirst('red'); // -> RED
+```
+
 ## use 
 
 No documentation.
+
+## values 
+
+Creates an array of the own enumerable property values of object.
+
+|Name  |Type  |Desc                    |
+|------|------|------------------------|
+|obj   |object|Object to query         |
+|return|array |Array of property values|
+
+```javascript
+values({one: 1, two: 2}); // -> [1, 2]
+```
 
 ## wrap 
 
