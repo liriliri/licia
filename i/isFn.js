@@ -2,7 +2,7 @@
  *
  * |Name  |Type   |Desc                       |
  * |------|-------|---------------------------|
- * |val   |*      |The value to check         |
+ * |val   |*      |Value to check             |
  * |return|boolean|True if value is a function|
  *
  * Generator function is also classified as true.
@@ -15,9 +15,9 @@
 
 _('objToStr');
 
-exports = function (val)
+function exports(val)
 {
     var objStr = objToStr(val);
 
     return objStr === '[object Function]' || objStr === '[object GeneratorFunction]';
-};
+}

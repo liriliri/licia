@@ -2,7 +2,7 @@
  *
  * |Name  |Type   |Desc                                 |
  * |------|-------|-------------------------------------|
- * |val   |*      |The value to check                   |
+ * |val   |*      |Value to check                       |
  * |return|boolean|True if value is a regular expression|
  *
  * ```javascript
@@ -12,7 +12,7 @@
 
 _('objToStr');
 
-exports = function (val)
+function exports(val)
 {
     return objToStr(val) === '[object RegExp]';
-};
+}

@@ -1,4 +1,4 @@
-/* Get the index at which the first occurrence of value.
+/* Get the index at which the first occurrence of value. TODO
  *
  * |Name       |Type  |Desc                |
  * |-----------|------|--------------------|
@@ -11,7 +11,7 @@
  * ```
  */
 
-exports = function (arr, val, fromIdx)
+function exports(arr, val, fromIdx)
 {
     return Array.prototype.indexOf.call(arr, val);
-};
+}

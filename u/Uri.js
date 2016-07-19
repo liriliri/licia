@@ -1,4 +1,5 @@
-// TODO
+/* TODO
+ */
 
 _('Class isArr each isObj isStr');
 

@@ -1,9 +1,9 @@
 /* Create an array of the own enumerable property names of object.
  *
- * |Name  |Type  |Desc                       |
- * |------|------|---------------------------|
- * |obj   |object|The object to query        |
- * |return|array |The array of property names|
+ * |Name  |Type  |Desc                   |
+ * |------|------|-----------------------|
+ * |obj   |object|Object to query        |
+ * |return|array |Array of property names|
  */
 
 _('has');

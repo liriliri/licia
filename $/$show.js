@@ -1,4 +1,4 @@
-/* Show elements.
+/* Show elements. TODO
  *
  * ```javascript
  * $show('#test');

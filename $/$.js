@@ -1,4 +1,4 @@
-/* jQuery like style dom manipulator.
+/* jQuery like style dom manipulator. TODO
  *
  * ```javascript
  * var $btn = $('#btn');

@@ -1,4 +1,5 @@
-// TODO
+/* TODO
+ */
 
 _('Emitter each isArr some slice');
 

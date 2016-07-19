@@ -17,7 +17,7 @@
 
 _('partial');
 
-exports = function (fn, wrapper)
+function exports(fn, wrapper)
 {
     return partial(wrapper, fn);
-};
+}

@@ -1,3 +1,6 @@
+/* TODO
+ */
+
 _('Class has each slice');
 
 exports = Class({

@@ -10,7 +10,7 @@
  * ```
  */
 
-exports = function (val)
+function exports(val)
 {
     return !!(val && val.nodeType === 1);
-};
+}

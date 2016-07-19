@@ -17,7 +17,7 @@
 
 _('safeCb each');
 
-exports = function (obj, predicate, ctx)
+function exports(obj, predicate, ctx)
 {
     var ret = [];
 
@@ -29,4 +29,4 @@ exports = function (obj, predicate, ctx)
     });
 
     return ret;
-};
+}

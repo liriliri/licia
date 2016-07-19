@@ -5,4 +5,4 @@
  * ```
  */
 
-exports = function () {};
+function exports() {}

@@ -1,4 +1,4 @@
-/* Attributes manipulation.
+/* Attributes manipulation. TODO
  *
  * ```javascript
  * $attr('#test', 'attr1', 'test');

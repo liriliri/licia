@@ -2,7 +2,7 @@
  *
  * |Name  |Type   |Desc                             |
  * |------|-------|---------------------------------|
- * |str   |string |The string to search             |
+ * |str   |string |String to search                 |
  * |prefix|string |String prefix                    |
  * |return|boolean|True if string starts with prefix|
  *
@@ -11,7 +11,7 @@
  * ```
  */
 
-exports = function (str, prefix)
+function exports(str, prefix)
 {
     return str.indexOf(prefix) === 0;
-};
+}

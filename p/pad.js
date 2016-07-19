@@ -1,11 +1,11 @@
 /* Pad string on the left and right sides if it's shorter than length.
  *
- * |Name  |Type  |Desc                      |
- * |------|------|--------------------------|
- * |str   |string|The string to pad         |
- * |len   |number|The padding length        |
- * |chars |string|The string used as padding|
- * |return|string|Resulted string           |
+ * |Name  |Type  |Desc                  |
+ * |------|------|----------------------|
+ * |str   |string|String to pad         |
+ * |len   |number|Padding length        |
+ * |chars |string|String used as padding|
+ * |return|string|Resulted string       |
  *
  * ```javascript
  * pad('a', 5); // -> '  a  '
@@ -18,7 +18,7 @@
 
 _('repeat');
 
-exports = function (str, len, chars)
+function exports(str, len, chars)
 {
     var strLen = str.length;
 
@@ -32,4 +32,4 @@ exports = function (str, len, chars)
     }
 
     return str;
-};
+}

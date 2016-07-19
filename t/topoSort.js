@@ -1,5 +1,10 @@
-/* Topological sorting algorithm.
+/* Topological sorting algorithm. TODO
  */
+
+function exports(edges)
+{
+    return sort(uniqueNodes(edges), edges);
+}
 
 function uniqueNodes(arr)
 {
@@ -53,8 +58,3 @@ function sort(nodes, edges)
 
     return sorted;
 }
-
-exports = function(edges)
-{
-    return sort(uniqueNodes(edges), edges);
-};

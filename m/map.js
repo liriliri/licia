@@ -14,7 +14,7 @@
 
 _('safeCb keys isArrLike');
 
-exports = function (obj, iteratee, ctx)
+function exports(obj, iteratee, ctx)
 {
     iteratee = safeCb(iteratee, ctx);
 
@@ -29,4 +29,4 @@ exports = function (obj, iteratee, ctx)
     }
 
     return results;
-};
+}

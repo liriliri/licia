@@ -2,7 +2,7 @@
  *
  * |Name  |Type  |Desc                  |
  * |------|------|----------------------|
- * |str   |string|The string to pad     |
+ * |str   |string|String to pad         |
  * |len   |number|Padding length        |
  * |chars |string|String used as padding|
  * |return|string|Resulted string       |
@@ -17,7 +17,7 @@
 
 _('repeat');
 
-exports = function (str, len, chars)
+function exports(str, len, chars)
 {
     var strLen = str.length;
 
@@ -26,4 +26,4 @@ exports = function (str, len, chars)
     if (strLen < len) str = (str + repeat(chars, len - strLen)).slice(0, len);
 
     return str;
-};
+}

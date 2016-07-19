@@ -1,7 +1,10 @@
 it('restrict function invoke times', function ()
 {
     var count = 0;
-    var fn = before(5, function () { count++ });
+    var fn = before(5, function ()
+    {
+        count++;
+    });
     fn();
     expect(count).to.equal(1);
     fn();

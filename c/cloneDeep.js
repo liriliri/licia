@@ -1,4 +1,5 @@
-// TODO
+/* TODO
+ */
 
 _('keys isObj isFn isArr each');
 

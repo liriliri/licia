@@ -12,11 +12,11 @@
 
 _('toNum');
 
-exports = function (val)
+function exports(val)
 {
     if (!val) return val === 0 ? val : 0;
 
     val = toNum(val);
 
     return val - val % 1;
-};
+}

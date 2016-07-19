@@ -12,11 +12,11 @@
 
 _('each');
 
-exports = function (obj)
+function exports(obj)
 {
     var ret = [];
 
     each(obj, function (val) { ret.push(val) });
 
     return ret;
-};
+}

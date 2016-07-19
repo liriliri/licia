@@ -2,7 +2,7 @@
  *
  * |Name  |Type   |Desc                   |
  * |------|-------|-----------------------|
- * |val   |*      |The value to check     |
+ * |val   |*      |Value to check         |
  * |return|boolean|True if value is an NaN|
  *
  * Undefined is not an NaN, different from global isNaN function.
@@ -15,7 +15,7 @@
 
 _('isNum');
 
-exports = function (val)
+function exports(val)
 {
     return isNum(val) && val !== +val;
-};
+}

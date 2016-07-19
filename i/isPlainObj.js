@@ -1,8 +1,9 @@
-// TODO
+/* TODO
+ */
 
 _('isObj isArr');
 
-exports = function (obj)
+function exports(obj)
 {
     return isObj(obj) && !isArr(obj);
-};
+}

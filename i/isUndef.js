@@ -2,7 +2,7 @@
  *
  * |Name  |Type   |Desc                      |
  * |------|-------|--------------------------|
- * |val   |*      |The value to check        |
+ * |val   |*      |Value to check            |
  * |return|boolean|True if value is undefined|
  *
  * ```javascript
@@ -11,7 +11,7 @@
  * ```
  */
 
-exports = function (val)
+function exports(val)
 {
     return val === void 0;
-};
+}

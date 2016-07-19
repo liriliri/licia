@@ -2,7 +2,7 @@
  *
  * |Name  |Type  |Desc            |
  * |------|------|----------------|
- * |str   |string|string to escape|
+ * |str   |string|String to escape|
  * |return|string|Escaped string  |
  *
  * ```javascript

@@ -1,4 +1,4 @@
-/* Data manipulation
+/* Data manipulation TODO
  *
  * ```javascript
  * $data('#test', 'attr1', 'eustia');

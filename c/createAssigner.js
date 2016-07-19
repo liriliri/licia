@@ -4,12 +4,12 @@
  * |--------|--------|------------------------------|
  * |keysFn  |function|Function to get object keys   |
  * |defaults|boolean |No override when set to true  |
- * |return  |function|The result function, extend...|
+ * |return  |function|Result function, extend...    |
  */
 
 _('isUndef each');
 
-exports = function (keysFn, defaults)
+function exports(keysFn, defaults)
 {
     return function (obj)
     {
@@ -27,4 +27,4 @@ exports = function (keysFn, defaults)
 
         return obj;
     };
-};
+}

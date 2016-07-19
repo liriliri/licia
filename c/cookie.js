@@ -94,6 +94,7 @@ exports = {
     {
         options = options || {};
         options.expires = -1;
+
         return setCookie(key, '', options);
     }
 };

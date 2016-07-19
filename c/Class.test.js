@@ -1,7 +1,7 @@
 var A = Class({
     initialize: function (name, height)
     {
-        this._name   = name;
+        this._name = name;
         this._height = height;
     },
     getName: function ()
@@ -15,7 +15,7 @@ var A = Class({
     introduce: function ()
     {
         return 'My name is ' + this._name + '. ' +
-            'I\'m ' + this._height + ' meters tall. ';
+               'I\'m ' + this._height + ' meters tall. ';
     }
 });
 
@@ -52,10 +52,10 @@ it('has class extension', function ()
 it('has callSuper and can override methods', function ()
 {
     expect(a.introduce()).to.equal('My name is eustia. ' +
-          'I\'m 1.496 meters tall. ');
+                                   'I\'m 1.496 meters tall. ');
     expect(b.introduce()).to.equal('My name is eustia. ' +
-          'I\'m 1.496 meters tall. ' +
-          'And my blood type is A. ');
+                                   'I\'m 1.496 meters tall. ' +
+                                   'And my blood type is A. ');
 });
 
 it('has correct instanceof value', function ()

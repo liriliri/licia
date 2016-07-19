@@ -13,7 +13,7 @@
  * ```
  */
 
-exports = function (min, max, floating)
+function exports(min, max, floating)
 {
     if (max == null)
     {
@@ -29,4 +29,4 @@ exports = function (min, max, floating)
     }
 
     return min + Math.floor(rand * (max - min + 1));
-};
+}

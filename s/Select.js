@@ -1,4 +1,4 @@
-/* jQuery like dom manipulator.
+/* jQuery like dom manipulator. TODO
  */
 
 _('Class isStr each');

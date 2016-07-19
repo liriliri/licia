@@ -1,4 +1,4 @@
-it('should retrieve all keys including those inherited', function ()
+it('retrieve all keys including those inherited', function ()
 {
     var obj = Object.create({zero: 0});
     obj.one = 1;

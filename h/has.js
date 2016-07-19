@@ -2,8 +2,8 @@
  *
  * |Name  |Type   |Desc                            |
  * |------|-------|--------------------------------|
- * |obj   |object |The object to query             |
- * |key   |string |The path to check               |
+ * |obj   |object |Object to query                 |
+ * |key   |string |Path to check                   |
  * |return|boolean|True if key is a direct property|
  *
  * ```javascript
@@ -13,7 +13,7 @@
 
 var hasOwnProp = Object.prototype.hasOwnProperty;
 
-exports = function (obj, key)
+function exports(obj, key)
 {
     return hasOwnProp.call(obj, key);
-};
+}

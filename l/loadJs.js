@@ -1,4 +1,4 @@
-/* Inject script tag into page with given src value.
+/* Inject script tag into page with given src value. TODO
  */
 
 exports = function (url, cb)

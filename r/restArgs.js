@@ -12,7 +12,7 @@
  * ```
  */
 
-exports = function (fn, startIdx)
+function exports(fn, startIdx)
 {
     startIdx = startIdx == null ? fn.length - 1 : +startIdx;
 
@@ -40,4 +40,4 @@ exports = function (fn, startIdx)
 
         return fn.apply(this, args);
     };
-};
+}

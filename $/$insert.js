@@ -1,4 +1,4 @@
-/* Insert html on different position.
+/* Insert html on different position. TODO
  *
  * ```javascript
  * $insert.append('#test', '<div>test</div>');

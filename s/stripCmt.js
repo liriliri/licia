@@ -10,7 +10,7 @@
  * ```
  */
 
-exports = function (str)
+function exports(str)
 {
     str = ('__' + str + '__').split('');
     var mode = {
@@ -80,4 +80,4 @@ exports = function (str)
     }
 
     return str.join('').slice(2, -2);
-};
+}

@@ -1,4 +1,4 @@
-/* Class manipulation.
+/* Class manipulation. TODO
  *
  * ```javascript
  * $class.add('#test', 'class1');

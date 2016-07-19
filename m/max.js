@@ -12,7 +12,7 @@
 
 _('toArr');
 
-exports = function ()
+function exports()
 {
     var arr = toArr(arguments),
         ret = arr[0];
@@ -23,4 +23,4 @@ exports = function ()
     }
 
     return ret;
-};
+}

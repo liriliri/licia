@@ -13,7 +13,7 @@
 
 _('isArrLike keys');
 
-exports = function (obj, iteratee, ctx)
+function exports(obj, iteratee, ctx)
 {
     var i, len;
 
@@ -30,4 +30,4 @@ exports = function (obj, iteratee, ctx)
     }
 
     return obj;
-};
+}

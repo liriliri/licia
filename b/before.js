@@ -14,7 +14,7 @@
  * ```
  */
 
-exports = function (n, fn)
+function exports(n, fn)
 {
     var memo;
 
@@ -22,6 +22,7 @@ exports = function (n, fn)
     {
         if (--n > 0) memo = fn.apply(this, arguments);
         if (n <= 1) fn = null;
+
         return memo;
     };
-};
+}

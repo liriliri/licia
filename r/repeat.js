@@ -1,10 +1,10 @@
 /* Repeat string n-times.
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |str   |string|The string to repeat|
- * |n     |number|Repeat times        |
- * |return|string|Repeated string     |
+ * |Name  |Type  |Desc            |
+ * |------|------|----------------|
+ * |str   |string|String to repeat|
+ * |n     |number|Repeat times    |
+ * |return|string|Repeated string |
  *
  * ```javascript
  * repeat('a', 3); // -> 'aaa'

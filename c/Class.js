@@ -1,10 +1,10 @@
 /* Create JavaScript class.
  *
- * |Name   |Type    |Desc                             |
- * |-------|--------|---------------------------------|
- * |methods|object  |Public methods                   |
- * |statics|object  |Static methods                   |
- * |return |function|Function used to create instances|
+ * |Name     |Type    |Desc                             |
+ * |---------|--------|---------------------------------|
+ * |methods  |object  |Public methods                   |
+ * |[statics]|object  |Static methods                   |
+ * |return   |function|Function used to create instances|
  *
  * ```javascript
  * var People = Class({
@@ -44,6 +44,11 @@
  */
 
 _('extend toArr inherits has');
+
+function exports(methods, statics)
+{
+    return Base.extend(methods, statics);
+}
 
 var regCallSuper = /callSuper/;
 
@@ -95,11 +100,6 @@ function makeClass(parent, methods, statics)
 
     return ctor;
 }
-
-exports = function (methods, statics)
-{
-    return Base.extend(methods, statics);
-};
 
 var Base = exports.Base = makeClass(Object, {
     className: 'Base',

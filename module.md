@@ -2,7 +2,7 @@
 
 ## $ 
 
-jQuery like style dom manipulator.
+jQuery like style dom manipulator. TODO
 
 ```javascript
 var $btn = $('#btn');
@@ -11,7 +11,7 @@ $btn.html('eustia');
 
 ## $attr 
 
-Attributes manipulation.
+Attributes manipulation. TODO
 
 ```javascript
 $attr('#test', 'attr1', 'test');
@@ -21,7 +21,7 @@ $attr.remove('#test', 'attr1');
 
 ## $class 
 
-Class manipulation.
+Class manipulation. TODO
 
 ```javascript
 $class.add('#test', 'class1');
@@ -34,7 +34,7 @@ $class.has('#test', 'class1'); // -> true
 
 ## $css 
 
-Css manipulation.
+Css manipulation. TODO
 
 ```javascript
 $css('#test', {
@@ -45,7 +45,7 @@ $css('#test', {
 
 ## $data 
 
-Data manipulation
+Data manipulation TODO
 
 ```javascript
 $data('#test', 'attr1', 'eustia');
@@ -53,7 +53,7 @@ $data('#test', 'attr1', 'eustia');
 
 ## $event 
 
-bind events to certain dom elements.
+bind events to certain dom elements. TODO
 
 ```javascript
 event.on('#test', 'click', function ()
@@ -64,7 +64,7 @@ event.on('#test', 'click', function ()
 
 ## $insert 
 
-Insert html on different position.
+Insert html on different position. TODO
 
 ```javascript
 $insert.append('#test', '<div>test</div>');
@@ -72,23 +72,23 @@ $insert.append('#test', '<div>test</div>');
 
 ## $offset 
 
-No documentation.
+TODO
 
 ## $property 
 
-No documentation.
+TODO
 
 ## $remove 
 
-No documentation.
+TODO
 
 ## $safeNodes 
 
-No documentation.
+TODO
 
 ## $show 
 
-Show elements.
+Show elements. TODO
 
 ```javascript
 $show('#test');
@@ -98,11 +98,11 @@ $show('#test');
 
 Create JavaScript class.
 
-|Name   |Type    |Desc                             |
-|-------|--------|---------------------------------|
-|methods|object  |Public methods                   |
-|statics|object  |Static methods                   |
-|return |function|Function used to create instances|
+|Name     |Type    |Desc                             |
+|---------|--------|---------------------------------|
+|methods  |object  |Public methods                   |
+|[statics]|object  |Static methods                   |
+|return   |function|Function used to create instances|
 
 ```javascript
 var People = Class({
@@ -142,29 +142,29 @@ Student.is(a); // -> true
 
 ## Emitter 
 
-No documentation.
+TODO
 
 ## Select 
 
-jQuery like dom manipulator.
+jQuery like dom manipulator. TODO
 
 ## State 
 
-No documentation.
+TODO
 
 ## Uri 
 
-No documentation.
+TODO
 
 ## after 
 
 Create a function that invokes once it's called n or more times.
 
-|Name  |Type    |Desc                                |
-|------|--------|------------------------------------|
-|n     |number  |Number of calls before fn is invoked|
-|fn    |function|Function to restrict                |
-|return|function|The new restricted function         |
+|Name  |Type    |Desc                          |
+|------|--------|------------------------------|
+|n     |number  |Number of calls before invoked|
+|fn    |function|Function to restrict          |
+|return|function|New restricted function       |
 
 ```javascript
 var fn = after(5, function()
@@ -177,10 +177,10 @@ var fn = after(5, function()
 
 Retrieve all the names of object's own and inherited properties.
 
-|Name  |Type  |Desc                           |
-|------|------|-------------------------------|
-|obj   |object|The object to query            |
-|return|array |The array of all property names|
+|Name  |Type  |Desc                       |
+|------|------|---------------------------|
+|obj   |object|Object to query            |
+|return|array |Array of all property names|
 
 > Members of Object's prototype won't be retrieved.
 
@@ -211,12 +211,12 @@ $(element).on('click', before(5, function() {}));
 
 Create a function bound to a given object.
 
-|Name  |Type    |Desc                          |
-|------|--------|------------------------------|
-|fn    |function|Function to bind              |
-|ctx   |*       |This binding of given function|
-|[rest]|...*    |Optional arguments            |
-|return|function|New bound function            |
+|Name  |Type    |Desc                    |
+|------|--------|------------------------|
+|fn    |function|Function to bind        |
+|ctx   |*       |This binding of given fn|
+|[rest]|...*    |Optional arguments      |
+|return|function|New bound function      |
 
 ```javascript
 var fn = bind(function (msg)
@@ -246,10 +246,10 @@ camelCase('foo.bar'); // -> fooBar
 
 Convert the first character to upper case and the remaining to lower case.
 
-|Name  |Type  |Desc                    |
-|------|------|------------------------|
-|str   |string|The string to capitalize|
-|return|string|The capitalized string  |
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|str   |string|String to capitalize|
+|return|string|Capitalized string  |
 
 ```
 capitalize('rED'); // -> Red
@@ -257,15 +257,15 @@ capitalize('rED'); // -> Red
 
 ## clone 
 
-No documentation.
+TODO
 
 ## cloneDeep 
 
-No documentation.
+TODO
 
 ## contain 
 
-No documentation.
+TODO
 
 ## cookie 
 
@@ -309,7 +309,7 @@ Used to create extend, extendOwn and defaults.
 |--------|--------|------------------------------|
 |keysFn  |function|Function to get object keys   |
 |defaults|boolean |No override when set to true  |
-|return  |function|The result function, extend...|
+|return  |function|Result function, extend...    |
 
 ## defaults 
 
@@ -327,7 +327,7 @@ defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood',
 
 ## define 
 
-No documentation.
+TODO
 
 ## delay 
 
@@ -349,7 +349,7 @@ delay(function (text)
 
 ## delegate 
 
-No documentation.
+TODO
 
 ## difference 
 
@@ -426,7 +426,7 @@ Escape special chars to be used as literals in RegExp constructors.
 
 |Name  |Type  |Desc            |
 |------|------|----------------|
-|str   |string|string to escape|
+|str   |string|String to escape|
 |return|string|Escaped string  |
 
 ```javascript
@@ -562,8 +562,8 @@ Checks if key is a direct property.
 
 |Name  |Type   |Desc                            |
 |------|-------|--------------------------------|
-|obj   |object |The object to query             |
-|key   |string |The path to check               |
+|obj   |object |Object to query                 |
+|key   |string |Path to check                   |
 |return|boolean|True if key is a direct property|
 
 ```javascript
@@ -585,7 +585,7 @@ identity('a'); // -> 'a'
 
 ## idxOf 
 
-Get the index at which the first occurrence of value.
+Get the index at which the first occurrence of value. TODO
 
 |Name       |Type  |Desc                |
 |-----------|------|--------------------|
@@ -688,7 +688,7 @@ isArr({}); // -> false
 
 ## isArrLike 
 
-No documentation.
+TODO
 
 ## isBool 
 
@@ -696,7 +696,7 @@ Check if value is a boolean primitive.
 
 |Name  |Type   |Desc                      |
 |------|-------|--------------------------|
-|val   |*      |The value to check        |
+|val   |*      |Value to check            |
 |return|boolean|True if value is a boolean|
 
 ```javascript
@@ -760,7 +760,7 @@ isEmpty({}); // -> true
 
 ## isEqual 
 
-No documentation.
+TODO
 
 ## isErr 
 
@@ -768,7 +768,7 @@ Check if value is an error.
 
 |Name  |Type   |Desc                     |
 |------|-------|-------------------------|
-|val   |*      |The value to check       |
+|val   |*      |Value to check           |
 |return|boolean|True if value is an error|
 
 ```javascript
@@ -795,7 +795,7 @@ Check if value is a function.
 
 |Name  |Type   |Desc                       |
 |------|-------|---------------------------|
-|val   |*      |The value to check         |
+|val   |*      |Value to check             |
 |return|boolean|True if value is a function|
 
 Generator function is also classified as true.
@@ -809,10 +809,10 @@ isFn(function*() {}); // -> true
 
 Checks if value is classified as a Integer.
 
-|Name  |Type   |Desc                                             |
-|------|-------|-------------------------------------------------|
-|value |*      |The value to check                               |
-|return|boolean|True if value is correctly classified, else false|
+|Name  |Type   |Desc                                 |
+|------|-------|-------------------------------------|
+|value |*      |Value to check                       |
+|return|boolean|True if value is correctly classified|
 
 ## isMatch 
 
@@ -830,7 +830,7 @@ isMatch({a: 1, b: 2}, {a: 1}); // -> true
 
 ## isMobile 
 
-Check whether client is using a mobile browser using ua.
+Check whether client is using a mobile browser using ua. TODO
 
 ## isNaN 
 
@@ -838,7 +838,7 @@ Check if value is an NaN.
 
 |Name  |Type   |Desc                   |
 |------|-------|-----------------------|
-|val   |*      |The value to check     |
+|val   |*      |Value to check         |
 |return|boolean|True if value is an NaN|
 
 Undefined is not an NaN, different from global isNaN function.
@@ -852,10 +852,10 @@ isNaN(NaN); // -> true
 
 Checks if value is classified as a Number primitive or object.
 
-|Name  |Type   |Desc                                             |
-|------|-------|-------------------------------------------------|
-|value |*      |The value to check                               |
-|return|boolean|True if value is correctly classified, else false|
+|Name  |Type   |Desc                                 |
+|------|-------|-------------------------------------|
+|value |*      |Value to check                       |
+|return|boolean|True if value is correctly classified|
 
 ## isObj 
 
@@ -863,7 +863,7 @@ Check if value is the language type of Object.
 
 |Name  |Type   |Desc                      |
 |------|-------|--------------------------|
-|val   |*      |The value to check        |
+|val   |*      |Value to check            |
 |return|boolean|True if value is an object|
 
 [Language Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
@@ -875,7 +875,7 @@ isObj([]); // -> true
 
 ## isPlainObj 
 
-No documentation.
+TODO
 
 ## isPrimitive 
 
@@ -898,7 +898,7 @@ Check if value is a regular expression.
 
 |Name  |Type   |Desc                                 |
 |------|-------|-------------------------------------|
-|val   |*      |The value to check                   |
+|val   |*      |Value to check                       |
 |return|boolean|True if value is a regular expression|
 
 ```javascript
@@ -924,7 +924,7 @@ Check if value is a string primitive.
 
 |Name  |Type   |Desc                               |
 |------|-------|-----------------------------------|
-|val   |*      |The value to check                 |
+|val   |*      |Value to check                     |
 |return|boolean|True if value is a string primitive|
 
 ```javascript
@@ -937,7 +937,7 @@ Check if value is undefined.
 
 |Name  |Type   |Desc                      |
 |------|-------|--------------------------|
-|val   |*      |The value to check        |
+|val   |*      |Value to check            |
 |return|boolean|True if value is undefined|
 
 ```javascript
@@ -965,10 +965,10 @@ kebabCase('foo.bar'); // -> foo-bar
 
 Create an array of the own enumerable property names of object.
 
-|Name  |Type  |Desc                       |
-|------|------|---------------------------|
-|obj   |object|The object to query        |
-|return|array |The array of property names|
+|Name  |Type  |Desc                   |
+|------|------|-----------------------|
+|obj   |object|Object to query        |
+|return|array |Array of property names|
 
 ## last 
 
@@ -985,7 +985,7 @@ last([1, 2]); // -> 2
 
 ## loadJs 
 
-Inject script tag into page with given src value.
+Inject script tag into page with given src value. TODO
 
 ## longest 
 
@@ -1004,12 +1004,12 @@ longest(['a', 'abcde', 'abc']); // -> 'abcde'
 
 Pad string on the left side if it's shorter than length.
 
-|Name  |Type  |Desc                      |
-|------|------|--------------------------|
-|str   |string|The string to pad         |
-|len   |number|The padding length        |
-|chars |string|The string used as padding|
-|return|string|Resulted string           |
+|Name   |Type  |Desc                  |
+|-------|------|----------------------|
+|str    |string|String to pad         |
+|len    |number|Padding length        |
+|[chars]|string|String used as padding|
+|return |string|Resulted string       |
 
 ```javascript
 lpad('a', 5); // -> '    a'
@@ -1051,7 +1051,7 @@ map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 
 ## matcher 
 
-No documentation.
+TODO
 
 ## max 
 
@@ -1140,18 +1140,18 @@ initOnce(); // -> init is invoked once
 
 ## optimizeCb 
 
-No documentation.
+TODO
 
 ## pad 
 
 Pad string on the left and right sides if it's shorter than length.
 
-|Name  |Type  |Desc                      |
-|------|------|--------------------------|
-|str   |string|The string to pad         |
-|len   |number|The padding length        |
-|chars |string|The string used as padding|
-|return|string|Resulted string           |
+|Name  |Type  |Desc                  |
+|------|------|----------------------|
+|str   |string|String to pad         |
+|len   |number|Padding length        |
+|chars |string|String used as padding|
+|return|string|Resulted string       |
 
 ```javascript
 pad('a', 5); // -> '  a  '
@@ -1212,11 +1212,11 @@ random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
 
 Repeat string n-times.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|str   |string|The string to repeat|
-|n     |number|Repeat times        |
-|return|string|Repeated string     |
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|str   |string|String to repeat|
+|n     |number|Repeat times    |
+|return|string|Repeated string |
 
 ```javascript
 repeat('a', 3); // -> 'aaa'
@@ -1249,7 +1249,7 @@ Pad string on the right side if it's shorter than length.
 
 |Name  |Type  |Desc                  |
 |------|------|----------------------|
-|str   |string|The string to pad     |
+|str   |string|String to pad         |
 |len   |number|Padding length        |
 |chars |string|String used as padding|
 |return|string|Resulted string       |
@@ -1279,7 +1279,7 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 
 ## safeCb 
 
-Create callback based on input value.
+Create callback based on input value. TODO
 
 ## size 
 
@@ -1297,7 +1297,7 @@ size([1, 2, 3]); // -> 3
 
 ## slice 
 
-No documentation.
+TODO
 
 ## snakeCase 
 
@@ -1371,7 +1371,7 @@ Check if string starts with the given target string.
 
 |Name  |Type   |Desc                             |
 |------|-------|---------------------------------|
-|str   |string |The string to search             |
+|str   |string |String to search                 |
 |prefix|string |String prefix                    |
 |return|boolean|True if string starts with prefix|
 
@@ -1433,7 +1433,7 @@ stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 
 ## template 
 
-No documentation.
+TODO
 
 ## toArr 
 
@@ -1495,7 +1495,7 @@ toStr([1, 2, 3]); // -> '1,2,3'
 
 ## topoSort 
 
-Topological sorting algorithm.
+Topological sorting algorithm. TODO
 
 ## trim 
 
@@ -1581,7 +1581,7 @@ upperFirst('red'); // -> RED
 
 ## use 
 
-No documentation.
+TODO
 
 ## values 
 

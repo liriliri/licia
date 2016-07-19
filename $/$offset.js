@@ -1,3 +1,6 @@
+/* TODO
+ */
+
 _('$safeNodes');
 
 exports = function (nodes)

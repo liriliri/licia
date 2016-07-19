@@ -1,8 +1,9 @@
-// TODO
+/* TODO
+ */
 
 _('extendOwn isMatch');
 
-exports = function (attrs)
+function exports(attrs)
 {
     attrs = extendOwn({}, attrs);
 
@@ -10,4 +11,4 @@ exports = function (attrs)
     {
         return isMatch(obj, attrs);
     };
-};
+}

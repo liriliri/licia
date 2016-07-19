@@ -1,6 +1,9 @@
+/* TODO
+ */
+
 _('isUndef');
 
-exports = function (func, ctx, argCount)
+function exports(func, ctx, argCount)
 {
     if (isUndef(ctx)) return func;
 
@@ -24,4 +27,4 @@ exports = function (func, ctx, argCount)
     {
         return func.apply(ctx, arguments);
     };
-};
+}

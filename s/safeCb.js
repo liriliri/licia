@@ -1,4 +1,4 @@
-/* Create callback based on input value.
+/* Create callback based on input value. TODO
  */
 
 _('isFn isObj optimizeCb matcher identity');

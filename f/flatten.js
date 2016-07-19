@@ -12,6 +12,11 @@
 
 _('isArr');
 
+function exports(arr)
+{
+    return flat(arr, []);
+}
+
 function flat(arr, res)
 {
     var len = arr.length,
@@ -26,8 +31,3 @@ function flat(arr, res)
 
     return res;
 }
-
-exports = function (arr)
-{
-    return flat(arr, []);
-};

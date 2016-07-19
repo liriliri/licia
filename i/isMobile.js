@@ -1,4 +1,4 @@
-/* Check whether client is using a mobile browser using ua.
+/* Check whether client is using a mobile browser using ua. TODO
  */
 
 var cache = {};

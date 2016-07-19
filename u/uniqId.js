@@ -12,9 +12,9 @@
 
 var idCounter = 0;
 
-exports = function (prefix)
+function exports(prefix)
 {
     var id = ++idCounter + '';
 
     return prefix ? prefix + id : id;
-};
+}

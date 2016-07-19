@@ -1,3 +1,6 @@
+/* TODO
+ */
+
 _('Class contain');
 
 function retTrue()  { return true }

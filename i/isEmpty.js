@@ -13,7 +13,7 @@
 
 _('isArrLike isArr isStr isArgs keys');
 
-exports = function (val)
+function exports(val)
 {
     if (val == null) return true;
 
@@ -23,4 +23,4 @@ exports = function (val)
     }
 
     return keys(val).length === 0;
-};
+}

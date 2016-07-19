@@ -13,9 +13,7 @@
 
 _('filter');
 
-function isEqual(a, b) { return a === b }
-
-exports = function (arr, compare)
+function exports(arr, compare)
 {
     compare = compare || isEqual;
 
@@ -30,4 +28,9 @@ exports = function (arr, compare)
 
         return true;
     });
-};
+}
+
+function isEqual(a, b)
+{
+    return a === b;
+}

@@ -1,4 +1,5 @@
-// TODO
+/* TODO
+ */
 
 var arrProto = Array.prototype;
 

@@ -12,7 +12,7 @@
 
 _('objToStr');
 
-exports = function (val)
+function exports(val)
 {
     return objToStr(val) === '[object Date]';
-};
+}
