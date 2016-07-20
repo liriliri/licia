@@ -13,6 +13,12 @@ as a mini version of npm suitable for tiny packages.
 Unable to find one suitable? Fork it on GitHub, add the module and submit a pull
 request.
 
+Please check [Eustia Documentation](http://liriliri.github.io/eustia/docs.html#create-module) 
+about how to write an eustia module.
+
+> To run test for a specified module, run `node test <moduleName>` to generate 
+test files first.
+
 ### Rules
 
 * Must have full documentation about usage.
