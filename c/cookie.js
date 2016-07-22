@@ -7,7 +7,7 @@
  * |key   |string|Cookie key                |
  * |return|string|Corresponding cookie value|
  *
- * ### set: set cookie value.
+ * ### set: Set cookie value.
  *
  * |Name     |Type   |Desc          |
  * |---------|-------|--------------|
@@ -16,7 +16,7 @@
  * |[options]|object |Cookie options|
  * |return   |exports|Module cookie |
  *
- * ### remove: remove cookie value.
+ * ### remove: Remove cookie value.
  *
  * |Name     |Type   |Desc          |
  * |---------|-------|--------------|

@@ -13,7 +13,8 @@ $btn.html('eustia');
 
 Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
 
-Get the value of an attribute for the first element in the set of matched elements.
+Get the value of an attribute for the first element in the set of matched
+elements.
 
 |Name   |Type                |Desc                            |
 |-------|--------------------|--------------------------------|
@@ -34,6 +35,14 @@ Set one or more attributes for the set of matched elements.
 |element   |string array element|Elements to manipulate                |
 |attributes|string              |Object of attribute-value pairs to set|
 
+### remove: Remove an attribute from each element in the set of matched
+elements.
+
+|Name   |Type                |Desc                  |
+|-------|--------------------|----------------------|
+|element|string array element|Elements to manipulate|
+|name   |string              |Attribute name        |
+
 ```javascript
 $attr('#test', 'attr1', 'test');
 $attr('#test', 'attr1'); // -> test
@@ -46,10 +55,44 @@ $attr('#test', {
 
 ## $class 
 
-Class manipulation. TODO
+Element class manipulations.
+
+### add: Add the specified class(es) to each element in the set of matched elements.
+
+|Name   |Type                |Desc                  |
+|-------|--------------------|----------------------|
+|element|string array element|Elements to manipulate|
+|names  |string array        |Classes to add        |
+
+### has: Determine whether any of the matched elements are assigned the given
+class.
+
+|Name   |Type                |Desc                                 |
+|-------|--------------------|-------------------------------------|
+|element|string array element|Elements to manipulate               |
+|name   |string              |Class name                           |
+|return |boolean             |True if elements has given class name|
+
+### toggle: Add or remove one or more classes from each element in the set of
+matched elements, depending on either the class's presence or the value of
+the state argument.
+
+|Name   |Type                |Desc                  |
+|-------|--------------------|----------------------|
+|element|string array element|Elements to manipulate|
+|name   |string              |Class name to toggle  |
+
+### remove: Remove a single class, multiple classes, or all classes from each
+element in the set of matched elements.
+
+|Name   |Type                |Desc                  |
+|-------|--------------------|----------------------|
+|element|string array element|Elements to manipulate|
+|names  |string              |Class names to remove |
 
 ```javascript
 $class.add('#test', 'class1');
+$class.add('#test', ['class1', 'class2']);
 $class.has('#test', 'class1'); // -> true
 $class.remove('#test', 'class1');
 $class.has('#test', 'class1'); // -> false
@@ -312,7 +355,7 @@ Simple api for handling browser cookies.
 |key   |string|Cookie key                |
 |return|string|Corresponding cookie value|
 
-### set: set cookie value.
+### set: Set cookie value.
 
 |Name     |Type   |Desc          |
 |---------|-------|--------------|
@@ -321,7 +364,7 @@ Simple api for handling browser cookies.
 |[options]|object |Cookie options|
 |return   |exports|Module cookie |
 
-### remove: remove cookie value.
+### remove: Remove cookie value.
 
 |Name     |Type   |Desc          |
 |---------|-------|--------------|

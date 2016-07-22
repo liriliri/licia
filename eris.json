@@ -1,7 +1,7 @@
 {
     "$": "jQuery like style dom manipulator. TODO",
     "$attr": "Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.",
-    "$class": "Class manipulation. TODO",
+    "$class": "Element class manipulations.",
     "$css": "Css manipulation. TODO",
     "$data": "Data manipulation TODO",
     "$event": "bind events to certain dom elements. TODO",
