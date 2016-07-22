@@ -10,12 +10,12 @@
  * ```
  */
 
-_('toArr some $safeNodes');
+_('toArr some $safeEls');
 
 exports = {
     add: function (nodes, name)
     {
-        nodes = $safeNodes(nodes);
+        nodes = $safeEls(nodes);
         var names = toArr(name);
 
         each(nodes, function (node)
@@ -32,7 +32,7 @@ exports = {
     },
     has: function (nodes, name)
     {
-        nodes = $safeNodes(nodes);
+        nodes = $safeEls(nodes);
 
         var regName = new RegExp('(^|\\s)' + name + '(\\s|$)');
 
@@ -43,7 +43,7 @@ exports = {
     },
     toggle: function (nodes, name)
     {
-        nodes = $safeNodes(nodes);
+        nodes = $safeEls(nodes);
 
         each(nodes, function (node)
         {
@@ -54,7 +54,7 @@ exports = {
     },
     remove: function (nodes, name)
     {
-        nodes = $safeNodes(nodes);
+        nodes = $safeEls(nodes);
         var names = toArr(name);
 
         each(nodes, function (node)

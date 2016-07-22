@@ -8,7 +8,7 @@
  * ```
  */
 
-_('delegate isUndef $safeNodes');
+_('delegate isUndef $safeEls');
 
 exports = {
     on: eventFactory('add'),
@@ -19,7 +19,7 @@ function eventFactory(type)
 {
     return function (nodes, event, selector, handler)
     {
-        nodes = $safeNodes(nodes);
+        nodes = $safeEls(nodes);
 
         if (isUndef(handler))
         {

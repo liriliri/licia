@@ -1,7 +1,7 @@
 /* TODO
  */
 
-_('isUndef each $safeNodes');
+_('isUndef each $safeEls');
 
 exports = {
     html: propFactory('innerHTML'),
@@ -13,7 +13,7 @@ function propFactory(name)
 {
     return function (nodes, val)
     {
-        nodes = $safeNodes(nodes);
+        nodes = $safeEls(nodes);
 
         if (isUndef(val)) return nodes[0][name];
 

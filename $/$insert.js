@@ -5,7 +5,7 @@
  * ```
  */
 
-_('each $safeNodes');
+_('each $safeEls');
 
 exports = {
     before: insertFactory('beforebegin'),
@@ -18,7 +18,7 @@ function insertFactory(type)
 {
     return function (nodes, val)
     {
-        nodes = $safeNodes(nodes);
+        nodes = $safeEls(nodes);
 
         each(nodes, function (node)
         {

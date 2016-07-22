@@ -1,6 +1,6 @@
 {
     "$": "jQuery like style dom manipulator. TODO",
-    "$attr": "Attributes manipulation. TODO",
+    "$attr": "Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.",
     "$class": "Class manipulation. TODO",
     "$css": "Css manipulation. TODO",
     "$data": "Data manipulation TODO",
@@ -9,7 +9,7 @@
     "$offset": "TODO",
     "$property": "TODO",
     "$remove": "TODO",
-    "$safeNodes": "TODO",
+    "$safeEls": "Convert value into an array, if it's a string, do querySelector.",
     "$show": "Show elements. TODO",
     "Class": "Create JavaScript class.",
     "Emitter": "TODO",

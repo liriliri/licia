@@ -1,20 +1,45 @@
-/* Attributes manipulation. TODO
+/* Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
+ *
+ * Get the value of an attribute for the first element in the set of matched elements.
+ *
+ * |Name   |Type                |Desc                            |
+ * |-------|--------------------|--------------------------------|
+ * |element|string array element|Elements to manipulate          |
+ * |name   |string              |Attribute name                  |
+ * |return |string              |Attribute value of first element|
+ *
+ * Set one or more attributes for the set of matched elements.
+ *
+ * |Name   |Type                |Desc                  |
+ * |-------|--------------------|----------------------|
+ * |element|string array element|Elements to manipulate|
+ * |name   |string              |Attribute name        |
+ * |value  |string              |Attribute value       |
+ *
+ * |Name      |Type                |Desc                                  |
+ * |----------|--------------------|--------------------------------------|
+ * |element   |string array element|Elements to manipulate                |
+ * |attributes|string              |Object of attribute-value pairs to set|
  *
  * ```javascript
  * $attr('#test', 'attr1', 'test');
  * $attr('#test', 'attr1'); // -> test
  * $attr.remove('#test', 'attr1');
+ * $attr('#test', {
+ *     'attr1': 'test',
+ *     'attr2': 'test'
+ * });
  * ```
  */
 
-_('toArr isObj isStr each isUndef $safeNodes');
+_('toArr isObj isStr each isUndef $safeEls');
 
-function exports(nodes, name, val)
+function exports(els, name, val)
 {
-    nodes = $safeNodes(nodes);
+    els = $safeEls(els);
 
     var isGetter = isUndef(val) && isStr(name);
-    if (isGetter) return getAttr(nodes[0], name);
+    if (isGetter) return getAttr(els[0], name);
 
     var attrs = name;
     if (!isObj(attrs))
@@ -23,15 +48,15 @@ function exports(nodes, name, val)
         attrs[name] = val;
     }
 
-    setAttr(nodes, attrs);
+    setAttr(els, attrs);
 }
 
-exports.remove = function (nodes, names)
+exports.remove = function (els, names)
 {
-    nodes = $safeNodes(nodes);
+    els = $safeEls(els);
     names = toArr(names);
 
-    each(nodes, function (node)
+    each(els, function (node)
     {
         each(names, function (name)
         {
@@ -40,18 +65,18 @@ exports.remove = function (nodes, names)
     });
 };
 
-function getAttr(node, name)
+function getAttr(el, name)
 {
-    return node.getAttribute(name);
+    return el.getAttribute(name);
 }
 
-function setAttr(nodes, attrs)
+function setAttr(els, attrs)
 {
-    each(nodes, function (node)
+    each(els, function (el)
     {
         each(attrs, function (val, name)
         {
-            node.setAttribute(name, val);
+            el.setAttribute(name, val);
         });
     })
 }

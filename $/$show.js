@@ -5,11 +5,11 @@
  * ```
  */
 
-_('each $safeNodes');
+_('each $safeEls');
 
 function exports(nodes)
 {
-    nodes = $safeNodes(nodes);
+    nodes = $safeEls(nodes);
 
     each(nodes, function (node)
     {

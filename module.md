@@ -11,12 +11,37 @@ $btn.html('eustia');
 
 ## $attr 
 
-Attributes manipulation. TODO
+Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
+
+Get the value of an attribute for the first element in the set of matched elements.
+
+|Name   |Type                |Desc                            |
+|-------|--------------------|--------------------------------|
+|element|string array element|Elements to manipulate          |
+|name   |string              |Attribute name                  |
+|return |string              |Attribute value of first element|
+
+Set one or more attributes for the set of matched elements.
+
+|Name   |Type                |Desc                  |
+|-------|--------------------|----------------------|
+|element|string array element|Elements to manipulate|
+|name   |string              |Attribute name        |
+|value  |string              |Attribute value       |
+
+|Name      |Type                |Desc                                  |
+|----------|--------------------|--------------------------------------|
+|element   |string array element|Elements to manipulate                |
+|attributes|string              |Object of attribute-value pairs to set|
 
 ```javascript
 $attr('#test', 'attr1', 'test');
 $attr('#test', 'attr1'); // -> test
 $attr.remove('#test', 'attr1');
+$attr('#test', {
+    'attr1': 'test',
+    'attr2': 'test'
+});
 ```
 
 ## $class 
@@ -82,9 +107,18 @@ TODO
 
 TODO
 
-## $safeNodes 
+## $safeEls 
 
-TODO
+Convert value into an array, if it's a string, do querySelector.
+
+|Name  |Type                |Desc             |
+|------|--------------------|-----------------|
+|value |element array string|Value to convert |
+|return|array               |Array of elements|
+
+```
+$safeEls('.test'); // -> Array of elements with test class
+```
 
 ## $show 
 

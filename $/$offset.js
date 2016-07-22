@@ -1,11 +1,11 @@
 /* TODO
  */
 
-_('$safeNodes');
+_('$safeEls');
 
 exports = function (nodes)
 {
-    nodes = $safeNodes(nodes);
+    nodes = $safeEls(nodes);
 
     var node = nodes[0];
 

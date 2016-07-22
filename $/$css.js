@@ -8,11 +8,11 @@
  * ```
  */
 
-_('isStr isObj camelCase kebabCase isUndef contain isNum $safeNodes');
+_('isStr isObj camelCase kebabCase isUndef contain isNum $safeEls');
 
 function exports(nodes, name, val)
 {
-    nodes = $safeNodes(nodes);
+    nodes = $safeEls(nodes);
 
     var isGetter = isUndef(val) && isStr(name);
     if (isGetter) return getCss(nodes[0], name);
