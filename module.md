@@ -13,8 +13,7 @@ $btn.html('eustia');
 
 Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
 
-Get the value of an attribute for the first element in the set of matched
-elements.
+Get the value of an attribute for the first element in the set of matched elements.
 
 |Name   |Type                |Desc                            |
 |-------|--------------------|--------------------------------|
@@ -35,8 +34,7 @@ Set one or more attributes for the set of matched elements.
 |element   |string array element|Elements to manipulate                |
 |attributes|string              |Object of attribute-value pairs to set|
 
-### remove: Remove an attribute from each element in the set of matched
-elements.
+### remove: Remove an attribute from each element in the set of matched elements.
 
 |Name   |Type                |Desc                  |
 |-------|--------------------|----------------------|
@@ -64,8 +62,7 @@ Element class manipulations.
 |element|string array element|Elements to manipulate|
 |names  |string array        |Classes to add        |
 
-### has: Determine whether any of the matched elements are assigned the given
-class.
+### has: Determine whether any of the matched elements are assigned the given class.
 
 |Name   |Type                |Desc                                 |
 |-------|--------------------|-------------------------------------|
@@ -73,17 +70,14 @@ class.
 |name   |string              |Class name                           |
 |return |boolean             |True if elements has given class name|
 
-### toggle: Add or remove one or more classes from each element in the set of
-matched elements, depending on either the class's presence or the value of
-the state argument.
+### toggle: Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.
 
 |Name   |Type                |Desc                  |
 |-------|--------------------|----------------------|
 |element|string array element|Elements to manipulate|
 |name   |string              |Class name to toggle  |
 
-### remove: Remove a single class, multiple classes, or all classes from each
-element in the set of matched elements.
+### remove: Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
 
 |Name   |Type                |Desc                  |
 |-------|--------------------|----------------------|
