@@ -60,7 +60,7 @@
     "isDate": "Check if value is classified as a Date object.",
     "isEl": "Check if value is a DOM element.",
     "isEmpty": "Check if value is an empty object or array.",
-    "isEqual": "TODO",
+    "isEqual": "Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.",
     "isErr": "Check if value is an error.",
     "isFinite": "Check if value is a finite primitive number.",
     "isFn": "Check if value is a function.",

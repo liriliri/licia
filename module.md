@@ -831,7 +831,17 @@ isEmpty({}); // -> true
 
 ## isEqual 
 
-TODO
+Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.
+
+|Name  |Type   |Desc                         |
+|------|-------|-----------------------------|
+|value |*      |Value to compare             |
+|other |*      |Other value to compare       |
+|return|boolean|True if values are equivalent|
+
+```javascript
+isEqual([1, 2, 3], [1, 2, 3]); // -> true
+```
 
 ## isErr 
 
