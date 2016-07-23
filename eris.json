@@ -119,7 +119,7 @@
     "toInt": "Convert value to an integer.",
     "toNum": "Convert value to a number.",
     "toStr": "Convert value to a string.",
-    "topoSort": "Topological sorting algorithm. TODO",
+    "topoSort": "Topological sorting algorithm.",
     "trim": "Remove chars or white-spaces from beginning end of string.",
     "unescape": "Convert HTML entities back, the inverse of escape.",
     "union": "Create an array of unique values, in order, from all given arrays.",

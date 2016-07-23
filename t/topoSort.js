@@ -1,4 +1,13 @@
-/* Topological sorting algorithm. TODO
+/* Topological sorting algorithm.
+ *
+ * |Name  |Type |Desc        |
+ * |------|-----|------------|
+ * |edges |array|Dependencies|
+ * |return|array|Sorted order|
+ *
+ * ```javascript
+ * topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
+ * ```
  */
 
 function exports(edges)
