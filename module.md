@@ -142,7 +142,15 @@ TODO
 
 ## $remove 
 
-TODO
+Remove the set of matched elements from the DOM.
+
+|Name   |Type                |Desc              |
+|-------|--------------------|------------------|
+|element|string array element|Elements to delete|
+
+```javascript
+$remove('#test');
+```
 
 ## $safeEls 
 

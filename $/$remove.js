@@ -1,16 +1,24 @@
-/* TODO
+/* Remove the set of matched elements from the DOM.
+ *
+ * |Name   |Type                |Desc              |
+ * |-------|--------------------|------------------|
+ * |element|string array element|Elements to delete|
+ *
+ * ```javascript
+ * $remove('#test');
+ * ```
  */
 
 _('each $safeEls');
 
-exports = function (nodes)
+function exports(els)
 {
-    nodes = $safeEls(nodes);
+    els = $safeEls(els);
 
-    each(nodes, function (node)
+    each(els, function (el)
     {
-        var parent = node.parentNode;
+        var parent = el.parentNode;
 
-        if (parent) parent.removeChild(node);
+        if (parent) parent.removeChild(el);
     });
-};
+}

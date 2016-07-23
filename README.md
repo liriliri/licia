@@ -2,6 +2,9 @@
 
 Eustia official module repository.
 
+> To check all current available functions, see 
+[module.md](https://github.com/liriliri/eris/blob/master/module.md).
+
 ## Another Lodash?
 
 No. The goal of Eustia is to provide a huge number of useful and small

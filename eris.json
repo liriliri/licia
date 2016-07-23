@@ -8,7 +8,7 @@
     "$insert": "Insert html on different position. TODO",
     "$offset": "TODO",
     "$property": "TODO",
-    "$remove": "TODO",
+    "$remove": "Remove the set of matched elements from the DOM.",
     "$safeEls": "Convert value into an array, if it's a string, do querySelector.",
     "$show": "Show elements. TODO",
     "Class": "Create JavaScript class.",
