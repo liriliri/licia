@@ -9,7 +9,7 @@ it('get node\'s property', function ()
     var $el = $dom.find('.getter');
 
     $el.text('Eustia rocks!');
-    expect($text($el)).to.equal('Eustia rocks!');
+    expect($property.text($el)).to.equal('Eustia rocks!');
 });
 
 it('set node\'s property', function ()
@@ -18,7 +18,7 @@ it('set node\'s property', function ()
 
     var $el = $dom.find('.setter');
 
-    $text($el, 'Eustia rocks!!');
+    $property.text($el, 'Eustia rocks!!');
     expect($el.text()).to.equal('Eustia rocks!!');
 });
 

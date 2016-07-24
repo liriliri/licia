@@ -1,4 +1,8 @@
-/* Show elements. TODO
+/* Show elements.
+ *
+ * |Name   |Type                |Desc            |
+ * |-------|--------------------|----------------|
+ * |element|string array element|Elements to show|
  *
  * ```javascript
  * $show('#test');
@@ -7,39 +11,39 @@
 
 _('each $safeEls');
 
-function exports(nodes)
+function exports(els)
 {
-    nodes = $safeEls(nodes);
+    els = $safeEls(els);
 
-    each(nodes, function (node)
+    each(els, function (el)
     {
-        if (isHidden(node))
+        if (isHidden(el))
         {
-            node.style.display = getDefDisplay(node.nodeName);
+            el.style.display = getDefDisplay(el.nodeName);
         }
     });
 }
 
-function isHidden(node)
+function isHidden(el)
 {
-    return getComputedStyle(node, '').getPropertyValue('display') == 'none';
+    return getComputedStyle(el, '').getPropertyValue('display') == 'none';
 }
 
 var elDisplay = {};
 
-function getDefDisplay(nodeName)
+function getDefDisplay(elName)
 {
     var el, display;
 
-    if (!elDisplay[nodeName])
+    if (!elDisplay[elName])
     {
-        el = document.createElement(nodeName);
+        el = document.createElement(elName);
         document.documentElement.appendChild(el);
         display = getComputedStyle(el, '').getPropertyValue("display");
         el.parentNode.removeChild(el);
         display == "none" && (display = "block");
-        elDisplay[nodeName] = display;
+        elDisplay[elName] = display;
     }
 
-    return elDisplay[nodeName];
+    return elDisplay[elName];
 }

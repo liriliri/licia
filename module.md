@@ -157,11 +157,30 @@ $insert.append('#test', '<div>test</div>');
 
 ## $offset 
 
-TODO
+Get the position of the element in document.
+
+|Name   |Type                |Desc                  |
+|-------|--------------------|----------------------|
+|element|string array element|Elements to get offset|
+
+```javascript
+$offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
+```
 
 ## $property 
 
-TODO
+Element property html, text, val getter and setter.
+
+###html: Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.
+
+###text: Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.
+
+###val: Get the current value of the first element in the set of matched elements or set the value of every matched element.
+
+```javascript
+$property.html('#test', 'eris');
+$property.html('#test'); // -> eris
+```
 
 ## $remove 
 
@@ -190,7 +209,11 @@ $safeEls('.test'); // -> Array of elements with test class
 
 ## $show 
 
-Show elements. TODO
+Show elements.
+
+|Name   |Type                |Desc            |
+|-------|--------------------|----------------|
+|element|string array element|Elements to show|
 
 ```javascript
 $show('#test');
