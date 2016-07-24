@@ -1,13 +1,17 @@
 /* Simple api for handling browser cookies.
  *
- * ### get: get cookie value.
+ * ### get
+ *
+ * Get cookie value.
  *
  * |Name  |Type  |Desc                      |
  * |------|------|--------------------------|
  * |key   |string|Cookie key                |
  * |return|string|Corresponding cookie value|
  *
- * ### set: Set cookie value.
+ * ### set
+ *
+ * Set cookie value.
  *
  * |Name     |Type   |Desc          |
  * |---------|-------|--------------|
@@ -16,7 +20,9 @@
  * |[options]|object |Cookie options|
  * |return   |exports|Module cookie |
  *
- * ### remove: Remove cookie value.
+ * ### remove
+ *
+ * Remove cookie value.
  *
  * |Name     |Type   |Desc          |
  * |---------|-------|--------------|

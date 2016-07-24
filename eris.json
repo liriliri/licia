@@ -13,7 +13,7 @@
     "$show": "Show elements.",
     "Class": "Create JavaScript class.",
     "Emitter": "TODO",
-    "Select": "jQuery like dom manipulator. TODO",
+    "Select": "Simple wrapper of querySelectorAll to make dom selection easier.",
     "State": "TODO",
     "Uri": "TODO",
     "after": "Create a function that invokes once it's called n or more times.",

@@ -1,4 +1,14 @@
-/* jQuery like dom manipulator. TODO
+/* Simple wrapper of querySelectorAll to make dom selection easier.
+ *
+ * ### Constructor
+ *
+ * |Name    |Type  |Desc               |
+ * |--------|------|-------------------|
+ * |selector|string|Dom selector string|
+ *
+ * ```javascript
+ * var test = new Select('#test');
+ * ```
  */
 
 _('Class isStr each');

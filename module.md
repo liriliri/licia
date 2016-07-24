@@ -34,7 +34,9 @@ Set one or more attributes for the set of matched elements.
 |element   |string array element|Elements to manipulate                |
 |attributes|object              |Object of attribute-value pairs to set|
 
-### remove: Remove an attribute from each element in the set of matched elements.
+### remove
+
+Remove an attribute from each element in the set of matched elements.
 
 |Name   |Type                |Desc                  |
 |-------|--------------------|----------------------|
@@ -55,14 +57,18 @@ $attr('#test', {
 
 Element class manipulations.
 
-### add: Add the specified class(es) to each element in the set of matched elements.
+### add
+
+Add the specified class(es) to each element in the set of matched elements.
 
 |Name   |Type                |Desc                  |
 |-------|--------------------|----------------------|
 |element|string array element|Elements to manipulate|
 |names  |string array        |Classes to add        |
 
-### has: Determine whether any of the matched elements are assigned the given class.
+### has
+
+Determine whether any of the matched elements are assigned the given class.
 
 |Name   |Type                |Desc                                 |
 |-------|--------------------|-------------------------------------|
@@ -70,14 +76,18 @@ Element class manipulations.
 |name   |string              |Class name                           |
 |return |boolean             |True if elements has given class name|
 
-### toggle: Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.
+### toggle
+
+Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.
 
 |Name   |Type                |Desc                  |
 |-------|--------------------|----------------------|
 |element|string array element|Elements to manipulate|
 |name   |string              |Class name to toggle  |
 
-### remove: Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
+### remove
+
+Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
 
 |Name   |Type                |Desc                  |
 |-------|--------------------|----------------------|
@@ -171,11 +181,17 @@ $offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
 
 Element property html, text, val getter and setter.
 
-###html: Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.
+### html
 
-###text: Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.
+Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.
 
-###val: Get the current value of the first element in the set of matched elements or set the value of every matched element.
+### text
+
+Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.
+
+### val
+
+Get the current value of the first element in the set of matched elements or set the value of every matched element.
 
 ```javascript
 $property.html('#test', 'eris');
@@ -271,7 +287,17 @@ TODO
 
 ## Select 
 
-jQuery like dom manipulator. TODO
+Simple wrapper of querySelectorAll to make dom selection easier.
+
+### Constructor
+
+|Name    |Type  |Desc               |
+|--------|------|-------------------|
+|selector|string|Dom selector string|
+
+```javascript
+var test = new Select('#test');
+```
 
 ## State 
 
@@ -396,14 +422,18 @@ TODO
 
 Simple api for handling browser cookies.
 
-### get: get cookie value.
+### get
+
+Get cookie value.
 
 |Name  |Type  |Desc                      |
 |------|------|--------------------------|
 |key   |string|Cookie key                |
 |return|string|Corresponding cookie value|
 
-### set: Set cookie value.
+### set
+
+Set cookie value.
 
 |Name     |Type   |Desc          |
 |---------|-------|--------------|
@@ -412,7 +442,9 @@ Simple api for handling browser cookies.
 |[options]|object |Cookie options|
 |return   |exports|Module cookie |
 
-### remove: Remove cookie value.
+### remove
+
+Remove cookie value.
 
 |Name     |Type   |Desc          |
 |---------|-------|--------------|

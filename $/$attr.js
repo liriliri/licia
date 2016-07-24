@@ -21,7 +21,9 @@
  * |element   |string array element|Elements to manipulate                |
  * |attributes|object              |Object of attribute-value pairs to set|
  *
- * ### remove: Remove an attribute from each element in the set of matched elements.
+ * ### remove
+ *
+ * Remove an attribute from each element in the set of matched elements.
  *
  * |Name   |Type                |Desc                  |
  * |-------|--------------------|----------------------|
