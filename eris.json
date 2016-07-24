@@ -54,7 +54,7 @@
     "invert": "Create an object composed of the inverted keys and values of object.",
     "isArgs": "Check if value is classified as an arguments object.",
     "isArr": "Check if value is an `Array` object.",
-    "isArrLike": "TODO",
+    "isArrLike": "Check if value is array-like.",
     "isBool": "Check if value is a boolean primitive.",
     "isBuffer": "Check if value is a buffer.",
     "isDate": "Check if value is classified as a Date object.",

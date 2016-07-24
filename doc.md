@@ -866,7 +866,18 @@ isArr({}); // -> false
 
 ## isArrLike 
 
-TODO
+Check if value is array-like.
+
+|Name  |Type   |Desc                       |
+|------|-------|---------------------------|
+|value |*      |Value to check             |
+|return|boolean|True if value is array like|
+
+```javascript
+isArrLike('test'); // -> true
+isArrLike(document.body.children); // -> true;
+isArrLike([1, 2, 3]); // -> true
+```
 
 ## isBool 
 
