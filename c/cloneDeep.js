@@ -17,7 +17,7 @@ function mapObject(obj, iteratee)
     return newObj;
 }
 
-exports = function (obj)
+function exports(obj)
 {
     if (isArr(obj))
     {
@@ -36,4 +36,4 @@ exports = function (obj)
     }
 
     return obj;
-};
+}

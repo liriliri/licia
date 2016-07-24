@@ -408,7 +408,18 @@ capitalize('rED'); // -> Red
 
 ## clone 
 
-TODO
+Create a shallow-copied clone of the provided plain object.
+
+Any nested objects or arrays will be copied by reference, not duplicated.
+
+|Name  |Type|Desc          |
+|------|----|--------------|
+|value |*   |Value to clone|
+|return|*   |Cloned value  |
+
+```javascript
+clone({name: 'eustia'}); // -> {name: 'eustia'}
+```
 
 ## cloneDeep 
 
@@ -416,7 +427,17 @@ TODO
 
 ## contain 
 
-TODO
+Check if the value is present in the list.
+
+|Name  |Type   |Desc                                |
+|------|-------|------------------------------------|
+|array |array  |Target list                         |
+|value |*      |Value to check                      |
+|return|boolean|True if value is present in the list|
+
+```javascript
+contain([1, 2, 3], 1); // -> true
+```
 
 ## cookie 
 
