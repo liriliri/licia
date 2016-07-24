@@ -3,7 +3,7 @@
 Eustia official module repository.
 
 > To check all current available functions, see 
-[module.md](https://github.com/liriliri/eris/blob/master/module.md).
+[doc.md](https://github.com/liriliri/eris/blob/master/doc.md).
 
 ## Another Lodash?
 

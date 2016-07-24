@@ -14,15 +14,15 @@ function buildAll(cb)
         include: util.keys(eris),
         enableLog: true,
         library: '$_abcdefghijklmnopqrstuvwxyz'.split(''),
-        output: './test/module.js'
+        output: './test/doc.js'
     }, cb);
 }
 
 function buildDoc()
 {
     eustia.doc({
-        input: './test/module.js',
+        input: './test/doc.js',
         format: 'md',
-        output: './module.md'
+        output: './doc.md'
     });
 }
