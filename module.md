@@ -11,7 +11,7 @@ $btn.html('eustia');
 
 ## $attr 
 
-Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
+Element attribute manipulation.
 
 Get the value of an attribute for the first element in the set of matched elements.
 
@@ -32,7 +32,7 @@ Set one or more attributes for the set of matched elements.
 |Name      |Type                |Desc                                  |
 |----------|--------------------|--------------------------------------|
 |element   |string array element|Elements to manipulate                |
-|attributes|string              |Object of attribute-value pairs to set|
+|attributes|object              |Object of attribute-value pairs to set|
 
 ### remove: Remove an attribute from each element in the set of matched elements.
 
@@ -96,13 +96,36 @@ $class.has('#test', 'class1'); // -> true
 
 ## $css 
 
-Css manipulation. TODO
+Element css manipulation.
+
+Get the computed style properties for the first element in the set of matched elements.
+
+|Name   |Type                |Desc                      |
+|-------|--------------------|--------------------------|
+|element|string array element|Elements to manipulate    |
+|name   |string              |Property name             |
+|return |string              |Css value of first element|
+
+Set one or more CSS properties for the set of matched elements.
+
+|Name   |Type                |Desc                  |
+|-------|--------------------|----------------------|
+|element|string array element|Elements to manipulate|
+|name   |string              |Property name         |
+|value  |string              |Css value             |
+
+|Name      |Type                |Desc                            |
+|----------|--------------------|--------------------------------|
+|element   |string array element|Elements to manipulate          |
+|properties|object              |Object of css-value pairs to set|
 
 ```javascript
 $css('#test', {
     'color': '#fff',
     'background': 'black'
 });
+$css('#test', 'display', 'block');
+$css('#test', 'color'); // -> #fff
 ```
 
 ## $data 

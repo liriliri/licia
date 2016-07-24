@@ -1,4 +1,4 @@
-/* Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
+/* Element attribute manipulation.
  *
  * Get the value of an attribute for the first element in the set of matched elements.
  *
@@ -19,7 +19,7 @@
  * |Name      |Type                |Desc                                  |
  * |----------|--------------------|--------------------------------------|
  * |element   |string array element|Elements to manipulate                |
- * |attributes|string              |Object of attribute-value pairs to set|
+ * |attributes|object              |Object of attribute-value pairs to set|
  *
  * ### remove: Remove an attribute from each element in the set of matched elements.
  *
