@@ -26,6 +26,7 @@ test files first.
 
 * Must have full documentation about usage.
 * Must have test.
+* Must named with **a-zA-Z$** characters only.
 * Must not be repeated. (e.g. leftPad is not allowed because there is already a
   module called lpad)
 

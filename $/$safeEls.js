@@ -5,7 +5,7 @@
  * |value |element array string|Value to convert |
  * |return|array               |Array of elements|
  *
- * ```
+ * ```javascript
  * $safeEls('.test'); // -> Array of elements with test class
  * ```
  */
