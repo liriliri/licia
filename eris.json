@@ -104,7 +104,7 @@
     "rtrim": "Remove chars or white-spaces from end of string.",
     "safeCb": "Create callback based on input value. TODO",
     "size": "Get size of object, length of array like object or the number of keys.",
-    "slice": "TODO",
+    "slice": "Create slice of source array or array-like object.",
     "snakeCase": "Convert string to \"snakeCase\".",
     "some": "Check if predicate return truthy for any element.",
     "spaceCase": "Convert string to \"spaceCase\".",
