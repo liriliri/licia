@@ -1,7 +1,48 @@
-/* TODO
+/* Event emitter class which provides observer pattern.
+ *
+ * ### on
+ *
+ * Bind event.
+ *
+ * ### off
+ *
+ * Unbind event.
+ *
+ * ### on
+ *
+ * Bind event that trigger once.
+ *
+ * |Name    |Type    |Desc          |
+ * |--------|--------|--------------|
+ * |event   |string  |Event name    |
+ * |listener|function|Event listener|
+ *
+ * ### emit
+ *
+ * Emit event.
+ *
+ * |Name   |Type    |Desc                        |
+ * |-------|--------|----------------------------|
+ * |event  |string  |Event name                  |
+ * |...args|*       |Arguments passed to listener|
+ *
+ * ### mixin
+ *
+ * Static: Mixin object class methods.
+ *
+ * |Name|Type  |Desc           |
+ * |----|------|---------------|
+ * |obj |object|Object to mixin|
+ *
+ * ```javascript
+ * var event = new Emitter();
+ * event.on('test', function () { console.log('test') });
+ * event.emit('test'); // Logs out 'test'.
+ * Emitter.mixin({});
+ * ```
  */
 
-_('Class has each slice');
+_('Class has each slice once');
 
 exports = Class({
     initialize: function ()
@@ -25,19 +66,7 @@ exports = Class({
     },
     once: function (event, listener)
     {
-        var fired = false;
-
-        function g()
-        {
-            this.off(event, g);
-            if (!fired)
-            {
-                fired = true;
-                listener.apply(this, arguments);
-            }
-        }
-
-        this.on(event, g);
+        this.on(event, once(listener));
 
         return this;
     },

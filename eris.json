@@ -12,7 +12,7 @@
     "$safeEls": "Convert value into an array, if it's a string, do querySelector.",
     "$show": "Show elements.",
     "Class": "Create JavaScript class.",
-    "Emitter": "TODO",
+    "Emitter": "Event emitter class which provides observer pattern.",
     "Select": "Simple wrapper of querySelectorAll to make dom selection easier.",
     "State": "TODO",
     "Uri": "TODO",

@@ -223,7 +223,7 @@ Convert value into an array, if it's a string, do querySelector.
 |value |element array string|Value to convert |
 |return|array               |Array of elements|
 
-```
+```javascript
 $safeEls('.test'); // -> Array of elements with test class
 ```
 
@@ -287,7 +287,48 @@ Student.is(a); // -> true
 
 ## Emitter 
 
-TODO
+Event emitter class which provides observer pattern.
+
+### on
+
+Bind event.
+
+### off
+
+Unbind event.
+
+### on
+
+Bind event that trigger once.
+
+|Name    |Type    |Desc          |
+|--------|--------|--------------|
+|event   |string  |Event name    |
+|listener|function|Event listener|
+
+### emit
+
+Emit event.
+
+|Name   |Type    |Desc                        |
+|-------|--------|----------------------------|
+|event  |string  |Event name                  |
+|...args|*       |Arguments passed to listener|
+
+### mixin
+
+Static: Mixin object class methods.
+
+|Name|Type  |Desc           |
+|----|------|---------------|
+|obj |object|Object to mixin|
+
+```javascript
+var event = new Emitter();
+event.on('test', function () { console.log('test') });
+event.emit('test'); // Logs out 'test'.
+Emitter.mixin({});
+```
 
 ## Select 
 
@@ -1260,10 +1301,10 @@ TODO
 
 Get maximum value of given numbers.
 
-|Name  |Type     |Desc                |
-|------|---------|--------------------|
-|num   |...number|Numbers to calculate|
-|return|number   |Maximum value       |
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|...num|number|Numbers to calculate|
+|return|number|Maximum value       |
 
 ```javascript
 max(2.3, 1, 4.5, 2); // 4.5
