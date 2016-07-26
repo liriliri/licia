@@ -8,7 +8,7 @@
  *
  * Unbind event.
  *
- * ### on
+ * ### once
  *
  * Bind event that trigger once.
  *
@@ -28,7 +28,7 @@
  *
  * ### mixin
  *
- * Static: Mixin object class methods.
+ * [static] Mixin object class methods.
  *
  * |Name|Type  |Desc           |
  * |----|------|---------------|

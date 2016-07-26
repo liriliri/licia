@@ -297,7 +297,7 @@ Bind event.
 
 Unbind event.
 
-### on
+### once
 
 Bind event that trigger once.
 
@@ -317,7 +317,7 @@ Emit event.
 
 ### mixin
 
-Static: Mixin object class methods.
+[static] Mixin object class methods.
 
 |Name|Type  |Desc           |
 |----|------|---------------|
