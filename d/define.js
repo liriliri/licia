@@ -1,25 +1,42 @@
-/* TODO
+/* Define a module, should be used along with use.
+ *
+ * |Name      |Type    |Desc        |
+ * |----------|--------|------------|
+ * |name      |string  |Module name |
+ * |[requires]|array   |Dependencies|
+ * |method    |function|Module body |
+ *
+ * The module won't be executed until it's used by use function.
+ *
+ * ```javascript
+ * define('A', function ()
+ * {
+ *     return 'A';
+ * });
+ * define('B', ['A'], function (A)
+ * {
+ *     return 'B' + A;
+ * });
+ * ```
  */
 
-var requireMarks = _._requireMarks = _._requireMarks || {};
-
-function _define(name, requires, method)
-{
-    _[name] = {
-        requires: requires,
-        body    : method
-    };
-
-    delete requireMarks[name];
-}
-
-exports = function (name, requires, method)
+function exports(name, requires, method)
 {
     if (arguments.length === 2)
     {
-        method   = requires;
+        method = requires;
         requires = [];
     }
 
-    _define(name, requires, method);
-};
+    define(name, requires, method);
+}
+
+var modules = exports._modules = {};
+
+function define(name, requires, method)
+{
+    modules[name] = {
+        requires: toArr(requires),
+        body: method
+    };
+}

@@ -21,10 +21,10 @@
  *
  * Emit event.
  *
- * |Name   |Type    |Desc                        |
- * |-------|--------|----------------------------|
- * |event  |string  |Event name                  |
- * |...args|*       |Arguments passed to listener|
+ * |Name   |Type  |Desc                        |
+ * |-------|------|----------------------------|
+ * |event  |string|Event name                  |
+ * |...args|*     |Arguments passed to listener|
  *
  * ### mixin
  *
