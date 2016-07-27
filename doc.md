@@ -310,10 +310,10 @@ Bind event that trigger once.
 
 Emit event.
 
-|Name   |Type    |Desc                        |
-|-------|--------|----------------------------|
-|event  |string  |Event name                  |
-|...args|*       |Arguments passed to listener|
+|Name   |Type  |Desc                        |
+|-------|------|----------------------------|
+|event  |string|Event name                  |
+|...args|*     |Arguments passed to listener|
 
 ### mixin
 
@@ -550,7 +550,26 @@ defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood',
 
 ## define 
 
-TODO
+Define a module, should be used along with use.
+
+|Name      |Type    |Desc        |
+|----------|--------|------------|
+|name      |string  |Module name |
+|[requires]|array   |Dependencies|
+|method    |function|Module body |
+
+The module won't be executed until it's used by use function.
+
+```javascript
+define('A', function ()
+{
+    return 'A';
+});
+define('B', ['A'], function (A)
+{
+    return 'B' + A;
+});
+```
 
 ## delay 
 
@@ -1844,7 +1863,23 @@ upperFirst('red'); // -> RED
 
 ## use 
 
-TODO
+Use modules that is created by define.
+
+|Name      |Type    |Desc                |
+|----------|--------|--------------------|
+|[requires]|array   |Dependencies        |
+|method    |function|Codes to be executed|
+
+```javascript
+define('A', function ()
+{
+    return 'A';
+});
+use(['A'], function (A)
+{
+    console.log(A + 'B'); // -> 'AB'
+});
+```
 
 ## values 
 

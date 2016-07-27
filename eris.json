@@ -28,7 +28,7 @@
     "cookie": "Simple api for handling browser cookies.",
     "createAssigner": "Used to create extend, extendOwn and defaults.",
     "defaults": "Fill in undefined properties in object with the first value present in the following list of defaults objects.",
-    "define": "TODO",
+    "define": "Define a module, should be used along with use.",
     "delay": "Invoke function after certain milliseconds.",
     "delegate": "TODO",
     "difference": "Create an array of unique array values not included in the other given array.",
@@ -126,7 +126,7 @@
     "uniqId": "Generate a globally-unique id.",
     "unique": "Create duplicate-free version of an array.",
     "upperFirst": "Convert the first character of string to upper case.",
-    "use": "TODO",
+    "use": "Use modules that is created by define.",
     "values": "Creates an array of the own enumerable property values of object.",
     "wrap": "Wrap the function inside a wrapper function, passing it as the first argument."
 }
