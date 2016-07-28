@@ -140,7 +140,7 @@ $css('#test', 'color'); // -> #fff
 
 ## $data 
 
-Data manipulation TODO
+Wrapper of $attr, adds data- prefix to keys.
 
 ```javascript
 $data('#test', 'attr1', 'eustia');
@@ -159,10 +159,39 @@ event.on('#test', 'click', function ()
 
 ## $insert 
 
-Insert html on different position. TODO
+Insert html on different position.
+
+### before
+
+Insert content before elements.
+
+### after
+
+Insert content after elements.
+
+### prepend
+
+Insert content to the beginning of elements.
+
+### append
+
+Insert content to the end of elements.
+
+|Name   |Type                |Desc                  |
+|-------|--------------------|----------------------|
+|element|string array element|Elements to manipulate|
+|content|string              |Html strings          |
 
 ```javascript
-$insert.append('#test', '<div>test</div>');
+// <div id="test"><div class="mark"></div></div>
+$insert.before('#test', '<div>eris</div>');
+// -> <div>eris</div><div id="test"><div class="mark"></div></div>
+$insert.after('#test', '<div>eris</div>');
+// -> <div id="test"><div class="mark"></div></div><div>eris</div>
+$insert.prepend('#test', '<div>eris</div>');
+// -> <div id="test"><div>eris</div><div class="mark"></div></div>
+$insert.append('#test', '<div>eris</div>');
+// -> <div id="test"><div class="mark"></div><div>eris</div></div>
 ```
 
 ## $offset 
