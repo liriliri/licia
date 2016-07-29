@@ -1122,7 +1122,16 @@ isMatch({a: 1, b: 2}, {a: 1}); // -> true
 
 ## isMobile 
 
-Check whether client is using a mobile browser using ua. TODO
+Check whether client is using a mobile browser using ua.
+
+|Name  |Type   |Desc                                 |
+|------|-------|-------------------------------------|
+|ua    |string |User agent                           |
+|return|boolean|True if ua belongs to mobile browsers|
+
+```javascript
+isMobile(navigator.userAgent);
+```
 
 ## isNaN 
 

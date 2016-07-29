@@ -66,7 +66,7 @@
     "isFn": "Check if value is a function.",
     "isInt": "Checks if value is classified as a Integer.",
     "isMatch": "Check if keys and values in src are contained in obj.",
-    "isMobile": "Check whether client is using a mobile browser using ua. TODO",
+    "isMobile": "Check whether client is using a mobile browser using ua.",
     "isNaN": "Check if value is an NaN.",
     "isNum": "Checks if value is classified as a Number primitive or object.",
     "isObj": "Check if value is the language type of Object.",
