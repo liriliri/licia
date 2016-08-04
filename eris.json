@@ -14,7 +14,7 @@
     "Class": "Create JavaScript class.",
     "Emitter": "Event emitter class which provides observer pattern.",
     "Select": "Simple wrapper of querySelectorAll to make dom selection easier.",
-    "State": "TODO",
+    "State": "Simple state machine.",
     "Uri": "TODO",
     "after": "Create a function that invokes once it's called n or more times.",
     "allKeys": "Retrieve all the names of object's own and inherited properties.",

@@ -1,6 +1,6 @@
 /* Simple wrapper of querySelectorAll to make dom selection easier.
  *
- * ### Constructor
+ * ### constructor
  *
  * |Name    |Type  |Desc               |
  * |--------|------|-------------------|
