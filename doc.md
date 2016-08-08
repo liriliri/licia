@@ -369,8 +369,28 @@ Simple wrapper of querySelectorAll to make dom selection easier.
 |--------|------|-------------------|
 |selector|string|Dom selector string|
 
+### find
+
+Get desdendants of current matched elements.
+
+|Name    |Type  |Desc               |
+|--------|------|-------------------|
+|selector|string|Dom selector string|
+
+### each
+
+Iterate over matched elements.
+
+|Name|Type    |Desc                                |
+|----|--------|------------------------------------|
+|fn  |function|Function to execute for each element|
+
 ```javascript
-var test = new Select('#test');
+var $test = new Select('#test');
+$test.find('.test').each(function (idx, element)
+{
+    // Manipulate dom nodes
+});
 ```
 
 ## State 
