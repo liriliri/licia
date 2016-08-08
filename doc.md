@@ -1420,6 +1420,24 @@ Get minimum value of given numbers.
 min(2.3, 1, 4.5, 2); // 1
 ```
 
+## mkdir 
+
+Recursively create directories.
+
+|Name       |Type    |Desc               |
+|-----------|--------|-------------------|
+|dir        |string  |Directory to create|
+|[mode=0777]|number  |Directory mode     |
+|callback   |function|Callback           |
+
+```javascript
+mkdir('/tmp/foo/bar/baz', function (err)
+{
+    if (err) console.log(err);
+    else console.log('Done');
+});
+```
+
 ## negate 
 
 Create a function that negates the result of the predicate function.
