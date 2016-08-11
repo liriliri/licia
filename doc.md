@@ -458,6 +458,58 @@ var fn = after(5, function()
 });
 ```
 
+## ajax 
+
+Perform an asynchronous HTTP request.
+
+|Name   |Type  |Desc        |
+|-------|------|------------|
+|options|object|Ajax options|
+
+Available options:
+
+|Name         |Type         |Desc                  |
+|-------------|-------------|----------------------|
+|url          |string       |Request url           |
+|data         |string object|Request data          |
+|dataType=json|string       |Response type         |
+|success      |function     |Success callback      |
+|error        |function     |Error callback        |
+|complete     |function     |Callback after request|
+
+### get
+
+Shortcut for type = GET;
+
+### post
+
+Shortcut for type = POST;
+
+|Name    |Type         |Desc            |
+|--------|-------------|----------------|
+|url     |string       |Request url     |
+|data    |string object|Request data    |
+|success |function     |Success callback|
+|dataType|function     |Response type   |
+
+```javascript
+ajax({
+    url: 'http://example.com',
+    data: {test: 'true'},
+    error: function () {},
+    success: function (data)
+    {
+        // ...
+    },
+    dataType: 'json'
+});
+
+ajax.get('http://example.com', {}, function (data)
+{
+    // ...
+});
+```
+
 ## allKeys 
 
 Retrieve all the names of object's own and inherited properties.
@@ -1025,6 +1077,8 @@ Check if value is array-like.
 |------|-------|---------------------------|
 |value |*      |Value to check             |
 |return|boolean|True if value is array like|
+
+> Function returns false.
 
 ```javascript
 isArrLike('test'); // -> true

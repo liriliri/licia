@@ -5,6 +5,8 @@
  * |value |*      |Value to check             |
  * |return|boolean|True if value is array like|
  *
+ * > Function returns false.
+ *
  * ```javascript
  * isArrLike('test'); // -> true
  * isArrLike(document.body.children); // -> true;
@@ -12,7 +14,7 @@
  * ```
  */
 
-_('isNum has');
+_('isNum has isFn');
 
 var MAX_ARR_IDX = Math.pow(2, 53) - 1;
 
@@ -22,5 +24,5 @@ function exports(val)
 
     var len = val.length;
 
-    return isNum(len) && len >= 0 && len <= MAX_ARR_IDX;
+    return isNum(len) && len >= 0 && len <= MAX_ARR_IDX && !isFn(val);
 }

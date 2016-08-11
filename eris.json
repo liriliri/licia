@@ -17,6 +17,7 @@
     "State": "Simple state machine.",
     "Uri": "TODO",
     "after": "Create a function that invokes once it's called n or more times.",
+    "ajax": "Perform an asynchronous HTTP request.",
     "allKeys": "Retrieve all the names of object's own and inherited properties.",
     "before": "Create a function that invokes less than n times.",
     "bind": "Create a function bound to a given object.",

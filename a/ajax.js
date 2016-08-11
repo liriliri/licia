@@ -1,4 +1,34 @@
-/* Perform an asynchronous HTTP request. TODO
+/* Perform an asynchronous HTTP request.
+ *
+ * |Name   |Type  |Desc        |
+ * |-------|------|------------|
+ * |options|object|Ajax options|
+ *
+ * Available options:
+ *
+ * |Name         |Type         |Desc                  |
+ * |-------------|-------------|----------------------|
+ * |url          |string       |Request url           |
+ * |data         |string object|Request data          |
+ * |dataType=json|string       |Response type         |
+ * |success      |function     |Success callback      |
+ * |error        |function     |Error callback        |
+ * |complete     |function     |Callback after request|
+ *
+ * ### get
+ *
+ * Shortcut for type = GET;
+ *
+ * ### post
+ *
+ * Shortcut for type = POST;
+ *
+ * |Name    |Type         |Desc            |
+ * |--------|-------------|----------------|
+ * |url     |string       |Request url     |
+ * |data    |string object|Request data    |
+ * |success |function     |Success callback|
+ * |dataType|function     |Response type   |
  *
  * ```javascript
  * ajax({
@@ -11,10 +41,15 @@
  *     },
  *     dataType: 'json'
  * });
+ *
+ * ajax.get('http://example.com', {}, function (data)
+ * {
+ *     // ...
+ * });
  * ```
  */
 
-_('isFn noop defaults');
+_('isFn noop defaults each isObj');
 
 function exports(options)
 {
@@ -51,8 +86,19 @@ function exports(options)
         complete();
     };
 
+    if (type === 'GET')
+    {
+        data = serialize(data);
+        url += url.indexOf('?') > -1 ? '&' + data : '?' + data;
+    } else
+    {
+        if(isObj(data)) data = serialize(data);
+    }
+
     xhr.open(type, url, true);
-    xhr.send();
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    type === 'GET' ? xhr.send() : xhr.send(data);
 
     return xhr;
 }
@@ -84,14 +130,6 @@ exports.post = function ()
     return exports(options);
 };
 
-exports.getJSON = function ()
-{
-    var options = parseArgs.apply(null, arguments);
-    options.dataType = 'json';
-
-    return exports(options);
-};
-
 function parseArgs(url, data, success, dataType)
 {
     if (isFn(data))
@@ -105,5 +143,17 @@ function parseArgs(url, data, success, dataType)
         data: data,
         success: success,
         dataType: dataType
-    }
+    };
+}
+
+function serialize(data)
+{
+    var ret = [];
+
+    each(data, function (val, key)
+    {
+        ret.push(key + '=' + encodeURIComponent(val));
+    });
+
+    return ret.join('&');
 }
