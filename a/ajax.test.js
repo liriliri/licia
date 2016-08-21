@@ -1,1 +1,11 @@
-// We need to set up a server to test it, don't know how to do it with only one file:(
+// Run `node a/ajax.server` before running the test.
+
+it('get data', function ()
+{
+
+});
+
+it('post data', function ()
+{
+
+});

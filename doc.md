@@ -1263,6 +1263,19 @@ isNaN(0); // -> false
 isNaN(NaN); // -> true
 ```
 
+## isNull 
+
+Check if value is an Null.
+
+|Name  |Type   |Desc                   |
+|------|-------|-----------------------|
+|value |*      |Value to check         |
+|return|boolean|True if value is an Null|
+
+```javascript
+isNull(null); // -> true
+```
+
 ## isNum 
 
 Checks if value is classified as a Number primitive or object.
@@ -2001,7 +2014,7 @@ Generate a globally-unique id.
 |return|string|Globally-unique id|
 
 ```javascript
-uniqueId('eusita_'); // -> 'eustia_xxx'
+uniqId('eusita_'); // -> 'eustia_xxx'
 ```
 
 ## unique 
