@@ -22,6 +22,7 @@ var A = Class({
 var B = A.extend({
     initialize: function (name, height, bloodType)
     {
+        this.callSuper(A, 'initialize', arguments);
         this._bloodType = bloodType;
     },
     getBloodType: function ()
@@ -30,7 +31,7 @@ var B = A.extend({
     },
     introduce: function ()
     {
-        return this.callSuper('introduce') + 'And my blood type is ' +
+        return this.callSuper(A, 'introduce') + 'And my blood type is ' +
                this._bloodType + '. ';
     }
 });

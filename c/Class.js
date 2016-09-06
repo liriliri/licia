@@ -22,13 +22,13 @@
  * var Student = People.extend({
  *     initialize: function (name, age, school)
  *     {
- *         this.callSuper('initialize', name, age);
+ *         this.callSuper(People, 'initialize', arguments);
  *
  *         this.school = school.
  *     },
  *     introduce: function ()
  *     {
- *         return this.callSuper('introduce') + '\n I study at ' + this.school + '.'.
+ *         return this.callSuper(People, 'introduce') + '\n I study at ' + this.school + '.'.
  *     }
  * }, {
  *     is: function (obj)
@@ -60,22 +60,13 @@ function makeClass(parent, methods, statics)
     {
         var args = toArr(arguments);
 
-        if (has(ctor.prototype, 'initialize') &&
-            !regCallSuper.test(this.initialize.toString()) &&
-            this.callSuper)
-        {
-            args.unshift('initialize');
-            this.callSuper.apply(this, args);
-            args.shift();
-        }
-
         return this.initialize
                ? this.initialize.apply(this, args) || this
                : this;
     };
 
     inherits(ctor, parent);
-    ctor.superclass = ctor.prototype.superclass = parent;
+    ctor.prototype.superclass = parent;
 
     ctor.extend = function (methods, statics)
     {
@@ -103,13 +94,13 @@ function makeClass(parent, methods, statics)
 
 var Base = exports.Base = makeClass(Object, {
     className: 'Base',
-    callSuper: function (name)
+    callSuper: function (parent, name, args)
     {
-        var superMethod = this.superclass.prototype[name];
+        var superMethod = parent.prototype[name];
 
         if (!superMethod) return;
 
-        return superMethod.apply(this, toArr(arguments).slice(1));
+        return superMethod.apply(this, args);
     },
     toString: function ()
     {

@@ -1,7 +1,7 @@
 /* bind events to certain dom elements. TODO
  *
  * ```javascript
- * event.on('#test', 'click', function ()
+ * $event.on('#test', 'click', function ()
  * {
  *     // ...
  * });

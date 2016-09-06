@@ -294,13 +294,13 @@ var People = Class({
 var Student = People.extend({
     initialize: function (name, age, school)
     {
-        this.callSuper('initialize', name, age);
+        this.callSuper(People, 'initialize', arguments);
 
         this.school = school.
     },
     introduce: function ()
     {
-        return this.callSuper('introduce') + '\n I study at ' + this.school + '.'.
+        return this.callSuper(People, 'introduce') + '\n I study at ' + this.school + '.'.
     }
 }, {
     is: function (obj)
