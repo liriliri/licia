@@ -101,6 +101,7 @@
     "partial": "Partially apply a function by filling in given arguments.",
     "pascalCase": "Convert string to \"pascalCase\".",
     "random": "Produces a random number between min and max(inclusive).",
+    "ready": "Invoke callback when dom is ready, similar to jQuery ready.",
     "repeat": "Repeat string n-times.",
     "restArgs": "This accumulates the arguments passed into an array, after a given index.",
     "root": "Root object reference, `global` in nodeJs, `window` in browser.",

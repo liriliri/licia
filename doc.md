@@ -151,7 +151,7 @@ $data('#test', 'attr1', 'eustia');
 bind events to certain dom elements. TODO
 
 ```javascript
-event.on('#test', 'click', function ()
+$event.on('#test', 'click', function ()
 {
     // ...
 });
@@ -1652,6 +1652,21 @@ Produces a random number between min and max(inclusive).
 random(1, 5); // -> an integer between 0 and 5
 random(5); // -> an integer between 0 and 5
 random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
+```
+
+## ready 
+
+Invoke callback when dom is ready, similar to jQuery ready.
+
+|Name|Type    |Desc             |
+|----|--------|-----------------|
+|fn  |function|Callback function|
+
+```javascript
+ready(function ()
+{
+    // It's safe to manipulate dom here.
+});
 ```
 
 ## repeat 
