@@ -80,10 +80,10 @@ function exports(options)
             success(result, xhr);
         } else
         {
-            error(xhr.statusText || null, xhr);
+            error(xhr);
         }
 
-        complete();
+        complete(xhr);
     };
 
     if (type === 'GET')
