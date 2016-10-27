@@ -1346,6 +1346,14 @@ Check if path appears to be relative.
 isRelative('README.md'); // -> true
 ```
 
+## isRetina 
+
+Determine if running on a high DPR device or not.
+
+```javascript
+isRetina(); // -> true if high DPR
+```
+
 ## isStr 
 
 Check if value is a string primitive.

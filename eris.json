@@ -77,6 +77,7 @@
     "isPrimitive": "Check if value is string, number, boolean or null.",
     "isRegExp": "Check if value is a regular expression.",
     "isRelative": "Check if path appears to be relative.",
+    "isRetina": "Determine if running on a high DPR device or not.",
     "isStr": "Check if value is a string primitive.",
     "isUndef": "Check if value is undefined.",
     "kebabCase": "Convert string to \"kebabCase\".",
