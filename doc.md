@@ -675,6 +675,20 @@ Used to create extend, extendOwn and defaults.
 |defaults|boolean |No override when set to true  |
 |return  |function|Result function, extend...    |
 
+## debounce 
+
+Return a new debounced version of the passed function.
+
+|Name  |Type    |Desc                           |
+|------|--------|-------------------------------|
+|fn    |function|Function to debounce           |
+|wait  |number  |Number of milliseconds to delay|
+|return|function|New debounced function         |
+
+```javascript
+$(window).resize(debounce(calLayout, 300));
+```
+
 ## defaults 
 
 Fill in undefined properties in object with the first value present in the following list of defaults objects.
@@ -1913,6 +1927,20 @@ stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 ## template 
 
 TODO
+
+## throttle 
+
+Return a new throttled version of the passed function.
+
+|Name  |Type    |Desc                           |
+|------|--------|-------------------------------|
+|fn    |function|Function to throttle           |
+|wait  |number  |Number of milliseconds to delay|
+|return|function|New throttled function         |
+
+```javascript
+$(window).scroll(throttle(updatePos, 100));
+```
 
 ## toArr 
 
