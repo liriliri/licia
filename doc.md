@@ -1169,6 +1169,19 @@ Check if value is a DOM element.
 isEl(document.body); // -> true
 ```
 
+## isEmail 
+
+Loosely validate an email address.
+
+|Name  |Type   |Desc                                 |
+|------|-------|-------------------------------------|
+|val   |*      |Value to check                       |
+|return|boolean|True if value is an email like string|
+
+```javascript
+isEmail('surunzi@foxmail.com'); // -> true
+```
+
 ## isEmpty 
 
 Check if value is an empty object or array.
