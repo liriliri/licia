@@ -54,6 +54,7 @@
     "idxOf": "Get the index at which the first occurrence of value. TODO",
     "indent": "Indent each line in a string.",
     "inherits": "Inherit the prototype methods from one constructor into another.",
+    "intersect": "Compute the list of values that are the intersection of all the arrays.",
     "invert": "Create an object composed of the inverted keys and values of object.",
     "isArgs": "Check if value is classified as an arguments object.",
     "isArr": "Check if value is an `Array` object.",
