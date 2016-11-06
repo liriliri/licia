@@ -1718,6 +1718,40 @@ pascalCase('foo_bar'); // -> FooBar
 pascalCase('foo.bar'); // -> FooBar
 ```
 
+## pluck 
+
+Extract a list of property values.
+
+|Name  |Type        |Desc                           |
+|------|------------|-------------------------------|
+|obj   |object array|Collection to iterate over     |
+|key   |string array|Property path                  |
+|return|array       |New array of specified property|
+
+```javascript
+var stooges = [
+    {name: 'moe', age: 40},
+    {name: 'larry', age: 50},
+    {name: 'curly', age: 60}
+];
+pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
+```
+
+## property 
+
+Return a function that will itself return the key property of any passed-in object.
+
+|Name  |Type        |Desc                       |
+|------|------------|---------------------------|
+|path  |string array|Path of the property to get|
+|return|function    |New accessor function      |
+
+```javascript
+var obj = {a: {b: 1}};
+property('a')(obj); // -> {b: 1}
+property(['a', 'b'])(obj); // -> 1
+```
+
 ## random 
 
 Produces a random number between min and max(inclusive).
@@ -2140,6 +2174,19 @@ Create duplicate-free version of an array.
 unique([1, 2, 3, 1]); // -> [1, 2, 3]
 ```
 
+## unzip 
+
+Opposite of zip.
+
+|Name  |Type |Desc                                |
+|------|-----|------------------------------------|
+|arr   |array|Array of grouped elements to process|
+|return|array|New array of regrouped elements     |
+
+```javascript
+unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, false]]
+```
+
 ## upperFirst 
 
 Convert the first character of string to upper case.
@@ -2202,4 +2249,17 @@ var p = wrap(escape, function(fn, text)
     return '<p>' + fn(text) + '</p>';
 });
 p('You & Me'); // -> '<p>You &amp; Me</p>'
+```
+
+## zip 
+
+Merge together the values of each of the arrays with the values at the corresponding position.
+
+|Name  |Type |Desc                         |
+|------|-----|-----------------------------|
+|*arr  |array|Arrays to process            |
+|return|array|New array of grouped elements|
+
+```javascript
+zip(['a', 'b'], [1, 2], [true, false]); // -> [['a', 1, true], ['b', 2, false]]
 ```

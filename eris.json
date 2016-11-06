@@ -105,6 +105,8 @@
     "pad": "Pad string on the left and right sides if it's shorter than length.",
     "partial": "Partially apply a function by filling in given arguments.",
     "pascalCase": "Convert string to \"pascalCase\".",
+    "pluck": "Extract a list of property values.",
+    "property": "Return a function that will itself return the key property of any passed-in object.",
     "random": "Produces a random number between min and max(inclusive).",
     "ready": "Invoke callback when dom is ready, similar to jQuery ready.",
     "repeat": "Repeat string n-times.",
@@ -136,8 +138,10 @@
     "union": "Create an array of unique values, in order, from all given arrays.",
     "uniqId": "Generate a globally-unique id.",
     "unique": "Create duplicate-free version of an array.",
+    "unzip": "Opposite of zip.",
     "upperFirst": "Convert the first character of string to upper case.",
     "use": "Use modules that is created by define.",
     "values": "Creates an array of the own enumerable property values of object.",
-    "wrap": "Wrap the function inside a wrapper function, passing it as the first argument."
+    "wrap": "Wrap the function inside a wrapper function, passing it as the first argument.",
+    "zip": "Merge together the values of each of the arrays with the values at the corresponding position."
 }
