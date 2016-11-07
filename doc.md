@@ -1768,6 +1768,21 @@ random(5); // -> an integer between 0 and 5
 random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
 ```
 
+## range 
+
+Create flexibly-numbered lists of integers.
+
+|Name    |Type  |Desc                              |
+|--------|------|----------------------------------|
+|[start] |number|Start of the range                |
+|end     |number|End of the range                  |
+|[step=1]|number|Value to increment or decrement by|
+
+```javascript
+range(5); // -> [0, 1, 2, 3, 4]
+range(0, 5, 2) // -> [0, 2, 4]
+```
+
 ## ready 
 
 Invoke callback when dom is ready, similar to jQuery ready.

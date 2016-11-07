@@ -108,6 +108,7 @@
     "pluck": "Extract a list of property values.",
     "property": "Return a function that will itself return the key property of any passed-in object.",
     "random": "Produces a random number between min and max(inclusive).",
+    "range": "Create flexibly-numbered lists of integers.",
     "ready": "Invoke callback when dom is ready, similar to jQuery ready.",
     "repeat": "Repeat string n-times.",
     "restArgs": "This accumulates the arguments passed into an array, after a given index.",
