@@ -1433,6 +1433,20 @@ Check if value is a string primitive.
 isStr('eris'); // -> true
 ```
 
+## isTypedArr 
+
+Check if value is a typed array.
+
+|Name  |Type   |Desc                          |
+|------|-------|------------------------------|
+|val   |*      |Value to check                |
+|return|boolean|True if value is a typed array|
+
+```javascript
+isTypedArr([]); // -> false
+isTypedArr(new Unit8Array); // -> true
+```
+
 ## isUndef 
 
 Check if value is undefined.

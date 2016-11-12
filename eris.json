@@ -82,6 +82,7 @@
     "isRelative": "Check if path appears to be relative.",
     "isRetina": "Determine if running on a high DPR device or not.",
     "isStr": "Check if value is a string primitive.",
+    "isTypedArr": "Check if value is a typed array.",
     "isUndef": "Check if value is undefined.",
     "kebabCase": "Convert string to \"kebabCase\".",
     "keys": "Create an array of the own enumerable property names of object.",
