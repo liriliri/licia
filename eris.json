@@ -76,7 +76,7 @@
     "isNull": "Check if value is an Null.",
     "isNum": "Checks if value is classified as a Number primitive or object.",
     "isObj": "Check if value is the language type of Object.",
-    "isPlainObj": "TODO",
+    "isPlainObj": "Check if value is an object created by Object constructor.",
     "isPrimitive": "Check if value is string, number, boolean or null.",
     "isRegExp": "Check if value is a regular expression.",
     "isRelative": "Check if path appears to be relative.",

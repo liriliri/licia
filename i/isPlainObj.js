@@ -1,9 +1,20 @@
-/* TODO
+/* Check if value is an object created by Object constructor.
+ *
+ * |Name  |Type   |Desc                           |
+ * |------|-------|-------------------------------|
+ * |val   |*      |Value to check                 |
+ * |return|boolean|True if value is a plain object|
+ *
+ * ```javascript
+ * isPlainObj({}); // -> true
+ * isPlainObj([]); // -> false
+ * isPlainObj(function () {}); // -> false
+ * ```
  */
 
-_('isObj isArr');
+_('isObj isArr isFn');
 
-function exports(obj)
+function exports(val)
 {
-    return isObj(obj) && !isArr(obj);
+    return isObj(val) && !isArr(val) && !isFn(val);
 }
