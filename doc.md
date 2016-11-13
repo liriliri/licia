@@ -1599,6 +1599,19 @@ var fibonacci = memoize(function(n)
 });
 ```
 
+## methods 
+
+Return a sorted list of the names of every method in an object.
+
+|Name  |Type  |Desc                    |
+|------|------|------------------------|
+|obj   |object|Object to check         |
+|return|array |Function names in object|
+
+```javascript
+methods(console); // -> ['Console', 'assert', 'dir', ...]
+```
+
 ## min 
 
 Get minimum value of given numbers.

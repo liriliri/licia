@@ -95,6 +95,7 @@
     "matcher": "TODO",
     "max": "Get maximum value of given numbers.",
     "memoize": "Memoize a given function by caching the computed result.",
+    "methods": "Return a sorted list of the names of every method in an object.",
     "min": "Get minimum value of given numbers.",
     "mkdir": "Recursively create directories.",
     "negate": "Create a function that negates the result of the predicate function.",
