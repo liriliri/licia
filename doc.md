@@ -2134,6 +2134,23 @@ Return a new throttled version of the passed function.
 $(window).scroll(throttle(updatePos, 100));
 ```
 
+## timeAgo 
+
+Format datetime with *** time ago statement.
+
+|Name          |Type  |Desc                     |
+|--------------|------|-------------------------|
+|date          |Date  |Date to calculate        |
+|[now=new Date]|Date  |The current date         |
+|return        |string|Formatted time ago string|
+
+```javascript
+var now = new Date().getTime();
+timeAgo(now - 1000 * 6); // -> right now
+timeAgo(now + 1000 * 15); // -> in 15 minutes
+timeAgo(now - 1000 * 60 * 60 * 5, now) -> 5 hours ago
+```
+
 ## toArr 
 
 Convert value to an array.

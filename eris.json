@@ -132,6 +132,7 @@
     "stripHtmlTag": "Strip html tags from a string.",
     "template": "TODO",
     "throttle": "Return a new throttled version of the passed function.",
+    "timeAgo": "Format datetime with *** time ago statement.",
     "toArr": "Convert value to an array.",
     "toInt": "Convert value to an integer.",
     "toNum": "Convert value to a number.",
