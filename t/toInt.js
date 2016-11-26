@@ -7,6 +7,7 @@
  *
  * ```javascript
  * toInt(1.1); // -> 1
+ * toInt(undefined); // -> 0
  * ```
  */
 

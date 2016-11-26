@@ -630,6 +630,24 @@ clone({name: 'eustia'}); // -> {name: 'eustia'}
 
 TODO
 
+## cmpVersion 
+
+Compare version strings.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|v1    |string|Version to compare|
+|v2    |string|Version to compare|
+|return|number|Comparison result |
+
+```javascript
+cmpVersion('1.1.8', '1.0.4'); // -> 1
+cmpVersion('1.0.2', '1.0.2'); // -> 0
+cmpVersion('2.0', '2.0.0'); // -> 0
+cmpVersion('3.0.1', '3.0.0.2'); // -> 1
+cmpVersion('1.1.1', '1.2.3'); // -> -1
+```
+
 ## compact 
 
 Return a copy of the array with all falsy values removed.
@@ -2197,6 +2215,7 @@ Convert value to an integer.
 
 ```javascript
 toInt(1.1); // -> 1
+toInt(undefined); // -> 0
 ```
 
 ## toNum 
