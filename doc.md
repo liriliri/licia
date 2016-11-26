@@ -592,6 +592,25 @@ Convert the first character to upper case and the remaining to lower case.
 capitalize('rED'); // -> Red
 ```
 
+## clamp 
+
+Clamp number within the inclusive lower and upper bounds.
+
+|Name   |Type  |Desc           |
+|-------|------|---------------|
+|n      |number|Number to clamp|
+|[lower]|number|Lower bound    |
+|upper  |number|Upper bound    |
+|return |number|Clamped number |
+
+```javascript
+clamp(-10, -5, 5); // -> -5
+clamp(10, -5, 5); // -> 5
+clamp(2, -5, 5); // -> 2
+clamp(10, 5); // -> 5
+clamp(2, 5); // -> 2
+```
+
 ## clone 
 
 Create a shallow-copied clone of the provided plain object.
@@ -2141,14 +2160,14 @@ Format datetime with *** time ago statement.
 |Name          |Type  |Desc                     |
 |--------------|------|-------------------------|
 |date          |Date  |Date to calculate        |
-|[now=new Date]|Date  |The current date         |
+|[now=new Date]|Date  |Current date             |
 |return        |string|Formatted time ago string|
 
 ```javascript
 var now = new Date().getTime();
 timeAgo(now - 1000 * 6); // -> right now
 timeAgo(now + 1000 * 15); // -> in 15 minutes
-timeAgo(now - 1000 * 60 * 60 * 5, now) -> 5 hours ago
+timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
 ```
 
 ## toArr 
