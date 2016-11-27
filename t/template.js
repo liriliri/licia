@@ -1,4 +1,15 @@
-/* TODO
+/* Compile JavaScript template into function that can be evaluated for rendering.
+ *
+ * |Name  |Type    |String                    |
+ * |------|--------|--------------------------|
+ * |str   |string  |Template string           |
+ * |return|function|Compiled template function|
+ *
+ * ```javascript
+ * template('Hello <%= name %>!')({name: 'eris'}); // -> 'Hello eris!'
+ * template('<p><%- name %></p>')({name: '<eris>'}); // -> '<p>&lt;eris&gt;</p>'
+ * template('<%if (echo) {%>Hello eris!<%}%>')({echo: true}); // -> 'Hello eris!'
+ * ```
  */
 
 _('escape');
@@ -23,38 +34,47 @@ var escapes = {
 
 var regEscapeChar = /\\|'|\r|\n|\u2028|\u2029/g;
 
-var escapeChar = function(match) {
+var escapeChar = function(match)
+{
     return '\\' + escapes[match];
 };
 
-exports = function (text) {
+exports = function (str)
+{
     var index = 0,
-        source = "__p+='";
+        src = "__p+='";
 
-    text.replace(regMatcher, function (match, escape, interpolate, evaluate, offset) {
-        source += text.slice(index, offset).replace(regEscapeChar, escapeChar);
+    str.replace(regMatcher, function (match, escape, interpolate, evaluate, offset)
+    {
+        src += str.slice(index, offset).replace(regEscapeChar, escapeChar);
         index = offset + match.length;
 
-        if (escape) {
-            source += "'+\n((__t=(" + escape + "))==null?'':_.escape(__t))+\n'";
-        } else if (interpolate) {
-            source += "'+\n((__t=(" + interpolate + "))==null?'':__t)+\n'";
-        } else if (evaluate) {
-            source += "';\n" + evaluate + "\n__p+='";
+        if (escape)
+        {
+            src += "'+\n((__t=(" + escape + "))==null?'':util.escape(__t))+\n'";
+        } else if (interpolate)
+        {
+            src += "'+\n((__t=(" + interpolate + "))==null?'':__t)+\n'";
+        } else if (evaluate)
+        {
+            src += "';\n" + evaluate + "\n__p+='";
         }
 
         return match;
     });
 
-    source += "';\n";
-    source = 'with(obj||{}){\n' + source + '}\n';
-    source = "var __t,__p='',__j=Array.prototype.join," +
-        "print=function(){__p+=__j.call(arguments,'');};\n" +
-        source + 'return __p;\n';
+    src += "';\n";
+    src = 'with(obj||{}){\n' + src + '}\n';
+    src = "var __t,__p='',__j=Array.prototype.join," +
+          "print=function(){__p+=__j.call(arguments,'');};\n" +
+          src + 'return __p;\n';
 
-    var render = new Function('obj', 'util', source);
+    console.log(src);
 
-    return function (data) {
+    var render = new Function('obj', 'util', src);
+
+    return function (data)
+    {
         return render.call(null, data, _);
     };
 };

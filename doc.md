@@ -2155,7 +2155,18 @@ stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 
 ## template 
 
-TODO
+Compile JavaScript template into function that can be evaluated for rendering.
+
+|Name  |Type    |String                    |
+|------|--------|--------------------------|
+|str   |string  |Template string           |
+|return|function|Compiled template function|
+
+```javascript
+template('Hello <%= name %>!')({name: 'eris'}); // -> 'Hello eris!'
+template('<p><%- name %></p>')({name: '<eris>'}); // -> '<p>&lt;eris&gt;</p>'
+template('<%if (echo) {%>Hello eris!<%}%>')({echo: true}); // -> 'Hello eris!'
+```
 
 ## throttle 
 
