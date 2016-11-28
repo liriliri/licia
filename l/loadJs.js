@@ -1,10 +1,22 @@
-/* Inject script tag into page with given src value. TODO
+/* Inject script tag into page with given src value.
+ *
+ * |Name|Type    |Desc           |
+ * |----|--------|---------------|
+ * |src |string  |Script source  |
+ * |cb  |function|Onload callback|
+ *
+ * ```javascript
+ * loadJs('main.js', function ()
+ * {
+ *     // Do something...
+ * });
+ * ```
  */
 
-exports = function (url, cb)
+function exports(src, cb)
 {
     var script = document.createElement('script');
-    script.src = url;
+    script.src = src;
     script.onload = function ()
     {
         var isNotLoaded = script.readyState &&
@@ -14,4 +26,4 @@ exports = function (url, cb)
         cb && cb(!isNotLoaded);
     };
     document.body.appendChild(script);
-};
+}

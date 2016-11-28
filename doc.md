@@ -1585,7 +1585,19 @@ last([1, 2]); // -> 2
 
 ## loadJs 
 
-Inject script tag into page with given src value. TODO
+Inject script tag into page with given src value.
+
+|Name|Type    |Desc           |
+|----|--------|---------------|
+|src |string  |Script source  |
+|cb  |function|Onload callback|
+
+```javascript
+loadJs('main.js', function ()
+{
+    // Do something...
+});
+```
 
 ## longest 
 

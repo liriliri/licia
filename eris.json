@@ -90,7 +90,7 @@
     "kebabCase": "Convert string to \"kebabCase\".",
     "keys": "Create an array of the own enumerable property names of object.",
     "last": "Get the last element of array.",
-    "loadJs": "Inject script tag into page with given src value. TODO",
+    "loadJs": "Inject script tag into page with given src value.",
     "longest": "Get the longest item in an array.",
     "lpad": "Pad string on the left side if it's shorter than length.",
     "ltrim": "Remove chars or white-spaces from beginning of string.",
