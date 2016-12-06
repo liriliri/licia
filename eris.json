@@ -1,5 +1,5 @@
 {
-    "$": "jQuery like style dom manipulator. TODO",
+    "$": "jQuery like style dom manipulator.",
     "$attr": "Element attribute manipulation.",
     "$class": "Element class manipulations.",
     "$css": "Element css manipulation.",

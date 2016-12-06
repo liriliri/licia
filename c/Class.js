@@ -24,7 +24,7 @@
  *     {
  *         this.callSuper(People, 'initialize', arguments);
  *
- *         this.school = school.
+ *         this.school = school;
  *     },
  *     introduce: function ()
  *     {

@@ -1,8 +1,20 @@
-/* jQuery like style dom manipulator. TODO
+/* jQuery like style dom manipulator.
+ *
+ * ### Available methods
+ *
+ * offset, hide, show, first, last, get, eq, on, off, html, text, val, css, attr,
+ * data, rmAttr, remove, addClass, rmClass, toggleClass, hasClass, append, prepend,
+ * before, after
  *
  * ```javascript
  * var $btn = $('#btn');
  * $btn.html('eustia');
+ * $btn.addClass('btn');
+ * $btn.show();
+ * $btn.on('click', function ()
+ * {
+ *     // Do something...
+ * });
  * ```
  */
 
