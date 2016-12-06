@@ -47,6 +47,8 @@ exports = Emitter.extend({
     className: 'State',
     initialize: function (initial, events)
     {
+        this.callSuper(Emitter, 'initialize');
+
         this.current = initial;
 
         var self = this;
