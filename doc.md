@@ -1673,6 +1673,21 @@ Create an array of values by running each element in collection through iteratee
 map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 ```
 
+## mapObj 
+
+Map for objects.
+
+|Name    |Type    |Desc                          |
+|--------|--------|------------------------------|
+|obj     |object  |Object to iterate over        |
+|iteratee|function|Function invoked per iteration|
+|[ctx]   |*       |Function context              |
+|return  |object  |New mapped object             |
+
+```javascript
+mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
+```
+
 ## matcher 
 
 Return a predicate function that checks if attrs are contained in an object.

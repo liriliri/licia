@@ -95,6 +95,7 @@
     "lpad": "Pad string on the left side if it's shorter than length.",
     "ltrim": "Remove chars or white-spaces from beginning of string.",
     "map": "Create an array of values by running each element in collection through iteratee.",
+    "mapObj": "Map for objects.",
     "matcher": "Return a predicate function that checks if attrs are contained in an object.",
     "max": "Get maximum value of given numbers.",
     "memoize": "Memoize a given function by caching the computed result.",
