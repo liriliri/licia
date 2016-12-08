@@ -109,6 +109,7 @@
     "once": "Create a function that invokes once.",
     "optimizeCb": "TODO",
     "pad": "Pad string on the left and right sides if it's shorter than length.",
+    "pairs": "Convert an object into a list of [key, value] pairs.",
     "partial": "Partially apply a function by filling in given arguments.",
     "pascalCase": "Convert string to \"pascalCase\".",
     "pluck": "Extract a list of property values.",

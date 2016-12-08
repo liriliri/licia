@@ -1861,6 +1861,19 @@ pad('abc', 5, 'ab'); // -> 'babca'
 pad('ab', 5, 'ab'); // -> 'ababa'
 ```
 
+## pairs 
+
+Convert an object into a list of [key, value] pairs.
+
+|Name  |Type  |Desc                      |
+|------|------|--------------------------|
+|obj   |object|Object to convert         |
+|return|array |List of [key, value] pairs|
+
+```javascript
+pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
+```
+
 ## partial 
 
 Partially apply a function by filling in given arguments.
