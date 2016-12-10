@@ -12,7 +12,7 @@
  * ```
  */
 
-_('isArr');
+_('isArr safeGet');
 
 function exports(path)
 {
@@ -20,7 +20,7 @@ function exports(path)
 
     return function(obj)
     {
-        return deepGet(obj, path);
+        return safeGet(obj, path);
     };
 }
 
@@ -30,17 +30,4 @@ function shallowProperty(key)
     {
         return obj == null ? void 0 : obj[key];
     };
-}
-
-function deepGet(obj, path)
-{
-    var len = path.length;
-
-    for (var i = 0; i < len; i++)
-    {
-        if (obj == null) return void 0;
-        obj = obj[path[i]];
-    }
-
-    return len ? obj : void 0;
 }

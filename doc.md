@@ -2071,6 +2071,23 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 
 Create callback based on input value. TODO
 
+## safeGet 
+
+Get object property, don't throw undefined error.
+
+|Name  |Type        |Desc                     |
+|------|------------|-------------------------|
+|obj   |object      |Object to query          |
+|path  |array string|Path of property to get  |
+|return|*           |Target value or undefined|
+
+```javascript
+var obj = {a: {aa: {aaa: 1}}};
+safeGet(obj, 'a.aa.aaa'); // -> 1
+safeGet(obj, ['a', 'aa']); // -> {aaa: 1}
+safeGet(obj, 'a.b'); // -> undefined
+```
+
 ## size 
 
 Get size of object, length of array like object or the number of keys.

@@ -124,6 +124,7 @@
     "rpad": "Pad string on the right side if it's shorter than length.",
     "rtrim": "Remove chars or white-spaces from end of string.",
     "safeCb": "Create callback based on input value. TODO",
+    "safeGet": "Get object property, don't throw undefined error.",
     "size": "Get size of object, length of array like object or the number of keys.",
     "slice": "Create slice of source array or array-like object.",
     "snakeCase": "Convert string to \"snakeCase\".",
