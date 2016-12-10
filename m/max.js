@@ -10,11 +10,9 @@
  * ```
  */
 
-_('toArr');
-
 function exports()
 {
-    var arr = toArr(arguments),
+    var arr = arguments,
         ret = arr[0];
 
     for (var i = 1, len = arr.length; i < len; i++)

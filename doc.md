@@ -539,6 +539,19 @@ obj.one = 1;
 allKeys(obj) // -> ['zero', 'one']
 ```
 
+## average 
+
+Get average value of given numbers.
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|...num|number|Numbers to calculate|
+|return|number|Average value       |
+
+```javascript
+average(5, 3, 1); // -> 3
+```
+
 ## before 
 
 Create a function that invokes less than n times.
@@ -1752,10 +1765,10 @@ methods(console); // -> ['Console', 'assert', 'dir', ...]
 
 Get minimum value of given numbers.
 
-|Name  |Type     |Desc                |
-|------|---------|--------------------|
-|num   |...number|Numbers to calculate|
-|return|number   |Minimum value       |
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|...num|number|Numbers to calculate|
+|return|number|Minimum value       |
 
 ```javascript
 min(2.3, 1, 4.5, 2); // 1
