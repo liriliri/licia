@@ -449,9 +449,78 @@ state.on('error', function (err, event)
 state.play('eustia');
 ```
 
-## Uri 
+## Url 
 
-TODO
+Simple url manipulator.
+
+### constructor
+
+|Name                 |Type  |Desc      |
+|---------------------|------|----------|
+|[url=window.location]|string|Url string|
+
+### setQuery
+
+Set query value.
+
+|Name  |Type  |Desc       |
+|------|------|-----------|
+|name  |string|Query name |
+|value |string|Query value|
+|return|Url   |this       |
+
+|Name  |Type  |Desc        |
+|------|------|------------|
+|names |object|query object|
+|return|Url   |this        |
+
+### rmQuery
+
+Remove query value.
+
+|Name  |Type        |Desc      |
+|------|------------|----------|
+|name  |string array|Query name|
+|return|Url         |this      |
+
+### parse
+
+[static] Parse url into an object.
+
+|Name  |Type  |Desc      |
+|------|------|----------|
+|url   |string|Url string|
+|return|object|Url object|
+
+### stringify
+
+[static] Stringify url object into a string.
+
+|Name  |Type  |Desc      |
+|------|------|----------|
+|url   |object|Url object|
+|return|string|Url string|
+
+An url object contains the following properties:
+
+|Name    |Desc                                                                                  |
+|--------|--------------------------------------------------------------------------------------|
+|protocol|The protocol scheme of the URL (e.g. http:)                                           |
+|slashes |A boolean which indicates whether the protocol is followed by two forward slashes (//)|
+|auth    |Authentication information portion (e.g. username:password)                           |
+|hostname|Host name without port number                                                         |
+|port    |Optional port number                                                                  |
+|pathname|URL path                                                                              |
+|query   |Parsed object containing query string                                                 |
+|hash    |The "fragment" portion of the URL including the pound-sign (#)                        |
+
+```javascript
+var url = new Url('http://example.com:8080?eruda=true');
+console.log(url.port); // -> '8080'
+url.query.foo = 'bar';
+url.rmQuery('eruda');
+utl.toString(); // -> 'http://example.com:8080/?foo=bar'
+```
 
 ## after 
 
@@ -1950,6 +2019,34 @@ Return a function that will itself return the key property of any passed-in obje
 var obj = {a: {b: 1}};
 property('a')(obj); // -> {b: 1}
 property(['a', 'b'])(obj); // -> 1
+```
+
+## query 
+
+Parse and stringify url query strings.
+
+### parse
+
+Parse a query string into an object.
+
+|Name  |Type  |Desc        |
+|------|------|------------|
+|str   |string|Query string|
+|return|object|Query object|
+
+### stringify
+
+Stringify an object into a query string.
+
+|Name  |Type  |Desc        |
+|------|------|------------|
+|obj   |object|Query object|
+|return|string|Query string|
+
+```javascript
+query.parse('foo=bar&eruda=true'); // -> {foo: 'bar', eruda: 'true'}
+query.stringify({foo: 'bar', eruda: 'true'}); // -> 'foo=bar&eruda=true'
+query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
 ```
 
 ## random 
