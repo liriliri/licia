@@ -2443,6 +2443,19 @@ Strip html tags from a string.
 stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 ```
 
+## sum 
+
+Compute sum of given numbers.
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|...num|number|Numbers to calculate|
+|return|number|Sum of numbers      |
+
+```javascript
+sum(1, 2, 5); // -> 8
+```
+
 ## template 
 
 Compile JavaScript template into function that can be evaluated for rendering.

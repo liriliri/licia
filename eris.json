@@ -139,6 +139,7 @@
     "stripCmt": "Strip comments from source code.",
     "stripColor": "Strip ansi color codes from a string.",
     "stripHtmlTag": "Strip html tags from a string.",
+    "sum": "Compute sum of given numbers.",
     "template": "Compile JavaScript template into function that can be evaluated for rendering.",
     "throttle": "Return a new throttled version of the passed function.",
     "timeAgo": "Format datetime with *** time ago statement.",
