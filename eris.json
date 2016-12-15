@@ -148,6 +148,7 @@
     "toStr": "Convert value to a string.",
     "topoSort": "Topological sorting algorithm.",
     "trim": "Remove chars or white-spaces from beginning end of string.",
+    "type": "Determine the internal JavaScript [[Class]] of an object.",
     "unescape": "Convert HTML entities back, the inverse of escape.",
     "union": "Create an array of unique values, in order, from all given arrays.",
     "uniqId": "Generate a globally-unique id.",

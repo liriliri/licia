@@ -2577,6 +2577,22 @@ trim('_abc_', '_'); // -> 'abc'
 trim('_abc_', ['a', 'c', '_']); // -> 'b'
 ```
 
+## type 
+
+Determine the internal JavaScript [[Class]] of an object.
+
+|Name  |Type  |Desc                      |
+|------|------|--------------------------|
+|val   |*     |Value to get type         |
+|return|string|Type of object, lowercased|
+
+```javascript
+type(5); // -> 'number'
+type({}); // -> 'object'
+type(function () {}); // -> 'function'
+type([]); // -> 'array'
+```
+
 ## unescape 
 
 Convert HTML entities back, the inverse of escape.
