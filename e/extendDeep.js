@@ -18,14 +18,7 @@
  *         brother: 'Bruce'
  *     }
  * });
- * // -> {
- *     name: 'RedHood',
- *     family: {
- *         mother: 'Jane',
- *         father: 'Jack',
- *         brother: 'Bruce'
- *     }
- * }
+ * // -> {name: 'RedHood', family: {mother: 'Jane', father: 'Jack', brother: 'Bruce'}}
  * ```
  */
 
