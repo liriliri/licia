@@ -1,4 +1,29 @@
-/* TODO
+/* Event delegation.
+ *
+ * ### add
+ *
+ * Add event delegation.
+ *
+ * |Name    |Type    |Desc          |
+ * |--------|--------|--------------|
+ * |el      |element |Parent element|
+ * |type    |string  |Event type    |
+ * |selector|string  |Match selector|
+ * |cb      |function|Event callback|
+ *
+ * ### remove
+ *
+ * Remove event delegation.
+ *
+ * ```javascript
+ * var container = document.getElementById('container');
+ * function clickHandler()
+ * {
+ *     // Do something...
+ * }
+ * delegate.add(container, 'click', '.children', clickHandler);
+ * delegate.remove(container, 'click', '.children', clickHandler);
+ * ```
  */
 
 _('Class contain');

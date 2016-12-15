@@ -1,10 +1,39 @@
-// TODO
+/* Recursive object extending
+ *
+ * |Name  |Type  |Desc              |
+ * |------|------|------------------|
+ * |obj   |object|Destination object|
+ * |*src  |object|Sources objects   |
+ * |return|object|Destination object|
+ *
+ * ```javascript
+ * extendDeep({
+ *     name: 'RedHood',
+ *     family: {
+ *         mother: 'Jane',
+ *         father: 'Jack'
+ *     }
+ * }, {
+ *     family: {
+ *         brother: 'Bruce'
+ *     }
+ * });
+ * // -> {
+ *     name: 'RedHood',
+ *     family: {
+ *         mother: 'Jane',
+ *         father: 'Jack',
+ *         brother: 'Bruce'
+ *     }
+ * }
+ * ```
+ */
 
 _('isPlainObj each cloneDeep');
 
 function exports(obj)
 {
-    var i   = 0,
+    var i = 0,
         ret = obj,
         len = arguments.length;
 

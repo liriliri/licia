@@ -1,10 +1,12 @@
-/* bind events to certain dom elements. TODO
+/* bind events to certain dom elements.
  *
  * ```javascript
- * $event.on('#test', 'click', function ()
+ * function clickHandler()
  * {
- *     // ...
- * });
+ *     // Do something...
+ * }
+ * $event.on('#test', 'click', clickHandler);
+ * $event.off('#test', 'click', clickHandler);
  * ```
  */
 

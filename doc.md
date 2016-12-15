@@ -160,13 +160,15 @@ $data('#test', 'attr1', 'eustia');
 
 ## $event 
 
-bind events to certain dom elements. TODO
+bind events to certain dom elements.
 
 ```javascript
-$event.on('#test', 'click', function ()
+function clickHandler()
 {
-    // ...
-});
+    // Do something...
+}
+$event.on('#test', 'click', clickHandler);
+$event.off('#test', 'click', clickHandler);
 ```
 
 ## $insert 
@@ -950,7 +952,32 @@ delay(function (text)
 
 ## delegate 
 
-TODO
+Event delegation.
+
+### add
+
+Add event delegation.
+
+|Name    |Type    |Desc          |
+|--------|--------|--------------|
+|el      |element |Parent element|
+|type    |string  |Event type    |
+|selector|string  |Match selector|
+|cb      |function|Event callback|
+
+### remove
+
+Remove event delegation.
+
+```javascript
+var container = document.getElementById('container');
+function clickHandler()
+{
+    // Do something...
+}
+delegate.add(container, 'click', '.children', clickHandler);
+delegate.remove(container, 'click', '.children', clickHandler);
+```
 
 ## difference 
 
@@ -1080,7 +1107,35 @@ extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 
 ## extendDeep 
 
-No documentation.
+Recursive object extending
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|obj   |object|Destination object|
+|*src  |object|Sources objects   |
+|return|object|Destination object|
+
+```javascript
+extendDeep({
+    name: 'RedHood',
+    family: {
+        mother: 'Jane',
+        father: 'Jack'
+    }
+}, {
+    family: {
+        brother: 'Bruce'
+    }
+});
+// -> {
+    name: 'RedHood',
+    family: {
+        mother: 'Jane',
+        father: 'Jack',
+        brother: 'Bruce'
+    }
+}
+```
 
 ## extendOwn 
 
@@ -1186,7 +1241,7 @@ identity('a'); // -> 'a'
 
 ## idxOf 
 
-Get the index at which the first occurrence of value. TODO
+Get the index at which the first occurrence of value.
 
 |Name       |Type  |Desc                |
 |-----------|------|--------------------|
@@ -1933,7 +1988,7 @@ initOnce(); // -> init is invoked once
 
 ## optimizeCb 
 
-TODO
+Used for function context binding.
 
 ## pad 
 
@@ -2177,7 +2232,7 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 
 ## safeCb 
 
-Create callback based on input value. TODO
+Create callback based on input value.
 
 ## safeGet 
 
