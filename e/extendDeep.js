@@ -1,4 +1,4 @@
-/* Recursive object extending
+/* Recursive object extending.
  *
  * |Name  |Type  |Desc              |
  * |------|------|------------------|

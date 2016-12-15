@@ -76,7 +76,7 @@ exports = Class({
     className: 'Url',
     initialize: function (url)
     {
-        extend(this, exports.parse(url || window.location));
+        extend(this, exports.parse(url || window.location.href));
     },
     setQuery: function (name, val)
     {
