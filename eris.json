@@ -26,7 +26,7 @@
     "capitalize": "Convert the first character to upper case and the remaining to lower case.",
     "clamp": "Clamp number within the inclusive lower and upper bounds.",
     "clone": "Create a shallow-copied clone of the provided plain object.",
-    "cloneDeep": "TODO",
+    "cloneDeep": "Recursively clone value.",
     "cmpVersion": "Compare version strings.",
     "compact": "Return a copy of the array with all falsy values removed.",
     "contain": "Check if the value is present in the list.",

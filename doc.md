@@ -713,7 +713,7 @@ Any nested objects or arrays will be copied by reference, not duplicated.
 
 |Name  |Type|Desc          |
 |------|----|--------------|
-|value |*   |Value to clone|
+|val   |*   |Value to clone|
 |return|*   |Cloned value  |
 
 ```javascript
@@ -722,7 +722,18 @@ clone({name: 'eustia'}); // -> {name: 'eustia'}
 
 ## cloneDeep 
 
-TODO
+Recursively clone value.
+
+|Name  |Type|Desc             |
+|------|----|-----------------|
+|val   |*   |Value to clone   |
+|return|*   |Deep cloned Value|
+
+```javascript
+var obj = [{a: 1}, {a: 2}];
+var obj2 = cloneDeep(obj);
+console.log(obj[0] === obj2[1]); // -> false
+```
 
 ## cmpVersion 
 

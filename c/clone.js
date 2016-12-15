@@ -4,7 +4,7 @@
  *
  * |Name  |Type|Desc          |
  * |------|----|--------------|
- * |value |*   |Value to clone|
+ * |val   |*   |Value to clone|
  * |return|*   |Cloned value  |
  *
  * ```javascript
