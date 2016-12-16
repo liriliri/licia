@@ -30,6 +30,7 @@
     "cmpVersion": "Compare version strings.",
     "compact": "Return a copy of the array with all falsy values removed.",
     "contain": "Check if the value is present in the list.",
+    "convertBase": "Convert base of a number.",
     "cookie": "Simple api for handling browser cookies.",
     "createAssigner": "Used to create extend, extendOwn and defaults.",
     "dateFormat": "Simple but extremely useful date format function.",
