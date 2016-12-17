@@ -2140,6 +2140,21 @@ random(5); // -> an integer between 0 and 5
 random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
 ```
 
+## randomBytes 
+
+Random bytes generator.
+
+Use crypto module in node or crypto object in browser if possible.
+
+|Name  |Type  |Desc                        |
+|------|------|----------------------------|
+|size  |number|Number of bytes to generate |
+|return|object|Random bytes of given length|
+
+```javascript
+randomBytes(5); // -> [55, 49, 153, 30, 122]
+```
+
 ## range 
 
 Create flexibly-numbered lists of integers.
@@ -2698,7 +2713,7 @@ Convert the first character of string to upper case.
 |return|string|Converted string |
 
 ```javascript
-upperFirst('red'); // -> RED
+upperFirst('red'); // -> Red
 ```
 
 ## use 
@@ -2719,6 +2734,16 @@ use(['A'], function (A)
 {
     console.log(A + 'B'); // -> 'AB'
 });
+```
+
+## uuid 
+
+RFC4122 version 4 compliant uuid generator.
+
+Check [RFC4122 4.4](http://www.ietf.org/rfc/rfc4122.txt) for reference.
+
+```javascript
+uuid(); // -> '53ce0497-6554-49e9-8d79-347406d2a88b'
 ```
 
 ## values 

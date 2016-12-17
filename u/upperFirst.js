@@ -6,7 +6,7 @@
  * |return|string|Converted string |
  *
  * ```javascript
- * upperFirst('red'); // -> RED
+ * upperFirst('red'); // -> Red
  * ```
  */
 

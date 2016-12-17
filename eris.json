@@ -118,6 +118,7 @@
     "property": "Return a function that will itself return the key property of any passed-in object.",
     "query": "Parse and stringify url query strings.",
     "random": "Produces a random number between min and max(inclusive).",
+    "randomBytes": "Random bytes generator.",
     "range": "Create flexibly-numbered lists of integers.",
     "ready": "Invoke callback when dom is ready, similar to jQuery ready.",
     "remove": "Remove all elements from array that predicate returns truthy for and return an array of the removed elements.",
@@ -158,6 +159,7 @@
     "unzip": "Opposite of zip.",
     "upperFirst": "Convert the first character of string to upper case.",
     "use": "Use modules that is created by define.",
+    "uuid": "RFC4122 version 4 compliant uuid generator.",
     "values": "Creates an array of the own enumerable property values of object.",
     "wrap": "Wrap the function inside a wrapper function, passing it as the first argument.",
     "zip": "Merge together the values of each of the arrays with the values at the corresponding position."
