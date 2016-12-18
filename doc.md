@@ -328,6 +328,44 @@ a.introduce(); // -> 'I am allen, 17 years old. \n I study at Hogwarts.'
 Student.is(a); // -> true
 ```
 
+## Color 
+
+Color converter.
+
+### constructor
+
+|Name |Type         |Desc            |
+|-----|-------------|----------------|
+|color|string object|Color to convert|
+
+### toRgb
+
+Get color rgb string format.
+
+### toHex
+
+Get color hex string format.
+
+### toHsl
+
+Get color hsl string format.
+
+### parse
+
+[static] Parse color string into object containing value and model.
+
+|Name  |Type  |Desc                             |
+|------|------|---------------------------------|
+|color |string|Color string                     |
+|return|object|Object containing value and model|
+
+```javascript
+Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model: 'rgb'}
+var color = new Color('#abc');
+color.toRgb(); // -> 'rgb(170, 187, 204)'
+color.toHsl(); // -> 'hsl(210, 25%, 73%)'
+```
+
 ## Emitter 
 
 Event emitter class which provides observer pattern.
@@ -1233,6 +1271,19 @@ Checks if key is a direct property.
 
 ```javascript
 has({one: 1}, 'one'); // -> true
+```
+
+## hslToRgb 
+
+Convert hsl to rgb.
+
+|Name  |Type |Desc      |
+|------|-----|----------|
+|hsl   |array|Hsl values|
+|return|array|Rgb values|
+
+```javascript
+hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
 ```
 
 ## identity 
@@ -2234,6 +2285,19 @@ This accumulates the arguments passed into an array, after a given index.
 ```javascript
 var paramArr = _.restArgs(function (rest) { return rest });
 paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
+```
+
+## rgbToHsl 
+
+Convert rgb to hsl.
+
+|Name  |Type |Desc      |
+|------|-----|----------|
+|rgb   |array|Rgb values|
+|return|array|Hsl values|
+
+```javascript
+rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
 ```
 
 ## root 
