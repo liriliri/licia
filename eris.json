@@ -30,6 +30,7 @@
     "cloneDeep": "Recursively clone value.",
     "cmpVersion": "Compare version strings.",
     "compact": "Return a copy of the array with all falsy values removed.",
+    "concat": "Concat multiple arrays into a single array.",
     "contain": "Check if the value is present in the list.",
     "convertBase": "Convert base of a number.",
     "cookie": "Simple api for handling browser cookies.",

@@ -3,7 +3,7 @@
  * |Name  |Type  |Desc              |
  * |------|------|------------------|
  * |obj   |object|Destination object|
- * |*src  |object|Sources objects   |
+ * |...src|object|Sources objects   |
  * |return|object|Destination object|
  *
  * ```javascript

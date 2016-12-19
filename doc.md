@@ -808,6 +808,19 @@ The values false, null, 0, "", undefined, and NaN are falsey.
 compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
 ```
 
+## concat 
+
+Concat multiple arrays into a single array.
+
+|Name  |Type |Desc              |
+|------|-----|------------------|
+|...arr|array|Arrays to concat  |
+|return|array|Concatenated array|
+
+```javascript
+concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
+```
+
 ## contain 
 
 Check if the value is present in the list.
@@ -1152,7 +1165,7 @@ Copy all of the properties in the source objects over to the destination object.
 |Name  |Type  |Desc              |
 |------|------|------------------|
 |obj   |object|Destination object|
-|*src  |object|Sources objects   |
+|...src|object|Sources objects   |
 |return|object|Destination object|
 
 ```javascript
@@ -1166,7 +1179,7 @@ Recursive object extending.
 |Name  |Type  |Desc              |
 |------|------|------------------|
 |obj   |object|Destination object|
-|*src  |object|Sources objects   |
+|...src|object|Sources objects   |
 |return|object|Destination object|
 
 ```javascript
