@@ -1,18 +1,18 @@
 // Built by eustia.
 module.exports = (function ()
 {
-        var _ = {};
+    var _ = {};
 
     /* ------------------------------ allKeys ------------------------------ */
 
-    var allKeys = _.allKeys = (function (exports)
+    var allKeys = _.allKeys = (function ()
     {
         /* Retrieve all the names of object's own and inherited properties.
          *
-         * |Name  |Type  |Desc                           |
-         * |---------------------------------------------|
-         * |obj   |object|The object to query            |
-         * |return|array |The array of all property names|
+         * |Name  |Type  |Desc                       |
+         * |------|------|---------------------------|
+         * |obj   |object|Object to query            |
+         * |return|array |Array of all property names|
          *
          * > Members of Object's prototype won't be retrieved.
          *
@@ -23,27 +23,27 @@ module.exports = (function ()
          * ```
          */
 
-        exports = function (obj)
+        function exports(obj)
         {
             var ret = [], key;
 
             for (key in obj) ret.push(key);
 
             return ret;
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ isUndef ------------------------------ */
 
-    var isUndef = _.isUndef = (function (exports)
+    var isUndef = _.isUndef = (function ()
     {
         /* Check if value is undefined.
          *
          * |Name  |Type   |Desc                      |
-         * |-----------------------------------------|
-         * |val   |*      |The value to check        |
+         * |------|-------|--------------------------|
+         * |val   |*      |Value to check            |
          * |return|boolean|True if value is undefined|
          *
          * ```javascript
@@ -52,24 +52,24 @@ module.exports = (function ()
          * ```
          */
 
-        exports = function (val)
+        function exports(val)
         {
             return val === void 0;
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ has ------------------------------ */
 
-    var has = _.has = (function (exports)
+    var has = _.has = (function ()
     {
         /* Checks if key is a direct property.
          *
          * |Name  |Type   |Desc                            |
-         * |-----------------------------------------------|
-         * |obj   |object |The object to query             |
-         * |key   |string |The path to check               |
+         * |------|-------|--------------------------------|
+         * |obj   |object |Object to query                 |
+         * |key   |string |Path to check                   |
          * |return|boolean|True if key is a direct property|
          *
          * ```javascript
@@ -79,13 +79,13 @@ module.exports = (function ()
 
         var hasOwnProp = Object.prototype.hasOwnProperty;
 
-        exports = function (obj, key)
+        function exports(obj, key)
         {
             return hasOwnProp.call(obj, key);
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ keys ------------------------------ */
 
@@ -93,10 +93,10 @@ module.exports = (function ()
     {
         /* Create an array of the own enumerable property names of object.
          *
-         * |Name  |Type  |Desc                       |
-         * |-----------------------------------------|
-         * |obj   |object|The object to query        |
-         * |return|array |The array of property names|
+         * |Name  |Type  |Desc                   |
+         * |------|------|-----------------------|
+         * |obj   |object|Object to query        |
+         * |return|array |Array of property names|
          */
 
         exports = Object.keys || function (obj)
@@ -116,12 +116,12 @@ module.exports = (function ()
 
     /* ------------------------------ identity ------------------------------ */
 
-    var identity = _.identity = (function (exports)
+    var identity = _.identity = (function ()
     {
         /* Return the first argument given.
          *
          * |Name  |Type|Desc       |
-         * |-----------------------|
+         * |------|----|-----------|
          * |val   |*   |Any value  |
          * |return|*   |Given value|
          *
@@ -130,13 +130,13 @@ module.exports = (function ()
          * ```
          */
 
-        exports = function (val)
+        function exports(val)
         {
             return val;
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ repeat ------------------------------ */
 
@@ -144,11 +144,11 @@ module.exports = (function ()
     {
         /* Repeat string n-times.
          *
-         * |Name  |Type  |Desc                |
-         * |----------------------------------|
-         * |str   |string|The string to repeat|
-         * |n     |number|Repeat times        |
-         * |return|string|Repeated string     |
+         * |Name  |Type  |Desc            |
+         * |------|------|----------------|
+         * |str   |string|String to repeat|
+         * |n     |number|Repeat times    |
+         * |return|string|Repeated string |
          *
          * ```javascript
          * repeat('a', 3); // -> 'aaa'
@@ -178,25 +178,29 @@ module.exports = (function ()
 
     /* ------------------------------ objToStr ------------------------------ */
 
-    var objToStr = _.objToStr = (function (exports)
+    var objToStr = _.objToStr = (function ()
     {
         /* Alias of Object.prototype.toString.
          *
-         * |Name  |Type  |Desc                                    |
-         * |------------------------------------------------------|
-         * |value |*     |Source value                            |
-         * |return|string|String representation of the given value|
+         * |Name  |Type  |Desc                                |
+         * |------|------|------------------------------------|
+         * |value |*     |Source value                        |
+         * |return|string|String representation of given value|
+         * 
+         * ```javascript
+         * objToStr(5); // -> '[object Number]'
+         * ```
          */
 
         var ObjToStr = Object.prototype.toString;
 
-        exports = function (val)
+        function exports(val)
         {
             return ObjToStr.call(val);
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ isArr ------------------------------ */
 
@@ -205,7 +209,7 @@ module.exports = (function ()
         /* Check if value is an `Array` object.
          *
          * |Name  |Type   |Desc                              |
-         * |-------------------------------------------------|
+         * |------|-------|----------------------------------|
          * |val   |*      |The value to check                |
          * |return|boolean|True if value is an `Array` object|
          *
@@ -225,32 +229,32 @@ module.exports = (function ()
 
     /* ------------------------------ isNum ------------------------------ */
 
-    var isNum = _.isNum = (function (exports)
+    var isNum = _.isNum = (function ()
     {
         /* Checks if value is classified as a Number primitive or object.
          *
-         * |Name|Type|Desc|
-         * |--------------|
-         * |value|*|The value to check|
-         * |return|boolean|True if value is correctly classified, else false|
+         * |Name  |Type   |Desc                                 |
+         * |------|-------|-------------------------------------|
+         * |value |*      |Value to check                       |
+         * |return|boolean|True if value is correctly classified|
          */
 
-        exports = function (val)
+        function exports(val)
         {
             return objToStr(val) === '[object Number]';
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ indent ------------------------------ */
 
-    var indent = _.indent = (function (exports)
+    var indent = _.indent = (function ()
     {
         /* Indent each line in a string.
          *
          * |Name  |Type  |Desc                |
-         * |----------------------------------|
+         * |------|------|--------------------|
          * |str   |string|String to indent    |
          * |[char]|string|Character to prepend|
          * |[len] |number|Indent length       |
@@ -279,46 +283,89 @@ module.exports = (function ()
         }
 
         return exports;
-    })({});
+    })();
+
+    /* ------------------------------ isFn ------------------------------ */
+
+    var isFn = _.isFn = (function ()
+    {
+        /* Check if value is a function.
+         *
+         * |Name  |Type   |Desc                       |
+         * |------|-------|---------------------------|
+         * |val   |*      |Value to check             |
+         * |return|boolean|True if value is a function|
+         *
+         * Generator function is also classified as true.
+         *
+         * ```javascript
+         * isFn(function() {}); // -> true
+         * isFn(function*() {}); // -> true
+         * ```
+         */
+
+        function exports(val)
+        {
+            var objStr = objToStr(val);
+
+            return objStr === '[object Function]' || objStr === '[object GeneratorFunction]';
+        }
+
+        return exports;
+    })();
 
     /* ------------------------------ isArrLike ------------------------------ */
 
-    var isArrLike = _.isArrLike = (function (exports)
+    var isArrLike = _.isArrLike = (function ()
     {
-        // TODO
+        /* Check if value is array-like.
+         *
+         * |Name  |Type   |Desc                       |
+         * |------|-------|---------------------------|
+         * |value |*      |Value to check             |
+         * |return|boolean|True if value is array like|
+         *
+         * > Function returns false.
+         *
+         * ```javascript
+         * isArrLike('test'); // -> true
+         * isArrLike(document.body.children); // -> true;
+         * isArrLike([1, 2, 3]); // -> true
+         * ```
+         */
 
         var MAX_ARR_IDX = Math.pow(2, 53) - 1;
 
-        exports = function (val)
+        function exports(val)
         {
             if (!has(val, 'length')) return false;
 
             var len = val.length;
 
-            return isNum(len) && len >= 0 && len <= MAX_ARR_IDX;
-        };
+            return isNum(len) && len >= 0 && len <= MAX_ARR_IDX && !isFn(val);
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ each ------------------------------ */
 
-    var each = _.each = (function (exports)
+    var each = _.each = (function ()
     {
         /* Iterates over elements of collection and invokes iteratee for each element.
          *
-         * |Name    |Type         |Desc                          |
-         * |-----------------------------------------------------|
-         * |obj     |object\|array|Collection to iterate over    |
-         * |iteratee|function     |Function invoked per iteration|
-         * |[ctx]   |*            |Function context              |
+         * |Name    |Type        |Desc                          |
+         * |--------|------------|------------------------------|
+         * |obj     |object array|Collection to iterate over    |
+         * |iteratee|function    |Function invoked per iteration|
+         * |[ctx]   |*           |Function context              |
          *
          * ```javascript
          * each({'a': 1, 'b': 2}, function (val, key) {});
          * ```
          */
 
-        exports = function (obj, iteratee, ctx)
+        function exports(obj, iteratee, ctx)
         {
             var i, len;
 
@@ -335,25 +382,25 @@ module.exports = (function ()
             }
 
             return obj;
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ createAssigner ------------------------------ */
 
-    var createAssigner = _.createAssigner = (function (exports)
+    var createAssigner = _.createAssigner = (function ()
     {
         /* Used to create extend, extendOwn and defaults.
          *
          * |Name    |Type    |Desc                          |
-         * |------------------------------------------------|
+         * |--------|--------|------------------------------|
          * |keysFn  |function|Function to get object keys   |
          * |defaults|boolean |No override when set to true  |
-         * |return  |function|The result function, extend...|
+         * |return  |function|Result function, extend...    |
          */
 
-        exports = function (keysFn, defaults)
+        function exports(keysFn, defaults)
         {
             return function (obj)
             {
@@ -371,10 +418,10 @@ module.exports = (function ()
 
                 return obj;
             };
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ defaults ------------------------------ */
 
@@ -383,7 +430,7 @@ module.exports = (function ()
         /* Fill in undefined properties in object with the first value present in the following list of defaults objects.
          *
          * |Name  |Type  |Desc              |
-         * |--------------------------------|
+         * |------|------|------------------|
          * |obj   |object|Destination object|
          * |*src  |object|Sources objects   |
          * |return|object|Destination object|
@@ -405,7 +452,7 @@ module.exports = (function ()
         /* Like extend, but only copies own properties over to the destination object.
          *
          * |Name  |Type  |Desc              |
-         * |--------------------------------|
+         * |------|------|------------------|
          * |obj   |object|Destination object|
          * |*src  |object|Sources objects   |
          * |return|object|Destination object|
@@ -420,43 +467,14 @@ module.exports = (function ()
         return exports;
     })({});
 
-    /* ------------------------------ isFn ------------------------------ */
-
-    var isFn = _.isFn = (function (exports)
-    {
-        /* Check if value is a function.
-         *
-         * |Name  |Type   |Desc                       |
-         * |------------------------------------------|
-         * |val   |*      |The value to check         |
-         * |return|boolean|True if value is a function|
-         *
-         * Generator function is also classified as true.
-         *
-         * ```javascript
-         * isFn(function() {}); // -> true
-         * isFn(function*() {}); // -> true
-         * ```
-         */
-
-        exports = function (val)
-        {
-            var objStr = objToStr(val);
-
-            return objStr === '[object Function]' || objStr === '[object GeneratorFunction]';
-        };
-
-        return exports;
-    })({});
-
     /* ------------------------------ isMatch ------------------------------ */
 
-    var isMatch = _.isMatch = (function (exports)
+    var isMatch = _.isMatch = (function ()
     {
         /* Check if keys and values in src are contained in obj.
          *
-         * |Name  |Type  |Desc                               |
-         * |-------------------------------------------------|
+         * |Name  |Type   |Desc                              |
+         * |------|-------|----------------------------------|
          * |obj   |object |Object to inspect                 |
          * |src   |object |Object of property values to match|
          * |return|boolean|True if object is match           |
@@ -466,7 +484,7 @@ module.exports = (function ()
          * ```
          */
 
-        exports = function (obj, src)
+        function exports(obj, src)
         {
             var _keys = keys(src),
                 len = _keys.length;
@@ -482,20 +500,20 @@ module.exports = (function ()
             }
 
             return true;
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ isObj ------------------------------ */
 
-    var isObj = _.isObj = (function (exports)
+    var isObj = _.isObj = (function ()
     {
         /* Check if value is the language type of Object.
          *
          * |Name  |Type   |Desc                      |
-         * |-----------------------------------------|
-         * |val   |*      |The value to check        |
+         * |------|-------|--------------------------|
+         * |val   |*      |Value to check            |
          * |return|boolean|True if value is an object|
          *
          * [Language Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
@@ -506,25 +524,25 @@ module.exports = (function ()
          * ```
          */
 
-        exports = function (val)
+        function exports(val)
         {
             var type = typeof val;
 
             return !!val && (type === 'function' || type === 'object');
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ isStr ------------------------------ */
 
-    var isStr = _.isStr = (function (exports)
+    var isStr = _.isStr = (function ()
     {
         /* Check if value is a string primitive.
          *
          * |Name  |Type   |Desc                               |
-         * |--------------------------------------------------|
-         * |val   |*      |The value to check                 |
+         * |------|-------|-----------------------------------|
+         * |val   |*      |Value to check                     |
          * |return|boolean|True if value is a string primitive|
          *
          * ```javascript
@@ -532,22 +550,22 @@ module.exports = (function ()
          * ```
          */
 
-        exports = function (val)
+        function exports(val)
         {
             return objToStr(val) === '[object String]';
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ last ------------------------------ */
 
-    var last = _.last = (function (exports)
+    var last = _.last = (function ()
     {
         /* Get the last element of array.
          *
          * |Name  |Type |Desc                     |
-         * |--------------------------------------|
+         * |------|-----|-------------------------|
          * |arr   |array|The array to query       |
          * |return|*    |The last element of array|
          *
@@ -556,27 +574,27 @@ module.exports = (function ()
          * ```
          */
 
-        exports = function (arr)
+        function exports(arr)
         {
             var len = arr ? arr.length : 0;
 
             if (len) return arr[len - 1];
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ ltrim ------------------------------ */
 
-    var ltrim = _.ltrim = (function (exports)
+    var ltrim = _.ltrim = (function ()
     {
         /* Remove chars or white-spaces from beginning of string.
          *
-         * |Name  |Type         |Desc                  |
-         * |-------------------------------------------|
-         * |str   |string       |The string to trim    |
-         * |chars |string\|array|The characters to trim|
-         * |return|string       |The trimmed string    |
+         * |Name  |Type        |Desc              |
+         * |------|------------|------------------|
+         * |str   |string      |String to trim    |
+         * |chars |string array|Characters to trim|
+         * |return|string      |Trimmed string    |
          *
          * ```javascript
          * ltrim(' abc  '); // -> 'abc  '
@@ -587,14 +605,14 @@ module.exports = (function ()
 
         var regSpace = /^\s+/;
 
-        exports = function (str, chars)
+        function exports(str, chars)
         {
             if (chars == null) return str.replace(regSpace, '');
 
-            var start   = 0,
-                len     = str.length,
+            var start = 0,
+                len = str.length,
                 charLen = chars.length,
-                found   = true,
+                found = true,
                 i, c;
 
             while (found && start < len)
@@ -615,18 +633,32 @@ module.exports = (function ()
             }
 
             return (start >= len) ? '' : str.substr(start, len);
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ matcher ------------------------------ */
 
-    var matcher = _.matcher = (function (exports)
+    var matcher = _.matcher = (function ()
     {
-        // TODO
+        /* Return a predicate function that checks if attrs are contained in an object.
+         *
+         * |Name  |Type    |Desc                              |
+         * |------|--------|----------------------------------|
+         * |attrs |object  |Object of property values to match|
+         * |return|function|New predicate function            |
+         *
+         * ```javascript
+         * var objects = [
+         *     {a: 1, b: 2, c: 3 },
+         *     {a: 4, b: 5, c: 6 }
+         * ];
+         * filter(objects, matcher({a: 4, c: 6 })); // -> [{a: 4, b: 5, c: 6 }]
+         * ```
+         */
 
-        exports = function (attrs)
+        function exports(attrs)
         {
             attrs = extendOwn({}, attrs);
 
@@ -634,50 +666,52 @@ module.exports = (function ()
             {
                 return isMatch(obj, attrs);
             };
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ optimizeCb ------------------------------ */
 
-    var optimizeCb = _.optimizeCb = (function (exports)
+    var optimizeCb = _.optimizeCb = (function ()
     {
-        exports = function (func, ctx, argCount)
+        /* Used for function context binding.
+         */
+
+        function exports(fn, ctx, argCount)
         {
-            if (isUndef(ctx)) return func;
+            if (isUndef(ctx)) return fn;
 
             switch (argCount == null ? 3 : argCount)
             {
                 case 1: return function (val)
                 {
-                    return func.call(ctx, val);
+                    return fn.call(ctx, val);
                 };
                 case 3: return function (val, idx, collection)
                 {
-                    return func.call(ctx, val, idx, collection);
+                    return fn.call(ctx, val, idx, collection);
                 };
                 case 4: return function (accumulator, val, idx, collection)
                 {
-                    return func.call(ctx, accumulator, val, idx, collection);
+                    return fn.call(ctx, accumulator, val, idx, collection);
                 }
             }
 
             return function ()
             {
-                return func.apply(ctx, arguments);
+                return fn.apply(ctx, arguments);
             };
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ safeCb ------------------------------ */
 
     var safeCb = _.safeCb = (function (exports)
     {
-        /* function
-         * safeCb: Create callback based on input value.
+        /* Create callback based on input value.
          */
 
         exports = function (val, ctx, argCount)
@@ -702,23 +736,23 @@ module.exports = (function ()
 
     /* ------------------------------ map ------------------------------ */
 
-    var map = _.map = (function (exports)
+    var map = _.map = (function ()
     {
         /* Create an array of values by running each element in collection through iteratee.
          *
-         * |Name    |Type         |Desc                          |
-         * |-----------------------------------------------------|
-         * |obj     |array\|object|Collection to iterate over    |
-         * |iteratee|function     |Function invoked per iteration|
-         * |[ctx]   |*            |Function context              |
-         * |return  |array        |New mapped array              |
+         * |Name    |Type        |Desc                          |
+         * |--------|------------|------------------------------|
+         * |obj     |array object|Collection to iterate over    |
+         * |iteratee|function    |Function invoked per iteration|
+         * |[ctx]   |*           |Function context              |
+         * |return  |array       |New mapped array              |
          *
          * ```javascript
          * map([4, 8], function (n) { return n * n; }); // -> [16, 64]
          * ```
          */
 
-        exports = function (obj, iteratee, ctx)
+        function exports(obj, iteratee, ctx)
         {
             iteratee = safeCb(iteratee, ctx);
 
@@ -733,22 +767,22 @@ module.exports = (function ()
             }
 
             return results;
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ restArgs ------------------------------ */
 
-    var restArgs = _.restArgs = (function (exports)
+    var restArgs = _.restArgs = (function ()
     {
         /* This accumulates the arguments passed into an array, after a given index.
          *
-         * |Name|Type|Desc|
-         * |--------------|
-         * |function|function|Function that needs rest parameters|
-         * |startIndex|number|The start index to accumulates|
-         * |return|function|Generated function with rest parameters|
+         * |Name      |Type    |Desc                                   |
+         * |----------|--------|---------------------------------------|
+         * |function  |function|Function that needs rest parameters    |
+         * |startIndex|number  |The start index to accumulates         |
+         * |return    |function|Generated function with rest parameters|
          *
          * ```javascript
          * var paramArr = _.restArgs(function (rest) { return rest });
@@ -756,7 +790,7 @@ module.exports = (function ()
          * ```
          */
 
-        exports = function (fn, startIdx)
+        function exports(fn, startIdx)
         {
             startIdx = startIdx == null ? fn.length - 1 : +startIdx;
 
@@ -784,19 +818,19 @@ module.exports = (function ()
 
                 return fn.apply(this, args);
             };
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ toArr ------------------------------ */
 
-    var toArr = _.toArr = (function (exports)
+    var toArr = _.toArr = (function ()
     {
         /* Convert value to an array.
          *
          * |Name  |Type |Desc            |
-         * |-----------------------------|
+         * |------|-----|----------------|
          * |val   |*    |Value to convert|
          * |return|array|Converted array |
          *
@@ -808,7 +842,7 @@ module.exports = (function ()
          * ```
          */
 
-        exports = function (val)
+        function exports(val)
         {
             if (!val) return [];
 
@@ -817,10 +851,10 @@ module.exports = (function ()
             if (isArrLike(val) && !isStr(val)) return map(val);
 
             return [val];
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ partial ------------------------------ */
 
@@ -829,7 +863,7 @@ module.exports = (function ()
         /* Partially apply a function by filling in given arguments.
          *
          * |Name    |Type    |Desc                                    |
-         * |----------------------------------------------------------|
+         * |--------|--------|----------------------------------------|
          * |fn      |function|Function to partially apply arguments to|
          * |partials|...*    |Arguments to be partially applied       |
          * |return  |function|New partially applied function          |
@@ -858,15 +892,15 @@ module.exports = (function ()
 
     /* ------------------------------ rtrim ------------------------------ */
 
-    var rtrim = _.rtrim = (function (exports)
+    var rtrim = _.rtrim = (function ()
     {
         /* Remove chars or white-spaces from end of string.
          *
-         * |Name  |Type         |Desc                  |
-         * |-------------------------------------------|
-         * |str   |string       |The string to trim    |
-         * |chars |string\|array|The characters to trim|
-         * |return|string       |The trimmed string    |
+         * |Name  |Type        |Desc              |
+         * |------|------------|------------------|
+         * |str   |string      |String to trim    |
+         * |chars |string array|Characters to trim|
+         * |return|string      |Trimmed string    |
          *
          * ```javascript
          * rtrim(' abc  '); // -> ' abc'
@@ -877,7 +911,7 @@ module.exports = (function ()
 
         var regSpace = /\s+$/;
 
-        exports = function (str, chars)
+        function exports(str, chars)
         {
             if (chars == null) return str.replace(regSpace, '');
 
@@ -904,22 +938,22 @@ module.exports = (function ()
             }
 
             return (end >= 0) ? str.substring(0, end + 1) : '';
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ trim ------------------------------ */
 
-    var trim = _.trim = (function (exports)
+    var trim = _.trim = (function ()
     {
         /* Remove chars or white-spaces from beginning end of string.
          *
-         * |Name  |Type         |Desc                  |
-         * |-------------------------------------------|
-         * |str   |string       |The string to trim    |
-         * |chars |string\|array|The characters to trim|
-         * |return|string       |The trimmed string    |
+         * |Name  |Type        |Desc              |
+         * |------|------------|------------------|
+         * |str   |string      |String to trim    |
+         * |chars |string array|Characters to trim|
+         * |return|string      |Trimmed string    |
          *
          * ```javascript
          * trim(' abc  '); // -> 'abc'
@@ -930,26 +964,35 @@ module.exports = (function ()
 
         var regSpace = /^\s+|\s+$/g;
 
-        exports = function (str, chars)
+        function exports(str, chars)
         {
             if (chars == null) return str.replace(regSpace, '');
 
             return ltrim(rtrim(str, chars), chars);
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     /* ------------------------------ extractBlockCmts ------------------------------ */
 
-    var extractBlockCmts = _.extractBlockCmts = (function (exports)
+    var extractBlockCmts = _.extractBlockCmts = (function ()
     {
         /* Extract block comments from source code.
+         *
+         * |Name  |Type  |Desc             |
+         * |------|------|-----------------|
+         * |str   |string|String to extract|
+         * |return|array |Block comments   |
+         *
+         * ```javascript
+         * extractBlockCmts('\/*eris*\/'); // -> ['eris']
+         * ```
          */
 
         var regBlockCmt = /(\/\*[\s\S]*?\*\/)/mg;
 
-        exports = function (str)
+        function exports(str)
         {
             var ret = str.match(regBlockCmt);
 
@@ -964,10 +1007,10 @@ module.exports = (function ()
             });
 
             return ret;
-        };
+        }
 
         return exports;
-    })({});
+    })();
 
     return _;
 })();
