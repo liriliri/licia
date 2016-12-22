@@ -2391,6 +2391,34 @@ safeSet(obj, ['a', 'aa'], 2); // obj = {a: {aa: 2}}
 safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
 ```
 
+## sample 
+
+Sample random values from a collection.
+
+|Name  |Type        |Desc                  |
+|------|------------|----------------------|
+|obj   |array object|Collection to sample  |
+|n     |number      |Number of values      |
+|return|array       |Array of sample values|
+
+```javascript
+sample([2, 3, 1], 2); // -> [2, 3]
+sample({a: 1, b: 2, c: 3}, 1); // -> [2]
+```
+
+## shuffle 
+
+Randomize the order of the elements in a given array.
+
+|Name  |Type |Desc              |
+|------|-----|------------------|
+|arr   |array|Array to randomize|
+|return|array|Randomized Array  |
+
+```javascript
+shuffle([1, 2, 3]); // -> [3, 1, 2]
+```
+
 ## size 
 
 Get size of object, length of array like object or the number of keys.
