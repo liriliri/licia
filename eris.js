@@ -12,7 +12,8 @@ var OUTPUT_PATH = path.resolve(__dirname, 'eris.json');
 glob('*/*.js', {
     ignore: [
         '*/*.*.js',
-        '*test/*.js'
+        '*test/*.js',
+        '*npm/*.js'
     ]
 }, function (err, files)
 {
