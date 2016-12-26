@@ -1376,11 +1376,11 @@ Compute the list of values that are the intersection of all the arrays.
 
 |Name  |Type |Desc                          |
 |------|-----|------------------------------|
-|*arr  |array|Arrays to inspect             |
+|...arr|array|Arrays to inspect             |
 |return|array|New array of inspecting values|
 
 ```javascript
-intersection([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
+intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
 ```
 
 ## invert 
