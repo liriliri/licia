@@ -320,7 +320,7 @@ var Student = People.extend({
     is: function (obj)
     {
         return obj instanceof Student;
-   }
+    }
 });
 
 var a = new Student('allen', 17, 'Hogwarts');
@@ -722,7 +722,7 @@ Convert the first character to upper case and the remaining to lower case.
 |str   |string|String to capitalize|
 |return|string|Capitalized string  |
 
-```
+```javascript
 capitalize('rED'); // -> Red
 ```
 

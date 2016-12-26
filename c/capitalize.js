@@ -5,7 +5,7 @@
  * |str   |string|String to capitalize|
  * |return|string|Capitalized string  |
  *
- * ```
+ * ```javascript
  * capitalize('rED'); // -> Red
  * ```
  */

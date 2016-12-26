@@ -34,7 +34,7 @@
  *     is: function (obj)
  *     {
  *         return obj instanceof Student;
-  *    }
+ *     }
  * });
  *
  * var a = new Student('allen', 17, 'Hogwarts');
