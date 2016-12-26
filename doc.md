@@ -661,6 +661,36 @@ Get average value of given numbers.
 average(5, 3, 1); // -> 3
 ```
 
+## base64 
+
+Basic base64 encoding and decoding.
+
+### encode
+
+Turn a byte array into a base64 string.
+
+|Name  |Type  |Desc         |
+|------|------|-------------|
+|arr   |array |Byte array   |
+|return|string|Base64 string|
+
+```javascript
+base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
+```
+
+### decode
+
+Turn a base64 string into a byte array.
+
+|Name  |Type  |Desc         |
+|------|------|-------------|
+|str   |string|Base64 string|
+|return|array |Byte array   |
+
+```javascript
+base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
+```
+
 ## before 
 
 Create a function that invokes less than n times.

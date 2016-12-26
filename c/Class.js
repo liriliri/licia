@@ -50,8 +50,6 @@ function exports(methods, statics)
     return Base.extend(methods, statics);
 }
 
-var regCallSuper = /callSuper/;
-
 function makeClass(parent, methods, statics)
 {
     statics = statics || {};
