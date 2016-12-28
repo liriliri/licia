@@ -121,6 +121,7 @@
     "pluck": "Extract a list of property values.",
     "property": "Return a function that will itself return the key property of any passed-in object.",
     "query": "Parse and stringify url query strings.",
+    "raf": "Shortcut for requestAnimationFrame.",
     "random": "Produces a random number between min and max(inclusive).",
     "randomBytes": "Random bytes generator.",
     "range": "Create flexibly-numbered lists of integers.",
