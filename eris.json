@@ -104,6 +104,7 @@
     "mapObj": "Map for objects.",
     "matcher": "Return a predicate function that checks if attrs are contained in an object.",
     "max": "Get maximum value of given numbers.",
+    "memStorage": "Memory-backed implementation of the Web Storage API.",
     "memoize": "Memoize a given function by caching the computed result.",
     "methods": "Return a sorted list of the names of every method in an object.",
     "min": "Get minimum value of given numbers.",

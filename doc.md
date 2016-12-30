@@ -1969,6 +1969,17 @@ Get maximum value of given numbers.
 max(2.3, 1, 4.5, 2); // 4.5
 ```
 
+## memStorage 
+
+Memory-backed implementation of the Web Storage API.
+
+A replacement for environments where localStorage or sessionStorage is not available.
+
+```javascript
+var localStorage = window.localStorage || memStorage;
+localStorage.setItem('test', 'eris');
+```
+
 ## memoize 
 
 Memoize a given function by caching the computed result.
