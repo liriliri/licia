@@ -6,7 +6,8 @@
     "test": "test"
   },
   "scripts": {
-    "update": "node eris && node doc"
+    "update": "node eris && node doc",
+    "pack": "node pack"
   },
   "repository": {
     "type": "git",

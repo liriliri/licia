@@ -25,7 +25,7 @@
  * ```
  */
 
-_('trim each isUndef isArr map isEmpty filter');
+_('trim each isUndef isArr map isEmpty filter isObj');
 
 exports = {
     parse: function (str)
@@ -61,7 +61,7 @@ exports = {
     {
         return filter(map(obj, function (val, key)
         {
-            if (isEmpty(val)) return '';
+            if (isObj(val) && isEmpty(val)) return '';
             if (isArr(val)) return exports.stringify(val, key);
 
             return (arrKey || key) + '=' + encodeURIComponent(val);

@@ -15,8 +15,9 @@ it('stringify query', function ()
     expect(query.stringify({foo: 'bar'})).to.equal('foo=bar');
     expect(query.stringify({
         eruda: 'true',
-        eustia: 'false'
-    })).to.equal('eruda=true&eustia=false');
+        eustia: 'false',
+        number: 156
+    })).to.equal('eruda=true&eustia=false&number=156');
     expect(query.stringify({
         test: ['1', '2']
     })).to.equal('test=1&test=2');
