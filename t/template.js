@@ -69,8 +69,6 @@ exports = function (str)
           "print=function(){__p+=__j.call(arguments,'');};\n" +
           src + 'return __p;\n';
 
-    console.log(src);
-
     var render = new Function('obj', 'util', src);
 
     return function (data)
