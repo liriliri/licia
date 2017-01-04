@@ -1824,6 +1824,29 @@ kebabCase('foo_bar'); // -> foo-bar
 kebabCase('foo.bar'); // -> foo-bar
 ```
 
+## keyCode 
+
+Key codes and key names conversion.
+
+Get key code's name.
+
+|Name  |Type  |Desc                  |
+|------|------|----------------------|
+|code  |number|Key code              |
+|return|string|Corresponding key name|
+
+Get key name's code.
+
+|Name  |Type  |Desc                  |
+|------|------|----------------------|
+|name  |string|Key name              |
+|return|number|Corresponding key code|
+
+```javascript
+keyCode(13); // -> 'enter'
+keyCode('enter'); // -> 13
+```
+
 ## keys 
 
 Create an array of the own enumerable property names of object.

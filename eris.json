@@ -94,6 +94,7 @@
     "isTypedArr": "Check if value is a typed array.",
     "isUndef": "Check if value is undefined.",
     "kebabCase": "Convert string to \"kebabCase\".",
+    "keyCode": "Key codes and key names conversion.",
     "keys": "Create an array of the own enumerable property names of object.",
     "last": "Get the last element of array.",
     "loadJs": "Inject script tag into page with given src value.",
