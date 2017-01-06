@@ -42,7 +42,7 @@
  *     }
  * });
  * validator.validate({}); // -> 'test is required'
- * validator.validate({test: 1}); // -> 'test should be a string with length 6';
+ * validator.validate({test: 1}); // -> 'test should be a string with length 5';
  * validator.validate({test: 'eris'}); // -> true
  * ```
  */
