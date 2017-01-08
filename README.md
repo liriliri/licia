@@ -16,7 +16,7 @@ as a mini version of npm suitable for tiny packages.
 It is recommended to use the official bundler [eustia](http://liriliri.github.io/eustia/).
 
 But if you don't like it, just install **eustia-module** and use it like 
-other npm utility modules such as lodash.
+any other npm utility modules such as lodash.
 
 ```bash
 npm i eustia-module --save
@@ -46,8 +46,3 @@ test files first.
 * Must named with **a-zA-Z$** characters only.
 * Must not be repeated. (e.g. leftPad is not allowed because there is already a
   module called lpad)
-
-## License
-
-Eris is released under the MIT license. Please see
-[LICENSE](https://opensource.org/licenses/MIT) for full details.
