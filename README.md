@@ -3,13 +3,30 @@
 Eustia official module repository.
 
 > To check all current available functions, see 
-[doc.md](https://github.com/liriliri/eris/blob/master/doc.md).
+[doc.md](doc.md).
 
 ## Another Lodash?
 
 No. The goal of Eustia is to provide a huge number of useful and small
 JavaScript codes, not just functions, but also modules and classes. Think of it
 as a mini version of npm suitable for tiny packages.
+
+## Usage
+
+It is recommended to use the official bundler [eustia](http://liriliri.github.io/eustia/).
+
+But if you don't like it, just install **eustia-module** and use it like 
+other npm utility modules such as lodash.
+
+```bash
+npm i eustia-module --save
+```
+
+```javascript
+var uuid = require('eustia-module/uuid');
+ 
+console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815 
+```
 
 ## Submitting New Modules
 
