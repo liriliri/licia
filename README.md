@@ -46,3 +46,4 @@ test files first.
 * Must named with **a-zA-Z$** characters only.
 * Must not be repeated. (e.g. leftPad is not allowed because there is already a
   module called lpad)
+* Must within a file, less than 500 lines. (with comments and blank lines counted)  
