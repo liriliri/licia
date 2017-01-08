@@ -981,6 +981,21 @@ Used to create extend, extendOwn and defaults.
 |defaults|boolean |No override when set to true  |
 |return  |function|Result function, extend...    |
 
+## curry 
+
+Function currying.
+
+|Name  |Type    |Desc                |
+|------|--------|--------------------|
+|fn    |function|Function to curry   |
+|return|function|New curried function|
+
+```javascript
+var add = function (a, b) { return a + b };
+var add1 = add(1);
+add1(2); // -> 3
+```
+
 ## dateFormat 
 
 Simple but extremely useful date format function.

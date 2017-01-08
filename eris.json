@@ -37,6 +37,7 @@
     "convertBase": "Convert base of a number.",
     "cookie": "Simple api for handling browser cookies.",
     "createAssigner": "Used to create extend, extendOwn and defaults.",
+    "curry": "Function currying.",
     "dateFormat": "Simple but extremely useful date format function.",
     "debounce": "Return a new debounced version of the passed function.",
     "defaults": "Fill in undefined properties in object with the first value present in the following list of defaults objects.",
