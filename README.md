@@ -2,8 +2,8 @@
 
 Eustia official module repository.
 
-> To check all current available functions, see 
-[doc.md](doc.md).
+To check all current available functions, see 
+[doc.md](http://liriliri.github.io/eustia/module.html).
 
 ## Another Lodash?
 
@@ -36,7 +36,7 @@ request.
 Please check [Eustia Documentation](http://liriliri.github.io/eustia/docs.html#create-module) 
 about how to write an eustia module.
 
-> To run test for a specified module, run `node test <moduleName>` to generate 
+Note: To run test for a specified module, run `node test <moduleName>` to generate 
 test files first.
 
 ### Rules
