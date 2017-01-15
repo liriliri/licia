@@ -24,3 +24,8 @@ it('format date using mask', function ()
         expect(dateFormat(now, key)).to.equal(val);
     });
 });
+
+it('format date', function ()
+{
+    expect(dateFormat('HH:MM:ss')).to.equal(dateFormat(new Date, 'HH:MM:ss'));
+});
