@@ -1,5 +1,10 @@
 # Eris
 
+[![Build status][travis-image]][travis-url]
+
+[travis-image]: https://img.shields.io/travis/liriliri/eris.svg
+[travis-url]: https://travis-ci.org/liriliri/eris
+
 Eustia official module repository.
 
 To check all current available functions, see 

@@ -1,9 +1,10 @@
 language: node_js
 node_js:
-  - "6"
-  - "7"
+  - "0.12"
+  - "6.1"
 before_script:
   - npm install -g mocha
   - mkdir test
 script:
+  - node test has && mocha test/has
   - node test noop && mocha test/noop
