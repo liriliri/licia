@@ -7,5 +7,4 @@ before_script:
   - npm install -g mocha
   - mkdir test
 script:
-  - node test has && mocha test/has
-  - node test noop && mocha test/noop
+  - bash ci.sh
