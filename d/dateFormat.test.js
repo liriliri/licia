@@ -12,7 +12,6 @@ it('format date using mask', function ()
         'mediumTime': '7:00:04 PM',
         'isoDate': '2016-11-19',
         'isoTime': '19:00:04',
-        'isoUtcDateTime': '2016-11-19T11:00:04Z',
         'yyyy-mm-dd HH:MM:ss': '2016-11-19 19:00:04'
     };
 
