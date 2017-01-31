@@ -20,6 +20,8 @@
  * ```
  */
 
+_('toArr');
+
 function exports(name, requires, method)
 {
     if (arguments.length === 2)
