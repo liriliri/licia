@@ -20,8 +20,8 @@ function exports(src, cb)
     script.onload = function ()
     {
         var isNotLoaded = script.readyState &&
-            script.readyState != "complete" &&
-            script.readyState != "loaded";
+            script.readyState != 'complete' &&
+            script.readyState != 'loaded';
 
         cb && cb(!isNotLoaded);
     };

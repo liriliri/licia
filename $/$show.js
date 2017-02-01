@@ -39,9 +39,9 @@ function getDefDisplay(elName)
     {
         el = document.createElement(elName);
         document.documentElement.appendChild(el);
-        display = getComputedStyle(el, '').getPropertyValue("display");
+        display = getComputedStyle(el, '').getPropertyValue('display');
         el.parentNode.removeChild(el);
-        display == "none" && (display = "block");
+        display == 'none' && (display = 'block');
         elDisplay[elName] = display;
     }
 

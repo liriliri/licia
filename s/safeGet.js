@@ -22,6 +22,7 @@ function exports(obj, path)
 
     var prop;
 
+    /* eslint-disable no-cond-assign */
     while (prop = path.shift())
     {
         obj = obj[prop];

@@ -76,6 +76,7 @@ function exports(options)
             result = xhr.responseText;
             try {
                 if (dataType === 'json') result = JSON.parse(result);
+            /* eslint-disable no-empty */
             } catch (e) {}
             success(result, xhr);
         } else

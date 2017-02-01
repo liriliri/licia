@@ -7,7 +7,8 @@
   },
   "scripts": {
     "update": "node eris && node doc",
-    "pack": "node pack"
+    "pack": "node pack",
+    "lint": "eslint $ [a-z]"
   },
   "repository": {
     "type": "git",

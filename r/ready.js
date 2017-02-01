@@ -25,6 +25,7 @@ if (!loaded)
     {
         doc.removeEventListener(domContentLoaded, listener);
         loaded = 1;
+        /* eslint-disable no-cond-assign */
         while (listener = fns.shift()) listener();
     });
 }

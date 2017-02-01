@@ -99,6 +99,7 @@ exports = Class({
         var val = [0, 0, 0, 1],
             model = 'rgb';
 
+        /* eslint-disable no-cond-assign */
         if (match = colorStr.match(regHexAbbr))
         {
             match = match[1];

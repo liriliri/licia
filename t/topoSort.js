@@ -53,6 +53,7 @@ function sort(nodes, edges)
 
         var outgoing = edges.filter(function(edge) { return edge[0] === node });
 
+        /* eslint-disable no-cond-assign */
         if (i = outgoing.length)
         {
             var preds = predecessors.concat(node);

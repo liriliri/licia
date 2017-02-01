@@ -10,6 +10,7 @@
  * ```
  */
 
+/* eslint-disable no-control-regex */
 var regColor = /\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]/g;
 
 function exports(str)

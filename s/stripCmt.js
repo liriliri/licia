@@ -30,7 +30,7 @@ function exports(str)
         }
         if (mode.singleQuote)
         {
-            if (str[i] === "'" && str[i-1] !== '\\') mode.singleQuote = false;
+            if (str[i] === '\'' && str[i-1] !== '\\') mode.singleQuote = false;
             continue;
         }
 
@@ -59,7 +59,7 @@ function exports(str)
         }
 
         mode.doubleQuote = str[i] === '"';
-        mode.singleQuote = str[i] === "'";
+        mode.singleQuote = str[i] === '\'';
 
         if (str[i] === '/')
         {

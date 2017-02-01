@@ -5,6 +5,7 @@ node_js:
   - "7"
 before_script:
   - npm install -g mocha
+  - npm install -g eslint
   - mkdir test
 script:
   - bash ci.sh

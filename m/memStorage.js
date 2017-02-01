@@ -33,10 +33,12 @@ exports = {
     {
         var keys = uncloakedKeys();
 
+        /* eslint-disable no-cond-assign */
         for (var i = 0, key; key = keys[i]; i++) delete this[key];
 
         keys = cloakedKeys();
 
+        /* eslint-disable no-cond-assign */
         for (i = 0; key = keys[i]; i++) delete cloak[key];
     }
 };

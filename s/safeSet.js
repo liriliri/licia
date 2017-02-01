@@ -25,6 +25,7 @@ function exports(obj, path, val)
     var lastProp = path.pop(),
         prop;
 
+    /* eslint-disable no-cond-assign */
     while (prop = path.shift())
     {
         if (!obj[prop]) obj[prop] = {};
