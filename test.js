@@ -19,7 +19,7 @@ function main()
 
     var modPath = resolvePath(modName[0].toLowerCase(), modName + '.js'),
         modTestPath = modPath.replace('.js', '.test.js'),
-        testOutputPath = resolvePath('test/' + modName + '.js');
+        testOutputPath = resolvePath('test/' + modName + '.' + options.type + '.js');
 
     var partial = util.partial;
 
@@ -42,12 +42,11 @@ function main()
         ]);
     }
 
-
     async.waterfall(callbacks, function (err)
     {
         if (err) return console.log(err);
 
-        console.log('Run "' + (options.type === 'mocha' ? 'mocha test/' + modName : 'karma start') +
+        console.log('Run "' + (options.type === 'mocha' ? 'mocha test/' + modName + '.mocha' : 'karma start') +
                     '" to execute test:)');
     });
 }
