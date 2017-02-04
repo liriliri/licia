@@ -159,7 +159,7 @@ mochaTests=(
 )
 
 for i in ${mochaTests[@]}; do
-    node test $i
+    node test $i -s
 done
 
 mocha test/*.mocha.js

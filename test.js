@@ -46,6 +46,8 @@ function main()
     {
         if (err) return console.log(err);
 
+        if (options.silent) return;
+
         console.log('Run "' + (options.type === 'mocha' ? 'mocha test/' + modName + '.mocha' : 'karma start') +
                     '" to execute test:)');
     });
@@ -136,9 +138,11 @@ function writeFile(path, data, cb)
 function readOpts()
 {
     options = util.defaults(nopt({
-        karma: Boolean
+        karma: Boolean,
+        silent: Boolean
     }, {
-        k: '--karma'
+        k: '--karma',
+        s: '--silent'
     }, process.argv, 2), options);
 
     if (options.karma) options.type = 'karma';
