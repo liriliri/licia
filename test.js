@@ -39,7 +39,7 @@ function runAll()
     if (options.type === 'karma')
     {
         callbacks = callbacks.concat([
-            partial(readTpl, 'karma.conf'),
+            partial(readTpl, getKarmaType()),
             partial(genKarmaConf, tests),
             partial(writeFile, resolvePath('karma.conf.js'))
         ]);
@@ -76,7 +76,7 @@ function runMod(modName, cb)
     if (options.type === 'karma' && !options.all)
     {
         callbacks = callbacks.concat([
-            partial(readTpl, 'karma.conf'),
+            partial(readTpl, getKarmaType()),
             partial(genKarmaConf, util.toArr(modName)),
             partial(writeFile, resolvePath('karma.conf.js'))
         ]);
@@ -126,9 +126,14 @@ function genKarmaConf(modNames, cb)
         files += '\'test/' + modNames[i] + '.karma.js\', ';
     }
 
-    files = util.rtrim(files, ',');
+    files = util.rtrim(files, ', ');
 
-    cb(null, tpl['karma.conf']({files: files}));
+    cb(null, tpl[getKarmaType()]({files: files}));
+}
+
+function getKarmaType()
+{
+    return options.sauce ? 'karma.sauce' : 'karma.conf';
 }
 
 function genTestUtil(modName, cb)
@@ -194,7 +199,8 @@ function readOpts()
     options = util.defaults(nopt({
         karma: Boolean,
         silent: Boolean,
-        all: Boolean
+        all: Boolean,
+        sauce: Boolean
     }, {
         k: '--karma',
         s: '--silent',

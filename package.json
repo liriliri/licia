@@ -10,8 +10,9 @@
     "pack": "node pack",
     "lint": "eslint $ [a-z]",
     "test": "npm run test:mocha && npm run test:karma",
+    "test:mocha": "node test -as && mocha test/*.mocha.js",
     "test:karma": "node test -kas && karma start",
-    "test:mocha": "node test -as && mocha test/*.mocha.js"
+    "test:sauce": "node test -kas --sauce && karma start"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "karma-chrome-launcher": "^0.2.3",
     "karma-jquery": "^0.1.0",
     "karma-mocha": "^0.2.2",
+    "karma-sauce-launcher": "^1.1.0",
     "mocha": "^2.4.5",
     "nopt": "^3.0.6",
     "underscore": "^1.8.3"
