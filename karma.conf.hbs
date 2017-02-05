@@ -8,9 +8,13 @@ module.exports = function(config)
             'karma-mocha',
             'karma-chai-plugins',
             'karma-jquery',
-            'karma-chrome-launcher'
+            'karma-chrome-launcher',
+            'karma-coverage'
         ],
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage'],
+        preprocessors: {
+            'testUtil/*.js': ['coverage']
+        },
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,

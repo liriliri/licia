@@ -10,7 +10,7 @@
     "pack": "node pack",
     "lint": "eslint $ [a-z]",
     "test": "npm run test:mocha && npm run test:karma",
-    "cov": "istanbul cover ./node_modules/mocha/bin/_mocha",
+    "cov:mocha": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "test:mocha": "node test -as && mocha",
     "test:karma": "node test -kas && karma start",
     "test:sauce": "node test -kas --sauce && karma start"
@@ -37,6 +37,7 @@
     "karma": "^0.13.22",
     "karma-chai-plugins": "^0.7.0",
     "karma-chrome-launcher": "^0.2.3",
+    "karma-coverage": "^1.1.1",
     "karma-jquery": "^0.1.0",
     "karma-mocha": "^0.2.2",
     "karma-sauce-launcher": "^1.1.0",
