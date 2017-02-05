@@ -39,7 +39,12 @@ function exports(p, mode, cb)
         switch (err.code)
         {
             case 'ENOENT':
-                exports(path.dirname(p), mode, cb);
+                exports(path.dirname(p), mode, function (err)
+                {
+                    if (err) return cb(err);
+
+                    exports(p, mode, cb)
+                });
                 break;
             default:
                 fs.stat(p, function (errStat, stat)

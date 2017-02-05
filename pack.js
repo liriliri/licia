@@ -14,7 +14,7 @@ glob('*/*.js', {
 {
     if (err) return console.log(err);
 
-    main(files);
+    util.mkdir('npm/eustia', function () { main(files) });
 });
 
 function main(files)

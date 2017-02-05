@@ -1,5 +1,7 @@
 /.idea/
 /node_modules/
 /test/
+/testUtil/
 /npm/
+/coverage/
 karma.conf.js

@@ -1,5 +1,6 @@
 var path = require('path'),
     fs = require('fs'),
+    rmdir = require('rmdir'),
     handlebars = require('handlebars'),
     eustia = require('eustia'),
     nopt = require('nopt'),
@@ -45,6 +46,8 @@ function runAll()
         ]);
     }
 
+    callbacks.push(partial(genTestUtil, tests));
+
     async.waterfall(callbacks, function (err)
     {
         if (err) return console.log(err);
@@ -59,7 +62,7 @@ function runMod(modName, cb)
 {
     var modPath = resolvePath(modName[0].toLowerCase(), modName + '.js'),
         modTestPath = modPath.replace('.js', '.test.js'),
-        testOutputPath = resolvePath('test/' + modName + '.' + options.type + '.js');
+        testOutputPath = resolvePath('test/' + modName + '.js');
 
     var partial = util.partial;
 
@@ -69,15 +72,16 @@ function runMod(modName, cb)
         partial(readTpl, options.type + '.test'),
         partial(readFile, modTestPath),
         partial(genTestFile, modName),
-        partial(writeFile, testOutputPath),
-        partial(genTestUtil, modName)
+        partial(writeFile, testOutputPath)
     ];
+
+    if (!options.all) callbacks.push(partial(genTestUtil, modName));
 
     if (options.type === 'karma' && !options.all)
     {
         callbacks = callbacks.concat([
             partial(readTpl, getKarmaType()),
-            partial(genKarmaConf, util.toArr(modName)),
+            partial(genKarmaConf, modName),
             partial(writeFile, resolvePath('karma.conf.js'))
         ]);
     }
@@ -86,12 +90,13 @@ function runMod(modName, cb)
     {
         if (err) return console.log(err);
 
+        if (!options.silent)
+        {
+            console.log('Run "' + (options.type === 'mocha' ? 'mocha test/' + modName : 'karma start') +
+                        '" to execute test:)');
+        }
+
         cb && cb();
-
-        if (options.silent) return;
-
-        console.log('Run "' + (options.type === 'mocha' ? 'mocha test/' + modName + '.mocha' : 'karma start') +
-                    '" to execute test:)');
     });
 }
 
@@ -108,25 +113,28 @@ function genTestFile(modName, data, cb)
 {
     cb(null, tpl[options.type + '.test']({
         modName: modName,
+        utilPath: options.all ? 'util' : modName,
         data: util.indent(util.trim(data))
     }));
 }
 
-function genKarmaConf(modNames, cb)
+function genKarmaConf(modName, cb)
 {
     var files = '';
 
-    for (var i = 0, len = modNames.length; i < len; i++)
+    if (options.all)
     {
-        files += '\'test/' + modNames[i] + '.util.js\', ';
-    }
-
-    for (i = 0, len = modNames.length; i < len; i++)
+        files += '\'testUtil/util.js\', ';
+        for (var i = 0, len = modName.length; i < len; i++)
+        {
+            files += '\'test/' + modName[i] + '.js\', ';
+        }
+        files = util.rtrim(files, ', ');
+    } else
     {
-        files += '\'test/' + modNames[i] + '.karma.js\', ';
+        files += '\'testUtil/' + modName + '.js\', ';
+        files += '\'test/' + modName + '.js\'';
     }
-
-    files = util.rtrim(files, ', ');
 
     cb(null, tpl[getKarmaType()]({files: files}));
 }
@@ -140,7 +148,7 @@ function genTestUtil(modName, cb)
 {
     eustia.build({
         files: [],
-        output: 'test/' + modName + '.util\.js',
+        output: 'testUtil/' + (options.all ? 'util' : modName) + '.js',
         library: '$_abcdefghijklmnopqrstuvwxyz'.split(''),
         include: modName,
         format: options.type === 'mocha' ? 'commonjs' : 'global'
@@ -210,4 +218,25 @@ function readOpts()
     if (options.karma) options.type = 'karma';
 }
 
-main();
+async.waterfall([
+    function (cb)
+    {
+        rmdir('test', function () { cb() });
+    },
+    function (cb)
+    {
+        rmdir('testUtil', function () { cb() });
+    },
+    function (cb)
+    {
+        util.mkdir('test', function () { cb() });
+    },
+    function (cb)
+    {
+        util.mkdir('testUtil', function () { cb() });
+    }
+], function ()
+{
+    main();
+});
+
