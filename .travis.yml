@@ -8,5 +8,3 @@ before_script:
   - mkdir test
 script:
   - bash ci.sh
-addons:
-  sauce_connect: true
