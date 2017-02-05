@@ -86,12 +86,12 @@ function runMod(modName, cb)
     {
         if (err) return console.log(err);
 
+        cb && cb();
+
         if (options.silent) return;
 
         console.log('Run "' + (options.type === 'mocha' ? 'mocha test/' + modName + '.mocha' : 'karma start') +
                     '" to execute test:)');
-
-        cb && cb();
     });
 }
 
