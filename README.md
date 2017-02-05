@@ -1,9 +1,14 @@
 # Eris
 
+[![NPM version][npm-image]][npm-url]
 [![Build status][travis-image]][travis-url]
+[![License][license-image]][npm-url]
 
+[npm-image]: https://img.shields.io/npm/v/eustia-module.svg
+[npm-url]: https://npmjs.org/package/eustia-module
 [travis-image]: https://img.shields.io/travis/liriliri/eris.svg
 [travis-url]: https://travis-ci.org/liriliri/eris
+[license-image]: https://img.shields.io/npm/l/eustia-module.svg
 
 Eustia official module repository.
 
