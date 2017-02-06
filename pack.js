@@ -85,6 +85,7 @@ function transToCommonjs(data)
 {
     var dependencies = data.match(regDependence);
 
+    data = util.trim(data);
     data += '\n\nmodule.exports = exports;\n';
 
     if (!dependencies) return data;
@@ -101,7 +102,7 @@ function transToCommonjs(data)
         if (i !== len - 1) requires += ',\n';
     });
 
-    requires = '\n\nvar ' + util.trim(requires, ', \\n') + ';';
+    requires = '\n\nvar ' + util.trim(util.trim(requires), ', ') + ';';
 
     data = data.replace(regDependence, requires);
 
