@@ -13,6 +13,7 @@ glob('*/*.js', {
     ignore: [
         '*/*.*.js',
         '*test/*.js',
+        '*testUtil/*.js',
         '*npm/*.js'
     ]
 }, function (err, files)

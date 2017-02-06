@@ -47,6 +47,7 @@
     "difference": "Create an array of unique array values not included in the other given array.",
     "dotCase": "Convert string to \"dotCase\".",
     "each": "Iterates over elements of collection and invokes iteratee for each element.",
+    "easing": "Easing functions adapted from http://jqueryui.com/",
     "endWith": "Check if string ends with the given target string.",
     "escape": "Escapes a string for insertion into HTML, replacing &, <, >, \", `, and ' characters.",
     "escapeRegExp": "Escape special chars to be used as literals in RegExp constructors.",

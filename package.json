@@ -10,7 +10,7 @@
     "pack": "node pack",
     "lint": "eslint $ [a-z]",
     "test": "npm run test:mocha && npm run test:karma",
-    "cov:mocha": "istanbul cover ./node_modules/mocha/bin/_mocha",
+    "cov": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "test:mocha": "node test -as && mocha",
     "test:karma": "node test -kas && karma start",
     "test:sauce": "node test -kas --sauce && karma start"

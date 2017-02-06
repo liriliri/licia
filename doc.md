@@ -1183,6 +1183,20 @@ Iterates over elements of collection and invokes iteratee for each element.
 each({'a': 1, 'b': 2}, function (val, key) {});
 ```
 
+## easing 
+
+Easing functions adapted from http://jqueryui.com/
+
+|Name   |Type  |Desc                  |
+|-------|------|----------------------|
+|percent|number|Number between 0 and 1|
+|return |number|Calculated number     |
+
+```javascript
+easing.linear(0.5); // -> 0.5
+easing.easeInElasticity(0.5, 500); // -> 0.03125
+```
+
 ## endWith 
 
 Check if string ends with the given target string.
