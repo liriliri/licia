@@ -49,6 +49,7 @@ var fns = {
     {
         var pow2, bounce = 4;
 
+        /* eslint-disable no-empty */
         while (t < ((pow2 = pow(2, --bounce)) - 1) / 11) {}
 
         return 1 / pow(4, 3 - bounce) - 7.5625 * pow((pow2 * 3 - 2) / 22 - t, 2);
