@@ -2173,6 +2173,25 @@ function even(n) { return n % 2 === 0 }
 filter([1, 2, 3, 4, 5, 6], negate(even)); // -> [1, 3, 5]
 ```
 
+## nextTick 
+
+Next tick for both node and browser.
+
+|Name|Type    |Desc            |
+|----|--------|----------------|
+|cb  |function|Function to call|
+
+Use process.nextTick if available.
+
+Otherwise setImmediate or setTimeout is used as fallback.
+
+```javascript
+nextTick(function ()
+{
+    // Do something...
+});
+```
+
 ## noop 
 
 A no-operation function.

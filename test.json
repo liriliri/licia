@@ -92,6 +92,7 @@
         "min",
         "mkdir",
         "negate",
+        "nextTick",
         "noop",
         "now",
         "objToStr",
@@ -170,6 +171,7 @@
         "$show",
         "cookie",
         "isRetina",
+        "nextTick",
         "raf"
     ]
 }

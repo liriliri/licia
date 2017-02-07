@@ -115,6 +115,7 @@
     "min": "Get minimum value of given numbers.",
     "mkdir": "Recursively create directories.",
     "negate": "Create a function that negates the result of the predicate function.",
+    "nextTick": "Next tick for both node and browser.",
     "noop": "A no-operation function.",
     "now": "Gets the number of milliseconds that have elapsed since the Unix epoch.",
     "objToStr": "Alias of Object.prototype.toString.",
