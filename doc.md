@@ -3046,7 +3046,7 @@ uuid(); // -> '53ce0497-6554-49e9-8d79-347406d2a88b'
 
 ## values 
 
-Creates an array of the own enumerable property values of object.
+Create an array of the own enumerable property values of object.
 
 |Name  |Type  |Desc                    |
 |------|------|------------------------|
@@ -3071,12 +3071,12 @@ waterfall([
     function (cb)
     {
         cb(null, 'one');
-   },
-   function (arg1)
-   {
-       // arg1 -> 'one'
-       cb(null, 'done');
-   }
+    },
+    function (arg1)
+    {
+        // arg1 -> 'one'
+        cb(null, 'done');
+    }
 ], function (err, result)
 {
     // result -> 'done'

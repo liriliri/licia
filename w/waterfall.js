@@ -10,12 +10,12 @@
  *     function (cb)
  *     {
  *         cb(null, 'one');
-  *    },
-  *    function (arg1)
-  *    {
-  *        // arg1 -> 'one'
-  *        cb(null, 'done');
-  *    }
+ *     },
+ *     function (arg1)
+ *     {
+ *         // arg1 -> 'one'
+ *         cb(null, 'done');
+ *     }
  * ], function (err, result)
  * {
  *     // result -> 'done'

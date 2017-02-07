@@ -1,4 +1,4 @@
-/* Creates an array of the own enumerable property values of object.
+/* Create an array of the own enumerable property values of object.
  *
  * |Name  |Type  |Desc                    |
  * |------|------|------------------------|
