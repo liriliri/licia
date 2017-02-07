@@ -46,9 +46,6 @@ request.
 Please check [Eustia Documentation](http://liriliri.github.io/eustia/docs.html#create-module) 
 about how to write an eustia module.
 
-Note: To run test for a specified module, run `node test <moduleName>` to generate 
-test files first.
-
 ### Rules
 
 * Must have full documentation about usage.

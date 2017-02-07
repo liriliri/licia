@@ -2,18 +2,18 @@
   "name": "eris",
   "version": "0.0.1",
   "description": "Eustia modules",
-  "directories": {
-    "test": "test"
+  "bin": {
+      "eris": "./bin/eris.js"
   },
   "scripts": {
-    "update": "node eris && node doc",
-    "pack": "node pack",
+    "update": "eris list && eris doc",
+    "pack": "eris pack",
     "lint": "eslint $ [a-z]",
     "test": "npm run test:mocha && npm run test:karma",
     "cov": "istanbul cover ./node_modules/mocha/bin/_mocha",
-    "test:mocha": "node test -as && mocha",
-    "test:karma": "node test -kas && karma start",
-    "test:sauce": "node test -kas --sauce && karma start"
+    "test:mocha": "eris test -as && mocha",
+    "test:karma": "eris test -kas && karma start",
+    "test:sauce": "eris test -kas --sauce && karma start"
   },
   "repository": {
     "type": "git",

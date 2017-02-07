@@ -1,5 +1,5 @@
 var eris = require('./eris.json'),
-    util = require('./util');
+    util = require('./lib/util');
 
 var exports = {
     env: {
