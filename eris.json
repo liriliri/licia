@@ -176,6 +176,7 @@
     "use": "Use modules that is created by define.",
     "uuid": "RFC4122 version 4 compliant uuid generator.",
     "values": "Creates an array of the own enumerable property values of object.",
+    "waterfall": "Run an array of functions in series.",
     "wrap": "Wrap the function inside a wrapper function, passing it as the first argument.",
     "zip": "Merge together the values of each of the arrays with the values at the corresponding position."
 }

@@ -153,6 +153,7 @@
         "uuid",
         "Validator",
         "values",
+        "waterfall",
         "wrap",
         "zip"
     ],

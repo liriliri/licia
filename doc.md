@@ -3057,6 +3057,32 @@ Creates an array of the own enumerable property values of object.
 values({one: 1, two: 2}); // -> [1, 2]
 ```
 
+## waterfall 
+
+Run an array of functions in series.
+
+|Name |Type    |Desc                   |
+|-----|--------|-----------------------|
+|tasks|array   |Array of functions     |
+|[cb] |function|Callback once completed|
+
+```javascript
+waterfall([
+    function (cb)
+    {
+        cb(null, 'one');
+   },
+   function (arg1)
+   {
+       // arg1 -> 'one'
+       cb(null, 'done');
+   }
+], function (err, result)
+{
+    // result -> 'done'
+});
+```
+
 ## wrap 
 
 Wrap the function inside a wrapper function, passing it as the first argument.
