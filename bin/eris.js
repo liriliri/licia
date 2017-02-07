@@ -8,12 +8,14 @@ var knowOpts = {
         karma: Boolean,
         silent: Boolean,
         all: Boolean,
-        sauce: Boolean
+        sauce: Boolean,
+        html: Boolean
     },
     shortHands = {
         k: '--karma',
         s: '--silent',
-        a: '--all'
+        a: '--all',
+        h: '--html'
     },
     options = nopt(knowOpts, shortHands, process.argv, 2),
     remain = options.argv.remain;

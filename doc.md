@@ -489,6 +489,22 @@ state.on('error', function (err, event)
 state.play('eustia');
 ```
 
+## Tween 
+
+Tween engine for JavaScript animations. // TODO
+
+```javascript
+var pos = {x: 0, y: 0};
+
+var tween = new Tween(pos);
+tween.to({x: 100, y: 100}, 1000)
+     .onUpdate(function ()
+     {
+         console.log(this.x, this.y);
+     })
+     .start();
+```
+
 ## Url 
 
 Simple url manipulator.

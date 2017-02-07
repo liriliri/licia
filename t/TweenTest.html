@@ -1,0 +1,19 @@
+<require>Tween $ evalCss</require>
+
+<style>
+    #test {
+        background: #08c;
+        color: #fff;
+    }
+</style>
+
+<template id="bodyTpl">
+    <div id="test">This is some text.</div>
+</template>
+
+<script>
+evalCss(style);
+$('body').html(bodyTpl);
+
+var tween = new Tween({});
+</script>

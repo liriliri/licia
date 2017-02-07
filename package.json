@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "description": "Eustia modules",
   "bin": {
-      "eris": "./bin/eris.js"
+    "eris": "./bin/eris.js"
   },
   "scripts": {
     "update": "eris list && eris doc",
     "pack": "eris pack",
     "lint": "eslint $ [a-z]",
+    "serve": "nws -p 3000 -d testHtml",
     "test": "npm run test:mocha && npm run test:karma",
     "cov": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "test:mocha": "eris test -as && mocha",
@@ -32,6 +33,7 @@
     "async": "^2.0.0-rc.3",
     "chai": "^3.5.0",
     "eustia": "^0.3.3",
+    "eustia-component": "0.0.3",
     "glob": "^7.0.3",
     "handlebars": "^4.0.5",
     "karma": "^0.13.22",
