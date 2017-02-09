@@ -105,6 +105,7 @@
         "pluck",
         "property",
         "query",
+        "raf",
         "random",
         "randomBytes",
         "range",

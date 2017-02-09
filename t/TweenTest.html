@@ -1,10 +1,19 @@
 <require>Tween $ evalCss</require>
 
 <style>
-    #test {
-        background: #08c;
-        color: #fff;
-    }
+body, html {
+    background: #000;
+}
+
+#test {
+    background: #08c;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 </style>
 
 <template id="bodyTpl">
@@ -15,5 +24,19 @@
 evalCss(style);
 $('body').html(bodyTpl);
 
-var tween = new Tween({});
+var test = $('#test').get(0);
+
+var tween = new Tween({left: 0, top: 0});
+tween.on('update', function (target)
+{
+    console.log(target);
+    test.style.left = target.left + 'px';
+    test.style.top = target.top + 'px';
+});
+tween.to({left: 300}, 2000, 'inElastic');
+
+setTimeout(function ()
+{
+    tween.play();
+}, 2000);
 </script>

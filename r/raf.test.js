@@ -1,5 +1,30 @@
-it('shortcut for requestAnimationFrame', function ()
+it('browser and node', function (done)
 {
-    expect(raf).to.equal(window.requestAnimationFrame);
-    expect(raf.cancel).to.equal(window.cancelAnimationFrame);
+    if (typeof window === 'object')
+    {
+        var webkitRaf = window.webkitRequestAnimationFrame;
+        if (webkitRaf) expect(raf).to.equal(webkitRaf);
+        done();
+    } else
+    {
+        var count = 0,
+            isPause = false;
+
+        function update()
+        {
+            if (isPause) return;
+
+            count++;
+            raf(update);
+        }
+
+        raf(update);
+
+        setTimeout(function ()
+        {
+            isPause = true;
+            expect(count > 2).to.be.true;
+            done();
+        }, 50);
+    }
 });

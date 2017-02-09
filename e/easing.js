@@ -7,7 +7,7 @@
  *
  * ```javascript
  * easing.linear(0.5); // -> 0.5
- * easing.easeInElasticity(0.5, 500); // -> 0.03125
+ * easing.inElastic(0.5, 500); // -> 0.03125
  * ```
  */
 
@@ -69,16 +69,16 @@ var DEFAULT_ELASTICITY = 400;
 each(fns, function (fn, name)
 {
     name = upperFirst(name);
-    exports['easeIn' + name] = fn;
-    exports['easeOut' + name] = function(t, m)
+    exports['in' + name] = fn;
+    exports['out' + name] = function(t, m)
     {
         return 1 - fn(1 - t, m);
     };
-    exports['easeInOut' + name] = function(t, m)
+    exports['inOut' + name] = function(t, m)
     {
         return t < 0.5 ? fn(t * 2, m) / 2 : 1 - fn(t * -2 + 2, m) / 2;
     };
-    exports['easeOutIn' + name] = function(t, m)
+    exports['outIn' + name] = function(t, m)
     {
         return t < 0.5 ? (1 - fn(1 - 2 * t, m)) / 2 : (fn(t * 2 - 1, m) + 1) / 2;
     };

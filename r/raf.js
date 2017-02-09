@@ -14,17 +14,22 @@
 
 _('now');
 
-var raf = window.requestAnimationFrame,
+var raf, cancel;
+
+if (typeof window === 'object')
+{
+    raf = window.requestAnimationFrame;
     cancel = window.cancelAnimationFrame;
 
-var lastTime = 0,
-    vendors = ['ms', 'moz', 'webkit', 'o'];
+    var lastTime = 0,
+        vendors = ['ms', 'moz', 'webkit', 'o'];
 
-for (var i = 0, len = vendors.length; i < len && !raf; i++)
-{
-    raf = window[vendors[i] + 'RequestAnimationFrame'];
-    cancel = window[vendors[i] + 'CancelAnimationFrame'] ||
-             window[vendors[i] + 'CancelRequestAnimationFrame'];
+    for (var i = 0, len = vendors.length; i < len && !raf; i++)
+    {
+        raf = window[vendors[i] + 'RequestAnimationFrame'];
+        cancel = window[vendors[i] + 'CancelAnimationFrame'] ||
+                 window[vendors[i] + 'CancelRequestAnimationFrame'];
+    }
 }
 
 raf = raf || function(cb)
@@ -44,4 +49,3 @@ cancel = cancel || function(id) { clearTimeout(id) };
 raf.cancel = cancel;
 
 exports = raf;
-
