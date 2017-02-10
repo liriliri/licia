@@ -70,12 +70,6 @@ exports = Emitter.extend({
             progress = progress < 1 ? progress : 1;
             this._progress = progress;
 
-            if (progress === 1)
-            {
-                each(dest, function (val, key) { target[key] = val });
-                return;
-            }
-
             each(dest, function (val, key)
             {
                 target[key] = origin[key] + diff[key] * ease(progress);
@@ -97,7 +91,8 @@ exports = Emitter.extend({
         state.play();
 
         var startTime = now(),
-            duration = this._duration,
+            progress = this._progress,
+            duration = this._duration * (1 - progress),
             target = this._target,
             self = this;
 
@@ -107,10 +102,11 @@ exports = Emitter.extend({
 
             var time = now();
 
-            self.progress((time - startTime) / duration);
+            self.progress(progress + (time - startTime) / duration);
 
             if (self._progress === 1)
             {
+                state.pause();
                 self.emit('end', target);
                 return;
             }
