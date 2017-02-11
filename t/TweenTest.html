@@ -1,4 +1,4 @@
-<require>Tween $ evalCss each</require>
+<require>Tween $ evalCss each methods easing random</require>
 
 <style>
 body, html {
@@ -51,7 +51,7 @@ button {
     border: 1px solid #fff;
     cursor: pointer;
     outline: none;
-    margin-right: 15px;
+    margin-right: 5px;
 }
 </style>
 
@@ -93,12 +93,14 @@ tween.on('update', function (target)
     progress.value = tween.progress() * 100;
 });
 
+var easingNames = methods(easing);
+
 tween.to({
     left: 300,
     top: -25,
     size: 100,
     rotate: 360
-}, 1500, 'outQuad');
+}, 1500, easingNames[random(0, easingNames.length - 1)]);
 
 $('#play').on('click', function ()
 {

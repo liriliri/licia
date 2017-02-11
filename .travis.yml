@@ -6,4 +6,5 @@ before_script:
   - npm install -g mocha
   - npm install -g eslint
 script:
+  - npm link
   - bash ci.sh

@@ -498,11 +498,11 @@ var pos = {x: 0, y: 0};
 
 var tween = new Tween(pos);
 tween.to({x: 100, y: 100}, 1000)
-     .onUpdate(function ()
+     .on('update', function (target)
      {
-         console.log(this.x, this.y);
+         console.log(target.x, target.y);
      })
-     .start();
+     .play();
 ```
 
 ## Url 
@@ -1210,7 +1210,7 @@ Easing functions adapted from http://jqueryui.com/
 
 ```javascript
 easing.linear(0.5); // -> 0.5
-easing.easeInElasticity(0.5, 500); // -> 0.03125
+easing.inElastic(0.5, 500); // -> 0.03125
 ```
 
 ## endWith 
@@ -2385,11 +2385,12 @@ raf.cancel(id);
 
 Produces a random number between min and max(inclusive).
 
-|Name  |Type  |Desc                      |
-|------|------|--------------------------|
-|min   |number|The minimum possible value|
-|max   |number|The maximum possible value|
-|return|number|The random number         |
+|Name            |Type   |Desc                  |
+|----------------|-------|----------------------|
+|min             |number |Minimum possible value|
+|max             |number |Maximum possible value|
+|[floating=false]|boolean|Float or not          |
+|return          |number |Random number         |
 
 ```javascript
 random(1, 5); // -> an integer between 0 and 5
