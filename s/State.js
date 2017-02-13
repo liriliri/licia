@@ -1,6 +1,6 @@
 /* Simple state machine.
  *
- * Extends from Emitter.
+ * Extend from Emitter.
  *
  * ### constructor
  *

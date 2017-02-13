@@ -16,7 +16,7 @@
     "Emitter": "Event emitter class which provides observer pattern.",
     "Select": "Simple wrapper of querySelectorAll to make dom selection easier.",
     "State": "Simple state machine.",
-    "Tween": "Tween engine for JavaScript animations. // TODO",
+    "Tween": "Tween engine for JavaScript animations.",
     "Url": "Simple url manipulator.",
     "Validator": "Object values validation.",
     "after": "Create a function that invokes once it's called n or more times.",

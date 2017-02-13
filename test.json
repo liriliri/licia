@@ -142,6 +142,7 @@
         "topoSort",
         "toStr",
         "trim",
+        "Tween",
         "type",
         "unescape",
         "union",

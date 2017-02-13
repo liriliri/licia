@@ -449,7 +449,7 @@ $test.find('.test').each(function (idx, element)
 
 Simple state machine.
 
-Extends from Emitter.
+Extend from Emitter.
 
 ### constructor
 
@@ -491,18 +491,56 @@ state.play('eustia');
 
 ## Tween 
 
-Tween engine for JavaScript animations. // TODO
+Tween engine for JavaScript animations.
+
+Extend from Emitter.
+
+### constructor
+
+|Name|Type  |Desc           |
+|----|------|---------------|
+|obj |object|Values to tween|
+
+### to
+
+|Name       |Type           |Desc            |
+|-----------|---------------|----------------|
+|destination|obj            |Final properties|
+|duration   |number         |Tween duration  |
+|ease       |string function|Easing function |
+
+### play
+
+Begin playing forward.
+
+### pause
+
+Pause the animation.
+
+### paused
+
+Get animation paused state.
+
+### progress
+
+Update or get animation progress.
+
+|Name      |Type  |Desc                  |
+|----------|------|----------------------|
+|[progress]|number|Number between 0 and 1|
 
 ```javascript
 var pos = {x: 0, y: 0};
 
 var tween = new Tween(pos);
-tween.to({x: 100, y: 100}, 1000)
-     .on('update', function (target)
-     {
-         console.log(target.x, target.y);
-     })
-     .play();
+tween.on('update', function (target)
+{
+    console.log(target.x, target.y);
+}).on('end', function ()
+{
+    console.log(target.x, target.y); // -> 100, 100
+});
+tween.to({x: 100, y: 100}, 1000, 'inElastic').play();
 ```
 
 ## Url 
