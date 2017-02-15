@@ -1,11 +1,18 @@
-it('browser and node', function (done)
-{
-    if (typeof window === 'object')
-    {
-        var webkitRaf = window.webkitRequestAnimationFrame;
-        if (webkitRaf) expect(raf).to.equal(webkitRaf);
-        done();
+var isBrowser = typeof window === 'object';
 
+it('borwser', function ()
+{
+    if (!isBrowser) return;
+
+    var windowRaf = window.requestAnimationFrame;
+    if (windowRaf) expect(raf).to.equal(windowRaf);
+});
+
+it('node', function (done)
+{
+    if (isBrowser)
+    {
+        done();
         return;
     }
 

@@ -10,14 +10,14 @@ it('return throttle function', function (done)
     throttleFn();
     throttleFn();
     throttleFn();
-    setTimeout(throttleFn, 60);
     setTimeout(throttleFn, 70);
-    setTimeout(throttleFn, 110);
-    setTimeout(throttleFn, 120);
+    setTimeout(throttleFn, 75);
+    setTimeout(throttleFn, 130);
+    setTimeout(throttleFn, 135);
 
     setTimeout(function ()
     {
         expect(counter).to.equal(3);
         done();
-    }, 200)
+    }, 300);
 });

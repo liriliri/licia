@@ -1623,6 +1623,14 @@ isBool(false); // -> true
 isBool(1); // -> false
 ```
 
+## isBrowser 
+
+Check if running in a browser.
+
+```javascript
+console.log(isBrowser); // -> true if running in a browser
+```
+
 ## isBuffer 
 
 Check if value is a buffer.
@@ -1798,6 +1806,14 @@ isNaN(0); // -> false
 isNaN(NaN); // -> true
 ```
 
+## isNode 
+
+Check if running in node.
+
+```javascript
+console.log(isNode); // -> true if running in node
+```
+
 ## isNull 
 
 Check if value is an Null.
@@ -1897,7 +1913,7 @@ isRelative('README.md'); // -> true
 Determine if running on a high DPR device or not.
 
 ```javascript
-isRetina(); // -> true if high DPR
+console.log(isRetina); // -> true if high DPR
 ```
 
 ## isStr 

@@ -12,11 +12,11 @@
  * ```
  */
 
-_('now');
+_('now isBrowser');
 
 var raf, cancel;
 
-if (typeof window === 'object')
+if (isBrowser)
 {
     raf = window.requestAnimationFrame;
     cancel = window.cancelAnimationFrame;

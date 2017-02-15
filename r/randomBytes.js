@@ -12,11 +12,11 @@
  * ```
  */
 
-_('random');
+_('random isBrowser');
 
 var crypto;
 
-if (typeof window === 'object')
+if (isBrowser)
 {
     crypto = window.crypto || window.msCrypto;
 
