@@ -176,6 +176,7 @@
         "$show",
         "cookie",
         "isBrowser",
+        "isEl",
         "isNode",
         "isRetina",
         "nextTick",
