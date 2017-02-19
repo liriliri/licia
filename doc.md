@@ -2213,6 +2213,14 @@ mkdir('/tmp/foo/bar/baz', function (err)
 });
 ```
 
+## morphDom 
+
+MorphDom lite, supports only modern browsers. TODO
+
+```javascript
+
+```
+
 ## negate 
 
 Create a function that negates the result of the predicate function.
@@ -2900,6 +2908,21 @@ toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
 toArr('abc'); // -> ['abc']
 toArr(1); // -> []
 toArr(null); // -> []
+```
+
+## toEl 
+
+Convert html string to dom elements.
+
+There should be only one root element.
+
+|Name  |Type   |Desc        |
+|------|-------|------------|
+|str   |string |Html string |
+|return|element|Html element|
+
+```javascript
+toEl('<div>test</div>');
 ```
 
 ## toInt 

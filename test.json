@@ -180,6 +180,7 @@
         "isNode",
         "isRetina",
         "nextTick",
+        "toEl",
         "raf"
     ]
 }
