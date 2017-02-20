@@ -95,7 +95,7 @@ it('compute', function ()
     });
     expect(data.get()).to.eql({a: 2});
 
-    var data = new JsonTransformer({a: 1, b: 2});
+    data = new JsonTransformer({a: 1, b: 2});
     data.compute('a', function (val) { return val * 2 });
     expect(data.get('a')).to.equal(2);
     data.compute(['a', 'b'], 'c', function (a, b) { return a + b });
