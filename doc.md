@@ -2213,14 +2213,6 @@ mkdir('/tmp/foo/bar/baz', function (err)
 });
 ```
 
-## morphDom 
-
-MorphDom lite, supports only modern browsers. TODO
-
-```javascript
-
-```
-
 ## negate 
 
 Create a function that negates the result of the predicate function.

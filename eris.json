@@ -116,7 +116,6 @@
     "methods": "Return a sorted list of the names of every method in an object.",
     "min": "Get minimum value of given numbers.",
     "mkdir": "Recursively create directories.",
-    "morphDom": "MorphDom lite, supports only modern browsers. TODO",
     "negate": "Create a function that negates the result of the predicate function.",
     "nextTick": "Next tick for both node and browser.",
     "noop": "A no-operation function.",
