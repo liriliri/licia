@@ -43,7 +43,7 @@
  * ```
  */
 
-_('extend toArr inherits has');
+_('extend toArr inherits has safeGet');
 
 function exports(methods, statics)
 {
@@ -53,18 +53,17 @@ function exports(methods, statics)
 function makeClass(parent, methods, statics)
 {
     statics = statics || {};
+    var className = methods.className || safeGet(methods, 'initialize.name') || '';
+    delete methods.className;
 
-    var ctor = function ()
-    {
-        var args = toArr(arguments);
-
-        return this.initialize
-               ? this.initialize.apply(this, args) || this
-               : this;
-    };
+    var ctor = new Function('toArr', 'return function ' + className + '()' + 
+    '{' +
+        'var args = toArr(arguments);' +
+        'return this.initialize ? this.initialize.apply(this, args) || this : this;' +
+    '};')(toArr);
 
     inherits(ctor, parent);
-    ctor.prototype.superclass = parent;
+    ctor.prototype.constructor = ctor;
 
     ctor.extend = function (methods, statics)
     {
@@ -102,6 +101,6 @@ var Base = exports.Base = makeClass(Object, {
     },
     toString: function ()
     {
-        return this.className;
+        return this.constructor.name;
     }
 });

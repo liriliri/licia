@@ -1,0 +1,23 @@
+<require>Class</require>
+
+<script>
+var A = Class({
+    initialize: function A(name) 
+    {
+        this.name = name;
+    }
+});
+
+var B = A.extend({
+    className: 'B',
+    initialize: function () 
+    {
+        this.callSuper(A, 'initialize', arguments);
+    }
+});
+
+var b = new B('test');
+
+console.log(b);
+console.log(b + '');
+</script>
