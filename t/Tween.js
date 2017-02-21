@@ -43,7 +43,7 @@
  * tween.on('update', function (target)
  * {
  *     console.log(target.x, target.y);
- * }).on('end', function ()
+ * }).on('end', function (target)
  * {
  *     console.log(target.x, target.y); // -> 100, 100
  * });

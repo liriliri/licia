@@ -4,6 +4,10 @@
  * |------|------|-----------------------|
  * |obj   |object|Object to query        |
  * |return|array |Array of property names|
+ * 
+ * ```javascript
+ * keys({a: 1}); // -> ['a']
+ * ```
  */
 
 _('has');

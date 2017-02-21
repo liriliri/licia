@@ -616,7 +616,7 @@ var tween = new Tween(pos);
 tween.on('update', function (target)
 {
     console.log(target.x, target.y);
-}).on('end', function ()
+}).on('end', function (target)
 {
     console.log(target.x, target.y); // -> 100, 100
 });
@@ -2084,6 +2084,10 @@ Create an array of the own enumerable property names of object.
 |------|------|-----------------------|
 |obj   |object|Object to query        |
 |return|array |Array of property names|
+
+```javascript
+keys({a: 1}); // -> ['a']
+```
 
 ## last 
 
