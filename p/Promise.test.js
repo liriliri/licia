@@ -15,4 +15,4 @@ var adapter = {
 	}
 };
 
-require("promises-aplus-tests").mocha(adapter);
+require('promises-aplus-tests').mocha(adapter);

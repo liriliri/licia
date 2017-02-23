@@ -108,7 +108,7 @@ var Promise = exports = Class({
 
         return new Promise(function (resolve) { resolve(val) });
     },
-    reject: function () 
+    reject: function (val) 
     {
         return new Promise(function (resolve) { reject(val) });
     },
