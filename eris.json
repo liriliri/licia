@@ -15,7 +15,7 @@
     "Color": "Color converter.",
     "Emitter": "Event emitter class which provides observer pattern.",
     "JsonTransformer": "Json to json transformer.",
-    "Promise": "Lightweight Promise implemetation.",
+    "Promise": "Lightweight Promise implementation.",
     "Select": "Simple wrapper of querySelectorAll to make dom selection easier.",
     "State": "Simple state machine.",
     "Tween": "Tween engine for JavaScript animations.",

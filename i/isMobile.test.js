@@ -5,12 +5,38 @@ var chrome = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36
     ios = 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13G34 Safari/601.1',
     android = 'Mozilla/5.0 (Linux; U; Android 5.0.2; zh-cn; Redmi Note 2 Build/LRX22G) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/46.0.2490.85 Mobile Safari/537.36 XiaoMi/MiuiBrowser/8.0.11';
 
-it('check ua to see it\'s mobile or not', function ()
+it('default', function () 
+{
+    expect(isMobile()).to.be.a('boolean');
+});
+
+it('chrome', function ()
 {
     expect(isMobile(chrome)).to.be.false;
+});
+
+it('edge', function () 
+{
     expect(isMobile(edge)).to.be.false;
+});
+
+it('firefox', function () 
+{
     expect(isMobile(firefox)).to.be.false;
+});
+
+it('safari', function () 
+{
     expect(isMobile(safari)).to.be.false;
+});
+
+it('ios', function () 
+{
     expect(isMobile(ios)).to.be.true;
+});
+
+it('android', function () 
+{
     expect(isMobile(android)).to.be.true;
 });
+

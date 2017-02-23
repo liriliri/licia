@@ -179,6 +179,7 @@
         "cookie",
         "isBrowser",
         "isEl",
+        "isMobile",
         "isNode",
         "isRetina",
         "nextTick",

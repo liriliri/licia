@@ -493,7 +493,7 @@ data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', c
 
 ## Promise 
 
-Lightweight Promise implemetation.
+Lightweight Promise implementation.
 
 [Promises spec](https://github.com/promises-aplus/promises-spec)
 
@@ -1889,10 +1889,10 @@ isMatch({a: 1, b: 2}, {a: 1}); // -> true
 
 Check whether client is using a mobile browser using ua.
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
-|ua    |string |User agent                           |
-|return|boolean|True if ua belongs to mobile browsers|
+|Name                    |Type   |Desc                                 |
+|------------------------|-------|-------------------------------------|
+|[ua=navigator.userAgent]|string |User agent                           |
+|return                  |boolean|True if ua belongs to mobile browsers|
 
 ```javascript
 isMobile(navigator.userAgent);

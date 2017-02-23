@@ -1,4 +1,4 @@
-/* Lightweight Promise implemetation.
+/* Lightweight Promise implementation.
  *
  * [Promises spec](https://github.com/promises-aplus/promises-spec)
  * 
