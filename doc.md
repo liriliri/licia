@@ -491,6 +491,34 @@ data.set('count', data.get('books').length);
 data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', count: 1}
 ```
 
+## Promise 
+
+Lightweight Promise implemetation.
+
+[Promises spec](https://github.com/promises-aplus/promises-spec)
+
+```javascript
+function get(url)
+{
+    return new Promise(function (resolve, reject)
+    {
+        var req = new XMLHttpRequest();
+        req.open('GET', url);
+        req.onload = function ()
+        {
+            req.status == 200 ? resolve(req.reponse) : reject(Error(req.statusText));
+        };
+        req.onerror = function () { reject(Error('Network Error')) };
+        req.send();
+    });
+}
+
+get('test.json').then(function (result)
+{
+    // Do something...
+});
+```
+
 ## Select 
 
 Simple wrapper of querySelectorAll to make dom selection easier.
