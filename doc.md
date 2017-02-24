@@ -801,14 +801,14 @@ Perform an asynchronous HTTP request.
 
 Available options:
 
-|Name         |Type         |Desc                  |
-|-------------|-------------|----------------------|
-|url          |string       |Request url           |
-|data         |string object|Request data          |
-|dataType=json|string       |Response type         |
-|success      |function     |Success callback      |
-|error        |function     |Error callback        |
-|complete     |function     |Callback after request|
+|Name         |Type         |Desc                    |
+|-------------|-------------|------------------------|
+|url          |string       |Request url             |
+|data         |string object|Request data            |
+|dataType=json|string       |Response type(json, xml)|
+|success      |function     |Success callback        |
+|error        |function     |Error callback          |
+|complete     |function     |Callback after request  |
 
 ### get
 

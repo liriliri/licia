@@ -6,14 +6,14 @@
  *
  * Available options:
  *
- * |Name         |Type         |Desc                  |
- * |-------------|-------------|----------------------|
- * |url          |string       |Request url           |
- * |data         |string object|Request data          |
- * |dataType=json|string       |Response type         |
- * |success      |function     |Success callback      |
- * |error        |function     |Error callback        |
- * |complete     |function     |Callback after request|
+ * |Name         |Type         |Desc                    |
+ * |-------------|-------------|------------------------|
+ * |url          |string       |Request url             |
+ * |data         |string object|Request data            |
+ * |dataType=json|string       |Response type(json, xml)|
+ * |success      |function     |Success callback        |
+ * |error        |function     |Error callback          |
+ * |complete     |function     |Callback after request  |
  *
  * ### get
  *
@@ -49,7 +49,7 @@
  * ```
  */
 
-_('isFn noop defaults each isObj');
+_('isFn noop defaults isObj query');
 
 function exports(options)
 {
@@ -61,12 +61,16 @@ function exports(options)
         dataType = options.dataType,
         success = options.success,
         error = options.error,
+        timeout = options.timeout,
         complete = options.complete,
-        xhr = options.xhr();
+        xhr = options.xhr(),
+        abortTimeout;
 
     xhr.onreadystatechange = function ()
     {
         if (xhr.readyState !== 4) return;
+
+        clearTimeout(abortTimeout);
 
         var result;
 
@@ -74,6 +78,7 @@ function exports(options)
         if ((status >= 200 && status < 300) || status === 304)
         {
             result = xhr.responseText;
+            if (dataType === 'xml') result = xhr.responseXML;
             try {
                 if (dataType === 'json') result = JSON.parse(result);
             /* eslint-disable no-empty */
@@ -89,17 +94,27 @@ function exports(options)
 
     if (type === 'GET')
     {
-        data = serialize(data);
+        data = query.stringify(data);
         url += url.indexOf('?') > -1 ? '&' + data : '?' + data;
     } else
     {
-        if(isObj(data)) data = serialize(data);
+        if(isObj(data)) data = query.stringify(data);
     }
 
     xhr.open(type, url, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-    type === 'GET' ? xhr.send() : xhr.send(data);
+    if (timeout > 0) 
+    {
+        abortTimeout = setTimeout(function () 
+        {
+            xhr.onreadystatechange = noop;
+            xhr.abort();
+            error(xhr, 'timeout');
+            complete(xhr);
+        }, timeout);
+    }
+    xhr.send(type === 'GET' ? null : data);
 
     return xhr;
 }
@@ -111,10 +126,7 @@ exports.setting = {
     complete: noop,
     dataType: 'json',
     data: {},
-    xhr: function ()
-    {
-        return new window.XMLHttpRequest();
-    },
+    xhr: function () { return new XMLHttpRequest() },
     timeout: 0
 };
 
@@ -135,6 +147,7 @@ function parseArgs(url, data, success, dataType)
 {
     if (isFn(data))
     {
+        dataType = success;
         success = data;
         data = {};
     }
@@ -145,16 +158,4 @@ function parseArgs(url, data, success, dataType)
         success: success,
         dataType: dataType
     };
-}
-
-function serialize(data)
-{
-    var ret = [];
-
-    each(data, function (val, key)
-    {
-        ret.push(key + '=' + encodeURIComponent(val));
-    });
-
-    return ret.join('&');
 }

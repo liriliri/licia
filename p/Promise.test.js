@@ -19,7 +19,7 @@ require('promises-aplus-tests').mocha(adapter);
 
 it('all', function (done) 
 {
-	expect(Promise.all([]) instanceof Promise).to.be.true;
+	expect(Promise.all([])).to.be.an.instanceof(Promise);
 
 	var step = 0;
 
@@ -63,7 +63,7 @@ it('reject', function (done)
 
 it('race', function (done) 
 {
-	expect(Promise.race([]) instanceof Promise).to.be.true;
+	expect(Promise.race([])).to.be.an.instanceof(Promise);
 
 	Promise.race([new Promise(function (resolve) 
 	{

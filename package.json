@@ -47,6 +47,7 @@
     "nopt": "^3.0.6",
     "promises-aplus-tests": "^2.1.2",
     "rmdir": "^1.2.0",
+    "sinon": "^1.17.7",
     "underscore": "^1.8.3"
   }
 }
