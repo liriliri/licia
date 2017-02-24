@@ -86,7 +86,7 @@ var Promise = exports = Class({
                                 res(i, val);
                             }, reject);
 
-                            return
+                            return;
                         }
                     }
 
@@ -110,7 +110,7 @@ var Promise = exports = Class({
     },
     reject: function (val) 
     {
-        return new Promise(function (resolve) { reject(val) });
+        return new Promise(function (resolve, reject) { reject(val) });
     },
     race: function (values) 
     {

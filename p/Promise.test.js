@@ -16,3 +16,65 @@ var adapter = {
 };
 
 require('promises-aplus-tests').mocha(adapter);
+
+it('all', function (done) 
+{
+	expect(Promise.all([]) instanceof Promise).to.be.true;
+
+	var step = 0;
+
+	Promise.all([new Promise(function (resolve) 
+	{
+		resolve('a');
+	}), new Promise(function (resolve) 
+	{
+		resolve('b');
+	})]).then(function (results) 
+	{
+		expect(results).to.eql(['a', 'b']);
+		step++;
+		if (step === 2) done();
+	});
+
+	Promise.all([new Promise(function (resolve) 
+	{
+		resolve('a');
+	}), new Promise(function (resolve, reject) 
+	{
+		throw new Error('error');
+		resolve('b');
+	})]).catch(function (val) 
+	{
+		expect(val).to.be.an('error');
+		step++;
+		if (step === 2) done();
+	});
+});
+
+it('reject', function (done) 
+{
+	var promise = Promise.reject('a');
+
+	promise.catch(function (val) 
+	{
+		expect(val).to.equal('a');
+		done();
+	});
+});
+
+it('race', function (done) 
+{
+	expect(Promise.race([]) instanceof Promise).to.be.true;
+
+	Promise.race([new Promise(function (resolve) 
+	{
+		resolve('a');
+	}), new Promise(function (resolve) 
+	{
+		setTimeout(function () { resolve('b') }, 50);
+	})]).then(function (val) 
+	{
+		expect(val).to.equal('a');
+		done();
+	});
+});
