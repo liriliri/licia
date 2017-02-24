@@ -29,7 +29,7 @@ it('basic', function (done)
     requests = [];
 });
 
-it('request data', function () 
+it('request data', function (done) 
 {
     ajax({
         url: 'test',
@@ -140,14 +140,13 @@ it('xml dataType', function (done)
     requests = [];
 });
 
-it('complete', function () 
+it('complete', function (done) 
 {
     var xhr = ajax({
         url: 'test',
         complete: function (xhr) 
         {
             expect(xhr).to.equal(xhr);
-            done();
         }
     });
 
@@ -155,11 +154,10 @@ it('complete', function ()
 
     request.respond(200, {}, '');
 
-    var xhr = ajax({
+    ajax({
         url: 'test',
         complete: function (xhr) 
         {
-            expect(xhr).to.equal(xhr);
             done();
         }
     });
