@@ -809,6 +809,7 @@ Available options:
 |success      |function     |Success callback        |
 |error        |function     |Error callback          |
 |complete     |function     |Callback after request  |
+|timeout      |number       |Request timeout         |
 
 ### get
 
@@ -821,7 +822,7 @@ Shortcut for type = POST;
 |Name    |Type         |Desc            |
 |--------|-------------|----------------|
 |url     |string       |Request url     |
-|data    |string object|Request data    |
+|[data]  |string object|Request data    |
 |success |function     |Success callback|
 |dataType|function     |Response type   |
 
@@ -1493,6 +1494,33 @@ Extract block comments from source code.
 
 ```javascript
 extractBlockCmts('\/*eris*\/'); // -> ['eris']
+```
+
+## fetch 
+
+Turn XMLHttpRequest into promise like.
+
+Note: This is not a complete fetch pollyfill.
+
+|Name   |Type   |Desc           |
+|-------|-------|---------------|
+|url    |string |Request url    |
+|options|object |Request options|
+|return |promise|Request promise|
+
+```javascript
+fetch('test.json', {
+    method: 'GET',
+    timeout: 3000,
+    headers: {},
+    body: ''
+}).then(function (res)
+{
+    return res.json();
+}).then(function (data)
+{
+    console.log(data);
+});
 ```
 
 ## filter 

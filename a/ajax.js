@@ -14,6 +14,7 @@
  * |success      |function     |Success callback        |
  * |error        |function     |Error callback          |
  * |complete     |function     |Callback after request  |
+ * |timeout      |number       |Request timeout         |
  *
  * ### get
  *
@@ -26,7 +27,7 @@
  * |Name    |Type         |Desc            |
  * |--------|-------------|----------------|
  * |url     |string       |Request url     |
- * |data    |string object|Request data    |
+ * |[data]  |string object|Request data    |
  * |success |function     |Success callback|
  * |dataType|function     |Response type   |
  *

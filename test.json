@@ -1,7 +1,6 @@
 {
     "mocha": [
         "after",
-        "ajax",
         "allKeys",
         "average",
         "base64",
