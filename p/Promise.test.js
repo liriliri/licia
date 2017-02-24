@@ -42,7 +42,6 @@ it('all', function (done)
 	}), new Promise(function (resolve, reject) 
 	{
 		throw new Error('error');
-		resolve('b');
 	})]).catch(function (val) 
 	{
 		expect(val).to.be.an('error');
