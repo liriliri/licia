@@ -7,4 +7,5 @@ before_script:
   - npm install -g eslint
 script:
   - npm link
-  - bash ci.sh
+  - npm run lint
+  - npm run test:mocha
