@@ -5,11 +5,6 @@ node_js:
 before_script:
   - npm install -g mocha
   - npm install -g eslint
-  - npm install -g istanbul
-  - npm install -g codecov
 script:
   - npm link
   - bash ci.sh
-after_script:
-  - npm run cov:lcov
-  - codecov
