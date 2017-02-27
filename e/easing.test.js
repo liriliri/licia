@@ -7,8 +7,8 @@ it('quad', function ()
 {
     expect(easing.inQuad(0.5)).to.equal(0.25);
     expect(easing.outQuad(0.5)).to.equal(0.75);
-    expect(easing.inOutQuad(0.8)).to.equal(0.92);
-    expect(easing.outInQuad(0.8)).to.equal(0.68);
+    expect(easing.inOutQuad(0.3)).to.equal(0.18);
+    expect(easing.outInQuad(0.3)).to.equal(0.42);
 });
 
 it('cubic', function ()
@@ -51,6 +51,7 @@ it('elastic', function ()
 {
     expect(easing.inElastic(0.5)).to.equal(0.015625);
     expect(easing.inElastic(0.5, 500)).to.equal(0.03125);
+    expect(easing.inElastic(0)).to.equal(0);
     expect(easing.outElastic(0.5)).to.equal(0.984375);
 });
 

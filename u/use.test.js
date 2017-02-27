@@ -1,6 +1,6 @@
 it('use modules created by define', function ()
 {
-    var define = util.define,
+    var define = typeof util === 'object' ? util.define : _.define,
         count = 0;
 
     define('A', function ()

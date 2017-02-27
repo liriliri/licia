@@ -42,5 +42,5 @@ function exports(str, chars)
         }
     }
 
-    return (start >= len) ? '' : str.substr(start, len);
+    return start >= len ? '' : str.substr(start, len);
 }

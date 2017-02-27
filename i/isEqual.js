@@ -72,6 +72,7 @@ function deepEq(a, b, aStack, bStack)
     }
     aStack.pop();
     bStack.pop();
+    
     return true;
 }
 

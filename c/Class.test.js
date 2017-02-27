@@ -1,5 +1,5 @@
 var A = Class({
-    initialize: function (name, height)
+    initialize: function A(name, height)
     {
         this._name = name;
         this._height = height;
@@ -20,7 +20,7 @@ var A = Class({
 });
 
 var B = A.extend({
-    initialize: function (name, height, bloodType)
+    initialize: function B(name, height, bloodType)
     {
         this.callSuper(A, 'initialize', arguments);
         this._bloodType = bloodType;
@@ -64,4 +64,10 @@ it('has correct instanceof value', function ()
     expect(a instanceof A).to.be.true;
     expect(b instanceof B).to.be.true;
     expect(b instanceof A).to.be.true;
+});
+
+it('toString', function () 
+{
+    expect(a.toString()).to.equal('A');
+    expect(b.toString()).to.equal('B');
 });

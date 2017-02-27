@@ -12,8 +12,8 @@
     "serve": "nws -p 3000 -d testHtml",
     "test": "npm run test:mocha && npm run test:karma",
     "cov": "istanbul cover ./node_modules/mocha/bin/_mocha",
-    "test:mocha": "eris test -as && mocha",
-    "test:karma": "eris test -kas && karma start",
+    "test:node": "eris test -as && mocha",
+    "test:browser": "eris test -kas && karma start",
     "test:sauce": "eris test -kas --sauce && karma start"
   },
   "repository": {

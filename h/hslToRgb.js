@@ -22,7 +22,7 @@ function exports(hsl)
 
     if (s === 0)
     {
-        val = Math.round(l * 255);
+        val = round(l * 255);
         ret[0] = ret[1] = ret[2] = val;
         return ret;
     }
@@ -57,8 +57,10 @@ function exports(hsl)
             val = t1;
         }
 
-        ret[i] = Math.round(val * 255);
+        ret[i] = round(val * 255);
     }
 
     return ret;
 }
+
+var round = Math.round;

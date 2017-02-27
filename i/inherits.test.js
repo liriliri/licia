@@ -1,4 +1,4 @@
-it('inherit prototype methods', function ()
+it('basic', function ()
 {
     function People(name)
     {

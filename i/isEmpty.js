@@ -8,6 +8,7 @@
  * ```javascript
  * isEmpty([]); // -> true
  * isEmpty({}); // -> true
+ * isEmpty(''); // -> true
  * ```
  */
 

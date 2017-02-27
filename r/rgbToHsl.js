@@ -15,8 +15,8 @@ function exports(rgb)
     var r = rgb[0] / 255,
         g = rgb[1] / 255,
         b = rgb[2] / 255,
-        min = Math.min(r, g, b),
-        max = Math.max(r, g, b),
+        min = mMin(r, g, b),
+        max = mMax(r, g, b),
         delta = max - min,
         h, s, l;
 
@@ -29,12 +29,12 @@ function exports(rgb)
     } else if (g === max)
     {
         h = 2 + (b - r) / delta;
-    } else if (b === max)
+    } else
     {
         h = 4 + (r - g) / delta;
     }
 
-    h = Math.min(h * 60, 360);
+    h = mMin(h * 60, 360);
 
     if (h < 0) h += 360;
 
@@ -51,9 +51,13 @@ function exports(rgb)
         s = delta / (2 - max - min);
     }
 
-    var ret = [Math.round(h), Math.round(s * 100), Math.round(l * 100)];
+    var ret = [round(h), round(s * 100), round(l * 100)];
 
     if (rgb[3]) ret[3] = rgb[3];
 
     return ret;
 }
+
+var mMin = Math.min,
+    mMax = Math.max,
+    round = Math.round;

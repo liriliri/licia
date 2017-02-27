@@ -8,4 +8,4 @@ before_script:
 script:
   - npm link
   - npm run lint
-  - npm run test:mocha
+  - npm run test:node

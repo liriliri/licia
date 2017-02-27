@@ -26,14 +26,14 @@
  * ```
  */
 
-var objCreate = Object.create;
-
-function noop() {}
-
 function exports(Class, SuperClass)
 {
     if (objCreate) return Class.prototype = objCreate(SuperClass.prototype);
 
-    noop.prototype  = SuperClass.prototype;
-    Class.prototype = new noop();
+    noop.prototype = SuperClass.prototype;
+    Class.prototype = new noop()
 }
+
+var objCreate = Object.create;
+
+function noop() {}

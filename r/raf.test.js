@@ -17,21 +17,20 @@ it('node', function (done)
     }
 
     var count = 0,
-        isPause = false;
+        isPause = false,
+        id;
 
     function update()
     {
-        if (isPause) return;
-
         count++;
-        raf(update);
+        id = raf(update);
     }
 
-    raf(update);
+    id = raf(update);
 
     setTimeout(function ()
     {
-        isPause = true;
+        raf.cancel(id);
         expect(count > 2).to.be.true;
         done();
     }, 50);

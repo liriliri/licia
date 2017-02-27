@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-it('recursively create directories', function (done)
+it('basic', function (done)
 {
     fs.unlink(__dirname + '/mkdirTest/', function ()
     {

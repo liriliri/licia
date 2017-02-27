@@ -1,4 +1,4 @@
-it('trim beginning of string', function ()
+it('basic', function ()
 {
     expect(ltrim(' abc  ')).to.equal('abc  ');
     expect(ltrim('_abc_', '_')).to.equal('abc_');

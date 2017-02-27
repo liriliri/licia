@@ -1,5 +1,5 @@
 {
-    "mocha": [
+    "all": [
         "after",
         "allKeys",
         "average",
@@ -54,7 +54,6 @@
         "isArrLike",
         "isBool",
         "isBrowser",
-        "isBuffer",
         "isDate",
         "isEmail",
         "isEmpty",
@@ -93,7 +92,6 @@
         "memStorage",
         "methods",
         "min",
-        "mkdir",
         "negate",
         "nextTick",
         "noop",
@@ -157,13 +155,17 @@
         "Url",
         "use",
         "uuid",
-        "Validator",
         "values",
+        "Validator",
         "waterfall",
         "wrap",
         "zip"
     ],
-    "karma": [
+    "node": [
+        "isBuffer",
+        "mkdir"
+    ],
+    "browser": [
         "$",
         "$attr",
         "$class",
@@ -177,13 +179,8 @@
         "$safeEls",
         "$show",
         "cookie",
-        "isBrowser",
         "isEl",
-        "isMobile",
-        "isNode",
         "isRetina",
-        "nextTick",
-        "toEl",
-        "raf"
+        "toEl"
     ]
 }
