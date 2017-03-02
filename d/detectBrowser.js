@@ -30,30 +30,26 @@ function exports(ua)
         name: 'ie'
     };
     
-    if (regIe11.test(ua)) 
-    {
-        return {
-            version: 11,
-            name: 'ie'
-        };
-    }
+    if (regIe11.test(ua)) return {
+        version: 11,
+        name: 'ie'
+    };
 
     for (var i = 0, len = browsers.length; i < len; i++) 
     {
         var name = browsers[i],
             match = ua.match(regBrowsers[name]);
 
-        if (match) 
-        {
-            var version = toInt(match[1].split('.')[0]);
+        if (match == null) continue;
+        
+        var version = toInt(match[1].split('.')[0]);
 
-            if (name === 'opera') version = getVer(ua, 'version/') || version;
+        if (name === 'opera') version = getVer(ua, 'version/') || version;
 
-            return {
-                name: name,
-                version: version
-            }
-        }
+        return {
+            name: name,
+            version: version
+        };
     }
 
     return {

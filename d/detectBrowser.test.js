@@ -1,3 +1,10 @@
+it('basic', function () 
+{
+    test([
+        ['Nonsense', 'unknown', -1]
+    ]);
+});
+
 it('ie', function () 
 {
     test([

@@ -26,6 +26,7 @@
         "define",
         "delay",
         "detectBrowser",
+        "detectOs",
         "difference",
         "dotCase",
         "each",

@@ -1324,6 +1324,24 @@ if (browser.name === 'ie' && browser.version < 9)
 }
 ```
 
+## detectOs 
+
+Detect operating system using ua.
+
+|Name                    |Type  |Desc                 |
+|------------------------|------|---------------------|
+|[ua=navigator.userAgent]|string|Browser userAgent    |
+|return                  |string|Operating system name|
+
+Supported os: windows, os x, linux, ios, android, windows phone
+
+```javascript
+if (detectOs() === 'ios')
+{
+    // Do something about ios...
+}
+```
+
 ## difference 
 
 Create an array of unique array values not included in the other given array.
