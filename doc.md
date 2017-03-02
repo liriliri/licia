@@ -1068,14 +1068,15 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 
 Check if the value is present in the list.
 
-|Name  |Type   |Desc                                |
-|------|-------|------------------------------------|
-|array |array  |Target list                         |
-|value |*      |Value to check                      |
-|return|boolean|True if value is present in the list|
+|Name  |Type        |Desc                                |
+|------|------------|------------------------------------|
+|array |array object|Target list                         |
+|value |*           |Value to check                      |
+|return|boolean     |True if value is present in the list|
 
 ```javascript
 contain([1, 2, 3], 1); // -> true
+contain({a: 1, b: 2}, 1); // -> true
 ```
 
 ## convertBase 
@@ -1302,6 +1303,25 @@ function clickHandler()
 }
 delegate.add(container, 'click', '.children', clickHandler);
 delegate.remove(container, 'click', '.children', clickHandler);
+```
+
+## detectBrowser 
+
+Detect browser info using ua.
+
+|Name                    |Type  |Desc                              |
+|------------------------|------|----------------------------------|
+|[ua=navigator.userAgent]|string|Browser userAgent                 |
+|return                  |object|Object containing name and version|
+
+Browsers supported: ie, chrome, edge, firefox, opera, safari, ios(mobile safari), android(android browser)
+
+```javascript
+var browser = detectBrowser();
+if (browser.name === 'ie' && browser.version < 9)
+{
+    // Do something about old IE...
+}
 ```
 
 ## difference 
@@ -1831,6 +1851,7 @@ Check if value is an empty object or array.
 ```javascript
 isEmpty([]); // -> true
 isEmpty({}); // -> true
+isEmpty(''); // -> true
 ```
 
 ## isEqual 

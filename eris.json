@@ -47,6 +47,7 @@
     "define": "Define a module, should be used along with use.",
     "delay": "Invoke function after certain milliseconds.",
     "delegate": "Event delegation.",
+    "detectBrowser": "Detect browser info using ua.",
     "difference": "Create an array of unique array values not included in the other given array.",
     "dotCase": "Convert string to \"dotCase\".",
     "each": "Iterates over elements of collection and invokes iteratee for each element.",

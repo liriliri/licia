@@ -55,7 +55,7 @@ about how to write an eustia module.
   module called lpad)
 * Must within a file, less than 500 lines. (with comments and blank lines counted)  
 
-### How To Add
+### How to Add
 
 * Fork and clone the repository.
 * `npm i && npm link` to register **eris** command in your system.
