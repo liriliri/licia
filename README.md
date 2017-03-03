@@ -1,3 +1,5 @@
+[中文](README_CH.md)
+
 # Eris
 
 [![NPM version][npm-image]][npm-url]
