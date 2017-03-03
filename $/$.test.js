@@ -140,8 +140,7 @@ it('insert', function ()
     dom.append('test2');
     expect($dom.html()).to.equal('<div>test1</div>test2');
     dom.prepend('test0');
-    expect($dom.html()).to.equal
-    ('test0<div>test1</div>test2');
+    expect($dom.html()).to.equal('test0<div>test1</div>test2');
     dom.html('<div>test</div>');
     var div = dom.find('div');
     div.before('<div>before</div>');
