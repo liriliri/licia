@@ -11,7 +11,7 @@
  *     {
  *         cb(null, 'one');
  *     },
- *     function (arg1)
+ *     function (arg1, cb)
  *     {
  *         // arg1 -> 'one'
  *         cb(null, 'done');
