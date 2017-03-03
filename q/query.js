@@ -41,6 +41,7 @@ exports = {
             var key = parts.shift(),
                 val = parts.length > 0 ? parts.join('=') : null;
 
+            key = decodeURIComponent(key);
             val = decodeURIComponent(val);
 
             if (isUndef(ret[key]))
@@ -64,7 +65,7 @@ exports = {
             if (isObj(val) && isEmpty(val)) return '';
             if (isArr(val)) return exports.stringify(val, key);
 
-            return (arrKey || key) + '=' + encodeURIComponent(val);
+            return (arrKey ? encodeURIComponent(arrKey) : encodeURIComponent(key)) + '=' + encodeURIComponent(val);
         }), function (str)
         {
             return str.length > 0;

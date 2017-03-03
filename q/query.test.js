@@ -8,6 +8,9 @@ it('parse query', function ()
     expect(query.parse('test=1&test=2')).to.eql({
         test: ['1', '2']
     });
+    expect(query.parse('te%20st=te%20st')).to.eql({
+        'te st': 'te st'
+    })
 });
 
 it('stringify query', function ()
@@ -21,4 +24,7 @@ it('stringify query', function ()
     expect(query.stringify({
         test: ['1', '2']
     })).to.equal('test=1&test=2');
+    expect(query.stringify({
+        'te st': 'te st'
+    })).to.equal('te%20st=te%20st')
 });
