@@ -23,9 +23,7 @@ as a mini version of npm suitable for tiny packages.
 
 ## Usage
 
-It is recommended to use the official bundler [eustia](http://liriliri.github.io/eustia/).
-
-But if you don't like it, just install **eustia-module** and use it like
+It is recommended to use the official bundler [eustia](http://liriliri.github.io/eustia/) to easily build a customized utility library for your project. But if you don't like it, just install **eustia-module** and use it like
 any other npm utility modules such as lodash.
 
 ```bash
@@ -61,7 +59,7 @@ about how to write an eustia module.
 * `npm i && npm link` to register **eris** command in your system.
 * Create a js file named with the module name and its corresponding test file.
 * Write the source code along with the documentaion and test. (documentation is the first block comment written in markdown)
-* `eris test <module-name>` to generate the test files, then run `mocha test/<module-name>` or `karma start` for testing.
+* `eris test <module-name>` to generate the test files(use `-k` if test should run in a browser), then run `mocha test/<module-name>` or `karma start` for testing.
 * `npm run cov` for checking the test coverage. (istanbul is required)
 * Add the module name to **test.json** so that travis-ci can test it automatically.
 * Update **eris.json** and **doc.md** by running `npm run update`.
