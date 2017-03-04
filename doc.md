@@ -2506,6 +2506,31 @@ Convert an object into a list of [key, value] pairs.
 pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
 ```
 
+## parallel 
+
+Run an array of functions in parallel.
+
+|Name |Type    |Desc                   |
+|-----|--------|-----------------------|
+|tasks|array   |Array of functions     |
+|[cb] |function|Callback once completed|
+
+```javascript
+parallel([
+    function(cb)
+    {
+        setTimeout(function () { cb(null, 'one') }, 200);
+    },
+    function(cb)
+    {
+        setTimeout(function () { cb(null, 'two') }, 100);
+    }
+], function (err, results)
+{
+    // results -> ['one', 'two']
+});
+```
+
 ## partial 
 
 Partially apply a function by filling in given arguments.

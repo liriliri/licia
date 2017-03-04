@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/liriliri/eris#readme",
   "devDependencies": {
-    "async": "^2.1.4",
     "chai": "^3.5.0",
     "eustia": "^0.3.3",
     "eustia-component": "0.0.3",

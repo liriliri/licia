@@ -130,6 +130,7 @@
     "optimizeCb": "Used for function context binding.",
     "pad": "Pad string on the left and right sides if it's shorter than length.",
     "pairs": "Convert an object into a list of [key, value] pairs.",
+    "parallel": "Run an array of functions in parallel.",
     "partial": "Partially apply a function by filling in given arguments.",
     "pascalCase": "Convert string to \"pascalCase\".",
     "pluck": "Extract a list of property values.",

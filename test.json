@@ -103,6 +103,7 @@
         "optimizeCb",
         "pad",
         "pairs",
+        "parallel",
         "partial",
         "pascalCase",
         "pluck",
