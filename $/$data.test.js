@@ -1,8 +1,14 @@
-$('body').append('<div id="dollarData"></div>');
+var $dom;
 
-var $dom = $('#dollarData');
+before(function ()
+{
+    $('body').append('<div id="dollarData"></div>');
+    $dom = $('#dollarData');
+});
 
-it('get node\'s data', function ()
+after(function () { $dom.remove() });
+
+it('get', function ()
 {
     $dom.append('<div class="getter"></div>');
 
@@ -13,7 +19,7 @@ it('get node\'s data', function ()
     expect($data($el.get(0), 'one')).to.equal('true');
 });
 
-it('set node\'s data', function ()
+it('set', function ()
 {
     $dom.append('<div class="setter"></div>');
 

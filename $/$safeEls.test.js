@@ -1,18 +1,24 @@
-$('body').append('<div id="dollarSafeEls"></div>');
+var dom;
 
-var dom = $('#dollarSafeEls').get(0);
+before(function ()
+{
+    $('body').append('<div id="dollarSafeEls"></div>');
+    dom = $('#dollarSafeEls').get(0);
+});
 
-it('turn string into elements', function ()
+after(function () { $('#dollarSafeEls').remove() });
+
+it('string', function ()
 {
     expect($safeEls('#dollarSafeEls')[0]).to.equal(dom);
 });
 
-it('turn single element to an array', function ()
+it('single element', function ()
 {
     expect($safeEls(dom)).to.eql([dom]);
 });
 
-it('do nothing to arrays', function ()
+it('array', function ()
 {
     expect($safeEls([dom])).to.eql([dom]);
 });

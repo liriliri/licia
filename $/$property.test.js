@@ -1,8 +1,14 @@
-$('body').append('<div id="dollarPropFactory"></div>');
+var $dom;
 
-var $dom = $('#dollarPropFactory');
+before(function ()
+{
+    $('body').append('<div id="dollarPropFactory"></div>');
+    $dom = $('#dollarPropFactory');
+});
 
-it('get node\'s property', function ()
+after(function () { $dom.remove() });
+
+it('get', function ()
 {
     $dom.append('<div class="getter"></div>');
 
@@ -12,7 +18,7 @@ it('get node\'s property', function ()
     expect($property.text($el)).to.equal('Eustia rocks!');
 });
 
-it('set node\'s property', function ()
+it('set', function ()
 {
     $dom.append('<div class="setter"></div>');
 
@@ -21,5 +27,3 @@ it('set node\'s property', function ()
     $property.text($el, 'Eustia rocks!!');
     expect($el.text()).to.equal('Eustia rocks!!');
 });
-
-$dom.remove();

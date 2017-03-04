@@ -1,8 +1,14 @@
-$('body').append('<div id="dollarCss"></div>');
+var $dom;
 
-var $dom = $('#dollarCss');
+before(function ()
+{
+    $('body').append('<div id="dollarCss"></div>');
+    $dom = $('#dollarCss');
+});
 
-it('get node\'s css value', function ()
+after(function () { $dom.remove() });
+
+it('get', function ()
 {
     $dom.append('<div class="getter"></div>');
 
@@ -13,21 +19,21 @@ it('get node\'s css value', function ()
     expect($css($el.get(0), 'width')).to.equal('100%');
 });
 
-it('set node\'s css value', function ()
+it('set', function ()
 {
     $dom.append('<div class="setter"></div>');
 
     var $el = $dom.find('.setter');
 
-    $css($el, 'width', '100%');
-    expect($el.css('width')).to.equal('100%');
+    $css($el, 'width', 14);
+    expect($el.css('width')).to.equal('14px');
+    $css($el, 'width', '16px');
+    expect($el.css('width')).to.equal('16px');
 
     $css($el, {
-        'width': '50%',
-        'height': '100%'
+        'width': 20,
+        'height': 100
     });
-    expect($el.css('width')).to.equal('50%');
-    expect($el.css('height')).to.equal('100%');
+    expect($el.css('width')).to.equal('20px');
+    expect($el.css('height')).to.equal('100px');
 });
-
-$dom.remove();

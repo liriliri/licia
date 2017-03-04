@@ -1,7 +1,20 @@
-$('body').append('<div id="dollarShow" style="display:none"></div>');
+var $dom;
 
-it('show elements', function ()
+before(function ()
+{
+    $('body').append('<div id="dollarShow" style="display:none"></div>');
+    $dom = $('#dollarShow');
+});
+
+after(function () { $dom.remove() });
+
+it('basic', function ()
 {
     $show('#dollarShow');
-    expect($('#dollarShow').css('display')).to.equal('block');
+    expect($dom.css('display')).to.equal('block');
+    $show('#dollarShow');
+    expect($dom.css('display')).to.equal('block');
+    $dom.css('display', 'none');
+    $show('#dollarShow');
+    expect($dom.css('display')).to.equal('block');
 });

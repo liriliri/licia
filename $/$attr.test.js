@@ -1,8 +1,14 @@
-$('body').append('<div id="dollarAttr"></div>');
+var $dom;
 
-var $dom = $('#dollarAttr');
+before(function ()
+{
+    $('body').append('<div id="dollarAttr"></div>');
+    $dom = $('#dollarAttr');
+});
 
-it('get node\'s attribute', function ()
+after(function () { $dom.remove() });
+
+it('get', function ()
 {
     $dom.append('<div class="getter"></div>');
 
@@ -13,7 +19,7 @@ it('get node\'s attribute', function ()
     expect($attr($el.get(0), 'data-one')).to.equal('true');
 });
 
-it('set node\'s attribute', function ()
+it('set', function ()
 {
     $dom.append('<div class="setter"></div>');
 
@@ -30,7 +36,7 @@ it('set node\'s attribute', function ()
     expect($el.attr('data-three')).to.equal('true');
 });
 
-it('remove node\'s attribute', function ()
+it('remove', function ()
 {
     $dom.append('<div class="remove"></div>');
 
@@ -45,5 +51,3 @@ it('remove node\'s attribute', function ()
     $attr.remove($el, ['data-one', 'data-two']);
     expect($el).to.not.have.attr('data-two', 'data-three');
 });
-
-$dom.remove();

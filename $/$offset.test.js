@@ -1,8 +1,14 @@
-$('body').append('<div id="dollarOffset"></div>');
+var $dom;
 
-var $dom = $('#dollarOffset');
+before(function ()
+{
+    $('body').append('<div id="dollarOffset"></div>');
+    $dom = $('#dollarOffset');
+});
 
-it('get offset', function ()
+after(function () { $dom.remove() });
+
+it('basic', function ()
 {
     var offset = $dom.offset();
 

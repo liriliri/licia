@@ -48,13 +48,13 @@
  * ```
  */
 
-_('toArr some $safeEls');
+_('toArr some $safeEls isStr');
 
 exports = {
     add: function (els, name)
     {
         els = $safeEls(els);
-        var names = toArr(name);
+        var names = safeName(name);
 
         each(els, function (el)
         {
@@ -93,7 +93,7 @@ exports = {
     remove: function (els, name)
     {
         els = $safeEls(els);
-        var names = toArr(name);
+        var names = safeName(name);
 
         each(els, function (el)
         {
@@ -104,3 +104,8 @@ exports = {
         });
     }
 };
+
+function safeName(name)
+{
+    return isStr(name) ? name.split(/\s/) : toArr(name);
+}
