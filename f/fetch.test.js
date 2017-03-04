@@ -1,10 +1,16 @@
 var sinon = require('sinon');
-    
-var fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest(),
-    requests = [];
 
-fakeXMLHttpRequest.onCreate = function (xhr) { requests.push(xhr) };    
-fetch.setting.xhr = function () { return new fakeXMLHttpRequest() };
+var requests = [];
+
+before(function ()
+{
+    var fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest();
+
+    fakeXMLHttpRequest.onCreate = function (xhr) { requests.push(xhr) };
+    fetch.setting.xhr = function () { return new fakeXMLHttpRequest() };
+});
+
+beforeEach(function () { requests = [] });
 
 it('basic', function (done) 
 {
@@ -35,8 +41,6 @@ it('basic', function (done)
     expect(request.requestHeaders).to.eql({a: 1});
     expect(request.requestBody).to.equal('test');
     request.respond(200, {b: 2}, '{"a":1}');
-
-    requests = [];
 });
 
 it('timeout', function (done) 
@@ -55,6 +59,4 @@ it('timeout', function (done)
     {
         request.respond(200, {}, '');
     }, 100);
-
-    requests = [];
 });

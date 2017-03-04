@@ -1,10 +1,16 @@
 var sinon = require('sinon');
-    
-var fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest(),
-    requests = [];
 
-fakeXMLHttpRequest.onCreate = function (xhr) { requests.push(xhr) };    
-ajax.setting.xhr = function () { return new fakeXMLHttpRequest() };
+var requests = [];
+
+before(function ()
+{
+    var fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest();
+
+    fakeXMLHttpRequest.onCreate = function (xhr) { requests.push(xhr) };
+    ajax.setting.xhr = function () { return new fakeXMLHttpRequest() };
+});
+
+beforeEach(function () { requests = [] });
 
 it('basic', function (done) 
 {
@@ -25,8 +31,6 @@ it('basic', function (done)
     expect(request.requestBody).to.be.a('null');
 
     request.respond(200, {}, '{"a":1,"b":2}');
-
-    requests = [];
 });
 
 it('request data', function (done) 
@@ -63,8 +67,6 @@ it('request data', function (done)
     request = requests[2];
     expect(request.requestBody).to.equal('test');
     request.respond(200, {}, '');
-
-    requests = [];
 });
 
 it('get', function (done)
@@ -87,8 +89,6 @@ it('get', function (done)
 
     request = requests[1];
     request.respond(200, {}, '{"a": 1}');
-
-    requests = [];
 });
 
 it('post', function (done)
@@ -102,8 +102,6 @@ it('post', function (done)
     var request = requests[0];
     expect(request.requestBody).to.equal('a=1');
     request.respond(200, {}, '{"a": 1}');
-
-    requests = [];
 });
 
 it('error', function (done) 
@@ -120,8 +118,6 @@ it('error', function (done)
     var request = requests[0];
 
     request.respond(500, {}, 'Error');
-
-    requests = [];
 });
 
 it('xml dataType', function (done) 
@@ -136,13 +132,11 @@ it('xml dataType', function (done)
     var request = requests[0];
 
     request.respond(200, {'Content-Type': 'text/xml'}, '<html>test</html>');
-
-    requests = [];
 });
 
 it('complete', function (done) 
 {
-    var xhr = ajax({
+    ajax({
         url: 'test',
         complete: function (xhr) 
         {
@@ -164,8 +158,6 @@ it('complete', function (done)
 
     request = requests[1];
     request.respond(500, {}, '')
-
-    requests = [];
 });
 
 it('timeout', function (done) 
@@ -186,7 +178,5 @@ it('timeout', function (done)
     {
         request.respond(200, {}, '');
     }, 100);
-
-    requests = [];
 });
 
