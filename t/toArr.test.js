@@ -1,4 +1,4 @@
-it('convert value to an array', function ()
+it('basic', function ()
 {
     expect(toArr({a: 1, b: 2})).to.eql([{a: 1, b: 2}]);
     expect(toArr(5)).to.eql([5]);
