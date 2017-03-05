@@ -4,7 +4,7 @@ it('play', function (done)
 
     tween.on('update', function (target)
     {
-        expect(target.a).to.above(0);
+        expect(target.a).to.be.at.least(0);
     });
 
     tween.on('end', function (target)
