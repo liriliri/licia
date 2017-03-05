@@ -8,7 +8,7 @@ module.exports = function(config)
             'karma-mocha',
             'karma-chai-plugins',
             'karma-jquery',
-            'karma-chrome-launcher',
+            'karma-phantomjs-launcher',
             'karma-coverage'
         ],
         reporters: ['progress', 'coverage'],
@@ -19,8 +19,8 @@ module.exports = function(config)
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: ['Chrome'],
-        singleRun: false,
+        browsers: ['PhantomJS'],
+        singleRun: true,
         concurrency: Infinity
     });
 };

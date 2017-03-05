@@ -5,7 +5,8 @@ node_js:
 before_script:
   - npm install -g mocha
   - npm install -g eslint
-script:
+  - npm install -g karma-cli
   - npm link
+script:
   - npm run lint
-  - npm run test:node
+  - npm run test
