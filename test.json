@@ -185,5 +185,9 @@
         "isEl",
         "isRetina",
         "toEl"
+    ],
+    "manual": [
+        "ajax",
+        "fetch"
     ]
 }

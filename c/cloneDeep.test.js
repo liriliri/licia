@@ -1,4 +1,4 @@
-it('deep clone value', function ()
+it('basic', function ()
 {
     var obj = [{a: 1}, {a: 2}],
         obj2 = cloneDeep(obj);

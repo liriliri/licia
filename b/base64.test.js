@@ -1,4 +1,4 @@
-it('encode byte array', function ()
+it('encode', function ()
 {
     expect(base64.encode([255, 255, 255])).to.equal('////');
     expect(base64.encode([255, 255, 255, 255])).to.equal('/////w==');
@@ -6,7 +6,7 @@ it('encode byte array', function ()
     expect(base64.encode([168, 174, 155, 255])).to.equal('qK6b/w==');
 });
 
-it('decode base64 string', function ()
+it('decode', function ()
 {
     expect(base64.decode('////')).to.eql([255, 255, 255]);
     expect(base64.decode('/////w==')).to.eql([255, 255, 255, 255]);

@@ -38,8 +38,7 @@
 _('Class isStr clamp rgbToHsl hslToRgb lpad convertBase');
 
 exports = Class({
-    className: 'Color',
-    initialize: function (color)
+    initialize: function Color(color)
     {
         if (isStr(color)) color = exports.parse(color);
 

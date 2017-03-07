@@ -1,4 +1,4 @@
-it('convert string to camel case', function ()
+it('basic', function ()
 {
     expect(camelCase('foo')).to.equal('foo');
     expect(camelCase('FooBar')).to.equal('fooBar');

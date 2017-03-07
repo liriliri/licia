@@ -1,10 +1,10 @@
-it('set, get cookie', function ()
+it('set, get', function ()
 {
     cookie.set('name', 'eustia');
     expect(cookie.get('name')).to.equal('eustia');
 });
 
-it('remove cookie', function ()
+it('remove', function ()
 {
     cookie.remove('name');
     expect(cookie.get('name')).to.be.undefined;

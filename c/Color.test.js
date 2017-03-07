@@ -1,4 +1,4 @@
-it('parse color string into rgba array', function ()
+it('parse', function ()
 {
     expect(Color.parse('#abc')).to.eql({
         val: [170, 187, 204, 1],
@@ -22,7 +22,7 @@ it('parse color string into rgba array', function ()
     });
 });
 
-it('convert color', function ()
+it('convert', function ()
 {
     var color = new Color('#abc');
     expect(color.toRgb()).to.eql('rgb(170, 187, 204)');

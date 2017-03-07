@@ -1,4 +1,4 @@
-it('create a function bound to a given object and arguments', function ()
+it('basic', function ()
 {
     var fn = bind(function (msg)
     {

@@ -1,4 +1,4 @@
-it('curry function', function ()
+it('basic', function ()
 {
     function add(a, b, c)
     {

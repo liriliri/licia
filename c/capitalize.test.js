@@ -1,4 +1,4 @@
-it('convert the first character to uppercase', function ()
+it('basic', function ()
 {
     expect(capitalize('rED')).to.equal('Red');
 });

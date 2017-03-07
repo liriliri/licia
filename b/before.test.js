@@ -1,4 +1,4 @@
-it('restrict function invoke times', function ()
+it('before', function ()
 {
     var count = 0;
     var fn = before(5, function ()

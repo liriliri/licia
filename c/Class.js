@@ -8,7 +8,7 @@
  *
  * ```javascript
  * var People = Class({
- *     initialize: function (name, age)
+ *     initialize: function People(name, age)
  *     {
  *         this.name = name;
  *         this.age = age;
@@ -20,7 +20,7 @@
  * });
  *
  * var Student = People.extend({
- *     initialize: function (name, age, school)
+ *     initialize: function Student(name, age, school)
  *     {
  *         this.callSuper(People, 'initialize', arguments);
  *
@@ -71,7 +71,7 @@ function makeClass(parent, methods, statics)
     };
     ctor.inherits = function (Class)
     {
-        inherits(Class, ctor);
+        inherits(ctor, Class);
     };
     ctor.methods = function (methods)
     {
@@ -94,8 +94,6 @@ var Base = exports.Base = makeClass(Object, {
     callSuper: function (parent, name, args)
     {
         var superMethod = parent.prototype[name];
-
-        if (!superMethod) return;
 
         return superMethod.apply(this, args);
     },

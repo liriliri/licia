@@ -36,21 +36,32 @@ var B = A.extend({
     }
 });
 
-var a = new A('eustia', 1.496),
-    b = new B('eustia', 1.496, 'A');
+var C = Class({
+    initialize: function (name, height)
+    {
+        this._name = name;
+        this._height = height;
+    }
+});
 
-it('create class', function ()
+C.inherits(A);
+
+var a = new A('eustia', 1.496),
+    b = new B('eustia', 1.496, 'A'),
+    c = new C('eustia', 1.496);
+
+it('basic', function ()
 {
     expect(a.getName()).to.equal('eustia');
 });
 
-it('has class extension', function ()
+it('extension', function ()
 {
     expect(b.getHeight()).to.equal(1.496);
     expect(b.getBloodType()).to.equal('A');
 });
 
-it('has callSuper and can override methods', function ()
+it('callSuper and override', function ()
 {
     expect(a.introduce()).to.equal('My name is eustia. ' +
                                    'I\'m 1.496 meters tall. ');
@@ -59,11 +70,13 @@ it('has callSuper and can override methods', function ()
                                    'And my blood type is A. ');
 });
 
-it('has correct instanceof value', function ()
+it('instanceof', function ()
 {
     expect(a instanceof A).to.be.true;
     expect(b instanceof B).to.be.true;
     expect(b instanceof A).to.be.true;
+    expect(c instanceof C).to.be.true;
+    expect(c instanceof A).to.be.true;
 });
 
 it('toString', function () 
