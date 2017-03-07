@@ -1,4 +1,4 @@
-it('check if it is high DPR', function ()
+it('basic', function ()
 {
     expect(isRetina).to.be.a('boolean');
 });

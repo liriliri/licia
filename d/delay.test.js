@@ -1,4 +1,4 @@
-it('delay function invocation', function (done)
+it('basic', function (done)
 {
     var count = 1;
 

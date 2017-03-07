@@ -1,4 +1,4 @@
-it('convert string to pascal case', function ()
+it('basic', function ()
 {
     expect(pascalCase('foo')).to.equal('Foo');
     expect(pascalCase('FooBar')).to.equal('FooBar');

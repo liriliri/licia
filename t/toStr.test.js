@@ -1,4 +1,4 @@
-it('convert value to a string', function ()
+it('basic', function ()
 {
     expect(toStr(null)).to.be.equal('');
     expect(toStr(undefined)).to.be.equal('');

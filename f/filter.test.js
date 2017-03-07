@@ -1,4 +1,4 @@
-it('filter elements not passing the given test', function ()
+it('basic', function ()
 {
     expect(filter([1, 2, 3, 4, 5], function (val)
     {

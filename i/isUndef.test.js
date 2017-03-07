@@ -1,9 +1,9 @@
-it('return `true` for undefined', function ()
+it('true', function ()
 {
     expect(isUndef(void 0)).to.be.true;
 });
 
-it('return `false` for non-undefined', function ()
+it('false', function ()
 {
     var b = 1;
 

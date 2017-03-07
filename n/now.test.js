@@ -1,4 +1,4 @@
-it('equals with calling Date.now', function ()
+it('basic', function ()
 {
     var a = now(),
         b = Date.now();

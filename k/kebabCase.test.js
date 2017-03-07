@@ -1,4 +1,4 @@
-it('convert string to kebab case', function ()
+it('basic', function ()
 {
     expect(kebabCase('foo')).to.equal('foo');
     expect(kebabCase('foo--bar')).to.equal('foo-bar');

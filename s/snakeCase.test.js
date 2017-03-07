@@ -1,4 +1,4 @@
-it('convert string to snake case', function ()
+it('basic', function ()
 {
     expect(snakeCase('foo')).to.equal('foo');
     expect(snakeCase('foo_bar')).to.equal('foo_bar');

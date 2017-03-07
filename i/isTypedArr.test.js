@@ -1,6 +1,5 @@
-it('check if is a typed array', function ()
+it('true', function ()
 {
-    expect(isTypedArr([])).to.be.false;
     expect(isTypedArr(new Int16Array)).to.be.true;
     expect(isTypedArr(new Int32Array)).to.be.true;
     expect(isTypedArr(new Uint8Array)).to.be.true;
@@ -9,4 +8,10 @@ it('check if is a typed array', function ()
     expect(isTypedArr(new Uint32Array)).to.be.true;
     expect(isTypedArr(new Float32Array)).to.be.true;
     expect(isTypedArr(new Float64Array)).to.be.true;
+});
+
+it('false', function () 
+{
+    expect(isTypedArr([])).to.be.false;
+    expect(isTypedArr({})).to.be.false;
 });

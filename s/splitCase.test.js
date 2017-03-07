@@ -1,4 +1,4 @@
-it('split different string case to an array', function ()
+it('basic', function ()
 {
     expect(splitCase('foo').length).to.equal(1);
     expect(splitCase('foo-bar').length).to.equal(2);

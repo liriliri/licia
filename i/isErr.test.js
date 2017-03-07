@@ -1,9 +1,9 @@
-it('return `true` for errors', function ()
+it('true', function ()
 {
     expect(isErr(new Error())).to.be.true;
 });
 
-it('return `false` for non-errors', function ()
+it('false', function ()
 {
     expect(isErr(5)).to.be.false;
 });

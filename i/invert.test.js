@@ -1,4 +1,4 @@
-it('invert object keys and values', function ()
+it('basic', function ()
 {
     var obj = {
         a: 'b',

@@ -1,4 +1,4 @@
-it('create render function', function ()
+it('basic', function ()
 {
     expect(template('Hello <%= name %>!')({name: 'eris'})).to.equal('Hello eris!');
     expect(template('<p><%- name %></p>')({name: '<eris>'})).to.equal('<p>&lt;eris&gt;</p>');

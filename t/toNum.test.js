@@ -1,4 +1,4 @@
-it('convert value to number', function ()
+it('basic', function ()
 {
     expect(toNum({})).to.be.NaN;
     expect(toNum([])).to.equal(0);

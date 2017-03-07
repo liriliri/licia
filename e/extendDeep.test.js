@@ -1,4 +1,4 @@
-it('recursively extend object', function ()
+it('basic', function ()
 {
     var obj = {
         name: 'RedHood',

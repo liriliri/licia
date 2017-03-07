@@ -1,4 +1,4 @@
-it('shuffle array', function ()
+it('basic', function ()
 {
     var arr = [2.3, 100, 75, 120],
         result = shuffle(arr),

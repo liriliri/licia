@@ -1,4 +1,4 @@
-it('wrap functions', function ()
+it('basic', function ()
 {
     function five() { return 'five' }
     var sayFive = wrap(five, function (fn)

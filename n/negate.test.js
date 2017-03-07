@@ -1,4 +1,4 @@
-it('negate function result', function ()
+it('basic', function ()
 {
     function even(n) { return n % 2 === 0 }
     var odd = negate(even);

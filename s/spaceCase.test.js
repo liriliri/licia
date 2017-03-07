@@ -1,4 +1,4 @@
-it('convert string to space case', function ()
+it('basic', function ()
 {
     expect(spaceCase('foo')).to.equal('foo');
     expect(spaceCase('foo--bar')).to.equal('foo bar');

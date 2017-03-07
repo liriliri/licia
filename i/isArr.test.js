@@ -1,9 +1,9 @@
-it('return `true` for arrays', function ()
+it('true', function ()
 {
     expect(isArr([])).to.be.true;
 });
 
-it('return `false` for non-arrays', function ()
+it('false', function ()
 {
     expect(isArr({})).to.be.false;
     expect(isArr(arguments)).to.be.false;

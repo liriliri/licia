@@ -1,4 +1,4 @@
-it('nextTick polyfill', function ()
+it('basic', function ()
 {
     var invoked = false;
 

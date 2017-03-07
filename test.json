@@ -182,8 +182,12 @@
         "$safeEls",
         "$show",
         "cookie",
+        "delegate",
+        "evalCss",
         "isEl",
         "isRetina",
+        "ready",
+        "Select",
         "toEl"
     ],
     "manual": [

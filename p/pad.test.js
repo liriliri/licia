@@ -1,4 +1,4 @@
-it('pad string on the left and right side', function ()
+it('basic', function ()
 {
     expect(pad('a', 5)).to.equal('  a  ');
     expect(pad('a', 5, '-')).to.equal('--a--');

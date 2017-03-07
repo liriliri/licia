@@ -1,4 +1,4 @@
-it('return throttle function', function (done)
+it('basic', function (done)
 {
     var counter = 0;
 

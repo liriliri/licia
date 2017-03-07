@@ -1,4 +1,4 @@
-it('get object property safely', function ()
+it('basic', function ()
 {
     var obj = {a: {aa: {aaa: 1}}};
     expect(safeGet(obj, 'a.aa.aaa')).to.equal(1);

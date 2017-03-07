@@ -1,9 +1,9 @@
-it('return `true` for functions', function ()
+it('true', function ()
 {
     expect(isFn(function () {})).to.be.true;
 });
 
-it('return `false` for non-functions', function ()
+it('false', function ()
 {
     expect(isFn(5)).to.be.false;
     expect(isFn({})).to.be.false;

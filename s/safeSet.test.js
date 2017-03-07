@@ -1,4 +1,4 @@
-it('set object value at given path', function ()
+it('basic', function ()
 {
     var obj = {};
     safeSet(obj, 'a.aa.aaa', 1);

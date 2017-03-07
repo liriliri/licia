@@ -1,4 +1,4 @@
-it('parse query', function ()
+it('parse', function ()
 {
     expect(query.parse('foo=bar')).to.eql({foo: 'bar'});
     expect(query.parse('eruda=true&eustia=false')).to.eql({
@@ -13,7 +13,7 @@ it('parse query', function ()
     })
 });
 
-it('stringify query', function ()
+it('stringify', function ()
 {
     expect(query.stringify({foo: 'bar'})).to.equal('foo=bar');
     expect(query.stringify({

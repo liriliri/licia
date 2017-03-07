@@ -1,4 +1,4 @@
-it('get values of object properties', function ()
+it('basic', function ()
 {
     var obj = Object.create({a: 1});
     obj.b = 2;

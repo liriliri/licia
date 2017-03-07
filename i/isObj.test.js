@@ -1,4 +1,4 @@
-it('return `true` for objects', function ()
+it('true', function ()
 {
     expect(isObj({})).to.be.true;
     expect(isObj([])).to.be.true;
@@ -6,7 +6,7 @@ it('return `true` for objects', function ()
     expect(isObj(/x/)).to.be.true;
 });
 
-it('return `false` for non-objects', function ()
+it('false', function ()
 {
     expect(isObj(5)).to.be.false;
     expect(isObj('eris')).to.be.false;

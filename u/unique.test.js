@@ -1,4 +1,4 @@
-it('create duplicate-free version of an array', function ()
+it('basic', function ()
 {
     expect(unique([1, 2, 3, 1]).length).to.equal(3);
 

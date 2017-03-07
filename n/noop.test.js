@@ -1,4 +1,4 @@
-it('is a function and return nothing', function ()
+it('basic', function ()
 {
     expect(noop).to.be.a('function');
     expect(noop()).to.be.an('undefined');

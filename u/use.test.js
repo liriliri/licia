@@ -1,4 +1,4 @@
-it('use modules created by define', function ()
+it('basic', function ()
 {
     var define = typeof util === 'object' ? util.define : _.define,
         count = 0;

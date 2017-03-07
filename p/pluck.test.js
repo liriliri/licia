@@ -1,4 +1,4 @@
-it('extract a list of property values', function ()
+it('basic', function ()
 {
     var stooges = [
         {name: 'moe', age: 40},

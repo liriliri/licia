@@ -1,4 +1,4 @@
-it('return `true` for primitives', function ()
+it('true', function ()
 {
     expect(isPrimitive(5)).to.be.true;
     expect(isPrimitive('abc')).to.be.true;
@@ -7,7 +7,7 @@ it('return `true` for primitives', function ()
     expect(isPrimitive(true)).to.be.true;
 });
 
-it('return `false` for non-primitives', function ()
+it('false', function ()
 {
     expect(isPrimitive([])).to.be.false;
     expect(isPrimitive(function () {})).to.be.false;

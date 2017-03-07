@@ -1,4 +1,4 @@
-it('provides observer pattern', function ()
+it('basic', function ()
 {
     var e = new Emitter(),
         a = 1;
@@ -15,10 +15,25 @@ it('provides observer pattern', function ()
     e.emit('add', 1);
     e.emit('add', 1);
     expect(a).to.equal(3);
+});
+
+it('mixin', function () 
+{
+    var a = 1;
+
+    function add(n) { a += n }
 
     var b = {};
     Emitter.mixin(b);
     b.on('add', add);
-    b.emit('add', 1);
-    expect(a).to.equal(4);
+    b.emit('add', 2);
+    expect(a).to.equal(3);
+});
+
+it('nonsense off and emit', function ()
+{
+    var e = new Emitter();
+
+    e.emit('test');
+    e.off('test', function () {});
 });

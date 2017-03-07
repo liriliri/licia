@@ -1,4 +1,4 @@
-it('create a function that wraps isMatch', function ()
+it('basic', function ()
 {
     var objects = [
         {a: 1, b: 2, c: 3},

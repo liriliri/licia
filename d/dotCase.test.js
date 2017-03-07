@@ -1,4 +1,4 @@
-it('convert string to dot case', function ()
+it('basic', function ()
 {
     expect(dotCase('foo')).to.equal('foo');
     expect(dotCase('foo--bar')).to.equal('foo.bar');

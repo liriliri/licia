@@ -2,7 +2,7 @@ var testCase = 'http://surunzi@github.com:8080/foo/bar?test=1&eruda=true#hash';
 
 var parseUrl = Url.parse(testCase);
 
-it('parse url', function ()
+it('parse', function ()
 {
     expect(parseUrl.protocol).to.equal('http:');
     expect(parseUrl.slashes).to.be.true;
@@ -17,7 +17,7 @@ it('parse url', function ()
     });
 });
 
-it('stringify url', function ()
+it('stringify', function ()
 {
     expect(Url.stringify(parseUrl)).to.equal(testCase);
 });

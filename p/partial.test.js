@@ -1,4 +1,4 @@
-it('partially apply function arguments', function ()
+it('basic', function ()
 {
     function subtract(a, b) { return b - a }
 

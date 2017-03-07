@@ -1,4 +1,12 @@
-it('iterate over collection to create a new array', function ()
+it('basic', function ()
 {
-    expect(map([2, 4], function (n) { return n * n})).to.deep.equal([4, 16]);
+    expect(map([2, 4], function (n) { return n * n})).to.eql([4, 16]);
+});
+
+it('object', function () 
+{
+    expect(map({a: 1, b: 2}, function (n) 
+    {
+        return n * n;
+    })).to.eql([1, 4]);
 });

@@ -1,4 +1,4 @@
-it('restrict function invoke times to one', function ()
+it('basic', function ()
 {
     var count = 0;
     var fn = once(function () { count++ });

@@ -45,8 +45,7 @@
 _('Class has each slice once');
 
 exports = Class({
-    className: 'Emitter',
-    initialize: function ()
+    initialize: function Emitter()
     {
         this._events = this._events || {};
     },

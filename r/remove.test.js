@@ -1,4 +1,4 @@
-it('remove elements from array', function ()
+it('basic', function ()
 {
     var arr = [1, 2, 3, 4, 5];
     var evens = remove(arr, function (val)

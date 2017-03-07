@@ -1,4 +1,4 @@
-it('trim end of string', function ()
+it('basic', function ()
 {
     expect(rtrim(' abc  ')).to.equal(' abc');
     expect(rtrim('_abc_', '_')).to.equal('_abc');

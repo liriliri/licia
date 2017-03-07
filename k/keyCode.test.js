@@ -1,4 +1,4 @@
-it('convert key code to key name', function ()
+it('key code to name', function ()
 {
     expect(keyCode(13)).to.equal('enter');
     expect(keyCode(65)).to.equal('a');
@@ -7,7 +7,7 @@ it('convert key code to key name', function ()
     expect(keyCode(97)).to.equal('numpad 1');
 });
 
-it('convert key name to key code', function ()
+it('key name to code', function ()
 {
     expect(keyCode('enter')).to.equal(13);
 });

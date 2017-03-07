@@ -1,4 +1,4 @@
-it('sample values from collection', function ()
+it('basic', function ()
 {
     var arr = [1, 3, 4, 5],
         result = sample(arr, 2);

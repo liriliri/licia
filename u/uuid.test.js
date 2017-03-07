@@ -1,4 +1,4 @@
-it('generate RFC4122 v4 uuid', function ()
+it('basic', function ()
 {
     var regUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 

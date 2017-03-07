@@ -1,4 +1,4 @@
-it('return function names in object', function ()
+it('basic', function ()
 {
     var obj = {
         a: 0,

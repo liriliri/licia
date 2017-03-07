@@ -1,4 +1,4 @@
-it('iterates over elements of collection', function ()
+it('object', function ()
 {
     var ctx = {keys: []};
 
@@ -9,4 +9,15 @@ it('iterates over elements of collection', function ()
 
     expect(ctx.keys).to.contain('a');
     expect(ctx.keys).to.contain('b');
+});
+
+it('array', function () 
+{
+    var arr = [0, 1];
+    each(arr, function (val, i) 
+    {
+        arr[i] = val * 2;
+    });
+
+    expect(arr).to.eql([0, 2]);
 });

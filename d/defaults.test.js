@@ -1,4 +1,4 @@
-it('fill in undefined properties in object', function ()
+it('basic', function ()
 {
     var srcB = {a: 'override', b: 'b'},
         srcC = Object.create({c: 'c'});

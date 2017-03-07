@@ -1,4 +1,4 @@
-it('strip html tags', function ()
+it('basic', function ()
 {
     expect(stripHtmlTag('<p>Hello</p>')).to.equal('Hello');
 });

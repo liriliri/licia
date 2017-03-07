@@ -1,4 +1,4 @@
-it('return accessor function', function ()
+it('basic', function ()
 {
     var obj = {a: {b: 1}};
 

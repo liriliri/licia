@@ -1,4 +1,4 @@
-it('return debounce function', function (done)
+it('basic', function (done)
 {
     var counter = 0;
 

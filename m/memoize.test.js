@@ -1,4 +1,4 @@
-it('create memoized function', function ()
+it('basic', function ()
 {
     var fib = memoize(function(n)
     {

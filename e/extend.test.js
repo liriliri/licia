@@ -1,4 +1,4 @@
-it('extend destination with properties of source objects', function ()
+it('basic', function ()
 {
     var srcB = {a: 'override', b: 'b'},
         srcC = Object.create({c: 'c'});

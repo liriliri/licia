@@ -1,4 +1,4 @@
-it('format datetime to *** ago', function ()
+it('basic', function ()
 {
     expect(timeAgo(ago(1000 * 6))).to.equal('just now');
     expect(timeAgo(new Date().getTime() + 1000 * 6)).to.equal('right now');

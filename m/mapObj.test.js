@@ -1,4 +1,4 @@
-it('map objects', function ()
+it('basic', function ()
 {
     expect(mapObj({a: 1, b: 2}, function (val)
     {

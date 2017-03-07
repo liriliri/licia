@@ -1,4 +1,4 @@
-it('a simple state machine', function ()
+it('basic', function ()
 {
     var state = new State('empty', {
         load: {from: 'empty', to: 'pause'},
