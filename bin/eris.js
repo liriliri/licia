@@ -25,11 +25,11 @@ global.options = options;
 
 var cmd = remain[0];
 
-var LEGAL_COMMANDS = ['test', 'pack', 'list', 'doc'];
+var LEGAL_COMMANDS = ['test', 'pack', 'list', 'doc', 'benchmark', 'help'];
 
 if (!util.contain(LEGAL_COMMANDS, cmd))
 {
-    console.log('No commands found!');
+    require('../lib/help')();
 } else
 {
     remain.splice(0, 1);

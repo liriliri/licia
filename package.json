@@ -31,6 +31,7 @@
   "homepage": "https://github.com/liriliri/eris#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "chalk": "^1.1.3",
     "eustia": "^0.3.3",
     "eustia-component": "0.0.3",
     "glob": "^7.0.3",
