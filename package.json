@@ -30,6 +30,8 @@
   },
   "homepage": "https://github.com/liriliri/eris#readme",
   "devDependencies": {
+    "beautify-benchmark": "^0.2.4",
+    "benchmark": "^2.1.3",
     "chai": "^3.5.0",
     "chalk": "^1.1.3",
     "eustia": "^0.3.3",

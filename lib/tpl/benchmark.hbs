@@ -1,0 +1,21 @@
+var benchmark = require('benchmark'),
+    benchmarks = require('beautify-benchmark');
+
+var util = require('./{{modName}}.util.js');
+
+var {{modName}} = util.{{modName}},
+    suite = new benchmark.Suite();
+
+suite.on('start', function ()
+{
+    console.log('{{modName}} benchmark');
+}).on('cycle', function (event)
+{
+    benchmarks.add(event.target);
+}).on('complete', function ()
+{
+    benchmarks.log();
+});
+
+{{data}}
+

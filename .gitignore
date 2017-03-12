@@ -2,6 +2,7 @@
 /node_modules/
 /testHtml/
 /test/
+/benchmark/
 /testUtil/
 /npm/
 /coverage/
