@@ -11,21 +11,23 @@
  * ```
  */
 
-_('isArrLike keys');
+_('isArrLike keys optimizeCb');
 
 function exports(obj, iteratee, ctx)
 {
+    iteratee = optimizeCb(iteratee, ctx);
+
     var i, len;
 
     if (isArrLike(obj))
     {
-        for (i = 0, len = obj.length; i < len; i++) iteratee.call(ctx, obj[i], i, obj);
+        for (i = 0, len = obj.length; i < len; i++) iteratee(obj[i], i, obj);
     } else
     {
         var _keys = keys(obj);
         for (i = 0, len = _keys.length; i < len; i++)
         {
-            iteratee.call(ctx, obj[_keys[i]], _keys[i], obj);
+            iteratee(obj[_keys[i]], _keys[i], obj);
         }
     }
 
