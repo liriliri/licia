@@ -39,7 +39,9 @@ function exports(url, options)
             body = options.body,
             timeout = options.timeout,
             abortTimer;
-        
+
+        xhr.withCredentials = options.credentials == 'include';     
+
         xhr.onload = function () 
         { 
             clearTimeout(abortTimer);
