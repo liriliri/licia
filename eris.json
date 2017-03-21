@@ -17,6 +17,7 @@
     "Emitter": "Event emitter class which provides observer pattern.",
     "JsonTransformer": "Json to json transformer.",
     "Promise": "Lightweight Promise implementation.",
+    "ReduceStore": "Simplified redux like state container.",
     "Select": "Simple wrapper of querySelectorAll to make dom selection easier.",
     "State": "Simple state machine.",
     "Tween": "Tween engine for JavaScript animations.",

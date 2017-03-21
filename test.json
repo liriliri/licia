@@ -114,6 +114,7 @@
         "random",
         "randomBytes",
         "range",
+        "ReduceStore",
         "remove",
         "repeat",
         "restArgs",

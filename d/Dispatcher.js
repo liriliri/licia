@@ -19,7 +19,7 @@
  * ```
  */
 
-_('Class uniqId each');
+_('Class uniqId');
 
 exports = Class({
     initialize: function Dispatcher() 
