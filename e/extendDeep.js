@@ -38,7 +38,7 @@ function exports(obj)
         {
             each(obj, function (val, key)
             {
-                ret[key] = extendDeep(ret[key], obj[key]);
+                ret[key] = exports(ret[key], obj[key]);
             });
         } else
         {

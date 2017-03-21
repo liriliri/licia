@@ -42,10 +42,10 @@ Select.methods({
     },
     first: function ()
     {
-        return $(this[0]);
+        return exports(this[0]);
     },
     last: function () {
-        return $(last(this));
+        return exports(last(this));
     },
     get: function (idx)
     {
@@ -53,7 +53,7 @@ Select.methods({
     },
     eq: function (idx)
     {
-        return $(this[idx]);
+        return exports(this[idx]);
     },
     on: function (event, selector, handler)
     {
@@ -151,7 +151,7 @@ Select.methods({
     },
     parent: function ()
     {
-        return $(this[0].parentNode);
+        return exports(this[0].parentNode);
     },
     append: function (val)
     {
