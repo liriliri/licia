@@ -28,6 +28,7 @@
         "detectBrowser",
         "detectOs",
         "difference",
+        "Dispatcher",
         "dotCase",
         "each",
         "easing",

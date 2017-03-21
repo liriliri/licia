@@ -13,6 +13,7 @@
     "$show": "Show elements.",
     "Class": "Create JavaScript class.",
     "Color": "Color converter.",
+    "Dispatcher": "Flux dispatcher.",
     "Emitter": "Event emitter class which provides observer pattern.",
     "JsonTransformer": "Json to json transformer.",
     "Promise": "Lightweight Promise implementation.",

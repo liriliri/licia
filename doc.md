@@ -294,7 +294,7 @@ Create JavaScript class.
 
 ```javascript
 var People = Class({
-    initialize: function (name, age)
+    initialize: function People(name, age)
     {
         this.name = name;
         this.age = age;
@@ -306,7 +306,7 @@ var People = Class({
 });
 
 var Student = People.extend({
-    initialize: function (name, age, school)
+    initialize: function Student(name, age, school)
     {
         this.callSuper(People, 'initialize', arguments);
 
@@ -364,6 +364,28 @@ Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model:
 var color = new Color('#abc');
 color.toRgb(); // -> 'rgb(170, 187, 204)'
 color.toHsl(); // -> 'hsl(210, 25%, 73%)'
+```
+
+## Dispatcher 
+
+Flux dispatcher.
+
+[Related docs](https://facebook.github.io/flux/docs/dispatcher.html).
+
+```javascript
+var dispatcher = new Dispatcher();
+
+dispatcher.register(function (payload)
+{
+   switch (payload.actionType)
+   {
+       // Do something
+   }
+});
+
+dispatcher.dispatch({
+    actionType: 'action'
+});
 ```
 
 ## Emitter 
@@ -1155,7 +1177,7 @@ Function currying.
 |return|function|New curried function|
 
 ```javascript
-var add = function (a, b) { return a + b };
+var add = curry(function (a, b) { return a + b });
 var add1 = add(1);
 add1(2); // -> 3
 ```
