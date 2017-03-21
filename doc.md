@@ -1,5 +1,26 @@
 # Eustia Documentation
 
+## $ 
+
+jQuery like style dom manipulator.
+
+### Available methods
+
+offset, hide, show, first, last, get, eq, on, off, html, text, val, css, attr,
+data, rmAttr, remove, addClass, rmClass, toggleClass, hasClass, append, prepend,
+before, after
+
+```javascript
+var $btn = $('#btn');
+$btn.html('eustia');
+$btn.addClass('btn');
+$btn.show();
+$btn.on('click', function ()
+{
+    // Do something...
+});
+```
+
 ## $attr 
 
 Element attribute manipulation.
@@ -307,6 +328,66 @@ a.introduce(); // -> 'I am allen, 17 years old. \n I study at Hogwarts.'
 Student.is(a); // -> true
 ```
 
+## Color 
+
+Color converter.
+
+### constructor
+
+|Name |Type         |Desc            |
+|-----|-------------|----------------|
+|color|string object|Color to convert|
+
+### toRgb
+
+Get color rgb string format.
+
+### toHex
+
+Get color hex string format.
+
+### toHsl
+
+Get color hsl string format.
+
+### parse
+
+[static] Parse color string into object containing value and model.
+
+|Name  |Type  |Desc                             |
+|------|------|---------------------------------|
+|color |string|Color string                     |
+|return|object|Object containing value and model|
+
+```javascript
+Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model: 'rgb'}
+var color = new Color('#abc');
+color.toRgb(); // -> 'rgb(170, 187, 204)'
+color.toHsl(); // -> 'hsl(210, 25%, 73%)'
+```
+
+## Dispatcher 
+
+Flux dispatcher.
+
+[Related docs](https://facebook.github.io/flux/docs/dispatcher.html).
+
+```javascript
+var dispatcher = new Dispatcher();
+
+dispatcher.register(function (payload)
+{
+   switch (payload.actionType)
+   {
+       // Do something
+   }
+});
+
+dispatcher.dispatch({
+    actionType: 'action'
+});
+```
+
 ## Emitter 
 
 Event emitter class which provides observer pattern.
@@ -352,6 +433,86 @@ event.emit('test'); // Logs out 'test'.
 Emitter.mixin({});
 ```
 
+## JsonTransformer 
+
+Json to json transformer.
+
+### constructor
+
+|Name     |Type  |Desc                     |
+|---------|------|-------------------------|
+|[data={}]|object|Json object to manipulate|
+
+### set
+
+Set object value.
+
+|Name |Type  |Desc        |
+|-----|------|------------|
+|[key]|string|Object key  |
+|val  |*     |Value to set|
+
+If key is not given, the whole source object is replaced by val.
+
+### get
+
+Get object value.
+
+|Name  |Type  |Desc                           |
+|------|------|-------------------------------|
+|[key] |string|Object key                     |
+|return|*     |Specified value or whole object|
+
+### remove
+
+|Name|Type        |Desc                 |
+|----|------------|---------------------|
+|key |array string|Object keys to remove|
+
+### map
+
+Shortcut for array map.
+
+|Name|Type    |Desc                          |
+|----|--------|------------------------------|
+|from|string  |From object path              |
+|to  |string  |Target object path            |
+|fn  |function|Function invoked per iteration|
+
+### filter
+
+Shortcut for array filter.
+
+### compute
+
+Compute value from several object values.
+
+|Name|Type        |Desc                            |
+|----|------------|--------------------------------|
+|from|array string|Source values                   |
+|to  |string      |Target object path              |
+|fn  |function    |Function to compute target value|
+
+```javascript
+var data = new JsonTransformer({
+    books: [{
+        title: 'Book 1',
+        price: 5
+    }, {
+        title: 'Book 2',
+        price: 10
+    }],
+    author: {
+        lastname: 'Su',
+        firstname: 'RedHood'
+    }
+});
+data.filter('books', function (book) { return book.price > 5 });
+data.compute('author', function (author) { return author.firstname + author.lastname });
+data.set('count', data.get('books').length);
+data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', count: 1}
+```
+
 ## Promise 
 
 Lightweight Promise implementation.
@@ -378,6 +539,60 @@ get('test.json').then(function (result)
 {
     // Do something...
 });
+```
+
+## ReduceStore 
+
+Simplified redux like state container.
+
+### constructor
+
+|Name        |Type    |Desc                       |
+|------------|--------|---------------------------|
+|reducer     |function|Function returns next state|
+|initialState|*       |Initial state              |
+
+### subscribe
+
+Add a change listener.
+
+|Name    |Type    |Desc                                |
+|--------|--------|------------------------------------|
+|listener|function|Callback to invoke on every dispatch|
+|return  |function|Function to unscribe                |
+
+### dispatch
+
+Dispatch an action.
+
+|Name  |Type  |Desc                       |
+|------|------|---------------------------|
+|action|object|Object representing changes|
+|return|object|Same action object         |
+
+### getState
+
+Get the current state.
+
+```javascript
+var store = new ReduceStore(function (state, action)
+{
+    switch (action.type)
+    {
+        case 'INCREMENT': return state + 1;
+        case 'DECREMENT': return state - 1;
+        default: return state;
+    }
+}, 0);
+
+store.subscribe(function ()
+{
+    console.log(store.getState());
+});
+
+store.dispatch({type: 'INCREMENT'}); // 1
+store.dispatch({type: 'INCREMENT'}); // 2
+store.dispatch({type: 'DECREMENT'}); // 1
 ```
 
 ## Select 
@@ -458,6 +673,253 @@ state.on('error', function (err, event)
 state.play('eustia');
 ```
 
+## Tween 
+
+Tween engine for JavaScript animations.
+
+Extend from Emitter.
+
+### constructor
+
+|Name|Type  |Desc           |
+|----|------|---------------|
+|obj |object|Values to tween|
+
+### to
+
+|Name       |Type           |Desc            |
+|-----------|---------------|----------------|
+|destination|obj            |Final properties|
+|duration   |number         |Tween duration  |
+|ease       |string function|Easing function |
+
+### play
+
+Begin playing forward.
+
+### pause
+
+Pause the animation.
+
+### paused
+
+Get animation paused state.
+
+### progress
+
+Update or get animation progress.
+
+|Name      |Type  |Desc                  |
+|----------|------|----------------------|
+|[progress]|number|Number between 0 and 1|
+
+```javascript
+var pos = {x: 0, y: 0};
+
+var tween = new Tween(pos);
+tween.on('update', function (target)
+{
+    console.log(target.x, target.y);
+}).on('end', function (target)
+{
+    console.log(target.x, target.y); // -> 100, 100
+});
+tween.to({x: 100, y: 100}, 1000, 'inElastic').play();
+```
+
+## Url 
+
+Simple url manipulator.
+
+### constructor
+
+|Name                 |Type  |Desc      |
+|---------------------|------|----------|
+|[url=window.location]|string|Url string|
+
+### setQuery
+
+Set query value.
+
+|Name  |Type  |Desc       |
+|------|------|-----------|
+|name  |string|Query name |
+|value |string|Query value|
+|return|Url   |this       |
+
+|Name  |Type  |Desc        |
+|------|------|------------|
+|names |object|query object|
+|return|Url   |this        |
+
+### rmQuery
+
+Remove query value.
+
+|Name  |Type        |Desc      |
+|------|------------|----------|
+|name  |string array|Query name|
+|return|Url         |this      |
+
+### parse
+
+[static] Parse url into an object.
+
+|Name  |Type  |Desc      |
+|------|------|----------|
+|url   |string|Url string|
+|return|object|Url object|
+
+### stringify
+
+[static] Stringify url object into a string.
+
+|Name  |Type  |Desc      |
+|------|------|----------|
+|url   |object|Url object|
+|return|string|Url string|
+
+An url object contains the following properties:
+
+|Name    |Desc                                                                                  |
+|--------|--------------------------------------------------------------------------------------|
+|protocol|The protocol scheme of the URL (e.g. http:)                                           |
+|slashes |A boolean which indicates whether the protocol is followed by two forward slashes (//)|
+|auth    |Authentication information portion (e.g. username:password)                           |
+|hostname|Host name without port number                                                         |
+|port    |Optional port number                                                                  |
+|pathname|URL path                                                                              |
+|query   |Parsed object containing query string                                                 |
+|hash    |The "fragment" portion of the URL including the pound-sign (#)                        |
+
+```javascript
+var url = new Url('http://example.com:8080?eruda=true');
+console.log(url.port); // -> '8080'
+url.query.foo = 'bar';
+url.rmQuery('eruda');
+utl.toString(); // -> 'http://example.com:8080/?foo=bar'
+```
+
+## Validator 
+
+Object values validation.
+
+### constructor
+
+|Name   |Type  |Desc                    |
+|-------|------|------------------------|
+|options|object|Validation configuration|
+
+### validate
+
+Validate object.
+
+|Name  |Type  |Desc                            |
+|------|------|--------------------------------|
+|obj   |object|Object to validate              |
+|return|*     |Validation result, true means ok|
+
+### addPlugin
+
+[static] Add plugin.
+
+|Name  |Type    |Desc              |
+|------|--------|------------------|
+|name  |string  |Plugin name       |
+|plugin|function|Validation handler|
+
+### Default Plugins
+
+Required, number, boolean, string and regexp.
+
+```javascript
+Validator.addPlugin('custom', function (val, key, config)
+{
+    if (typeof val === 'string' && val.length === 5) return true;
+
+    return key + ' should be a string with length 5';
+});
+var validator = new Validator({
+    'test': {
+        required: true,
+        custom: true
+    }
+});
+validator.validate({}); // -> 'test is required'
+validator.validate({test: 1}); // -> 'test should be a string with length 5';
+validator.validate({test: 'eris'}); // -> true
+```
+
+## after 
+
+Create a function that invokes once it's called n or more times.
+
+|Name  |Type    |Desc                          |
+|------|--------|------------------------------|
+|n     |number  |Number of calls before invoked|
+|fn    |function|Function to restrict          |
+|return|function|New restricted function       |
+
+```javascript
+var fn = after(5, function()
+{
+    // -> Only invoke after fn is called 5 times.
+});
+```
+
+## ajax 
+
+Perform an asynchronous HTTP request.
+
+|Name   |Type  |Desc        |
+|-------|------|------------|
+|options|object|Ajax options|
+
+Available options:
+
+|Name         |Type         |Desc                    |
+|-------------|-------------|------------------------|
+|url          |string       |Request url             |
+|data         |string object|Request data            |
+|dataType=json|string       |Response type(json, xml)|
+|success      |function     |Success callback        |
+|error        |function     |Error callback          |
+|complete     |function     |Callback after request  |
+|timeout      |number       |Request timeout         |
+
+### get
+
+Shortcut for type = GET;
+
+### post
+
+Shortcut for type = POST;
+
+|Name    |Type         |Desc            |
+|--------|-------------|----------------|
+|url     |string       |Request url     |
+|[data]  |string object|Request data    |
+|success |function     |Success callback|
+|dataType|function     |Response type   |
+
+```javascript
+ajax({
+    url: 'http://example.com',
+    data: {test: 'true'},
+    error: function () {},
+    success: function (data)
+    {
+        // ...
+    },
+    dataType: 'json'
+});
+
+ajax.get('http://example.com', {}, function (data)
+{
+    // ...
+});
+```
+
 ## allKeys 
 
 Retrieve all the names of object's own and inherited properties.
@@ -473,6 +935,49 @@ Retrieve all the names of object's own and inherited properties.
 var obj = Object.create({zero: 0});
 obj.one = 1;
 allKeys(obj) // -> ['zero', 'one']
+```
+
+## average 
+
+Get average value of given numbers.
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|...num|number|Numbers to calculate|
+|return|number|Average value       |
+
+```javascript
+average(5, 3, 1); // -> 3
+```
+
+## base64 
+
+Basic base64 encoding and decoding.
+
+### encode
+
+Turn a byte array into a base64 string.
+
+|Name  |Type  |Desc         |
+|------|------|-------------|
+|arr   |array |Byte array   |
+|return|string|Base64 string|
+
+```javascript
+base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
+```
+
+### decode
+
+Turn a base64 string into a byte array.
+
+|Name  |Type  |Desc         |
+|------|------|-------------|
+|str   |string|Base64 string|
+|return|array |Byte array   |
+
+```javascript
+base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
 ```
 
 ## before 
@@ -527,6 +1032,19 @@ camelCase('foo_bar'); // -> fooBar
 camelCase('foo.bar'); // -> fooBar
 ```
 
+## capitalize 
+
+Convert the first character to upper case and the remaining to lower case.
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|str   |string|String to capitalize|
+|return|string|Capitalized string  |
+
+```javascript
+capitalize('rED'); // -> Red
+```
+
 ## clamp 
 
 Clamp number within the inclusive lower and upper bounds.
@@ -576,6 +1094,52 @@ var obj2 = cloneDeep(obj);
 console.log(obj[0] === obj2[1]); // -> false
 ```
 
+## cmpVersion 
+
+Compare version strings.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|v1    |string|Version to compare|
+|v2    |string|Version to compare|
+|return|number|Comparison result |
+
+```javascript
+cmpVersion('1.1.8', '1.0.4'); // -> 1
+cmpVersion('1.0.2', '1.0.2'); // -> 0
+cmpVersion('2.0', '2.0.0'); // -> 0
+cmpVersion('3.0.1', '3.0.0.2'); // -> 1
+cmpVersion('1.1.1', '1.2.3'); // -> -1
+```
+
+## compact 
+
+Return a copy of the array with all falsy values removed.
+
+The values false, null, 0, "", undefined, and NaN are falsey.
+
+|Name  |Type |Desc                        |
+|------|-----|----------------------------|
+|arr   |array|Array to compact            |
+|return|array|New array of filtered values|
+
+```javascript
+compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
+```
+
+## concat 
+
+Concat multiple arrays into a single array.
+
+|Name  |Type |Desc              |
+|------|-----|------------------|
+|...arr|array|Arrays to concat  |
+|return|array|Concatenated array|
+
+```javascript
+concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
+```
+
 ## contain 
 
 Check if the value is present in the list.
@@ -607,6 +1171,46 @@ convertBase('10', 2, 10); // -> '2'
 convertBase('ff', 16, 2); // -> '11111111'
 ```
 
+## cookie 
+
+Simple api for handling browser cookies.
+
+### get
+
+Get cookie value.
+
+|Name  |Type  |Desc                      |
+|------|------|--------------------------|
+|key   |string|Cookie key                |
+|return|string|Corresponding cookie value|
+
+### set
+
+Set cookie value.
+
+|Name     |Type   |Desc          |
+|---------|-------|--------------|
+|key      |string |Cookie key    |
+|val      |string |Cookie value  |
+|[options]|object |Cookie options|
+|return   |exports|Module cookie |
+
+### remove
+
+Remove cookie value.
+
+|Name     |Type   |Desc          |
+|---------|-------|--------------|
+|key      |string |Cookie key    |
+|[options]|object |Cookie options|
+|return   |exports|Module cookie |
+
+```javascript
+cookie.set('a', '1', {path: '/'});
+cookie.get('a'); // -> '1'
+cookie.remove('a');
+```
+
 ## createAssigner 
 
 Used to create extend, extendOwn and defaults.
@@ -616,6 +1220,68 @@ Used to create extend, extendOwn and defaults.
 |keysFn  |function|Function to get object keys   |
 |defaults|boolean |No override when set to true  |
 |return  |function|Result function, extend...    |
+
+## curry 
+
+Function currying.
+
+|Name  |Type    |Desc                |
+|------|--------|--------------------|
+|fn    |function|Function to curry   |
+|return|function|New curried function|
+
+```javascript
+var add = curry(function (a, b) { return a + b });
+var add1 = add(1);
+add1(2); // -> 3
+```
+
+## dateFormat 
+
+Simple but extremely useful date format function.
+
+|Name           |Type   |Desc                 |
+|---------------|-------|---------------------|
+|[date=new Date]|Date   |Date object to format|
+|mask           |string |Format mask          |
+|[utc=false]    |boolean|UTC or not           |
+|[gmt=false]    |boolean|GMT or not           |
+
+|Mask|Description                                                      |
+|----|-----------------------------------------------------------------|
+|d   |Day of the month as digits; no leading zero for single-digit days|
+|dd  |Day of the month as digits; leading zero for single-digit days   |
+|ddd |Day of the week as a three-letter abbreviation                   |
+|dddd|Day of the week as its full name                                 |
+|m   |Month as digits; no leading zero for single-digit months         |
+|mm  |Month as digits; leading zero for single-digit months            |
+|mmm |Month as a three-letter abbreviation                             |
+|mmmm|Month as its full name                                           |
+|yy  |Year as last two digits; leading zero for years less than 10     |
+|yyyy|Year represented by four digits                                  |
+|h   |Hours; no leading zero for single-digit hours (12-hour clock)    |
+|hh  |Hours; leading zero for single-digit hours (12-hour clock)       |
+|H   |Hours; no leading zero for single-digit hours (24-hour clock)    |
+|HH  |Hours; leading zero for single-digit hours (24-hour clock)       |
+|M   |Minutes; no leading zero for single-digit minutes                |
+|MM  |Minutes; leading zero for single-digit minutes                   |
+|s   |Seconds; no leading zero for single-digit seconds                |
+|ss  |Seconds; leading zero for single-digit seconds                   |
+|l L |Milliseconds. l gives 3 digits. L gives 2 digits                 |
+|t   |Lowercase, single-character time marker string: a or p           |
+|tt  |Lowercase, two-character time marker string: am or pm            |
+|T   |Uppercase, single-character time marker string: A or P           |
+|TT  |Uppercase, two-character time marker string: AM or PM            |
+|Z   |US timezone abbreviation, e.g. EST or MDT                        |
+|o   |GMT/UTC timezone offset, e.g. -0500 or +0230                     |
+|S   |The date's ordinal suffix (st, nd, rd, or th)                    |
+|UTC:|Must be the first four characters of the mask                    |
+
+```javascript
+dateFormat('isoDate'); // -> 2016-11-19
+dateFormat('yyyy-mm-dd HH:MM:ss'); // -> 2016-11-19 19:00:04
+dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
+```
 
 ## debounce 
 
@@ -668,6 +1334,24 @@ define('B', ['A'], function (A)
 });
 ```
 
+## delay 
+
+Invoke function after certain milliseconds.
+
+|Name  |Type    |Desc                                      |
+|------|--------|------------------------------------------|
+|fn    |function|Function to delay                         |
+|wait  |number  |Number of milliseconds to delay invocation|
+|[args]|...*    |Arguments to invoke fn with               |
+
+```javascript
+delay(function (text)
+{
+    console.log(text);
+}, 1000, 'later');
+// -> Logs 'later' after one second
+```
+
 ## delegate 
 
 Event delegation.
@@ -695,6 +1379,71 @@ function clickHandler()
 }
 delegate.add(container, 'click', '.children', clickHandler);
 delegate.remove(container, 'click', '.children', clickHandler);
+```
+
+## detectBrowser 
+
+Detect browser info using ua.
+
+|Name                    |Type  |Desc                              |
+|------------------------|------|----------------------------------|
+|[ua=navigator.userAgent]|string|Browser userAgent                 |
+|return                  |object|Object containing name and version|
+
+Browsers supported: ie, chrome, edge, firefox, opera, safari, ios(mobile safari), android(android browser)
+
+```javascript
+var browser = detectBrowser();
+if (browser.name === 'ie' && browser.version < 9)
+{
+    // Do something about old IE...
+}
+```
+
+## detectOs 
+
+Detect operating system using ua.
+
+|Name                    |Type  |Desc                 |
+|------------------------|------|---------------------|
+|[ua=navigator.userAgent]|string|Browser userAgent    |
+|return                  |string|Operating system name|
+
+Supported os: windows, os x, linux, ios, android, windows phone
+
+```javascript
+if (detectOs() === 'ios')
+{
+    // Do something about ios...
+}
+```
+
+## difference 
+
+Create an array of unique array values not included in the other given array.
+
+|Name  |Type    |Desc                        |
+|------|--------|----------------------------|
+|arr   |array   |Array to inspect            |
+|[rest]|...array|Values to exclude           |
+|return|array   |New array of filtered values|
+
+```javascript
+difference([3, 2, 1], [4, 2]); // -> [3, 1]
+```
+
+## dotCase 
+
+Convert string to "dotCase".
+
+|Name  |Type  |Desc             |
+|------|------|-----------------|
+|str   |string|String to convert|
+|return|string|Dot cased string |
+
+```javascript
+dotCase('fooBar'); // -> foo.bar
+dotCase('foo bar'); // -> foo.bar
 ```
 
 ## each 
@@ -725,6 +1474,20 @@ easing.linear(0.5); // -> 0.5
 easing.inElastic(0.5, 500); // -> 0.03125
 ```
 
+## endWith 
+
+Check if string ends with the given target string.
+
+|Name  |Type   |Desc                           |
+|------|-------|-------------------------------|
+|str   |string |The string to search           |
+|suffix|string |String suffix                  |
+|return|boolean|True if string ends with target|
+
+```javascript
+endWith('ab', 'b'); // -> true
+```
+
 ## escape 
 
 Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' characters.
@@ -736,6 +1499,49 @@ Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' charact
 
 ```javascript
 escape('You & Me'); -> // -> 'You &amp; Me'
+```
+
+## escapeRegExp 
+
+Escape special chars to be used as literals in RegExp constructors.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|str   |string|String to escape|
+|return|string|Escaped string  |
+
+```javascript
+escapeRegExp('[eris]'); // -> '\\[eris\\]'
+```
+
+## evalCss 
+
+Load css into page.
+
+|Name|Type  |Desc    |
+|----|------|--------|
+|css |string|Css code|
+
+```javascript
+evalCss('body{background:#08c}');
+```
+
+## every 
+
+Check if predicate return truthy for all elements.
+
+|Name     |Type        |Desc                                         |
+|---------|------------|---------------------------------------------|
+|obj      |array object|Collection to iterate over                   |
+|predicate|function    |Function invoked per iteration               |
+|ctx      |*           |Predicate context                            |
+|return   |boolean     |True if all elements pass the predicate check|
+
+```javascript
+every([2, 4], function (val)
+{
+    return val % 2 === 0;
+}); // -> false
 ```
 
 ## extend 
@@ -752,6 +1558,31 @@ Copy all of the properties in the source objects over to the destination object.
 extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 ```
 
+## extendDeep 
+
+Recursive object extending.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|obj   |object|Destination object|
+|...src|object|Sources objects   |
+|return|object|Destination object|
+
+```javascript
+extendDeep({
+    name: 'RedHood',
+    family: {
+        mother: 'Jane',
+        father: 'Jack'
+    }
+}, {
+    family: {
+        brother: 'Bruce'
+    }
+});
+// -> {name: 'RedHood', family: {mother: 'Jane', father: 'Jack', brother: 'Bruce'}}
+```
+
 ## extendOwn 
 
 Like extend, but only copies own properties over to the destination object.
@@ -764,6 +1595,46 @@ Like extend, but only copies own properties over to the destination object.
 
 ```javascript
 extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
+```
+
+## extractBlockCmts 
+
+Extract block comments from source code.
+
+|Name  |Type  |Desc             |
+|------|------|-----------------|
+|str   |string|String to extract|
+|return|array |Block comments   |
+
+```javascript
+extractBlockCmts('\/*eris*\/'); // -> ['eris']
+```
+
+## fetch 
+
+Turn XMLHttpRequest into promise like.
+
+Note: This is not a complete fetch pollyfill.
+
+|Name   |Type   |Desc           |
+|-------|-------|---------------|
+|url    |string |Request url    |
+|options|object |Request options|
+|return |promise|Request promise|
+
+```javascript
+fetch('test.json', {
+    method: 'GET',
+    timeout: 3000,
+    headers: {},
+    body: ''
+}).then(function (res)
+{
+    return res.json();
+}).then(function (data)
+{
+    console.log(data);
+});
 ```
 
 ## filter 
@@ -782,6 +1653,23 @@ filter([1, 2, 3, 4, 5], function (val)
 {
     return val % 2 === 0;
 }); // -> [2, 4]
+```
+
+## findKey 
+
+Return the key where the predicate truth test passes or undefined.
+
+|Name     |Type    |Desc                          |
+|---------|--------|------------------------------|
+|obj      |object  |Object to search              |
+|predicate|function|Function invoked per iteration|
+|return   |string  |The key of matched element    |
+
+```javascript
+findKey({a: 1, b: 2}, function (val)
+{
+    return val === 1;
+}); // -> a
 ```
 
 ## flatten 
@@ -851,6 +1739,21 @@ Get the index at which the first occurrence of value.
 idxOf([1, 2, 1, 2], 2, 2); // -> 3
 ```
 
+## indent 
+
+Indent each line in a string.
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|str   |string|String to indent    |
+|[char]|string|Character to prepend|
+|[len] |number|Indent length       |
+|return|string|Indented string     |
+
+```javascript
+indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
+```
+
 ## inherits 
 
 Inherit the prototype methods from one constructor into another.
@@ -878,6 +1781,19 @@ function Student(name)
 inherits(Student, People);
 var s = new Student('RedHood');
 s.getName(); // -> 'RedHood'
+```
+
+## intersect 
+
+Compute the list of values that are the intersection of all the arrays.
+
+|Name  |Type |Desc                          |
+|------|-----|------------------------------|
+|...arr|array|Arrays to inspect             |
+|return|array|New array of inspecting values|
+
+```javascript
+intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
 ```
 
 ## invert 
@@ -965,6 +1881,19 @@ Check if running in a browser.
 console.log(isBrowser); // -> true if running in a browser
 ```
 
+## isBuffer 
+
+Check if value is a buffer.
+
+|Name  |Type   |Desc                     |
+|------|-------|-------------------------|
+|val   |*      |The value to check       |
+|return|boolean|True if value is a buffer|
+
+```javascript
+isBuffer(new Buffer(4)); // -> true
+```
+
 ## isDate 
 
 Check if value is classified as a Date object.
@@ -976,6 +1905,32 @@ Check if value is classified as a Date object.
 
 ```javascript
 isDate(new Date()); // -> true
+```
+
+## isEl 
+
+Check if value is a DOM element.
+
+|Name  |Type   |Desc                          |
+|------|-------|------------------------------|
+|val   |*      |Value to check                |
+|return|boolean|True if value is a DOM element|
+
+```javascript
+isEl(document.body); // -> true
+```
+
+## isEmail 
+
+Loosely validate an email address.
+
+|Name  |Type   |Desc                                 |
+|------|-------|-------------------------------------|
+|val   |*      |Value to check                       |
+|return|boolean|True if value is an email like string|
+
+```javascript
+isEmail('surunzi@foxmail.com'); // -> true
 ```
 
 ## isEmpty 
@@ -991,6 +1946,47 @@ Check if value is an empty object or array.
 isEmpty([]); // -> true
 isEmpty({}); // -> true
 isEmpty(''); // -> true
+```
+
+## isEqual 
+
+Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.
+
+|Name  |Type   |Desc                         |
+|------|-------|-----------------------------|
+|value |*      |Value to compare             |
+|other |*      |Other value to compare       |
+|return|boolean|True if values are equivalent|
+
+```javascript
+isEqual([1, 2, 3], [1, 2, 3]); // -> true
+```
+
+## isErr 
+
+Check if value is an error.
+
+|Name  |Type   |Desc                     |
+|------|-------|-------------------------|
+|val   |*      |Value to check           |
+|return|boolean|True if value is an error|
+
+```javascript
+isErr(new Error()); // -> true
+```
+
+## isFinite 
+
+Check if value is a finite primitive number.
+
+|Name  |Type   |Desc                            |
+|------|-------|--------------------------------|
+|val   |*      |Value to check                  |
+|return|boolean|True if value is a finite number|
+
+```javascript
+isFinite(3); // -> true
+isFinite(Infinity); // -> false
 ```
 
 ## isFn 
@@ -1009,6 +2005,15 @@ isFn(function() {}); // -> true
 isFn(function*() {}); // -> true
 ```
 
+## isInt 
+
+Checks if value is classified as a Integer.
+
+|Name  |Type   |Desc                                 |
+|------|-------|-------------------------------------|
+|value |*      |Value to check                       |
+|return|boolean|True if value is correctly classified|
+
 ## isMatch 
 
 Check if keys and values in src are contained in obj.
@@ -1021,6 +2026,19 @@ Check if keys and values in src are contained in obj.
 
 ```javascript
 isMatch({a: 1, b: 2}, {a: 1}); // -> true
+```
+
+## isMobile 
+
+Check whether client is using a mobile browser using ua.
+
+|Name                    |Type   |Desc                                 |
+|------------------------|-------|-------------------------------------|
+|[ua=navigator.userAgent]|string |User agent                           |
+|return                  |boolean|True if ua belongs to mobile browsers|
+
+```javascript
+isMobile(navigator.userAgent);
 ```
 
 ## isNaN 
@@ -1037,6 +2055,27 @@ Undefined is not an NaN, different from global isNaN function.
 ```javascript
 isNaN(0); // -> false
 isNaN(NaN); // -> true
+```
+
+## isNode 
+
+Check if running in node.
+
+```javascript
+console.log(isNode); // -> true if running in node
+```
+
+## isNull 
+
+Check if value is an Null.
+
+|Name  |Type   |Desc                   |
+|------|-------|-----------------------|
+|value |*      |Value to check         |
+|return|boolean|True if value is an Null|
+
+```javascript
+isNull(null); // -> true
 ```
 
 ## isNum 
@@ -1079,6 +2118,55 @@ isPlainObj([]); // -> false
 isPlainObj(function () {}); // -> false
 ```
 
+## isPrimitive 
+
+Check if value is string, number, boolean or null.
+
+|Name  |Type   |Desc                        |
+|------|-------|----------------------------|
+|val   |*      |Value to check              |
+|return|boolean|True if value is a primitive|
+
+```javascript
+isPrimitive(5); // -> true
+isPrimitive('abc'); // -> true
+isPrimitive(false); // -> true
+```
+
+## isRegExp 
+
+Check if value is a regular expression.
+
+|Name  |Type   |Desc                                 |
+|------|-------|-------------------------------------|
+|val   |*      |Value to check                       |
+|return|boolean|True if value is a regular expression|
+
+```javascript
+isRegExp(/a/); // -> true
+```
+
+## isRelative 
+
+Check if path appears to be relative.
+
+|Name  |Type   |Desc                               |
+|------|-------|-----------------------------------|
+|path  |string |Path to check                      |
+|return|boolean|True if path appears to be relative|
+
+```javascript
+isRelative('README.md'); // -> true
+```
+
+## isRetina 
+
+Determine if running on a high DPR device or not.
+
+```javascript
+console.log(isRetina); // -> true if high DPR
+```
+
 ## isStr 
 
 Check if value is a string primitive.
@@ -1090,6 +2178,20 @@ Check if value is a string primitive.
 
 ```javascript
 isStr('eris'); // -> true
+```
+
+## isTypedArr 
+
+Check if value is a typed array.
+
+|Name  |Type   |Desc                          |
+|------|-------|------------------------------|
+|val   |*      |Value to check                |
+|return|boolean|True if value is a typed array|
+
+```javascript
+isTypedArr([]); // -> false
+isTypedArr(new Unit8Array); // -> true
 ```
 
 ## isUndef 
@@ -1122,6 +2224,29 @@ kebabCase('foo_bar'); // -> foo-bar
 kebabCase('foo.bar'); // -> foo-bar
 ```
 
+## keyCode 
+
+Key codes and key names conversion.
+
+Get key code's name.
+
+|Name  |Type  |Desc                  |
+|------|------|----------------------|
+|code  |number|Key code              |
+|return|string|Corresponding key name|
+
+Get key name's code.
+
+|Name  |Type  |Desc                  |
+|------|------|----------------------|
+|name  |string|Key name              |
+|return|number|Corresponding key code|
+
+```javascript
+keyCode(13); // -> 'enter'
+keyCode('enter'); // -> 13
+```
+
 ## keys 
 
 Create an array of the own enumerable property names of object.
@@ -1146,6 +2271,35 @@ Get the last element of array.
 
 ```javascript
 last([1, 2]); // -> 2
+```
+
+## loadJs 
+
+Inject script tag into page with given src value.
+
+|Name|Type    |Desc           |
+|----|--------|---------------|
+|src |string  |Script source  |
+|cb  |function|Onload callback|
+
+```javascript
+loadJs('main.js', function ()
+{
+    // Do something...
+});
+```
+
+## longest 
+
+Get the longest item in an array.
+
+|Name  |Type |Desc            |
+|------|-----|----------------|
+|arr   |array|Array to inspect|
+|return|*    |Longest item    |
+
+```javascript
+longest(['a', 'abcde', 'abc']); // -> 'abcde'
 ```
 
 ## lpad 
@@ -1197,6 +2351,21 @@ Create an array of values by running each element in collection through iteratee
 map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 ```
 
+## mapObj 
+
+Map for objects.
+
+|Name    |Type    |Desc                          |
+|--------|--------|------------------------------|
+|obj     |object  |Object to iterate over        |
+|iteratee|function|Function invoked per iteration|
+|[ctx]   |*       |Function context              |
+|return  |object  |New mapped object             |
+
+```javascript
+mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
+```
+
 ## matcher 
 
 Return a predicate function that checks if attrs are contained in an object.
@@ -1227,6 +2396,17 @@ Get maximum value of given numbers.
 max(2.3, 1, 4.5, 2); // 4.5
 ```
 
+## memStorage 
+
+Memory-backed implementation of the Web Storage API.
+
+A replacement for environments where localStorage or sessionStorage is not available.
+
+```javascript
+var localStorage = window.localStorage || memStorage;
+localStorage.setItem('test', 'eris');
+```
+
 ## memoize 
 
 Memoize a given function by caching the computed result.
@@ -1242,6 +2422,64 @@ var fibonacci = memoize(function(n)
 {
     return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
 });
+```
+
+## methods 
+
+Return a sorted list of the names of every method in an object.
+
+|Name  |Type  |Desc                    |
+|------|------|------------------------|
+|obj   |object|Object to check         |
+|return|array |Function names in object|
+
+```javascript
+methods(console); // -> ['Console', 'assert', 'dir', ...]
+```
+
+## min 
+
+Get minimum value of given numbers.
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|...num|number|Numbers to calculate|
+|return|number|Minimum value       |
+
+```javascript
+min(2.3, 1, 4.5, 2); // 1
+```
+
+## mkdir 
+
+Recursively create directories.
+
+|Name       |Type    |Desc               |
+|-----------|--------|-------------------|
+|dir        |string  |Directory to create|
+|[mode=0777]|number  |Directory mode     |
+|callback   |function|Callback           |
+
+```javascript
+mkdir('/tmp/foo/bar/baz', function (err)
+{
+    if (err) console.log(err);
+    else console.log('Done');
+});
+```
+
+## negate 
+
+Create a function that negates the result of the predicate function.
+
+|Name     |Type    |Desc               |
+|---------|--------|-------------------|
+|predicate|function|Predicate to negate|
+|return   |function|New function       |
+
+```javascript
+function even(n) { return n % 2 === 0 }
+filter([1, 2, 3, 4, 5, 6], negate(even)); // -> [1, 3, 5]
 ```
 
 ## nextTick 
@@ -1312,6 +2550,63 @@ initOnce(); // -> init is invoked once
 
 Used for function context binding.
 
+## pad 
+
+Pad string on the left and right sides if it's shorter than length.
+
+|Name  |Type  |Desc                  |
+|------|------|----------------------|
+|str   |string|String to pad         |
+|len   |number|Padding length        |
+|chars |string|String used as padding|
+|return|string|Resulted string       |
+
+```javascript
+pad('a', 5); // -> '  a  '
+pad('a', 5, '-'); // -> '--a--'
+pad('abc', 3, '-'); // -> 'abc'
+pad('abc', 5, 'ab'); // -> 'babca'
+pad('ab', 5, 'ab'); // -> 'ababa'
+```
+
+## pairs 
+
+Convert an object into a list of [key, value] pairs.
+
+|Name  |Type  |Desc                      |
+|------|------|--------------------------|
+|obj   |object|Object to convert         |
+|return|array |List of [key, value] pairs|
+
+```javascript
+pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
+```
+
+## parallel 
+
+Run an array of functions in parallel.
+
+|Name |Type    |Desc                   |
+|-----|--------|-----------------------|
+|tasks|array   |Array of functions     |
+|[cb] |function|Callback once completed|
+
+```javascript
+parallel([
+    function(cb)
+    {
+        setTimeout(function () { cb(null, 'one') }, 200);
+    },
+    function(cb)
+    {
+        setTimeout(function () { cb(null, 'two') }, 100);
+    }
+], function (err, results)
+{
+    // results -> ['one', 'two']
+});
+```
+
 ## partial 
 
 Partially apply a function by filling in given arguments.
@@ -1325,6 +2620,22 @@ Partially apply a function by filling in given arguments.
 ```javascript
 var sub5 = partial(function (a, b) { return b - a }, 5);
 sub(20); // -> 15
+```
+
+## pascalCase 
+
+Convert string to "pascalCase".
+
+|Name  |Type  |Desc               |
+|------|------|-------------------|
+|str   |string|String to convert  |
+|return|string|Pascal cased string|
+
+```javascript
+pascalCase('fooBar'); // -> FooBar
+pascalCase('foo bar'); // -> FooBar
+pascalCase('foo_bar'); // -> FooBar
+pascalCase('foo.bar'); // -> FooBar
 ```
 
 ## pluck 
@@ -1436,6 +2747,36 @@ Use crypto module in node or crypto object in browser if possible.
 randomBytes(5); // -> [55, 49, 153, 30, 122]
 ```
 
+## range 
+
+Create flexibly-numbered lists of integers.
+
+|Name    |Type  |Desc                              |
+|--------|------|----------------------------------|
+|[start] |number|Start of the range                |
+|end     |number|End of the range                  |
+|[step=1]|number|Value to increment or decrement by|
+
+```javascript
+range(5); // -> [0, 1, 2, 3, 4]
+range(0, 5, 2) // -> [0, 2, 4]
+```
+
+## ready 
+
+Invoke callback when dom is ready, similar to jQuery ready.
+
+|Name|Type    |Desc             |
+|----|--------|-----------------|
+|fn  |function|Callback function|
+
+```javascript
+ready(function ()
+{
+    // It's safe to manipulate dom here.
+});
+```
+
 ## remove 
 
 Remove all elements from array that predicate returns truthy for and return an array of the removed elements.
@@ -1503,6 +2844,24 @@ rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
 ## root 
 
 Root object reference, `global` in nodeJs, `window` in browser.
+
+## rpad 
+
+Pad string on the right side if it's shorter than length.
+
+|Name  |Type  |Desc                  |
+|------|------|----------------------|
+|str   |string|String to pad         |
+|len   |number|Padding length        |
+|chars |string|String used as padding|
+|return|string|Resulted string       |
+
+```javascript
+rpad('a', 5); // -> 'a    '
+rpad('a', 5, '-'); // -> 'a----'
+rpad('abc', 3, '-'); // -> 'abc'
+rpad('abc', 5, 'ab'); // -> 'abcab'
+```
 
 ## rtrim 
 
@@ -1592,6 +2951,19 @@ sample([2, 3, 1], 2); // -> [2, 3]
 sample({a: 1, b: 2, c: 3}, 1); // -> [2]
 ```
 
+## shuffle 
+
+Randomize the order of the elements in a given array.
+
+|Name  |Type |Desc              |
+|------|-----|------------------|
+|arr   |array|Array to randomize|
+|return|array|Randomized Array  |
+
+```javascript
+shuffle([1, 2, 3]); // -> [3, 1, 2]
+```
+
 ## size 
 
 Get size of object, length of array like object or the number of keys.
@@ -1620,6 +2992,21 @@ Create slice of source array or array-like object.
 slice([1, 2, 3, 4], 1, 2); // -> [2]
 ```
 
+## snakeCase 
+
+Convert string to "snakeCase".
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|str   |string|String to convert |
+|return|string|Snake cased string|
+
+```javascript
+snakeCase('fooBar'); // -> foo_bar
+snakeCase('foo bar'); // -> foo_bar
+snakeCase('foo.bar'); // -> foo_bar
+```
+
 ## some 
 
 Check if predicate return truthy for any element.
@@ -1636,6 +3023,21 @@ some([2, 5], function (val)
 {
     return val % 2 === 0;
 }); // -> true
+```
+
+## spaceCase 
+
+Convert string to "spaceCase".
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|str   |string|String to convert |
+|return|string|Space cased string|
+
+```javascript
+spaceCase('fooBar'); // -> foo bar
+spaceCase('foo.bar'); // -> foo bar
+spaceCase('foo.bar'); // -> foo bar
 ```
 
 ## splitCase 
@@ -1656,6 +3058,131 @@ splitCase('fooBar'); // -> ['foo', 'bar']
 splitCase('foo-Bar'); // -> ['foo', 'bar']
 ```
 
+## startWith 
+
+Check if string starts with the given target string.
+
+|Name  |Type   |Desc                             |
+|------|-------|---------------------------------|
+|str   |string |String to search                 |
+|prefix|string |String prefix                    |
+|return|boolean|True if string starts with prefix|
+
+```javascript
+startWith('ab', 'a'); // -> true
+```
+
+## stripAnsi 
+
+Strip ansi codes from a string.
+
+|Name  |Type  |Desc           |
+|------|------|---------------|
+|str   |string|String to strip|
+|return|string|Resulted string|
+
+```javascript
+stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
+```
+
+## stripCmt 
+
+Strip comments from source code.
+
+|Name  |Type  |Desc                 |
+|------|------|---------------------|
+|str   |string|Source code          |
+|return|string|Code without comments|
+
+```javascript
+stripCmts('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
+```
+
+## stripColor 
+
+Strip ansi color codes from a string.
+
+|Name  |Type  |Desc           |
+|------|------|---------------|
+|str   |string|String to strip|
+|return|string|Resulted string|
+
+```javascript
+stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
+```
+
+## stripHtmlTag 
+
+Strip html tags from a string.
+
+|Name  |Type  |Desc           |
+|------|------|---------------|
+|str   |string|String to strip|
+|return|string|Resulted string|
+
+```javascript
+stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
+```
+
+## sum 
+
+Compute sum of given numbers.
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|...num|number|Numbers to calculate|
+|return|number|Sum of numbers      |
+
+```javascript
+sum(1, 2, 5); // -> 8
+```
+
+## template 
+
+Compile JavaScript template into function that can be evaluated for rendering.
+
+|Name  |Type    |String                    |
+|------|--------|--------------------------|
+|str   |string  |Template string           |
+|return|function|Compiled template function|
+
+```javascript
+template('Hello <%= name %>!')({name: 'eris'}); // -> 'Hello eris!'
+template('<p><%- name %></p>')({name: '<eris>'}); // -> '<p>&lt;eris&gt;</p>'
+template('<%if (echo) {%>Hello eris!<%}%>')({echo: true}); // -> 'Hello eris!'
+```
+
+## throttle 
+
+Return a new throttled version of the passed function.
+
+|Name  |Type    |Desc                           |
+|------|--------|-------------------------------|
+|fn    |function|Function to throttle           |
+|wait  |number  |Number of milliseconds to delay|
+|return|function|New throttled function         |
+
+```javascript
+$(window).scroll(throttle(updatePos, 100));
+```
+
+## timeAgo 
+
+Format datetime with *** time ago statement.
+
+|Name          |Type  |Desc                     |
+|--------------|------|-------------------------|
+|date          |Date  |Date to calculate        |
+|[now=new Date]|Date  |Current date             |
+|return        |string|Formatted time ago string|
+
+```javascript
+var now = new Date().getTime();
+timeAgo(now - 1000 * 6); // -> right now
+timeAgo(now + 1000 * 15); // -> in 15 minutes
+timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
+```
+
 ## toArr 
 
 Convert value to an array.
@@ -1670,6 +3197,21 @@ toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
 toArr('abc'); // -> ['abc']
 toArr(1); // -> [1]
 toArr(null); // -> []
+```
+
+## toEl 
+
+Convert html string to dom elements.
+
+There should be only one root element.
+
+|Name  |Type   |Desc        |
+|------|-------|------------|
+|str   |string |Html string |
+|return|element|Html element|
+
+```javascript
+toEl('<div>test</div>');
 ```
 
 ## toInt 
@@ -1715,6 +3257,19 @@ toStr(false); // -> 'false'
 toStr([1, 2, 3]); // -> '1,2,3'
 ```
 
+## topoSort 
+
+Topological sorting algorithm.
+
+|Name  |Type |Desc        |
+|------|-----|------------|
+|edges |array|Dependencies|
+|return|array|Sorted order|
+
+```javascript
+topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
+```
+
 ## trim 
 
 Remove chars or white-spaces from beginning end of string.
@@ -1729,6 +3284,48 @@ Remove chars or white-spaces from beginning end of string.
 trim(' abc  '); // -> 'abc'
 trim('_abc_', '_'); // -> 'abc'
 trim('_abc_', ['a', 'c', '_']); // -> 'b'
+```
+
+## type 
+
+Determine the internal JavaScript [[Class]] of an object.
+
+|Name  |Type  |Desc                      |
+|------|------|--------------------------|
+|val   |*     |Value to get type         |
+|return|string|Type of object, lowercased|
+
+```javascript
+type(5); // -> 'number'
+type({}); // -> 'object'
+type(function () {}); // -> 'function'
+type([]); // -> 'array'
+```
+
+## unescape 
+
+Convert HTML entities back, the inverse of escape.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|str   |string|String to unescape|
+|return|string|unescaped string  |
+
+```javascript
+unescape('You &amp; Me'); -> // -> 'You & Me'
+```
+
+## union 
+
+Create an array of unique values, in order, from all given arrays.
+
+|Name  |Type    |Desc                        |
+|------|--------|----------------------------|
+|arr   |...array|Arrays to inspect           |
+|return|array   |New array of combined values|
+
+```javascript
+union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
 ```
 
 ## uniqId 
@@ -1784,6 +3381,36 @@ Convert the first character of string to upper case.
 upperFirst('red'); // -> Red
 ```
 
+## use 
+
+Use modules that is created by define.
+
+|Name      |Type    |Desc                |
+|----------|--------|--------------------|
+|[requires]|array   |Dependencies        |
+|method    |function|Codes to be executed|
+
+```javascript
+define('A', function ()
+{
+    return 'A';
+});
+use(['A'], function (A)
+{
+    console.log(A + 'B'); // -> 'AB'
+});
+```
+
+## uuid 
+
+RFC4122 version 4 compliant uuid generator.
+
+Check [RFC4122 4.4](http://www.ietf.org/rfc/rfc4122.txt) for reference.
+
+```javascript
+uuid(); // -> '53ce0497-6554-49e9-8d79-347406d2a88b'
+```
+
 ## values 
 
 Create an array of the own enumerable property values of object.
@@ -1795,4 +3422,61 @@ Create an array of the own enumerable property values of object.
 
 ```javascript
 values({one: 1, two: 2}); // -> [1, 2]
+```
+
+## waterfall 
+
+Run an array of functions in series.
+
+|Name |Type    |Desc                   |
+|-----|--------|-----------------------|
+|tasks|array   |Array of functions     |
+|[cb] |function|Callback once completed|
+
+```javascript
+waterfall([
+    function (cb)
+    {
+        cb(null, 'one');
+    },
+    function (arg1, cb)
+    {
+        // arg1 -> 'one'
+        cb(null, 'done');
+    }
+], function (err, result)
+{
+    // result -> 'done'
+});
+```
+
+## wrap 
+
+Wrap the function inside a wrapper function, passing it as the first argument.
+
+|Name   |Type    |Desc            |
+|-------|--------|----------------|
+|fn     |*       |Function to wrap|
+|wrapper|function|Wrapper function|
+|return |function|New function    |
+
+```javascript
+var p = wrap(escape, function(fn, text)
+{
+    return '<p>' + fn(text) + '</p>';
+});
+p('You & Me'); // -> '<p>You &amp; Me</p>'
+```
+
+## zip 
+
+Merge together the values of each of the arrays with the values at the corresponding position.
+
+|Name  |Type |Desc                         |
+|------|-----|-----------------------------|
+|*arr  |array|Arrays to process            |
+|return|array|New array of grouped elements|
+
+```javascript
+zip(['a', 'b'], [1, 2], [true, false]); // -> [['a', 1, true], ['b', 2, false]]
 ```
