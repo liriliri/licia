@@ -31,7 +31,7 @@
  * ```
  */
 
-_('isStr isObj camelCase kebabCase isUndef contain isNum $safeEls');
+_('isStr isObj camelCase kebabCase isUndef contain isNum $safeEls startWith');
 
 function exports(nodes, name, val)
 {
@@ -62,7 +62,8 @@ function setCss(nodes, css)
         var cssText = ';';
         each(css, function (val, key)
         {
-            cssText += kebabCase(key) + ':' + addPx(key, val) + ';';
+            key = dasherize(key);
+            cssText += key + ':' + addPx(key, val) + ';';
         });
         node.style.cssText += cssText;
     });
@@ -83,4 +84,12 @@ function addPx(key, val)
     var needPx = isNum(val) && !contain(cssNumProps, kebabCase(key));
 
     return needPx ? val + 'px' : val;
+}
+
+function dasherize(str) 
+{
+    // -webkit- -o- 
+    if (startWith(str, '-')) return str;
+
+    return kebabCase(str);
 }
