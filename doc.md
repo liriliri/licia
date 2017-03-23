@@ -2951,6 +2951,33 @@ sample([2, 3, 1], 2); // -> [2, 3]
 sample({a: 1, b: 2, c: 3}, 1); // -> [2]
 ```
 
+## scrollTo 
+
+Scroll to a target with animation.
+
+|Name   |Type                 |Desc          |
+|-------|---------------------|--------------|
+|target |element string number|Scroll target |
+|options|object               |Scroll options|
+
+### Options
+
+|Name     |Type           |Default |Desc                                   |
+|---------|---------------|--------|---------------------------------------|
+|tolerance|number         |0       |Tolerance of target to scroll          |
+|duration |number         |800     |Scroll duration                        |
+|easing   |string function|outQuart|Easing function                        |
+|callback |function       |noop    |Function to run once scrolling complete|
+
+```javascript
+scrollTo('body', {
+    tolerance: 0,
+    duration: 800,
+    easing: 'outQuart',
+    callback: function () {}
+});
+```
+
 ## shuffle 
 
 Randomize the order of the elements in a given array.

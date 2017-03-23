@@ -155,6 +155,7 @@
     "safeGet": "Get object property, don't throw undefined error.",
     "safeSet": "Set value at path of object.",
     "sample": "Sample random values from a collection.",
+    "scrollTo": "Scroll to a target with animation.",
     "shuffle": "Randomize the order of the elements in a given array.",
     "size": "Get size of object, length of array like object or the number of keys.",
     "slice": "Create slice of source array or array-like object.",

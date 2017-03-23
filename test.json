@@ -189,11 +189,13 @@
         "isEl",
         "isRetina",
         "ready",
+        "scrollTo",
         "Select",
         "toEl"
     ],
     "manual": [
         "ajax",
-        "fetch"
+        "fetch",
+        "Promise"
     ]
 }
