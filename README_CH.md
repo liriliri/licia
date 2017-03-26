@@ -14,7 +14,7 @@ Eustia官方模块
 
 Eris是一套在开发中实践积累起来的实用JavaScript工具库。该库目前拥有超过180个模块，包括Dom操作，cookie设置，类创建，模板函数，日期格式化等实用模块，同时配套有打包工具Eustia进行定制化，使JS脚本加载量缩减在10KB以下，极大优化移动端页面的加载速度。
 
-目前拥有的所有模块可[点此](http://liriliri.github.io/eustia/module.html)查看。
+目前拥有的所有模块可[点此](http://eustia.liriliri.io/module.html)查看。
 
 ## 开发背景
 
@@ -24,7 +24,7 @@ Eris从一开始就不是为了单纯地替代underscore或lodash而生。它的
 
 ## 使用方法
 
-推荐使用官方打包工具[eustia](http://liriliri.github.io/eustia/)针对项目定制工具库按需引入。当然安装**eustia-module**模块然后直接引用也是可以的。
+推荐使用官方打包工具[eustia](http://eustia.liriliri.io/)针对项目定制工具库按需引入。当然安装**eustia-module**模块然后直接引用也是可以的。
 
 ```bash
 npm i eustia-module --save
@@ -40,7 +40,7 @@ console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 
 在无法找到所需模块的情况下，你可以发起issue建议或者自己添加模块合并到该项目中去。
 
-关于如何编写模块，请查看[Eustia文档](http://liriliri.github.io/eustia/docs.html#create-module)中的相关说明。
+关于如何编写模块，请查看[Eustia文档](http://eustia.liriliri.io/docs.html#create-module)中的相关说明。
 
 ### 基本原则
 

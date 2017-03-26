@@ -15,7 +15,7 @@
 Eustia official module repository.
 
 To check all current available functions, see
-[doc.md](http://liriliri.github.io/eustia/module.html).
+[doc.md](http://eustia.liriliri.io/module.html).
 
 ## Another Lodash?
 
@@ -25,7 +25,7 @@ as a mini version of npm suitable for tiny packages.
 
 ## Usage
 
-It is recommended to use the official bundler [eustia](http://liriliri.github.io/eustia/) to easily build a customized utility library for your project. But if you don't like it, just install **eustia-module** and use it like
+It is recommended to use the official bundler [eustia](http://eustia.liriliri.io/) to easily build a customized utility library for your project. But if you don't like it, just install **eustia-module** and use it like
 any other npm utility modules such as lodash.
 
 ```bash
@@ -43,7 +43,7 @@ console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 Unable to find one suitable? Fork it on GitHub, add the module and submit a pull
 request.
 
-Please check [Eustia Documentation](http://liriliri.github.io/eustia/docs.html#create-module)
+Please check [Eustia Documentation](http://eustia.liriliri.io/docs.html#create-module)
 about how to write an eustia module.
 
 ### Rules
