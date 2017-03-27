@@ -1,4 +1,4 @@
-[中文](README_CH.md)
+[中文](README_CN.md)
 
 # Eris
 
