@@ -143,6 +143,7 @@
     "randomBytes": "Random bytes generator.",
     "range": "Create flexibly-numbered lists of integers.",
     "ready": "Invoke callback when dom is ready, similar to jQuery ready.",
+    "reduce": "Turn a list of values into a single value.",
     "remove": "Remove all elements from array that predicate returns truthy for and return an array of the removed elements.",
     "repeat": "Repeat string n-times.",
     "restArgs": "This accumulates the arguments passed into an array, after a given index.",
