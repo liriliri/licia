@@ -1685,6 +1685,29 @@ Recursively flatten an array.
 flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 ```
 
+## format 
+
+Format string in a printf-like format.
+
+|Name     |Type  |Desc                               |
+|---------|------|-----------------------------------|
+|str      |string|String to format                   |
+|...values|*     |Values to replace format specifiers|
+|return   |string|Formatted string                   |
+
+## Format Specifiers
+
+|Specifier|Desc                |
+|---------|--------------------|
+|%s       |String              |
+|%d, %i   |Integer             |
+|%f       |Floating point value|
+|%o       |Object              |
+
+```javascript
+format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
+```
+
 ## has 
 
 Checks if key is a direct property.

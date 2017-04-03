@@ -68,6 +68,7 @@
     "filter": "Iterates over elements of collection, returning an array of all the values that pass a truth test.",
     "findKey": "Return the key where the predicate truth test passes or undefined.",
     "flatten": "Recursively flatten an array.",
+    "format": "Format string in a printf-like format.",
     "has": "Checks if key is a direct property.",
     "hslToRgb": "Convert hsl to rgb.",
     "identity": "Return the first argument given.",
