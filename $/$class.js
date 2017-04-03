@@ -107,5 +107,5 @@ exports = {
 
 function safeName(name)
 {
-    return isStr(name) ? name.split(/\s/) : toArr(name);
+    return isStr(name) ? name.split(/\s+/) : toArr(name);
 }
