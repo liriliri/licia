@@ -1695,7 +1695,7 @@ Format string in a printf-like format.
 |...values|*     |Values to replace format specifiers|
 |return   |string|Formatted string                   |
 
-## Format Specifiers
+### Format Specifiers
 
 |Specifier|Desc                |
 |---------|--------------------|

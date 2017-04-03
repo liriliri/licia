@@ -6,7 +6,7 @@
  * |...values|*     |Values to replace format specifiers|
  * |return   |string|Formatted string                   |
  *
- * ## Format Specifiers
+ * ### Format Specifiers
  *
  * |Specifier|Desc                |
  * |---------|--------------------|
