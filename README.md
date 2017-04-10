@@ -38,6 +38,8 @@ var uuid = require('eustia-module/uuid');
 console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 ```
 
+There is also an online tool to build a customized utility library, check [here](http://eustia.liriliri.io/builder.html).
+
 ## Submitting New Modules
 
 Unable to find one suitable? Fork it on GitHub, add the module and submit a pull
