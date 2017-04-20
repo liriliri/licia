@@ -15,10 +15,12 @@
  * ```
  */
 
-_('repeat');
+_('repeat toStr');
 
 function exports(str, len, chars)
 {
+    str = toStr(str);
+
     var strLen = str.length;
 
     chars = chars || ' ';
