@@ -37,7 +37,7 @@ function trigger(e)
         handler,
         handlerQueue = formatHandlers.call(this, e, handlers);
 
-    e = new delegate.Event(e);
+    e = new exports.Event(e);
 
     var i = 0, j, matched, ret;
 
@@ -61,7 +61,7 @@ function trigger(e)
 function formatHandlers(e, handlers)
 {
     var current = e.target,
-        ret     = [],
+        ret = [],
         delegateCount = handlers.delegateCount,
         selector, matches, handler, i;
 
@@ -100,7 +100,7 @@ exports = {
     {
         var handler = {
                 selector: selector,
-                handler : fn
+                handler: fn
             },
             handlers;
 
