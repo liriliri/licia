@@ -17,10 +17,6 @@
  *
  * Remove the first item of the queue.
  *
- * |Name  |Type|Desc      |
- * |------|----|----------|
- * |return|*   |First item|
- *
  * ### peek
  *
  * Get the first item without removing it.
@@ -96,6 +92,6 @@ exports = Class({
     },
     toArr: function ()
     {
-        return this._items.slice();
+        return this._items.slice(0);
     }
 });

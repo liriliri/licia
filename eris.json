@@ -20,6 +20,7 @@
     "Queue": "Queue data structure.",
     "ReduceStore": "Simplified redux like state container.",
     "Select": "Simple wrapper of querySelectorAll to make dom selection easier.",
+    "Stack": "Stack data structure.",
     "State": "Simple state machine.",
     "Tween": "Tween engine for JavaScript animations.",
     "Url": "Simple url manipulator.",

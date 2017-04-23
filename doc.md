@@ -562,10 +562,6 @@ Add an item to the queue.
 
 Remove the first item of the queue.
 
-|Name  |Type|Desc      |
-|------|----|----------|
-|return|*   |First item|
-
 ### peek
 
 Get the first item without removing it.
@@ -681,6 +677,52 @@ $test.find('.test').each(function (idx, element)
 {
     // Manipulate dom nodes
 });
+```
+
+## Stack 
+
+Stack data structure.
+
+### clear
+
+Clear the stack.
+
+### push
+
+Add an item to the stack.
+
+|Name  |Type  |Desc        |
+|------|------|------------|
+|item  |*     |Item to add |
+|return|number|Current size|
+
+### pop
+
+Get the last item of the stack.
+
+### peek
+
+Get the last item without removing it.
+
+### forEach
+
+Iterate over the stack.
+
+|Name    |Type    |Desc                      |
+|--------|--------|--------------------------|
+|iteratee|function|Function invoked iteration|
+|[ctx]   |*       |Function context          |
+
+### toArr
+
+Convert the stack to a JavaScript stack.
+
+```javascript
+var stack = new Stack();
+
+stack.push(2); // -> 1
+stack.push(3); // -> 2
+stack.pop(); // -> 3
 ```
 
 ## State 
