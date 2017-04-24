@@ -1097,12 +1097,12 @@ $(element).on('click', before(5, function() {}));
 
 Create a function bound to a given object.
 
-|Name  |Type    |Desc                    |
-|------|--------|------------------------|
-|fn    |function|Function to bind        |
-|ctx   |*       |This binding of given fn|
-|[rest]|...*    |Optional arguments      |
-|return|function|New bound function      |
+|Name     |Type    |Desc                    |
+|---------|--------|------------------------|
+|fn       |function|Function to bind        |
+|ctx      |*       |This binding of given fn|
+|[...rest]|*       |Optional arguments      |
+|return   |function|New bound function      |
 
 ```javascript
 var fn = bind(function (msg)
@@ -1434,11 +1434,11 @@ define('B', ['A'], function (A)
 
 Invoke function after certain milliseconds.
 
-|Name  |Type    |Desc                                      |
-|------|--------|------------------------------------------|
-|fn    |function|Function to delay                         |
-|wait  |number  |Number of milliseconds to delay invocation|
-|[args]|...*    |Arguments to invoke fn with               |
+|Name     |Type    |Desc                                      |
+|---------|--------|------------------------------------------|
+|fn       |function|Function to delay                         |
+|wait     |number  |Number of milliseconds to delay invocation|
+|[...args]|*       |Arguments to invoke fn with               |
 
 ```javascript
 delay(function (text)
@@ -1518,11 +1518,11 @@ if (detectOs() === 'ios')
 
 Create an array of unique array values not included in the other given array.
 
-|Name  |Type    |Desc                        |
-|------|--------|----------------------------|
-|arr   |array   |Array to inspect            |
-|[rest]|...array|Values to exclude           |
-|return|array   |New array of filtered values|
+|Name     |Type |Desc                        |
+|---------|-----|----------------------------|
+|arr      |array|Array to inspect            |
+|[...rest]|array|Values to exclude           |
+|return   |array|New array of filtered values|
 
 ```javascript
 difference([3, 2, 1], [4, 2]); // -> [3, 1]
@@ -2730,11 +2730,11 @@ parallel([
 
 Partially apply a function by filling in given arguments.
 
-|Name    |Type    |Desc                                    |
-|--------|--------|----------------------------------------|
-|fn      |function|Function to partially apply arguments to|
-|partials|...*    |Arguments to be partially applied       |
-|return  |function|New partially applied function          |
+|Name       |Type    |Desc                                    |
+|-----------|--------|----------------------------------------|
+|fn         |function|Function to partially apply arguments to|
+|...partials|*       |Arguments to be partially applied       |
+|return     |function|New partially applied function          |
 
 ```javascript
 var sub5 = partial(function (a, b) { return b - a }, 5);
@@ -3500,10 +3500,10 @@ unescape('You &amp; Me'); -> // -> 'You & Me'
 
 Create an array of unique values, in order, from all given arrays.
 
-|Name  |Type    |Desc                        |
-|------|--------|----------------------------|
-|arr   |...array|Arrays to inspect           |
-|return|array   |New array of combined values|
+|Name  |Type |Desc                        |
+|------|-----|----------------------------|
+|...arr|array|Arrays to inspect           |
+|return|array|New array of combined values|
 
 ```javascript
 union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
