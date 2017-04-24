@@ -108,6 +108,7 @@
         "parallel",
         "partial",
         "pascalCase",
+        "pick",
         "pluck",
         "property",
         "query",

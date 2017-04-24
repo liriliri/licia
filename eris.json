@@ -138,6 +138,7 @@
     "parallel": "Run an array of functions in parallel.",
     "partial": "Partially apply a function by filling in given arguments.",
     "pascalCase": "Convert string to \"pascalCase\".",
+    "pick": "Return a filtered copy of an object.",
     "pluck": "Extract a list of property values.",
     "property": "Return a function that will itself return the key property of any passed-in object.",
     "query": "Parse and stringify url query strings.",
