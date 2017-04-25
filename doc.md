@@ -946,6 +946,20 @@ validator.validate({test: 1}); // -> 'test should be a string with length 5';
 validator.validate({test: 'eris'}); // -> true
 ```
 
+## abbrev 
+
+Calculate the set of unique abbreviations for a given set of strings.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|...arr|string|List of names   |
+|return|object|Abbreviation map|
+
+```javascript
+abbrev('lina', 'luna');
+// -> {li: 'lina', lin: 'lina', lina: 'lina', lu: 'luna', lun: 'luna', luna: 'luna'}
+```
+
 ## after 
 
 Create a function that invokes once it's called n or more times.
