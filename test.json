@@ -97,6 +97,7 @@
         "memStorage",
         "methods",
         "min",
+        "ms",
         "negate",
         "nextTick",
         "noop",
