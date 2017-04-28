@@ -301,7 +301,7 @@ var People = Class({
     },
     introduce: function ()
     {
-        return 'I am ' + this.name + ', ' + this.age + ' years old.'.
+        return 'I am ' + this.name + ', ' + this.age + ' years old.';
     }
 });
 
@@ -314,7 +314,7 @@ var Student = People.extend({
     },
     introduce: function ()
     {
-        return this.callSuper(People, 'introduce') + '\n I study at ' + this.school + '.'.
+        return this.callSuper(People, 'introduce') + '\n I study at ' + this.school + '.';
     }
 }, {
     is: function (obj)
