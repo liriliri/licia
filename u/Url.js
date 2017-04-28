@@ -70,7 +70,7 @@
  * ```
  */
 
-_('Class extend trim query isEmpty each toArr');
+_('Class extend trim query isEmpty each isArr toArr');
 
 exports = Class({
     className: 'Url',
