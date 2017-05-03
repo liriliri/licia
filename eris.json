@@ -170,6 +170,7 @@
     "some": "Check if predicate return truthy for any element.",
     "spaceCase": "Convert string to \"spaceCase\".",
     "splitCase": "Split different string case to an array.",
+    "splitPath": "Split path into device, dir, name and ext.",
     "startWith": "Check if string starts with the given target string.",
     "stripAnsi": "Strip ansi codes from a string.",
     "stripCmt": "Strip comments from source code.",

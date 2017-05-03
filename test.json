@@ -140,6 +140,7 @@
         "some",
         "spaceCase",
         "splitCase",
+        "splitPath",
         "Stack",
         "startWith",
         "State",
