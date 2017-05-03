@@ -88,7 +88,7 @@ exports = Class({
     {
         each(['on', 'off', 'once', 'emit'], function (val)
         {
-            obj[val] = Emitter.prototype[val];
+            obj[val] = exports.prototype[val];
         });
 
         obj._events = obj._events || {};
