@@ -52,7 +52,7 @@ function exports(nodes, name, val)
 
 function getCss(node, name)
 {
-    return node.style[camelCase(name)];
+    return node.style[camelCase(name)] || getComputedStyle(node, '').getPropertyValue(name);
 }
 
 function setCss(nodes, css)
