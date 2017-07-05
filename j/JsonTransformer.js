@@ -87,7 +87,7 @@ exports = Class({
     },
     set: function (key, val) 
     {
-        if (val == null) 
+        if (arguments.length === 1) 
         {
             this._data = key;
             return this;

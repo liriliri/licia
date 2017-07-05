@@ -39,6 +39,8 @@ it('set', function ()
     expect(data.get('a')).to.eql({b: 2});
     data.set({a: 1});
     expect(data.get('a')).to.equal(1);
+    data.set('b', undefined);
+    expect(data.get('a')).to.equal(1);
 });
 
 it('map', function () 
