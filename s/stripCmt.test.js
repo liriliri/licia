@@ -5,7 +5,7 @@ it('basic', function ()
         'var a = 5;',
         '/* comment2',
         ' * comment3',
-        ' *\/'
+        ' */'
     ].join('\n');
 
     expect(stripCmt(source)).to.equal('\nvar a = 5;\n');

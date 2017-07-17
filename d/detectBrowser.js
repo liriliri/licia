@@ -59,13 +59,13 @@ function exports(ua)
 }
 
 var regBrowsers = {
-    'edge': /edge\/([0-9\._]+)/,
-    'firefox': /firefox\/([0-9\.]+)(?:\s|$)/,
-    'opera': /opera\/([0-9\.]+)(?:\s|$)/,
-    'android': /android\s([0-9\.]+)/,
-    'ios': /version\/([0-9\._]+).*mobile.*safari.*/, 
-    'safari': /version\/([0-9\._]+).*safari/,
-    'chrome': /(?!chrom.*opr)chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/
+    'edge': /edge\/([0-9._]+)/,
+    'firefox': /firefox\/([0-9.]+)(?:\s|$)/,
+    'opera': /opera\/([0-9.]+)(?:\s|$)/,
+    'android': /android\s([0-9.]+)/,
+    'ios': /version\/([0-9._]+).*mobile.*safari.*/,
+    'safari': /version\/([0-9._]+).*safari/,
+    'chrome': /(?!chrom.*opr)chrom(?:e|ium)\/([0-9.]+)(:?\s|$)/
 };
 
 var regIe11 = /trident\/7\./,

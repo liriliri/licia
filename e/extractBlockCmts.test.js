@@ -1,6 +1,6 @@
 it('basic', function ()
 {
-    var src = '\/* line one\n * line two\n */';
+    var src = '/* line one\n * line two\n */';
 
     expect(extractBlockCmts(src)).to.eql(['line one\n line two']);
 });

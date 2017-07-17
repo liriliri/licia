@@ -15,4 +15,4 @@ function exports(path)
     return !regAbsolute.test(path);
 }
 
-var regAbsolute = /^([a-z]+:)?[\\\/]/i;
+var regAbsolute = /^([a-z]+:)?[\\/]/i;
