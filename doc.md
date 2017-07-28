@@ -1835,6 +1835,24 @@ Format string in a printf-like format.
 format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
 ```
 
+## freeze 
+
+Shortcut for Object.freeze.
+
+Use Object.defineProperties if Object.freeze is not supported.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|obj   |object|Object to freeze|
+|return|object|Object passed in|
+
+```javascript
+var a = {b: 1};
+freeze(a);
+a.b = 2;
+console.log(a); // -> {b: 1}
+```
+
 ## has 
 
 Checks if key is a direct property.
