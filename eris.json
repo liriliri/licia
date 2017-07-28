@@ -74,6 +74,7 @@
     "flatten": "Recursively flatten an array.",
     "format": "Format string in a printf-like format.",
     "freeze": "Shortcut for Object.freeze.",
+    "freezeDeep": "Recursively use Object.freeze.",
     "has": "Checks if key is a direct property.",
     "hslToRgb": "Convert hsl to rgb.",
     "identity": "Return the first argument given.",

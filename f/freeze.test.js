@@ -1,11 +1,11 @@
 it('basic', function () 
 {
-     var a = {b: 1};
-     a.b = 2;
-     expect(a).to.eql({b: 2});
-     freeze(a);
-     a.b = 1;
-     expect(a).to.eql({b: 2});
+    var a = {b: 1};
+    a.b = 2;
+    expect(a).to.eql({b: 2});
+    freeze(a);
+    a.b = 1;
+    expect(a).to.eql({b: 2});
 });
 
 it('shallow', function () 

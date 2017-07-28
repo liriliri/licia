@@ -48,6 +48,7 @@
         "flatten",
         "format",
         "freeze",
+        "freezeDeep",
         "has",
         "hslToRgb",
         "identity",

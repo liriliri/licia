@@ -1853,6 +1853,22 @@ a.b = 2;
 console.log(a); // -> {b: 1}
 ```
 
+## freezeDeep 
+
+Recursively use Object.freeze.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|obj   |object|Object to freeze|
+|return|object|Object passed in|
+
+```javascript
+var a = {b: {c: 1}};
+freezeDeep(a);
+a.b.c = 2;
+console.log(a); // -> {b: {c: 1}}
+```
+
 ## has 
 
 Checks if key is a direct property.

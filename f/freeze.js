@@ -15,13 +15,13 @@
  * ```
  */
 
-exports = function (obj) 
+_('keys');
+
+function exports(obj) 
 {
     if (Object.freeze) return Object.freeze(obj);
 
-    var propList = Object.getOwnPropertyNames(obj);
-
-    propList.forEach(function (prop) 
+    keys(obj).forEach(function (prop) 
     {
         if (!Object.getOwnPropertyDescriptor(obj, prop).configurable) return;
 
