@@ -32,4 +32,4 @@ function exports(obj)
     });
 
     return obj;
-};
+}
