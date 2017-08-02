@@ -1047,6 +1047,23 @@ obj.one = 1;
 allKeys(obj) // -> ['zero', 'one']
 ```
 
+## arrToMap 
+
+Make an object map using array of strings.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|arr   |array |Array of strings|
+|return|object|Object map      |
+
+```javascript
+var needPx = arrToMap([
+    'column-count', 'columns', 'font-weight', 'line-weight', 'opacity', 'z-index', 'zoom'
+]);
+
+if (needPx[key]) val += 'px';
+```
+
 ## average 
 
 Get average value of given numbers.

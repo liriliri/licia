@@ -29,6 +29,7 @@
     "after": "Create a function that invokes once it's called n or more times.",
     "ajax": "Perform an asynchronous HTTP request.",
     "allKeys": "Retrieve all the names of object's own and inherited properties.",
+    "arrToMap": "Make an object map using array of strings.",
     "average": "Get average value of given numbers.",
     "base64": "Basic base64 encoding and decoding.",
     "before": "Create a function that invokes less than n times.",
