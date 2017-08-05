@@ -433,6 +433,31 @@ event.emit('test'); // Logs out 'test'.
 Emitter.mixin({});
 ```
 
+## Enum 
+
+Enum type implementation.
+
+### constructor
+
+|Name|Type |Desc            |
+|----|-----|----------------|
+|arr |array|Array of strings|
+
+|Name|Type  |Desc                  |
+|----|------|----------------------|
+|obj |object|Pairs of key and value|
+
+```javascript
+var importance = new Enum([
+    'none', 'trivial', 'regular', 'important', 'critical'
+]);
+
+if (val === importance.critical)
+{
+    // Do something.
+}
+```
+
 ## JsonTransformer 
 
 Json to json transformer.

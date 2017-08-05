@@ -36,6 +36,7 @@
         "easing",
         "Emitter",
         "endWith",
+        "Enum",
         "escape",
         "escapeRegExp",
         "every",

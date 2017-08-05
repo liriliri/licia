@@ -15,6 +15,7 @@
     "Color": "Color converter.",
     "Dispatcher": "Flux dispatcher.",
     "Emitter": "Event emitter class which provides observer pattern.",
+    "Enum": "Enum type implementation.",
     "JsonTransformer": "Json to json transformer.",
     "Promise": "Lightweight Promise implementation.",
     "Queue": "Queue data structure.",
