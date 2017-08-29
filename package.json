@@ -6,6 +6,7 @@
     "eris": "./bin/eris.js"
   },
   "scripts": {
+    "ci": "npm run lint && npm test",
     "update": "eris list && eris doc",
     "pack": "eris pack",
     "lint": "eslint $ [a-z]",
@@ -34,6 +35,7 @@
     "benchmark": "^2.1.3",
     "chai": "^3.5.0",
     "chalk": "^1.1.3",
+    "eslint": "^4.5.0",
     "eustia": "^0.3.6",
     "eustia-component": "0.0.3",
     "glob": "^7.0.3",
@@ -45,7 +47,7 @@
     "karma-mocha": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sauce-launcher": "^1.1.0",
-    "mocha": "^2.4.5",
+    "mocha": "^3.5.0",
     "nopt": "^3.0.6",
     "promises-aplus-tests": "^2.1.2",
     "rmdir": "^1.2.0",
