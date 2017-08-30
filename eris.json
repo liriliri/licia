@@ -64,6 +64,7 @@
     "escape": "Escapes a string for insertion into HTML, replacing &, <, >, \", `, and ' characters.",
     "escapeRegExp": "Escape special chars to be used as literals in RegExp constructors.",
     "evalCss": "Load css into page.",
+    "evalJs": "Execute js in given context.",
     "every": "Check if predicate return truthy for all elements.",
     "extend": "Copy all of the properties in the source objects over to the destination object.",
     "extendDeep": "Recursive object extending.",

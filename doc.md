@@ -1678,6 +1678,19 @@ Load css into page.
 evalCss('body{background:#08c}');
 ```
 
+## evalJs 
+
+Execute js in given context.
+
+|Name        |Type  |Desc           |
+|------------|------|---------------|
+|js          |string|JavaScript code|
+|[ctx=global]|object|Context        |
+
+```
+evalJs('5+2'); // -> 7
+```
+
 ## every 
 
 Check if predicate return truthy for all elements.

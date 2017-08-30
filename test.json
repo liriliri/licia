@@ -39,6 +39,7 @@
         "Enum",
         "escape",
         "escapeRegExp",
+        "evalJs",
         "every",
         "extend",
         "extendDeep",
