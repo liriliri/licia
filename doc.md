@@ -2808,6 +2808,30 @@ initOnce(); // -> init is invoked once
 
 Used for function context binding.
 
+## orientation 
+
+Screen orientation helper.
+
+### on
+
+Bind change event.
+
+### off
+
+Unbind change event.
+
+### get
+
+Get current orientation, landscape or landscape.
+
+```javascript
+orientation.on('change', function (direction)
+{
+    // Do something.
+});
+orientation.get(); // -> 'landscape'
+```
+
 ## pad 
 
 Pad string on the left and right sides if it's shorter than length.

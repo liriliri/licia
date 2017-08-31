@@ -141,6 +141,7 @@
     "objToStr": "Alias of Object.prototype.toString.",
     "once": "Create a function that invokes once.",
     "optimizeCb": "Used for function context binding.",
+    "orientation": "Screen orientation helper.",
     "pad": "Pad string on the left and right sides if it's shorter than length.",
     "pairs": "Convert an object into a list of [key, value] pairs.",
     "parallel": "Run an array of functions in parallel.",

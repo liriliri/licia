@@ -1,0 +1,40 @@
+<require>orientation evalCss $</require>
+
+<style>
+body {
+    margin: 15px 0;
+    text-align: center;
+}
+.wrapper {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+}
+.title {
+    font-size: 25px;
+}
+.result {
+    font-size: 18px;
+}
+</style>
+
+<template id="bodyTpl">
+    <div class="wrapper">
+        <div class="title">Change Orientation to See Result</div>
+        <div class="result"></div>
+    </div>    
+</template>
+
+<script>
+evalCss(style);
+$('body').html(bodyTpl);
+
+function print(direction) 
+{
+    $('.result').html('Current orientation is: ' + direction + '!');
+}
+
+print(orientation.get());
+
+orientation.on('change', print);
+</script>
