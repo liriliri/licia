@@ -10,12 +10,12 @@
  * 
  * ### get
  * 
- * Get current orientation, landscape or landscape.
+ * Get current orientation(landscape or portrait).
  * 
  * ```javascript
  * orientation.on('change', function (direction) 
  * {
- *     // Do something.
+ *     console.log(direction); // -> 'portrait'
  * });
  * orientation.get(); // -> 'landscape'
  * ```
