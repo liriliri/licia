@@ -168,6 +168,7 @@
     "safeDel": "Delete object property.",
     "safeGet": "Get object property, don't throw undefined error.",
     "safeSet": "Set value at path of object.",
+    "safeStorage": "Use storage safely in safari private browsing and older browsers.",
     "sample": "Sample random values from a collection.",
     "scrollTo": "Scroll to a target with animation.",
     "shuffle": "Randomize the order of the elements in a given array.",

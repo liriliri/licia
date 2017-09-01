@@ -3253,6 +3253,20 @@ safeSet(obj, ['a', 'aa'], 2); // obj = {a: {aa: 2}}
 safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
 ```
 
+## safeStorage 
+
+Use storage safely in safari private browsing and older browsers.
+
+|Name  |Type  |Desc             |
+|------|------|-----------------|
+|type  |string|local or session |
+|return|object|Specified storage|
+
+```javascript
+var localStorage = safeStorage('local');
+localStorage.setItem('eris', 'util');
+```
+
 ## sample 
 
 Sample random values from a collection.
