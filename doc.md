@@ -3257,10 +3257,10 @@ safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
 
 Use storage safely in safari private browsing and older browsers.
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|type  |string|local or session |
-|return|object|Specified storage|
+|Name          |Type  |Desc             |
+|--------------|------|-----------------|
+|[type='local']|string|local or session |
+|return        |object|Specified storage|
 
 ```javascript
 var localStorage = safeStorage('local');

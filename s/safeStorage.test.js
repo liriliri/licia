@@ -1,7 +1,7 @@
 it('local', function () 
 {
     var localStorage = window.localStorage,
-        storage = safeStorage('local');
+        storage = safeStorage();
 
    expect(storage).to.equal(localStorage);
 });
