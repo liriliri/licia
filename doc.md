@@ -544,10 +544,10 @@ Simple logger with level filter.
 
 ### constructor
 
-|Name |Type  |Desc        |
-|-----|------|------------|
-|name |string|Logger name |
-|level|number|Logger level|
+|Name         |Type  |Desc        |
+|-------------|------|------------|
+|name         |string|Logger name |
+|[level=DEBUG]|number|Logger level|
 
 ### trace, debug, info, warn, error
 
