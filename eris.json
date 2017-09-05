@@ -17,6 +17,7 @@
     "Emitter": "Event emitter class which provides observer pattern.",
     "Enum": "Enum type implementation.",
     "JsonTransformer": "Json to json transformer.",
+    "Logger": "Simple logger with level filter.",
     "Promise": "Lightweight Promise implementation.",
     "Queue": "Queue data structure.",
     "ReduceStore": "Simplified redux like state container.",

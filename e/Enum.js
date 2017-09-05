@@ -12,10 +12,10 @@
  *
  * ```javascript
  * var importance = new Enum([
- *     'none', 'trivial', 'regular', 'important', 'critical'
+ *     'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
  * ]);
  *
- * if (val === importance.critical)
+ * if (val === importance.CRITICAL)
  * {
  *     // Do something.
  * }

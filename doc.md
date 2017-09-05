@@ -449,10 +449,10 @@ Enum type implementation.
 
 ```javascript
 var importance = new Enum([
-    'none', 'trivial', 'regular', 'important', 'critical'
+    'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
 ]);
 
-if (val === importance.critical)
+if (val === importance.CRITICAL)
 {
     // Do something.
 }
@@ -536,6 +536,47 @@ data.filter('books', function (book) { return book.price > 5 });
 data.compute('author', function (author) { return author.firstname + author.lastname });
 data.set('count', data.get('books').length);
 data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', count: 1}
+```
+
+## Logger 
+
+Simple logger with level filter.
+
+### constructor
+
+|Name |Type  |Desc        |
+|-----|------|------------|
+|name |string|Logger name |
+|level|number|Logger level|
+
+### trace, debug, info, warn, error
+
+Logging methods.
+
+### Log Levels
+
+TRACE, DEBUG, INFO, WARN, ERROR and SILENT.
+
+```javascript
+var logger = new Logger('eris', logger.level.ERROR);
+logger.trace('test');
+
+logger.formatter = function (type, argList)
+{
+    argList.push(new Date().getTime());
+
+    return argList;
+};
+
+logger.on('all', function (type, argList)
+{
+    // It's affected by log level.
+});
+
+logger.on('debug', function (argList)
+{
+    // Affected by log level.
+});
 ```
 
 ## Promise 

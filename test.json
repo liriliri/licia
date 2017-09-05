@@ -92,6 +92,7 @@
         "keyCode",
         "keys",
         "last",
+        "Logger",
         "longest",
         "lpad",
         "ltrim",

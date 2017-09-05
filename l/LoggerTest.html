@@ -1,0 +1,10 @@
+<require>Logger</require>
+
+<script>
+var logger = new Logger('Eris', Logger.level.TRACE);
+logger.trace('test %o test', {a: 1});
+logger.debug('test');
+logger.info('test');
+logger.warn('test');
+logger.error('test');
+</script>
