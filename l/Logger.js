@@ -19,6 +19,7 @@
  * var logger = new Logger('eris', logger.level.ERROR);
  * logger.trace('test');
  * 
+ * // Format output.
  * logger.formatter = function (type, argList)
  * {
  *     argList.push(new Date().getTime());
@@ -38,7 +39,7 @@
  * ```
  */
 
-_('Emitter Enum dateFormat toArr isUndef');
+_('Emitter Enum dateFormat toArr isUndef clone');
 
 exports = Emitter.extend({
     initialize: function Logger(name, level) 
@@ -50,8 +51,6 @@ exports = Emitter.extend({
     },
     formatter: function (type, argList) 
     {
-        argList.push(dateFormat('yyyy-mm-dd HH:MM:ss') + ' ' + this.name + ' [' + type.toUpperCase() + ']');
-
         return argList;
     },
     trace: function () 
@@ -79,10 +78,10 @@ exports = Emitter.extend({
         argList = toArr(argList);
         if (argList.length === 0) return;
 
-        this.emit('all', type, argList);
+        this.emit('all', type, clone(argList));
 
         if (exports.level[type.toUpperCase()] < this.level) return;
-        this.emit(type, argList);
+        this.emit(type, clone(argList));
         /* eslint-disable no-console */
         var consoleMethod = type === 'debug' ? console.log : console[type];
         consoleMethod.apply(console, this.formatter(type, argList));

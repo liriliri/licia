@@ -561,6 +561,7 @@ TRACE, DEBUG, INFO, WARN, ERROR and SILENT.
 var logger = new Logger('eris', logger.level.ERROR);
 logger.trace('test');
 
+// Format output.
 logger.formatter = function (type, argList)
 {
     argList.push(new Date().getTime());
