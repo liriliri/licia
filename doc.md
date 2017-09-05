@@ -570,7 +570,7 @@ logger.formatter = function (type, argList)
 
 logger.on('all', function (type, argList)
 {
-    // It's affected by log level.
+    // It's not affected by log level.
 });
 
 logger.on('debug', function (argList)
