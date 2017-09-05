@@ -83,6 +83,7 @@ exports = Emitter.extend({
 
         if (exports.level[type.toUpperCase()] < this.level) return;
         this.emit(type, argList);
+        /* eslint-disable no-console */
         var consoleMethod = type === 'debug' ? console.log : console[type];
         consoleMethod.apply(console, this.formatter(type, argList));
     }
