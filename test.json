@@ -12,6 +12,7 @@
         "capitalize",
         "clamp",
         "Class",
+        "className",
         "clone",
         "cloneDeep",
         "cmpVersion",

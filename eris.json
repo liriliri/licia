@@ -39,6 +39,7 @@
     "camelCase": "Convert string to \"camelCase\".",
     "capitalize": "Convert the first character to upper case and the remaining to lower case.",
     "clamp": "Clamp number within the inclusive lower and upper bounds.",
+    "className": "Utility for conditionally joining class names.",
     "clone": "Create a shallow-copied clone of the provided plain object.",
     "cloneDeep": "Recursively clone value.",
     "cmpVersion": "Compare version strings.",
