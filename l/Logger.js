@@ -7,6 +7,16 @@
  * |name         |string|Logger name |
  * |[level=DEBUG]|number|Logger level|
  * 
+ * ### setLevel
+ * 
+ * |Name |Type         |Desc        |
+ * |-----|-------------|------------|
+ * |level|number string|Logger level|
+ * 
+ * ### getLevel
+ * 
+ * Get current level.
+ * 
  * ### trace, debug, info, warn, error
  * 
  * Logging methods.
@@ -39,15 +49,31 @@
  * ```
  */
 
-_('Emitter Enum toArr isUndef clone');
+_('Emitter Enum toArr isUndef clone isStr isNum');
 
 exports = Emitter.extend({
     initialize: function Logger(name, level) 
     {
         this.name = name;
-        this.level = isUndef(level) ? exports.level.DEBUG : level;
+        this._level = isUndef(level) ? exports.level.DEBUG : level;
 
         this.callSuper(Emitter, 'initialize', arguments);
+    },
+    setLevel: function (level) 
+    {
+        if (isStr(level)) 
+        {
+            var level = exports.level[level.toUpperCase()];
+            if (level) this._level = level;
+            return this;
+        }
+        if (isNum(level)) this._level = level;
+
+        return this;
+    },
+    getLevel: function () 
+    {
+        return this._level;
     },
     formatter: function (type, argList) 
     {
@@ -55,36 +81,38 @@ exports = Emitter.extend({
     },
     trace: function () 
     {
-        this._log('trace', arguments);
+        return this._log('trace', arguments);
     },
     debug: function () 
     {
-        this._log('debug', arguments);
+        return this._log('debug', arguments);
     },
     info: function ()
     {
-        this._log('info', arguments);
+        return this._log('info', arguments);
     },
     warn: function () 
     {
-        this._log('warn', arguments);
+        return this._log('warn', arguments);
     },
     error: function ()
     {
-        this._log('error', arguments);
+        return this._log('error', arguments);
     },
     _log: function (type, argList) 
     {
         argList = toArr(argList);
-        if (argList.length === 0) return;
+        if (argList.length === 0) return this;
 
         this.emit('all', type, clone(argList));
 
-        if (exports.level[type.toUpperCase()] < this.level) return;
+        if (exports.level[type.toUpperCase()] < this._level) return this;
         this.emit(type, clone(argList));
         /* eslint-disable no-console */
         var consoleMethod = type === 'debug' ? console.log : console[type];
         consoleMethod.apply(console, this.formatter(type, argList));
+
+        return this;
     }
 }, {
     level: new Enum({

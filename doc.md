@@ -549,6 +549,16 @@ Simple logger with level filter.
 |name         |string|Logger name |
 |[level=DEBUG]|number|Logger level|
 
+### setLevel
+
+|Name |Type         |Desc        |
+|-----|-------------|------------|
+|level|number string|Logger level|
+
+### getLevel
+
+Get current level.
+
 ### trace, debug, info, warn, error
 
 Logging methods.

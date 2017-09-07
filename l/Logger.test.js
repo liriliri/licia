@@ -2,7 +2,7 @@ it('basic', function ()
 {
     var logger = new Logger('Eris', Logger.level.ERROR);
     expect(logger.name).to.equal('Eris');
-    expect(logger.level).to.equal(Logger.level.ERROR);
+    expect(logger.getLevel()).to.equal(Logger.level.ERROR);
 
     function all(type, argList) 
     {
@@ -10,18 +10,14 @@ it('basic', function ()
         expect(argList).to.eql(['test', 'test2']);
     }
 
-    logger.on('all', all);
-    logger.debug('test', 'test2');
-    logger.off('all', all);
+    logger.on('all', all).debug('test', 'test2').off('all', all);
 
     function info(argList) 
     {
         expect(argList).to.eql(['test']);
     }
     logger.level = Logger.level.INFO;
-    logger.on('trace', info);
-    logger.info('test');
-    logger.off('trace', info);
+    logger.on('trace', info).info('test').off('trace', info);
 
     logger.formatter = function (type, argList) 
     {
@@ -29,8 +25,8 @@ it('basic', function ()
 
         return argList;
     };
-    logger.trace('test');
-    logger.debug('test');
-    logger.warn('test');
-    logger.error('test');
+    logger.trace('test').debug('test').warn('test').error('test');
+
+    logger.setLevel('silent');
+    expect(logger.getLevel()).to.equal(Logger.level.SILENT);
 });
