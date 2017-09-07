@@ -63,7 +63,7 @@ exports = Emitter.extend({
     {
         if (isStr(level)) 
         {
-            var level = exports.level[level.toUpperCase()];
+            level = exports.level[level.toUpperCase()];
             if (level) this._level = level;
             return this;
         }
