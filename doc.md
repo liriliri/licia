@@ -1249,6 +1249,19 @@ Convert the first character to upper case and the remaining to lower case.
 capitalize('rED'); // -> Red
 ```
 
+## chunk 
+
+Split array into groups the length of given size.
+|Name    |Type  |Desc                |
+|--------|------|--------------------|
+|arr     |array |Array to process    |
+|[size=1]|number|Length of each chunk|
+
+```javascript
+chunk([1, 2, 3, 4], 2); // -> [[1, 2], [3, 4]]
+chunk([1, 2, 3, 4], 3); // -> [[1, 2, 3], [4]]
+```
+
 ## clamp 
 
 Clamp number within the inclusive lower and upper bounds.
