@@ -12,8 +12,9 @@
 
 function exports(arr, size) 
 {
-    var ret = [],
-        size = size || 1;
+    var ret = [];
+       
+    var size = size || 1;
 
     for (var i = 0, len = Math.ceil(arr.length / size); i < len; i++) 
     {
