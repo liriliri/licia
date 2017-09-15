@@ -1,4 +1,5 @@
 /* Split array into groups the length of given size.
+ *
  * |Name    |Type  |Desc                |
  * |--------|------|--------------------|
  * |arr     |array |Array to process    |
@@ -7,6 +8,7 @@
  * ```javascript
  * chunk([1, 2, 3, 4], 2); // -> [[1, 2], [3, 4]]
  * chunk([1, 2, 3, 4], 3); // -> [[1, 2, 3], [4]]
+ * chunk([1, 2, 3, 4]); // -> [[1], [2], [3], [4]]
  * ```
  */
 
