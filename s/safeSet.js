@@ -16,21 +16,19 @@
  * ```
  */
 
-_('isStr');
+_("isStr");
 
-function exports(obj, path, val)
-{
-    if (isStr(path)) path = path.split('.');
+function exports(obj, path, val) {
+  if (isStr(path)) path = path.split(".");
 
-    var lastProp = path.pop(),
-        prop;
+  var lastProp = path.pop(),
+    prop;
 
-    /* eslint-disable no-cond-assign */
-    while (prop = path.shift())
-    {
-        if (!obj[prop]) obj[prop] = {};
-        obj = obj[prop];
-    }
+  /* eslint-disable no-cond-assign */
+  while ((prop = path.shift())) {
+    if (!obj[prop]) obj[prop] = {};
+    obj = obj[prop];
+  }
 
-    obj[lastProp] = val;
+  obj[lastProp] = val;
 }

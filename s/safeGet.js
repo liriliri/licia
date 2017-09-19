@@ -14,21 +14,24 @@
  * ```
  */
 
-_('isStr isArr reduce');
+_("isStr isArr reduce");
 
-function exports(obj, path)
-{
+function exports(obj, path) {
   if (isArr(path)) {
-    return reduce(path,function(ob,k){
-    	return ob && ob[k] ? ob[k] : undefined;
-    },obj)
+    return reduce(
+      path,
+      function(ob, k) {
+        return ob && ob[k] ? ob[k] : undefined;
+      },
+      obj
+    );
   } else if (isStr(path)) {
     var arrKeys = path.split("."),
       keys = [],
       m;
-    arrKeys.forEach(function(k){
-      if ((m = k.match(/([^\[\]]+)|(\[\d+\])/g))) {  
-        m = m.map(v => v.replace(/\[(\d+)\]/, "$1"));  
+    arrKeys.forEach(function(k) {
+      if ((m = k.match(/([^\[\]]+)|(\[\d+\])/g))) {
+        m = m.map(v => v.replace(/\[(\d+)\]/, "$1"));
         [].push.apply(keys, m);
       }
     });
