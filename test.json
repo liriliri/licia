@@ -204,6 +204,7 @@
         "evalCss",
         "isEl",
         "isRetina",
+        "meta",
         "orientation",
         "ready",
         "safeStorage",

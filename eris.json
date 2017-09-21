@@ -133,6 +133,7 @@
     "max": "Get maximum value of given numbers.",
     "memStorage": "Memory-backed implementation of the Web Storage API.",
     "memoize": "Memoize a given function by caching the computed result.",
+    "meta": "Document meta manipulation, turn name and content into key value pairs.",
     "methods": "Return a sorted list of the names of every method in an object.",
     "min": "Get minimum value of given numbers.",
     "mkdir": "Recursively create directories.",
