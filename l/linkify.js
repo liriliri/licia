@@ -9,10 +9,10 @@
  * ```javascript
  * var str = 'Official site: http://eustia.liriliri.io'
  * linkify(str); // -> 'Official site: <a href="http://eustia.liriliri.io">http://eustia.liriliri.io</a>'
- * expect(linkify(str, function (url) 
+ * linkify(str, function (url) 
  * {
  *     return '<a href="' + url + '" target="_blank">' + url + '</a>';
- * }))
+ * });
  * ```
  */
 
