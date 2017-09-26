@@ -73,6 +73,7 @@
     "extendDeep": "Recursive object extending.",
     "extendOwn": "Like extend, but only copies own properties over to the destination object.",
     "extractBlockCmts": "Extract block comments from source code.",
+    "extractUrls": "Extract urls from plain text.",
     "fetch": "Turn XMLHttpRequest into promise like.",
     "fileSize": "Turn bytes into human readable file size.",
     "filter": "Iterates over elements of collection, returning an array of all the values that pass a truth test.",

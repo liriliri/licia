@@ -46,6 +46,7 @@
         "extendDeep",
         "extendOwn",
         "extractBlockCmts",
+        "extractUrls",
         "fileSize",
         "filter",
         "findKey",

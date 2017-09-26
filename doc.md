@@ -1860,6 +1860,20 @@ Extract block comments from source code.
 extractBlockCmts('\/*eris*\/'); // -> ['eris']
 ```
 
+## extractUrls 
+
+Extract urls from plain text.
+
+|Name  |Type  |Desc           |
+|------|------|---------------|
+|str   |string|Text to extract|
+|return|array |Url list       |
+
+```javascript
+var str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
+extractUrl(str); // -> ['http://eustia.liriliri.io']
+```
+
 ## fetch 
 
 Turn XMLHttpRequest into promise like.
