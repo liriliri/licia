@@ -94,6 +94,7 @@
         "keyCode",
         "keys",
         "last",
+        "linkify",
         "Logger",
         "longest",
         "lpad",

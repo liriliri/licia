@@ -2611,6 +2611,21 @@ Get the last element of array.
 last([1, 2]); // -> 2
 ```
 
+## linkify 
+
+Hyperlink urls in a string.
+
+|Name       |Type    |Desc                     |
+|-----------|--------|-------------------------|
+|str        |string  |String to hyperlink      |
+|[hyperlink]|function|Function to hyperlink url|
+|return     |string  |Result string            |
+
+```javascript
+var str = 'Official site: http://eustia.liriliri.io'
+linkify(str); // -> 'Official site: <a href="http://eustia.liriliri.io">http://eustia.liriliri.io</a>'
+```
+
 ## loadJs 
 
 Inject script tag into page with given src value.
