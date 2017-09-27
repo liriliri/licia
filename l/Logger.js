@@ -55,8 +55,8 @@ exports = Emitter.extend({
     initialize: function Logger(name, level) 
     {
         this.name = name;
-        this._level = isUndef(level) ? exports.level.DEBUG : level;
-
+        
+        this.setLevel(isUndef(level) ? exports.level.DEBUG : level);
         this.callSuper(Emitter, 'initialize', arguments);
     },
     setLevel: function (level) 
