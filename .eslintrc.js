@@ -18,6 +18,9 @@ var exports = {
         ],
         'no-unused-vars': [
             'off'
+        ],
+        'no-useless-escape': [
+            'off'
         ]
     }
 };
