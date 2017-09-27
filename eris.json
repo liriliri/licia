@@ -38,6 +38,7 @@
     "bind": "Create a function bound to a given object.",
     "camelCase": "Convert string to \"camelCase\".",
     "capitalize": "Convert the first character to upper case and the remaining to lower case.",
+    "castPath": "Cast value into a property path array.",
     "chunk": "Split array into groups the length of given size.",
     "clamp": "Clamp number within the inclusive lower and upper bounds.",
     "className": "Utility for conditionally joining class names.",

@@ -1249,6 +1249,23 @@ Convert the first character to upper case and the remaining to lower case.
 capitalize('rED'); // -> Red
 ```
 
+## castPath 
+
+Cast value into a property path array.
+
+|Name  |Type  |Desc               |
+|------|------|-------------------|
+|str   |*     |Value to inspect   |
+|[obj] |object|Object to query    |
+|return|array |Property path array|
+
+```javascript
+castPath('a.b.c'); // -> ['a', 'b', 'c']
+castPath(['a']); // -> ['a']
+castPath('a[0].b'); // -> ['a', '0', 'b']
+castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
+```
+
 ## chunk 
 
 Split array into groups the length of given size.

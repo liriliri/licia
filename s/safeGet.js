@@ -14,11 +14,11 @@
  * ```
  */
 
-_('isStr isUndef');
+_('isUndef castPath');
 
 function exports(obj, path)
 {
-    if (isStr(path)) path = path.split('.');
+    path = castPath(path, obj);
 
     var prop;
 

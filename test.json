@@ -10,6 +10,7 @@
         "bind",
         "camelCase",
         "capitalize",
+        "castPath",
         "clamp",
         "Class",
         "className",

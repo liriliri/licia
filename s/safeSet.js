@@ -16,11 +16,11 @@
  * ```
  */
 
-_('isStr');
+_('castPath');
 
 function exports(obj, path, val)
 {
-    if (isStr(path)) path = path.split('.');
+    path = castPath(path, obj);
 
     var lastProp = path.pop(),
         prop;
