@@ -4,6 +4,12 @@
  * |------|-------|-------------------------------------|
  * |value |*      |Value to check                       |
  * |return|boolean|True if value is correctly classified|
+ * 
+ * ```javascript
+ * isNum(5); // -> true
+ * isNum(5.1); // -> true
+ * isNum({}); // -> false
+ * ```
  */
 
 _('objToStr');

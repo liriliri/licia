@@ -6,7 +6,7 @@
     "eris": "./bin/eris.js"
   },
   "scripts": {
-    "ci": "npm run lint && npm test",
+    "ci": "npm run lint && npm test && npm run update",
     "update": "eris list && eris doc",
     "pack": "eris pack",
     "lint": "eslint $ [a-z]",
