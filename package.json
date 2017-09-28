@@ -12,6 +12,7 @@
     "lint": "eslint $ [a-z]",
     "serve": "nws -p 3000 -d testHtml",
     "test": "npm run test:node && npm run test:browser",
+    "demo": "eris test -ah",
     "cov": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "test:node": "eris test -as && mocha",
     "test:browser": "eris test -kas && karma start",
