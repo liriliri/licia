@@ -121,6 +121,7 @@
     "isStr": "Check if value is a string primitive.",
     "isTypedArr": "Check if value is a typed array.",
     "isUndef": "Check if value is undefined.",
+    "isUrl": "Loosely validate an url.",
     "kebabCase": "Convert string to \"kebabCase\".",
     "keyCode": "Key codes and key names conversion.",
     "keys": "Create an array of the own enumerable property names of object.",

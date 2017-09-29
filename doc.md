@@ -2281,7 +2281,7 @@ Loosely validate an email address.
 
 |Name  |Type   |Desc                                 |
 |------|-------|-------------------------------------|
-|val   |*      |Value to check                       |
+|val   |string |Value to check                       |
 |return|boolean|True if value is an email like string|
 
 ```javascript
@@ -2573,6 +2573,19 @@ Check if value is undefined.
 ```javascript
 isUndef(void 0); // -> true
 isUndef(null); // -> false
+```
+
+## isUrl 
+
+Loosely validate an url.
+
+|Name  |Type   |Desc                               |
+|------|-------|-----------------------------------|
+|val   |string |Value to check                     |
+|return|boolean|True if value is an url like string|
+
+```javascript
+isUrl('http://www.example.com?foo=bar&param=test'); // -> true
 ```
 
 ## kebabCase 

@@ -2,7 +2,7 @@
  *
  * |Name  |Type   |Desc                                 |
  * |------|-------|-------------------------------------|
- * |val   |*      |Value to check                       |
+ * |val   |string |Value to check                       |
  * |return|boolean|True if value is an email like string|
  *
  * ```javascript
@@ -10,11 +10,9 @@
  * ```
  */
 
-_('isStr');
-
-var regEmail = /.+@.+\..+/;
-
 function exports(val)
 {
-    return isStr(val) && regEmail.test(val);
+    return regEmail.test(val);
 }
+
+var regEmail = /.+@.+\..+/;

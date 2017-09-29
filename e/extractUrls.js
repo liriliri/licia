@@ -23,4 +23,4 @@ function exports(str)
     }));
 }
 
-var regUrl = /https?:\/\/[\w.]+[^ \f\n\r\t\v"\\<>[\]\u2100-\uFFFF()]*/ig;
+var regUrl = /((https?)|(ftp)):\/\/[\w.]+[^ \f\n\r\t\v"\\<>[\]\u2100-\uFFFF(),]*/ig;
