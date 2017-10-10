@@ -56,6 +56,7 @@
     "debounce": "Return a new debounced version of the passed function.",
     "defaults": "Fill in undefined properties in object with the first value present in the following list of defaults objects.",
     "define": "Define a module, should be used along with use.",
+    "defineProp": "Shortcut for Object.defineProperty(defineProperties).",
     "delay": "Invoke function after certain milliseconds.",
     "delegate": "Event delegation.",
     "detectBrowser": "Detect browser info using ua.",

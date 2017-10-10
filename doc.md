@@ -1587,6 +1587,62 @@ define('B', ['A'], function (A)
 });
 ```
 
+## defineProp 
+
+Shortcut for Object.defineProperty(defineProperties).
+
+|Name      |Type  |Desc               |
+|----------|------|-------------------|
+|obj       |object|Object to define   |
+|prop      |string|Property path      |
+|descriptor|object|Property descriptor|
+|return    |object|Object itself      |
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|obj   |object|Object to define    |
+|prop  |object|Property descriptors|
+|return|object|Object itself       |
+
+```javascript
+var obj = {b: {c: 3}, d: 4, e: 5};
+defineProp(obj, 'a', {
+    get: function ()
+    {
+        return this.e * 2;
+    }
+});
+console.log(obj.a); // -> 10
+defineProp(obj, 'b.c', {
+    set: (function (val)
+    {
+        // this is pointed to obj.b
+        this.e = val;
+    }).bind(obj)
+});
+obj.b.c = 2;
+console.log(obj.a); // -> 4;
+
+obj = {a: 1, b: 2, c: 3};
+defineProp(obj, {
+    a: {
+        get: function ()
+        {
+            return this.c;
+        }
+    },
+    b: {
+        set: function (val)
+        {
+            this.c = val / 2;
+        }
+    }
+});
+console.log(obj.a); // -> 3
+obj.b = 4;
+console.log(obj.a); // -> 2
+```
+
 ## delay 
 
 Invoke function after certain milliseconds.

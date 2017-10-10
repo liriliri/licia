@@ -28,6 +28,7 @@
         "debounce",
         "defaults",
         "define",
+        "defineProp",
         "delay",
         "detectBrowser",
         "detectOs",
