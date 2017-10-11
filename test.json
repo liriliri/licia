@@ -156,6 +156,7 @@
         "Stack",
         "startWith",
         "State",
+        "stringify",
         "stripCmt",
         "stripColor",
         "stripHtmlTag",

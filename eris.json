@@ -189,6 +189,7 @@
     "splitCase": "Split different string case to an array.",
     "splitPath": "Split path into device, dir, name and ext.",
     "startWith": "Check if string starts with the given target string.",
+    "stringify": "JSON stringify with support for circular object, function etc.",
     "stripAnsi": "Strip ansi codes from a string.",
     "stripCmt": "Strip comments from source code.",
     "stripColor": "Strip ansi color codes from a string.",

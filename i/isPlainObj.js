@@ -12,9 +12,15 @@
  * ```
  */
 
-_('isObj isArr isFn');
+_('isObj isArr isFn has');
 
 function exports(val)
 {
-    return isObj(val) && !isArr(val) && !isFn(val);
+    if (!isObj(val)) return false;
+
+    var ctor = val.constructor;
+    if (!isFn(ctor)) return false;
+    if (!has(ctor.prototype, 'isPrototypeOf')) return false;
+
+    return !isArr(val) && !isFn(val);
 }
