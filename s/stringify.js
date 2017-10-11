@@ -16,7 +16,7 @@
  * ```
  */
 
-_('isPrimitive isPlainObj type upperFirst toStr isUndef');
+_('type upperFirst toStr isUndef isFn isRegExp');
 
 function exports(obj, spaces) 
 {
@@ -58,7 +58,7 @@ function serializer()
             stack.push(val);
         }
 
-        if (!isPrimitive(val) && !isPlainObj(val)) 
+        if (isRegExp(val) || isFn(val)) 
         {
             val = '[' + upperFirst(type(val)) + ' ' + toStr(val) + ']';
         } else if (isUndef(val)) 
