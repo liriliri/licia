@@ -35,6 +35,8 @@ function exports(text, cb)
 
     body.appendChild(el);
 
+    // Prevent showing ios keyboard.
+    el.setAttribute('readonly', '');
     el.select();
     el.setSelectionRange(0, text.length);
 
