@@ -1,0 +1,15 @@
+<require>copy $</require>
+
+<template id="bodyTpl">
+    <input type="text" value="http://eustia.liriliri.io/"/>
+    <button>Copy</button>
+</template>
+
+<script>
+$('body').html(bodyTpl);
+
+$('button').on('click', function () 
+{
+    copy($('input').val());
+});
+</script>

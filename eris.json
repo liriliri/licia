@@ -50,6 +50,7 @@
     "contain": "Check if the value is present in the list.",
     "convertBase": "Convert base of a number.",
     "cookie": "Simple api for handling browser cookies.",
+    "copy": "Copy text to clipboard using document.execCommand.",
     "createAssigner": "Used to create extend, extendOwn and defaults.",
     "curry": "Function currying.",
     "dateFormat": "Simple but extremely useful date format function.",

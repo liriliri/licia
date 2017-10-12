@@ -1464,6 +1464,22 @@ cookie.get('a'); // -> '1'
 cookie.remove('a');
 ```
 
+## copy 
+
+Copy text to clipboard using document.execCommand.
+
+|Name|Type    |Desc             |
+|----|--------|-----------------|
+|text|string  |Text to copy     |
+|[cb]|function|Optional callback|
+
+```javascript
+copy('text', function (err)
+{
+    // Handle errors.
+});
+```
+
 ## createAssigner 
 
 Used to create extend, extendOwn and defaults.
