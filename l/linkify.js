@@ -16,6 +16,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('extractUrls each escapeRegExp');
 
 function exports(str, hyperlink) 

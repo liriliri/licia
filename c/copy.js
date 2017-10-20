@@ -13,6 +13,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('extend noop');
 
 function exports(text, cb) 

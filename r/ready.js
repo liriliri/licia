@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 var fns = [],
     listener,
     doc = document,

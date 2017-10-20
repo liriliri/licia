@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('isStr toArr Select');
 
 function exports(val)

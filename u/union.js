@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('restArgs unique flatten');
 
 exports = restArgs(function (arrays)

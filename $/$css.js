@@ -31,6 +31,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('isStr isObj camelCase kebabCase isUndef contain isNum $safeEls startWith');
 
 function exports(nodes, name, val)

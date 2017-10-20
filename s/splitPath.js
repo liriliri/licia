@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(path) 
 {
     var match = path.match(regSplit);

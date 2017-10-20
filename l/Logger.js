@@ -49,6 +49,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Emitter Enum toArr isUndef clone isStr isNum');
 
 exports = Emitter.extend({

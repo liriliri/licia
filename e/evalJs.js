@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('root');
 
 function exports(js, ctx) 

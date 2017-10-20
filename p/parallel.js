@@ -22,6 +22,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('noop each nextTick');
 
 function exports(tasks, cb)

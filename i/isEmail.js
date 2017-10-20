@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(val)
 {
     return regEmail.test(val);

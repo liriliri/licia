@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(fn, wait, immediate)
 {
     var timeout;

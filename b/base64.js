@@ -27,6 +27,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 exports = {
     encode: function (arr)
     {

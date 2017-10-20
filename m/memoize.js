@@ -14,6 +14,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('has');
 
 function exports(fn, hashFn)

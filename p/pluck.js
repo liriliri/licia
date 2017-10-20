@@ -16,6 +16,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('map property');
 
 function exports(obj, key)

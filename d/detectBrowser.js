@@ -16,6 +16,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isBrowser toInt keys');
 
 function exports(ua) 

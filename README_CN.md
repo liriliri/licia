@@ -62,7 +62,6 @@ console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 * 编写模块代码，使用文档（顶部块注释，Markdown格式）和单元测试。
 * `eris test <module-name>`生成测试文件（如果模块只能跑在浏览器端，使用`-k`选项）， 接着输入`mocha test/<module-name>`或者`karma start`执行测试。
 * `npm run cov`检查测试覆盖率，需要安装istanbul。
-* 将模块名添加到**test.json**中相应部分以进行持续集成。
-* 输入`npm run update`命令更新**eris.json**和**doc.md**文件。
+* 输入`npm run update`命令更新**index.json**和**doc.md**文件。
 
 做完这一切就可以发起pull request了:)

@@ -13,6 +13,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isNum');
 
 function exports(val)

@@ -13,6 +13,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(val)
 {
     var type = typeof val;

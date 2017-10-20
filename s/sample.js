@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isArrLike clone values random');
 
 function exports(obj, n)

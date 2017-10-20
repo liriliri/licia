@@ -14,6 +14,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isNum has isFn');
 
 var MAX_ARR_IDX = Math.pow(2, 53) - 1;

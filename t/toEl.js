@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 var doc = document;
 
 exports = function (str)

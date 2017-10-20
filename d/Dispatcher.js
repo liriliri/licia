@@ -19,6 +19,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Class uniqId');
 
 exports = Class({

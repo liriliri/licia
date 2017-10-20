@@ -16,6 +16,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isUndef');
 
 function exports(n, lower, upper)

@@ -65,7 +65,6 @@ about how to write an eustia module.
 * Write the source code along with the documentaion and test. (documentation is the first block comment written in markdown)
 * `eris test <module-name>` to generate the test files(use `-k` if test should run in a browser), then run `mocha test/<module-name>` or `karma start` for testing.
 * `npm run cov` for checking the test coverage. (istanbul is required)
-* Add the module name to **test.json** so that travis-ci can test it automatically.
-* Update **eris.json** and **doc.md** by running `npm run update`.
+* Update **index.json** and **doc.md** by running `npm run update`.
 
 Now it's time to submit a pull request:)

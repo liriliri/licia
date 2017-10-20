@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: node
+ * test: node
+ */
+
 _('isFn');
 
 function exports(val)

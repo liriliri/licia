@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(start, end, step)
 {
     if (end == null)

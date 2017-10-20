@@ -16,6 +16,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('castPath');
 
 function exports(obj, path, val)

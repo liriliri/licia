@@ -25,6 +25,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('trim each isUndef isArr map isEmpty filter isObj');
 
 exports = {

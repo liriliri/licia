@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isObj isArr extend');
 
 function exports(obj)

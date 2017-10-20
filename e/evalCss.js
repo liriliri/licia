@@ -9,6 +9,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 function exports(css)
 {
     var style = document.createElement('style');

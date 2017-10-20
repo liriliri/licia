@@ -1,6 +1,11 @@
 /* Used for function context binding.
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isUndef');
 
 function exports(fn, ctx, argCount)

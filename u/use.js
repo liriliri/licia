@@ -17,6 +17,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('map define has toArr');
 
 function exports(requires, method)

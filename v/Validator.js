@@ -47,6 +47,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Class keys safeGet isFn isUndef isNum isStr isBool');
 
 exports = Class({

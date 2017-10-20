@@ -17,6 +17,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('safeCb');
 
 function exports(arr, predicate, ctx)

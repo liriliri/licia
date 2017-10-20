@@ -41,6 +41,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Emitter each isArr some slice toArr');
 
 exports = Emitter.extend({

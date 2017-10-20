@@ -25,7 +25,7 @@ global.options = options;
 
 var cmd = remain[0];
 
-var LEGAL_COMMANDS = ['test', 'pack', 'list', 'doc', 'benchmark', 'help'];
+var LEGAL_COMMANDS = ['test', 'pack', 'update', 'benchmark', 'help'];
 
 if (!util.contain(LEGAL_COMMANDS, cmd))
 {

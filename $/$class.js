@@ -48,6 +48,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('toArr some $safeEls isStr');
 
 exports = {

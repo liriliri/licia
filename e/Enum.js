@@ -22,6 +22,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Class freeze isArr each keys');
 
 exports = Class({

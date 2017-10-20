@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 var ObjToStr = Object.prototype.toString;
 
 function exports(val)

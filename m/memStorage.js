@@ -8,6 +8,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('keys');
 
 exports = {

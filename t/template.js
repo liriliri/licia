@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('escape');
 
 /* eslint-disable quotes */

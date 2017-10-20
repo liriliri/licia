@@ -51,6 +51,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Emitter State easing now each raf isFn');
 
 exports = Emitter.extend({

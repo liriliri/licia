@@ -20,6 +20,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isStr invert');
 
 function exports(val)

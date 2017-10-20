@@ -15,6 +15,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('repeat toStr');
 
 function exports(str, len, chars)

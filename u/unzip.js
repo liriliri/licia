@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('map pluck max');
 
 function exports(arr)

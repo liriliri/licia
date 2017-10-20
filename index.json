@@ -1,0 +1,1109 @@
+{
+    "$": {
+        "description": "jQuery like style dom manipulator.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$attr": {
+        "description": "Element attribute manipulation.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$class": {
+        "description": "Element class manipulations.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$css": {
+        "description": "Element css manipulation.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$data": {
+        "description": "Wrapper of $attr, adds data- prefix to keys.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$event": {
+        "description": "bind events to certain dom elements.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$insert": {
+        "description": "Insert html on different position.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$offset": {
+        "description": "Get the position of the element in document.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$property": {
+        "description": "Element property html, text, val getter and setter.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$remove": {
+        "description": "Remove the set of matched elements from the DOM.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$safeEls": {
+        "description": "Convert value into an array, if it's a string, do querySelector.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "$show": {
+        "description": "Show elements.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "Class": {
+        "description": "Create JavaScript class.",
+        "env": "all",
+        "test": "all",
+        "demo": true
+    },
+    "Color": {
+        "description": "Color converter.",
+        "env": "all",
+        "test": "all"
+    },
+    "Dispatcher": {
+        "description": "Flux dispatcher.",
+        "env": "all",
+        "test": "all"
+    },
+    "Emitter": {
+        "description": "Event emitter class which provides observer pattern.",
+        "env": "all",
+        "test": "all"
+    },
+    "Enum": {
+        "description": "Enum type implementation.",
+        "env": "all",
+        "test": "all"
+    },
+    "JsonTransformer": {
+        "description": "Json to json transformer.",
+        "env": "all",
+        "test": "all"
+    },
+    "Logger": {
+        "description": "Simple logger with level filter.",
+        "env": "all",
+        "test": "all",
+        "demo": true
+    },
+    "Promise": {
+        "description": "Lightweight Promise implementation.",
+        "env": "all",
+        "test": "manual",
+        "demo": true
+    },
+    "Queue": {
+        "description": "Queue data structure.",
+        "env": "all",
+        "test": "all"
+    },
+    "ReduceStore": {
+        "description": "Simplified redux like state container.",
+        "env": "all",
+        "test": "all"
+    },
+    "Select": {
+        "description": "Simple wrapper of querySelectorAll to make dom selection easier.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "Stack": {
+        "description": "Stack data structure.",
+        "env": "all",
+        "test": "all"
+    },
+    "State": {
+        "description": "Simple state machine.",
+        "env": "all",
+        "test": "all"
+    },
+    "Tween": {
+        "description": "Tween engine for JavaScript animations.",
+        "env": "all",
+        "test": "all",
+        "demo": true
+    },
+    "Url": {
+        "description": "Simple url manipulator.",
+        "env": "all",
+        "test": "all"
+    },
+    "Validator": {
+        "description": "Object values validation.",
+        "env": "all",
+        "test": "all"
+    },
+    "abbrev": {
+        "description": "Calculate the set of unique abbreviations for a given set of strings.",
+        "env": "all",
+        "test": "all"
+    },
+    "after": {
+        "description": "Create a function that invokes once it's called n or more times.",
+        "env": "all",
+        "test": "all"
+    },
+    "ajax": {
+        "description": "Perform an asynchronous HTTP request.",
+        "env": "browser",
+        "test": "manual"
+    },
+    "allKeys": {
+        "description": "Retrieve all the names of object's own and inherited properties.",
+        "env": "all",
+        "test": "all"
+    },
+    "arrToMap": {
+        "description": "Make an object map using array of strings.",
+        "env": "all",
+        "test": "all"
+    },
+    "average": {
+        "description": "Get average value of given numbers.",
+        "env": "all",
+        "test": "all"
+    },
+    "base64": {
+        "description": "Basic base64 encoding and decoding.",
+        "env": "all",
+        "test": "all"
+    },
+    "before": {
+        "description": "Create a function that invokes less than n times.",
+        "env": "all",
+        "test": "all"
+    },
+    "bind": {
+        "description": "Create a function bound to a given object.",
+        "env": "all",
+        "test": "all"
+    },
+    "camelCase": {
+        "description": "Convert string to \"camelCase\".",
+        "env": "all",
+        "test": "all"
+    },
+    "capitalize": {
+        "description": "Convert the first character to upper case and the remaining to lower case.",
+        "env": "all",
+        "test": "all"
+    },
+    "castPath": {
+        "description": "Cast value into a property path array.",
+        "env": "all",
+        "test": "all"
+    },
+    "chunk": {
+        "description": "Split array into groups the length of given size.",
+        "env": "all",
+        "test": "all"
+    },
+    "clamp": {
+        "description": "Clamp number within the inclusive lower and upper bounds.",
+        "env": "all",
+        "test": "all"
+    },
+    "className": {
+        "description": "Utility for conditionally joining class names.",
+        "env": "all",
+        "test": "all"
+    },
+    "clone": {
+        "description": "Create a shallow-copied clone of the provided plain object.",
+        "env": "all",
+        "test": "all"
+    },
+    "cloneDeep": {
+        "description": "Recursively clone value.",
+        "env": "all",
+        "test": "all"
+    },
+    "cmpVersion": {
+        "description": "Compare version strings.",
+        "env": "all",
+        "test": "all"
+    },
+    "compact": {
+        "description": "Return a copy of the array with all falsy values removed.",
+        "env": "all",
+        "test": "all"
+    },
+    "concat": {
+        "description": "Concat multiple arrays into a single array.",
+        "env": "all",
+        "test": "all"
+    },
+    "contain": {
+        "description": "Check if the value is present in the list.",
+        "env": "all",
+        "test": "all"
+    },
+    "convertBase": {
+        "description": "Convert base of a number.",
+        "env": "all",
+        "test": "all"
+    },
+    "cookie": {
+        "description": "Simple api for handling browser cookies.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "copy": {
+        "description": "Copy text to clipboard using document.execCommand.",
+        "env": "browser",
+        "test": "browser",
+        "demo": true
+    },
+    "createAssigner": {
+        "description": "Used to create extend, extendOwn and defaults.",
+        "env": "all",
+        "test": "all"
+    },
+    "curry": {
+        "description": "Function currying.",
+        "env": "all",
+        "test": "all"
+    },
+    "dateFormat": {
+        "description": "Simple but extremely useful date format function.",
+        "env": "all",
+        "test": "all"
+    },
+    "debounce": {
+        "description": "Return a new debounced version of the passed function.",
+        "env": "all",
+        "test": "all"
+    },
+    "defaults": {
+        "description": "Fill in undefined properties in object with the first value present in the following list of defaults objects.",
+        "env": "all",
+        "test": "all"
+    },
+    "define": {
+        "description": "Define a module, should be used along with use.",
+        "env": "all",
+        "test": "all"
+    },
+    "defineProp": {
+        "description": "Shortcut for Object.defineProperty(defineProperties).",
+        "env": "all",
+        "test": "all"
+    },
+    "delay": {
+        "description": "Invoke function after certain milliseconds.",
+        "env": "all",
+        "test": "all"
+    },
+    "delegate": {
+        "description": "Event delegation.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "detectBrowser": {
+        "description": "Detect browser info using ua.",
+        "env": "all",
+        "test": "all"
+    },
+    "detectOs": {
+        "description": "Detect operating system using ua.",
+        "env": "all",
+        "test": "all"
+    },
+    "difference": {
+        "description": "Create an array of unique array values not included in the other given array.",
+        "env": "all",
+        "test": "all"
+    },
+    "dotCase": {
+        "description": "Convert string to \"dotCase\".",
+        "env": "all",
+        "test": "all"
+    },
+    "each": {
+        "description": "Iterates over elements of collection and invokes iteratee for each element.",
+        "env": "all",
+        "test": "all"
+    },
+    "easing": {
+        "description": "Easing functions adapted from http://jqueryui.com/",
+        "env": "all",
+        "test": "all"
+    },
+    "endWith": {
+        "description": "Check if string ends with the given target string.",
+        "env": "all",
+        "test": "all"
+    },
+    "escape": {
+        "description": "Escapes a string for insertion into HTML, replacing &, <, >, \", `, and ' characters.",
+        "env": "all",
+        "test": "all"
+    },
+    "escapeRegExp": {
+        "description": "Escape special chars to be used as literals in RegExp constructors.",
+        "env": "all",
+        "test": "all"
+    },
+    "evalCss": {
+        "description": "Load css into page.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "evalJs": {
+        "description": "Execute js in given context.",
+        "env": "all",
+        "test": "all"
+    },
+    "every": {
+        "description": "Check if predicate return truthy for all elements.",
+        "env": "all",
+        "test": "all"
+    },
+    "extend": {
+        "description": "Copy all of the properties in the source objects over to the destination object.",
+        "env": "all",
+        "test": "all"
+    },
+    "extendDeep": {
+        "description": "Recursive object extending.",
+        "env": "all",
+        "test": "all"
+    },
+    "extendOwn": {
+        "description": "Like extend, but only copies own properties over to the destination object.",
+        "env": "all",
+        "test": "all"
+    },
+    "extractBlockCmts": {
+        "description": "Extract block comments from source code.",
+        "env": "all",
+        "test": "all"
+    },
+    "extractUrls": {
+        "description": "Extract urls from plain text.",
+        "env": "all",
+        "test": "all"
+    },
+    "fetch": {
+        "description": "Turn XMLHttpRequest into promise like.",
+        "env": "browser",
+        "test": "manual"
+    },
+    "fileSize": {
+        "description": "Turn bytes into human readable file size.",
+        "env": "all",
+        "test": "all"
+    },
+    "filter": {
+        "description": "Iterates over elements of collection, returning an array of all the values that pass a truth test.",
+        "env": "all",
+        "test": "all"
+    },
+    "findKey": {
+        "description": "Return the key where the predicate truth test passes or undefined.",
+        "env": "all",
+        "test": "all"
+    },
+    "flatten": {
+        "description": "Recursively flatten an array.",
+        "env": "all",
+        "test": "all"
+    },
+    "format": {
+        "description": "Format string in a printf-like format.",
+        "env": "all",
+        "test": "all"
+    },
+    "freeze": {
+        "description": "Shortcut for Object.freeze.",
+        "env": "all",
+        "test": "all"
+    },
+    "freezeDeep": {
+        "description": "Recursively use Object.freeze.",
+        "env": "all",
+        "test": "all"
+    },
+    "has": {
+        "description": "Checks if key is a direct property.",
+        "env": "all",
+        "test": "all"
+    },
+    "hslToRgb": {
+        "description": "Convert hsl to rgb.",
+        "env": "all",
+        "test": "all"
+    },
+    "identity": {
+        "description": "Return the first argument given.",
+        "env": "all",
+        "test": "all"
+    },
+    "idxOf": {
+        "description": "Get the index at which the first occurrence of value.",
+        "env": "all",
+        "test": "all"
+    },
+    "indent": {
+        "description": "Indent each line in a string.",
+        "env": "all",
+        "test": "all"
+    },
+    "inherits": {
+        "description": "Inherit the prototype methods from one constructor into another.",
+        "env": "all",
+        "test": "all"
+    },
+    "intersect": {
+        "description": "Compute the list of values that are the intersection of all the arrays.",
+        "env": "all",
+        "test": "all"
+    },
+    "invert": {
+        "description": "Create an object composed of the inverted keys and values of object.",
+        "env": "all",
+        "test": "all"
+    },
+    "isArgs": {
+        "description": "Check if value is classified as an arguments object.",
+        "env": "all",
+        "test": "all"
+    },
+    "isArr": {
+        "description": "Check if value is an `Array` object.",
+        "env": "all",
+        "test": "all"
+    },
+    "isArrLike": {
+        "description": "Check if value is array-like.",
+        "env": "all",
+        "test": "all"
+    },
+    "isBool": {
+        "description": "Check if value is a boolean primitive.",
+        "env": "all",
+        "test": "all"
+    },
+    "isBrowser": {
+        "description": "Check if running in a browser.",
+        "env": "all",
+        "test": "all"
+    },
+    "isBuffer": {
+        "description": "Check if value is a buffer.",
+        "env": "node",
+        "test": "node"
+    },
+    "isDate": {
+        "description": "Check if value is classified as a Date object.",
+        "env": "all",
+        "test": "all"
+    },
+    "isEl": {
+        "description": "Check if value is a DOM element.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "isEmail": {
+        "description": "Loosely validate an email address.",
+        "env": "all",
+        "test": "all"
+    },
+    "isEmpty": {
+        "description": "Check if value is an empty object or array.",
+        "env": "all",
+        "test": "all"
+    },
+    "isEqual": {
+        "description": "Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.",
+        "env": "all",
+        "test": "all"
+    },
+    "isErr": {
+        "description": "Check if value is an error.",
+        "env": "all",
+        "test": "all"
+    },
+    "isFinite": {
+        "description": "Check if value is a finite primitive number.",
+        "env": "all",
+        "test": "all"
+    },
+    "isFn": {
+        "description": "Check if value is a function.",
+        "env": "all",
+        "test": "all"
+    },
+    "isInt": {
+        "description": "Checks if value is classified as a Integer.",
+        "env": "all",
+        "test": "all"
+    },
+    "isMatch": {
+        "description": "Check if keys and values in src are contained in obj.",
+        "env": "all",
+        "test": "all"
+    },
+    "isMobile": {
+        "description": "Check whether client is using a mobile browser using ua.",
+        "env": "all",
+        "test": "all"
+    },
+    "isNaN": {
+        "description": "Check if value is an NaN.",
+        "env": "all",
+        "test": "all"
+    },
+    "isNode": {
+        "description": "Check if running in node.",
+        "env": "all",
+        "test": "all"
+    },
+    "isNull": {
+        "description": "Check if value is an Null.",
+        "env": "all",
+        "test": "all"
+    },
+    "isNum": {
+        "description": "Checks if value is classified as a Number primitive or object.",
+        "env": "all",
+        "test": "all"
+    },
+    "isObj": {
+        "description": "Check if value is the language type of Object.",
+        "env": "all",
+        "test": "all"
+    },
+    "isPlainObj": {
+        "description": "Check if value is an object created by Object constructor.",
+        "env": "all",
+        "test": "all"
+    },
+    "isPrimitive": {
+        "description": "Check if value is string, number, boolean or null.",
+        "env": "all",
+        "test": "all"
+    },
+    "isRegExp": {
+        "description": "Check if value is a regular expression.",
+        "env": "all",
+        "test": "all"
+    },
+    "isRelative": {
+        "description": "Check if path appears to be relative.",
+        "env": "all",
+        "test": "all"
+    },
+    "isRetina": {
+        "description": "Determine if running on a high DPR device or not.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "isStr": {
+        "description": "Check if value is a string primitive.",
+        "env": "all",
+        "test": "all"
+    },
+    "isTypedArr": {
+        "description": "Check if value is a typed array.",
+        "env": "all",
+        "test": "all"
+    },
+    "isUndef": {
+        "description": "Check if value is undefined.",
+        "env": "all",
+        "test": "all"
+    },
+    "isUrl": {
+        "description": "Loosely validate an url.",
+        "env": "all",
+        "test": "all"
+    },
+    "kebabCase": {
+        "description": "Convert string to \"kebabCase\".",
+        "env": "all",
+        "test": "all"
+    },
+    "keyCode": {
+        "description": "Key codes and key names conversion.",
+        "env": "all",
+        "test": "all"
+    },
+    "keys": {
+        "description": "Create an array of the own enumerable property names of object.",
+        "env": "all",
+        "test": "all"
+    },
+    "last": {
+        "description": "Get the last element of array.",
+        "env": "all",
+        "test": "all"
+    },
+    "linkify": {
+        "description": "Hyperlink urls in a string.",
+        "env": "all",
+        "test": "all"
+    },
+    "loadJs": {
+        "description": "Inject script tag into page with given src value.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "longest": {
+        "description": "Get the longest item in an array.",
+        "env": "all",
+        "test": "all"
+    },
+    "lpad": {
+        "description": "Pad string on the left side if it's shorter than length.",
+        "env": "all",
+        "test": "all"
+    },
+    "ltrim": {
+        "description": "Remove chars or white-spaces from beginning of string.",
+        "env": "all",
+        "test": "all"
+    },
+    "map": {
+        "description": "Create an array of values by running each element in collection through iteratee.",
+        "env": "all",
+        "test": "all"
+    },
+    "mapObj": {
+        "description": "Map for objects.",
+        "env": "all",
+        "test": "all"
+    },
+    "matcher": {
+        "description": "Return a predicate function that checks if attrs are contained in an object.",
+        "env": "all",
+        "test": "all"
+    },
+    "max": {
+        "description": "Get maximum value of given numbers.",
+        "env": "all",
+        "test": "all"
+    },
+    "memStorage": {
+        "description": "Memory-backed implementation of the Web Storage API.",
+        "env": "all",
+        "test": "all"
+    },
+    "memoize": {
+        "description": "Memoize a given function by caching the computed result.",
+        "env": "all",
+        "test": "all"
+    },
+    "meta": {
+        "description": "Document meta manipulation, turn name and content into key value pairs.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "methods": {
+        "description": "Return a sorted list of the names of every method in an object.",
+        "env": "all",
+        "test": "all"
+    },
+    "min": {
+        "description": "Get minimum value of given numbers.",
+        "env": "all",
+        "test": "all"
+    },
+    "mkdir": {
+        "description": "Recursively create directories.",
+        "env": "node",
+        "test": "node"
+    },
+    "ms": {
+        "description": "Convert time string formats to milliseconds.",
+        "env": "all",
+        "test": "all"
+    },
+    "negate": {
+        "description": "Create a function that negates the result of the predicate function.",
+        "env": "all",
+        "test": "all"
+    },
+    "nextTick": {
+        "description": "Next tick for both node and browser.",
+        "env": "all",
+        "test": "all"
+    },
+    "noop": {
+        "description": "A no-operation function.",
+        "env": "all",
+        "test": "all"
+    },
+    "now": {
+        "description": "Gets the number of milliseconds that have elapsed since the Unix epoch.",
+        "env": "all",
+        "test": "all"
+    },
+    "objToStr": {
+        "description": "Alias of Object.prototype.toString.",
+        "env": "all",
+        "test": "all"
+    },
+    "once": {
+        "description": "Create a function that invokes once.",
+        "env": "all",
+        "test": "all"
+    },
+    "optimizeCb": {
+        "description": "Used for function context binding.",
+        "env": "all",
+        "test": "all"
+    },
+    "orientation": {
+        "description": "Screen orientation helper.",
+        "env": "browser",
+        "test": "browser",
+        "demo": true
+    },
+    "pad": {
+        "description": "Pad string on the left and right sides if it's shorter than length.",
+        "env": "all",
+        "test": "all"
+    },
+    "pairs": {
+        "description": "Convert an object into a list of [key, value] pairs.",
+        "env": "all",
+        "test": "all"
+    },
+    "parallel": {
+        "description": "Run an array of functions in parallel.",
+        "env": "all",
+        "test": "all"
+    },
+    "partial": {
+        "description": "Partially apply a function by filling in given arguments.",
+        "env": "all",
+        "test": "all"
+    },
+    "pascalCase": {
+        "description": "Convert string to \"pascalCase\".",
+        "env": "all",
+        "test": "all"
+    },
+    "pick": {
+        "description": "Return a filtered copy of an object.",
+        "env": "all",
+        "test": "all"
+    },
+    "pluck": {
+        "description": "Extract a list of property values.",
+        "env": "all",
+        "test": "all"
+    },
+    "property": {
+        "description": "Return a function that will itself return the key property of any passed-in object.",
+        "env": "all",
+        "test": "all"
+    },
+    "query": {
+        "description": "Parse and stringify url query strings.",
+        "env": "all",
+        "test": "all"
+    },
+    "raf": {
+        "description": "Shortcut for requestAnimationFrame.",
+        "env": "all",
+        "test": "all"
+    },
+    "random": {
+        "description": "Produces a random number between min and max(inclusive).",
+        "env": "all",
+        "test": "all"
+    },
+    "randomBytes": {
+        "description": "Random bytes generator.",
+        "env": "all",
+        "test": "all"
+    },
+    "range": {
+        "description": "Create flexibly-numbered lists of integers.",
+        "env": "all",
+        "test": "all"
+    },
+    "ready": {
+        "description": "Invoke callback when dom is ready, similar to jQuery ready.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "reduce": {
+        "description": "Turn a list of values into a single value.",
+        "env": "all",
+        "test": "all"
+    },
+    "remove": {
+        "description": "Remove all elements from array that predicate returns truthy for and return an array of the removed elements.",
+        "env": "all",
+        "test": "all"
+    },
+    "repeat": {
+        "description": "Repeat string n-times.",
+        "env": "all",
+        "test": "all"
+    },
+    "restArgs": {
+        "description": "This accumulates the arguments passed into an array, after a given index.",
+        "env": "all",
+        "test": "all"
+    },
+    "rgbToHsl": {
+        "description": "Convert rgb to hsl.",
+        "env": "all",
+        "test": "all"
+    },
+    "root": {
+        "description": "Root object reference, `global` in nodeJs, `window` in browser.",
+        "env": "all",
+        "test": "all"
+    },
+    "rpad": {
+        "description": "Pad string on the right side if it's shorter than length.",
+        "env": "all",
+        "test": "all"
+    },
+    "rtrim": {
+        "description": "Remove chars or white-spaces from end of string.",
+        "env": "all",
+        "test": "all"
+    },
+    "safeCb": {
+        "description": "Create callback based on input value.",
+        "env": "all",
+        "test": "all"
+    },
+    "safeDel": {
+        "description": "Delete object property.",
+        "env": "all",
+        "test": "all"
+    },
+    "safeGet": {
+        "description": "Get object property, don't throw undefined error.",
+        "env": "all",
+        "test": "all"
+    },
+    "safeSet": {
+        "description": "Set value at path of object.",
+        "env": "all",
+        "test": "all"
+    },
+    "safeStorage": {
+        "description": "Use storage safely in safari private browsing and older browsers.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "sample": {
+        "description": "Sample random values from a collection.",
+        "env": "all",
+        "test": "all"
+    },
+    "scrollTo": {
+        "description": "Scroll to a target with animation.",
+        "env": "browser",
+        "test": "browser",
+        "demo": true
+    },
+    "shuffle": {
+        "description": "Randomize the order of the elements in a given array.",
+        "env": "all",
+        "test": "all"
+    },
+    "size": {
+        "description": "Get size of object, length of array like object or the number of keys.",
+        "env": "all",
+        "test": "all"
+    },
+    "slice": {
+        "description": "Create slice of source array or array-like object.",
+        "env": "all",
+        "test": "all"
+    },
+    "snakeCase": {
+        "description": "Convert string to \"snakeCase\".",
+        "env": "all",
+        "test": "all"
+    },
+    "some": {
+        "description": "Check if predicate return truthy for any element.",
+        "env": "all",
+        "test": "all"
+    },
+    "spaceCase": {
+        "description": "Convert string to \"spaceCase\".",
+        "env": "all",
+        "test": "all"
+    },
+    "splitCase": {
+        "description": "Split different string case to an array.",
+        "env": "all",
+        "test": "all"
+    },
+    "splitPath": {
+        "description": "Split path into device, dir, name and ext.",
+        "env": "all",
+        "test": "all"
+    },
+    "startWith": {
+        "description": "Check if string starts with the given target string.",
+        "env": "all",
+        "test": "all"
+    },
+    "stringify": {
+        "description": "JSON stringify with support for circular object, function etc.",
+        "env": "all",
+        "test": "all"
+    },
+    "stripAnsi": {
+        "description": "Strip ansi codes from a string.",
+        "env": "all",
+        "test": "all"
+    },
+    "stripCmt": {
+        "description": "Strip comments from source code.",
+        "env": "all",
+        "test": "all"
+    },
+    "stripColor": {
+        "description": "Strip ansi color codes from a string.",
+        "env": "all",
+        "test": "all"
+    },
+    "stripHtmlTag": {
+        "description": "Strip html tags from a string.",
+        "env": "all",
+        "test": "all"
+    },
+    "sum": {
+        "description": "Compute sum of given numbers.",
+        "env": "all",
+        "test": "all"
+    },
+    "template": {
+        "description": "Compile JavaScript template into function that can be evaluated for rendering.",
+        "env": "all",
+        "test": "all"
+    },
+    "throttle": {
+        "description": "Return a new throttled version of the passed function.",
+        "env": "all",
+        "test": "all"
+    },
+    "timeAgo": {
+        "description": "Format datetime with *** time ago statement.",
+        "env": "all",
+        "test": "all"
+    },
+    "toArr": {
+        "description": "Convert value to an array.",
+        "env": "all",
+        "test": "all"
+    },
+    "toEl": {
+        "description": "Convert html string to dom elements.",
+        "env": "browser",
+        "test": "browser"
+    },
+    "toInt": {
+        "description": "Convert value to an integer.",
+        "env": "all",
+        "test": "all"
+    },
+    "toNum": {
+        "description": "Convert value to a number.",
+        "env": "all",
+        "test": "all"
+    },
+    "toStr": {
+        "description": "Convert value to a string.",
+        "env": "all",
+        "test": "all"
+    },
+    "topoSort": {
+        "description": "Topological sorting algorithm.",
+        "env": "all",
+        "test": "all"
+    },
+    "trim": {
+        "description": "Remove chars or white-spaces from beginning end of string.",
+        "env": "all",
+        "test": "all"
+    },
+    "type": {
+        "description": "Determine the internal JavaScript [[Class]] of an object.",
+        "env": "all",
+        "test": "all"
+    },
+    "unescape": {
+        "description": "Convert HTML entities back, the inverse of escape.",
+        "env": "all",
+        "test": "all"
+    },
+    "union": {
+        "description": "Create an array of unique values, in order, from all given arrays.",
+        "env": "all",
+        "test": "all"
+    },
+    "uniqId": {
+        "description": "Generate a globally-unique id.",
+        "env": "all",
+        "test": "all"
+    },
+    "unique": {
+        "description": "Create duplicate-free version of an array.",
+        "env": "all",
+        "test": "all"
+    },
+    "unzip": {
+        "description": "Opposite of zip.",
+        "env": "all",
+        "test": "all"
+    },
+    "upperFirst": {
+        "description": "Convert the first character of string to upper case.",
+        "env": "all",
+        "test": "all"
+    },
+    "use": {
+        "description": "Use modules that is created by define.",
+        "env": "all",
+        "test": "all"
+    },
+    "uuid": {
+        "description": "RFC4122 version 4 compliant uuid generator.",
+        "env": "all",
+        "test": "all"
+    },
+    "values": {
+        "description": "Create an array of the own enumerable property values of object.",
+        "env": "all",
+        "test": "all"
+    },
+    "waterfall": {
+        "description": "Run an array of functions in series.",
+        "env": "all",
+        "test": "all"
+    },
+    "wrap": {
+        "description": "Wrap the function inside a wrapper function, passing it as the first argument.",
+        "env": "all",
+        "test": "all"
+    },
+    "zip": {
+        "description": "Merge together the values of each of the arrays with the values at the corresponding position.",
+        "env": "all",
+        "test": "all"
+    }
+}

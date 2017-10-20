@@ -14,6 +14,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('each isStr isNum isArr isObj');
 
 function exports() 

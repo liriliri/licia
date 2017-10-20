@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('restArgs toArr');
 
 exports = restArgs(function (fn, partials)

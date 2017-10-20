@@ -13,6 +13,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('camelCase upperFirst');
 
 function exports(str)

@@ -26,6 +26,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(Class, SuperClass)
 {
     if (objCreate) return Class.prototype = objCreate(SuperClass.prototype);

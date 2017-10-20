@@ -13,6 +13,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('keys each');
 
 function exports(obj)

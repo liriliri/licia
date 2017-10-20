@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isArrLike keys optimizeCb');
 
 function exports(obj, iteratee, ctx)

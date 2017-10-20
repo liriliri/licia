@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(str, suffix)
 {
     var idx = str.length - suffix.length;

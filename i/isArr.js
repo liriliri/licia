@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('objToStr');
 
 exports = Array.isArray || function (val)

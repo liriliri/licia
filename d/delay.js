@@ -15,6 +15,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('restArgs');
 
 exports = restArgs(function (fn, wait, args)

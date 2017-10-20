@@ -16,6 +16,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isStr isArr contain each');
 
 function exports(obj, filter)

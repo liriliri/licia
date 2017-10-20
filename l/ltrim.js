@@ -13,6 +13,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 var regSpace = /^\s+/;
 
 function exports(str, chars)

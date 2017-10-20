@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('has');
 
 exports = Object.keys || function (obj)

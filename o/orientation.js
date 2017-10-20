@@ -21,6 +21,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('Emitter safeGet');
 
 var screen = window.screen;

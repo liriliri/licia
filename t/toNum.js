@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isNum isObj isFn isStr');
 
 exports = function (val)

@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(str)
 {
     return str.replace(/\W/g, '\\$&');

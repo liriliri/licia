@@ -6,14 +6,15 @@
     "eris": "./bin/eris.js"
   },
   "scripts": {
-    "ci": "npm run lint && npm test && npm run update",
-    "update": "eris list && eris doc",
+    "ci": "npm run lint && npm run update && npm test",
+    "update": "eris update",
     "pack": "eris pack",
     "lint": "eslint $ [a-z]",
     "serve": "nws -p 3000 -d testHtml",
     "test": "npm run test:node && npm run test:browser",
     "demo": "eris test -ah",
     "cov": "istanbul cover ./node_modules/mocha/bin/_mocha",
+    "eustia": "eustia",
     "test:node": "eris test -as && mocha",
     "test:browser": "eris test -kas && karma start",
     "test:sauce": "eris test -kas --sauce && karma start"

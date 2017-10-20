@@ -13,6 +13,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('optimizeCb isArrLike isUndef keys');
 
 function exports(obj, iteratee, initial, ctx)

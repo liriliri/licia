@@ -1,6 +1,11 @@
 /* Create callback based on input value.
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isFn isObj optimizeCb matcher identity');
 
 exports = function (val, ctx, argCount)

@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('delegate isUndef $safeEls');
 
 exports = {

@@ -9,6 +9,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('each $safeEls');
 
 function exports(els)

@@ -42,6 +42,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('each isStr isUndef contain isArr isObj toArr');
 
 function exports(name, content) 

@@ -24,6 +24,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: manual
+ */
+
 _('Promise each defaults noop');
 
 function exports(url, options) 

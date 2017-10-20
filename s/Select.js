@@ -31,6 +31,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('Class isStr each');
 
 exports = Class({

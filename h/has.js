@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 var hasOwnProp = Object.prototype.hasOwnProperty;
 
 function exports(obj, key)

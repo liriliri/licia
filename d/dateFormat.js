@@ -44,6 +44,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isStr isDate toStr lpad');
 
 function exports(date, mask, utc, gmt)

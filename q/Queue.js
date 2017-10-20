@@ -47,6 +47,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Class');
 
 exports = Class({

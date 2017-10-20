@@ -22,6 +22,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isPlainObj each cloneDeep');
 
 function exports(obj)

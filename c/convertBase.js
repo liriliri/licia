@@ -13,6 +13,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(num, from, to)
 {
     return parseInt(num, from).toString(to);

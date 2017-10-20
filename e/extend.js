@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('createAssigner allKeys');
 
 exports = createAssigner(allKeys);

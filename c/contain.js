@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('idxOf isArrLike values');
 
 function exports(arr, val)

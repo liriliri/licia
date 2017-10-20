@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('safeCb keys');
 
 function exports(obj, iteratee, ctx)

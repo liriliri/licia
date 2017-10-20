@@ -50,6 +50,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: manual
+ */
+
 _('isFn noop defaults isObj query');
 
 function exports(options)

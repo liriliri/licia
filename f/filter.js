@@ -15,6 +15,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('safeCb each');
 
 function exports(obj, predicate, ctx)

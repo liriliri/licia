@@ -34,6 +34,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('each $safeEls');
 
 exports = {

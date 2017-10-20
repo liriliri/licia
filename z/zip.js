@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('restArgs unzip');
 
 exports = restArgs(unzip);

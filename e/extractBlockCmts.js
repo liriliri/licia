@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('map trim');
 
 var regBlockCmt = /(\/\*[\s\S]*?\*\/)/mg;

@@ -13,6 +13,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('ltrim rtrim');
 
 var regSpace = /^\s+|\s+$/g;

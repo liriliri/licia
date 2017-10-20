@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 var regHtmlTag = /<[^>]*>/g;
 
 function exports(str)

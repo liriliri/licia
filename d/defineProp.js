@@ -53,6 +53,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('castPath isStr isObj each');
 
 function exports(obj, prop, descriptor) 

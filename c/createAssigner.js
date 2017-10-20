@@ -7,6 +7,11 @@
  * |return  |function|Result function, extend...    |
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isUndef each');
 
 function exports(keysFn, defaults)

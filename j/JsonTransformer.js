@@ -77,6 +77,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Class safeSet safeGet map filter isFn safeDel toArr');
 
 exports = Class({

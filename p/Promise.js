@@ -25,6 +25,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: manual
+ */
+
 _('Class isObj isFn State bind nextTick noop');
 
 var Promise = exports = Class({

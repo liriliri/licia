@@ -35,6 +35,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Class isStr clamp rgbToHsl hslToRgb lpad convertBase');
 
 exports = Class({

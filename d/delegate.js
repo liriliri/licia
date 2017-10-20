@@ -26,6 +26,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('Class contain');
 
 function retTrue()  { return true }

@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isArrLike isArr isStr isArgs keys');
 
 function exports(val)

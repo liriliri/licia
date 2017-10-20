@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('each upperFirst');
 
 exports.linear = function (t) { return t };

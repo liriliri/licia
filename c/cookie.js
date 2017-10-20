@@ -37,6 +37,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('defaults isNum isUndef');
 
 var defOpts = { path: '/' };

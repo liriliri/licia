@@ -14,6 +14,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(bytes) 
 {
     if (bytes <= 0) return '0';

@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('restArgs flatten filter contain');
 
 exports = restArgs(function (arr, rest)

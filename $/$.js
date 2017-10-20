@@ -18,6 +18,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */ 
+
 _('Select $offset $show $css $attr $property last $remove $data $event $class $insert isUndef isStr');
 
 function exports(selector)

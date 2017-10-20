@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('keys isObj isFn isArr each');
 
 function mapObject(obj, iteratee)

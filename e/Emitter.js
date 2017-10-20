@@ -42,6 +42,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Class has each slice once');
 
 exports = Class({

@@ -7,6 +7,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('randomBytes');
 
 function exports()

@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isNum isUndef repeat');
 
 var regLineBegin = /^(?!\s*$)/mg;

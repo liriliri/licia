@@ -22,6 +22,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('isUndef each $safeEls');
 
 exports = {

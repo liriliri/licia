@@ -12,6 +12,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(fn, startIdx)
 {
     startIdx = startIdx == null ? fn.length - 1 : +startIdx;

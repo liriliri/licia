@@ -20,6 +20,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('restArgs toInt toNum toStr');
 
 exports = restArgs(function (str, values)

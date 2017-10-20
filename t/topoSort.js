@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports(edges)
 {
     return sort(uniqueNodes(edges), edges);

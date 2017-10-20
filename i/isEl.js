@@ -10,6 +10,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 function exports(val)
 {
     return !!(val && val.nodeType === 1);

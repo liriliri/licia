@@ -70,6 +70,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Class extend trim query isEmpty each isArr toArr');
 
 exports = Class({

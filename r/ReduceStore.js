@@ -51,6 +51,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('Class clone remove');
 
 exports = Class({

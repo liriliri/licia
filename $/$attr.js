@@ -41,6 +41,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('toArr isObj isStr each isUndef $safeEls');
 
 function exports(els, name, val)

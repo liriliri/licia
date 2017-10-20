@@ -15,6 +15,11 @@
  * ```
  */
 
+/* module
+ * env: node
+ * test: node
+ */
+
 _('isFn noop');
 
 var fs = require('fs'),

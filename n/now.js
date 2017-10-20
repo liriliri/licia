@@ -5,6 +5,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 exports = Date.now || function ()
 {
     return new Date().getTime();

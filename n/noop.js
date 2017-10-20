@@ -5,4 +5,9 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 function exports() {}

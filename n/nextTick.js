@@ -16,6 +16,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 if (typeof process === 'object' && process.nextTick)
 {
     exports = process.nextTick;

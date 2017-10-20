@@ -43,6 +43,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('extend toArr inherits has safeGet');
 
 function exports(methods, statics)

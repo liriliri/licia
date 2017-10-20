@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('memStorage');
 
 function exports(type)

@@ -24,6 +24,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('Tween defaults noop isNum $offset');
 
 function exports(target, options) 

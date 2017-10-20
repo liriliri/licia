@@ -13,6 +13,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 function exports(src, cb)
 {
     var script = document.createElement('script');

@@ -15,6 +15,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 var regUpperCase = /([A-Z])/g,
     regSeparator = /[_.\- ]+/g,
     regTrim = /(^-)|(-$)/g;

@@ -11,6 +11,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('root');
 
 var nativeIsFinite = root.isFinite,

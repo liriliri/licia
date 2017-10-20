@@ -16,6 +16,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('type upperFirst toStr isUndef isFn isRegExp');
 
 function exports(obj, spaces) 

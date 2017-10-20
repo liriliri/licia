@@ -5,6 +5,11 @@
  * ```
  */
 
+/* module
+ * env: browser
+ * test: browser
+ */
+
 _('$attr isStr isObj each');
 
 function exports(nodes, name, val)

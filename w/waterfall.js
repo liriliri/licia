@@ -23,6 +23,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('noop nextTick restArgs');
 
 function exports(tasks, cb)
