@@ -1,4 +1,4 @@
-var eris = require('./eris.json'),
+var eris = require('./index.json'),
     util = require('./lib/util');
 
 var exports = {
