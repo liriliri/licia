@@ -332,7 +332,8 @@
     "each": {
         "description": "Iterates over elements of collection and invokes iteratee for each element.",
         "env": "all",
-        "test": "all"
+        "test": "all",
+        "benchmark": true
     },
     "easing": {
         "description": "Easing functions adapted from http://jqueryui.com/",
@@ -362,7 +363,8 @@
     "evalJs": {
         "description": "Execute js in given context.",
         "env": "all",
-        "test": "all"
+        "test": "all",
+        "benchmark": true
     },
     "every": {
         "description": "Check if predicate return truthy for all elements.",
@@ -843,7 +845,8 @@
     "reduce": {
         "description": "Turn a list of values into a single value.",
         "env": "all",
-        "test": "all"
+        "test": "all",
+        "benchmark": true
     },
     "remove": {
         "description": "Remove all elements from array that predicate returns truthy for and return an array of the removed elements.",
@@ -1084,7 +1087,8 @@
     "uuid": {
         "description": "RFC4122 version 4 compliant uuid generator.",
         "env": "all",
-        "test": "all"
+        "test": "all",
+        "benchmark": true
     },
     "values": {
         "description": "Create an array of the own enumerable property values of object.",
