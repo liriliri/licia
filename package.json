@@ -1,6 +1,6 @@
 {
   "name": "eris",
-  "version": "0.0.1",
+  "version": "0.8.0",
   "description": "Eustia modules",
   "bin": {
     "eris": "./bin/eris.js"
@@ -50,6 +50,7 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sauce-launcher": "^1.1.0",
     "mocha": "^4.0.1",
+    "ncp": "^2.0.0",
     "nopt": "^4.0.1",
     "promises-aplus-tests": "^2.1.2",
     "rmdir": "^1.2.0",
