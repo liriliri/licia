@@ -797,6 +797,11 @@
         "env": "all",
         "test": "all"
     },
+    "perfNow": {
+        "description": "High resolution time up to microsecond precision.",
+        "env": "all",
+        "test": "all"
+    },
     "pick": {
         "description": "Return a filtered copy of an object.",
         "env": "all",

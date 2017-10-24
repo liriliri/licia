@@ -3196,6 +3196,18 @@ pascalCase('foo_bar'); // -> FooBar
 pascalCase('foo.bar'); // -> FooBar
 ```
 
+## perfNow 
+
+High resolution time up to microsecond precision.
+
+```javascript
+var start = perfNow();
+
+// Do something.
+
+console.log(perfNow() - start);
+```
+
 ## pick 
 
 Return a filtered copy of an object.
