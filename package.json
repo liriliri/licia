@@ -15,9 +15,12 @@
     "demo": "eris test -ah",
     "cov": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "eustia": "eustia",
-    "test:node": "eris test -as && mocha",
-    "test:browser": "eris test -kas && karma start",
-    "test:sauce": "eris test -kas --sauce && karma start"
+    "karma": "karma",
+    "mocha": "mocha",
+    "benchmark": "node",
+    "test:node": "eris test -as",
+    "test:browser": "eris test -kas",
+    "test:sauce": "eris test -kas --sauce"
   },
   "repository": {
     "type": "git",
@@ -39,7 +42,8 @@
     "chalk": "^2.2.0",
     "eslint": "^4.5.0",
     "eustia": "^0.5.0",
-    "eustia-component": "0.0.3",
+    "eustia-component": "^0.0.3",
+    "npm": "5.5.1",
     "glob": "^7.0.3",
     "handlebars": "^4.0.5",
     "karma": "^1.7.1",
@@ -57,5 +61,6 @@
     "sinon": "^4.0.1",
     "underscore": "^1.8.3",
     "uuid": "^3.0.1"
-  }
+  },
+  "dependencies": {}
 }
