@@ -8,7 +8,7 @@ module.exports = function(config)
             'karma-mocha',
             'karma-chai-plugins',
             'karma-jquery',
-            'karma-phantomjs-launcher',
+            'karma-chrome-launcher',
             'karma-coverage'
         ],
         reporters: ['progress', 'coverage'],
@@ -18,8 +18,8 @@ module.exports = function(config)
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
-        autoWatch: true,
-        browsers: ['PhantomJS'],
+        autoWatch: false,
+        browsers: ['ChromeHeadless'],
         singleRun: true,
         concurrency: Infinity
     });
