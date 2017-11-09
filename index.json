@@ -90,6 +90,11 @@
         "env": "all",
         "test": "all"
     },
+    "LocalStore": {
+        "description": "LocalStorage wrapper.",
+        "env": "browser",
+        "test": "browser"
+    },
     "Logger": {
         "description": "Simple logger with level filter.",
         "env": "all",
@@ -117,6 +122,11 @@
         "env": "browser",
         "test": "browser"
     },
+    "SessionStore": {
+        "description": "SessionStorage wrapper.",
+        "env": "browser",
+        "test": "browser"
+    },
     "Stack": {
         "description": "Stack data structure.",
         "env": "all",
@@ -124,6 +134,11 @@
     },
     "State": {
         "description": "Simple state machine.",
+        "env": "all",
+        "test": "all"
+    },
+    "Store": {
+        "description": "Memory storage.",
         "env": "all",
         "test": "all"
     },
@@ -330,7 +345,7 @@
         "test": "all"
     },
     "each": {
-        "description": "Iterates over elements of collection and invokes iteratee for each element.",
+        "description": "Iterate over elements of collection and invokes iteratee for each element.",
         "env": "all",
         "test": "all",
         "benchmark": true

@@ -6,10 +6,10 @@
     "eris": "./bin/eris.js"
   },
   "scripts": {
-    "ci": "npm run lint && npm run update && npm test",
+    "ci": "npm run update && npm run lint && npm test",
     "update": "eris update",
     "pack": "eris pack",
-    "lint": "eslint $ [a-z]",
+    "lint": "eslint $ [a-z]/*.js",
     "serve": "nws -p 3000 -d testHtml",
     "test": "npm run test:node && npm run test:browser",
     "demo": "eris test -ah",

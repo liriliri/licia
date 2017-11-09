@@ -1,0 +1,49 @@
+/* LocalStorage wrapper.
+ * 
+ * Extend from Store.
+ * 
+ * ### constructor
+ * 
+ * |Name|Type  |Desc                  |
+ * |----|------|----------------------|
+ * |name|string|LocalStorage item name|
+ * |data|object|Default data          |
+ * 
+ * ```javascript
+ * var store = new LocalStore('eris');
+ * store.set('name', 'eris');
+ * ```
+ */
+
+/* module
+ * env: browser
+ * test: browser
+ */ 
+
+_('Store safeStorage isEmpty stringify defaults isObj'); 
+
+var localStorage = safeStorage('local');
+
+exports = Store.extend({
+    initialize: function LocalStore(name, data) 
+    {
+        this._name = name;
+
+        var localData = localStorage.getItem(name);
+        try 
+        {
+            localData = JSON.parse(localData);
+        } catch (e) 
+        {
+            localData = {};            
+        }
+        if (!isObj(localData)) localData = {};
+        data = defaults(localData, data);
+        this.callSuper(Store, 'initialize', [data]);
+    },
+    save: function (data) 
+    {
+        if (isEmpty(data)) return localStorage.removeItem(this._name);
+        localStorage.setItem(this._name, stringify(data));
+    }
+});

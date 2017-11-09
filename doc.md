@@ -538,6 +538,24 @@ data.set('count', data.get('books').length);
 data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', count: 1}
 ```
 
+## LocalStore 
+
+LocalStorage wrapper.
+
+Extend from Store.
+
+### constructor
+
+|Name|Type  |Desc                  |
+|----|------|----------------------|
+|name|string|LocalStorage item name|
+|data|object|Default data          |
+
+```javascript
+var store = new LocalStore('eris');
+store.set('name', 'eris');
+```
+
 ## Logger 
 
 Simple logger with level filter.
@@ -756,6 +774,24 @@ $test.find('.test').each(function (idx, element)
 });
 ```
 
+## SessionStore 
+
+SessionStorage wrapper.
+
+Extend from Store.
+
+### constructor
+
+|Name|Type  |Desc                    |
+|----|------|------------------------|
+|name|string|SessionStorage item name|
+|data|object|Default data            |
+
+```javascript
+var store = new SessionStore('eris');
+store.set('name', 'eris');
+```
+
 ## Stack 
 
 Stack data structure.
@@ -844,6 +880,86 @@ state.on('error', function (err, event)
     // Error handler
 });
 state.play('eustia');
+```
+
+## Store 
+
+Memory storage.
+
+Extend from Emitter.
+
+### constructor
+
+|Name|Type  |Desc        |
+|----|------|------------|
+|data|object|Initial data|
+
+### set
+
+Set value.
+
+|Name|Type  |Desc        |
+|----|------|------------|
+|key |string|Value key   |
+|val |*     |Value to set|
+
+Set values
+
+|Name|Type  |Desc           |
+|----|------|---------------|
+|vals|object|Key value pairs|
+
+This emit a change event whenever is called.
+
+### get
+
+Get value.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|key   |string|Value key         |
+|return|*     |Value of given key|
+
+Get values
+
+|Name  |Type  |Desc           |
+|------|------|---------------|
+|keys  |array |Array of keys  |
+|return|object|Key value pairs|
+
+### remove
+
+Remove value.
+
+|Name|Type        |Desc         |
+|----|------------|-------------|
+|key |string array|Key to remove|
+
+### clear
+
+Clear all data.
+
+### each
+
+Iterate over values.
+
+|Name|Type    |Desc                           |
+|----|--------|-------------------------------|
+|fn  |function|Function invoked per interation|
+
+```javascript
+var store = new Store('test');
+store.set('user', {name: 'eris'});
+store.get('user').name; // -> 'eris'
+store.clear();
+store.each(function (val, key)
+{
+    // Do something.
+});
+store.on('change', function (key, newVal, oldVal)
+{
+    // It triggers whenever set is called.
+});
 ```
 
 ## Tween 
@@ -1773,7 +1889,7 @@ dotCase('foo bar'); // -> foo.bar
 
 ## each 
 
-Iterates over elements of collection and invokes iteratee for each element.
+Iterate over elements of collection and invokes iteratee for each element.
 
 |Name    |Type        |Desc                          |
 |--------|------------|------------------------------|

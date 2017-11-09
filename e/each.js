@@ -1,4 +1,4 @@
-/* Iterates over elements of collection and invokes iteratee for each element.
+/* Iterate over elements of collection and invokes iteratee for each element.
  *
  * |Name    |Type        |Desc                          |
  * |--------|------------|------------------------------|
