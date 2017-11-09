@@ -60,7 +60,7 @@ console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 * `npm i && npm link`将**eris**命令行工具添加到系统中。
 * 创建一个文件名为模块名的js文件，还有相应的单元测试文件，以test.js结尾。
 * 编写模块代码，使用文档（顶部块注释，Markdown格式）和单元测试。
-* `eris test <module-name>`执行测试。如果模块只能跑在浏览器端，使用`-k`选项。
+* `eris test <module-name>`执行测试。如果模块只能跑在浏览器端，使用`-b`选项。
 * `npm run cov`检查测试覆盖率，需要安装istanbul。
 * 输入`npm run update`命令更新**index.json**和**doc.md**文件。
 

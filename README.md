@@ -63,7 +63,7 @@ about how to write an eustia module.
 * `npm i && npm link` to register **eris** command in your system.
 * Create a js file named with the module name and its corresponding test file.
 * Write the source code along with the documentaion and test. (documentation is the first block comment written in markdown)
-* `eris test <module-name>` run the test. (use `-k` if test should run in a browser)
+* `eris test <module-name>` run the test. (use `-b` if test should run in a browser)
 * `npm run cov` for checking the test coverage. (istanbul is required)
 * Update **index.json** and **doc.md** by running `npm run update`.
 

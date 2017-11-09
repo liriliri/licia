@@ -5,14 +5,14 @@ var nopt = require('nopt'),
     util = require('../lib/util');
 
 var knowOpts = {
-        karma: Boolean,
+        browser: Boolean,
         silent: Boolean,
         all: Boolean,
         sauce: Boolean,
         html: Boolean
     },
     shortHands = {
-        k: '--karma',
+        b: '--browser',
         s: '--silent',
         a: '--all',
         h: '--html'

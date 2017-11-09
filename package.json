@@ -19,8 +19,8 @@
     "mocha": "mocha",
     "benchmark": "node",
     "test:node": "eris test -as",
-    "test:browser": "eris test -kas",
-    "test:sauce": "eris test -kas --sauce"
+    "test:browser": "eris test -bas",
+    "test:sauce": "eris test -bas --sauce"
   },
   "repository": {
     "type": "git",

@@ -903,7 +903,7 @@ Set value.
 |key |string|Value key   |
 |val |*     |Value to set|
 
-Set values
+Set values.
 
 |Name|Type  |Desc           |
 |----|------|---------------|
@@ -920,7 +920,7 @@ Get value.
 |key   |string|Value key         |
 |return|*     |Value of given key|
 
-Get values
+Get values.
 
 |Name  |Type  |Desc           |
 |------|------|---------------|
