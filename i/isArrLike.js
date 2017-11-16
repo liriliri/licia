@@ -19,13 +19,13 @@
  * test: all
  */
 
-_('isNum has isFn');
+_('isNum isFn');
 
 var MAX_ARR_IDX = Math.pow(2, 53) - 1;
 
 function exports(val)
 {
-    if (!has(val, 'length')) return false;
+    if (!val) return false;
 
     var len = val.length;
 
