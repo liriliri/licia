@@ -2629,7 +2629,7 @@ isNull(null); // -> true
 
 ## isNum 
 
-Checks if value is classified as a Number primitive or object.
+Check if value is classified as a Number primitive or object.
 
 |Name  |Type   |Desc                                 |
 |------|-------|-------------------------------------|
@@ -2640,6 +2640,26 @@ Checks if value is classified as a Number primitive or object.
 isNum(5); // -> true
 isNum(5.1); // -> true
 isNum({}); // -> false
+```
+
+## isNumeric 
+
+Check if value is numeric.
+
+|Name  |Type   |Desc                    |
+|------|-------|------------------------|
+|val   |*      |Value to check          |
+|return|boolean|True if value is numeric|
+
+```javascript
+isNumeric(1); // -> true
+isNumeric('1'); // -> true
+isNumeric(Number.MAX_VALUE); // -> true
+isNumeric(0144); // -> true
+isNumeric(0xFF); // -> true
+isNumeric(''); // -> false
+isNumeric('1.1.1'); // -> false
+isNumeric(NaN); // -> false
 ```
 
 ## isObj 

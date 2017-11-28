@@ -592,7 +592,12 @@
         "test": "all"
     },
     "isNum": {
-        "description": "Checks if value is classified as a Number primitive or object.",
+        "description": "Check if value is classified as a Number primitive or object.",
+        "env": "all",
+        "test": "all"
+    },
+    "isNumeric": {
+        "description": "Check if value is numeric.",
         "env": "all",
         "test": "all"
     },
