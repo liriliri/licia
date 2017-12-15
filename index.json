@@ -421,6 +421,9 @@
         "env": "all",
         "test": "all"
     },
+    "fill": {
+        "description": "Fill elements of array with value."
+    },
     "filter": {
         "description": "Iterates over elements of collection, returning an array of all the values that pass a truth test.",
         "env": "all",
