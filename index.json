@@ -584,6 +584,16 @@
         "env": "all",
         "test": "all"
     },
+    "isNative": {
+        "description": "Check if value is a native function.",
+        "env": "all",
+        "test": "all"
+    },
+    "isNil": {
+        "description": "Check if value is null or undefined, the same as value == null.",
+        "env": "all",
+        "test": "all"
+    },
     "isNode": {
         "description": "Check if running in node.",
         "env": "all",
@@ -1054,6 +1064,11 @@
     },
     "toNum": {
         "description": "Convert value to a number.",
+        "env": "all",
+        "test": "all"
+    },
+    "toSrc": {
+        "description": "Convert function to its source code.",
         "env": "all",
         "test": "all"
     },
