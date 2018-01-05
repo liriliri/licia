@@ -7,3 +7,4 @@
 /npm/
 /coverage/
 karma.conf.js
+package-lock.json
