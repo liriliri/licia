@@ -649,6 +649,11 @@
         "env": "all",
         "test": "all"
     },
+    "isStream": {
+        "description": "Check if value is a Node.js stream.",
+        "env": "node",
+        "test": "node"
+    },
     "isTypedArr": {
         "description": "Check if value is a typed array.",
         "env": "all",

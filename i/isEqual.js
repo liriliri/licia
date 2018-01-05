@@ -2,7 +2,7 @@
  *
  * |Name  |Type   |Desc                         |
  * |------|-------|-----------------------------|
- * |value |*      |Value to compare             |
+ * |val   |*      |Value to compare             |
  * |other |*      |Other value to compare       |
  * |return|boolean|True if values are equivalent|
  *

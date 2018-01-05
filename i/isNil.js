@@ -2,7 +2,7 @@
  * 
  * |Name  |Type   |Desc                              |
  * |------|-------|----------------------------------|
- * |value |*      |Value to check                    |
+ * |val   |*      |Value to check                    |
  * |return|boolean|True if value is null or undefined|
  * 
  * ```javascript

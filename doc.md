@@ -2378,7 +2378,7 @@ Check if value is classified as an arguments object.
 
 |Name  |Type   |Desc                                |
 |------|-------|------------------------------------|
-|value |*      |Value to check                      |
+|val   |*      |Value to check                      |
 |return|boolean|True if value is an arguments object|
 
 ```javascript
@@ -2407,7 +2407,7 @@ Check if value is array-like.
 
 |Name  |Type   |Desc                       |
 |------|-------|---------------------------|
-|value |*      |Value to check             |
+|val   |*      |Value to check             |
 |return|boolean|True if value is array like|
 
 > Function returns false.
@@ -2514,7 +2514,7 @@ Performs an optimized deep comparison between the two objects, to determine if t
 
 |Name  |Type   |Desc                         |
 |------|-------|-----------------------------|
-|value |*      |Value to compare             |
+|val   |*      |Value to compare             |
 |other |*      |Other value to compare       |
 |return|boolean|True if values are equivalent|
 
@@ -2571,7 +2571,7 @@ Checks if value is classified as a Integer.
 
 |Name  |Type   |Desc                                 |
 |------|-------|-------------------------------------|
-|value |*      |Value to check                       |
+|val   |*      |Value to check                       |
 |return|boolean|True if value is correctly classified|
 
 ```javascript
@@ -2629,7 +2629,7 @@ Check if value is a native function.
 
 |Name  |Type   |Desc                              |
 |------|-------|----------------------------------|
-|value |*      |Value to check                    |
+|val   |*      |Value to check                    |
 |return|boolean|True if value is a native function|
 
 ```javascript
@@ -2643,7 +2643,7 @@ Check if value is null or undefined, the same as value == null.
 
 |Name  |Type   |Desc                              |
 |------|-------|----------------------------------|
-|value |*      |Value to check                    |
+|val   |*      |Value to check                    |
 |return|boolean|True if value is null or undefined|
 
 ```javascript
@@ -2669,7 +2669,7 @@ Check if value is an Null.
 
 |Name  |Type   |Desc                    |
 |------|-------|------------------------|
-|value |*      |Value to check          |
+|val   |*      |Value to check          |
 |return|boolean|True if value is an Null|
 
 ```javascript
@@ -2682,7 +2682,7 @@ Check if value is classified as a Number primitive or object.
 
 |Name  |Type   |Desc                                 |
 |------|-------|-------------------------------------|
-|value |*      |Value to check                       |
+|val   |*      |Value to check                       |
 |return|boolean|True if value is correctly classified|
 
 ```javascript
@@ -2802,6 +2802,21 @@ Check if value is a string primitive.
 
 ```javascript
 isStr('eris'); // -> true
+```
+
+## isStream 
+
+Check if value is a Node.js stream.
+
+|Name  |Type   |Desc                             |
+|------|-------|---------------------------------|
+|val   |*      |Value to check                   |
+|return|boolean|True if value is a Node.js stream|
+
+```javascript
+var stream = require('stream');
+
+isStream(new stream.Stream()); // -> true
 ```
 
 ## isTypedArr 
