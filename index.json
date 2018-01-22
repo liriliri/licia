@@ -669,6 +669,11 @@
         "env": "all",
         "test": "all"
     },
+    "isWindows": {
+        "description": "Check if platform is windows.",
+        "env": "node",
+        "test": "node"
+    },
     "kebabCase": {
         "description": "Convert string to \"kebabCase\".",
         "env": "all",

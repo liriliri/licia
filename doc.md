@@ -2860,6 +2860,14 @@ Loosely validate an url.
 isUrl('http://www.example.com?foo=bar&param=test'); // -> true
 ```
 
+## isWindows 
+
+Check if platform is windows.
+
+```javascript
+console.log(isWindows); // -> true if running on windows
+```
+
 ## kebabCase 
 
 Convert string to "kebabCase".
