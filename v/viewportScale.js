@@ -23,7 +23,7 @@ function exports()
         return trim(val); 
     });
 
-    let minScale = 0.25,
+    var minScale = 0.25,
         maxScale = 5,
         initialScale = 1;
 
@@ -31,7 +31,7 @@ function exports()
     {
         val = val.split('=');
 
-        let key = val[0];
+        var key = val[0];
         val = val[1];
 
         if (key === 'initial-scale') initialScale = +val;
@@ -39,7 +39,7 @@ function exports()
         if (key === 'minimum-scale') minScale = +val;
     });
 
-    let ret = clamp(initialScale, minScale, maxScale);
+    var ret = clamp(initialScale, minScale, maxScale);
 
     // Some will use ';' to be the separator, need to avoid the wrong result.
     if (isNaN(ret)) return 1;
