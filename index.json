@@ -1148,6 +1148,11 @@
         "env": "all",
         "test": "all"
     },
+    "viewportScale": {
+        "description": "Get viewport scale.",
+        "env": "browser",
+        "test": "browser"
+    },
     "waterfall": {
         "description": "Run an array of functions in series.",
         "env": "all",

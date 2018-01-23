@@ -4325,6 +4325,14 @@ Create an array of the own enumerable property values of object.
 values({one: 1, two: 2}); // -> [1, 2]
 ```
 
+## viewportScale 
+
+Get viewport scale.
+
+```javascript
+viewportScale(); // -> 3
+```
+
 ## waterfall 
 
 Run an array of functions in series.
