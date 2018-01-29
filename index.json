@@ -1104,6 +1104,11 @@
         "env": "all",
         "test": "all"
     },
+    "tryIt": {
+        "description": "Run function in a try catch.",
+        "env": "all",
+        "test": "all"
+    },
     "type": {
         "description": "Determine the internal JavaScript [[Class]] of an object.",
         "env": "all",
