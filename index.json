@@ -422,7 +422,9 @@
         "test": "all"
     },
     "fill": {
-        "description": "Fill elements of array with value."
+        "description": "Fill elements of array with value.",
+        "env": "all",
+        "test": "all"
     },
     "filter": {
         "description": "Iterates over elements of collection, returning an array of all the values that pass a truth test.",
@@ -436,6 +438,11 @@
     },
     "flatten": {
         "description": "Recursively flatten an array.",
+        "env": "all",
+        "test": "all"
+    },
+    "fnParams": {
+        "description": "Get a function parameter's names.",
         "env": "all",
         "test": "all"
     },

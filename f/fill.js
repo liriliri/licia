@@ -14,6 +14,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 _('isUndef');
 
 function exports(arr, val, start, end) 

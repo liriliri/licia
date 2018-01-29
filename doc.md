@@ -2188,6 +2188,19 @@ Recursively flatten an array.
 flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 ```
 
+## fnParams 
+
+Get a function parameter's names.
+
+|Name  |Type    |Desc                      |
+|------|--------|--------------------------|
+|fn    |function|Function to get parameters|
+|return|array   |Names                     |
+
+```javascript
+fnParams(function (a, b) {}); // -> ['a', 'b']
+```
+
 ## format 
 
 Format string in a printf-like format.
