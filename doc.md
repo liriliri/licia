@@ -2406,12 +2406,25 @@ Check if value is an `Array` object.
 
 |Name  |Type   |Desc                              |
 |------|-------|----------------------------------|
-|val   |*      |The value to check                |
+|val   |*      |Value to check                    |
 |return|boolean|True if value is an `Array` object|
 
 ```javascript
 isArr([]); // -> true
 isArr({}); // -> false
+```
+
+## isArrBuffer 
+
+Check if value is an ArrayBuffer.
+
+|Name  |Type   |Desc                           |
+|------|-------|-------------------------------|
+|val   |*      |Value to check                 |
+|return|boolean|True if value is an ArrayBuffer|
+
+```javascript
+isArrBuffer(new ArrayBuffer(8)); // -> true
 ```
 
 ## isArrLike 

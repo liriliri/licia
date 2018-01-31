@@ -2,7 +2,7 @@
  *
  * |Name  |Type   |Desc                              |
  * |------|-------|----------------------------------|
- * |val   |*      |The value to check                |
+ * |val   |*      |Value to check                    |
  * |return|boolean|True if value is an `Array` object|
  *
  * ```javascript
