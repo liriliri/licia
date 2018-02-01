@@ -908,6 +908,9 @@
         "test": "all",
         "benchmark": true
     },
+    "reject": {
+        "description": "Opposite of filter."
+    },
     "remove": {
         "description": "Remove all elements from array that predicate returns truthy for and return an array of the removed elements.",
         "env": "all",
