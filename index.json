@@ -1072,6 +1072,11 @@
         "env": "all",
         "test": "all"
     },
+    "timeTaken": {
+        "description": "Get execution time of a function.",
+        "env": "all",
+        "test": "all"
+    },
     "toArr": {
         "description": "Convert value to an array.",
         "env": "all",

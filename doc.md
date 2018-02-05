@@ -4114,6 +4114,22 @@ timeAgo(now + 1000 * 15); // -> in 15 minutes
 timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
 ```
 
+## timeTaken 
+
+Get execution time of a function.
+
+|Name  |Type    |Desc                    |
+|------|--------|------------------------|
+|fn    |function|Function to measure time|
+|return|number  |Execution time, ms      |
+
+```javascript
+timeTaken(function ()
+{
+    // Do something.
+}); // -> Time taken to execute given function.
+```
+
 ## toArr 
 
 Convert value to an array.
