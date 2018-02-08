@@ -1074,6 +1074,12 @@
         "env": "all",
         "test": "all"
     },
+    "isJson": {
+        "description": "Check if value is a valid JSON.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "isMatch": {
         "description": "Check if keys and values in src are contained in obj.",
         "dependencies": [

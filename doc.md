@@ -2606,6 +2606,22 @@ isInt(5.1); // -> false
 isInt({}); // -> false
 ```
 
+## isJson 
+
+Check if value is a valid JSON.
+
+It uses `JSON.parse()` and a `try... catch` block.
+
+|Name  |Type   |Desc                         |
+|------|-------|-----------------------------|
+|val   |string |JSON string                  |
+|return|boolean|True if value is a valid JSON|
+
+```javascript
+isJson('{"a": 5}'); // -> true
+isJson("{'a': 5}"); // -> false
+```
+
 ## isMatch 
 
 Check if keys and values in src are contained in obj.
