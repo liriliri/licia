@@ -1,1195 +1,2078 @@
 {
     "$": {
         "description": "jQuery like style dom manipulator.",
+        "dependencies": [
+            "Select",
+            "$offset",
+            "$show",
+            "$css",
+            "$attr",
+            "$property",
+            "last",
+            "$remove",
+            "$data",
+            "$event",
+            "$class",
+            "$insert",
+            "isUndef",
+            "isStr"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$attr": {
         "description": "Element attribute manipulation.",
+        "dependencies": [
+            "toArr",
+            "isObj",
+            "isStr",
+            "each",
+            "isUndef",
+            "$safeEls"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$class": {
         "description": "Element class manipulations.",
+        "dependencies": [
+            "toArr",
+            "some",
+            "$safeEls",
+            "isStr"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$css": {
         "description": "Element css manipulation.",
+        "dependencies": [
+            "isStr",
+            "isObj",
+            "camelCase",
+            "kebabCase",
+            "isUndef",
+            "contain",
+            "isNum",
+            "$safeEls",
+            "startWith"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$data": {
         "description": "Wrapper of $attr, adds data- prefix to keys.",
+        "dependencies": [
+            "$attr",
+            "isStr",
+            "isObj",
+            "each"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$event": {
         "description": "bind events to certain dom elements.",
+        "dependencies": [
+            "delegate",
+            "isUndef",
+            "$safeEls"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$insert": {
         "description": "Insert html on different position.",
+        "dependencies": [
+            "each",
+            "$safeEls"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$offset": {
         "description": "Get the position of the element in document.",
+        "dependencies": [
+            "$safeEls"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$property": {
         "description": "Element property html, text, val getter and setter.",
+        "dependencies": [
+            "isUndef",
+            "each",
+            "$safeEls"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$remove": {
         "description": "Remove the set of matched elements from the DOM.",
+        "dependencies": [
+            "each",
+            "$safeEls"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$safeEls": {
         "description": "Convert value into an array, if it's a string, do querySelector.",
+        "dependencies": [
+            "isStr",
+            "toArr",
+            "Select"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "$show": {
         "description": "Show elements.",
+        "dependencies": [
+            "each",
+            "$safeEls"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "Class": {
         "description": "Create JavaScript class.",
+        "dependencies": [
+            "extend",
+            "toArr",
+            "inherits",
+            "has",
+            "safeGet"
+        ],
         "env": "all",
         "test": "all",
         "demo": true
     },
     "Color": {
         "description": "Color converter.",
+        "dependencies": [
+            "Class",
+            "isStr",
+            "clamp",
+            "rgbToHsl",
+            "hslToRgb",
+            "lpad",
+            "convertBase"
+        ],
         "env": "all",
         "test": "all"
     },
     "Dispatcher": {
         "description": "Flux dispatcher.",
+        "dependencies": [
+            "Class",
+            "uniqId"
+        ],
         "env": "all",
         "test": "all"
     },
     "Emitter": {
         "description": "Event emitter class which provides observer pattern.",
+        "dependencies": [
+            "Class",
+            "has",
+            "each",
+            "slice",
+            "once"
+        ],
         "env": "all",
         "test": "all"
     },
     "Enum": {
         "description": "Enum type implementation.",
+        "dependencies": [
+            "Class",
+            "freeze",
+            "isArr",
+            "each",
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "JsonTransformer": {
         "description": "Json to json transformer.",
+        "dependencies": [
+            "Class",
+            "safeSet",
+            "safeGet",
+            "map",
+            "filter",
+            "isFn",
+            "safeDel",
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "LocalStore": {
         "description": "LocalStorage wrapper.",
+        "dependencies": [
+            "Store",
+            "safeStorage",
+            "isEmpty",
+            "stringify",
+            "defaults",
+            "isObj"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "Logger": {
         "description": "Simple logger with level filter.",
+        "dependencies": [
+            "Emitter",
+            "Enum",
+            "toArr",
+            "isUndef",
+            "clone",
+            "isStr",
+            "isNum"
+        ],
         "env": "all",
         "test": "all",
         "demo": true
     },
     "Promise": {
         "description": "Lightweight Promise implementation.",
+        "dependencies": [
+            "Class",
+            "isObj",
+            "isFn",
+            "State",
+            "bind",
+            "nextTick",
+            "noop"
+        ],
         "env": "all",
         "test": "manual",
         "demo": true
     },
     "Queue": {
         "description": "Queue data structure.",
+        "dependencies": [
+            "Class"
+        ],
         "env": "all",
         "test": "all"
     },
     "ReduceStore": {
         "description": "Simplified redux like state container.",
+        "dependencies": [
+            "Class",
+            "clone",
+            "remove"
+        ],
         "env": "all",
         "test": "all"
     },
     "Select": {
         "description": "Simple wrapper of querySelectorAll to make dom selection easier.",
+        "dependencies": [
+            "Class",
+            "isStr",
+            "each"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "SessionStore": {
         "description": "SessionStorage wrapper.",
+        "dependencies": [
+            "Store",
+            "safeStorage",
+            "isEmpty",
+            "stringify",
+            "defaults",
+            "isObj"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "Stack": {
         "description": "Stack data structure.",
+        "dependencies": [
+            "Class"
+        ],
         "env": "all",
         "test": "all"
     },
     "State": {
         "description": "Simple state machine.",
+        "dependencies": [
+            "Emitter",
+            "each",
+            "isArr",
+            "some",
+            "slice",
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "Store": {
         "description": "Memory storage.",
+        "dependencies": [
+            "Emitter",
+            "isStr",
+            "isObj",
+            "each",
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "Tween": {
         "description": "Tween engine for JavaScript animations.",
+        "dependencies": [
+            "Emitter",
+            "State",
+            "easing",
+            "now",
+            "each",
+            "raf",
+            "isFn"
+        ],
         "env": "all",
         "test": "all",
         "demo": true
     },
     "Url": {
         "description": "Simple url manipulator.",
+        "dependencies": [
+            "Class",
+            "extend",
+            "trim",
+            "query",
+            "isEmpty",
+            "each",
+            "isArr",
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "Validator": {
         "description": "Object values validation.",
+        "dependencies": [
+            "Class",
+            "keys",
+            "safeGet",
+            "isFn",
+            "isUndef",
+            "isNum",
+            "isStr",
+            "isBool"
+        ],
         "env": "all",
         "test": "all"
     },
     "abbrev": {
         "description": "Calculate the set of unique abbreviations for a given set of strings.",
+        "dependencies": [
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "after": {
         "description": "Create a function that invokes once it's called n or more times.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "ajax": {
         "description": "Perform an asynchronous HTTP request.",
+        "dependencies": [
+            "isFn",
+            "noop",
+            "defaults",
+            "isObj",
+            "query"
+        ],
         "env": "browser",
         "test": "manual"
     },
     "allKeys": {
         "description": "Retrieve all the names of object's own and inherited properties.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "arrToMap": {
         "description": "Make an object map using array of strings.",
+        "dependencies": [
+            "each"
+        ],
         "env": "all",
         "test": "all"
     },
     "average": {
         "description": "Get average value of given numbers.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "base64": {
         "description": "Basic base64 encoding and decoding.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "before": {
         "description": "Create a function that invokes less than n times.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "bind": {
         "description": "Create a function bound to a given object.",
+        "dependencies": [
+            "restArgs"
+        ],
         "env": "all",
         "test": "all"
     },
     "camelCase": {
         "description": "Convert string to \"camelCase\".",
+        "dependencies": [
+            "splitCase"
+        ],
         "env": "all",
         "test": "all"
     },
     "capitalize": {
         "description": "Convert the first character to upper case and the remaining to lower case.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "castPath": {
         "description": "Cast value into a property path array.",
+        "dependencies": [
+            "has",
+            "isArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "chunk": {
         "description": "Split array into groups the length of given size.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "clamp": {
         "description": "Clamp number within the inclusive lower and upper bounds.",
+        "dependencies": [
+            "isUndef"
+        ],
         "env": "all",
         "test": "all"
     },
     "className": {
         "description": "Utility for conditionally joining class names.",
+        "dependencies": [
+            "each",
+            "isStr",
+            "isNum",
+            "isArr",
+            "isObj"
+        ],
         "env": "all",
         "test": "all"
     },
     "clone": {
         "description": "Create a shallow-copied clone of the provided plain object.",
+        "dependencies": [
+            "isObj",
+            "isArr",
+            "extend"
+        ],
         "env": "all",
         "test": "all"
     },
     "cloneDeep": {
         "description": "Recursively clone value.",
+        "dependencies": [
+            "keys",
+            "isObj",
+            "isFn",
+            "isArr",
+            "each"
+        ],
         "env": "all",
         "test": "all"
     },
     "cmpVersion": {
         "description": "Compare version strings.",
+        "dependencies": [
+            "toInt",
+            "max"
+        ],
         "env": "all",
         "test": "all"
     },
     "compact": {
         "description": "Return a copy of the array with all falsy values removed.",
+        "dependencies": [
+            "filter"
+        ],
         "env": "all",
         "test": "all"
     },
     "concat": {
         "description": "Concat multiple arrays into a single array.",
+        "dependencies": [
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "contain": {
         "description": "Check if the value is present in the list.",
+        "dependencies": [
+            "idxOf",
+            "isArrLike",
+            "values"
+        ],
         "env": "all",
         "test": "all"
     },
     "convertBase": {
         "description": "Convert base of a number.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "cookie": {
         "description": "Simple api for handling browser cookies.",
+        "dependencies": [
+            "defaults",
+            "isNum",
+            "isUndef"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "copy": {
         "description": "Copy text to clipboard using document.execCommand.",
+        "dependencies": [
+            "extend",
+            "noop"
+        ],
         "env": "browser",
         "test": "browser",
         "demo": true
     },
     "createAssigner": {
         "description": "Used to create extend, extendOwn and defaults.",
+        "dependencies": [
+            "isUndef",
+            "each"
+        ],
         "env": "all",
         "test": "all"
     },
     "curry": {
         "description": "Function currying.",
+        "dependencies": [
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "dateFormat": {
         "description": "Simple but extremely useful date format function.",
+        "dependencies": [
+            "isStr",
+            "isDate",
+            "toStr",
+            "lpad"
+        ],
         "env": "all",
         "test": "all"
     },
     "debounce": {
         "description": "Return a new debounced version of the passed function.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "defaults": {
         "description": "Fill in undefined properties in object with the first value present in the following list of defaults objects.",
+        "dependencies": [
+            "createAssigner",
+            "allKeys"
+        ],
         "env": "all",
         "test": "all"
     },
     "define": {
         "description": "Define a module, should be used along with use.",
+        "dependencies": [
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "defineProp": {
         "description": "Shortcut for Object.defineProperty(defineProperties).",
+        "dependencies": [
+            "castPath",
+            "isStr",
+            "isObj",
+            "each"
+        ],
         "env": "all",
         "test": "all"
     },
     "delay": {
         "description": "Invoke function after certain milliseconds.",
+        "dependencies": [
+            "restArgs"
+        ],
         "env": "all",
         "test": "all"
     },
     "delegate": {
         "description": "Event delegation.",
+        "dependencies": [
+            "Class",
+            "contain"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "detectBrowser": {
         "description": "Detect browser info using ua.",
+        "dependencies": [
+            "isBrowser",
+            "toInt",
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "detectOs": {
         "description": "Detect operating system using ua.",
+        "dependencies": [
+            "isBrowser"
+        ],
         "env": "all",
         "test": "all"
     },
     "difference": {
         "description": "Create an array of unique array values not included in the other given array.",
+        "dependencies": [
+            "restArgs",
+            "flatten",
+            "filter",
+            "contain"
+        ],
         "env": "all",
         "test": "all"
     },
     "dotCase": {
         "description": "Convert string to \"dotCase\".",
+        "dependencies": [
+            "splitCase"
+        ],
         "env": "all",
         "test": "all"
     },
     "each": {
         "description": "Iterate over elements of collection and invokes iteratee for each element.",
+        "dependencies": [
+            "isArrLike",
+            "keys",
+            "optimizeCb"
+        ],
         "env": "all",
         "test": "all",
         "benchmark": true
     },
     "easing": {
         "description": "Easing functions adapted from http://jqueryui.com/",
+        "dependencies": [
+            "each",
+            "upperFirst"
+        ],
         "env": "all",
         "test": "all"
     },
     "endWith": {
         "description": "Check if string ends with the given target string.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "escape": {
         "description": "Escapes a string for insertion into HTML, replacing &, <, >, \", `, and ' characters.",
+        "dependencies": [
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "escapeRegExp": {
         "description": "Escape special chars to be used as literals in RegExp constructors.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "evalCss": {
         "description": "Load css into page.",
+        "dependencies": [],
         "env": "browser",
         "test": "browser"
     },
     "evalJs": {
         "description": "Execute js in given context.",
+        "dependencies": [
+            "root"
+        ],
         "env": "all",
         "test": "all",
         "benchmark": true
     },
     "every": {
         "description": "Check if predicate return truthy for all elements.",
+        "dependencies": [
+            "safeCb",
+            "isArrLike",
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "extend": {
         "description": "Copy all of the properties in the source objects over to the destination object.",
+        "dependencies": [
+            "createAssigner",
+            "allKeys"
+        ],
         "env": "all",
         "test": "all"
     },
     "extendDeep": {
         "description": "Recursive object extending.",
+        "dependencies": [
+            "isPlainObj",
+            "each",
+            "cloneDeep"
+        ],
         "env": "all",
         "test": "all"
     },
     "extendOwn": {
         "description": "Like extend, but only copies own properties over to the destination object.",
+        "dependencies": [
+            "keys",
+            "createAssigner"
+        ],
         "env": "all",
         "test": "all"
     },
     "extractBlockCmts": {
         "description": "Extract block comments from source code.",
+        "dependencies": [
+            "map",
+            "trim"
+        ],
         "env": "all",
         "test": "all"
     },
     "extractUrls": {
         "description": "Extract urls from plain text.",
+        "dependencies": [
+            "unique",
+            "trim",
+            "map",
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "fetch": {
         "description": "Turn XMLHttpRequest into promise like.",
+        "dependencies": [
+            "Promise",
+            "each",
+            "defaults",
+            "noop"
+        ],
         "env": "browser",
         "test": "manual"
     },
     "fileSize": {
         "description": "Turn bytes into human readable file size.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "fill": {
         "description": "Fill elements of array with value.",
+        "dependencies": [
+            "isUndef"
+        ],
         "env": "all",
         "test": "all"
     },
     "filter": {
         "description": "Iterates over elements of collection, returning an array of all the values that pass a truth test.",
+        "dependencies": [
+            "safeCb",
+            "each"
+        ],
         "env": "all",
         "test": "all"
     },
     "findKey": {
         "description": "Return the key where the predicate truth test passes or undefined.",
+        "dependencies": [
+            "safeCb",
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "flatten": {
         "description": "Recursively flatten an array.",
+        "dependencies": [
+            "isArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "fnParams": {
         "description": "Get a function parameter's names.",
+        "dependencies": [
+            "toSrc",
+            "stripCmt"
+        ],
         "env": "all",
         "test": "all"
     },
     "format": {
         "description": "Format string in a printf-like format.",
+        "dependencies": [
+            "restArgs",
+            "toInt",
+            "toNum",
+            "toStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "freeze": {
         "description": "Shortcut for Object.freeze.",
+        "dependencies": [
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "freezeDeep": {
         "description": "Recursively use Object.freeze.",
+        "dependencies": [
+            "freeze",
+            "keys",
+            "isObj"
+        ],
         "env": "all",
         "test": "all"
     },
     "has": {
         "description": "Checks if key is a direct property.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "hslToRgb": {
         "description": "Convert hsl to rgb.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "identity": {
         "description": "Return the first argument given.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "idxOf": {
         "description": "Get the index at which the first occurrence of value.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "indent": {
         "description": "Indent each line in a string.",
+        "dependencies": [
+            "isNum",
+            "isUndef",
+            "repeat"
+        ],
         "env": "all",
         "test": "all"
     },
     "inherits": {
         "description": "Inherit the prototype methods from one constructor into another.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "intersect": {
         "description": "Compute the list of values that are the intersection of all the arrays.",
+        "dependencies": [
+            "contain",
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "invert": {
         "description": "Create an object composed of the inverted keys and values of object.",
+        "dependencies": [
+            "keys",
+            "each"
+        ],
         "env": "all",
         "test": "all"
     },
     "isArgs": {
         "description": "Check if value is classified as an arguments object.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isArr": {
         "description": "Check if value is an `Array` object.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isArrBuffer": {
         "description": "Check if value is an ArrayBuffer.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isArrLike": {
         "description": "Check if value is array-like.",
+        "dependencies": [
+            "isNum",
+            "isFn"
+        ],
         "env": "all",
         "test": "all"
     },
     "isBool": {
         "description": "Check if value is a boolean primitive.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "isBrowser": {
         "description": "Check if running in a browser.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "isBuffer": {
         "description": "Check if value is a buffer.",
+        "dependencies": [
+            "isFn"
+        ],
         "env": "node",
         "test": "node"
     },
     "isDate": {
         "description": "Check if value is classified as a Date object.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isEl": {
         "description": "Check if value is a DOM element.",
+        "dependencies": [],
         "env": "browser",
         "test": "browser"
     },
     "isEmail": {
         "description": "Loosely validate an email address.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "isEmpty": {
         "description": "Check if value is an empty object or array.",
+        "dependencies": [
+            "isArrLike",
+            "isArr",
+            "isStr",
+            "isArgs",
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "isEqual": {
         "description": "Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.",
+        "dependencies": [
+            "isFn",
+            "has",
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "isErr": {
         "description": "Check if value is an error.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isFinite": {
         "description": "Check if value is a finite primitive number.",
+        "dependencies": [
+            "root"
+        ],
         "env": "all",
         "test": "all"
     },
     "isFn": {
         "description": "Check if value is a function.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isInt": {
         "description": "Checks if value is classified as a Integer.",
+        "dependencies": [
+            "isNum"
+        ],
         "env": "all",
         "test": "all"
     },
     "isMatch": {
         "description": "Check if keys and values in src are contained in obj.",
+        "dependencies": [
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "isMobile": {
         "description": "Check whether client is using a mobile browser using ua.",
+        "dependencies": [
+            "isBrowser",
+            "memoize"
+        ],
         "env": "all",
         "test": "all"
     },
     "isNaN": {
         "description": "Check if value is an NaN.",
+        "dependencies": [
+            "isNum"
+        ],
         "env": "all",
         "test": "all"
     },
     "isNative": {
         "description": "Check if value is a native function.",
+        "dependencies": [
+            "isObj",
+            "isFn",
+            "has",
+            "toSrc"
+        ],
         "env": "all",
         "test": "all"
     },
     "isNil": {
         "description": "Check if value is null or undefined, the same as value == null.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "isNode": {
         "description": "Check if running in node.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isNull": {
         "description": "Check if value is an Null.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "isNum": {
         "description": "Check if value is classified as a Number primitive or object.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isNumeric": {
         "description": "Check if value is numeric.",
+        "dependencies": [
+            "isStr",
+            "isNaN",
+            "isFinite",
+            "isArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isObj": {
         "description": "Check if value is the language type of Object.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "isPlainObj": {
         "description": "Check if value is an object created by Object constructor.",
+        "dependencies": [
+            "isObj",
+            "isArr",
+            "isFn",
+            "has"
+        ],
         "env": "all",
         "test": "all"
     },
     "isPrimitive": {
         "description": "Check if value is string, number, boolean or null.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "isRegExp": {
         "description": "Check if value is a regular expression.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isRelative": {
         "description": "Check if path appears to be relative.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "isRetina": {
         "description": "Determine if running on a high DPR device or not.",
+        "dependencies": [
+            "isBrowser"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "isStr": {
         "description": "Check if value is a string primitive.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "isStream": {
         "description": "Check if value is a Node.js stream.",
+        "dependencies": [
+            "isObj",
+            "isFn"
+        ],
         "env": "node",
         "test": "node"
     },
     "isTypedArr": {
         "description": "Check if value is a typed array.",
+        "dependencies": [
+            "objToStr",
+            "each"
+        ],
         "env": "all",
         "test": "all"
     },
     "isUndef": {
         "description": "Check if value is undefined.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "isUrl": {
         "description": "Loosely validate an url.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "isWindows": {
         "description": "Check if platform is windows.",
+        "dependencies": [],
         "env": "node",
         "test": "node"
     },
     "kebabCase": {
         "description": "Convert string to \"kebabCase\".",
+        "dependencies": [
+            "splitCase"
+        ],
         "env": "all",
         "test": "all"
     },
     "keyCode": {
         "description": "Key codes and key names conversion.",
+        "dependencies": [
+            "isStr",
+            "invert"
+        ],
         "env": "all",
         "test": "all"
     },
     "keys": {
         "description": "Create an array of the own enumerable property names of object.",
+        "dependencies": [
+            "has"
+        ],
         "env": "all",
         "test": "all"
     },
     "last": {
         "description": "Get the last element of array.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "linkify": {
         "description": "Hyperlink urls in a string.",
+        "dependencies": [
+            "extractUrls",
+            "each",
+            "escapeRegExp"
+        ],
         "env": "all",
         "test": "all"
     },
     "loadJs": {
         "description": "Inject script tag into page with given src value.",
+        "dependencies": [],
         "env": "browser",
         "test": "browser"
     },
     "longest": {
         "description": "Get the longest item in an array.",
+        "dependencies": [
+            "size"
+        ],
         "env": "all",
         "test": "all"
     },
     "lpad": {
         "description": "Pad string on the left side if it's shorter than length.",
+        "dependencies": [
+            "repeat",
+            "toStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "ltrim": {
         "description": "Remove chars or white-spaces from beginning of string.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "map": {
         "description": "Create an array of values by running each element in collection through iteratee.",
+        "dependencies": [
+            "safeCb",
+            "keys",
+            "isArrLike"
+        ],
         "env": "all",
         "test": "all"
     },
     "mapObj": {
         "description": "Map for objects.",
+        "dependencies": [
+            "safeCb",
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "matcher": {
         "description": "Return a predicate function that checks if attrs are contained in an object.",
+        "dependencies": [
+            "extendOwn",
+            "isMatch"
+        ],
         "env": "all",
         "test": "all"
     },
     "max": {
         "description": "Get maximum value of given numbers.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "memStorage": {
         "description": "Memory-backed implementation of the Web Storage API.",
+        "dependencies": [
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "memoize": {
         "description": "Memoize a given function by caching the computed result.",
+        "dependencies": [
+            "has"
+        ],
         "env": "all",
         "test": "all"
     },
     "meta": {
         "description": "Document meta manipulation, turn name and content into key value pairs.",
+        "dependencies": [
+            "each",
+            "isStr",
+            "isUndef",
+            "contain",
+            "isArr",
+            "isObj",
+            "toArr"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "methods": {
         "description": "Return a sorted list of the names of every method in an object.",
+        "dependencies": [
+            "isFn"
+        ],
         "env": "all",
         "test": "all"
     },
     "min": {
         "description": "Get minimum value of given numbers.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "mkdir": {
         "description": "Recursively create directories.",
+        "dependencies": [
+            "isFn",
+            "noop"
+        ],
         "env": "node",
         "test": "node"
     },
     "ms": {
         "description": "Convert time string formats to milliseconds.",
+        "dependencies": [
+            "toNum"
+        ],
         "env": "all",
         "test": "all"
     },
     "negate": {
         "description": "Create a function that negates the result of the predicate function.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "nextTick": {
         "description": "Next tick for both node and browser.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "noop": {
         "description": "A no-operation function.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "now": {
         "description": "Gets the number of milliseconds that have elapsed since the Unix epoch.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "objToStr": {
         "description": "Alias of Object.prototype.toString.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "once": {
         "description": "Create a function that invokes once.",
+        "dependencies": [
+            "partial",
+            "before"
+        ],
         "env": "all",
         "test": "all"
     },
     "optimizeCb": {
         "description": "Used for function context binding.",
+        "dependencies": [
+            "isUndef"
+        ],
         "env": "all",
         "test": "all"
     },
     "orientation": {
         "description": "Screen orientation helper.",
+        "dependencies": [
+            "Emitter",
+            "safeGet"
+        ],
         "env": "browser",
         "test": "browser",
         "demo": true
     },
     "pad": {
         "description": "Pad string on the left and right sides if it's shorter than length.",
+        "dependencies": [
+            "repeat",
+            "toStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "pairs": {
         "description": "Convert an object into a list of [key, value] pairs.",
+        "dependencies": [
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "parallel": {
         "description": "Run an array of functions in parallel.",
+        "dependencies": [
+            "noop",
+            "each",
+            "nextTick"
+        ],
         "env": "all",
         "test": "all"
     },
     "partial": {
         "description": "Partially apply a function by filling in given arguments.",
+        "dependencies": [
+            "restArgs",
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "pascalCase": {
         "description": "Convert string to \"pascalCase\".",
+        "dependencies": [
+            "camelCase",
+            "upperFirst"
+        ],
         "env": "all",
         "test": "all"
     },
     "perfNow": {
         "description": "High resolution time up to microsecond precision.",
+        "dependencies": [
+            "now",
+            "root"
+        ],
         "env": "all",
         "test": "all"
     },
     "pick": {
         "description": "Return a filtered copy of an object.",
+        "dependencies": [
+            "isStr",
+            "isArr",
+            "contain",
+            "each"
+        ],
         "env": "all",
         "test": "all"
     },
     "pluck": {
         "description": "Extract a list of property values.",
+        "dependencies": [
+            "map",
+            "property"
+        ],
         "env": "all",
         "test": "all"
     },
     "property": {
         "description": "Return a function that will itself return the key property of any passed-in object.",
+        "dependencies": [
+            "isArr",
+            "safeGet"
+        ],
         "env": "all",
         "test": "all"
     },
     "query": {
         "description": "Parse and stringify url query strings.",
+        "dependencies": [
+            "trim",
+            "each",
+            "isUndef",
+            "isArr",
+            "map",
+            "isEmpty",
+            "filter",
+            "isObj"
+        ],
         "env": "all",
         "test": "all"
     },
     "raf": {
         "description": "Shortcut for requestAnimationFrame.",
+        "dependencies": [
+            "now",
+            "isBrowser"
+        ],
         "env": "all",
         "test": "all"
     },
     "random": {
         "description": "Produces a random number between min and max(inclusive).",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "randomBytes": {
         "description": "Random bytes generator.",
+        "dependencies": [
+            "random",
+            "isBrowser"
+        ],
         "env": "all",
         "test": "all"
     },
     "range": {
         "description": "Create flexibly-numbered lists of integers.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "ready": {
         "description": "Invoke callback when dom is ready, similar to jQuery ready.",
+        "dependencies": [],
         "env": "browser",
         "test": "browser"
     },
     "reduce": {
         "description": "Turn a list of values into a single value.",
+        "dependencies": [
+            "optimizeCb",
+            "isArrLike",
+            "isUndef",
+            "keys"
+        ],
         "env": "all",
         "test": "all",
         "benchmark": true
     },
     "reject": {
-        "description": "Opposite of filter."
+        "description": "Opposite of filter.",
+        "dependencies": [
+            "safeCb",
+            "negate",
+            "filter"
+        ]
     },
     "remove": {
         "description": "Remove all elements from array that predicate returns truthy for and return an array of the removed elements.",
+        "dependencies": [
+            "safeCb"
+        ],
         "env": "all",
         "test": "all"
     },
     "repeat": {
         "description": "Repeat string n-times.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "restArgs": {
         "description": "This accumulates the arguments passed into an array, after a given index.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "rgbToHsl": {
         "description": "Convert rgb to hsl.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "root": {
         "description": "Root object reference, `global` in nodeJs, `window` in browser.",
+        "dependencies": [
+            "isBrowser"
+        ],
         "env": "all",
         "test": "all"
     },
     "rpad": {
         "description": "Pad string on the right side if it's shorter than length.",
+        "dependencies": [
+            "repeat",
+            "toStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "rtrim": {
         "description": "Remove chars or white-spaces from end of string.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "safeCb": {
         "description": "Create callback based on input value.",
+        "dependencies": [
+            "isFn",
+            "isObj",
+            "optimizeCb",
+            "matcher",
+            "identity"
+        ],
         "env": "all",
         "test": "all"
     },
     "safeDel": {
         "description": "Delete object property.",
+        "dependencies": [
+            "isUndef",
+            "castPath"
+        ],
         "env": "all",
         "test": "all"
     },
     "safeGet": {
         "description": "Get object property, don't throw undefined error.",
+        "dependencies": [
+            "isUndef",
+            "castPath"
+        ],
         "env": "all",
         "test": "all"
     },
     "safeSet": {
         "description": "Set value at path of object.",
+        "dependencies": [
+            "castPath"
+        ],
         "env": "all",
         "test": "all"
     },
     "safeStorage": {
         "description": "Use storage safely in safari private browsing and older browsers.",
+        "dependencies": [
+            "memStorage"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "sample": {
         "description": "Sample random values from a collection.",
+        "dependencies": [
+            "isArrLike",
+            "clone",
+            "values",
+            "random"
+        ],
         "env": "all",
         "test": "all"
     },
     "scrollTo": {
         "description": "Scroll to a target with animation.",
+        "dependencies": [
+            "Tween",
+            "defaults",
+            "noop",
+            "isNum",
+            "$offset"
+        ],
         "env": "browser",
         "test": "browser",
         "demo": true
     },
     "shuffle": {
         "description": "Randomize the order of the elements in a given array.",
+        "dependencies": [
+            "sample"
+        ],
         "env": "all",
         "test": "all"
     },
     "size": {
         "description": "Get size of object, length of array like object or the number of keys.",
+        "dependencies": [
+            "isArrLike",
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "slice": {
         "description": "Create slice of source array or array-like object.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "snakeCase": {
         "description": "Convert string to \"snakeCase\".",
+        "dependencies": [
+            "splitCase"
+        ],
         "env": "all",
         "test": "all"
     },
     "some": {
         "description": "Check if predicate return truthy for any element.",
+        "dependencies": [
+            "safeCb",
+            "isArrLike",
+            "keys"
+        ],
         "env": "all",
         "test": "all"
     },
     "spaceCase": {
         "description": "Convert string to \"spaceCase\".",
+        "dependencies": [
+            "splitCase"
+        ],
         "env": "all",
         "test": "all"
     },
     "splitCase": {
         "description": "Split different string case to an array.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "splitPath": {
         "description": "Split path into device, dir, name and ext.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "startWith": {
         "description": "Check if string starts with the given target string.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "stringify": {
         "description": "JSON stringify with support for circular object, function etc.",
+        "dependencies": [
+            "type",
+            "upperFirst",
+            "toStr",
+            "isUndef",
+            "isFn",
+            "isRegExp"
+        ],
         "env": "all",
         "test": "all"
     },
     "stripAnsi": {
         "description": "Strip ansi codes from a string.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "stripCmt": {
         "description": "Strip comments from source code.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "stripColor": {
         "description": "Strip ansi color codes from a string.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "stripHtmlTag": {
         "description": "Strip html tags from a string.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "sum": {
         "description": "Compute sum of given numbers.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "template": {
         "description": "Compile JavaScript template into function that can be evaluated for rendering.",
+        "dependencies": [
+            "escape"
+        ],
         "env": "all",
         "test": "all"
     },
     "throttle": {
         "description": "Return a new throttled version of the passed function.",
+        "dependencies": [
+            "debounce"
+        ],
         "env": "all",
         "test": "all"
     },
     "timeAgo": {
         "description": "Format datetime with *** time ago statement.",
+        "dependencies": [
+            "isDate",
+            "toInt"
+        ],
         "env": "all",
         "test": "all"
     },
     "timeTaken": {
         "description": "Get execution time of a function.",
+        "dependencies": [
+            "perfNow"
+        ],
         "env": "all",
         "test": "all"
     },
     "toArr": {
         "description": "Convert value to an array.",
+        "dependencies": [
+            "isArrLike",
+            "map",
+            "isArr",
+            "isStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "toEl": {
         "description": "Convert html string to dom elements.",
+        "dependencies": [],
         "env": "browser",
         "test": "browser"
     },
     "toInt": {
         "description": "Convert value to an integer.",
+        "dependencies": [
+            "toNum"
+        ],
         "env": "all",
         "test": "all"
     },
     "toNum": {
         "description": "Convert value to a number.",
+        "dependencies": [
+            "isNum",
+            "isObj",
+            "isFn",
+            "isStr"
+        ],
         "env": "all",
         "test": "all"
     },
     "toSrc": {
         "description": "Convert function to its source code.",
+        "dependencies": [
+            "isNil"
+        ],
         "env": "all",
         "test": "all"
     },
     "toStr": {
         "description": "Convert value to a string.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "topoSort": {
         "description": "Topological sorting algorithm.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "trim": {
         "description": "Remove chars or white-spaces from beginning end of string.",
+        "dependencies": [
+            "ltrim",
+            "rtrim"
+        ],
         "env": "all",
         "test": "all"
     },
     "tryIt": {
         "description": "Run function in a try catch.",
+        "dependencies": [
+            "noop"
+        ],
         "env": "all",
         "test": "all"
     },
     "type": {
         "description": "Determine the internal JavaScript [[Class]] of an object.",
+        "dependencies": [
+            "objToStr",
+            "isNaN"
+        ],
         "env": "all",
         "test": "all"
     },
     "unescape": {
         "description": "Convert HTML entities back, the inverse of escape.",
+        "dependencies": [
+            "escape",
+            "keys",
+            "invert"
+        ],
         "env": "all",
         "test": "all"
     },
     "union": {
         "description": "Create an array of unique values, in order, from all given arrays.",
+        "dependencies": [
+            "restArgs",
+            "unique",
+            "flatten"
+        ],
         "env": "all",
         "test": "all"
     },
     "uniqId": {
         "description": "Generate a globally-unique id.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "unique": {
         "description": "Create duplicate-free version of an array.",
+        "dependencies": [
+            "filter"
+        ],
         "env": "all",
         "test": "all"
     },
     "unzip": {
         "description": "Opposite of zip.",
+        "dependencies": [
+            "map",
+            "pluck",
+            "max"
+        ],
         "env": "all",
         "test": "all"
     },
     "upperFirst": {
         "description": "Convert the first character of string to upper case.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
     "use": {
         "description": "Use modules that is created by define.",
+        "dependencies": [
+            "map",
+            "define",
+            "has",
+            "toArr"
+        ],
         "env": "all",
         "test": "all"
     },
     "uuid": {
         "description": "RFC4122 version 4 compliant uuid generator.",
+        "dependencies": [
+            "randomBytes"
+        ],
         "env": "all",
         "test": "all",
         "benchmark": true
     },
     "values": {
         "description": "Create an array of the own enumerable property values of object.",
+        "dependencies": [
+            "each"
+        ],
         "env": "all",
         "test": "all"
     },
     "viewportScale": {
         "description": "Get viewport scale.",
+        "dependencies": [
+            "meta",
+            "clamp",
+            "trim",
+            "each",
+            "map",
+            "isNaN"
+        ],
         "env": "browser",
         "test": "browser"
     },
     "waterfall": {
         "description": "Run an array of functions in series.",
+        "dependencies": [
+            "noop",
+            "nextTick",
+            "restArgs"
+        ],
         "env": "all",
         "test": "all"
     },
     "wrap": {
         "description": "Wrap the function inside a wrapper function, passing it as the first argument.",
+        "dependencies": [
+            "partial"
+        ],
         "env": "all",
         "test": "all"
     },
     "zip": {
         "description": "Merge together the values of each of the arrays with the values at the corresponding position.",
+        "dependencies": [
+            "restArgs",
+            "unzip"
+        ],
         "env": "all",
         "test": "all"
     }
