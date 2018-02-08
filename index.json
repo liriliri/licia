@@ -1050,6 +1050,14 @@
         "env": "all",
         "test": "all"
     },
+    "isEven": {
+        "description": "Check if number is even.",
+        "dependencies": [
+            "isInt"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "isFinite": {
         "description": "Check if value is a finite primitive number.",
         "dependencies": [
@@ -1158,6 +1166,14 @@
     "isObj": {
         "description": "Check if value is the language type of Object.",
         "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
+    "isOdd": {
+        "description": "Check if number is odd.",
+        "dependencies": [
+            "isInt"
+        ],
         "env": "all",
         "test": "all"
     },

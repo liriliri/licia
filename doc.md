@@ -2561,6 +2561,21 @@ Check if value is an error.
 isErr(new Error()); // -> true
 ```
 
+## isEven 
+
+Check if number is even.
+
+|Name  |Type   |Desc                  |
+|------|-------|----------------------|
+|num   |number |Number to check       |
+|return|boolean|True if number is even|
+
+```javascript
+isOdd(0); // -> true
+isOdd(1); // -> false
+isOdd(2); // -> true
+```
+
 ## isFinite 
 
 Check if value is a finite primitive number.
@@ -2767,6 +2782,21 @@ Check if value is the language type of Object.
 ```javascript
 isObj({}); // -> true
 isObj([]); // -> true
+```
+
+## isOdd 
+
+Check if number is odd.
+
+|Name  |Type   |Desc                 |
+|------|-------|---------------------|
+|num   |number |Number to check      |
+|return|boolean|True if number is odd|
+
+```javascript
+isOdd(0); // -> false
+isOdd(1); // -> true
+isOdd(2); // -> false
 ```
 
 ## isPlainObj 
