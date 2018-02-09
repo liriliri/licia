@@ -889,6 +889,12 @@
         "env": "all",
         "test": "all"
     },
+    "gcd": {
+        "description": "Compute the greatest common divisor using Euclid's algorithm.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "has": {
         "description": "Checks if key is a direct property.",
         "dependencies": [],

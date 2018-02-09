@@ -2258,6 +2258,20 @@ a.b.c = 2;
 console.log(a); // -> {b: {c: 1}}
 ```
 
+## gcd 
+
+Compute the greatest common divisor using Euclid's algorithm.
+
+|Name  |Type  |Desc                   |
+|------|------|-----------------------|
+|a     |number|Number to calculate    |
+|b     |number|Number to calculate    |
+|return|number|Greatest common divisor|
+
+```javascript
+gcd(121, 44); // -> 11
+```
+
 ## has 
 
 Checks if key is a direct property.
