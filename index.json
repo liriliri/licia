@@ -1000,6 +1000,14 @@
         "env": "node",
         "test": "node"
     },
+    "isClose": {
+        "description": "Check if values are close(almost equal) to each other.",
+        "dependencies": [
+            "isNum"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "isDate": {
         "description": "Check if value is classified as a Date object.",
         "dependencies": [
