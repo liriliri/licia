@@ -1382,6 +1382,22 @@ castPath('a[0].b'); // -> ['a', '0', 'b']
 castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
 ```
 
+## centerAlign 
+
+Center align text in a string.
+
+|Name   |Type        |Desc                    |
+|-------|------------|------------------------|
+|str    |string array|String to align         |
+|[width]|number      |Total width of each line|
+|return |string      |Center aligned string   |
+
+```javascript
+centerAlign('test', 8); // -> '  test'
+centerAlign('test\nlines', 8); // -> '  test\n lines'
+centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
+```
+
 ## chunk 
 
 Split array into groups the length of given size.

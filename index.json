@@ -462,6 +462,18 @@
         "env": "all",
         "test": "all"
     },
+    "centerAlign": {
+        "description": "Center align text in a string.",
+        "dependencies": [
+            "longest",
+            "isArr",
+            "isUndef",
+            "map",
+            "lpad"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "chunk": {
         "description": "Split array into groups the length of given size.",
         "dependencies": [],
