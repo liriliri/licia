@@ -3088,6 +3088,19 @@ Get the longest item in an array.
 longest(['a', 'abcde', 'abc']); // -> 'abcde'
 ```
 
+## lowerCase 
+
+Convert string to lower case.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|str   |string|String to convert |
+|return|string|Lower cased string|
+
+```javascript
+lowerCase('TEST'); // -> 'test'
+```
+
 ## lpad 
 
 Pad string on the left side if it's shorter than length.
@@ -4427,6 +4440,19 @@ Opposite of zip.
 
 ```javascript
 unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, false]]
+```
+
+## upperCase 
+
+Convert string to upper case.
+
+|Name  |Type  |Desc             |
+|------|------|-----------------|
+|str   |string|String to convert|
+|return|string|Uppercased string|
+
+```javascript
+uppercase('test'); // -> 'TEST'
 ```
 
 ## upperFirst 

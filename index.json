@@ -1329,6 +1329,14 @@
         "env": "all",
         "test": "all"
     },
+    "lowerCase": {
+        "description": "Convert string to lower case.",
+        "dependencies": [
+            "toStr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "lpad": {
         "description": "Pad string on the left side if it's shorter than length.",
         "dependencies": [
@@ -2034,6 +2042,14 @@
             "map",
             "pluck",
             "max"
+        ],
+        "env": "all",
+        "test": "all"
+    },
+    "upperCase": {
+        "description": "Convert string to upper case.",
+        "dependencies": [
+            "toStr"
         ],
         "env": "all",
         "test": "all"
