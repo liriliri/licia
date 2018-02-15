@@ -3387,6 +3387,20 @@ A no-operation function.
 noop(); // Does nothing
 ```
 
+## normalizePath 
+
+Normalize file path slashes.
+
+|Name  |Type  |Desc             |
+|------|------|-----------------|
+|path  |string|Path to normalize|
+|return|string|Normalized path  |
+
+```javascript
+normalizePath('\\foo\\bar\\'); // -> '/foo/bar/'
+normalizePath('./foo//bar'); // -> './foo/bar'
+```
+
 ## now 
 
 Gets the number of milliseconds that have elapsed since the Unix epoch.

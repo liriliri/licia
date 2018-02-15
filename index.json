@@ -1477,6 +1477,12 @@
         "env": "all",
         "test": "all"
     },
+    "normalizePath": {
+        "description": "Normalize file path slashes.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "now": {
         "description": "Gets the number of milliseconds that have elapsed since the Unix epoch.",
         "dependencies": [],
