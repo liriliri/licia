@@ -733,6 +733,14 @@
         "env": "all",
         "test": "all"
     },
+    "escapeJsStr": {
+        "description": "Escape string to be a valid JavaScript string literal between quotes.",
+        "dependencies": [
+            "toStr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "escapeRegExp": {
         "description": "Escape special chars to be used as literals in RegExp constructors.",
         "dependencies": [],

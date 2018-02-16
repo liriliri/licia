@@ -1958,6 +1958,21 @@ Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' charact
 escape('You & Me'); -> // -> 'You &amp; Me'
 ```
 
+## escapeJsStr 
+
+Escape string to be a valid JavaScript string literal between quotes.
+
+http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|str   |string|String to escape|
+|return|string|Escaped string  |
+
+```javascript
+escapeJsStr('\"\n'); // -> '\\"\\\\n'
+```
+
 ## escapeRegExp 
 
 Escape special chars to be used as literals in RegExp constructors.
