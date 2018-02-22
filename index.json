@@ -1710,6 +1710,14 @@
         "env": "all",
         "test": "all"
     },
+    "rmCookie": {
+        "description": "Loop through all possible path and domain to remove cookie.",
+        "dependencies": [
+            "cookie"
+        ],
+        "env": "browser",
+        "test": "browser"
+    },
     "root": {
         "description": "Root object reference, `global` in nodeJs, `window` in browser.",
         "dependencies": [

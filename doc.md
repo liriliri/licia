@@ -3837,6 +3837,18 @@ Convert rgb to hsl.
 rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
 ```
 
+## rmCookie 
+
+Loop through all possible path and domain to remove cookie.
+
+|Name|Type  |Desc      |
+|----|------|----------|
+|key |string|Cookie key|
+
+```javascript
+rmCookie('test');
+```
+
 ## root 
 
 Root object reference, `global` in nodeJs, `window` in browser.
