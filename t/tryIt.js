@@ -6,7 +6,7 @@
  * |[cb]|function|Callback             |
  * 
  * ```javascript
- * try(function () 
+ * tryIt(function () 
  * {
  *     // Do something that might cause an error.
  * }, function (err, result) 
