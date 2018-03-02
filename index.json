@@ -964,6 +964,12 @@
         "env": "all",
         "test": "all"
     },
+    "intersectRange": {
+        "description": "Intersect two ranges.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "invert": {
         "description": "Create an object composed of the inverted keys and values of object.",
         "dependencies": [

@@ -2414,6 +2414,23 @@ Compute the list of values that are the intersection of all the arrays.
 intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
 ```
 
+## intersectRange 
+
+Intersect two ranges.
+
+|Name  |Type  |Desc                 |
+|------|------|---------------------|
+|a     |object|Range a              |
+|b     |object|Range b              |
+|return|object|Intersection if exist|
+
+```javascript
+intersectRange({start: 0, end: 12}, {start: 11, end: 13});
+// -> {start: 11, end: 12}
+intersectRange({start: 0, end: 5}, {start: 6, end: 7});
+// -> undefined
+```
+
 ## invert 
 
 Create an object composed of the inverted keys and values of object.
@@ -4408,7 +4425,7 @@ Run function in a try catch.
 |[cb]|function|Callback             |
 
 ```javascript
-try(function ()
+tryIt(function ()
 {
     // Do something that might cause an error.
 }, function (err, result)
