@@ -474,6 +474,10 @@
         "env": "all",
         "test": "all"
     },
+    "char": {
+        "description": "Return string representing a character whose Unicode code point is the given integer.",
+        "dependencies": []
+    },
     "chunk": {
         "description": "Split array into groups the length of given size.",
         "dependencies": [],

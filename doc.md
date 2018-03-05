@@ -1398,6 +1398,21 @@ centerAlign('test\nlines', 8); // -> '  test\n lines'
 centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
 ```
 
+## char 
+
+Return string representing a character whose Unicode code point is the given integer.
+
+|Name  |Type  |Desc                                  |
+|------|------|--------------------------------------|
+|num   |number|Integer to convert                    |
+|return|string|String representing corresponding char|
+
+```javascript
+char(65); // -> 'A'
+char(97); // -> 'a'
+char(8364); // -> '€'
+```
+
 ## chunk 
 
 Split array into groups the length of given size.
