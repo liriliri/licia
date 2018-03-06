@@ -1257,6 +1257,14 @@ var needPx = arrToMap([
 if (needPx[key]) val += 'px';
 ```
 
+## atob 
+
+Use Buffer to emulate atob when running in node.
+
+```javascript
+atob('SGVsbG8gV29ybGQ='); // -> 'Hello World'
+```
+
 ## average 
 
 Get average value of given numbers.
@@ -1334,6 +1342,14 @@ var fn = bind(function (msg)
     console.log(this.name + ':' + msg);
 }, {name: 'eustia'}, 'I am a utility library.');
 fn(); // -> 'eustia: I am a utility library.'
+```
+
+## btoa 
+
+Use Buffer to emulate btoa when running in node.
+
+```javascript
+btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 ```
 
 ## camelCase 

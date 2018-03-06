@@ -413,6 +413,17 @@
         "env": "all",
         "test": "all"
     },
+    "atob": {
+        "description": "Use Buffer to emulate atob when running in node.",
+        "dependencies": [
+            "root",
+            "isNode",
+            "base64",
+            "map"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "average": {
         "description": "Get average value of given numbers.",
         "dependencies": [],
@@ -435,6 +446,17 @@
         "description": "Create a function bound to a given object.",
         "dependencies": [
             "restArgs"
+        ],
+        "env": "all",
+        "test": "all"
+    },
+    "btoa": {
+        "description": "Use Buffer to emulate btoa when running in node.",
+        "dependencies": [
+            "root",
+            "isNode",
+            "base64",
+            "map"
         ],
         "env": "all",
         "test": "all"
