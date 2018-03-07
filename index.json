@@ -49,13 +49,13 @@
         "dependencies": [
             "isStr",
             "isObj",
-            "camelCase",
             "kebabCase",
             "isUndef",
             "contain",
             "isNum",
             "$safeEls",
-            "startWith"
+            "startWith",
+            "prefix"
         ],
         "env": "browser",
         "test": "browser"
@@ -1635,6 +1635,18 @@
         ],
         "env": "all",
         "test": "all"
+    },
+    "prefix": {
+        "description": "Add vendor prefixes to a CSS attribute.",
+        "dependencies": [
+            "memoize",
+            "camelCase",
+            "upperFirst",
+            "has",
+            "kebabCase"
+        ],
+        "env": "browser",
+        "test": "browser"
     },
     "property": {
         "description": "Return a function that will itself return the key property of any passed-in object.",

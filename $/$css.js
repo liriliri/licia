@@ -36,7 +36,7 @@
  * test: browser
  */
 
-_('isStr isObj camelCase kebabCase isUndef contain isNum $safeEls startWith');
+_('isStr isObj kebabCase isUndef contain isNum $safeEls startWith prefix');
 
 function exports(nodes, name, val)
 {
@@ -57,7 +57,7 @@ function exports(nodes, name, val)
 
 function getCss(node, name)
 {
-    return node.style[camelCase(name)] || getComputedStyle(node, '').getPropertyValue(name);
+    return node.style[prefix(name)] || getComputedStyle(node, '').getPropertyValue(name);
 }
 
 function setCss(nodes, css)
@@ -67,7 +67,7 @@ function setCss(nodes, css)
         var cssText = ';';
         each(css, function (val, key)
         {
-            key = dasherize(key);
+            key = prefix.dash(key);
             cssText += key + ':' + addPx(key, val) + ';';
         });
         node.style.cssText += cssText;
@@ -89,12 +89,4 @@ function addPx(key, val)
     var needPx = isNum(val) && !contain(cssNumProps, kebabCase(key));
 
     return needPx ? val + 'px' : val;
-}
-
-function dasherize(str) 
-{
-    // -webkit- -o- 
-    if (startWith(str, '-')) return str;
-
-    return kebabCase(str);
 }

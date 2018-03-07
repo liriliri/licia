@@ -3667,6 +3667,25 @@ var stooges = [
 pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
 ```
 
+## prefix 
+
+Add vendor prefixes to a CSS attribute.
+
+|Name  |Type  |Desc                  |
+|------|------|----------------------|
+|name  |string|Property name         |
+|return|string|Prefixed property name|
+
+### dash
+
+Create a dasherize version.
+
+```javascript
+prefix('text-emphasis'); // -> 'WebkitTextEmphasis'
+prefix.dash('text-emphasis'); // -> '-webkit-text-emphasis'
+prefix('color'); // -> 'color'
+```
+
 ## property 
 
 Return a function that will itself return the key property of any passed-in object.
