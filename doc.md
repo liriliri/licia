@@ -3138,6 +3138,22 @@ linkify(str, function (url)
 });
 ```
 
+## loadCss 
+
+Inject link tag into page with given href value.
+
+|Name|Type    |Desc           |
+|----|--------|---------------|
+|src |string  |Style source   |
+|cb  |function|Onload callback|
+
+```javascript
+loadCss('style.css', function (isLoaded)
+{
+    // Do something...
+});
+```
+
 ## loadJs 
 
 Inject script tag into page with given src value.
@@ -3148,7 +3164,7 @@ Inject script tag into page with given src value.
 |cb  |function|Onload callback|
 
 ```javascript
-loadJs('main.js', function ()
+loadJs('main.js', function (isLoaded)
 {
     // Do something...
 });

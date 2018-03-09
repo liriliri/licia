@@ -1367,6 +1367,14 @@
         "env": "all",
         "test": "all"
     },
+    "loadCss": {
+        "description": "Inject link tag into page with given href value.",
+        "dependencies": [
+            "noop"
+        ],
+        "env": "browser",
+        "test": "browser"
+    },
     "loadJs": {
         "description": "Inject script tag into page with given src value.",
         "dependencies": [],
