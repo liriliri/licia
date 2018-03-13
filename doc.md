@@ -1426,7 +1426,6 @@ Return string representing a character whose Unicode code point is the given int
 ```javascript
 char(65); // -> 'A'
 char(97); // -> 'a'
-char(8364); // -> '€'
 ```
 
 ## chunk 
@@ -3700,6 +3699,28 @@ Create a dasherize version.
 prefix('text-emphasis'); // -> 'WebkitTextEmphasis'
 prefix.dash('text-emphasis'); // -> '-webkit-text-emphasis'
 prefix('color'); // -> 'color'
+```
+
+## promisify 
+
+Convert callback based functions into Promises.
+
+|Name             |Type    |Desc                                  |
+|-----------------|--------|--------------------------------------|
+|fn               |function|Callback based function               |
+|[multiArgs=false]|boolean |If callback has multiple success value|
+|return           |boolean |Result function                       |
+
+If multiArgs is set to true, the resulting promise will always fulfill with an array of the callback's success values.
+
+```javascript
+var fs = require('fs');
+
+var readFile = promisify(fs.readFile);
+readFile('test.js', 'utf-8').then(function (data)
+{
+    // Do something with file content.
+});
 ```
 
 ## property 

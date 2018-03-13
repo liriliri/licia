@@ -1656,6 +1656,16 @@
         "env": "browser",
         "test": "browser"
     },
+    "promisify": {
+        "description": "Convert callback based functions into Promises.",
+        "dependencies": [
+            "restArgs",
+            "root",
+            "Promise"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "property": {
         "description": "Return a function that will itself return the key property of any passed-in object.",
         "dependencies": [
