@@ -211,6 +211,12 @@
         "env": "all",
         "test": "all"
     },
+    "LinkedList": {
+        "description": "Doubly-linked list implementation.",
+        "dependencies": [
+            "Class"
+        ]
+    },
     "LocalStore": {
         "description": "LocalStorage wrapper.",
         "dependencies": [

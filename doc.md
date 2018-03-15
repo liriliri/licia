@@ -538,6 +538,45 @@ data.set('count', data.get('books').length);
 data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', count: 1}
 ```
 
+## LinkedList 
+
+Doubly-linked list implementation.
+
+### push
+
+Add an value to the end of the list.
+
+|Name  |Type  |Desc         |
+|------|------|-------------|
+|val   |*     |Value to push|
+|return|number|Current size |
+
+### pop
+
+Get the last value of the list.
+
+### unshift
+
+Add an value to the head of the list.
+
+### shift
+
+Get the first value of the list.
+
+### forEach
+
+Iterate over the list.
+
+### toArr
+
+Convert the list to a JavaScript array.
+
+```javascript
+var linkedList = new LinkedList();
+linkedList.push(5);
+linkedList.pop(); // -> 5
+```
+
 ## LocalStore 
 
 LocalStorage wrapper.
