@@ -215,7 +215,9 @@
         "description": "Doubly-linked list implementation.",
         "dependencies": [
             "Class"
-        ]
+        ],
+        "env": "all",
+        "test": "all"
     },
     "LocalStore": {
         "description": "LocalStorage wrapper.",
@@ -463,6 +465,14 @@
             "isNode",
             "base64",
             "map"
+        ],
+        "env": "all",
+        "test": "all"
+    },
+    "callbackify": {
+        "description": "Convert a function that returns a Promise to a function following the error-first callback style.",
+        "dependencies": [
+            "restArgs"
         ],
         "env": "all",
         "test": "all"

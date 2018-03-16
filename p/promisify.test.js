@@ -9,12 +9,12 @@ it('basic', function ()
 {
     var promiseFn = promisify(cbFn);
 
-    promiseFn(4).catch(err => 
+    promiseFn(4).catch(function (err)
     {
         expect(err).to.be.an('error');
     });
 
-    promiseFn(5).then(value => 
+    promiseFn(5).then(function (value) 
     {
         expect(value).to.equal(10);
     });
@@ -24,7 +24,7 @@ it('multiArgs', function ()
 {
     var promiseFn = promisify(cbFn, true);
 
-    promiseFn(5).then(values => 
+    promiseFn(5).then(function (values)
     {
         expect(values[0]).to.equal(10);
         expect(values[1]).to.equal(15);

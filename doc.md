@@ -1391,6 +1391,32 @@ Use Buffer to emulate btoa when running in node.
 btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 ```
 
+## callbackify 
+
+Convert a function that returns a Promise to a function following the error-first callback style.
+
+|Name  |Type    |Desc                                            |
+|------|--------|------------------------------------------------|
+|fn    |function|Function that returns a Promise                 |
+|return|function|Function following the error-fist callback style|
+
+```javascript
+function fn()
+{
+    return new Promise(function (resolve, reject)
+    {
+        // ...
+    });
+}
+
+var cbFn = callbackify(fn);
+
+cbFn(function (err, value)
+{
+    // ...
+});
+```
+
 ## camelCase 
 
 Convert string to "camelCase".
