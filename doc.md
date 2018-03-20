@@ -1793,6 +1793,19 @@ Return a new debounced version of the passed function.
 $(window).resize(debounce(calLayout, 300));
 ```
 
+## decodeUriComponent 
+
+Better decodeURIComponent that does not throw if input is invalid.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|str   |string|String to decode|
+|return|string|Decoded string  |
+
+```javascript
+decodeUriComponent('%%25%'); // -> ''
+```
+
 ## defaults 
 
 Fill in undefined properties in object with the first value present in the following list of defaults objects.
