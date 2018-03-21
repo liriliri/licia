@@ -4615,6 +4615,35 @@ type(function () {}); // -> 'function'
 type([]); // -> 'array'
 ```
 
+## ucs2 
+
+UCS-2 encoding and decoding.
+
+### encode
+
+Create a string using an array of code point values.
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|arr   |array |Array of code points|
+|return|string|Encoded string      |
+
+### decode
+
+Create an array of code point values using a string.
+
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|str   |string|Input string        |
+|return|array |Array of code points|
+
+```javascript
+ucs2.encode([0x61, 0x62, 0x63]); // -> 'abc'
+ucs2.decode('abc'); // -> [0x61, 0x62, 0x63]
+'𝌆'.length; // -> 2
+ucs2.decode('𝌆').length; // -> 1
+```
+
 ## unescape 
 
 Convert HTML entities back, the inverse of escape.

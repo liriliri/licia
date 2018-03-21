@@ -2120,6 +2120,12 @@
         "env": "all",
         "test": "all"
     },
+    "ucs2": {
+        "description": "UCS-2 encoding and decoding.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "unescape": {
         "description": "Convert HTML entities back, the inverse of escape.",
         "dependencies": [
