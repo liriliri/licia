@@ -52,7 +52,7 @@ exports = {
             if (c >= 0xD800 && c <= 0xDBFF && i < len) 
             {
                 var tail = str.charCodeAt(i++);
-                // nextC >= 0xDC00 && nextC <= DFFF
+                // nextC >= 0xDC00 && nextC <= 0xDFFF
                 if ((tail & 0xFC00) === 0xDC00) 
                 {
                     // C = (H - 0xD800) * 0x400 + L - 0xDC00 + 0x10000
