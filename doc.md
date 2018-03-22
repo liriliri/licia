@@ -4756,6 +4756,33 @@ use(['A'], function (A)
 });
 ```
 
+## utf8 
+
+UTF-8 encoding and decoding.
+
+### encode
+
+Turn any UTF-8 decoded string into UTF-8 encoded string.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|str   |string|String to encode|
+|return|string|Encoded string  |
+
+### decode
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|str   |string|String to decode|
+|return|string|Decoded string  |
+
+Turn any UTF-8 encoded string into UTF-8 decoded string.
+
+```javascript
+utf8.encode('\uD800\uDC00'); // ->  '\xF0\x90\x80\x80'
+utf8.decode('\xF0\x90\x80\x80'); // -> '\uD800\uDC00'
+```
+
 ## uuid 
 
 RFC4122 version 4 compliant uuid generator.

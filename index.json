@@ -2195,6 +2195,14 @@
         "env": "all",
         "test": "all"
     },
+    "utf8": {
+        "description": "UTF-8 encoding and decoding.",
+        "dependencies": [
+            "ucs2"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "uuid": {
         "description": "RFC4122 version 4 compliant uuid generator.",
         "dependencies": [
