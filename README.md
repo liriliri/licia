@@ -52,7 +52,7 @@ about how to write an eustia module.
 
 * Must have full documentation about usage.
 * Must have test.
-* Must named with **a-zA-Z$** characters only.
+* Must named with **a-zA-Z0-9$** characters only.
 * Must not be repeated. (e.g. leftPad is not allowed because there is already a
   module called lpad)
 * Must within a file, less than 500 lines. (with comments and blank lines counted)  
