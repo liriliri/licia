@@ -2671,6 +2671,20 @@ isClose(1, 1.2, 0.3); // -> true
 isClose(1, 1.2, 0.1, 0.3); // -> true
 ```
 
+## isDataUrl 
+
+Check if a string is a valid data url.
+
+|Name  |Type   |Desc                        |
+|------|-------|----------------------------|
+|str   |string |String to check             |
+|return|boolean|True if string is a data url|
+
+```javascript
+isDataUrl('http://eustia.liriliri.io'); // -> false
+isDataUrl('data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D'); // -> true
+```
+
 ## isDate 
 
 Check if value is classified as a Date object.
