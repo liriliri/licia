@@ -1803,7 +1803,8 @@ Better decodeURIComponent that does not throw if input is invalid.
 |return|string|Decoded string  |
 
 ```javascript
-decodeUriComponent('%%25%'); // -> ''
+decodeUriComponent('%%25%'); // -> '%%%'
+decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
 ```
 
 ## defaults 
@@ -4785,10 +4786,11 @@ Turn any UTF-8 decoded string into UTF-8 encoded string.
 
 ### decode
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|str   |string|String to decode|
-|return|string|Decoded string  |
+|Name        |Type   |Desc                  |
+|------------|-------|----------------------|
+|str         |string |String to decode      |
+|[safe=false]|boolean|Suppress error if true|
+|return      |string |Decoded string        |
 
 Turn any UTF-8 encoded string into UTF-8 decoded string.
 

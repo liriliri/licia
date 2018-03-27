@@ -7,6 +7,7 @@
  * 
  * ```javascript
  * decodeUriComponent('%%25%'); // -> '%%%'
+ * decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
  * ```
  */ 
 
@@ -44,7 +45,7 @@ function decode(str)
     var bytes = map(str, hexToInt);
 
     str = ucs2.encode(bytes);
-    str = utf8.decode(str);
+    str = utf8.decode(str, true);
 
     return str;
 }

@@ -42,7 +42,7 @@
  * test: browser
  */
 
-_('defaults isNum isUndef');
+_('defaults isNum isUndef decodeUriComponent');
 
 var defOpts = { path: '/' };
 
@@ -81,10 +81,10 @@ function setCookie(key, val, options)
     {
         var c = cookies[i],
             parts = c.split('='),
-            name = decodeURIComponent(parts.shift());
+            name = decodeUriComponent(parts.shift());
 
         c = parts.join('=');
-        c = decodeURIComponent(c);
+        c = decodeUriComponent(c);
 
         if (key === name)
         {

@@ -16,7 +16,7 @@ it('decode', function ()
     // Invalid continuation byte
     expect(function () 
     {
-        utf8.decode('\xED\xA0\x80\xED\xA0\x80'); 
+        utf8.decode('\xED\xA0\x80');
     }).to.throw();
 
     // Invalid byte index
@@ -30,4 +30,11 @@ it('decode', function ()
     {
         utf8.decode('\xFF\x01');
     }).to.throw();
+});
+
+it('decode safe', function () 
+{
+    expect(utf8.decode('\xED\xA0\x80', true)).to.equal('\xED\u00A0\u0080');
+    expect(utf8.decode('\xE0\xA4', true)).to.equal('\xE0\u00A4');
+    expect(utf8.decode('\xFF\x01', true)).to.equal('\xFF\u0001');
 });

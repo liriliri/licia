@@ -610,7 +610,8 @@
         "dependencies": [
             "defaults",
             "isNum",
-            "isUndef"
+            "isUndef",
+            "decodeUriComponent"
         ],
         "env": "browser",
         "test": "browser"
@@ -661,7 +662,12 @@
     },
     "decodeUriComponent": {
         "description": "Better decodeURIComponent that does not throw if input is invalid.",
-        "dependencies": [],
+        "dependencies": [
+            "each",
+            "ucs2",
+            "map",
+            "utf8"
+        ],
         "env": "all",
         "test": "all"
     },

@@ -123,13 +123,14 @@ var byteArr,
     lowerBoundary,
     upperBoundary;
 
-function decodeCodePoint() 
+function decodeCodePoint(safe) 
 {
     /* eslint-disable no-constant-condition */
     while (true) 
     {
         if (byteIdx >= byteCount && bytesNeeded) 
         {
+            if (safe) return goBack();
             throw new Error('Invalid byte index');
         }
 
@@ -166,6 +167,7 @@ function decodeCodePoint()
                 codePoint = byte & 0x7;
             } else 
             {
+                if (safe) return goBack();
                 throw new Error('Invalid UTF-8 detected');
             }
 
@@ -174,12 +176,10 @@ function decodeCodePoint()
 
         if (byte < lowerBoundary || byte > upperBoundary) 
         {
-            codePoint = 0;
-            bytesNeeded = 0;
-            bytesSeen = 0;
-            lowerBoundary = 0x80;
-            upperBoundary = 0xBF;
-            byteIdx--;
+            if (safe) {
+                byteIdx--;
+                return goBack();
+            }
             throw new Error('Invalid continuation byte');
         }
 
@@ -200,4 +200,17 @@ function decodeCodePoint()
 
         return tmp;
     }
+}
+
+function goBack() 
+{
+    var start = byteIdx - bytesSeen - 1;
+    byteIdx = start + 1;
+    codePoint = 0;
+    bytesNeeded = 0;
+    bytesSeen = 0;
+    lowerBoundary = 0x80;
+    upperBoundary = 0xBF;
+
+    return byteArr[start];
 }
