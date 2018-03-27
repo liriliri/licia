@@ -11,10 +11,11 @@
  * 
  * ### decode
  * 
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |str   |string|String to decode|
- * |return|string|Decoded string  |
+ * |Name        |Type   |Desc                  |
+ * |------------|-------|----------------------|
+ * |str         |string |String to decode      |
+ * |[safe=false]|boolean|Suppress error if true|
+ * |return      |string |Decoded string        |
  * 
  * Turn any UTF-8 encoded string into UTF-8 decoded string.
  * 
@@ -46,7 +47,7 @@ exports = {
 
         return byteArr;
     },
-    decode: function decode(str)
+    decode: function decode(str, safe)
     {
         byteArr = ucs2.decode(str);
         byteIdx = 0; 
@@ -61,7 +62,7 @@ exports = {
     
         var tmp;
     
-        while((tmp = decodeCodePoint()) !== false) 
+        while((tmp = decodeCodePoint(safe)) !== false) 
         {
             codePoints.push(tmp);
         }
@@ -127,7 +128,10 @@ function decodeCodePoint()
     /* eslint-disable no-constant-condition */
     while (true) 
     {
-        if (byteIdx >= byteCount && bytesNeeded) throw new Error('Invalid byte index');
+        if (byteIdx >= byteCount && bytesNeeded) 
+        {
+            throw new Error('Invalid byte index');
+        }
 
         if (byteIdx === byteCount) return false;
 

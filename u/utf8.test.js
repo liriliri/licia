@@ -13,7 +13,21 @@ it('decode', function ()
     expect(utf8.decode('\xE0\xA0\x80')).to.equal('\u0800');
     expect(utf8.decode('\xF0\x90\x80\x80')).to.equal('\uD800\uDC00');
 
-    expect(function () {
+    // Invalid continuation byte
+    expect(function () 
+    {
         utf8.decode('\xED\xA0\x80\xED\xA0\x80'); 
+    }).to.throw();
+
+    // Invalid byte index
+    expect(function () 
+    {
+        utf8.decode('\xE0\xA4');
+    }).to.throw();
+
+    // Invalid UTF-8 detected
+    expect(function ()
+    {
+        utf8.decode('\xFF\x01');
     }).to.throw();
 });
