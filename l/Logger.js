@@ -26,7 +26,7 @@
  * TRACE, DEBUG, INFO, WARN, ERROR and SILENT.
  * 
  * ```javascript
- * var logger = new Logger('eris', logger.level.ERROR);
+ * var logger = new Logger('eris', Logger.level.ERROR);
  * logger.trace('test');
  * 
  * // Format output.
