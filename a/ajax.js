@@ -6,15 +6,16 @@
  *
  * Available options:
  *
- * |Name         |Type         |Desc                    |
- * |-------------|-------------|------------------------|
- * |url          |string       |Request url             |
- * |data         |string object|Request data            |
- * |dataType=json|string       |Response type(json, xml)|
- * |success      |function     |Success callback        |
- * |error        |function     |Error callback          |
- * |complete     |function     |Callback after request  |
- * |timeout      |number       |Request timeout         |
+ * |Name                                          |Type         |Desc                      |
+ * |---------------------------------------------|-------------|---------------------------|
+ * |url                                          |string       |Request url                |
+ * |data                                         |string object|Request data               |
+ * |dataType=json                                |string       |Response type(json, xml)   |
+ * |contentType=application/x-www-form-urlencoded|string       |Request header Content-Type|
+ * |success                                      |function     |Success callback           |
+ * |error                                        |function     |Error callback             |
+ * |complete                                     |function     |Callback after request     |
+ * |timeout                                      |number       |Request timeout            |
  *
  * ### get
  *
@@ -102,17 +103,19 @@ function exports(options)
     {
         data = query.stringify(data);
         url += url.indexOf('?') > -1 ? '&' + data : '?' + data;
-    } else
+    } else if (options.contentType === 'application/x-www-form-urlencoded')
     {
         if(isObj(data)) data = query.stringify(data);
+    } else if (options.contentType === 'application/json') {
+        if(isObj(data)) data = JSON.stringify(data);
     }
 
     xhr.open(type, url, true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Content-Type', options.contentType);
 
-    if (timeout > 0) 
+    if (timeout > 0)
     {
-        abortTimeout = setTimeout(function () 
+        abortTimeout = setTimeout(function ()
         {
             xhr.onreadystatechange = noop;
             xhr.abort();
@@ -131,6 +134,7 @@ exports.setting = {
     error: noop,
     complete: noop,
     dataType: 'json',
+    contentType: 'application/x-www-form-urlencoded',
     data: {},
     xhr: function () { return new XMLHttpRequest() },
     timeout: 0
