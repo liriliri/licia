@@ -625,7 +625,7 @@ Logging methods.
 TRACE, DEBUG, INFO, WARN, ERROR and SILENT.
 
 ```javascript
-var logger = new Logger('eris', logger.level.ERROR);
+var logger = new Logger('eris', Logger.level.ERROR);
 logger.trace('test');
 
 // Format output.
@@ -1219,15 +1219,16 @@ Perform an asynchronous HTTP request.
 
 Available options:
 
-|Name         |Type         |Desc                    |
-|-------------|-------------|------------------------|
-|url          |string       |Request url             |
-|data         |string object|Request data            |
-|dataType=json|string       |Response type(json, xml)|
-|success      |function     |Success callback        |
-|error        |function     |Error callback          |
-|complete     |function     |Callback after request  |
-|timeout      |number       |Request timeout         |
+|Name                                         |Type         |Desc                      |
+|---------------------------------------------|-------------|---------------------------|
+|url                                          |string       |Request url                |
+|data                                         |string object|Request data               |
+|dataType=json                                |string       |Response type(json, xml)   |
+|contentType=application/x-www-form-urlencoded|string       |Request header Content-Type|
+|success                                      |function     |Success callback           |
+|error                                        |function     |Error callback             |
+|complete                                     |function     |Callback after request     |
+|timeout                                      |number       |Request timeout            |
 
 ### get
 
@@ -1716,6 +1717,24 @@ Used to create extend, extendOwn and defaults.
 |keysFn  |function|Function to get object keys   |
 |defaults|boolean |No override when set to true  |
 |return  |function|Result function, extend...    |
+
+## cssSupports 
+
+Check if browser supports a given CSS feature.
+
+|Name  |Type   |Desc              |
+|------|-------|------------------|
+|name  |string |Css property name |
+|[val] |string |Css property value|
+|return|boolean|True if supports  |
+
+```javascript
+cssSupports('display', 'flex'); // -> true
+cssSupports('display', 'invalid'); // -> false
+cssSupports('text-decoration-line', 'underline'); // -> true
+cssSupports('grid'); // -> true
+cssSupports('invalid'); // -> false
+```
 
 ## curry 
 

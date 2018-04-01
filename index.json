@@ -635,6 +635,16 @@
         "env": "all",
         "test": "all"
     },
+    "cssSupports": {
+        "description": "Check if browser supports a given CSS feature.",
+        "dependencies": [
+            "memoize",
+            "isUndef",
+            "camelCase"
+        ],
+        "env": "browser",
+        "test": "browser"
+    },
     "curry": {
         "description": "Function currying.",
         "dependencies": [
