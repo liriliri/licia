@@ -9,13 +9,13 @@ var knowOpts = {
         silent: Boolean,
         all: Boolean,
         sauce: Boolean,
-        html: Boolean
+        demo: Boolean
     },
     shortHands = {
         b: '--browser',
         s: '--silent',
         a: '--all',
-        h: '--html'
+        d: '--demo'
     },
     options = nopt(knowOpts, shortHands, process.argv, 2),
     remain = options.argv.remain;

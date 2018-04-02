@@ -1,7 +1,7 @@
 *swp
 /.idea/
 /node_modules/
-/testHtml/
+/demo/
 /test/
 /benchmark/
 /testUtil/
