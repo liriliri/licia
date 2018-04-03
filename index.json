@@ -985,6 +985,20 @@
         "env": "all",
         "test": "all"
     },
+    "hotkey": {
+        "description": "Capture keyboard input to trigger given events.",
+        "dependencies": [
+            "Emitter",
+            "keyCode",
+            "each",
+            "unique",
+            "trim",
+            "map"
+        ],
+        "env": "browser",
+        "test": "browser",
+        "demo": true
+    },
     "hslToRgb": {
         "description": "Convert hsl to rgb.",
         "dependencies": [],

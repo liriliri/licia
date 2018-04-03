@@ -2445,6 +2445,33 @@ Checks if key is a direct property.
 has({one: 1}, 'one'); // -> true
 ```
 
+## hotkey 
+
+Capture keyboard input to trigger given events.
+
+### on
+
+Register keyboard listener.
+
+|Name    |Type    |Desc        |
+|--------|--------|------------|
+|key     |string  |Key string  |
+|listener|function|Key listener|
+
+### off
+
+Unregister keyboard listener.
+
+```javascript
+hotkey.on('k', function ()
+{
+    console.log('k is pressed');
+});
+function keyDown() {}
+hotkey.on('shift+a, shift+b', keyDown);
+hotkey.off('shift+a', keyDown);
+```
+
 ## hslToRgb 
 
 Convert hsl to rgb.
