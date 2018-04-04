@@ -2,13 +2,13 @@
  *
  * `abs(a-b) <= max(relTol * max(abs(a), abs(b)), absTol)`
  *
- * |Name         |Type   |Desc                    |
- * |-------------|-------|------------------------|
- * |a            |number |Number to compare       |
- * |b            |number |Number to compare       |
- * |[relTol=1e-9]|number |Relative tolerance      |
- * |[absTol=0]   |number |Absolute tolerance      |
- * |return       |boolean|True if values are close|
+ * |Name       |Type   |Desc                    |
+ * |-----------|-------|------------------------|
+ * |a          |number |Number to compare       |
+ * |b          |number |Number to compare       |
+ * |relTol=1e-9|number |Relative tolerance      |
+ * |absTol=0   |number |Absolute tolerance      |
+ * |return     |boolean|True if values are close|
  * 
  * ```javascript
  * isClose(1, 1.0000000001); // -> true

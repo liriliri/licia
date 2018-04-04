@@ -2132,6 +2132,16 @@
         "env": "all",
         "test": "all"
     },
+    "trigger": {
+        "description": "Trigger browser events.",
+        "dependencies": [
+            "isStr",
+            "defaults",
+            "extend"
+        ],
+        "env": "browser",
+        "test": "browser"
+    },
     "trim": {
         "description": "Remove chars or white-spaces from beginning end of string.",
         "dependencies": [

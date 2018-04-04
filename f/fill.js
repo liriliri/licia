@@ -1,12 +1,12 @@
 /* Fill elements of array with value.
  *
- * |Name            |Type  |Desc                    |
- * |----------------|------|------------------------|
- * |arr             |array |Array to fill           | 
- * |val             |*     |Value to fill array with|
- * |[start=0]       |number|Start position          |
- * |[end=arr.length]|number|End position            |
- * |return          |array |Filled array            |
+ * |Name          |Type  |Desc                    |
+ * |--------------|------|------------------------|
+ * |arr           |array |Array to fill           | 
+ * |val           |*     |Value to fill array with|
+ * |start=0       |number|Start position          |
+ * |end=arr.length|number|End position            |
+ * |return        |array |Filled array            |
  * 
  * ```javascript
  * fill([1, 2, 3], '*'); // -> ['*', '*', '*']

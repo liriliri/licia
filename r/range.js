@@ -1,10 +1,10 @@
 /* Create flexibly-numbered lists of integers.
  *
- * |Name    |Type  |Desc                              |
- * |--------|------|----------------------------------|
- * |[start] |number|Start of the range                |
- * |end     |number|End of the range                  |
- * |[step=1]|number|Value to increment or decrement by|
+ * |Name   |Type  |Desc                              |
+ * |-------|------|----------------------------------|
+ * |[start]|number|Start of the range                |
+ * |end    |number|End of the range                  |
+ * |step=1 |number|Value to increment or decrement by|
  *
  * ```javascript
  * range(5); // -> [0, 1, 2, 3, 4]

@@ -1498,10 +1498,10 @@ char(97); // -> 'a'
 
 Split array into groups the length of given size.
 
-|Name    |Type  |Desc                |
-|--------|------|--------------------|
-|arr     |array |Array to process    |
-|[size=1]|number|Length of each chunk|
+|Name  |Type  |Desc                |
+|------|------|--------------------|
+|arr   |array |Array to process    |
+|size=1|number|Length of each chunk|
 
 ```javascript
 chunk([1, 2, 3, 4], 2); // -> [[1, 2], [3, 4]]
@@ -2286,13 +2286,13 @@ fileSize(1500000000000); // -> '1.36T'
 
 Fill elements of array with value.
 
-|Name            |Type  |Desc                    |
-|----------------|------|------------------------|
-|arr             |array |Array to fill           |
-|val             |*     |Value to fill array with|
-|[start=0]       |number|Start position          |
-|[end=arr.length]|number|End position            |
-|return          |array |Filled array            |
+|Name          |Type  |Desc                    |
+|--------------|------|------------------------|
+|arr           |array |Array to fill           |
+|val           |*     |Value to fill array with|
+|start=0       |number|Start position          |
+|end=arr.length|number|End position            |
+|return        |array |Filled array            |
 
 ```javascript
 fill([1, 2, 3], '*'); // -> ['*', '*', '*']
@@ -2502,11 +2502,11 @@ identity('a'); // -> 'a'
 
 Get the index at which the first occurrence of value.
 
-|Name       |Type  |Desc                |
-|-----------|------|--------------------|
-|arr        |array |Array to search     |
-|val        |*     |Value to search for |
-|[fromIdx=0]|number|Index to search from|
+|Name     |Type  |Desc                |
+|---------|------|--------------------|
+|arr      |array |Array to search     |
+|val      |*     |Value to search for |
+|fromIdx=0|number|Index to search from|
 
 ```javascript
 idxOf([1, 2, 1, 2], 2, 2); // -> 3
@@ -2703,13 +2703,13 @@ Check if values are close(almost equal) to each other.
 
 `abs(a-b) <= max(relTol * max(abs(a), abs(b)), absTol)`
 
-|Name         |Type   |Desc                    |
-|-------------|-------|------------------------|
-|a            |number |Number to compare       |
-|b            |number |Number to compare       |
-|[relTol=1e-9]|number |Relative tolerance      |
-|[absTol=0]   |number |Absolute tolerance      |
-|return       |boolean|True if values are close|
+|Name       |Type   |Desc                    |
+|-----------|-------|------------------------|
+|a          |number |Number to compare       |
+|b          |number |Number to compare       |
+|relTol=1e-9|number |Relative tolerance      |
+|absTol=0   |number |Absolute tolerance      |
+|return     |boolean|True if values are close|
 
 ```javascript
 isClose(1, 1.0000000001); // -> true
@@ -3956,11 +3956,11 @@ randomBytes(5); // -> [55, 49, 153, 30, 122]
 
 Create flexibly-numbered lists of integers.
 
-|Name    |Type  |Desc                              |
-|--------|------|----------------------------------|
-|[start] |number|Start of the range                |
-|end     |number|End of the range                  |
-|[step=1]|number|Value to increment or decrement by|
+|Name   |Type  |Desc                              |
+|-------|------|----------------------------------|
+|[start]|number|Start of the range                |
+|end    |number|End of the range                  |
+|step=1 |number|Value to increment or decrement by|
 
 ```javascript
 range(5); // -> [0, 1, 2, 3, 4]
@@ -4623,6 +4623,21 @@ Topological sorting algorithm.
 
 ```javascript
 topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
+```
+
+## trigger 
+
+Trigger browser events.
+
+|Name         |Type   |Desc              |
+|-------------|-------|------------------|
+|[el=document]|element|Element to trigger|
+|type         |string |Event type        |
+|opts         |object |Options           |
+
+```javascript
+trigger(el, 'mouseup');
+trigger('keydown', {keyCode: 65});
 ```
 
 ## trim 
