@@ -1,15 +1,24 @@
+var each = util.each;
+
+var tests = [
+    [[255, 255, 255], '////'],
+    [[255, 255, 255, 255], '/////w=='],
+    [[255, 255, 255, 255, 255], '//////8='],
+    [[168, 174, 155, 255], 'qK6b/w==']
+];
+
 it('encode', function ()
 {
-    expect(base64.encode([255, 255, 255])).to.equal('////');
-    expect(base64.encode([255, 255, 255, 255])).to.equal('/////w==');
-    expect(base64.encode([255, 255, 255, 255, 255])).to.equal('//////8=');
-    expect(base64.encode([168, 174, 155, 255])).to.equal('qK6b/w==');
+    each(tests, function (test) 
+    {
+        expect(base64.encode(test[0])).to.equal(test[1]);
+    });
 });
 
 it('decode', function ()
 {
-    expect(base64.decode('////')).to.eql([255, 255, 255]);
-    expect(base64.decode('/////w==')).to.eql([255, 255, 255, 255]);
-    expect(base64.decode('//////8=')).to.eql([255, 255, 255, 255, 255]);
-    expect(base64.decode('qK6b/w==')).to.eql([168, 174, 155, 255]);
+    each(tests, function (test) 
+    {
+        expect(base64.decode(test[1])).to.eql(test[0]);
+    });
 });

@@ -1,4 +1,4 @@
-var isBrowser = typeof window === 'object';
+var isBrowser = util.isBrowser;
 
 it('borwser', function ()
 {

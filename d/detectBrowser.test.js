@@ -1,3 +1,5 @@
+var each = util.each;
+
 it('basic', function () 
 {
     test([
@@ -74,7 +76,7 @@ it('android', function ()
 
 function test(expects) 
 {
-    _.each(expects, function (val) 
+    each(expects, function (val) 
     {
         var result = detectBrowser(val[0]);
 

@@ -20,7 +20,7 @@ module.exports = function(config)
     config.set({
         basePath: '',
         frameworks: ['mocha', 'chai', 'chai-jquery', 'jquery-1.8.3'],
-        files: ['node_modules/underscore/underscore.js', {{{files}}}],
+        files: [{{{files}}}],
         plugins: [
             'karma-sauce-launcher',
             'karma-mocha',

@@ -1,7 +1,8 @@
+var define = util.define;
+
 it('basic', function ()
 {
-    var define = typeof util === 'object' ? util.define : _.define,
-        count = 0;
+    var count = 0;
 
     define('A', function ()
     {

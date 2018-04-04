@@ -4063,7 +4063,7 @@ This accumulates the arguments passed into an array, after a given index.
 |return    |function|Generated function with rest parameters|
 
 ```javascript
-var paramArr = _.restArgs(function (rest) { return rest });
+var paramArr = restArgs(function (rest) { return rest });
 paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
 ```
 

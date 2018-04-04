@@ -1,3 +1,5 @@
+var each = util.each;
+
 it('format date using mask', function ()
 {
     var now = new Date(2016, 10, 19, 19, 0, 4);
@@ -15,7 +17,7 @@ it('format date using mask', function ()
         'yyyy-mm-dd HH:MM:ss': '2016-11-19 19:00:04'
     };
 
-    _.each(expects, function (val, key)
+    each(expects, function (val, key)
     {
         expect(dateFormat(now, key)).to.equal(val);
     });
