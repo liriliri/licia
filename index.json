@@ -1057,6 +1057,12 @@
         "env": "all",
         "test": "all"
     },
+    "isAbsoluteUrl": {
+        "description": "Check if an url is absolute.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "isArgs": {
         "description": "Check if value is classified as an arguments object.",
         "dependencies": [

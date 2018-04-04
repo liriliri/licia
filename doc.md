@@ -2602,6 +2602,21 @@ assignments of previous values unless multiValue is true.
 invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
 ```
 
+## isAbsoluteUrl 
+
+Check if an url is absolute.
+
+|Name  |Type   |Desc                   |
+|------|-------|-----------------------|
+|url   |string |Url to check           |
+|return|boolean|True if url is absolute|
+
+```javascript
+isAbsoluteUrl('http://www.surunzi.com'); // -> true
+isAbsoluteUrl('//www.surunzi.com'); // -> false
+isAbsoluteUrl('surunzi.com'); // -> false
+```
+
 ## isArgs 
 
 Check if value is classified as an arguments object.
