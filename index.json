@@ -1441,6 +1441,14 @@
         "env": "browser",
         "test": "browser"
     },
+    "loadImg": {
+        "description": "Load image with given src.",
+        "dependencies": [
+            "noop"
+        ],
+        "env": "browser",
+        "test": "browser"
+    },
     "loadJs": {
         "description": "Inject script tag into page with given src value.",
         "dependencies": [],

@@ -3307,6 +3307,22 @@ loadCss('style.css', function (isLoaded)
 });
 ```
 
+## loadImg 
+
+Load image with given src.
+
+|Name|Type    |Desc           |
+|----|--------|---------------|
+|src |string  |Image source   |
+|[cb]|function|Onload callback|
+
+```javascript
+loadImg('http://eustia.liriliri.io/img.jpg', function (err, img)
+{
+    console.log(img.width, img.height);
+});
+```
+
 ## loadJs 
 
 Inject script tag into page with given src value.
