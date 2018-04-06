@@ -895,6 +895,12 @@
         "env": "browser",
         "test": "manual"
     },
+    "fibonacci": {
+        "description": "Calculate fibonacci number.",
+        "dependencies": [
+            "memoize"
+        ]
+    },
     "fileSize": {
         "description": "Turn bytes into human readable file size.",
         "dependencies": [],

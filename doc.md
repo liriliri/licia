@@ -2265,6 +2265,20 @@ fetch('test.json', {
 });
 ```
 
+## fibonacci 
+
+Calculate fibonacci number.
+
+|Name  |Type  |Desc                       |
+|------|------|---------------------------|
+|n     |number|Index of fibonacci sequence|
+|return|number|Expected fibonacci number  |
+
+```javascript
+fibonacci(1); // -> 1
+fibonacci(3); // -> 2
+```
+
 ## fileSize 
 
 Turn bytes into human readable file size.
