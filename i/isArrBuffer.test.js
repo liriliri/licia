@@ -1,7 +1,16 @@
+var each = util.each;
+
 it('basic', function () 
 {
-    expect(isArrBuffer(new ArrayBuffer(8))).to.be.true;
-    expect(isArrBuffer([])).to.be.false;
-    expect(isArrBuffer(new Int16Array)).to.be.false;
-    expect(isArrBuffer(null)).to.be.false;
+    var tests = [
+        [new ArrayBuffer(8), true],
+        [[], false],
+        [new Int16Array, false],
+        [null, false]
+    ];
+
+    each(tests, function (test) 
+    {
+        expect(isArrBuffer(test[0])).to.equal(test[1]);
+    });
 });
