@@ -282,6 +282,21 @@ Show elements.
 $show('#test');
 ```
 
+## Blob 
+
+Use Blob when available, otherwise BlobBuilder.
+
+### constructor
+
+|Name  |Type  |Desc      |
+|------|------|----------|
+|parts |array |Blob parts|
+|[opts]|object|Options   |
+
+```javascript
+var blob = new Blob([]);
+```
+
 ## Class 
 
 Create JavaScript class.
@@ -2688,6 +2703,20 @@ Check if value is array-like.
 isArrLike('test'); // -> true
 isArrLike(document.body.children); // -> true;
 isArrLike([1, 2, 3]); // -> true
+```
+
+## isBlob 
+
+Check if value is a Blob.
+
+|Name  |Type   |Desc                   |
+|------|-------|-----------------------|
+|val   |*      |Value to check         |
+|return|boolean|True if value is a Blob|
+
+```javascript
+isBlob(new Blog([])); // -> true;
+isBlob([]); // -> false
 ```
 
 ## isBool 

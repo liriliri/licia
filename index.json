@@ -136,6 +136,15 @@
         "env": "browser",
         "test": "browser"
     },
+    "Blob": {
+        "description": "Use Blob when available, otherwise BlobBuilder.",
+        "dependencies": [
+            "root",
+            "each"
+        ],
+        "env": "browser",
+        "test": "browser"
+    },
     "Class": {
         "description": "Create JavaScript class.",
         "dependencies": [
@@ -1101,6 +1110,14 @@
         ],
         "env": "all",
         "test": "all"
+    },
+    "isBlob": {
+        "description": "Check if value is a Blob.",
+        "dependencies": [
+            "objToStr"
+        ],
+        "env": "browser",
+        "test": "browser"
     },
     "isBool": {
         "description": "Check if value is a boolean primitive.",
