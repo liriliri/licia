@@ -1733,6 +1733,23 @@ Used to create extend, extendOwn and defaults.
 |defaults|boolean |No override when set to true  |
 |return  |function|Result function, extend...    |
 
+## createUrl 
+
+CreateObjectURL wrapper.
+
+|Name   |Type                  |Desc                                |
+|-------|----------------------|------------------------------------|
+|data   |File Blob string array|Url data                            |
+|[opts] |object                |Used when data is not a File or Blob|
+|return |string                |Blob url                            |
+
+```javascript
+createUrl('test', {type: 'text/plain'}); // -> Blob url
+createUrl(['test', 'test']);
+createUrl(new Blob([]));
+createUrl(new File(['test'], 'test.txt'));
+```
+
 ## cssSupports 
 
 Check if browser supports a given CSS feature.
@@ -2044,6 +2061,20 @@ Convert string to "dotCase".
 ```javascript
 dotCase('fooBar'); // -> foo.bar
 dotCase('foo bar'); // -> foo.bar
+```
+
+## download 
+
+Trigger a file download on client side.
+
+|Name           |Type                  |Desc            |
+|---------------|----------------------|----------------|
+|data           |Blob File string array|Data to download|
+|name           |string                |File name       |
+|type=text/plain|string                |Data type       |
+
+```javascript
+download('test', 'test.txt');
 ```
 
 ## each 
@@ -2884,6 +2915,19 @@ Check if number is even.
 isOdd(0); // -> true
 isOdd(1); // -> false
 isOdd(2); // -> true
+```
+
+## isFile 
+
+Check if value is a file.
+
+|Name  |Type   |Desc                   |
+|------|-------|-----------------------|
+|val   |*      |Value to check         |
+|return|boolean|True if value is a file|
+
+```javascript
+isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
 ```
 
 ## isFinite 

@@ -644,6 +644,18 @@
         "env": "all",
         "test": "all"
     },
+    "createUrl": {
+        "description": "CreateObjectURL wrapper.",
+        "dependencies": [
+            "defaults",
+            "isBlob",
+            "isFile",
+            "Blob",
+            "toArr"
+        ],
+        "env": "browser",
+        "test": "browser"
+    },
     "cssSupports": {
         "description": "Check if browser supports a given CSS feature.",
         "dependencies": [
@@ -771,6 +783,16 @@
         ],
         "env": "all",
         "test": "all"
+    },
+    "download": {
+        "description": "Trigger a file download on client side.",
+        "dependencies": [
+            "createUrl",
+            "trigger"
+        ],
+        "env": "browser",
+        "test": "browser",
+        "demo": true
     },
     "each": {
         "description": "Iterate over elements of collection and invokes iteratee for each element.",
@@ -1212,6 +1234,14 @@
         ],
         "env": "all",
         "test": "all"
+    },
+    "isFile": {
+        "description": "Check if value is a file.",
+        "dependencies": [
+            "objToStr"
+        ],
+        "env": "browser",
+        "test": "browser"
     },
     "isFinite": {
         "description": "Check if value is a finite primitive number.",
