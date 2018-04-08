@@ -16,7 +16,7 @@
  * test: browser
  */ 
 
-_('createUrl trigger');
+_('createUrl');
 
 function exports(data, name, type) 
 {

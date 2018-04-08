@@ -787,8 +787,7 @@
     "download": {
         "description": "Trigger a file download on client side.",
         "dependencies": [
-            "createUrl",
-            "trigger"
+            "createUrl"
         ],
         "env": "browser",
         "test": "browser",
