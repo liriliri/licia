@@ -1444,6 +1444,18 @@
         "env": "node",
         "test": "node"
     },
+    "jsonp": {
+        "description": "A simple jsonp implementation.",
+        "dependencies": [
+            "loadJs",
+            "defaults",
+            "noop",
+            "uniqId",
+            "query"
+        ],
+        "env": "browser",
+        "test": "browser"
+    },
     "kebabCase": {
         "description": "Convert string to \"kebabCase\".",
         "dependencies": [
