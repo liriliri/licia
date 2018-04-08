@@ -41,7 +41,7 @@ function exports(opts)
     defaults(opts, exports.settings); 
     
     var name = opts.name || uniqId('jsonp'),
-        param = opts.param || 'callback',
+        param = opts.param,
         timeout = opts.timeout,
         error = opts.error,
         success = opts.success,

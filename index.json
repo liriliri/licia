@@ -991,6 +991,15 @@
         "env": "all",
         "test": "all"
     },
+    "fraction": {
+        "description": "Convert number to fraction.",
+        "dependencies": [
+            "gcd",
+            "precision"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "freeze": {
         "description": "Shortcut for Object.freeze.",
         "dependencies": [
@@ -1779,6 +1788,12 @@
             "map",
             "property"
         ],
+        "env": "all",
+        "test": "all"
+    },
+    "precision": {
+        "description": "Find decimal precision of a given number.",
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },

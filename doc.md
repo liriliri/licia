@@ -2443,6 +2443,19 @@ Format string in a printf-like format.
 format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
 ```
 
+## fraction 
+
+Convert number to fraction.
+
+|Name  |Type  |Desc                  |
+|------|------|----------------------|
+|num   |number|Number to convert     |
+|return|string|Corresponding fraction|
+
+```javascript
+fraction(1.2); // -> '6/5'
+```
+
 ## freeze 
 
 Shortcut for Object.freeze.
@@ -3969,6 +3982,19 @@ var stooges = [
     {name: 'curly', age: 60}
 ];
 pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
+```
+
+## precision 
+
+Find decimal precision of a given number.
+
+|Name  |Type  |Desc           |
+|------|------|---------------|
+|num   |number|Number to check|
+|return|number|Precision      |
+
+```javascript
+precision(1.234); // -> 3;
 ```
 
 ## prefix 
