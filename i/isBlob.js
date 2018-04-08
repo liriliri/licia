@@ -6,7 +6,7 @@
  * |return|boolean|True if value is a Blob|
  * 
  * ```javascript
- * isBlob(new Blog([])); // -> true;
+ * isBlob(new Blob([])); // -> true;
  * isBlob([]); // -> false
  * ```
  */
