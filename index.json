@@ -256,6 +256,14 @@
         "test": "all",
         "demo": true
     },
+    "MutationObserver": {
+        "description": "Safe MutationObserver, does nothing if MutationObserver is not supported.",
+        "dependencies": [
+            "Class"
+        ],
+        "env": "browser",
+        "test": "browser"
+    },
     "Promise": {
         "description": "Lightweight Promise implementation.",
         "dependencies": [
