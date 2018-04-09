@@ -1387,6 +1387,15 @@
         "env": "all",
         "test": "all"
     },
+    "isPromise": {
+        "description": "Check if value looks like a promise.",
+        "dependencies": [
+            "isObj",
+            "isFn"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "isRegExp": {
         "description": "Check if value is a regular expression.",
         "dependencies": [
@@ -2383,6 +2392,20 @@
         ],
         "env": "all",
         "test": "all"
+    },
+    "workerize": {
+        "description": "Move a stand-alone function to a worker thread.",
+        "dependencies": [
+            "Promise",
+            "restArgs",
+            "uniqId",
+            "toSrc",
+            "createUrl",
+            "isStr"
+        ],
+        "env": "browser",
+        "test": "browser",
+        "demo": true
     },
     "wrap": {
         "description": "Wrap the function inside a wrapper function, passing it as the first argument.",

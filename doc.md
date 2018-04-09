@@ -3196,6 +3196,20 @@ isPrimitive('abc'); // -> true
 isPrimitive(false); // -> true
 ```
 
+## isPromise 
+
+Check if value looks like a promise.
+
+|Name  |Type   |Desc                              |
+|------|-------|----------------------------------|
+|val   |*      |Value to check                    |
+|return|boolean|True if value looks like a promise|
+
+```javascript
+isPromise(new Promise(function () {})); // -> true
+isPromise({}); // -> false
+```
+
 ## isRegExp 
 
 Check if value is a regular expression.
@@ -5090,6 +5104,26 @@ waterfall([
 ], function (err, result)
 {
     // result -> 'done'
+});
+```
+
+## workerize 
+
+Move a stand-alone function to a worker thread.
+
+|Name  |Type    |Desc               |
+|------|--------|-------------------|
+|fn    |function|Function to turn   |
+|return|function|Workerized Function|
+
+```javascript
+workerize(function (a, b)
+{
+    return a + b;
+});
+workerize(1, 2).then(function (value)
+{
+    console.log(value); // -> 3
 });
 ```
 
