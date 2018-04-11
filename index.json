@@ -486,6 +486,12 @@
         "env": "all",
         "test": "all"
     },
+    "bubbleSort": {
+        "description": "Bubble sort implementation.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "callbackify": {
         "description": "Convert a function that returns a Promise to a function following the error-first callback style.",
         "dependencies": [

@@ -1420,6 +1420,19 @@ Use Buffer to emulate btoa when running in node.
 btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 ```
 
+## bubbleSort 
+
+Bubble sort implementation.
+
+|Name |Type    |Desc         |
+|-----|--------|-------------|
+|arr  |array   |Array to sort|
+|[cmp]|function|Comparator   |
+
+```javascript
+bubbleSort([2, 1]); // -> [1, 2]
+```
+
 ## callbackify 
 
 Convert a function that returns a Promise to a function following the error-first callback style.
