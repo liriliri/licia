@@ -1092,6 +1092,12 @@
         "env": "all",
         "test": "all"
     },
+    "insertionSort": {
+        "description": "Insertion sort implementation.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "intersect": {
         "description": "Compute the list of values that are the intersection of all the arrays.",
         "dependencies": [

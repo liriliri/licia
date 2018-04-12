@@ -2655,6 +2655,19 @@ var s = new Student('RedHood');
 s.getName(); // -> 'RedHood'
 ```
 
+## insertionSort 
+
+Insertion sort implementation.
+
+|Name |Type    |Desc         |
+|-----|--------|-------------|
+|arr  |array   |Array to sort|
+|[cmp]|function|Comparator   |
+
+```javascript
+insertionSort([2, 1]); // -> [1, 2]
+```
+
 ## intersect 
 
 Compute the list of values that are the intersection of all the arrays.
