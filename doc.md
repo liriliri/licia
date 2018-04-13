@@ -1312,10 +1312,11 @@ allKeys(obj) // -> ['zero', 'one']
 
 Make an object map using array of strings.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|arr   |array |Array of strings|
-|return|object|Object map      |
+|Name    |Type  |Desc            |
+|--------|------|----------------|
+|arr     |array |Array of strings|
+|val=true|*     |Key value       |
+|return  |object|Object map      |
 
 ```javascript
 var needPx = arrToMap([

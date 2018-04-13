@@ -1,9 +1,10 @@
 /* Make an object map using array of strings.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |arr   |array |Array of strings|
- * |return|object|Object map      |
+ * |Name    |Type  |Desc            |
+ * |--------|------|----------------|
+ * |arr     |array |Array of strings|
+ * |val=true|*     |Key value       |
+ * |return  |object|Object map      |
  * 
  * ```javascript
  * var needPx = arrToMap([
@@ -19,15 +20,18 @@
  * test: all
  */
 
-_('each');
+_('each isUndef isFn');
 
-function exports(arr) 
+function exports(arr, val) 
 {
+    if (isUndef(val)) val = true;
+    var _isFn = isFn(val);
+
     var ret = {};
 
-    each(arr, function (val) 
+    each(arr, function (key) 
     { 
-        ret[val] = true; 
+        ret[key] = _isFn ? val(key) : val; 
     });
 
     return ret;

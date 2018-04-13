@@ -433,7 +433,9 @@
     "arrToMap": {
         "description": "Make an object map using array of strings.",
         "dependencies": [
-            "each"
+            "each",
+            "isUndef",
+            "isFn"
         ],
         "env": "all",
         "test": "all"
