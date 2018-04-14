@@ -1775,6 +1775,17 @@
         "env": "all",
         "test": "all"
     },
+    "parseArgs": {
+        "description": "Parse command line argument options, the same as minimist.",
+        "dependencies": [
+            "defaults",
+            "toNum",
+            "invert",
+            "toBool"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "partial": {
         "description": "Partially apply a function by filling in given arguments.",
         "dependencies": [
@@ -2206,6 +2217,14 @@
             "isArrLike",
             "map",
             "isArr",
+            "isStr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
+    "toBool": {
+        "description": "Convert value to a boolean.",
+        "dependencies": [
             "isStr"
         ],
         "env": "all",

@@ -3957,6 +3957,37 @@ parallel([
 });
 ```
 
+## parseArgs 
+
+Parse command line argument options, the same as minimist.
+
+|Name  |Type  |Desc           |
+|------|------|---------------|
+|args  |array |Argument array |
+|opts  |object|Parse options  |
+|return|object|Parsed result  |
+
+### options
+
+|Name      |Type  |Desc             |
+|----------|------|-----------------|
+|names     |object|option names     |
+|shorthands|object|option shorthands|
+
+```javascript
+parseArgs(['eustia', '--output', 'util.js', '-w'], {
+    names: {
+        output: 'string',
+        watch: 'boolean'
+    },
+    shorthands: {
+        output: 'o',
+        watch: 'w'
+    }
+});
+// -> {remain: ['eustia'], output: 'util.js', watch: true}
+```
+
 ## partial 
 
 Partially apply a function by filling in given arguments.
@@ -4768,6 +4799,25 @@ toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
 toArr('abc'); // -> ['abc']
 toArr(1); // -> [1]
 toArr(null); // -> []
+```
+
+## toBool 
+
+Convert value to a boolean.
+
+|Name  |Type   |Desc             |
+|------|-------|-----------------|
+|val   |*      |Value to convert |
+|return|boolean|Converted boolean|
+
+```javascript
+toBool(true); // -> true
+toBool(null); // -> false
+toBool(1); // -> true
+toBool(0); // -> false
+toBool('0'); // -> false
+toBool('1'); // -> true
+toBool('false'); // -> false
 ```
 
 ## toEl 
