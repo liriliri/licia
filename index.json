@@ -606,6 +606,19 @@
         "env": "all",
         "test": "all"
     },
+    "compressImg": {
+        "description": "Compress image using canvas.",
+        "dependencies": [
+            "isFn",
+            "loadImg",
+            "noop",
+            "defaults",
+            "createUrl"
+        ],
+        "env": "browser",
+        "test": "browser",
+        "demo": true
+    },
     "concat": {
         "description": "Concat multiple arrays into a single array.",
         "dependencies": [
