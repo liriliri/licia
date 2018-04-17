@@ -2081,6 +2081,12 @@
         "test": "browser",
         "demo": true
     },
+    "selectionSort": {
+        "description": "Selection sort implementation.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "shuffle": {
         "description": "Randomize the order of the elements in a given array.",
         "dependencies": [

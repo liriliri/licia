@@ -4538,6 +4538,19 @@ scrollTo('body', {
 });
 ```
 
+## selectionSort 
+
+Selection sort implementation.
+
+|Name |Type    |Desc         |
+|-----|--------|-------------|
+|arr  |array   |Array to sort|
+|[cmp]|function|Comparator   |
+
+```javascript
+selectionSort([2, 1]); // -> [1, 2]
+```
+
 ## shuffle 
 
 Randomize the order of the elements in a given array.
@@ -5110,7 +5123,7 @@ Convert string to upper case.
 |return|string|Uppercased string|
 
 ```javascript
-uppercase('test'); // -> 'TEST'
+upperCase('test'); // -> 'TEST'
 ```
 
 ## upperFirst 

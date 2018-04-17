@@ -6,7 +6,7 @@
  * |return|string|Uppercased string|
  * 
  * ```javascript
- * uppercase('test'); // -> 'TEST'
+ * upperCase('test'); // -> 'TEST'
  * ```
  */
 
