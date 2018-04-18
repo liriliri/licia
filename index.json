@@ -1302,6 +1302,14 @@
         "env": "all",
         "test": "all"
     },
+    "isGeneratorFn": {
+        "description": "Check if value is a generator function.",
+        "dependencies": [
+            "objToStr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "isInt": {
         "description": "Checks if value is classified as a Integer.",
         "dependencies": [
