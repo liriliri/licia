@@ -1701,7 +1701,8 @@
     "ms": {
         "description": "Convert time string formats to milliseconds.",
         "dependencies": [
-            "toNum"
+            "toNum",
+            "isStr"
         ],
         "env": "all",
         "test": "all"

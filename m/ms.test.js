@@ -1,9 +1,20 @@
+var each = util.each;
+
 it('basic', function () 
 {
-    expect(ms('1s')).to.equal(1000); 
-    expect(ms('1m')).to.equal(60000);
-    expect(ms('1.5h')).to.equal(5400000);
-    expect(ms('1d')).to.equal(86400000);
-    expect(ms('1y')).to.equal(31557600000);
-    expect(ms('1000')).to.equal(1000);
+    var tests = [
+        ['1s', 1000], 
+        ['1m', 60000],
+        ['1.5h', 5400000],
+        ['1d', 86400000],
+        ['1y', 31557600000],
+        ['1000', 1000],
+        [1500, '1.5s'],
+        [60000, '1m']
+    ];
+
+    each(tests, function (test) 
+    {
+        expect(ms(test[0])).to.equal(test[1]);
+    });
 });
