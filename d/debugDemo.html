@@ -1,0 +1,11 @@
+<require>debug</require>
+
+<script>
+var d = debug('test');
+d('test format %o', {a: 1});
+d('doing lots of uninteresting work');
+for (var i = 0; i < 10000; i++);
+d('doing lots of uninteresting work');
+d.enabled = false;
+d('doing lots of uninteresting work');
+</script>

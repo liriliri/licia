@@ -1905,6 +1905,21 @@ Return a new debounced version of the passed function.
 $(window).resize(debounce(calLayout, 300));
 ```
 
+## debug 
+
+A tiny JavaScript debugging utility.
+
+|Name  |Type    |Desc                           |
+|------|--------|-------------------------------|
+|name  |string  |Namespace                      |
+|return|function|Function to print decorated log|
+
+```javascript
+var d = debug('test');
+d('doing lots of uninteresting work');
+d.enabled = false;
+```
+
 ## decodeUriComponent 
 
 Better decodeURIComponent that does not throw if input is invalid.

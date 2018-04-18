@@ -720,6 +720,18 @@
         "env": "all",
         "test": "all"
     },
+    "debug": {
+        "description": "A tiny JavaScript debugging utility.",
+        "dependencies": [
+            "toArr",
+            "now",
+            "format",
+            "ms"
+        ],
+        "env": "all",
+        "test": "all",
+        "demo": true
+    },
     "decodeUriComponent": {
         "description": "Better decodeURIComponent that does not throw if input is invalid.",
         "dependencies": [
