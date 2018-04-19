@@ -1089,9 +1089,9 @@ Simple url manipulator.
 
 ### constructor
 
-|Name                 |Type  |Desc      |
-|---------------------|------|----------|
-|[url=window.location]|string|Url string|
+|Name        |Type  |Desc      |
+|------------|------|----------|
+|url=location|string|Url string|
 
 ### setQuery
 
@@ -2578,6 +2578,20 @@ Compute the greatest common divisor using Euclid's algorithm.
 
 ```javascript
 gcd(121, 44); // -> 11
+```
+
+## getUrlParam 
+
+Get url param.
+
+|Name        |Type  |Desc            |
+|------------|------|----------------|
+|name        |string|Param name      |
+|url=location|string|Url to get param|
+|return      |string|Param value     |
+
+```javascript
+getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 ```
 
 ## has 

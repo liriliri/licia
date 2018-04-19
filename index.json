@@ -378,7 +378,8 @@
             "isEmpty",
             "each",
             "isArr",
-            "toArr"
+            "toArr",
+            "isBrowser"
         ],
         "env": "all",
         "test": "all"
@@ -1064,6 +1065,14 @@
     "gcd": {
         "description": "Compute the greatest common divisor using Euclid's algorithm.",
         "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
+    "getUrlParam": {
+        "description": "Get url param.",
+        "dependencies": [
+            "Url"
+        ],
         "env": "all",
         "test": "all"
     },

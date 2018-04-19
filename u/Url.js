@@ -2,9 +2,9 @@
  *
  * ### constructor
  *
- * |Name                 |Type  |Desc      |
- * |---------------------|------|----------|
- * |[url=window.location]|string|Url string|
+ * |Name        |Type  |Desc      |
+ * |------------|------|----------|
+ * |url=location|string|Url string|
  *
  * ### setQuery
  *
@@ -75,13 +75,14 @@
  * test: all
  */
 
-_('Class extend trim query isEmpty each isArr toArr');
+_('Class extend trim query isEmpty each isArr toArr isBrowser');
 
 exports = Class({
     className: 'Url',
     initialize: function (url)
     {
-        extend(this, exports.parse(url || window.location.href));
+        if (!url && isBrowser) url = window.location.href;
+        extend(this, exports.parse(url || ''));
     },
     setQuery: function (name, val)
     {
