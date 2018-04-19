@@ -1,11 +1,16 @@
-<require>debug</require>
+<require>debug uuid</require>
 
 <script>
-var d = debug('test');
-d('test format %o', {a: 1});
-d('doing lots of uninteresting work');
-for (var i = 0; i < 10000; i++);
-d('doing lots of uninteresting work');
+var d = debug('test'),
+    d2 = debug('test2');
+
+d('booting %s', 'test');
+d2('booting %s', 'test2');
+for (var i = 0; i < 100000; i++) uuid(); 
+d('create 100000 uuid');
+for (var i = 0; i < 100000; i++) uuid(); 
+d2('create another 100000 uuid');
+
 d.enabled = false;
 d('doing lots of uninteresting work');
 </script>

@@ -726,7 +726,9 @@
             "toArr",
             "now",
             "format",
-            "ms"
+            "ms",
+            "isBrowser",
+            "strHash"
         ],
         "env": "all",
         "test": "all",
