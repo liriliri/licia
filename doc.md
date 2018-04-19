@@ -4726,6 +4726,19 @@ Check if string starts with the given target string.
 startWith('ab', 'a'); // -> true
 ```
 
+## strHash 
+
+String hash function using djb2.
+
+|Name  |Type  |Desc          |
+|------|------|--------------|
+|str   |string|String to hash|
+|return|number|Hash result   |
+
+```javascript
+strHash('test'); // -> 2090770981
+```
+
 ## stringify 
 
 JSON stringify with support for circular object, function etc.

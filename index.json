@@ -2175,6 +2175,12 @@
         "env": "all",
         "test": "all"
     },
+    "strHash": {
+        "description": "String hash function using djb2.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "stringify": {
         "description": "JSON stringify with support for circular object, function etc.",
         "dependencies": [
