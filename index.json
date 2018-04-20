@@ -998,11 +998,38 @@
         "env": "all",
         "test": "all"
     },
+    "find": {
+        "description": "Find the first value that passes a truth test in a collection.",
+        "dependencies": [
+            "findKey",
+            "findIdx",
+            "isArrLike",
+            "isUndef"
+        ],
+        "env": "all",
+        "test": "all"
+    },
+    "findIdx": {
+        "description": "Return the first index where the predicate truth test passes.",
+        "dependencies": [
+            "safeCb"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "findKey": {
-        "description": "Return the key where the predicate truth test passes or undefined.",
+        "description": "Return the first key where the predicate truth test passes.",
         "dependencies": [
             "safeCb",
             "keys"
+        ],
+        "env": "all",
+        "test": "all"
+    },
+    "findLastIdx": {
+        "description": "Return the last index where the predicate truth test passes.",
+        "dependencies": [
+            "findIdx"
         ],
         "env": "all",
         "test": "all"

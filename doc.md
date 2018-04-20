@@ -2453,21 +2453,95 @@ filter([1, 2, 3, 4, 5], function (val)
 }); // -> [2, 4]
 ```
 
+## find 
+
+Find the first value that passes a truth test in a collection.
+
+|Name     |Type        |Desc                             |
+|---------|------------|---------------------------------|
+|obj      |array object|Collection to iterate over       |
+|predicate|function    |Function invoked per iteration   |
+|[ctx]    |*           |Predicate context                |
+|return   |*           |First value that passes predicate|
+
+```javascript
+find([{
+    name: 'john',
+    age: 24
+}, {
+    name: 'jane',
+    age: 23
+}], function (val)
+{
+    return val.age === 23;
+}); // -> {name: 'jane', age: 23}
+```
+
+## findIdx 
+
+Return the first index where the predicate truth test passes.
+
+|Name     |Type    |Desc                          |
+|---------|--------|------------------------------|
+|arr      |array   |Array to search               |
+|predicate|function|Function invoked per iteration|
+|return   |number  |Index of matched element      |
+
+```javascript
+findIdx([{
+    name: 'john',
+    age: 24
+}, {
+    name: 'jane',
+    age: 23
+}], function (val)
+{
+    return val.age === 23;
+}); // -> 1
+```
+
 ## findKey 
 
-Return the key where the predicate truth test passes or undefined.
+Return the first key where the predicate truth test passes.
 
 |Name     |Type    |Desc                          |
 |---------|--------|------------------------------|
 |obj      |object  |Object to search              |
 |predicate|function|Function invoked per iteration|
-|return   |string  |The key of matched element    |
+|[ctx]    |*       |Predicate context             |
+|return   |string  |Key of matched element        |
 
 ```javascript
 findKey({a: 1, b: 2}, function (val)
 {
     return val === 1;
 }); // -> a
+```
+
+## findLastIdx 
+
+Return the last index where the predicate truth test passes.
+
+|Name     |Type    |Desc                          |
+|---------|--------|------------------------------|
+|arr      |array   |Array to search               |
+|predicate|function|Function invoked per iteration|
+|return   |number  |Last index of matched element |
+
+```javascript
+findLastIdx([{
+    name: 'john',
+    age: 24
+}, {
+    name: 'jane',
+    age: 23
+}, {
+    name: 'kitty',
+    age: 24
+}], function (val)
+{
+    return val.age === 24;
+}); // -> 2
 ```
 
 ## flatten 

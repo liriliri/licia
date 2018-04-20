@@ -1,10 +1,11 @@
-/* Return the key where the predicate truth test passes or undefined.
+/* Return the first key where the predicate truth test passes.
  *
  * |Name     |Type    |Desc                          |
  * |---------|--------|------------------------------|
  * |obj      |object  |Object to search              |
  * |predicate|function|Function invoked per iteration|
- * |return   |string  |The key of matched element    |
+ * |[ctx]    |*       |Predicate context             |
+ * |return   |string  |Key of matched element        |
  *
  * ```javascript
  * findKey({a: 1, b: 2}, function (val)
