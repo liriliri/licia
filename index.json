@@ -2278,6 +2278,16 @@
         "env": "all",
         "test": "all"
     },
+    "through": {
+        "description": "Tiny wrapper of stream Transform.",
+        "dependencies": [
+            "isFn",
+            "extend",
+            "inherits"
+        ],
+        "env": "node",
+        "test": "node"
+    },
     "timeAgo": {
         "description": "Format datetime with *** time ago statement.",
         "dependencies": [

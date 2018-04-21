@@ -4940,6 +4940,34 @@ Return a new throttled version of the passed function.
 $(window).scroll(throttle(updatePos, 100));
 ```
 
+## through 
+
+Tiny wrapper of stream Transform.
+
+|Name     |Type    |Desc                        |
+|---------|--------|----------------------------|
+|[opts={}]|Object  |Options to initialize stream|
+|transform|function|Transform implementation    |
+|[flush]  |function|Flush implementation        |
+
+### obj
+
+Shortcut for setting objectMode to true.
+
+### ctor
+
+Return a class that extends stream Transform.
+
+```javascript
+fs.createReadStream('in.txt')
+  .pipe(through(function (chunk, enc, cb)
+  {
+      // Do something to chunk
+      this.push(chunk);
+      cb();
+  })).pipe(fs.createWriteStream('out.txt'));
+```
+
 ## timeAgo 
 
 Format datetime with *** time ago statement.
