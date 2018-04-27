@@ -3609,6 +3609,19 @@ Get the last element of array.
 last([1, 2]); // -> 2
 ```
 
+## lazyRequire 
+
+Require modules lazily.
+
+```javascript
+var r = lazyRequire(require);
+
+var _ = r('underscore');
+
+// underscore is required only when _ is called.
+_().isNumber(5);
+```
+
 ## linkify 
 
 Hyperlink urls in a string.

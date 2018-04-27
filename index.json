@@ -1598,6 +1598,12 @@
         "env": "all",
         "test": "all"
     },
+    "lazyRequire": {
+        "description": "Require modules lazily.",
+        "dependencies": [],
+        "env": "node",
+        "test": "node"
+    },
     "linkify": {
         "description": "Hyperlink urls in a string.",
         "dependencies": [
