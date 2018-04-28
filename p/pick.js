@@ -23,7 +23,7 @@
 
 _('isStr isArr contain each');
 
-function exports(obj, filter)
+function exports(obj, filter, omit)
 {
     if (isStr(filter)) filter = [filter];
 
@@ -39,10 +39,20 @@ function exports(obj, filter)
 
     var ret = {};
 
-    each(obj, function (val, key)
+    var iteratee = function (val, key) 
     {
         if (filter(val, key)) ret[key] = val;
-    });
+    };
+
+    if (omit) 
+    {
+        iteratee = function (val, key) 
+        {
+            if (!filter(val, key)) ret[key] = val;
+        };
+    }
+
+    each(obj, iteratee);
 
     return ret;
 }

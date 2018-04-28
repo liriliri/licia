@@ -4031,6 +4031,24 @@ Alias of Object.prototype.toString.
 objToStr(5); // -> '[object Number]'
 ```
 
+## omit 
+
+Opposite of pick.
+
+|Name  |Type                 |Desc           |
+|------|---------------------|---------------|
+|obj   |object               |Source object  |
+|filter|string array function|Object filter  |
+|return|object               |Filtered object|
+
+```javascript
+omit({a: 1, b: 2}, 'a'); // -> {b: 2}
+omit({a: 1, b: 2, c: 3}, ['b', 'c']) // -> {a: 1}
+omit({a: 1, b: 2, c: 3, d: 4}, function (val, key)
+{
+    return val % 2;
+}); // -> {b: 2, d: 4}
+
 ## once 
 
 Create a function that invokes once.

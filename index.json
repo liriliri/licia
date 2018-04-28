@@ -1799,6 +1799,14 @@
         "env": "all",
         "test": "all"
     },
+    "omit": {
+        "description": "Opposite of pick.",
+        "dependencies": [
+            "pick"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "once": {
         "description": "Create a function that invokes once.",
         "dependencies": [
