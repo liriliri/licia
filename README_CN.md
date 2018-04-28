@@ -4,11 +4,11 @@
 [![Build status][travis-image]][travis-url]
 [![License][license-image]][npm-url]
 
-[npm-image]: https://img.shields.io/npm/v/eustia-module.svg
-[npm-url]: https://npmjs.org/package/eustia-module
+[npm-image]: https://img.shields.io/npm/v/licia.svg
+[npm-url]: https://npmjs.org/package/licia
 [travis-image]: https://img.shields.io/travis/liriliri/licia.svg
 [travis-url]: https://travis-ci.org/liriliri/licia
-[license-image]: https://img.shields.io/npm/l/eustia-module.svg
+[license-image]: https://img.shields.io/npm/l/licia.svg
 
 Eustia官方模块
 
@@ -24,14 +24,14 @@ Licia从一开始就不是为了单纯地替代underscore或lodash而生。它�
 
 ## 使用方法
 
-推荐使用官方打包工具[eustia](http://eustia.liriliri.io/)针对项目定制工具库按需引入。当然安装**eustia-module**模块然后直接引用也是可以的。
+推荐使用官方打包工具[eustia](http://eustia.liriliri.io/)针对项目定制工具库按需引入。当然安装**licia**模块然后直接引用也是可以的。
 
 ```bash
-npm i eustia-module --save
+npm i licia --save
 ```
 
 ```javascript
-var uuid = require('eustia-module/uuid');
+var uuid = require('licia/uuid');
 
 console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 ```

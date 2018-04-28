@@ -6,11 +6,11 @@
 [![Build status][travis-image]][travis-url]
 [![License][license-image]][npm-url]
 
-[npm-image]: https://img.shields.io/npm/v/eustia-module.svg
-[npm-url]: https://npmjs.org/package/eustia-module
+[npm-image]: https://img.shields.io/npm/v/licia.svg
+[npm-url]: https://npmjs.org/package/licia
 [travis-image]: https://img.shields.io/travis/liriliri/licia.svg
 [travis-url]: https://travis-ci.org/liriliri/licia
-[license-image]: https://img.shields.io/npm/l/eustia-module.svg
+[license-image]: https://img.shields.io/npm/l/licia.svg
 
 Eustia official module repository.
 
