@@ -63,8 +63,8 @@
  * 
  * ```javascript
  * var store = new Store('test');
- * store.set('user', {name: 'eris'});
- * store.get('user').name; // -> 'eris'
+ * store.set('user', {name: 'licia'});
+ * store.get('user').name; // -> 'licia'
  * store.clear();
  * store.each(function (val, key) 
  * {

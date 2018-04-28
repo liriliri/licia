@@ -23,14 +23,14 @@
  *
  * ```javascript
  * // <div id="test"><div class="mark"></div></div>
- * $insert.before('#test', '<div>eris</div>');
- * // -> <div>eris</div><div id="test"><div class="mark"></div></div>
- * $insert.after('#test', '<div>eris</div>');
- * // -> <div id="test"><div class="mark"></div></div><div>eris</div>
- * $insert.prepend('#test', '<div>eris</div>');
- * // -> <div id="test"><div>eris</div><div class="mark"></div></div>
- * $insert.append('#test', '<div>eris</div>');
- * // -> <div id="test"><div class="mark"></div><div>eris</div></div>
+ * $insert.before('#test', '<div>licia</div>');
+ * // -> <div>licia</div><div id="test"><div class="mark"></div></div>
+ * $insert.after('#test', '<div>licia</div>');
+ * // -> <div id="test"><div class="mark"></div></div><div>licia</div>
+ * $insert.prepend('#test', '<div>licia</div>');
+ * // -> <div id="test"><div>licia</div><div class="mark"></div></div>
+ * $insert.append('#test', '<div>licia</div>');
+ * // -> <div id="test"><div class="mark"></div><div>licia</div></div>
  * ```
  */
 

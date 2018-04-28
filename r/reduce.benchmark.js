@@ -7,7 +7,7 @@ function sum(sum, n) { return sum + n }
 suite.add('underscore', function ()
 {
     underscore.reduce(arr, sum);
-}).add('eris', function ()
+}).add('licia', function ()
 {
     reduce(arr, sum);
 }).run();

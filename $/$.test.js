@@ -99,8 +99,8 @@ it('css', function ()
 
 it('attr', function () 
 {
-    dom.attr('data-name', 'eris');
-    expect($dom.attr('data-name')).to.equal('eris');
+    dom.attr('data-name', 'licia');
+    expect($dom.attr('data-name')).to.equal('licia');
     $dom.attr('data-name', '');
     expect(dom.attr('data-name')).to.equal('');
     dom.rmAttr('data-name');
@@ -108,8 +108,8 @@ it('attr', function ()
 
 it('data', function () 
 {
-    dom.data('name', 'eris');
-    expect($dom.attr('data-name')).to.equal('eris');
+    dom.data('name', 'licia');
+    expect($dom.attr('data-name')).to.equal('licia');
     $dom.attr('data-name', '');
     expect(dom.data('name')).to.equal('');
 });

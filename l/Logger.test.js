@@ -1,7 +1,7 @@
 it('basic', function () 
 {
-    var logger = new Logger('Eris', Logger.level.ERROR);
-    expect(logger.name).to.equal('Eris');
+    var logger = new Logger('Licia', Logger.level.ERROR);
+    expect(logger.name).to.equal('Licia');
     expect(logger.getLevel()).to.equal(Logger.level.ERROR);
 
     function all(type, argList) 

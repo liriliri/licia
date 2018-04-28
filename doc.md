@@ -198,14 +198,14 @@ Insert content to the end of elements.
 
 ```javascript
 // <div id="test"><div class="mark"></div></div>
-$insert.before('#test', '<div>eris</div>');
-// -> <div>eris</div><div id="test"><div class="mark"></div></div>
-$insert.after('#test', '<div>eris</div>');
-// -> <div id="test"><div class="mark"></div></div><div>eris</div>
-$insert.prepend('#test', '<div>eris</div>');
-// -> <div id="test"><div>eris</div><div class="mark"></div></div>
-$insert.append('#test', '<div>eris</div>');
-// -> <div id="test"><div class="mark"></div><div>eris</div></div>
+$insert.before('#test', '<div>licia</div>');
+// -> <div>licia</div><div id="test"><div class="mark"></div></div>
+$insert.after('#test', '<div>licia</div>');
+// -> <div id="test"><div class="mark"></div></div><div>licia</div>
+$insert.prepend('#test', '<div>licia</div>');
+// -> <div id="test"><div>licia</div><div class="mark"></div></div>
+$insert.append('#test', '<div>licia</div>');
+// -> <div id="test"><div class="mark"></div><div>licia</div></div>
 ```
 
 ## $offset 
@@ -241,8 +241,8 @@ Get the current value of the first element in the set of matched elements or
 set the value of every matched element.
 
 ```javascript
-$property.html('#test', 'eris');
-$property.html('#test'); // -> eris
+$property.html('#test', 'licia');
+$property.html('#test'); // -> licia
 ```
 
 ## $remove 
@@ -606,8 +606,8 @@ Extend from Store.
 |data|object|Default data          |
 
 ```javascript
-var store = new LocalStore('eris');
-store.set('name', 'eris');
+var store = new LocalStore('licia');
+store.set('name', 'licia');
 ```
 
 ## Logger 
@@ -640,7 +640,7 @@ Logging methods.
 TRACE, DEBUG, INFO, WARN, ERROR and SILENT.
 
 ```javascript
-var logger = new Logger('eris', Logger.level.ERROR);
+var logger = new Logger('licia', Logger.level.ERROR);
 logger.trace('test');
 
 // Format output.
@@ -855,8 +855,8 @@ Extend from Store.
 |data|object|Default data            |
 
 ```javascript
-var store = new SessionStore('eris');
-store.set('name', 'eris');
+var store = new SessionStore('licia');
+store.set('name', 'licia');
 ```
 
 ## Stack 
@@ -1016,8 +1016,8 @@ Iterate over values.
 
 ```javascript
 var store = new Store('test');
-store.set('user', {name: 'eris'});
-store.get('user').name; // -> 'eris'
+store.set('user', {name: 'licia'});
+store.get('user').name; // -> 'licia'
 store.clear();
 store.each(function (val, key)
 {
@@ -1203,7 +1203,7 @@ var validator = new Validator({
 });
 validator.validate({}); // -> 'test is required'
 validator.validate({test: 1}); // -> 'test should be a string with length 5';
-validator.validate({test: 'eris'}); // -> true
+validator.validate({test: 'licia'}); // -> true
 ```
 
 ## abbrev 
@@ -2233,7 +2233,7 @@ Escape special chars to be used as literals in RegExp constructors.
 |return|string|Escaped string  |
 
 ```javascript
-escapeRegExp('[eris]'); // -> '\\[eris\\]'
+escapeRegExp('[licia]'); // -> '\\[licia\\]'
 ```
 
 ## evalCss 
@@ -2343,7 +2343,7 @@ Extract block comments from source code.
 |return|array |Block comments   |
 
 ```javascript
-extractBlockCmts('\/*eris*\/'); // -> ['eris']
+extractBlockCmts('\/*licia*\/'); // -> ['licia']
 ```
 
 ## extractUrls 
@@ -3445,7 +3445,7 @@ Check if value is a string primitive.
 |return|boolean|True if value is a string primitive|
 
 ```javascript
-isStr('eris'); // -> true
+isStr('licia'); // -> true
 ```
 
 ## isStream 
@@ -3817,7 +3817,7 @@ A replacement for environments where localStorage or sessionStorage is not avail
 
 ```javascript
 var localStorage = window.localStorage || memStorage;
-localStorage.setItem('test', 'eris');
+localStorage.setItem('test', 'licia');
 ```
 
 ## memoize 
@@ -4652,7 +4652,7 @@ Use storage safely in safari private browsing and older browsers.
 
 ```javascript
 var localStorage = safeStorage('local');
-localStorage.setItem('eris', 'util');
+localStorage.setItem('licia', 'util');
 ```
 
 ## sample 
@@ -4952,9 +4952,9 @@ Compile JavaScript template into function that can be evaluated for rendering.
 |return|function|Compiled template function|
 
 ```javascript
-template('Hello <%= name %>!')({name: 'eris'}); // -> 'Hello eris!'
-template('<p><%- name %></p>')({name: '<eris>'}); // -> '<p>&lt;eris&gt;</p>'
-template('<%if (echo) {%>Hello eris!<%}%>')({echo: true}); // -> 'Hello eris!'
+template('Hello <%= name %>!')({name: 'licia'}); // -> 'Hello licia!'
+template('<p><%- name %></p>')({name: '<licia>'}); // -> '<p>&lt;licia&gt;</p>'
+template('<%if (echo) {%>Hello licia!<%}%>')({echo: true}); // -> 'Hello licia!'
 ```
 
 ## throttle 

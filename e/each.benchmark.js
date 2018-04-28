@@ -9,7 +9,7 @@ suite.add('underscore', function ()
 {
     underscore.each(obj, noop);
     underscore.each(arr, noop);
-}).add('eris', function ()
+}).add('licia', function ()
 {
     each(obj, noop);
     each(arr, noop);

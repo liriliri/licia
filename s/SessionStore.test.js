@@ -2,7 +2,7 @@ var sessionStorage = window.sessionStorage;
 
 it('basic', function () 
 {
-    sessionStorage.setItem('SessionStore', '{eris}');
+    sessionStorage.setItem('SessionStore', '{licia}');
 
     var store = new SessionStore('SessionStore', {
         a: 1,
@@ -20,7 +20,7 @@ it('basic', function ()
     store.clear();
     expect(sessionStorage.getItem('SessionStore')).to.be.an('null');
 
-    sessionStorage.setItem('SessionStore', '"eris"');
+    sessionStorage.setItem('SessionStore', '"licia"');
     store = new SessionStore('SessionStore', {
         a: 1
     });

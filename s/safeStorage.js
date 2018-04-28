@@ -7,7 +7,7 @@
  * 
  * ```javascript
  * var localStorage = safeStorage('local');
- * localStorage.setItem('eris', 'util');
+ * localStorage.setItem('licia', 'util');
  * ```
  */
 

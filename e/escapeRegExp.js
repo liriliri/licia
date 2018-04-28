@@ -6,7 +6,7 @@
  * |return|string|Escaped string  |
  *
  * ```javascript
- * escapeRegExp('[eris]'); // -> '\\[eris\\]'
+ * escapeRegExp('[licia]'); // -> '\\[licia\\]'
  * ```
  */
 

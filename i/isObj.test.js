@@ -9,6 +9,6 @@ it('true', function ()
 it('false', function ()
 {
     expect(isObj(5)).to.be.false;
-    expect(isObj('eris')).to.be.false;
+    expect(isObj('licia')).to.be.false;
     expect(isObj(null)).to.be.false;
 });

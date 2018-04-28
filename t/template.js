@@ -6,9 +6,9 @@
  * |return|function|Compiled template function|
  *
  * ```javascript
- * template('Hello <%= name %>!')({name: 'eris'}); // -> 'Hello eris!'
- * template('<p><%- name %></p>')({name: '<eris>'}); // -> '<p>&lt;eris&gt;</p>'
- * template('<%if (echo) {%>Hello eris!<%}%>')({echo: true}); // -> 'Hello eris!'
+ * template('Hello <%= name %>!')({name: 'licia'}); // -> 'Hello licia!'
+ * template('<p><%- name %></p>')({name: '<licia>'}); // -> '<p>&lt;licia&gt;</p>'
+ * template('<%if (echo) {%>Hello licia!<%}%>')({echo: true}); // -> 'Hello licia!'
  * ```
  */
 

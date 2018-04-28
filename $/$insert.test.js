@@ -15,24 +15,24 @@ beforeEach(function ()
 
 it('insert before', function ()
 {
-    $insert.before('#test', '<div>eris</div>');
-    expect($dom.html()).to.equal('<div>eris</div><div id="test"><div class="mark"></div></div>');
+    $insert.before('#test', '<div>licia</div>');
+    expect($dom.html()).to.equal('<div>licia</div><div id="test"><div class="mark"></div></div>');
 });
 
 it('insert after', function ()
 {
-    $insert.after('#test', '<div>eris</div>');
-    expect($dom.html()).to.equal('<div id="test"><div class="mark"></div></div><div>eris</div>');
+    $insert.after('#test', '<div>licia</div>');
+    expect($dom.html()).to.equal('<div id="test"><div class="mark"></div></div><div>licia</div>');
 });
 
 it('insert to the beginning', function ()
 {
-    $insert.prepend('#test', '<div>eris</div>');
-    expect($dom.html()).to.equal('<div id="test"><div>eris</div><div class="mark"></div></div>');
+    $insert.prepend('#test', '<div>licia</div>');
+    expect($dom.html()).to.equal('<div id="test"><div>licia</div><div class="mark"></div></div>');
 });
 
 it('insert to the end', function ()
 {
-    $insert.append('#test', '<div>eris</div>');
-    expect($dom.html()).to.equal('<div id="test"><div class="mark"></div><div>eris</div></div>');
+    $insert.append('#test', '<div>licia</div>');
+    expect($dom.html()).to.equal('<div id="test"><div class="mark"></div><div>licia</div></div>');
 });

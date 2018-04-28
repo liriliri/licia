@@ -1,6 +1,6 @@
 [中文](README_CN.md)
 
-# Eris
+# Licia
 
 [![NPM version][npm-image]][npm-url]
 [![Build status][travis-image]][travis-url]
@@ -8,8 +8,8 @@
 
 [npm-image]: https://img.shields.io/npm/v/eustia-module.svg
 [npm-url]: https://npmjs.org/package/eustia-module
-[travis-image]: https://img.shields.io/travis/liriliri/eris.svg
-[travis-url]: https://travis-ci.org/liriliri/eris
+[travis-image]: https://img.shields.io/travis/liriliri/licia.svg
+[travis-url]: https://travis-ci.org/liriliri/licia
 [license-image]: https://img.shields.io/npm/l/eustia-module.svg
 
 Eustia official module repository.
@@ -19,21 +19,21 @@ To check all current available functions, see
 
 ## Another Lodash?
 
-No. The goal of Eustia is to provide a huge number of useful and small
+No. The goal of Licia is to provide a huge number of useful and small
 JavaScript codes, not just functions, but also modules and classes. Think of it
 as a mini version of npm suitable for tiny packages.
 
 ## Usage
 
-It is recommended to use the official bundler [eustia](http://eustia.liriliri.io/) to easily build a customized utility library for your project. But if you don't like it, just install **eustia-module** and use it like
+It is recommended to use the official bundler [eustia](http://eustia.liriliri.io/) to easily build a customized utility library for your project. But if you don't like it, just install **licia** and use it like
 any other npm utility modules such as lodash.
 
 ```bash
-npm i eustia-module --save
+npm i licia --save
 ```
 
 ```javascript
-var uuid = require('eustia-module/uuid');
+var uuid = require('licia/uuid');
 
 console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 ```
@@ -60,10 +60,10 @@ about how to write an eustia module.
 ### How to Add
 
 * Fork and clone the repository.
-* `npm i && npm link` to register **eris** command in your system.
+* `npm i && npm link` to register **licia** command in your system.
 * Create a js file named with the module name and its corresponding test file.
 * Write the source code along with the documentaion and test. (documentation is the first block comment written in markdown)
-* `eris test <module-name>` run the test. (use `-b` if test should run in a browser)
+* `licia test <module-name>` run the test. (use `-b` if test should run in a browser)
 * `npm run cov` for checking the test coverage. (istanbul is required)
 * Update **index.json** and **doc.md** by running `npm run update`.
 

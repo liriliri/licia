@@ -2,7 +2,7 @@ var localStorage = window.localStorage;
 
 it('basic', function () 
 {
-    localStorage.setItem('LocalStore', '{eris}');
+    localStorage.setItem('LocalStore', '{licia}');
 
     var store = new LocalStore('LocalStore', {
         a: 1,
@@ -20,7 +20,7 @@ it('basic', function ()
     store.clear();
     expect(localStorage.getItem('LocalStore')).to.be.an('null');
 
-    localStorage.setItem('LocalStore', '"eris"');
+    localStorage.setItem('LocalStore', '"licia"');
     store = new LocalStore('LocalStore', {
         a: 1
     });

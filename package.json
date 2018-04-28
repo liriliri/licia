@@ -1,30 +1,30 @@
 {
-  "name": "eris",
+  "name": "licia",
   "version": "0.10.0",
   "description": "Eustia modules",
   "bin": {
-    "eris": "./bin/eris.js"
+    "licia": "./bin/licia.js"
   },
   "scripts": {
     "ci": "npm run update && npm run lint && npm test",
-    "update": "eris update",
-    "pack": "eris pack",
+    "update": "licia update",
+    "pack": "licia pack",
     "lint": "eslint $ [a-z]/*.js",
     "serveDemo": "nws -p 3000 -d demo",
     "test": "npm run test:node && npm run test:browser",
-    "demo": "eris test -ad",
+    "demo": "licia test -ad",
     "cov": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "eustia": "eustia",
     "karma": "karma",
     "mocha": "mocha",
     "benchmark": "node",
-    "test:node": "eris test -as",
-    "test:browser": "eris test -bas",
-    "test:sauce": "eris test -bas --sauce"
+    "test:node": "licia test -as",
+    "test:browser": "licia test -bas",
+    "test:sauce": "licia test -bas --sauce"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liriliri/eris.git"
+    "url": "git+https://github.com/liriliri/licia.git"
   },
   "keywords": [
     "eustia"
@@ -32,9 +32,9 @@
   "author": "redhoodsu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/liriliri/eris/issues"
+    "url": "https://github.com/liriliri/licia/issues"
   },
-  "homepage": "https://github.com/liriliri/eris#readme",
+  "homepage": "https://github.com/liriliri/licia#readme",
   "devDependencies": {
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",

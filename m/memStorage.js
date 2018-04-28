@@ -4,7 +4,7 @@
  *
  * ```javascript
  * var localStorage = window.localStorage || memStorage;
- * localStorage.setItem('test', 'eris');
+ * localStorage.setItem('test', 'licia');
  * ```
  */
 

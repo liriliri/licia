@@ -6,7 +6,7 @@
  * |return|boolean|True if value is a string primitive|
  *
  * ```javascript
- * isStr('eris'); // -> true
+ * isStr('licia'); // -> true
  * ```
  */
 

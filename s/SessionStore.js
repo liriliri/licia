@@ -10,8 +10,8 @@
  * |data|object|Default data            |
  * 
  * ```javascript
- * var store = new SessionStore('eris');
- * store.set('name', 'eris');
+ * var store = new SessionStore('licia');
+ * store.set('name', 'licia');
  * ```
  */
 

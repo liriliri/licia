@@ -4,7 +4,7 @@ suite.add('eval', function ()
 }).add('function', function () 
 {
     (function () {for (var i = 0; i < 100000; i++);})();
-}).add('eris', function () 
+}).add('licia', function () 
 {
     evalJs('for (var i = 0; i < 100000; i++);');
 }).run();

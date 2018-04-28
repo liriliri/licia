@@ -8,7 +8,7 @@ it('select elements', function ()
     expect($test.length).to.equal(1);
     $test.each(function ()
     {
-        this.innerHTML = 'eris';
+        this.innerHTML = 'licia';
     });
-    expect($('#select .test').html()).to.equal('eris');
+    expect($('#select .test').html()).to.equal('licia');
 });

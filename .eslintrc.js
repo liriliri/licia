@@ -1,4 +1,4 @@
-var eris = require('./index.json'),
+var licia = require('./index.json'),
     util = require('./lib/util');
 
 var exports = {
@@ -28,7 +28,7 @@ var globals = {
     expect: true
 };
 
-util.each(eris, function (val, key) { globals[key] = true });
+util.each(licia, function (val, key) { globals[key] = true });
 
 exports.globals = globals;
 

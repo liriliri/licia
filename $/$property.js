@@ -17,8 +17,8 @@
  * set the value of every matched element.
  *
  * ```javascript
- * $property.html('#test', 'eris');
- * $property.html('#test'); // -> eris
+ * $property.html('#test', 'licia');
+ * $property.html('#test'); // -> licia
  * ```
  */
 

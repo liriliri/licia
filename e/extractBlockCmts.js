@@ -6,7 +6,7 @@
  * |return|array |Block comments   |
  *
  * ```javascript
- * extractBlockCmts('\/*eris*\/'); // -> ['eris']
+ * extractBlockCmts('\/*licia*\/'); // -> ['licia']
  * ```
  */
 

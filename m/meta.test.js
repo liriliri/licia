@@ -1,15 +1,15 @@
 before(function () 
 {
     $('head').append([
-        '<meta name="a" content="1" eris="true">',
-        '<meta name="b" content="2" eris="true">',
-        '<meta name="c" content="3" eris="true">'
+        '<meta name="a" content="1" licia="true">',
+        '<meta name="b" content="2" licia="true">',
+        '<meta name="c" content="3" licia="true">'
     ].join(''));
 });
 
 after(function () 
 {
-    $('meta[eris="true"]').remove();
+    $('meta[licia="true"]').remove();
 });
 
 it('get', function () 
