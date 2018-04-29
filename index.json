@@ -607,6 +607,14 @@
         "env": "all",
         "test": "all"
     },
+    "compose": {
+        "description": "Compose a list of functions.",
+        "dependencies": [
+            "restArgs"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "compressImg": {
         "description": "Compress image using canvas.",
         "dependencies": [

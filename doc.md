@@ -1650,6 +1650,29 @@ The values false, null, 0, "", undefined, and NaN are falsey.
 compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
 ```
 
+## compose 
+
+Compose a list of functions.
+
+Each function consumes the return value of the function that follows.
+
+|Name  |Type    |Desc                |
+|------|--------|--------------------|
+|...fn |function|Functions to compose|
+|return|function|Composed function   |
+
+```javascript
+var welcome = compose(function (name)
+{
+    return 'hi: ' + name;
+}, function (name)
+{
+    return name.toUpperCase() + '!';
+});
+
+welcome('licia'); // -> 'hi: LICIA!'
+```
+
 ## compressImg 
 
 Compress image using canvas.
