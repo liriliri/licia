@@ -152,7 +152,8 @@
             "toArr",
             "inherits",
             "has",
-            "safeGet"
+            "safeGet",
+            "isMiniProgram"
         ],
         "env": "all",
         "test": "all",
@@ -1386,6 +1387,14 @@
         "description": "Check if keys and values in src are contained in obj.",
         "dependencies": [
             "keys"
+        ],
+        "env": "all",
+        "test": "all"
+    },
+    "isMiniProgram": {
+        "description": "Check if running in wechat mini program.",
+        "dependencies": [
+            "isFn"
         ],
         "env": "all",
         "test": "all"

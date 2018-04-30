@@ -48,7 +48,7 @@
  * test: all
  */
 
-_('extend toArr inherits has safeGet');
+_('extend toArr inherits has safeGet isMiniProgram');
 
 function exports(methods, statics)
 {
@@ -61,11 +61,22 @@ function makeClass(parent, methods, statics)
     var className = methods.className || safeGet(methods, 'initialize.name') || '';
     delete methods.className;
 
-    var ctor = new Function('toArr', 'return function ' + className + '()' + 
-    '{' +
-        'var args = toArr(arguments);' +
-        'return this.initialize ? this.initialize.apply(this, args) || this : this;' +
-    '};')(toArr);
+    var ctor;
+    if (isMiniProgram) 
+    {
+        ctor = function () 
+        {
+            var args = toArr(arguments);
+            return this.initialize ? this.initialize.apply(this, args) || this : this;
+        };
+    } else 
+    {
+        ctor = new Function('toArr', 'return function ' + className + '()' + 
+        '{' +
+            'var args = toArr(arguments);' +
+            'return this.initialize ? this.initialize.apply(this, args) || this : this;' +
+        '};')(toArr);
+    }
 
     inherits(ctor, parent);
     ctor.prototype.constructor = ctor;

@@ -3232,6 +3232,14 @@ Check if keys and values in src are contained in obj.
 isMatch({a: 1, b: 2}, {a: 1}); // -> true
 ```
 
+## isMiniProgram 
+
+Check if running in wechat mini program.
+
+```javascript
+console.log(isMiniProgram); // -> true if running in mini program.
+```
+
 ## isMobile 
 
 Check whether client is using a mobile browser using ua.
