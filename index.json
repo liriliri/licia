@@ -1383,6 +1383,12 @@
         "env": "all",
         "test": "all"
     },
+    "isLeapYear": {
+        "description": "Check if a year is a leap year.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "isMatch": {
         "description": "Check if keys and values in src are contained in obj.",
         "dependencies": [

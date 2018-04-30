@@ -3218,6 +3218,20 @@ isJson('{"a": 5}'); // -> true
 isJson("{'a': 5}"); // -> false
 ```
 
+## isLeapYear 
+
+Check if a year is a leap year.
+
+|Name  |Type   |Desc                       |
+|------|-------|---------------------------|
+|year  |number |Year to check              |
+|return|boolean|True if year is a leap year|
+
+```javascript
+isLeapYear(2000); // -> true
+isLeapYear(2002); // -> false
+```
+
 ## isMatch 
 
 Check if keys and values in src are contained in obj.
