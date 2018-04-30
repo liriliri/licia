@@ -6,11 +6,11 @@ before(function ()
 {
     var fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest();
 
-    fakeXMLHttpRequest.onCreate = function (xhr) { requests.push(xhr) };
-    fetch.setting.xhr = function () { return new fakeXMLHttpRequest() };
+    fakeXMLHttpRequest.onCreate = function (xhr) { requests.push(xhr); };
+    fetch.setting.xhr = function () { return new fakeXMLHttpRequest(); };
 });
 
-beforeEach(function () { requests = [] });
+beforeEach(function () { requests = []; });
 
 it('basic', function (done) 
 {

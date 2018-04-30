@@ -6,7 +6,7 @@ before(function ()
     $dom = jQuery('#evalCss');
 });
 
-after(function () { $dom.remove() });
+after(function () { $dom.remove(); });
 
 it('basic', function () 
 {

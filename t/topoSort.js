@@ -56,7 +56,7 @@ function sort(nodes, edges)
         if (visited[i]) return;
         visited[i] = true;
 
-        var outgoing = edges.filter(function(edge) { return edge[0] === node });
+        var outgoing = edges.filter(function(edge) { return edge[0] === node; });
 
         /* eslint-disable no-cond-assign */
         if (i = outgoing.length)
@@ -65,10 +65,10 @@ function sort(nodes, edges)
             do {
                 var child = outgoing[--i][1];
                 visit(child, nodes.indexOf(child), preds);
-            } while (i)
+            } while (i);
         }
 
-        sorted[--cursor] = node
+        sorted[--cursor] = node;
     }
 
     return sorted;

@@ -21,5 +21,5 @@ _('filter');
 
 function exports(arr)
 {
-    return filter(arr, function (val) { return !!val });
+    return filter(arr, function (val) { return !!val; });
 }

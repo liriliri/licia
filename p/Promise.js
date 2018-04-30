@@ -46,7 +46,7 @@ var Promise = exports = Class({
             adopt: {from: 'pending', to: 'adopted'}
         }).on('fulfill', assignVal).on('reject', assignVal).on('adopt', assignVal);
 
-        function assignVal(val) { self._value = val }
+        function assignVal(val) { self._value = val; }
 
         this._handled = false;
         this._value = undefined;
@@ -111,11 +111,11 @@ var Promise = exports = Class({
     {
         if (val && isObj(val) && val.constructor === Promise) return val;
 
-        return new Promise(function (resolve) { resolve(val) });
+        return new Promise(function (resolve) { resolve(val); });
     },
     reject: function (val) 
     {
-        return new Promise(function (resolve, reject) { reject(val) });
+        return new Promise(function (resolve, reject) { reject(val); });
     },
     race: function (values) 
     {

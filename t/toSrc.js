@@ -34,7 +34,7 @@ function exports(fn)
     /* eslint-disable no-empty */    
     } catch (e) {}
 
-    return ''
+    return '';
 }
 
 var fnToStr = Function.prototype.toString;

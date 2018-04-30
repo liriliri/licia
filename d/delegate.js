@@ -33,8 +33,8 @@
 
 _('Class contain');
 
-function retTrue()  { return true }
-function retFalse() { return false }
+function retTrue()  { return true; }
+function retFalse() { return false; }
 
 function trigger(e)
 {
@@ -150,7 +150,7 @@ exports = {
     },
     Event: Class({
         className: 'Event',
-        initialize: function Event(e) { this.origEvent = e },
+        initialize: function Event(e) { this.origEvent = e; },
         isDefaultPrevented: retFalse,
         isPropagationStopped: retFalse,
         isImmediatePropagationStopped: retFalse,

@@ -18,7 +18,7 @@
 
 _('each upperFirst');
 
-exports.linear = function (t) { return t };
+exports.linear = function (t) { return t; };
 
 var pow = Math.pow,
     sqrt = Math.sqrt,

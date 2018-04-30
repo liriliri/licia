@@ -6,7 +6,7 @@ before(function ()
     $dom = $('#dollarPropFactory');
 });
 
-after(function () { $dom.remove() });
+after(function () { $dom.remove(); });
 
 it('get', function ()
 {

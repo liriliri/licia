@@ -6,7 +6,7 @@ before(function ()
     $dom = $('#dollarAttr');
 });
 
-after(function () { $dom.remove() });
+after(function () { $dom.remove(); });
 
 it('get', function ()
 {

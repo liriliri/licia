@@ -42,14 +42,14 @@ raf = raf || function(cb)
     var curTime = now();
 
     var timeToCall = Math.max(0, 16 - (curTime - lastTime)),
-        id = setTimeout(function() { cb(curTime + timeToCall) }, timeToCall);
+        id = setTimeout(function() { cb(curTime + timeToCall); }, timeToCall);
 
     lastTime = curTime + timeToCall;
 
     return id;
 };
 
-cancel = cancel || function(id) { clearTimeout(id) };
+cancel = cancel || function(id) { clearTimeout(id); };
 
 raf.cancel = cancel;
 

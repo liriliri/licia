@@ -3,7 +3,7 @@ it('basic', function ()
     var e = new Emitter(),
         a = 1;
 
-    function add() { a++ }
+    function add() { a++; }
 
     e.on('add', add);
     e.emit('add', 1);
@@ -21,7 +21,7 @@ it('mixin', function ()
 {
     var a = 1;
 
-    function add(n) { a += n }
+    function add(n) { a += n; }
 
     var b = {};
     Emitter.mixin(b);

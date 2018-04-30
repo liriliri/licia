@@ -8,7 +8,11 @@ it('basic', function (done)
         {
             if (err) return done(err);
 
-            done();
+            fs.exists(__dirname + '/mkdirTest/1', function (exists) 
+            {
+                expect(exists).to.be.true;
+                done();
+            });
         });
     });
 });

@@ -35,7 +35,7 @@ function exports(ua)
     if (detect('mac')) return 'os x';
     if (detect('linux')) return 'linux';
 
-    function detect(keyword) { return ua.indexOf(keyword) > -1 }
+    function detect(keyword) { return ua.indexOf(keyword) > -1; }
 
     return 'unknown';
 }

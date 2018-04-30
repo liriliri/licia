@@ -138,7 +138,7 @@ exports = Class({
 
         var data = this._data;
 
-        each(keys, function (key) { safeDel(data, key) });
+        each(keys, function (key) { safeDel(data, key); });
 
         return this;
     },
@@ -148,7 +148,7 @@ exports = Class({
 
         if (isFn(to)) return this.set(from, to.call(this, this.get(from)));
 
-        from = map(toArr(from), function (key) { return safeGet(this._data, key) }, this);
+        from = map(toArr(from), function (key) { return safeGet(this._data, key); }, this);
 
         return this.set(to, fn.apply(this, from));
     },

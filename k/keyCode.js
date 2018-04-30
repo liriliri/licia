@@ -81,10 +81,10 @@ var codeMap = {
 // Lower case chars
 for (var i = 97; i < 123; i++) codeMap[String.fromCharCode(i)] = i - 32;
 // Numbers
-for (i = 48; i < 58; i++) codeMap[i - 48] = i
+for (i = 48; i < 58; i++) codeMap[i - 48] = i;
 // Function keys
-for (i = 1; i < 13; i++) codeMap['f' + i] = i + 111
+for (i = 1; i < 13; i++) codeMap['f' + i] = i + 111;
 // Numpad keys
-for (i = 0; i < 10; i++) codeMap['numpad ' + i] = i + 96
+for (i = 0; i < 10; i++) codeMap['numpad ' + i] = i + 96;
 
 var nameMap = invert(codeMap);

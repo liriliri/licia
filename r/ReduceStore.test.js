@@ -13,7 +13,7 @@ it('basic', function ()
     expect(store.getState()).to.equal(0);
     store.dispatch({type: 'INCREMENT'});
     expect(store.getState()).to.equal(1);
-    store.dispatch({type: 'INCREMENT'})
+    store.dispatch({type: 'INCREMENT'});
     expect(store.getState()).to.equal(2);
     store.dispatch({type: 'DECREMENT'});
     expect(store.getState()).to.equal(1);

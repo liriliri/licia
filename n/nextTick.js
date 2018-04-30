@@ -26,10 +26,10 @@ if (typeof process === 'object' && process.nextTick)
     exports = process.nextTick;
 } else if (typeof setImmediate === 'function')
 {
-    exports = function (cb) { setImmediate(ensureCallable(cb)) }
+    exports = function (cb) { setImmediate(ensureCallable(cb)); };
 } else
 {
-    exports = function (cb) { setTimeout(ensureCallable(cb), 0) };
+    exports = function (cb) { setTimeout(ensureCallable(cb), 0); };
 }
 
 function ensureCallable(fn)

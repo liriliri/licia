@@ -16,6 +16,10 @@ var exports = {
             'error',
             'single'
         ],
+        semi: [
+            'error',
+            'always'
+        ],
         'no-unused-vars': [
             'off'
         ]

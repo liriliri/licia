@@ -92,5 +92,5 @@ function setAttr(els, attrs)
         {
             el.setAttribute(name, val);
         });
-    })
+    });
 }

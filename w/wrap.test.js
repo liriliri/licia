@@ -1,6 +1,6 @@
 it('basic', function ()
 {
-    function five() { return 'five' }
+    function five() { return 'five'; }
     var sayFive = wrap(five, function (fn)
     {
         return 'Say ' + fn();

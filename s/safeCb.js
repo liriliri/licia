@@ -21,6 +21,6 @@ exports = function (val, ctx, argCount)
         return function (obj)
         {
             return obj == null ? undefined : obj[key];
-        }
+        };
     };
 };

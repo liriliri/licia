@@ -70,7 +70,7 @@ it('race', function (done)
         resolve('a');
     }), new Promise(function (resolve) 
     {
-        setTimeout(function () { resolve('b') }, 50);
+        setTimeout(function () { resolve('b'); }, 50);
     })]).then(function (val) 
     {
         expect(val).to.equal('a');

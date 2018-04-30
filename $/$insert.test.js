@@ -6,7 +6,7 @@ before(function ()
     $dom = $('#dollarInsert');
 });
 
-after(function () { $dom.remove() });
+after(function () { $dom.remove(); });
 
 beforeEach(function ()
 {

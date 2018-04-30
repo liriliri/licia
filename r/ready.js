@@ -37,5 +37,5 @@ if (!loaded)
 
 function exports(fn)
 {
-    loaded ? setTimeout(fn, 0) : fns.push(fn)
+    loaded ? setTimeout(fn, 0) : fns.push(fn);
 }

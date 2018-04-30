@@ -1,6 +1,6 @@
 it('basic', function ()
 {
-    expect(map([2, 4], function (n) { return n * n})).to.eql([4, 16]);
+    expect(map([2, 4], function (n) { return n * n; })).to.eql([4, 16]);
 });
 
 it('object', function () 

@@ -25,7 +25,7 @@ function exports(fn, ctx, argCount)
         case 4: return function (accumulator, val, idx, collection)
         {
             return fn.call(ctx, accumulator, val, idx, collection);
-        }
+        };
     }
 
     return function ()

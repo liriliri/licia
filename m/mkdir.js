@@ -48,7 +48,7 @@ function exports(p, mode, cb)
                 {
                     if (err) return cb(err);
 
-                    exports(p, mode, cb)
+                    exports(p, mode, cb);
                 });
                 break;
             default:

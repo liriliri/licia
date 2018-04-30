@@ -3,11 +3,11 @@ it('basic', function (done)
     parallel([
         function (cb)
         {
-            setTimeout(function () { cb(null, 'one') }, 100);
+            setTimeout(function () { cb(null, 'one'); }, 100);
         },
         function (cb)
         {
-            setTimeout(function () { cb(null, 'two') }, 50);
+            setTimeout(function () { cb(null, 'two'); }, 50);
         }
     ], function (err, results)
     {
@@ -71,7 +71,7 @@ it('callback always async', function (done)
     var invoked = false;
 
     parallel([
-        function (cb) { cb() }
+        function (cb) { cb(); }
     ], function ()
     {
         invoked = true;

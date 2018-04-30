@@ -2078,6 +2078,15 @@
         "env": "browser",
         "test": "browser"
     },
+    "rmdir": {
+        "description": "Recursively remove directories.",
+        "dependencies": [
+            "noop",
+            "parallel"
+        ],
+        "env": "node",
+        "test": "node"
+    },
     "root": {
         "description": "Root object reference, `global` in nodeJs, `window` in browser.",
         "dependencies": [

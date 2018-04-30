@@ -10,7 +10,7 @@ it('parse', function ()
     });
     expect(query.parse('te%20st=te%20st')).to.eql({
         'te st': 'te st'
-    })
+    });
 });
 
 it('stringify', function ()
@@ -26,5 +26,5 @@ it('stringify', function ()
     })).to.equal('test=1&test=2');
     expect(query.stringify({
         'te st': 'te st'
-    })).to.equal('te%20st=te%20st')
+    })).to.equal('te%20st=te%20st');
 });

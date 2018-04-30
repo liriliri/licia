@@ -3,7 +3,7 @@ var $dom, windowY, origScroll;
 before(function ()
 {
     origScroll = window.scroll;
-    window.scroll = function (x, y) { windowY = y };
+    window.scroll = function (x, y) { windowY = y; };
     $('body').append('<div id="scrollTo" style="margin-top: 50px;"></div>');
     $dom = $('#scrollTo');
 });

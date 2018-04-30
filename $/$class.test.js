@@ -6,7 +6,7 @@ before(function ()
     $dom = $('#dollarClass');
 });
 
-after(function () { $dom.remove() });
+after(function () { $dom.remove(); });
 
 it('add', function ()
 {

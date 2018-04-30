@@ -4577,6 +4577,23 @@ Loop through all possible path and domain to remove cookie.
 rmCookie('test');
 ```
 
+## rmdir 
+
+Recursively remove directories.
+
+|Name    |Type    |Desc               |
+|--------|--------|-------------------|
+|dir     |string  |Directory to remove|
+|callback|function|Callback           |
+
+```javascript
+rmdir('/tmp/foo/bar/baz', function (err)
+{
+    if (err) console.log (err);
+    else console.log('Done');
+});
+```
+
 ## root 
 
 Root object reference, `global` in nodeJs, `window` in browser.

@@ -41,7 +41,7 @@ function exports(tasks, cb)
         if (++current >= tasks.length || err)
         {
             args.unshift(err);
-            nextTick(function () { cb.apply(null, args) });
+            nextTick(function () { cb.apply(null, args); });
         } else
         {
             args.push(taskCb);
@@ -54,6 +54,6 @@ function exports(tasks, cb)
         tasks[0](taskCb);
     } else
     {
-        nextTick(function () { cb(null) });
+        nextTick(function () { cb(); });
     }
 }

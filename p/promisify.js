@@ -44,6 +44,6 @@ exports = function (fn, multiArgs)
             fn.apply(this, args);
         });
     });
-} 
+}; 
 
 exports.Promise = root.Promise || Promise;

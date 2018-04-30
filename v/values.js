@@ -21,7 +21,7 @@ function exports(obj)
 {
     var ret = [];
 
-    each(obj, function (val) { ret.push(val) });
+    each(obj, function (val) { ret.push(val); });
 
     return ret;
 }

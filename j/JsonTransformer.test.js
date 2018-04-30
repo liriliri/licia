@@ -13,8 +13,8 @@ it('basic', function ()
             firstname: 'RedHood'
         }
     });
-    data.filter('books', function (book) { return book.price > 5 });
-    data.compute('author', function (author) { return author.firstname + author.lastname });
+    data.filter('books', function (book) { return book.price > 5; });
+    data.compute('author', function (author) { return author.firstname + author.lastname; });
     data.set('count', data.get('books').length);
     expect(data.get()).to.eql({books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', count: 1});
 });
@@ -57,7 +57,7 @@ it('map', function ()
     data.map('arr', 'newArr', double);
     expect(data.get('newArr')).to.eql([4, 8]);
 
-    function double(val) { return val * 2 }
+    function double(val) { return val * 2; }
 });
 
 it('remove', function () 
@@ -83,7 +83,7 @@ it('filter', function ()
     data.filter('arr', 'newArr', odd);
     expect(data.get('newArr')).to.eql([1, 3]);
 
-    function odd(val) { return val % 2 !== 0 }
+    function odd(val) { return val % 2 !== 0; }
 });
 
 it('compute', function () 
@@ -98,9 +98,9 @@ it('compute', function ()
     expect(data.get()).to.eql({a: 2});
 
     data = new JsonTransformer({a: 1, b: 2});
-    data.compute('a', function (val) { return val * 2 });
+    data.compute('a', function (val) { return val * 2; });
     expect(data.get('a')).to.equal(2);
-    data.compute(['a', 'b'], 'c', function (a, b) { return a + b });
+    data.compute(['a', 'b'], 'c', function (a, b) { return a + b; });
     expect(data.get('c')).to.equal(4);
 });
 

@@ -31,4 +31,4 @@ it('multiple', function ()
     hotkey.off('b', addOne);
     trigger('keydown', {keyCode: b});
     expect(num).to.equal(3);
-})
+});

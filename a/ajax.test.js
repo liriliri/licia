@@ -6,11 +6,11 @@ before(function ()
 {
     var fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest();
 
-    fakeXMLHttpRequest.onCreate = function (xhr) { requests.push(xhr) };
-    ajax.setting.xhr = function () { return new fakeXMLHttpRequest() };
+    fakeXMLHttpRequest.onCreate = function (xhr) { requests.push(xhr); };
+    ajax.setting.xhr = function () { return new fakeXMLHttpRequest(); };
 });
 
-beforeEach(function () { requests = [] });
+beforeEach(function () { requests = []; });
 
 it('basic', function (done)
 {
@@ -61,7 +61,7 @@ it('request data', function (done)
         type: 'post',
         url: 'test',
         data: 'test',
-        success: function () { done() }
+        success: function () { done(); }
     });
 
     request = requests[2];
@@ -111,7 +111,7 @@ it('post json', function (done)
         url: 'test',
         data: {foo: 'bar'},
         contentType: 'application/json',
-        success: function () { done() }
+        success: function () { done(); }
     });
 
     var request = requests[0];
@@ -173,7 +173,7 @@ it('complete', function (done)
     });
 
     request = requests[1];
-    request.respond(500, {}, '')
+    request.respond(500, {}, '');
 });
 
 it('timeout', function (done)

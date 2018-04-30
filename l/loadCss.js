@@ -28,8 +28,8 @@ function exports(src, cb)
 
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.onerror = function () { cb(false); }
-    link.onload = function () { cb(true); }
+    link.onerror = function () { cb(false); };
+    link.onload = function () { cb(true); };
     link.href = src;
 
     document.head.appendChild(link);

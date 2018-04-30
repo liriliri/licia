@@ -1,6 +1,6 @@
 it('basic', function () 
 {
-    var str = 'Official site: http://eustia.liriliri.io'
+    var str = 'Official site: http://eustia.liriliri.io';
     expect(linkify(str)).to.equal('Official site: <a href="http://eustia.liriliri.io">http://eustia.liriliri.io</a>');
     expect(linkify(str, function (url) 
     {

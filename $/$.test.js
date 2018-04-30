@@ -9,7 +9,7 @@ before(function ()
     dom = $($dom[0]);
 });
 
-after(function () { dom.remove() });
+after(function () { dom.remove(); });
 
 it('offset', function () 
 {
@@ -85,7 +85,7 @@ it('val', function ()
 {
     dom.val('test');
     expect($dom.val()).to.equal('test');
-    $dom.val('')
+    $dom.val('');
     expect(dom.val()).to.equal('');
 });
 
@@ -122,7 +122,7 @@ it('class', function ()
     expect(dom.hasClass('test2')).to.be.true;
     dom.rmClass('test');
     expect($dom.hasClass('test')).to.be.false;
-    dom.toggleClass('test')
+    dom.toggleClass('test');
     expect($dom.hasClass('test')).to.be.true;
 });
 

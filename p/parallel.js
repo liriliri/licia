@@ -40,7 +40,7 @@ function exports(tasks, cb)
 
     each(tasks, function (task, i)
     {
-        task(function (err, result) { taskCb(i, err, result) });
+        task(function (err, result) { taskCb(i, err, result); });
     });
 
     function taskCb(i, err, result)

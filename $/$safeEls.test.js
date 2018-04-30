@@ -6,7 +6,7 @@ before(function ()
     dom = $('#dollarSafeEls').get(0);
 });
 
-after(function () { $('#dollarSafeEls').remove() });
+after(function () { $('#dollarSafeEls').remove(); });
 
 it('string', function ()
 {
