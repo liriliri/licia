@@ -2364,6 +2364,15 @@
         "env": "all",
         "test": "all"
     },
+    "toDate": {
+        "description": "Convert value to a Date.",
+        "dependencies": [
+            "isDate",
+            "isStr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "toEl": {
         "description": "Convert html string to dom elements.",
         "dependencies": [],

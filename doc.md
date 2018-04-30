@@ -5115,6 +5115,21 @@ toBool('1'); // -> true
 toBool('false'); // -> false
 ```
 
+## toDate 
+
+Convert value to a Date.
+
+|Name  |Type|Desc            |
+|------|----|----------------|
+|val   |*   |Value to convert|
+|return|Date|Converted Date  |
+
+```javascript
+toDate('20180501');
+toDate('2018-05-01');
+toDate(1525107450849);
+```
+
 ## toEl 
 
 Convert html string to dom elements.
