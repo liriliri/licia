@@ -77,8 +77,10 @@ exports = function (str)
 
     var render = new Function('obj', 'util', src);
 
-    return function (data)
+    return function (data, util)
     {
-        return render.call(null, data, _);
+        if (!util) util = (typeof _ === 'object' ? _ : {});
+
+        return render.call(null, data, util);
     };
 };
