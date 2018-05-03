@@ -1777,6 +1777,18 @@
         "env": "node",
         "test": "node"
     },
+    "moment": {
+        "description": "Tiny moment.js like implementation.",
+        "dependencies": [
+            "Class",
+            "toDate",
+            "dateFormat",
+            "isLeapYear",
+            "extend"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "ms": {
         "description": "Convert time string formats to milliseconds.",
         "dependencies": [
