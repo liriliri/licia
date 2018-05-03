@@ -6,9 +6,9 @@
  * 
  * format, isValid, isLeapYear, isSame, isBefore, isAfter, year,
  * month, date, hour, minute, second, millisecond, unix, clone,
- * toDate, toArray, toJSON, toISOString, toObject, toString
+ * toDate, toArray, toJSON, toISOString, toObject, toString, set
  * 
- * Note: Format uses dateFormat module, so the mask is not quite the same as moment.js.
+ * Format uses dateFormat module, so the mask is not quite the same as moment.js.
  * 
  * ```javascript
  * moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
@@ -20,7 +20,7 @@
  * test: all
  */ 
 
-_('Class toDate dateFormat isLeapYear extend'); 
+_('Class toDate dateFormat isLeapYear extend toStr'); 
 
 function exports(val) 
 {
@@ -151,5 +151,55 @@ var Moment = Class({
     toString: function () 
     {
         return this._d.toUTCString();
+    },
+    set: function (unit, num) 
+    {
+        var d = this._d;
+
+        unit = normalizeUnit(unit);
+
+        switch (unit) 
+        {
+            case 'year': d.setFullYear(num); break;
+            case 'month': d.setMonth(num); break;
+            case 'date': d.setDate(num); break;
+            case 'hour': d.setHours(num); break;
+            case 'minute': d.setMinutes(num); break;
+            case 'millisecond': d.setMilliseconds(num); break;
+        }
+
+        this._init();
+
+        return this;
     }
 });
+
+function absFloor(num) 
+{
+    return num < 0 ? (Math.ceil(num) || 0) : Math.floor(num);
+}
+
+var unitShorthandMap = {
+    y: 'year',
+    Q: 'quarter',
+    M: 'month',
+    w: 'week',
+    d: 'day',
+    D: 'date',
+    h: 'hour',
+    m: 'minute',
+    s: 'second',
+    ms: 'millisecond'
+};
+
+var regEndS = /s$/;
+
+// Turn 'y' or 'years' into 'year'
+function normalizeUnit(unit) 
+{
+    unit = toStr(unit);
+
+    if (unitShorthandMap[unit]) return unitShorthandMap[unit];
+
+    return unit.toLowerCase().replace(regEndS, '');
+}

@@ -79,3 +79,21 @@ it('toDate toArray toJSON toISOString toObject toString', function ()
     });
     expect(m.toString()).to.equal(m.toDate().toUTCString());
 });
+
+it('set', function () 
+{
+    var m = moment(1525305141649);
+    
+    m.set('y', 2016);
+    expect(m.year()).to.equal(2016);
+    m.set('month', 5);
+    expect(m.month()).to.equal(5);
+    m.set('D', 4);
+    expect(m.date()).to.equal(4);
+    m.set('hours', 8);
+    expect(m.hour()).to.equal(8);
+    m.set('m', 53);
+    expect(m.minute()).to.equal(53);
+    m.set('ms', 300);
+    expect(m.millisecond()).to.equal(300);
+});

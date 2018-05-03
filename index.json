@@ -1784,7 +1784,8 @@
             "toDate",
             "dateFormat",
             "isLeapYear",
-            "extend"
+            "extend",
+            "toStr"
         ],
         "env": "all",
         "test": "all"
