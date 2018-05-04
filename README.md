@@ -12,16 +12,14 @@
 [travis-url]: https://travis-ci.org/liriliri/licia
 [license-image]: https://img.shields.io/npm/l/licia.svg
 
-Eustia official module repository.
+Useful utility collection with zero dependencies.
 
 To check all current available functions, see
 [doc.md](http://eustia.liriliri.io/module.html).
 
 ## Another Lodash?
 
-No. The goal of Licia is to provide a huge number of useful and small
-JavaScript codes, not just functions, but also modules and classes. Think of it
-as a mini version of npm suitable for tiny packages.
+No. The goal of Licia is to provide a huge number of useful and small JavaScript codes, not just functions, but also modules and classes. Think of it as a mini version of npm suitable for tiny packages.
 
 ## Usage
 
