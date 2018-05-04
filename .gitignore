@@ -5,7 +5,7 @@
 /test/
 /benchmark/
 /testUtil/
-/npm/
+/packages/
 /coverage/
 karma.conf.js
 package-lock.json

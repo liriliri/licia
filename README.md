@@ -25,8 +25,7 @@ as a mini version of npm suitable for tiny packages.
 
 ## Usage
 
-It is recommended to use the official bundler [eustia](http://eustia.liriliri.io/) to easily build a customized utility library for your project. But if you don't like it, just install **licia** and use it like
-any other npm utility modules such as lodash.
+It is recommended to use the official bundler [eustia](http://eustia.liriliri.io/) to easily build a customized utility library for your project. But if you don't like it, just install **licia** and use it like any other npm utility modules such as lodash.
 
 ```bash
 npm i licia --save
