@@ -1785,7 +1785,9 @@
             "dateFormat",
             "isLeapYear",
             "extend",
-            "toStr"
+            "toStr",
+            "isNil",
+            "ms"
         ],
         "env": "all",
         "test": "all"
