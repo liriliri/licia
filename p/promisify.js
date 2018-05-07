@@ -30,7 +30,7 @@ exports = function (fn, multiArgs)
 {
     return restArgs(function (args) 
     {
-        return new exports.Promise((resolve, reject) => 
+        return new exports.Promise(function (resolve, reject) 
         {
             args.push(restArgs(function callback(err, values) 
             {
