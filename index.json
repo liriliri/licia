@@ -2057,6 +2057,12 @@
         "test": "all",
         "benchmark": true
     },
+    "reduceRight": {
+        "description": "Right-associative version of reduce.",
+        "dependencies": [
+            "reduce"
+        ]
+    },
     "reject": {
         "description": "Opposite of filter.",
         "dependencies": [

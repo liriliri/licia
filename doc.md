@@ -4520,6 +4520,14 @@ Turn a list of values into a single value.
 reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
 ```
 
+## reduceRight 
+
+Right-associative version of reduce.
+
+```javascript
+reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> [3, 2, 1]
+```
+
 ## reject 
 
 Opposite of filter.

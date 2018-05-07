@@ -20,37 +20,47 @@
 
 _('optimizeCb isArrLike isUndef keys');
 
-function exports(obj, iteratee, initial, ctx)
+exports = createReduce(1);
+exports.create = createReduce;
+
+function createReduce(dir) 
 {
-    iteratee = optimizeCb(iteratee, ctx);
-
-    var i = 0, len, key;
-
-    if (isArrLike(obj))
+    return function (obj, iteratee, initial, ctx)
     {
-       if (isUndef(initial))
-       {
-           initial = obj[0];
-           i = 1;
-       }
-       for (len = obj.length; i < len; i++)
-       {
-           initial = iteratee(initial, obj[i], i, obj);
-       }
-    } else
-    {
-        var _keys = keys(obj);
-        if (isUndef(initial))
-        {
-            initial = obj[_keys[0]];
-            i = 1;
-        }
-        for (len = _keys.length; i < len; i++)
-        {
-            key = _keys[i];
-            initial = iteratee(initial, obj[key], key, obj);
-        }
-    }
+        iteratee = optimizeCb(iteratee, ctx);
 
-    return initial;
+        var i, len, key;
+
+        if (isArrLike(obj))
+        {
+            len = obj.length;
+            i = dir > 0 ? 0 : len - 1;
+            if (isUndef(initial))
+            {
+                initial = obj[i];
+                i += dir;
+            }
+            for (; i < len && i >= 0; i += dir)
+            {
+                initial = iteratee(initial, obj[i], i, obj);
+            }
+        } else
+        {
+            var _keys = keys(obj);
+            len = _keys.length;
+            i = dir > 0 ? 0 : len - 1;
+            if (isUndef(initial))
+            {
+                initial = obj[_keys[i]];
+                i += dir;
+            }
+            for (; i < len && i >= 0; i += dir)
+            {
+                key = _keys[i];
+                initial = iteratee(initial, obj[key], key, obj);
+            }
+        }
+
+        return initial;
+    };
 }
