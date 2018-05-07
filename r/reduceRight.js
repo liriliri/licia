@@ -5,6 +5,11 @@
  * ```
  */
 
+/* module
+ * env: all
+ * test: all
+ */ 
+
 _('reduce'); 
 
 exports = reduce.create(-1);
