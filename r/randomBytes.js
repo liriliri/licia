@@ -17,7 +17,7 @@
  * test: all
  */
 
-_('random isBrowser');
+_('random isBrowser isNode');
 
 var crypto;
 
@@ -36,7 +36,7 @@ if (isBrowser)
             return ret;
         };
     }
-} else
+} else if (isNode)
 {
     crypto = require('crypto');
 
