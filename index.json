@@ -1542,6 +1542,14 @@
         "env": "browser",
         "test": "browser"
     },
+    "isSet": {
+        "description": "Check if value is a Set object.",
+        "dependencies": [
+            "objToStr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "isStr": {
         "description": "Check if value is a string primitive.",
         "dependencies": [
@@ -1582,6 +1590,14 @@
     },
     "isWeakMap": {
         "description": "Check if value is a WeakMap object.",
+        "dependencies": [
+            "objToStr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
+    "isWeakSet": {
+        "description": "Check if value is a WeakSet object.",
         "dependencies": [
             "objToStr"
         ],
@@ -2044,7 +2060,8 @@
         "description": "Random bytes generator.",
         "dependencies": [
             "random",
-            "isBrowser"
+            "isBrowser",
+            "isNode"
         ],
         "env": "all",
         "test": "all"

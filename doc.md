@@ -3494,6 +3494,20 @@ Determine if running on a high DPR device or not.
 console.log(isRetina); // -> true if high DPR
 ```
 
+## isSet 
+
+Check if value is a Set object.
+
+|Name  |Type   |Desc                  |
+|------|-------|----------------------|
+|val   |*      |Value to check        |
+|return|boolean|True if value is a Set|
+
+```javascript
+isSet(new Set()); // -> true
+isSet(new WeakSet()); // -> false
+```
+
 ## isStr 
 
 Check if value is a string primitive.
@@ -3575,6 +3589,20 @@ Check if value is a WeakMap object.
 ```javascript
 isWeakMap(new Map()); // -> false
 isWeakMap(new WeakMap()); // -> true
+```
+
+## isWeakSet 
+
+Check if value is a WeakSet object.
+
+|Name  |Type   |Desc                      |
+|------|-------|--------------------------|
+|val   |*      |Value to check            |
+|return|boolean|True if value is a WeakSet|
+
+```javascript
+isWeakSet(new Set()); // -> false
+isWeakSet(new WeakSet()); // -> true
 ```
 
 ## isWindows 
