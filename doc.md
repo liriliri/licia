@@ -3232,6 +3232,20 @@ isLeapYear(2000); // -> true
 isLeapYear(2002); // -> false
 ```
 
+## isMap 
+
+Check if value is a Map object.
+
+|Name  |Type   |Desc                  |
+|------|-------|----------------------|
+|val   |*      |Value to check        |
+|return|boolean|True if value is a Map|
+
+```javascript
+isMap(new Map()); // -> true
+isMap(new WeakMap()); // -> false
+```
+
 ## isMatch 
 
 Check if keys and values in src are contained in obj.
@@ -3547,6 +3561,20 @@ Loosely validate an url.
 
 ```javascript
 isUrl('http://www.example.com?foo=bar&param=test'); // -> true
+```
+
+## isWeakMap 
+
+Check if value is a WeakMap object.
+
+|Name  |Type   |Desc                      |
+|------|-------|--------------------------|
+|val   |*      |Value to check            |
+|return|boolean|True if value is a WeakMap|
+
+```javascript
+isWeakMap(new Map()); // -> false
+isWeakMap(new WeakMap()); // -> true
 ```
 
 ## isWindows 

@@ -1389,6 +1389,14 @@
         "env": "all",
         "test": "all"
     },
+    "isMap": {
+        "description": "Check if value is a Map object.",
+        "dependencies": [
+            "objToStr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "isMatch": {
         "description": "Check if keys and values in src are contained in obj.",
         "dependencies": [
@@ -1569,6 +1577,14 @@
     "isUrl": {
         "description": "Loosely validate an url.",
         "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
+    "isWeakMap": {
+        "description": "Check if value is a WeakMap object.",
+        "dependencies": [
+            "objToStr"
+        ],
         "env": "all",
         "test": "all"
     },
