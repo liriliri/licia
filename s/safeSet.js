@@ -21,7 +21,7 @@
  * test: all
  */
 
-_('castPath');
+_('castPath isUndef');
 
 function exports(obj, path, val)
 {
@@ -30,11 +30,12 @@ function exports(obj, path, val)
     var lastProp = path.pop(),
         prop;
 
-    /* eslint-disable no-cond-assign */
-    while (prop = path.shift())
+    prop = path.shift();    
+    while (!isUndef(prop))
     {
         if (!obj[prop]) obj[prop] = {};
         obj = obj[prop];
+        prop = path.shift();
     }
 
     obj[lastProp] = val;

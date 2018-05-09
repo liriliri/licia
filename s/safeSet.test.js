@@ -7,4 +7,6 @@ it('basic', function ()
     expect(obj).to.eql({a: {aa: 2}});
     safeSet(obj, 'a.b', 3);
     expect(obj).to.eql({a: {aa: 2, b: 3}});
+    safeSet(obj, [0, 'a'], 4);
+    expect(obj).to.eql({a: {aa: 2, b: 3}, 0: {a: 4}});
 });

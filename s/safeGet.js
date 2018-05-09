@@ -27,11 +27,12 @@ function exports(obj, path)
 
     var prop;
 
-    /* eslint-disable no-cond-assign */
-    while (prop = path.shift())
+    prop = path.shift();
+    while (!isUndef(prop))
     {
         obj = obj[prop];
         if (isUndef(obj)) return;
+        prop = path.shift();
     }
 
     return obj;

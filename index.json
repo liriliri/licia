@@ -2205,7 +2205,8 @@
     "safeSet": {
         "description": "Set value at path of object.",
         "dependencies": [
-            "castPath"
+            "castPath",
+            "isUndef"
         ],
         "env": "all",
         "test": "all"
