@@ -2663,6 +2663,17 @@ a.b.c = 2;
 console.log(a); // -> {b: {c: 1}}
 ```
 
+## fs 
+
+Promised version of node.js fs module.
+
+```javascript
+fs.readFile('test.js').then(function (data)
+{
+    // Do something
+});
+```
+
 ## gcd 
 
 Compute the greatest common divisor using Euclid's algorithm.

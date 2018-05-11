@@ -1098,6 +1098,17 @@
         "env": "all",
         "test": "all"
     },
+    "fs": {
+        "description": "Promised version of node.js fs module.",
+        "dependencies": [
+            "promisify",
+            "each",
+            "Promise",
+            "toArr"
+        ],
+        "env": "node",
+        "test": "node"
+    },
     "gcd": {
         "description": "Compute the greatest common divisor using Euclid's algorithm.",
         "dependencies": [],
