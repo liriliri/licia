@@ -4,6 +4,9 @@
  * fs.readFile('test.js').then(function (data) 
  * {
  *     // Do something
+ * }).catch(function (err) 
+ * {
+ *     // Handle errors
  * });
  * ```
  */
@@ -13,7 +16,7 @@
  * test: node
  */ 
 
-_('promisify each Promise toArr');
+_('promisify root each Promise toArr');
 
 var fs = require('fs');
 
