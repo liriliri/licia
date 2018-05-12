@@ -4497,6 +4497,19 @@ query.stringify({foo: 'bar', eruda: 'true'}); // -> 'foo=bar&eruda=true'
 query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
 ```
 
+## quickSort 
+
+Quick sort implementation.
+
+|Name |Type    |Desc         |
+|-----|--------|-------------|
+|arr  |array   |Array to sort|
+|[cmp]|function|Comparator   |
+
+```javascript
+quickSort([2, 1]); // -> [1, 2]
+```
+
 ## raf 
 
 Shortcut for requestAnimationFrame.

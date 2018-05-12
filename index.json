@@ -2057,6 +2057,15 @@
         "env": "all",
         "test": "all"
     },
+    "quickSort": {
+        "description": "Quick sort implementation.",
+        "dependencies": [
+            "swap"
+        ],
+        "env": "all",
+        "test": "all",
+        "benchmark": true
+    },
     "raf": {
         "description": "Shortcut for requestAnimationFrame.",
         "dependencies": [
