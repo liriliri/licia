@@ -15,6 +15,8 @@
  * test: all
  */ 
 
+_('swap');
+
 function exports(arr, cmp) 
 {
     cmp = cmp || comparator;
@@ -33,9 +35,7 @@ function exports(arr, cmp)
         }
         if (i != min) 
         {
-            tmp = arr[i];
-            arr[i] = arr[min];
-            arr[min] = tmp;
+            swap(arr, i, min);
         }
     }
 

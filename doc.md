@@ -2671,6 +2671,9 @@ Promised version of node.js fs module.
 fs.readFile('test.js').then(function (data)
 {
     // Do something
+}).catch(function (err)
+{
+    // Handle errors
 });
 ```
 
@@ -5100,6 +5103,22 @@ Compute sum of given numbers.
 
 ```javascript
 sum(1, 2, 5); // -> 8
+```
+
+## swap 
+
+Swap two items in an array.
+
+|Name  |Type  |Desc         |
+|------|------|-------------|
+|arr   |array |Array to swap|
+|a     |number|First index  |
+|b     |number|Second index |
+|return|array |Array given  |
+
+```javascript
+var arr = [1, 2];
+swap(arr, 0, 1); // -> [2, 1]
 ```
 
 ## template 

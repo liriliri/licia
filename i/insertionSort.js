@@ -15,6 +15,8 @@
  * test: all
  */ 
 
+_('swap'); 
+
 function exports(arr, cmp) 
 {
     cmp = cmp || comparator;
@@ -27,9 +29,7 @@ function exports(arr, cmp)
         {
             if (cmp(arr[j], arr[j - 1]) < 0) 
             {
-                tmp = arr[j];
-                arr[j] = arr[j - 1];
-                arr[j - 1] = tmp;
+                swap(arr, j, j - 1);
             }
         }
     }

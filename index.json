@@ -492,7 +492,9 @@
     },
     "bubbleSort": {
         "description": "Bubble sort implementation.",
-        "dependencies": [],
+        "dependencies": [
+            "swap"
+        ],
         "env": "all",
         "test": "all"
     },
@@ -1102,6 +1104,7 @@
         "description": "Promised version of node.js fs module.",
         "dependencies": [
             "promisify",
+            "root",
             "each",
             "Promise",
             "toArr"
@@ -1179,7 +1182,9 @@
     },
     "insertionSort": {
         "description": "Insertion sort implementation.",
-        "dependencies": [],
+        "dependencies": [
+            "swap"
+        ],
         "env": "all",
         "test": "all"
     },
@@ -2256,7 +2261,9 @@
     },
     "selectionSort": {
         "description": "Selection sort implementation.",
-        "dependencies": [],
+        "dependencies": [
+            "swap"
+        ],
         "env": "all",
         "test": "all"
     },
@@ -2372,6 +2379,12 @@
     },
     "sum": {
         "description": "Compute sum of given numbers.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
+    "swap": {
+        "description": "Swap two items in an array.",
         "dependencies": [],
         "env": "all",
         "test": "all"
