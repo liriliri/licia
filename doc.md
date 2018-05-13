@@ -3522,6 +3522,20 @@ isSet(new Set()); // -> true
 isSet(new WeakSet()); // -> false
 ```
 
+## isSorted 
+
+Check if an array is sorted.
+
+|Name |Type    |Desc          |
+|-----|--------|--------------|
+|arr  |array   |Array to check|
+|[cmp]|function|Comparator    |
+
+```javascript
+isSorted([1, 2, 3]); // -> true
+isSorted([3, 2, 1]); // -> false
+```
+
 ## isStr 
 
 Check if value is a string primitive.

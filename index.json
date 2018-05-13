@@ -1566,6 +1566,12 @@
         "env": "all",
         "test": "all"
     },
+    "isSorted": {
+        "description": "Check if an array is sorted.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "isStr": {
         "description": "Check if value is a string primitive.",
         "dependencies": [
