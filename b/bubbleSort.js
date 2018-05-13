@@ -21,8 +21,6 @@ function exports(arr, cmp)
 {
     cmp = cmp || comparator;
 
-    var tmp;
-
     for (var i = 0, len = arr.length; i < len; i++) 
     {
         for (var j = i; j > 0; j--) 

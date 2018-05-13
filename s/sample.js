@@ -17,7 +17,7 @@
  * test: all
  */
 
-_('isArrLike clone values random');
+_('isArrLike clone values random swap');
 
 function exports(obj, n)
 {
@@ -31,9 +31,7 @@ function exports(obj, n)
     for (var i = 0; i < n; i++)
     {
         var rand = random(i, last);
-        var temp = sample[i];
-        sample[i] = sample[rand];
-        sample[rand] = temp;
+        swap(sample, i, rand);
     }
 
     return sample.slice(0, n);

@@ -2270,7 +2270,8 @@
             "isArrLike",
             "clone",
             "values",
-            "random"
+            "random",
+            "swap"
         ],
         "env": "all",
         "test": "all"
