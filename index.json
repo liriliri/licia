@@ -2103,6 +2103,14 @@
         "env": "all",
         "test": "all"
     },
+    "randomItem": {
+        "description": "Get a random item from an array.",
+        "dependencies": [
+            "random"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "range": {
         "description": "Create flexibly-numbered lists of integers.",
         "dependencies": [],

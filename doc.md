@@ -4586,6 +4586,19 @@ Use crypto module in node or crypto object in browser if possible.
 randomBytes(5); // -> [55, 49, 153, 30, 122]
 ```
 
+## randomItem 
+
+Get a random item from an array.
+
+|Name  |Type |Desc                |
+|------|-----|--------------------|
+|arr   |array|Array to get        |
+|return|*    |Randomly picked item|
+
+```javascript
+randomItem([1, 2, 3]); // -> 2
+```
+
 ## range 
 
 Create flexibly-numbered lists of integers.
