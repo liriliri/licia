@@ -1,6 +1,7 @@
 var bubbleSort = util.bubbleSort,
     insertionSort = util.insertionSort,
     selectionSort = util.selectionSort,
+    mergeSort = util.mergeSort,
     random = util.random;
 
 suite.add('vanilla', function () 
@@ -9,6 +10,9 @@ suite.add('vanilla', function ()
 }).add('quickSort', function ()
 {
     quickSort(randomArr(10000));
+}).add('mergeSort', function () 
+{
+    mergeSort(randomArr(10000));
 }).add('bubbleSort', function ()
 {   
     bubbleSort(randomArr(10000));

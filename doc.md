@@ -3952,6 +3952,21 @@ var fibonacci = memoize(function(n)
 });
 ```
 
+## mergeSort 
+
+Merge sort implementation.
+
+Note: It's not an "in-place" sort.
+
+|Name |Type    |Desc         |
+|-----|--------|-------------|
+|arr  |array   |Array to sort|
+|[cmp]|function|Comparator   |
+
+```javascript
+mergeSort([2, 1]); // -> [1, 2]
+```
+
 ## meta 
 
 Document meta manipulation, turn name and content into key value pairs.

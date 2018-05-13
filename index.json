@@ -1788,6 +1788,12 @@
         "env": "all",
         "test": "all"
     },
+    "mergeSort": {
+        "description": "Merge sort implementation.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "meta": {
         "description": "Document meta manipulation, turn name and content into key value pairs.",
         "dependencies": [
