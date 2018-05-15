@@ -2338,6 +2338,17 @@
         "env": "all",
         "test": "all"
     },
+    "sortBy": {
+        "description": "Return an array of elements sorted in ascending order by results of running each element through iteratee.",
+        "dependencies": [
+            "safeCb",
+            "pluck",
+            "map",
+            "isUndef"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "spaceCase": {
         "description": "Convert string to \"spaceCase\".",
         "dependencies": [
