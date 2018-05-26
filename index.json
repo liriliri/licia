@@ -280,6 +280,20 @@
         "test": "manual",
         "demo": true
     },
+    "PseudoMap": {
+        "description": "Like es6 Map, without iterators.",
+        "dependencies": [
+            "Class",
+            "root",
+            "detectMocha",
+            "defineProp",
+            "keys",
+            "each",
+            "isArr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "Queue": {
         "description": "Queue data structure.",
         "dependencies": [
@@ -448,7 +462,8 @@
             "root",
             "isNode",
             "base64",
-            "map"
+            "map",
+            "detectMocha"
         ],
         "env": "all",
         "test": "all"
@@ -485,7 +500,8 @@
             "root",
             "isNode",
             "base64",
-            "map"
+            "map",
+            "detectMocha"
         ],
         "env": "all",
         "test": "all"
@@ -808,6 +824,14 @@
             "isBrowser",
             "toInt",
             "keys"
+        ],
+        "env": "all",
+        "test": "all"
+    },
+    "detectMocha": {
+        "description": "Detect if mocha is running.",
+        "dependencies": [
+            "root"
         ],
         "env": "all",
         "test": "all"
@@ -1664,7 +1688,8 @@
     "keys": {
         "description": "Create an array of the own enumerable property names of object.",
         "dependencies": [
-            "has"
+            "has",
+            "detectMocha"
         ],
         "env": "all",
         "test": "all"

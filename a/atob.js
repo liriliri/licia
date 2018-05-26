@@ -10,7 +10,7 @@
  * test: all
  */
 
-_('root isNode base64 map'); 
+_('root isNode base64 map detectMocha'); 
 
 if (isNode) 
 {
@@ -20,7 +20,7 @@ if (isNode)
     };
 } else 
 {
-    if (root.atob) 
+    if (root.atob && !detectMocha())
     {
         exports = root.atob;
     } else 

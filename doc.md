@@ -703,6 +703,18 @@ get('test.json').then(function (result)
 });
 ```
 
+## PseudoMap 
+
+Like es6 Map, without iterators.
+
+It supports only string keys, and uses Map if exists.
+
+```javascript
+var map = new PseudoMap();
+map.set('1', 1);
+map.get('1'); // -> 1
+```
+
 ## Queue 
 
 Queue data structure.
@@ -2114,6 +2126,14 @@ if (browser.name === 'ie' && browser.version < 9)
 {
     // Do something about old IE...
 }
+```
+
+## detectMocha 
+
+Detect if mocha is running.
+
+```javascript
+detectMocha(); // -> True if mocha is running.
 ```
 
 ## detectOs 

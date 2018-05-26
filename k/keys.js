@@ -15,16 +15,22 @@
  * test: all
  */
 
-_('has');
+_('has detectMocha');
 
-exports = Object.keys || function (obj)
+if (Object.keys && !detectMocha()) 
 {
-    var ret = [], key;
-
-    for (key in obj)
+    exports = Object.keys;
+} else 
+{
+    exports = function (obj)
     {
-        if (has(obj, key)) ret.push(key);
-    }
+        var ret = [], key;
 
-    return ret;
-};
+        for (key in obj)
+        {
+            if (has(obj, key)) ret.push(key);
+        }
+
+        return ret;
+    };
+}
