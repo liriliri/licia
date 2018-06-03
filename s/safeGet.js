@@ -31,7 +31,7 @@ function exports(obj, path)
     while (!isUndef(prop))
     {
         obj = obj[prop];
-        if (isUndef(obj)) return;
+        if (obj == null) return;
         prop = path.shift();
     }
 
