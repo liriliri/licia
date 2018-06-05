@@ -604,7 +604,8 @@
             "isObj",
             "isFn",
             "isArr",
-            "each"
+            "each",
+            "mapObj"
         ],
         "env": "all",
         "test": "all"

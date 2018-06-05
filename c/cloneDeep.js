@@ -17,21 +17,7 @@
  * test: all
  */
 
-_('keys isObj isFn isArr each');
-
-function mapObject(obj, iteratee)
-{
-    var newObj = {};
-
-    each(obj, function (val, key)
-    {
-        var pair = iteratee(key, val);
-
-        newObj[pair[0]] = pair[1];
-    });
-
-    return newObj;
-}
+_('keys isObj isFn isArr each mapObj');
 
 function exports(obj)
 {
@@ -39,15 +25,15 @@ function exports(obj)
     {
         return obj.map(function (val)
         {
-            return cloneDeep(val);
+            return exports(val);
         });
     }
 
     if (isObj(obj) && !isFn(obj))
     {
-        return mapObject(obj, function (key, val)
+        return mapObj(obj, function (val)
         {
-            return [key, cloneDeep(val)];
+            return exports(val);
         });
     }
 
