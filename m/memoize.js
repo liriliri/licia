@@ -21,10 +21,8 @@
 
 _('has');
 
-function exports(fn, hashFn)
-{
-    var memoize = function (key)
-    {
+function exports(fn, hashFn) {
+    var memoize = function(key) {
         var cache = memoize.cache,
             address = '' + (hashFn ? hashFn.apply(this, arguments) : key);
 

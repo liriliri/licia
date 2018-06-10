@@ -22,7 +22,6 @@
 
 _('partial');
 
-function exports(fn, wrapper)
-{
+function exports(fn, wrapper) {
     return partial(wrapper, fn);
 }

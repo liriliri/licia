@@ -34,14 +34,12 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
-_('isFn loadImg noop defaults createUrl'); 
+_('isFn loadImg noop defaults createUrl');
 
-function exports(file, opts, cb) 
-{
-    if (isFn(opts)) 
-    {
+function exports(file, opts, cb) {
+    if (isFn(opts)) {
         cb = opts;
         opts = {};
     }
@@ -51,16 +49,14 @@ function exports(file, opts, cb)
     defaults(opts, defOpts);
     opts.mineType = opts.mineType || file.type;
 
-    loadImg(createUrl(file), function (err, img) 
-    {
+    loadImg(createUrl(file), function(err, img) {
         if (err) return cb(err);
 
         compress(img, opts, cb);
     });
 }
 
-function compress(img, opts, cb) 
-{
+function compress(img, opts, cb) {
     var canvas = document.createElement('canvas'),
         ctx = canvas.getContext('2d');
 
@@ -71,48 +67,43 @@ function compress(img, opts, cb)
     var maxWidth = opts.maxWidth,
         maxHeight = opts.maxHeight;
 
-    if (opts.width || opts.height) 
-    {
-        if (opts.width) 
-        {
+    if (opts.width || opts.height) {
+        if (opts.width) {
             width = opts.width;
             height = width / ratio;
-        } else if (opts.height) 
-        {
+        } else if (opts.height) {
             height = opts.height;
             width = height * ratio;
         }
-    } else 
-    {
-        if (width > maxWidth) 
-        {
+    } else {
+        if (width > maxWidth) {
             width = maxWidth;
             height = width / ratio;
         }
 
-        if (height > maxHeight) 
-        {
+        if (height > maxHeight) {
             height = maxHeight;
             width = height * ratio;
         }
-    }    
-    
+    }
+
     width = floor(width);
-    height = floor(height);    
+    height = floor(height);
 
     canvas.width = width;
-    canvas.height = height; 
-    
+    canvas.height = height;
+
     ctx.drawImage(img, 0, 0, width, height);
     if (URL) URL.revokeObjectURL(img.src);
-    if (canvas.toBlob) 
-    {
-        canvas.toBlob(function (file) 
-        {
-            cb(null, file);
-        }, opts.mineType, opts.quality);
-    } else 
-    {
+    if (canvas.toBlob) {
+        canvas.toBlob(
+            function(file) {
+                cb(null, file);
+            },
+            opts.mineType,
+            opts.quality
+        );
+    } else {
         cb(new Error('Canvas toBlob is not supported'));
     }
 }

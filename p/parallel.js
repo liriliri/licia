@@ -29,8 +29,7 @@
 
 _('noop each nextTick');
 
-function exports(tasks, cb)
-{
+function exports(tasks, cb) {
     cb = cb || noop;
 
     var results = [],
@@ -38,21 +37,19 @@ function exports(tasks, cb)
 
     if (!pending) return done(null);
 
-    each(tasks, function (task, i)
-    {
-        task(function (err, result) { taskCb(i, err, result); });
+    each(tasks, function(task, i) {
+        task(function(err, result) {
+            taskCb(i, err, result);
+        });
     });
 
-    function taskCb(i, err, result)
-    {
+    function taskCb(i, err, result) {
         results[i] = result;
         if (--pending === 0 || err) done(err);
     }
 
-    function done(err)
-    {
-        nextTick(function ()
-        {
+    function done(err) {
+        nextTick(function() {
             cb(err, results);
             cb = noop;
         });

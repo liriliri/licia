@@ -15,7 +15,6 @@
  * test: all
  */
 
-function exports(str)
-{
+function exports(str) {
     return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
 }

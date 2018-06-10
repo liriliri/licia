@@ -14,9 +14,8 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-function exports(year) 
-{
-    return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
-} 
+function exports(year) {
+    return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+}

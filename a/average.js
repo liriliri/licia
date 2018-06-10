@@ -15,8 +15,7 @@
  * test: all
  */
 
-function exports()
-{
+function exports() {
     var arr = arguments,
         sum = 0;
 

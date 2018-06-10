@@ -1,8 +1,6 @@
-it('before', function ()
-{
+it('before', function() {
     var count = 0;
-    var fn = before(5, function ()
-    {
+    var fn = before(5, function() {
         count++;
     });
     fn();

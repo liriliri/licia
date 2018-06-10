@@ -13,16 +13,15 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-function exports(num) 
-{
-    num = num.toExponential().match(regExponential); 
+function exports(num) {
+    num = num.toExponential().match(regExponential);
 
     var coefficient = num[1],
         exponent = parseInt(num[2], 10);
 
-    var places = (coefficient.split('.')[1] || '').length;    
+    var places = (coefficient.split('.')[1] || '').length;
 
     var ret = places - exponent;
 

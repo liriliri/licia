@@ -22,14 +22,12 @@
 
 _('safeCb each');
 
-function exports(obj, predicate, ctx)
-{
+function exports(obj, predicate, ctx) {
     var ret = [];
 
     predicate = safeCb(predicate, ctx);
 
-    each(obj, function (val, idx, list)
-    {
+    each(obj, function(val, idx, list) {
         if (predicate(val, idx, list)) ret.push(val);
     });
 

@@ -12,23 +12,20 @@
 
 _('meta clamp trim each map isNaN');
 
-function exports() 
-{
+function exports() {
     var viewport = meta('viewport');
 
     if (!viewport) return 1;
 
-    viewport = map(viewport.split(','), function (val) 
-    { 
-        return trim(val); 
+    viewport = map(viewport.split(','), function(val) {
+        return trim(val);
     });
 
     var minScale = 0.25,
         maxScale = 5,
         initialScale = 1;
 
-    each(viewport, function (val)
-    {
+    each(viewport, function(val) {
         val = val.split('=');
 
         var key = val[0];

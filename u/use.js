@@ -24,16 +24,13 @@
 
 _('map define has toArr');
 
-function exports(requires, method)
-{
-    if (method == null)
-    {
+function exports(requires, method) {
+    if (method == null) {
         method = requires;
         requires = [];
     }
 
-    requires = map(toArr(requires), function (val)
-    {
+    requires = map(toArr(requires), function(val) {
         return require(val);
     });
 
@@ -44,8 +41,7 @@ var modules = define._modules;
 
 var requireMarks = {};
 
-function require(name)
-{
+function require(name) {
     if (has(requireMarks, name)) return modules[name];
 
     var requires = modules[name].requires,

@@ -1,6 +1,5 @@
-it('basic', function ()
-{
-    var obj = Object.create({zero: 0});
+it('basic', function() {
+    var obj = Object.create({ zero: 0 });
     obj.one = 1;
 
     var keys = allKeys(obj);

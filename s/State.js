@@ -50,47 +50,47 @@ _('Emitter each isArr some slice toArr');
 
 exports = Emitter.extend({
     className: 'State',
-    initialize: function (initial, events)
-    {
+    initialize: function(initial, events) {
         this.callSuper(Emitter, 'initialize');
 
         this.current = initial;
 
         var self = this;
 
-        each(events, function (event, key)
-        {
+        each(events, function(event, key) {
             self[key] = buildEvent(key, event);
         });
     },
-    is: function (state)
-    {
+    is: function(state) {
         return this.current === state;
     }
 });
 
-function buildEvent(name, event)
-{
+function buildEvent(name, event) {
     var from = toArr(event.from),
         to = event.to;
 
-    return function ()
-    {
+    return function() {
         var args = toArr(arguments);
         args.unshift(name);
 
-        var hasEvent = some(from, function (val)
-        {
-            return this.current === val;
-        }, this);
+        var hasEvent = some(
+            from,
+            function(val) {
+                return this.current === val;
+            },
+            this
+        );
 
-        if (hasEvent)
-        {
+        if (hasEvent) {
             this.current = to;
             this.emit.apply(this, args);
-        } else
-        {
-            this.emit('error', new Error(this.current + ' => ' + to + ' error'), name);
+        } else {
+            this.emit(
+                'error',
+                new Error(this.current + ' => ' + to + ' error'),
+                name
+            );
         }
     };
 }

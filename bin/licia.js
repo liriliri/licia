@@ -27,11 +27,9 @@ var cmd = remain[0];
 
 var LEGAL_COMMANDS = ['test', 'pack', 'update', 'benchmark', 'help'];
 
-if (!util.contain(LEGAL_COMMANDS, cmd))
-{
+if (!util.contain(LEGAL_COMMANDS, cmd)) {
     require('../lib/help')();
-} else
-{
+} else {
     remain.splice(0, 1);
     require('../lib/' + cmd)();
 }

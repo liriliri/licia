@@ -19,12 +19,10 @@
 
 _('isNum isUndef repeat');
 
-var regLineBegin = /^(?!\s*$)/mg;
+var regLineBegin = /^(?!\s*$)/gm;
 
-function exports(str, char, len)
-{
-    if (isNum(char))
-    {
+function exports(str, char, len) {
+    if (isNum(char)) {
         len = char;
         char = ' ';
     }
@@ -35,4 +33,3 @@ function exports(str, char, len)
 
     return str.replace(regLineBegin, char);
 }
-

@@ -18,16 +18,14 @@
 
 _('toArr');
 
-function exports() 
-{
+function exports() {
     var args = toArr(arguments);
     args = args.sort(nameSort);
 
     var ret = {},
         idleMap = {};
 
-    for (var i = 0, len = args.length; i < len; i++) 
-    {
+    for (var i = 0, len = args.length; i < len; i++) {
         var str = args[i],
             nextStr = args[i + 1] || '';
 
@@ -36,17 +34,15 @@ function exports()
         var start = false,
             abbrev = '';
 
-        for (var j = 0, strLen = str.length; j < strLen; j++) 
-        {
+        for (var j = 0, strLen = str.length; j < strLen; j++) {
             abbrev += str[j];
 
-            if (!start && (str[j] !== nextStr[j] || j === strLen - 1)) start = true;
+            if (!start && (str[j] !== nextStr[j] || j === strLen - 1))
+                start = true;
 
-            if (!start) 
-            {
+            if (!start) {
                 idleMap[abbrev] = str;
-            } else if (!ret[abbrev] && !idleMap[abbrev]) 
-            {
+            } else if (!ret[abbrev] && !idleMap[abbrev]) {
                 ret[abbrev] = str;
             }
         }
@@ -55,7 +51,6 @@ function exports()
     return ret;
 }
 
-function nameSort(a, b) 
-{
-    return a === b ? 0 : (a > b ? 1 : -1);
+function nameSort(a, b) {
+    return a === b ? 0 : a > b ? 1 : -1;
 }

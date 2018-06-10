@@ -1,19 +1,18 @@
-before(function () 
-{
-    $('head').append([
-        '<meta name="a" content="1" licia="true">',
-        '<meta name="b" content="2" licia="true">',
-        '<meta name="c" content="3" licia="true">'
-    ].join(''));
+before(function() {
+    $('head').append(
+        [
+            '<meta name="a" content="1" licia="true">',
+            '<meta name="b" content="2" licia="true">',
+            '<meta name="c" content="3" licia="true">'
+        ].join('')
+    );
 });
 
-after(function () 
-{
+after(function() {
     $('meta[licia="true"]').remove();
 });
 
-it('get', function () 
-{
+it('get', function() {
     var metaList = meta();
     expect(metaList.a).to.equal('1');
     expect(metaList.b).to.equal('2');
@@ -27,8 +26,7 @@ it('get', function ()
     });
 });
 
-it('set', function () 
-{
+it('set', function() {
     meta('d', '4');
     expect($('meta[name="d"]').attr('content')).to.equal('4');
     meta({
@@ -41,8 +39,7 @@ it('set', function ()
     expect($('meta[name="f"]').attr('content')).to.equal('7');
 });
 
-it('remove', function () 
-{
+it('remove', function() {
     meta.remove('d');
     meta.remove(['e', 'f', 'g']);
     expect($('meta[name="d"]').length).to.equal(0);

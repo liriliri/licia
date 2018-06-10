@@ -1,12 +1,10 @@
 var linkedList;
 
-beforeEach(function ()
-{
+beforeEach(function() {
     linkedList = new LinkedList();
 });
 
-it('basic', function () 
-{
+it('basic', function() {
     expect(linkedList.push(5)).to.equal(1);
     expect(linkedList.push(4)).to.equal(2);
     expect(linkedList.toArr()).to.eql([5, 4]);
@@ -28,8 +26,7 @@ it('basic', function ()
     expect(linkedList.toArr()).to.eql([]);
 });
 
-it('forEach', function () 
-{
+it('forEach', function() {
     linkedList.push(1);
     linkedList.push(2);
     linkedList.push(3);
@@ -37,8 +34,7 @@ it('forEach', function ()
 
     var sum = 0;
 
-    linkedList.forEach(function (val) 
-    {
+    linkedList.forEach(function(val) {
         sum += val;
     });
 

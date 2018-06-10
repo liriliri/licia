@@ -1,5 +1,5 @@
-it('basic', function (done)
-{
-    ready(function () { done(); });
+it('basic', function(done) {
+    ready(function() {
+        done();
+    });
 });
-

@@ -14,18 +14,14 @@
 
 _('isUndef each');
 
-function exports(keysFn, defaults)
-{
-    return function (obj)
-    {
-        each(arguments, function (src, idx)
-        {
+function exports(keysFn, defaults) {
+    return function(obj) {
+        each(arguments, function(src, idx) {
             if (idx === 0) return;
 
             var keys = keysFn(src);
 
-            each(keys, function (key)
-            {
+            each(keys, function(key) {
                 if (!defaults || isUndef(obj[key])) obj[key] = src[key];
             });
         });

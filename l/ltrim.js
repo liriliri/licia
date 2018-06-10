@@ -20,26 +20,23 @@
 
 var regSpace = /^\s+/;
 
-function exports(str, chars)
-{
+function exports(str, chars) {
     if (chars == null) return str.replace(regSpace, '');
 
     var start = 0,
         len = str.length,
         charLen = chars.length,
         found = true,
-        i, c;
+        i,
+        c;
 
-    while (found && start < len)
-    {
+    while (found && start < len) {
         found = false;
         i = -1;
         c = str.charAt(start);
 
-        while (++i < charLen)
-        {
-            if (c === chars[i])
-            {
+        while (++i < charLen) {
+            if (c === chars[i]) {
                 found = true;
                 start++;
                 break;

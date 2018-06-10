@@ -16,8 +16,7 @@
  * test: all
  */
 
-function exports(path) 
-{
+function exports(path) {
     return path.replace(regSlashes, '/');
 }
 

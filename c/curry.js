@@ -19,18 +19,14 @@
 
 _('toArr');
 
-function exports(fn)
-{
+function exports(fn) {
     var len = fn.length;
 
-    return function curriedFn()
-    {
+    return function curriedFn() {
         var args = toArr(arguments);
 
-        if (args.length < len)
-        {
-            return function ()
-            {
+        if (args.length < len) {
+            return function() {
                 return curriedFn.apply(null, args.concat(toArr(arguments)));
             };
         }

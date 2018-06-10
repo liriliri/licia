@@ -14,8 +14,7 @@
  * test: browser
  */
 
-function exports(css)
-{
+function exports(css) {
     var style = document.createElement('style');
     style.textContent = css;
     style.type = 'text/css';

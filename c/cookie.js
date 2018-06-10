@@ -46,17 +46,16 @@ _('defaults isNum isUndef decodeUriComponent');
 
 var defOpts = { path: '/' };
 
-function setCookie(key, val, options)
-{
-    if (!isUndef(val))
-    {
+function setCookie(key, val, options) {
+    if (!isUndef(val)) {
         options = options || {};
         options = defaults(options, defOpts);
 
-        if (isNum(options.expires))
-        {
+        if (isNum(options.expires)) {
             var expires = new Date();
-            expires.setMilliseconds(expires.getMilliseconds() + options.expires * 864e+5);
+            expires.setMilliseconds(
+                expires.getMilliseconds() + options.expires * 864e5
+            );
             options.expires = expires;
         }
 
@@ -64,10 +63,12 @@ function setCookie(key, val, options)
         key = encodeURIComponent(key);
 
         document.cookie = [
-            key, '=', val,
+            key,
+            '=',
+            val,
             options.expires && '; expires=' + options.expires.toUTCString(),
             options.path && '; path=' + options.path,
-            options.domain  && '; domain=' + options.domain,
+            options.domain && '; domain=' + options.domain,
             options.secure ? '; secure' : ''
         ].join('');
 
@@ -77,8 +78,7 @@ function setCookie(key, val, options)
     var cookies = document.cookie ? document.cookie.split('; ') : [],
         result = key ? undefined : {};
 
-    for (var i = 0, len = cookies.length; i < len; i++)
-    {
+    for (var i = 0, len = cookies.length; i < len; i++) {
         var c = cookies[i],
             parts = c.split('='),
             name = decodeUriComponent(parts.shift());
@@ -86,8 +86,7 @@ function setCookie(key, val, options)
         c = parts.join('=');
         c = decodeUriComponent(c);
 
-        if (key === name)
-        {
+        if (key === name) {
             result = c;
             break;
         }
@@ -101,8 +100,7 @@ function setCookie(key, val, options)
 exports = {
     get: setCookie,
     set: setCookie,
-    remove: function (key, options)
-    {
+    remove: function(key, options) {
         options = options || {};
         options.expires = -1;
 

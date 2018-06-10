@@ -18,28 +18,28 @@
 
 _('memStorage');
 
-function exports(type)
-{
+function exports(type) {
     type = type || 'local';
 
     var ret;
 
-    switch (type)
-    {
-        case 'local': ret = window.localStorage; break;
-        case 'session':  ret = window.sessionStorage; break;
+    switch (type) {
+        case 'local':
+            ret = window.localStorage;
+            break;
+        case 'session':
+            ret = window.sessionStorage;
+            break;
     }
 
-    try
-    {
+    try {
         // Safari private browsing
         var x = 'test-localStorage-' + Date.now();
         ret.setItem(x, x);
         var y = ret.getItem(x);
         ret.removeItem(x);
         if (y !== x) throw new Error();
-    } catch (e)
-    {
+    } catch (e) {
         return memStorage;
     }
 

@@ -2,25 +2,28 @@ var sinon = require('sinon');
 
 var requests = [];
 
-before(function ()
-{
+before(function() {
     var fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest();
 
-    fakeXMLHttpRequest.onCreate = function (xhr) { requests.push(xhr); };
-    ajax.setting.xhr = function () { return new fakeXMLHttpRequest(); };
+    fakeXMLHttpRequest.onCreate = function(xhr) {
+        requests.push(xhr);
+    };
+    ajax.setting.xhr = function() {
+        return new fakeXMLHttpRequest();
+    };
 });
 
-beforeEach(function () { requests = []; });
+beforeEach(function() {
+    requests = [];
+});
 
-it('basic', function (done)
-{
+it('basic', function(done) {
     expect(ajax).to.be.a('function');
 
     ajax({
         url: 'test',
-        success: function (res)
-        {
-            expect(res).to.eql({a: 1, b: 2});
+        success: function(res) {
+            expect(res).to.eql({ a: 1, b: 2 });
             done();
         }
     });
@@ -33,12 +36,11 @@ it('basic', function (done)
     request.respond(200, {}, '{"a":1,"b":2}');
 });
 
-it('request data', function (done)
-{
+it('request data', function(done) {
     ajax({
         url: 'test',
-        data: {a: 1},
-        success: function () { }
+        data: { a: 1 },
+        success: function() {}
     });
 
     var request = requests[0];
@@ -49,8 +51,8 @@ it('request data', function (done)
     ajax({
         type: 'post',
         url: 'test',
-        data: {a: 1, b: 2},
-        success: function () { }
+        data: { a: 1, b: 2 },
+        success: function() {}
     });
 
     request = requests[1];
@@ -61,7 +63,9 @@ it('request data', function (done)
         type: 'post',
         url: 'test',
         data: 'test',
-        success: function () { done(); }
+        success: function() {
+            done();
+        }
     });
 
     request = requests[2];
@@ -69,49 +73,59 @@ it('request data', function (done)
     request.respond(200, {}, '');
 });
 
-it('get', function (done)
-{
-    ajax.get('test', {a: 1}, function (res)
-    {
-        expect(res).to.eql({a: 1});
-    }, 'json');
+it('get', function(done) {
+    ajax.get(
+        'test',
+        { a: 1 },
+        function(res) {
+            expect(res).to.eql({ a: 1 });
+        },
+        'json'
+    );
 
     var request = requests[0];
 
     expect(request.url).to.equal('test?a=1');
     request.respond(200, {}, '{"a":1}');
 
-    ajax.get('test', function (res)
-    {
-        expect(res).to.eql({a: 1});
-        done();
-    }, 'json');
+    ajax.get(
+        'test',
+        function(res) {
+            expect(res).to.eql({ a: 1 });
+            done();
+        },
+        'json'
+    );
 
     request = requests[1];
     request.respond(200, {}, '{"a": 1}');
 });
 
-it('post', function (done)
-{
-    ajax.post('test', {a: 1}, function (res)
-    {
-        expect(res).to.eql({a: 1});
-        done();
-    }, 'json');
+it('post', function(done) {
+    ajax.post(
+        'test',
+        { a: 1 },
+        function(res) {
+            expect(res).to.eql({ a: 1 });
+            done();
+        },
+        'json'
+    );
 
     var request = requests[0];
     expect(request.requestBody).to.equal('a=1');
     request.respond(200, {}, '{"a": 1}');
 });
 
-it('post json', function (done)
-{
+it('post json', function(done) {
     ajax({
         type: 'post',
         url: 'test',
-        data: {foo: 'bar'},
+        data: { foo: 'bar' },
         contentType: 'application/json',
-        success: function () { done(); }
+        success: function() {
+            done();
+        }
     });
 
     var request = requests[0];
@@ -120,12 +134,10 @@ it('post json', function (done)
     request.respond(200, {}, '{"a": 1}');
 });
 
-it('error', function (done)
-{
+it('error', function(done) {
     ajax({
         url: 'test',
-        error: function (xhr)
-        {
+        error: function(xhr) {
             expect(xhr.status).to.equal(500);
             done();
         }
@@ -136,26 +148,26 @@ it('error', function (done)
     request.respond(500, {}, 'Error');
 });
 
-it('xml dataType', function (done)
-{
-    var xhr = ajax.get('test', function (res)
-    {
-        // It's not going to work in nodejs environment because of sinon's implementation details.
-        expect(res).to.equal(xhr.responseXML);
-        done();
-    }, 'xml');
+it('xml dataType', function(done) {
+    var xhr = ajax.get(
+        'test',
+        function(res) {
+            // It's not going to work in nodejs environment because of sinon's implementation details.
+            expect(res).to.equal(xhr.responseXML);
+            done();
+        },
+        'xml'
+    );
 
     var request = requests[0];
 
-    request.respond(200, {'Content-Type': 'text/xml'}, '<html>test</html>');
+    request.respond(200, { 'Content-Type': 'text/xml' }, '<html>test</html>');
 });
 
-it('complete', function (done)
-{
+it('complete', function(done) {
     ajax({
         url: 'test',
-        complete: function (xhr)
-        {
+        complete: function(xhr) {
             expect(xhr).to.equal(xhr);
         }
     });
@@ -166,8 +178,7 @@ it('complete', function (done)
 
     ajax({
         url: 'test',
-        complete: function (xhr)
-        {
+        complete: function(xhr) {
             done();
         }
     });
@@ -176,13 +187,11 @@ it('complete', function (done)
     request.respond(500, {}, '');
 });
 
-it('timeout', function (done)
-{
+it('timeout', function(done) {
     ajax({
         url: 'test',
         timeout: 50,
-        error: function (xhr, type)
-        {
+        error: function(xhr, type) {
             expect(type).to.equal('timeout');
             done();
         }
@@ -190,9 +199,7 @@ it('timeout', function (done)
 
     var request = requests[0];
 
-    setTimeout(function ()
-    {
+    setTimeout(function() {
         request.respond(200, {}, '');
     }, 100);
 });
-

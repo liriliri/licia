@@ -1,41 +1,34 @@
-it('basic', function () 
-{
+it('basic', function() {
     expect(moment('20180501').format('yyyy-mm-dd')).to.equal('2018-05-01');
 });
 
-it('isValid', function () 
-{
+it('isValid', function() {
     expect(moment('test').isValid()).to.be.false;
     expect(moment().isValid()).to.be.true;
 });
 
-it('isLeapYear', function () 
-{
+it('isLeapYear', function() {
     expect(moment('20120501').isLeapYear()).to.be.true;
     expect(moment('20150501').isLeapYear()).to.be.false;
 });
 
-it('valueOf', function () 
-{
+it('valueOf', function() {
     expect(moment(1525161584274).valueOf()).to.equal(1525161584274);
 });
 
-it('isSame', function () 
-{
+it('isSame', function() {
     expect(moment(1525161584274).isSame(moment(1525161584274))).to.be.true;
 });
 
-it('isBefore isAfter', function () 
-{
+it('isBefore isAfter', function() {
     var m1 = moment(1525161584274),
         m2 = moment(1425161584274);
 
-    expect(m2.isBefore(m1)).to.be.true;    
+    expect(m2.isBefore(m1)).to.be.true;
     expect(m1.isAfter(m2)).to.be.true;
 });
 
-it('year month date hour minute millisecond', function () 
-{
+it('year month date hour minute millisecond', function() {
     var m = moment(1525305141649);
 
     expect(m.year()).to.equal(2018);
@@ -67,21 +60,18 @@ it('year month date hour minute millisecond', function ()
     expect(m.millisecond()).to.equal(600);
 });
 
-it('unix', function ()
-{
+it('unix', function() {
     expect(moment(1525305141649).unix()).to.equal(1525305141);
 });
 
-it('clone', function () 
-{
+it('clone', function() {
     var m1 = moment(1525161584274),
         m2 = m1.clone();
 
     expect(m1.isSame(m2)).to.be.true;
 });
 
-it('toDate toArray toJSON toISOString toObject toString', function () 
-{
+it('toDate toArray toJSON toISOString toObject toString', function() {
     var m = moment(1525305141649);
 
     expect(m.toDate()).to.be.a('Date');
@@ -100,10 +90,9 @@ it('toDate toArray toJSON toISOString toObject toString', function ()
     expect(m.toString()).to.equal(m.toDate().toUTCString());
 });
 
-it('set', function () 
-{
+it('set', function() {
     var m = moment(1525305141649);
-    
+
     m.set('y', 2016);
     expect(m.year()).to.equal(2016);
     m.set('month', 5);
@@ -118,8 +107,7 @@ it('set', function ()
     expect(m.millisecond()).to.equal(300);
 });
 
-it('startOf', function () 
-{
+it('startOf', function() {
     var m = moment(1525305141649);
 
     m.startOf('second');
@@ -138,8 +126,7 @@ it('startOf', function ()
     expect(m.month()).to.equal(0);
 });
 
-it('endOf', function () 
-{
+it('endOf', function() {
     var m = moment(1525305141649);
 
     m.endOf('second');
@@ -158,14 +145,12 @@ it('endOf', function ()
     expect(m.month()).to.equal(11);
 });
 
-it('daysInMonth', function () 
-{
+it('daysInMonth', function() {
     expect(moment('20180501').daysInMonth()).to.equal(31);
     expect(moment('20180401').daysInMonth()).to.equal(30);
 });
 
-it('add subtract', function () 
-{
+it('add subtract', function() {
     var m = moment(1525305141649);
 
     m.add(1, 'y');
@@ -211,13 +196,12 @@ it('add subtract', function ()
     expect(m.second()).to.equal(16);
 });
 
-it('diff', function () 
-{
+it('diff', function() {
     var m1 = moment('20180508'),
         m2 = moment('20170505');
 
     expect(m1.diff(m2, 'year')).to.equal(1);
-    expect(m1.diff(m2, 'year', true)).to.be.above(1);    
+    expect(m1.diff(m2, 'year', true)).to.be.above(1);
     expect(m1.diff(m2, 'month')).to.equal(12);
     expect(m1.diff(m2, 'day')).to.equal(368);
     expect(m1.diff(m2, 'hour')).to.equal(368 * 24);

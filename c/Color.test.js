@@ -1,5 +1,4 @@
-it('parse', function ()
-{
+it('parse', function() {
     expect(Color.parse('#abc')).to.eql({
         val: [170, 187, 204, 1],
         model: 'rgb'
@@ -38,8 +37,7 @@ it('parse', function ()
     });
 });
 
-it('convert', function ()
-{
+it('convert', function() {
     var color = new Color('#abc');
     expect(color.toRgb()).to.eql('rgb(170, 187, 204)');
     expect(color.toHsl()).to.eql('hsl(210, 25%, 73%)');

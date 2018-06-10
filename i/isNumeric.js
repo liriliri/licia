@@ -20,12 +20,11 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('isStr isNaN isFinite isArr');
 
-function exports(val) 
-{
+function exports(val) {
     if (isStr(val)) val = val.replace(regComma, '');
 
     return !isNaN(parseFloat(val)) && isFinite(val) && !isArr(val);

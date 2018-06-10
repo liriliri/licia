@@ -26,23 +26,22 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('restArgs'); 
+_('restArgs');
 
-function exports(fn) 
-{
-    return restArgs(function (args) 
-    {
+function exports(fn) {
+    return restArgs(function(args) {
         var cb = args.pop();
 
-        fn.apply(this, args).then(function (value) 
-        {
-            cb(null, value);
-        }, function (err) 
-        {
-            if (err === null) err = new Error();
-            cb(err);
-        });
+        fn.apply(this, args).then(
+            function(value) {
+                cb(null, value);
+            },
+            function(err) {
+                if (err === null) err = new Error();
+                cb(err);
+            }
+        );
     });
-} 
+}

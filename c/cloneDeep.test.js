@@ -1,6 +1,5 @@
-it('basic', function ()
-{
-    var obj = [{a: {b: 1}}, {a: 2}],
+it('basic', function() {
+    var obj = [{ a: { b: 1 } }, { a: 2 }],
         obj2 = cloneDeep(obj);
 
     expect(obj[0] === obj2[0]).to.be.false;

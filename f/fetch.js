@@ -31,24 +31,21 @@
 
 _('Promise each defaults noop');
 
-function exports(url, options) 
-{
+function exports(url, options) {
     options = options || {};
 
     defaults(options, exports.setting);
 
-    return new Promise(function (resolve, reject) 
-    {
+    return new Promise(function(resolve, reject) {
         var xhr = options.xhr(),
             headers = options.headers,
             body = options.body,
             timeout = options.timeout,
             abortTimer;
 
-        xhr.withCredentials = options.credentials == 'include';     
+        xhr.withCredentials = options.credentials == 'include';
 
-        xhr.onload = function () 
-        { 
+        xhr.onload = function() {
             clearTimeout(abortTimer);
             resolve(getRes(xhr));
         };
@@ -57,15 +54,12 @@ function exports(url, options)
 
         xhr.open(options.method, url, true);
 
-        each(headers, function (val, key) 
-        {
+        each(headers, function(val, key) {
             xhr.setRequestHeader(key, val);
         });
-        
-        if (timeout > 0) 
-        {
-            setTimeout(function () 
-            {
+
+        if (timeout > 0) {
+            setTimeout(function() {
                 xhr.onload = noop;
                 xhr.abort();
                 reject(Error('timeout'));
@@ -78,38 +72,54 @@ function exports(url, options)
 
 var regHeaders = /^(.*?):\s*([\s\S]*?)$/gm;
 
-function getRes(xhr) 
-{
+function getRes(xhr) {
     var keys = [],
         all = [],
         headers = {},
         header;
 
-    xhr.getAllResponseHeaders().replace(regHeaders, function (m, key, val) 
-    {
+    xhr.getAllResponseHeaders().replace(regHeaders, function(m, key, val) {
         key = key.toLowerCase();
         keys.push(key);
         // Duplicated headers is possible.
         all.push([key, val]);
         header = headers[key];
         headers[key] = header ? header + ',' + val : val;
-    });    
+    });
 
     return {
         ok: xhr.status >= 200 && xhr.status < 400,
         status: xhr.status,
         statusText: xhr.statusText,
         url: xhr.responseURL,
-        clone: function () { return getRes(xhr); },
-        text: function () { return Promise.resolve(xhr.responseText); },
-        json: function () { return Promise.resolve(xhr.responseText).then(JSON.parse); },
-        xml: function () { return Promise.resolve(xhr.responseXML); },
-        blob: function () { return Promise.resolve(new Blob([xhr.response])); },
+        clone: function() {
+            return getRes(xhr);
+        },
+        text: function() {
+            return Promise.resolve(xhr.responseText);
+        },
+        json: function() {
+            return Promise.resolve(xhr.responseText).then(JSON.parse);
+        },
+        xml: function() {
+            return Promise.resolve(xhr.responseXML);
+        },
+        blob: function() {
+            return Promise.resolve(new Blob([xhr.response]));
+        },
         headers: {
-            keys: function () { return keys; },
-            entries: function () { return all; },
-            get: function (name) { return headers[name.toLowerCase()]; },
-            has: function (name) { return has(headers, name); }
+            keys: function() {
+                return keys;
+            },
+            entries: function() {
+                return all;
+            },
+            get: function(name) {
+                return headers[name.toLowerCase()];
+            },
+            has: function(name) {
+                return has(headers, name);
+            }
         }
     };
 }
@@ -118,5 +128,7 @@ exports.setting = {
     method: 'GET',
     headers: {},
     timeout: 0,
-    xhr: function () { return new XMLHttpRequest(); }
+    xhr: function() {
+        return new XMLHttpRequest();
+    }
 };

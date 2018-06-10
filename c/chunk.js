@@ -17,17 +17,15 @@
  * test: all
  */
 
-function exports(arr, size) 
-{
+function exports(arr, size) {
     var ret = [];
-       
+
     size = size || 1;
 
-    for (var i = 0, len = Math.ceil(arr.length / size); i < len; i++) 
-    {
+    for (var i = 0, len = Math.ceil(arr.length / size); i < len; i++) {
         var start = i * size,
             end = start + size;
-        
+
         ret.push(arr.slice(start, end));
     }
 

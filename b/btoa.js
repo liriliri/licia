@@ -8,29 +8,24 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('root isNode base64 map detectMocha'); 
+_('root isNode base64 map detectMocha');
 
-if (isNode) 
-{
-    exports = function (str) 
-    {
+if (isNode) {
+    exports = function(str) {
         return new Buffer(str, 'binary').toString('base64');
     };
-} else 
-{
-    if (root.btoa && !detectMocha()) 
-    {
+} else {
+    if (root.btoa && !detectMocha()) {
         exports = root.btoa;
-    } else 
-    {
-        exports = function (str) 
-        {
-            return base64.encode(map(str, function (c) 
-            {
-                return c.charCodeAt(0);
-            }));
+    } else {
+        exports = function(str) {
+            return base64.encode(
+                map(str, function(c) {
+                    return c.charCodeAt(0);
+                })
+            );
         };
     }
 }

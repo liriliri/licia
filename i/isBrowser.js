@@ -10,6 +10,7 @@
  * test: all
  */
 
-exports = typeof window === 'object' &&
-          typeof document === 'object' &&
-          document.nodeType === 9;
+exports =
+    typeof window === 'object' &&
+    typeof document === 'object' &&
+    document.nodeType === 9;

@@ -17,7 +17,6 @@
 
 _('restArgs unique flatten');
 
-exports = restArgs(function (arrays)
-{
+exports = restArgs(function(arrays) {
     return unique(flatten(arrays));
 });

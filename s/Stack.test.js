@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     var stack = new Stack();
 
     expect(stack.push(2)).to.equal(1);
@@ -14,8 +13,7 @@ it('basic', function ()
     expect(stack.peek()).to.be.an('undefined');
 });
 
-it('forEach', function ()
-{
+it('forEach', function() {
     var stack = new Stack();
 
     stack.push(1);
@@ -23,15 +21,16 @@ it('forEach', function ()
     stack.push(3);
     stack.push(4);
 
-    stack.forEach(function (val, i)
-    {
-        expect(val).to.eql(this[stack.size - i - 1]);
-    }, [1, 2, 3, 4]);
+    stack.forEach(
+        function(val, i) {
+            expect(val).to.eql(this[stack.size - i - 1]);
+        },
+        [1, 2, 3, 4]
+    );
 
     var sum = 0;
 
-    stack.forEach(function (val)
-    {
+    stack.forEach(function(val) {
         sum += val;
     });
 

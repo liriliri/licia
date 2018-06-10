@@ -15,12 +15,11 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('isInt');
 
-function exports(num) 
-{
+function exports(num) {
     if (!isInt(num)) return false;
 
     return num % 2 === 0;

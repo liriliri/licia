@@ -21,35 +21,41 @@ _('now isBrowser');
 
 var raf, cancel;
 
-if (isBrowser)
-{
+if (isBrowser) {
     raf = window.requestAnimationFrame;
     cancel = window.cancelAnimationFrame;
 
     var lastTime = 0,
         vendors = ['ms', 'moz', 'webkit', 'o'];
 
-    for (var i = 0, len = vendors.length; i < len && !raf; i++)
-    {
+    for (var i = 0, len = vendors.length; i < len && !raf; i++) {
         raf = window[vendors[i] + 'RequestAnimationFrame'];
-        cancel = window[vendors[i] + 'CancelAnimationFrame'] ||
-                 window[vendors[i] + 'CancelRequestAnimationFrame'];
+        cancel =
+            window[vendors[i] + 'CancelAnimationFrame'] ||
+            window[vendors[i] + 'CancelRequestAnimationFrame'];
     }
 }
 
-raf = raf || function(cb)
-{
-    var curTime = now();
+raf =
+    raf ||
+    function(cb) {
+        var curTime = now();
 
-    var timeToCall = Math.max(0, 16 - (curTime - lastTime)),
-        id = setTimeout(function() { cb(curTime + timeToCall); }, timeToCall);
+        var timeToCall = Math.max(0, 16 - (curTime - lastTime)),
+            id = setTimeout(function() {
+                cb(curTime + timeToCall);
+            }, timeToCall);
 
-    lastTime = curTime + timeToCall;
+        lastTime = curTime + timeToCall;
 
-    return id;
-};
+        return id;
+    };
 
-cancel = cancel || function(id) { clearTimeout(id); };
+cancel =
+    cancel ||
+    function(id) {
+        clearTimeout(id);
+    };
 
 raf.cancel = cancel;
 

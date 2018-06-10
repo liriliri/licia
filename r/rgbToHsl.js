@@ -15,27 +15,24 @@
  * test: all
  */
 
-function exports(rgb)
-{
+function exports(rgb) {
     var r = rgb[0] / 255,
         g = rgb[1] / 255,
         b = rgb[2] / 255,
         min = mMin(r, g, b),
         max = mMax(r, g, b),
         delta = max - min,
-        h, s, l;
+        h,
+        s,
+        l;
 
-    if (max === min)
-    {
+    if (max === min) {
         h = 0;
-    } else if (r === max)
-    {
+    } else if (r === max) {
         h = (g - b) / delta;
-    } else if (g === max)
-    {
+    } else if (g === max) {
         h = 2 + (b - r) / delta;
-    } else
-    {
+    } else {
         h = 4 + (r - g) / delta;
     }
 
@@ -45,14 +42,11 @@ function exports(rgb)
 
     l = (min + max) / 2;
 
-    if (max === min)
-    {
+    if (max === min) {
         s = 0;
-    } else if (l <= 0.5)
-    {
+    } else if (l <= 0.5) {
         s = delta / (max + min);
-    } else
-    {
+    } else {
         s = delta / (2 - max - min);
     }
 

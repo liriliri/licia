@@ -8,8 +8,8 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('reduce'); 
+_('reduce');
 
 exports = reduce.create(-1);

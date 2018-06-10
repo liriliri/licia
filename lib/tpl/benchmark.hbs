@@ -6,14 +6,11 @@ var util = require('./{{modName}}.util.js');
 var {{modName}} = util.{{modName}},
     suite = new benchmark.Suite();
 
-suite.on('start', function ()
-{
+suite.on('start', function () {
     console.log('{{modName}} benchmark');
-}).on('cycle', function (event)
-{
+}).on('cycle', function (event) {
     benchmarks.add(event.target);
-}).on('complete', function ()
-{
+}).on('complete', function () {
     benchmarks.log();
 });
 

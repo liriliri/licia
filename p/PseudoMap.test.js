@@ -1,5 +1,4 @@
-it('basic', function () 
-{
+it('basic', function() {
     var map = new PseudoMap();
     map.set('1', 1);
     map.set('2', 2);
@@ -18,11 +17,10 @@ it('basic', function ()
     expect(map.size).to.equal(0);
 });
 
-it('initialize data', function () 
-{
+it('initialize data', function() {
     var map = new PseudoMap();
     map.set('1', 1);
-    
+
     var map2 = new PseudoMap(map);
     expect(map2.get('1')).to.equal(1);
 
@@ -31,12 +29,10 @@ it('initialize data', function ()
     expect(map.get('2')).to.equal(2);
 });
 
-it('forEach', function () 
-{
+it('forEach', function() {
     var map = new PseudoMap([['1', 1], ['2', 2]]);
     var sum = 0;
-    map.forEach(function (val, key) 
-    {
+    map.forEach(function(val, key) {
         sum += val;
     });
     expect(sum).to.equal(3);

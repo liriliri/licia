@@ -1,15 +1,15 @@
 var $dom;
 
-before(function ()
-{
+before(function() {
     $('body').append('<div id="dollarData"><div class="inner"></div></div>');
     $dom = $('#dollarData');
 });
 
-after(function () { $dom.remove(); });
+after(function() {
+    $dom.remove();
+});
 
-it('basic', function ()
-{
+it('basic', function() {
     function click() {}
     $event.on($dom, 'click', click);
     $event.off($dom, 'click', click);

@@ -33,29 +33,35 @@
 
 _('Class contain');
 
-function retTrue()  { return true; }
-function retFalse() { return false; }
+function retTrue() {
+    return true;
+}
+function retFalse() {
+    return false;
+}
 
-function trigger(e)
-{
+function trigger(e) {
     var handlers = this.events[e.type],
         handler,
         handlerQueue = formatHandlers.call(this, e, handlers);
 
     e = new exports.Event(e);
 
-    var i = 0, j, matched, ret;
+    var i = 0,
+        j,
+        matched,
+        ret;
 
-    while ((matched = handlerQueue[i++]) && !e.isPropagationStopped())
-    {
+    while ((matched = handlerQueue[i++]) && !e.isPropagationStopped()) {
         e.curTarget = matched.el;
         j = 0;
-        while ((handler = matched.handlers[j++]) && !e.isImmediatePropagationStopped())
-        {
+        while (
+            (handler = matched.handlers[j++]) &&
+            !e.isImmediatePropagationStopped()
+        ) {
             ret = handler.handler.apply(matched.el, [e]);
 
-            if (ret === false)
-            {
+            if (ret === false) {
                 e.preventDefault();
                 e.stopPropagation();
             }
@@ -63,34 +69,34 @@ function trigger(e)
     }
 }
 
-function formatHandlers(e, handlers)
-{
+function formatHandlers(e, handlers) {
     var current = e.target,
         ret = [],
         delegateCount = handlers.delegateCount,
-        selector, matches, handler, i;
+        selector,
+        matches,
+        handler,
+        i;
 
-    if (current.nodeType)
-    {
-        for (; current !== this; current = current.parentNode || this)
-        {
+    if (current.nodeType) {
+        for (; current !== this; current = current.parentNode || this) {
             matches = [];
-            for (i = 0; i < delegateCount; i++)
-            {
+            for (i = 0; i < delegateCount; i++) {
                 handler = handlers[i];
                 selector = handler.selector + ' ';
-                if (matches[selector] === undefined)
-                {
-                    matches[selector] = contain(this.querySelectorAll(selector), current);
+                if (matches[selector] === undefined) {
+                    matches[selector] = contain(
+                        this.querySelectorAll(selector),
+                        current
+                    );
                 }
                 if (matches[selector]) matches.push(handler);
             }
-            if (matches.length) ret.push({ el: current, handlers: matches});
+            if (matches.length) ret.push({ el: current, handlers: matches });
         }
     }
 
-    if (delegateCount < handlers.length)
-    {
+    if (delegateCount < handlers.length) {
         ret.push({
             el: this,
             handlers: handlers.slice(delegateCount)
@@ -101,8 +107,7 @@ function formatHandlers(e, handlers)
 }
 
 exports = {
-    add: function (el, type, selector, fn)
-    {
+    add: function(el, type, selector, fn) {
         var handler = {
                 selector: selector,
                 handler: fn
@@ -111,21 +116,23 @@ exports = {
 
         if (!el.events) el.events = {};
 
-        if (!(handlers = el.events[type]))
-        {
+        if (!(handlers = el.events[type])) {
             handlers = el.events[type] = [];
             handlers.delegateCount = 0;
-            el.addEventListener(type, function (e)
-            {
-                trigger.apply(el, arguments);
-            }, false);
+            el.addEventListener(
+                type,
+                function(e) {
+                    trigger.apply(el, arguments);
+                },
+                false
+            );
         }
 
-        selector ? handlers.splice(handlers.delegateCount++, 0, handler)
-                 : handlers.push(handler);
+        selector
+            ? handlers.splice(handlers.delegateCount++, 0, handler)
+            : handlers.push(handler);
     },
-    remove: function (el, type, selector, fn)
-    {
+    remove: function(el, type, selector, fn) {
         var events = el.events;
 
         if (!events || !events[type]) return;
@@ -134,15 +141,15 @@ exports = {
             i = handlers.length,
             handler;
 
-        while (i--)
-        {
+        while (i--) {
             handler = handlers[i];
 
-            if ((!selector || handler.selector == selector) && handler.handler == fn)
-            {
+            if (
+                (!selector || handler.selector == selector) &&
+                handler.handler == fn
+            ) {
                 handlers.splice(i, 1);
-                if (handler.selector)
-                {
+                if (handler.selector) {
                     handlers.delegateCount--;
                 }
             }
@@ -150,26 +157,25 @@ exports = {
     },
     Event: Class({
         className: 'Event',
-        initialize: function Event(e) { this.origEvent = e; },
+        initialize: function Event(e) {
+            this.origEvent = e;
+        },
         isDefaultPrevented: retFalse,
         isPropagationStopped: retFalse,
         isImmediatePropagationStopped: retFalse,
-        preventDefault: function ()
-        {
+        preventDefault: function() {
             var e = this.origEvent;
 
             this.isDefaultPrevented = retTrue;
             if (e && e.preventDefault) e.preventDefault();
         },
-        stopPropagation: function ()
-        {
+        stopPropagation: function() {
             var e = this.origEvent;
 
             this.isPropagationStopped = retTrue;
             if (e && e.stopPropagation) e.stopPropagation();
         },
-        stopImmediatePropagation: function ()
-        {
+        stopImmediatePropagation: function() {
             var e = this.origEvent;
 
             this.isImmediatePropagationStopped = retTrue;

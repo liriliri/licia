@@ -18,7 +18,6 @@
  * test: all
  */
 
-function exports(num, from, to)
-{
+function exports(num, from, to) {
     return parseInt(num, from).toString(to);
 }

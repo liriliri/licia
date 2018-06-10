@@ -15,8 +15,7 @@
  * test: all
  */
 
-function exports(path)
-{
+function exports(path) {
     return !regAbsolute.test(path);
 }
 

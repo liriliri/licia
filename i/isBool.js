@@ -17,7 +17,6 @@
  * test: all
  */
 
-function exports(val)
-{
+function exports(val) {
     return val === true || val === false;
 }

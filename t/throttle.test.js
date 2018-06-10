@@ -1,9 +1,7 @@
-it('basic', function (done)
-{
+it('basic', function(done) {
     var counter = 0;
 
-    var throttleFn = throttle(function ()
-    {
+    var throttleFn = throttle(function() {
         counter++;
     }, 50);
 
@@ -15,8 +13,7 @@ it('basic', function (done)
     setTimeout(throttleFn, 130);
     setTimeout(throttleFn, 135);
 
-    setTimeout(function ()
-    {
+    setTimeout(function() {
         expect(counter).to.equal(3);
         done();
     }, 300);

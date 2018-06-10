@@ -20,8 +20,7 @@
 
 _('isArrLike map isArr isStr');
 
-function exports(val)
-{
+function exports(val) {
     if (!val) return [];
 
     if (isArr(val)) return val;

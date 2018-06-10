@@ -23,16 +23,14 @@
 
 _('castPath isUndef');
 
-function exports(obj, path, val)
-{
+function exports(obj, path, val) {
     path = castPath(path, obj);
 
     var lastProp = path.pop(),
         prop;
 
-    prop = path.shift();    
-    while (!isUndef(prop))
-    {
+    prop = path.shift();
+    while (!isUndef(prop)) {
         if (!obj[prop]) obj[prop] = {};
         obj = obj[prop];
         prop = path.shift();

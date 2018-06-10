@@ -1,4 +1,3 @@
-it('basic', function () 
-{
+it('basic', function() {
     copy('Nothing to test');
 });

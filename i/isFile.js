@@ -13,11 +13,10 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
 _('objToStr');
 
-function exports(val) 
-{
+function exports(val) {
     return objToStr(val) === '[object File]';
-} 
+}

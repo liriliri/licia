@@ -13,18 +13,20 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
 _('Class');
 
-exports = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+exports =
+    window.MutationObserver ||
+    window.WebKitMutationObserver ||
+    window.MozMutationObserver;
 
-if (!exports) 
-{
+if (!exports) {
     exports = Class({
         initialize: function MutationObserver() {},
-        observe: function () {},
-        disconnect: function () {},
-        takeRecords: function () {}
+        observe: function() {},
+        disconnect: function() {},
+        takeRecords: function() {}
     });
 }

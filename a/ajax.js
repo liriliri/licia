@@ -58,8 +58,7 @@
 
 _('isFn noop defaults isObj query');
 
-function exports(options)
-{
+function exports(options) {
     defaults(options, exports.setting);
 
     var type = options.type,
@@ -73,8 +72,7 @@ function exports(options)
         xhr = options.xhr(),
         abortTimeout;
 
-    xhr.onreadystatechange = function ()
-    {
+    xhr.onreadystatechange = function() {
         if (xhr.readyState !== 4) return;
 
         clearTimeout(abortTimeout);
@@ -82,41 +80,35 @@ function exports(options)
         var result;
 
         var status = xhr.status;
-        if ((status >= 200 && status < 300) || status === 304)
-        {
+        if ((status >= 200 && status < 300) || status === 304) {
             result = xhr.responseText;
             if (dataType === 'xml') result = xhr.responseXML;
             try {
                 if (dataType === 'json') result = JSON.parse(result);
-            /* eslint-disable no-empty */
+                /* eslint-disable no-empty */
             } catch (e) {}
             success(result, xhr);
-        } else
-        {
+        } else {
             error(xhr);
         }
 
         complete(xhr);
     };
 
-    if (type === 'GET')
-    {
+    if (type === 'GET') {
         data = query.stringify(data);
         url += url.indexOf('?') > -1 ? '&' + data : '?' + data;
-    } else if (options.contentType === 'application/x-www-form-urlencoded')
-    {
-        if(isObj(data)) data = query.stringify(data);
+    } else if (options.contentType === 'application/x-www-form-urlencoded') {
+        if (isObj(data)) data = query.stringify(data);
     } else if (options.contentType === 'application/json') {
-        if(isObj(data)) data = JSON.stringify(data);
+        if (isObj(data)) data = JSON.stringify(data);
     }
 
     xhr.open(type, url, true);
     xhr.setRequestHeader('Content-Type', options.contentType);
 
-    if (timeout > 0)
-    {
-        abortTimeout = setTimeout(function ()
-        {
+    if (timeout > 0) {
+        abortTimeout = setTimeout(function() {
             xhr.onreadystatechange = noop;
             xhr.abort();
             error(xhr, 'timeout');
@@ -136,27 +128,25 @@ exports.setting = {
     dataType: 'json',
     contentType: 'application/x-www-form-urlencoded',
     data: {},
-    xhr: function () { return new XMLHttpRequest(); },
+    xhr: function() {
+        return new XMLHttpRequest();
+    },
     timeout: 0
 };
 
-exports.get = function ()
-{
+exports.get = function() {
     return exports(parseArgs.apply(null, arguments));
 };
 
-exports.post = function ()
-{
+exports.post = function() {
     var options = parseArgs.apply(null, arguments);
     options.type = 'POST';
 
     return exports(options);
 };
 
-function parseArgs(url, data, success, dataType)
-{
-    if (isFn(data))
-    {
+function parseArgs(url, data, success, dataType) {
+    if (isFn(data)) {
         dataType = success;
         success = data;
         data = {};

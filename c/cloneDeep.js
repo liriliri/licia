@@ -19,20 +19,15 @@
 
 _('keys isObj isFn isArr each mapObj');
 
-function exports(obj)
-{
-    if (isArr(obj))
-    {
-        return obj.map(function (val)
-        {
+function exports(obj) {
+    if (isArr(obj)) {
+        return obj.map(function(val) {
             return exports(val);
         });
     }
 
-    if (isObj(obj) && !isFn(obj))
-    {
-        return mapObj(obj, function (val)
-        {
+    if (isObj(obj) && !isFn(obj)) {
+        return mapObj(obj, function(val) {
             return exports(val);
         });
     }

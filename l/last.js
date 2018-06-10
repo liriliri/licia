@@ -15,8 +15,7 @@
  * test: all
  */
 
-function exports(arr)
-{
+function exports(arr) {
     var len = arr ? arr.length : 0;
 
     if (len) return arr[len - 1];

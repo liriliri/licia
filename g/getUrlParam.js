@@ -14,11 +14,10 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('Url'); 
+_('Url');
 
-function exports(name, url) 
-{
-    return (new Url(url)).query[name];
-} 
+function exports(name, url) {
+    return new Url(url).query[name];
+}

@@ -23,39 +23,31 @@ _('optimizeCb isArrLike isUndef keys');
 exports = createReduce(1);
 exports.create = createReduce;
 
-function createReduce(dir) 
-{
-    return function (obj, iteratee, initial, ctx)
-    {
+function createReduce(dir) {
+    return function(obj, iteratee, initial, ctx) {
         iteratee = optimizeCb(iteratee, ctx);
 
         var i, len, key;
 
-        if (isArrLike(obj))
-        {
+        if (isArrLike(obj)) {
             len = obj.length;
             i = dir > 0 ? 0 : len - 1;
-            if (isUndef(initial))
-            {
+            if (isUndef(initial)) {
                 initial = obj[i];
                 i += dir;
             }
-            for (; i < len && i >= 0; i += dir)
-            {
+            for (; i < len && i >= 0; i += dir) {
                 initial = iteratee(initial, obj[i], i, obj);
             }
-        } else
-        {
+        } else {
             var _keys = keys(obj);
             len = _keys.length;
             i = dir > 0 ? 0 : len - 1;
-            if (isUndef(initial))
-            {
+            if (isUndef(initial)) {
                 initial = obj[_keys[i]];
                 i += dir;
             }
-            for (; i < len && i >= 0; i += dir)
-            {
+            for (; i < len && i >= 0; i += dir) {
                 key = _keys[i];
                 initial = iteratee(initial, obj[key], key, obj);
             }

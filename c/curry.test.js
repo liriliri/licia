@@ -1,7 +1,5 @@
-it('basic', function ()
-{
-    function add(a, b, c)
-    {
+it('basic', function() {
+    function add(a, b, c) {
         return a + b + c;
     }
 

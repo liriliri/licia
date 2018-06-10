@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     expect(toNum({})).to.be.NaN;
     expect(toNum([])).to.equal(0);
     expect(toNum(null)).to.equal(0);

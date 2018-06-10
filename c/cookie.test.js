@@ -1,5 +1,4 @@
-it('set, get', function ()
-{
+it('set, get', function() {
     cookie.set('name', 'eustia');
     expect(cookie.get('name')).to.equal('eustia');
     cookie.set('name2', 'eruda');
@@ -9,8 +8,7 @@ it('set, get', function ()
     });
 });
 
-it('remove', function ()
-{
+it('remove', function() {
     cookie.remove('name');
     expect(cookie.get('name')).to.be.undefined;
 });

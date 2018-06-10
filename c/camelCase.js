@@ -20,8 +20,7 @@
 
 _('splitCase');
 
-function exports(str)
-{
+function exports(str) {
     var arr = splitCase(str);
 
     var ret = arr[0];
@@ -33,10 +32,8 @@ function exports(str)
     return ret;
 }
 
-function capitalize(val, idx)
-{
-    this[idx] = val.replace(/\w/, function (match)
-    {
+function capitalize(val, idx) {
+    this[idx] = val.replace(/\w/, function(match) {
         return match.toUpperCase();
     });
 }

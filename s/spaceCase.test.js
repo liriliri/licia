@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     expect(spaceCase('foo')).to.equal('foo');
     expect(spaceCase('foo--bar')).to.equal('foo bar');
     expect(spaceCase('__foo__bar__')).to.equal('foo bar');

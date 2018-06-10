@@ -23,8 +23,7 @@ _('isNum isFn');
 
 var MAX_ARR_IDX = Math.pow(2, 53) - 1;
 
-function exports(val)
-{
+function exports(val) {
     if (!val) return false;
 
     var len = val.length;

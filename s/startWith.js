@@ -16,7 +16,6 @@
  * test: all
  */
 
-function exports(str, prefix)
-{
+function exports(str, prefix) {
     return str.indexOf(prefix) === 0;
 }

@@ -18,7 +18,6 @@
 
 _('debounce');
 
-function exports(fn, wait)
-{
+function exports(fn, wait) {
     return debounce(fn, wait, true);
 }

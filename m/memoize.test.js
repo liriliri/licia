@@ -1,12 +1,12 @@
-it('basic', function ()
-{
-    var fib = memoize(function(n)
-    {
-        return n < 2 ? n : fib(n - 1) + fib(n - 2);
-    }, function (n)
-    {
-        return 'key' + n;
-    });
+it('basic', function() {
+    var fib = memoize(
+        function(n) {
+            return n < 2 ? n : fib(n - 1) + fib(n - 2);
+        },
+        function(n) {
+            return 'key' + n;
+        }
+    );
 
     expect(fib(3)).to.equal(2);
     expect(fib(10)).to.equal(55);

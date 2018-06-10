@@ -14,12 +14,11 @@
  * test: browser
  */
 
-_('cookie'); 
+_('cookie');
 
-function exports(key) 
-{
+function exports(key) {
     var location = window.location,
-        hostname = location.hostname, 
+        hostname = location.hostname,
         pathname = location.pathname,
         hostNames = hostname.split('.'),
         pathNames = pathname.split('/'),
@@ -29,34 +28,34 @@ function exports(key)
 
     if (del()) return;
 
-    for (var i = hostNames.length - 1; i >= 0; i--)
-    {
+    for (var i = hostNames.length - 1; i >= 0; i--) {
         var hostName = hostNames[i];
         if (hostName === '') continue;
-        domain = (domain === '') ? hostName : hostName + '.' + domain ;
+        domain = domain === '' ? hostName : hostName + '.' + domain;
 
         path = '/';
-        if (del({domain: domain, path: path}) || del({domain: domain})) return;
+        if (del({ domain: domain, path: path }) || del({ domain: domain }))
+            return;
 
-        for (var j = 0; j < pathLen; j++)
-        {
+        for (var j = 0; j < pathLen; j++) {
             var pathName = pathNames[j];
             if (pathName === '') continue;
 
             path += pathName;
-            if (del({domain: domain, path: path}) || del({path: path})) return;
+            if (del({ domain: domain, path: path }) || del({ path: path }))
+                return;
 
             path += '/';
-            if (del({domain: domain, path: path}) || del({path: path})) return;
+            if (del({ domain: domain, path: path }) || del({ path: path }))
+                return;
         }
     }
 
-    function del(options)
-    {
+    function del(options) {
         options = options || {};
 
         cookie.remove(key, options);
 
         return !cookie.get(key);
     }
-} 
+}

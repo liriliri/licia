@@ -20,7 +20,6 @@
 
 _('splitCase');
 
-function exports(str)
-{
+function exports(str) {
     return splitCase(str).join('-');
 }

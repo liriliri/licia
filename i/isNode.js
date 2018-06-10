@@ -12,4 +12,5 @@
 
 _('objToStr');
 
-exports = typeof process !== 'undefined' && objToStr(process) === '[object process]';
+exports =
+    typeof process !== 'undefined' && objToStr(process) === '[object process]';

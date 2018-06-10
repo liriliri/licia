@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     expect(lpad('a', 5)).to.equal('    a');
     expect(lpad('a', 5, '-')).to.equal('----a');
     expect(lpad('abc', 3, '-')).to.equal('abc');

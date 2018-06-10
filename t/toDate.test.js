@@ -1,8 +1,7 @@
 var isDate = util.isDate,
     dateFormat = util.dateFormat;
 
-it('basic', function () 
-{
+it('basic', function() {
     expect(isDate(toDate())).to.be.true;
     expect(isDate(toDate(null))).to.be.true;
     expect(dateFormat(toDate('20180501'), 'yyyymmdd')).to.equal('20180501');

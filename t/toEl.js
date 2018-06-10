@@ -19,8 +19,7 @@
 
 var doc = document;
 
-exports = function (str)
-{
+exports = function(str) {
     var fragment = doc.createElement('body');
 
     fragment.innerHTML = str;
@@ -28,15 +27,12 @@ exports = function (str)
     return fragment.childNodes[0];
 };
 
-if (doc.createRange)
-{
+if (doc.createRange) {
     var range = doc.createRange();
     range.selectNode(doc.body);
 
-    if (range.createContextualFragment)
-    {
-        exports = function (str)
-        {
+    if (range.createContextualFragment) {
+        exports = function(str) {
             return range.createContextualFragment(str).childNodes[0];
         };
     }

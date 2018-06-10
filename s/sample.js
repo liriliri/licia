@@ -19,8 +19,7 @@
 
 _('isArrLike clone values random swap');
 
-function exports(obj, n)
-{
+function exports(obj, n) {
     var sample = isArrLike(obj) ? clone(obj) : values(obj),
         len = sample.length;
 
@@ -28,8 +27,7 @@ function exports(obj, n)
 
     var last = len - 1;
 
-    for (var i = 0; i < n; i++)
-    {
+    for (var i = 0; i < n; i++) {
         var rand = random(i, last);
         swap(sample, i, rand);
     }

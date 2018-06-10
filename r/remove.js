@@ -24,8 +24,7 @@
 
 _('safeCb');
 
-function exports(arr, predicate, ctx)
-{
+function exports(arr, predicate, ctx) {
     var ret = [];
 
     predicate = safeCb(predicate, ctx);
@@ -33,12 +32,10 @@ function exports(arr, predicate, ctx)
     var i = -1,
         len = arr.length;
 
-    while (++i < len)
-    {
+    while (++i < len) {
         var val = arr[i];
 
-        if (predicate(val, i, arr))
-        {
+        if (predicate(val, i, arr)) {
             ret.push(val);
             arr.splice(i, 1);
         }

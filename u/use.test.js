@@ -1,27 +1,22 @@
 var define = util.define;
 
-it('basic', function ()
-{
+it('basic', function() {
     var count = 0;
 
-    define('A', function ()
-    {
+    define('A', function() {
         count++;
         return 'A';
     });
-    define('B', 'A', function (A)
-    {
+    define('B', 'A', function(A) {
         return A + 'B';
     });
 
-    use(['A', 'B'], function (A, B)
-    {
+    use(['A', 'B'], function(A, B) {
         expect(A).to.equal(A);
         expect(B).to.equal('AB');
     });
 
-    use(function ()
-    {
+    use(function() {
         expect(count).to.equal(1);
     });
 });

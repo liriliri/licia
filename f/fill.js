@@ -21,8 +21,7 @@
 
 _('isUndef');
 
-function exports(arr, val, start, end) 
-{
+function exports(arr, val, start, end) {
     var len = arr.length;
 
     if (!len) return [];

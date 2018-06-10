@@ -17,18 +17,15 @@
 
 _('size');
 
-function exports(arr)
-{
+function exports(arr) {
     if (arr.length < 1) return;
 
     var ret = arr[0],
         retSize = size(arr[0]);
 
-    for (var i = 1, len = arr.length; i < len; i++)
-    {
+    for (var i = 1, len = arr.length; i < len; i++) {
         var elSize = size(arr[i]);
-        if (elSize > retSize)
-        {
+        if (elSize > retSize) {
             ret = arr[i];
             retSize = elSize;
         }

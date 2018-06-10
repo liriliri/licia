@@ -1,7 +1,6 @@
 var isBlob = util.isBlob;
 
-it('basic', function () 
-{
+it('basic', function() {
     var blob = new Blob([]);
 
     expect(isBlob(blob)).to.be.true;

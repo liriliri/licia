@@ -19,20 +19,18 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
-_('memoize camelCase upperFirst has kebabCase'); 
+_('memoize camelCase upperFirst has kebabCase');
 
-exports = memoize(function (name) 
-{
+exports = memoize(function(name) {
     name = name.replace(regPrefixes, '');
     name = camelCase(name);
 
     if (has(style, name)) return name;
 
     var i = prefixes.length;
-    while (i--) 
-    {
+    while (i--) {
         var prefixName = prefixes[i] + upperFirst(name);
         if (has(style, prefixName)) return prefixName;
     }
@@ -40,11 +38,13 @@ exports = memoize(function (name)
     return name;
 });
 
-exports.dash = memoize(function (name) 
-{
+exports.dash = memoize(function(name) {
     var camelCaseResult = exports(name);
 
-    return (regPrefixes.test(camelCaseResult) ? '-' : '') + kebabCase(camelCaseResult);
+    return (
+        (regPrefixes.test(camelCaseResult) ? '-' : '') +
+        kebabCase(camelCaseResult)
+    );
 });
 
 var prefixes = ['O', 'ms', 'Moz', 'Webkit'],

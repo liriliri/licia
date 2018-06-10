@@ -27,33 +27,27 @@ var fs = require('fs'),
 
 var _0777 = parseInt('0777', 8);
 
-function exports(p, mode, cb)
-{
-    if (isFn(mode))
-    {
+function exports(p, mode, cb) {
+    if (isFn(mode)) {
         cb = mode;
         mode = _0777;
     }
     cb = cb || noop;
     p = path.resolve(p);
 
-    fs.mkdir(p, mode, function (err)
-    {
+    fs.mkdir(p, mode, function(err) {
         if (!err) return cb();
 
-        switch (err.code)
-        {
+        switch (err.code) {
             case 'ENOENT':
-                exports(path.dirname(p), mode, function (err)
-                {
+                exports(path.dirname(p), mode, function(err) {
                     if (err) return cb(err);
 
                     exports(p, mode, cb);
                 });
                 break;
             default:
-                fs.stat(p, function (errStat, stat)
-                {
+                fs.stat(p, function(errStat, stat) {
                     if (errStat || !stat.isDirectory()) return cb(errStat);
 
                     cb();

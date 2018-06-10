@@ -48,14 +48,11 @@ exports = {
     prepend: insertFactory('afterbegin')
 };
 
-function insertFactory(type)
-{
-    return function (nodes, val)
-    {
+function insertFactory(type) {
+    return function(nodes, val) {
         nodes = $safeEls(nodes);
 
-        each(nodes, function (node)
-        {
+        each(nodes, function(node) {
             node.insertAdjacentHTML(type, val);
         });
     };

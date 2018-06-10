@@ -1,7 +1,6 @@
 var each = util.each;
 
-it('basic', function () 
-{
+it('basic', function() {
     var tests = [
         [true, true],
         [false, false],
@@ -19,8 +18,7 @@ it('basic', function ()
         [[], true]
     ];
 
-    each(tests, function (test) 
-    {
+    each(tests, function(test) {
         expect(toBool(test[0])).to.equal(test[1]);
     });
 });

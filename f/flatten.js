@@ -17,19 +17,16 @@
 
 _('isArr');
 
-function exports(arr)
-{
+function exports(arr) {
     return flat(arr, []);
 }
 
-function flat(arr, res)
-{
+function flat(arr, res) {
     var len = arr.length,
         i = -1,
         cur;
 
-    while (len--)
-    {
+    while (len--) {
         cur = arr[++i];
         isArr(cur) ? flat(cur, res) : res.push(cur);
     }

@@ -17,14 +17,12 @@
 
 _('keys');
 
-function exports(obj)
-{
+function exports(obj) {
     var _keys = _.keys(obj),
         len = _keys.length,
         ret = Array(len);
 
-    for (var i = 0; i < len; i++)
-    {
+    for (var i = 0; i < len; i++) {
         ret[i] = [_keys[i], obj[_keys[i]]];
     }
 

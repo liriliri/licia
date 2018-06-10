@@ -23,14 +23,12 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('restArgs');
 
-exports = restArgs(function (fnList) 
-{
-    return function () 
-    {
+exports = restArgs(function(fnList) {
+    return function() {
         var i = fnList.length - 1;
 
         var result = fnList[i].apply(this, arguments);
@@ -38,4 +36,4 @@ exports = restArgs(function (fnList)
 
         return result;
     };
-}); 
+});

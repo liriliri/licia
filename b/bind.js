@@ -23,10 +23,8 @@
 
 _('restArgs');
 
-exports = restArgs(function (fn, ctx, rest)
-{
-    return restArgs(function (callArgs)
-    {
+exports = restArgs(function(fn, ctx, rest) {
+    return restArgs(function(callArgs) {
         return fn.apply(ctx, rest.concat(callArgs));
     });
 });

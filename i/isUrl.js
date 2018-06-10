@@ -15,8 +15,7 @@
  * test: all
  */
 
-function exports(val) 
-{
+function exports(val) {
     return regUrl.test(val);
 }
 

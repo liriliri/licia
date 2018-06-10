@@ -18,8 +18,7 @@
 
 _('keys');
 
-function exports(obj, src)
-{
+function exports(obj, src) {
     var _keys = keys(src),
         len = _keys.length;
 
@@ -27,8 +26,7 @@ function exports(obj, src)
 
     obj = Object(obj);
 
-    for (var i = 0; i < len; i++)
-    {
+    for (var i = 0; i < len; i++) {
         var key = _keys[i];
         if (src[key] !== obj[key] || !(key in obj)) return false;
     }

@@ -16,16 +16,16 @@
  * test: all
  */
 
-_('unique trim map toArr'); 
+_('unique trim map toArr');
 
-function exports(str) 
-{
+function exports(str) {
     var urlList = toArr(str.match(regUrl));
 
-    return unique(map(urlList, function (url) 
-    {
-        return trim(url);
-    }));
+    return unique(
+        map(urlList, function(url) {
+            return trim(url);
+        })
+    );
 }
 
-var regUrl = /((https?)|(ftp)):\/\/[\w.]+[^ \f\n\r\t\v"\\<>[\]\u2100-\uFFFF(),]*/ig;
+var regUrl = /((https?)|(ftp)):\/\/[\w.]+[^ \f\n\r\t\v"\\<>[\]\u2100-\uFFFF(),]*/gi;

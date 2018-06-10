@@ -31,23 +31,22 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('defaults toNum invert toBool');
 
-function exports(args, opts) 
-{
+function exports(args, opts) {
     opts = opts || {};
     defaults(opts, defOpts);
     var names = opts.names,
         shorthands = invert(opts.shorthands);
 
     var remain = [],
-        ret = {remain: remain},
-        name, type;
+        ret = { remain: remain },
+        name,
+        type;
 
-    for (var i = 0, len = args.length; i < len; i++) 
-    {
+    for (var i = 0, len = args.length; i < len; i++) {
         var arg = args[i],
             nextArg = args[i + 1];
 
@@ -55,19 +54,15 @@ function exports(args, opts)
 
         match = arg.match(regDoubleDash);
 
-        if (match) 
-        {
+        if (match) {
             name = match[1];
             type = names[name];
-            if (!type) 
-            {
+            if (!type) {
                 remain.push(arg);
-            } else if (nextArg && !regDashStart.test(nextArg)) 
-            {
+            } else if (nextArg && !regDashStart.test(nextArg)) {
                 setArg(name, nextArg);
                 i++;
-            } else if (type === 'boolean') 
-            {
+            } else if (type === 'boolean') {
                 setArg(name, true);
                 i++;
             }
@@ -76,48 +71,44 @@ function exports(args, opts)
 
         match = arg.match(regSingleDash);
 
-        if (match) 
-        {
+        if (match) {
             var letters = match[1];
 
-            for (var j = 0; j < letters.length; j++) 
-            {
+            for (var j = 0; j < letters.length; j++) {
                 var letter = letters[j];
 
                 name = shorthands[letter];
-                if (!name) continue;    
-                
+                if (!name) continue;
+
                 type = names[name];
                 if (type === 'boolean') setArg(shorthands[letter], true);
             }
-            
+
             continue;
         }
 
         remain.push(arg);
     }
 
-    function setArg(name, val) 
-    {
+    function setArg(name, val) {
         var type = names[name];
 
-        switch (type) 
-        {
+        switch (type) {
             case 'number':
                 val = toNum(val);
                 break;
             case 'boolean':
-                val = toBool(val);    
+                val = toBool(val);
                 break;
             default:
-                break;    
+                break;
         }
 
         ret[name] = val;
     }
 
     return ret;
-} 
+}
 
 var defOpts = {
     names: {},

@@ -1,11 +1,9 @@
-it('basic', function ()
-{
+it('basic', function() {
     var obj = {};
 
-    createAssigner(function ()
-    {
+    createAssigner(function() {
         return 'a';
-    })(obj, {a: 1, b: 2});
+    })(obj, { a: 1, b: 2 });
 
-    expect(obj).to.eql({a: 1});
+    expect(obj).to.eql({ a: 1 });
 });

@@ -20,12 +20,10 @@
 
 _('freeze keys isObj');
 
-function exports(obj) 
-{
+function exports(obj) {
     freeze(obj);
 
-    keys(obj).forEach(function (prop) 
-    {
+    keys(obj).forEach(function(prop) {
         var val = obj[prop];
 
         if (isObj(val) && !Object.isFrozen(val)) exports(val);

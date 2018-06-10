@@ -14,10 +14,9 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-function exports(a, b) 
-{
+function exports(a, b) {
     if (b === 0) return a;
     return exports(b, a % b);
 }

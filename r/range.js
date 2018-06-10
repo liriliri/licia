@@ -17,10 +17,8 @@
  * test: all
  */
 
-function exports(start, end, step)
-{
-    if (end == null)
-    {
+function exports(start, end, step) {
+    if (end == null) {
         end = start || 0;
         start = 0;
     }

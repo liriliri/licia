@@ -23,11 +23,12 @@ _('escape');
 var regEvaluate = /<%([\s\S]+?)%>/g,
     regInterpolate = /<%=([\s\S]+?)%>/g,
     regEscape = /<%-([\s\S]+?)%>/g,
-    regMatcher = RegExp([
-        regEscape.source,
-        regInterpolate.source,
-        regEvaluate.source
-    ].join('|') + '|$', 'g');
+    regMatcher = RegExp(
+        [regEscape.source, regInterpolate.source, regEvaluate.source].join(
+            '|'
+        ) + '|$',
+        'g'
+    );
 
 var escapes = {
     "'": "'",
@@ -40,29 +41,29 @@ var escapes = {
 
 var regEscapeChar = /\\|'|\r|\n|\u2028|\u2029/g;
 
-var escapeChar = function(match)
-{
+var escapeChar = function(match) {
     return '\\' + escapes[match];
 };
 
-exports = function (str)
-{
+exports = function(str) {
     var index = 0,
         src = "__p+='";
 
-    str.replace(regMatcher, function (match, escape, interpolate, evaluate, offset)
-    {
+    str.replace(regMatcher, function(
+        match,
+        escape,
+        interpolate,
+        evaluate,
+        offset
+    ) {
         src += str.slice(index, offset).replace(regEscapeChar, escapeChar);
         index = offset + match.length;
 
-        if (escape)
-        {
+        if (escape) {
             src += "'+\n((__t=(" + escape + "))==null?'':util.escape(__t))+\n'";
-        } else if (interpolate)
-        {
+        } else if (interpolate) {
             src += "'+\n((__t=(" + interpolate + "))==null?'':__t)+\n'";
-        } else if (evaluate)
-        {
+        } else if (evaluate) {
             src += "';\n" + evaluate + "\n__p+='";
         }
 
@@ -71,15 +72,16 @@ exports = function (str)
 
     src += "';\n";
     src = 'with(obj||{}){\n' + src + '}\n';
-    src = "var __t,__p='',__j=Array.prototype.join," +
-          "print=function(){__p+=__j.call(arguments,'');};\n" +
-          src + 'return __p;\n';
+    src =
+        "var __t,__p='',__j=Array.prototype.join," +
+        "print=function(){__p+=__j.call(arguments,'');};\n" +
+        src +
+        'return __p;\n';
 
     var render = new Function('obj', 'util', src);
 
-    return function (data, util)
-    {
-        if (!util) util = (typeof _ === 'object' ? _ : {});
+    return function(data, util) {
+        if (!util) util = typeof _ === 'object' ? _ : {};
 
         return render.call(null, data, util);
     };

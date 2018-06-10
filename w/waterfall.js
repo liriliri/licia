@@ -30,30 +30,28 @@
 
 _('noop nextTick restArgs');
 
-function exports(tasks, cb)
-{
+function exports(tasks, cb) {
     cb = cb || noop;
 
     var current = 0;
 
-    var taskCb = restArgs(function (err, args)
-    {
-        if (++current >= tasks.length || err)
-        {
+    var taskCb = restArgs(function(err, args) {
+        if (++current >= tasks.length || err) {
             args.unshift(err);
-            nextTick(function () { cb.apply(null, args); });
-        } else
-        {
+            nextTick(function() {
+                cb.apply(null, args);
+            });
+        } else {
             args.push(taskCb);
             tasks[current].apply(null, args);
         }
     });
 
-    if (tasks.length)
-    {
+    if (tasks.length) {
         tasks[0](taskCb);
-    } else
-    {
-        nextTick(function () { cb(); });
+    } else {
+        nextTick(function() {
+            cb();
+        });
     }
 }

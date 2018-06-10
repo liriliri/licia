@@ -19,8 +19,7 @@
  * test: all
  */
 
-function exports(bytes) 
-{
+function exports(bytes) {
     if (bytes <= 0) return '0';
 
     var suffixIdx = Math.floor(Math.log(bytes) / Math.log(1024)),

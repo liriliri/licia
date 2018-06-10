@@ -15,25 +15,28 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
-_('root each'); 
+_('root each');
 
-exports = root.Blob || function Blob(parts, opts) 
-{
-    opts = opts || {};
+exports =
+    root.Blob ||
+    function Blob(parts, opts) {
+        opts = opts || {};
 
-    var blobBuilder = new BlobBuilder();
+        var blobBuilder = new BlobBuilder();
 
-    each(parts, function (part) 
-    { 
-        blobBuilder.append(part); 
-    });
+        each(parts, function(part) {
+            blobBuilder.append(part);
+        });
 
-    return opts.type ? blobBuilder.getBlob(opts.type) : blobBuilder.getBlob();
-};
+        return opts.type
+            ? blobBuilder.getBlob(opts.type)
+            : blobBuilder.getBlob();
+    };
 
-var BlobBuilder = root.BlobBuilder || 
-                  root.WebKitBlobBuilder || 
-                  root.MSBlobBuilder || 
-                  root.MozBlobBuilder;
+var BlobBuilder =
+    root.BlobBuilder ||
+    root.WebKitBlobBuilder ||
+    root.MSBlobBuilder ||
+    root.MozBlobBuilder;

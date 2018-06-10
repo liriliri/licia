@@ -16,10 +16,9 @@
  * test: all
  */
 
-function exports(path) 
-{
+function exports(path) {
     var match = path.match(regSplit);
-    
+
     return {
         dir: match[1],
         name: match[2],

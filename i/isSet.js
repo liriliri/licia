@@ -14,11 +14,10 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('objToStr'); 
+_('objToStr');
 
-function exports(val) 
-{
+function exports(val) {
     return objToStr(val) === '[object Set]';
-} 
+}

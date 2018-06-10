@@ -18,7 +18,8 @@
 
 _('objToStr');
 
-exports = Array.isArray || function (val)
-{
-    return objToStr(val) === '[object Array]';
-};
+exports =
+    Array.isArray ||
+    function(val) {
+        return objToStr(val) === '[object Array]';
+    };

@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     expect(sum(5, 12, 6)).to.equal(23);
     expect(sum()).to.equal(0);
 });

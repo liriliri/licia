@@ -1,17 +1,14 @@
 var isBrowser = util.isBrowser;
 
-it('borwser', function ()
-{
+it('borwser', function() {
     if (!isBrowser) return;
 
     var windowRaf = window.requestAnimationFrame;
     if (windowRaf) expect(raf).to.equal(windowRaf);
 });
 
-it('node', function (done)
-{
-    if (isBrowser)
-    {
+it('node', function(done) {
+    if (isBrowser) {
         done();
         return;
     }
@@ -20,16 +17,14 @@ it('node', function (done)
         isPause = false,
         id;
 
-    function update()
-    {
+    function update() {
         count++;
         id = raf(update);
     }
 
     id = raf(update);
 
-    setTimeout(function ()
-    {
+    setTimeout(function() {
         raf.cancel(id);
         expect(count > 2).to.be.true;
         done();

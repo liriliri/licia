@@ -31,9 +31,8 @@
  * test: all
  */
 
-function exports(Class, SuperClass)
-{
-    if (objCreate) return Class.prototype = objCreate(SuperClass.prototype);
+function exports(Class, SuperClass) {
+    if (objCreate) return (Class.prototype = objCreate(SuperClass.prototype));
 
     noop.prototype = SuperClass.prototype;
     Class.prototype = new noop();

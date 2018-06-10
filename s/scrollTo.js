@@ -31,24 +31,29 @@
 
 _('Tween defaults noop isNum $offset');
 
-function exports(target, options) 
-{
+function exports(target, options) {
     options = options || {};
-    defaults(options, defOpts);    
+    defaults(options, defOpts);
 
     if (!isNum(target)) target = $offset(target).top;
 
     new Tween({
         y: window.pageYOffset
-    }).on('update', function (target) 
-    {
-        window.scroll(0, target.y);
-    }).on('end', function () 
-    {
-        options.callback();
-    }).to({
-        y: target - options.tolerance
-    }, options.duration, options.easing).play();
+    })
+        .on('update', function(target) {
+            window.scroll(0, target.y);
+        })
+        .on('end', function() {
+            options.callback();
+        })
+        .to(
+            {
+                y: target - options.tolerance
+            },
+            options.duration,
+            options.easing
+        )
+        .play();
 }
 
 var defOpts = {

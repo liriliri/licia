@@ -21,15 +21,13 @@
  * test: all
  */
 
-_('isStr'); 
+_('isStr');
 
-function exports(val) 
-{
-    if (isStr(val)) 
-    {
+function exports(val) {
+    if (isStr(val)) {
         val = val.toLowerCase();
         return val !== '0' && val !== '' && val !== 'false';
     }
-    
+
     return !!val;
 }

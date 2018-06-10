@@ -20,7 +20,6 @@
 
 _('isNum');
 
-function exports(val)
-{
+function exports(val) {
     return isNum(val) && val !== +val;
 }

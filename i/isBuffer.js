@@ -17,10 +17,13 @@
 
 _('isFn');
 
-function exports(val)
-{
+function exports(val) {
     if (val == null) return false;
     if (val._isBuffer) return true;
 
-    return val.constructor && isFn(val.constructor.isBuffer) && val.constructor.isBuffer(val);
+    return (
+        val.constructor &&
+        isFn(val.constructor.isBuffer) &&
+        val.constructor.isBuffer(val)
+    );
 }

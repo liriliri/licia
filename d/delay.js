@@ -22,10 +22,8 @@
 
 _('restArgs');
 
-exports = restArgs(function (fn, wait, args)
-{
-    return setTimeout(function ()
-    {
+exports = restArgs(function(fn, wait, args) {
+    return setTimeout(function() {
         return fn.apply(null, args);
     }, wait);
 });

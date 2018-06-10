@@ -9,39 +9,34 @@
  * decodeUriComponent('%%25%'); // -> '%%%'
  * decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
  * ```
- */ 
+ */
 
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('each ucs2 map utf8');
 
-function exports(str) 
-{
-    try 
-    {
+function exports(str) {
+    try {
         return decodeURIComponent(str);
-    } catch (e) 
-    {
+    } catch (e) {
         var replaceMap = {};
 
         var matches = str.match(regMatcher);
 
-        each(matches, function (match) 
-        {
+        each(matches, function(match) {
             str = str.replace(match, decode(match));
         });
 
         return str;
     }
-} 
+}
 
-function decode(str) 
-{
+function decode(str) {
     str = str.split('%').slice(1);
-    
+
     var bytes = map(str, hexToInt);
 
     str = ucs2.encode(bytes);
@@ -50,8 +45,7 @@ function decode(str)
     return str;
 }
 
-function hexToInt(numStr) 
-{
+function hexToInt(numStr) {
     return +('0x' + numStr);
 }
 

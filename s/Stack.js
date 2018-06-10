@@ -51,44 +51,36 @@
 _('Class');
 
 exports = Class({
-    initialize: function Stack()
-    {
+    initialize: function Stack() {
         this.clear();
     },
-    clear: function ()
-    {
+    clear: function() {
         this._items = [];
         this.size = 0;
     },
-    push: function (item)
-    {
+    push: function(item) {
         this._items.push(item);
 
         return ++this.size;
     },
-    pop: function ()
-    {
+    pop: function() {
         this.size--;
 
         return this._items.pop();
     },
-    peek: function ()
-    {
+    peek: function() {
         return this._items[this.size - 1];
     },
-    forEach: function (iteratee, ctx)
-    {
+    forEach: function(iteratee, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
         var items = this._items;
 
-        for (var i = this.size - 1, j = 0; i >= 0; i--, j++)
-        {
+        for (var i = this.size - 1, j = 0; i >= 0; i--, j++) {
             iteratee.call(ctx, items[i], j, this);
         }
     },
-    toArr: function ()
-    {
+    toArr: function() {
         return this._items.slice(0).reverse();
     }
 });

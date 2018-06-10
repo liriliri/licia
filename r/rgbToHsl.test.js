@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     expect(rgbToHsl([52, 203, 165])).to.eql([165, 59, 50]);
     expect(rgbToHsl([55, 55, 55])).to.eql([0, 0, 22]);
     expect(rgbToHsl([88, 50, 50])).to.eql([0, 28, 27]);
@@ -8,7 +7,6 @@ it('basic', function ()
     expect(rgbToHsl([200, 199, 202])).to.eql([260, 3, 79]);
 });
 
-it('alpha', function () 
-{
+it('alpha', function() {
     expect(rgbToHsl([200, 199, 202, 0.5])).to.eql([260, 3, 79, 0.5]);
 });

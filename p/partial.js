@@ -19,10 +19,8 @@
 
 _('restArgs toArr');
 
-exports = restArgs(function (fn, partials)
-{
-    return function ()
-    {
+exports = restArgs(function(fn, partials) {
+    return function() {
         var args = [];
 
         args = args.concat(partials);

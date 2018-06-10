@@ -20,9 +20,11 @@
 
 _('objToStr');
 
-function exports(val)
-{
+function exports(val) {
     var objStr = objToStr(val);
 
-    return objStr === '[object Function]' || objStr === '[object GeneratorFunction]';
+    return (
+        objStr === '[object Function]' ||
+        objStr === '[object GeneratorFunction]'
+    );
 }

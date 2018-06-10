@@ -1,15 +1,15 @@
 var $dom;
 
-before(function ()
-{
+before(function() {
     $('body').append('<div id="dollarClass"></div>');
     $dom = $('#dollarClass');
 });
 
-after(function () { $dom.remove(); });
+after(function() {
+    $dom.remove();
+});
 
-it('add', function ()
-{
+it('add', function() {
     $class.add('#dollarClass', 'add1');
     $class.add('#dollarClass', ['add2', 'add3']);
     $class.add('#dollarClass', 'add4 add5');
@@ -21,8 +21,7 @@ it('add', function ()
     expect($dom.hasClass('add5')).to.be.true;
 });
 
-it('remove', function ()
-{
+it('remove', function() {
     $dom.addClass('rm1 rm2 rm3 rm4 rm5');
     $class.remove('#dollarClass', 'rm1');
     $class.remove('#dollarClass', ['rm2', 'rm3']);
@@ -34,16 +33,14 @@ it('remove', function ()
     expect($dom.hasClass('rm5')).to.be.false;
 });
 
-it('toggle', function ()
-{
+it('toggle', function() {
     $class.toggle('#dollarClass', 'toggle');
     expect($dom.hasClass('toggle')).to.be.true;
     $class.toggle('#dollarClass', 'toggle');
     expect($dom.hasClass('toggle')).to.be.false;
 });
 
-it('check', function ()
-{
+it('check', function() {
     expect($class.has('#dollarClass', 'has')).to.be.false;
     $dom.addClass('has');
     expect($class.has('#dollarClass', 'has')).to.be.true;

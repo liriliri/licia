@@ -38,16 +38,14 @@
 
 _('isStr isObj kebabCase isUndef contain isNum $safeEls startWith prefix');
 
-function exports(nodes, name, val)
-{
+function exports(nodes, name, val) {
     nodes = $safeEls(nodes);
 
     var isGetter = isUndef(val) && isStr(name);
     if (isGetter) return getCss(nodes[0], name);
 
     var css = name;
-    if (!isObj(css))
-    {
+    if (!isObj(css)) {
         css = {};
         css[name] = val;
     }
@@ -55,18 +53,17 @@ function exports(nodes, name, val)
     setCss(nodes, css);
 }
 
-function getCss(node, name)
-{
-    return node.style[prefix(name)] || getComputedStyle(node, '').getPropertyValue(name);
+function getCss(node, name) {
+    return (
+        node.style[prefix(name)] ||
+        getComputedStyle(node, '').getPropertyValue(name)
+    );
 }
 
-function setCss(nodes, css)
-{
-    each(nodes, function (node)
-    {
+function setCss(nodes, css) {
+    each(nodes, function(node) {
         var cssText = ';';
-        each(css, function (val, key)
-        {
+        each(css, function(val, key) {
             key = prefix.dash(key);
             cssText += key + ':' + addPx(key, val) + ';';
         });
@@ -84,8 +81,7 @@ var cssNumProps = [
     'zoom'
 ];
 
-function addPx(key, val)
-{
+function addPx(key, val) {
     var needPx = isNum(val) && !contain(cssNumProps, kebabCase(key));
 
     return needPx ? val + 'px' : val;

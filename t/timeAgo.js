@@ -21,8 +21,7 @@
 
 _('isDate toInt');
 
-function exports(date, now)
-{
+function exports(date, now) {
     if (!isDate(date)) date = new Date(date);
 
     now = now || new Date();
@@ -34,8 +33,7 @@ function exports(date, now)
 
     diff = Math.abs(diff);
 
-    while(diff >= secArr[i] && i < secArrLen)
-    {
+    while (diff >= secArr[i] && i < secArrLen) {
         diff /= secArr[i];
         i++;
     }
@@ -48,11 +46,10 @@ function exports(date, now)
     return format(diff, i, ago);
 }
 
-var secArr = [60, 60, 24, 7, 365/7/12, 12],
+var secArr = [60, 60, 24, 7, 365 / 7 / 12, 12],
     secArrLen = secArr.length;
 
-function format(diff, i, ago)
-{
+function format(diff, i, ago) {
     return exports.i18n[i][ago ? 0 : 1].replace('%s', diff);
 }
 

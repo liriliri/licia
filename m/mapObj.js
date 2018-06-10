@@ -19,16 +19,14 @@
 
 _('safeCb keys');
 
-function exports(obj, iteratee, ctx)
-{
+function exports(obj, iteratee, ctx) {
     iteratee = safeCb(iteratee, ctx);
 
     var _keys = keys(obj),
         len = _keys.length,
         ret = {};
 
-    for (var i = 0; i < len; i++)
-    {
+    for (var i = 0; i < len; i++) {
         var curKey = _keys[i];
         ret[curKey] = iteratee(obj[curKey], curKey, obj);
     }

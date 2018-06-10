@@ -1,15 +1,15 @@
 var $dom;
 
-before(function ()
-{
+before(function() {
     $('body').append('<div id="dollarCss"></div>');
     $dom = $('#dollarCss');
 });
 
-after(function () { $dom.remove(); });
+after(function() {
+    $dom.remove();
+});
 
-it('get', function ()
-{
+it('get', function() {
     $dom.append('<div class="getter"></div>');
 
     var $el = $dom.find('.getter');
@@ -19,8 +19,7 @@ it('get', function ()
     expect($css($el.get(0), 'width')).to.equal('100%');
 });
 
-it('set', function ()
-{
+it('set', function() {
     $dom.append('<div class="setter"></div>');
 
     var $el = $dom.find('.setter');
@@ -31,8 +30,8 @@ it('set', function ()
     expect($el.css('width')).to.equal('16px');
 
     $css($el, {
-        'width': 20,
-        'height': 100
+        width: 20,
+        height: 100
     });
     expect($el.css('width')).to.equal('20px');
     expect($el.css('height')).to.equal('100px');

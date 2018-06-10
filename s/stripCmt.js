@@ -15,8 +15,7 @@
  * test: all
  */
 
-function exports(str)
-{
+function exports(str) {
     str = ('__' + str + '__').split('');
     var mode = {
         singleQuote: false,
@@ -26,56 +25,46 @@ function exports(str)
         lineComment: false,
         condComp: false
     };
-    for (var i = 0, l = str.length; i < l; i++)
-    {
-        if (mode.regex)
-        {
-            if (str[i] === '/' && str[i-1] !== '\\') mode.regex = false;
+    for (var i = 0, l = str.length; i < l; i++) {
+        if (mode.regex) {
+            if (str[i] === '/' && str[i - 1] !== '\\') mode.regex = false;
             continue;
         }
-        if (mode.singleQuote)
-        {
-            if (str[i] === '\'' && str[i-1] !== '\\') mode.singleQuote = false;
+        if (mode.singleQuote) {
+            if (str[i] === "'" && str[i - 1] !== '\\') mode.singleQuote = false;
             continue;
         }
 
-        if (mode.doubleQuote)
-        {
-            if (str[i] === '"' && str[i-1] !== '\\') mode.doubleQuote = false;
+        if (mode.doubleQuote) {
+            if (str[i] === '"' && str[i - 1] !== '\\') mode.doubleQuote = false;
             continue;
         }
 
-        if (mode.blockComment)
-        {
-            if (str[i] === '*' && str[i+1] === '/')
-            {
-                str[i+1] = '';
+        if (mode.blockComment) {
+            if (str[i] === '*' && str[i + 1] === '/') {
+                str[i + 1] = '';
                 mode.blockComment = false;
             }
             str[i] = '';
             continue;
         }
 
-        if (mode.lineComment)
-        {
-            if (str[i+1] === '\n') mode.lineComment = false;
+        if (mode.lineComment) {
+            if (str[i + 1] === '\n') mode.lineComment = false;
             str[i] = '';
             continue;
         }
 
         mode.doubleQuote = str[i] === '"';
-        mode.singleQuote = str[i] === '\'';
+        mode.singleQuote = str[i] === "'";
 
-        if (str[i] === '/')
-        {
-            if (str[i+1] === '*')
-            {
+        if (str[i] === '/') {
+            if (str[i + 1] === '*') {
                 str[i] = '';
                 mode.blockComment = true;
                 continue;
             }
-            if (str[i+1] === '/')
-            {
+            if (str[i + 1] === '/') {
                 str[i] = '';
                 mode.lineComment = true;
                 continue;

@@ -1,9 +1,7 @@
-it('basic', function (done)
-{
+it('basic', function(done) {
     var counter = 0;
 
-    var debounceFn = debounce(function ()
-    {
+    var debounceFn = debounce(function() {
         counter++;
     }, 50);
 
@@ -16,8 +14,7 @@ it('basic', function (done)
     setTimeout(debounceFn, 120);
     setTimeout(debounceFn, 150);
 
-    setTimeout(function ()
-    {
+    setTimeout(function() {
         expect(counter).to.equal(1);
         done();
     }, 220);

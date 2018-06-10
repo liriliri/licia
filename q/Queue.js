@@ -55,48 +55,40 @@
 _('Class');
 
 exports = Class({
-    initialize: function Queue()
-    {
+    initialize: function Queue() {
         this.clear();
     },
-    clear: function ()
-    {
+    clear: function() {
         this._items = [];
         this.size = 0;
     },
-    enqueue: function (item)
-    {
+    enqueue: function(item) {
         this._items.push(item);
 
         return ++this.size;
     },
-    dequeue: function ()
-    {
+    dequeue: function() {
         if (!this.size) return;
 
         this.size--;
 
         return this._items.shift();
     },
-    peek: function ()
-    {
+    peek: function() {
         if (!this.size) return;
 
         return this._items[0];
     },
-    forEach: function (iteratee, ctx)
-    {
+    forEach: function(iteratee, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
         var items = this._items;
 
-        for (var i = 0, size = this.size; i < size; i++)
-        {
+        for (var i = 0, size = this.size; i < size; i++) {
             iteratee.call(ctx, items[i], i, this);
         }
     },
-    toArr: function ()
-    {
+    toArr: function() {
         return this._items.slice(0);
     }
 });

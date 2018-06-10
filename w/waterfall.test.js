@@ -1,55 +1,50 @@
-it('basic', function (done)
-{
-    waterfall([
-        function (cb)
-        {
-            cb(null, 'one');
-        },
-        function (arg1, cb)
-        {
-            expect(arg1).to.equal('one');
-            cb(null, 'done');
-        }
-    ], function (err, result)
-    {
-        expect(err).to.be.a('null');
-        expect(result).to.equal('done');
+it('basic', function(done) {
+    waterfall(
+        [
+            function(cb) {
+                cb(null, 'one');
+            },
+            function(arg1, cb) {
+                expect(arg1).to.equal('one');
+                cb(null, 'done');
+            }
+        ],
+        function(err, result) {
+            expect(err).to.be.a('null');
+            expect(result).to.equal('done');
 
-        done();
-    });
+            done();
+        }
+    );
 });
 
-it('occur error', function (done)
-{
+it('occur error', function(done) {
     var invoked = false;
 
-    waterfall([
-        function (cb)
-        {
-            cb(new Error('Something is wrong'));
-        },
-        function (cb)
-        {
-            invoked = true;
-            cb();
+    waterfall(
+        [
+            function(cb) {
+                cb(new Error('Something is wrong'));
+            },
+            function(cb) {
+                invoked = true;
+                cb();
+            }
+        ],
+        function(err) {
+            expect(err).to.be.an('error');
+            expect(invoked).to.be.false;
+            done();
         }
-    ], function (err)
-    {
-        expect(err).to.be.an('error');
-        expect(invoked).to.be.false;
-        done();
-    });
+    );
 });
 
-it('no callback', function (done)
-{
+it('no callback', function(done) {
     waterfall([
-        function (cb)
-        {
+        function(cb) {
             cb(null, 'one');
         },
-        function (arg1, cb)
-        {
+        function(arg1, cb) {
             expect(arg1).to.equal('one');
             cb();
             done();
@@ -57,12 +52,10 @@ it('no callback', function (done)
     ]);
 });
 
-it('callback always async', function (done)
-{
+it('callback always async', function(done) {
     var invoked = false;
 
-    waterfall([], function ()
-    {
+    waterfall([], function() {
         invoked = true;
         done();
     });

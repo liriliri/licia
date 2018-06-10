@@ -27,10 +27,8 @@
 
 _('toArr');
 
-function exports(name, requires, method)
-{
-    if (arguments.length === 2)
-    {
+function exports(name, requires, method) {
+    if (arguments.length === 2) {
         method = requires;
         requires = [];
     }
@@ -38,10 +36,9 @@ function exports(name, requires, method)
     define(name, requires, method);
 }
 
-var modules = exports._modules = {};
+var modules = (exports._modules = {});
 
-function define(name, requires, method)
-{
+function define(name, requires, method) {
     modules[name] = {
         requires: toArr(requires),
         body: method

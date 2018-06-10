@@ -1,7 +1,6 @@
 var store;
 
-beforeEach(function () 
-{
+beforeEach(function() {
     store = new Store({
         a: 1,
         b: 2,
@@ -9,16 +8,14 @@ beforeEach(function ()
     });
 });
 
-it('set', function () 
-{
+it('set', function() {
     store.on('change', onChange);
     expect(store.get('a')).to.equal(1);
     store.set('a', 2);
     expect(store.get('a')).to.equal(2);
     store.off('change', onChange);
 
-    function onChange(key, newVal, oldVal) 
-    {
+    function onChange(key, newVal, oldVal) {
         expect(key).to.equal('a');
         expect(newVal).to.equal(2);
         expect(oldVal).to.equal(1);
@@ -34,8 +31,7 @@ it('set', function ()
     expect(store.get('c')).to.equal(4);
 });
 
-it('get', function () 
-{
+it('get', function() {
     expect(store.get('a')).to.equal(1);
     expect(store.get(['b', 'c'])).to.eql({
         b: 2,
@@ -43,8 +39,7 @@ it('get', function ()
     });
 });
 
-it('remove', function () 
-{
+it('remove', function() {
     store.remove('a');
     expect(store.get('a')).to.be.an('undefined');
     store.remove(['b', 'c']);
@@ -52,24 +47,21 @@ it('remove', function ()
     expect(store.get('c')).to.be.an('undefined');
 });
 
-it('clear', function () 
-{
+it('clear', function() {
     store.clear();
     expect(store.get('a')).to.be.an('undefined');
     expect(store.get('b')).to.be.an('undefined');
     expect(store.get('c')).to.be.an('undefined');
 });
 
-it('each', function () 
-{
+it('each', function() {
     var data = {};
-    store.each(function (val, key) 
-    {
+    store.each(function(val, key) {
         data[key] = val;
     });
     expect(data).to.eql({
         a: 1,
-        b: 2, 
+        b: 2,
         c: 3
     });
 });

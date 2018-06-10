@@ -16,16 +16,14 @@
  * test: all
  */
 
-function exports(fn, wait, immediate)
-{
+function exports(fn, wait, immediate) {
     var timeout;
 
-    return function ()
-    {
-        var ctx = this, args = arguments;
+    return function() {
+        var ctx = this,
+            args = arguments;
 
-        var throttler = function ()
-        {
+        var throttler = function() {
             timeout = null;
             fn.apply(ctx, args);
         };

@@ -18,31 +18,27 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
-_('Store safeStorage isEmpty stringify defaults isObj'); 
+_('Store safeStorage isEmpty stringify defaults isObj');
 
 var localStorage = safeStorage('local');
 
 exports = Store.extend({
-    initialize: function LocalStore(name, data) 
-    {
+    initialize: function LocalStore(name, data) {
         this._name = name;
 
         var localData = localStorage.getItem(name);
-        try 
-        {
+        try {
             localData = JSON.parse(localData);
-        } catch (e) 
-        {
-            localData = {};            
+        } catch (e) {
+            localData = {};
         }
         if (!isObj(localData)) localData = {};
         data = defaults(localData, data);
         this.callSuper(Store, 'initialize', [data]);
     },
-    save: function (data) 
-    {
+    save: function(data) {
         if (isEmpty(data)) return localStorage.removeItem(this._name);
         localStorage.setItem(this._name, stringify(data));
     }

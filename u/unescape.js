@@ -17,8 +17,7 @@
 
 _('escape keys invert');
 
-function exports(str)
-{
+function exports(str) {
     return regTest.test(str) ? str.replace(regReplace, replaceFn) : str;
 }
 
@@ -28,7 +27,6 @@ var regSrc = '(?:' + keys(map).join('|') + ')',
     regTest = new RegExp(regSrc),
     regReplace = new RegExp(regSrc, 'g');
 
-function replaceFn(match)
-{
+function replaceFn(match) {
     return map[match];
 }

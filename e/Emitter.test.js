@@ -1,9 +1,10 @@
-it('basic', function ()
-{
+it('basic', function() {
     var e = new Emitter(),
         a = 1;
 
-    function add() { a++; }
+    function add() {
+        a++;
+    }
 
     e.on('add', add);
     e.emit('add', 1);
@@ -17,11 +18,12 @@ it('basic', function ()
     expect(a).to.equal(3);
 });
 
-it('mixin', function () 
-{
+it('mixin', function() {
     var a = 1;
 
-    function add(n) { a += n; }
+    function add(n) {
+        a += n;
+    }
 
     var b = {};
     Emitter.mixin(b);
@@ -30,10 +32,9 @@ it('mixin', function ()
     expect(a).to.equal(3);
 });
 
-it('nonsense off and emit', function ()
-{
+it('nonsense off and emit', function() {
     var e = new Emitter();
 
     e.emit('test');
-    e.off('test', function () {});
+    e.off('test', function() {});
 });

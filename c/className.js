@@ -21,19 +21,16 @@
 
 _('each isStr isNum isArr isObj');
 
-function exports() 
-{
+function exports() {
     var ret = [];
 
-    each(arguments, function (arg) 
-    {
+    each(arguments, function(arg) {
         if (!arg) return;
         if (isStr(arg) || isNum(arg)) return ret.push(arg);
         if (isArr(arg)) return ret.push(exports.apply(null, arg));
         if (!isObj(arg)) return;
-        
-        each(arg, function (val, key)
-        {
+
+        each(arg, function(val, key) {
             if (val) ret.push(key);
         });
     });

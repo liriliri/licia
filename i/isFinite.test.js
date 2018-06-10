@@ -1,9 +1,7 @@
-it('true', function ()
-{
+it('true', function() {
     expect(isFinite(3)).to.be.true;
 });
 
-it('false', function ()
-{
+it('false', function() {
     expect(isFinite(Infinity)).to.be.false;
 });

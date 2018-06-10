@@ -19,8 +19,7 @@
 
 _('isObj isArr isFn has');
 
-function exports(val)
-{
+function exports(val) {
     if (!isObj(val)) return false;
 
     var ctor = val.constructor;

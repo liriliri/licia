@@ -1,21 +1,18 @@
-it('local', function () 
-{
+it('local', function() {
     var localStorage = window.localStorage,
         storage = safeStorage();
 
-   expect(storage).to.equal(localStorage);
+    expect(storage).to.equal(localStorage);
 });
 
-it('session', function () 
-{
+it('session', function() {
     var sessionStorage = window.sessionStorage,
         storage = safeStorage('session');
 
     expect(storage).to.equal(sessionStorage);
 });
 
-it('not available', function ()
-{
+it('not available', function() {
     var localStorage = window.localStorage;
 
     var storage = safeStorage('local');

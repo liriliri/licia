@@ -1,6 +1,5 @@
-it('basic', function ()
-{
-    var obj = Object.create({a: 1});
+it('basic', function() {
+    var obj = Object.create({ a: 1 });
     obj.b = 2;
     obj.c = 3;
 

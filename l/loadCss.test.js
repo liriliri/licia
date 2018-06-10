@@ -1,4 +1,3 @@
-it('basic', function () 
-{
-    expect(loadCss).to.be.an.function;    
+it('basic', function() {
+    expect(loadCss).to.be.an.function;
 });

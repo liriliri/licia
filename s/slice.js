@@ -16,29 +16,22 @@
  * test: all
  */
 
-function exports(arr, start, end)
-{
+function exports(arr, start, end) {
     var len = arr.length;
 
-    if (start == null)
-    {
+    if (start == null) {
         start = 0;
-    } else if (start < 0)
-    {
+    } else if (start < 0) {
         start = Math.max(len + start, 0);
-    } else
-    {
+    } else {
         start = Math.min(start, len);
     }
 
-    if (end == null)
-    {
+    if (end == null) {
         end = len;
-    } else if (end < 0)
-    {
+    } else if (end < 0) {
         end = Math.max(len + end, 0);
-    } else
-    {
+    } else {
         end = Math.min(end, len);
     }
 

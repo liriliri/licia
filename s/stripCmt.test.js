@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     var source = [
         '// comment',
         'var a = 5;',
@@ -11,21 +10,19 @@ it('basic', function ()
     expect(stripCmt(source)).to.equal('\nvar a = 5;\n');
 });
 
-it('comment inside string', function () 
-{
+it('comment inside string', function() {
     var source = [
         'var a = "// Not a comment";',
-        'var b = \'// Not a comment\';'
+        "var b = '// Not a comment';"
     ].join('\n');
 
-    expect(stripCmt(source)).to.equal('var a = "// Not a comment";\nvar b = \'// Not a comment\';');
+    expect(stripCmt(source)).to.equal(
+        'var a = "// Not a comment";\nvar b = \'// Not a comment\';'
+    );
 });
 
-it('regexp', function () 
-{
-    var source = [
-        'var reg = /test/g;',
-    ].join('\n');
+it('regexp', function() {
+    var source = ['var reg = /test/g;'].join('\n');
 
     expect(stripCmt(source)).to.equal('var reg = /test/g;');
 });

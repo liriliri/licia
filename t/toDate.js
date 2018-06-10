@@ -15,23 +15,21 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('isDate isStr');
 
-function exports(val) 
-{
+function exports(val) {
     if (!val) return new Date();
 
     if (isDate(val)) return val;
 
-    if (isStr(val)) 
-    {
+    if (isStr(val)) {
         var match = val.match(regDate);
         if (match) return new Date(match[1], match[2] - 1, match[3]);
     }
 
     return new Date(val);
-} 
+}
 
 var regDate = /^(\d{4})-?(\d{2})-?(\d{1,2})$/;

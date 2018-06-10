@@ -23,51 +23,41 @@
 
 _('type upperFirst toStr isUndef isFn isRegExp');
 
-function exports(obj, spaces) 
-{
+function exports(obj, spaces) {
     return JSON.stringify(obj, serializer(), spaces);
 }
 
-function serializer() 
-{
-    var stack = [], keys = [];
+function serializer() {
+    var stack = [],
+        keys = [];
 
-    return function (key, val) 
-    {
-        if (stack.length > 0) 
-        {
+    return function(key, val) {
+        if (stack.length > 0) {
             var pos = stack.indexOf(this);
-            if (pos > -1) 
-            {
+            if (pos > -1) {
                 stack.splice(pos + 1);
                 keys.splice(pos, Infinity, key);
-            } else 
-            {
+            } else {
                 stack.push(this);
                 keys.push(key);
             }
 
             var valPos = stack.indexOf(val);
-            if (valPos > -1) 
-            {
-                if (stack[0] === val) 
-                {
+            if (valPos > -1) {
+                if (stack[0] === val) {
                     val = '[Circular ~]';
-                } else 
-                {
-                    val = '[Circular ~.' + keys.slice(0, valPos).join('.') + ']';
+                } else {
+                    val =
+                        '[Circular ~.' + keys.slice(0, valPos).join('.') + ']';
                 }
             }
-        } else
-        {
+        } else {
             stack.push(val);
         }
 
-        if (isRegExp(val) || isFn(val)) 
-        {
+        if (isRegExp(val) || isFn(val)) {
             val = '[' + upperFirst(type(val)) + ' ' + toStr(val) + ']';
-        } else if (isUndef(val)) 
-        {
+        } else if (isUndef(val)) {
             val = null;
         }
 

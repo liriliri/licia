@@ -16,7 +16,6 @@
  * test: all
  */
 
-function exports(val)
-{
+function exports(val) {
     return val === void 0;
 }

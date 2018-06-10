@@ -14,23 +14,21 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
 _('createUrl');
 
-function exports(data, name, type) 
-{
-    type = type || 'text/plain';    
+function exports(data, name, type) {
+    type = type || 'text/plain';
 
     var el = document.createElement('a');
-    el.setAttribute('href', createUrl(data, {type: type}));
+    el.setAttribute('href', createUrl(data, { type: type }));
     el.setAttribute('download', name);
-    el.addEventListener('click', function (e) 
-    { 
-        e.stopImmediatePropagation(); 
+    el.addEventListener('click', function(e) {
+        e.stopImmediatePropagation();
     });
 
     document.body.appendChild(el);
-    el.click();    
+    el.click();
     document.body.removeChild(el);
-} 
+}

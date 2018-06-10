@@ -33,30 +33,25 @@
 
 _('toNum isStr');
 
-function exports(str) 
-{
-    if (isStr(str)) 
-    {
+function exports(str) {
+    if (isStr(str)) {
         var match = str.match(regStrTime);
 
         if (!match) return 0;
 
         return toNum(match[1]) * factor[match[2] || 'ms'];
-    } else 
-    {
+    } else {
         var num = str,
             suffix = 'ms';
 
-        for (var i = 0, len = suffixList.length; i < len; i++) 
-        {
-            if (num >= factor[suffixList[i]]) 
-            {
+        for (var i = 0, len = suffixList.length; i < len; i++) {
+            if (num >= factor[suffixList[i]]) {
                 suffix = suffixList[i];
                 break;
             }
-        }    
+        }
 
-        return +((num / factor[suffix]).toFixed(2)) + suffix;
+        return +(num / factor[suffix]).toFixed(2) + suffix;
     }
 }
 

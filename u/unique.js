@@ -18,16 +18,13 @@
 
 _('filter');
 
-function exports(arr, compare)
-{
+function exports(arr, compare) {
     compare = compare || isEqual;
 
-    return filter(arr, function (item, idx, arr)
-    {
+    return filter(arr, function(item, idx, arr) {
         var len = arr.length;
 
-        while (++idx < len)
-        {
+        while (++idx < len) {
             if (compare(item, arr[idx])) return false;
         }
 
@@ -35,7 +32,6 @@ function exports(arr, compare)
     });
 }
 
-function isEqual(a, b)
-{
+function isEqual(a, b) {
     return a === b;
 }

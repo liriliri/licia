@@ -8,9 +8,9 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('isFn'); 
+_('isFn');
 
 /* eslint-disable no-undef */
 exports = typeof wx !== 'undefined' && isFn(wx.openLocation);

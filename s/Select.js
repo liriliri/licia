@@ -40,35 +40,29 @@ _('Class isStr each');
 
 exports = Class({
     className: 'Select',
-    initialize: function (selector)
-    {
+    initialize: function(selector) {
         this.length = 0;
 
         if (!selector) return this;
 
         if (isStr(selector)) return rootSelect.find(selector);
 
-        if (selector.nodeType)
-        {
+        if (selector.nodeType) {
             this[0] = selector;
             this.length = 1;
         }
     },
-    find: function (selector)
-    {
-        var ret = new Select;
+    find: function(selector) {
+        var ret = new Select();
 
-        this.each(function ()
-        {
+        this.each(function() {
             mergeArr(ret, this.querySelectorAll(selector));
         });
 
         return ret;
     },
-    each: function (fn)
-    {
-        each(this, function (element, idx)
-        {
+    each: function(fn) {
+        each(this, function(element, idx) {
             fn.call(element, idx, element);
         });
 
@@ -78,8 +72,7 @@ exports = Class({
 
 var rootSelect = new exports(document);
 
-function mergeArr(first, second)
-{
+function mergeArr(first, second) {
     var len = second.length,
         i = first.length;
 

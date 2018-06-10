@@ -18,21 +18,16 @@
 
 _('root');
 
-function exports(js, ctx) 
-{
+function exports(js, ctx) {
     ctx = ctx || root;
 
     // Using Function constructor executes much faster than pure eval according to benchmark.
-    try 
-    {
+    try {
         return new Function('return (' + js + ');').call(ctx);
-    } catch (e) 
-    {
-        try 
-        {
+    } catch (e) {
+        try {
             return new Function('return ' + js).call(ctx);
-        } catch (e) 
-        {
+        } catch (e) {
             return new Function(js).call(ctx);
         }
     }

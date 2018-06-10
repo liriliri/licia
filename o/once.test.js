@@ -1,7 +1,8 @@
-it('basic', function ()
-{
+it('basic', function() {
     var count = 0;
-    var fn = once(function () { count++; });
+    var fn = once(function() {
+        count++;
+    });
     fn();
     fn();
     fn();

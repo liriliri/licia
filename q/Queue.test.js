@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     var queue = new Queue();
 
     expect(queue.size).to.equal(0);
@@ -17,8 +16,7 @@ it('basic', function ()
     expect(queue.peek()).to.be.an('undefined');
 });
 
-it('forEach', function ()
-{
+it('forEach', function() {
     var queue = new Queue();
 
     queue.enqueue(1);
@@ -28,8 +26,7 @@ it('forEach', function ()
 
     var sum = 0;
 
-    queue.forEach(function (val)
-    {
+    queue.forEach(function(val) {
         sum += val;
     });
 
@@ -37,8 +34,7 @@ it('forEach', function ()
 
     sum = 0;
 
-    queue.forEach(function (val, i)
-    {
+    queue.forEach(function(val, i) {
         sum += val + this[i];
     }, queue.toArr());
 

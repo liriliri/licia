@@ -14,11 +14,10 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('isObj isFn');
 
-function exports(val) 
-{
+function exports(val) {
     return isObj(val) && isFn(val.then);
-} 
+}

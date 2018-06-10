@@ -13,19 +13,17 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('swap'); 
+_('swap');
 
-function exports(arr, cmp) 
-{
+function exports(arr, cmp) {
     cmp = cmp || comparator;
 
     return quickSort(arr, 0, arr.length - 1, cmp);
-} 
+}
 
-function quickSort(arr, left, right, cmp) 
-{
+function quickSort(arr, left, right, cmp) {
     var idx;
 
     if (arr.length <= 1) return arr;
@@ -38,28 +36,24 @@ function quickSort(arr, left, right, cmp)
     return arr;
 }
 
-function partition(arr, left, right, cmp) 
-{
+function partition(arr, left, right, cmp) {
     var pivot = arr[floor((right + left) / 2)];
-    
-    while (left <= right) 
-    {
+
+    while (left <= right) {
         while (cmp(arr[left], pivot) < 0) left++;
         while (cmp(arr[right], pivot) > 0) right--;
-        if (left <= right) 
-        {
+        if (left <= right) {
             swap(arr, left, right);
             left++;
             right--;
         }
-    }    
+    }
 
     return left;
 }
 
 var floor = Math.floor;
 
-function comparator(a, b) 
-{
+function comparator(a, b) {
     return a - b;
 }

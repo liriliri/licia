@@ -18,8 +18,7 @@
 
 _('trim');
 
-function exports(str) 
-{
+function exports(str) {
     return regDataUrl.test(trim(str));
 }
 

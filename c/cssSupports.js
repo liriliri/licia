@@ -18,24 +18,24 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
 _('memoize isUndef camelCase');
 
-exports = memoize(function (name, value) 
-{
-    if (isUndef(value)) 
-    {
-        name = camelCase(name);
-        return !isUndef(style[name]); 
-    }
+exports = memoize(
+    function(name, value) {
+        if (isUndef(value)) {
+            name = camelCase(name);
+            return !isUndef(style[name]);
+        }
 
-    style.cssText = '';
-    style.cssText = name + ':' + value;
-    return !!style.length;
-}, function (name, value) 
-{
-    return name + ' ' + value;
-});
+        style.cssText = '';
+        style.cssText = name + ':' + value;
+        return !!style.length;
+    },
+    function(name, value) {
+        return name + ' ' + value;
+    }
+);
 
 var style = document.createElement('p').style;

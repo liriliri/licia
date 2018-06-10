@@ -21,16 +21,14 @@
 
 _('has isArr');
 
-function exports(str, obj) 
-{
+function exports(str, obj) {
     if (isArr(str)) return str;
     if (obj && has(obj, str)) return [str];
 
     var ret = [];
 
-    str.replace(regPropName, function(match, number, quote, str) 
-    {
-        ret.push(quote ? str.replace(regEscapeChar, '$1') : (number || match));
+    str.replace(regPropName, function(match, number, quote, str) {
+        ret.push(quote ? str.replace(regEscapeChar, '$1') : number || match);
     });
 
     return ret;

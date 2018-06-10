@@ -1,5 +1,4 @@
-it('basic', function () 
-{
+it('basic', function() {
     expect(prefix('MozColor')).to.equal('color');
     expect(prefix('msColor')).to.equal('color');
     expect(prefix('OColor')).to.equal('color');
@@ -13,8 +12,7 @@ it('basic', function ()
     expect(prefix('text-emphasis')).to.equal('WebkitTextEmphasis');
 });
 
-it('dash', function () 
-{
+it('dash', function() {
     expect(prefix.dash('text-emphasis')).to.equal('-webkit-text-emphasis');
     expect(prefix.dash('color')).to.equal('color');
 });

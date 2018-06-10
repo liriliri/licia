@@ -17,20 +17,20 @@
 
 _('contain toArr');
 
-function exports(arr)
-{
+function exports(arr) {
     var ret = [],
         args = toArr(arguments),
         argsLen = args.length,
-        item, i, j, len;
+        item,
+        i,
+        j,
+        len;
 
-    for (i = 0, len = arr.length; i < len; i++)
-    {
+    for (i = 0, len = arr.length; i < len; i++) {
         item = arr[i];
         if (contain(ret, item)) continue;
 
-        for (j = 1; j < argsLen; j++)
-        {
+        for (j = 1; j < argsLen; j++) {
             if (!contain(args[j], item)) break;
         }
 

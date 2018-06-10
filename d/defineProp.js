@@ -60,15 +60,11 @@
 
 _('castPath isStr isObj each');
 
-function exports(obj, prop, descriptor) 
-{
-    if (isStr(prop)) 
-    {
+function exports(obj, prop, descriptor) {
+    if (isStr(prop)) {
         defineProp(obj, prop, descriptor);
-    } else if (isObj(prop))
-    {
-        each(prop, function (descriptor, prop) 
-        {
+    } else if (isObj(prop)) {
+        each(prop, function(descriptor, prop) {
             defineProp(obj, prop, descriptor);
         });
     }
@@ -76,14 +72,12 @@ function exports(obj, prop, descriptor)
     return obj;
 }
 
-function defineProp(obj, prop, descriptor) 
-{
+function defineProp(obj, prop, descriptor) {
     var path = castPath(prop, obj),
         lastProp = path.pop();
 
     /* eslint-disable no-cond-assign */
-    while (prop = path.shift())
-    {
+    while ((prop = path.shift())) {
         if (!obj[prop]) obj[prop] = {};
         obj = obj[prop];
     }

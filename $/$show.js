@@ -16,32 +16,26 @@
 
 _('each $safeEls');
 
-function exports(els)
-{
+function exports(els) {
     els = $safeEls(els);
 
-    each(els, function (el)
-    {
-        if (isHidden(el))
-        {
+    each(els, function(el) {
+        if (isHidden(el)) {
             el.style.display = getDefDisplay(el.nodeName);
         }
     });
 }
 
-function isHidden(el)
-{
+function isHidden(el) {
     return getComputedStyle(el, '').getPropertyValue('display') == 'none';
 }
 
 var elDisplay = {};
 
-function getDefDisplay(elName)
-{
+function getDefDisplay(elName) {
     var el, display;
 
-    if (!elDisplay[elName])
-    {
+    if (!elDisplay[elName]) {
         el = document.createElement(elName);
         document.documentElement.appendChild(el);
         display = getComputedStyle(el, '').getPropertyValue('display');

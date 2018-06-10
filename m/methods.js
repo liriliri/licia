@@ -17,12 +17,10 @@
 
 _('isFn');
 
-function exports(obj)
-{
+function exports(obj) {
     var ret = [];
 
-    for (var key in obj)
-    {
+    for (var key in obj) {
         if (isFn(obj[key])) ret.push(key);
     }
 

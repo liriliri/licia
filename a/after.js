@@ -19,10 +19,8 @@
  * test: all
  */
 
-function exports(n, fn)
-{
-    return function ()
-    {
+function exports(n, fn) {
+    return function() {
         if (--n < 1) return fn.apply(this, arguments);
     };
 }

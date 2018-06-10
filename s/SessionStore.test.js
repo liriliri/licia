@@ -1,7 +1,6 @@
 var sessionStorage = window.sessionStorage;
 
-it('basic', function () 
-{
+it('basic', function() {
     sessionStorage.setItem('SessionStore', '{licia}');
 
     var store = new SessionStore('SessionStore', {
@@ -24,5 +23,5 @@ it('basic', function ()
     store = new SessionStore('SessionStore', {
         a: 1
     });
-    expect(JSON.parse(sessionStorage.getItem('SessionStore'))).to.eql({a: 1});
+    expect(JSON.parse(sessionStorage.getItem('SessionStore'))).to.eql({ a: 1 });
 });

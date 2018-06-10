@@ -19,20 +19,16 @@
 
 _('isArr safeGet');
 
-function exports(path)
-{
+function exports(path) {
     if (!isArr(path)) return shallowProperty(path);
 
-    return function(obj)
-    {
+    return function(obj) {
         return safeGet(obj, path);
     };
 }
 
-function shallowProperty(key)
-{
-    return function(obj)
-    {
+function shallowProperty(key) {
+    return function(obj) {
         return obj == null ? void 0 : obj[key];
     };
 }

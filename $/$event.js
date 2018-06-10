@@ -22,20 +22,16 @@ exports = {
     off: eventFactory('remove')
 };
 
-function eventFactory(type)
-{
-    return function (nodes, event, selector, handler)
-    {
+function eventFactory(type) {
+    return function(nodes, event, selector, handler) {
         nodes = $safeEls(nodes);
 
-        if (isUndef(handler))
-        {
+        if (isUndef(handler)) {
             handler = selector;
             selector = undefined;
         }
 
-        each(nodes, function (node)
-        {
+        each(nodes, function(node) {
             delegate[type](node, event, selector, handler);
         });
     };

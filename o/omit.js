@@ -18,11 +18,10 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('pick');
 
-function exports(obj, filter) 
-{
-    return pick(obj, filter, true); 
-} 
+function exports(obj, filter) {
+    return pick(obj, filter, true);
+}

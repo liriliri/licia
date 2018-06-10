@@ -16,12 +16,10 @@
 
 _('each $safeEls');
 
-function exports(els)
-{
+function exports(els) {
     els = $safeEls(els);
 
-    each(els, function (el)
-    {
+    each(els, function(el) {
         var parent = el.parentNode;
 
         if (parent) parent.removeChild(el);

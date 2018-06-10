@@ -1,7 +1,6 @@
 var localStorage = window.localStorage;
 
-it('basic', function () 
-{
+it('basic', function() {
     localStorage.setItem('LocalStore', '{licia}');
 
     var store = new LocalStore('LocalStore', {
@@ -24,5 +23,5 @@ it('basic', function ()
     store = new LocalStore('LocalStore', {
         a: 1
     });
-    expect(JSON.parse(localStorage.getItem('LocalStore'))).to.eql({a: 1});
+    expect(JSON.parse(localStorage.getItem('LocalStore'))).to.eql({ a: 1 });
 });

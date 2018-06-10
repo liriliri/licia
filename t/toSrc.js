@@ -18,20 +18,17 @@
 
 _('isNil');
 
-function exports(fn) 
-{
+function exports(fn) {
     if (isNil(fn)) return '';
 
-    try 
-    {
+    try {
         return fnToStr.call(fn);
-    /* eslint-disable no-empty */    
+        /* eslint-disable no-empty */
     } catch (e) {}
 
-    try 
-    {
+    try {
         return fn + '';
-    /* eslint-disable no-empty */    
+        /* eslint-disable no-empty */
     } catch (e) {}
 
     return '';

@@ -23,31 +23,25 @@
 
 _('isStr isArr contain each');
 
-function exports(obj, filter, omit)
-{
+function exports(obj, filter, omit) {
     if (isStr(filter)) filter = [filter];
 
-    if (isArr(filter))
-    {
+    if (isArr(filter)) {
         var keys = filter;
 
-        filter = function (val, key)
-        {
+        filter = function(val, key) {
             return contain(keys, key);
         };
     }
 
     var ret = {};
 
-    var iteratee = function (val, key) 
-    {
+    var iteratee = function(val, key) {
         if (filter(val, key)) ret[key] = val;
     };
 
-    if (omit) 
-    {
-        iteratee = function (val, key) 
-        {
+    if (omit) {
+        iteratee = function(val, key) {
             if (!filter(val, key)) ret[key] = val;
         };
     }

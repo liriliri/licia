@@ -13,28 +13,23 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('swap');
 
-function exports(arr, cmp) 
-{
+function exports(arr, cmp) {
     cmp = cmp || comparator;
 
     var min;
 
-    for (var i = 0, len = arr.length; i < len; i++) 
-    {
+    for (var i = 0, len = arr.length; i < len; i++) {
         min = i;
-        for (var j = i + 1; j < len; j++) 
-        {
-            if (cmp(arr[j], arr[min]) < 0) 
-            {
+        for (var j = i + 1; j < len; j++) {
+            if (cmp(arr[j], arr[min]) < 0) {
                 min = j;
             }
         }
-        if (i != min) 
-        {
+        if (i != min) {
             swap(arr, i, min);
         }
     }
@@ -42,7 +37,6 @@ function exports(arr, cmp)
     return arr;
 }
 
-function comparator(a, b) 
-{
+function comparator(a, b) {
     return a - b;
 }

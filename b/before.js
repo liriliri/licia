@@ -19,12 +19,10 @@
  * test: all
  */
 
-function exports(n, fn)
-{
+function exports(n, fn) {
     var memo;
 
-    return function ()
-    {
+    return function() {
         if (--n > 0) memo = fn.apply(this, arguments);
         if (n <= 1) fn = null;
 

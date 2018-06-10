@@ -19,9 +19,9 @@
  * test: all
  */
 
-function exports(obj)
-{
-    var ret = [], key;
+function exports(obj) {
+    var ret = [],
+        key;
 
     for (key in obj) ret.push(key);
 

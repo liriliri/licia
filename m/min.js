@@ -15,13 +15,11 @@
  * test: all
  */
 
-function exports()
-{
+function exports() {
     var arr = arguments,
         ret = arr[0];
 
-    for (var i = 1, len = arr.length; i < len; i++)
-    {
+    for (var i = 1, len = arr.length; i < len; i++) {
         if (arr[i] < ret) ret = arr[i];
     }
 

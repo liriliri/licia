@@ -12,71 +12,64 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('Class root detectMocha defineProp keys each isArr'); 
+_('Class root detectMocha defineProp keys each isArr');
 
-if (root.Map && !detectMocha()) 
-{
+if (root.Map && !detectMocha()) {
     exports = root.Map;
-} else 
-{
+} else {
     exports = Class({
-        initialize: function PseudoMap(data) 
-        {
+        initialize: function PseudoMap(data) {
             this.clear();
 
             var self = this;
 
             defineProp(this, 'size', {
-                get: function () 
-                {
+                get: function() {
                     return keys(self._data).length;
                 },
-                set: function () {},
+                set: function() {},
                 enumerable: true,
                 configurable: true
             });
 
-            if (data instanceof exports) 
-            {
-                data.forEach(function (val, key) 
-                {
+            if (data instanceof exports) {
+                data.forEach(function(val, key) {
                     this.set(key, val);
                 }, this);
-            } else if (isArr(data)) 
-            {
-                each(data, function (val) 
-                {   
-                    this.set(val[0], val[1]);
-                }, this);
+            } else if (isArr(data)) {
+                each(
+                    data,
+                    function(val) {
+                        this.set(val[0], val[1]);
+                    },
+                    this
+                );
             }
         },
-        forEach: function (fn, ctx) 
-        {
-            each(this._data, function (val, key) 
-            {
-                fn.call(this, val, key);
-            }, ctx);
+        forEach: function(fn, ctx) {
+            each(
+                this._data,
+                function(val, key) {
+                    fn.call(this, val, key);
+                },
+                ctx
+            );
         },
-        has: function (key) 
-        {
+        has: function(key) {
             return !isUndef(this._data[key]);
         },
-        get: function (key) 
-        {
+        get: function(key) {
             return this._data[key];
         },
-        set: function (key, val) 
-        {
+        set: function(key, val) {
             this._data[key] = val;
         },
-        delete: function (key) 
-        {
+        delete: function(key) {
             delete this._data[key];
         },
-        clear: function () 
-        {
+        clear: function() {
             this._data = {};
         }
     });

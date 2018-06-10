@@ -1,4 +1,3 @@
-it('basic', function () 
-{
+it('basic', function() {
     expect(compressImg).to.be.a('function');
 });

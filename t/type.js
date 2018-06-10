@@ -20,8 +20,7 @@
 
 _('objToStr isNaN');
 
-function exports(val)
-{
+function exports(val) {
     if (val === null) return 'null';
     if (val === undefined) return 'undefined';
     if (isNaN(val)) return 'nan';

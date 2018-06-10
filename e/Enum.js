@@ -30,22 +30,25 @@
 _('Class freeze isArr each keys');
 
 exports = Class({
-    initialize: function Enum(map)
-    {
-        if (isArr(map))
-        {
+    initialize: function Enum(map) {
+        if (isArr(map)) {
             this.size = map.length;
-            each(map, function (member, val)
-            {
-                this[member] = val;
-            }, this);
-        } else
-        {
+            each(
+                map,
+                function(member, val) {
+                    this[member] = val;
+                },
+                this
+            );
+        } else {
             this.size = keys(map).length;
-            each(map, function (val, member)
-            {
-                this[member] = val;
-            }, this);
+            each(
+                map,
+                function(val, member) {
+                    this[member] = val;
+                },
+                this
+            );
         }
 
         freeze(this);

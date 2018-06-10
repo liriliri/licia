@@ -1,28 +1,22 @@
-it('basic', function ()
-{
-    function People(name)
-    {
+it('basic', function() {
+    function People(name) {
         this._name = name;
     }
     People.prototype = {
-        getName: function ()
-        {
+        getName: function() {
             return this._name;
         },
-        is: function ()
-        {
+        is: function() {
             return 'People';
         }
     };
 
-    function Student(name)
-    {
+    function Student(name) {
         this._name = name;
     }
     inherits(Student, People);
 
-    Student.prototype.is = function ()
-    {
+    Student.prototype.is = function() {
         return 'Student';
     };
 

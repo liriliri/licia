@@ -1,36 +1,32 @@
 var $dom, windowY, origScroll;
 
-before(function ()
-{
+before(function() {
     origScroll = window.scroll;
-    window.scroll = function (x, y) { windowY = y; };
+    window.scroll = function(x, y) {
+        windowY = y;
+    };
     $('body').append('<div id="scrollTo" style="margin-top: 50px;"></div>');
     $dom = $('#scrollTo');
 });
 
-after(function () 
-{ 
+after(function() {
     window.scroll = origScroll;
     $dom.remove();
 });
 
-it('basic', function (done) 
-{
+it('basic', function(done) {
     scrollTo(50, {
         tolerance: -50,
-        callback: function () 
-        {
+        callback: function() {
             expect(windowY).to.equal(100);
             done();
         }
     });
 });
 
-it('dom', function (done) 
-{
+it('dom', function(done) {
     scrollTo('#scrollTo', {
-        callback: function () 
-        {
+        callback: function() {
             expect(windowY).to.not.equal(0);
             done();
         }

@@ -23,7 +23,6 @@
 
 _('map property');
 
-function exports(obj, key)
-{
+function exports(obj, key) {
     return map(obj, property(key));
 }

@@ -18,31 +18,27 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
-_('Store safeStorage isEmpty stringify defaults isObj'); 
+_('Store safeStorage isEmpty stringify defaults isObj');
 
 var sessionStorage = safeStorage('session');
 
 exports = Store.extend({
-    initialize: function SessionStore(name, data) 
-    {
+    initialize: function SessionStore(name, data) {
         this._name = name;
 
         var sessionData = sessionStorage.getItem(name);
-        try 
-        {
+        try {
             sessionData = JSON.parse(sessionData);
-        } catch (e) 
-        {
-            sessionData = {};            
+        } catch (e) {
+            sessionData = {};
         }
         if (!isObj(sessionData)) sessionData = {};
         data = defaults(sessionData, data);
         this.callSuper(Store, 'initialize', [data]);
     },
-    save: function (data) 
-    {
+    save: function(data) {
         if (isEmpty(data)) return sessionStorage.removeItem(this._name);
         sessionStorage.setItem(this._name, stringify(data));
     }

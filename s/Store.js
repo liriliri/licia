@@ -80,34 +80,29 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('Emitter isStr isObj each toArr');
 
 exports = Emitter.extend({
-    initialize: function Store(data) 
-    {
+    initialize: function Store(data) {
         this.callSuper(Emitter, 'initialize', arguments);
         this._data = data || {};
         this.save(this._data);
     },
-    set: function (key, val) 
-    {
+    set: function(key, val) {
         var data;
 
-        if (isStr(key)) 
-        {
+        if (isStr(key)) {
             data = {};
             data[key] = val;
-        } else if (isObj(key)) 
-        {
+        } else if (isObj(key)) {
             data = key;
         }
 
         var self = this;
 
-        each(data, function (val, key) 
-        {
+        each(data, function(val, key) {
             var oldVal = self._data[key];
             self._data[key] = val;
             self.emit('change', key, val, oldVal);
@@ -115,46 +110,39 @@ exports = Emitter.extend({
 
         this.save(this._data);
     },
-    get: function (key) 
-    {
+    get: function(key) {
         var data = this._data;
 
         if (isStr(key)) return data[key];
 
         var ret = {};
-        each(key, function (val) 
-        {
+        each(key, function(val) {
             ret[val] = data[val];
-        });        
+        });
 
         return ret;
     },
-    remove: function (key) 
-    {
+    remove: function(key) {
         key = toArr(key);
 
         var data = this._data;
 
-        each(key, function (val) 
-        {
+        each(key, function(val) {
             delete data[val];
         });
 
         this.save(data);
     },
-    clear: function () 
-    {
+    clear: function() {
         this._data = {};
 
         this.save(this._data);
     },
-    each: function (fn) 
-    {
+    each: function(fn) {
         each(this._data, fn);
     },
     // This methods exists to be overwritten.
-    save: function (data) 
-    {
+    save: function(data) {
         this._data = data;
     }
 });

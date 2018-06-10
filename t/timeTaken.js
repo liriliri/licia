@@ -16,12 +16,11 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('perfNow');
 
-function exports(fn) 
-{
+function exports(fn) {
     var start = perfNow();
 
     fn();

@@ -17,13 +17,11 @@
 
 _('toArr');
 
-function exports()
-{
+function exports() {
     var args = toArr(arguments),
         ret = [];
 
-    for (var i = 0, len = args.length; i < len; i++)
-    {
+    for (var i = 0, len = args.length; i < len; i++) {
         ret = ret.concat(toArr(args[i]));
     }
 

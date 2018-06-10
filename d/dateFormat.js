@@ -51,17 +51,13 @@
 
 _('isStr isDate toStr lpad');
 
-function exports(date, mask, utc, gmt)
-{
-    if (arguments.length === 1 &&
-        isStr(date) &&
-        !regNum.test(date))
-    {
+function exports(date, mask, utc, gmt) {
+    if (arguments.length === 1 && isStr(date) && !regNum.test(date)) {
         mask = date;
         date = undefined;
     }
 
-    date = date || new Date;
+    date = date || new Date();
 
     if (!isDate(date)) date = new Date(date);
 
@@ -69,8 +65,7 @@ function exports(date, mask, utc, gmt)
 
     var maskSlice = mask.slice(0, 4);
 
-    if (maskSlice === 'UTC:' || maskSlice === 'GMT:')
-    {
+    if (maskSlice === 'UTC:' || maskSlice === 'GMT:') {
         mask = mask.slice(4);
         utc = true;
         if (maskSlice === 'GMT:') gmt = true;
@@ -107,25 +102,36 @@ function exports(date, mask, utc, gmt)
             ss: padZero(s),
             l: padZero(L, 3),
             L: padZero(Math.round(L / 10)),
-            t: H < 12 ? 'a'  : 'p',
+            t: H < 12 ? 'a' : 'p',
             tt: H < 12 ? 'am' : 'pm',
-            T: H < 12 ? 'A'  : 'P',
+            T: H < 12 ? 'A' : 'P',
             TT: H < 12 ? 'AM' : 'PM',
-            Z: gmt ? 'GMT' : utc ? 'UTC' : (toStr(date).match(regTimezone) || ['']).pop().replace(regTimezoneClip, ''),
-            o: (o > 0 ? '-' : '+') + padZero(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4),
-            S: ['th', 'st', 'nd', 'rd'][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10]
+            Z: gmt
+                ? 'GMT'
+                : utc
+                    ? 'UTC'
+                    : (toStr(date).match(regTimezone) || [''])
+                          .pop()
+                          .replace(regTimezoneClip, ''),
+            o:
+                (o > 0 ? '-' : '+') +
+                padZero(
+                    Math.floor(Math.abs(o) / 60) * 100 + (Math.abs(o) % 60),
+                    4
+                ),
+            S: ['th', 'st', 'nd', 'rd'][
+                d % 10 > 3 ? 0 : (((d % 100) - (d % 10) != 10) * d) % 10
+            ]
         };
 
-    return mask.replace(regToken, function (match)
-    {
+    return mask.replace(regToken, function(match) {
         if (match in flags) return flags[match];
 
         return match.slice(1, match.length - 1);
     });
 }
 
-function padZero(str, len)
-{
+function padZero(str, len) {
     return lpad(toStr(str), len || 2, '0');
 }
 
@@ -135,28 +141,62 @@ var regToken = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZWN]|'[^']*'|'[^']*'/
     regTimezoneClip = /[^-+\dA-Z]/g;
 
 exports.masks = {
-    'default': 'ddd mmm dd yyyy HH:MM:ss',
-    'shortDate': 'm/d/yy',
-    'mediumDate': 'mmm d, yyyy',
-    'longDate': 'mmmm d, yyyy',
-    'fullDate': 'dddd, mmmm d, yyyy',
-    'shortTime': 'h:MM TT',
-    'mediumTime': 'h:MM:ss TT',
-    'longTime': 'h:MM:ss TT Z',
-    'isoDate': 'yyyy-mm-dd',
-    'isoTime': 'HH:MM:ss',
-    'isoDateTime': 'yyyy-mm-dd\'T\'HH:MM:sso',
-    'isoUtcDateTime': 'UTC:yyyy-mm-dd\'T\'HH:MM:ss\'Z\'',
-    'expiresHeaderFormat': 'ddd, dd mmm yyyy HH:MM:ss Z'
+    default: 'ddd mmm dd yyyy HH:MM:ss',
+    shortDate: 'm/d/yy',
+    mediumDate: 'mmm d, yyyy',
+    longDate: 'mmmm d, yyyy',
+    fullDate: 'dddd, mmmm d, yyyy',
+    shortTime: 'h:MM TT',
+    mediumTime: 'h:MM:ss TT',
+    longTime: 'h:MM:ss TT Z',
+    isoDate: 'yyyy-mm-dd',
+    isoTime: 'HH:MM:ss',
+    isoDateTime: "yyyy-mm-dd'T'HH:MM:sso",
+    isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'",
+    expiresHeaderFormat: 'ddd, dd mmm yyyy HH:MM:ss Z'
 };
 
 exports.i18n = {
     dayNames: [
-        'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat',
-        'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
+        'Sun',
+        'Mon',
+        'Tue',
+        'Wed',
+        'Thu',
+        'Fri',
+        'Sat',
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
     ],
     monthNames: [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
-        'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
     ]
 };

@@ -18,8 +18,7 @@
 
 _('isObj isFn has toSrc');
 
-function exports(val) 
-{
+function exports(val) {
     if (!isObj(val)) return false;
 
     if (isFn(val)) return regIsNative.test(toSrc(val));
@@ -30,9 +29,15 @@ function exports(val)
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
-var regIsNative = new RegExp('^' +
-    toSrc(hasOwnProperty).replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
-                         .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+var regIsNative = new RegExp(
+    '^' +
+        toSrc(hasOwnProperty)
+            .replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
+            .replace(
+                /hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,
+                '$1.*?'
+            ) +
+        '$'
 );
 
 var regIsHostCtor = /^\[object .+?Constructor\]$/;

@@ -19,8 +19,7 @@
 
 _('idxOf isArrLike values');
 
-function exports(arr, val)
-{
+function exports(arr, val) {
     if (!isArrLike(arr)) arr = values(arr);
 
     return idxOf(arr, val) >= 0;

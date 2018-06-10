@@ -32,14 +32,13 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
-_('loadJs defaults noop uniqId query'); 
+_('loadJs defaults noop uniqId query');
 
-function exports(opts) 
-{
-    defaults(opts, exports.settings); 
-    
+function exports(opts) {
+    defaults(opts, exports.settings);
+
     var name = opts.name || uniqId('jsonp'),
         param = opts.param,
         timeout = opts.timeout,
@@ -51,18 +50,15 @@ function exports(opts)
         timer,
         isTimeout = false;
 
-    if (timeout > 0) 
-    {
-        timer = setTimeout(function () 
-        {
+    if (timeout > 0) {
+        timer = setTimeout(function() {
             isTimeout = true;
-            error(new Error('Timeout'));   
+            error(new Error('Timeout'));
             complete();
         }, timeout);
     }
 
-    window[name] = function (data) 
-    {
+    window[name] = function(data) {
         success(data);
         complete();
         window[name] = noop;
@@ -72,12 +68,10 @@ function exports(opts)
     data = query.stringify(data);
     url += url.indexOf('?') > -1 ? '&' + data : '?' + data;
 
-    loadJs(url, function (isLoaded) 
-    {
+    loadJs(url, function(isLoaded) {
         if (isTimeout) return;
         if (timer) clearTimeout(timer);
-        if (!isLoaded) 
-        {
+        if (!isLoaded) {
             error(new Error());
             complete();
         }

@@ -15,7 +15,6 @@
  * test: all
  */
 
-function exports(str)
-{
+function exports(str) {
     return str.replace(/\W/g, '\\$&');
 }

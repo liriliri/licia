@@ -1,11 +1,9 @@
-it('name', function () 
-{
+it('name', function() {
     expect(cssSupports('grid')).to.be.true;
     expect(cssSupports('invalid')).to.be.false;
 });
 
-it('value', function () 
-{
+it('value', function() {
     expect(cssSupports('display', 'flex')).to.be.true;
     expect(cssSupports('display', 'invalid')).to.be.false;
     expect(cssSupports('text-decoration-line', 'underline')).to.be.true;

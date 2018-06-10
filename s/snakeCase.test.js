@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     expect(snakeCase('foo')).to.equal('foo');
     expect(snakeCase('foo_bar')).to.equal('foo_bar');
     expect(snakeCase('foo--bar')).to.equal('foo_bar');

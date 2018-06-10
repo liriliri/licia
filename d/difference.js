@@ -18,12 +18,10 @@
 
 _('restArgs flatten filter contain');
 
-exports = restArgs(function (arr, rest)
-{
+exports = restArgs(function(arr, rest) {
     rest = flatten(rest);
 
-    return filter(arr, function (val)
-    {
+    return filter(arr, function(val) {
         return !contain(rest, val);
     });
 });

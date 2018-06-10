@@ -13,11 +13,10 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('random'); 
+_('random');
 
-function exports(arr) 
-{ 
+function exports(arr) {
     return arr[random(0, arr.length - 1)];
-} 
+}

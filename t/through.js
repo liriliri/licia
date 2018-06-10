@@ -34,8 +34,7 @@ _('isFn extend inherits');
 
 var Transform = require('stream').Transform;
 
-exports = through(function (opts, transform, flush) 
-{
+exports = through(function(opts, transform, flush) {
     var t = new Transform(opts);
 
     t._transform = transform;
@@ -44,12 +43,16 @@ exports = through(function (opts, transform, flush)
     return t;
 });
 
-exports.obj = through(function (opts, transform, flush) 
-{
-    var t = new Transform(extend({
-        objectMode: true,
-        highWaterMark: 16
-    }, opts));
+exports.obj = through(function(opts, transform, flush) {
+    var t = new Transform(
+        extend(
+            {
+                objectMode: true,
+                highWaterMark: 16
+            },
+            opts
+        )
+    );
 
     t._transform = transform;
     if (flush) t._flush = flush;
@@ -57,10 +60,8 @@ exports.obj = through(function (opts, transform, flush)
     return t;
 });
 
-exports.ctor = through(function (opts, transform, flush) 
-{
-    function Through(override) 
-    {
+exports.ctor = through(function(opts, transform, flush) {
+    function Through(override) {
         if (!(this instanceof Through)) return new Through(override);
 
         Transform.call(this, extend(opts, override));
@@ -75,12 +76,9 @@ exports.ctor = through(function (opts, transform, flush)
     return Through;
 });
 
-function through(streamFactory) 
-{
-    return function (opts, transform, flush) 
-    {
-        if (isFn(opts)) 
-        {
+function through(streamFactory) {
+    return function(opts, transform, flush) {
+        if (isFn(opts)) {
             flush = transform;
             transform = opts;
             opts = {};
@@ -93,7 +91,6 @@ function through(streamFactory)
     };
 }
 
-function defTransform(chunk, enc, cb) 
-{
+function defTransform(chunk, enc, cb) {
     cb(null, chunk);
 }

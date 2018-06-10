@@ -17,13 +17,11 @@
  * test: browser
  */
 
-_('isStr defaults extend'); 
+_('isStr defaults extend');
 
 // https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events
-function exports(el, type, opts) 
-{
-    if (isStr(el)) 
-    {
+function exports(el, type, opts) {
+    if (isStr(el)) {
         opts = type;
         type = el;
         el = document;

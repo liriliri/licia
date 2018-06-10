@@ -15,29 +15,26 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-function exports(arr, cmp) 
-{
+function exports(arr, cmp) {
     cmp = cmp || comparator;
 
     if (arr.length <= 1) return arr;
-    
+
     var middle = floor(arr.length / 2),
         left = arr.slice(0, middle),
         right = arr.slice(middle);
 
-    return merge(exports(left, cmp), exports(right, cmp), cmp);    
+    return merge(exports(left, cmp), exports(right, cmp), cmp);
 }
 
-function merge(left, right, cmp) 
-{
+function merge(left, right, cmp) {
     var ret = [],
         i = 0,
         j = 0;
 
-    while (i < left.length && j < right.length) 
-    {
+    while (i < left.length && j < right.length) {
         cmp(left[i], right[j]) < 0 ? ret.push(left[i++]) : ret.push(right[j++]);
     }
 
@@ -47,8 +44,7 @@ function merge(left, right, cmp)
     return ret;
 }
 
-function comparator(a, b) 
-{
+function comparator(a, b) {
     return a - b;
 }
 

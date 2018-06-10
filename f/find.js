@@ -24,15 +24,14 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('findKey findIdx isArrLike isUndef');
 
-function exports(obj, predicate, ctx) 
-{
+function exports(obj, predicate, ctx) {
     var keyFinder = isArrLike(obj) ? findIdx : findKey;
 
     var key = keyFinder(obj, predicate, ctx);
 
     if (!isUndef(key) && key !== -1) return obj[key];
-} 
+}

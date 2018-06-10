@@ -1,9 +1,7 @@
-it('true', function ()
-{
+it('true', function() {
     expect(isArgs(arguments)).to.be.true;
 });
 
-it('false', function ()
-{
+it('false', function() {
     expect(isArgs([])).to.be.false;
 });

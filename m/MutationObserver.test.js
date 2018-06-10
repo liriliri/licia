@@ -1,4 +1,3 @@
-it('basic', function () 
-{
+it('basic', function() {
     expect(MutationObserver).to.be.a('function');
 });

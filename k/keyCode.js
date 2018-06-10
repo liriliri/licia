@@ -27,35 +27,34 @@
 
 _('isStr invert');
 
-function exports(val)
-{
+function exports(val) {
     if (isStr(val)) return codeMap[val];
 
     return nameMap[val];
 }
 
 var codeMap = {
-    'backspace': 8,
-    'tab': 9,
-    'enter': 13,
-    'shift': 16,
-    'ctrl': 17,
-    'alt': 18,
+    backspace: 8,
+    tab: 9,
+    enter: 13,
+    shift: 16,
+    ctrl: 17,
+    alt: 18,
     'pause/break': 19,
     'caps lock': 20,
-    'esc': 27,
-    'space': 32,
+    esc: 27,
+    space: 32,
     'page up': 33,
     'page down': 34,
-    'end': 35,
-    'home': 36,
-    'left': 37,
-    'up': 38,
-    'right': 39,
-    'down': 40,
-    'insert': 45,
-    'delete': 46,
-    'windows': 91,
+    end: 35,
+    home: 36,
+    left: 37,
+    up: 38,
+    right: 39,
+    down: 40,
+    insert: 45,
+    delete: 46,
+    windows: 91,
     'right windows': 92,
     'windows menu': 93,
     'numpad *': 106,
@@ -75,7 +74,7 @@ var codeMap = {
     '[': 219,
     '\\': 220,
     ']': 221,
-    '\'': 222
+    "'": 222
 };
 
 // Lower case chars

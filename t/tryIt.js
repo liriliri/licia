@@ -21,18 +21,15 @@
  * test: all
  */
 
-_('noop'); 
+_('noop');
 
-function exports(fn, cb) 
-{
+function exports(fn, cb) {
     cb = cb || noop;
 
-    try 
-    {
+    try {
         cb(null, fn());
-    } catch(e) 
-    {
+    } catch (e) {
         cb(e);
         return;
     }
-} 
+}

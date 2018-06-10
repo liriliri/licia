@@ -21,7 +21,6 @@ _('root');
 var nativeIsFinite = root.isFinite,
     nativeIsNaN = root.isNaN;
 
-function exports(val)
-{
+function exports(val) {
     return nativeIsFinite(val) && !nativeIsNaN(parseFloat(val));
 }

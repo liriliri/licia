@@ -20,7 +20,6 @@
 
 _('camelCase upperFirst');
 
-function exports(str)
-{
+function exports(str) {
     return upperFirst(camelCase(str));
 }

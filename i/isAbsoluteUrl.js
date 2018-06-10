@@ -15,11 +15,10 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-function exports(url) 
-{
+function exports(url) {
     return regAbsolute.test(url);
-} 
+}
 
 var regAbsolute = /^[a-z][a-z0-9+.-]*:/;

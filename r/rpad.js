@@ -22,8 +22,7 @@
 
 _('repeat toStr');
 
-function exports(str, len, chars)
-{
+function exports(str, len, chars) {
     str = toStr(str);
 
     var strLen = str.length;

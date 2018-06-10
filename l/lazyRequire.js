@@ -13,16 +13,13 @@
 /* module
  * env: node
  * test: node
- */ 
+ */
 
-function exports(requireFn) 
-{
+function exports(requireFn) {
     var cache = {};
 
-    return function (name) 
-    {
-        return function () 
-        {
+    return function(name) {
+        return function() {
             return cache[name] || (cache[name] = requireFn(name));
         };
     };

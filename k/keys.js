@@ -17,17 +17,14 @@
 
 _('has detectMocha');
 
-if (Object.keys && !detectMocha()) 
-{
+if (Object.keys && !detectMocha()) {
     exports = Object.keys;
-} else 
-{
-    exports = function (obj)
-    {
-        var ret = [], key;
+} else {
+    exports = function(obj) {
+        var ret = [],
+            key;
 
-        for (key in obj)
-        {
+        for (key in obj) {
             if (has(obj, key)) ret.push(key);
         }
 

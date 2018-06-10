@@ -23,24 +23,21 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('Class toDate dateFormat isLeapYear extend toStr isNil ms'); 
+_('Class toDate dateFormat isLeapYear extend toStr isNil ms');
 
-function exports(val) 
-{
+function exports(val) {
     return new Moment(val);
 }
 
 var Moment = Class({
-    initialize: function (val) 
-    {
+    initialize: function(val) {
         this._d = toDate(val);
 
         this._init();
     },
-    _init: function () 
-    {
+    _init: function() {
         var d = this._d;
 
         extend(this, {
@@ -55,32 +52,25 @@ var Moment = Class({
 
         return this;
     },
-    format: function (mask)
-    {
+    format: function(mask) {
         return dateFormat(this._d, mask);
     },
-    isValid: function () 
-    {
+    isValid: function() {
         return !(this._d.toString() === 'Invalid Date');
     },
-    isLeapYear: function () 
-    {
+    isLeapYear: function() {
         return isLeapYear(this._year);
     },
-    isSame: function (that) 
-    {
+    isSame: function(that) {
         return this.valueOf() === that.valueOf();
     },
-    valueOf: function () 
-    {
+    valueOf: function() {
         return this._d.getTime();
     },
-    isBefore: function (that) 
-    {
+    isBefore: function(that) {
         return this.valueOf() < that.valueOf();
     },
-    isAfter: function (that)
-    {
+    isAfter: function(that) {
         return this.valueOf() > that.valueOf();
     },
     year: makeGetSet('year'),
@@ -90,20 +80,16 @@ var Moment = Class({
     minute: makeGetSet('minute'),
     second: makeGetSet('second'),
     millisecond: makeGetSet('millisecond'),
-    unix: function () 
-    {
+    unix: function() {
         return floor(this.valueOf() / 1000);
     },
-    clone: function () 
-    {
+    clone: function() {
         return new Moment(this);
     },
-    toDate: function () 
-    {
+    toDate: function() {
         return new Date(this._d);
     },
-    toArray: function () 
-    {
+    toArray: function() {
         return [
             this._year,
             this._month,
@@ -114,16 +100,13 @@ var Moment = Class({
             this._millisecond
         ];
     },
-    toJSON: function () 
-    {
+    toJSON: function() {
         return this.toISOString();
     },
-    toISOString: function () 
-    {
+    toISOString: function() {
         return this.toDate().toISOString();
     },
-    toObject: function () 
-    {
+    toObject: function() {
         return {
             years: this._year,
             months: this._month,
@@ -134,59 +117,75 @@ var Moment = Class({
             milliseconds: this._millisecond
         };
     },
-    toString: function () 
-    {
+    toString: function() {
         return this._d.toUTCString();
     },
-    set: function (unit, num) 
-    {
+    set: function(unit, num) {
         var d = this._d;
 
         unit = normalizeUnit(unit);
 
-        switch (unit) 
-        {
-            case 'year': d.setFullYear(num); break;
-            case 'month': d.setMonth(num); break;
-            case 'date': d.setDate(num); break;
-            case 'hour': d.setHours(num); break;
-            case 'minute': d.setMinutes(num); break;
-            case 'second': d.setSeconds(num); break;
-            case 'millisecond': d.setMilliseconds(num); break;
+        switch (unit) {
+            case 'year':
+                d.setFullYear(num);
+                break;
+            case 'month':
+                d.setMonth(num);
+                break;
+            case 'date':
+                d.setDate(num);
+                break;
+            case 'hour':
+                d.setHours(num);
+                break;
+            case 'minute':
+                d.setMinutes(num);
+                break;
+            case 'second':
+                d.setSeconds(num);
+                break;
+            case 'millisecond':
+                d.setMilliseconds(num);
+                break;
         }
 
         return this._init();
     },
-    startOf: function (unit) 
-    {
+    startOf: function(unit) {
         unit = normalizeUnit(unit);
 
         /* eslint-disable no-fallthrough */
-        switch (unit) 
-        {
-            case 'year': this.month(0);
-            case 'month': this.date(1);
+        switch (unit) {
+            case 'year':
+                this.month(0);
+            case 'month':
+                this.date(1);
             case 'day':
-            case 'date': this.hour(0);
-            case 'hour': this.minute(0);
-            case 'minute': this.second(0);
-            case 'second': this.millisecond(0);
+            case 'date':
+                this.hour(0);
+            case 'hour':
+                this.minute(0);
+            case 'minute':
+                this.second(0);
+            case 'second':
+                this.millisecond(0);
         }
 
         return this;
     },
-    endOf: function (unit) 
-    {
-        return this.startOf(unit).add(1, unit).subtract(1, 'ms');
+    endOf: function(unit) {
+        return this.startOf(unit)
+            .add(1, unit)
+            .subtract(1, 'ms');
     },
-    daysInMonth: function () 
-    {
-        return this.clone().endOf('month').date();
-    },  
+    daysInMonth: function() {
+        return this.clone()
+            .endOf('month')
+            .date();
+    },
     add: createAdder(1),
     subtract: createAdder(-1),
-    diff: function (input, unit, asFloat) 
-    {
+    diff: function(input, unit, asFloat) {
         var that = input instanceof Moment ? input : new Moment(input),
             ret;
 
@@ -194,15 +193,27 @@ var Moment = Class({
 
         var diff = this - that;
 
-        switch (unit) 
-        {
-            case 'year': ret = monthDiff(this, that) / 12; break;
-            case 'month': ret = monthDiff(this, that); break;
-            case 'second': ret = diff / 1e3; break; // 1000
-            case 'minute': ret = diff / 6e4; break; // 1000 * 60
-            case 'hour': ret = diff / 36e5; break; // 1000 * 60 * 60
-            case 'day': ret = diff / 864e5; break; // 1000 * 60 * 60 * 24
-            default: ret = diff;
+        switch (unit) {
+            case 'year':
+                ret = monthDiff(this, that) / 12;
+                break;
+            case 'month':
+                ret = monthDiff(this, that);
+                break;
+            case 'second':
+                ret = diff / 1e3;
+                break; // 1000
+            case 'minute':
+                ret = diff / 6e4;
+                break; // 1000 * 60
+            case 'hour':
+                ret = diff / 36e5;
+                break; // 1000 * 60 * 60
+            case 'day':
+                ret = diff / 864e5;
+                break; // 1000 * 60 * 60 * 24
+            default:
+                ret = diff;
         }
 
         return asFloat ? ret : absFloor(ret);
@@ -212,9 +223,8 @@ var Moment = Class({
 var floor = Math.floor,
     ceil = Math.ceil;
 
-function absFloor(num) 
-{
-    return num < 0 ? (ceil(num) || 0) : floor(num);
+function absFloor(num) {
+    return num < 0 ? ceil(num) || 0 : floor(num);
 }
 
 var unitShorthandMap = {
@@ -231,8 +241,7 @@ var unitShorthandMap = {
 var regEndS = /s$/;
 
 // Turn 'y' or 'years' into 'year'
-function normalizeUnit(unit) 
-{
+function normalizeUnit(unit) {
     unit = toStr(unit);
 
     if (unitShorthandMap[unit]) return unitShorthandMap[unit];
@@ -240,25 +249,21 @@ function normalizeUnit(unit)
     return unit.toLowerCase().replace(regEndS, '');
 }
 
-function makeGetSet(unit) 
-{
-    return function (num) 
-    {
+function makeGetSet(unit) {
+    return function(num) {
         return isNil(num) ? this['_' + unit] : this.set(unit, num);
     };
 }
 
-function createAdder(dir) 
-{
-    return function (num, unit) 
-    {
+function createAdder(dir) {
+    return function(num, unit) {
         unit = normalizeUnit(unit);
 
-        if (unit === 'month') return this.month(this._month + (dir * num));
-        if (unit === 'year') return this.year(this._year + (dir * num));
+        if (unit === 'month') return this.month(this._month + dir * num);
+        if (unit === 'year') return this.year(this._year + dir * num);
 
         var duration = createDuration(num, unit);
-        this._d = new Date(this.valueOf() + (dir * duration));
+        this._d = new Date(this.valueOf() + dir * duration);
 
         return this._init();
     };
@@ -272,24 +277,21 @@ var msMap = {
     millisecond: ''
 };
 
-function createDuration(num, unit) 
-{
+function createDuration(num, unit) {
     return ms(num + msMap[unit]);
 }
 
 // From moment.js
-function monthDiff (a, b) 
-{
-    var wholeMonthDiff = ((b.year() - a.year()) * 12) + (b.month() - a.month()),
+function monthDiff(a, b) {
+    var wholeMonthDiff = (b.year() - a.year()) * 12 + (b.month() - a.month()),
         anchor = a.clone().add(wholeMonthDiff, 'months'),
-        anchor2, adjust;
+        anchor2,
+        adjust;
 
-    if (b - anchor < 0) 
-    {
+    if (b - anchor < 0) {
         anchor2 = a.clone().add(wholeMonthDiff - 1, 'months');
         adjust = (b - anchor) / (anchor - anchor2);
-    } else 
-    {
+    } else {
         anchor2 = a.clone().add(wholeMonthDiff + 1, 'months');
         adjust = (b - anchor) / (anchor2 - anchor);
     }

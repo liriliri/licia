@@ -20,44 +20,38 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
 _('Promise restArgs uniqId toSrc createUrl isStr');
 
-function exports(fn) 
-{
+function exports(fn) {
     var promises = {};
 
     var src = [
         toSrc(isPromise),
         'onmessage=(',
-        toSrc(function (fn) 
-        {
-            return function (e) 
-            {
+        toSrc(function(fn) {
+            return function(e) {
                 var data = e.data,
                     id = data[0],
                     args = data[1],
                     value;
 
-                try 
-                {
+                try {
                     value = fn.apply(fn, args);
-                    if (isPromise(value)) 
-                    {
-                        value.then(function (value) 
-                        {
-                            postMessage([id, null, value]);
-                        }, function (err) 
-                        {
-                            postMessage([id, err.message]);
-                        });
-                    } else 
-                    {
+                    if (isPromise(value)) {
+                        value.then(
+                            function(value) {
+                                postMessage([id, null, value]);
+                            },
+                            function(err) {
+                                postMessage([id, err.message]);
+                            }
+                        );
+                    } else {
                         postMessage([id, null, value]);
                     }
-                } catch (e) 
-                {
+                } catch (e) {
                     postMessage([id, e.message]);
                 }
             };
@@ -67,26 +61,22 @@ function exports(fn)
 
     var worker = new Worker(createUrl(src));
 
-    worker.onmessage = function (e) 
-    {
+    worker.onmessage = function(e) {
         var data = e.data,
             id = data[0],
             err = data[1],
             value = data[2];
 
-        if (isStr(err)) err = new Error(err); 
+        if (isStr(err)) err = new Error(err);
         promises[id](err, value);
         delete promises[id];
     };
 
-    return restArgs(function (args) 
-    {
+    return restArgs(function(args) {
         var id = uniqId('workerize');
 
-        return new Promise(function (resolve, reject) 
-        {
-            promises[id] = function (err, value) 
-            {
+        return new Promise(function(resolve, reject) {
+            promises[id] = function(err, value) {
                 if (err) return reject(err);
 
                 resolve(value);
@@ -95,9 +85,12 @@ function exports(fn)
             worker.postMessage([id, args]);
         });
     });
-} 
+}
 
-function isPromise(val) 
-{
-    return !!val && (typeof val === 'object' || typeof val === 'function') && typeof val.then === 'function';
+function isPromise(val) {
+    return (
+        !!val &&
+        (typeof val === 'object' || typeof val === 'function') &&
+        typeof val.then === 'function'
+    );
 }

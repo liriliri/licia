@@ -35,16 +35,13 @@ exports = {
     val: propFactory('value')
 };
 
-function propFactory(name)
-{
-    return function (nodes, val)
-    {
+function propFactory(name) {
+    return function(nodes, val) {
         nodes = $safeEls(nodes);
 
         if (isUndef(val)) return nodes[0][name];
 
-        each(nodes, function (node)
-        {
+        each(nodes, function(node) {
             node[name] = val;
         });
     };

@@ -2,8 +2,7 @@ var testCase = 'http://surunzi@github.com:8080/foo/bar?test=1&eruda=true#hash';
 
 var parseUrl = Url.parse(testCase);
 
-it('parse', function ()
-{
+it('parse', function() {
     expect(parseUrl.protocol).to.equal('http:');
     expect(parseUrl.slashes).to.be.true;
     expect(parseUrl.auth).to.equal('surunzi');
@@ -17,13 +16,11 @@ it('parse', function ()
     });
 });
 
-it('stringify', function ()
-{
+it('stringify', function() {
     expect(Url.stringify(parseUrl)).to.equal(testCase);
 });
 
-it('manipulate query', function ()
-{
+it('manipulate query', function() {
     var url = new Url('http://liriliri.github.io?eruda=true&foo=bar');
     expect(url.query.eruda).to.equal('true');
     url.setQuery('foo', 'bar');

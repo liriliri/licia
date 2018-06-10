@@ -27,8 +27,7 @@
 
 _('safeCb');
 
-function exports(arr, predicate, ctx, dir) 
-{
+function exports(arr, predicate, ctx, dir) {
     dir = dir || 1;
 
     predicate = safeCb(predicate, ctx);
@@ -36,11 +35,10 @@ function exports(arr, predicate, ctx, dir)
     var len = arr.length,
         i = dir > 0 ? 0 : len - 1;
 
-    while (i >= 0 && i < len) 
-    {
+    while (i >= 0 && i < len) {
         if (predicate(arr[i], i, arr)) return i;
         i += dir;
     }
 
     return -1;
-} 
+}

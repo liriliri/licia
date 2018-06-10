@@ -16,43 +16,37 @@
 _('keys');
 
 exports = {
-    getItem: function (key)
-    {
+    getItem: function(key) {
         return (API_KEYS[key] ? cloak[key] : this[key]) || null;
     },
-    setItem: function (key, val)
-    {
-        API_KEYS[key] ? cloak[key] = val : this[key] = val;
+    setItem: function(key, val) {
+        API_KEYS[key] ? (cloak[key] = val) : (this[key] = val);
     },
-    removeItem: function (key)
-    {
+    removeItem: function(key) {
         API_KEYS[key] ? delete cloak[key] : delete this[key];
     },
-    key: function (i)
-    {
+    key: function(i) {
         var keys = enumerableKeys();
 
         return i >= 0 && i < keys.length ? keys[i] : null;
     },
-    clear: function ()
-    {
+    clear: function() {
         var keys = uncloakedKeys();
 
         /* eslint-disable no-cond-assign */
-        for (var i = 0, key; key = keys[i]; i++) delete this[key];
+        for (var i = 0, key; (key = keys[i]); i++) delete this[key];
 
         keys = cloakedKeys();
 
         /* eslint-disable no-cond-assign */
-        for (i = 0; key = keys[i]; i++) delete cloak[key];
+        for (i = 0; (key = keys[i]); i++) delete cloak[key];
     }
 };
 
 Object.defineProperty(exports, 'length', {
     enumerable: false,
     configurable: true,
-    get: function ()
-    {
+    get: function() {
         return enumerableKeys().length;
     }
 });
@@ -68,20 +62,16 @@ var API_KEYS = {
     length: 1
 };
 
-function enumerableKeys()
-{
+function enumerableKeys() {
     return uncloakedKeys().concat(cloakedKeys());
 }
 
-function uncloakedKeys()
-{
-    return keys(exports).filter(function (key)
-    {
+function uncloakedKeys() {
+    return keys(exports).filter(function(key) {
         return !API_KEYS[key];
     });
 }
 
-function cloakedKeys()
-{
+function cloakedKeys() {
     return keys(cloak);
 }

@@ -17,25 +17,23 @@
 
 _('keys');
 
-function exports(str)
-{
+function exports(str) {
     return regTest.test(str) ? str.replace(regReplace, replaceFn) : str;
 }
 
-var map = exports.map = {
+var map = (exports.map = {
     '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
-    '\'': '&#x27;',
+    "'": '&#x27;',
     '`': '&#x60;'
-};
+});
 
 var regSrc = '(?:' + keys(map).join('|') + ')',
     regTest = new RegExp(regSrc),
     regReplace = new RegExp(regSrc, 'g');
 
-function replaceFn(match)
-{
+function replaceFn(match) {
     return map[match];
 }

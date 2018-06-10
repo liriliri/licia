@@ -60,8 +60,7 @@ _('Emitter State easing now each raf isFn');
 
 exports = Emitter.extend({
     className: 'Tween',
-    initialize: function (target)
-    {
+    initialize: function(target) {
         this.callSuper(Emitter, 'initialize', arguments);
 
         this._target = target;
@@ -72,12 +71,11 @@ exports = Emitter.extend({
         this._diff = {};
         this._ease = easing['linear'];
         this._state = new State('pause', {
-            play: {from: 'pause', to: 'play'},
-            pause: {from: 'play', to: 'pause'}
+            play: { from: 'pause', to: 'play' },
+            pause: { from: 'play', to: 'pause' }
         });
     },
-    to: function (props, duration, ease)
-    {
+    to: function(props, duration, ease) {
         var origin = {},
             target = this._target,
             diff = {};
@@ -88,8 +86,7 @@ exports = Emitter.extend({
         this._duration = duration || this._duration;
         this._ease = isFn(ease) ? ease : easing[ease];
 
-        each(props, function (val, key)
-        {
+        each(props, function(val, key) {
             origin[key] = target[key];
             diff[key] = val - origin[key];
         });
@@ -99,8 +96,7 @@ exports = Emitter.extend({
 
         return this;
     },
-    progress: function (progress)
-    {
+    progress: function(progress) {
         var ease = this._ease,
             target = this._target,
             origin = this._origin,
@@ -108,13 +104,11 @@ exports = Emitter.extend({
             dest = this._dest,
             self = this;
 
-        if (progress != null)
-        {
+        if (progress != null) {
             progress = progress < 1 ? progress : 1;
             this._progress = progress;
 
-            each(dest, function (val, key)
-            {
+            each(dest, function(val, key) {
                 target[key] = origin[key] + diff[key] * ease(progress);
             });
 
@@ -125,8 +119,7 @@ exports = Emitter.extend({
 
         return this._progress;
     },
-    play: function ()
-    {
+    play: function() {
         var state = this._state;
 
         if (state.is('play')) return;
@@ -139,16 +132,14 @@ exports = Emitter.extend({
             target = this._target,
             self = this;
 
-        function render()
-        {
+        function render() {
             if (state.is('pause')) return;
 
             var time = now();
 
             self.progress(progress + (time - startTime) / duration);
 
-            if (self._progress === 1)
-            {
+            if (self._progress === 1) {
                 state.pause();
                 self.emit('end', target);
                 return;
@@ -161,8 +152,7 @@ exports = Emitter.extend({
 
         return this;
     },
-    pause: function ()
-    {
+    pause: function() {
         var state = this._state;
 
         if (state.is('pause')) return;
@@ -170,8 +160,7 @@ exports = Emitter.extend({
 
         return this;
     },
-    paused: function ()
-    {
+    paused: function() {
         return this._state.is('pause');
     }
 });

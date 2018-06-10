@@ -17,7 +17,6 @@
 
 var ObjToStr = Object.prototype.toString;
 
-function exports(val)
-{
+function exports(val) {
     return ObjToStr.call(val);
 }

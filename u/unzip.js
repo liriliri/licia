@@ -17,13 +17,16 @@
 
 _('map pluck max');
 
-function exports(arr)
-{
-    var len = max.apply(null, map(arr, function(arr) { return arr.length; })),
+function exports(arr) {
+    var len = max.apply(
+            null,
+            map(arr, function(arr) {
+                return arr.length;
+            })
+        ),
         ret = Array(len);
 
-    for (var i = 0; i < len; i++)
-    {
+    for (var i = 0; i < len; i++) {
         ret[i] = pluck(arr, i);
     }
 

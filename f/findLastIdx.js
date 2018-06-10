@@ -28,9 +28,8 @@
  * test: all
  */
 
-_('findIdx'); 
+_('findIdx');
 
-function exports(arr, predicate, ctx) 
-{
+function exports(arr, predicate, ctx) {
     return findIdx(arr, predicate, ctx, -1);
 }

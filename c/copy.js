@@ -20,8 +20,7 @@
 
 _('extend noop');
 
-function exports(text, cb) 
-{
+function exports(text, cb) {
     cb = cb || noop;
 
     var el = document.createElement('textarea'),
@@ -34,9 +33,9 @@ function exports(text, cb)
         margin: '0',
         position: 'absolute',
         left: '-9999px'
-    });    
+    });
 
-    el.value = text;    
+    el.value = text;
 
     body.appendChild(el);
 
@@ -48,11 +47,9 @@ function exports(text, cb)
     try {
         document.execCommand('copy');
         cb();
-    } catch (e) 
-    {
+    } catch (e) {
         cb(e);
-    } finally 
-    {
+    } finally {
         body.removeChild(el);
     }
-} 
+}

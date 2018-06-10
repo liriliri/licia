@@ -17,14 +17,12 @@
 
 _('isNum isObj isFn isStr');
 
-exports = function (val)
-{
+exports = function(val) {
     if (isNum(val)) return val;
 
-    if (isObj(val))
-    {
+    if (isObj(val)) {
         var temp = isFn(val.valueOf) ? val.valueOf() : val;
-        val = isObj(temp) ? (temp + '') : temp;
+        val = isObj(temp) ? temp + '' : temp;
     }
 
     if (!isStr(val)) return val === 0 ? val : +val;

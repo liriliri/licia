@@ -13,11 +13,10 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('toStr'); 
+_('toStr');
 
-function exports(str) 
-{
+function exports(str) {
     return toStr(str).toLocaleLowerCase();
 }

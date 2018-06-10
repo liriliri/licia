@@ -8,14 +8,12 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
-_('root'); 
+_('root');
 
-function exports() 
-{
-    for (var i = 0, len = methods.length; i < len; i++) 
-    {
+function exports() {
+    for (var i = 0, len = methods.length; i < len; i++) {
         var method = methods[i];
 
         if (typeof root[method] !== 'function') return false;
@@ -24,4 +22,4 @@ function exports()
     return true;
 }
 
-var methods = ['afterEach','after','beforeEach','before','describe','it'];
+var methods = ['afterEach', 'after', 'beforeEach', 'before', 'describe', 'it'];

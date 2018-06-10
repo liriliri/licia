@@ -19,7 +19,6 @@
 
 _('isNum');
 
-function exports(val)
-{
-    return isNum(val) && (val % 1 === 0);
+function exports(val) {
+    return isNum(val) && val % 1 === 0;
 }

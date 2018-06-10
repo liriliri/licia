@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     var obj = {
         a: 'b',
         c: 'd',

@@ -23,21 +23,18 @@
 
 _('extractUrls each escapeRegExp');
 
-function exports(str, hyperlink) 
-{
+function exports(str, hyperlink) {
     hyperlink = hyperlink || defHyperlink;
 
     var urlList = extractUrls(str);
 
-    each(urlList, function (url) 
-    {
+    each(urlList, function(url) {
         str = str.replace(new RegExp(escapeRegExp(url), 'g'), hyperlink);
-    });    
+    });
 
     return str;
 }
 
-function defHyperlink(url) 
-{
+function defHyperlink(url) {
     return '<a href="' + url + '">' + url + '</a>';
 }

@@ -1,4 +1,3 @@
-it('basic', function () 
-{
+it('basic', function() {
     expect(download).to.be.a('function');
 });

@@ -1,9 +1,7 @@
-it('true', function ()
-{
+it('true', function() {
     expect(isStr('eustia')).to.be.true;
 });
 
-it('false', function ()
-{
+it('false', function() {
     expect(isStr(5)).to.be.false;
 });

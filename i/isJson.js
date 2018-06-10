@@ -18,14 +18,11 @@
  * test: all
  */
 
-function exports(val) 
-{
-    try 
-    {
+function exports(val) {
+    try {
         JSON.parse(val);
         return true;
-    } catch (e)
-    {
+    } catch (e) {
         return false;
     }
 }

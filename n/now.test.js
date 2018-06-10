@@ -1,5 +1,4 @@
-it('basic', function ()
-{
+it('basic', function() {
     var a = now(),
         b = Date.now();
 

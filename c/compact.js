@@ -19,7 +19,8 @@
 
 _('filter');
 
-function exports(arr)
-{
-    return filter(arr, function (val) { return !!val; });
+function exports(arr) {
+    return filter(arr, function(val) {
+        return !!val;
+    });
 }

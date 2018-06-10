@@ -24,12 +24,12 @@ var regUpperCase = /([A-Z])/g,
     regSeparator = /[_.\- ]+/g,
     regTrim = /(^-)|(-$)/g;
 
-function exports(str)
-{
-    str = str.replace(regUpperCase, '-$1')
-             .toLowerCase()
-             .replace(regSeparator, '-')
-             .replace(regTrim, '');
+function exports(str) {
+    str = str
+        .replace(regUpperCase, '-$1')
+        .toLowerCase()
+        .replace(regSeparator, '-')
+        .replace(regTrim, '');
 
     return str.split('-');
 }

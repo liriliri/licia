@@ -41,38 +41,33 @@
  * test: all
  */
 
-_('Class'); 
+_('Class');
 
 exports = Class({
-    initialize: function LinkedList() 
-    {
+    initialize: function LinkedList() {
         this.tail = null;
         this.head = null;
         this.size = 0;
     },
-    push: function (val) 
-    {
+    push: function(val) {
         var node = new Node(val, this.tail);
 
-        this.tail = node;        
+        this.tail = node;
         this.head = this.head || node;
 
         this.size++;
 
         return this.size;
     },
-    pop: function () 
-    {
+    pop: function() {
         if (!this.tail) return;
 
         var node = this.tail;
 
         this.tail = node.prev;
-        if (this.tail) 
-        {
+        if (this.tail) {
             this.tail.next = null;
-        } else 
-        {
+        } else {
             this.head = null;
         }
 
@@ -80,8 +75,7 @@ exports = Class({
 
         return node.value;
     },
-    unshift: function (val) 
-    {
+    unshift: function(val) {
         var node = new Node(val, null, this.head);
 
         this.head = node;
@@ -91,18 +85,15 @@ exports = Class({
 
         return this.size;
     },
-    shift: function () 
-    {
+    shift: function() {
         if (!this.head) return;
 
         var node = this.head;
 
         this.head = node.next;
-        if (this.head) 
-        {
+        if (this.head) {
             this.head.prev = null;
-        } else 
-        {
+        } else {
             this.tail = null;
         }
 
@@ -110,22 +101,18 @@ exports = Class({
 
         return node.value;
     },
-    forEach: function (iteratee, ctx) 
-    {
+    forEach: function(iteratee, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
-        for (var i = 0, current = this.head; current !== null; i++) 
-        {
+        for (var i = 0, current = this.head; current !== null; i++) {
             iteratee.call(ctx, current.value, i, this);
             current = current.next;
         }
     },
-    toArr: function () 
-    {
+    toArr: function() {
         var arr = new Array(this.size);
 
-        for (var i = 0, current = this.head; current !== null; i++) 
-        {
+        for (var i = 0, current = this.head; current !== null; i++) {
             arr[i] = current.value;
             current = current.next;
         }
@@ -134,27 +121,22 @@ exports = Class({
     }
 });
 
-var Node = exports.Node = Class({
-    initialize: function Node(val, prev, next) 
-    {
+var Node = (exports.Node = Class({
+    initialize: function Node(val, prev, next) {
         this.value = val;
 
-        if (prev) 
-        {
+        if (prev) {
             prev.next = this;
             this.prev = prev;
-        } else 
-        {
+        } else {
             this.prev = null;
         }
 
-        if (next) 
-        {
+        if (next) {
             next.prev = this;
             this.next = next;
-        } else 
-        {
+        } else {
             this.next = null;
         }
     }
-});
+}));

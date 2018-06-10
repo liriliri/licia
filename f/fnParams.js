@@ -13,12 +13,11 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 _('toSrc stripCmt');
 
-function exports(fn) 
-{
+function exports(fn) {
     var fnStr = stripCmt(toSrc(fn));
 
     var ret = fnStr.slice(fnStr.indexOf('(') + 1, fnStr.indexOf(')'));

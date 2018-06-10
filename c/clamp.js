@@ -23,10 +23,8 @@
 
 _('isUndef');
 
-function exports(n, lower, upper)
-{
-    if (isUndef(upper))
-    {
+function exports(n, lower, upper) {
+    if (isUndef(upper)) {
         upper = lower;
         lower = undefined;
     }

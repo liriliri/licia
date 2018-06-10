@@ -18,13 +18,12 @@
  * test: browser
  */
 
-function exports(src, cb)
-{
+function exports(src, cb) {
     var script = document.createElement('script');
     script.src = src;
-    script.onload = function ()
-    {
-        var isNotLoaded = script.readyState &&
+    script.onload = function() {
+        var isNotLoaded =
+            script.readyState &&
             script.readyState != 'complete' &&
             script.readyState != 'loaded';
 

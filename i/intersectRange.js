@@ -19,13 +19,12 @@
  * test: all
  */
 
-function exports(a, b) 
-{
+function exports(a, b) {
     var min = a.start < b.start ? a : b,
         max = min === a ? b : a;
 
     if (min.end < max.start) return;
-    
+
     return {
         start: max.start,
         end: min.end < max.end ? min.end : max.end

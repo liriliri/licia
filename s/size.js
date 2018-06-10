@@ -18,7 +18,6 @@
 
 _('isArrLike keys');
 
-function exports(obj)
-{
+function exports(obj) {
     return isArrLike(obj) ? obj.length : keys(obj).length;
 }

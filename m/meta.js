@@ -49,28 +49,24 @@
 
 _('each isStr isUndef contain isArr isObj toArr');
 
-function exports(name, content) 
-{
+function exports(name, content) {
     if (isUndef(name)) return getAllMeta();
 
-    var isGetter = (isStr(name) && isUndef(content))|| isArr(name);
+    var isGetter = (isStr(name) && isUndef(content)) || isArr(name);
     if (isGetter) return getMeta(name);
 
     var metas = name;
-    if (!isObj(metas)) 
-    {
+    if (!isObj(metas)) {
         metas = {};
         metas[name] = content;
     }
     setMeta(metas);
-} 
+}
 
-exports.remove = function (nameList)
-{
+exports.remove = function(nameList) {
     nameList = toArr(nameList);
 
-    each(nameList, function (name) 
-    {
+    each(nameList, function(name) {
         var meta = selectMeta(name);
         if (meta) doc.head.removeChild(meta);
     });
@@ -78,42 +74,34 @@ exports.remove = function (nameList)
 
 var doc = document;
 
-function getAllMeta() 
-{
+function getAllMeta() {
     var ret = {};
 
-    metaEach(function (name, content) 
-    {
+    metaEach(function(name, content) {
         ret[name] = content;
     });
 
     return ret;
 }
 
-function getMeta(name) 
-{
-    if (isStr(name)) 
-    {
+function getMeta(name) {
+    if (isStr(name)) {
         var meta = selectMeta(name);
 
         if (meta) return meta.getAttribute('content');
-    } else 
-    {
+    } else {
         var ret = {};
 
-        metaEach(function (key, val) 
-        {
-            if(contain(name, key)) ret[key] = val;
+        metaEach(function(key, val) {
+            if (contain(name, key)) ret[key] = val;
         });
 
         return ret;
     }
 }
 
-function setMeta(metas) 
-{
-    each(metas, function (content, name) 
-    {
+function setMeta(metas) {
+    each(metas, function(content, name) {
         var meta = selectMeta(name);
         if (meta) return meta.setAttribute('content', content);
 
@@ -124,22 +112,19 @@ function setMeta(metas)
     });
 }
 
-function metaEach(fn) 
-{
+function metaEach(fn) {
     var metaList = doc.querySelectorAll('meta');
 
-    each(metaList, function (meta) 
-    {
+    each(metaList, function(meta) {
         var name = meta.getAttribute('name'),
             content = meta.getAttribute('content');
 
         if (!name || !content) return;
-        
+
         fn(name, content);
     });
 }
 
-function selectMeta(name) 
-{
+function selectMeta(name) {
     return doc.querySelector('meta[name="' + name + '"]');
 }

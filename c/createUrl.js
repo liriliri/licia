@@ -17,22 +17,20 @@
 /* module
  * env: browser
  * test: browser
- */ 
+ */
 
 _('defaults isBlob isFile Blob toArr');
 
-function exports(data, opts) 
-{
+function exports(data, opts) {
     opts = opts || {};
     defaults(opts, defOpts);
 
-    if (!isBlob(data) && !isFile(data)) 
-    {
+    if (!isBlob(data) && !isFile(data)) {
         data = new Blob(toArr(data), opts);
     }
 
-    return URL.createObjectURL(data);        
-} 
+    return URL.createObjectURL(data);
+}
 
 var defOpts = {
     type: 'text/plain'

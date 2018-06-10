@@ -17,7 +17,6 @@
 
 _('objToStr');
 
-function exports(val)
-{
+function exports(val) {
     return objToStr(val) === '[object Date]';
 }

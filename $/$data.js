@@ -12,16 +12,13 @@
 
 _('$attr isStr isObj each');
 
-function exports(nodes, name, val)
-{
+function exports(nodes, name, val) {
     var dataName = name;
 
     if (isStr(name)) dataName = 'data-' + name;
-    if (isObj(name))
-    {
+    if (isObj(name)) {
         dataName = {};
-        each(name, function (val, key)
-        {
+        each(name, function(val, key) {
             dataName['data-' + key] = val;
         });
     }

@@ -11,7 +11,6 @@
  * ```
  */
 
-function exports(num) 
-{
+function exports(num) {
     return String.fromCodePoint(num);
-} 
+}

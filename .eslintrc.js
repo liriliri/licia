@@ -12,17 +12,8 @@ var exports = {
     },
     extends: 'eslint:recommended',
     rules: {
-        quotes: [
-            'error',
-            'single'
-        ],
-        semi: [
-            'error',
-            'always'
-        ],
-        'no-unused-vars': [
-            'off'
-        ]
+        semi: ['error', 'always'],
+        'no-unused-vars': ['off']
     }
 };
 
@@ -32,7 +23,9 @@ var globals = {
     expect: true
 };
 
-util.each(licia, function (val, key) { globals[key] = true });
+util.each(licia, function(val, key) {
+    globals[key] = true;
+});
 
 exports.globals = globals;
 
