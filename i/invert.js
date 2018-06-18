@@ -18,7 +18,7 @@
  * test: all
  */
 
-_('keys each');
+_('each');
 
 function exports(obj) {
     var ret = {};

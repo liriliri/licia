@@ -16,7 +16,7 @@
  * test: all
  */
 
-_('isObj isFn has toSrc');
+_('isObj isFn toSrc');
 
 function exports(val) {
     if (!isObj(val)) return false;

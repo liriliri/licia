@@ -17,7 +17,7 @@
  * test: all
  */
 
-_('keys isObj isFn isArr each mapObj');
+_('isObj isFn isArr mapObj');
 
 function exports(obj) {
     if (isArr(obj)) {

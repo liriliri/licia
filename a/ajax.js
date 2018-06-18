@@ -6,7 +6,7 @@
  *
  * Available options:
  *
- * |Name                                         |Type         |Desc                      |
+ * |Name                                         |Type         |Desc                       |
  * |---------------------------------------------|-------------|---------------------------|
  * |url                                          |string       |Request url                |
  * |data                                         |string object|Request data               |

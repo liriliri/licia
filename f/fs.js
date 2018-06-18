@@ -62,7 +62,7 @@ each(
 exports.exists = function() {
     var args = toArr(arguments);
 
-    return new exports.Promise(function(resolve, reject) {
+    return new exports.Promise(function(resolve) {
         args.push(resolve);
         fs.exists.apply(null, args);
     });

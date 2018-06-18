@@ -22,8 +22,6 @@ function exports(str) {
     try {
         return decodeURIComponent(str);
     } catch (e) {
-        var replaceMap = {};
-
         var matches = str.match(regMatcher);
 
         each(matches, function(match) {

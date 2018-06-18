@@ -1,12 +1,12 @@
 {
   "name": "licia",
-  "version": "0.13.0",
+  "version": "1.0.0",
   "description": "Useful utility collection with zero dependencies",
   "bin": {
     "licia": "./bin/licia.js"
   },
   "scripts": {
-    "ci": "npm run prettier && npm run update && npm run lint && npm test",
+    "ci": "npm run format && npm run update && npm run lint && npm test",
     "update": "licia update",
     "pack": "licia pack",
     "lint": "eslint $/*.js [a-z]/*.js",
@@ -17,7 +17,7 @@
     "eustia": "eustia",
     "karma": "karma",
     "mocha": "mocha",
-    "prettier": "prettier $/*.js [a-z]/*.js *.js lib/**/*.js bin/*.js --write",
+    "format": "prettier $/*.js [a-z]/*.js *.js lib/**/*.js lib/*.js bin/*.js --write",
     "benchmark": "node",
     "test:node": "licia test -as",
     "test:browser": "licia test -bas",

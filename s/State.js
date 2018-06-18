@@ -46,7 +46,7 @@
  * test: all
  */
 
-_('Emitter each isArr some slice toArr');
+_('Emitter each some toArr');
 
 exports = Emitter.extend({
     className: 'State',

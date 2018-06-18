@@ -54,7 +54,6 @@
             "contain",
             "isNum",
             "$safeEls",
-            "startWith",
             "prefix"
         ],
         "env": "browser",
@@ -151,7 +150,6 @@
             "extend",
             "toArr",
             "inherits",
-            "has",
             "safeGet",
             "isMiniProgram"
         ],
@@ -348,9 +346,7 @@
         "dependencies": [
             "Emitter",
             "each",
-            "isArr",
             "some",
-            "slice",
             "toArr"
         ],
         "env": "all",
@@ -600,11 +596,9 @@
     "cloneDeep": {
         "description": "Recursively clone value.",
         "dependencies": [
-            "keys",
             "isObj",
             "isFn",
             "isArr",
-            "each",
             "mapObj"
         ],
         "env": "all",
@@ -1231,7 +1225,6 @@
     "invert": {
         "description": "Create an object composed of the inverted keys and values of object.",
         "dependencies": [
-            "keys",
             "each"
         ],
         "env": "all",
@@ -1476,7 +1469,6 @@
         "dependencies": [
             "isObj",
             "isFn",
-            "has",
             "toSrc"
         ],
         "env": "all",

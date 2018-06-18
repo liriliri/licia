@@ -121,7 +121,7 @@ exports = {
             handlers.delegateCount = 0;
             el.addEventListener(
                 type,
-                function(e) {
+                function() {
                     trigger.apply(el, arguments);
                 },
                 false

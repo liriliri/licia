@@ -36,7 +36,7 @@
  * test: browser
  */
 
-_('isStr isObj kebabCase isUndef contain isNum $safeEls startWith prefix');
+_('isStr isObj kebabCase isUndef contain isNum $safeEls prefix');
 
 function exports(nodes, name, val) {
     nodes = $safeEls(nodes);

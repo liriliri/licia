@@ -48,7 +48,7 @@
  * test: all
  */
 
-_('extend toArr inherits has safeGet isMiniProgram');
+_('extend toArr inherits safeGet isMiniProgram');
 
 function exports(methods, statics) {
     return Base.extend(methods, statics);
