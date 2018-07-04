@@ -61,14 +61,27 @@ exports = Class(
             return this;
         },
         off: function(event, listener) {
-            if (!has(this._events, event)) return;
+            if (!has(this._events, event)) return
+            var reg = /\{\s*\[native code\]\s*\}/
+            var listenerStr = listener.toString()
+            var isNativeOff = reg.test(listenerStr)
+            if (isNativeOff) return
+            if (listener && typeof listener === 'function') {
+                var listeners = this._events[event]
+                for (var i = 0; i < listeners.length; i++) {
+                    let listenersItemStr = listeners[i].toString()
+                    if (
+                        !reg.test(listenersItemStr) &&
+                        listenersItemStr === listenerStr
+                    ) {
+                        listeners.splice(i, 1)
+                    }
+                }
+            } else {
+                delete this._events[event]
+            }
 
-            this._events[event].splice(
-                this._events[event].indexOf(listener),
-                1
-            );
-
-            return this;
+            return this
         },
         once: function(event, listener) {
             this.on(event, once(listener));
