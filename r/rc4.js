@@ -6,7 +6,7 @@
  * @param string str - string to be encrypted/decrypted
  * @return string
  */
-function rc4(key, str) {
+function exports (key, str) {
 	var s = [], j = 0, x, res = '';
 	for (var i = 0; i < 256; i++) {
 		s[i] = i;
