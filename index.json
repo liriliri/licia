@@ -442,6 +442,17 @@
         "env": "all",
         "test": "all"
     },
+    "arrToCombine": {
+        "description": "Array of strings merge into array of objects.",
+        "dependencies": [
+            "isUndef",
+            "isArr",
+            "isArrLike",
+            "reduce"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "arrToMap": {
         "description": "Make an object map using array of strings.",
         "dependencies": [

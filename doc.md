@@ -1320,6 +1320,19 @@ obj.one = 1;
 allKeys(obj) // -> ['zero', 'one']
 ```
 
+## arrToCombine 
+
+Array of strings merge into array of objects.
+
+|Name  |Type          |Desc                  |
+|------|--------------|----------------------|
+|...arr|array         |array                 |
+|return|array/boolean |Merged array or false |
+
+```javascript
+  arrToCombine(['a', 'b', 'c'], [1, 2, 3]); // [{a: 1}, {b: 2}, {c: 3}]
+```
+
 ## arrToMap 
 
 Make an object map using array of strings.
