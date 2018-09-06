@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function startWith(str: string, prefix: string): boolean
+ */
+
 function exports(str, prefix) {
     return str.indexOf(prefix) === 0;
 }

@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isStr(val: any): boolean
+ */
+
 _('objToStr');
 
 function exports(val) {

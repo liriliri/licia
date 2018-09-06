@@ -10,4 +10,8 @@
  * test: all
  */
 
+/* typescript
+ * export declare function noop(): void
+ */
+
 function exports() {}

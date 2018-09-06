@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isEmpty(val: any): boolean
+ */
+
 _('isArrLike isArr isStr isArgs keys');
 
 function exports(val) {

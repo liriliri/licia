@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function trim(str: string, chars?: string | string[]): string
+ */
+
 _('ltrim rtrim');
 
 var regSpace = /^\s+|\s+$/g;

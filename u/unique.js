@@ -16,6 +16,13 @@
  * test: all
  */
 
+/* typescript
+ * export declare function unique(
+ *     arr: any[], 
+ *     compare?: (a: any, b: any) => boolean | number
+ * ): any[]
+ */
+
 _('filter');
 
 function exports(arr, compare) {

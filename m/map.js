@@ -17,6 +17,14 @@
  * test: all
  */
 
+/* typescript
+ * export declare function map(
+ *     obj: {} | any[],
+ *     iteratee: (val: any, idx?: number | string, obj?: {} | any[]) => boolean,
+ *     ctx?: any
+ * ): any[]
+ */
+
 _('safeCb keys isArrLike');
 
 function exports(obj, iteratee, ctx) {

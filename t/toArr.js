@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function toArr(val: any): any[]
+ */
+
 _('isArrLike map isArr isStr');
 
 function exports(val) {

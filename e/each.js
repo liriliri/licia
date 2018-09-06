@@ -16,6 +16,14 @@
  * test: all
  */
 
+/* typescript
+ * export declare function each(
+ *     obj: {} | any[], 
+ *     iteratee: (val: any, key?: string | number, obj?: {} | any[]) => void, 
+ *     ctx?: any
+ * ): void
+ */
+
 _('isArrLike keys optimizeCb');
 
 function exports(obj, iteratee, ctx) {

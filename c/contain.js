@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function contain(arr: any[], val: any): boolean
+ */
+
 _('idxOf isArrLike values');
 
 function exports(arr, val) {

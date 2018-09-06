@@ -20,6 +20,14 @@
  * test: all
  */
 
+/* typescript
+ * export declare function filter(
+ *     obj: {} | any[], 
+ *     predicate: (val: any, idx?: number | string, obj?: {} | any[]) => boolean, 
+ *     ctx?: any
+ * ): any[]
+ */
+
 _('safeCb each');
 
 function exports(obj, predicate, ctx) {

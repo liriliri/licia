@@ -10,6 +10,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function now(): number
+ */
+
 exports =
     Date.now ||
     function() {

@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function escapeRegExp(str: string): string
+ */
+
 function exports(str) {
     return str.replace(/\W/g, '\\$&');
 }

@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function extractBlockCmts(str: string): string[]
+ */
+
 _('map trim');
 
 var regBlockCmt = /(\/\*[\s\S]*?\*\/)/gm;

@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function stripCmt(str: string): string
+ */
+
 function exports(str) {
     str = ('__' + str + '__').split('');
     var mode = {

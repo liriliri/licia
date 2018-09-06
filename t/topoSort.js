@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function topoSort(edges: any[]): any[]
+ */
+
 function exports(edges) {
     return sort(uniqueNodes(edges), edges);
 }

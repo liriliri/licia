@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isUrl(val: string): boolean
+ */
+
 function exports(val) {
     return regUrl.test(val);
 }

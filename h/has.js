@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function has(obj: {}, key: string): boolean
+ */
+
 var hasOwnProp = Object.prototype.hasOwnProperty;
 
 function exports(obj, key) {

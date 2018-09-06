@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function stripColor(str: string): string
+ */
+
 /* eslint-disable no-control-regex */
 var regColor = /\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]/g;
 

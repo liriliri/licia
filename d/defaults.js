@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function defaults(obj: {}, ...src: any[]): {}
+ */
+
 _('createAssigner allKeys');
 
 exports = createAssigner(allKeys, true);

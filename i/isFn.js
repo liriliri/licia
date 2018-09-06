@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isFn(val: any): boolean
+ */
+
 _('objToStr');
 
 function exports(val) {
