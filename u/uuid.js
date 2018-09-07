@@ -12,6 +12,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function uuid(): string
+ */
+
 _('randomBytes');
 
 function exports() {

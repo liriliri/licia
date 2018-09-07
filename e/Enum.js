@@ -27,6 +27,13 @@
  * test: all
  */
 
+/* typescript
+ * export declare class Enum {
+ *     public size: number
+ *     [key: string]: any
+ * }
+ */
+
 _('Class freeze isArr each keys');
 
 exports = Class({

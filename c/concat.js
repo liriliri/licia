@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function concat(...args: Array<any[]>): any[]
+ */
+
 _('toArr');
 
 function exports() {

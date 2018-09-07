@@ -4,7 +4,7 @@
  * |-----------|--------|-------------------|
  * |dir        |string  |Directory to create|
  * |[mode=0777]|number  |Directory mode     |
- * |callback   |function|Callback           |
+ * |[callback] |function|Callback           |
  *
  * ```javascript
  * mkdir('/tmp/foo/bar/baz', function (err)
@@ -18,6 +18,14 @@
 /* module
  * env: node
  * test: node
+ */
+
+/* typescript
+ * export declare function mkdir(
+ *     dir: string, 
+ *     mode?: number, 
+ *     cb?: (err: Error) => void
+ * ): void
  */
 
 _('isFn noop');

@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function endWith(str: string, suffix: string): boolean
+ */
+
 function exports(str, suffix) {
     var idx = str.length - suffix.length;
 

@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isObj(val: any): boolean
+ */
+
 function exports(val) {
     var type = typeof val;
 

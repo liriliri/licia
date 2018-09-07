@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function strHash(str: string): number
+ */
+
 function exports(str) {
     var hash = 5381;
 

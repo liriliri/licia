@@ -4080,7 +4080,7 @@ Recursively create directories.
 |-----------|--------|-------------------|
 |dir        |string  |Directory to create|
 |[mode=0777]|number  |Directory mode     |
-|callback   |function|Callback           |
+|[callback] |function|Callback           |
 
 ```javascript
 mkdir('/tmp/foo/bar/baz', function (err)

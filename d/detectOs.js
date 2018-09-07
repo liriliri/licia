@@ -20,6 +20,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function detectOs(ua?: string): string
+ */
+
 _('isBrowser');
 
 function exports(ua) {

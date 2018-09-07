@@ -49,6 +49,20 @@
  * test: all
  */
 
+/* typescript
+ * export declare function dateFormat(
+ *     date: Date, 
+ *     mask: string, 
+ *     utc?: boolean,
+ *     gmt?: boolean
+ * ): string
+ * export declare function dateFormat(
+ *     mask: string, 
+ *     utc?: boolean,
+ *     gmt?: boolean
+ * ): string
+ */
+
 _('isStr isDate toStr lpad');
 
 function exports(date, mask, utc, gmt) {

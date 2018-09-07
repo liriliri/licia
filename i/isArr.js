@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isArr(val: any): boolean
+ */
+
 _('objToStr');
 
 exports =

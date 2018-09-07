@@ -16,6 +16,18 @@
  * test: node
  */
 
+/* typescript
+ * export declare const fs: {
+ *     readFile(path: string, options?: string): Promise<string>
+ *     exists(path: string): Promise<boolean>
+ *     unlink(path: string): Promise<void>
+ *     writeFile(path: string, data: string, options?: string): Promise<void>
+ *     readdir(path: string): Promise<string[]>
+ *     rmdir(path: string): Promise<void>
+ *     [key: string]: any
+ * }
+ */
+
 _('promisify root each Promise toArr');
 
 var fs = require('fs');

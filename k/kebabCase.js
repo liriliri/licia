@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function kebabCase(str: string): string
+ */
+
 _('splitCase');
 
 function exports(str) {

@@ -21,6 +21,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function nextTick(cb: (...args: any[]) => void): void
+ */
+
 if (typeof process === 'object' && process.nextTick) {
     exports = process.nextTick;
 } else if (typeof setImmediate === 'function') {

@@ -25,6 +25,11 @@
  * test: all
  */
 
+/* typescript
+ * export declare function keyCode(name: string): number
+ * export declare function keyCode(code: number): string
+ */
+
 _('isStr invert');
 
 function exports(val) {
