@@ -14,8 +14,8 @@
 
 Useful utility collection with zero dependencies.
 
-To check all current available functions, see
-[doc.md](http://eustia.liriliri.io/module.html).
+To check all current available functions, click
+[here](http://eustia.liriliri.io/module.html).
 
 ## Another Lodash?
 
