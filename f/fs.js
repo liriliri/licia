@@ -18,7 +18,8 @@
 
 /* typescript
  * export declare const fs: {
- *     readFile(path: string, options?: string): Promise<string>
+ *     readFile(path: string, encoding: string): Promise<string>
+ *     readFile(path: string): Promise<Buffer>
  *     exists(path: string): Promise<boolean>
  *     unlink(path: string): Promise<void>
  *     writeFile(path: string, data: string, options?: string): Promise<void>
