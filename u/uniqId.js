@@ -1,9 +1,9 @@
 /* Generate a globally-unique id.
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |prefix|string|Id prefix         |
- * |return|string|Globally-unique id|
+ * |Name    |Type  |Desc              |
+ * |--------|------|------------------|
+ * |[prefix]|string|Id prefix         |
+ * |return  |string|Globally-unique id|
  *
  * ```javascript
  * uniqId('eusita_'); // -> 'eustia_xxx'
@@ -14,6 +14,10 @@
  * env: all
  * test: all
  */
+
+/* typescript
+ * export declare function uniqId(prefix?: string): string
+ */ 
 
 var idCounter = 0;
 
