@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isUndef(val: any): boolean
+ */
+
 function exports(val) {
     return val === void 0;
 }
