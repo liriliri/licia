@@ -47,6 +47,14 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function meta(): {}
+ * export declare function meta(key: string): string
+ * export declare function meta(keys: string[]): {}
+ * export declare function meta(key, value): void
+ * export declare function meta(pairs: {}): void
+ */ 
+
 _('each isStr isUndef contain isArr isObj toArr');
 
 function exports(name, content) {
