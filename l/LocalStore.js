@@ -20,6 +20,12 @@
  * test: browser
  */
 
+/* typescript
+ * export declare class LocalStore extends Store {
+ *     constructor(name: string, data: {})
+ * }
+ */ 
+
 _('Store safeStorage isEmpty stringify defaults isObj');
 
 var localStorage = safeStorage('local');
