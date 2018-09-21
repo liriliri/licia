@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function escapeJsStr(str: string): string
+ */ 
+
 _('toStr');
 
 function exports(str) {
