@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function getUrlParam(name: string, url?:string): string | undefined
+ */ 
+
 _('Url');
 
 function exports(name, url) {
