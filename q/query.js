@@ -35,7 +35,7 @@
  *     parse(str: string): any
  *     stringify(object: any): string
  * }
- */ 
+ */
 
 _('trim each isUndef isArr map isEmpty filter isObj');
 

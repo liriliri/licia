@@ -17,7 +17,7 @@
 
 /* typescript
  * export declare function uniqId(prefix?: string): string
- */ 
+ */
 
 var idCounter = 0;
 

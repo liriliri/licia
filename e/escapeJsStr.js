@@ -19,7 +19,7 @@
 
 /* typescript
  * export declare function escapeJsStr(str: string): string
- */ 
+ */
 
 _('toStr');
 

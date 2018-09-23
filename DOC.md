@@ -5564,10 +5564,10 @@ union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
 
 Generate a globally-unique id.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|prefix|string|Id prefix         |
-|return|string|Globally-unique id|
+|Name    |Type  |Desc              |
+|--------|------|------------------|
+|[prefix]|string|Id prefix         |
+|return  |string|Globally-unique id|
 
 ```javascript
 uniqId('eusita_'); // -> 'eustia_xxx'

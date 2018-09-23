@@ -94,7 +94,7 @@
  *     clear(): void
  *     each(fn: (...args: any[]) => void): void
  * }
- */ 
+ */
 
 _('Emitter isStr isObj each toArr');
 
