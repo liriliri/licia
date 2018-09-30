@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function lowerCase(str: string): string
+ */ 
+
 _('toStr');
 
 function exports(str) {
