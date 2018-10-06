@@ -1,13 +1,13 @@
 ## $
 
-jQuery like style dom manipulator.
+类似 jQuery 的 dom 操作库。
 
-### Available methods
-
+### 支持方法列表 
+ 
 offset, hide, show, first, last, get, eq, on, off, html, text, val, css, attr,
 data, rmAttr, remove, addClass, rmClass, toggleClass, hasClass, append, prepend,
 before, after
-
+ 
 ```javascript
 var $btn = $('#btn');
 $btn.html('eustia');
@@ -21,37 +21,37 @@ $btn.on('click', function ()
 
 ## $attr
 
-Element attribute manipulation.
+操作元素属性。
 
-Get the value of an attribute for the first element in the set of matched elements.
+获取元素集中第一个元素的指定属性值。
 
-|Name   |Type                |Desc                            |
-|-------|--------------------|--------------------------------|
-|element|string array element|Elements to manipulate          |
-|name   |string              |Attribute name                  |
-|return |string              |Attribute value of first element|
+|参数名|类型|说明|
+|-----|----|---|
+|element|string array element|目标元素集|
+|name|string|属性名|
+|返回值|string|第一个元素的属性值|
 
-Set one or more attributes for the set of matched elements.
+设置元素集中一个或多个属性的值。
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|name   |string              |Attribute name        |
-|value  |string              |Attribute value       |
+|参数名|类型|说明|
+|-----|----|---|
+|element|string array element|目标元素集|
+|name|string|属性名|
+|value|string|属性值|
 
-|Name      |Type                |Desc                                  |
-|----------|--------------------|--------------------------------------|
-|element   |string array element|Elements to manipulate                |
-|attributes|object              |Object of attribute-value pairs to set|
+|参数名|类型|说明|
+|-----|----|---|
+|element|string array element|目标元素集|
+|attributes|object|包含多个要设置键值对的对象|
 
 ### remove
 
-Remove an attribute from each element in the set of matched elements.
+对元素集中的所有元素，移除指定的属性。
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|name   |string              |Attribute name        |
+|参数名|类型|说明|
+|-----|----|---|
+|element|string array element|目标元素|
+|name|string|属性名|
 
 ```javascript
 $attr('#test', 'attr1', 'test');
@@ -65,44 +65,45 @@ $attr('#test', {
 
 ## $class
 
-Element class manipulations.
+操作元素 class。
 
 ### add
 
-Add the specified class(es) to each element in the set of matched elements.
+对元素集中的所有元素，添加指定的 class。
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|names  |string array        |Classes to add        |
+|参数名|类型|说明|
+|-----|----|---|
+|element|string array element|目标元素|
+|names|string array|添加的 class|
 
 ### has
 
-Determine whether any of the matched elements are assigned the given class.
+判断元素集中是否有元素含有指定的 class。
 
-|Name   |Type                |Desc                                 |
-|-------|--------------------|-------------------------------------|
-|element|string array element|Elements to manipulate               |
-|name   |string              |Class name                           |
-|return |boolean             |True if elements has given class name|
+|参数名|类型|说明|
+|-----|----|---|
+|element|string array element|目标元素|
+|name|string|class 值|
+|返回值|boolean|如果有，返回真|
 
 ### toggle
 
-Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.
+对于元素集中的每个元素，如果含有指定的 class 就将其删除，反之则添加。
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|name   |string              |Class name to toggle  |
+|参数名|类型|说明|
+|-----|----|---|
+|element|string array element|目标元素|
+|name|string|class 值|
 
 ### remove
 
-Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
+对于元素集中的所有元素，移除指定的 class。
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|names  |string              |Class names to remove |
+
+|参数名|类型|说明|
+|-----|----|---|
+|element|string array element|目标元素|
+|names|string|class 值|
 
 ```javascript
 $class.add('#test', 'class1');
@@ -120,22 +121,22 @@ Element css manipulation.
 
 Get the computed style properties for the first element in the set of matched elements.
 
-|Name   |Type                |Desc                      |
-|-------|--------------------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |element|string array element|Elements to manipulate    |
 |name   |string              |Property name             |
 |return |string              |Css value of first element|
 
 Set one or more CSS properties for the set of matched elements.
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |element|string array element|Elements to manipulate|
 |name   |string              |Property name         |
 |value  |string              |Css value             |
 
-|Name      |Type                |Desc                            |
-|----------|--------------------|--------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |element   |string array element|Elements to manipulate          |
 |properties|object              |Object of css-value pairs to set|
 
@@ -189,8 +190,8 @@ Insert content to the beginning of elements.
 
 Insert content to the end of elements.
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |element|string array element|Elements to manipulate|
 |content|string              |Html strings          |
 
@@ -210,8 +211,8 @@ $insert.append('#test', '<div>licia</div>');
 
 Get the position of the element in document.
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |element|string array element|Elements to get offset|
 
 ```javascript
@@ -247,8 +248,8 @@ $property.html('#test'); // -> licia
 
 Remove the set of matched elements from the DOM.
 
-|Name   |Type                |Desc              |
-|-------|--------------------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |element|string array element|Elements to delete|
 
 ```javascript
@@ -259,8 +260,8 @@ $remove('#test');
 
 Convert value into an array, if it's a string, do querySelector.
 
-|Name  |Type                |Desc             |
-|------|--------------------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |value |element array string|Value to convert |
 |return|array               |Array of elements|
 
@@ -272,8 +273,8 @@ $safeEls('.test'); // -> Array of elements with test class
 
 Show elements.
 
-|Name   |Type                |Desc            |
-|-------|--------------------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |element|string array element|Elements to show|
 
 ```javascript
