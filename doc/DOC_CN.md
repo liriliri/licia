@@ -42,7 +42,7 @@ $btn.on('click', function ()
 |参数名|类型|说明|
 |-----|----|---|
 |element|string array element|目标元素集|
-|attributes|object|包含多个要设置键值对的对象|
+|attributes|object|包含多个要设置属性-值对的对象|
 
 ### remove
 
@@ -50,7 +50,7 @@ $btn.on('click', function ()
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|目标元素|
+|element|string array element|目标元素集|
 |name|string|属性名|
 
 ```javascript
@@ -73,7 +73,7 @@ $attr('#test', {
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|目标元素|
+|element|string array element|目标元素集|
 |names|string array|添加的 class|
 
 ### has
@@ -82,7 +82,7 @@ $attr('#test', {
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|目标元素|
+|element|string array element|目标元素集|
 |name|string|class 值|
 |返回值|boolean|如果有，返回真|
 
@@ -92,7 +92,7 @@ $attr('#test', {
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|目标元素|
+|element|string array element|目标元素集|
 |name|string|class 值|
 
 ### remove
@@ -102,7 +102,7 @@ $attr('#test', {
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|目标元素|
+|element|string array element|目标元素集|
 |names|string|class 值|
 
 ```javascript
@@ -117,28 +117,28 @@ $class.has('#test', 'class1'); // -> true
 
 ## $css
 
-Element css manipulation.
+操作元素样式。
 
-Get the computed style properties for the first element in the set of matched elements.
-
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|Elements to manipulate    |
-|name   |string              |Property name             |
-|return |string              |Css value of first element|
-
-Set one or more CSS properties for the set of matched elements.
+获取元素集中第一个元素的指定样式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|Elements to manipulate|
-|name   |string              |Property name         |
-|value  |string              |Css value             |
+|element|string array element|目标元素集|
+|name|string|样式名|
+|返回值|string|样式值|
+
+设置元素集中一个或多个样式的值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|element   |string array element|Elements to manipulate          |
-|properties|object              |Object of css-value pairs to set|
+|element|string array element|目标元素集|
+|name|string|样式名|
+|value|string|样式值|
+
+|参数名|类型|说明|
+|-----|----|---|
+|element|string array element|目标元素集|
+|properties|object|包含多个要设置样式-值对的对象|
 
 ```javascript
 $css('#test', {
@@ -151,7 +151,7 @@ $css('#test', 'color'); // -> #fff
 
 ## $data
 
-Wrapper of $attr, adds data- prefix to keys.
+同 $attr，自动给属性名加 data- 前缀。
 
 ```javascript
 $data('#test', 'attr1', 'eustia');
@@ -172,28 +172,28 @@ $event.off('#test', 'click', clickHandler);
 
 ## $insert
 
-Insert html on different position.
+插入 html 到不同位置。
 
 ### before
 
-Insert content before elements.
+插入 html 到元素前。
 
 ### after
 
-Insert content after elements.
+插入 html 到元素后。
 
 ### prepend
 
-Insert content to the beginning of elements.
+插入 html 到元素内部前。
 
 ### append
 
-Insert content to the end of elements.
+插入 html 到元素内部后。
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|Elements to manipulate|
-|content|string              |Html strings          |
+|element|string array element|目标元素集|
+|content|string|html 字符串|
 
 ```javascript
 // <div id="test"><div class="mark"></div></div>
@@ -209,11 +209,11 @@ $insert.append('#test', '<div>licia</div>');
 
 ## $offset
 
-Get the position of the element in document.
+获取元素在文档中的位置。
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|Elements to get offset|
+|element|string array element|目标元素集|
 
 ```javascript
 $offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
@@ -221,23 +221,19 @@ $offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
 
 ## $property
 
-Element property html, text, val getter and setter.
+设置或获取元素的 html， text，val 等值。
 
 ### html
 
-Get the HTML contents of the first element in the set of matched elements or
-set the HTML contents of every matched element.
+设置或获取元素的 html 值。
 
 ### text
 
-Get the combined text contents of each element in the set of matched
-elements, including their descendants, or set the text contents of the
-matched elements.
+设置或获取元素的 text 值。
 
 ### val
 
-Get the current value of the first element in the set of matched elements or
-set the value of every matched element.
+设置或获取元素的 val 值。
 
 ```javascript
 $property.html('#test', 'licia');
@@ -246,11 +242,11 @@ $property.html('#test'); // -> licia
 
 ## $remove
 
-Remove the set of matched elements from the DOM.
+移除指定元素集。
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|Elements to delete|
+|element|string array element|目标元素集|
 
 ```javascript
 $remove('#test');
@@ -258,12 +254,12 @@ $remove('#test');
 
 ## $safeEls
 
-Convert value into an array, if it's a string, do querySelector.
+将值转换为数组，如果值为字符串，使用 querySelector 获取元素集。
 
 |参数名|类型|说明|
 |-----|----|---|
-|value |element array string|Value to convert |
-|return|array               |Array of elements|
+|value |element array string|要转换的值|
+|return|array|元素集|
 
 ```javascript
 $safeEls('.test'); // -> Array of elements with test class
@@ -271,11 +267,11 @@ $safeEls('.test'); // -> Array of elements with test class
 
 ## $show
 
-Show elements.
+显示元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|Elements to show|
+|element|string array element|目标元素集|
 
 ```javascript
 $show('#test');

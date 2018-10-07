@@ -1,27 +1,27 @@
 ## CN
 
-Element css manipulation.
+操作元素样式。
 
-Get the computed style properties for the first element in the set of matched elements.
-
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|Elements to manipulate    |
-|name   |string              |Property name             |
-|return |string              |Css value of first element|
-
-Set one or more CSS properties for the set of matched elements.
+获取元素集中第一个元素的指定样式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|Elements to manipulate|
-|name   |string              |Property name         |
-|value  |string              |Css value             |
+|element|string array element|目标元素集|
+|name|string|样式名|
+|返回值|string|样式值|
+
+设置元素集中一个或多个样式的值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|element   |string array element|Elements to manipulate          |
-|properties|object              |Object of css-value pairs to set|
+|element|string array element|目标元素集|
+|name|string|样式名|
+|value|string|样式值|
+
+|参数名|类型|说明|
+|-----|----|---|
+|element|string array element|目标元素集|
+|properties|object|包含多个要设置样式-值对的对象|
 
 ```javascript
 $css('#test', {

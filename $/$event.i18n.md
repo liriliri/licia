@@ -1,6 +1,6 @@
 # CN
 
-bind events to certain dom elements.
+给指定 dom 元素绑定事件。
 
 ```javascript
 function clickHandler()

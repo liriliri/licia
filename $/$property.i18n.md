@@ -1,22 +1,18 @@
 ## CN
 
-Element property html, text, val getter and setter.
+设置或获取元素的 html， text，val 等值。
 
 ### html
 
-Get the HTML contents of the first element in the set of matched elements or
-set the HTML contents of every matched element.
+设置或获取元素的 html 值。
 
 ### text
 
-Get the combined text contents of each element in the set of matched
-elements, including their descendants, or set the text contents of the
-matched elements.
+设置或获取元素的 text 值。
 
 ### val
 
-Get the current value of the first element in the set of matched elements or
-set the value of every matched element.
+设置或获取元素的 val 值。
 
 ```javascript
 $property.html('#test', 'licia');

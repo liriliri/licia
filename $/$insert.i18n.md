@@ -1,27 +1,27 @@
 ## CN
 
-Insert html on different position.
+插入 html 到不同位置。
 
 ### before
 
-Insert content before elements.
+插入 html 到元素前。
 
 ### after
 
-Insert content after elements.
+插入 html 到元素后。
 
 ### prepend
 
-Insert content to the beginning of elements.
+插入 html 到元素内部前。
 
 ### append
 
-Insert content to the end of elements.
+插入 html 到元素内部后。
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|Elements to manipulate|
-|content|string              |Html strings          |
+|element|string array element|目标元素集|
+|content|string|html 字符串|
 
 ```javascript
 // <div id="test"><div class="mark"></div></div>

@@ -1,10 +1,10 @@
 ## CN
 
-Remove the set of matched elements from the DOM.
+移除指定元素集。
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|Elements to delete|
+|element|string array element|目标元素集|
 
 ```javascript
 $remove('#test');

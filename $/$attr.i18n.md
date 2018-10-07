@@ -21,7 +21,7 @@
 |参数名|类型|说明|
 |-----|----|---|
 |element|string array element|目标元素集|
-|attributes|object|包含多个要设置键值对的对象|
+|attributes|object|包含多个要设置属性-值对的对象|
 
 ### remove
 
@@ -29,7 +29,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|目标元素|
+|element|string array element|目标元素集|
 |name|string|属性名|
 
 ```javascript

@@ -8,7 +8,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|目标元素|
+|element|string array element|目标元素集|
 |names|string array|添加的 class|
 
 ### has
@@ -17,7 +17,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|目标元素|
+|element|string array element|目标元素集|
 |name|string|class 值|
 |返回值|boolean|如果有，返回真|
 
@@ -27,7 +27,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|目标元素|
+|element|string array element|目标元素集|
 |name|string|class 值|
 
 ### remove
@@ -37,7 +37,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|element|string array element|目标元素|
+|element|string array element|目标元素集|
 |names|string|class 值|
 
 ```javascript
