@@ -279,14 +279,14 @@ $show('#test');
 
 ## Blob
 
-Use Blob when available, otherwise BlobBuilder.
+如果支持 Blob，直接返回 Blob，否则使用 BlobBuilder 进行兼容。
 
 ### constructor
 
-|Name  |Type  |Desc      |
-|------|------|----------|
-|parts |array |Blob parts|
-|[opts]|object|Options   |
+|参数名|类型|说明|
+|-----|----|---|
+|parts|array|Blob 分片|
+|[opts]|object|选项|
 
 ```javascript
 var blob = new Blob([]);

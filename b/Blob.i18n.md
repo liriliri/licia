@@ -1,4 +1,4 @@
-## Blob
+## CN
 
 如果支持 Blob，直接返回 Blob，否则使用 BlobBuilder 进行兼容。
 
