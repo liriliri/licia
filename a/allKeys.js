@@ -5,7 +5,7 @@
  * |obj   |object|Object to query            |
  * |return|array |Array of all property names|
  *
- * > Members of Object's prototype won't be retrieved.
+ * Members of Object's prototype won't be retrieved.
  *
  * ```javascript
  * var obj = Object.create({zero: 0});

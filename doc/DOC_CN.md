@@ -1307,7 +1307,7 @@ ajax.get('http://example.com', {}, function (data)
 |obj|object|目标对象|
 |返回值|array|包含所有键名的数组|
 
-> Object 对象原型上的方法不会被获取到。 
+Object 对象原型上的方法不会被获取到。 
 
 ```javascript
 var obj = Object.create({zero: 0});
@@ -1335,7 +1335,7 @@ if (needPx[key]) val += 'px';
 
 ## atob
 
-Use Buffer to emulate atob when running in node.
+window.atob，运行在 node 环境时使用 Buffer 进行模拟。
 
 ```javascript
 atob('SGVsbG8gV29ybGQ='); // -> 'Hello World'
@@ -1356,16 +1356,16 @@ average(5, 3, 1); // -> 3
 
 ## base64
 
-Basic base64 encoding and decoding.
+base64 编解码。
 
 ### encode
 
-Turn a byte array into a base64 string.
+将字节数组编码为 base64 字符串。
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
-|arr   |array |Byte array   |
-|return|string|Base64 string|
+|参数名|类型|说明|
+|-----|----|---|
+|arr|array|字节数组|
+|返回值|string|base64 编码的字符串|
 
 ```javascript
 base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
@@ -1373,12 +1373,12 @@ base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
 
 ### decode
 
-Turn a base64 string into a byte array.
+将 base64 字符串解码为字节数组。
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
-|str   |string|Base64 string|
-|return|array |Byte array   |
+|参数名|类型|说明|
+|-----|----|---|
+|str|string|base64 编码的字符串|
+|return|array|字节数组|
 
 ```javascript
 base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
@@ -1386,15 +1386,15 @@ base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
 
 ## before
 
-Create a function that invokes less than n times.
+创建一个函数，只能调用少于 n 次。
 
-|Name  |Type    |Desc                                            |
-|------|--------|------------------------------------------------|
-|n     |number  |Number of calls at which fn is no longer invoked|
-|fn    |function|Function to restrict                            |
-|return|function|New restricted function                         |
+|参数名|类型|说明|
+|-----|----|---|
+|n|number|调用次数|
+|fn|function|源函数|
+|返回值|function|输出函数|
 
-Subsequent calls to the created function return the result of the last fn invocation.
+超过 n 次后再次调用函数将直接返回最后一次函数的调用结果。
 
 ```javascript
 $(element).on('click', before(5, function() {}));
@@ -1403,14 +1403,14 @@ $(element).on('click', before(5, function() {}));
 
 ## bind
 
-Create a function bound to a given object.
+创建一个绑定到指定对象的函数。
 
-|Name     |Type    |Desc                    |
-|---------|--------|------------------------|
-|fn       |function|Function to bind        |
-|ctx      |*       |This binding of given fn|
-|[...rest]|*       |Optional arguments      |
-|return   |function|New bound function      |
+|参数名|类型|说明|
+|-----|----|---|
+|fn|function|源函数|
+|ctx|*|绑定对象|
+|[...rest]|*|可选参数|
+|返回值|function|输出函数|
 
 ```javascript
 var fn = bind(function (msg)
@@ -1422,7 +1422,7 @@ fn(); // -> 'eustia: I am a utility library.'
 
 ## btoa
 
-Use Buffer to emulate btoa when running in node.
+window.btoa，运行在 node 环境时使用 Buffer 进行模拟。
 
 ```javascript
 btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
@@ -1430,12 +1430,12 @@ btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 
 ## bubbleSort
 
-Bubble sort implementation.
+冒泡排序实现。
 
-|Name |Type    |Desc         |
-|-----|--------|-------------|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|参数名|类型|说明|
+|-----|----|---|
+|arr|array|要排序的数组|
+|[cmp]|function|比较器|
 
 ```javascript
 bubbleSort([2, 1]); // -> [1, 2]
