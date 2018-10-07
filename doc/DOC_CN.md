@@ -46,7 +46,7 @@ $btn.on('click', function ()
 
 ### remove
 
-对元素集中的所有元素，移除指定的属性。
+对元素集中的所有元素，移除指定的属性。
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -78,7 +78,7 @@ $attr('#test', {
 
 ### has
 
-判断元素集中是否有元素含有指定的 class。
+判断元素集中是否有元素含有指定的 class。
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -254,7 +254,7 @@ $remove('#test');
 
 ## $safeEls
 
-将值转换为数组，如果值为字符串，使用 querySelector 获取元素集。
+将值转换为数组，如果值为字符串，使用 querySelector 获取元素集。
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -1215,12 +1215,12 @@ validator.validate({test: 'licia'}); // -> true
 
 ## abbrev
 
-Calculate the set of unique abbreviations for a given set of strings.
+计算字符串集的缩写集合。
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|...arr|string|List of names   |
-|return|object|Abbreviation map|
+|参数名|类型|说明|
+|-----|----|---|
+|...arr|string|字符串集|
+|返回值|object|缩写集合|
 
 ```javascript
 abbrev('lina', 'luna');
@@ -1229,13 +1229,13 @@ abbrev('lina', 'luna');
 
 ## after
 
-Create a function that invokes once it's called n or more times.
+创建一个函数，只有在调用 n 次后才会调用一次。
 
-|Name  |Type    |Desc                          |
-|------|--------|------------------------------|
-|n     |number  |Number of calls before invoked|
-|fn    |function|Function to restrict          |
-|return|function|New restricted function       |
+|参数名|类型|说明|
+|-----|----|---|
+|n|number|调用次数|
+|fn|function|源函数|
+|返回值|function|输出函数|
 
 ```javascript
 var fn = after(5, function()
@@ -1246,39 +1246,39 @@ var fn = after(5, function()
 
 ## ajax
 
-Perform an asynchronous HTTP request.
+执行异步 HTTP 请求。
 
-|Name   |Type  |Desc        |
-|-------|------|------------|
-|options|object|Ajax options|
+|参数名|类型|说明|
+|-----|----|---|
+|options|object|Ajax 选项|
 
-Available options:
+可用选项：
 
-|Name                                         |Type         |Desc                       |
-|---------------------------------------------|-------------|---------------------------|
-|url                                          |string       |Request url                |
-|data                                         |string object|Request data               |
-|dataType=json                                |string       |Response type(json, xml)   |
-|contentType=application/x-www-form-urlencoded|string       |Request header Content-Type|
-|success                                      |function     |Success callback           |
-|error                                        |function     |Error callback             |
-|complete                                     |function     |Callback after request     |
-|timeout                                      |number       |Request timeout            |
+|参数名|类型|说明|
+|-----|----|---|
+|url|string|请求地址|
+|data|string object|请求数据|
+|dataType=json|string|响应类型（json，xml）|
+|contentType=application/x-www-form-urlencoded|string|请求内容类型|
+|success|function|成功回调|
+|error|function|失败回调|
+|complete|function|结束回调|
+|timeout|number|请求超时|
 
 ### get
 
-Shortcut for type = GET;
+type = GET 的快捷方式。
 
 ### post
 
-Shortcut for type = POST;
+type = POST 的快捷方式。
 
-|Name    |Type         |Desc            |
-|--------|-------------|----------------|
-|url     |string       |Request url     |
-|[data]  |string object|Request data    |
-|success |function     |Success callback|
-|dataType|function     |Response type   |
+|参数名|类型|说明|
+|-----|----|---|
+|url|string|请求地址|
+|[data]|string object|请求数据|
+|success|function|成功回调|
+|dataType|function|响应类型|
 
 ```javascript
 ajax({
@@ -1300,14 +1300,14 @@ ajax.get('http://example.com', {}, function (data)
 
 ## allKeys
 
-Retrieve all the names of object's own and inherited properties.
+获取对象的所有键名，包括自身的及继承的。
 
-|Name  |Type  |Desc                       |
-|------|------|---------------------------|
-|obj   |object|Object to query            |
-|return|array |Array of all property names|
+|参数名|类型|说明|
+|-----|----|---|
+|obj|object|目标对象|
+|返回值|array|包含所有键名的数组|
 
-> Members of Object's prototype won't be retrieved.
+> Object 对象原型上的方法不会被获取到。 
 
 ```javascript
 var obj = Object.create({zero: 0});
@@ -1317,13 +1317,13 @@ allKeys(obj) // -> ['zero', 'one']
 
 ## arrToMap
 
-Make an object map using array of strings.
+将字符串列表转换为映射。
 
-|Name    |Type  |Desc            |
-|--------|------|----------------|
-|arr     |array |Array of strings|
-|val=true|*     |Key value       |
-|return  |object|Object map      |
+|参数名|类型|说明|
+|-----|----|---|
+|arr|array|字符串列表|
+|val=true|*|键值|
+|返回值|object|映射|
 
 ```javascript
 var needPx = arrToMap([
@@ -1343,12 +1343,12 @@ atob('SGVsbG8gV29ybGQ='); // -> 'Hello World'
 
 ## average
 
-Get average value of given numbers.
+获取数字的平均值。
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|...num|number|Numbers to calculate|
-|return|number|Average value       |
+|参数名|类型|说明|
+|-----|----|---|
+|...num|number|要计算的数字|
+|返回值|number|平均值|
 
 ```javascript
 average(5, 3, 1); // -> 3
