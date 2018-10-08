@@ -7,7 +7,7 @@ Each function consumes the return value of the function that follows.
 |参数名|类型|说明|
 |-----|----|---|
 |...fn |function|Functions to compose|
-|return|function|Composed function   |
+|返回值|function|Composed function   |
 
 ```javascript
 var welcome = compose(function (name) 

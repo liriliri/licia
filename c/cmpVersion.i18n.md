@@ -6,7 +6,7 @@ Compare version strings.
 |-----|----|---|
 |v1    |string|Version to compare|
 |v2    |string|Version to compare|
-|return|number|Comparison result |
+|返回值|number|Comparison result |
 
 ```javascript
 cmpVersion('1.1.8', '1.0.4'); // -> 1

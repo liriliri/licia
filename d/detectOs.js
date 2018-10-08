@@ -1,9 +1,9 @@
 /* Detect operating system using ua.
  * 
- * |Name                    |Type  |Desc                 |
- * |------------------------|------|---------------------|
- * |[ua=navigator.userAgent]|string|Browser userAgent    |
- * |return                  |string|Operating system name|
+ * |Name                  |Type  |Desc                 |
+ * |----------------------|------|---------------------|
+ * |ua=navigator.userAgent|string|Browser userAgent    |
+ * |return                |string|Operating system name|
  * 
  * Supported os: windows, os x, linux, ios, android, windows phone
  * 

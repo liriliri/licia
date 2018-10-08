@@ -22,7 +22,7 @@ base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|base64 编码的字符串|
-|return|array|字节数组|
+|返回值|array|字节数组|
 
 ```javascript
 base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]

@@ -6,7 +6,7 @@ CreateObjectURL wrapper.
 |-----|----|---|
 |data   |File Blob string array|Url data                            | 
 |[opts] |object                |Used when data is not a File or Blob|
-|return |string                |Blob url                            |
+|返回值 |string                |Blob url                            |
 
 ```javascript
 createUrl('test', {type: 'text/plain'}); // -> Blob url

@@ -6,7 +6,7 @@ Check if browser supports a given CSS feature.
 |-----|----|---|
 |name  |string |Css property name |
 |[val] |string |Css property value|
-|return|boolean|True if supports  |
+|返回值|boolean|True if supports  |
 
 ```javascript
 cssSupports('display', 'flex'); // -> true

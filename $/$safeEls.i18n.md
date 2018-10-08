@@ -5,7 +5,7 @@
 |参数名|类型|说明|
 |-----|----|---|
 |value |element array string|要转换的值|
-|return|array|元素集|
+|返回值|array|元素集|
 
 ```javascript
 $safeEls('.test'); // -> Array of elements with test class

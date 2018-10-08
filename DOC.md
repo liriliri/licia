@@ -2140,10 +2140,10 @@ detectMocha(); // -> True if mocha is running.
 
 Detect operating system using ua.
 
-|Name                    |Type  |Desc                 |
-|------------------------|------|---------------------|
-|[ua=navigator.userAgent]|string|Browser userAgent    |
-|return                  |string|Operating system name|
+|Name                  |Type  |Desc                 |
+|----------------------|------|---------------------|
+|ua=navigator.userAgent|string|Browser userAgent    |
+|return                |string|Operating system name|
 
 Supported os: windows, os x, linux, ios, android, windows phone
 
@@ -3306,10 +3306,10 @@ console.log(isMiniProgram); // -> true if running in mini program.
 
 Check whether client is using a mobile browser using ua.
 
-|Name                    |Type   |Desc                                 |
-|------------------------|-------|-------------------------------------|
-|[ua=navigator.userAgent]|string |User agent                           |
-|return                  |boolean|True if ua belongs to mobile browsers|
+|Name                  |Type   |Desc                                 |
+|----------------------|-------|-------------------------------------|
+|ua=navigator.userAgent|string |User agent                           |
+|return                |boolean|True if ua belongs to mobile browsers|
 
 ```javascript
 isMobile(navigator.userAgent);
@@ -4076,11 +4076,11 @@ min(2.3, 1, 4.5, 2); // 1
 
 Recursively create directories.
 
-|Name       |Type    |Desc               |
-|-----------|--------|-------------------|
-|dir        |string  |Directory to create|
-|[mode=0777]|number  |Directory mode     |
-|[callback] |function|Callback           |
+|Name      |Type    |Desc               |
+|----------|--------|-------------------|
+|dir       |string  |Directory to create|
+|mode=0777 |number  |Directory mode     |
+|[callback]|function|Callback           |
 
 ```javascript
 mkdir('/tmp/foo/bar/baz', function (err)
@@ -5218,7 +5218,7 @@ swap(arr, 0, 1); // -> [2, 1]
 
 Compile JavaScript template into function that can be evaluated for rendering.
 
-|Name  |Type    |String                    |
+|Name  |Type    |Desc                      |
 |------|--------|--------------------------|
 |str   |string  |Template string           |
 |return|function|Compiled template function|
@@ -5249,7 +5249,7 @@ Tiny wrapper of stream Transform.
 
 |Name     |Type    |Desc                        |
 |---------|--------|----------------------------|
-|[opts={}]|Object  |Options to initialize stream|
+|opts={}  |Object  |Options to initialize stream|
 |transform|function|Transform implementation    |
 |[flush]  |function|Flush implementation        |
 
@@ -5741,11 +5741,11 @@ Move a stand-alone function to a worker thread.
 |return|function|Workerized Function|
 
 ```javascript
-workerize(function (a, b)
+var worker = workerize(function (a, b)
 {
     return a + b;
 });
-workerize(1, 2).then(function (value)
+worker(1, 2).then(function (value)
 {
     console.log(value); // -> 3
 });

@@ -2,7 +2,7 @@
  *
  * |Name     |Type    |Desc                        |
  * |---------|--------|----------------------------|
- * |[opts={}]|Object  |Options to initialize stream|
+ * |opts={}  |Object  |Options to initialize stream|
  * |transform|function|Transform implementation    |
  * |[flush]  |function|Flush implementation        |
  * 

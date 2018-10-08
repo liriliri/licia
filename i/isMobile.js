@@ -1,9 +1,9 @@
 /* Check whether client is using a mobile browser using ua.
  *
- * |Name                    |Type   |Desc                                 |
- * |------------------------|-------|-------------------------------------|
- * |[ua=navigator.userAgent]|string |User agent                           |
- * |return                  |boolean|True if ua belongs to mobile browsers|
+ * |Name                  |Type   |Desc                                 |
+ * |----------------------|-------|-------------------------------------|
+ * |ua=navigator.userAgent|string |User agent                           |
+ * |return                |boolean|True if ua belongs to mobile browsers|
  *
  * ```javascript
  * isMobile(navigator.userAgent);

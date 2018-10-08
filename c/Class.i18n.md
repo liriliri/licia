@@ -6,7 +6,7 @@ Create JavaScript class.
 |-----|----|---|
 |methods  |object  |Public methods                   |
 |[statics]|object  |Static methods                   |
-|return   |function|Function used to create instances|
+|返回值   |function|Function used to create instances|
 
 ```javascript
 var People = Class({

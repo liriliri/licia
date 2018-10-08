@@ -6,4 +6,4 @@ Used to create extend, extendOwn and defaults.
 |-----|----|---|
 |keysFn  |function|Function to get object keys   |
 |defaults|boolean |No override when set to true  |
-|return  |function|Result function, extend...    |
+|返回值  |function|Result function, extend...    |

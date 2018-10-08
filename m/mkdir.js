@@ -1,10 +1,10 @@
 /* Recursively create directories.
  *
- * |Name       |Type    |Desc               |
- * |-----------|--------|-------------------|
- * |dir        |string  |Directory to create|
- * |[mode=0777]|number  |Directory mode     |
- * |[callback] |function|Callback           |
+ * |Name      |Type    |Desc               |
+ * |----------|--------|-------------------|
+ * |dir       |string  |Directory to create|
+ * |mode=0777 |number  |Directory mode     |
+ * |[callback]|function|Callback           |
  *
  * ```javascript
  * mkdir('/tmp/foo/bar/baz', function (err)

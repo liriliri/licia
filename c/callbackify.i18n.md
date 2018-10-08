@@ -5,7 +5,7 @@ Convert a function that returns a Promise to a function following the error-firs
 |参数名|类型|说明|
 |-----|----|---|
 |fn    |function|Function that returns a Promise                 |
-|return|function|Function following the error-fist callback style|
+|返回值|function|Function following the error-fist callback style|
 
 ```javascript
 function fn() 

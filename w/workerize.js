@@ -6,11 +6,11 @@
  * |return|function|Workerized Function|
  * 
  * ```javascript
- * workerize(function (a, b) 
+ * var worker = workerize(function (a, b) 
  * {
  *     return a + b;   
  * });
- * workerize(1, 2).then(function (value) 
+ * worker(1, 2).then(function (value) 
  * {
  *     console.log(value); // -> 3
  * });

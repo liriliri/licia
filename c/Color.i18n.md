@@ -27,7 +27,7 @@ Get color hsl string format.
 |Name  |Type  |Desc                             |
 |------|------|---------------------------------|
 |color |string|Color string                     |
-|return|object|Object containing value and model|
+|返回值|object|Object containing value and model|
 
 ```javascript
 Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model: 'rgb'}

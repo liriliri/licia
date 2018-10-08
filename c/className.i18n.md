@@ -5,7 +5,7 @@ Utility for conditionally joining class names.
 |参数名|类型|说明|
 |-----|----|---|
 |...class|string object array|Class names       |
-|return  |string             |Joined class names|
+|返回值  |string             |Joined class names|
 
 ```javascript
 className('a', 'b', 'c'); // -> 'a b c'

@@ -6,7 +6,7 @@ Cast value into a property path array.
 |-----|----|---|
 |str   |*     |Value to inspect   |
 |[obj] |object|Object to query    |
-|return|array |Property path array|
+|返回值|array |Property path array|
 
 ```javascript
 castPath('a.b.c'); // -> ['a', 'b', 'c']

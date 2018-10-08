@@ -5,7 +5,7 @@ Recursively clone value.
 |参数名|类型|说明|
 |-----|----|---|
 |val   |*   |Value to clone   |
-|return|*   |Deep cloned Value|
+|返回值|*   |Deep cloned Value|
 
 ```javascript
 var obj = [{a: 1}, {a: 2}];

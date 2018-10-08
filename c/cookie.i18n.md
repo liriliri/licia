@@ -9,7 +9,7 @@ Get cookie value.
 |参数名|类型|说明|
 |-----|----|---|
 |key   |string|Cookie key                |
-|return|string|Corresponding cookie value|
+|返回值|string|Corresponding cookie value|
 
 ### set
 
@@ -20,7 +20,7 @@ Set cookie value.
 |key      |string |Cookie key    |
 |val      |string |Cookie value  |
 |[options]|object |Cookie options|
-|return   |exports|Module cookie |
+|返回值   |exports|Module cookie |
 
 ### remove
 
@@ -30,7 +30,7 @@ Remove cookie value.
 |-----|----|---|
 |key      |string |Cookie key    |
 |[options]|object |Cookie options|
-|return   |exports|Module cookie |
+|返回值   |exports|Module cookie |
 
 ```javascript
 cookie.set('a', '1', {path: '/'});

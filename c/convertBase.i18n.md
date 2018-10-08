@@ -7,7 +7,7 @@ Convert base of a number.
 |num   |number string|Number to convert|
 |from  |number       |Base from        |
 |to    |number       |Base to          |
-|return|string       |Converted number |
+|返回值|string       |Converted number |
 
 ```javascript
 convertBase('10', 2, 10); // -> '2'

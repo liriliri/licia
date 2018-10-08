@@ -6,7 +6,7 @@ Center align text in a string.
 |-----|----|---|
 |str    |string array|String to align         |
 |[width]|number      |Total width of each line|
-|return |string      |Center aligned string   |
+|返回值 |string      |Center aligned string   |
 
 ```javascript
 centerAlign('test', 8); // -> '  test'

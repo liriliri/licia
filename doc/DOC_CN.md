@@ -259,7 +259,7 @@ $remove('#test');
 |参数名|类型|说明|
 |-----|----|---|
 |value |element array string|要转换的值|
-|return|array|元素集|
+|返回值|array|元素集|
 
 ```javascript
 $safeEls('.test'); // -> Array of elements with test class
@@ -300,7 +300,7 @@ Create JavaScript class.
 |-----|----|---|
 |methods  |object  |Public methods                   |
 |[statics]|object  |Static methods                   |
-|return   |function|Function used to create instances|
+|返回值   |function|Function used to create instances|
 
 ```javascript
 var People = Class({
@@ -367,7 +367,7 @@ Get color hsl string format.
 |Name  |Type  |Desc                             |
 |------|------|---------------------------------|
 |color |string|Color string                     |
-|return|object|Object containing value and model|
+|返回值|object|Object containing value and model|
 
 ```javascript
 Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model: 'rgb'}
@@ -414,8 +414,8 @@ Unbind event.
 
 Bind event that trigger once.
 
-|Name    |Type    |Desc          |
-|--------|--------|--------------|
+|参数名|类型|说明|
+|-----|----|---|
 |event   |string  |Event name    |
 |listener|function|Event listener|
 
@@ -423,8 +423,8 @@ Bind event that trigger once.
 
 Emit event.
 
-|Name   |Type  |Desc                        |
-|-------|------|----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |event  |string|Event name                  |
 |...args|*     |Arguments passed to listener|
 
@@ -432,8 +432,8 @@ Emit event.
 
 [static] Mixin object class methods.
 
-|Name|Type  |Desc           |
-|----|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj |object|Object to mixin|
 
 ```javascript
@@ -449,12 +449,12 @@ Enum type implementation.
 
 ### constructor
 
-|Name|Type |Desc            |
-|----|-----|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr |array|Array of strings|
 
-|Name|Type  |Desc                  |
-|----|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj |object|Pairs of key and value|
 
 ```javascript
@@ -474,16 +474,16 @@ Json to json transformer.
 
 ### constructor
 
-|Name     |Type  |Desc                     |
-|---------|------|-------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[data={}]|object|Json object to manipulate|
 
 ### set
 
 Set object value.
 
-|Name |Type  |Desc        |
-|-----|------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[key]|string|Object key  |
 |val  |*     |Value to set|
 
@@ -493,23 +493,23 @@ If key is not given, the whole source object is replaced by val.
 
 Get object value.
 
-|Name  |Type  |Desc                           |
-|------|------|-------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[key] |string|Object key                     |
-|return|*     |Specified value or whole object|
+|返回值|*     |Specified value or whole object|
 
 ### remove
 
-|Name|Type        |Desc                 |
-|----|------------|---------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |key |array string|Object keys to remove|
 
 ### map
 
 Shortcut for array map.
 
-|Name|Type    |Desc                          |
-|----|--------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |from|string  |From object path              |
 |to  |string  |Target object path            |
 |fn  |function|Function invoked per iteration|
@@ -522,8 +522,8 @@ Shortcut for array filter.
 
 Compute value from several object values.
 
-|Name|Type        |Desc                            |
-|----|------------|--------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |from|array string|Source values                   |
 |to  |string      |Target object path              |
 |fn  |function    |Function to compute target value|
@@ -556,10 +556,10 @@ Doubly-linked list implementation.
 
 Add an value to the end of the list.
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*     |Value to push|
-|return|number|Current size |
+|返回值|number|Current size |
 
 ### pop
 
@@ -595,8 +595,8 @@ Extend from Store.
 
 ### constructor
 
-|Name|Type  |Desc                  |
-|----|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name|string|LocalStorage item name|
 |data|object|Default data          |
 
@@ -611,15 +611,15 @@ Simple logger with level filter.
 
 ### constructor
 
-|Name         |Type  |Desc        |
-|-------------|------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name         |string|Logger name |
 |[level=DEBUG]|number|Logger level|
 
 ### setLevel
 
-|Name |Type         |Desc        |
-|-----|-------------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |level|number string|Logger level|
 
 ### getLevel
@@ -722,10 +722,10 @@ Clear the queue.
 
 Add an item to the queue.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |item  |*     |Item to enqueue|
-|return|number|Current size   |
+|返回值|number|Current size   |
 
 ### dequeue
 
@@ -739,8 +739,8 @@ Get the first item without removing it.
 
 Iterate over the queue.
 
-|Name    |Type    |Desc                      |
-|--------|--------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |iteratee|function|Function invoked iteration|
 |[ctx]   |*       |Function context          |
 
@@ -766,8 +766,8 @@ Simplified redux like state container.
 
 ### constructor
 
-|Name        |Type    |Desc                       |
-|------------|--------|---------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |reducer     |function|Function returns next state|
 |initialState|*       |Initial state              |
 
@@ -775,19 +775,19 @@ Simplified redux like state container.
 
 Add a change listener.
 
-|Name    |Type    |Desc                                |
-|--------|--------|------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |listener|function|Callback to invoke on every dispatch|
-|return  |function|Function to unscribe                |
+|返回值  |function|Function to unscribe                |
 
 ### dispatch
 
 Dispatch an action.
 
-|Name  |Type  |Desc                       |
-|------|------|---------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |action|object|Object representing changes|
-|return|object|Same action object         |
+|返回值|object|Same action object         |
 
 ### getState
 
@@ -820,24 +820,24 @@ Simple wrapper of querySelectorAll to make dom selection easier.
 
 ### constructor
 
-|Name    |Type  |Desc               |
-|--------|------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |selector|string|Dom selector string|
 
 ### find
 
 Get desdendants of current matched elements.
 
-|Name    |Type  |Desc               |
-|--------|------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |selector|string|Dom selector string|
 
 ### each
 
 Iterate over matched elements.
 
-|Name|Type    |Desc                                |
-|----|--------|------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn  |function|Function to execute for each element|
 
 ```javascript
@@ -856,8 +856,8 @@ Extend from Store.
 
 ### constructor
 
-|Name|Type  |Desc                    |
-|----|------|------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name|string|SessionStorage item name|
 |data|object|Default data            |
 
@@ -878,10 +878,10 @@ Clear the stack.
 
 Add an item to the stack.
 
-|Name  |Type  |Desc        |
-|------|------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |item  |*     |Item to add |
-|return|number|Current size|
+|返回值|number|Current size|
 
 ### pop
 
@@ -895,8 +895,8 @@ Get the last item without removing it.
 
 Iterate over the stack.
 
-|Name    |Type    |Desc                      |
-|--------|--------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |iteratee|function|Function invoked iteration|
 |[ctx]   |*       |Function context          |
 
@@ -920,8 +920,8 @@ Extend from Emitter.
 
 ### constructor
 
-|Name   |Type  |Desc                  |
-|-------|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |initial|string|Initial state         |
 |events |string|Events to change state|
 
@@ -929,10 +929,10 @@ Extend from Emitter.
 
 Check current state.
 
-|Name  |Type   |Desc                                    |
-|------|-------|----------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |value |string |State to check                          |
-|return|boolean|True if current state equals given value|
+|返回值|boolean|True if current state equals given value|
 
 ```javascript
 var state = new State('empty', {
@@ -964,23 +964,23 @@ Extend from Emitter.
 
 ### constructor
 
-|Name|Type  |Desc        |
-|----|------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |data|object|Initial data|
 
 ### set
 
 Set value.
 
-|Name|Type  |Desc        |
-|----|------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |key |string|Value key   |
 |val |*     |Value to set|
 
 Set values.
 
-|Name|Type  |Desc           |
-|----|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |vals|object|Key value pairs|
 
 This emit a change event whenever is called.
@@ -989,24 +989,24 @@ This emit a change event whenever is called.
 
 Get value.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |key   |string|Value key         |
-|return|*     |Value of given key|
+|返回值|*     |Value of given key|
 
 Get values.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |keys  |array |Array of keys  |
-|return|object|Key value pairs|
+|返回值|object|Key value pairs|
 
 ### remove
 
 Remove value.
 
-|Name|Type        |Desc         |
-|----|------------|-------------|
+|参数名|类型|说明|
+|-----|----|---|
 |key |string array|Key to remove|
 
 ### clear
@@ -1017,8 +1017,8 @@ Clear all data.
 
 Iterate over values.
 
-|Name|Type    |Desc                           |
-|----|--------|-------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn  |function|Function invoked per interation|
 
 ```javascript
@@ -1044,14 +1044,14 @@ Extend from Emitter.
 
 ### constructor
 
-|Name|Type  |Desc           |
-|----|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj |object|Values to tween|
 
 ### to
 
-|Name       |Type           |Desc            |
-|-----------|---------------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |destination|obj            |Final properties|
 |duration   |number         |Tween duration  |
 |ease       |string function|Easing function |
@@ -1072,8 +1072,8 @@ Get animation paused state.
 
 Update or get animation progress.
 
-|Name      |Type  |Desc                  |
-|----------|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[progress]|number|Number between 0 and 1|
 
 ```javascript
@@ -1096,24 +1096,24 @@ Simple url manipulator.
 
 ### constructor
 
-|Name        |Type  |Desc      |
-|------------|------|----------|
+|参数名|类型|说明|
+|-----|----|---|
 |url=location|string|Url string|
 
 ### setQuery
 
 Set query value.
 
-|Name  |Type  |Desc       |
-|------|------|-----------|
+|参数名|类型|说明|
+|-----|----|---|
 |name  |string|Query name |
 |value |string|Query value|
-|return|Url   |this       |
+|返回值|Url   |this       |
 
-|Name  |Type  |Desc        |
-|------|------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |names |object|query object|
-|return|Url   |this        |
+|返回值|Url   |this        |
 
 ### rmQuery
 
@@ -1122,7 +1122,7 @@ Remove query value.
 |Name  |Type        |Desc      |
 |------|------------|----------|
 |name  |string array|Query name|
-|return|Url         |this      |
+|返回值|Url         |this      |
 
 ### parse
 
@@ -1131,7 +1131,7 @@ Remove query value.
 |Name  |Type  |Desc      |
 |------|------|----------|
 |url   |string|Url string|
-|return|object|Url object|
+|返回值|object|Url object|
 
 ### stringify
 
@@ -1140,7 +1140,7 @@ Remove query value.
 |Name  |Type  |Desc      |
 |------|------|----------|
 |url   |object|Url object|
-|return|string|Url string|
+|返回值|string|Url string|
 
 An url object contains the following properties:
 
@@ -1169,25 +1169,25 @@ Object values validation.
 
 ### constructor
 
-|Name   |Type  |Desc                    |
-|-------|------|------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |options|object|Validation configuration|
 
 ### validate
 
 Validate object.
 
-|Name  |Type  |Desc                            |
-|------|------|--------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Object to validate              |
-|return|*     |Validation result, true means ok|
+|返回值|*     |Validation result, true means ok|
 
 ### addPlugin
 
 [static] Add plugin.
 
-|Name  |Type    |Desc              |
-|------|--------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name  |string  |Plugin name       |
 |plugin|function|Validation handler|
 
@@ -1378,7 +1378,7 @@ base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|base64 编码的字符串|
-|return|array|字节数组|
+|返回值|array|字节数组|
 
 ```javascript
 base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
@@ -1448,7 +1448,7 @@ Convert a function that returns a Promise to a function following the error-firs
 |参数名|类型|说明|
 |-----|----|---|
 |fn    |function|Function that returns a Promise                 |
-|return|function|Function following the error-fist callback style|
+|返回值|function|Function following the error-fist callback style|
 
 ```javascript
 function fn() 
@@ -1474,7 +1474,7 @@ Convert string to "camelCase".
 |参数名|类型|说明|
 |-----|----|---|
 |str   |string|String to convert |
-|return|string|Camel cased string|
+|返回值|string|Camel cased string|
 
 ```javascript
 camelCase('foo-bar'); // -> fooBar
@@ -1490,7 +1490,7 @@ Convert the first character to upper case and the remaining to lower case.
 |参数名|类型|说明|
 |-----|----|---|
 |str   |string|String to capitalize|
-|return|string|Capitalized string  |
+|返回值|string|Capitalized string  |
 
 ```javascript
 capitalize('rED'); // -> Red
@@ -1504,7 +1504,7 @@ Cast value into a property path array.
 |-----|----|---|
 |str   |*     |Value to inspect   |
 |[obj] |object|Object to query    |
-|return|array |Property path array|
+|返回值|array |Property path array|
 
 ```javascript
 castPath('a.b.c'); // -> ['a', 'b', 'c']
@@ -1521,7 +1521,7 @@ Center align text in a string.
 |-----|----|---|
 |str    |string array|String to align         |
 |[width]|number      |Total width of each line|
-|return |string      |Center aligned string   |
+|返回值 |string      |Center aligned string   |
 
 ```javascript
 centerAlign('test', 8); // -> '  test'
@@ -1536,7 +1536,7 @@ Return string representing a character whose Unicode code point is the given int
 |参数名|类型|说明|
 |-----|----|---|
 |num   |number|Integer to convert                    |
-|return|string|String representing corresponding char|
+|返回值|string|String representing corresponding char|
 
 ```javascript
 char(65); // -> 'A'
@@ -1567,7 +1567,7 @@ Clamp number within the inclusive lower and upper bounds.
 |n      |number|Number to clamp|
 |[lower]|number|Lower bound    |
 |upper  |number|Upper bound    |
-|return |number|Clamped number |
+|返回值 |number|Clamped number |
 
 ```javascript
 clamp(-10, -5, 5); // -> -5
@@ -1584,7 +1584,7 @@ Utility for conditionally joining class names.
 |参数名|类型|说明|
 |-----|----|---|
 |...class|string object array|Class names       |
-|return  |string             |Joined class names|
+|返回值  |string             |Joined class names|
 
 ```javascript
 className('a', 'b', 'c'); // -> 'a b c'
@@ -1603,7 +1603,7 @@ Any nested objects or arrays will be copied by reference, not duplicated.
 |参数名|类型|说明|
 |-----|----|---|
 |val   |*   |Value to clone|
-|return|*   |Cloned value  |
+|返回值|*   |Cloned value  |
 
 ```javascript
 clone({name: 'eustia'}); // -> {name: 'eustia'}
@@ -1616,7 +1616,7 @@ Recursively clone value.
 |参数名|类型|说明|
 |-----|----|---|
 |val   |*   |Value to clone   |
-|return|*   |Deep cloned Value|
+|返回值|*   |Deep cloned Value|
 
 ```javascript
 var obj = [{a: 1}, {a: 2}];
@@ -1632,7 +1632,7 @@ Compare version strings.
 |-----|----|---|
 |v1    |string|Version to compare|
 |v2    |string|Version to compare|
-|return|number|Comparison result |
+|返回值|number|Comparison result |
 
 ```javascript
 cmpVersion('1.1.8', '1.0.4'); // -> 1
@@ -1651,7 +1651,7 @@ The values false, null, 0, "", undefined, and NaN are falsey.
 |参数名|类型|说明|
 |-----|----|---|
 |arr   |array|Array to compact            |
-|return|array|New array of filtered values|
+|返回值|array|New array of filtered values|
 
 ```javascript
 compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
@@ -1666,7 +1666,7 @@ Each function consumes the return value of the function that follows.
 |参数名|类型|说明|
 |-----|----|---|
 |...fn |function|Functions to compose|
-|return|function|Composed function   |
+|返回值|function|Composed function   |
 
 ```javascript
 var welcome = compose(function (name) 
@@ -1721,7 +1721,7 @@ Concat multiple arrays into a single array.
 |参数名|类型|说明|
 |-----|----|---|
 |...arr|array|Arrays to concat  |
-|return|array|Concatenated array|
+|返回值|array|Concatenated array|
 
 ```javascript
 concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
@@ -1735,7 +1735,7 @@ Check if the value is present in the list.
 |-----|----|---|
 |array |array object|Target list                         |
 |value |*           |Value to check                      |
-|return|boolean     |True if value is present in the list|
+|返回值|boolean     |True if value is present in the list|
 
 ```javascript
 contain([1, 2, 3], 1); // -> true
@@ -1751,7 +1751,7 @@ Convert base of a number.
 |num   |number string|Number to convert|
 |from  |number       |Base from        |
 |to    |number       |Base to          |
-|return|string       |Converted number |
+|返回值|string       |Converted number |
 
 ```javascript
 convertBase('10', 2, 10); // -> '2'
@@ -1769,7 +1769,7 @@ Get cookie value.
 |参数名|类型|说明|
 |-----|----|---|
 |key   |string|Cookie key                |
-|return|string|Corresponding cookie value|
+|返回值|string|Corresponding cookie value|
 
 ### set
 
@@ -1780,7 +1780,7 @@ Set cookie value.
 |key      |string |Cookie key    |
 |val      |string |Cookie value  |
 |[options]|object |Cookie options|
-|return   |exports|Module cookie |
+|返回值   |exports|Module cookie |
 
 ### remove
 
@@ -1790,7 +1790,7 @@ Remove cookie value.
 |-----|----|---|
 |key      |string |Cookie key    |
 |[options]|object |Cookie options|
-|return   |exports|Module cookie |
+|返回值   |exports|Module cookie |
 
 ```javascript
 cookie.set('a', '1', {path: '/'});
@@ -1822,7 +1822,7 @@ Used to create extend, extendOwn and defaults.
 |-----|----|---|
 |keysFn  |function|Function to get object keys   |
 |defaults|boolean |No override when set to true  |
-|return  |function|Result function, extend...    |
+|返回值  |function|Result function, extend...    |
 
 ## createUrl
 
@@ -1832,7 +1832,7 @@ CreateObjectURL wrapper.
 |-----|----|---|
 |data   |File Blob string array|Url data                            | 
 |[opts] |object                |Used when data is not a File or Blob|
-|return |string                |Blob url                            |
+|返回值 |string                |Blob url                            |
 
 ```javascript
 createUrl('test', {type: 'text/plain'}); // -> Blob url
@@ -1849,7 +1849,7 @@ Check if browser supports a given CSS feature.
 |-----|----|---|
 |name  |string |Css property name |
 |[val] |string |Css property value|
-|return|boolean|True if supports  |
+|返回值|boolean|True if supports  |
 
 ```javascript
 cssSupports('display', 'flex'); // -> true
@@ -1866,7 +1866,7 @@ Function currying.
 |参数名|类型|说明|
 |-----|----|---|
 |fn    |function|Function to curry   |
-|return|function|New curried function|
+|返回值|function|New curried function|
 
 ```javascript
 var add = curry(function (a, b) { return a + b });
@@ -1878,8 +1878,8 @@ add1(2); // -> 3
 
 Simple but extremely useful date format function.
 
-|Name           |Type   |Desc                 |
-|---------------|-------|---------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[date=new Date]|Date   |Date object to format|
 |mask           |string |Format mask          |
 |[utc=false]    |boolean|UTC or not           |
@@ -1925,11 +1925,11 @@ dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
 
 Return a new debounced version of the passed function.
 
-|Name  |Type    |Desc                           |
-|------|--------|-------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn    |function|Function to debounce           |
 |wait  |number  |Number of milliseconds to delay|
-|return|function|New debounced function         |
+|返回值|function|New debounced function         |
 
 ```javascript
 $(window).resize(debounce(calLayout, 300));
@@ -1939,10 +1939,10 @@ $(window).resize(debounce(calLayout, 300));
 
 A tiny JavaScript debugging utility.
 
-|Name  |Type    |Desc                           |
-|------|--------|-------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name  |string  |Namespace                      |
-|return|function|Function to print decorated log|
+|返回值|function|Function to print decorated log|
 
 ```javascript
 var d = debug('test');
@@ -1954,10 +1954,10 @@ d.enabled = false;
 
 Better decodeURIComponent that does not throw if input is invalid.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to decode|
-|return|string|Decoded string  |
+|返回值|string|Decoded string  |
 
 ```javascript
 decodeUriComponent('%%25%'); // -> '%%%'
@@ -1968,11 +1968,11 @@ decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
 
 Fill in undefined properties in object with the first value present in the following list of defaults objects.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Destination object|
 |*src  |object|Sources objects   |
-|return|object|Destination object|
+|返回值|object|Destination object|
 
 ```javascript
 defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood', age: 24}
@@ -1982,8 +1982,8 @@ defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood',
 
 Define a module, should be used along with use.
 
-|Name      |Type    |Desc        |
-|----------|--------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name      |string  |Module name |
 |[requires]|array   |Dependencies|
 |method    |function|Module body |
@@ -2005,18 +2005,18 @@ define('B', ['A'], function (A)
 
 Shortcut for Object.defineProperty(defineProperties).
 
-|Name      |Type  |Desc               |
-|----------|------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj       |object|Object to define   |
 |prop      |string|Property path      |
 |descriptor|object|Property descriptor|
-|return    |object|Object itself      |
+|返回值    |object|Object itself      |
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Object to define    |
 |prop  |object|Property descriptors|
-|return|object|Object itself       |
+|返回值|object|Object itself       |
 
 ```javascript
 var obj = {b: {c: 3}, d: 4, e: 5};
@@ -2061,8 +2061,8 @@ console.log(obj.a); // -> 2
 
 Invoke function after certain milliseconds.
 
-|Name     |Type    |Desc                                      |
-|---------|--------|------------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn       |function|Function to delay                         |
 |wait     |number  |Number of milliseconds to delay invocation|
 |[...args]|*       |Arguments to invoke fn with               |
@@ -2083,8 +2083,8 @@ Event delegation.
 
 Add event delegation.
 
-|Name    |Type    |Desc          |
-|--------|--------|--------------|
+|参数名|类型|说明|
+|-----|----|---|
 |el      |element |Parent element|
 |type    |string  |Event type    |
 |selector|string  |Match selector|
@@ -2108,10 +2108,10 @@ delegate.remove(container, 'click', '.children', clickHandler);
 
 Detect browser info using ua.
 
-|Name                    |Type  |Desc                              |
-|------------------------|------|----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[ua=navigator.userAgent]|string|Browser userAgent                 |
-|return                  |object|Object containing name and version|
+|返回值                  |object|Object containing name and version|
 
 Browsers supported: ie, chrome, edge, firefox, opera, safari, ios(mobile safari), android(android browser)
 
@@ -2135,10 +2135,10 @@ detectMocha(); // -> True if mocha is running.
 
 Detect operating system using ua.
 
-|Name                    |Type  |Desc                 |
-|------------------------|------|---------------------|
-|[ua=navigator.userAgent]|string|Browser userAgent    |
-|return                  |string|Operating system name|
+|参数名|类型|说明|
+|-----|----|---|
+|ua=navigator.userAgent|string|Browser userAgent    |
+|返回值                  |string|Operating system name|
 
 Supported os: windows, os x, linux, ios, android, windows phone
 
@@ -2153,11 +2153,11 @@ if (detectOs() === 'ios')
 
 Create an array of unique array values not included in the other given array.
 
-|Name     |Type |Desc                        |
-|---------|-----|----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr      |array|Array to inspect            |
 |[...rest]|array|Values to exclude           |
-|return   |array|New array of filtered values|
+|返回值   |array|New array of filtered values|
 
 ```javascript
 difference([3, 2, 1], [4, 2]); // -> [3, 1]
@@ -2167,10 +2167,10 @@ difference([3, 2, 1], [4, 2]); // -> [3, 1]
 
 Convert string to "dotCase".
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to convert|
-|return|string|Dot cased string |
+|返回值|string|Dot cased string |
 
 ```javascript
 dotCase('fooBar'); // -> foo.bar
@@ -2181,8 +2181,8 @@ dotCase('foo bar'); // -> foo.bar
 
 Trigger a file download on client side.
 
-|Name           |Type                  |Desc            |
-|---------------|----------------------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |data           |Blob File string array|Data to download|
 |name           |string                |File name       |
 |type=text/plain|string                |Data type       |
@@ -2195,8 +2195,8 @@ download('test', 'test.txt');
 
 Iterate over elements of collection and invokes iteratee for each element.
 
-|Name    |Type        |Desc                          |
-|--------|------------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj     |object array|Collection to iterate over    |
 |iteratee|function    |Function invoked per iteration|
 |[ctx]   |*           |Function context              |
@@ -2209,10 +2209,10 @@ each({'a': 1, 'b': 2}, function (val, key) {});
 
 Easing functions adapted from http://jqueryui.com/
 
-|Name   |Type  |Desc                  |
-|-------|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |percent|number|Number between 0 and 1|
-|return |number|Calculated number     |
+|返回值 |number|Calculated number     |
 
 ```javascript
 easing.linear(0.5); // -> 0.5
@@ -2223,11 +2223,11 @@ easing.inElastic(0.5, 500); // -> 0.03125
 
 Check if string ends with the given target string.
 
-|Name  |Type   |Desc                           |
-|------|-------|-------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string |The string to search           |
 |suffix|string |String suffix                  |
-|return|boolean|True if string ends with target|
+|返回值|boolean|True if string ends with target|
 
 ```javascript
 endWith('ab', 'b'); // -> true
@@ -2237,10 +2237,10 @@ endWith('ab', 'b'); // -> true
 
 Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' characters.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to escape|
-|return|string|Escaped string  |
+|返回值|string|Escaped string  |
 
 ```javascript
 escape('You & Me'); -> // -> 'You &amp; Me'
@@ -2252,10 +2252,10 @@ Escape string to be a valid JavaScript string literal between quotes.
 
 http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to escape|
-|return|string|Escaped string  |
+|返回值|string|Escaped string  |
 
 ```javascript
 escapeJsStr('\"\n'); // -> '\\"\\\\n'
@@ -2265,10 +2265,10 @@ escapeJsStr('\"\n'); // -> '\\"\\\\n'
 
 Escape special chars to be used as literals in RegExp constructors.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to escape|
-|return|string|Escaped string  |
+|返回值|string|Escaped string  |
 
 ```javascript
 escapeRegExp('[licia]'); // -> '\\[licia\\]'
@@ -2278,8 +2278,8 @@ escapeRegExp('[licia]'); // -> '\\[licia\\]'
 
 Load css into page.
 
-|Name|Type  |Desc    |
-|----|------|--------|
+|参数名|类型|说明|
+|-----|----|---|
 |css |string|Css code|
 
 ```javascript
@@ -2290,8 +2290,8 @@ evalCss('body{background:#08c}');
 
 Execute js in given context.
 
-|Name        |Type  |Desc           |
-|------------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |js          |string|JavaScript code|
 |[ctx=global]|object|Context        |
 
@@ -2304,12 +2304,12 @@ evalJs('this.a', {a: 2}); // -> 2
 
 Check if predicate return truthy for all elements.
 
-|Name     |Type        |Desc                                         |
-|---------|------------|---------------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj      |array object|Collection to iterate over                   |
 |predicate|function    |Function invoked per iteration               |
 |ctx      |*           |Predicate context                            |
-|return   |boolean     |True if all elements pass the predicate check|
+|返回值   |boolean     |True if all elements pass the predicate check|
 
 ```javascript
 every([2, 4], function (val)
@@ -2322,11 +2322,11 @@ every([2, 4], function (val)
 
 Copy all of the properties in the source objects over to the destination object.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Destination object|
 |...src|object|Sources objects   |
-|return|object|Destination object|
+|返回值|object|Destination object|
 
 ```javascript
 extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
@@ -2336,11 +2336,11 @@ extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 
 Recursive object extending.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Destination object|
 |...src|object|Sources objects   |
-|return|object|Destination object|
+|返回值|object|Destination object|
 
 ```javascript
 extendDeep({
@@ -2361,11 +2361,11 @@ extendDeep({
 
 Like extend, but only copies own properties over to the destination object.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Destination object|
 |*src  |object|Sources objects   |
-|return|object|Destination object|
+|返回值|object|Destination object|
 
 ```javascript
 extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
@@ -2375,10 +2375,10 @@ extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 
 Extract block comments from source code.
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to extract|
-|return|array |Block comments   |
+|返回值|array |Block comments   |
 
 ```javascript
 extractBlockCmts('\/*licia*\/'); // -> ['licia']
@@ -2388,10 +2388,10 @@ extractBlockCmts('\/*licia*\/'); // -> ['licia']
 
 Extract urls from plain text.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|Text to extract|
-|return|array |Url list       |
+|返回值|array |Url list       |
 
 ```javascript
 var str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
@@ -2404,11 +2404,11 @@ Turn XMLHttpRequest into promise like.
 
 Note: This is not a complete fetch pollyfill.
 
-|Name   |Type   |Desc           |
-|-------|-------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |url    |string |Request url    |
 |options|object |Request options|
-|return |promise|Request promise|
+|返回值 |promise|Request promise|
 
 ```javascript
 fetch('test.json', {
@@ -2429,10 +2429,10 @@ fetch('test.json', {
 
 Calculate fibonacci number.
 
-|Name  |Type  |Desc                       |
-|------|------|---------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |n     |number|Index of fibonacci sequence|
-|return|number|Expected fibonacci number  |
+|返回值|number|Expected fibonacci number  |
 
 ```javascript
 fibonacci(1); // -> 1
@@ -2443,10 +2443,10 @@ fibonacci(3); // -> 2
 
 Turn bytes into human readable file size.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |bytes |number|File bytes        |
-|return|string|Readable file size|
+|返回值|string|Readable file size|
 
 ```javascript
 fileSize(5); // -> '5'
@@ -2460,13 +2460,13 @@ fileSize(1500000000000); // -> '1.36T'
 
 Fill elements of array with value.
 
-|Name          |Type  |Desc                    |
-|--------------|------|------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr           |array |Array to fill           |
 |val           |*     |Value to fill array with|
 |start=0       |number|Start position          |
 |end=arr.length|number|End position            |
-|return        |array |Filled array            |
+|返回值        |array |Filled array            |
 
 ```javascript
 fill([1, 2, 3], '*'); // -> ['*', '*', '*']
@@ -2477,12 +2477,12 @@ fill([1, 2, 3], '*', 1, 2); // -> [1, '*', 3]
 
 Iterates over elements of collection, returning an array of all the values that pass a truth test.
 
-|Name     |Type    |Desc                                   |
-|---------|--------|---------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj      |array   |Collection to iterate over             |
 |predicate|function|Function invoked per iteration         |
 |[ctx]    |*       |Predicate context                      |
-|return   |array   |Array of all values that pass predicate|
+|返回值   |array   |Array of all values that pass predicate|
 
 ```javascript
 filter([1, 2, 3, 4, 5], function (val)
@@ -2495,12 +2495,12 @@ filter([1, 2, 3, 4, 5], function (val)
 
 Find the first value that passes a truth test in a collection.
 
-|Name     |Type        |Desc                             |
-|---------|------------|---------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj      |array object|Collection to iterate over       |
 |predicate|function    |Function invoked per iteration   |
 |[ctx]    |*           |Predicate context                |
-|return   |*           |First value that passes predicate|
+|返回值   |*           |First value that passes predicate|
 
 ```javascript
 find([{
@@ -2519,11 +2519,11 @@ find([{
 
 Return the first index where the predicate truth test passes.
 
-|Name     |Type    |Desc                          |
-|---------|--------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr      |array   |Array to search               |
 |predicate|function|Function invoked per iteration|
-|return   |number  |Index of matched element      |
+|返回值   |number  |Index of matched element      |
 
 ```javascript
 findIdx([{
@@ -2542,12 +2542,12 @@ findIdx([{
 
 Return the first key where the predicate truth test passes.
 
-|Name     |Type    |Desc                          |
-|---------|--------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj      |object  |Object to search              |
 |predicate|function|Function invoked per iteration|
 |[ctx]    |*       |Predicate context             |
-|return   |string  |Key of matched element        |
+|返回值   |string  |Key of matched element        |
 
 ```javascript
 findKey({a: 1, b: 2}, function (val)
@@ -2560,11 +2560,11 @@ findKey({a: 1, b: 2}, function (val)
 
 Return the last index where the predicate truth test passes.
 
-|Name     |Type    |Desc                          |
-|---------|--------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr      |array   |Array to search               |
 |predicate|function|Function invoked per iteration|
-|return   |number  |Last index of matched element |
+|返回值   |number  |Last index of matched element |
 
 ```javascript
 findLastIdx([{
@@ -2586,10 +2586,10 @@ findLastIdx([{
 
 Recursively flatten an array.
 
-|Name  |Type |Desc               |
-|------|-----|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr   |array|Array to flatten   |
-|return|array|New flattened array|
+|返回值|array|New flattened array|
 
 ```javascript
 flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
@@ -2599,10 +2599,10 @@ flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 
 Get a function parameter's names.
 
-|Name  |Type    |Desc                      |
-|------|--------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn    |function|Function to get parameters|
-|return|array   |Names                     |
+|返回值|array   |Names                     |
 
 ```javascript
 fnParams(function (a, b) {}); // -> ['a', 'b']
@@ -2612,11 +2612,11 @@ fnParams(function (a, b) {}); // -> ['a', 'b']
 
 Format string in a printf-like format.
 
-|Name     |Type  |Desc                               |
-|---------|------|-----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str      |string|String to format                   |
 |...values|*     |Values to replace format specifiers|
-|return   |string|Formatted string                   |
+|返回值   |string|Formatted string                   |
 
 ### Format Specifiers
 
@@ -2635,10 +2635,10 @@ format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
 
 Convert number to fraction.
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |num   |number|Number to convert     |
-|return|string|Corresponding fraction|
+|返回值|string|Corresponding fraction|
 
 ```javascript
 fraction(1.2); // -> '6/5'
@@ -2650,10 +2650,10 @@ Shortcut for Object.freeze.
 
 Use Object.defineProperties if Object.freeze is not supported.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Object to freeze|
-|return|object|Object passed in|
+|返回值|object|Object passed in|
 
 ```javascript
 var a = {b: 1};
@@ -2666,10 +2666,10 @@ console.log(a); // -> {b: 1}
 
 Recursively use Object.freeze.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Object to freeze|
-|return|object|Object passed in|
+|返回值|object|Object passed in|
 
 ```javascript
 var a = {b: {c: 1}};
@@ -2696,11 +2696,11 @@ fs.readFile('test.js').then(function (data)
 
 Compute the greatest common divisor using Euclid's algorithm.
 
-|Name  |Type  |Desc                   |
-|------|------|-----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |a     |number|Number to calculate    |
 |b     |number|Number to calculate    |
-|return|number|Greatest common divisor|
+|返回值|number|Greatest common divisor|
 
 ```javascript
 gcd(121, 44); // -> 11
@@ -2710,11 +2710,11 @@ gcd(121, 44); // -> 11
 
 Get url param.
 
-|Name        |Type  |Desc            |
-|------------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name        |string|Param name      |
 |url=location|string|Url to get param|
-|return      |string|Param value     |
+|返回值      |string|Param value     |
 
 ```javascript
 getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
@@ -2724,11 +2724,11 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 
 Checks if key is a direct property.
 
-|Name  |Type   |Desc                            |
-|------|-------|--------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object |Object to query                 |
 |key   |string |Path to check                   |
-|return|boolean|True if key is a direct property|
+|返回值|boolean|True if key is a direct property|
 
 ```javascript
 has({one: 1}, 'one'); // -> true
@@ -2742,8 +2742,8 @@ Capture keyboard input to trigger given events.
 
 Register keyboard listener.
 
-|Name    |Type    |Desc        |
-|--------|--------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |key     |string  |Key string  |
 |listener|function|Key listener|
 
@@ -2765,10 +2765,10 @@ hotkey.off('shift+a', keyDown);
 
 Convert hsl to rgb.
 
-|Name  |Type |Desc      |
-|------|-----|----------|
+|参数名|类型|说明|
+|-----|----|---|
 |hsl   |array|Hsl values|
-|return|array|Rgb values|
+|返回值|array|Rgb values|
 
 ```javascript
 hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
@@ -2778,10 +2778,10 @@ hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
 
 Return the first argument given.
 
-|Name  |Type|Desc       |
-|------|----|-----------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*   |Any value  |
-|return|*   |Given value|
+|返回值|*   |Given value|
 
 ```javascript
 identity('a'); // -> 'a'
@@ -2791,8 +2791,8 @@ identity('a'); // -> 'a'
 
 Get the index at which the first occurrence of value.
 
-|Name     |Type  |Desc                |
-|---------|------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr      |array |Array to search     |
 |val      |*     |Value to search for |
 |fromIdx=0|number|Index to search from|
@@ -2805,12 +2805,12 @@ idxOf([1, 2, 1, 2], 2, 2); // -> 3
 
 Indent each line in a string.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to indent    |
 |[char]|string|Character to prepend|
 |[len] |number|Indent length       |
-|return|string|Indented string     |
+|返回值|string|Indented string     |
 
 ```javascript
 indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
@@ -2820,8 +2820,8 @@ indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
 
 Inherit the prototype methods from one constructor into another.
 
-|Name      |Type    |Desc       |
-|----------|--------|-----------|
+|参数名|类型|说明|
+|-----|----|---|
 |Class     |function|Child Class|
 |SuperClass|function|Super Class|
 
@@ -2849,8 +2849,8 @@ s.getName(); // -> 'RedHood'
 
 Insertion sort implementation.
 
-|Name |Type    |Desc         |
-|-----|--------|-------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr  |array   |Array to sort|
 |[cmp]|function|Comparator   |
 
@@ -2862,10 +2862,10 @@ insertionSort([2, 1]); // -> [1, 2]
 
 Compute the list of values that are the intersection of all the arrays.
 
-|Name  |Type |Desc                          |
-|------|-----|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |...arr|array|Arrays to inspect             |
-|return|array|New array of inspecting values|
+|返回值|array|New array of inspecting values|
 
 ```javascript
 intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
@@ -2875,11 +2875,11 @@ intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
 
 Intersect two ranges.
 
-|Name  |Type  |Desc                 |
-|------|------|---------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |a     |object|Range a              |
 |b     |object|Range b              |
-|return|object|Intersection if exist|
+|返回值|object|Intersection if exist|
 
 ```javascript
 intersectRange({start: 0, end: 12}, {start: 11, end: 13});
@@ -2892,10 +2892,10 @@ intersectRange({start: 0, end: 5}, {start: 6, end: 7});
 
 Create an object composed of the inverted keys and values of object.
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Object to invert   |
-|return|object|New inverted object|
+|返回值|object|New inverted object|
 
 If object contains duplicate values, subsequent values overwrite property
 assignments of previous values unless multiValue is true.
@@ -2908,10 +2908,10 @@ invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
 
 Check if an url is absolute.
 
-|Name  |Type   |Desc                   |
-|------|-------|-----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |url   |string |Url to check           |
-|return|boolean|True if url is absolute|
+|返回值|boolean|True if url is absolute|
 
 ```javascript
 isAbsoluteUrl('http://www.surunzi.com'); // -> true
@@ -2923,10 +2923,10 @@ isAbsoluteUrl('surunzi.com'); // -> false
 
 Check if value is classified as an arguments object.
 
-|Name  |Type   |Desc                                |
-|------|-------|------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                      |
-|return|boolean|True if value is an arguments object|
+|返回值|boolean|True if value is an arguments object|
 
 ```javascript
 (function () {
@@ -2938,10 +2938,10 @@ Check if value is classified as an arguments object.
 
 Check if value is an `Array` object.
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                    |
-|return|boolean|True if value is an `Array` object|
+|返回值|boolean|True if value is an `Array` object|
 
 ```javascript
 isArr([]); // -> true
@@ -2952,10 +2952,10 @@ isArr({}); // -> false
 
 Check if value is an ArrayBuffer.
 
-|Name  |Type   |Desc                           |
-|------|-------|-------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                 |
-|return|boolean|True if value is an ArrayBuffer|
+|返回值|boolean|True if value is an ArrayBuffer|
 
 ```javascript
 isArrBuffer(new ArrayBuffer(8)); // -> true
@@ -2965,10 +2965,10 @@ isArrBuffer(new ArrayBuffer(8)); // -> true
 
 Check if value is array-like.
 
-|Name  |Type   |Desc                       |
-|------|-------|---------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check             |
-|return|boolean|True if value is array like|
+|返回值|boolean|True if value is array like|
 
 > Function returns false.
 
@@ -2982,10 +2982,10 @@ isArrLike([1, 2, 3]); // -> true
 
 Check if value is a Blob.
 
-|Name  |Type   |Desc                   |
-|------|-------|-----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check         |
-|return|boolean|True if value is a Blob|
+|返回值|boolean|True if value is a Blob|
 
 ```javascript
 isBlob(new Blob([])); // -> true;
@@ -3019,10 +3019,10 @@ console.log(isBrowser); // -> true if running in a browser
 
 Check if value is a buffer.
 
-|Name  |Type   |Desc                     |
-|------|-------|-------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |The value to check       |
-|return|boolean|True if value is a buffer|
+|返回值|boolean|True if value is a buffer|
 
 ```javascript
 isBuffer(new Buffer(4)); // -> true
@@ -3034,13 +3034,13 @@ Check if values are close(almost equal) to each other.
 
 `abs(a-b) <= max(relTol * max(abs(a), abs(b)), absTol)`
 
-|Name       |Type   |Desc                    |
-|-----------|-------|------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |a          |number |Number to compare       |
 |b          |number |Number to compare       |
 |relTol=1e-9|number |Relative tolerance      |
 |absTol=0   |number |Absolute tolerance      |
-|return     |boolean|True if values are close|
+|返回值     |boolean|True if values are close|
 
 ```javascript
 isClose(1, 1.0000000001); // -> true
@@ -3053,10 +3053,10 @@ isClose(1, 1.2, 0.1, 0.3); // -> true
 
 Check if a string is a valid data url.
 
-|Name  |Type   |Desc                        |
-|------|-------|----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string |String to check             |
-|return|boolean|True if string is a data url|
+|返回值|boolean|True if string is a data url|
 
 ```javascript
 isDataUrl('http://eustia.liriliri.io'); // -> false
@@ -3067,10 +3067,10 @@ isDataUrl('data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D'); // -> true
 
 Check if value is classified as a Date object.
 
-|Name  |Type   |Desc                          |
-|------|-------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |value to check                |
-|return|boolean|True if value is a Date object|
+|返回值|boolean|True if value is a Date object|
 
 ```javascript
 isDate(new Date()); // -> true
@@ -3080,10 +3080,10 @@ isDate(new Date()); // -> true
 
 Check if value is a DOM element.
 
-|Name  |Type   |Desc                          |
-|------|-------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                |
-|return|boolean|True if value is a DOM element|
+|返回值|boolean|True if value is a DOM element|
 
 ```javascript
 isEl(document.body); // -> true
@@ -3093,10 +3093,10 @@ isEl(document.body); // -> true
 
 Loosely validate an email address.
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |string |Value to check                       |
-|return|boolean|True if value is an email like string|
+|返回值|boolean|True if value is an email like string|
 
 ```javascript
 isEmail('surunzi@foxmail.com'); // -> true
@@ -3106,10 +3106,10 @@ isEmail('surunzi@foxmail.com'); // -> true
 
 Check if value is an empty object or array.
 
-|Name  |Type   |Desc                  |
-|------|-------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check        |
-|return|boolean|True if value is empty|
+|返回值|boolean|True if value is empty|
 
 ```javascript
 isEmpty([]); // -> true
@@ -3121,11 +3121,11 @@ isEmpty(''); // -> true
 
 Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.
 
-|Name  |Type   |Desc                         |
-|------|-------|-----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to compare             |
 |other |*      |Other value to compare       |
-|return|boolean|True if values are equivalent|
+|返回值|boolean|True if values are equivalent|
 
 ```javascript
 isEqual([1, 2, 3], [1, 2, 3]); // -> true
@@ -3135,10 +3135,10 @@ isEqual([1, 2, 3], [1, 2, 3]); // -> true
 
 Check if value is an error.
 
-|Name  |Type   |Desc                     |
-|------|-------|-------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check           |
-|return|boolean|True if value is an error|
+|返回值|boolean|True if value is an error|
 
 ```javascript
 isErr(new Error()); // -> true
@@ -3148,10 +3148,10 @@ isErr(new Error()); // -> true
 
 Check if number is even.
 
-|Name  |Type   |Desc                  |
-|------|-------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |num   |number |Number to check       |
-|return|boolean|True if number is even|
+|返回值|boolean|True if number is even|
 
 ```javascript
 isOdd(0); // -> true
@@ -3163,10 +3163,10 @@ isOdd(2); // -> true
 
 Check if value is a file.
 
-|Name  |Type   |Desc                   |
-|------|-------|-----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check         |
-|return|boolean|True if value is a file|
+|返回值|boolean|True if value is a file|
 
 ```javascript
 isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
@@ -3176,10 +3176,10 @@ isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
 
 Check if value is a finite primitive number.
 
-|Name  |Type   |Desc                            |
-|------|-------|--------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                  |
-|return|boolean|True if value is a finite number|
+|返回值|boolean|True if value is a finite number|
 
 ```javascript
 isFinite(3); // -> true
@@ -3190,10 +3190,10 @@ isFinite(Infinity); // -> false
 
 Check if value is a function.
 
-|Name  |Type   |Desc                       |
-|------|-------|---------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check             |
-|return|boolean|True if value is a function|
+|返回值|boolean|True if value is a function|
 
 Generator function is also classified as true.
 
@@ -3206,10 +3206,10 @@ isFn(function*() {}); // -> true
 
 Check if value is a generator function.
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                       |
-|return|boolean|True if value is a generator function|
+|返回值|boolean|True if value is a generator function|
 
 ```javascript
 isGeneratorFn(function * () {}); // -> true;
@@ -3220,10 +3220,10 @@ isGeneratorFn(function () {}); // -> false;
 
 Checks if value is classified as a Integer.
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                       |
-|return|boolean|True if value is correctly classified|
+|返回值|boolean|True if value is correctly classified|
 
 ```javascript
 isInt(5); // -> true
@@ -3237,10 +3237,10 @@ Check if value is a valid JSON.
 
 It uses `JSON.parse()` and a `try... catch` block.
 
-|Name  |Type   |Desc                         |
-|------|-------|-----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |string |JSON string                  |
-|return|boolean|True if value is a valid JSON|
+|返回值|boolean|True if value is a valid JSON|
 
 ```javascript
 isJson('{"a": 5}'); // -> true
@@ -3251,10 +3251,10 @@ isJson("{'a': 5}"); // -> false
 
 Check if a year is a leap year.
 
-|Name  |Type   |Desc                       |
-|------|-------|---------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |year  |number |Year to check              |
-|return|boolean|True if year is a leap year|
+|返回值|boolean|True if year is a leap year|
 
 ```javascript
 isLeapYear(2000); // -> true
@@ -3265,10 +3265,10 @@ isLeapYear(2002); // -> false
 
 Check if value is a Map object.
 
-|Name  |Type   |Desc                  |
-|------|-------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check        |
-|return|boolean|True if value is a Map|
+|返回值|boolean|True if value is a Map|
 
 ```javascript
 isMap(new Map()); // -> true
@@ -3279,11 +3279,11 @@ isMap(new WeakMap()); // -> false
 
 Check if keys and values in src are contained in obj.
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object |Object to inspect                 |
 |src   |object |Object of property values to match|
-|return|boolean|True if object is match           |
+|返回值|boolean|True if object is match           |
 
 ```javascript
 isMatch({a: 1, b: 2}, {a: 1}); // -> true
@@ -3301,10 +3301,10 @@ console.log(isMiniProgram); // -> true if running in mini program.
 
 Check whether client is using a mobile browser using ua.
 
-|Name                    |Type   |Desc                                 |
-|------------------------|-------|-------------------------------------|
-|[ua=navigator.userAgent]|string |User agent                           |
-|return                  |boolean|True if ua belongs to mobile browsers|
+|参数名|类型|说明|
+|-----|----|---|
+|ua=navigator.userAgent|string |User agent                           |
+|返回值                  |boolean|True if ua belongs to mobile browsers|
 
 ```javascript
 isMobile(navigator.userAgent);
@@ -3314,10 +3314,10 @@ isMobile(navigator.userAgent);
 
 Check if value is an NaN.
 
-|Name  |Type   |Desc                   |
-|------|-------|-----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check         |
-|return|boolean|True if value is an NaN|
+|返回值|boolean|True if value is an NaN|
 
 Undefined is not an NaN, different from global isNaN function.
 
@@ -3330,10 +3330,10 @@ isNaN(NaN); // -> true
 
 Check if value is a native function.
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                    |
-|return|boolean|True if value is a native function|
+|返回值|boolean|True if value is a native function|
 
 ```javascript
 isNative(function () {}); // -> false
@@ -3344,10 +3344,10 @@ isNative(Math.min); // -> true
 
 Check if value is null or undefined, the same as value == null.
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                    |
-|return|boolean|True if value is null or undefined|
+|返回值|boolean|True if value is null or undefined|
 
 ```javascript
 isNil(null); // -> true
@@ -3370,10 +3370,10 @@ console.log(isNode); // -> true if running in node
 
 Check if value is an Null.
 
-|Name  |Type   |Desc                    |
-|------|-------|------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check          |
-|return|boolean|True if value is an Null|
+|返回值|boolean|True if value is an Null|
 
 ```javascript
 isNull(null); // -> true
@@ -3383,10 +3383,10 @@ isNull(null); // -> true
 
 Check if value is classified as a Number primitive or object.
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                       |
-|return|boolean|True if value is correctly classified|
+|返回值|boolean|True if value is correctly classified|
 
 ```javascript
 isNum(5); // -> true
@@ -3398,10 +3398,10 @@ isNum({}); // -> false
 
 Check if value is numeric.
 
-|Name  |Type   |Desc                    |
-|------|-------|------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check          |
-|return|boolean|True if value is numeric|
+|返回值|boolean|True if value is numeric|
 
 ```javascript
 isNumeric(1); // -> true
@@ -3418,10 +3418,10 @@ isNumeric(NaN); // -> false
 
 Check if value is the language type of Object.
 
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check            |
-|return|boolean|True if value is an object|
+|返回值|boolean|True if value is an object|
 
 [Language Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
 
@@ -3434,10 +3434,10 @@ isObj([]); // -> true
 
 Check if number is odd.
 
-|Name  |Type   |Desc                 |
-|------|-------|---------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |num   |number |Number to check      |
-|return|boolean|True if number is odd|
+|返回值|boolean|True if number is odd|
 
 ```javascript
 isOdd(0); // -> false
@@ -3449,10 +3449,10 @@ isOdd(2); // -> false
 
 Check if value is an object created by Object constructor.
 
-|Name  |Type   |Desc                           |
-|------|-------|-------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                 |
-|return|boolean|True if value is a plain object|
+|返回值|boolean|True if value is a plain object|
 
 ```javascript
 isPlainObj({}); // -> true
@@ -3464,10 +3464,10 @@ isPlainObj(function () {}); // -> false
 
 Check if value is string, number, boolean or null.
 
-|Name  |Type   |Desc                        |
-|------|-------|----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check              |
-|return|boolean|True if value is a primitive|
+|返回值|boolean|True if value is a primitive|
 
 ```javascript
 isPrimitive(5); // -> true
@@ -3479,10 +3479,10 @@ isPrimitive(false); // -> true
 
 Check if value looks like a promise.
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                    |
-|return|boolean|True if value looks like a promise|
+|返回值|boolean|True if value looks like a promise|
 
 ```javascript
 isPromise(new Promise(function () {})); // -> true
@@ -3493,10 +3493,10 @@ isPromise({}); // -> false
 
 Check if value is a regular expression.
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                       |
-|return|boolean|True if value is a regular expression|
+|返回值|boolean|True if value is a regular expression|
 
 ```javascript
 isRegExp(/a/); // -> true
@@ -3506,10 +3506,10 @@ isRegExp(/a/); // -> true
 
 Check if path appears to be relative.
 
-|Name  |Type   |Desc                               |
-|------|-------|-----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |path  |string |Path to check                      |
-|return|boolean|True if path appears to be relative|
+|返回值|boolean|True if path appears to be relative|
 
 ```javascript
 isRelative('README.md'); // -> true
@@ -3527,10 +3527,10 @@ console.log(isRetina); // -> true if high DPR
 
 Check if value is a Set object.
 
-|Name  |Type   |Desc                  |
-|------|-------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check        |
-|return|boolean|True if value is a Set|
+|返回值|boolean|True if value is a Set|
 
 ```javascript
 isSet(new Set()); // -> true
@@ -3541,8 +3541,8 @@ isSet(new WeakSet()); // -> false
 
 Check if an array is sorted.
 
-|Name |Type    |Desc          |
-|-----|--------|--------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr  |array   |Array to check|
 |[cmp]|function|Comparator    |
 
@@ -3555,10 +3555,10 @@ isSorted([3, 2, 1]); // -> false
 
 Check if value is a string primitive.
 
-|Name  |Type   |Desc                               |
-|------|-------|-----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                     |
-|return|boolean|True if value is a string primitive|
+|返回值|boolean|True if value is a string primitive|
 
 ```javascript
 isStr('licia'); // -> true
@@ -3568,10 +3568,10 @@ isStr('licia'); // -> true
 
 Check if value is a Node.js stream.
 
-|Name  |Type   |Desc                             |
-|------|-------|---------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                   |
-|return|boolean|True if value is a Node.js stream|
+|返回值|boolean|True if value is a Node.js stream|
 
 ```javascript
 var stream = require('stream');
@@ -3583,10 +3583,10 @@ isStream(new stream.Stream()); // -> true
 
 Check if value is a typed array.
 
-|Name  |Type   |Desc                          |
-|------|-------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check                |
-|return|boolean|True if value is a typed array|
+|返回值|boolean|True if value is a typed array|
 
 ```javascript
 isTypedArr([]); // -> false
@@ -3597,10 +3597,10 @@ isTypedArr(new Unit8Array); // -> true
 
 Check if value is undefined.
 
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check            |
-|return|boolean|True if value is undefined|
+|返回值|boolean|True if value is undefined|
 
 ```javascript
 isUndef(void 0); // -> true
@@ -3611,10 +3611,10 @@ isUndef(null); // -> false
 
 Loosely validate an url.
 
-|Name  |Type   |Desc                               |
-|------|-------|-----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |string |Value to check                     |
-|return|boolean|True if value is an url like string|
+|返回值|boolean|True if value is an url like string|
 
 ```javascript
 isUrl('http://www.example.com?foo=bar&param=test'); // -> true
@@ -3624,10 +3624,10 @@ isUrl('http://www.example.com?foo=bar&param=test'); // -> true
 
 Check if value is a WeakMap object.
 
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check            |
-|return|boolean|True if value is a WeakMap|
+|返回值|boolean|True if value is a WeakMap|
 
 ```javascript
 isWeakMap(new Map()); // -> false
@@ -3638,10 +3638,10 @@ isWeakMap(new WeakMap()); // -> true
 
 Check if value is a WeakSet object.
 
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to check            |
-|return|boolean|True if value is a WeakSet|
+|返回值|boolean|True if value is a WeakSet|
 
 ```javascript
 isWeakSet(new Set()); // -> false
@@ -3660,14 +3660,14 @@ console.log(isWindows); // -> true if running on windows
 
 A simple jsonp implementation.
 
-|Name|Type  |Desc         |
-|----|------|-------------|
+|参数名|类型|说明|
+|-----|----|---|
 |opts|object|Jsonp Options|
 
 Available options:
 
-|Name          |Type    |Desc                  |
-|--------------|--------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |url           |string  |Request url           |
 |data          |object  |Request data          |
 |success       |function|Success callback      |
@@ -3692,10 +3692,10 @@ jsonp({
 
 Convert string to "kebabCase".
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to convert |
-|return|string|Kebab cased string|
+|返回值|string|Kebab cased string|
 
 ```javascript
 kebabCase('fooBar'); // -> foo-bar
@@ -3710,17 +3710,17 @@ Key codes and key names conversion.
 
 Get key code's name.
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |code  |number|Key code              |
-|return|string|Corresponding key name|
+|返回值|string|Corresponding key name|
 
 Get key name's code.
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name  |string|Key name              |
-|return|number|Corresponding key code|
+|返回值|number|Corresponding key code|
 
 ```javascript
 keyCode(13); // -> 'enter'
@@ -3731,10 +3731,10 @@ keyCode('enter'); // -> 13
 
 Create an array of the own enumerable property names of object.
 
-|Name  |Type  |Desc                   |
-|------|------|-----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Object to query        |
-|return|array |Array of property names|
+|返回值|array |Array of property names|
 
 ```javascript
 keys({a: 1}); // -> ['a']
@@ -3744,10 +3744,10 @@ keys({a: 1}); // -> ['a']
 
 Get the last element of array.
 
-|Name  |Type |Desc                     |
-|------|-----|-------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr   |array|The array to query       |
-|return|*    |The last element of array|
+|返回值|*    |The last element of array|
 
 ```javascript
 last([1, 2]); // -> 2
@@ -3770,11 +3770,11 @@ _().isNumber(5);
 
 Hyperlink urls in a string.
 
-|Name       |Type    |Desc                     |
-|-----------|--------|-------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str        |string  |String to hyperlink      |
 |[hyperlink]|function|Function to hyperlink url|
-|return     |string  |Result string            |
+|返回值     |string  |Result string            |
 
 ```javascript
 var str = 'Official site: http://eustia.liriliri.io'
@@ -3789,8 +3789,8 @@ linkify(str, function (url)
 
 Inject link tag into page with given href value.
 
-|Name|Type    |Desc           |
-|----|--------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |src |string  |Style source   |
 |cb  |function|Onload callback|
 
@@ -3805,8 +3805,8 @@ loadCss('style.css', function (isLoaded)
 
 Load image with given src.
 
-|Name|Type    |Desc           |
-|----|--------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |src |string  |Image source   |
 |[cb]|function|Onload callback|
 
@@ -3821,8 +3821,8 @@ loadImg('http://eustia.liriliri.io/img.jpg', function (err, img)
 
 Inject script tag into page with given src value.
 
-|Name|Type    |Desc           |
-|----|--------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |src |string  |Script source  |
 |cb  |function|Onload callback|
 
@@ -3837,10 +3837,10 @@ loadJs('main.js', function (isLoaded)
 
 Get the longest item in an array.
 
-|Name  |Type |Desc            |
-|------|-----|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr   |array|Array to inspect|
-|return|*    |Longest item    |
+|返回值|*    |Longest item    |
 
 ```javascript
 longest(['a', 'abcde', 'abc']); // -> 'abcde'
@@ -3850,10 +3850,10 @@ longest(['a', 'abcde', 'abc']); // -> 'abcde'
 
 Convert string to lower case.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to convert |
-|return|string|Lower cased string|
+|返回值|string|Lower cased string|
 
 ```javascript
 lowerCase('TEST'); // -> 'test'
@@ -3863,12 +3863,12 @@ lowerCase('TEST'); // -> 'test'
 
 Pad string on the left side if it's shorter than length.
 
-|Name   |Type  |Desc                  |
-|-------|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str    |string|String to pad         |
 |len    |number|Padding length        |
 |[chars]|string|String used as padding|
-|return |string|Resulted string       |
+|返回值 |string|Resulted string       |
 
 ```javascript
 lpad('a', 5); // -> '    a'
@@ -3881,11 +3881,11 @@ lpad('abc', 5, 'ab'); // -> 'ababc'
 
 Remove chars or white-spaces from beginning of string.
 
-|Name  |Type        |Desc              |
-|------|------------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string      |String to trim    |
 |chars |string array|Characters to trim|
-|return|string      |Trimmed string    |
+|返回值|string      |Trimmed string    |
 
 ```javascript
 ltrim(' abc  '); // -> 'abc  '
@@ -3897,12 +3897,12 @@ ltrim('_abc_', ['a', '_']); // -> 'bc_'
 
 Create an array of values by running each element in collection through iteratee.
 
-|Name    |Type        |Desc                          |
-|--------|------------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj     |array object|Collection to iterate over    |
 |iteratee|function    |Function invoked per iteration|
 |[ctx]   |*           |Function context              |
-|return  |array       |New mapped array              |
+|返回值  |array       |New mapped array              |
 
 ```javascript
 map([4, 8], function (n) { return n * n; }); // -> [16, 64]
@@ -3912,12 +3912,12 @@ map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 
 Map for objects.
 
-|Name    |Type    |Desc                          |
-|--------|--------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj     |object  |Object to iterate over        |
 |iteratee|function|Function invoked per iteration|
 |[ctx]   |*       |Function context              |
-|return  |object  |New mapped object             |
+|返回值  |object  |New mapped object             |
 
 ```javascript
 mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
@@ -3927,10 +3927,10 @@ mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
 
 Return a predicate function that checks if attrs are contained in an object.
 
-|Name  |Type    |Desc                              |
-|------|--------|----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |attrs |object  |Object of property values to match|
-|return|function|New predicate function            |
+|返回值|function|New predicate function            |
 
 ```javascript
 var objects = [
@@ -3944,10 +3944,10 @@ filter(objects, matcher({a: 4, c: 6 })); // -> [{a: 4, b: 5, c: 6 }]
 
 Get maximum value of given numbers.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |...num|number|Numbers to calculate|
-|return|number|Maximum value       |
+|返回值|number|Maximum value       |
 
 ```javascript
 max(2.3, 1, 4.5, 2); // 4.5
@@ -3968,11 +3968,11 @@ localStorage.setItem('test', 'licia');
 
 Memoize a given function by caching the computed result.
 
-|Name    |Type    |Desc                                |
-|--------|--------|------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn      |function|Function to have its output memoized|
 |[hashFn]|function|Function to create cache key        |
-|return  |function|New memoized function               |
+|返回值  |function|New memoized function               |
 
 ```javascript
 var fibonacci = memoize(function(n)
@@ -3987,8 +3987,8 @@ Merge sort implementation.
 
 Note: It's not an "in-place" sort.
 
-|Name |Type    |Desc         |
-|-----|--------|-------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr  |array   |Array to sort|
 |[cmp]|function|Comparator   |
 
@@ -4002,28 +4002,28 @@ Document meta manipulation, turn name and content into key value pairs.
 
 Get meta content with given name. If name is omitted, all pairs will be return.
 
-|Name  |Type        |Desc        |
-|------|------------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[name]|string array|Meta name   |
-|return|string      |Meta content|
+|返回值|string      |Meta content|
 
 Set meta content.
 
-|Name   |Type  |Desc        |
-|-------|------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name   |string|Meta name   |
 |content|string|Meta content|
 
-|Name |Type  |Desc                        |
-|-----|------|----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |metas|object|Object of name content pairs|
 
 ### remove
 
 Remove metas.
 
-|Name|Type        |Desc     |
-|----|------------|---------|
+|参数名|类型|说明|
+|-----|----|---|
 |name|string array|Meta name|
 
 ```javascript
@@ -4045,10 +4045,10 @@ meta.remove(['e', 'f']);
 
 Return a sorted list of the names of every method in an object.
 
-|Name  |Type  |Desc                    |
-|------|------|------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Object to check         |
-|return|array |Function names in object|
+|返回值|array |Function names in object|
 
 ```javascript
 methods(console); // -> ['Console', 'assert', 'dir', ...]
@@ -4058,10 +4058,10 @@ methods(console); // -> ['Console', 'assert', 'dir', ...]
 
 Get minimum value of given numbers.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |...num|number|Numbers to calculate|
-|return|number|Minimum value       |
+|返回值|number|Minimum value       |
 
 ```javascript
 min(2.3, 1, 4.5, 2); // 1
@@ -4071,10 +4071,10 @@ min(2.3, 1, 4.5, 2); // 1
 
 Recursively create directories.
 
-|Name       |Type    |Desc               |
-|-----------|--------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |dir        |string  |Directory to create|
-|[mode=0777]|number  |Directory mode     |
+|mode=0777|number  |Directory mode     |
 |[callback] |function|Callback           |
 
 ```javascript
@@ -4114,17 +4114,17 @@ Convert time string formats to milliseconds.
 
 Turn time string into milliseconds.
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String format|
-|return|number|Milliseconds |
+|返回值|number|Milliseconds |
 
 Turn milliseconds into time string.
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
+|参数名|类型|说明|
+|-----|----|---|
 |num   |number|Milliseconds |
-|return|string|String format|
+|返回值|string|String format|
 
 ```javascript
 ms('1s'); // -> 1000
@@ -4141,10 +4141,10 @@ ms(60000); // -> '1m'
 
 Create a function that negates the result of the predicate function.
 
-|Name     |Type    |Desc               |
-|---------|--------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |predicate|function|Predicate to negate|
-|return   |function|New function       |
+|返回值   |function|New function       |
 
 ```javascript
 function even(n) { return n % 2 === 0 }
@@ -4155,8 +4155,8 @@ filter([1, 2, 3, 4, 5, 6], negate(even)); // -> [1, 3, 5]
 
 Next tick for both node and browser.
 
-|Name|Type    |Desc            |
-|----|--------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |cb  |function|Function to call|
 
 Use process.nextTick if available.
@@ -4182,10 +4182,10 @@ noop(); // Does nothing
 
 Normalize file path slashes.
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |path  |string|Path to normalize|
-|return|string|Normalized path  |
+|返回值|string|Normalized path  |
 
 ```javascript
 normalizePath('\\foo\\bar\\'); // -> '/foo/bar/'
@@ -4204,10 +4204,10 @@ now(); // -> 1468826678701
 
 Alias of Object.prototype.toString.
 
-|Name  |Type  |Desc                                |
-|------|------|------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |value |*     |Source value                        |
-|return|string|String representation of given value|
+|返回值|string|String representation of given value|
 
 ```javascript
 objToStr(5); // -> '[object Number]'
@@ -4217,11 +4217,11 @@ objToStr(5); // -> '[object Number]'
 
 Opposite of pick.
 
-|Name  |Type                 |Desc           |
-|------|---------------------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object               |Source object  |
 |filter|string array function|Object filter  |
-|return|object               |Filtered object|
+|返回值|object               |Filtered object|
 
 ```javascript
 omit({a: 1, b: 2}, 'a'); // -> {b: 2}
@@ -4235,10 +4235,10 @@ omit({a: 1, b: 2, c: 3, d: 4}, function (val, key)
 
 Create a function that invokes once.
 
-|Name  |Type    |Desc                   |
-|------|--------|-----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn    |function|Function to restrict   |
-|return|function|New restricted function|
+|返回值|function|New restricted function|
 
 ```javascript
 function init() {};
@@ -4279,12 +4279,12 @@ orientation.get(); // -> 'landscape'
 
 Pad string on the left and right sides if it's shorter than length.
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to pad         |
 |len   |number|Padding length        |
 |chars |string|String used as padding|
-|return|string|Resulted string       |
+|返回值|string|Resulted string       |
 
 ```javascript
 pad('a', 5); // -> '  a  '
@@ -4298,10 +4298,10 @@ pad('ab', 5, 'ab'); // -> 'ababa'
 
 Convert an object into a list of [key, value] pairs.
 
-|Name  |Type  |Desc                      |
-|------|------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Object to convert         |
-|return|array |List of [key, value] pairs|
+|返回值|array |List of [key, value] pairs|
 
 ```javascript
 pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
@@ -4311,8 +4311,8 @@ pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
 
 Run an array of functions in parallel.
 
-|Name |Type    |Desc                   |
-|-----|--------|-----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |tasks|array   |Array of functions     |
 |[cb] |function|Callback once completed|
 
@@ -4336,16 +4336,16 @@ parallel([
 
 Parse command line argument options, the same as minimist.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |args  |array |Argument array |
 |opts  |object|Parse options  |
-|return|object|Parsed result  |
+|返回值|object|Parsed result  |
 
 ### options
 
-|Name      |Type  |Desc             |
-|----------|------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |names     |object|option names     |
 |shorthands|object|option shorthands|
 
@@ -4367,11 +4367,11 @@ parseArgs(['eustia', '--output', 'util.js', '-w'], {
 
 Partially apply a function by filling in given arguments.
 
-|Name       |Type    |Desc                                    |
-|-----------|--------|----------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn         |function|Function to partially apply arguments to|
 |...partials|*       |Arguments to be partially applied       |
-|return     |function|New partially applied function          |
+|返回值     |function|New partially applied function          |
 
 ```javascript
 var sub5 = partial(function (a, b) { return b - a }, 5);
@@ -4382,10 +4382,10 @@ sub(20); // -> 15
 
 Convert string to "pascalCase".
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to convert  |
-|return|string|Pascal cased string|
+|返回值|string|Pascal cased string|
 
 ```javascript
 pascalCase('fooBar'); // -> FooBar
@@ -4410,11 +4410,11 @@ console.log(perfNow() - start);
 
 Return a filtered copy of an object.
 
-|Name  |Type                 |Desc           |
-|------|---------------------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object               |Source object  |
 |filter|string array function|Object filter  |
-|return|object               |Filtered object|
+|返回值|object               |Filtered object|
 
 ```javascript
 pick({a: 1, b: 2}, 'a'); // -> {a: 1}
@@ -4429,11 +4429,11 @@ pick({a: 1, b: 2, c: 3, d: 4}, function (val, key)
 
 Extract a list of property values.
 
-|Name  |Type        |Desc                           |
-|------|------------|-------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object array|Collection to iterate over     |
 |key   |string array|Property path                  |
-|return|array       |New array of specified property|
+|返回值|array       |New array of specified property|
 
 ```javascript
 var stooges = [
@@ -4448,10 +4448,10 @@ pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
 
 Find decimal precision of a given number.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |num   |number|Number to check|
-|return|number|Precision      |
+|返回值|number|Precision      |
 
 ```javascript
 precision(1.234); // -> 3;
@@ -4461,10 +4461,10 @@ precision(1.234); // -> 3;
 
 Add vendor prefixes to a CSS attribute.
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name  |string|Property name         |
-|return|string|Prefixed property name|
+|返回值|string|Prefixed property name|
 
 ### dash
 
@@ -4480,11 +4480,11 @@ prefix('color'); // -> 'color'
 
 Convert callback based functions into Promises.
 
-|Name             |Type    |Desc                                  |
-|-----------------|--------|--------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn               |function|Callback based function               |
 |[multiArgs=false]|boolean |If callback has multiple success value|
-|return           |boolean |Result function                       |
+|返回值           |boolean |Result function                       |
 
 If multiArgs is set to true, the resulting promise will always fulfill with an array of the callback's success values.
 
@@ -4502,10 +4502,10 @@ readFile('test.js', 'utf-8').then(function (data)
 
 Return a function that will itself return the key property of any passed-in object.
 
-|Name  |Type        |Desc                       |
-|------|------------|---------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |path  |string array|Path of the property to get|
-|return|function    |New accessor function      |
+|返回值|function    |New accessor function      |
 
 ```javascript
 var obj = {a: {b: 1}};
@@ -4521,19 +4521,19 @@ Parse and stringify url query strings.
 
 Parse a query string into an object.
 
-|Name  |Type  |Desc        |
-|------|------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|Query string|
-|return|object|Query object|
+|返回值|object|Query object|
 
 ### stringify
 
 Stringify an object into a query string.
 
-|Name  |Type  |Desc        |
-|------|------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Query object|
-|return|string|Query string|
+|返回值|string|Query string|
 
 ```javascript
 query.parse('foo=bar&eruda=true'); // -> {foo: 'bar', eruda: 'true'}
@@ -4545,8 +4545,8 @@ query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
 
 Quick sort implementation.
 
-|Name |Type    |Desc         |
-|-----|--------|-------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr  |array   |Array to sort|
 |[cmp]|function|Comparator   |
 
@@ -4573,12 +4573,12 @@ raf.cancel(id);
 
 Produces a random number between min and max(inclusive).
 
-|Name            |Type   |Desc                  |
-|----------------|-------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |min             |number |Minimum possible value|
 |max             |number |Maximum possible value|
 |[floating=false]|boolean|Float or not          |
-|return          |number |Random number         |
+|返回值          |number |Random number         |
 
 ```javascript
 random(1, 5); // -> an integer between 0 and 5
@@ -4592,10 +4592,10 @@ Random bytes generator.
 
 Use crypto module in node or crypto object in browser if possible.
 
-|Name  |Type  |Desc                        |
-|------|------|----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |size  |number|Number of bytes to generate |
-|return|object|Random bytes of given length|
+|返回值|object|Random bytes of given length|
 
 ```javascript
 randomBytes(5); // -> [55, 49, 153, 30, 122]
@@ -4605,10 +4605,10 @@ randomBytes(5); // -> [55, 49, 153, 30, 122]
 
 Get a random item from an array.
 
-|Name  |Type |Desc                |
-|------|-----|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr   |array|Array to get        |
-|return|*    |Randomly picked item|
+|返回值|*    |Randomly picked item|
 
 ```javascript
 randomItem([1, 2, 3]); // -> 2
@@ -4618,8 +4618,8 @@ randomItem([1, 2, 3]); // -> 2
 
 Create flexibly-numbered lists of integers.
 
-|Name   |Type  |Desc                              |
-|-------|------|----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[start]|number|Start of the range                |
 |end    |number|End of the range                  |
 |step=1 |number|Value to increment or decrement by|
@@ -4633,8 +4633,8 @@ range(0, 5, 2) // -> [0, 2, 4]
 
 Invoke callback when dom is ready, similar to jQuery ready.
 
-|Name|Type    |Desc             |
-|----|--------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn  |function|Callback function|
 
 ```javascript
@@ -4648,13 +4648,13 @@ ready(function ()
 
 Turn a list of values into a single value.
 
-|Name               |Type        |Desc                          |
-|-------------------|------------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj                |object array|Collection to iterate over    |
 |[iteratee=identity]|function    |Function invoked per iteration|
 |[initial]          |*           |Initial value                 |
 |[ctx]              |*           |Function context              |
-|return             |*           |Accumulated value             |
+|返回值             |*           |Accumulated value             |
 
 ```javascript
 reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
@@ -4672,12 +4672,12 @@ reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> 
 
 Opposite of filter.
 
-|Name     |Type    |Desc                                   |
-|---------|--------|---------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj      |array   |Collection to iterate over             |
 |predicate|function|Function invoked per iteration         |
 |[ctx]    |*       |Predicate context                      |
-|return   |array   |Array of all values that pass predicate|
+|返回值   |array   |Array of all values that pass predicate|
 
 ```javascript
 reject([1, 2, 3, 4, 5], function (val)
@@ -4692,12 +4692,12 @@ Remove all elements from array that predicate returns truthy for and return an a
 
 Unlike filter, this method mutates array.
 
-|Name     |Type    |Desc                                |
-|---------|--------|------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj      |array   |Collection to iterate over          |
 |predicate|function|Function invoked per iteration      |
 |[ctx]    |*       |Predicate context                   |
-|return   |array   |Array of all values that are removed|
+|返回值   |array   |Array of all values that are removed|
 
 ```javascript
 var arr = [1, 2, 3, 4, 5];
@@ -4710,11 +4710,11 @@ console.log(evens); // -> [2, 4]
 
 Repeat string n-times.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to repeat|
 |n     |number|Repeat times    |
-|return|string|Repeated string |
+|返回值|string|Repeated string |
 
 ```javascript
 repeat('a', 3); // -> 'aaa'
@@ -4726,11 +4726,11 @@ repeat('*', 0); // -> ''
 
 This accumulates the arguments passed into an array, after a given index.
 
-|Name      |Type    |Desc                                   |
-|----------|--------|---------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |function  |function|Function that needs rest parameters    |
 |startIndex|number  |The start index to accumulates         |
-|return    |function|Generated function with rest parameters|
+|返回值    |function|Generated function with rest parameters|
 
 ```javascript
 var paramArr = restArgs(function (rest) { return rest });
@@ -4741,10 +4741,10 @@ paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
 
 Convert rgb to hsl.
 
-|Name  |Type |Desc      |
-|------|-----|----------|
+|参数名|类型|说明|
+|-----|----|---|
 |rgb   |array|Rgb values|
-|return|array|Hsl values|
+|返回值|array|Hsl values|
 
 ```javascript
 rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
@@ -4754,8 +4754,8 @@ rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
 
 Loop through all possible path and domain to remove cookie.
 
-|Name|Type  |Desc      |
-|----|------|----------|
+|参数名|类型|说明|
+|-----|----|---|
 |key |string|Cookie key|
 
 ```javascript
@@ -4766,8 +4766,8 @@ rmCookie('test');
 
 Recursively remove directories.
 
-|Name    |Type    |Desc               |
-|--------|--------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |dir     |string  |Directory to remove|
 |callback|function|Callback           |
 
@@ -4787,12 +4787,12 @@ Root object reference, `global` in nodeJs, `window` in browser.
 
 Pad string on the right side if it's shorter than length.
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to pad         |
 |len   |number|Padding length        |
 |chars |string|String used as padding|
-|return|string|Resulted string       |
+|返回值|string|Resulted string       |
 
 ```javascript
 rpad('a', 5); // -> 'a    '
@@ -4805,11 +4805,11 @@ rpad('abc', 5, 'ab'); // -> 'abcab'
 
 Remove chars or white-spaces from end of string.
 
-|Name  |Type        |Desc              |
-|------|------------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string      |String to trim    |
 |chars |string array|Characters to trim|
-|return|string      |Trimmed string    |
+|返回值|string      |Trimmed string    |
 
 ```javascript
 rtrim(' abc  '); // -> ' abc'
@@ -4825,11 +4825,11 @@ Create callback based on input value.
 
 Delete object property.
 
-|Name  |Type        |Desc                      |
-|------|------------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object      |Object to query           |
 |path  |array string|Path of property to delete|
-|return|*           |Deleted value or undefined|
+|返回值|*           |Deleted value or undefined|
 
 ```javascript
 var obj = {a: {aa: {aaa: 1}}};
@@ -4842,11 +4842,11 @@ safeDel(obj, 'a.b'); // -> undefined
 
 Get object property, don't throw undefined error.
 
-|Name  |Type        |Desc                     |
-|------|------------|-------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object      |Object to query          |
 |path  |array string|Path of property to get  |
-|return|*           |Target value or undefined|
+|返回值|*           |Target value or undefined|
 
 ```javascript
 var obj = {a: {aa: {aaa: 1}}};
@@ -4861,8 +4861,8 @@ Set value at path of object.
 
 If a portion of path doesn't exist, it's created.
 
-|Name|Type        |Desc                   |
-|----|------------|-----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj |object      |Object to modify       |
 |path|array string|Path of property to set|
 |val |*           |Value to set           |
@@ -4878,10 +4878,10 @@ safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
 
 Use storage safely in safari private browsing and older browsers.
 
-|Name          |Type  |Desc             |
-|--------------|------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[type='local']|string|local or session |
-|return        |object|Specified storage|
+|返回值        |object|Specified storage|
 
 ```javascript
 var localStorage = safeStorage('local');
@@ -4892,11 +4892,11 @@ localStorage.setItem('licia', 'util');
 
 Sample random values from a collection.
 
-|Name  |Type        |Desc                  |
-|------|------------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |array object|Collection to sample  |
 |n     |number      |Number of values      |
-|return|array       |Array of sample values|
+|返回值|array       |Array of sample values|
 
 ```javascript
 sample([2, 3, 1], 2); // -> [2, 3]
@@ -4907,8 +4907,8 @@ sample({a: 1, b: 2, c: 3}, 1); // -> [2]
 
 Scroll to a target with animation.
 
-|Name   |Type                 |Desc          |
-|-------|---------------------|--------------|
+|参数名|类型|说明|
+|-----|----|---|
 |target |element string number|Scroll target |
 |options|object               |Scroll options|
 
@@ -4934,8 +4934,8 @@ scrollTo('body', {
 
 Selection sort implementation.
 
-|Name |Type    |Desc         |
-|-----|--------|-------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr  |array   |Array to sort|
 |[cmp]|function|Comparator   |
 
@@ -4947,10 +4947,10 @@ selectionSort([2, 1]); // -> [1, 2]
 
 Randomize the order of the elements in a given array.
 
-|Name  |Type |Desc              |
-|------|-----|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr   |array|Array to randomize|
-|return|array|Randomized Array  |
+|返回值|array|Randomized Array  |
 
 ```javascript
 shuffle([1, 2, 3]); // -> [3, 1, 2]
@@ -4960,10 +4960,10 @@ shuffle([1, 2, 3]); // -> [3, 1, 2]
 
 Get size of object, length of array like object or the number of keys.
 
-|Name  |Type        |Desc                 |
-|------|------------|---------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |array object|Collection to inspect|
-|return|number      |Collection size      |
+|返回值|number      |Collection size      |
 
 ```javascript
 size({a: 1, b: 2}); // -> 2
@@ -4974,8 +4974,8 @@ size([1, 2, 3]); // -> 3
 
 Create slice of source array or array-like object.
 
-|Name              |Type  |Desc                      |
-|------------------|------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |array             |array |Array to slice            |
 |[start=0]         |number|Start position            |
 |[end=array.length]|number|End position, not included|
@@ -4988,10 +4988,10 @@ slice([1, 2, 3, 4], 1, 2); // -> [2]
 
 Convert string to "snakeCase".
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to convert |
-|return|string|Snake cased string|
+|返回值|string|Snake cased string|
 
 ```javascript
 snakeCase('fooBar'); // -> foo_bar
@@ -5003,12 +5003,12 @@ snakeCase('foo.bar'); // -> foo_bar
 
 Check if predicate return truthy for any element.
 
-|Name     |Type        |Desc                                          |
-|---------|------------|----------------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj      |array object|Collection to iterate over                    |
 |predicate|function    |Function to invoked per iteration             |
 |ctx      |*           |Predicate context                             |
-|return   |boolean     |True if any element passes the predicate check|
+|返回值   |boolean     |True if any element passes the predicate check|
 
 ```javascript
 some([2, 5], function (val)
@@ -5021,12 +5021,12 @@ some([2, 5], function (val)
 
 Return an array of elements sorted in ascending order by results of running each element through iteratee.
 
-|Name               |Type        |Desc                      |
-|-------------------|------------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr                |object array|Collection to iterate over|
 |[iteratee=identity]|function    |Iteratee to sort by       |
 |[ctx]              |*           |Iteratee context          |
-|return             |array       |New sorted array          |
+|返回值             |array       |New sorted array          |
 
 ```javascript
 sortBy([1, 2, 3, 4, 5, 6], function (num)
@@ -5039,10 +5039,10 @@ sortBy([1, 2, 3, 4, 5, 6], function (num)
 
 Convert string to "spaceCase".
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to convert |
-|return|string|Space cased string|
+|返回值|string|Space cased string|
 
 ```javascript
 spaceCase('fooBar'); // -> foo bar
@@ -5054,10 +5054,10 @@ spaceCase('foo.bar'); // -> foo bar
 
 Split different string case to an array.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to split|
-|return|array |Result array   |
+|返回值|array |Result array   |
 
 ```javascript
 splitCase('foo-bar'); // -> ['foo', 'bar']
@@ -5072,10 +5072,10 @@ splitCase('foo-Bar'); // -> ['foo', 'bar']
 
 Split path into device, dir, name and ext.
 
-|Name  |Type  |Desc                               |
-|------|------|-----------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |path  |string|Path to split                      |
-|return|object|Object containing dir, name and ext|
+|返回值|object|Object containing dir, name and ext|
 
 ```javascript
 splitPath('f:/foo/bar.txt'); // -> {dir: 'f:/foo/', name: 'bar.txt', ext: '.txt'}
@@ -5086,11 +5086,11 @@ splitPath('/home/foo/bar.txt'); // -> {dir: '/home/foo/', name: 'bar.txt', ext: 
 
 Check if string starts with the given target string.
 
-|Name  |Type   |Desc                             |
-|------|-------|---------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string |String to search                 |
 |prefix|string |String prefix                    |
-|return|boolean|True if string starts with prefix|
+|返回值|boolean|True if string starts with prefix|
 
 ```javascript
 startWith('ab', 'a'); // -> true
@@ -5100,10 +5100,10 @@ startWith('ab', 'a'); // -> true
 
 String hash function using djb2.
 
-|Name  |Type  |Desc          |
-|------|------|--------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to hash|
-|return|number|Hash result   |
+|返回值|number|Hash result   |
 
 ```javascript
 strHash('test'); // -> 2090770981
@@ -5115,11 +5115,11 @@ JSON stringify with support for circular object, function etc.
 
 Undefined is treated as null value.
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Object to stringify|
 |spaces|number|Indent spaces      |
-|return|string|Stringified object |
+|返回值|string|Stringified object |
 
 ```javascript
 stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
@@ -5132,10 +5132,10 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 
 Strip ansi codes from a string.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to strip|
-|return|string|Resulted string|
+|返回值|string|Resulted string|
 
 ```javascript
 stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
@@ -5145,10 +5145,10 @@ stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
 
 Strip comments from source code.
 
-|Name  |Type  |Desc                 |
-|------|------|---------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|Source code          |
-|return|string|Code without comments|
+|返回值|string|Code without comments|
 
 ```javascript
 stripCmts('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
@@ -5158,10 +5158,10 @@ stripCmts('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' va
 
 Strip ansi color codes from a string.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to strip|
-|return|string|Resulted string|
+|返回值|string|Resulted string|
 
 ```javascript
 stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
@@ -5171,10 +5171,10 @@ stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
 
 Strip html tags from a string.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to strip|
-|return|string|Resulted string|
+|返回值|string|Resulted string|
 
 ```javascript
 stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
@@ -5184,10 +5184,10 @@ stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 
 Compute sum of given numbers.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |...num|number|Numbers to calculate|
-|return|number|Sum of numbers      |
+|返回值|number|Sum of numbers      |
 
 ```javascript
 sum(1, 2, 5); // -> 8
@@ -5197,12 +5197,12 @@ sum(1, 2, 5); // -> 8
 
 Swap two items in an array.
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr   |array |Array to swap|
 |a     |number|First index  |
 |b     |number|Second index |
-|return|array |Array given  |
+|返回值|array |Array given  |
 
 ```javascript
 var arr = [1, 2];
@@ -5213,10 +5213,10 @@ swap(arr, 0, 1); // -> [2, 1]
 
 Compile JavaScript template into function that can be evaluated for rendering.
 
-|Name  |Type    |String                    |
-|------|--------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string  |Template string           |
-|return|function|Compiled template function|
+|返回值|function|Compiled template function|
 
 ```javascript
 template('Hello <%= name %>!')({name: 'licia'}); // -> 'Hello licia!'
@@ -5228,11 +5228,11 @@ template('<%if (echo) {%>Hello licia!<%}%>')({echo: true}); // -> 'Hello licia!'
 
 Return a new throttled version of the passed function.
 
-|Name  |Type    |Desc                           |
-|------|--------|-------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn    |function|Function to throttle           |
 |wait  |number  |Number of milliseconds to delay|
-|return|function|New throttled function         |
+|返回值|function|New throttled function         |
 
 ```javascript
 $(window).scroll(throttle(updatePos, 100));
@@ -5242,9 +5242,9 @@ $(window).scroll(throttle(updatePos, 100));
 
 Tiny wrapper of stream Transform.
 
-|Name     |Type    |Desc                        |
-|---------|--------|----------------------------|
-|[opts={}]|Object  |Options to initialize stream|
+|参数名|类型|说明|
+|-----|----|---|
+|opts={}|Object  |Options to initialize stream|
 |transform|function|Transform implementation    |
 |[flush]  |function|Flush implementation        |
 
@@ -5270,11 +5270,11 @@ fs.createReadStream('in.txt')
 
 Format datetime with *** time ago statement.
 
-|Name          |Type  |Desc                     |
-|--------------|------|-------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |date          |Date  |Date to calculate        |
 |[now=new Date]|Date  |Current date             |
-|return        |string|Formatted time ago string|
+|返回值        |string|Formatted time ago string|
 
 ```javascript
 var now = new Date().getTime();
@@ -5287,10 +5287,10 @@ timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
 
 Get execution time of a function.
 
-|Name  |Type    |Desc                    |
-|------|--------|------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn    |function|Function to measure time|
-|return|number  |Execution time, ms      |
+|返回值|number  |Execution time, ms      |
 
 ```javascript
 timeTaken(function ()
@@ -5303,10 +5303,10 @@ timeTaken(function ()
 
 Convert value to an array.
 
-|Name  |Type |Desc            |
-|------|-----|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*    |Value to convert|
-|return|array|Converted array |
+|返回值|array|Converted array |
 
 ```javascript
 toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
@@ -5319,10 +5319,10 @@ toArr(null); // -> []
 
 Convert value to a boolean.
 
-|Name  |Type   |Desc             |
-|------|-------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*      |Value to convert |
-|return|boolean|Converted boolean|
+|返回值|boolean|Converted boolean|
 
 ```javascript
 toBool(true); // -> true
@@ -5338,10 +5338,10 @@ toBool('false'); // -> false
 
 Convert value to a Date.
 
-|Name  |Type|Desc            |
-|------|----|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*   |Value to convert|
-|return|Date|Converted Date  |
+|返回值|Date|Converted Date  |
 
 ```javascript
 toDate('20180501');
@@ -5355,10 +5355,10 @@ Convert html string to dom elements.
 
 There should be only one root element.
 
-|Name  |Type   |Desc        |
-|------|-------|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string |Html string |
-|return|element|Html element|
+|返回值|element|Html element|
 
 ```javascript
 toEl('<div>test</div>');
@@ -5368,10 +5368,10 @@ toEl('<div>test</div>');
 
 Convert value to an integer.
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*     |Value to convert |
-|return|number|Converted integer|
+|返回值|number|Converted integer|
 
 ```javascript
 toInt(1.1); // -> 1
@@ -5382,10 +5382,10 @@ toInt(undefined); // -> 0
 
 Convert value to a number.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*     |Value to process|
-|return|number|Resulted number |
+|返回值|number|Resulted number |
 
 ```javascript
 toNum('5'); // -> 5
@@ -5395,10 +5395,10 @@ toNum('5'); // -> 5
 
 Convert function to its source code.
 
-|Name  |Type    |Desc               |
-|------|--------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn    |function|Function to convert|
-|return|string  |Source code        |
+|返回值|string  |Source code        |
 
 ```javascript
 toSrc(Math.min); // -> 'function min() { [native code] }'
@@ -5409,10 +5409,10 @@ toSrc(function () {}) // -> 'function () { }'
 
 Convert value to a string.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*     |Value to convert|
-|return|string|Resulted string |
+|返回值|string|Resulted string |
 
 ```javascript
 toStr(null); // -> ''
@@ -5425,10 +5425,10 @@ toStr([1, 2, 3]); // -> '1,2,3'
 
 Topological sorting algorithm.
 
-|Name  |Type |Desc        |
-|------|-----|------------|
+|参数名|类型|说明|
+|-----|----|---|
 |edges |array|Dependencies|
-|return|array|Sorted order|
+|返回值|array|Sorted order|
 
 ```javascript
 topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
@@ -5438,8 +5438,8 @@ topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
 
 Trigger browser events.
 
-|Name         |Type   |Desc              |
-|-------------|-------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[el=document]|element|Element to trigger|
 |type         |string |Event type        |
 |opts         |object |Options           |
@@ -5453,11 +5453,11 @@ trigger('keydown', {keyCode: 65});
 
 Remove chars or white-spaces from beginning end of string.
 
-|Name  |Type        |Desc              |
-|------|------------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string      |String to trim    |
 |chars |string array|Characters to trim|
-|return|string      |Trimmed string    |
+|返回值|string      |Trimmed string    |
 
 ```javascript
 trim(' abc  '); // -> 'abc'
@@ -5469,8 +5469,8 @@ trim('_abc_', ['a', 'c', '_']); // -> 'b'
 
 Run function in a try catch.
 
-|Name|Type    |Desc                 |
-|----|--------|---------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn  |function|Function to try catch|
 |[cb]|function|Callback             |
 
@@ -5488,10 +5488,10 @@ tryIt(function ()
 
 Determine the internal JavaScript [[Class]] of an object.
 
-|Name  |Type  |Desc                      |
-|------|------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*     |Value to get type         |
-|return|string|Type of object, lowercased|
+|返回值|string|Type of object, lowercased|
 
 ```javascript
 type(5); // -> 'number'
@@ -5508,19 +5508,19 @@ UCS-2 encoding and decoding.
 
 Create a string using an array of code point values.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr   |array |Array of code points|
-|return|string|Encoded string      |
+|返回值|string|Encoded string      |
 
 ### decode
 
 Create an array of code point values using a string.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|Input string        |
-|return|array |Array of code points|
+|返回值|array |Array of code points|
 
 ```javascript
 ucs2.encode([0x61, 0x62, 0x63]); // -> 'abc'
@@ -5533,10 +5533,10 @@ ucs2.decode('𝌆').length; // -> 1
 
 Convert HTML entities back, the inverse of escape.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to unescape|
-|return|string|unescaped string  |
+|返回值|string|unescaped string  |
 
 ```javascript
 unescape('You &amp; Me'); -> // -> 'You & Me'
@@ -5546,10 +5546,10 @@ unescape('You &amp; Me'); -> // -> 'You & Me'
 
 Create an array of unique values, in order, from all given arrays.
 
-|Name  |Type |Desc                        |
-|------|-----|----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |...arr|array|Arrays to inspect           |
-|return|array|New array of combined values|
+|返回值|array|New array of combined values|
 
 ```javascript
 union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
@@ -5559,10 +5559,10 @@ union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
 
 Generate a globally-unique id.
 
-|Name    |Type  |Desc              |
-|--------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[prefix]|string|Id prefix         |
-|return  |string|Globally-unique id|
+|返回值  |string|Globally-unique id|
 
 ```javascript
 uniqId('eusita_'); // -> 'eustia_xxx'
@@ -5572,11 +5572,11 @@ uniqId('eusita_'); // -> 'eustia_xxx'
 
 Create duplicate-free version of an array.
 
-|Name     |Type    |Desc                         |
-|---------|--------|-----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr      |array   |Array to inspect             |
 |[compare]|function|Function for comparing values|
-|return   |array   |New duplicate free array     |
+|返回值   |array   |New duplicate free array     |
 
 ```javascript
 unique([1, 2, 3, 1]); // -> [1, 2, 3]
@@ -5586,10 +5586,10 @@ unique([1, 2, 3, 1]); // -> [1, 2, 3]
 
 Opposite of zip.
 
-|Name  |Type |Desc                                |
-|------|-----|------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr   |array|Array of grouped elements to process|
-|return|array|New array of regrouped elements     |
+|返回值|array|New array of regrouped elements     |
 
 ```javascript
 unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, false]]
@@ -5599,10 +5599,10 @@ unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, fals
 
 Convert string to upper case.
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to convert|
-|return|string|Uppercased string|
+|返回值|string|Uppercased string|
 
 ```javascript
 upperCase('test'); // -> 'TEST'
@@ -5612,10 +5612,10 @@ upperCase('test'); // -> 'TEST'
 
 Convert the first character of string to upper case.
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to convert|
-|return|string|Converted string |
+|返回值|string|Converted string |
 
 ```javascript
 upperFirst('red'); // -> Red
@@ -5625,8 +5625,8 @@ upperFirst('red'); // -> Red
 
 Use modules that is created by define.
 
-|Name      |Type    |Desc                |
-|----------|--------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |[requires]|array   |Dependencies        |
 |method    |function|Codes to be executed|
 
@@ -5649,18 +5649,18 @@ UTF-8 encoding and decoding.
 
 Turn any UTF-8 decoded string into UTF-8 encoded string.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to encode|
-|return|string|Encoded string  |
+|返回值|string|Encoded string  |
 
 ### decode
 
-|Name        |Type   |Desc                  |
-|------------|-------|----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str         |string |String to decode      |
 |[safe=false]|boolean|Suppress error if true|
-|return      |string |Decoded string        |
+|返回值      |string |Decoded string        |
 
 Turn any UTF-8 encoded string into UTF-8 decoded string.
 
@@ -5683,10 +5683,10 @@ uuid(); // -> '53ce0497-6554-49e9-8d79-347406d2a88b'
 
 Create an array of the own enumerable property values of object.
 
-|Name  |Type  |Desc                    |
-|------|------|------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |obj   |object|Object to query         |
-|return|array |Array of property values|
+|返回值|array |Array of property values|
 
 ```javascript
 values({one: 1, two: 2}); // -> [1, 2]
@@ -5704,8 +5704,8 @@ viewportScale(); // -> 3
 
 Run an array of functions in series.
 
-|Name |Type    |Desc                   |
-|-----|--------|-----------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |tasks|array   |Array of functions     |
 |[cb] |function|Callback once completed|
 
@@ -5730,17 +5730,17 @@ waterfall([
 
 Move a stand-alone function to a worker thread.
 
-|Name  |Type    |Desc               |
-|------|--------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn    |function|Function to turn   |
-|return|function|Workerized Function|
+|返回值|function|Workerized Function|
 
 ```javascript
-workerize(function (a, b)
+var worker = workerize(function (a, b)
 {
     return a + b;
 });
-workerize(1, 2).then(function (value)
+worker(1, 2).then(function (value)
 {
     console.log(value); // -> 3
 });
@@ -5750,11 +5750,11 @@ workerize(1, 2).then(function (value)
 
 Wrap the function inside a wrapper function, passing it as the first argument.
 
-|Name   |Type    |Desc            |
-|-------|--------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn     |*       |Function to wrap|
 |wrapper|function|Wrapper function|
-|return |function|New function    |
+|返回值 |function|New function    |
 
 ```javascript
 var p = wrap(escape, function(fn, text)
@@ -5768,10 +5768,10 @@ p('You & Me'); // -> '<p>You &amp; Me</p>'
 
 Merge together the values of each of the arrays with the values at the corresponding position.
 
-|Name  |Type |Desc                         |
-|------|-----|-----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |*arr  |array|Arrays to process            |
-|return|array|New array of grouped elements|
+|返回值|array|New array of grouped elements|
 
 ```javascript
 zip(['a', 'b'], [1, 2], [true, false]); // -> [['a', 1, true], ['b', 2, false]]

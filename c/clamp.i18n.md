@@ -7,7 +7,7 @@ Clamp number within the inclusive lower and upper bounds.
 |n      |number|Number to clamp|
 |[lower]|number|Lower bound    |
 |upper  |number|Upper bound    |
-|return |number|Clamped number |
+|返回值 |number|Clamped number |
 
 ```javascript
 clamp(-10, -5, 5); // -> -5

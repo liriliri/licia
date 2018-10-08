@@ -1,6 +1,6 @@
 /* Compile JavaScript template into function that can be evaluated for rendering.
  *
- * |Name  |Type    |String                    |
+ * |Name  |Type    |Desc                      |
  * |------|--------|--------------------------|
  * |str   |string  |Template string           |
  * |return|function|Compiled template function|

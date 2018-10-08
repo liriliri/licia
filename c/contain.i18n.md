@@ -6,7 +6,7 @@ Check if the value is present in the list.
 |-----|----|---|
 |array |array object|Target list                         |
 |value |*           |Value to check                      |
-|return|boolean     |True if value is present in the list|
+|返回值|boolean     |True if value is present in the list|
 
 ```javascript
 contain([1, 2, 3], 1); // -> true
