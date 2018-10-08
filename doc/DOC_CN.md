@@ -296,8 +296,8 @@ var blob = new Blob([]);
 
 Create JavaScript class.
 
-|Name     |Type    |Desc                             |
-|---------|--------|---------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |methods  |object  |Public methods                   |
 |[statics]|object  |Static methods                   |
 |return   |function|Function used to create instances|
@@ -344,8 +344,8 @@ Color converter.
 
 ### constructor
 
-|Name |Type         |Desc            |
-|-----|-------------|----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |color|string object|Color to convert|
 
 ### toRgb
@@ -1445,15 +1445,15 @@ bubbleSort([2, 1]); // -> [1, 2]
 
 Convert a function that returns a Promise to a function following the error-first callback style.
 
-|Name  |Type    |Desc                                            |
-|------|--------|------------------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn    |function|Function that returns a Promise                 |
 |return|function|Function following the error-fist callback style|
 
 ```javascript
-function fn()
+function fn() 
 {
-    return new Promise(function (resolve, reject)
+    return new Promise(function (resolve, reject) 
     {
         // ...
     });
@@ -1471,8 +1471,8 @@ cbFn(function (err, value)
 
 Convert string to "camelCase".
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to convert |
 |return|string|Camel cased string|
 
@@ -1487,8 +1487,8 @@ camelCase('foo.bar'); // -> fooBar
 
 Convert the first character to upper case and the remaining to lower case.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |string|String to capitalize|
 |return|string|Capitalized string  |
 
@@ -1500,8 +1500,8 @@ capitalize('rED'); // -> Red
 
 Cast value into a property path array.
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str   |*     |Value to inspect   |
 |[obj] |object|Object to query    |
 |return|array |Property path array|
@@ -1517,8 +1517,8 @@ castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
 
 Center align text in a string.
 
-|Name   |Type        |Desc                    |
-|-------|------------|------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |str    |string array|String to align         |
 |[width]|number      |Total width of each line|
 |return |string      |Center aligned string   |
@@ -1533,8 +1533,8 @@ centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
 
 Return string representing a character whose Unicode code point is the given integer.
 
-|Name  |Type  |Desc                                  |
-|------|------|--------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |num   |number|Integer to convert                    |
 |return|string|String representing corresponding char|
 
@@ -1547,8 +1547,8 @@ char(97); // -> 'a'
 
 Split array into groups the length of given size.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr   |array |Array to process    |
 |size=1|number|Length of each chunk|
 
@@ -1562,8 +1562,8 @@ chunk([1, 2, 3, 4]); // -> [[1], [2], [3], [4]]
 
 Clamp number within the inclusive lower and upper bounds.
 
-|Name   |Type  |Desc           |
-|-------|------|---------------|
+|参数名|类型|说明|
+|-----|----|---|
 |n      |number|Number to clamp|
 |[lower]|number|Lower bound    |
 |upper  |number|Upper bound    |
@@ -1581,8 +1581,8 @@ clamp(2, 5); // -> 2
 
 Utility for conditionally joining class names.
 
-|Name    |Type               |Desc              |
-|--------|-------------------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |...class|string object array|Class names       |
 |return  |string             |Joined class names|
 
@@ -1600,8 +1600,8 @@ Create a shallow-copied clone of the provided plain object.
 
 Any nested objects or arrays will be copied by reference, not duplicated.
 
-|Name  |Type|Desc          |
-|------|----|--------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*   |Value to clone|
 |return|*   |Cloned value  |
 
@@ -1613,8 +1613,8 @@ clone({name: 'eustia'}); // -> {name: 'eustia'}
 
 Recursively clone value.
 
-|Name  |Type|Desc             |
-|------|----|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |val   |*   |Value to clone   |
 |return|*   |Deep cloned Value|
 
@@ -1628,8 +1628,8 @@ console.log(obj[0] === obj2[1]); // -> false
 
 Compare version strings.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |v1    |string|Version to compare|
 |v2    |string|Version to compare|
 |return|number|Comparison result |
@@ -1648,8 +1648,8 @@ Return a copy of the array with all falsy values removed.
 
 The values false, null, 0, "", undefined, and NaN are falsey.
 
-|Name  |Type |Desc                        |
-|------|-----|----------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |arr   |array|Array to compact            |
 |return|array|New array of filtered values|
 
@@ -1663,16 +1663,16 @@ Compose a list of functions.
 
 Each function consumes the return value of the function that follows.
 
-|Name  |Type    |Desc                |
-|------|--------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |...fn |function|Functions to compose|
 |return|function|Composed function   |
 
 ```javascript
-var welcome = compose(function (name)
+var welcome = compose(function (name) 
 {
     return 'hi: ' + name;
-}, function (name)
+}, function (name) 
 {
     return name.toUpperCase() + '!';
 });
@@ -1684,16 +1684,16 @@ welcome('licia'); // -> 'hi: LICIA!'
 
 Compress image using canvas.
 
-|Name|Type     |Desc      |
-|----|---------|----------|
+|参数名|类型|说明|
+|-----|----|---|
 |file|File Blob|Image file|
 |opts|object   |Options   |
 |cb  |function |Callback  |
 
 Available options:
 
-|Name       |Type  |Desc                            |
-|-----------|------|--------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |maxWidth   |number|Max width                       |
 |maxHeight  |number|Max height                      |
 |width      |number|Output image width              |
@@ -1708,7 +1708,7 @@ And maxWith, maxHeight will be ignored if width or height is set.
 ```javascript
 compressImg(file, {
     maxWidth: 200
-}, function (err, file)
+}, function (err, file) 
 {
     // ...
 });
@@ -1718,8 +1718,8 @@ compressImg(file, {
 
 Concat multiple arrays into a single array.
 
-|Name  |Type |Desc              |
-|------|-----|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |...arr|array|Arrays to concat  |
 |return|array|Concatenated array|
 
@@ -1731,8 +1731,8 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 
 Check if the value is present in the list.
 
-|Name  |Type        |Desc                                |
-|------|------------|------------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |array |array object|Target list                         |
 |value |*           |Value to check                      |
 |return|boolean     |True if value is present in the list|
@@ -1746,8 +1746,8 @@ contain({a: 1, b: 2}, 1); // -> true
 
 Convert base of a number.
 
-|Name  |Type         |Desc             |
-|------|-------------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |num   |number string|Number to convert|
 |from  |number       |Base from        |
 |to    |number       |Base to          |
@@ -1766,8 +1766,8 @@ Simple api for handling browser cookies.
 
 Get cookie value.
 
-|Name  |Type  |Desc                      |
-|------|------|--------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |key   |string|Cookie key                |
 |return|string|Corresponding cookie value|
 
@@ -1775,8 +1775,8 @@ Get cookie value.
 
 Set cookie value.
 
-|Name     |Type   |Desc          |
-|---------|-------|--------------|
+|参数名|类型|说明|
+|-----|----|---|
 |key      |string |Cookie key    |
 |val      |string |Cookie value  |
 |[options]|object |Cookie options|
@@ -1786,8 +1786,8 @@ Set cookie value.
 
 Remove cookie value.
 
-|Name     |Type   |Desc          |
-|---------|-------|--------------|
+|参数名|类型|说明|
+|-----|----|---|
 |key      |string |Cookie key    |
 |[options]|object |Cookie options|
 |return   |exports|Module cookie |
@@ -1802,13 +1802,13 @@ cookie.remove('a');
 
 Copy text to clipboard using document.execCommand.
 
-|Name|Type    |Desc             |
-|----|--------|-----------------|
+|参数名|类型|说明|
+|-----|----|---|
 |text|string  |Text to copy     |
 |[cb]|function|Optional callback|
 
 ```javascript
-copy('text', function (err)
+copy('text', function (err) 
 {
     // Handle errors.
 });
@@ -1818,8 +1818,8 @@ copy('text', function (err)
 
 Used to create extend, extendOwn and defaults.
 
-|Name    |Type    |Desc                          |
-|--------|--------|------------------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |keysFn  |function|Function to get object keys   |
 |defaults|boolean |No override when set to true  |
 |return  |function|Result function, extend...    |
@@ -1828,9 +1828,9 @@ Used to create extend, extendOwn and defaults.
 
 CreateObjectURL wrapper.
 
-|Name   |Type                  |Desc                                |
-|-------|----------------------|------------------------------------|
-|data   |File Blob string array|Url data                            |
+|参数名|类型|说明|
+|-----|----|---|
+|data   |File Blob string array|Url data                            | 
 |[opts] |object                |Used when data is not a File or Blob|
 |return |string                |Blob url                            |
 
@@ -1845,8 +1845,8 @@ createUrl(new File(['test'], 'test.txt'));
 
 Check if browser supports a given CSS feature.
 
-|Name  |Type   |Desc              |
-|------|-------|------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |name  |string |Css property name |
 |[val] |string |Css property value|
 |return|boolean|True if supports  |
@@ -1863,8 +1863,8 @@ cssSupports('invalid'); // -> false
 
 Function currying.
 
-|Name  |Type    |Desc                |
-|------|--------|--------------------|
+|参数名|类型|说明|
+|-----|----|---|
 |fn    |function|Function to curry   |
 |return|function|New curried function|
 
