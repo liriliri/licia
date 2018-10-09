@@ -10,7 +10,7 @@
 
 ### toRgb
 
-获取颜色 rgb 格式。
+获取颜色 rgb 格式。
 
 ### toHex
 
