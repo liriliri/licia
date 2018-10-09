@@ -17,7 +17,7 @@
     "eustia": "eustia",
     "karma": "karma",
     "mocha": "mocha",
-    "format": "prettier $/*.js [a-z]/*.js *.js lib/**/*.js lib/*.js bin/*.js --write",
+    "format": "prettier $/*.js [a-z]/*.js *.js lib/**/*.js lib/*.js bin/*.js script/*.js --write",
     "benchmark": "node",
     "test:node": "licia test -as",
     "test:browser": "licia test -bas",

@@ -1,6 +1,6 @@
 ## CN
 
-使用 document.execCommand 将文本拷贝到剪贴板。
+使用 document.execCommand 将文本拷贝到剪贴板。
 
 |参数名|类型|说明|
 |-----|----|---|
