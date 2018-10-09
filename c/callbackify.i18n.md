@@ -1,11 +1,11 @@
 ## CN
 
-Convert a function that returns a Promise to a function following the error-first callback style.
+将返回 Promise 的函数转换为使用回调的函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function that returns a Promise                 |
-|返回值|function|Function following the error-fist callback style|
+|fn|function|返回 Promise 的函数|
+|返回值|function|使用回调的函数|
 
 ```javascript
 function fn() 

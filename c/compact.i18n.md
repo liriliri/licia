@@ -1,13 +1,13 @@
 ## CN
 
-Return a copy of the array with all falsy values removed.
+返回数组的拷贝并移除其中的虚值。
 
-The values false, null, 0, "", undefined, and NaN are falsey.
+虚值包括 false，null，0，空字符串，undefined 和 NaN。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array|Array to compact            |
-|返回值|array|New array of filtered values|
+|arr|array|源数组|
+|返回值|array|目标数组|
 
 ```javascript
 compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]

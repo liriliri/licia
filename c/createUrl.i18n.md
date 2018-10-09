@@ -1,12 +1,12 @@
 ## CN
 
-CreateObjectURL wrapper.
+CreateObjectURL 的包裹函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|data   |File Blob string array|Url data                            | 
-|[opts] |object                |Used when data is not a File or Blob|
-|返回值 |string                |Blob url                            |
+|data|File Blob string array|数据| 
+|[opts]|object|当数据不是 File 或者 Blob 对象时使用|
+|返回值|string|Blob 地址|
 
 ```javascript
 createUrl('test', {type: 'text/plain'}); // -> Blob url

@@ -1,27 +1,27 @@
 ## CN
 
-Compress image using canvas.
+使用 canvas 对图像进行压缩。
 
 |参数名|类型|说明|
 |-----|----|---|
-|file|File Blob|Image file|
-|opts|object   |Options   |
-|cb  |function |Callback  |
+|file|File Blob|图片文件|
+|opts|object|选项|
+|cb|function|回调|
 
-Available options:
+可用选项：
 
 |参数名|类型|说明|
 |-----|----|---|
-|maxWidth   |number|Max width                       |
-|maxHeight  |number|Max height                      |
-|width      |number|Output image width              |
-|height     |number|Output image height             |
-|mineType   |string|Mine type                       |
-|quality=0.8|number|Image quality, range from 0 to 1|
+|maxWidth|number|最大宽度|
+|maxHeight|number|最大高度|
+|width|number|输出图片宽度|
+|height|number|输出图片高度|
+|mineType|string|Mine 类型|
+|quality=0.8|number|图片质量，从 0 到 1|
 
-In order to keep image ratio, height will be ignored when width is set.
+为了保持图片比例，当宽度设置时高度将被忽略。
 
-And maxWith, maxHeight will be ignored if width or height is set.
+如果设置了宽高，最大宽度跟最大高度将被忽略。
 
 ```javascript
 compressImg(file, {

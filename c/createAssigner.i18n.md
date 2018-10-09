@@ -1,9 +1,9 @@
 ## CN
 
-Used to create extend, extendOwn and defaults.
+用于创建 extend，extendOwn 和 defaults 等模块。
 
 |参数名|类型|说明|
 |-----|----|---|
-|keysFn  |function|Function to get object keys   |
-|defaults|boolean |No override when set to true  |
-|返回值  |function|Result function, extend...    |
+|keysFn|function|获取对象键名的函数|
+|defaults|boolean|设置为真时不对值进行覆盖|
+|返回值|function|目标函数|

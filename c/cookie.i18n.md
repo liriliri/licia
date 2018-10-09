@@ -1,36 +1,36 @@
 ## CN
 
-Simple api for handling browser cookies.
+浏览器 cookie 操作库。
 
 ### get
 
-Get cookie value.
+获取 cookie 值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key   |string|Cookie key                |
-|返回值|string|Corresponding cookie value|
+|key|string|Cookie 键名|
+|返回值|string|对应的 cookie 值|
 
 ### set
 
-Set cookie value.
+设置 cookie 值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key      |string |Cookie key    |
-|val      |string |Cookie value  |
-|[options]|object |Cookie options|
-|返回值   |exports|Module cookie |
+|key|string|cookie 键名|
+|val|string|cookie 值|
+|[options]|object|cookie 选项|
+|返回值|exports|cookie 模块|
 
 ### remove
 
-Remove cookie value.
+移除 cookie 值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key      |string |Cookie key    |
-|[options]|object |Cookie options|
-|返回值   |exports|Module cookie |
+|key|string|Cookie 键名|
+|[options]|object|Cookie 选项|
+|返回值|exports|cookie 模块|
 
 ```javascript
 cookie.set('a', '1', {path: '/'});

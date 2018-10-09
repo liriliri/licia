@@ -294,13 +294,13 @@ var blob = new Blob([]);
 
 ## Class
 
-Create JavaScript class.
+创建 JavaScript 类。
 
 |参数名|类型|说明|
 |-----|----|---|
-|methods  |object  |Public methods                   |
-|[statics]|object  |Static methods                   |
-|返回值   |function|Function used to create instances|
+|methods|object|公有方法|
+|[statics]|object|静态方法|
+|返回值|function|用于创建实例的函数|
 
 ```javascript
 var People = Class({
@@ -340,34 +340,34 @@ Student.is(a); // -> true
 
 ## Color
 
-Color converter.
+颜色转换。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|color|string object|Color to convert|
+|color|string object|要转换的颜色|
 
 ### toRgb
 
-Get color rgb string format.
+获取颜色 rgb 格式。
 
 ### toHex
 
-Get color hex string format.
+获取颜色十六进制格式。
 
 ### toHsl
 
-Get color hsl string format.
+获取颜色 hsl 格式。
 
 ### parse
 
-[static] Parse color string into object containing value and model.
+【静态】将颜色字符串转换为含有值及颜色模型的对象。
 
-|Name  |Type  |Desc                             |
-|------|------|---------------------------------|
-|color |string|Color string                     |
-|返回值|object|Object containing value and model|
+|参数名|类型|说明|
+|-----|----|---|
+|color|string|颜色字条串|
+|返回值|object|含有值及颜色模型的对象|
 
 ```javascript
 Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model: 'rgb'}
@@ -1443,12 +1443,12 @@ bubbleSort([2, 1]); // -> [1, 2]
 
 ## callbackify
 
-Convert a function that returns a Promise to a function following the error-first callback style.
+将返回 Promise 的函数转换为使用回调的函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function that returns a Promise                 |
-|返回值|function|Function following the error-fist callback style|
+|fn|function|返回 Promise 的函数|
+|返回值|function|使用回调的函数|
 
 ```javascript
 function fn() 
@@ -1469,12 +1469,12 @@ cbFn(function (err, value)
 
 ## camelCase
 
-Convert string to "camelCase".
+将字符串转换为驼峰式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert |
-|返回值|string|Camel cased string|
+|str|string|源字符串|
+|返回值|string|驼峰式字符串|
 
 ```javascript
 camelCase('foo-bar'); // -> fooBar
@@ -1485,12 +1485,12 @@ camelCase('foo.bar'); // -> fooBar
 
 ## capitalize
 
-Convert the first character to upper case and the remaining to lower case.
+将字符串的第一个字符转换为大写，其余字符转换为小写。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to capitalize|
-|返回值|string|Capitalized string  |
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 capitalize('rED'); // -> Red
@@ -1498,13 +1498,13 @@ capitalize('rED'); // -> Red
 
 ## castPath
 
-Cast value into a property path array.
+将值转换为属性路径数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |*     |Value to inspect   |
-|[obj] |object|Object to query    |
-|返回值|array |Property path array|
+|str|*|要转换的值|
+|[obj]|object|目标对象|
+|返回值|array|属性路径数组|
 
 ```javascript
 castPath('a.b.c'); // -> ['a', 'b', 'c']
@@ -1515,13 +1515,13 @@ castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
 
 ## centerAlign
 
-Center align text in a string.
+字符串居中。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str    |string array|String to align         |
-|[width]|number      |Total width of each line|
-|返回值 |string      |Center aligned string   |
+|str|string array|源字符串|
+|[width]|number|每行宽度|
+|返回值|string|居中字符串|
 
 ```javascript
 centerAlign('test', 8); // -> '  test'
@@ -1531,12 +1531,12 @@ centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
 
 ## char
 
-Return string representing a character whose Unicode code point is the given integer.
+根据指定的整数返回 unicode 编码为该整数的字符。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number|Integer to convert                    |
-|返回值|string|String representing corresponding char|
+|num|number|要转换的整数|
+|返回值|string|对应字符|
 
 ```javascript
 char(65); // -> 'A'
@@ -1545,12 +1545,12 @@ char(97); // -> 'a'
 
 ## chunk
 
-Split array into groups the length of given size.
+将数组拆分为指定长度的子数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array |Array to process    |
-|size=1|number|Length of each chunk|
+|arr|array|目标数组|
+|size=1|number|子数组的长度|
 
 ```javascript
 chunk([1, 2, 3, 4], 2); // -> [[1, 2], [3, 4]]
@@ -1560,14 +1560,14 @@ chunk([1, 2, 3, 4]); // -> [[1], [2], [3], [4]]
 
 ## clamp
 
-Clamp number within the inclusive lower and upper bounds.
+将数字限定于指定区间。
 
 |参数名|类型|说明|
 |-----|----|---|
-|n      |number|Number to clamp|
-|[lower]|number|Lower bound    |
-|upper  |number|Upper bound    |
-|返回值 |number|Clamped number |
+|n|number|要处理的数字|
+|[lower]|number|下限|
+|upper|number|上限|
+|返回值|number|限定后的数字|
 
 ```javascript
 clamp(-10, -5, 5); // -> -5
@@ -1579,12 +1579,12 @@ clamp(2, 5); // -> 2
 
 ## className
 
-Utility for conditionally joining class names.
+合并 class。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...class|string object array|Class names       |
-|返回值  |string             |Joined class names|
+|...class|string object array|要合并的 class|
+|返回值|string|合并后的 class 字符串|
 
 ```javascript
 className('a', 'b', 'c'); // -> 'a b c'
@@ -1596,14 +1596,14 @@ className('a', ['b', 'c', {d: true, e: false}]); // -> 'a b c d';
 
 ## clone
 
-Create a shallow-copied clone of the provided plain object.
+对指定对象进行浅复制。
 
-Any nested objects or arrays will be copied by reference, not duplicated.
+任何嵌套的对象或数组只会拷贝其引用。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*   |Value to clone|
-|返回值|*   |Cloned value  |
+|val|*|要克隆的值|
+|返回值|*|克隆值|
 
 ```javascript
 clone({name: 'eustia'}); // -> {name: 'eustia'}
@@ -1611,12 +1611,12 @@ clone({name: 'eustia'}); // -> {name: 'eustia'}
 
 ## cloneDeep
 
-Recursively clone value.
+深复制。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*   |Value to clone   |
-|返回值|*   |Deep cloned Value|
+|val|*|要克隆的值|
+|返回值|*|克隆值|
 
 ```javascript
 var obj = [{a: 1}, {a: 2}];
@@ -1626,13 +1626,13 @@ console.log(obj[0] === obj2[1]); // -> false
 
 ## cmpVersion
 
-Compare version strings.
+比较版本号。
 
 |参数名|类型|说明|
 |-----|----|---|
-|v1    |string|Version to compare|
-|v2    |string|Version to compare|
-|返回值|number|Comparison result |
+|v1|string|版本号|
+|v2|string|版本号|
+|返回值|number|比较结果|
 
 ```javascript
 cmpVersion('1.1.8', '1.0.4'); // -> 1
@@ -1644,14 +1644,14 @@ cmpVersion('1.1.1', '1.2.3'); // -> -1
 
 ## compact
 
-Return a copy of the array with all falsy values removed.
+返回数组的拷贝并移除其中的虚值。
 
-The values false, null, 0, "", undefined, and NaN are falsey.
+虚值包括 false，null，0，空字符串，undefined 和 NaN。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array|Array to compact            |
-|返回值|array|New array of filtered values|
+|arr|array|源数组|
+|返回值|array|目标数组|
 
 ```javascript
 compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
@@ -1659,14 +1659,14 @@ compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
 
 ## compose
 
-Compose a list of functions.
+将多个函数组合成一个函数。
 
-Each function consumes the return value of the function that follows.
+每个函数使用下一个函数的返回值作为参数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...fn |function|Functions to compose|
-|返回值|function|Composed function   |
+|...fn|function|要组合的函数|
+|返回值|function|目标函数|
 
 ```javascript
 var welcome = compose(function (name) 
@@ -1682,28 +1682,28 @@ welcome('licia'); // -> 'hi: LICIA!'
 
 ## compressImg
 
-Compress image using canvas.
+使用 canvas 对图像进行压缩。
 
 |参数名|类型|说明|
 |-----|----|---|
-|file|File Blob|Image file|
-|opts|object   |Options   |
-|cb  |function |Callback  |
+|file|File Blob|图片文件|
+|opts|object|选项|
+|cb|function|回调|
 
-Available options:
+可用选项：
 
 |参数名|类型|说明|
 |-----|----|---|
-|maxWidth   |number|Max width                       |
-|maxHeight  |number|Max height                      |
-|width      |number|Output image width              |
-|height     |number|Output image height             |
-|mineType   |string|Mine type                       |
-|quality=0.8|number|Image quality, range from 0 to 1|
+|maxWidth|number|最大宽度|
+|maxHeight|number|最大高度|
+|width|number|输出图片宽度|
+|height|number|输出图片高度|
+|mineType|string|Mine 类型|
+|quality=0.8|number|图片质量，从 0 到 1|
 
-In order to keep image ratio, height will be ignored when width is set.
+为了保持图片比例，当宽度设置时高度将被忽略。
 
-And maxWith, maxHeight will be ignored if width or height is set.
+如果设置了宽高，最大宽度跟最大高度将被忽略。
 
 ```javascript
 compressImg(file, {
@@ -1716,12 +1716,12 @@ compressImg(file, {
 
 ## concat
 
-Concat multiple arrays into a single array.
+将多个数组合并成一个数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...arr|array|Arrays to concat  |
-|返回值|array|Concatenated array|
+|...arr|array|要合并的数组|
+|返回值|array|合并后的数组|
 
 ```javascript
 concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
@@ -1729,13 +1729,13 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 
 ## contain
 
-Check if the value is present in the list.
+检查数组中是否有指定值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|array |array object|Target list                         |
-|value |*           |Value to check                      |
-|返回值|boolean     |True if value is present in the list|
+|array|array object|数组|
+|value|*|要检查的值|
+|返回值|boolean|如果有，返回真|
 
 ```javascript
 contain([1, 2, 3], 1); // -> true
@@ -1744,14 +1744,14 @@ contain({a: 1, b: 2}, 1); // -> true
 
 ## convertBase
 
-Convert base of a number.
+对数字进行进制转换。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number string|Number to convert|
-|from  |number       |Base from        |
-|to    |number       |Base to          |
-|返回值|string       |Converted number |
+|num|number string|要转换的数字|
+|from|number|源进制|
+|to|number|目标进制|
+|返回值|string|转换后的数字|
 
 ```javascript
 convertBase('10', 2, 10); // -> '2'
@@ -1760,37 +1760,37 @@ convertBase('ff', 16, 2); // -> '11111111'
 
 ## cookie
 
-Simple api for handling browser cookies.
+浏览器 cookie 操作库。
 
 ### get
 
-Get cookie value.
+获取 cookie 值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key   |string|Cookie key                |
-|返回值|string|Corresponding cookie value|
+|key|string|Cookie 键名|
+|返回值|string|对应的 cookie 值|
 
 ### set
 
-Set cookie value.
+设置 cookie 值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key      |string |Cookie key    |
-|val      |string |Cookie value  |
-|[options]|object |Cookie options|
-|返回值   |exports|Module cookie |
+|key|string|cookie 键名|
+|val|string|cookie 值|
+|[options]|object|cookie 选项|
+|返回值|exports|cookie 模块|
 
 ### remove
 
-Remove cookie value.
+移除 cookie 值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key      |string |Cookie key    |
-|[options]|object |Cookie options|
-|返回值   |exports|Module cookie |
+|key|string|Cookie 键名|
+|[options]|object|Cookie 选项|
+|返回值|exports|cookie 模块|
 
 ```javascript
 cookie.set('a', '1', {path: '/'});
@@ -1800,12 +1800,12 @@ cookie.remove('a');
 
 ## copy
 
-Copy text to clipboard using document.execCommand.
+使用 document.execCommand 将文本拷贝到剪贴板。
 
 |参数名|类型|说明|
 |-----|----|---|
-|text|string  |Text to copy     |
-|[cb]|function|Optional callback|
+|text|string|要拷贝的文本|
+|[cb]|function|可选回调|
 
 ```javascript
 copy('text', function (err) 
@@ -1816,23 +1816,23 @@ copy('text', function (err)
 
 ## createAssigner
 
-Used to create extend, extendOwn and defaults.
+用于创建 extend，extendOwn 和 defaults 等模块。
 
 |参数名|类型|说明|
 |-----|----|---|
-|keysFn  |function|Function to get object keys   |
-|defaults|boolean |No override when set to true  |
-|返回值  |function|Result function, extend...    |
+|keysFn|function|获取对象键名的函数|
+|defaults|boolean|设置为真时不对值进行覆盖|
+|返回值|function|目标函数|
 
 ## createUrl
 
-CreateObjectURL wrapper.
+CreateObjectURL 的包裹函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|data   |File Blob string array|Url data                            | 
-|[opts] |object                |Used when data is not a File or Blob|
-|返回值 |string                |Blob url                            |
+|data|File Blob string array|数据| 
+|[opts]|object|当数据不是 File 或者 Blob 对象时使用|
+|返回值|string|Blob 地址|
 
 ```javascript
 createUrl('test', {type: 'text/plain'}); // -> Blob url
@@ -1843,13 +1843,13 @@ createUrl(new File(['test'], 'test.txt'));
 
 ## cssSupports
 
-Check if browser supports a given CSS feature.
+检查浏览器是否支持某项 CSS 特性。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name  |string |Css property name |
-|[val] |string |Css property value|
-|返回值|boolean|True if supports  |
+|name|string|Css 属性名|
+|[val]|string|Css 属性值|
+|返回值|boolean|如果支持，返回真|
 
 ```javascript
 cssSupports('display', 'flex'); // -> true
@@ -1861,12 +1861,12 @@ cssSupports('invalid'); // -> false
 
 ## curry
 
-Function currying.
+函数柯里化。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to curry   |
-|返回值|function|New curried function|
+|fn|function|源函数|
+|返回值|function|目标函数|
 
 ```javascript
 var add = curry(function (a, b) { return a + b });

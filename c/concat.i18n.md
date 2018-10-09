@@ -1,11 +1,11 @@
 ## CN
 
-Concat multiple arrays into a single array.
+将多个数组合并成一个数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...arr|array|Arrays to concat  |
-|返回值|array|Concatenated array|
+|...arr|array|要合并的数组|
+|返回值|array|合并后的数组|
 
 ```javascript
 concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]

@@ -1,11 +1,11 @@
 ## CN
 
-Utility for conditionally joining class names.
+合并 class。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...class|string object array|Class names       |
-|返回值  |string             |Joined class names|
+|...class|string object array|要合并的 class|
+|返回值|string|合并后的 class 字符串|
 
 ```javascript
 className('a', 'b', 'c'); // -> 'a b c'

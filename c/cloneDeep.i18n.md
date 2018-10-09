@@ -1,11 +1,11 @@
 ## CN
 
-Recursively clone value.
+深复制。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*   |Value to clone   |
-|返回值|*   |Deep cloned Value|
+|val|*|要克隆的值|
+|返回值|*|克隆值|
 
 ```javascript
 var obj = [{a: 1}, {a: 2}];

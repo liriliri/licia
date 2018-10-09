@@ -1,11 +1,11 @@
 ## CN
 
-Split array into groups the length of given size.
+将数组拆分为指定长度的子数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array |Array to process    |
-|size=1|number|Length of each chunk|
+|arr|array|目标数组|
+|size=1|number|子数组的长度|
 
 ```javascript
 chunk([1, 2, 3, 4], 2); // -> [[1, 2], [3, 4]]

@@ -1,13 +1,13 @@
 ## CN
 
-Create a shallow-copied clone of the provided plain object.
+对指定对象进行浅复制。
 
-Any nested objects or arrays will be copied by reference, not duplicated.
+任何嵌套的对象或数组只会拷贝其引用。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*   |Value to clone|
-|返回值|*   |Cloned value  |
+|val|*|要克隆的值|
+|返回值|*|克隆值|
 
 ```javascript
 clone({name: 'eustia'}); // -> {name: 'eustia'}

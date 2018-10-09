@@ -1,12 +1,12 @@
 ## CN
 
-Check if browser supports a given CSS feature.
+检查浏览器是否支持某项 CSS 特性。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name  |string |Css property name |
-|[val] |string |Css property value|
-|返回值|boolean|True if supports  |
+|name|string|Css 属性名|
+|[val]|string|Css 属性值|
+|返回值|boolean|如果支持，返回真|
 
 ```javascript
 cssSupports('display', 'flex'); // -> true

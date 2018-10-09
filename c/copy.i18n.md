@@ -1,11 +1,11 @@
 ## CN
 
-Copy text to clipboard using document.execCommand.
+使用 document.execCommand 将文本拷贝到剪贴板。
 
 |参数名|类型|说明|
 |-----|----|---|
-|text|string  |Text to copy     |
-|[cb]|function|Optional callback|
+|text|string|要拷贝的文本|
+|[cb]|function|可选回调|
 
 ```javascript
 copy('text', function (err) 

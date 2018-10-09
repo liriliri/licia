@@ -1,11 +1,11 @@
 ## CN
 
-Return string representing a character whose Unicode code point is the given integer.
+根据指定的整数返回 unicode 编码为该整数的字符。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number|Integer to convert                    |
-|返回值|string|String representing corresponding char|
+|num|number|要转换的整数|
+|返回值|string|对应字符|
 
 ```javascript
 char(65); // -> 'A'

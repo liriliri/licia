@@ -1,12 +1,12 @@
 ## CN
 
-Compare version strings.
+比较版本号。
 
 |参数名|类型|说明|
 |-----|----|---|
-|v1    |string|Version to compare|
-|v2    |string|Version to compare|
-|返回值|number|Comparison result |
+|v1|string|版本号|
+|v2|string|版本号|
+|返回值|number|比较结果|
 
 ```javascript
 cmpVersion('1.1.8', '1.0.4'); // -> 1
