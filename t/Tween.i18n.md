@@ -42,11 +42,9 @@ Update or get animation progress.
 var pos = {x: 0, y: 0};
 
 var tween = new Tween(pos);
-tween.on('update', function (target)
-{
+tween.on('update', function (target) {
     console.log(target.x, target.y);
-}).on('end', function (target)
-{
+}).on('end', function (target) {
     console.log(target.x, target.y); // -> 100, 100
 });
 tween.to({x: 100, y: 100}, 1000, 'inElastic').play();

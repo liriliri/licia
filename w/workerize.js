@@ -6,12 +6,10 @@
  * |return|function|Workerized Function|
  * 
  * ```javascript
- * var worker = workerize(function (a, b) 
- * {
+ * var worker = workerize(function (a, b) {
  *     return a + b;   
  * });
- * worker(1, 2).then(function (value) 
- * {
+ * worker(1, 2).then(function (value) {
  *     console.log(value); // -> 3
  * });
  * ```

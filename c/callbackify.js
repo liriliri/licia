@@ -6,18 +6,15 @@
  * |return|function|Function following the error-fist callback style|
  * 
  * ```javascript
- * function fn() 
- * {
- *     return new Promise(function (resolve, reject) 
- *     {
+ * function fn() {
+ *     return new Promise(function (resolve, reject) {
  *         // ...
  *     });
  * }
  * 
  * var cbFn = callbackify(fn);
  * 
- * cbFn(function (err, value)
- * {
+ * cbFn(function (err, value) {
  *     // ...
  * });
  * ```

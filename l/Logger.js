@@ -30,20 +30,17 @@
  * logger.trace('test');
  * 
  * // Format output.
- * logger.formatter = function (type, argList)
- * {
+ * logger.formatter = function (type, argList) {
  *     argList.push(new Date().getTime());
  * 
  *     return argList;
  * };
  * 
- * logger.on('all', function (type, argList) 
- * {
+ * logger.on('all', function (type, argList) {
  *     // It's not affected by log level.
  * });
  * 
- * logger.on('debug', function (argList) 
- * {
+ * logger.on('debug', function (argList) {
  *     // Affected by log level.
  * });
  * ```

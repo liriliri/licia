@@ -6,8 +6,7 @@
  * |return|number  |Execution time, ms      |
  * 
  * ```javascript
- * timeTaken(function () 
- * {
+ * timeTaken(function () {
  *     // Do something.
  * }); // -> Time taken to execute given function.
  * ```

@@ -29,8 +29,7 @@
  * Required, number, boolean, string and regexp.
  *
  * ```javascript
- * Validator.addPlugin('custom', function (val, key, config)
- * {
+ * Validator.addPlugin('custom', function (val, key, config) {
  *     if (typeof val === 'string' && val.length === 5) return true;
  *
  *     return key + ' should be a string with length 5';

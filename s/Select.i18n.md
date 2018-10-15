@@ -26,8 +26,7 @@ Iterate over matched elements.
 
 ```javascript
 var $test = new Select('#test');
-$test.find('.test').each(function (idx, element)
-{
+$test.find('.test').each(function (idx, element) {
     // Manipulate dom nodes
 });
 ```

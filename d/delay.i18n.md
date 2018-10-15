@@ -9,8 +9,7 @@
 |[...args]|*|绑定参数|
 
 ```javascript
-delay(function (text)
-{
+delay(function (text) {
     console.log(text);
 }, 1000, 'later');
 // -> Logs 'later' after one second

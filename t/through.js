@@ -16,8 +16,7 @@
  *
  * ```javascript
  * fs.createReadStream('in.txt')
- *   .pipe(through(function (chunk, enc, cb) 
- *   {
+ *   .pipe(through(function (chunk, enc, cb) {
  *       // Do something to chunk
  *       this.push(chunk);
  *       cb();

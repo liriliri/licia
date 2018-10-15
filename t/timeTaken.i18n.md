@@ -8,8 +8,7 @@ Get execution time of a function.
 |返回值|number  |Execution time, ms      |
 
 ```javascript
-timeTaken(function ()
-{
+timeTaken(function () {
     // Do something.
 }); // -> Time taken to execute given function.
 ```

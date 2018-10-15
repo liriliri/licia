@@ -13,8 +13,7 @@
  * }, {
  *     name: 'jane',
  *     age: 23
- * }], function (val) 
- * {
+ * }], function (val) {
  *     return val.age === 23;
  * }); // -> 1
  * ```

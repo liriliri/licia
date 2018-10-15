@@ -8,8 +8,7 @@
  * |return   |boolean     |True if all elements pass the predicate check|
  *
  * ```javascript
- * every([2, 4], function (val)
- * {
+ * every([2, 4], function (val) {
  *     return val % 2 === 0;
  * }); // -> false
  * ```

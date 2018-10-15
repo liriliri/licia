@@ -8,8 +8,7 @@
  * |return   |array   |Array of all values that pass predicate|
  *
  * ```javascript
- * reject([1, 2, 3, 4, 5], function (val)
- * {
+ * reject([1, 2, 3, 4, 5], function (val) {
  *     return val % 2 === 0;
  * }); // -> [1, 3, 5]
  * ```

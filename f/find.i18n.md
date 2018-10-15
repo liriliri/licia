@@ -16,8 +16,7 @@ find([{
 }, {
     name: 'jane',
     age: 23
-}], function (val)
-{
+}], function (val) {
     return val.age === 23;
 }); // -> {name: 'jane', age: 23}
 ```

@@ -8,8 +8,7 @@
 |[cb]|function|可选回调|
 
 ```javascript
-copy('text', function (err) 
-{
+copy('text', function (err) {
     // Handle errors.
 });
 ```

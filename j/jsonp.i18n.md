@@ -23,8 +23,7 @@ Available options:
 jsonp({
     url: 'http://example.com',
     data: {test: 'true'},
-    success: function (data)
-    {
+    success: function (data) {
         // ...
     }
 });

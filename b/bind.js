@@ -8,8 +8,7 @@
  * |return   |function|New bound function      |
  *
  * ```javascript
- * var fn = bind(function (msg)
- * {
+ * var fn = bind(function (msg) {
  *     console.log(this.name + ':' + msg);
  * }, {name: 'eustia'}, 'I am a utility library.');
  * fn(); // -> 'eustia: I am a utility library.'

@@ -7,8 +7,7 @@
  * |[...args]|*       |Arguments to invoke fn with               |
  *
  * ```javascript
- * delay(function (text)
- * {
+ * delay(function (text) {
  *     console.log(text);
  * }, 1000, 'later');
  * // -> Logs 'later' after one second

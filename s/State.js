@@ -29,12 +29,10 @@
  * state.is('empty'); // -> true
  * state.load();
  * state.is('pause'); // -> true
- * state.on('play', function (src)
- * {
+ * state.on('play', function (src) {
  *     console.log(src); // -> 'eustia'
  * });
- * state.on('error', function (err, event)
- * {
+ * state.on('error', function (err, event) {
  *     // Error handler
  * });
  * state.play('eustia');

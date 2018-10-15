@@ -10,31 +10,26 @@
 
 ```javascript
 var People = Class({
-    initialize: function People(name, age)
-    {
+    initialize: function People(name, age) {
         this.name = name;
         this.age = age;
     },
-    introduce: function ()
-    {
+    introduce: function () {
         return 'I am ' + this.name + ', ' + this.age + ' years old.';
     }
 });
 
 var Student = People.extend({
-    initialize: function Student(name, age, school)
-    {
+    initialize: function Student(name, age, school) {
         this.callSuper(People, 'initialize', arguments);
 
         this.school = school;
     },
-    introduce: function ()
-    {
+    introduce: function () {
         return this.callSuper(People, 'introduce') + '\n I study at ' + this.school + '.';
     }
 }, {
-    is: function (obj)
-    {
+    is: function (obj) {
         return obj instanceof Student;
     }
 });

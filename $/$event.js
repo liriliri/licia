@@ -1,8 +1,7 @@
 /* bind events to certain dom elements.
  *
  * ```javascript
- * function clickHandler()
- * {
+ * function clickHandler() {
  *     // Do something...
  * }
  * $event.on('#test', 'click', clickHandler);

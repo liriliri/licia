@@ -6,8 +6,7 @@
  * |cb  |function|Onload callback|
  *
  * ```javascript
- * loadCss('style.css', function (isLoaded)
- * {
+ * loadCss('style.css', function (isLoaded) {
  *     // Do something...
  * });
  * ```

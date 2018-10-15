@@ -6,8 +6,7 @@
  * |cb  |function|Onload callback|
  *
  * ```javascript
- * loadJs('main.js', function (isLoaded)
- * {
+ * loadJs('main.js', function (isLoaded) {
  *     // Do something...
  * });
  * ```

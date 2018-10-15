@@ -6,8 +6,7 @@
  * |[cb]|function|Optional callback|
  * 
  * ```javascript
- * copy('text', function (err) 
- * {
+ * copy('text', function (err) {
  *     // Handle errors.
  * });
  * ```

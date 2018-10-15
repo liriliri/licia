@@ -10,8 +10,7 @@ Iterates over elements of collection, returning an array of all the values that 
 |返回值   |array   |Array of all values that pass predicate|
 
 ```javascript
-filter([1, 2, 3, 4, 5], function (val)
-{
+filter([1, 2, 3, 4, 5], function (val) {
     return val % 2 === 0;
 }); // -> [2, 4]
 ```

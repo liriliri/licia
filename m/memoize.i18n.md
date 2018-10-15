@@ -9,8 +9,7 @@ Memoize a given function by caching the computed result.
 |返回值  |function|New memoized function               |
 
 ```javascript
-var fibonacci = memoize(function(n)
-{
+var fibonacci = memoize(function(n) {
     return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
 });
 ```

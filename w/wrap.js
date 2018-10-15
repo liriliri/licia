@@ -7,8 +7,7 @@
  * |return |function|New function    |
  *
  * ```javascript
- * var p = wrap(escape, function(fn, text)
- * {
+* var p = wrap(escape, function(fn, text) {
  *     return '<p>' + fn(text) + '</p>';
  * });
  * p('You & Me'); // -> '<p>You &amp; Me</p>'

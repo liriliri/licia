@@ -7,17 +7,14 @@
  *
  * ```javascript
  * waterfall([
- *     function (cb)
- *     {
+ *     function (cb) {
  *         cb(null, 'one');
  *     },
- *     function (arg1, cb)
- *     {
+ *     function (arg1, cb) {
  *         // arg1 -> 'one'
  *         cb(null, 'done');
  *     }
- * ], function (err, result)
- * {
+ * ], function (err, result) {
  *     // result -> 'done'
  * });
  * ```

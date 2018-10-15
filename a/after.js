@@ -7,8 +7,7 @@
  * |return|function|New restricted function       |
  *
  * ```javascript
- * var fn = after(5, function()
- * {
+ * var fn = after(5, function() {
  *     // -> Only invoke after fn is called 5 times.
  * });
  * ```

@@ -19,8 +19,7 @@
 
 ```javascript
 var container = document.getElementById('container');
-function clickHandler()
-{
+function clickHandler() {
     // Do something...
 }
 delegate.add(container, 'click', '.children', clickHandler);

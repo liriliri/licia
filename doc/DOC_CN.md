@@ -13,8 +13,7 @@ var $btn = $('#btn');
 $btn.html('eustia');
 $btn.addClass('btn');
 $btn.show();
-$btn.on('click', function ()
-{
+$btn.on('click', function () {
     // Do something...
 });
 ```
@@ -162,8 +161,7 @@ $data('#test', 'attr1', 'eustia');
 给指定 dom 元素绑定事件。
 
 ```javascript
-function clickHandler()
-{
+function clickHandler() {
     // Do something...
 }
 $event.on('#test', 'click', clickHandler);
@@ -304,31 +302,26 @@ var blob = new Blob([]);
 
 ```javascript
 var People = Class({
-    initialize: function People(name, age)
-    {
+    initialize: function People(name, age) {
         this.name = name;
         this.age = age;
     },
-    introduce: function ()
-    {
+    introduce: function () {
         return 'I am ' + this.name + ', ' + this.age + ' years old.';
     }
 });
 
 var Student = People.extend({
-    initialize: function Student(name, age, school)
-    {
+    initialize: function Student(name, age, school) {
         this.callSuper(People, 'initialize', arguments);
 
         this.school = school;
     },
-    introduce: function ()
-    {
+    introduce: function () {
         return this.callSuper(People, 'introduce') + '\n I study at ' + this.school + '.';
     }
 }, {
-    is: function (obj)
-    {
+    is: function (obj) {
         return obj instanceof Student;
     }
 });
@@ -385,10 +378,8 @@ Flux 调度器。
 ```javascript
 var dispatcher = new Dispatcher();
 
-dispatcher.register(function (payload)
-{
-   switch (payload.actionType)
-   {
+dispatcher.register(function (payload) {
+   switch (payload.actionType) {
        // Do something
    }
 });
@@ -462,8 +453,7 @@ var importance = new Enum([
     'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
 ]);
 
-if (val === importance.CRITICAL)
-{
+if (val === importance.CRITICAL) {
     // Do something.
 }
 ```
@@ -639,20 +629,17 @@ var logger = new Logger('licia', Logger.level.ERROR);
 logger.trace('test');
 
 // Format output.
-logger.formatter = function (type, argList)
-{
+logger.formatter = function (type, argList) {
     argList.push(new Date().getTime());
 
     return argList;
 };
 
-logger.on('all', function (type, argList)
-{
+logger.on('all', function (type, argList) {
     // It's not affected by log level.
 });
 
-logger.on('debug', function (argList)
-{
+logger.on('debug', function (argList) {
     // Affected by log level.
 });
 ```
@@ -662,8 +649,7 @@ logger.on('debug', function (argList)
 Safe MutationObserver, does nothing if MutationObserver is not supported.
 
 ```javascript
-var observer = new MutationObserver(function (mutations)
-{
+var observer = new MutationObserver(function (mutations) {
     // Do something.
 });
 observer.observe(document.htmlElement);
@@ -677,14 +663,11 @@ Lightweight Promise implementation.
 [Promises spec](https://github.com/promises-aplus/promises-spec)
 
 ```javascript
-function get(url)
-{
-    return new Promise(function (resolve, reject)
-    {
+function get(url) {
+    return new Promise(function (resolve, reject) {
         var req = new XMLHttpRequest();
         req.open('GET', url);
-        req.onload = function ()
-        {
+        req.onload = function () {
             req.status == 200 ? resolve(req.reponse) : reject(Error(req.statusText));
         };
         req.onerror = function () { reject(Error('Network Error')) };
@@ -692,8 +675,7 @@ function get(url)
     });
 }
 
-get('test.json').then(function (result)
-{
+get('test.json').then(function (result) {
     // Do something...
 });
 ```
@@ -794,18 +776,15 @@ Dispatch an action.
 Get the current state.
 
 ```javascript
-var store = new ReduceStore(function (state, action)
-{
-    switch (action.type)
-    {
+var store = new ReduceStore(function (state, action) {
+    switch (action.type) {
         case 'INCREMENT': return state + 1;
         case 'DECREMENT': return state - 1;
         default: return state;
     }
 }, 0);
 
-store.subscribe(function ()
-{
+store.subscribe(function () {
     console.log(store.getState());
 });
 
@@ -842,8 +821,7 @@ Iterate over matched elements.
 
 ```javascript
 var $test = new Select('#test');
-$test.find('.test').each(function (idx, element)
-{
+$test.find('.test').each(function (idx, element) {
     // Manipulate dom nodes
 });
 ```
@@ -945,12 +923,10 @@ var state = new State('empty', {
 state.is('empty'); // -> true
 state.load();
 state.is('pause'); // -> true
-state.on('play', function (src)
-{
+state.on('play', function (src) {
     console.log(src); // -> 'eustia'
 });
-state.on('error', function (err, event)
-{
+state.on('error', function (err, event) {
     // Error handler
 });
 state.play('eustia');
@@ -1026,12 +1002,10 @@ var store = new Store('test');
 store.set('user', {name: 'licia'});
 store.get('user').name; // -> 'licia'
 store.clear();
-store.each(function (val, key)
-{
+store.each(function (val, key) {
     // Do something.
 });
-store.on('change', function (key, newVal, oldVal)
-{
+store.on('change', function (key, newVal, oldVal) {
     // It triggers whenever set is called.
 });
 ```
@@ -1080,11 +1054,9 @@ Update or get animation progress.
 var pos = {x: 0, y: 0};
 
 var tween = new Tween(pos);
-tween.on('update', function (target)
-{
+tween.on('update', function (target) {
     console.log(target.x, target.y);
-}).on('end', function (target)
-{
+}).on('end', function (target) {
     console.log(target.x, target.y); // -> 100, 100
 });
 tween.to({x: 100, y: 100}, 1000, 'inElastic').play();
@@ -1196,8 +1168,7 @@ Validate object.
 Required, number, boolean, string and regexp.
 
 ```javascript
-Validator.addPlugin('custom', function (val, key, config)
-{
+Validator.addPlugin('custom', function (val, key, config) {
     if (typeof val === 'string' && val.length === 5) return true;
 
     return key + ' should be a string with length 5';
@@ -1238,8 +1209,7 @@ abbrev('lina', 'luna');
 |返回值|function|输出函数|
 
 ```javascript
-var fn = after(5, function()
-{
+var fn = after(5, function() {
     // -> Only invoke after fn is called 5 times.
 });
 ```
@@ -1285,15 +1255,13 @@ ajax({
     url: 'http://example.com',
     data: {test: 'true'},
     error: function () {},
-    success: function (data)
-    {
+    success: function (data) {
         // ...
     },
     dataType: 'json'
 });
 
-ajax.get('http://example.com', {}, function (data)
-{
+ajax.get('http://example.com', {}, function (data) {
     // ...
 });
 ```
@@ -1413,8 +1381,7 @@ $(element).on('click', before(5, function() {}));
 |返回值|function|输出函数|
 
 ```javascript
-var fn = bind(function (msg)
-{
+var fn = bind(function (msg) {
     console.log(this.name + ':' + msg);
 }, {name: 'eustia'}, 'I am a utility library.');
 fn(); // -> 'eustia: I am a utility library.'
@@ -1451,18 +1418,15 @@ bubbleSort([2, 1]); // -> [1, 2]
 |返回值|function|使用回调的函数|
 
 ```javascript
-function fn() 
-{
-    return new Promise(function (resolve, reject) 
-    {
+function fn() {
+    return new Promise(function (resolve, reject) {
         // ...
     });
 }
 
 var cbFn = callbackify(fn);
 
-cbFn(function (err, value)
-{
+cbFn(function (err, value) {
     // ...
 });
 ```
@@ -1669,11 +1633,9 @@ compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
 |返回值|function|目标函数|
 
 ```javascript
-var welcome = compose(function (name) 
-{
+var welcome = compose(function (name) {
     return 'hi: ' + name;
-}, function (name) 
-{
+}, function (name) {
     return name.toUpperCase() + '!';
 });
 
@@ -1708,8 +1670,7 @@ welcome('licia'); // -> 'hi: LICIA!'
 ```javascript
 compressImg(file, {
     maxWidth: 200
-}, function (err, file) 
-{
+}, function (err, file) {
     // ...
 });
 ```
@@ -1808,8 +1769,7 @@ cookie.remove('a');
 |[cb]|function|可选回调|
 
 ```javascript
-copy('text', function (err) 
-{
+copy('text', function (err) {
     // Handle errors.
 });
 ```
@@ -2062,8 +2022,7 @@ console.log(obj.a); // -> 2
 |[...args]|*|绑定参数|
 
 ```javascript
-delay(function (text)
-{
+delay(function (text) {
     console.log(text);
 }, 1000, 'later');
 // -> Logs 'later' after one second
@@ -2090,8 +2049,7 @@ delay(function (text)
 
 ```javascript
 var container = document.getElementById('container');
-function clickHandler()
-{
+function clickHandler() {
     // Do something...
 }
 delegate.add(container, 'click', '.children', clickHandler);
@@ -2111,8 +2069,7 @@ delegate.remove(container, 'click', '.children', clickHandler);
 
 ```javascript
 var browser = detectBrowser();
-if (browser.name === 'ie' && browser.version < 9)
-{
+if (browser.name === 'ie' && browser.version < 9) {
     // Do something about old IE...
 }
 ```
@@ -2137,8 +2094,7 @@ detectMocha(); // -> True if mocha is running.
 支持操作系统: windows, os x, linux, ios, android, windows phone
 
 ```javascript
-if (detectOs() === 'ios')
-{
+if (detectOs() === 'ios') {
     // Do something about ios...
 }
 ```
@@ -2306,8 +2262,7 @@ Check if predicate return truthy for all elements.
 |返回值   |boolean     |True if all elements pass the predicate check|
 
 ```javascript
-every([2, 4], function (val)
-{
+every([2, 4], function (val) {
     return val % 2 === 0;
 }); // -> false
 ```
@@ -2410,11 +2365,9 @@ fetch('test.json', {
     timeout: 3000,
     headers: {},
     body: ''
-}).then(function (res)
-{
+}).then(function (res) {
     return res.json();
-}).then(function (data)
-{
+}).then(function (data) {
     console.log(data);
 });
 ```
@@ -2479,8 +2432,7 @@ Iterates over elements of collection, returning an array of all the values that 
 |返回值   |array   |Array of all values that pass predicate|
 
 ```javascript
-filter([1, 2, 3, 4, 5], function (val)
-{
+filter([1, 2, 3, 4, 5], function (val) {
     return val % 2 === 0;
 }); // -> [2, 4]
 ```
@@ -2503,8 +2455,7 @@ find([{
 }, {
     name: 'jane',
     age: 23
-}], function (val)
-{
+}], function (val) {
     return val.age === 23;
 }); // -> {name: 'jane', age: 23}
 ```
@@ -2526,8 +2477,7 @@ findIdx([{
 }, {
     name: 'jane',
     age: 23
-}], function (val)
-{
+}], function (val) {
     return val.age === 23;
 }); // -> 1
 ```
@@ -2544,8 +2494,7 @@ Return the first key where the predicate truth test passes.
 |返回值   |string  |Key of matched element        |
 
 ```javascript
-findKey({a: 1, b: 2}, function (val)
-{
+findKey({a: 1, b: 2}, function (val) {
     return val === 1;
 }); // -> a
 ```
@@ -2570,8 +2519,7 @@ findLastIdx([{
 }, {
     name: 'kitty',
     age: 24
-}], function (val)
-{
+}], function (val) {
     return val.age === 24;
 }); // -> 2
 ```
@@ -2677,11 +2625,9 @@ console.log(a); // -> {b: {c: 1}}
 Promised version of node.js fs module.
 
 ```javascript
-fs.readFile('test.js').then(function (data)
-{
+fs.readFile('test.js').then(function (data) {
     // Do something
-}).catch(function (err)
-{
+}).catch(function (err) {
     // Handle errors
 });
 ```
@@ -2746,8 +2692,7 @@ Register keyboard listener.
 Unregister keyboard listener.
 
 ```javascript
-hotkey.on('k', function ()
-{
+hotkey.on('k', function () {
     console.log('k is pressed');
 });
 function keyDown() {}
@@ -2820,18 +2765,15 @@ Inherit the prototype methods from one constructor into another.
 |SuperClass|function|Super Class|
 
 ```javascript
-function People(name)
-{
+function People(name) {
     this._name = name;
 }
 People.prototype = {
-    getName: function ()
-    {
+    getName: function () {
         return this._name;
     }
 };
-function Student(name)
-{
+function Student(name) {
     this._name = name;
 }
 inherits(Student, People);
@@ -3675,8 +3617,7 @@ Available options:
 jsonp({
     url: 'http://example.com',
     data: {test: 'true'},
-    success: function (data)
-    {
+    success: function (data) {
         // ...
     }
 });
@@ -3773,8 +3714,7 @@ Hyperlink urls in a string.
 ```javascript
 var str = 'Official site: http://eustia.liriliri.io'
 linkify(str); // -> 'Official site: <a href="http://eustia.liriliri.io">http://eustia.liriliri.io</a>'
-linkify(str, function (url)
-{
+linkify(str, function (url) {
     return '<a href="' + url + '" target="_blank">' + url + '</a>';
 });
 ```
@@ -3789,8 +3729,7 @@ Inject link tag into page with given href value.
 |cb  |function|Onload callback|
 
 ```javascript
-loadCss('style.css', function (isLoaded)
-{
+loadCss('style.css', function (isLoaded) {
     // Do something...
 });
 ```
@@ -3805,8 +3744,7 @@ Load image with given src.
 |[cb]|function|Onload callback|
 
 ```javascript
-loadImg('http://eustia.liriliri.io/img.jpg', function (err, img)
-{
+loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
     console.log(img.width, img.height);
 });
 ```
@@ -3821,8 +3759,7 @@ Inject script tag into page with given src value.
 |cb  |function|Onload callback|
 
 ```javascript
-loadJs('main.js', function (isLoaded)
-{
+loadJs('main.js', function (isLoaded) {
     // Do something...
 });
 ```
@@ -3969,8 +3906,7 @@ Memoize a given function by caching the computed result.
 |返回值  |function|New memoized function               |
 
 ```javascript
-var fibonacci = memoize(function(n)
-{
+var fibonacci = memoize(function(n) {
     return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
 });
 ```
@@ -4072,8 +4008,7 @@ Recursively create directories.
 |[callback] |function|Callback           |
 
 ```javascript
-mkdir('/tmp/foo/bar/baz', function (err)
-{
+mkdir('/tmp/foo/bar/baz', function (err) {
     if (err) console.log(err);
     else console.log('Done');
 });
@@ -4158,8 +4093,7 @@ Use process.nextTick if available.
 Otherwise setImmediate or setTimeout is used as fallback.
 
 ```javascript
-nextTick(function ()
-{
+nextTick(function () {
     // Do something...
 });
 ```
@@ -4220,8 +4154,7 @@ Opposite of pick.
 ```javascript
 omit({a: 1, b: 2}, 'a'); // -> {b: 2}
 omit({a: 1, b: 2, c: 3}, ['b', 'c']) // -> {a: 1}
-omit({a: 1, b: 2, c: 3, d: 4}, function (val, key)
-{
+omit({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
     return val % 2;
 }); // -> {b: 2, d: 4}
 
@@ -4262,8 +4195,7 @@ Unbind change event.
 Get current orientation(landscape or portrait).
 
 ```javascript
-orientation.on('change', function (direction)
-{
+orientation.on('change', function (direction) {
     console.log(direction); // -> 'portrait'
 });
 orientation.get(); // -> 'landscape'
@@ -4312,16 +4244,13 @@ Run an array of functions in parallel.
 
 ```javascript
 parallel([
-    function(cb)
-    {
+    function(cb) {
         setTimeout(function () { cb(null, 'one') }, 200);
     },
-    function(cb)
-    {
+    function(cb) {
         setTimeout(function () { cb(null, 'two') }, 100);
     }
-], function (err, results)
-{
+], function (err, results) {
     // results -> ['one', 'two']
 });
 ```
@@ -4413,8 +4342,7 @@ Return a filtered copy of an object.
 ```javascript
 pick({a: 1, b: 2}, 'a'); // -> {a: 1}
 pick({a: 1, b: 2, c: 3}, ['b', 'c']) // -> {b: 2, c: 3}
-pick({a: 1, b: 2, c: 3, d: 4}, function (val, key)
-{
+pick({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
     return val % 2;
 }); // -> {a: 1, c: 3}
 ```
@@ -4486,8 +4414,7 @@ If multiArgs is set to true, the resulting promise will always fulfill with an a
 var fs = require('fs');
 
 var readFile = promisify(fs.readFile);
-readFile('test.js', 'utf-8').then(function (data)
-{
+readFile('test.js', 'utf-8').then(function (data) {
     // Do something with file content.
 });
 ```
@@ -4555,8 +4482,7 @@ Shortcut for requestAnimationFrame.
 Use setTimeout if native requestAnimationFrame is not supported.
 
 ```javascript
-var id = raf(function tick()
-{
+var id = raf(function tick() {
     // Animation stuff
     raf(tick);
 });
@@ -4632,8 +4558,7 @@ Invoke callback when dom is ready, similar to jQuery ready.
 |fn  |function|Callback function|
 
 ```javascript
-ready(function ()
-{
+ready(function () {
     // It's safe to manipulate dom here.
 });
 ```
@@ -4674,8 +4599,7 @@ Opposite of filter.
 |返回值   |array   |Array of all values that pass predicate|
 
 ```javascript
-reject([1, 2, 3, 4, 5], function (val)
-{
+reject([1, 2, 3, 4, 5], function (val) {
     return val % 2 === 0;
 }); // -> [1, 3, 5]
 ```
@@ -4766,8 +4690,7 @@ Recursively remove directories.
 |callback|function|Callback           |
 
 ```javascript
-rmdir('/tmp/foo/bar/baz', function (err)
-{
+rmdir('/tmp/foo/bar/baz', function (err) {
     if (err) console.log (err);
     else console.log('Done');
 });
@@ -5005,8 +4928,7 @@ Check if predicate return truthy for any element.
 |返回值   |boolean     |True if any element passes the predicate check|
 
 ```javascript
-some([2, 5], function (val)
-{
+some([2, 5], function (val) {
     return val % 2 === 0;
 }); // -> true
 ```
@@ -5023,8 +4945,7 @@ Return an array of elements sorted in ascending order by results of running each
 |返回值             |array       |New sorted array          |
 
 ```javascript
-sortBy([1, 2, 3, 4, 5, 6], function (num)
-{
+sortBy([1, 2, 3, 4, 5, 6], function (num) {
     return Math.sin(num);
 }); // -> [5, 4, 6, 3, 1, 2]
 ```
@@ -5252,8 +5173,7 @@ Return a class that extends stream Transform.
 
 ```javascript
 fs.createReadStream('in.txt')
-  .pipe(through(function (chunk, enc, cb)
-  {
+  .pipe(through(function (chunk, enc, cb) {
       // Do something to chunk
       this.push(chunk);
       cb();
@@ -5287,8 +5207,7 @@ Get execution time of a function.
 |返回值|number  |Execution time, ms      |
 
 ```javascript
-timeTaken(function ()
-{
+timeTaken(function () {
     // Do something.
 }); // -> Time taken to execute given function.
 ```
@@ -5469,11 +5388,9 @@ Run function in a try catch.
 |[cb]|function|Callback             |
 
 ```javascript
-tryIt(function ()
-{
+tryIt(function () {
     // Do something that might cause an error.
-}, function (err, result)
-{
+}, function (err, result) {
     if (err) console.log(err);
 });
 ```
@@ -5625,12 +5542,10 @@ Use modules that is created by define.
 |method    |function|Codes to be executed|
 
 ```javascript
-define('A', function ()
-{
+define('A', function () {
     return 'A';
 });
-use(['A'], function (A)
-{
+use(['A'], function (A) {
     console.log(A + 'B'); // -> 'AB'
 });
 ```
@@ -5705,17 +5620,14 @@ Run an array of functions in series.
 
 ```javascript
 waterfall([
-    function (cb)
-    {
+    function (cb) {
         cb(null, 'one');
     },
-    function (arg1, cb)
-    {
+    function (arg1, cb) {
         // arg1 -> 'one'
         cb(null, 'done');
     }
-], function (err, result)
-{
+], function (err, result) {
     // result -> 'done'
 });
 ```
@@ -5730,12 +5642,10 @@ Move a stand-alone function to a worker thread.
 |返回值|function|Workerized Function|
 
 ```javascript
-var worker = workerize(function (a, b)
-{
+var worker = workerize(function (a, b) {
     return a + b;
 });
-worker(1, 2).then(function (value)
-{
+worker(1, 2).then(function (value) {
     console.log(value); // -> 3
 });
 ```
@@ -5751,8 +5661,7 @@ Wrap the function inside a wrapper function, passing it as the first argument.
 |返回值 |function|New function    |
 
 ```javascript
-var p = wrap(escape, function(fn, text)
-{
+var p = wrap(escape, function(fn, text) {
     return '<p>' + fn(text) + '</p>';
 });
 p('You & Me'); // -> '<p>You &amp; Me</p>'

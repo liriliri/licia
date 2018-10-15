@@ -24,8 +24,7 @@
  * ```javascript
  * compressImg(file, {
  *     maxWidth: 200
- * }, function (err, file) 
- * {
+ * }, function (err, file) {
  *     // ...
  * });
  * ```

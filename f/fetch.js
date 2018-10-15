@@ -14,11 +14,9 @@
  *     timeout: 3000,
  *     headers: {},
  *     body: ''
- * }).then(function (res) 
- * {
+ * }).then(function (res) {
  *     return res.json();
- * }).then(function (data) 
- * {
+ * }).then(function (data) {
  *     console.log(data);   
  * });
  * ```

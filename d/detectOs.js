@@ -8,8 +8,7 @@
  * Supported os: windows, os x, linux, ios, android, windows phone
  * 
  * ```javascript
- * if (detectOs() === 'ios') 
- * {
+ * if (detectOs() === 'ios') {
  *     // Do something about ios...
  * }
  * ```

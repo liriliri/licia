@@ -17,8 +17,7 @@ var importance = new Enum([
     'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
 ]);
 
-if (val === importance.CRITICAL)
-{
+if (val === importance.CRITICAL) {
     // Do something.
 }
 ```

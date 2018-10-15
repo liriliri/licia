@@ -8,11 +8,9 @@ Run function in a try catch.
 |[cb]|function|Callback             |
 
 ```javascript
-tryIt(function ()
-{
+tryIt(function () {
     // Do something that might cause an error.
-}, function (err, result)
-{
+}, function (err, result) {
     if (err) console.log(err);
 });
 ```

@@ -9,8 +9,7 @@
  *
  * ```javascript
  * var browser = detectBrowser();
- * if (browser.name === 'ie' && browser.version < 9) 
- * {
+ * if (browser.name === 'ie' && browser.version < 9) {
  *     // Do something about old IE...
  * }
  * ```

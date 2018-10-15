@@ -8,8 +8,7 @@ Inject script tag into page with given src value.
 |cb  |function|Onload callback|
 
 ```javascript
-loadJs('main.js', function (isLoaded)
-{
+loadJs('main.js', function (isLoaded) {
     // Do something...
 });
 ```

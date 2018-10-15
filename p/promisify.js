@@ -12,8 +12,7 @@
  * var fs = require('fs');
  * 
  * var readFile = promisify(fs.readFile);
- * readFile('test.js', 'utf-8').then(function (data) 
- * {
+ * readFile('test.js', 'utf-8').then(function (data) {
  *     // Do something with file content.
  * });
  * ```

@@ -9,8 +9,7 @@
  * Otherwise setImmediate or setTimeout is used as fallback.
  *
  * ```javascript
- * nextTick(function ()
- * {
+ * nextTick(function () {
  *     // Do something...
  * });
  * ```

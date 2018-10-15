@@ -9,16 +9,13 @@ Run an array of functions in parallel.
 
 ```javascript
 parallel([
-    function(cb)
-    {
+    function(cb) {
         setTimeout(function () { cb(null, 'one') }, 200);
     },
-    function(cb)
-    {
+    function(cb) {
         setTimeout(function () { cb(null, 'two') }, 100);
     }
-], function (err, results)
-{
+], function (err, results) {
     // results -> ['one', 'two']
 });
 ```

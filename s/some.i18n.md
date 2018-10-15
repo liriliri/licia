@@ -10,8 +10,7 @@ Check if predicate return truthy for any element.
 |返回值   |boolean     |True if any element passes the predicate check|
 
 ```javascript
-some([2, 5], function (val)
-{
+some([2, 5], function (val) {
     return val % 2 === 0;
 }); // -> true
 ```

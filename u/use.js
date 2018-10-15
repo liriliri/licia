@@ -6,12 +6,10 @@
  * |method    |function|Codes to be executed|
  *
  * ```javascript
- * define('A', function ()
- * {
+ * define('A', function () {
  *     return 'A';
  * });
- * use(['A'], function (A)
- * {
+ * use(['A'], function (A) {
  *     console.log(A + 'B'); // -> 'AB'
  * });
  * ```

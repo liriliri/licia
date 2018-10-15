@@ -16,8 +16,7 @@
  * }, {
  *     name: 'kitty',
  *     age: 24
- * }], function (val) 
- * {
+ * }], function (val) {
  *     return val.age === 24;
  * }); // -> 2 
  * ```

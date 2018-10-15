@@ -15,8 +15,7 @@ Unbind change event.
 Get current orientation(landscape or portrait).
 
 ```javascript
-orientation.on('change', function (direction)
-{
+orientation.on('change', function (direction) {
     console.log(direction); // -> 'portrait'
 });
 orientation.get(); // -> 'landscape'

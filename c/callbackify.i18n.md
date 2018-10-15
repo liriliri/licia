@@ -8,18 +8,15 @@
 |返回值|function|使用回调的函数|
 
 ```javascript
-function fn() 
-{
-    return new Promise(function (resolve, reject) 
-    {
+function fn() {
+    return new Promise(function (resolve, reject) {
         // ...
     });
 }
 
 var cbFn = callbackify(fn);
 
-cbFn(function (err, value)
-{
+cbFn(function (err, value) {
     // ...
 });
 ```

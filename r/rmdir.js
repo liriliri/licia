@@ -6,8 +6,7 @@
  * |callback|function|Callback           |
  * 
  * ```javascript
- * rmdir('/tmp/foo/bar/baz', function (err) 
- * {
+ * rmdir('/tmp/foo/bar/baz', function (err) {
  *     if (err) console.log (err);
  *     else console.log('Done');
  * });

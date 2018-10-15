@@ -37,15 +37,13 @@
  *     url: 'http://example.com',
  *     data: {test: 'true'},
  *     error: function () {},
- *     success: function (data)
- *     {
+ *     success: function (data) {
  *         // ...
  *     },
  *     dataType: 'json'
  * });
  *
- * ajax.get('http://example.com', {}, function (data)
- * {
+ * ajax.get('http://example.com', {}, function (data) {
  *     // ...
  * });
  * ```

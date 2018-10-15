@@ -7,8 +7,7 @@ Invoke callback when dom is ready, similar to jQuery ready.
 |fn  |function|Callback function|
 
 ```javascript
-ready(function ()
-{
+ready(function () {
     // It's safe to manipulate dom here.
 });
 ```

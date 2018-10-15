@@ -10,11 +10,9 @@
 |返回值|function|目标函数|
 
 ```javascript
-var welcome = compose(function (name) 
-{
+var welcome = compose(function (name) {
     return 'hi: ' + name;
-}, function (name) 
-{
+}, function (name) {
     return name.toUpperCase() + '!';
 });
 

@@ -7,10 +7,8 @@ Flux 调度器。
 ```javascript
 var dispatcher = new Dispatcher();
 
-dispatcher.register(function (payload)
-{
-   switch (payload.actionType)
-   {
+dispatcher.register(function (payload) {
+   switch (payload.actionType) {
        // Do something
    }
 });

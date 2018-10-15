@@ -8,8 +8,7 @@ Inject link tag into page with given href value.
 |cb  |function|Onload callback|
 
 ```javascript
-loadCss('style.css', function (isLoaded)
-{
+loadCss('style.css', function (isLoaded) {
     // Do something...
 });
 ```

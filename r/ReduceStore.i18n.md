@@ -32,18 +32,15 @@ Dispatch an action.
 Get the current state.
 
 ```javascript
-var store = new ReduceStore(function (state, action)
-{
-    switch (action.type)
-    {
+var store = new ReduceStore(function (state, action) {
+    switch (action.type) {
         case 'INCREMENT': return state + 1;
         case 'DECREMENT': return state - 1;
         default: return state;
     }
 }, 0);
 
-store.subscribe(function ()
-{
+store.subscribe(function () {
     console.log(store.getState());
 });
 

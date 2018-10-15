@@ -8,11 +8,9 @@
  * |return|function|Composed function   |
  * 
  * ```javascript
- * var welcome = compose(function (name) 
- * {
+ * var welcome = compose(function (name) {
  *     return 'hi: ' + name;
- * }, function (name) 
- * {
+ * }, function (name) {
  *     return name.toUpperCase() + '!';
  * });
  * 
