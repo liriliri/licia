@@ -1,11 +1,11 @@
 ## CN
 
-Better decodeURIComponent that does not throw if input is invalid.
+类似 decodeURIComponent 函数，只是输入不合法时不抛出错误并尽可能地对其进行解码。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to decode|
-|返回值|string|Decoded string  |
+|str|string|要解码的字符串|
+|返回值|string|解码后的字符串|
 
 ```javascript
 decodeUriComponent('%%25%'); // -> '%%%'

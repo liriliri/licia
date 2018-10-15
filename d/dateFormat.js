@@ -1,11 +1,11 @@
 /* Simple but extremely useful date format function.
  *
- * |Name           |Type   |Desc                 |
- * |---------------|-------|---------------------|
- * |[date=new Date]|Date   |Date object to format|
- * |mask           |string |Format mask          |
- * |[utc=false]    |boolean|UTC or not           |
- * |[gmt=false]    |boolean|GMT or not           |
+ * |Name         |Type   |Desc                 |
+ * |-------------|-------|---------------------|
+ * |date=new Date|Date   |Date object to format|
+ * |mask         |string |Format mask          |
+ * |utc=false    |boolean|UTC or not           |
+ * |gmt=false    |boolean|GMT or not           |
  *
  * |Mask|Description                                                      |
  * |----|-----------------------------------------------------------------|

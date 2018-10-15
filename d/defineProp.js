@@ -16,15 +16,13 @@
  * ```javascript
  * var obj = {b: {c: 3}, d: 4, e: 5};
  * defineProp(obj, 'a', {
- *     get: function () 
- *     {
+ *     get: function () {
  *         return this.e * 2;
  *     }
  * });
  * console.log(obj.a); // -> 10
  * defineProp(obj, 'b.c', {
- *     set: (function (val) 
- *     {
+ *     set: (function (val) {
  *         // this is pointed to obj.b
  *         this.e = val;
  *     }).bind(obj)
@@ -35,14 +33,12 @@
  * obj = {a: 1, b: 2, c: 3};
  * defineProp(obj, {
  *     a: {
- *         get: function () 
- *         {
+ *         get: function () {
  *             return this.c;
  *         }
  *     },
  *     b: {
- *         set: function (val) 
- *         {
+ *         set: function (val) {
  *             this.c = val / 2;   
  *         }
  *     }

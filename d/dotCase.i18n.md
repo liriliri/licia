@@ -1,11 +1,11 @@
 ## CN
 
-Convert string to "dotCase".
+将字条串转换为点式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert|
-|返回值|string|Dot cased string |
+|str|string|源字符串|
+|返回值|string|点式字符串|
 
 ```javascript
 dotCase('fooBar'); // -> foo.bar

@@ -1,12 +1,12 @@
 ## CN
 
-Invoke function after certain milliseconds.
+在指定时长后执行函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn       |function|Function to delay                         |
-|wait     |number  |Number of milliseconds to delay invocation|
-|[...args]|*       |Arguments to invoke fn with               |
+|fn|function|源函数|
+|wait|number|延迟的毫秒数|
+|[...args]|*|绑定参数|
 
 ```javascript
 delay(function (text)

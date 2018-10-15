@@ -1,12 +1,12 @@
 ## CN
 
-Return a new debounced version of the passed function.
+返回函数的防反跳版本。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to debounce           |
-|wait  |number  |Number of milliseconds to delay|
-|返回值|function|New debounced function         |
+|fn|function|源函数|
+|wait|number|延迟的毫秒数|
+|返回值|function|目标函数|
 
 ```javascript
 $(window).resize(debounce(calLayout, 300));

@@ -9,12 +9,10 @@
  * The module won't be executed until it's used by use function.
  *
  * ```javascript
- * define('A', function ()
- * {
+ * define('A', function () {
  *     return 'A';
  * });
- * define('B', ['A'], function (A)
- * {
+ * define('B', ['A'], function (A) {
  *     return 'B' + A;
  * });
  * ```

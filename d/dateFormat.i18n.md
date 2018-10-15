@@ -1,43 +1,43 @@
 ## CN
 
-Simple but extremely useful date format function.
+简单日期格式化。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[date=new Date]|Date   |Date object to format|
-|mask           |string |Format mask          |
-|[utc=false]    |boolean|UTC or not           |
-|[gmt=false]    |boolean|GMT or not           |
+|date=new Date|Date|要格式化的日期对象|
+|mask|string|日期格式|
+|utc=false|boolean|是否是 UTC|
+|gmt=false|boolean|是否是 GMT|
 
-|Mask|Description                                                      |
-|----|-----------------------------------------------------------------|
-|d   |Day of the month as digits; no leading zero for single-digit days|
-|dd  |Day of the month as digits; leading zero for single-digit days   |
-|ddd |Day of the week as a three-letter abbreviation                   |
-|dddd|Day of the week as its full name                                 |
-|m   |Month as digits; no leading zero for single-digit months         |
-|mm  |Month as digits; leading zero for single-digit months            |
-|mmm |Month as a three-letter abbreviation                             |
-|mmmm|Month as its full name                                           |
-|yy  |Year as last two digits; leading zero for years less than 10     |
-|yyyy|Year represented by four digits                                  |
-|h   |Hours; no leading zero for single-digit hours (12-hour clock)    |
-|hh  |Hours; leading zero for single-digit hours (12-hour clock)       |
-|H   |Hours; no leading zero for single-digit hours (24-hour clock)    |
-|HH  |Hours; leading zero for single-digit hours (24-hour clock)       |
-|M   |Minutes; no leading zero for single-digit minutes                |
-|MM  |Minutes; leading zero for single-digit minutes                   |
-|s   |Seconds; no leading zero for single-digit seconds                |
-|ss  |Seconds; leading zero for single-digit seconds                   |
-|l L |Milliseconds. l gives 3 digits. L gives 2 digits                 |
-|t   |Lowercase, single-character time marker string: a or p           |
-|tt  |Lowercase, two-character time marker string: am or pm            |
-|T   |Uppercase, single-character time marker string: A or P           |
-|TT  |Uppercase, two-character time marker string: AM or PM            |
-|Z   |US timezone abbreviation, e.g. EST or MDT                        |
-|o   |GMT/UTC timezone offset, e.g. -0500 or +0230                     |
-|S   |The date's ordinal suffix (st, nd, rd, or th)                    |
-|UTC:|Must be the first four characters of the mask                    |
+|掩码|说明|
+|----|----|
+|d|月份天数，不补零|
+|dd|月份天数，不足两位补零|
+|ddd|星期几，简称|
+|dddd|星期几，全称|
+|m|月份，数字，不补零|
+|mm|月份，数字，不足两位补零|
+|mmm|月份，简称|
+|mmmm|月份，全称|
+|yy|年份，只显示后两位数字，不足两位补零|
+|yyyy|年份，显示四位数字|
+|h|小时，不补零 (12 小时制)|
+|hh|小时，不足两位补零（12 小时制）|
+|H|小时，不补零（24 小时制）|
+|HH|小时，不足两位补零（24 小时制）|
+|M|分钟，不补零|
+|MM|分钟，不足两位补零|
+|s|秒数，不补零|
+|ss|秒数，不足两位补零|
+|l L|毫秒，l 显示 3 位， L 显示 2 位|
+|t|小写显示上午下午，a 或 p|
+|tt|小写显示上午下午，am 或 pm|
+|T|大写显示上午下午，A 或 P|
+|TT|大写显示上午下午，AM 或 PM|
+|Z|美国时区缩写，比如 EST 或 MDT|
+|o|GMT/UTC 时区时差，比如 -0500 或 +0230|
+|S|月份天数序数后缀 （st，nd，rd，或 th）|
+|UTC:|是否是 UTC，必须写在最前面|
 
 ```javascript
 dateFormat('isoDate'); // -> 2016-11-19

@@ -1,21 +1,21 @@
 ## CN
 
-Event delegation.
+事件委托。
 
 ### add
 
-Add event delegation.
+添加事件委托。
 
 |参数名|类型|说明|
 |-----|----|---|
-|el      |element |Parent element|
-|type    |string  |Event type    |
-|selector|string  |Match selector|
-|cb      |function|Event callback|
+|el|element|父元素|
+|type|string|事件类型|
+|selector|string|匹配选择器|
+|cb|function|事件回调|
 
 ### remove
 
-Remove event delegation.
+移除事件委托。
 
 ```javascript
 var container = document.getElementById('container');

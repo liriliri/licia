@@ -378,9 +378,9 @@ color.toHsl(); // -> 'hsl(210, 25%, 73%)'
 
 ## Dispatcher
 
-Flux dispatcher.
+Flux 调度器。
 
-[Related docs](https://facebook.github.io/flux/docs/dispatcher.html).
+[相关文档](https://facebook.github.io/flux/docs/dispatcher.html)。
 
 ```javascript
 var dispatcher = new Dispatcher();
@@ -1876,44 +1876,44 @@ add1(2); // -> 3
 
 ## dateFormat
 
-Simple but extremely useful date format function.
+简单日期格式化。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[date=new Date]|Date   |Date object to format|
-|mask           |string |Format mask          |
-|[utc=false]    |boolean|UTC or not           |
-|[gmt=false]    |boolean|GMT or not           |
+|date=new Date|Date|要格式化的日期对象|
+|mask|string|日期格式|
+|utc=false|boolean|是否是 UTC|
+|gmt=false|boolean|是否是 GMT|
 
-|Mask|Description                                                      |
-|----|-----------------------------------------------------------------|
-|d   |Day of the month as digits; no leading zero for single-digit days|
-|dd  |Day of the month as digits; leading zero for single-digit days   |
-|ddd |Day of the week as a three-letter abbreviation                   |
-|dddd|Day of the week as its full name                                 |
-|m   |Month as digits; no leading zero for single-digit months         |
-|mm  |Month as digits; leading zero for single-digit months            |
-|mmm |Month as a three-letter abbreviation                             |
-|mmmm|Month as its full name                                           |
-|yy  |Year as last two digits; leading zero for years less than 10     |
-|yyyy|Year represented by four digits                                  |
-|h   |Hours; no leading zero for single-digit hours (12-hour clock)    |
-|hh  |Hours; leading zero for single-digit hours (12-hour clock)       |
-|H   |Hours; no leading zero for single-digit hours (24-hour clock)    |
-|HH  |Hours; leading zero for single-digit hours (24-hour clock)       |
-|M   |Minutes; no leading zero for single-digit minutes                |
-|MM  |Minutes; leading zero for single-digit minutes                   |
-|s   |Seconds; no leading zero for single-digit seconds                |
-|ss  |Seconds; leading zero for single-digit seconds                   |
-|l L |Milliseconds. l gives 3 digits. L gives 2 digits                 |
-|t   |Lowercase, single-character time marker string: a or p           |
-|tt  |Lowercase, two-character time marker string: am or pm            |
-|T   |Uppercase, single-character time marker string: A or P           |
-|TT  |Uppercase, two-character time marker string: AM or PM            |
-|Z   |US timezone abbreviation, e.g. EST or MDT                        |
-|o   |GMT/UTC timezone offset, e.g. -0500 or +0230                     |
-|S   |The date's ordinal suffix (st, nd, rd, or th)                    |
-|UTC:|Must be the first four characters of the mask                    |
+|掩码|说明|
+|----|----|
+|d|月份天数，不补零|
+|dd|月份天数，不足两位补零|
+|ddd|星期几，简称|
+|dddd|星期几，全称|
+|m|月份，数字，不补零|
+|mm|月份，数字，不足两位补零|
+|mmm|月份，简称|
+|mmmm|月份，全称|
+|yy|年份，只显示后两位数字，不足两位补零|
+|yyyy|年份，显示四位数字|
+|h|小时，不补零 (12 小时制)|
+|hh|小时，不足两位补零（12 小时制）|
+|H|小时，不补零（24 小时制）|
+|HH|小时，不足两位补零（24 小时制）|
+|M|分钟，不补零|
+|MM|分钟，不足两位补零|
+|s|秒数，不补零|
+|ss|秒数，不足两位补零|
+|l L|毫秒，l 显示 3 位， L 显示 2 位|
+|t|小写显示上午下午，a 或 p|
+|tt|小写显示上午下午，am 或 pm|
+|T|大写显示上午下午，A 或 P|
+|TT|大写显示上午下午，AM 或 PM|
+|Z|美国时区缩写，比如 EST 或 MDT|
+|o|GMT/UTC 时区时差，比如 -0500 或 +0230|
+|S|月份天数序数后缀 （st，nd，rd，或 th）|
+|UTC:|是否是 UTC，必须写在最前面|
 
 ```javascript
 dateFormat('isoDate'); // -> 2016-11-19
@@ -1923,13 +1923,13 @@ dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
 
 ## debounce
 
-Return a new debounced version of the passed function.
+返回函数的防反跳版本。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to debounce           |
-|wait  |number  |Number of milliseconds to delay|
-|返回值|function|New debounced function         |
+|fn|function|源函数|
+|wait|number|延迟的毫秒数|
+|返回值|function|目标函数|
 
 ```javascript
 $(window).resize(debounce(calLayout, 300));
@@ -1937,12 +1937,12 @@ $(window).resize(debounce(calLayout, 300));
 
 ## debug
 
-A tiny JavaScript debugging utility.
+简单的 JavaScript 输出 debug 日志函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name  |string  |Namespace                      |
-|返回值|function|Function to print decorated log|
+|name|string|名称|
+|返回值|function|打印格式化日志的函数|
 
 ```javascript
 var d = debug('test');
@@ -1952,12 +1952,12 @@ d.enabled = false;
 
 ## decodeUriComponent
 
-Better decodeURIComponent that does not throw if input is invalid.
+类似 decodeURIComponent 函数，只是输入不合法时不抛出错误并尽可能地对其进行解码。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to decode|
-|返回值|string|Decoded string  |
+|str|string|要解码的字符串|
+|返回值|string|解码后的字符串|
 
 ```javascript
 decodeUriComponent('%%25%'); // -> '%%%'
@@ -1966,13 +1966,13 @@ decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
 
 ## defaults
 
-Fill in undefined properties in object with the first value present in the following list of defaults objects.
+填充对象的默认值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Destination object|
-|*src  |object|Sources objects   |
-|返回值|object|Destination object|
+|obj|object|目标对象|
+|...src|object|提供默认值对象|
+|返回值|object|目标对象|
 
 ```javascript
 defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood', age: 24}
@@ -1980,56 +1980,52 @@ defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood',
 
 ## define
 
-Define a module, should be used along with use.
+定义一个模块，需要跟 use 模块配合使用。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name      |string  |Module name |
-|[requires]|array   |Dependencies|
-|method    |function|Module body |
+|name|string|模块名|
+|[requires]|array|依赖|
+|method|function|模块主体函数|
 
-The module won't be executed until it's used by use function.
+模块主体函数只有被 use 模块使用时才会被执行。
 
 ```javascript
-define('A', function ()
-{
+define('A', function () {
     return 'A';
 });
-define('B', ['A'], function (A)
-{
+define('B', ['A'], function (A) {
     return 'B' + A;
 });
 ```
 
 ## defineProp
 
-Shortcut for Object.defineProperty(defineProperties).
+Object.defineProperty(defineProperties) 的快捷方式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj       |object|Object to define   |
-|prop      |string|Property path      |
-|descriptor|object|Property descriptor|
-|返回值    |object|Object itself      |
+|obj|object|要定义的对象|
+|prop|string|属性路径|
+|descriptor|object|属性描述|
+|返回值|object|传入对象|
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to define    |
-|prop  |object|Property descriptors|
-|返回值|object|Object itself       |
+|obj|object|要定义的对象|
+|prop|object|属性描述|
+|返回值|object|传入对象|
 
 ```javascript
 var obj = {b: {c: 3}, d: 4, e: 5};
 defineProp(obj, 'a', {
-    get: function ()
-    {
+    get: function () {
         return this.e * 2;
     }
 });
 console.log(obj.a); // -> 10
 defineProp(obj, 'b.c', {
-    set: (function (val)
-    {
+    set: (function (val) {
         // this is pointed to obj.b
         this.e = val;
     }).bind(obj)
@@ -2040,14 +2036,12 @@ console.log(obj.a); // -> 4;
 obj = {a: 1, b: 2, c: 3};
 defineProp(obj, {
     a: {
-        get: function ()
-        {
+        get: function () {
             return this.c;
         }
     },
     b: {
-        set: function (val)
-        {
+        set: function (val) {
             this.c = val / 2;
         }
     }
@@ -2059,13 +2053,13 @@ console.log(obj.a); // -> 2
 
 ## delay
 
-Invoke function after certain milliseconds.
+在指定时长后执行函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn       |function|Function to delay                         |
-|wait     |number  |Number of milliseconds to delay invocation|
-|[...args]|*       |Arguments to invoke fn with               |
+|fn|function|源函数|
+|wait|number|延迟的毫秒数|
+|[...args]|*|绑定参数|
 
 ```javascript
 delay(function (text)
@@ -2077,22 +2071,22 @@ delay(function (text)
 
 ## delegate
 
-Event delegation.
+事件委托。
 
 ### add
 
-Add event delegation.
+添加事件委托。
 
 |参数名|类型|说明|
 |-----|----|---|
-|el      |element |Parent element|
-|type    |string  |Event type    |
-|selector|string  |Match selector|
-|cb      |function|Event callback|
+|el|element|父元素|
+|type|string|事件类型|
+|selector|string|匹配选择器|
+|cb|function|事件回调|
 
 ### remove
 
-Remove event delegation.
+移除事件委托。
 
 ```javascript
 var container = document.getElementById('container');
@@ -2106,14 +2100,14 @@ delegate.remove(container, 'click', '.children', clickHandler);
 
 ## detectBrowser
 
-Detect browser info using ua.
+使用 ua 检测浏览器信息。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[ua=navigator.userAgent]|string|Browser userAgent                 |
-|返回值                  |object|Object containing name and version|
+|ua=navigator.userAgent|string|浏览器用户代理|
+|返回值|object|包含名称和版本的对象|
 
-Browsers supported: ie, chrome, edge, firefox, opera, safari, ios(mobile safari), android(android browser)
+支持浏览器：ie，chrome，edge，firefox，opera，safari，ios（mobile safari），android（android browser）
 
 ```javascript
 var browser = detectBrowser();
@@ -2125,7 +2119,7 @@ if (browser.name === 'ie' && browser.version < 9)
 
 ## detectMocha
 
-Detect if mocha is running.
+检测是否有 mocha 测试框架在运行。 
 
 ```javascript
 detectMocha(); // -> True if mocha is running.
@@ -2133,14 +2127,14 @@ detectMocha(); // -> True if mocha is running.
 
 ## detectOs
 
-Detect operating system using ua.
+使用 ua 检测操作系统。
 
 |参数名|类型|说明|
 |-----|----|---|
-|ua=navigator.userAgent|string|Browser userAgent    |
-|返回值                  |string|Operating system name|
+|ua=navigator.userAgent|string|浏览器用户代理|
+|返回值|string|操作系统名称|
 
-Supported os: windows, os x, linux, ios, android, windows phone
+支持操作系统: windows, os x, linux, ios, android, windows phone
 
 ```javascript
 if (detectOs() === 'ios')
@@ -2151,13 +2145,13 @@ if (detectOs() === 'ios')
 
 ## difference
 
-Create an array of unique array values not included in the other given array.
+创建一个数组，该数组的元素不存在于给定的其它数组中。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr      |array|Array to inspect            |
-|[...rest]|array|Values to exclude           |
-|返回值   |array|New array of filtered values|
+|arr|array|源数组|
+|[...rest]|array|要排除的元素|
+|返回值|array|目标数组|
 
 ```javascript
 difference([3, 2, 1], [4, 2]); // -> [3, 1]
@@ -2165,12 +2159,12 @@ difference([3, 2, 1], [4, 2]); // -> [3, 1]
 
 ## dotCase
 
-Convert string to "dotCase".
+将字条串转换为点式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert|
-|返回值|string|Dot cased string |
+|str|string|源字符串|
+|返回值|string|点式字符串|
 
 ```javascript
 dotCase('fooBar'); // -> foo.bar
@@ -2179,13 +2173,13 @@ dotCase('foo bar'); // -> foo.bar
 
 ## download
 
-Trigger a file download on client side.
+在浏览器端触发文件下载。
 
 |参数名|类型|说明|
 |-----|----|---|
-|data           |Blob File string array|Data to download|
-|name           |string                |File name       |
-|type=text/plain|string                |Data type       |
+|data|Blob File string array|下载的数据|
+|name|string|文件名|
+|type=text/plain|string|数据类型|
 
 ```javascript
 download('test', 'test.txt');

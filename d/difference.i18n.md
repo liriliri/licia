@@ -1,12 +1,12 @@
 ## CN
 
-Create an array of unique array values not included in the other given array.
+创建一个数组，该数组的元素不存在于给定的其它数组中。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr      |array|Array to inspect            |
-|[...rest]|array|Values to exclude           |
-|返回值   |array|New array of filtered values|
+|arr|array|源数组|
+|[...rest]|array|要排除的元素|
+|返回值|array|目标数组|
 
 ```javascript
 difference([3, 2, 1], [4, 2]); // -> [3, 1]

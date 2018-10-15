@@ -1,12 +1,12 @@
 ## CN
 
-Fill in undefined properties in object with the first value present in the following list of defaults objects.
+填充对象的默认值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Destination object|
-|*src  |object|Sources objects   |
-|返回值|object|Destination object|
+|obj|object|目标对象|
+|...src|object|提供默认值对象|
+|返回值|object|目标对象|
 
 ```javascript
 defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood', age: 24}

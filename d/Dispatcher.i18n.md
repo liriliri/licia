@@ -1,8 +1,8 @@
 ## CN
 
-Flux dispatcher.
+Flux 调度器。
 
-[Related docs](https://facebook.github.io/flux/docs/dispatcher.html).
+[相关文档](https://facebook.github.io/flux/docs/dispatcher.html)。
 
 ```javascript
 var dispatcher = new Dispatcher();

@@ -1883,12 +1883,12 @@ add1(2); // -> 3
 
 Simple but extremely useful date format function.
 
-|Name           |Type   |Desc                 |
-|---------------|-------|---------------------|
-|[date=new Date]|Date   |Date object to format|
-|mask           |string |Format mask          |
-|[utc=false]    |boolean|UTC or not           |
-|[gmt=false]    |boolean|GMT or not           |
+|Name         |Type   |Desc                 |
+|-------------|-------|---------------------|
+|date=new Date|Date   |Date object to format|
+|mask         |string |Format mask          |
+|utc=false    |boolean|UTC or not           |
+|gmt=false    |boolean|GMT or not           |
 
 |Mask|Description                                                      |
 |----|-----------------------------------------------------------------|
@@ -1996,12 +1996,10 @@ Define a module, should be used along with use.
 The module won't be executed until it's used by use function.
 
 ```javascript
-define('A', function ()
-{
+define('A', function () {
     return 'A';
 });
-define('B', ['A'], function (A)
-{
+define('B', ['A'], function (A) {
     return 'B' + A;
 });
 ```
@@ -2026,15 +2024,13 @@ Shortcut for Object.defineProperty(defineProperties).
 ```javascript
 var obj = {b: {c: 3}, d: 4, e: 5};
 defineProp(obj, 'a', {
-    get: function ()
-    {
+    get: function () {
         return this.e * 2;
     }
 });
 console.log(obj.a); // -> 10
 defineProp(obj, 'b.c', {
-    set: (function (val)
-    {
+    set: (function (val) {
         // this is pointed to obj.b
         this.e = val;
     }).bind(obj)
@@ -2045,14 +2041,12 @@ console.log(obj.a); // -> 4;
 obj = {a: 1, b: 2, c: 3};
 defineProp(obj, {
     a: {
-        get: function ()
-        {
+        get: function () {
             return this.c;
         }
     },
     b: {
-        set: function (val)
-        {
+        set: function (val) {
             this.c = val / 2;
         }
     }
@@ -2113,10 +2107,10 @@ delegate.remove(container, 'click', '.children', clickHandler);
 
 Detect browser info using ua.
 
-|Name                    |Type  |Desc                              |
-|------------------------|------|----------------------------------|
-|[ua=navigator.userAgent]|string|Browser userAgent                 |
-|return                  |object|Object containing name and version|
+|Name                  |Type  |Desc                              |
+|----------------------|------|----------------------------------|
+|ua=navigator.userAgent|string|Browser userAgent                 |
+|return                |object|Object containing name and version|
 
 Browsers supported: ie, chrome, edge, firefox, opera, safari, ios(mobile safari), android(android browser)
 
