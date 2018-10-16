@@ -1,11 +1,11 @@
 ## CN
 
-Return a function that will itself return the key property of any passed-in object.
+返回一个函数，该函数返回任何传入对象的指定属性。
 
 |参数名|类型|说明|
 |-----|----|---|
-|path  |string array|Path of the property to get|
-|返回值|function    |New accessor function      |
+|path|string array|属性路径|
+|返回值|function|目标函数|
 
 ```javascript
 var obj = {a: {b: 1}};

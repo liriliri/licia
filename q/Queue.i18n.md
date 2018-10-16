@@ -1,40 +1,40 @@
 ## CN
 
-Queue data structure.
+队列数据结构。
 
 ### clear
 
-Clear the queue.
+清空队列。
 
 ### enqueue
 
-Add an item to the queue.
+元素入列。
 
 |参数名|类型|说明|
 |-----|----|---|
-|item  |*     |Item to enqueue|
-|返回值|number|Current size   |
+|item|*|入列元素|
+|返回值|number|当前大小|
 
 ### dequeue
 
-Remove the first item of the queue.
+元素出列。
 
 ### peek
 
-Get the first item without removing it.
+获取第一个元素但不移除它。
 
 ### forEach
 
-Iterate over the queue.
+遍历队列。
 
 |参数名|类型|说明|
 |-----|----|---|
-|iteratee|function|Function invoked iteration|
-|[ctx]   |*       |Function context          |
+|iteratee|function|调用函数|
+|[ctx]|*|函数上下文|
 
 ### toArr
 
-Convert queue to a JavaScript array.
+将队列转换为 JavaScript 数组。
 
 ```javascript
 var queue = new Queue();

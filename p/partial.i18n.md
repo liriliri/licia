@@ -1,12 +1,12 @@
 ## CN
 
-Partially apply a function by filling in given arguments.
+返回局部填充参数的函数，与 bind 模块相似。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn         |function|Function to partially apply arguments to|
-|...partials|*       |Arguments to be partially applied       |
-|返回值     |function|New partially applied function          |
+|fn|function|源函数|
+|...partials|*|局部填充参数|
+|返回值|function|目标函数|
 
 ```javascript
 var sub5 = partial(function (a, b) { return b - a }, 5);

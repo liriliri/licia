@@ -1,11 +1,11 @@
 ## CN
 
-Run an array of functions in parallel.
+同时执行多个函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|tasks|array   |Array of functions     |
-|[cb] |function|Callback once completed|
+|tasks|array|函数数组|
+|[cb]|function|结束回调|
 
 ```javascript
 parallel([

@@ -1,8 +1,8 @@
 ## CN
 
-Like es6 Map, without iterators.
+类似 es6 的 Map，不支持遍历器。
 
-It supports only string keys, and uses Map if exists.
+只支持字符串键名，当 Map 存在时会直接使用 Map。
 
 ```javascript
 var map = new PseudoMap();

@@ -1,24 +1,24 @@
 ## CN
 
-Parse and stringify url query strings.
+解析序列化 url 的 query 部分。
 
 ### parse
 
-Parse a query string into an object.
+将 query 字符串解析成对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|Query string|
-|返回值|object|Query object|
+|str|string|query 字符串|
+|返回值|object|query 对象|
 
 ### stringify
 
-Stringify an object into a query string.
+将对象序列化成 query 字符串。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Query object|
-|返回值|string|Query string|
+|obj|object|query 对象|
+|返回值|string|query 字符串|
 
 ```javascript
 query.parse('foo=bar&eruda=true'); // -> {foo: 'bar', eruda: 'true'}

@@ -1,8 +1,8 @@
 ## CN
 
-Lightweight Promise implementation.
+轻量 Promise 实现。
 
-[Promises spec](https://github.com/promises-aplus/promises-spec)
+[Promises 标准](https://github.com/promises-aplus/promises-spec)
 
 ```javascript
 function get(url) {

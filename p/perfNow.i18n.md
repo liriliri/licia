@@ -1,6 +1,6 @@
 ## CN
 
-High resolution time up to microsecond precision.
+高精度时间戳。
 
 ```javascript
 var start = perfNow();

@@ -1,15 +1,15 @@
 ## CN
 
-Add vendor prefixes to a CSS attribute.
+给 css 属性名增加浏览器前缀。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name  |string|Property name         |
-|返回值|string|Prefixed property name|
+|name|string|源属性名|
+|返回值|string|目标属性名|
 
 ### dash
 
-Create a dasherize version.
+同上，但返回短横线命名方式的版本。
 
 ```javascript
 prefix('text-emphasis'); // -> 'WebkitTextEmphasis'

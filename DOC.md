@@ -4411,11 +4411,11 @@ prefix('color'); // -> 'color'
 
 Convert callback based functions into Promises.
 
-|Name             |Type    |Desc                                  |
-|-----------------|--------|--------------------------------------|
-|fn               |function|Callback based function               |
-|[multiArgs=false]|boolean |If callback has multiple success value|
-|return           |boolean |Result function                       |
+|Name           |Type    |Desc                                  |
+|---------------|--------|--------------------------------------|
+|fn             |function|Callback based function               |
+|multiArgs=false|boolean |If callback has multiple success value|
+|return         |boolean |Result function                       |
 
 If multiArgs is set to true, the resulting promise will always fulfill with an array of the callback's success values.
 

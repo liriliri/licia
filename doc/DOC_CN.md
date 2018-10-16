@@ -662,9 +662,9 @@ observer.disconnect();
 
 ## Promise
 
-Lightweight Promise implementation.
+轻量 Promise 实现。
 
-[Promises spec](https://github.com/promises-aplus/promises-spec)
+[Promises 标准](https://github.com/promises-aplus/promises-spec)
 
 ```javascript
 function get(url) {
@@ -686,9 +686,9 @@ get('test.json').then(function (result) {
 
 ## PseudoMap
 
-Like es6 Map, without iterators.
+类似 es6 的 Map，不支持遍历器。
 
-It supports only string keys, and uses Map if exists.
+只支持字符串键名，当 Map 存在时会直接使用 Map。
 
 ```javascript
 var map = new PseudoMap();
@@ -698,41 +698,41 @@ map.get('1'); // -> 1
 
 ## Queue
 
-Queue data structure.
+队列数据结构。
 
 ### clear
 
-Clear the queue.
+清空队列。
 
 ### enqueue
 
-Add an item to the queue.
+元素入列。
 
 |参数名|类型|说明|
 |-----|----|---|
-|item  |*     |Item to enqueue|
-|返回值|number|Current size   |
+|item|*|入列元素|
+|返回值|number|当前大小|
 
 ### dequeue
 
-Remove the first item of the queue.
+元素出列。
 
 ### peek
 
-Get the first item without removing it.
+获取第一个元素但不移除它。
 
 ### forEach
 
-Iterate over the queue.
+遍历队列。
 
 |参数名|类型|说明|
 |-----|----|---|
-|iteratee|function|Function invoked iteration|
-|[ctx]   |*       |Function context          |
+|iteratee|function|调用函数|
+|[ctx]|*|函数上下文|
 
 ### toArr
 
-Convert queue to a JavaScript array.
+将队列转换为 JavaScript 数组。
 
 ```javascript
 var queue = new Queue();
@@ -4206,14 +4206,14 @@ orientation.get(); // -> 'landscape'
 
 ## pad
 
-Pad string on the left and right sides if it's shorter than length.
+对字符串进行左右填充。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to pad         |
-|len   |number|Padding length        |
-|chars |string|String used as padding|
-|返回值|string|Resulted string       |
+|str|string|源字符串|
+|len|number|填充长度|
+|chars|string|填充字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 pad('a', 5); // -> '  a  '
@@ -4225,12 +4225,12 @@ pad('ab', 5, 'ab'); // -> 'ababa'
 
 ## pairs
 
-Convert an object into a list of [key, value] pairs.
+将对象转换为包含【键名，键值】对的数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to convert         |
-|返回值|array |List of [key, value] pairs|
+|obj|object|目标对象|
+|返回值|array|键值对数组|
 
 ```javascript
 pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
@@ -4238,12 +4238,12 @@ pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
 
 ## parallel
 
-Run an array of functions in parallel.
+同时执行多个函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|tasks|array   |Array of functions     |
-|[cb] |function|Callback once completed|
+|tasks|array|函数数组|
+|[cb]|function|结束回调|
 
 ```javascript
 parallel([
@@ -4260,20 +4260,20 @@ parallel([
 
 ## parseArgs
 
-Parse command line argument options, the same as minimist.
+命令行参数简单解析。
 
 |参数名|类型|说明|
 |-----|----|---|
-|args  |array |Argument array |
-|opts  |object|Parse options  |
-|返回值|object|Parsed result  |
+|args|array|参数数组|
+|opts|object|解析选项|
+|返回值|object|解析结果|
 
 ### options
 
 |参数名|类型|说明|
 |-----|----|---|
-|names     |object|option names     |
-|shorthands|object|option shorthands|
+|names|object|选项名及类型|
+|shorthands|object|选项名缩写|
 
 ```javascript
 parseArgs(['eustia', '--output', 'util.js', '-w'], {
@@ -4291,13 +4291,13 @@ parseArgs(['eustia', '--output', 'util.js', '-w'], {
 
 ## partial
 
-Partially apply a function by filling in given arguments.
+返回局部填充参数的函数，与 bind 模块相似。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn         |function|Function to partially apply arguments to|
-|...partials|*       |Arguments to be partially applied       |
-|返回值     |function|New partially applied function          |
+|fn|function|源函数|
+|...partials|*|局部填充参数|
+|返回值|function|目标函数|
 
 ```javascript
 var sub5 = partial(function (a, b) { return b - a }, 5);
@@ -4306,12 +4306,12 @@ sub(20); // -> 15
 
 ## pascalCase
 
-Convert string to "pascalCase".
+将字符串转换为帕斯卡式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert  |
-|返回值|string|Pascal cased string|
+|str|string|源字符串|
+|返回值|string|帕斯卡式字符串|
 
 ```javascript
 pascalCase('fooBar'); // -> FooBar
@@ -4322,7 +4322,7 @@ pascalCase('foo.bar'); // -> FooBar
 
 ## perfNow
 
-High resolution time up to microsecond precision.
+高精度时间戳。
 
 ```javascript
 var start = perfNow();
@@ -4334,13 +4334,13 @@ console.log(perfNow() - start);
 
 ## pick
 
-Return a filtered copy of an object.
+过滤对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object               |Source object  |
-|filter|string array function|Object filter  |
-|返回值|object               |Filtered object|
+|obj|object|源对象|
+|filter|string array function|对象过滤器|
+|返回值|object|目标对象|
 
 ```javascript
 pick({a: 1, b: 2}, 'a'); // -> {a: 1}
@@ -4352,13 +4352,13 @@ pick({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 
 ## pluck
 
-Extract a list of property values.
+提取数组对象中指定属性值，返回一个数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object array|Collection to iterate over     |
-|key   |string array|Property path                  |
-|返回值|array       |New array of specified property|
+|obj|object array|目标集合|
+|key|string array|属性路径|
+|返回值|array|指定属性值列表|
 
 ```javascript
 var stooges = [
@@ -4371,12 +4371,12 @@ pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
 
 ## precision
 
-Find decimal precision of a given number.
+获取数字的精度。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number|Number to check|
-|返回值|number|Precision      |
+|num|number|要检查的数字|
+|返回值|number|精度|
 
 ```javascript
 precision(1.234); // -> 3;
@@ -4384,16 +4384,16 @@ precision(1.234); // -> 3;
 
 ## prefix
 
-Add vendor prefixes to a CSS attribute.
+给 css 属性名增加浏览器前缀。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name  |string|Property name         |
-|返回值|string|Prefixed property name|
+|name|string|源属性名|
+|返回值|string|目标属性名|
 
 ### dash
 
-Create a dasherize version.
+同上，但返回短横线命名方式的版本。
 
 ```javascript
 prefix('text-emphasis'); // -> 'WebkitTextEmphasis'
@@ -4403,15 +4403,15 @@ prefix('color'); // -> 'color'
 
 ## promisify
 
-Convert callback based functions into Promises.
+转换使用回调的异步函数，使其返回 Promise。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn               |function|Callback based function               |
-|[multiArgs=false]|boolean |If callback has multiple success value|
-|返回值           |boolean |Result function                       |
+|fn|function|源函数|
+|multiArgs=false|boolean|回调是否有多个结果|
+|返回值|boolean|目标函数|
 
-If multiArgs is set to true, the resulting promise will always fulfill with an array of the callback's success values.
+如果 multiArgs 设为真，返回的 Promise 会将回调的结果合并成一个数组。
 
 ```javascript
 var fs = require('fs');
@@ -4424,12 +4424,12 @@ readFile('test.js', 'utf-8').then(function (data) {
 
 ## property
 
-Return a function that will itself return the key property of any passed-in object.
+返回一个函数，该函数返回任何传入对象的指定属性。
 
 |参数名|类型|说明|
 |-----|----|---|
-|path  |string array|Path of the property to get|
-|返回值|function    |New accessor function      |
+|path|string array|属性路径|
+|返回值|function|目标函数|
 
 ```javascript
 var obj = {a: {b: 1}};
@@ -4439,25 +4439,25 @@ property(['a', 'b'])(obj); // -> 1
 
 ## query
 
-Parse and stringify url query strings.
+解析序列化 url 的 query 部分。
 
 ### parse
 
-Parse a query string into an object.
+将 query 字符串解析成对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|Query string|
-|返回值|object|Query object|
+|str|string|query 字符串|
+|返回值|object|query 对象|
 
 ### stringify
 
-Stringify an object into a query string.
+将对象序列化成 query 字符串。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Query object|
-|返回值|string|Query string|
+|obj|object|query 对象|
+|返回值|string|query 字符串|
 
 ```javascript
 query.parse('foo=bar&eruda=true'); // -> {foo: 'bar', eruda: 'true'}
@@ -4467,12 +4467,12 @@ query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
 
 ## quickSort
 
-Quick sort implementation.
+快排实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|arr|array|要排序的数组|
+|[cmp]|function|比较器|
 
 ```javascript
 quickSort([2, 1]); // -> [1, 2]

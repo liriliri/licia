@@ -1,14 +1,14 @@
 ## CN
 
-Convert callback based functions into Promises.
+转换使用回调的异步函数，使其返回 Promise。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn               |function|Callback based function               |
-|[multiArgs=false]|boolean |If callback has multiple success value|
-|返回值           |boolean |Result function                       |
+|fn|function|源函数|
+|multiArgs=false|boolean|回调是否有多个结果|
+|返回值|boolean|目标函数|
 
-If multiArgs is set to true, the resulting promise will always fulfill with an array of the callback's success values.
+如果 multiArgs 设为真，返回的 Promise 会将回调的结果合并成一个数组。
 
 ```javascript
 var fs = require('fs');

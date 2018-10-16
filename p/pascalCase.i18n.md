@@ -1,11 +1,11 @@
 ## CN
 
-Convert string to "pascalCase".
+将字符串转换为帕斯卡式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert  |
-|返回值|string|Pascal cased string|
+|str|string|源字符串|
+|返回值|string|帕斯卡式字符串|
 
 ```javascript
 pascalCase('fooBar'); // -> FooBar
