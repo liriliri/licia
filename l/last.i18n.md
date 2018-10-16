@@ -1,11 +1,11 @@
 ## CN
 
-Get the last element of array.
+获取数组的最后一个元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array|The array to query       |
-|返回值|*    |The last element of array|
+|arr|array|目标数组|
+|返回值|*|数组的最后一个元素|
 
 ```javascript
 last([1, 2]); // -> 2

@@ -460,63 +460,65 @@ if (val === importance.CRITICAL) {
 
 ## JsonTransformer
 
-Json to json transformer.
+JSON 转换器。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|[data={}]|object|Json object to manipulate|
+|[data={}]|object|目标 JSON 对象|
 
 ### set
 
-Set object value.
+设置属性值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[key]|string|Object key  |
-|val  |*     |Value to set|
+|[key]|string|属性路径|
+|val|*|值|
 
-If key is not given, the whole source object is replaced by val.
+如果属性路径为空，整个对象将被值替换。
 
 ### get
 
-Get object value.
+获取属性值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[key] |string|Object key                     |
-|返回值|*     |Specified value or whole object|
+|[key]|string|属性路径|
+|返回值|*|指定值或整个对象|
 
 ### remove
 
+移除属性值。
+
 |参数名|类型|说明|
 |-----|----|---|
-|key |array string|Object keys to remove|
+|key|array string|属性路径|
 
 ### map
 
-Shortcut for array map.
+数组 map 的快捷方式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|from|string  |From object path              |
-|to  |string  |Target object path            |
-|fn  |function|Function invoked per iteration|
+|from|string|源对象路径|
+|to|string|目标对象路径|
+|fn|function|真值检测函数|
 
 ### filter
 
-Shortcut for array filter.
+数组 filter 的快捷方式。
 
 ### compute
 
-Compute value from several object values.
+从多个属性值计算新值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|from|array string|Source values                   |
-|to  |string      |Target object path              |
-|fn  |function    |Function to compute target value|
+|from|array string|源属性路径|
+|to|string|目标属性路径|
+|fn|function|计算函数|
 
 ```javascript
 var data = new JsonTransformer({
@@ -540,36 +542,36 @@ data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', c
 
 ## LinkedList
 
-Doubly-linked list implementation.
+双向链表实现。
 
 ### push
 
-Add an value to the end of the list.
+向链表尾部添加值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*     |Value to push|
-|返回值|number|Current size |
+|val|*|要添加的值|
+|返回值|number|链表大小|
 
 ### pop
 
-Get the last value of the list.
+获取链表尾部值。
 
 ### unshift
 
-Add an value to the head of the list.
+向链表头部添加值。
 
 ### shift
 
-Get the first value of the list.
+获取链表头部值。
 
 ### forEach
 
-Iterate over the list.
+遍历链表。
 
 ### toArr
 
-Convert the list to a JavaScript array.
+将链表转换成 JavaScript 数组。
 
 ```javascript
 var linkedList = new LinkedList();
@@ -579,16 +581,16 @@ linkedList.pop(); // -> 5
 
 ## LocalStore
 
-LocalStorage wrapper.
+LocalStorage 存储。
 
-Extend from Store.
+继承自 Store 类。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|name|string|LocalStorage item name|
-|data|object|Default data          |
+|name|string|LocalStorage 存储名|
+|data|object|默认数据|
 
 ```javascript
 var store = new LocalStore('licia');
@@ -597,32 +599,34 @@ store.set('name', 'licia');
 
 ## Logger
 
-Simple logger with level filter.
+带日志级别的简单日志库。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|name         |string|Logger name |
-|[level=DEBUG]|number|Logger level|
+|name|string|日志名称|
+|level=DEBUG|number|日志级别|
 
 ### setLevel
 
+设置日志级别。
+
 |参数名|类型|说明|
 |-----|----|---|
-|level|number string|Logger level|
+|level|number string|日志级别|
 
 ### getLevel
 
-Get current level.
+获取当前日志级别。
 
 ### trace, debug, info, warn, error
 
-Logging methods.
+打日志方法。
 
-### Log Levels
+### 日志级别 
 
-TRACE, DEBUG, INFO, WARN, ERROR and SILENT.
+TRACE，DEBUG，INFO，WARN，ERROR 和 SILENT。
 
 ```javascript
 var logger = new Logger('licia', Logger.level.ERROR);
@@ -3595,24 +3599,24 @@ console.log(isWindows); // -> true if running on windows
 
 ## jsonp
 
-A simple jsonp implementation.
+简单 jsonp 实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|opts|object|Jsonp Options|
+|opts|object|jsonp 选项|
 
-Available options:
+可用选项：
 
 |参数名|类型|说明|
 |-----|----|---|
-|url           |string  |Request url           |
-|data          |object  |Request data          |
-|success       |function|Success callback      |
-|param=callback|string  |Callback param        |
-|name          |string  |Callback name         |
-|error         |function|Error callback        |
-|complete      |function|Callback after request|
-|timeout       |number  |Request timeout       |
+|url|string|请求地址|
+|data|object|请求数据|
+|success|function|成功回调|
+|param=callback|string|回调参数名|
+|[name]|string|回调函数名|
+|error|function|失败回调|
+|complete|function|结束回调|
+|timeout|number|请求超时|
 
 ```javascript
 jsonp({
@@ -3626,12 +3630,12 @@ jsonp({
 
 ## kebabCase
 
-Convert string to "kebabCase".
+将字符串转换为短横线式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert |
-|返回值|string|Kebab cased string|
+|str|string|源字符串|
+|返回值|string|短横线式字符串|
 
 ```javascript
 kebabCase('fooBar'); // -> foo-bar
@@ -3642,21 +3646,21 @@ kebabCase('foo.bar'); // -> foo-bar
 
 ## keyCode
 
-Key codes and key names conversion.
+键码键名转换。
 
-Get key code's name.
-
-|参数名|类型|说明|
-|-----|----|---|
-|code  |number|Key code              |
-|返回值|string|Corresponding key name|
-
-Get key name's code.
+获取键码对应的键名。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name  |string|Key name              |
-|返回值|number|Corresponding key code|
+|code|number|键码|
+|返回值|string|对应的键名|
+
+获取键名对应的键码。
+
+|参数名|类型|说明|
+|-----|----|---|
+|name|string|键名|
+|返回值|number|对应的键码|
 
 ```javascript
 keyCode(13); // -> 'enter'
@@ -3665,12 +3669,12 @@ keyCode('enter'); // -> 13
 
 ## keys
 
-Create an array of the own enumerable property names of object.
+返回包含对象自身可遍历所有键名的数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to query        |
-|返回值|array |Array of property names|
+|obj|object|目标对象|
+|返回值|array|所有键名|
 
 ```javascript
 keys({a: 1}); // -> ['a']
@@ -3678,12 +3682,12 @@ keys({a: 1}); // -> ['a']
 
 ## last
 
-Get the last element of array.
+获取数组的最后一个元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array|The array to query       |
-|返回值|*    |The last element of array|
+|arr|array|目标数组|
+|返回值|*|数组的最后一个元素|
 
 ```javascript
 last([1, 2]); // -> 2
@@ -3691,7 +3695,7 @@ last([1, 2]); // -> 2
 
 ## lazyRequire
 
-Require modules lazily.
+模块懒加载。
 
 ```javascript
 var r = lazyRequire(require);
@@ -3704,13 +3708,13 @@ _().isNumber(5);
 
 ## linkify
 
-Hyperlink urls in a string.
+将文本中的 url 地址转换为超链接。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str        |string  |String to hyperlink      |
-|[hyperlink]|function|Function to hyperlink url|
-|返回值     |string  |Result string            |
+|str|string|源字符串|
+|[hyperlink]|function|转换超链接函数|
+|返回值|string|目标字符串|
 
 ```javascript
 var str = 'Official site: http://eustia.liriliri.io'
@@ -3722,12 +3726,12 @@ linkify(str, function (url) {
 
 ## loadCss
 
-Inject link tag into page with given href value.
+往页面插入样式链接。
 
 |参数名|类型|说明|
 |-----|----|---|
-|src |string  |Style source   |
-|cb  |function|Onload callback|
+|src|string|样式文件地址|
+|cb|function|加载完回调|
 
 ```javascript
 loadCss('style.css', function (isLoaded) {
@@ -3737,12 +3741,12 @@ loadCss('style.css', function (isLoaded) {
 
 ## loadImg
 
-Load image with given src.
+加载指定地址的图片。
 
 |参数名|类型|说明|
 |-----|----|---|
-|src |string  |Image source   |
-|[cb]|function|Onload callback|
+|src|string|图片地址|
+|[cb]|function|加载完回调|
 
 ```javascript
 loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
@@ -3752,12 +3756,12 @@ loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
 
 ## loadJs
 
-Inject script tag into page with given src value.
+往页面插入脚本链接。
 
 |参数名|类型|说明|
 |-----|----|---|
-|src |string  |Script source  |
-|cb  |function|Onload callback|
+|src|string|脚本地址|
+|cb|function|加载完回调|
 
 ```javascript
 loadJs('main.js', function (isLoaded) {
@@ -3767,12 +3771,12 @@ loadJs('main.js', function (isLoaded) {
 
 ## longest
 
-Get the longest item in an array.
+获取数组中最长的一项。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array|Array to inspect|
-|返回值|*    |Longest item    |
+|arr|array|目标数组|
+|返回值|*|最长的一项|
 
 ```javascript
 longest(['a', 'abcde', 'abc']); // -> 'abcde'
@@ -3780,12 +3784,12 @@ longest(['a', 'abcde', 'abc']); // -> 'abcde'
 
 ## lowerCase
 
-Convert string to lower case.
+转换字符串为小写。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert |
-|返回值|string|Lower cased string|
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 lowerCase('TEST'); // -> 'test'
@@ -3793,14 +3797,14 @@ lowerCase('TEST'); // -> 'test'
 
 ## lpad
 
-Pad string on the left side if it's shorter than length.
+对字符串进行左填充。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str    |string|String to pad         |
-|len    |number|Padding length        |
-|[chars]|string|String used as padding|
-|返回值 |string|Resulted string       |
+|str|string|源字符串|
+|len|number|填充长度|
+|[chars]|string|填充字符串|
+|返回值 |string|目标字符串|
 
 ```javascript
 lpad('a', 5); // -> '    a'
@@ -3811,13 +3815,13 @@ lpad('abc', 5, 'ab'); // -> 'ababc'
 
 ## ltrim
 
-Remove chars or white-spaces from beginning of string.
+删除字符串头部指定字符或空格。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string      |String to trim    |
-|chars |string array|Characters to trim|
-|返回值|string      |Trimmed string    |
+|str|string|源字符串|
+|chars|string array|删除字符|
+|返回值|string|目标字符串|
 
 ```javascript
 ltrim(' abc  '); // -> 'abc  '
@@ -3831,10 +3835,10 @@ Create an array of values by running each element in collection through iteratee
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj     |array object|Collection to iterate over    |
-|iteratee|function    |Function invoked per iteration|
-|[ctx]   |*           |Function context              |
-|返回值  |array       |New mapped array              |
+|obj|array object|Collection to iterate over|
+|iteratee|function|Function invoked per iteration|
+|[ctx]|*|Function context|
+|返回值|array|New mapped array|
 
 ```javascript
 map([4, 8], function (n) { return n * n; }); // -> [16, 64]

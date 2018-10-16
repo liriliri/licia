@@ -495,6 +495,8 @@ Get object value.
 
 ### remove
 
+Remove object value.
+
 |Name|Type        |Desc                 |
 |----|------------|---------------------|
 |key |array string|Object keys to remove|
@@ -606,12 +608,14 @@ Simple logger with level filter.
 
 ### constructor
 
-|Name         |Type  |Desc        |
-|-------------|------|------------|
-|name         |string|Logger name |
-|[level=DEBUG]|number|Logger level|
+|Name       |Type  |Desc        |
+|-----------|------|------------|
+|name       |string|Logger name |
+|level=DEBUG|number|Logger level|
 
 ### setLevel
+
+Set level.
 
 |Name |Type         |Desc        |
 |-----|-------------|------------|
@@ -3613,7 +3617,7 @@ Available options:
 |data          |object  |Request data          |
 |success       |function|Success callback      |
 |param=callback|string  |Callback param        |
-|name          |string  |Callback name         |
+|[name]        |string  |Callback name         |
 |error         |function|Error callback        |
 |complete      |function|Callback after request|
 |timeout       |number  |Request timeout       |

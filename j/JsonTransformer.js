@@ -28,6 +28,8 @@
  * 
  * ### remove
  * 
+ * Remove object value.
+ * 
  * |Name|Type        |Desc                 |
  * |----|------------|---------------------|
  * |key |array string|Object keys to remove|

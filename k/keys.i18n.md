@@ -1,11 +1,11 @@
 ## CN
 
-Create an array of the own enumerable property names of object.
+返回包含对象自身可遍历所有键名的数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to query        |
-|返回值|array |Array of property names|
+|obj|object|目标对象|
+|返回值|array|所有键名|
 
 ```javascript
 keys({a: 1}); // -> ['a']

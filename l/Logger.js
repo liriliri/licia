@@ -2,12 +2,14 @@
  *
  * ### constructor
  * 
- * |Name         |Type  |Desc        |
- * |-------------|------|------------|
- * |name         |string|Logger name |
- * |[level=DEBUG]|number|Logger level|
+ * |Name       |Type  |Desc        |
+ * |-----------|------|------------|
+ * |name       |string|Logger name |
+ * |level=DEBUG|number|Logger level|
  * 
  * ### setLevel
+ * 
+ * Set level.
  * 
  * |Name |Type         |Desc        |
  * |-----|-------------|------------|

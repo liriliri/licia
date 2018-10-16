@@ -1,23 +1,23 @@
 ## CN
 
-A simple jsonp implementation.
+简单 jsonp 实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|opts|object|Jsonp Options|
+|opts|object|jsonp 选项|
 
-Available options:
+可用选项：
 
 |参数名|类型|说明|
 |-----|----|---|
-|url           |string  |Request url           |
-|data          |object  |Request data          |
-|success       |function|Success callback      |
-|param=callback|string  |Callback param        |
-|name          |string  |Callback name         |
-|error         |function|Error callback        |
-|complete      |function|Callback after request|
-|timeout       |number  |Request timeout       |
+|url|string|请求地址|
+|data|object|请求数据|
+|success|function|成功回调|
+|param=callback|string|回调参数名|
+|[name]|string|回调函数名|
+|error|function|失败回调|
+|complete|function|结束回调|
+|timeout|number|请求超时|
 
 ```javascript
 jsonp({

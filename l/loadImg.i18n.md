@@ -1,11 +1,11 @@
 ## CN
 
-Load image with given src.
+加载指定地址的图片。
 
 |参数名|类型|说明|
 |-----|----|---|
-|src |string  |Image source   |
-|[cb]|function|Onload callback|
+|src|string|图片地址|
+|[cb]|function|加载完回调|
 
 ```javascript
 loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {

@@ -1,31 +1,33 @@
 ## CN
 
-Simple logger with level filter.
+带日志级别的简单日志库。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|name         |string|Logger name |
-|[level=DEBUG]|number|Logger level|
+|name|string|日志名称|
+|level=DEBUG|number|日志级别|
 
 ### setLevel
 
+设置日志级别。
+
 |参数名|类型|说明|
 |-----|----|---|
-|level|number string|Logger level|
+|level|number string|日志级别|
 
 ### getLevel
 
-Get current level.
+获取当前日志级别。
 
 ### trace, debug, info, warn, error
 
-Logging methods.
+打日志方法。
 
-### Log Levels
+### 日志级别 
 
-TRACE, DEBUG, INFO, WARN, ERROR and SILENT.
+TRACE，DEBUG，INFO，WARN，ERROR 和 SILENT。
 
 ```javascript
 var logger = new Logger('licia', Logger.level.ERROR);

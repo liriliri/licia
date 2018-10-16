@@ -1,12 +1,12 @@
 ## CN
 
-Hyperlink urls in a string.
+将文本中的 url 地址转换为超链接。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str        |string  |String to hyperlink      |
-|[hyperlink]|function|Function to hyperlink url|
-|返回值     |string  |Result string            |
+|str|string|源字符串|
+|[hyperlink]|function|转换超链接函数|
+|返回值|string|目标字符串|
 
 ```javascript
 var str = 'Official site: http://eustia.liriliri.io'

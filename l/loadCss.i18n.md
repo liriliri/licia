@@ -1,11 +1,11 @@
 ## CN
 
-Inject link tag into page with given href value.
+往页面插入样式链接。
 
 |参数名|类型|说明|
 |-----|----|---|
-|src |string  |Style source   |
-|cb  |function|Onload callback|
+|src|string|样式文件地址|
+|cb|function|加载完回调|
 
 ```javascript
 loadCss('style.css', function (isLoaded) {

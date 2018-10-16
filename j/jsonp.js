@@ -12,7 +12,7 @@
  * |data          |object  |Request data          |
  * |success       |function|Success callback      |
  * |param=callback|string  |Callback param        |
- * |name          |string  |Callback name         |
+ * |[name]        |string  |Callback name         |
  * |error         |function|Error callback        |
  * |complete      |function|Callback after request|
  * |timeout       |number  |Request timeout       |

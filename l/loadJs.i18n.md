@@ -1,11 +1,11 @@
 ## CN
 
-Inject script tag into page with given src value.
+往页面插入脚本链接。
 
 |参数名|类型|说明|
 |-----|----|---|
-|src |string  |Script source  |
-|cb  |function|Onload callback|
+|src|string|脚本地址|
+|cb|function|加载完回调|
 
 ```javascript
 loadJs('main.js', function (isLoaded) {

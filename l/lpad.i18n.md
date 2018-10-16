@@ -1,13 +1,13 @@
 ## CN
 
-Pad string on the left side if it's shorter than length.
+对字符串进行左填充。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str    |string|String to pad         |
-|len    |number|Padding length        |
-|[chars]|string|String used as padding|
-|返回值 |string|Resulted string       |
+|str|string|源字符串|
+|len|number|填充长度|
+|[chars]|string|填充字符串|
+|返回值 |string|目标字符串|
 
 ```javascript
 lpad('a', 5); // -> '    a'

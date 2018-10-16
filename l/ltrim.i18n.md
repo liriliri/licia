@@ -1,12 +1,12 @@
 ## CN
 
-Remove chars or white-spaces from beginning of string.
+删除字符串头部指定字符或空格。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string      |String to trim    |
-|chars |string array|Characters to trim|
-|返回值|string      |Trimmed string    |
+|str|string|源字符串|
+|chars|string array|删除字符|
+|返回值|string|目标字符串|
 
 ```javascript
 ltrim(' abc  '); // -> 'abc  '

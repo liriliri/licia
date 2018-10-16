@@ -1,62 +1,64 @@
 ## CN
 
-Json to json transformer.
+JSON 转换器。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|[data={}]|object|Json object to manipulate|
+|[data={}]|object|目标 JSON 对象|
 
 ### set
 
-Set object value.
+设置属性值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[key]|string|Object key  |
-|val  |*     |Value to set|
+|[key]|string|属性路径|
+|val|*|值|
 
-If key is not given, the whole source object is replaced by val.
+如果属性路径为空，整个对象将被值替换。
 
 ### get
 
-Get object value.
+获取属性值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[key] |string|Object key                     |
-|返回值|*     |Specified value or whole object|
+|[key]|string|属性路径|
+|返回值|*|指定值或整个对象|
 
 ### remove
 
+移除属性值。
+
 |参数名|类型|说明|
 |-----|----|---|
-|key |array string|Object keys to remove|
+|key|array string|属性路径|
 
 ### map
 
-Shortcut for array map.
+数组 map 的快捷方式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|from|string  |From object path              |
-|to  |string  |Target object path            |
-|fn  |function|Function invoked per iteration|
+|from|string|源对象路径|
+|to|string|目标对象路径|
+|fn|function|真值检测函数|
 
 ### filter
 
-Shortcut for array filter.
+数组 filter 的快捷方式。
 
 ### compute
 
-Compute value from several object values.
+从多个属性值计算新值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|from|array string|Source values                   |
-|to  |string      |Target object path              |
-|fn  |function    |Function to compute target value|
+|from|array string|源属性路径|
+|to|string|目标属性路径|
+|fn|function|计算函数|
 
 ```javascript
 var data = new JsonTransformer({

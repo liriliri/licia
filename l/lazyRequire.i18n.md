@@ -1,6 +1,6 @@
 ## CN
 
-Require modules lazily.
+模块懒加载。
 
 ```javascript
 var r = lazyRequire(require);
