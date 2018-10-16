@@ -1,11 +1,11 @@
 ## CN
 
-Check if value is a buffer.
+检查值是否是 Buffer 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |The value to check       |
-|返回值|boolean|True if value is a buffer|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Buffer 类型，返回真|
 
 ```javascript
 isBuffer(new Buffer(4)); // -> true

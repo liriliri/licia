@@ -1,11 +1,11 @@
 ## CN
 
-Check if value is an `Array` object.
+检查值是否是数组类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                    |
-|返回值|boolean|True if value is an `Array` object|
+|val|*|要检查的值|
+|返回值|boolean|如果是数组类型，返回真|
 
 ```javascript
 isArr([]); // -> true

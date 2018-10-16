@@ -2716,12 +2716,12 @@ hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
 
 ## identity
 
-Return the first argument given.
+返回传入的第一个参数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*   |Any value  |
-|返回值|*   |Given value|
+|val|*|任何值|
+|返回值|*|第一个参数|
 
 ```javascript
 identity('a'); // -> 'a'
@@ -2729,13 +2729,14 @@ identity('a'); // -> 'a'
 
 ## idxOf
 
-Get the index at which the first occurrence of value.
+返回指定值第一次在数组中出现的位置。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr      |array |Array to search     |
-|val      |*     |Value to search for |
-|fromIdx=0|number|Index to search from|
+|arr|array|目标数组|
+|val|*|要查找的值|
+|fromIdx=0|number|查找起始位置|
+|返回值|number|第一次出现的位置，如果没有，返回 -1|
 
 ```javascript
 idxOf([1, 2, 1, 2], 2, 2); // -> 3
@@ -2743,14 +2744,14 @@ idxOf([1, 2, 1, 2], 2, 2); // -> 3
 
 ## indent
 
-Indent each line in a string.
+对文本的每一行进行缩进处理。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to indent    |
-|[char]|string|Character to prepend|
-|[len] |number|Indent length       |
-|返回值|string|Indented string     |
+|str|string|源字符串|
+|[char]|string|缩进字符|
+|[len]|number|缩进长度|
+|返回值|string|目标字符串|
 
 ```javascript
 indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
@@ -2758,12 +2759,12 @@ indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
 
 ## inherits
 
-Inherit the prototype methods from one constructor into another.
+使构造函数继承另一个构造函数原型链上的方法。
 
 |参数名|类型|说明|
 |-----|----|---|
-|Class     |function|Child Class|
-|SuperClass|function|Super Class|
+|Class|function|子类|
+|SuperClass|function|父类|
 
 ```javascript
 function People(name) {
@@ -2784,12 +2785,12 @@ s.getName(); // -> 'RedHood'
 
 ## insertionSort
 
-Insertion sort implementation.
+插入排序实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|arr|array|要排序的数组|
+|[cmp]|function|比较器|
 
 ```javascript
 insertionSort([2, 1]); // -> [1, 2]
@@ -2797,12 +2798,12 @@ insertionSort([2, 1]); // -> [1, 2]
 
 ## intersect
 
-Compute the list of values that are the intersection of all the arrays.
+计算所有数组的交集。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...arr|array|Arrays to inspect             |
-|返回值|array|New array of inspecting values|
+|...arr|array|源数组|
+|返回值|array|交集|
 
 ```javascript
 intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
@@ -2810,13 +2811,13 @@ intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
 
 ## intersectRange
 
-Intersect two ranges.
+计算两个区间的交集。
 
 |参数名|类型|说明|
 |-----|----|---|
-|a     |object|Range a              |
-|b     |object|Range b              |
-|返回值|object|Intersection if exist|
+|a|object|区间 a|
+|b|object|区间 b|
+|返回值|object|如果存在区间交集，返回它|
 
 ```javascript
 intersectRange({start: 0, end: 12}, {start: 11, end: 13});
@@ -2827,15 +2828,14 @@ intersectRange({start: 0, end: 5}, {start: 6, end: 7});
 
 ## invert
 
-Create an object composed of the inverted keys and values of object.
+生成一个新对象，该对象的键名和键值进行调换。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to invert   |
-|返回值|object|New inverted object|
+|obj|object|源对象|
+|返回值|object|目标对象|
 
-If object contains duplicate values, subsequent values overwrite property
-assignments of previous values unless multiValue is true.
+如果对象存在重复的键值，后面的值会覆盖前面的值。
 
 ```javascript
 invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
@@ -2843,12 +2843,12 @@ invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
 
 ## isAbsoluteUrl
 
-Check if an url is absolute.
+检查 url 是否是绝对地址。
 
 |参数名|类型|说明|
 |-----|----|---|
-|url   |string |Url to check           |
-|返回值|boolean|True if url is absolute|
+|url|string|目标 url|
+|返回值|boolean|如果是绝对地址，返回真|
 
 ```javascript
 isAbsoluteUrl('http://www.surunzi.com'); // -> true
@@ -2858,12 +2858,12 @@ isAbsoluteUrl('surunzi.com'); // -> false
 
 ## isArgs
 
-Check if value is classified as an arguments object.
+检查值是否是参数类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                      |
-|返回值|boolean|True if value is an arguments object|
+|val|*|要检查的值|
+|返回值|boolean|如果是参数类型，返回真|
 
 ```javascript
 (function () {
@@ -2873,12 +2873,12 @@ Check if value is classified as an arguments object.
 
 ## isArr
 
-Check if value is an `Array` object.
+检查值是否是数组类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                    |
-|返回值|boolean|True if value is an `Array` object|
+|val|*|要检查的值|
+|返回值|boolean|如果是数组类型，返回真|
 
 ```javascript
 isArr([]); // -> true
@@ -2887,12 +2887,12 @@ isArr({}); // -> false
 
 ## isArrBuffer
 
-Check if value is an ArrayBuffer.
+检查值是否是 ArrayBuffer 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                 |
-|返回值|boolean|True if value is an ArrayBuffer|
+|val|*|要检查的值|
+|返回值|boolean|如果是 ArrayBuffer 类型，返回真|
 
 ```javascript
 isArrBuffer(new ArrayBuffer(8)); // -> true
@@ -2900,14 +2900,14 @@ isArrBuffer(new ArrayBuffer(8)); // -> true
 
 ## isArrLike
 
-Check if value is array-like.
+检查值是否是类数组对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check             |
-|返回值|boolean|True if value is array like|
+|val|*|要检查的值|
+|返回值|boolean|如果是类数组对象，返回真|
 
-> Function returns false.
+对于函数，返回假。
 
 ```javascript
 isArrLike('test'); // -> true
@@ -2917,12 +2917,12 @@ isArrLike([1, 2, 3]); // -> true
 
 ## isBlob
 
-Check if value is a Blob.
+检查值是否是 Blob 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check         |
-|返回值|boolean|True if value is a Blob|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Blob 类型，返回真|
 
 ```javascript
 isBlob(new Blob([])); // -> true;
@@ -2946,7 +2946,7 @@ isBool(1); // -> false
 
 ## isBrowser
 
-Check if running in a browser.
+检测是否运行于浏览器环境。
 
 ```javascript
 console.log(isBrowser); // -> true if running in a browser
@@ -2954,12 +2954,12 @@ console.log(isBrowser); // -> true if running in a browser
 
 ## isBuffer
 
-Check if value is a buffer.
+检查值是否是 Buffer 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |The value to check       |
-|返回值|boolean|True if value is a buffer|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Buffer 类型，返回真|
 
 ```javascript
 isBuffer(new Buffer(4)); // -> true
@@ -2967,17 +2967,17 @@ isBuffer(new Buffer(4)); // -> true
 
 ## isClose
 
-Check if values are close(almost equal) to each other.
+检查两个数字是否近似相等。
 
 `abs(a-b) <= max(relTol * max(abs(a), abs(b)), absTol)`
 
 |参数名|类型|说明|
 |-----|----|---|
-|a          |number |Number to compare       |
-|b          |number |Number to compare       |
-|relTol=1e-9|number |Relative tolerance      |
-|absTol=0   |number |Absolute tolerance      |
-|返回值     |boolean|True if values are close|
+|a|number|要比较的数字|
+|b|number|要比较的数字|
+|relTol=1e-9|number|相对误差|
+|absTol=0|number|绝对误差|
+|返回值|boolean|如果近似相等，返回真|
 
 ```javascript
 isClose(1, 1.0000000001); // -> true
@@ -2988,12 +2988,12 @@ isClose(1, 1.2, 0.1, 0.3); // -> true
 
 ## isDataUrl
 
-Check if a string is a valid data url.
+检查字符串是否是有效的 Data Url。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string |String to check             |
-|返回值|boolean|True if string is a data url|
+|str|string|要检查的字符串|
+|返回值|boolean|如果是有效的 Data Url，返回真|
 
 ```javascript
 isDataUrl('http://eustia.liriliri.io'); // -> false
@@ -3002,12 +3002,12 @@ isDataUrl('data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D'); // -> true
 
 ## isDate
 
-Check if value is classified as a Date object.
+检查值是否是 Date 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |value to check                |
-|返回值|boolean|True if value is a Date object|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Date 类型，返回真|
 
 ```javascript
 isDate(new Date()); // -> true
@@ -3015,12 +3015,12 @@ isDate(new Date()); // -> true
 
 ## isEl
 
-Check if value is a DOM element.
+检查值是否是 DOM 元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                |
-|返回值|boolean|True if value is a DOM element|
+|val|*|要检查的值|
+|返回值|boolean|如果是 DOM 元素，返回真|
 
 ```javascript
 isEl(document.body); // -> true
@@ -3028,12 +3028,12 @@ isEl(document.body); // -> true
 
 ## isEmail
 
-Loosely validate an email address.
+简单检查值是否是合法的邮件地址。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |string |Value to check                       |
-|返回值|boolean|True if value is an email like string|
+|val|string|要检查的值|
+|返回值|boolean|如果是合法的邮件地址，返回真|
 
 ```javascript
 isEmail('surunzi@foxmail.com'); // -> true
@@ -3041,12 +3041,12 @@ isEmail('surunzi@foxmail.com'); // -> true
 
 ## isEmpty
 
-Check if value is an empty object or array.
+检查值是否是空对象或空数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check        |
-|返回值|boolean|True if value is empty|
+|val|*|要检查的值|
+|返回值|boolean|如果为空，返回真|
 
 ```javascript
 isEmpty([]); // -> true
@@ -3056,13 +3056,13 @@ isEmpty(''); // -> true
 
 ## isEqual
 
-Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.
+对两个对象进行深度比较，如果相等，返回真。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to compare             |
-|other |*      |Other value to compare       |
-|返回值|boolean|True if values are equivalent|
+|val|*|要比较的对象|
+|other|*|要比较的对象|
+|返回值|boolean|如果相等，返回真|
 
 ```javascript
 isEqual([1, 2, 3], [1, 2, 3]); // -> true
@@ -3070,12 +3070,12 @@ isEqual([1, 2, 3], [1, 2, 3]); // -> true
 
 ## isErr
 
-Check if value is an error.
+检查值是否是 Error 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check           |
-|返回值|boolean|True if value is an error|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Error 类型，返回真|
 
 ```javascript
 isErr(new Error()); // -> true
@@ -3083,12 +3083,12 @@ isErr(new Error()); // -> true
 
 ## isEven
 
-Check if number is even.
+检查数字是否是偶数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number |Number to check       |
-|返回值|boolean|True if number is even|
+|num|number|要检查的数字|
+|返回值|boolean|如果是偶数，返回真|
 
 ```javascript
 isOdd(0); // -> true
@@ -3098,12 +3098,12 @@ isOdd(2); // -> true
 
 ## isFile
 
-Check if value is a file.
+检查值是否是 File 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check         |
-|返回值|boolean|True if value is a file|
+|val|*|要检查的值|
+|返回值|boolean|如果是 File 类型，返回真|
 
 ```javascript
 isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
@@ -3111,12 +3111,12 @@ isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
 
 ## isFinite
 
-Check if value is a finite primitive number.
+检查值是否是有限数字。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                  |
-|返回值|boolean|True if value is a finite number|
+|val|*|要检查的值|
+|返回值|boolean|如果是有限数字，返回真|
 
 ```javascript
 isFinite(3); // -> true
@@ -3125,12 +3125,12 @@ isFinite(Infinity); // -> false
 
 ## isFn
 
-Check if value is a function.
+检查值是否是函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check             |
-|返回值|boolean|True if value is a function|
+|val|*|要检查的值|
+|返回值|boolean|如果是函数，返回真|
 
 Generator function is also classified as true.
 
@@ -3141,12 +3141,12 @@ isFn(function*() {}); // -> true
 
 ## isGeneratorFn
 
-Check if value is a generator function.
+检查值是否是 Generator 函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                       |
-|返回值|boolean|True if value is a generator function|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Generator 函数，返回真|
 
 ```javascript
 isGeneratorFn(function * () {}); // -> true;
@@ -3155,12 +3155,12 @@ isGeneratorFn(function () {}); // -> false;
 
 ## isInt
 
-Checks if value is classified as a Integer.
+检查值是否是整数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                       |
-|返回值|boolean|True if value is correctly classified|
+|val|*|要检查的值|
+|返回值|boolean|如果是整数，返回真|
 
 ```javascript
 isInt(5); // -> true
@@ -3170,14 +3170,14 @@ isInt({}); // -> false
 
 ## isJson
 
-Check if value is a valid JSON.
+检查值是否是有效的 JSON。
 
-It uses `JSON.parse()` and a `try... catch` block.
+该模块使用 `JSON.parse()` 和 `try... catch` 进行检测。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |string |JSON string                  |
-|返回值|boolean|True if value is a valid JSON|
+|val|string|JSON 字符串|
+|返回值|boolean|如果是有效的 JSON，返回真|
 
 ```javascript
 isJson('{"a": 5}'); // -> true
@@ -3186,12 +3186,12 @@ isJson("{'a': 5}"); // -> false
 
 ## isLeapYear
 
-Check if a year is a leap year.
+检查年份是否是闰年。
 
 |参数名|类型|说明|
 |-----|----|---|
-|year  |number |Year to check              |
-|返回值|boolean|True if year is a leap year|
+|year|number|要检查的年份|
+|返回值|boolean|如果是闰年，返回真|
 
 ```javascript
 isLeapYear(2000); // -> true
@@ -3200,12 +3200,12 @@ isLeapYear(2002); // -> false
 
 ## isMap
 
-Check if value is a Map object.
+检查值是否是 Map 对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check        |
-|返回值|boolean|True if value is a Map|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Map 类型，返回真|
 
 ```javascript
 isMap(new Map()); // -> true
@@ -3214,13 +3214,13 @@ isMap(new WeakMap()); // -> false
 
 ## isMatch
 
-Check if keys and values in src are contained in obj.
+检查对象所有键名和键值是否在指定的对象中。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object |Object to inspect                 |
-|src   |object |Object of property values to match|
-|返回值|boolean|True if object is match           |
+|obj|object|目标对象|
+|src|object|进行匹配的对象|
+|返回值|boolean|如果匹配，返回真|
 
 ```javascript
 isMatch({a: 1, b: 2}, {a: 1}); // -> true
@@ -3228,7 +3228,7 @@ isMatch({a: 1, b: 2}, {a: 1}); // -> true
 
 ## isMiniProgram
 
-Check if running in wechat mini program.
+检测是否运行于微信小程序环境中。
 
 ```javascript
 console.log(isMiniProgram); // -> true if running in mini program.
@@ -3236,12 +3236,12 @@ console.log(isMiniProgram); // -> true if running in mini program.
 
 ## isMobile
 
-Check whether client is using a mobile browser using ua.
+使用 ua 检测是否运行于移动端浏览器。
 
 |参数名|类型|说明|
 |-----|----|---|
-|ua=navigator.userAgent|string |User agent                           |
-|返回值                  |boolean|True if ua belongs to mobile browsers|
+|ua=navigator.userAgent|string|浏览器用户代理|
+|返回值|boolean|如果是移动端浏览器，返回真|
 
 ```javascript
 isMobile(navigator.userAgent);
@@ -3249,14 +3249,14 @@ isMobile(navigator.userAgent);
 
 ## isNaN
 
-Check if value is an NaN.
+检测值是否是 NaN。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check         |
-|返回值|boolean|True if value is an NaN|
+|val|*|要检查的值|
+|返回值|boolean|如果是 NaN，返回真|
 
-Undefined is not an NaN, different from global isNaN function.
+跟全局 isNaN 不同的是，Undefined 不是 NaN。
 
 ```javascript
 isNaN(0); // -> false
@@ -3265,12 +3265,12 @@ isNaN(NaN); // -> true
 
 ## isNative
 
-Check if value is a native function.
+检查值是否是原生函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                    |
-|返回值|boolean|True if value is a native function|
+|val|*|要检查的值|
+|返回值|boolean|如果是原生函数，返回真|
 
 ```javascript
 isNative(function () {}); // -> false
@@ -3279,12 +3279,12 @@ isNative(Math.min); // -> true
 
 ## isNil
 
-Check if value is null or undefined, the same as value == null.
+检查值是否是 null 或 undefined，等价于 value == null。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                    |
-|返回值|boolean|True if value is null or undefined|
+|val|*|要检查的值|
+|返回值|boolean|如果是 null 或 undefined，返回真|
 
 ```javascript
 isNil(null); // -> true
@@ -3297,7 +3297,7 @@ isNil([]); // -> false
 
 ## isNode
 
-Check if running in node.
+检测是否运行于 node 环境中。
 
 ```javascript
 console.log(isNode); // -> true if running in node
@@ -3305,12 +3305,12 @@ console.log(isNode); // -> true if running in node
 
 ## isNull
 
-Check if value is an Null.
+检查值是否是 Null 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check          |
-|返回值|boolean|True if value is an Null|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Null 类型，返回真|
 
 ```javascript
 isNull(null); // -> true
@@ -3318,12 +3318,12 @@ isNull(null); // -> true
 
 ## isNum
 
-Check if value is classified as a Number primitive or object.
+检测值是否是数字类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                       |
-|返回值|boolean|True if value is correctly classified|
+|val|*|要检查的值|
+|返回值|boolean|如果是数字，返回真|
 
 ```javascript
 isNum(5); // -> true
@@ -3333,12 +3333,12 @@ isNum({}); // -> false
 
 ## isNumeric
 
-Check if value is numeric.
+检查值是否是数字，包括数字字符串。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check          |
-|返回值|boolean|True if value is numeric|
+|val|*|要检查的值|
+|返回值|boolean|如果是数字，返回真|
 
 ```javascript
 isNumeric(1); // -> true
@@ -3353,14 +3353,14 @@ isNumeric(NaN); // -> false
 
 ## isObj
 
-Check if value is the language type of Object.
+检查值是否是对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check            |
-|返回值|boolean|True if value is an object|
+|val|*|要检查的值|
+|返回值|boolean|如果是对象，返回真|
 
-[Language Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
+[标准定义](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
 
 ```javascript
 isObj({}); // -> true
@@ -3369,12 +3369,12 @@ isObj([]); // -> true
 
 ## isOdd
 
-Check if number is odd.
+检查数字是否是奇数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number |Number to check      |
-|返回值|boolean|True if number is odd|
+|num|number|要检查的数字|
+|返回值|boolean|如果是奇数，返回真|
 
 ```javascript
 isOdd(0); // -> false
@@ -3384,12 +3384,12 @@ isOdd(2); // -> false
 
 ## isPlainObj
 
-Check if value is an object created by Object constructor.
+检查值是否是用 Object 构造函数创建的对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                 |
-|返回值|boolean|True if value is a plain object|
+|val|*|要检查的值|
+|返回值|boolean|如果是 plain object，返回真|
 
 ```javascript
 isPlainObj({}); // -> true
@@ -3399,12 +3399,12 @@ isPlainObj(function () {}); // -> false
 
 ## isPrimitive
 
-Check if value is string, number, boolean or null.
+检测值是否是字符串，数字，布尔值或 null。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check              |
-|返回值|boolean|True if value is a primitive|
+|val|*|要检查的值|
+|返回值|boolean|如果是原始类型，返回真|
 
 ```javascript
 isPrimitive(5); // -> true
@@ -3414,12 +3414,12 @@ isPrimitive(false); // -> true
 
 ## isPromise
 
-Check if value looks like a promise.
+检查值是否是类 promise 对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                    |
-|返回值|boolean|True if value looks like a promise|
+|val|*|要检查的值|
+|返回值|boolean|如果是类 promise 对象，返回真|
 
 ```javascript
 isPromise(new Promise(function () {})); // -> true
@@ -3428,12 +3428,12 @@ isPromise({}); // -> false
 
 ## isRegExp
 
-Check if value is a regular expression.
+检查值是否是正则类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                       |
-|返回值|boolean|True if value is a regular expression|
+|val|*|要检查的值|
+|返回值|boolean|如果是正则类型，返回真|
 
 ```javascript
 isRegExp(/a/); // -> true
@@ -3441,12 +3441,12 @@ isRegExp(/a/); // -> true
 
 ## isRelative
 
-Check if path appears to be relative.
+检查路径是否是相对路径。
 
 |参数名|类型|说明|
 |-----|----|---|
-|path  |string |Path to check                      |
-|返回值|boolean|True if path appears to be relative|
+|path|string|要检查的路径|
+|返回值|boolean|如果是相对路径，返回真|
 
 ```javascript
 isRelative('README.md'); // -> true
@@ -3454,7 +3454,7 @@ isRelative('README.md'); // -> true
 
 ## isRetina
 
-Determine if running on a high DPR device or not.
+判断是否运行在 retina 屏幕的设备上。
 
 ```javascript
 console.log(isRetina); // -> true if high DPR
@@ -3462,12 +3462,12 @@ console.log(isRetina); // -> true if high DPR
 
 ## isSet
 
-Check if value is a Set object.
+检查值是否是 Set 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check        |
-|返回值|boolean|True if value is a Set|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Set 类型，返回真|
 
 ```javascript
 isSet(new Set()); // -> true
@@ -3476,12 +3476,12 @@ isSet(new WeakSet()); // -> false
 
 ## isSorted
 
-Check if an array is sorted.
+检查数组是否有序。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr  |array   |Array to check|
-|[cmp]|function|Comparator    |
+|arr|array|目标数组|
+|[cmp]|function|比较器|
 
 ```javascript
 isSorted([1, 2, 3]); // -> true
@@ -3490,12 +3490,12 @@ isSorted([3, 2, 1]); // -> false
 
 ## isStr
 
-Check if value is a string primitive.
+检查值是否是字符串。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                     |
-|返回值|boolean|True if value is a string primitive|
+|val|*|要检查的值|
+|返回值|boolean|如果是字符串，返回真|
 
 ```javascript
 isStr('licia'); // -> true
@@ -3503,12 +3503,12 @@ isStr('licia'); // -> true
 
 ## isStream
 
-Check if value is a Node.js stream.
+检查值是否是 Node.js Stream 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                   |
-|返回值|boolean|True if value is a Node.js stream|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Node.js Stream 类型，返回真|
 
 ```javascript
 var stream = require('stream');
@@ -3518,12 +3518,12 @@ isStream(new stream.Stream()); // -> true
 
 ## isTypedArr
 
-Check if value is a typed array.
+检查值是否 TypedArray 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                |
-|返回值|boolean|True if value is a typed array|
+|val|*|要检查的值|
+|返回值|boolean|如果值是 TypedArray 类型，返回真|
 
 ```javascript
 isTypedArr([]); // -> false
@@ -3532,12 +3532,12 @@ isTypedArr(new Unit8Array); // -> true
 
 ## isUndef
 
-Check if value is undefined.
+检查值是否是 undefined。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check            |
-|返回值|boolean|True if value is undefined|
+|val|*|要检查的值|
+|返回值|boolean|如果是 undefined，返回真|
 
 ```javascript
 isUndef(void 0); // -> true
@@ -3546,12 +3546,12 @@ isUndef(null); // -> false
 
 ## isUrl
 
-Loosely validate an url.
+简单检查值是否是有效的 url 地址。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |string |Value to check                     |
-|返回值|boolean|True if value is an url like string|
+|val|string|要检查的值|
+|返回值|boolean|如果是有效的 url 地址，返回真|
 
 ```javascript
 isUrl('http://www.example.com?foo=bar&param=test'); // -> true
@@ -3559,12 +3559,12 @@ isUrl('http://www.example.com?foo=bar&param=test'); // -> true
 
 ## isWeakMap
 
-Check if value is a WeakMap object.
+检查值是否是 WeakMap 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check            |
-|返回值|boolean|True if value is a WeakMap|
+|val|*|要检查的值|
+|返回值|boolean|如果是 WeakMap 类型，返回真|
 
 ```javascript
 isWeakMap(new Map()); // -> false
@@ -3573,12 +3573,12 @@ isWeakMap(new WeakMap()); // -> true
 
 ## isWeakSet
 
-Check if value is a WeakSet object.
+检查值是否是 WeakSet 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check            |
-|返回值|boolean|True if value is a WeakSet|
+|val|*|要检查的值|
+|返回值|boolean|如果是 WeakSet 类型，返回真|
 
 ```javascript
 isWeakSet(new Set()); // -> false
@@ -3587,7 +3587,7 @@ isWeakSet(new WeakSet()); // -> true
 
 ## isWindows
 
-Check if platform is windows.
+检测是否运行在 windows 操作系统上。
 
 ```javascript
 console.log(isWindows); // -> true if running on windows

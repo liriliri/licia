@@ -1,11 +1,11 @@
 ## CN
 
-Check if an array is sorted.
+检查数组是否有序。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr  |array   |Array to check|
-|[cmp]|function|Comparator    |
+|arr|array|目标数组|
+|[cmp]|function|比较器|
 
 ```javascript
 isSorted([1, 2, 3]); // -> true

@@ -1,11 +1,11 @@
 ## CN
 
-Check if value is classified as a Date object.
+检查值是否是 Date 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |value to check                |
-|返回值|boolean|True if value is a Date object|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Date 类型，返回真|
 
 ```javascript
 isDate(new Date()); // -> true

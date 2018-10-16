@@ -1,13 +1,13 @@
 ## CN
 
-Check if value is array-like.
+检查值是否是类数组对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check             |
-|返回值|boolean|True if value is array like|
+|val|*|要检查的值|
+|返回值|boolean|如果是类数组对象，返回真|
 
-> Function returns false.
+对于函数，返回假。
 
 ```javascript
 isArrLike('test'); // -> true

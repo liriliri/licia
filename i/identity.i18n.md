@@ -1,11 +1,11 @@
 ## CN
 
-Return the first argument given.
+返回传入的第一个参数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*   |Any value  |
-|返回值|*   |Given value|
+|val|*|任何值|
+|返回值|*|第一个参数|
 
 ```javascript
 identity('a'); // -> 'a'

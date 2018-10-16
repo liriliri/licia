@@ -1,11 +1,11 @@
 ## CN
 
-Check if a year is a leap year.
+检查年份是否是闰年。
 
 |参数名|类型|说明|
 |-----|----|---|
-|year  |number |Year to check              |
-|返回值|boolean|True if year is a leap year|
+|year|number|要检查的年份|
+|返回值|boolean|如果是闰年，返回真|
 
 ```javascript
 isLeapYear(2000); // -> true

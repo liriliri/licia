@@ -1,11 +1,11 @@
 ## CN
 
-Compute the list of values that are the intersection of all the arrays.
+计算所有数组的交集。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...arr|array|Arrays to inspect             |
-|返回值|array|New array of inspecting values|
+|...arr|array|源数组|
+|返回值|array|交集|
 
 ```javascript
 intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]

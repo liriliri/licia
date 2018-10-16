@@ -2740,6 +2740,7 @@ Get the index at which the first occurrence of value.
 |arr      |array |Array to search     |
 |val      |*     |Value to search for |
 |fromIdx=0|number|Index to search from|
+|return   |number|Value index         |
 
 ```javascript
 idxOf([1, 2, 1, 2], 2, 2); // -> 3
@@ -2838,8 +2839,7 @@ Create an object composed of the inverted keys and values of object.
 |obj   |object|Object to invert   |
 |return|object|New inverted object|
 
-If object contains duplicate values, subsequent values overwrite property
-assignments of previous values unless multiValue is true.
+If object contains duplicate values, subsequent values overwrite property assignments of previous values.
 
 ```javascript
 invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
@@ -2911,7 +2911,7 @@ Check if value is array-like.
 |val   |*      |Value to check             |
 |return|boolean|True if value is array like|
 
-> Function returns false.
+Function returns false.
 
 ```javascript
 isArrLike('test'); // -> true

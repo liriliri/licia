@@ -1,14 +1,13 @@
 ## CN
 
-Create an object composed of the inverted keys and values of object.
+生成一个新对象，该对象的键名和键值进行调换。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to invert   |
-|返回值|object|New inverted object|
+|obj|object|源对象|
+|返回值|object|目标对象|
 
-If object contains duplicate values, subsequent values overwrite property
-assignments of previous values unless multiValue is true.
+如果对象存在重复的键值，后面的值会覆盖前面的值。
 
 ```javascript
 invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}

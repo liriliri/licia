@@ -1,12 +1,12 @@
 ## CN
 
-Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.
+对两个对象进行深度比较，如果相等，返回真。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to compare             |
-|other |*      |Other value to compare       |
-|返回值|boolean|True if values are equivalent|
+|val|*|要比较的对象|
+|other|*|要比较的对象|
+|返回值|boolean|如果相等，返回真|
 
 ```javascript
 isEqual([1, 2, 3], [1, 2, 3]); // -> true

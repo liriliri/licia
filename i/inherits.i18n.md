@@ -1,11 +1,11 @@
 ## CN
 
-Inherit the prototype methods from one constructor into another.
+使构造函数继承另一个构造函数原型链上的方法。
 
 |参数名|类型|说明|
 |-----|----|---|
-|Class     |function|Child Class|
-|SuperClass|function|Super Class|
+|Class|function|子类|
+|SuperClass|function|父类|
 
 ```javascript
 function People(name) {

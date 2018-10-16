@@ -1,11 +1,11 @@
 ## CN
 
-Check if value is a finite primitive number.
+检查值是否是有限数字。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                  |
-|返回值|boolean|True if value is a finite number|
+|val|*|要检查的值|
+|返回值|boolean|如果是有限数字，返回真|
 
 ```javascript
 isFinite(3); // -> true

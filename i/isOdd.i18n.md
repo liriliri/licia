@@ -1,11 +1,11 @@
 ## CN
 
-Check if number is odd.
+检查数字是否是奇数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number |Number to check      |
-|返回值|boolean|True if number is odd|
+|num|number|要检查的数字|
+|返回值|boolean|如果是奇数，返回真|
 
 ```javascript
 isOdd(0); // -> false

@@ -1,13 +1,13 @@
 ## CN
 
-Check if value is a valid JSON.
+检查值是否是有效的 JSON。
 
-It uses `JSON.parse()` and a `try... catch` block.
+该模块使用 `JSON.parse()` 和 `try... catch` 进行检测。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |string |JSON string                  |
-|返回值|boolean|True if value is a valid JSON|
+|val|string|JSON 字符串|
+|返回值|boolean|如果是有效的 JSON，返回真|
 
 ```javascript
 isJson('{"a": 5}'); // -> true

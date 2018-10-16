@@ -5,7 +5,7 @@
  * |val   |*      |Value to check             |
  * |return|boolean|True if value is array like|
  *
- * > Function returns false.
+ * Function returns false.
  *
  * ```javascript
  * isArrLike('test'); // -> true

@@ -1,11 +1,11 @@
 ## CN
 
-Checks if value is classified as a Integer.
+检查值是否是整数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                       |
-|返回值|boolean|True if value is correctly classified|
+|val|*|要检查的值|
+|返回值|boolean|如果是整数，返回真|
 
 ```javascript
 isInt(5); // -> true

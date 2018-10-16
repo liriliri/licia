@@ -1,11 +1,11 @@
 ## CN
 
-Check if value is classified as a Number primitive or object.
+检测值是否是数字类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                       |
-|返回值|boolean|True if value is correctly classified|
+|val|*|要检查的值|
+|返回值|boolean|如果是数字，返回真|
 
 ```javascript
 isNum(5); // -> true

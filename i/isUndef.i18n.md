@@ -1,11 +1,11 @@
 ## CN
 
-Check if value is undefined.
+检查值是否是 undefined。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check            |
-|返回值|boolean|True if value is undefined|
+|val|*|要检查的值|
+|返回值|boolean|如果是 undefined，返回真|
 
 ```javascript
 isUndef(void 0); // -> true

@@ -5,8 +5,7 @@
  * |obj   |object|Object to invert   |
  * |return|object|New inverted object|
  *
- * If object contains duplicate values, subsequent values overwrite property
- * assignments of previous values unless multiValue is true.
+ * If object contains duplicate values, subsequent values overwrite property assignments of previous values.
  *
  * ```javascript
  * invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}

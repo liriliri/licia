@@ -1,11 +1,11 @@
 ## CN
 
-Check if value is an ArrayBuffer.
+检查值是否是 ArrayBuffer 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check                 |
-|返回值|boolean|True if value is an ArrayBuffer|
+|val|*|要检查的值|
+|返回值|boolean|如果是 ArrayBuffer 类型，返回真|
 
 ```javascript
 isArrBuffer(new ArrayBuffer(8)); // -> true

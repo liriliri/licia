@@ -1,11 +1,11 @@
 ## CN
 
-Check if value is a Set object.
+检查值是否是 Set 类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check        |
-|返回值|boolean|True if value is a Set|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Set 类型，返回真|
 
 ```javascript
 isSet(new Set()); // -> true

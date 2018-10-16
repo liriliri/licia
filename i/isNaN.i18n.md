@@ -1,13 +1,13 @@
 ## CN
 
-Check if value is an NaN.
+检测值是否是 NaN。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check         |
-|返回值|boolean|True if value is an NaN|
+|val|*|要检查的值|
+|返回值|boolean|如果是 NaN，返回真|
 
-Undefined is not an NaN, different from global isNaN function.
+跟全局 isNaN 不同的是，Undefined 不是 NaN。
 
 ```javascript
 isNaN(0); // -> false

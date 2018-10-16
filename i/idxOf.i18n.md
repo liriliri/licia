@@ -1,12 +1,13 @@
 ## CN
 
-Get the index at which the first occurrence of value.
+返回指定值第一次在数组中出现的位置。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr      |array |Array to search     |
-|val      |*     |Value to search for |
-|fromIdx=0|number|Index to search from|
+|arr|array|目标数组|
+|val|*|要查找的值|
+|fromIdx=0|number|查找起始位置|
+|返回值|number|第一次出现的位置，如果没有，返回 -1|
 
 ```javascript
 idxOf([1, 2, 1, 2], 2, 2); // -> 3

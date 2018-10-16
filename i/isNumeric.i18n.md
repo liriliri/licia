@@ -1,11 +1,11 @@
 ## CN
 
-Check if value is numeric.
+检查值是否是数字，包括数字字符串。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to check          |
-|返回值|boolean|True if value is numeric|
+|val|*|要检查的值|
+|返回值|boolean|如果是数字，返回真|
 
 ```javascript
 isNumeric(1); // -> true

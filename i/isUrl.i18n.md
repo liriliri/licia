@@ -1,11 +1,11 @@
 ## CN
 
-Loosely validate an url.
+简单检查值是否是有效的 url 地址。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |string |Value to check                     |
-|返回值|boolean|True if value is an url like string|
+|val|string|要检查的值|
+|返回值|boolean|如果是有效的 url 地址，返回真|
 
 ```javascript
 isUrl('http://www.example.com?foo=bar&param=test'); // -> true
