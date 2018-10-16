@@ -1,12 +1,12 @@
 ## CN
 
-Check if string ends with the given target string.
+检查字符串是否以指定字符串结尾。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string |The string to search           |
-|suffix|string |String suffix                  |
-|返回值|boolean|True if string ends with target|
+|str|string|目标字符串|
+|suffix|string|字符串后缀|
+|返回值|boolean|如果是，返回真|
 
 ```javascript
 endWith('ab', 'b'); // -> true

@@ -1,4 +1,4 @@
-/* Easing functions adapted from http://jqueryui.com/
+/* Easing functions adapted from http://jqueryui.com/ .
  *
  * |Name   |Type  |Desc                  |
  * |-------|------|----------------------|

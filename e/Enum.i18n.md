@@ -1,16 +1,16 @@
 ## CN
 
-Enum type implementation.
+Enum 类实现。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr |array|Array of strings|
+|arr|array|字符串数组|
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj |object|Pairs of key and value|
+|obj|object|键值对|
 
 ```javascript
 var importance = new Enum([

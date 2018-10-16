@@ -879,7 +879,7 @@
         "benchmark": true
     },
     "easing": {
-        "description": "Easing functions adapted from http://jqueryui.com/",
+        "description": "Easing functions adapted from http://jqueryui.com/ .",
         "dependencies": [
             "each",
             "upperFirst"

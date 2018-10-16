@@ -2162,7 +2162,7 @@ each({'a': 1, 'b': 2}, function (val, key) {});
 
 ## easing 
 
-Easing functions adapted from http://jqueryui.com/
+Easing functions adapted from http://jqueryui.com/ .
 
 |Name   |Type  |Desc                  |
 |-------|------|----------------------|
@@ -2245,10 +2245,10 @@ evalCss('body{background:#08c}');
 
 Execute js in given context.
 
-|Name        |Type  |Desc           |
-|------------|------|---------------|
-|js          |string|JavaScript code|
-|[ctx=global]|object|Context        |
+|Name      |Type  |Desc           |
+|----------|------|---------------|
+|js        |string|JavaScript code|
+|ctx=global|object|Context        |
 
 ```javascript
 evalJs('5+2'); // -> 7

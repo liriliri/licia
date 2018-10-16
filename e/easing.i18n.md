@@ -1,11 +1,11 @@
 ## CN
 
-Easing functions adapted from http://jqueryui.com/
+缓动函数，参考 http://jqueryui.com/ 。
 
 |参数名|类型|说明|
 |-----|----|---|
-|percent|number|Number between 0 and 1|
-|返回值 |number|Calculated number     |
+|percent|number|位于 0 到 1 之前的数字|
+|返回值|number|计算结果|
 
 ```javascript
 easing.linear(0.5); // -> 0.5

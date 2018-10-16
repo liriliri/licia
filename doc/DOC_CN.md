@@ -391,41 +391,41 @@ dispatcher.dispatch({
 
 ## Emitter
 
-Event emitter class which provides observer pattern.
+提供观察者模式的 Event emitter 类。
 
 ### on
 
-Bind event.
+绑定事件。
 
 ### off
 
-Unbind event.
+解绑事件。
 
 ### once
 
-Bind event that trigger once.
+绑定只触发一次的事件。
 
 |参数名|类型|说明|
 |-----|----|---|
-|event   |string  |Event name    |
-|listener|function|Event listener|
+|event|string|事件名称|
+|listener|function|事件监听器|
 
 ### emit
 
-Emit event.
+触发事件。
 
 |参数名|类型|说明|
 |-----|----|---|
-|event  |string|Event name                  |
-|...args|*     |Arguments passed to listener|
+|event|string|事件名称|
+|...args|*|传递给监听器的参数|
 
 ### mixin
 
-[static] Mixin object class methods.
+【静态】 将 Emitter 类的方法绑定到指定对象上去。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj |object|Object to mixin|
+|obj |object|目标对象|
 
 ```javascript
 var event = new Emitter();
@@ -436,17 +436,17 @@ Emitter.mixin({});
 
 ## Enum
 
-Enum type implementation.
+Enum 类实现。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr |array|Array of strings|
+|arr|array|字符串数组|
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj |object|Pairs of key and value|
+|obj|object|键值对|
 
 ```javascript
 var importance = new Enum([
@@ -2143,13 +2143,13 @@ download('test', 'test.txt');
 
 ## each
 
-Iterate over elements of collection and invokes iteratee for each element.
+遍历集合中的所有元素，用每个元素当做参数调用 iteratee 函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj     |object array|Collection to iterate over    |
-|iteratee|function    |Function invoked per iteration|
-|[ctx]   |*           |Function context              |
+|obj|object array|目标集合|
+|iteratee|function|调用函数|
+|[ctx]|*|函数上下文|
 
 ```javascript
 each({'a': 1, 'b': 2}, function (val, key) {});
@@ -2157,12 +2157,12 @@ each({'a': 1, 'b': 2}, function (val, key) {});
 
 ## easing
 
-Easing functions adapted from http://jqueryui.com/
+缓动函数，参考 http://jqueryui.com/ 。
 
 |参数名|类型|说明|
 |-----|----|---|
-|percent|number|Number between 0 and 1|
-|返回值 |number|Calculated number     |
+|percent|number|位于 0 到 1 之前的数字|
+|返回值|number|计算结果|
 
 ```javascript
 easing.linear(0.5); // -> 0.5
@@ -2171,13 +2171,13 @@ easing.inElastic(0.5, 500); // -> 0.03125
 
 ## endWith
 
-Check if string ends with the given target string.
+检查字符串是否以指定字符串结尾。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string |The string to search           |
-|suffix|string |String suffix                  |
-|返回值|boolean|True if string ends with target|
+|str|string|目标字符串|
+|suffix|string|字符串后缀|
+|返回值|boolean|如果是，返回真|
 
 ```javascript
 endWith('ab', 'b'); // -> true
@@ -2185,12 +2185,13 @@ endWith('ab', 'b'); // -> true
 
 ## escape
 
-Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' characters.
+转义 HTML 字符串，替换 &，<，>，"，`，和 ' 字符。
+
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to escape|
-|返回值|string|Escaped string  |
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 escape('You & Me'); -> // -> 'You &amp; Me'
@@ -2198,14 +2199,14 @@ escape('You & Me'); -> // -> 'You &amp; Me'
 
 ## escapeJsStr
 
-Escape string to be a valid JavaScript string literal between quotes.
+转义字符串为合法的 JavaScript 字符串字面量。
 
 http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to escape|
-|返回值|string|Escaped string  |
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 escapeJsStr('\"\n'); // -> '\\"\\\\n'
@@ -2213,12 +2214,12 @@ escapeJsStr('\"\n'); // -> '\\"\\\\n'
 
 ## escapeRegExp
 
-Escape special chars to be used as literals in RegExp constructors.
+转义特殊字符用于 RegExp 构造函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to escape|
-|返回值|string|Escaped string  |
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 escapeRegExp('[licia]'); // -> '\\[licia\\]'
@@ -2226,11 +2227,11 @@ escapeRegExp('[licia]'); // -> '\\[licia\\]'
 
 ## evalCss
 
-Load css into page.
+加载 css 到页面中。
 
 |参数名|类型|说明|
 |-----|----|---|
-|css |string|Css code|
+|css|string|css 代码|
 
 ```javascript
 evalCss('body{background:#08c}');
@@ -2238,12 +2239,12 @@ evalCss('body{background:#08c}');
 
 ## evalJs
 
-Execute js in given context.
+在指定的上下文执行 js 代码。
 
 |参数名|类型|说明|
 |-----|----|---|
-|js          |string|JavaScript code|
-|[ctx=global]|object|Context        |
+|js|string|JavaScript 代码|
+|ctx=global|object|上下文|
 
 ```javascript
 evalJs('5+2'); // -> 7
@@ -2252,14 +2253,14 @@ evalJs('this.a', {a: 2}); // -> 2
 
 ## every
 
-Check if predicate return truthy for all elements.
+检查是否集合中的所有元素都能通过 predicate 的真值检测。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj      |array object|Collection to iterate over                   |
-|predicate|function    |Function invoked per iteration               |
-|ctx      |*           |Predicate context                            |
-|返回值   |boolean     |True if all elements pass the predicate check|
+|obj|array object|目标集合|
+|predicate|function|真值检测函数|
+|ctx|*|函数上下文|
+|返回值|boolean|如果都能通过，返回真|
 
 ```javascript
 every([2, 4], function (val) {
@@ -2269,13 +2270,13 @@ every([2, 4], function (val) {
 
 ## extend
 
-Copy all of the properties in the source objects over to the destination object.
+复制多个对象中的所有属性到目标对象上。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Destination object|
-|...src|object|Sources objects   |
-|返回值|object|Destination object|
+|obj|object|目标对象|
+|...src|object|源对象|
+|返回值|object|目标对象|
 
 ```javascript
 extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
@@ -2283,13 +2284,13 @@ extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 
 ## extendDeep
 
-Recursive object extending.
+类似 extend，但会递归进行扩展。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Destination object|
-|...src|object|Sources objects   |
-|返回值|object|Destination object|
+|obj|object|目标对象|
+|...src|object|源对象|
+|返回值|object|目标对象|
 
 ```javascript
 extendDeep({
@@ -2308,13 +2309,13 @@ extendDeep({
 
 ## extendOwn
 
-Like extend, but only copies own properties over to the destination object.
+类似 extend，但只复制自己的属性，不包括原型链上的属性。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Destination object|
-|*src  |object|Sources objects   |
-|返回值|object|Destination object|
+|obj|object|目标对象|
+|*src|object|源对象|
+|返回值|object|目标对象|
 
 ```javascript
 extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
@@ -2322,12 +2323,12 @@ extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 
 ## extractBlockCmts
 
-Extract block comments from source code.
+从源码中提取块注释。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to extract|
-|返回值|array |Block comments   |
+|str|string|源码|
+|返回值|array|块注释|
 
 ```javascript
 extractBlockCmts('\/*licia*\/'); // -> ['licia']
@@ -2335,12 +2336,12 @@ extractBlockCmts('\/*licia*\/'); // -> ['licia']
 
 ## extractUrls
 
-Extract urls from plain text.
+从文本中提取 url。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|Text to extract|
-|返回值|array |Url list       |
+|str|string|文本|
+|返回值|array|url 列表|
 
 ```javascript
 var str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';

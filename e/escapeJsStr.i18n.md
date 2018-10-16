@@ -1,13 +1,13 @@
 ## CN
 
-Escape string to be a valid JavaScript string literal between quotes.
+转义字符串为合法的 JavaScript 字符串字面量。
 
 http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to escape|
-|返回值|string|Escaped string  |
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 escapeJsStr('\"\n'); // -> '\\"\\\\n'

@@ -1,40 +1,40 @@
 ## CN
 
-Event emitter class which provides observer pattern.
+提供观察者模式的 Event emitter 类。
 
 ### on
 
-Bind event.
+绑定事件。
 
 ### off
 
-Unbind event.
+解绑事件。
 
 ### once
 
-Bind event that trigger once.
+绑定只触发一次的事件。
 
 |参数名|类型|说明|
 |-----|----|---|
-|event   |string  |Event name    |
-|listener|function|Event listener|
+|event|string|事件名称|
+|listener|function|事件监听器|
 
 ### emit
 
-Emit event.
+触发事件。
 
 |参数名|类型|说明|
 |-----|----|---|
-|event  |string|Event name                  |
-|...args|*     |Arguments passed to listener|
+|event|string|事件名称|
+|...args|*|传递给监听器的参数|
 
 ### mixin
 
-[static] Mixin object class methods.
+【静态】 将 Emitter 类的方法绑定到指定对象上去。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj |object|Object to mixin|
+|obj |object|目标对象|
 
 ```javascript
 var event = new Emitter();
