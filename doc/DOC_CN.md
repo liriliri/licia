@@ -650,7 +650,7 @@ logger.on('debug', function (argList) {
 
 ## MutationObserver
 
-Safe MutationObserver, does nothing if MutationObserver is not supported.
+MutationObserver 安全版本，如果不支持，则什么也不做。
 
 ```javascript
 var observer = new MutationObserver(function (mutations) {
@@ -3831,14 +3831,14 @@ ltrim('_abc_', ['a', '_']); // -> 'bc_'
 
 ## map
 
-Create an array of values by running each element in collection through iteratee.
+对集合的每个元素调用转换函数生成与之对应的数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|array object|Collection to iterate over|
-|iteratee|function|Function invoked per iteration|
-|[ctx]|*|Function context|
-|返回值|array|New mapped array|
+|obj|array object|源集合|
+|iteratee|function|转换函数|
+|[ctx]|*|函数上下文|
+|返回值|array|目标集合|
 
 ```javascript
 map([4, 8], function (n) { return n * n; }); // -> [16, 64]
@@ -3846,14 +3846,14 @@ map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 
 ## mapObj
 
-Map for objects.
+类似 map，但针对对象，生成一个新对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj     |object  |Object to iterate over        |
-|iteratee|function|Function invoked per iteration|
-|[ctx]   |*       |Function context              |
-|返回值  |object  |New mapped object             |
+|obj|object|源对象|
+|iteratee|function|转换函数|
+|[ctx]|*|函数上下文|
+|返回值|object|目标对象|
 
 ```javascript
 mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
@@ -3861,12 +3861,12 @@ mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
 
 ## matcher
 
-Return a predicate function that checks if attrs are contained in an object.
+传入对象返回函数，如果传入参数中包含该对象则返回真。
 
 |参数名|类型|说明|
 |-----|----|---|
-|attrs |object  |Object of property values to match|
-|返回值|function|New predicate function            |
+|attrs|object|要匹配的对象|
+|返回值|function|真值检测函数|
 
 ```javascript
 var objects = [
@@ -3878,12 +3878,12 @@ filter(objects, matcher({a: 4, c: 6 })); // -> [{a: 4, b: 5, c: 6 }]
 
 ## max
 
-Get maximum value of given numbers.
+获取数字中的最大值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...num|number|Numbers to calculate|
-|返回值|number|Maximum value       |
+|...num|number|要计算的数字|
+|返回值|number|最大值|
 
 ```javascript
 max(2.3, 1, 4.5, 2); // 4.5
@@ -3891,9 +3891,9 @@ max(2.3, 1, 4.5, 2); // 4.5
 
 ## memStorage
 
-Memory-backed implementation of the Web Storage API.
+Web Storage 接口的纯内存实现。
 
-A replacement for environments where localStorage or sessionStorage is not available.
+当 localStorage 或者 sessionStorage 无法使用时可以使用其作为替代。
 
 ```javascript
 var localStorage = window.localStorage || memStorage;
@@ -3902,13 +3902,13 @@ localStorage.setItem('test', 'licia');
 
 ## memoize
 
-Memoize a given function by caching the computed result.
+缓存函数计算结果。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn      |function|Function to have its output memoized|
-|[hashFn]|function|Function to create cache key        |
-|返回值  |function|New memoized function               |
+|fn|function|源函数|
+|[hashFn]|function|计算缓存键名函数|
+|返回值|function|目标函数|
 
 ```javascript
 var fibonacci = memoize(function(n) {
@@ -3918,14 +3918,14 @@ var fibonacci = memoize(function(n) {
 
 ## mergeSort
 
-Merge sort implementation.
+归并排序实现。
 
-Note: It's not an "in-place" sort.
+注意：它不改变原数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|arr|array|要排序的数组|
+|[cmp]|function|比较器|
 
 ```javascript
 mergeSort([2, 1]); // -> [1, 2]
@@ -3933,33 +3933,33 @@ mergeSort([2, 1]); // -> [1, 2]
 
 ## meta
 
-Document meta manipulation, turn name and content into key value pairs.
+meta 操作库，将 name 和 content 属性值转换为键值对。
 
-Get meta content with given name. If name is omitted, all pairs will be return.
-
-|参数名|类型|说明|
-|-----|----|---|
-|[name]|string array|Meta name   |
-|返回值|string      |Meta content|
-
-Set meta content.
+获取指定 meta 值。如果忽略 meta 名，所有的 meta 键值对都被返回。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name   |string|Meta name   |
-|content|string|Meta content|
+|[name]|string array|meta 名|
+|返回值|string|meta 值|
+
+设置 meta 值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|metas|object|Object of name content pairs|
+|name|string|meta 名|
+|content|string|meta 值|
+
+|参数名|类型|说明|
+|-----|----|---|
+|metas|object|包含所有 meta 键值对的对象|
 
 ### remove
 
-Remove metas.
+移除指定 meta。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name|string array|Meta name|
+|name|string array|meta 名|
 
 ```javascript
 // <meta name="a" content="1"/> <meta name="b" content="2"/> <meta name="c" content="3"/>
@@ -3978,12 +3978,12 @@ meta.remove(['e', 'f']);
 
 ## methods
 
-Return a sorted list of the names of every method in an object.
+获取对象中所有方法名。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to check         |
-|返回值|array |Function names in object|
+|obj|object|目标对象|
+|返回值|array|方法名列表|
 
 ```javascript
 methods(console); // -> ['Console', 'assert', 'dir', ...]
@@ -3991,12 +3991,12 @@ methods(console); // -> ['Console', 'assert', 'dir', ...]
 
 ## min
 
-Get minimum value of given numbers.
+获取数字中的最小值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...num|number|Numbers to calculate|
-|返回值|number|Minimum value       |
+|...num|number|要计算的数字|
+|返回值|number|最小值|
 
 ```javascript
 min(2.3, 1, 4.5, 2); // 1
@@ -4004,13 +4004,13 @@ min(2.3, 1, 4.5, 2); // 1
 
 ## mkdir
 
-Recursively create directories.
+递归地创建文件夹。
 
 |参数名|类型|说明|
 |-----|----|---|
-|dir        |string  |Directory to create|
-|mode=0777|number  |Directory mode     |
-|[callback] |function|Callback           |
+|dir|string|文件夹路径|
+|mode=0777|number|文件夹模式|
+|[callback]|function|回调|
 
 ```javascript
 mkdir('/tmp/foo/bar/baz', function (err) {
@@ -4021,22 +4021,22 @@ mkdir('/tmp/foo/bar/baz', function (err) {
 
 ## moment
 
-Tiny moment.js like implementation.
+简单的类 moment.js 实现。
 
-It only supports a subset of moment.js api.
+它只支持一小部分的 moment.js api。
 
-### Available methods
+### 可用方法 
 
-format, isValid, isLeapYear, isSame, isBefore, isAfter, year,
-month, date, hour, minute, second, millisecond, unix, clone,
-toDate, toArray, toJSON, toISOString, toObject, toString, set,
-startOf, endOf, add, subtract, diff
+format，isValid，isLeapYear，isSame，isBefore，isAfter，year，
+month，date，hour，minute，second，millisecond，unix，clone，
+toDate，toArray，toJSON，toISOString，toObject，toString，set，
+startOf，endOf，add，subtract，diff
 
-### Not supported
+### 不支持特性
 
-locale and units like quarter and week.
+时区以及 quarter 和 week 单位。
 
-Note: Format uses dateFormat module, so the mask is not quite the same as moment.js.
+注意：格式化功能使用 dateFormat 模块，所以掩码格式并不完全与 moment.js 一致。
 
 ```javascript
 moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
@@ -4044,21 +4044,21 @@ moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
 
 ## ms
 
-Convert time string formats to milliseconds.
+时长字符串与毫秒转换库。
 
-Turn time string into milliseconds.
-
-|参数名|类型|说明|
-|-----|----|---|
-|str   |string|String format|
-|返回值|number|Milliseconds |
-
-Turn milliseconds into time string.
+转换时长字符串为毫秒。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number|Milliseconds |
-|返回值|string|String format|
+|str|string|字符串格式|
+|返回值|number|毫秒|
+
+转换毫秒为时长字符串。
+
+|参数名|类型|说明|
+|-----|----|---|
+|num|number|毫秒|
+|返回值|string|字符串格式|
 
 ```javascript
 ms('1s'); // -> 1000
@@ -4073,12 +4073,12 @@ ms(60000); // -> '1m'
 
 ## negate
 
-Create a function that negates the result of the predicate function.
+创建一个将原函数结果取反的函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|predicate|function|Predicate to negate|
-|返回值   |function|New function       |
+|predicate|function|源函数|
+|返回值|function|目标函数|
 
 ```javascript
 function even(n) { return n % 2 === 0 }
@@ -4087,15 +4087,13 @@ filter([1, 2, 3, 4, 5, 6], negate(even)); // -> [1, 3, 5]
 
 ## nextTick
 
-Next tick for both node and browser.
+能够同时运行在 node 和浏览器端的 next tick 实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|cb  |function|Function to call|
+|cb|function|调用函数|
 
-Use process.nextTick if available.
-
-Otherwise setImmediate or setTimeout is used as fallback.
+如果支持 process.nextTick，则调用它，否则使用 setImmediate 或 setTimeout 进行兼容。
 
 ```javascript
 nextTick(function () {
@@ -4105,7 +4103,7 @@ nextTick(function () {
 
 ## noop
 
-A no-operation function.
+一个什么也不做的空函数。
 
 ```javascript
 noop(); // Does nothing
@@ -4113,12 +4111,12 @@ noop(); // Does nothing
 
 ## normalizePath
 
-Normalize file path slashes.
+标准化文件路径中的斜杠。
 
 |参数名|类型|说明|
 |-----|----|---|
-|path  |string|Path to normalize|
-|返回值|string|Normalized path  |
+|path|string|源路径|
+|返回值|string|目标路径|
 
 ```javascript
 normalizePath('\\foo\\bar\\'); // -> '/foo/bar/'
@@ -4127,7 +4125,7 @@ normalizePath('./foo//bar'); // -> './foo/bar'
 
 ## now
 
-Gets the number of milliseconds that have elapsed since the Unix epoch.
+获取当前时间戳。
 
 ```javascript
 now(); // -> 1468826678701
@@ -4135,12 +4133,12 @@ now(); // -> 1468826678701
 
 ## objToStr
 
-Alias of Object.prototype.toString.
+Object.prototype.toString 的别名。
 
 |参数名|类型|说明|
 |-----|----|---|
-|value |*     |Source value                        |
-|返回值|string|String representation of given value|
+|val|*|目标值|
+|返回值|string|字符串表示|
 
 ```javascript
 objToStr(5); // -> '[object Number]'
@@ -4148,13 +4146,13 @@ objToStr(5); // -> '[object Number]'
 
 ## omit
 
-Opposite of pick.
+类似 pick，但结果相反。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object               |Source object  |
-|filter|string array function|Object filter  |
-|返回值|object               |Filtered object|
+|obj|object|源对象|
+|filter|string array function|对象过滤器|
+|返回值|object|目标对象|
 
 ```javascript
 omit({a: 1, b: 2}, 'a'); // -> {b: 2}
@@ -4165,12 +4163,12 @@ omit({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 
 ## once
 
-Create a function that invokes once.
+创建只能调用一次的函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to restrict   |
-|返回值|function|New restricted function|
+|fn|function|源函数|
+|返回值|function|目标函数|
 
 ```javascript
 function init() {};
@@ -4181,23 +4179,23 @@ initOnce(); // -> init is invoked once
 
 ## optimizeCb
 
-Used for function context binding.
+用于高效的函数上下文绑定。
 
 ## orientation
 
-Screen orientation helper.
+屏幕方向工具库。
 
 ### on
 
-Bind change event.
+绑定 change 事件。
 
 ### off
 
-Unbind change event.
+解绑 change 事件。
 
 ### get
 
-Get current orientation(landscape or portrait).
+获取当前屏幕方向（横屏 landscape 或 竖屏 portrait）。
 
 ```javascript
 orientation.on('change', function (direction) {

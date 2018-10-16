@@ -1,13 +1,13 @@
 ## CN
 
-Merge sort implementation.
+归并排序实现。
 
-Note: It's not an "in-place" sort.
+注意：它不改变原数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|arr|array|要排序的数组|
+|[cmp]|function|比较器|
 
 ```javascript
 mergeSort([2, 1]); // -> [1, 2]

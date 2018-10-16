@@ -1,20 +1,20 @@
 ## CN
 
-Convert time string formats to milliseconds.
+时长字符串与毫秒转换库。
 
-Turn time string into milliseconds.
-
-|参数名|类型|说明|
-|-----|----|---|
-|str   |string|String format|
-|返回值|number|Milliseconds |
-
-Turn milliseconds into time string.
+转换时长字符串为毫秒。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number|Milliseconds |
-|返回值|string|String format|
+|str|string|字符串格式|
+|返回值|number|毫秒|
+
+转换毫秒为时长字符串。
+
+|参数名|类型|说明|
+|-----|----|---|
+|num|number|毫秒|
+|返回值|string|字符串格式|
 
 ```javascript
 ms('1s'); // -> 1000

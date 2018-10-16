@@ -1,11 +1,11 @@
 ## CN
 
-Get minimum value of given numbers.
+获取数字中的最小值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...num|number|Numbers to calculate|
-|返回值|number|Minimum value       |
+|...num|number|要计算的数字|
+|返回值|number|最小值|
 
 ```javascript
 min(2.3, 1, 4.5, 2); // 1

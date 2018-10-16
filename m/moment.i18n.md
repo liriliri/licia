@@ -1,21 +1,21 @@
 ## CN
 
-Tiny moment.js like implementation.
+简单的类 moment.js 实现。
 
-It only supports a subset of moment.js api.
+它只支持一小部分的 moment.js api。
 
-### Available methods
+### 可用方法 
 
-format, isValid, isLeapYear, isSame, isBefore, isAfter, year,
-month, date, hour, minute, second, millisecond, unix, clone,
-toDate, toArray, toJSON, toISOString, toObject, toString, set,
-startOf, endOf, add, subtract, diff
+format，isValid，isLeapYear，isSame，isBefore，isAfter，year，
+month，date，hour，minute，second，millisecond，unix，clone，
+toDate，toArray，toJSON，toISOString，toObject，toString，set，
+startOf，endOf，add，subtract，diff
 
-### Not supported
+### 不支持特性
 
-locale and units like quarter and week.
+时区以及 quarter 和 week 单位。
 
-Note: Format uses dateFormat module, so the mask is not quite the same as moment.js.
+注意：格式化功能使用 dateFormat 模块，所以掩码格式并不完全与 moment.js 一致。
 
 ```javascript
 moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'

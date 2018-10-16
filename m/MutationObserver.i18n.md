@@ -1,6 +1,6 @@
 ## CN
 
-Safe MutationObserver, does nothing if MutationObserver is not supported.
+MutationObserver 安全版本，如果不支持，则什么也不做。
 
 ```javascript
 var observer = new MutationObserver(function (mutations) {

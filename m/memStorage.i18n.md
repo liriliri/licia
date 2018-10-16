@@ -1,8 +1,8 @@
 ## CN
 
-Memory-backed implementation of the Web Storage API.
+Web Storage 接口的纯内存实现。
 
-A replacement for environments where localStorage or sessionStorage is not available.
+当 localStorage 或者 sessionStorage 无法使用时可以使用其作为替代。
 
 ```javascript
 var localStorage = window.localStorage || memStorage;

@@ -1,11 +1,11 @@
 ## CN
 
-Return a predicate function that checks if attrs are contained in an object.
+传入对象返回函数，如果传入参数中包含该对象则返回真。
 
 |参数名|类型|说明|
 |-----|----|---|
-|attrs |object  |Object of property values to match|
-|返回值|function|New predicate function            |
+|attrs|object|要匹配的对象|
+|返回值|function|真值检测函数|
 
 ```javascript
 var objects = [

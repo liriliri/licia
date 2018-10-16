@@ -1,18 +1,18 @@
 ## CN
 
-Screen orientation helper.
+屏幕方向工具库。
 
 ### on
 
-Bind change event.
+绑定 change 事件。
 
 ### off
 
-Unbind change event.
+解绑 change 事件。
 
 ### get
 
-Get current orientation(landscape or portrait).
+获取当前屏幕方向（横屏 landscape 或 竖屏 portrait）。
 
 ```javascript
 orientation.on('change', function (direction) {

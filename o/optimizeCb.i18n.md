@@ -1,3 +1,3 @@
 ## CN
 
-Used for function context binding.
+用于高效的函数上下文绑定。

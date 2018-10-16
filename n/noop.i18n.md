@@ -1,6 +1,6 @@
 ## CN
 
-A no-operation function.
+一个什么也不做的空函数。
 
 ```javascript
 noop(); // Does nothing

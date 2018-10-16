@@ -2,7 +2,7 @@
  *
  * |Name  |Type  |Desc                                |
  * |------|------|------------------------------------|
- * |value |*     |Source value                        |
+ * |val   |*     |Source value                        |
  * |return|string|String representation of given value|
  * 
  * ```javascript

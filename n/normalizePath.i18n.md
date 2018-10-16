@@ -1,11 +1,11 @@
 ## CN
 
-Normalize file path slashes.
+标准化文件路径中的斜杠。
 
 |参数名|类型|说明|
 |-----|----|---|
-|path  |string|Path to normalize|
-|返回值|string|Normalized path  |
+|path|string|源路径|
+|返回值|string|目标路径|
 
 ```javascript
 normalizePath('\\foo\\bar\\'); // -> '/foo/bar/'

@@ -1,11 +1,11 @@
 ## CN
 
-Return a sorted list of the names of every method in an object.
+获取对象中所有方法名。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to check         |
-|返回值|array |Function names in object|
+|obj|object|目标对象|
+|返回值|array|方法名列表|
 
 ```javascript
 methods(console); // -> ['Console', 'assert', 'dir', ...]

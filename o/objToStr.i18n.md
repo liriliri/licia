@@ -1,11 +1,11 @@
 ## CN
 
-Alias of Object.prototype.toString.
+Object.prototype.toString 的别名。
 
 |参数名|类型|说明|
 |-----|----|---|
-|value |*     |Source value                        |
-|返回值|string|String representation of given value|
+|val|*|目标值|
+|返回值|string|字符串表示|
 
 ```javascript
 objToStr(5); // -> '[object Number]'

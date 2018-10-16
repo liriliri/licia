@@ -1,11 +1,11 @@
 ## CN
 
-Create a function that negates the result of the predicate function.
+创建一个将原函数结果取反的函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|predicate|function|Predicate to negate|
-|返回值   |function|New function       |
+|predicate|function|源函数|
+|返回值|function|目标函数|
 
 ```javascript
 function even(n) { return n % 2 === 0 }
