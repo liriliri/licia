@@ -1,12 +1,12 @@
 ## CN
 
-Compute the greatest common divisor using Euclid's algorithm.
+使用欧几里德算法求最大公约数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|a     |number|Number to calculate    |
-|b     |number|Number to calculate    |
-|返回值|number|Greatest common divisor|
+|a|number|要计算的数字|
+|b|number|要计算的数字|
+|返回值|number|最大公约数|
 
 ```javascript
 gcd(121, 44); // -> 11

@@ -1,12 +1,12 @@
 ## CN
 
-Checks if key is a direct property.
+检查属性是否是对象自身的属性（原型链上的不算）。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object |Object to query                 |
-|key   |string |Path to check                   |
-|返回值|boolean|True if key is a direct property|
+|obj|object|目标对象|
+|key|string|键名|
+|返回值|boolean|如果是自身的属性，返回真|
 
 ```javascript
 has({one: 1}, 'one'); // -> true

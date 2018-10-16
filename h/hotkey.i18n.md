@@ -1,19 +1,19 @@
 ## CN
 
-Capture keyboard input to trigger given events.
+监听键盘触发对应的事件。
 
 ### on
 
-Register keyboard listener.
+注册键盘按键监听器。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key     |string  |Key string  |
-|listener|function|Key listener|
+|key|string|按键|
+|listener|function|监听器|
 
 ### off
 
-Unregister keyboard listener.
+注销监听器。
 
 ```javascript
 hotkey.on('k', function () {

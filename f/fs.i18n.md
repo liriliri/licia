@@ -1,6 +1,6 @@
 ## CN
 
-Promised version of node.js fs module.
+node.js fs 模块的 promise 版本。
 
 ```javascript
 fs.readFile('test.js').then(function (data) {

@@ -1,13 +1,13 @@
 ## CN
 
-Shortcut for Object.freeze.
+Object.freeze 的快捷方式。
 
-Use Object.defineProperties if Object.freeze is not supported.
+如果不支持 Object.freeze，使用 Object.defineProperties 进行模拟。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to freeze|
-|返回值|object|Object passed in|
+|obj|object|目标对象|
+|返回值|object|目标对象|
 
 ```javascript
 var a = {b: 1};

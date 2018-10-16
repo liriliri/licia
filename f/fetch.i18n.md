@@ -1,14 +1,14 @@
 ## CN
 
-Turn XMLHttpRequest into promise like.
+将 XMLHttpRequest 转换为 promise 的形式。
 
-Note: This is not a complete fetch pollyfill.
+注意：这并不是 fetch 的 pollyfill。
 
 |参数名|类型|说明|
 |-----|----|---|
-|url    |string |Request url    |
-|options|object |Request options|
-|返回值 |promise|Request promise|
+|url|string|请求地址|
+|options|object|请求选项|
+|返回值|promise|请求 promise|
 
 ```javascript
 fetch('test.json', {

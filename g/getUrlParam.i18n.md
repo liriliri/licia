@@ -1,12 +1,12 @@
 ## CN
 
-Get url param.
+获取 url 参数值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name        |string|Param name      |
-|url=location|string|Url to get param|
-|返回值      |string|Param value     |
+|name|string|参数名|
+|url=location|string|目标 url|
+|返回值|string|参数值|
 
 ```javascript
 getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'

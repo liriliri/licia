@@ -1,11 +1,11 @@
 ## CN
 
-Convert number to fraction.
+转换数字为分数形式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number|Number to convert     |
-|返回值|string|Corresponding fraction|
+|num|number|数字|
+|返回值|string|对应的分数|
 
 ```javascript
 fraction(1.2); // -> '6/5'

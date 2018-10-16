@@ -1,11 +1,11 @@
 ## CN
 
-Recursively flatten an array.
+递归拍平数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array|Array to flatten   |
-|返回值|array|New flattened array|
+|arr|array|源数组|
+|返回值|array|目标数组|
 
 ```javascript
 flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']

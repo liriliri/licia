@@ -1,12 +1,12 @@
 ## CN
 
-Return the first index where the predicate truth test passes.
+返回第一个通过真值检测元素在数组中的位置。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr      |array   |Array to search               |
-|predicate|function|Function invoked per iteration|
-|返回值   |number  |Index of matched element      |
+|arr|array|目标集合|
+|predicate|function|真值检测函数|
+|返回值|number|第一个符合条件元素的位置|
 
 ```javascript
 findIdx([{

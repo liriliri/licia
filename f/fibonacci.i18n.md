@@ -1,11 +1,11 @@
 ## CN
 
-Calculate fibonacci number.
+计算斐波那契数列中某位数字。
 
 |参数名|类型|说明|
 |-----|----|---|
-|n     |number|Index of fibonacci sequence|
-|返回值|number|Expected fibonacci number  |
+|n|number|序号 n|
+|返回值|number|斐波那契数列 n 位的数字|
 
 ```javascript
 fibonacci(1); // -> 1

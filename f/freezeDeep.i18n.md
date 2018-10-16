@@ -1,11 +1,11 @@
 ## CN
 
-Recursively use Object.freeze.
+递归进行 Object.freeze。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to freeze|
-|返回值|object|Object passed in|
+|obj|object|目标对象|
+|返回值|object|目标对象|
 
 ```javascript
 var a = {b: {c: 1}};

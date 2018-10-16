@@ -1,11 +1,11 @@
 ## CN
 
-Turn bytes into human readable file size.
+将字节数转换为易于阅读的形式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|bytes |number|File bytes        |
-|返回值|string|Readable file size|
+|bytes|number|文件字节大小|
+|返回值|string|易于阅读的文件大小|
 
 ```javascript
 fileSize(5); // -> '5'

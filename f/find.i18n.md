@@ -1,13 +1,13 @@
 ## CN
 
-Find the first value that passes a truth test in a collection.
+找到集合中第一个通过真值检测的元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj      |array object|Collection to iterate over       |
-|predicate|function    |Function invoked per iteration   |
-|[ctx]    |*           |Predicate context                |
-|返回值   |*           |First value that passes predicate|
+|obj|array object|目标集合|
+|predicate|function|真值检测函数|
+|[ctx]|*|函数上下文|
+|返回值|*|第一个通过的元素|
 
 ```javascript
 find([{

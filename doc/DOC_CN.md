@@ -2350,15 +2350,15 @@ extractUrl(str); // -> ['http://eustia.liriliri.io']
 
 ## fetch
 
-Turn XMLHttpRequest into promise like.
+将 XMLHttpRequest 转换为 promise 的形式。
 
-Note: This is not a complete fetch pollyfill.
+注意：这并不是 fetch 的 pollyfill。
 
 |参数名|类型|说明|
 |-----|----|---|
-|url    |string |Request url    |
-|options|object |Request options|
-|返回值 |promise|Request promise|
+|url|string|请求地址|
+|options|object|请求选项|
+|返回值|promise|请求 promise|
 
 ```javascript
 fetch('test.json', {
@@ -2375,12 +2375,12 @@ fetch('test.json', {
 
 ## fibonacci
 
-Calculate fibonacci number.
+计算斐波那契数列中某位数字。
 
 |参数名|类型|说明|
 |-----|----|---|
-|n     |number|Index of fibonacci sequence|
-|返回值|number|Expected fibonacci number  |
+|n|number|序号 n|
+|返回值|number|斐波那契数列 n 位的数字|
 
 ```javascript
 fibonacci(1); // -> 1
@@ -2389,12 +2389,12 @@ fibonacci(3); // -> 2
 
 ## fileSize
 
-Turn bytes into human readable file size.
+将字节数转换为易于阅读的形式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|bytes |number|File bytes        |
-|返回值|string|Readable file size|
+|bytes|number|文件字节大小|
+|返回值|string|易于阅读的文件大小|
 
 ```javascript
 fileSize(5); // -> '5'
@@ -2406,15 +2406,15 @@ fileSize(1500000000000); // -> '1.36T'
 
 ## fill
 
-Fill elements of array with value.
+在数组指定位置填充指定值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr           |array |Array to fill           |
-|val           |*     |Value to fill array with|
-|start=0       |number|Start position          |
-|end=arr.length|number|End position            |
-|返回值        |array |Filled array            |
+|arr|array|源数组|
+|val|*|填充数组的值|
+|start=0|number|起始位置|
+|end=arr.length|number|结束位置，不包括|
+|返回值|array|目标数组|
 
 ```javascript
 fill([1, 2, 3], '*'); // -> ['*', '*', '*']
@@ -2423,14 +2423,14 @@ fill([1, 2, 3], '*', 1, 2); // -> [1, '*', 3]
 
 ## filter
 
-Iterates over elements of collection, returning an array of all the values that pass a truth test.
+遍历集合中的每个元素，返回所有通过真值检测的元素组成的数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj      |array   |Collection to iterate over             |
-|predicate|function|Function invoked per iteration         |
-|[ctx]    |*       |Predicate context                      |
-|返回值   |array   |Array of all values that pass predicate|
+|obj|array|要遍历的集合|
+|predicate|function|真值检测函数|
+|[ctx]|*|函数上下文|
+|返回值|array|包含所有通过真值检测元素的数组|
 
 ```javascript
 filter([1, 2, 3, 4, 5], function (val) {
@@ -2440,14 +2440,14 @@ filter([1, 2, 3, 4, 5], function (val) {
 
 ## find
 
-Find the first value that passes a truth test in a collection.
+找到集合中第一个通过真值检测的元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj      |array object|Collection to iterate over       |
-|predicate|function    |Function invoked per iteration   |
-|[ctx]    |*           |Predicate context                |
-|返回值   |*           |First value that passes predicate|
+|obj|array object|目标集合|
+|predicate|function|真值检测函数|
+|[ctx]|*|函数上下文|
+|返回值|*|第一个通过的元素|
 
 ```javascript
 find([{
@@ -2463,13 +2463,13 @@ find([{
 
 ## findIdx
 
-Return the first index where the predicate truth test passes.
+返回第一个通过真值检测元素在数组中的位置。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr      |array   |Array to search               |
-|predicate|function|Function invoked per iteration|
-|返回值   |number  |Index of matched element      |
+|arr|array|目标集合|
+|predicate|function|真值检测函数|
+|返回值|number|第一个符合条件元素的位置|
 
 ```javascript
 findIdx([{
@@ -2485,14 +2485,14 @@ findIdx([{
 
 ## findKey
 
-Return the first key where the predicate truth test passes.
+返回对象中第一个通过真值检测的属性键名。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj      |object  |Object to search              |
-|predicate|function|Function invoked per iteration|
-|[ctx]    |*       |Predicate context             |
-|返回值   |string  |Key of matched element        |
+|obj|object|目标对象|
+|predicate|function|真值检测函数|
+|[ctx]|*|函数上下文|
+|返回值|string|符合条件的键名|
 
 ```javascript
 findKey({a: 1, b: 2}, function (val) {
@@ -2502,13 +2502,13 @@ findKey({a: 1, b: 2}, function (val) {
 
 ## findLastIdx
 
-Return the last index where the predicate truth test passes.
+同 findIdx，只是查找顺序改为从后往前。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr      |array   |Array to search               |
-|predicate|function|Function invoked per iteration|
-|返回值   |number  |Last index of matched element |
+|arr|array|目标集合|
+|predicate|function|真值检测函数|
+|返回值|number|从后往前，第一个符合条件元素的位置|
 
 ```javascript
 findLastIdx([{
@@ -2527,12 +2527,12 @@ findLastIdx([{
 
 ## flatten
 
-Recursively flatten an array.
+递归拍平数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array|Array to flatten   |
-|返回值|array|New flattened array|
+|arr|array|源数组|
+|返回值|array|目标数组|
 
 ```javascript
 flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
@@ -2540,12 +2540,12 @@ flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 
 ## fnParams
 
-Get a function parameter's names.
+获取函数的参数名列表。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to get parameters|
-|返回值|array   |Names                     |
+|fn|function|目标函数|
+|返回值|array|参数名|
 
 ```javascript
 fnParams(function (a, b) {}); // -> ['a', 'b']
@@ -2553,22 +2553,22 @@ fnParams(function (a, b) {}); // -> ['a', 'b']
 
 ## format
 
-Format string in a printf-like format.
+使用类似于 printf 的方式来格式化字符串。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str      |string|String to format                   |
-|...values|*     |Values to replace format specifiers|
-|返回值   |string|Formatted string                   |
+|str|string|源字符串|
+|...values|*|替换占位符的值|
+|返回值|string|目标字符串|
 
 ### Format Specifiers
 
-|Specifier|Desc                |
-|---------|--------------------|
-|%s       |String              |
-|%d, %i   |Integer             |
-|%f       |Floating point value|
-|%o       |Object              |
+|占位符|说明|
+|-----|----|
+|%s|字符串|
+|%d, %i|整数|
+|%f|浮点数|
+|%o|对象|
 
 ```javascript
 format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
@@ -2576,12 +2576,12 @@ format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
 
 ## fraction
 
-Convert number to fraction.
+转换数字为分数形式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|num   |number|Number to convert     |
-|返回值|string|Corresponding fraction|
+|num|number|数字|
+|返回值|string|对应的分数|
 
 ```javascript
 fraction(1.2); // -> '6/5'
@@ -2589,14 +2589,14 @@ fraction(1.2); // -> '6/5'
 
 ## freeze
 
-Shortcut for Object.freeze.
+Object.freeze 的快捷方式。
 
-Use Object.defineProperties if Object.freeze is not supported.
+如果不支持 Object.freeze，使用 Object.defineProperties 进行模拟。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to freeze|
-|返回值|object|Object passed in|
+|obj|object|目标对象|
+|返回值|object|目标对象|
 
 ```javascript
 var a = {b: 1};
@@ -2607,12 +2607,12 @@ console.log(a); // -> {b: 1}
 
 ## freezeDeep
 
-Recursively use Object.freeze.
+递归进行 Object.freeze。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to freeze|
-|返回值|object|Object passed in|
+|obj|object|目标对象|
+|返回值|object|目标对象|
 
 ```javascript
 var a = {b: {c: 1}};
@@ -2623,7 +2623,7 @@ console.log(a); // -> {b: {c: 1}}
 
 ## fs
 
-Promised version of node.js fs module.
+node.js fs 模块的 promise 版本。
 
 ```javascript
 fs.readFile('test.js').then(function (data) {
@@ -2635,13 +2635,13 @@ fs.readFile('test.js').then(function (data) {
 
 ## gcd
 
-Compute the greatest common divisor using Euclid's algorithm.
+使用欧几里德算法求最大公约数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|a     |number|Number to calculate    |
-|b     |number|Number to calculate    |
-|返回值|number|Greatest common divisor|
+|a|number|要计算的数字|
+|b|number|要计算的数字|
+|返回值|number|最大公约数|
 
 ```javascript
 gcd(121, 44); // -> 11
@@ -2649,13 +2649,13 @@ gcd(121, 44); // -> 11
 
 ## getUrlParam
 
-Get url param.
+获取 url 参数值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name        |string|Param name      |
-|url=location|string|Url to get param|
-|返回值      |string|Param value     |
+|name|string|参数名|
+|url=location|string|目标 url|
+|返回值|string|参数值|
 
 ```javascript
 getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
@@ -2663,13 +2663,13 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 
 ## has
 
-Checks if key is a direct property.
+检查属性是否是对象自身的属性（原型链上的不算）。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object |Object to query                 |
-|key   |string |Path to check                   |
-|返回值|boolean|True if key is a direct property|
+|obj|object|目标对象|
+|key|string|键名|
+|返回值|boolean|如果是自身的属性，返回真|
 
 ```javascript
 has({one: 1}, 'one'); // -> true
@@ -2677,20 +2677,20 @@ has({one: 1}, 'one'); // -> true
 
 ## hotkey
 
-Capture keyboard input to trigger given events.
+监听键盘触发对应的事件。
 
 ### on
 
-Register keyboard listener.
+注册键盘按键监听器。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key     |string  |Key string  |
-|listener|function|Key listener|
+|key|string|按键|
+|listener|function|监听器|
 
 ### off
 
-Unregister keyboard listener.
+注销监听器。
 
 ```javascript
 hotkey.on('k', function () {
@@ -2703,12 +2703,12 @@ hotkey.off('shift+a', keyDown);
 
 ## hslToRgb
 
-Convert hsl to rgb.
+将 hsl 格式的颜色值转换为 rgb 格式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|hsl   |array|Hsl values|
-|返回值|array|Rgb values|
+|hsl|array|hsl 值|
+|返回值|array|rgb 值|
 
 ```javascript
 hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
