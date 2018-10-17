@@ -1,11 +1,11 @@
 ## CN
 
-Create an array of the own enumerable property values of object.
+返回对象所有的属性值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to query         |
-|返回值|array |Array of property values|
+|obj|object|目标对象|
+|返回值|array|所有属性值|
 
 ```javascript
 values({one: 1, two: 2}); // -> [1, 2]

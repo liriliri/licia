@@ -11,13 +11,13 @@
  * 
  * ### decode
  * 
- * |Name        |Type   |Desc                  |
- * |------------|-------|----------------------|
- * |str         |string |String to decode      |
- * |[safe=false]|boolean|Suppress error if true|
- * |return      |string |Decoded string        |
- * 
  * Turn any UTF-8 encoded string into UTF-8 decoded string.
+ * 
+ * |Name      |Type   |Desc                  |
+ * |----------|-------|----------------------|
+ * |str       |string |String to decode      |
+ * |safe=false|boolean|Suppress error if true|
+ * |return    |string |Decoded string        |
  * 
  * ```javascript
  * utf8.encode('\uD800\uDC00'); // ->  '\xF0\x90\x80\x80'

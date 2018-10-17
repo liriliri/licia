@@ -7,7 +7,7 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是函数，返回真|
 
-Generator function is also classified as true.
+Generator 函数返回真。
 
 ```javascript
 isFn(function() {}); // -> true

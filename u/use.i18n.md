@@ -1,11 +1,11 @@
 ## CN
 
-Use modules that is created by define.
+使用 define 创建的模块。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[requires]|array   |Dependencies        |
-|method    |function|Codes to be executed|
+|[requires]|array|依赖|
+|method|function|要执行的代码|
 
 ```javascript
 define('A', function () {

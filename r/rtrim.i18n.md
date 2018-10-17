@@ -1,6 +1,5 @@
 ## CN
 
-Remove chars or white-spaces from end of string.
 删除字符串尾部指定字符或空格。
 
 |参数名|类型|说明|

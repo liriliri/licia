@@ -1,67 +1,67 @@
 ## CN
 
-Simple url manipulator.
+简单 url 操作库。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|url=location|string|Url string|
+|url=location|string|url 地址|
 
 ### setQuery
 
-Set query value.
+设置 query 值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name  |string|Query name |
-|value |string|Query value|
-|返回值|Url   |this       |
+|name|string|query 名|
+|value|string|query 值|
+|返回值|Url|this|
 
 |参数名|类型|说明|
 |-----|----|---|
-|names |object|query object|
-|返回值|Url   |this        |
+|names|object|query 对象|
+|返回值|Url|this|
 
 ### rmQuery
 
-Remove query value.
+移除 query 值。
 
-|Name  |Type        |Desc      |
-|------|------------|----------|
-|name  |string array|Query name|
-|返回值|Url         |this      |
+|参数名|类型|说明|
+|-----|----|---|
+|name|string array|query 名|
+|返回值|Url|this|
 
 ### parse
 
-[static] Parse url into an object.
+【静态】将 url 解析成对象。
 
-|Name  |Type  |Desc      |
-|------|------|----------|
-|url   |string|Url string|
-|返回值|object|Url object|
+|参数名|类型|说明|
+|-----|----|---|
+|url|string|url 地址|
+|返回值|object|url 对象|
 
 ### stringify
 
-[static] Stringify url object into a string.
+【静态】将 url 对象转换为 url 地址。
 
-|Name  |Type  |Desc      |
-|------|------|----------|
-|url   |object|Url object|
-|返回值|string|Url string|
+|参数名|类型|说明|
+|-----|----|---|
+|url|object|url 对象|
+|返回值|string|url 地址|
 
-An url object contains the following properties:
+url 对象包含以下属性值：
 
-|Name    |Desc                                                                                  |
-|--------|--------------------------------------------------------------------------------------|
-|protocol|The protocol scheme of the URL (e.g. http:)                                           |
-|slashes |A boolean which indicates whether the protocol is followed by two forward slashes (//)|
-|auth    |Authentication information portion (e.g. username:password)                           |
-|hostname|Host name without port number                                                         |
-|port    |Optional port number                                                                  |
-|pathname|URL path                                                                              |
-|query   |Parsed object containing query string                                                 |
-|hash    |The "fragment" portion of the URL including the pound-sign (#)                        |
+|属性名|说明|
+|-----|----|
+|protocol|协议名，（如 http:）|
+|slashes|协议名后是否有双斜杠|
+|auth|身份验证（例如 用户名:密码）|
+|hostname|Host 名，不带端口号|
+|port|端口号|
+|pathname|URL 路径|
+|query|query 对象|
+|hash|URL # 字符后边的部分，# 包含在内|
 
 ```javascript
 var url = new Url('http://example.com:8080?eruda=true');

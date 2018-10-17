@@ -1,11 +1,11 @@
 ## CN
 
-Get execution time of a function.
+获取函数的执行时间。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to measure time|
-|返回值|number  |Execution time, ms      |
+|fn|function|要计算执行时间的函数|
+|返回值|number|执行时间，单位毫秒|
 
 ```javascript
 timeTaken(function () {

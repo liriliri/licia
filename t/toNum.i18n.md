@@ -1,11 +1,11 @@
 ## CN
 
-Convert value to a number.
+将任意值转换为数字。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*     |Value to process|
-|返回值|number|Resulted number |
+|val|*|要转换的值|
+|返回值|number|转换后的数字|
 
 ```javascript
 toNum('5'); // -> 5

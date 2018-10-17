@@ -1,34 +1,34 @@
 ## CN
 
-Object values validation.
+对象属性值校验。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|options|object|Validation configuration|
+|options|object|校验配置|
 
 ### validate
 
-Validate object.
+校验对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to validate              |
-|返回值|*     |Validation result, true means ok|
+|obj|object|目标对象|
+|返回值|*|校验结果，true 表示通过|
 
 ### addPlugin
 
-[static] Add plugin.
+【静态】添加插件。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name  |string  |Plugin name       |
-|plugin|function|Validation handler|
+|name|string|插件名|
+|plugin|function|校验函数|
 
-### Default Plugins
+### 默认插件 
 
-Required, number, boolean, string and regexp.
+required，number，boolean，string 和 regexp。
 
 ```javascript
 Validator.addPlugin('custom', function (val, key, config) {

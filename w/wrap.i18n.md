@@ -1,12 +1,12 @@
 ## CN
 
-Wrap the function inside a wrapper function, passing it as the first argument.
+将函数封装到包裹函数里面, 并把它作为第一个参数传给包裹函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn     |*       |Function to wrap|
-|wrapper|function|Wrapper function|
-|返回值 |function|New function    |
+|fn|*|要包裹的函数|
+|wrapper|function|包裹函数|
+|返回值 |function|目标函数|
 
 ```javascript
 var p = wrap(escape, function(fn, text) {

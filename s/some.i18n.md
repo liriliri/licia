@@ -1,6 +1,5 @@
 ## CN
 
-Check if predicate return truthy for any element.
 检查集合中是否有元素通过真值检测。
 
 |参数名|类型|说明|

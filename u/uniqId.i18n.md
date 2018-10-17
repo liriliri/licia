@@ -1,11 +1,11 @@
 ## CN
 
-Generate a globally-unique id.
+生成全局唯一 id。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[prefix]|string|Id prefix         |
-|返回值  |string|Globally-unique id|
+|[prefix]|string|id 前缀|
+|返回值|string|全局唯一 id|
 
 ```javascript
 uniqId('eusita_'); // -> 'eustia_xxx'

@@ -373,7 +373,7 @@ color.toHsl(); // -> 'hsl(210, 25%, 73%)'
 
 Flux 调度器。
 
-[相关文档](https://facebook.github.io/flux/docs/dispatcher.html)。
+[相关文档](https://facebook.github.io/flux/docs/dispatcher.html)
 
 ```javascript
 var dispatcher = new Dispatcher();
@@ -620,7 +620,7 @@ store.set('name', 'licia');
 
 获取当前日志级别。
 
-### trace, debug, info, warn, error
+### trace，debug，info，warn，error
 
 打日志方法。
 
@@ -1016,43 +1016,43 @@ store.on('change', function (key, newVal, oldVal) {
 
 ## Tween
 
-Tween engine for JavaScript animations.
+JavaScript 补间动画库。
 
-Extend from Emitter.
+继承自 Emitter 类。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj |object|Values to tween|
+|obj|object|要补间的对象|
 
 ### to
 
 |参数名|类型|说明|
 |-----|----|---|
-|destination|obj            |Final properties|
-|duration   |number         |Tween duration  |
-|ease       |string function|Easing function |
+|destination|obj|目标属性值|
+|duration|number|补间时长|
+|ease|string function|缓动函数|
 
 ### play
 
-Begin playing forward.
+开始播放。
 
 ### pause
 
-Pause the animation.
+暂停动画。
 
 ### paused
 
-Get animation paused state.
+检查动画是否暂停。
 
 ### progress
 
-Update or get animation progress.
+设置或获取动画进度。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[progress]|number|Number between 0 and 1|
+|[progress]|number|介于 0 到 1 之间的数字|
 
 ```javascript
 var pos = {x: 0, y: 0};
@@ -1068,68 +1068,68 @@ tween.to({x: 100, y: 100}, 1000, 'inElastic').play();
 
 ## Url
 
-Simple url manipulator.
+简单 url 操作库。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|url=location|string|Url string|
+|url=location|string|url 地址|
 
 ### setQuery
 
-Set query value.
+设置 query 值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name  |string|Query name |
-|value |string|Query value|
-|返回值|Url   |this       |
+|name|string|query 名|
+|value|string|query 值|
+|返回值|Url|this|
 
 |参数名|类型|说明|
 |-----|----|---|
-|names |object|query object|
-|返回值|Url   |this        |
+|names|object|query 对象|
+|返回值|Url|this|
 
 ### rmQuery
 
-Remove query value.
+移除 query 值。
 
-|Name  |Type        |Desc      |
-|------|------------|----------|
-|name  |string array|Query name|
-|返回值|Url         |this      |
+|参数名|类型|说明|
+|-----|----|---|
+|name|string array|query 名|
+|返回值|Url|this|
 
 ### parse
 
-[static] Parse url into an object.
+【静态】将 url 解析成对象。
 
-|Name  |Type  |Desc      |
-|------|------|----------|
-|url   |string|Url string|
-|返回值|object|Url object|
+|参数名|类型|说明|
+|-----|----|---|
+|url|string|url 地址|
+|返回值|object|url 对象|
 
 ### stringify
 
-[static] Stringify url object into a string.
+【静态】将 url 对象转换为 url 地址。
 
-|Name  |Type  |Desc      |
-|------|------|----------|
-|url   |object|Url object|
-|返回值|string|Url string|
+|参数名|类型|说明|
+|-----|----|---|
+|url|object|url 对象|
+|返回值|string|url 地址|
 
-An url object contains the following properties:
+url 对象包含以下属性值：
 
-|Name    |Desc                                                                                  |
-|--------|--------------------------------------------------------------------------------------|
-|protocol|The protocol scheme of the URL (e.g. http:)                                           |
-|slashes |A boolean which indicates whether the protocol is followed by two forward slashes (//)|
-|auth    |Authentication information portion (e.g. username:password)                           |
-|hostname|Host name without port number                                                         |
-|port    |Optional port number                                                                  |
-|pathname|URL path                                                                              |
-|query   |Parsed object containing query string                                                 |
-|hash    |The "fragment" portion of the URL including the pound-sign (#)                        |
+|属性名|说明|
+|-----|----|
+|protocol|协议名，（如 http:）|
+|slashes|协议名后是否有双斜杠|
+|auth|身份验证（例如 用户名:密码）|
+|hostname|Host 名，不带端口号|
+|port|端口号|
+|pathname|URL 路径|
+|query|query 对象|
+|hash|URL # 字符后边的部分，# 包含在内|
 
 ```javascript
 var url = new Url('http://example.com:8080?eruda=true');
@@ -1141,35 +1141,35 @@ utl.toString(); // -> 'http://example.com:8080/?foo=bar'
 
 ## Validator
 
-Object values validation.
+对象属性值校验。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|options|object|Validation configuration|
+|options|object|校验配置|
 
 ### validate
 
-Validate object.
+校验对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to validate              |
-|返回值|*     |Validation result, true means ok|
+|obj|object|目标对象|
+|返回值|*|校验结果，true 表示通过|
 
 ### addPlugin
 
-[static] Add plugin.
+【静态】添加插件。
 
 |参数名|类型|说明|
 |-----|----|---|
-|name  |string  |Plugin name       |
-|plugin|function|Validation handler|
+|name|string|插件名|
+|plugin|function|校验函数|
 
-### Default Plugins
+### 默认插件 
 
-Required, number, boolean, string and regexp.
+required，number，boolean，string 和 regexp。
 
 ```javascript
 Validator.addPlugin('custom', function (val, key, config) {
@@ -1892,7 +1892,7 @@ dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|源函数|
-|wait|number|延迟的毫秒数|
+|wait|number|延迟毫秒数|
 |返回值|function|目标函数|
 
 ```javascript
@@ -2565,7 +2565,7 @@ fnParams(function (a, b) {}); // -> ['a', 'b']
 |...values|*|替换占位符的值|
 |返回值|string|目标字符串|
 
-### Format Specifiers
+### 格式占位符 
 
 |占位符|说明|
 |-----|----|
@@ -3136,7 +3136,7 @@ isFinite(Infinity); // -> false
 |val|*|要检查的值|
 |返回值|boolean|如果是函数，返回真|
 
-Generator function is also classified as true.
+Generator 函数返回真。
 
 ```javascript
 isFn(function() {}); // -> true
@@ -4723,7 +4723,6 @@ rpad('abc', 5, 'ab'); // -> 'abcab'
 
 ## rtrim
 
-Remove chars or white-spaces from end of string.
 删除字符串尾部指定字符或空格。
 
 |参数名|类型|说明|
@@ -4922,7 +4921,6 @@ snakeCase('foo.bar'); // -> foo_bar
 
 ## some
 
-Check if predicate return truthy for any element.
 检查集合中是否有元素通过真值检测。
 
 |参数名|类型|说明|
@@ -5131,12 +5129,12 @@ swap(arr, 0, 1); // -> [2, 1]
 
 ## template
 
-Compile JavaScript template into function that can be evaluated for rendering.
+将模板字符串编译成函数用于渲染。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string  |Template string           |
-|返回值|function|Compiled template function|
+|str|string|模板字符串|
+|返回值|function|编译后的模板函数|
 
 ```javascript
 template('Hello <%= name %>!')({name: 'licia'}); // -> 'Hello licia!'
@@ -5146,13 +5144,13 @@ template('<%if (echo) {%>Hello licia!<%}%>')({echo: true}); // -> 'Hello licia!'
 
 ## throttle
 
-Return a new throttled version of the passed function.
+返回函数的节流阀版本。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to throttle           |
-|wait  |number  |Number of milliseconds to delay|
-|返回值|function|New throttled function         |
+|fn|function|源函数|
+|wait|number|延迟毫秒数|
+|返回值|function|目标函数|
 
 ```javascript
 $(window).scroll(throttle(updatePos, 100));
@@ -5160,21 +5158,21 @@ $(window).scroll(throttle(updatePos, 100));
 
 ## through
 
-Tiny wrapper of stream Transform.
+stream Transform 类的简单包装。
 
 |参数名|类型|说明|
 |-----|----|---|
-|opts={}|Object  |Options to initialize stream|
-|transform|function|Transform implementation    |
-|[flush]  |function|Flush implementation        |
+|opts={}|Object|初始化流选项|
+|transform|function|Transform 实现|
+|[flush]|function|Flush 实现|
 
 ### obj
 
-Shortcut for setting objectMode to true.
+设置 objectMode 为真的快捷方式。
 
 ### ctor
 
-Return a class that extends stream Transform.
+返回继承 Transform 的类。
 
 ```javascript
 fs.createReadStream('in.txt')
@@ -5187,13 +5185,13 @@ fs.createReadStream('in.txt')
 
 ## timeAgo
 
-Format datetime with *** time ago statement.
+将时间格式化成多久之前的形式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|date          |Date  |Date to calculate        |
-|[now=new Date]|Date  |Current date             |
-|返回值        |string|Formatted time ago string|
+|date|Date|目标日期|
+|[now=new Date]|Date|当时日期|
+|返回值|string|格式化时间表示|
 
 ```javascript
 var now = new Date().getTime();
@@ -5204,12 +5202,12 @@ timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
 
 ## timeTaken
 
-Get execution time of a function.
+获取函数的执行时间。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to measure time|
-|返回值|number  |Execution time, ms      |
+|fn|function|要计算执行时间的函数|
+|返回值|number|执行时间，单位毫秒|
 
 ```javascript
 timeTaken(function () {
@@ -5219,12 +5217,12 @@ timeTaken(function () {
 
 ## toArr
 
-Convert value to an array.
+将任意值转换为数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*    |Value to convert|
-|返回值|array|Converted array |
+|val|*|要转换的值|
+|返回值|array|转换后的数组|
 
 ```javascript
 toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
@@ -5235,12 +5233,12 @@ toArr(null); // -> []
 
 ## toBool
 
-Convert value to a boolean.
+将任意值转换为布尔值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*      |Value to convert |
-|返回值|boolean|Converted boolean|
+|val|*|要转换的值|
+|返回值|boolean|转换后的布尔值|
 
 ```javascript
 toBool(true); // -> true
@@ -5254,12 +5252,12 @@ toBool('false'); // -> false
 
 ## toDate
 
-Convert value to a Date.
+将任意值转换为日期类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*   |Value to convert|
-|返回值|Date|Converted Date  |
+|val|*|要转换的值|
+|返回值|Date|转换后的日期值|
 
 ```javascript
 toDate('20180501');
@@ -5269,14 +5267,14 @@ toDate(1525107450849);
 
 ## toEl
 
-Convert html string to dom elements.
+将 html 字符串转换为 dom 元素。
 
-There should be only one root element.
+必须只有一个根元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string |Html string |
-|返回值|element|Html element|
+|str|string|html 字符串|
+|返回值|element|html 元素|
 
 ```javascript
 toEl('<div>test</div>');
@@ -5284,12 +5282,12 @@ toEl('<div>test</div>');
 
 ## toInt
 
-Convert value to an integer.
+将任意值转换为整数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*     |Value to convert |
-|返回值|number|Converted integer|
+|val|*|要转换的值|
+|返回值|number|转换后的整数|
 
 ```javascript
 toInt(1.1); // -> 1
@@ -5298,12 +5296,12 @@ toInt(undefined); // -> 0
 
 ## toNum
 
-Convert value to a number.
+将任意值转换为数字。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*     |Value to process|
-|返回值|number|Resulted number |
+|val|*|要转换的值|
+|返回值|number|转换后的数字|
 
 ```javascript
 toNum('5'); // -> 5
@@ -5311,12 +5309,12 @@ toNum('5'); // -> 5
 
 ## toSrc
 
-Convert function to its source code.
+将函数转换为源码。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to convert|
-|返回值|string  |Source code        |
+|fn|function|目标函数|
+|返回值|string|源码|
 
 ```javascript
 toSrc(Math.min); // -> 'function min() { [native code] }'
@@ -5325,12 +5323,12 @@ toSrc(function () {}) // -> 'function () { }'
 
 ## toStr
 
-Convert value to a string.
+将任意值转换为字符串。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*     |Value to convert|
-|返回值|string|Resulted string |
+|val|*|要转换的值|
+|返回值|string|转换后的字符串|
 
 ```javascript
 toStr(null); // -> ''
@@ -5341,12 +5339,12 @@ toStr([1, 2, 3]); // -> '1,2,3'
 
 ## topoSort
 
-Topological sorting algorithm.
+拓扑排序实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|edges |array|Dependencies|
-|返回值|array|Sorted order|
+|edges|array|依赖关系|
+|返回值|array|排序后的数组|
 
 ```javascript
 topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
@@ -5354,13 +5352,13 @@ topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
 
 ## trigger
 
-Trigger browser events.
+触发浏览器事件。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[el=document]|element|Element to trigger|
-|type         |string |Event type        |
-|opts         |object |Options           |
+|[el=document]|element|目标元素|
+|type|string|事件类型|
+|opts|object|选项|
 
 ```javascript
 trigger(el, 'mouseup');
@@ -5369,13 +5367,13 @@ trigger('keydown', {keyCode: 65});
 
 ## trim
 
-Remove chars or white-spaces from beginning end of string.
+删除字符串两边指定字符或空格。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string      |String to trim    |
-|chars |string array|Characters to trim|
-|返回值|string      |Trimmed string    |
+|str|string|源字符串|
+|chars|string array|删除字符|
+|返回值|string|目标字符串|
 
 ```javascript
 trim(' abc  '); // -> 'abc'
@@ -5385,12 +5383,12 @@ trim('_abc_', ['a', 'c', '_']); // -> 'b'
 
 ## tryIt
 
-Run function in a try catch.
+在 try catch 块中运行函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn  |function|Function to try catch|
-|[cb]|function|Callback             |
+|fn|function|目标函数|
+|[cb]|function|回调|
 
 ```javascript
 tryIt(function () {
@@ -5402,12 +5400,12 @@ tryIt(function () {
 
 ## type
 
-Determine the internal JavaScript [[Class]] of an object.
+获取 JavaScript 对象的内部类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*     |Value to get type         |
-|返回值|string|Type of object, lowercased|
+|val|*|目标对象|
+|返回值|string|对象类型，小写|
 
 ```javascript
 type(5); // -> 'number'
@@ -5418,25 +5416,25 @@ type([]); // -> 'array'
 
 ## ucs2
 
-UCS-2 encoding and decoding.
+UCS-2 编解码。
 
 ### encode
 
-Create a string using an array of code point values.
+通过码点序列创建字符串。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array |Array of code points|
-|返回值|string|Encoded string      |
+|arr|array|码点序列|
+|返回值|string|编码后的字符串|
 
 ### decode
 
-Create an array of code point values using a string.
+通过字符串创建码点序列。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|Input string        |
-|返回值|array |Array of code points|
+|str|string|字符串|
+|返回值|array|码点序列|
 
 ```javascript
 ucs2.encode([0x61, 0x62, 0x63]); // -> 'abc'
@@ -5447,12 +5445,12 @@ ucs2.decode('𝌆').length; // -> 1
 
 ## unescape
 
-Convert HTML entities back, the inverse of escape.
+和 escape 相反，转义 HTML 实体回去。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to unescape|
-|返回值|string|unescaped string  |
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 unescape('You &amp; Me'); -> // -> 'You & Me'
@@ -5460,12 +5458,12 @@ unescape('You &amp; Me'); -> // -> 'You & Me'
 
 ## union
 
-Create an array of unique values, in order, from all given arrays.
+返回传入所有数组的并集。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...arr|array|Arrays to inspect           |
-|返回值|array|New array of combined values|
+|...arr|array|要合并的数组|
+|返回值|array|数组并集|
 
 ```javascript
 union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
@@ -5473,12 +5471,12 @@ union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
 
 ## uniqId
 
-Generate a globally-unique id.
+生成全局唯一 id。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[prefix]|string|Id prefix         |
-|返回值  |string|Globally-unique id|
+|[prefix]|string|id 前缀|
+|返回值|string|全局唯一 id|
 
 ```javascript
 uniqId('eusita_'); // -> 'eustia_xxx'
@@ -5486,13 +5484,13 @@ uniqId('eusita_'); // -> 'eustia_xxx'
 
 ## unique
 
-Create duplicate-free version of an array.
+返回数组去重后的副本。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr      |array   |Array to inspect             |
-|[compare]|function|Function for comparing values|
-|返回值   |array   |New duplicate free array     |
+|arr|array|源数组|
+|[compare]|function|比较函数|
+|返回值|array|目标数组|
 
 ```javascript
 unique([1, 2, 3, 1]); // -> [1, 2, 3]
@@ -5500,12 +5498,12 @@ unique([1, 2, 3, 1]); // -> [1, 2, 3]
 
 ## unzip
 
-Opposite of zip.
+与 zip 相反。 
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array|Array of grouped elements to process|
-|返回值|array|New array of regrouped elements     |
+|arr|array|源数组|
+|返回值|array|目标数组|
 
 ```javascript
 unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, false]]
@@ -5513,12 +5511,12 @@ unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, fals
 
 ## upperCase
 
-Convert string to upper case.
+转换字符串为大写。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert|
-|返回值|string|Uppercased string|
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 upperCase('test'); // -> 'TEST'
@@ -5526,12 +5524,12 @@ upperCase('test'); // -> 'TEST'
 
 ## upperFirst
 
-Convert the first character of string to upper case.
+将字符串的第一个字符转换为大写。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert|
-|返回值|string|Converted string |
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 upperFirst('red'); // -> Red
@@ -5539,12 +5537,12 @@ upperFirst('red'); // -> Red
 
 ## use
 
-Use modules that is created by define.
+使用 define 创建的模块。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[requires]|array   |Dependencies        |
-|method    |function|Codes to be executed|
+|[requires]|array|依赖|
+|method|function|要执行的代码|
 
 ```javascript
 define('A', function () {
@@ -5557,26 +5555,26 @@ use(['A'], function (A) {
 
 ## utf8
 
-UTF-8 encoding and decoding.
+UTF-8 编解码。
 
 ### encode
 
-Turn any UTF-8 decoded string into UTF-8 encoded string.
+UTF-8 编码。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to encode|
-|返回值|string|Encoded string  |
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ### decode
 
+UTF-8 解码。
+
 |参数名|类型|说明|
 |-----|----|---|
-|str         |string |String to decode      |
-|[safe=false]|boolean|Suppress error if true|
-|返回值      |string |Decoded string        |
-
-Turn any UTF-8 encoded string into UTF-8 decoded string.
+|str|string|源字符串|
+|safe=false|boolean|如果设为真，不抛错误|
+|返回值|string|目标字符串|
 
 ```javascript
 utf8.encode('\uD800\uDC00'); // ->  '\xF0\x90\x80\x80'
@@ -5585,9 +5583,9 @@ utf8.decode('\xF0\x90\x80\x80'); // -> '\uD800\uDC00'
 
 ## uuid
 
-RFC4122 version 4 compliant uuid generator.
+生成符合 RFC4112 版本 4 协议的 uuid。
 
-Check [RFC4122 4.4](http://www.ietf.org/rfc/rfc4122.txt) for reference.
+相关标准 [RFC4122 4.4](http://www.ietf.org/rfc/rfc4122.txt)。
 
 ```javascript
 uuid(); // -> '53ce0497-6554-49e9-8d79-347406d2a88b'
@@ -5595,12 +5593,12 @@ uuid(); // -> '53ce0497-6554-49e9-8d79-347406d2a88b'
 
 ## values
 
-Create an array of the own enumerable property values of object.
+返回对象所有的属性值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to query         |
-|返回值|array |Array of property values|
+|obj|object|目标对象|
+|返回值|array|所有属性值|
 
 ```javascript
 values({one: 1, two: 2}); // -> [1, 2]
@@ -5608,7 +5606,7 @@ values({one: 1, two: 2}); // -> [1, 2]
 
 ## viewportScale
 
-Get viewport scale.
+获取窗口缩放比。
 
 ```javascript
 viewportScale(); // -> 3
@@ -5616,12 +5614,12 @@ viewportScale(); // -> 3
 
 ## waterfall
 
-Run an array of functions in series.
+按顺序执行函数序列。
 
 |参数名|类型|说明|
 |-----|----|---|
-|tasks|array   |Array of functions     |
-|[cb] |function|Callback once completed|
+|tasks|array|函数序列|
+|[cb]|function|结束回调|
 
 ```javascript
 waterfall([
@@ -5639,12 +5637,12 @@ waterfall([
 
 ## workerize
 
-Move a stand-alone function to a worker thread.
+将函数运行在 worker 线程中。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to turn   |
-|返回值|function|Workerized Function|
+|fn|function|源函数|
+|返回值|function|目标函数|
 
 ```javascript
 var worker = workerize(function (a, b) {
@@ -5657,13 +5655,13 @@ worker(1, 2).then(function (value) {
 
 ## wrap
 
-Wrap the function inside a wrapper function, passing it as the first argument.
+将函数封装到包裹函数里面, 并把它作为第一个参数传给包裹函数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn     |*       |Function to wrap|
-|wrapper|function|Wrapper function|
-|返回值 |function|New function    |
+|fn|*|要包裹的函数|
+|wrapper|function|包裹函数|
+|返回值 |function|目标函数|
 
 ```javascript
 var p = wrap(escape, function(fn, text) {
@@ -5674,12 +5672,12 @@ p('You & Me'); // -> '<p>You &amp; Me</p>'
 
 ## zip
 
-Merge together the values of each of the arrays with the values at the corresponding position.
+将每个数组中相应位置的值合并在一起。
 
 |参数名|类型|说明|
 |-----|----|---|
-|*arr  |array|Arrays to process            |
-|返回值|array|New array of grouped elements|
+|...arr|array|源数组|
+|返回值|array|目标数组|
 
 ```javascript
 zip(['a', 'b'], [1, 2], [true, false]); // -> [['a', 1, true], ['b', 2, false]]

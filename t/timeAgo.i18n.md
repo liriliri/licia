@@ -1,12 +1,12 @@
 ## CN
 
-Format datetime with *** time ago statement.
+将时间格式化成多久之前的形式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|date          |Date  |Date to calculate        |
-|[now=new Date]|Date  |Current date             |
-|返回值        |string|Formatted time ago string|
+|date|Date|目标日期|
+|[now=new Date]|Date|当时日期|
+|返回值|string|格式化时间表示|
 
 ```javascript
 var now = new Date().getTime();

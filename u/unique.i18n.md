@@ -1,12 +1,12 @@
 ## CN
 
-Create duplicate-free version of an array.
+返回数组去重后的副本。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr      |array   |Array to inspect             |
-|[compare]|function|Function for comparing values|
-|返回值   |array   |New duplicate free array     |
+|arr|array|源数组|
+|[compare]|function|比较函数|
+|返回值|array|目标数组|
 
 ```javascript
 unique([1, 2, 3, 1]); // -> [1, 2, 3]

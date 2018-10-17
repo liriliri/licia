@@ -1,11 +1,11 @@
 ## CN
 
-Create an array of unique values, in order, from all given arrays.
+返回传入所有数组的并集。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...arr|array|Arrays to inspect           |
-|返回值|array|New array of combined values|
+|...arr|array|要合并的数组|
+|返回值|array|数组并集|
 
 ```javascript
 union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]

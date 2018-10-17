@@ -1,11 +1,11 @@
 ## CN
 
-Compile JavaScript template into function that can be evaluated for rendering.
+将模板字符串编译成函数用于渲染。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string  |Template string           |
-|返回值|function|Compiled template function|
+|str|string|模板字符串|
+|返回值|function|编译后的模板函数|
 
 ```javascript
 template('Hello <%= name %>!')({name: 'licia'}); // -> 'Hello licia!'

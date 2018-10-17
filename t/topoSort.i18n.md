@@ -1,11 +1,11 @@
 ## CN
 
-Topological sorting algorithm.
+拓扑排序实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|edges |array|Dependencies|
-|返回值|array|Sorted order|
+|edges|array|依赖关系|
+|返回值|array|排序后的数组|
 
 ```javascript
 topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]

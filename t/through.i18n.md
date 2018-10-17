@@ -1,20 +1,20 @@
 ## CN
 
-Tiny wrapper of stream Transform.
+stream Transform 类的简单包装。
 
 |参数名|类型|说明|
 |-----|----|---|
-|opts={}|Object  |Options to initialize stream|
-|transform|function|Transform implementation    |
-|[flush]  |function|Flush implementation        |
+|opts={}|Object|初始化流选项|
+|transform|function|Transform 实现|
+|[flush]|function|Flush 实现|
 
 ### obj
 
-Shortcut for setting objectMode to true.
+设置 objectMode 为真的快捷方式。
 
 ### ctor
 
-Return a class that extends stream Transform.
+返回继承 Transform 的类。
 
 ```javascript
 fs.createReadStream('in.txt')

@@ -1,11 +1,11 @@
 ## CN
 
-Run an array of functions in series.
+按顺序执行函数序列。
 
 |参数名|类型|说明|
 |-----|----|---|
-|tasks|array   |Array of functions     |
-|[cb] |function|Callback once completed|
+|tasks|array|函数序列|
+|[cb]|function|结束回调|
 
 ```javascript
 waterfall([

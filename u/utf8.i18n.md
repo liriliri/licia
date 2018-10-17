@@ -1,25 +1,25 @@
 ## CN
 
-UTF-8 encoding and decoding.
+UTF-8 编解码。
 
 ### encode
 
-Turn any UTF-8 decoded string into UTF-8 encoded string.
+UTF-8 编码。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to encode|
-|返回值|string|Encoded string  |
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ### decode
 
+UTF-8 解码。
+
 |参数名|类型|说明|
 |-----|----|---|
-|str         |string |String to decode      |
-|[safe=false]|boolean|Suppress error if true|
-|返回值      |string |Decoded string        |
-
-Turn any UTF-8 encoded string into UTF-8 decoded string.
+|str|string|源字符串|
+|safe=false|boolean|如果设为真，不抛错误|
+|返回值|string|目标字符串|
 
 ```javascript
 utf8.encode('\uD800\uDC00'); // ->  '\xF0\x90\x80\x80'

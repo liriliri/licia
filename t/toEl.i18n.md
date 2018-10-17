@@ -1,13 +1,13 @@
 ## CN
 
-Convert html string to dom elements.
+将 html 字符串转换为 dom 元素。
 
-There should be only one root element.
+必须只有一个根元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string |Html string |
-|返回值|element|Html element|
+|str|string|html 字符串|
+|返回值|element|html 元素|
 
 ```javascript
 toEl('<div>test</div>');

@@ -21,7 +21,7 @@
 
 获取当前日志级别。
 
-### trace, debug, info, warn, error
+### trace，debug，info，warn，error
 
 打日志方法。
 

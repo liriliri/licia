@@ -1,11 +1,11 @@
 ## CN
 
-Move a stand-alone function to a worker thread.
+将函数运行在 worker 线程中。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to turn   |
-|返回值|function|Workerized Function|
+|fn|function|源函数|
+|返回值|function|目标函数|
 
 ```javascript
 var worker = workerize(function (a, b) {

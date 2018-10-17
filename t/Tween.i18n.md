@@ -1,42 +1,42 @@
 ## CN
 
-Tween engine for JavaScript animations.
+JavaScript 补间动画库。
 
-Extend from Emitter.
+继承自 Emitter 类。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj |object|Values to tween|
+|obj|object|要补间的对象|
 
 ### to
 
 |参数名|类型|说明|
 |-----|----|---|
-|destination|obj            |Final properties|
-|duration   |number         |Tween duration  |
-|ease       |string function|Easing function |
+|destination|obj|目标属性值|
+|duration|number|补间时长|
+|ease|string function|缓动函数|
 
 ### play
 
-Begin playing forward.
+开始播放。
 
 ### pause
 
-Pause the animation.
+暂停动画。
 
 ### paused
 
-Get animation paused state.
+检查动画是否暂停。
 
 ### progress
 
-Update or get animation progress.
+设置或获取动画进度。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[progress]|number|Number between 0 and 1|
+|[progress]|number|介于 0 到 1 之间的数字|
 
 ```javascript
 var pos = {x: 0, y: 0};

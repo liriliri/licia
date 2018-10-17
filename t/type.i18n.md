@@ -1,11 +1,11 @@
 ## CN
 
-Determine the internal JavaScript [[Class]] of an object.
+获取 JavaScript 对象的内部类型。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*     |Value to get type         |
-|返回值|string|Type of object, lowercased|
+|val|*|目标对象|
+|返回值|string|对象类型，小写|
 
 ```javascript
 type(5); // -> 'number'

@@ -1,6 +1,6 @@
 /* Flux dispatcher.
  *
- * [Related docs](https://facebook.github.io/flux/docs/dispatcher.html).
+ * [Related docs](https://facebook.github.io/flux/docs/dispatcher.html)
  * 
  * ```javascript
  * var dispatcher = new Dispatcher();

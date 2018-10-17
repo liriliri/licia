@@ -1,11 +1,11 @@
 ## CN
 
-Convert value to a string.
+将任意值转换为字符串。
 
 |参数名|类型|说明|
 |-----|----|---|
-|val   |*     |Value to convert|
-|返回值|string|Resulted string |
+|val|*|要转换的值|
+|返回值|string|转换后的字符串|
 
 ```javascript
 toStr(null); // -> ''

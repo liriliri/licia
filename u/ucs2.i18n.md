@@ -1,24 +1,24 @@
 ## CN
 
-UCS-2 encoding and decoding.
+UCS-2 编解码。
 
 ### encode
 
-Create a string using an array of code point values.
+通过码点序列创建字符串。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array |Array of code points|
-|返回值|string|Encoded string      |
+|arr|array|码点序列|
+|返回值|string|编码后的字符串|
 
 ### decode
 
-Create an array of code point values using a string.
+通过字符串创建码点序列。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|Input string        |
-|返回值|array |Array of code points|
+|str|string|字符串|
+|返回值|array|码点序列|
 
 ```javascript
 ucs2.encode([0x61, 0x62, 0x63]); // -> 'abc'

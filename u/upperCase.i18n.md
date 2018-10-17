@@ -1,11 +1,11 @@
 ## CN
 
-Convert string to upper case.
+转换字符串为大写。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert|
-|返回值|string|Uppercased string|
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 upperCase('test'); // -> 'TEST'

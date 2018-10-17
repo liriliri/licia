@@ -1,12 +1,12 @@
 ## CN
 
-Return a new throttled version of the passed function.
+返回函数的节流阀版本。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn    |function|Function to throttle           |
-|wait  |number  |Number of milliseconds to delay|
-|返回值|function|New throttled function         |
+|fn|function|源函数|
+|wait|number|延迟毫秒数|
+|返回值|function|目标函数|
 
 ```javascript
 $(window).scroll(throttle(updatePos, 100));

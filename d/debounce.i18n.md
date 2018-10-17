@@ -5,7 +5,7 @@
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|源函数|
-|wait|number|延迟的毫秒数|
+|wait|number|延迟毫秒数|
 |返回值|function|目标函数|
 
 ```javascript
