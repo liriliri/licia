@@ -1,28 +1,28 @@
 ## CN
 
-Simple wrapper of querySelectorAll to make dom selection easier.
+querySelectorAll 的简单包装类。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|selector|string|Dom selector string|
+|selector|string|选择器|
 
 ### find
 
-Get desdendants of current matched elements.
+查找子元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|selector|string|Dom selector string|
+|selector|string|选择器|
 
 ### each
 
-Iterate over matched elements.
+遍历匹配的元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn  |function|Function to execute for each element|
+|fn|function|调用函数|
 
 ```javascript
 var $test = new Select('#test');

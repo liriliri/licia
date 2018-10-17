@@ -359,7 +359,7 @@ Student.is(a); // -> true
 
 |参数名|类型|说明|
 |-----|----|---|
-|color|string|颜色字条串|
+|color|string|颜色字符串|
 |返回值|object|含有值及颜色模型的对象|
 
 ```javascript
@@ -799,29 +799,29 @@ store.dispatch({type: 'DECREMENT'}); // 1
 
 ## Select
 
-Simple wrapper of querySelectorAll to make dom selection easier.
+querySelectorAll 的简单包装类。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|selector|string|Dom selector string|
+|selector|string|选择器|
 
 ### find
 
-Get desdendants of current matched elements.
+查找子元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|selector|string|Dom selector string|
+|selector|string|选择器|
 
 ### each
 
-Iterate over matched elements.
+遍历匹配的元素。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn  |function|Function to execute for each element|
+|fn|function|调用函数|
 
 ```javascript
 var $test = new Select('#test');
@@ -832,16 +832,16 @@ $test.find('.test').each(function (idx, element) {
 
 ## SessionStore
 
-SessionStorage wrapper.
+SessionStorage 存储。
 
-Extend from Store.
+继承自 Store 类。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|name|string|SessionStorage item name|
-|data|object|Default data            |
+|name|string|SessionStorage 存储名|
+|data|object|默认数据|
 
 ```javascript
 var store = new SessionStore('licia');
@@ -850,41 +850,41 @@ store.set('name', 'licia');
 
 ## Stack
 
-Stack data structure.
+栈数据结构。
 
 ### clear
 
-Clear the stack.
+清空栈。
 
 ### push
 
-Add an item to the stack.
+元素入栈。
 
 |参数名|类型|说明|
 |-----|----|---|
-|item  |*     |Item to add |
-|返回值|number|Current size|
+|item|*|入栈元素|
+|返回值|number|当前大小|
 
 ### pop
 
-Get the last item of the stack.
+元素出栈。
 
 ### peek
 
-Get the last item without removing it.
+获取最后一个元素但不移除它。
 
 ### forEach
 
-Iterate over the stack.
+遍历栈。
 
 |参数名|类型|说明|
 |-----|----|---|
-|iteratee|function|Function invoked iteration|
-|[ctx]   |*       |Function context          |
+|iteratee|function|调用函数|
+|[ctx]|*|函数上下文|
 
 ### toArr
 
-Convert the stack to a JavaScript stack.
+将栈转换为 JavaScript 数组。
 
 ```javascript
 var stack = new Stack();
@@ -896,25 +896,25 @@ stack.pop(); // -> 3
 
 ## State
 
-Simple state machine.
+简单状态机。
 
-Extend from Emitter.
+继承自 Emitter 类。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|initial|string|Initial state         |
-|events |string|Events to change state|
+|initial|string|初始状态|
+|events|string|改变状态的事件|
 
 ### is
 
-Check current state.
+检查当前状态是否是指定状态。
 
 |参数名|类型|说明|
 |-----|----|---|
-|value |string |State to check                          |
-|返回值|boolean|True if current state equals given value|
+|value|string|要检查的状态|
+|返回值|boolean|如果是，返回真|
 
 ```javascript
 var state = new State('empty', {
@@ -938,68 +938,68 @@ state.play('eustia');
 
 ## Store
 
-Memory storage.
+内存存储。
 
-Extend from Emitter.
+继承自 Emitter 类。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|data|object|Initial data|
+|data|object|初始数据|
 
 ### set
 
-Set value.
+设置值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key |string|Value key   |
-|val |*     |Value to set|
+|key|string|键名|
+|val|*|键值|
 
-Set values.
+设置多个值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|vals|object|Key value pairs|
+|vals|object|包含多个键值对的对象|
 
-This emit a change event whenever is called.
+该方法被调用时发触发 change 事件。
 
 ### get
 
-Get value.
+获取值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key   |string|Value key         |
-|返回值|*     |Value of given key|
+|key|string|键名|
+|返回值|*|键值|
 
-Get values.
+获取多个值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|keys  |array |Array of keys  |
-|返回值|object|Key value pairs|
+|keys|array|键名列表|
+|返回值|object|包含多个键值对的对象|
 
 ### remove
 
-Remove value.
+移除值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key |string array|Key to remove|
+|key|string array|键名|
 
 ### clear
 
-Clear all data.
+清空数据。
 
 ### each
 
-Iterate over values.
+遍历数据。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn  |function|Function invoked per interation|
+|fn|function|遍历函数|
 
 ```javascript
 var store = new Store('test');
@@ -2119,7 +2119,7 @@ difference([3, 2, 1], [4, 2]); // -> [3, 1]
 
 ## dotCase
 
-将字条串转换为点式。
+将字符串转换为点式。
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2181,7 +2181,7 @@ easing.inElastic(0.5, 500); // -> 0.03125
 |-----|----|---|
 |str|string|目标字符串|
 |suffix|string|字符串后缀|
-|返回值|boolean|如果是，返回真|
+|返回值|boolean|如果是后缀，返回真|
 
 ```javascript
 endWith('ab', 'b'); // -> true
@@ -4712,7 +4712,7 @@ rmdir('/tmp/foo/bar/baz', function (err) {
 |str|string|源字符串|
 |len|number|填充长度|
 |chars|string|填充字符|
-|返回值|string|目标字条串|
+|返回值|string|目标字符串|
 
 ```javascript
 rpad('a', 5); // -> 'a    '
@@ -4740,17 +4740,17 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 
 ## safeCb
 
-Create callback based on input value.
+创建回调函数，内部模块使用。
 
 ## safeDel
 
-Delete object property.
+删除对象属性。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object      |Object to query           |
-|path  |array string|Path of property to delete|
-|返回值|*           |Deleted value or undefined|
+|obj|object|目标对象|
+|path|array string|属性路径|
+|返回值|*|删除值或 undefined|
 
 ```javascript
 var obj = {a: {aa: {aaa: 1}}};
@@ -4761,13 +4761,13 @@ safeDel(obj, 'a.b'); // -> undefined
 
 ## safeGet
 
-Get object property, don't throw undefined error.
+获取对象属性值，路径不存在时不报错。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object      |Object to query          |
-|path  |array string|Path of property to get  |
-|返回值|*           |Target value or undefined|
+|obj|object|目标对象|
+|path|array string|属性路径|
+|返回值|*|属性值或 undefined|
 
 ```javascript
 var obj = {a: {aa: {aaa: 1}}};
@@ -4778,15 +4778,15 @@ safeGet(obj, 'a.b'); // -> undefined
 
 ## safeSet
 
-Set value at path of object.
+设置对象属性值。
 
-If a portion of path doesn't exist, it's created.
+如果路径的某一层不存在，将会创建一个空对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj |object      |Object to modify       |
-|path|array string|Path of property to set|
-|val |*           |Value to set           |
+|obj|object|目标对象|
+|path|array string|属性路径|
+|val|*|要设置的值|
 
 ```javascript
 var obj = {};
@@ -4797,12 +4797,12 @@ safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
 
 ## safeStorage
 
-Use storage safely in safari private browsing and older browsers.
+安全地使用 storage，使其在旧浏览器及 safari 无痕模式下能正常运行。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[type='local']|string|local or session |
-|返回值        |object|Specified storage|
+|type='local'|string|模式，local 或 session|
+|返回值|object|指定 storage|
 
 ```javascript
 var localStorage = safeStorage('local');
@@ -4811,13 +4811,13 @@ localStorage.setItem('licia', 'util');
 
 ## sample
 
-Sample random values from a collection.
+从集合中随机抽取部分样本。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |array object|Collection to sample  |
-|n     |number      |Number of values      |
-|返回值|array       |Array of sample values|
+|obj|array object|目标集合|
+|n|number|样本数量|
+|返回值|array|样本|
 
 ```javascript
 sample([2, 3, 1], 2); // -> [2, 3]
@@ -4826,21 +4826,21 @@ sample({a: 1, b: 2, c: 3}, 1); // -> [2]
 
 ## scrollTo
 
-Scroll to a target with animation.
+以动画的形式滚动到指定目标。
 
 |参数名|类型|说明|
 |-----|----|---|
-|target |element string number|Scroll target |
-|options|object               |Scroll options|
+|target|element string number|滚动目标|
+|options|object|滚动选项|
 
-### Options
+### 选项 
 
-|Name     |Type           |Default |Desc                                   |
-|---------|---------------|--------|---------------------------------------|
-|tolerance|number         |0       |Tolerance of target to scroll          |
-|duration |number         |800     |Scroll duration                        |
-|easing   |string function|outQuart|Easing function                        |
-|callback |function       |noop    |Function to run once scrolling complete|
+|选项名|类型|默认值|说明|
+|-----|----|-----|----|
+|tolerance|number|0|偏移|
+|duration|number|800|时长|
+|easing|string function|outQuart|缓动函数|
+|callback|function|noop|结束回调|
 
 ```javascript
 scrollTo('body', {
@@ -4853,12 +4853,12 @@ scrollTo('body', {
 
 ## selectionSort
 
-Selection sort implementation.
+选择排序实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|arr|array|要排序的数组|
+|[cmp]|function|比较器|
 
 ```javascript
 selectionSort([2, 1]); // -> [1, 2]
@@ -4866,12 +4866,12 @@ selectionSort([2, 1]); // -> [1, 2]
 
 ## shuffle
 
-Randomize the order of the elements in a given array.
+将数组中元素的顺序打乱。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array|Array to randomize|
-|返回值|array|Randomized Array  |
+|arr|array|源数组|
+|返回值|array|目标数组|
 
 ```javascript
 shuffle([1, 2, 3]); // -> [3, 1, 2]
@@ -4879,12 +4879,12 @@ shuffle([1, 2, 3]); // -> [3, 1, 2]
 
 ## size
 
-Get size of object, length of array like object or the number of keys.
+获取对象的大小或类数组元素的长度。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |array object|Collection to inspect|
-|返回值|number      |Collection size      |
+|obj|array object|目标集合|
+|返回值|number|集合大小|
 
 ```javascript
 size({a: 1, b: 2}); // -> 2
@@ -4893,13 +4893,13 @@ size([1, 2, 3]); // -> 3
 
 ## slice
 
-Create slice of source array or array-like object.
+截取数组的一部分生成新数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|array             |array |Array to slice            |
-|[start=0]         |number|Start position            |
-|[end=array.length]|number|End position, not included|
+|array|array|目标数组|
+|[start=0]|number|起始位置|
+|[end=array.length]|number|结束位置，不包含|
 
 ```javascript
 slice([1, 2, 3, 4], 1, 2); // -> [2]
@@ -4907,12 +4907,12 @@ slice([1, 2, 3, 4], 1, 2); // -> [2]
 
 ## snakeCase
 
-Convert string to "snakeCase".
+转换字符串为下划线式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert |
-|返回值|string|Snake cased string|
+|str|string|源字符串|
+|返回值|string|下划线式字符串|
 
 ```javascript
 snakeCase('fooBar'); // -> foo_bar
@@ -4923,13 +4923,14 @@ snakeCase('foo.bar'); // -> foo_bar
 ## some
 
 Check if predicate return truthy for any element.
+检查集合中是否有元素通过真值检测。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj      |array object|Collection to iterate over                    |
-|predicate|function    |Function to invoked per iteration             |
-|ctx      |*           |Predicate context                             |
-|返回值   |boolean     |True if any element passes the predicate check|
+|obj|array object|目标集合|
+|predicate|function|真值检测函数|
+|ctx|*|函数上下文|
+|返回值|boolean|如果有元素通过真值检测，返回真|
 
 ```javascript
 some([2, 5], function (val) {
@@ -4939,14 +4940,14 @@ some([2, 5], function (val) {
 
 ## sortBy
 
-Return an array of elements sorted in ascending order by results of running each element through iteratee.
+遍历集合中的元素，将其作为参数调用函数，并以得到的结果为依据对数组进行排序。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr                |object array|Collection to iterate over|
-|[iteratee=identity]|function    |Iteratee to sort by       |
-|[ctx]              |*           |Iteratee context          |
-|返回值             |array       |New sorted array          |
+|arr|object array|源集合|
+|[iteratee=identity]|function|排序依据生成函数|
+|[ctx]|*|函数上下文|
+|返回值|array|排序后的数组|
 
 ```javascript
 sortBy([1, 2, 3, 4, 5, 6], function (num) {
@@ -4956,12 +4957,12 @@ sortBy([1, 2, 3, 4, 5, 6], function (num) {
 
 ## spaceCase
 
-Convert string to "spaceCase".
+将字符串转换为空格式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert |
-|返回值|string|Space cased string|
+|str|string|源字符串|
+|返回值|string|空格式字符串|
 
 ```javascript
 spaceCase('fooBar'); // -> foo bar
@@ -4971,12 +4972,12 @@ spaceCase('foo.bar'); // -> foo bar
 
 ## splitCase
 
-Split different string case to an array.
+将不同命名式的字符串拆分成数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to split|
-|返回值|array |Result array   |
+|str|string|目标字符串|
+|返回值|array|拆分成的数组|
 
 ```javascript
 splitCase('foo-bar'); // -> ['foo', 'bar']
@@ -4989,12 +4990,12 @@ splitCase('foo-Bar'); // -> ['foo', 'bar']
 
 ## splitPath
 
-Split path into device, dir, name and ext.
+将路径拆分为文件夹路径，文件名和扩展名。
 
 |参数名|类型|说明|
 |-----|----|---|
-|path  |string|Path to split                      |
-|返回值|object|Object containing dir, name and ext|
+|path|string|目标路径|
+|返回值|object|包含文件夹路径，文件名和扩展名的对象|
 
 ```javascript
 splitPath('f:/foo/bar.txt'); // -> {dir: 'f:/foo/', name: 'bar.txt', ext: '.txt'}
@@ -5003,13 +5004,13 @@ splitPath('/home/foo/bar.txt'); // -> {dir: '/home/foo/', name: 'bar.txt', ext: 
 
 ## startWith
 
-Check if string starts with the given target string.
+检查字符串是否以指定字符串开头。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string |String to search                 |
-|prefix|string |String prefix                    |
-|返回值|boolean|True if string starts with prefix|
+|str|string|目标字符串|
+|prefix|string|字符串前缀|
+|返回值|boolean|如果是前缀，返回真|
 
 ```javascript
 startWith('ab', 'a'); // -> true
@@ -5017,12 +5018,12 @@ startWith('ab', 'a'); // -> true
 
 ## strHash
 
-String hash function using djb2.
+使用 djb2 算法进行字符串哈希。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to hash|
-|返回值|number|Hash result   |
+|str|string|目标字符串|
+|返回值|number|哈希结果|
 
 ```javascript
 strHash('test'); // -> 2090770981
@@ -5030,15 +5031,15 @@ strHash('test'); // -> 2090770981
 
 ## stringify
 
-JSON stringify with support for circular object, function etc.
+JSON 序列化，支持循环引用和函数。
 
-Undefined is treated as null value.
+undefined 被当作 null 处理。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to stringify|
-|spaces|number|Indent spaces      |
-|返回值|string|Stringified object |
+|obj|object|目标对象|
+|spaces|number|缩进|
+|返回值|string|序列化后的字符串|
 
 ```javascript
 stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
@@ -5049,12 +5050,12 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 
 ## stripAnsi
 
-Strip ansi codes from a string.
+清除字符串中的 ansi 控制码。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to strip|
-|返回值|string|Resulted string|
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
@@ -5062,12 +5063,12 @@ stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
 
 ## stripCmt
 
-Strip comments from source code.
+清除源码中的注释。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|Source code          |
-|返回值|string|Code without comments|
+|str|string|源码|
+|返回值|string|无注释代码|
 
 ```javascript
 stripCmts('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
@@ -5075,12 +5076,12 @@ stripCmts('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' va
 
 ## stripColor
 
-Strip ansi color codes from a string.
+清除字符串中的 ansi 颜色控制码。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to strip|
-|返回值|string|Resulted string|
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
@@ -5088,12 +5089,12 @@ stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
 
 ## stripHtmlTag
 
-Strip html tags from a string.
+清除字符串中的 html 标签。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to strip|
-|返回值|string|Resulted string|
+|str|string|源字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
@@ -5101,12 +5102,12 @@ stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 
 ## sum
 
-Compute sum of given numbers.
+计算数字和。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...num|number|Numbers to calculate|
-|返回值|number|Sum of numbers      |
+|...num|number|要计算的数字|
+|返回值|number|数字和|
 
 ```javascript
 sum(1, 2, 5); // -> 8
@@ -5114,14 +5115,14 @@ sum(1, 2, 5); // -> 8
 
 ## swap
 
-Swap two items in an array.
+交换数组中的两项。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array |Array to swap|
-|a     |number|First index  |
-|b     |number|Second index |
-|返回值|array |Array given  |
+|arr|array|目标数组|
+|a|number|序号一|
+|b|number|序号二|
+|返回值|array|数组本身|
 
 ```javascript
 var arr = [1, 2];

@@ -1,11 +1,11 @@
 ## CN
 
-Convert string to "spaceCase".
+将字符串转换为空格式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to convert |
-|返回值|string|Space cased string|
+|str|string|源字符串|
+|返回值|string|空格式字符串|
 
 ```javascript
 spaceCase('fooBar'); // -> foo bar

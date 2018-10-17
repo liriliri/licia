@@ -1,3 +1,3 @@
 ## CN
 
-Create callback based on input value.
+创建回调函数，内部模块使用。

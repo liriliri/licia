@@ -1,11 +1,11 @@
 ## CN
 
-Get size of object, length of array like object or the number of keys.
+获取对象的大小或类数组元素的长度。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |array object|Collection to inspect|
-|返回值|number      |Collection size      |
+|obj|array object|目标集合|
+|返回值|number|集合大小|
 
 ```javascript
 size({a: 1, b: 2}); // -> 2

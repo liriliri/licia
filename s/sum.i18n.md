@@ -1,11 +1,11 @@
 ## CN
 
-Compute sum of given numbers.
+计算数字和。
 
 |参数名|类型|说明|
 |-----|----|---|
-|...num|number|Numbers to calculate|
-|返回值|number|Sum of numbers      |
+|...num|number|要计算的数字|
+|返回值|number|数字和|
 
 ```javascript
 sum(1, 2, 5); // -> 8

@@ -1,40 +1,40 @@
 ## CN
 
-Stack data structure.
+栈数据结构。
 
 ### clear
 
-Clear the stack.
+清空栈。
 
 ### push
 
-Add an item to the stack.
+元素入栈。
 
 |参数名|类型|说明|
 |-----|----|---|
-|item  |*     |Item to add |
-|返回值|number|Current size|
+|item|*|入栈元素|
+|返回值|number|当前大小|
 
 ### pop
 
-Get the last item of the stack.
+元素出栈。
 
 ### peek
 
-Get the last item without removing it.
+获取最后一个元素但不移除它。
 
 ### forEach
 
-Iterate over the stack.
+遍历栈。
 
 |参数名|类型|说明|
 |-----|----|---|
-|iteratee|function|Function invoked iteration|
-|[ctx]   |*       |Function context          |
+|iteratee|function|调用函数|
+|[ctx]|*|函数上下文|
 
 ### toArr
 
-Convert the stack to a JavaScript stack.
+将栈转换为 JavaScript 数组。
 
 ```javascript
 var stack = new Stack();

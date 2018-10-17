@@ -889,7 +889,7 @@ Iterate over the stack.
 
 ### toArr
 
-Convert the stack to a JavaScript stack.
+Convert the stack to a JavaScript array.
 
 ```javascript
 var stack = new Stack();
@@ -4804,10 +4804,10 @@ safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
 
 Use storage safely in safari private browsing and older browsers.
 
-|Name          |Type  |Desc             |
-|--------------|------|-----------------|
-|[type='local']|string|local or session |
-|return        |object|Specified storage|
+|Name        |Type  |Desc             |
+|------------|------|-----------------|
+|type='local'|string|local or session |
+|return      |object|Specified storage|
 
 ```javascript
 var localStorage = safeStorage('local');
@@ -4884,7 +4884,7 @@ shuffle([1, 2, 3]); // -> [3, 1, 2]
 
 ## size 
 
-Get size of object, length of array like object or the number of keys.
+Get size of object or length of array like object.
 
 |Name  |Type        |Desc                 |
 |------|------------|---------------------|
@@ -4994,7 +4994,7 @@ splitCase('foo-Bar'); // -> ['foo', 'bar']
 
 ## splitPath 
 
-Split path into device, dir, name and ext.
+Split path into dir, name and ext.
 
 |Name  |Type  |Desc                               |
 |------|------|-----------------------------------|

@@ -1,14 +1,14 @@
 ## CN
 
-JSON stringify with support for circular object, function etc.
+JSON 序列化，支持循环引用和函数。
 
-Undefined is treated as null value.
+undefined 被当作 null 处理。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj   |object|Object to stringify|
-|spaces|number|Indent spaces      |
-|返回值|string|Stringified object |
+|obj|object|目标对象|
+|spaces|number|缩进|
+|返回值|string|序列化后的字符串|
 
 ```javascript
 stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'

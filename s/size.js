@@ -1,4 +1,4 @@
-/* Get size of object, length of array like object or the number of keys.
+/* Get size of object or length of array like object.
  *
  * |Name  |Type        |Desc                 |
  * |------|------------|---------------------|

@@ -1,4 +1,4 @@
-/* Split path into device, dir, name and ext.
+/* Split path into dir, name and ext.
  *
  * |Name  |Type  |Desc                               |
  * |------|------|-----------------------------------|

@@ -7,7 +7,7 @@
 |str|string|源字符串|
 |len|number|填充长度|
 |chars|string|填充字符|
-|返回值|string|目标字条串|
+|返回值|string|目标字符串|
 
 ```javascript
 rpad('a', 5); // -> 'a    '

@@ -2324,7 +2324,7 @@
         "test": "all"
     },
     "size": {
-        "description": "Get size of object, length of array like object or the number of keys.",
+        "description": "Get size of object or length of array like object.",
         "dependencies": [
             "isArrLike",
             "keys"
@@ -2382,7 +2382,7 @@
         "test": "all"
     },
     "splitPath": {
-        "description": "Split path into device, dir, name and ext.",
+        "description": "Split path into dir, name and ext.",
         "dependencies": [],
         "env": "all",
         "test": "all"

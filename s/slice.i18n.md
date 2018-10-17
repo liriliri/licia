@@ -1,12 +1,12 @@
 ## CN
 
-Create slice of source array or array-like object.
+截取数组的一部分生成新数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|array             |array |Array to slice            |
-|[start=0]         |number|Start position            |
-|[end=array.length]|number|End position, not included|
+|array|array|目标数组|
+|[start=0]|number|起始位置|
+|[end=array.length]|number|结束位置，不包含|
 
 ```javascript
 slice([1, 2, 3, 4], 1, 2); // -> [2]

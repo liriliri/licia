@@ -1,13 +1,14 @@
 ## CN
 
 Check if predicate return truthy for any element.
+检查集合中是否有元素通过真值检测。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj      |array object|Collection to iterate over                    |
-|predicate|function    |Function to invoked per iteration             |
-|ctx      |*           |Predicate context                             |
-|返回值   |boolean     |True if any element passes the predicate check|
+|obj|array object|目标集合|
+|predicate|function|真值检测函数|
+|ctx|*|函数上下文|
+|返回值|boolean|如果有元素通过真值检测，返回真|
 
 ```javascript
 some([2, 5], function (val) {

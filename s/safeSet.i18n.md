@@ -1,14 +1,14 @@
 ## CN
 
-Set value at path of object.
+设置对象属性值。
 
-If a portion of path doesn't exist, it's created.
+如果路径的某一层不存在，将会创建一个空对象。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj |object      |Object to modify       |
-|path|array string|Path of property to set|
-|val |*           |Value to set           |
+|obj|object|目标对象|
+|path|array string|属性路径|
+|val|*|要设置的值|
 
 ```javascript
 var obj = {};

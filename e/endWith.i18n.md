@@ -6,7 +6,7 @@
 |-----|----|---|
 |str|string|目标字符串|
 |suffix|string|字符串后缀|
-|返回值|boolean|如果是，返回真|
+|返回值|boolean|如果是后缀，返回真|
 
 ```javascript
 endWith('ab', 'b'); // -> true

@@ -26,7 +26,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|color|string|颜色字条串|
+|color|string|颜色字符串|
 |返回值|object|含有值及颜色模型的对象|
 
 ```javascript

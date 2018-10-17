@@ -1,67 +1,67 @@
 ## CN
 
-Memory storage.
+内存存储。
 
-Extend from Emitter.
+继承自 Emitter 类。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|data|object|Initial data|
+|data|object|初始数据|
 
 ### set
 
-Set value.
+设置值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key |string|Value key   |
-|val |*     |Value to set|
+|key|string|键名|
+|val|*|键值|
 
-Set values.
+设置多个值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|vals|object|Key value pairs|
+|vals|object|包含多个键值对的对象|
 
-This emit a change event whenever is called.
+该方法被调用时发触发 change 事件。
 
 ### get
 
-Get value.
+获取值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key   |string|Value key         |
-|返回值|*     |Value of given key|
+|key|string|键名|
+|返回值|*|键值|
 
-Get values.
+获取多个值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|keys  |array |Array of keys  |
-|返回值|object|Key value pairs|
+|keys|array|键名列表|
+|返回值|object|包含多个键值对的对象|
 
 ### remove
 
-Remove value.
+移除值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key |string array|Key to remove|
+|key|string array|键名|
 
 ### clear
 
-Clear all data.
+清空数据。
 
 ### each
 
-Iterate over values.
+遍历数据。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn  |function|Function invoked per interation|
+|fn|function|遍历函数|
 
 ```javascript
 var store = new Store('test');

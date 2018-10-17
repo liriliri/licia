@@ -32,7 +32,7 @@
  *
  * ### toArr
  *
- * Convert the stack to a JavaScript stack.
+ * Convert the stack to a JavaScript array.
  *
  * ```javascript
  * var stack = new Stack();
