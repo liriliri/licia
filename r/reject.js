@@ -1,11 +1,11 @@
 /* Opposite of filter.
  *
- * |Name     |Type    |Desc                                   |
- * |---------|--------|---------------------------------------|
- * |obj      |array   |Collection to iterate over             |
- * |predicate|function|Function invoked per iteration         |
- * |[ctx]    |*       |Predicate context                      |
- * |return   |array   |Array of all values that pass predicate|
+ * |Name     |Type    |Desc                                          |
+ * |---------|--------|----------------------------------------------|
+ * |obj      |array   |Collection to iterate over                    |
+ * |predicate|function|Function invoked per iteration                |
+ * |[ctx]    |*       |Predicate context                             |
+ * |return   |array   |Array of all values that didn't pass predicate|
  *
  * ```javascript
  * reject([1, 2, 3, 4, 5], function (val) {

@@ -1,15 +1,15 @@
 ## CN
 
-Remove all elements from array that predicate returns truthy for and return an array of the removed elements.
+移除集合中所有通过真值检测的元素，返回包含所有删除元素的数组。
 
-Unlike filter, this method mutates array.
+与 filter 不同，该模块会改变原数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj      |array   |Collection to iterate over          |
-|predicate|function|Function invoked per iteration      |
-|[ctx]    |*       |Predicate context                   |
-|返回值   |array   |Array of all values that are removed|
+|obj|array|要遍历的集合|
+|predicate|function|真值检测函数|
+|[ctx]|*|函数上下文|
+|返回值|array|包含所有删除元素的数组|
 
 ```javascript
 var arr = [1, 2, 3, 4, 5];

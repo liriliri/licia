@@ -1,8 +1,8 @@
 ## CN
 
-Shortcut for requestAnimationFrame.
+requestAnimationFrame 快捷方式。
 
-Use setTimeout if native requestAnimationFrame is not supported.
+如果原生 requestAnimationFrame 不支持，使用 setTimeout 进行兼容。
 
 ```javascript
 var id = raf(function tick() {

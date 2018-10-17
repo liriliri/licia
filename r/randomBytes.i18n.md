@@ -1,8 +1,8 @@
 ## CN
 
-Random bytes generator.
+随机字节序列生成器。
 
-Use crypto module in node or crypto object in browser if possible.
+如果支持，使用 node 的 crypto 模块或浏览器的 crypto 对象。
 
 |参数名|类型|说明|
 |-----|----|---|

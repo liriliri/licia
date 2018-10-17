@@ -1,12 +1,12 @@
 ## CN
 
-This accumulates the arguments passed into an array, after a given index.
+将给定序号后的参数合并成一个数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|function  |function|Function that needs rest parameters    |
-|startIndex|number  |The start index to accumulates         |
-|返回值    |function|Generated function with rest parameters|
+|function|function|源函数|
+|[startIndex]|number|合并参数起始位置|
+|返回值|function|目标函数|
 
 ```javascript
 var paramArr = restArgs(function (rest) { return rest });

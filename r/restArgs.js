@@ -1,10 +1,10 @@
 /* This accumulates the arguments passed into an array, after a given index.
  *
- * |Name      |Type    |Desc                                   |
- * |----------|--------|---------------------------------------|
- * |function  |function|Function that needs rest parameters    |
- * |startIndex|number  |The start index to accumulates         |
- * |return    |function|Generated function with rest parameters|
+ * |Name        |Type    |Desc                                   |
+ * |------------|--------|---------------------------------------|
+ * |function    |function|Function that needs rest parameters    |
+ * |[startIndex]|number  |The start index to accumulates         |
+ * |return      |function|Generated function with rest parameters|
  *
  * ```javascript
  * var paramArr = restArgs(function (rest) { return rest });

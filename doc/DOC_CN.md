@@ -748,36 +748,36 @@ console.log(queue.size); // -> 1
 
 ## ReduceStore
 
-Simplified redux like state container.
+简单类 redux 状态管理。
 
 ### constructor
 
 |参数名|类型|说明|
 |-----|----|---|
-|reducer     |function|Function returns next state|
-|initialState|*       |Initial state              |
+|reducer|function|生成下一个状态的函数|
+|initialState|*|初始状态|
 
 ### subscribe
 
-Add a change listener.
+订阅状态改变事件。
 
 |参数名|类型|说明|
 |-----|----|---|
-|listener|function|Callback to invoke on every dispatch|
-|返回值  |function|Function to unscribe                |
+|listener|function|回调函数|
+|返回值|function|取消订阅函数|
 
 ### dispatch
 
-Dispatch an action.
+发出动作。
 
 |参数名|类型|说明|
 |-----|----|---|
-|action|object|Object representing changes|
-|返回值|object|Same action object         |
+|action|object|描述改变内容的对象|
+|返回值|object|传入对象|
 
 ### getState
 
-Get the current state.
+获取当前状态。
 
 ```javascript
 var store = new ReduceStore(function (state, action) {
@@ -4480,9 +4480,9 @@ quickSort([2, 1]); // -> [1, 2]
 
 ## raf
 
-Shortcut for requestAnimationFrame.
+requestAnimationFrame 快捷方式。
 
-Use setTimeout if native requestAnimationFrame is not supported.
+如果原生 requestAnimationFrame 不支持，使用 setTimeout 进行兼容。
 
 ```javascript
 var id = raf(function tick() {
@@ -4494,14 +4494,14 @@ raf.cancel(id);
 
 ## random
 
-Produces a random number between min and max(inclusive).
+在给定区间内生成随机数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|min             |number |Minimum possible value|
-|max             |number |Maximum possible value|
-|[floating=false]|boolean|Float or not          |
-|返回值          |number |Random number         |
+|min|number|最小值|
+|max|number|最大值|
+|floating=false|boolean|是否允许浮点数|
+|返回值|number|随机数|
 
 ```javascript
 random(1, 5); // -> an integer between 0 and 5
@@ -4511,9 +4511,9 @@ random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
 
 ## randomBytes
 
-Random bytes generator.
+随机字节序列生成器。
 
-Use crypto module in node or crypto object in browser if possible.
+如果支持，使用 node 的 crypto 模块或浏览器的 crypto 对象。
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4526,12 +4526,12 @@ randomBytes(5); // -> [55, 49, 153, 30, 122]
 
 ## randomItem
 
-Get a random item from an array.
+随机获取数组中的某项。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr   |array|Array to get        |
-|返回值|*    |Randomly picked item|
+|arr|array|目标数组|
+|返回值|*|随机项|
 
 ```javascript
 randomItem([1, 2, 3]); // -> 2
@@ -4539,13 +4539,13 @@ randomItem([1, 2, 3]); // -> 2
 
 ## range
 
-Create flexibly-numbered lists of integers.
+创建整数数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|[start]|number|Start of the range                |
-|end    |number|End of the range                  |
-|step=1 |number|Value to increment or decrement by|
+|[start]|number|起始值|
+|end|number|结束值|
+|step=1|number|相邻差|
 
 ```javascript
 range(5); // -> [0, 1, 2, 3, 4]
@@ -4554,11 +4554,11 @@ range(0, 5, 2) // -> [0, 2, 4]
 
 ## ready
 
-Invoke callback when dom is ready, similar to jQuery ready.
+dom 准备好时调用回调函数，类似于 jQuery 的 ready 方法。
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn  |function|Callback function|
+|fn|function|回调函数|
 
 ```javascript
 ready(function () {
@@ -4568,15 +4568,15 @@ ready(function () {
 
 ## reduce
 
-Turn a list of values into a single value.
+合并多个值成一个值。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj                |object array|Collection to iterate over    |
-|[iteratee=identity]|function    |Function invoked per iteration|
-|[initial]          |*           |Initial value                 |
-|[ctx]              |*           |Function context              |
-|返回值             |*           |Accumulated value             |
+|obj|object array|目标集合|
+|iteratee=identity|function|合并函数|
+|[initial]|*|初始值|
+|[ctx]|*|函数上下文|
+|返回值|*|合并值|
 
 ```javascript
 reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
@@ -4584,7 +4584,7 @@ reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
 
 ## reduceRight
 
-Right-associative version of reduce.
+类似于 reduce，只是从后往前合并。
 
 ```javascript
 reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> [3, 2, 1]
@@ -4592,14 +4592,14 @@ reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> 
 
 ## reject
 
-Opposite of filter.
+类似 filter，但结果相反。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj      |array   |Collection to iterate over             |
-|predicate|function|Function invoked per iteration         |
-|[ctx]    |*       |Predicate context                      |
-|返回值   |array   |Array of all values that pass predicate|
+|obj|array|要遍历的集合|
+|predicate|function|真值检测函数|
+|[ctx]|*|函数上下文|
+|返回值|array|包含所有未通过真值检测元素的数组|
 
 ```javascript
 reject([1, 2, 3, 4, 5], function (val) {
@@ -4609,16 +4609,16 @@ reject([1, 2, 3, 4, 5], function (val) {
 
 ## remove
 
-Remove all elements from array that predicate returns truthy for and return an array of the removed elements.
+移除集合中所有通过真值检测的元素，返回包含所有删除元素的数组。
 
-Unlike filter, this method mutates array.
+与 filter 不同，该模块会改变原数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj      |array   |Collection to iterate over          |
-|predicate|function|Function invoked per iteration      |
-|[ctx]    |*       |Predicate context                   |
-|返回值   |array   |Array of all values that are removed|
+|obj|array|要遍历的集合|
+|predicate|function|真值检测函数|
+|[ctx]|*|函数上下文|
+|返回值|array|包含所有删除元素的数组|
 
 ```javascript
 var arr = [1, 2, 3, 4, 5];
@@ -4629,13 +4629,13 @@ console.log(evens); // -> [2, 4]
 
 ## repeat
 
-Repeat string n-times.
+重复字符串指定次数。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to repeat|
-|n     |number|Repeat times    |
-|返回值|string|Repeated string |
+|str|string|源字符串|
+|n|number|重复次数|
+|返回值|string|目标字符串|
 
 ```javascript
 repeat('a', 3); // -> 'aaa'
@@ -4645,13 +4645,13 @@ repeat('*', 0); // -> ''
 
 ## restArgs
 
-This accumulates the arguments passed into an array, after a given index.
+将给定序号后的参数合并成一个数组。
 
 |参数名|类型|说明|
 |-----|----|---|
-|function  |function|Function that needs rest parameters    |
-|startIndex|number  |The start index to accumulates         |
-|返回值    |function|Generated function with rest parameters|
+|function|function|源函数|
+|[startIndex]|number|合并参数起始位置|
+|返回值|function|目标函数|
 
 ```javascript
 var paramArr = restArgs(function (rest) { return rest });
@@ -4660,12 +4660,12 @@ paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
 
 ## rgbToHsl
 
-Convert rgb to hsl.
+将 rgb 格式的颜色值转换为 hsl 格式。
 
 |参数名|类型|说明|
 |-----|----|---|
-|rgb   |array|Rgb values|
-|返回值|array|Hsl values|
+|rgb|array|rgb 值|
+|返回值|array|hsl 值|
 
 ```javascript
 rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
@@ -4673,11 +4673,11 @@ rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
 
 ## rmCookie
 
-Loop through all possible path and domain to remove cookie.
+遍历所有可能的路径和域名将 cookie 删除。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key |string|Cookie key|
+|key|string|cookie 名|
 
 ```javascript
 rmCookie('test');
@@ -4685,12 +4685,12 @@ rmCookie('test');
 
 ## rmdir
 
-Recursively remove directories.
+递归地删除文件夹。
 
 |参数名|类型|说明|
 |-----|----|---|
-|dir     |string  |Directory to remove|
-|callback|function|Callback           |
+|dir|string|文件夹路径|
+|callback|function|回调|
 
 ```javascript
 rmdir('/tmp/foo/bar/baz', function (err) {
@@ -4701,18 +4701,18 @@ rmdir('/tmp/foo/bar/baz', function (err) {
 
 ## root
 
-Root object reference, `global` in nodeJs, `window` in browser.
+根对象引用，对于 nodeJs，取 `global` 对象，对于浏览器，取 `window` 对象。
 
 ## rpad
 
-Pad string on the right side if it's shorter than length.
+对字符串进行右填充。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string|String to pad         |
-|len   |number|Padding length        |
-|chars |string|String used as padding|
-|返回值|string|Resulted string       |
+|str|string|源字符串|
+|len|number|填充长度|
+|chars|string|填充字符|
+|返回值|string|目标字条串|
 
 ```javascript
 rpad('a', 5); // -> 'a    '
@@ -4724,12 +4724,13 @@ rpad('abc', 5, 'ab'); // -> 'abcab'
 ## rtrim
 
 Remove chars or white-spaces from end of string.
+删除字符串尾部指定字符或空格。
 
 |参数名|类型|说明|
 |-----|----|---|
-|str   |string      |String to trim    |
-|chars |string array|Characters to trim|
-|返回值|string      |Trimmed string    |
+|str|string|源字符串|
+|chars|string array|删除字符|
+|返回值|string|目标字符串|
 
 ```javascript
 rtrim(' abc  '); // -> ' abc'

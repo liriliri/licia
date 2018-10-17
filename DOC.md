@@ -4502,12 +4502,12 @@ raf.cancel(id);
 
 Produces a random number between min and max(inclusive).
 
-|Name            |Type   |Desc                  |
-|----------------|-------|----------------------|
-|min             |number |Minimum possible value|
-|max             |number |Maximum possible value|
-|[floating=false]|boolean|Float or not          |
-|return          |number |Random number         |
+|Name          |Type   |Desc                  |
+|--------------|-------|----------------------|
+|min           |number |Minimum possible value|
+|max           |number |Maximum possible value|
+|floating=false|boolean|Float or not          |
+|return        |number |Random number         |
 
 ```javascript
 random(1, 5); // -> an integer between 0 and 5
@@ -4576,13 +4576,13 @@ ready(function () {
 
 Turn a list of values into a single value.
 
-|Name               |Type        |Desc                          |
-|-------------------|------------|------------------------------|
-|obj                |object array|Collection to iterate over    |
-|[iteratee=identity]|function    |Function invoked per iteration|
-|[initial]          |*           |Initial value                 |
-|[ctx]              |*           |Function context              |
-|return             |*           |Accumulated value             |
+|Name             |Type        |Desc                          |
+|-----------------|------------|------------------------------|
+|obj              |object array|Collection to iterate over    |
+|iteratee=identity|function    |Function invoked per iteration|
+|[initial]        |*           |Initial value                 |
+|[ctx]            |*           |Function context              |
+|return           |*           |Accumulated value             |
 
 ```javascript
 reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
@@ -4600,12 +4600,12 @@ reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> 
 
 Opposite of filter.
 
-|Name     |Type    |Desc                                   |
-|---------|--------|---------------------------------------|
-|obj      |array   |Collection to iterate over             |
-|predicate|function|Function invoked per iteration         |
-|[ctx]    |*       |Predicate context                      |
-|return   |array   |Array of all values that pass predicate|
+|Name     |Type    |Desc                                          |
+|---------|--------|----------------------------------------------|
+|obj      |array   |Collection to iterate over                    |
+|predicate|function|Function invoked per iteration                |
+|[ctx]    |*       |Predicate context                             |
+|return   |array   |Array of all values that didn't pass predicate|
 
 ```javascript
 reject([1, 2, 3, 4, 5], function (val) {
@@ -4653,11 +4653,11 @@ repeat('*', 0); // -> ''
 
 This accumulates the arguments passed into an array, after a given index.
 
-|Name      |Type    |Desc                                   |
-|----------|--------|---------------------------------------|
-|function  |function|Function that needs rest parameters    |
-|startIndex|number  |The start index to accumulates         |
-|return    |function|Generated function with rest parameters|
+|Name        |Type    |Desc                                   |
+|------------|--------|---------------------------------------|
+|function    |function|Function that needs rest parameters    |
+|[startIndex]|number  |The start index to accumulates         |
+|return      |function|Generated function with rest parameters|
 
 ```javascript
 var paramArr = restArgs(function (rest) { return rest });

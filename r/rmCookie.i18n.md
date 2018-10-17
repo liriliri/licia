@@ -1,10 +1,10 @@
 ## CN
 
-Loop through all possible path and domain to remove cookie.
+遍历所有可能的路径和域名将 cookie 删除。
 
 |参数名|类型|说明|
 |-----|----|---|
-|key |string|Cookie key|
+|key|string|cookie 名|
 
 ```javascript
 rmCookie('test');
