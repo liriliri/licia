@@ -14,7 +14,7 @@ Eustia官方模块
 
 Licia是一套在开发中实践积累起来的实用JavaScript工具库。该库目前拥有超过180个模块，包括Dom操作，cookie设置，类创建，模板函数，日期格式化等实用模块，同时配套有打包工具Eustia进行定制化，使JS脚本加载量缩减在10KB以下，极大优化移动端页面的加载速度。
 
-目前拥有的所有模块可[点此](http://eustia.liriliri.io/module.html)查看。
+目前拥有的所有模块可[点此](http://eustia.liriliri.io/module_cn.html)查看。
 
 ## 开发背景
 
