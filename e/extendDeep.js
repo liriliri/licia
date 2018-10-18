@@ -5,8 +5,9 @@
  * |obj   |object|Destination object|
  * |...src|object|Sources objects   |
  * |return|object|Destination object|
- *
- * ```javascript
+ */
+
+/* example
  * extendDeep({
  *     name: 'RedHood',
  *     family: {
@@ -19,7 +20,6 @@
  *     }
  * });
  * // -> {name: 'RedHood', family: {mother: 'Jane', father: 'Jack', brother: 'Bruce'}}
- * ```
  */
 
 /* module

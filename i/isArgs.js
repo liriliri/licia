@@ -4,12 +4,12 @@
  * |------|-------|------------------------------------|
  * |val   |*      |Value to check                      |
  * |return|boolean|True if value is an arguments object|
- *
- * ```javascript
+ */
+
+/* example
  * (function () {
  *     isArgs(arguments); // -> true
  * })();
- * ```
  */
 
 /* module

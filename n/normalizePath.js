@@ -4,11 +4,11 @@
  * |------|------|-----------------|
  * |path  |string|Path to normalize|
  * |return|string|Normalized path  |
- * 
- * ```javascript
+ */
+
+/* example
  * normalizePath('\\foo\\bar\\'); // -> '/foo/bar/'
  * normalizePath('./foo//bar'); // -> './foo/bar'
- * ```
  */
 
 /* module

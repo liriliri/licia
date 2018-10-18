@@ -4,10 +4,10 @@
  * |------|-----|------------|
  * |edges |array|Dependencies|
  * |return|array|Sorted order|
- *
- * ```javascript
+ */
+
+/* example
  * topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
- * ```
  */
 
 /* module

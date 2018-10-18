@@ -7,7 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果值是 TypedArray 类型，返回真|
 
-```javascript
-isTypedArr([]); // -> false
-isTypedArr(new Unit8Array); // -> true
-```

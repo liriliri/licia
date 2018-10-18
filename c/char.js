@@ -4,11 +4,11 @@
  * |------|------|--------------------------------------|
  * |num   |number|Integer to convert                    |
  * |return|string|String representing corresponding char|
- * 
- * ```javascript
+ */
+
+/* example
  * char(65); // -> 'A'
  * char(97); // -> 'a'
- * ```
  */
 
 function exports(num) {

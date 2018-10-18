@@ -7,6 +7,3 @@
 |num|number|数字|
 |返回值|string|对应的分数|
 
-```javascript
-fraction(1.2); // -> '6/5'
-```

@@ -7,6 +7,3 @@
 |arr|array|源数组|
 |返回值|array|目标数组|
 
-```javascript
-shuffle([1, 2, 3]); // -> [3, 1, 2]
-```

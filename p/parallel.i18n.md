@@ -7,15 +7,3 @@
 |tasks|array|函数数组|
 |[cb]|function|结束回调|
 
-```javascript
-parallel([
-    function(cb) {
-        setTimeout(function () { cb(null, 'one') }, 200);
-    },
-    function(cb) {
-        setTimeout(function () { cb(null, 'two') }, 100);
-    }
-], function (err, results) {
-    // results -> ['one', 'two']
-});
-```

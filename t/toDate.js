@@ -4,12 +4,12 @@
  * |------|----|----------------|
  * |val   |*   |Value to convert|
  * |return|Date|Converted Date  |
- * 
- * ```javascript
+ */
+
+/* example
  * toDate('20180501');
  * toDate('2018-05-01');
  * toDate(1525107450849);
- * ```
  */
 
 /* module

@@ -7,7 +7,3 @@
 |type='local'|string|模式，local 或 session|
 |返回值|object|指定 storage|
 
-```javascript
-var localStorage = safeStorage('local');
-localStorage.setItem('licia', 'util');
-```

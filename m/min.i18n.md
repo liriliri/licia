@@ -7,6 +7,3 @@
 |...num|number|要计算的数字|
 |返回值|number|最小值|
 
-```javascript
-min(2.3, 1, 4.5, 2); // 1
-```

@@ -6,12 +6,12 @@
  * |max           |number |Maximum possible value|
  * |floating=false|boolean|Float or not          |
  * |return        |number |Random number         |
- *
- * ```javascript
+ */
+
+/* example
  * random(1, 5); // -> an integer between 0 and 5
  * random(5); // -> an integer between 0 and 5
  * random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
- * ```
  */
 
 /* module

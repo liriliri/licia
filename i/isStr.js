@@ -4,10 +4,10 @@
  * |------|-------|-----------------------------------|
  * |val   |*      |Value to check                     |
  * |return|boolean|True if value is a string primitive|
- *
- * ```javascript
+ */
+
+/* example
  * isStr('licia'); // -> true
- * ```
  */
 
 /* module

@@ -4,10 +4,10 @@
  * |------|------|--------------------------|
  * |obj   |object|Object to convert         |
  * |return|array |List of [key, value] pairs|
- *
- * ```javascript
+ */
+
+/* example
  * pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
- * ```
  */
 
 /* module

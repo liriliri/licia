@@ -4,10 +4,10 @@
  * |------|-------|------------------------------|
  * |val   |*      |Value to check                |
  * |return|boolean|True if value is a DOM element|
- *
- * ```javascript
+ */
+
+/* example
  * isEl(document.body); // -> true
- * ```
  */
 
 /* module

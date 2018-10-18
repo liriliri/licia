@@ -6,10 +6,10 @@
  * |iteratee|function    |Function invoked per iteration|
  * |[ctx]   |*           |Function context              |
  * |return  |array       |New mapped array              |
- *
- * ```javascript
+ */
+
+/* example
  * map([4, 8], function (n) { return n * n; }); // -> [16, 64]
- * ```
  */
 
 /* module

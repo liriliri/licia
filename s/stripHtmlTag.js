@@ -4,10 +4,10 @@
  * |------|------|---------------|
  * |str   |string|String to strip|
  * |return|string|Resulted string|
- *
- * ```javascript
+ */
+
+/* example
  * stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
- * ```
  */
 
 /* module

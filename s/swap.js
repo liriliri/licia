@@ -6,11 +6,11 @@
  * |a     |number|First index  |
  * |b     |number|Second index |
  * |return|array |Array given  |
- * 
- * ```javascript
+ */
+
+/* example
  * var arr = [1, 2];
  * swap(arr, 0, 1); // -> [2, 1]
- * ```
  */
 
 /* module

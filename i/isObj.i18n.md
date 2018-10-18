@@ -9,7 +9,3 @@
 
 [标准定义](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
 
-```javascript
-isObj({}); // -> true
-isObj([]); // -> true
-```

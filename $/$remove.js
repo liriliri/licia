@@ -3,10 +3,10 @@
  * |Name   |Type                |Desc              |
  * |-------|--------------------|------------------|
  * |element|string array element|Elements to delete|
- *
- * ```javascript
+ */
+
+/* example
  * $remove('#test');
- * ```
  */
 
 /* module

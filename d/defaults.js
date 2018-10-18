@@ -5,10 +5,10 @@
  * |obj   |object|Destination object|
  * |*src  |object|Sources objects   |
  * |return|object|Destination object|
- *
- * ```javascript
+ */
+
+/* example
  * defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood', age: 24}
- * ```
  */
 
 /* module

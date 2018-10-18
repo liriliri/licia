@@ -5,13 +5,13 @@
  * |obj   |object      |Object to query          |
  * |path  |array string|Path of property to get  |
  * |return|*           |Target value or undefined|
- *
- * ```javascript
+ */
+
+/* example
  * var obj = {a: {aa: {aaa: 1}}};
  * safeGet(obj, 'a.aa.aaa'); // -> 1
  * safeGet(obj, ['a', 'aa']); // -> {aaa: 1}
  * safeGet(obj, 'a.b'); // -> undefined
- * ```
  */
 
 /* module

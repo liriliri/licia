@@ -6,10 +6,10 @@
  * |[char]|string|Character to prepend|
  * |[len] |number|Indent length       |
  * |return|string|Indented string     |
- *
- * ```javascript
+ */
+
+/* example
  * indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
- * ```
  */
 
 /* module

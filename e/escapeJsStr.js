@@ -6,10 +6,10 @@
  * |------|------|----------------|
  * |str   |string|String to escape|
  * |return|string|Escaped string  |
- * 
- * ```javascript
+ */
+
+/* example
  * escapeJsStr('\"\n'); // -> '\\"\\\\n'
- * ```
  */
 
 /* module

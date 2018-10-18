@@ -4,12 +4,12 @@
  * |----|--------|-----------------|
  * |text|string  |Text to copy     |
  * |[cb]|function|Optional callback|
- * 
- * ```javascript
+ */
+
+/* example
  * copy('text', function (err) {
  *     // Handle errors.
  * });
- * ```
  */
 
 /* module

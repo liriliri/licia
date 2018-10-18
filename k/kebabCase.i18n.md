@@ -7,9 +7,3 @@
 |str|string|源字符串|
 |返回值|string|短横线式字符串|
 
-```javascript
-kebabCase('fooBar'); // -> foo-bar
-kebabCase('foo bar'); // -> foo-bar
-kebabCase('foo_bar'); // -> foo-bar
-kebabCase('foo.bar'); // -> foo-bar
-```

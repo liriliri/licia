@@ -29,12 +29,12 @@
  * |key      |string |Cookie key    |
  * |[options]|object |Cookie options|
  * |return   |exports|Module cookie |
- *
- * ```javascript
+ */
+
+/* example
  * cookie.set('a', '1', {path: '/'});
  * cookie.get('a'); // -> '1'
  * cookie.remove('a');
- * ```
  */
 
 /* module

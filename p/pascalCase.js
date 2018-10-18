@@ -4,13 +4,13 @@
  * |------|------|-------------------|
  * |str   |string|String to convert  |
  * |return|string|Pascal cased string|
- *
- * ```javascript
+ */
+
+/* example
  * pascalCase('fooBar'); // -> FooBar
  * pascalCase('foo bar'); // -> FooBar
  * pascalCase('foo_bar'); // -> FooBar
  * pascalCase('foo.bar'); // -> FooBar
- * ```
  */
 
 /* module

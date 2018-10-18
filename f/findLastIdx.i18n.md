@@ -8,17 +8,3 @@
 |predicate|function|真值检测函数|
 |返回值|number|从后往前，第一个符合条件元素的位置|
 
-```javascript
-findLastIdx([{
-    name: 'john',
-    age: 24
-}, {
-    name: 'jane',
-    age: 23
-}, {
-    name: 'kitty',
-    age: 24
-}], function (val) {
-    return val.age === 24;
-}); // -> 2
-```

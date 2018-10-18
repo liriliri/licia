@@ -4,11 +4,11 @@
  * |------|-------|---------------------------|
  * |year  |number |Year to check              |
  * |return|boolean|True if year is a leap year|
- * 
- * ```javascript
+ */
+
+/* example
  * isLeapYear(2000); // -> true
  * isLeapYear(2002); // -> false
- * ```
  */
 
 /* module

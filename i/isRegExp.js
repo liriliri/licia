@@ -4,10 +4,10 @@
  * |------|-------|-------------------------------------|
  * |val   |*      |Value to check                       |
  * |return|boolean|True if value is a regular expression|
- *
- * ```javascript
+ */
+
+/* example
  * isRegExp(/a/); // -> true
- * ```
  */
 
 /* module

@@ -4,12 +4,12 @@
  * |------|------|------------------|
  * |str   |string|String to convert |
  * |return|string|Space cased string|
- *
- * ```javascript
+ */
+
+/* example
  * spaceCase('fooBar'); // -> foo bar
  * spaceCase('foo.bar'); // -> foo bar
  * spaceCase('foo.bar'); // -> foo bar
- * ```
  */
 
 /* module

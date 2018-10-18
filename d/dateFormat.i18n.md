@@ -39,8 +39,3 @@
 |S|月份天数序数后缀 （st，nd，rd，或 th）|
 |UTC:|是否是 UTC，必须写在最前面|
 
-```javascript
-dateFormat('isoDate'); // -> 2016-11-19
-dateFormat('yyyy-mm-dd HH:MM:ss'); // -> 2016-11-19 19:00:04
-dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
-```

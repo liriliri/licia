@@ -4,10 +4,10 @@
  * |------|-------|-------------------------------------|
  * |val   |string |Value to check                       |
  * |return|boolean|True if value is an email like string|
- *
- * ```javascript
+ */
+
+/* example
  * isEmail('surunzi@foxmail.com'); // -> true
- * ```
  */
 
 /* module

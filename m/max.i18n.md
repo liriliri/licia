@@ -7,6 +7,3 @@
 |...num|number|要计算的数字|
 |返回值|number|最大值|
 
-```javascript
-max(2.3, 1, 4.5, 2); // 4.5
-```

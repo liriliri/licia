@@ -6,13 +6,13 @@
  * |ctx      |*       |This binding of given fn|
  * |[...rest]|*       |Optional arguments      |
  * |return   |function|New bound function      |
- *
- * ```javascript
+ */
+
+/* example
  * var fn = bind(function (msg) {
  *     console.log(this.name + ':' + msg);
  * }, {name: 'eustia'}, 'I am a utility library.');
  * fn(); // -> 'eustia: I am a utility library.'
- * ```
  */
 
 /* module

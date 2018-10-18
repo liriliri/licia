@@ -4,12 +4,12 @@
  * |------|--------|------------------------|
  * |fn    |function|Function to measure time|
  * |return|number  |Execution time, ms      |
- * 
- * ```javascript
+ */
+
+/* example
  * timeTaken(function () {
  *     // Do something.
  * }); // -> Time taken to execute given function.
- * ```
  */
 
 /* module

@@ -7,8 +7,3 @@
 |str|string|源字符串|
 |返回值|string|空格式字符串|
 
-```javascript
-spaceCase('fooBar'); // -> foo bar
-spaceCase('foo.bar'); // -> foo bar
-spaceCase('foo.bar'); // -> foo bar
-```

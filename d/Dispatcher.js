@@ -1,8 +1,9 @@
 /* Flux dispatcher.
  *
  * [Related docs](https://facebook.github.io/flux/docs/dispatcher.html)
- * 
- * ```javascript
+ */
+
+/* example
  * var dispatcher = new Dispatcher();
  * 
  * dispatcher.register(function (payload) {
@@ -14,7 +15,6 @@
  * dispatcher.dispatch({
  *     actionType: 'action'
  * });
- * ```
  */
 
 /* module

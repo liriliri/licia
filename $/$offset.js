@@ -3,10 +3,10 @@
  * |Name   |Type                |Desc                  |
  * |-------|--------------------|----------------------|
  * |element|string array element|Elements to get offset|
- *
- * ```javascript
+ */
+
+/* example
  * $offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
- * ```
  */
 
 /* module

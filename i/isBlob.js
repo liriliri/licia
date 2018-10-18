@@ -4,11 +4,11 @@
  * |------|-------|-----------------------|
  * |val   |*      |Value to check         |
  * |return|boolean|True if value is a Blob|
- * 
- * ```javascript
+ */
+
+/* example
  * isBlob(new Blob([])); // -> true;
  * isBlob([]); // -> false
- * ```
  */
 
 /* module

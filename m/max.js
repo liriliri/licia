@@ -4,10 +4,10 @@
  * |------|------|--------------------|
  * |...num|number|Numbers to calculate|
  * |return|number|Maximum value       |
- *
- * ```javascript
+ */
+
+/* example
  * max(2.3, 1, 4.5, 2); // 4.5
- * ```
  */
 
 /* module

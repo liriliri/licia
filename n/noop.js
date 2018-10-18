@@ -1,8 +1,8 @@
 /* A no-operation function.
- *
- * ```javascript
+ */
+
+/* example
  * noop(); // Does nothing
- * ```
  */
 
 /* module

@@ -8,8 +8,3 @@
 |chars|string array|删除字符|
 |返回值|string|目标字符串|
 
-```javascript
-trim(' abc  '); // -> 'abc'
-trim('_abc_', '_'); // -> 'abc'
-trim('_abc_', ['a', 'c', '_']); // -> 'b'
-```

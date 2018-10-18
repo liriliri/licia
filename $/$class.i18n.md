@@ -40,12 +40,3 @@
 |element|string array element|目标元素集|
 |names|string|class 值|
 
-```javascript
-$class.add('#test', 'class1');
-$class.add('#test', ['class1', 'class2']);
-$class.has('#test', 'class1'); // -> true
-$class.remove('#test', 'class1');
-$class.has('#test', 'class1'); // -> false
-$class.toggle('#test', 'class1');
-$class.has('#test', 'class1'); // -> true
-```

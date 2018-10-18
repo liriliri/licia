@@ -27,8 +27,9 @@
  * ### Default Plugins
  *
  * Required, number, boolean, string and regexp.
- *
- * ```javascript
+ */
+
+/* example
  * Validator.addPlugin('custom', function (val, key, config) {
  *     if (typeof val === 'string' && val.length === 5) return true;
  *
@@ -43,7 +44,6 @@
  * validator.validate({}); // -> 'test is required'
  * validator.validate({test: 1}); // -> 'test should be a string with length 5';
  * validator.validate({test: 'licia'}); // -> true
- * ```
  */
 
 /* module

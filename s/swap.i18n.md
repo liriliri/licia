@@ -9,7 +9,3 @@
 |b|number|序号二|
 |返回值|array|数组本身|
 
-```javascript
-var arr = [1, 2];
-swap(arr, 0, 1); // -> [2, 1]
-```

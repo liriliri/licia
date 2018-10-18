@@ -6,12 +6,12 @@
  * |return|array |Array of all property names|
  *
  * Members of Object's prototype won't be retrieved.
- *
- * ```javascript
+ */
+
+/* example
  * var obj = Object.create({zero: 0});
  * obj.one = 1;
  * allKeys(obj) // -> ['zero', 'one']
- * ```
  */
 
 /* module

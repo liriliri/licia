@@ -9,6 +9,3 @@
 |[ctx]|*|函数上下文|
 |返回值|object|目标对象|
 
-```javascript
-mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
-```

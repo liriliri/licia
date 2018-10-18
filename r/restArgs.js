@@ -5,11 +5,11 @@
  * |function    |function|Function that needs rest parameters    |
  * |[startIndex]|number  |The start index to accumulates         |
  * |return      |function|Generated function with rest parameters|
- *
- * ```javascript
+ */
+
+/* example
  * var paramArr = restArgs(function (rest) { return rest });
  * paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
- * ```
  */
 
 /* module

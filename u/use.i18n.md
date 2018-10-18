@@ -7,11 +7,3 @@
 |[requires]|array|依赖|
 |method|function|要执行的代码|
 
-```javascript
-define('A', function () {
-    return 'A';
-});
-use(['A'], function (A) {
-    console.log(A + 'B'); // -> 'AB'
-});
-```

@@ -3,10 +3,10 @@
  * |Name|Type  |Desc      |
  * |----|------|----------|
  * |key |string|Cookie key|
- * 
- * ```javascript
+ */
+
+/* example
  * rmCookie('test');
- * ```
  */
 
 /* module

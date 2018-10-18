@@ -9,10 +9,6 @@
  * |arr   |array |Byte array   |
  * |return|string|Base64 string|
  *
- * ```javascript
- * base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
- * ```
- *
  * ### decode
  *
  * Turn a base64 string into a byte array.
@@ -21,10 +17,11 @@
  * |------|------|-------------|
  * |str   |string|Base64 string|
  * |return|array |Byte array   |
- *
- * ```javascript
+ */
+
+/* example
+ * base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
  * base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
- * ```
  */
 
 /* module

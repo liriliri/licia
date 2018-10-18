@@ -4,11 +4,11 @@
  * |------|-------|----------------------------------|
  * |val   |*      |Value to check                    |
  * |return|boolean|True if value looks like a promise|
- * 
- * ```javascript
+ */
+
+/* example
  * isPromise(new Promise(function () {})); // -> true
  * isPromise({}); // -> false
- * ```
  */
 
 /* module

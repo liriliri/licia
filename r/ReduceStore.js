@@ -28,8 +28,9 @@
  * ### getState
  * 
  * Get the current state.
- *
- * ```javascript
+ */
+
+/* example
  * var store = new ReduceStore(function (state, action) {
  *     switch (action.type) {
  *         case 'INCREMENT': return state + 1;
@@ -45,7 +46,6 @@
  * store.dispatch({type: 'INCREMENT'}); // 1
  * store.dispatch({type: 'INCREMENT'}); // 2
  * store.dispatch({type: 'DECREMENT'}); // 1
- * ```
  */
 
 /* module

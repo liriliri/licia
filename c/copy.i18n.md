@@ -7,8 +7,3 @@
 |text|string|要拷贝的文本|
 |[cb]|function|可选回调|
 
-```javascript
-copy('text', function (err) {
-    // Handle errors.
-});
-```

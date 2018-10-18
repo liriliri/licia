@@ -25,8 +25,9 @@
  * |Name|Type        |Desc     |
  * |----|------------|---------|
  * |name|string array|Meta name|
- * 
- * ```javascript
+ */
+
+/* example
  * // <meta name="a" content="1"/> <meta name="b" content="2"/> <meta name="c" content="3"/>
  * meta(); // -> {a: '1', b: '2', c: '3'}
  * meta('a'); // -> '1'
@@ -39,7 +40,6 @@
  * });
  * meta.remove('d');
  * meta.remove(['e', 'f']);
- * ```
  */
 
 /* module

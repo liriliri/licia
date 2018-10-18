@@ -9,6 +9,3 @@ http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
 |str|string|源字符串|
 |返回值|string|目标字符串|
 
-```javascript
-escapeJsStr('\"\n'); // -> '\\"\\\\n'
-```

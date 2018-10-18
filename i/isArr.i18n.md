@@ -7,7 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是数组类型，返回真|
 
-```javascript
-isArr([]); // -> true
-isArr({}); // -> false
-```

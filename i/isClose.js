@@ -9,13 +9,13 @@
  * |relTol=1e-9|number |Relative tolerance      |
  * |absTol=0   |number |Absolute tolerance      |
  * |return     |boolean|True if values are close|
- * 
- * ```javascript
+ */
+
+/* example
  * isClose(1, 1.0000000001); // -> true
  * isClose(1, 2); // -> false
  * isClose(1, 1.2, 0.3); // -> true
  * isClose(1, 1.2, 0.1, 0.3); // -> true
- * ```
  */
 
 /* module

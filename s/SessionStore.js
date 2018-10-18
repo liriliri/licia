@@ -8,11 +8,11 @@
  * |----|------|------------------------|
  * |name|string|SessionStorage item name|
  * |data|object|Default data            |
- * 
- * ```javascript
+ */
+
+/* example
  * var store = new SessionStore('licia');
  * store.set('name', 'licia');
- * ```
  */
 
 /* module

@@ -9,6 +9,3 @@
 |val|*|要克隆的值|
 |返回值|*|克隆值|
 
-```javascript
-clone({name: 'eustia'}); // -> {name: 'eustia'}
-```

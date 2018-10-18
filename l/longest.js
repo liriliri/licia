@@ -4,10 +4,10 @@
  * |------|-----|----------------|
  * |arr   |array|Array to inspect|
  * |return|*    |Longest item    |
- *
- * ```javascript
+ */
+
+/* example
  * longest(['a', 'abcde', 'abc']); // -> 'abcde'
- * ```
  */
 
 /* module

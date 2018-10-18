@@ -4,11 +4,11 @@
  * |------|-------|--------------------------|
  * |val   |*      |Value to check            |
  * |return|boolean|True if value is a WeakSet|
- * 
- * ```javascript
+ */
+
+/* example
  * isWeakSet(new Set()); // -> false
  * isWeakSet(new WeakSet()); // -> true
- * ```
  */
 
 /* module

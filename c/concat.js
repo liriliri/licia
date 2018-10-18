@@ -4,10 +4,10 @@
  * |------|-----|------------------|
  * |...arr|array|Arrays to concat  |
  * |return|array|Concatenated array|
- *
- * ```javascript
+ */
+
+/* example
  * concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
- * ```
  */
 
 /* module

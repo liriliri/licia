@@ -4,10 +4,10 @@
  * |------|------|------------------------|
  * |obj   |object|Object to check         |
  * |return|array |Function names in object|
- *
- * ```javascript
+ */
+
+/* example
  * methods(console); // -> ['Console', 'assert', 'dir', ...]
- * ```
  */
 
 /* module

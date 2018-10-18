@@ -4,11 +4,11 @@
  * |------|------|----------------|
  * |...arr|string|List of names   |
  * |return|object|Abbreviation map|
- * 
- * ```javascript
+ */
+
+/* example
  * abbrev('lina', 'luna');
  * // -> {li: 'lina', lin: 'lina', lina: 'lina', lu: 'luna', lun: 'luna', luna: 'luna'}
- * ```
  */
 
 /* module

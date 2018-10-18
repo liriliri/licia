@@ -6,13 +6,13 @@
  * |len    |number|Padding length        |
  * |[chars]|string|String used as padding|
  * |return |string|Resulted string       |
- *
- * ```javascript
+ */
+
+/* example
  * lpad('a', 5); // -> '    a'
  * lpad('a', 5, '-'); // -> '----a'
  * lpad('abc', 3, '-'); // -> 'abc'
  * lpad('abc', 5, 'ab'); // -> 'ababc'
- * ```
  */
 
 /* module

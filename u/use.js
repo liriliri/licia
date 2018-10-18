@@ -4,15 +4,15 @@
  * |----------|--------|--------------------|
  * |[requires]|array   |Dependencies        |
  * |method    |function|Codes to be executed|
- *
- * ```javascript
+ */
+
+/* example
  * define('A', function () {
  *     return 'A';
  * });
  * use(['A'], function (A) {
  *     console.log(A + 'B'); // -> 'AB'
  * });
- * ```
  */
 
 /* module

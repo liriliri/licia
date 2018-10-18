@@ -4,8 +4,3 @@
 
 只支持字符串键名，当 Map 存在时会直接使用 Map。
 
-```javascript
-var map = new PseudoMap();
-map.set('1', 1);
-map.get('1'); // -> 1
-```

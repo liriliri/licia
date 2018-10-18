@@ -8,8 +8,3 @@
 |fn|function|源函数|
 |返回值|function|输出函数|
 
-```javascript
-var fn = after(5, function() {
-    // -> Only invoke after fn is called 5 times.
-});
-```

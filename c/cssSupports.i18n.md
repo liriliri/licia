@@ -8,10 +8,3 @@
 |[val]|string|Css 属性值|
 |返回值|boolean|如果支持，返回真|
 
-```javascript
-cssSupports('display', 'flex'); // -> true
-cssSupports('display', 'invalid'); // -> false
-cssSupports('text-decoration-line', 'underline'); // -> true
-cssSupports('grid'); // -> true
-cssSupports('invalid'); // -> false
-```

@@ -14,10 +14,10 @@
  * locale and units like quarter and week.
  * 
  * Note: Format uses dateFormat module, so the mask is not quite the same as moment.js.
- * 
- * ```javascript
+ */
+
+/* example
  * moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
- * ```
  */
 
 /* module

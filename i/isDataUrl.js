@@ -4,11 +4,11 @@
  * |------|-------|----------------------------|
  * |str   |string |String to check             |
  * |return|boolean|True if string is a data url|
- * 
- * ```javascript
+ */
+
+/* example
  * isDataUrl('http://eustia.liriliri.io'); // -> false
  * isDataUrl('data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D'); // -> true
- * ```
  */
 
 /* module

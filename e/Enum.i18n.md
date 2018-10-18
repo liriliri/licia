@@ -12,12 +12,3 @@ Enum 类实现。
 |-----|----|---|
 |obj|object|键值对|
 
-```javascript
-var importance = new Enum([
-    'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
-]);
-
-if (val === importance.CRITICAL) {
-    // Do something.
-}
-```

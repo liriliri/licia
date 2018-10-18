@@ -12,15 +12,15 @@
  * ### off
  * 
  * Unregister keyboard listener.
- *
- * ```javascript
+ */
+
+/* example
  * hotkey.on('k', function () {
  *     console.log('k is pressed');
  * });
  * function keyDown() {}
  * hotkey.on('shift+a, shift+b', keyDown);
  * hotkey.off('shift+a', keyDown);
- * ```
  */
 
 /* module

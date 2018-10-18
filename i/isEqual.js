@@ -5,10 +5,10 @@
  * |val   |*      |Value to compare             |
  * |other |*      |Other value to compare       |
  * |return|boolean|True if values are equivalent|
- *
- * ```javascript
+ */
+
+/* example
  * isEqual([1, 2, 3], [1, 2, 3]); // -> true
- * ```
  */
 
 /* module

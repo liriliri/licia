@@ -4,13 +4,13 @@
  * |------|------|----------------|
  * |val   |*     |Value to convert|
  * |return|string|Resulted string |
- *
- * ```javascript
+ */
+
+/* example
  * toStr(null); // -> ''
  * toStr(1); // -> '1'
  * toStr(false); // -> 'false'
  * toStr([1, 2, 3]); // -> '1,2,3'
- * ```
  */
 
 /* module

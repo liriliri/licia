@@ -6,8 +6,3 @@ dom 准备好时调用回调函数，类似于 jQuery 的 ready 方法。
 |-----|----|---|
 |fn|function|回调函数|
 
-```javascript
-ready(function () {
-    // It's safe to manipulate dom here.
-});
-```

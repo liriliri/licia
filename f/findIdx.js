@@ -5,8 +5,9 @@
  * |arr      |array   |Array to search               |
  * |predicate|function|Function invoked per iteration|
  * |return   |number  |Index of matched element      |
- * 
- * ```javascript
+ */
+
+/* example
  * findIdx([{
  *     name: 'john',
  *     age: 24
@@ -16,7 +17,6 @@
  * }], function (val) {
  *     return val.age === 23;
  * }); // -> 1
- * ```
  */
 
 /* module

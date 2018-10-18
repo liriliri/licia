@@ -5,13 +5,13 @@
  * |dir       |string  |Directory to create|
  * |mode=0777 |number  |Directory mode     |
  * |[callback]|function|Callback           |
- *
- * ```javascript
+ */
+
+/* example
  * mkdir('/tmp/foo/bar/baz', function (err) {
  *     if (err) console.log(err);
  *     else console.log('Done');
  * });
- * ```
  */
 
 /* module

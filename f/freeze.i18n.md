@@ -9,9 +9,3 @@ Object.freeze 的快捷方式。
 |obj|object|目标对象|
 |返回值|object|目标对象|
 
-```javascript
-var a = {b: 1};
-freeze(a);
-a.b = 2;
-console.log(a); // -> {b: 1}
-```

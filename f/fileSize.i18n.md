@@ -7,10 +7,3 @@
 |bytes|number|文件字节大小|
 |返回值|string|易于阅读的文件大小|
 
-```javascript
-fileSize(5); // -> '5'
-fileSize(1500); // -> '1.46K'
-fileSize(1500000); // -> '1.43M'
-fileSize(1500000000); // -> '1.4G'
-fileSize(1500000000000); // -> '1.36T'
-```

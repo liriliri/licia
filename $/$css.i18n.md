@@ -23,11 +23,3 @@
 |element|string array element|目标元素集|
 |properties|object|包含多个要设置样式-值对的对象|
 
-```javascript
-$css('#test', {
-    'color': '#fff',
-    'background': 'black'
-});
-$css('#test', 'display', 'block');
-$css('#test', 'color'); // -> #fff
-```

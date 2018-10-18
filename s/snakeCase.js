@@ -4,12 +4,12 @@
  * |------|------|------------------|
  * |str   |string|String to convert |
  * |return|string|Snake cased string|
- *
- * ```javascript
+ */
+
+/* example
  * snakeCase('fooBar'); // -> foo_bar
  * snakeCase('foo bar'); // -> foo_bar
  * snakeCase('foo.bar'); // -> foo_bar
- * ```
  */
 
 /* module

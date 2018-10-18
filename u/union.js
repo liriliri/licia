@@ -4,10 +4,10 @@
  * |------|-----|----------------------------|
  * |...arr|array|Arrays to inspect           |
  * |return|array|New array of combined values|
- *
- * ```javascript
+ */
+
+/* example
  * union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
- * ```
  */
 
 /* module

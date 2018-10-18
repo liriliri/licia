@@ -29,22 +29,3 @@
 
 TRACE，DEBUG，INFO，WARN，ERROR 和 SILENT。
 
-```javascript
-var logger = new Logger('licia', Logger.level.ERROR);
-logger.trace('test');
-
-// Format output.
-logger.formatter = function (type, argList) {
-    argList.push(new Date().getTime());
-
-    return argList;
-};
-
-logger.on('all', function (type, argList) {
-    // It's not affected by log level.
-});
-
-logger.on('debug', function (argList) {
-    // Affected by log level.
-});
-```

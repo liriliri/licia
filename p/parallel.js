@@ -4,8 +4,9 @@
  * |-----|--------|-----------------------|
  * |tasks|array   |Array of functions     |
  * |[cb] |function|Callback once completed|
- *
- * ```javascript
+ */
+
+/* example
  * parallel([
  *     function(cb) {
  *         setTimeout(function () { cb(null, 'one') }, 200);
@@ -16,7 +17,6 @@
  * ], function (err, results) {
  *     // results -> ['one', 'two']
  * });
- * ```
  */
 
 /* module

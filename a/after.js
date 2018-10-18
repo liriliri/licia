@@ -5,12 +5,12 @@
  * |n     |number  |Number of calls before invoked|
  * |fn    |function|Function to restrict          |
  * |return|function|New restricted function       |
- *
- * ```javascript
+ */
+
+/* example
  * var fn = after(5, function() {
  *     // -> Only invoke after fn is called 5 times.
  * });
- * ```
  */
 
 /* module

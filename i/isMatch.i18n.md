@@ -8,6 +8,3 @@
 |src|object|进行匹配的对象|
 |返回值|boolean|如果匹配，返回真|
 
-```javascript
-isMatch({a: 1, b: 2}, {a: 1}); // -> true
-```

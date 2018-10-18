@@ -9,8 +9,3 @@
 |ctx|*|函数上下文|
 |返回值|boolean|如果有元素通过真值检测，返回真|
 
-```javascript
-some([2, 5], function (val) {
-    return val % 2 === 0;
-}); // -> true
-```

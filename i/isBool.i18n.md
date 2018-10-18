@@ -7,8 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是布尔类型，返回真|
 
-```javascript
-isBool(true); // -> true
-isBool(false); // -> true
-isBool(1); // -> false
-```

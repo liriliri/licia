@@ -20,15 +20,15 @@
  * |----------|--------------------|--------------------------------|
  * |element   |string array element|Elements to manipulate          |
  * |properties|object              |Object of css-value pairs to set|
- *
- * ```javascript
+ */
+
+/* example
  * $css('#test', {
  *     'color': '#fff',
  *     'background': 'black'
  * });
  * $css('#test', 'display', 'block');
  * $css('#test', 'color'); // -> #fff
- * ```
  */
 
 /* module

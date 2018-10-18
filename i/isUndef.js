@@ -4,11 +4,11 @@
  * |------|-------|--------------------------|
  * |val   |*      |Value to check            |
  * |return|boolean|True if value is undefined|
- *
- * ```javascript
+ */
+
+/* example
  * isUndef(void 0); // -> true
  * isUndef(null); // -> false
- * ```
  */
 
 /* module

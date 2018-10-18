@@ -10,15 +10,3 @@
 |options|object|请求选项|
 |返回值|promise|请求 promise|
 
-```javascript
-fetch('test.json', {
-    method: 'GET',
-    timeout: 3000,
-    headers: {},
-    body: ''
-}).then(function (res) {
-    return res.json();
-}).then(function (data) {
-    console.log(data);
-});
-```

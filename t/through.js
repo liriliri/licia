@@ -13,15 +13,15 @@
  * ### ctor
  * 
  * Return a class that extends stream Transform.
- *
- * ```javascript
+ */
+
+/* example
  * fs.createReadStream('in.txt')
  *   .pipe(through(function (chunk, enc, cb) {
  *       // Do something to chunk
  *       this.push(chunk);
  *       cb();
  *   })).pipe(fs.createWriteStream('out.txt'));
- * ```
  */
 
 /* module

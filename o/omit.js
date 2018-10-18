@@ -5,8 +5,9 @@
  * |obj   |object               |Source object  |
  * |filter|string array function|Object filter  |
  * |return|object               |Filtered object|
- * 
- * ```javascript
+ */
+
+/* example
  * omit({a: 1, b: 2}, 'a'); // -> {b: 2}
  * omit({a: 1, b: 2, c: 3}, ['b', 'c']) // -> {a: 1}
  * omit({a: 1, b: 2, c: 3, d: 4}, function (val, key) {

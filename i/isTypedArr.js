@@ -4,11 +4,11 @@
  * |------|-------|------------------------------|
  * |val   |*      |Value to check                |
  * |return|boolean|True if value is a typed array|
- *
- * ```javascript
+ */
+
+/* example
  * isTypedArr([]); // -> false
  * isTypedArr(new Unit8Array); // -> true
- * ```
  */
 
 /* module

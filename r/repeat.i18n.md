@@ -8,8 +8,3 @@
 |n|number|重复次数|
 |返回值|string|目标字符串|
 
-```javascript
-repeat('a', 3); // -> 'aaa'
-repeat('ab', 2); // -> 'abab'
-repeat('*', 0); // -> ''
-```

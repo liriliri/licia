@@ -38,14 +38,3 @@ JavaScript 补间动画库。
 |-----|----|---|
 |[progress]|number|介于 0 到 1 之间的数字|
 
-```javascript
-var pos = {x: 0, y: 0};
-
-var tween = new Tween(pos);
-tween.on('update', function (target) {
-    console.log(target.x, target.y);
-}).on('end', function (target) {
-    console.log(target.x, target.y); // -> 100, 100
-});
-tween.to({x: 100, y: 100}, 1000, 'inElastic').play();
-```

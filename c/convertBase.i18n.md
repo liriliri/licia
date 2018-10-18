@@ -9,7 +9,3 @@
 |to|number|目标进制|
 |返回值|string|转换后的数字|
 
-```javascript
-convertBase('10', 2, 10); // -> '2'
-convertBase('ff', 16, 2); // -> '11111111'
-```

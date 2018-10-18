@@ -4,10 +4,10 @@
  * |------|------|--------------------|
  * |...num|number|Numbers to calculate|
  * |return|number|Average value       |
- *
- * ```javascript
+ */
+
+/* example
  * average(5, 3, 1); // -> 3
- * ```
  */
 
 /* module

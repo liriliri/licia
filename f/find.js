@@ -6,8 +6,9 @@
  * |predicate|function    |Function invoked per iteration   |
  * |[ctx]    |*           |Predicate context                |
  * |return   |*           |First value that passes predicate|
- * 
- * ```javascript
+ */
+
+/* example
  * find([{
  *     name: 'john',
  *     age: 24
@@ -17,7 +18,6 @@
  * }], function (val) {
  *     return val.age === 23;
  * }); // -> {name: 'jane', age: 23}
- * ```
  */
 
 /* module

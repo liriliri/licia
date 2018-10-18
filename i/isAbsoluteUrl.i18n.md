@@ -7,8 +7,3 @@
 |url|string|目标 url|
 |返回值|boolean|如果是绝对地址，返回真|
 
-```javascript
-isAbsoluteUrl('http://www.surunzi.com'); // -> true
-isAbsoluteUrl('//www.surunzi.com'); // -> false
-isAbsoluteUrl('surunzi.com'); // -> false
-```

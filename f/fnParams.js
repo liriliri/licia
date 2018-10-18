@@ -4,10 +4,10 @@
  * |------|--------|--------------------------|
  * |fn    |function|Function to get parameters|
  * |return|array   |Names                     |
- * 
- * ```javascript
+ */
+
+/* example
  * fnParams(function (a, b) {}); // -> ['a', 'b']
- * ```
  */
 
 /* module

@@ -9,9 +9,3 @@
 |[chars]|string|填充字符串|
 |返回值 |string|目标字符串|
 
-```javascript
-lpad('a', 5); // -> '    a'
-lpad('a', 5, '-'); // -> '----a'
-lpad('abc', 3, '-'); // -> 'abc'
-lpad('abc', 5, 'ab'); // -> 'ababc'
-```

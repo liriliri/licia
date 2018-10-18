@@ -5,10 +5,10 @@
  * |a     |number|Number to calculate    |
  * |b     |number|Number to calculate    |
  * |return|number|Greatest common divisor|
- * 
- * ```javascript
+ */
+
+/* example
  * gcd(121, 44); // -> 11
- * ```
  */
 
 /* module

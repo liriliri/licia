@@ -5,10 +5,10 @@
  * |obj   |object |Object to query                 |
  * |key   |string |Path to check                   |
  * |return|boolean|True if key is a direct property|
- *
- * ```javascript
+ */
+
+/* example
  * has({one: 1}, 'one'); // -> true
- * ```
  */
 
 /* module

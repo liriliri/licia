@@ -7,8 +7,3 @@
 |src|string|样式文件地址|
 |cb|function|加载完回调|
 
-```javascript
-loadCss('style.css', function (isLoaded) {
-    // Do something...
-});
-```

@@ -33,14 +33,14 @@
  * ### toArr
  *
  * Convert the stack to a JavaScript array.
- *
- * ```javascript
+ */
+
+/* example
  * var stack = new Stack();
  *
  * stack.push(2); // -> 1
  * stack.push(3); // -> 2
  * stack.pop(); // -> 3
- * ```
  */
 
 /* module

@@ -7,8 +7,3 @@
 |name|string|名称|
 |返回值|function|打印格式化日志的函数|
 
-```javascript
-var d = debug('test');
-d('doing lots of uninteresting work');
-d.enabled = false;
-```

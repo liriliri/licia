@@ -4,10 +4,10 @@
  * |--------|------|------------------|
  * |[prefix]|string|Id prefix         |
  * |return  |string|Globally-unique id|
- *
- * ```javascript
+ */
+
+/* example
  * uniqId('eusita_'); // -> 'eustia_xxx'
- * ```
  */
 
 /* module

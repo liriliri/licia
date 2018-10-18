@@ -4,11 +4,11 @@
  * |------|------|-----------------|
  * |str   |string|String to convert|
  * |return|string|Dot cased string |
- *
- * ```javascript
+ */
+
+/* example
  * dotCase('fooBar'); // -> foo.bar
  * dotCase('foo bar'); // -> foo.bar
- * ```
  */
 
 /* module

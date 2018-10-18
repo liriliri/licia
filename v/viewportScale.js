@@ -1,8 +1,8 @@
 /* Get viewport scale.
- * 
- * ```javascript
+ */
+
+/* example
  * viewportScale(); // -> 3
- * ```
  */
 
 /* module

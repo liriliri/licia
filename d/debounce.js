@@ -5,10 +5,10 @@
  * |fn    |function|Function to debounce           |
  * |wait  |number  |Number of milliseconds to delay|
  * |return|function|New debounced function         |
- *
- * ```javascript
+ */
+
+/* example
  * $(window).resize(debounce(calLayout, 300));
- * ```
  */
 
 /* module

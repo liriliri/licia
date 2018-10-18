@@ -4,12 +4,12 @@
  * |------|-------|---------------------|
  * |num   |number |Number to check      |
  * |return|boolean|True if number is odd|
- * 
- * ```javascript
+ */
+
+/* example
  * isOdd(0); // -> false
  * isOdd(1); // -> true
  * isOdd(2); // -> false
- * ```
  */
 
 /* module

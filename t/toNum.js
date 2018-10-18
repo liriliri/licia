@@ -4,10 +4,10 @@
  * |------|------|----------------|
  * |val   |*     |Value to process|
  * |return|number|Resulted number |
- *
- * ```javascript
+ */
+
+/* example
  * toNum('5'); // -> 5
- * ```
  */
 
 /* module

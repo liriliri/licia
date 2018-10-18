@@ -28,17 +28,3 @@ meta 操作库，将 name 和 content 属性值转换为键值对。
 |-----|----|---|
 |name|string array|meta 名|
 
-```javascript
-// <meta name="a" content="1"/> <meta name="b" content="2"/> <meta name="c" content="3"/>
-meta(); // -> {a: '1', b: '2', c: '3'}
-meta('a'); // -> '1'
-meta(['a', 'c']); // -> {a: '1', c: '3'}
-meta('d', '4');
-meta({
-    d: '5',
-    e: '6',
-    f: '7'
-});
-meta.remove('d');
-meta.remove(['e', 'f']);
-```

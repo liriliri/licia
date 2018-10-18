@@ -6,11 +6,11 @@
  * |------|-------|-----------------------------|
  * |val   |string |JSON string                  |
  * |return|boolean|True if value is a valid JSON|
- * 
- * ```javascript
+ */
+
+/* example
  * isJson('{"a": 5}'); // -> true
  * isJson("{'a': 5}"); // -> false
- * ```
  */
 
 /* module

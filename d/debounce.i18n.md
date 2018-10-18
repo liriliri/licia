@@ -8,6 +8,3 @@
 |wait|number|延迟毫秒数|
 |返回值|function|目标函数|
 
-```javascript
-$(window).resize(debounce(calLayout, 300));
-```

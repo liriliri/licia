@@ -9,8 +9,3 @@
 
 对于函数，返回假。
 
-```javascript
-isArrLike('test'); // -> true
-isArrLike(document.body.children); // -> true;
-isArrLike([1, 2, 3]); // -> true
-```

@@ -9,6 +9,3 @@
 |str|string|html 字符串|
 |返回值|element|html 元素|
 
-```javascript
-toEl('<div>test</div>');
-```

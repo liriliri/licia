@@ -1,8 +1,8 @@
 /* Check if running in wechat mini program.
- *
- * ```javascript
+ */
+
+/* example
  * console.log(isMiniProgram); // -> true if running in mini program.
- * ```
  */
 
 /* module

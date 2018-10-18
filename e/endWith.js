@@ -5,10 +5,10 @@
  * |str   |string |The string to search           |
  * |suffix|string |String suffix                  |
  * |return|boolean|True if string ends with target|
- *
- * ```javascript
+ */
+
+/* example
  * endWith('ab', 'b'); // -> true
- * ```
  */
 
 /* module

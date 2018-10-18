@@ -7,6 +7,3 @@
 |str|string|源码|
 |返回值|array|块注释|
 
-```javascript
-extractBlockCmts('\/*licia*\/'); // -> ['licia']
-```

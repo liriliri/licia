@@ -9,6 +9,3 @@
 |arr|array|要排序的数组|
 |[cmp]|function|比较器|
 
-```javascript
-mergeSort([2, 1]); // -> [1, 2]
-```

@@ -5,10 +5,10 @@
  * |fn    |function|Function to throttle           |
  * |wait  |number  |Number of milliseconds to delay|
  * |return|function|New throttled function         |
- *
- * ```javascript
+ */
+
+/* example
  * $(window).scroll(throttle(updatePos, 100));
- * ```
  */
 
 /* module

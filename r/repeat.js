@@ -5,12 +5,12 @@
  * |str   |string|String to repeat|
  * |n     |number|Repeat times    |
  * |return|string|Repeated string |
- *
- * ```javascript
+ */
+
+/* example
  * repeat('a', 3); // -> 'aaa'
  * repeat('ab', 2); // -> 'abab'
  * repeat('*', 0); // -> ''
- * ```
  */
 
 /* module

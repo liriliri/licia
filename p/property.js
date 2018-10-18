@@ -4,12 +4,12 @@
  * |------|------------|---------------------------|
  * |path  |string array|Path of the property to get|
  * |return|function    |New accessor function      |
- *
- * ```javascript
+ */
+
+/* example
  * var obj = {a: {b: 1}};
  * property('a')(obj); // -> {b: 1}
  * property(['a', 'b'])(obj); // -> 1
- * ```
  */
 
 /* module

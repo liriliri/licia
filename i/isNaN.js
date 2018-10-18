@@ -6,11 +6,11 @@
  * |return|boolean|True if value is an NaN|
  *
  * Undefined is not an NaN, different from global isNaN function.
- *
- * ```javascript
+ */
+
+/* example
  * isNaN(0); // -> false
  * isNaN(NaN); // -> true
- * ```
  */
 
 /* module

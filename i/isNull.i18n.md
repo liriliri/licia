@@ -7,6 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是 Null 类型，返回真|
 
-```javascript
-isNull(null); // -> true
-```

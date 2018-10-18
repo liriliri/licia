@@ -7,6 +7,3 @@
 |str|string|源字符串|
 |返回值|string|目标字符串|
 
-```javascript
-stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
-```

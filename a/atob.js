@@ -1,8 +1,8 @@
 /* Use Buffer to emulate atob when running in node.
- *
- * ```javascript
+ */
+
+/* example
  * atob('SGVsbG8gV29ybGQ='); // -> 'Hello World'
- * ```
  */
 
 /* module

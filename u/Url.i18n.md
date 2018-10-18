@@ -63,10 +63,3 @@ url 对象包含以下属性值：
 |query|query 对象|
 |hash|URL # 字符后边的部分，# 包含在内|
 
-```javascript
-var url = new Url('http://example.com:8080?eruda=true');
-console.log(url.port); // -> '8080'
-url.query.foo = 'bar';
-url.rmQuery('eruda');
-utl.toString(); // -> 'http://example.com:8080/?foo=bar'
-```

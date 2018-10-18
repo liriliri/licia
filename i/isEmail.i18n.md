@@ -7,6 +7,3 @@
 |val|string|要检查的值|
 |返回值|boolean|如果是合法的邮件地址，返回真|
 
-```javascript
-isEmail('surunzi@foxmail.com'); // -> true
-```

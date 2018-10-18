@@ -4,12 +4,12 @@
  * |------|-------|----------------------|
  * |num   |number |Number to check       |
  * |return|boolean|True if number is even|
- * 
- * ```javascript
+ */
+
+/* example
  * isOdd(0); // -> true
  * isOdd(1); // -> false
  * isOdd(2); // -> true
- * ```
  */
 
 /* module

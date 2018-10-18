@@ -8,9 +8,3 @@
 |wrapper|function|包裹函数|
 |返回值 |function|目标函数|
 
-```javascript
-var p = wrap(escape, function(fn, text) {
-    return '<p>' + fn(text) + '</p>';
-});
-p('You & Me'); // -> '<p>You &amp; Me</p>'
-```

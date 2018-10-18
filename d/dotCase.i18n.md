@@ -7,7 +7,3 @@
 |str|string|源字符串|
 |返回值|string|点式字符串|
 
-```javascript
-dotCase('fooBar'); // -> foo.bar
-dotCase('foo bar'); // -> foo.bar
-```

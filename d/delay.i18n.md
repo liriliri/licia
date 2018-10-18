@@ -8,9 +8,3 @@
 |wait|number|延迟的毫秒数|
 |[...args]|*|绑定参数|
 
-```javascript
-delay(function (text) {
-    console.log(text);
-}, 1000, 'later');
-// -> Logs 'later' after one second
-```

@@ -4,12 +4,12 @@
  * |------|-------|-------------------------------|
  * |val   |*      |Value to check                 |
  * |return|boolean|True if value is a plain object|
- *
- * ```javascript
+ */
+
+/* example
  * isPlainObj({}); // -> true
  * isPlainObj([]); // -> false
  * isPlainObj(function () {}); // -> false
- * ```
  */
 
 /* module

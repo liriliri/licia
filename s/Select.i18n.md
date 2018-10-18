@@ -24,9 +24,3 @@ querySelectorAll 的简单包装类。
 |-----|----|---|
 |fn|function|调用函数|
 
-```javascript
-var $test = new Select('#test');
-$test.find('.test').each(function (idx, element) {
-    // Manipulate dom nodes
-});
-```

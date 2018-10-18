@@ -8,13 +8,13 @@
  * |predicate|function|Function invoked per iteration      |
  * |[ctx]    |*       |Predicate context                   |
  * |return   |array   |Array of all values that are removed|
- *
- * ```javascript
+ */
+
+/* example
  * var arr = [1, 2, 3, 4, 5];
  * var evens = remove(arr, function (val) { return val % 2 === 0 });
  * console.log(arr); // -> [1, 3, 5]
  * console.log(evens); // -> [2, 4]
- * ```
  */
 
 /* module

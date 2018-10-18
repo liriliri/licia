@@ -7,7 +7,3 @@
 |n|number|序号 n|
 |返回值|number|斐波那契数列 n 位的数字|
 
-```javascript
-fibonacci(1); // -> 1
-fibonacci(3); // -> 2
-```

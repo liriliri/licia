@@ -7,6 +7,3 @@
 |edges|array|依赖关系|
 |返回值|array|排序后的数组|
 
-```javascript
-topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
-```

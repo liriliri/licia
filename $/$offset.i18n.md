@@ -6,6 +6,3 @@
 |-----|----|---|
 |element|string array element|目标元素集|
 
-```javascript
-$offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
-```

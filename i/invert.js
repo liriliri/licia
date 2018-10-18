@@ -6,10 +6,10 @@
  * |return|object|New inverted object|
  *
  * If object contains duplicate values, subsequent values overwrite property assignments of previous values.
- *
- * ```javascript
+ */
+
+/* example
  * invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
- * ```
  */
 
 /* module

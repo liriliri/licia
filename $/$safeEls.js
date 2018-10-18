@@ -4,10 +4,10 @@
  * |------|--------------------|-----------------|
  * |value |element array string|Value to convert |
  * |return|array               |Array of elements|
- *
- * ```javascript
+ */
+
+/* example
  * $safeEls('.test'); // -> Array of elements with test class
- * ```
  */
 
 /* module

@@ -5,11 +5,11 @@
  * |obj   |array object|Collection to sample  |
  * |n     |number      |Number of values      |
  * |return|array       |Array of sample values|
- *
- * ```javascript
+ */
+
+/* example
  * sample([2, 3, 1], 2); // -> [2, 3]
  * sample({a: 1, b: 2, c: 3}, 1); // -> [2]
- * ```
  */
 
 /* module

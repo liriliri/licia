@@ -7,6 +7,3 @@
 |fn|function|目标函数|
 |返回值|array|参数名|
 
-```javascript
-fnParams(function (a, b) {}); // -> ['a', 'b']
-```

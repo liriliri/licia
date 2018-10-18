@@ -1,12 +1,12 @@
 /* High resolution time up to microsecond precision.
- *
- * ```javascript
+ */
+
+/* example
  * var start = perfNow();
  * 
  * // Do something.
  * 
  * console.log(perfNow() - start);
- * ```
  */
 
 /* module

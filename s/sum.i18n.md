@@ -7,6 +7,3 @@
 |...num|number|要计算的数字|
 |返回值|number|数字和|
 
-```javascript
-sum(1, 2, 5); // -> 8
-```

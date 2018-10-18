@@ -4,8 +4,9 @@
  * |-----|--------|-----------------------|
  * |tasks|array   |Array of functions     |
  * |[cb] |function|Callback once completed|
- *
- * ```javascript
+ */
+
+/* example
  * waterfall([
  *     function (cb) {
  *         cb(null, 'one');
@@ -17,7 +18,6 @@
  * ], function (err, result) {
  *     // result -> 'done'
  * });
- * ```
  */
 
 /* module

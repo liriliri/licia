@@ -17,8 +17,9 @@
  * |------|-------|----------------------------------------|
  * |value |string |State to check                          |
  * |return|boolean|True if current state equals given value|
- *
- * ```javascript
+ */
+
+/* example
  * var state = new State('empty', {
  *     load: {from: 'empty', to: 'pause'},
  *     play: {from: 'pause', to: 'play'},
@@ -36,7 +37,6 @@
  *     // Error handler
  * });
  * state.play('eustia');
- * ```
  */
 
 /* module

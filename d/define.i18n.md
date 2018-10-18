@@ -10,11 +10,3 @@
 
 模块主体函数只有被 use 模块使用时才会被执行。
 
-```javascript
-define('A', function () {
-    return 'A';
-});
-define('B', ['A'], function (A) {
-    return 'B' + A;
-});
-```

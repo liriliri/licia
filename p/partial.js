@@ -5,11 +5,11 @@
  * |fn         |function|Function to partially apply arguments to|
  * |...partials|*       |Arguments to be partially applied       |
  * |return     |function|New partially applied function          |
- *
- * ```javascript
+ */
+
+/* example
  * var sub5 = partial(function (a, b) { return b - a }, 5);
  * sub(20); // -> 15
- * ```
  */
 
 /* module

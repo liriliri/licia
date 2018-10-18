@@ -8,12 +8,12 @@
  * ### dash
  * 
  * Create a dasherize version.
- * 
- * ```javascript
+ */
+
+/* example
  * prefix('text-emphasis'); // -> 'WebkitTextEmphasis'
  * prefix.dash('text-emphasis'); // -> '-webkit-text-emphasis'
  * prefix('color'); // -> 'color'
- * ```
  */
 
 /* module

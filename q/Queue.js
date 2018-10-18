@@ -33,8 +33,9 @@
  * ### toArr
  *
  * Convert queue to a JavaScript array.
- *
- * ```javascript
+ */
+
+/* example
  * var queue = new Queue();
  *
  * console.log(queue.size); // -> 0
@@ -44,7 +45,6 @@
  * console.log(queue.size); // -> 1
  * queue.peek(); // -> 3
  * console.log(queue.size); // -> 1
- * ```
  */
 
 /* module

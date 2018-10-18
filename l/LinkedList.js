@@ -28,12 +28,12 @@
  * ### toArr
  * 
  * Convert the list to a JavaScript array.
- *
- * ```javascript
+ */
+
+/* example
  * var linkedList = new LinkedList();
  * linkedList.push(5);
  * linkedList.pop(); // -> 5
- * ```
  */
 
 /* module

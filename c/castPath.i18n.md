@@ -8,9 +8,3 @@
 |[obj]|object|目标对象|
 |返回值|array|属性路径数组|
 
-```javascript
-castPath('a.b.c'); // -> ['a', 'b', 'c']
-castPath(['a']); // -> ['a']
-castPath('a[0].b'); // -> ['a', '0', 'b']
-castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
-```

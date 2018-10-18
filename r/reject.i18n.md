@@ -9,8 +9,3 @@
 |[ctx]|*|函数上下文|
 |返回值|array|包含所有未通过真值检测元素的数组|
 
-```javascript
-reject([1, 2, 3, 4, 5], function (val) {
-    return val % 2 === 0;
-}); // -> [1, 3, 5]
-```

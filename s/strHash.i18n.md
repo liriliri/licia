@@ -7,6 +7,3 @@
 |str|string|目标字符串|
 |返回值|number|哈希结果|
 
-```javascript
-strHash('test'); // -> 2090770981
-```

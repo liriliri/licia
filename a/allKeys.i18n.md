@@ -9,8 +9,3 @@
 
 Object 对象原型上的方法不会被获取到。 
 
-```javascript
-var obj = Object.create({zero: 0});
-obj.one = 1;
-allKeys(obj) // -> ['zero', 'one']
-```

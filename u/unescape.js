@@ -4,10 +4,10 @@
  * |------|------|------------------|
  * |str   |string|String to unescape|
  * |return|string|unescaped string  |
- *
- * ```javascript
+ */
+
+/* example
  * unescape('You &amp; Me'); -> // -> 'You & Me'
- * ```
  */
 
 /* module

@@ -31,8 +31,3 @@
 
 将链表转换成 JavaScript 数组。
 
-```javascript
-var linkedList = new LinkedList();
-linkedList.push(5);
-linkedList.pop(); // -> 5
-```

@@ -29,9 +29,3 @@
 |color|string|颜色字符串|
 |返回值|object|含有值及颜色模型的对象|
 
-```javascript
-Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model: 'rgb'}
-var color = new Color('#abc');
-color.toRgb(); // -> 'rgb(170, 187, 204)'
-color.toHsl(); // -> 'hsl(210, 25%, 73%)'
-```

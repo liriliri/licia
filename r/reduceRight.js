@@ -1,8 +1,8 @@
 /* Right-associative version of reduce.
- *
- * ```javascript
+ */
+
+/* example
  * reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> [3, 2, 1]
- * ```
  */
 
 /* module

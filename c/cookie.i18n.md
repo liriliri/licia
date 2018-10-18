@@ -32,8 +32,3 @@
 |[options]|object|Cookie 选项|
 |返回值|exports|cookie 模块|
 
-```javascript
-cookie.set('a', '1', {path: '/'});
-cookie.get('a'); // -> '1'
-cookie.remove('a');
-```

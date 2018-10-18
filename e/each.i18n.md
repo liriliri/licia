@@ -8,6 +8,3 @@
 |iteratee|function|调用函数|
 |[ctx]|*|函数上下文|
 
-```javascript
-each({'a': 1, 'b': 2}, function (val, key) {});
-```

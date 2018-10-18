@@ -8,7 +8,3 @@
 |[startIndex]|number|合并参数起始位置|
 |返回值|function|目标函数|
 
-```javascript
-var paramArr = restArgs(function (rest) { return rest });
-paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
-```

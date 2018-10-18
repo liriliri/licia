@@ -9,6 +9,3 @@
 |parts|array|Blob 分片|
 |[opts]|object|选项|
 
-```javascript
-var blob = new Blob([]);
-```

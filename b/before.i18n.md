@@ -10,7 +10,3 @@
 
 超过 n 次后再次调用函数将直接返回最后一次函数的调用结果。
 
-```javascript
-$(element).on('click', before(5, function() {}));
-// -> allow function to be call 4 times at last.
-```

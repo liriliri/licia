@@ -4,10 +4,10 @@
  * |------|------|---------------|
  * |str   |string|String to strip|
  * |return|string|Resulted string|
- *
- * ```javascript
+ */
+
+/* example
  * stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
- * ```
  */
 
 /* module

@@ -4,10 +4,10 @@
  * |------|------|------------------|
  * |str   |string|String to convert |
  * |return|string|Lower cased string|
- * 
- * ```javascript
+ */
+
+/* example
  * lowerCase('TEST'); // -> 'test'
- * ```
  */
 
 /* module

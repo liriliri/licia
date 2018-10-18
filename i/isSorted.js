@@ -4,11 +4,11 @@
  * |-----|--------|--------------|
  * |arr  |array   |Array to check|
  * |[cmp]|function|Comparator    |
- * 
- * ```javascript
+ */
+
+/* example
  * isSorted([1, 2, 3]); // -> true
  * isSorted([3, 2, 1]); // -> false
- * ```
  */
 
 /* module

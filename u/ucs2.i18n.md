@@ -20,9 +20,3 @@ UCS-2 编解码。
 |str|string|字符串|
 |返回值|array|码点序列|
 
-```javascript
-ucs2.encode([0x61, 0x62, 0x63]); // -> 'abc'
-ucs2.decode('abc'); // -> [0x61, 0x62, 0x63]
-'𝌆'.length; // -> 2
-ucs2.decode('𝌆').length; // -> 1
-```

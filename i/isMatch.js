@@ -5,10 +5,10 @@
  * |obj   |object |Object to inspect                 |
  * |src   |object |Object of property values to match|
  * |return|boolean|True if object is match           |
- *
- * ```javascript
+ */
+
+/* example
  * isMatch({a: 1, b: 2}, {a: 1}); // -> true
- * ```
  */
 
 /* module

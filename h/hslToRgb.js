@@ -4,10 +4,10 @@
  * |------|-----|----------|
  * |hsl   |array|Hsl values|
  * |return|array|Rgb values|
- *
- * ```javascript
+ */
+
+/* example
  * hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
- * ```
  */
 
 /* module

@@ -4,10 +4,10 @@
  * |------|------|--------------|
  * |str   |string|String to hash|
  * |return|number|Hash result   |
- * 
- * ```javascript
+ */
+
+/* example
  * strHash('test'); // -> 2090770981
- * ```
  */
 
 /* module

@@ -4,11 +4,11 @@
  * |------|-------|----------------------------------|
  * |val   |*      |Value to check                    |
  * |return|boolean|True if value is a native function|
- * 
- * ```javascript
+ */
+
+/* example
  * isNative(function () {}); // -> false
  * isNative(Math.min); // -> true
- * ```
  */
 
 /* module

@@ -14,10 +14,10 @@
  * |%d, %i   |Integer             |
  * |%f       |Floating point value|
  * |%o       |Object              |
- *
- * ```javascript
+ */
+
+/* example
  * format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
- * ```
  */
 
 /* module

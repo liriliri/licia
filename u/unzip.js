@@ -4,10 +4,10 @@
  * |------|-----|------------------------------------|
  * |arr   |array|Array of grouped elements to process|
  * |return|array|New array of regrouped elements     |
- *
- * ```javascript
+ */
+
+/* example
  * unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, false]]
- * ```
  */
 
 /* module

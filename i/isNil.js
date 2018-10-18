@@ -4,15 +4,15 @@
  * |------|-------|----------------------------------|
  * |val   |*      |Value to check                    |
  * |return|boolean|True if value is null or undefined|
- * 
- * ```javascript
+ */
+
+/* example
  * isNil(null); // -> true
  * isNil(void 0); // -> true
  * isNil(undefined); // -> true
  * isNil(false); // -> false
  * isNil(0); // -> false
  * isNil([]); // -> false
- * ```
  */
 
 /* module

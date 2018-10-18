@@ -7,8 +7,9 @@
  * |url    |string |Request url    |
  * |options|object |Request options|
  * |return |promise|Request promise|
- * 
- * ```javascript
+ */
+
+/* example
  * fetch('test.json', {
  *     method: 'GET',
  *     timeout: 3000,
@@ -19,7 +20,6 @@
  * }).then(function (data) {
  *     console.log(data);   
  * });
- * ```
  */
 
 /* module

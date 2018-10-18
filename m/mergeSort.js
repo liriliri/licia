@@ -6,10 +6,10 @@
  * |-----|--------|-------------|
  * |arr  |array   |Array to sort|
  * |[cmp]|function|Comparator   |
- * 
- * ```javascript
+ */
+
+/* example
  * mergeSort([2, 1]); // -> [1, 2]
- * ```
  */
 
 /* module

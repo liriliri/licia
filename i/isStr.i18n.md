@@ -7,6 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是字符串，返回真|
 
-```javascript
-isStr('licia'); // -> true
-```

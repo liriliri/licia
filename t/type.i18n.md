@@ -7,9 +7,3 @@
 |val|*|目标对象|
 |返回值|string|对象类型，小写|
 
-```javascript
-type(5); // -> 'number'
-type({}); // -> 'object'
-type(function () {}); // -> 'function'
-type([]); // -> 'array'
-```

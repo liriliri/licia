@@ -7,9 +7,3 @@
 |obj|object|目标对象|
 |返回值|object|目标对象|
 
-```javascript
-var a = {b: {c: 1}};
-freezeDeep(a);
-a.b.c = 2;
-console.log(a); // -> {b: {c: 1}}
-```

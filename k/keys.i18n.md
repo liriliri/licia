@@ -7,6 +7,3 @@
 |obj|object|目标对象|
 |返回值|array|所有键名|
 
-```javascript
-keys({a: 1}); // -> ['a']
-```

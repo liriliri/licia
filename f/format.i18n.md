@@ -17,6 +17,3 @@
 |%f|浮点数|
 |%o|对象|
 
-```javascript
-format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
-```

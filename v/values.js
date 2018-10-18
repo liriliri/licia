@@ -4,10 +4,10 @@
  * |------|------|------------------------|
  * |obj   |object|Object to query         |
  * |return|array |Array of property values|
- *
- * ```javascript
+ */
+
+/* example
  * values({one: 1, two: 2}); // -> [1, 2]
- * ```
  */
 
 /* module

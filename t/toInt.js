@@ -4,11 +4,11 @@
  * |------|------|-----------------|
  * |val   |*     |Value to convert |
  * |return|number|Converted integer|
- *
- * ```javascript
+ */
+
+/* example
  * toInt(1.1); // -> 1
  * toInt(undefined); // -> 0
- * ```
  */
 
 /* module

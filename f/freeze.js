@@ -6,13 +6,13 @@
  * |------|------|----------------|
  * |obj   |object|Object to freeze|
  * |return|object|Object passed in|
- * 
- * ```javascript
+ */
+
+/* example
  * var a = {b: 1};
  * freeze(a);
  * a.b = 2;
  * console.log(a); // -> {b: 1}
- * ```
  */
 
 /* module

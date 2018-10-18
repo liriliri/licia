@@ -4,15 +4,15 @@
  * |------|--------|-------------------|
  * |fn    |function|Function to turn   |
  * |return|function|Workerized Function|
- * 
- * ```javascript
+ */
+
+/* example
  * var worker = workerize(function (a, b) {
  *     return a + b;   
  * });
  * worker(1, 2).then(function (value) {
  *     console.log(value); // -> 3
  * });
- * ```
  */
 
 /* module

@@ -8,6 +8,3 @@
 |[...rest]|array|要排除的元素|
 |返回值|array|目标数组|
 
-```javascript
-difference([3, 2, 1], [4, 2]); // -> [3, 1]
-```

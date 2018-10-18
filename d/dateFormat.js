@@ -36,12 +36,12 @@
  * |o   |GMT/UTC timezone offset, e.g. -0500 or +0230                     |
  * |S   |The date's ordinal suffix (st, nd, rd, or th)                    |
  * |UTC:|Must be the first four characters of the mask                    |
- *
- * ```javascript
+ */
+
+/* example
  * dateFormat('isoDate'); // -> 2016-11-19
  * dateFormat('yyyy-mm-dd HH:MM:ss'); // -> 2016-11-19 19:00:04
  * dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
- * ```
  */
 
 /* module

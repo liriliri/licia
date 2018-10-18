@@ -8,11 +8,11 @@
  * |----|------|----------------------|
  * |name|string|LocalStorage item name|
  * |data|object|Default data          |
- * 
- * ```javascript
+ */
+
+/* example
  * var store = new LocalStore('licia');
  * store.set('name', 'licia');
- * ```
  */
 
 /* module

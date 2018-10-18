@@ -9,6 +9,3 @@
 |arr|array|源数组|
 |返回值|array|目标数组|
 
-```javascript
-compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
-```

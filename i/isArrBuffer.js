@@ -4,10 +4,10 @@
  * |------|-------|-------------------------------|
  * |val   |*      |Value to check                 |
  * |return|boolean|True if value is an ArrayBuffer|
- * 
- * ```javascript
+ */
+
+/* example
  * isArrBuffer(new ArrayBuffer(8)); // -> true
- * ```
  */
 
 /* module

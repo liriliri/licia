@@ -16,8 +16,9 @@
  * |error         |function|Error callback        |
  * |complete      |function|Callback after request|
  * |timeout       |number  |Request timeout       |
- * 
- * ```javascript
+ */
+
+/* example
  * jsonp({
  *     url: 'http://example.com',
  *     data: {test: 'true'},
@@ -25,7 +26,6 @@
  *         // ...
  *     }
  * });
- * ```
  */
 
 /* module

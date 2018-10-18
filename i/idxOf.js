@@ -6,10 +6,10 @@
  * |val      |*     |Value to search for |
  * |fromIdx=0|number|Index to search from|
  * |return   |number|Value index         |
- *
- * ```javascript
+ */
+
+/* example
  * idxOf([1, 2, 1, 2], 2, 2); // -> 3
- * ```
  */
 
 /* module

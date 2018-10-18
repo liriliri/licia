@@ -4,11 +4,11 @@
  * |------|-------|--------------------------------|
  * |val   |*      |Value to check                  |
  * |return|boolean|True if value is a finite number|
- *
- * ```javascript
+ */
+
+/* example
  * isFinite(3); // -> true
  * isFinite(Infinity); // -> false
- * ```
  */
 
 /* module

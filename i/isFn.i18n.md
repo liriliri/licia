@@ -9,7 +9,3 @@
 
 Generator 函数返回真。
 
-```javascript
-isFn(function() {}); // -> true
-isFn(function*() {}); // -> true
-```

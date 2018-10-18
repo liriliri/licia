@@ -15,11 +15,11 @@
  *
  * Get the current value of the first element in the set of matched elements or
  * set the value of every matched element.
- *
- * ```javascript
+ */
+
+/* example
  * $property.html('#test', 'licia');
  * $property.html('#test'); // -> licia
- * ```
  */
 
 /* module

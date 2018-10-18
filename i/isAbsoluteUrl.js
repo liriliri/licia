@@ -4,12 +4,12 @@
  * |------|-------|-----------------------|
  * |url   |string |Url to check           |
  * |return|boolean|True if url is absolute|
- * 
- * ```javascript
+ */
+
+/* example
  * isAbsoluteUrl('http://www.surunzi.com'); // -> true
  * isAbsoluteUrl('//www.surunzi.com'); // -> false
  * isAbsoluteUrl('surunzi.com'); // -> false
- * ```
  */
 
 /* module

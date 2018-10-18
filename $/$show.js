@@ -3,10 +3,10 @@
  * |Name   |Type                |Desc            |
  * |-------|--------------------|----------------|
  * |element|string array element|Elements to show|
- *
- * ```javascript
+ */
+
+/* example
  * $show('#test');
- * ```
  */
 
 /* module

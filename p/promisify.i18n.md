@@ -10,11 +10,3 @@
 
 如果 multiArgs 设为真，返回的 Promise 会将回调的结果合并成一个数组。
 
-```javascript
-var fs = require('fs');
-
-var readFile = promisify(fs.readFile);
-readFile('test.js', 'utf-8').then(function (data) {
-    // Do something with file content.
-});
-```

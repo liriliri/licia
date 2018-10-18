@@ -7,6 +7,3 @@
 |str|string|源字符串|
 |返回值|string|目标字符串|
 
-```javascript
-stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
-```

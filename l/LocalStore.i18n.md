@@ -11,7 +11,3 @@ LocalStorage 存储。
 |name|string|LocalStorage 存储名|
 |data|object|默认数据|
 
-```javascript
-var store = new LocalStore('licia');
-store.set('name', 'licia');
-```

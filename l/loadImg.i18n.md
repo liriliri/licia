@@ -7,8 +7,3 @@
 |src|string|图片地址|
 |[cb]|function|加载完回调|
 
-```javascript
-loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
-    console.log(img.width, img.height);
-});
-```

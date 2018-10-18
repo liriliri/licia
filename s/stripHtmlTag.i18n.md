@@ -7,6 +7,3 @@
 |str|string|源字符串|
 |返回值|string|目标字符串|
 
-```javascript
-stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
-```

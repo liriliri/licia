@@ -9,9 +9,3 @@
 |[...rest]|*|可选参数|
 |返回值|function|输出函数|
 
-```javascript
-var fn = bind(function (msg) {
-    console.log(this.name + ':' + msg);
-}, {name: 'eustia'}, 'I am a utility library.');
-fn(); // -> 'eustia: I am a utility library.'
-```

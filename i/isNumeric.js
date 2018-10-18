@@ -4,8 +4,9 @@
  * |------|-------|------------------------|
  * |val   |*      |Value to check          |
  * |return|boolean|True if value is numeric|
- * 
- * ```javascript
+ */
+
+/* example
  * isNumeric(1); // -> true
  * isNumeric('1'); // -> true
  * isNumeric(Number.MAX_VALUE); // -> true
@@ -14,7 +15,6 @@
  * isNumeric(''); // -> false
  * isNumeric('1.1.1'); // -> false
  * isNumeric(NaN); // -> false
- * ```
  */
 
 /* module

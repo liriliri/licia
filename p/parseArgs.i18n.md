@@ -15,16 +15,3 @@
 |names|object|选项名及类型|
 |shorthands|object|选项名缩写|
 
-```javascript
-parseArgs(['eustia', '--output', 'util.js', '-w'], {
-    names: {
-        output: 'string',
-        watch: 'boolean'
-    },
-    shorthands: {
-        output: 'o',
-        watch: 'w'
-    }
-});
-// -> {remain: ['eustia'], output: 'util.js', watch: true}
-```

@@ -4,10 +4,10 @@
  * |-----|--------|-------------|
  * |arr  |array   |Array to sort|
  * |[cmp]|function|Comparator   |
- * 
- * ```javascript
+ */
+
+/* example
  * quickSort([2, 1]); // -> [1, 2]
- * ```
  */
 
 /* module

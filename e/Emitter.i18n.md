@@ -36,9 +36,3 @@
 |-----|----|---|
 |obj |object|目标对象|
 
-```javascript
-var event = new Emitter();
-event.on('test', function () { console.log('test') });
-event.emit('test'); // Logs out 'test'.
-Emitter.mixin({});
-```

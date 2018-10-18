@@ -7,6 +7,3 @@
 |num|number|要检查的数字|
 |返回值|number|精度|
 
-```javascript
-precision(1.234); // -> 3;
-```

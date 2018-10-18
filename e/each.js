@@ -5,10 +5,10 @@
  * |obj     |object array|Collection to iterate over    |
  * |iteratee|function    |Function invoked per iteration|
  * |[ctx]   |*           |Function context              |
- *
- * ```javascript
+ */
+
+/* example
  * each({'a': 1, 'b': 2}, function (val, key) {});
- * ```
  */
 
 /* module

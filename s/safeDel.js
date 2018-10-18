@@ -5,13 +5,13 @@
  * |obj   |object      |Object to query           |
  * |path  |array string|Path of property to delete|
  * |return|*           |Deleted value or undefined|
- *
- * ```javascript
+ */
+
+/* example
  * var obj = {a: {aa: {aaa: 1}}};
  * safeDel(obj, 'a.aa.aaa'); // -> 1
  * safeDel(obj, ['a', 'aa']); // -> {}
  * safeDel(obj, 'a.b'); // -> undefined
- * ```
  */
 
 /* module

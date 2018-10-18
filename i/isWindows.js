@@ -1,8 +1,8 @@
 /* Check if platform is windows.
- * 
- * ```javascript
+ */
+
+/* example
  * console.log(isWindows); // -> true if running on windows
- * ```
  */
 
 /* module

@@ -8,6 +8,3 @@
 |b|number|要计算的数字|
 |返回值|number|最大公约数|
 
-```javascript
-gcd(121, 44); // -> 11
-```

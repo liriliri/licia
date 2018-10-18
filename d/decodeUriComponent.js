@@ -4,11 +4,11 @@
  * |------|------|----------------|
  * |str   |string|String to decode|
  * |return|string|Decoded string  |
- * 
- * ```javascript
+ */
+
+/* example
  * decodeUriComponent('%%25%'); // -> '%%%'
  * decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
- * ```
  */
 
 /* module

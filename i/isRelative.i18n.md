@@ -7,6 +7,3 @@
 |path|string|要检查的路径|
 |返回值|boolean|如果是相对路径，返回真|
 
-```javascript
-isRelative('README.md'); // -> true
-```

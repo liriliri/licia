@@ -6,10 +6,10 @@
  * |------|-----|----------------------------|
  * |arr   |array|Array to compact            |
  * |return|array|New array of filtered values|
- *
- * ```javascript
+ */
+
+/* example
  * compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
- * ```
  */
 
 /* module

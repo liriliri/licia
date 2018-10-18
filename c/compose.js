@@ -6,8 +6,9 @@
  * |------|--------|--------------------|
  * |...fn |function|Functions to compose|
  * |return|function|Composed function   |
- * 
- * ```javascript
+ */
+
+/* example
  * var welcome = compose(function (name) {
  *     return 'hi: ' + name;
  * }, function (name) {
@@ -15,7 +16,6 @@
  * });
  * 
  * welcome('licia'); // -> 'hi: LICIA!'
- * ```
  */
 
 /* module

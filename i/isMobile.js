@@ -4,10 +4,10 @@
  * |----------------------|-------|-------------------------------------|
  * |ua=navigator.userAgent|string |User agent                           |
  * |return                |boolean|True if ua belongs to mobile browsers|
- *
- * ```javascript
+ */
+
+/* example
  * isMobile(navigator.userAgent);
- * ```
  */
 
 /* module

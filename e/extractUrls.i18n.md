@@ -7,7 +7,3 @@
 |str|string|文本|
 |返回值|array|url 列表|
 
-```javascript
-var str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
-extractUrl(str); // -> ['http://eustia.liriliri.io']
-```

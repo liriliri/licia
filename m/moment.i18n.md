@@ -17,6 +17,3 @@ startOf，endOf，add，subtract，diff
 
 注意：格式化功能使用 dateFormat 模块，所以掩码格式并不完全与 moment.js 一致。
 
-```javascript
-moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
-```

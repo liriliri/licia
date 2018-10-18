@@ -8,8 +8,3 @@
 |chars|string array|删除字符|
 |返回值|string|目标字符串|
 
-```javascript
-ltrim(' abc  '); // -> 'abc  '
-ltrim('_abc_', '_'); // -> 'abc_'
-ltrim('_abc_', ['a', '_']); // -> 'bc_'
-```

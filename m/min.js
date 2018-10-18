@@ -4,10 +4,10 @@
  * |------|------|--------------------|
  * |...num|number|Numbers to calculate|
  * |return|number|Minimum value       |
- *
- * ```javascript
+ */
+
+/* example
  * min(2.3, 1, 4.5, 2); // 1
- * ```
  */
 
 /* module

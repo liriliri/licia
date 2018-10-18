@@ -5,12 +5,12 @@
  * |fn      |function|Function to have its output memoized|
  * |[hashFn]|function|Function to create cache key        |
  * |return  |function|New memoized function               |
- *
- * ```javascript
+ */
+
+/* example
  * var fibonacci = memoize(function(n) {
  *     return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
  * });
- * ```
  */
 
 /* module

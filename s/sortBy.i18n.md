@@ -9,8 +9,3 @@
 |[ctx]|*|函数上下文|
 |返回值|array|排序后的数组|
 
-```javascript
-sortBy([1, 2, 3, 4, 5, 6], function (num) {
-    return Math.sin(num);
-}); // -> [5, 4, 6, 3, 1, 2]
-```

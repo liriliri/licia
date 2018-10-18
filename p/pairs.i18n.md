@@ -7,6 +7,3 @@
 |obj|object|目标对象|
 |返回值|array|键值对数组|
 
-```javascript
-pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
-```

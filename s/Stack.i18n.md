@@ -36,10 +36,3 @@
 
 将栈转换为 JavaScript 数组。
 
-```javascript
-var stack = new Stack();
-
-stack.push(2); // -> 1
-stack.push(3); // -> 2
-stack.pop(); // -> 3
-```

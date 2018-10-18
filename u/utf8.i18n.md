@@ -21,7 +21,3 @@ UTF-8 解码。
 |safe=false|boolean|如果设为真，不抛错误|
 |返回值|string|目标字符串|
 
-```javascript
-utf8.encode('\uD800\uDC00'); // ->  '\xF0\x90\x80\x80'
-utf8.decode('\xF0\x90\x80\x80'); // -> '\uD800\uDC00'
-```

@@ -4,10 +4,10 @@
  * |------|------|----------------|
  * |str   |string|String to escape|
  * |return|string|Escaped string  |
- *
- * ```javascript
+ */
+
+/* example
  * escape('You & Me'); -> // -> 'You &amp; Me'
- * ```
  */
 
 /* module

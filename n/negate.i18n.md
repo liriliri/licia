@@ -7,7 +7,3 @@
 |predicate|function|源函数|
 |返回值|function|目标函数|
 
-```javascript
-function even(n) { return n % 2 === 0 }
-filter([1, 2, 3, 4, 5, 6], negate(even)); // -> [1, 3, 5]
-```

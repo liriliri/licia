@@ -7,6 +7,3 @@
 |obj|object|目标对象|
 |返回值|array|方法名列表|
 
-```javascript
-methods(console); // -> ['Console', 'assert', 'dir', ...]
-```

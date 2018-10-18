@@ -4,10 +4,10 @@
  * |------|------|--------------------|
  * |str   |string|String to capitalize|
  * |return|string|Capitalized string  |
- *
- * ```javascript
+ */
+
+/* example
  * capitalize('rED'); // -> Red
- * ```
  */
 
 /* module

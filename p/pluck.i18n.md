@@ -8,11 +8,3 @@
 |key|string array|属性路径|
 |返回值|array|指定属性值列表|
 
-```javascript
-var stooges = [
-    {name: 'moe', age: 40},
-    {name: 'larry', age: 50},
-    {name: 'curly', age: 60}
-];
-pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
-```

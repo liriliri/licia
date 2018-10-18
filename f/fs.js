@@ -1,12 +1,12 @@
 /* Promised version of node.js fs module.
- *
- * ```javascript
+ */
+
+/* example
  * fs.readFile('test.js').then(function (data) {
  *     // Do something
  * }).catch(function (err) {
  *     // Handle errors
  * });
- * ```
  */
 
 /* module

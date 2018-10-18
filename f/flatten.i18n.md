@@ -7,6 +7,3 @@
 |arr|array|源数组|
 |返回值|array|目标数组|
 
-```javascript
-flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
-```

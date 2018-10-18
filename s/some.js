@@ -6,12 +6,12 @@
  * |predicate|function    |Function to invoked per iteration             |
  * |ctx      |*           |Predicate context                             |
  * |return   |boolean     |True if any element passes the predicate check|
- *
- * ```javascript
+ */
+
+/* example
  * some([2, 5], function (val) {
  *     return val % 2 === 0;
  * }); // -> true
- * ```
  */
 
 /* module

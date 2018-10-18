@@ -60,8 +60,9 @@
  * |Name|Type    |Desc                           |
  * |----|--------|-------------------------------|
  * |fn  |function|Function invoked per interation|
- * 
- * ```javascript
+ */
+
+/* example
  * var store = new Store('test');
  * store.set('user', {name: 'licia'});
  * store.get('user').name; // -> 'licia'
@@ -72,7 +73,6 @@
  * store.on('change', function (key, newVal, oldVal) {
  *     // It triggers whenever set is called.
  * });
- * ```
  */
 
 /* module

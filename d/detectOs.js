@@ -6,12 +6,12 @@
  * |return                |string|Operating system name|
  * 
  * Supported os: windows, os x, linux, ios, android, windows phone
- * 
- * ```javascript
+ */
+
+/* example
  * if (detectOs() === 'ios') {
  *     // Do something about ios...
  * }
- * ```
  */
 
 /* module

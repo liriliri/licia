@@ -1,12 +1,12 @@
 /* bind events to certain dom elements.
- *
- * ```javascript
+ */
+
+/* example
  * function clickHandler() {
  *     // Do something...
  * }
  * $event.on('#test', 'click', clickHandler);
  * $event.off('#test', 'click', clickHandler);
- * ```
  */
 
 /* module

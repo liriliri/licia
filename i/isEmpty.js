@@ -4,12 +4,12 @@
  * |------|-------|----------------------|
  * |val   |*      |Value to check        |
  * |return|boolean|True if value is empty|
- *
- * ```javascript
+ */
+
+/* example
  * isEmpty([]); // -> true
  * isEmpty({}); // -> true
  * isEmpty(''); // -> true
- * ```
  */
 
 /* module

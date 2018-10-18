@@ -16,11 +16,3 @@ stream Transform 类的简单包装。
 
 返回继承 Transform 的类。
 
-```javascript
-fs.createReadStream('in.txt')
-  .pipe(through(function (chunk, enc, cb) {
-      // Do something to chunk
-      this.push(chunk);
-      cb();
-  })).pipe(fs.createWriteStream('out.txt'));
-```

@@ -7,7 +7,3 @@
 |path|string|源路径|
 |返回值|string|目标路径|
 
-```javascript
-normalizePath('\\foo\\bar\\'); // -> '/foo/bar/'
-normalizePath('./foo//bar'); // -> './foo/bar'
-```

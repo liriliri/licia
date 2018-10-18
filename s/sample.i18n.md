@@ -8,7 +8,3 @@
 |n|number|样本数量|
 |返回值|array|样本|
 
-```javascript
-sample([2, 3, 1], 2); // -> [2, 3]
-sample({a: 1, b: 2, c: 3}, 1); // -> [2]
-```

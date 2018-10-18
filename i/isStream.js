@@ -4,12 +4,12 @@
  * |------|-------|---------------------------------|
  * |val   |*      |Value to check                   |
  * |return|boolean|True if value is a Node.js stream|
- * 
- * ```javascript
+ */
+
+/* example
  * var stream = require('stream');
  * 
  * isStream(new stream.Stream()); // -> true
- * ```
  */
 
 /* module

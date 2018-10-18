@@ -8,6 +8,3 @@
 |...src|object|提供默认值对象|
 |返回值|object|目标对象|
 
-```javascript
-defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood', age: 24}
-```

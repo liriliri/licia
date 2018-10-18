@@ -36,8 +36,9 @@
  * |-------|--------------------|----------------------|
  * |element|string array element|Elements to manipulate|
  * |names  |string              |Class names to remove |
- *
- * ```javascript
+ */
+
+/* example
  * $class.add('#test', 'class1');
  * $class.add('#test', ['class1', 'class2']);
  * $class.has('#test', 'class1'); // -> true
@@ -45,7 +46,6 @@
  * $class.has('#test', 'class1'); // -> false
  * $class.toggle('#test', 'class1');
  * $class.has('#test', 'class1'); // -> true
- * ```
  */
 
 /* module

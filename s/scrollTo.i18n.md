@@ -16,11 +16,3 @@
 |easing|string function|outQuart|缓动函数|
 |callback|function|noop|结束回调|
 
-```javascript
-scrollTo('body', {
-    tolerance: 0,
-    duration: 800,
-    easing: 'outQuart',
-    callback: function () {}
-});
-```

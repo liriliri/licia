@@ -7,7 +7,3 @@
 |num|number|要转换的整数|
 |返回值|string|对应字符|
 
-```javascript
-char(65); // -> 'A'
-char(97); // -> 'a'
-```

@@ -4,10 +4,10 @@
  * |------|------|---------------|
  * |num   |number|Number to check|
  * |return|number|Precision      |
- * 
- * ```javascript
+ */
+
+/* example
  * precision(1.234); // -> 3;
- * ```
  */
 
 /* module

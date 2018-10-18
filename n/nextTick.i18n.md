@@ -8,8 +8,3 @@
 
 如果支持 process.nextTick，则调用它，否则使用 setImmediate 或 setTimeout 进行兼容。
 
-```javascript
-nextTick(function () {
-    // Do something...
-});
-```

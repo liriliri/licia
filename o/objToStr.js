@@ -4,10 +4,10 @@
  * |------|------|------------------------------------|
  * |val   |*     |Source value                        |
  * |return|string|String representation of given value|
- * 
- * ```javascript
+ */
+
+/* example
  * objToStr(5); // -> '[object Number]'
- * ```
  */
 
 /* module

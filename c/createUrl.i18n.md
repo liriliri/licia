@@ -8,9 +8,3 @@ CreateObjectURL 的包裹函数。
 |[opts]|object|当数据不是 File 或者 Blob 对象时使用|
 |返回值|string|Blob 地址|
 
-```javascript
-createUrl('test', {type: 'text/plain'}); // -> Blob url
-createUrl(['test', 'test']);
-createUrl(new Blob([]));
-createUrl(new File(['test'], 'test.txt'));
-```

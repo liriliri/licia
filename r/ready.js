@@ -3,12 +3,12 @@
  * |Name|Type    |Desc             |
  * |----|--------|-----------------|
  * |fn  |function|Callback function|
- *
- * ```javascript
+ */
+
+/* example
  * ready(function () {
  *     // It's safe to manipulate dom here.
  * });
- * ```
  */
 
 /* module

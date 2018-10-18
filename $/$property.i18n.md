@@ -14,7 +14,3 @@
 
 设置或获取元素的 val 值。
 
-```javascript
-$property.html('#test', 'licia');
-$property.html('#test'); // -> licia
-```

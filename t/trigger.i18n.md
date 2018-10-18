@@ -8,7 +8,3 @@
 |type|string|事件类型|
 |opts|object|选项|
 
-```javascript
-trigger(el, 'mouseup');
-trigger('keydown', {keyCode: 65});
-```

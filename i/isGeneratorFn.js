@@ -4,11 +4,11 @@
  * |------|-------|-------------------------------------|
  * |val   |*      |Value to check                       |
  * |return|boolean|True if value is a generator function|
- *
- * ```javascript
+ */
+
+/* example
  * isGeneratorFn(function * () {}); // -> true;
  * isGeneratorFn(function () {}); // -> false;
- * ```
  */
 
 /* module

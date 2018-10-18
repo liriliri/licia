@@ -13,15 +13,15 @@
  * |duration |number         |800     |Scroll duration                        |
  * |easing   |string function|outQuart|Easing function                        |
  * |callback |function       |noop    |Function to run once scrolling complete|
- *
- * ```javascript
+ */
+
+/* example
  * scrollTo('body', {
  *     tolerance: 0,
  *     duration: 800,
  *     easing: 'outQuart',
  *     callback: function () {}
  * });
- * ```
  */
 
 /* module

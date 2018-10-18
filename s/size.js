@@ -4,11 +4,11 @@
  * |------|------------|---------------------|
  * |obj   |array object|Collection to inspect|
  * |return|number      |Collection size      |
- *
- * ```javascript
+ */
+
+/* example
  * size({a: 1, b: 2}); // -> 2
  * size([1, 2, 3]); // -> 3
- * ```
  */
 
 /* module

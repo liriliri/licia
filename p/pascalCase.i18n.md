@@ -7,9 +7,3 @@
 |str|string|源字符串|
 |返回值|string|帕斯卡式字符串|
 
-```javascript
-pascalCase('fooBar'); // -> FooBar
-pascalCase('foo bar'); // -> FooBar
-pascalCase('foo_bar'); // -> FooBar
-pascalCase('foo.bar'); // -> FooBar
-```

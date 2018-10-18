@@ -7,11 +7,11 @@
  * |start=0       |number|Start position          |
  * |end=arr.length|number|End position            |
  * |return        |array |Filled array            |
- * 
- * ```javascript
+ */
+
+/* example
  * fill([1, 2, 3], '*'); // -> ['*', '*', '*']
  * fill([1, 2, 3], '*', 1, 2); // -> [1, '*', 3]
- * ```
  */
 
 /* module

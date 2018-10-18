@@ -5,13 +5,13 @@
  * |fn       |function|Function to delay                         |
  * |wait     |number  |Number of milliseconds to delay invocation|
  * |[...args]|*       |Arguments to invoke fn with               |
- *
- * ```javascript
+ */
+
+/* example
  * delay(function (text) {
  *     console.log(text);
  * }, 1000, 'later');
  * // -> Logs 'later' after one second
- * ```
  */
 
 /* module

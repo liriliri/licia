@@ -8,6 +8,3 @@
 |[compare]|function|比较函数|
 |返回值|array|目标数组|
 
-```javascript
-unique([1, 2, 3, 1]); // -> [1, 2, 3]
-```

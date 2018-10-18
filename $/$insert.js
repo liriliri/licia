@@ -20,8 +20,9 @@
  * |-------|--------------------|----------------------|
  * |element|string array element|Elements to manipulate|
  * |content|string              |Html strings          |
- *
- * ```javascript
+ */
+
+/* example
  * // <div id="test"><div class="mark"></div></div>
  * $insert.before('#test', '<div>licia</div>');
  * // -> <div>licia</div><div id="test"><div class="mark"></div></div>
@@ -31,7 +32,6 @@
  * // -> <div id="test"><div>licia</div><div class="mark"></div></div>
  * $insert.append('#test', '<div>licia</div>');
  * // -> <div id="test"><div class="mark"></div><div>licia</div></div>
- * ```
  */
 
 /* module

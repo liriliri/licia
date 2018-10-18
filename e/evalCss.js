@@ -3,10 +3,10 @@
  * |Name|Type  |Desc    |
  * |----|------|--------|
  * |css |string|Css code|
- *
- * ```javascript
+ */
+
+/* example
  * evalCss('body{background:#08c}');
- * ```
  */
 
 /* module

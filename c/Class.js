@@ -5,8 +5,9 @@
  * |methods  |object  |Public methods                   |
  * |[statics]|object  |Static methods                   |
  * |return   |function|Function used to create instances|
- *
- * ```javascript
+ */
+
+/* example
  * var People = Class({
  *     initialize: function People(name, age) {
  *         this.name = name;
@@ -35,7 +36,6 @@
  * var a = new Student('allen', 17, 'Hogwarts');
  * a.introduce(); // -> 'I am allen, 17 years old. \n I study at Hogwarts.'
  * Student.is(a); // -> true
- * ```
  */
 
 /* module

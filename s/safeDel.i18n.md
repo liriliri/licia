@@ -8,9 +8,3 @@
 |path|array string|属性路径|
 |返回值|*|删除值或 undefined|
 
-```javascript
-var obj = {a: {aa: {aaa: 1}}};
-safeDel(obj, 'a.aa.aaa'); // -> 1
-safeDel(obj, ['a', 'aa']); // -> {}
-safeDel(obj, 'a.b'); // -> undefined
-```

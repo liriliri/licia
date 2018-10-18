@@ -4,12 +4,12 @@
  * |------|-------|--------------------------|
  * |val   |*      |Value to check            |
  * |return|boolean|True if value is a boolean|
- *
- * ```javascript
+ */
+
+/* example
  * isBool(true); // -> true
  * isBool(false); // -> true
  * isBool(1); // -> false
- * ```
  */
 
 /* module

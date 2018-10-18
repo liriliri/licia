@@ -7,7 +7,3 @@
 |obj|array object|目标集合|
 |返回值|number|集合大小|
 
-```javascript
-size({a: 1, b: 2}); // -> 2
-size([1, 2, 3]); // -> 3
-```

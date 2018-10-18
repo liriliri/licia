@@ -31,8 +31,9 @@
  * |[data]  |string object|Request data    |
  * |success |function     |Success callback|
  * |dataType|function     |Response type   |
- *
- * ```javascript
+ */
+
+/* example
  * ajax({
  *     url: 'http://example.com',
  *     data: {test: 'true'},
@@ -46,7 +47,6 @@
  * ajax.get('http://example.com', {}, function (data) {
  *     // ...
  * });
- * ```
  */
 
 /* module

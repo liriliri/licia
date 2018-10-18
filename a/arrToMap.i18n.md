@@ -8,10 +8,3 @@
 |val=true|*|键值|
 |返回值|object|映射|
 
-```javascript
-var needPx = arrToMap([
-    'column-count', 'columns', 'font-weight', 'line-weight', 'opacity', 'z-index', 'zoom'
-]);
-
-if (needPx[key]) val += 'px';
-```

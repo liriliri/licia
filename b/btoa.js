@@ -1,8 +1,8 @@
 /* Use Buffer to emulate btoa when running in node.
- *
- * ```javascript
+ */
+
+/* example
  * btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
- * ```
  */
 
 /* module

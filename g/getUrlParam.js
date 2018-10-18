@@ -5,10 +5,10 @@
  * |name        |string|Param name      |
  * |url=location|string|Url to get param|
  * |return      |string|Param value     |
- * 
- * ```javascript
+ */
+
+/* example
  * getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
- * ```
  */
 
 /* module

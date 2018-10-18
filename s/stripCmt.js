@@ -4,10 +4,10 @@
  * |------|------|---------------------|
  * |str   |string|Source code          |
  * |return|string|Code without comments|
- *
- * ```javascript
+ */
+
+/* example
  * stripCmts('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
- * ```
  */
 
 /* module

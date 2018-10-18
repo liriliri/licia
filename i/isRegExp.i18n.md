@@ -7,6 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是正则类型，返回真|
 
-```javascript
-isRegExp(/a/); // -> true
-```

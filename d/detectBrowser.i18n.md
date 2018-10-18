@@ -9,9 +9,3 @@
 
 支持浏览器：ie，chrome，edge，firefox，opera，safari，ios（mobile safari），android（android browser）
 
-```javascript
-var browser = detectBrowser();
-if (browser.name === 'ie' && browser.version < 9) {
-    // Do something about old IE...
-}
-```

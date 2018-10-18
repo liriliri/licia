@@ -10,9 +10,3 @@ undefined 被当作 null 处理。
 |spaces|number|缩进|
 |返回值|string|序列化后的字符串|
 
-```javascript
-stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
-var obj = {a: 1};
-obj.b = obj;
-stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
-```

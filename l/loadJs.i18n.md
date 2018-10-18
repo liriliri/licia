@@ -7,8 +7,3 @@
 |src|string|脚本地址|
 |cb|function|加载完回调|
 
-```javascript
-loadJs('main.js', function (isLoaded) {
-    // Do something...
-});
-```

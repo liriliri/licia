@@ -4,10 +4,10 @@
  * |------|-------|-----------------------------------|
  * |val   |string |Value to check                     |
  * |return|boolean|True if value is an url like string|
- *
- * ```javascript
+ */
+
+/* example
  * isUrl('http://www.example.com?foo=bar&param=test'); // -> true
- * ```
  */
 
 /* module

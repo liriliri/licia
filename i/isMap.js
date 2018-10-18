@@ -4,11 +4,11 @@
  * |------|-------|----------------------|
  * |val   |*      |Value to check        |
  * |return|boolean|True if value is a Map|
- * 
- * ```javascript
+ */
+
+/* example
  * isMap(new Map()); // -> true
  * isMap(new WeakMap()); // -> false
- * ```
  */
 
 /* module

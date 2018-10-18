@@ -7,16 +7,3 @@
 |fn|function|返回 Promise 的函数|
 |返回值|function|使用回调的函数|
 
-```javascript
-function fn() {
-    return new Promise(function (resolve, reject) {
-        // ...
-    });
-}
-
-var cbFn = callbackify(fn);
-
-cbFn(function (err, value) {
-    // ...
-});
-```

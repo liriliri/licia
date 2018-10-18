@@ -4,10 +4,10 @@
  * |------|------|-----------------|
  * |str   |string|String to extract|
  * |return|array |Block comments   |
- *
- * ```javascript
+ */
+
+/* example
  * extractBlockCmts('\/*licia*\/'); // -> ['licia']
- * ```
  */
 
 /* module

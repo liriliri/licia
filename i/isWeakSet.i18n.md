@@ -7,7 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是 WeakSet 类型，返回真|
 
-```javascript
-isWeakSet(new Set()); // -> false
-isWeakSet(new WeakSet()); // -> true
-```

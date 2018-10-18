@@ -6,10 +6,10 @@
  * |------|------|----------|
  * |parts |array |Blob parts|
  * |[opts]|object|Options   |
- * 
- * ```javascript
+ */
+
+/* example
  * var blob = new Blob([]);
- * ```
  */
 
 /* module

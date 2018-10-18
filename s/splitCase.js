@@ -4,15 +4,15 @@
  * |------|------|---------------|
  * |str   |string|String to split|
  * |return|array |Result array   |
- *
- * ```javascript
+ */
+
+/* example
  * splitCase('foo-bar'); // -> ['foo', 'bar']
  * splitCase('foo bar'); // -> ['foo', 'bar']
  * splitCase('foo_bar'); // -> ['foo', 'bar']
  * splitCase('foo.bar'); // -> ['foo', 'bar']
  * splitCase('fooBar'); // -> ['foo', 'bar']
  * splitCase('foo-Bar'); // -> ['foo', 'bar']
- * ```
  */
 
 /* module

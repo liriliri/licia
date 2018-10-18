@@ -8,17 +8,3 @@
 |...src|object|源对象|
 |返回值|object|目标对象|
 
-```javascript
-extendDeep({
-    name: 'RedHood',
-    family: {
-        mother: 'Jane',
-        father: 'Jack'
-    }
-}, {
-    family: {
-        brother: 'Bruce'
-    }
-});
-// -> {name: 'RedHood', family: {mother: 'Jane', father: 'Jack', brother: 'Bruce'}}
-```

@@ -5,14 +5,14 @@
  * |name  |string |Css property name |
  * |[val] |string |Css property value|
  * |return|boolean|True if supports  |
- * 
- * ```javascript
+ */
+
+/* example
  * cssSupports('display', 'flex'); // -> true
  * cssSupports('display', 'invalid'); // -> false
  * cssSupports('text-decoration-line', 'underline'); // -> true
  * cssSupports('grid'); // -> true
  * cssSupports('invalid'); // -> false
- * ```
  */
 
 /* module

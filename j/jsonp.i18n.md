@@ -19,12 +19,3 @@
 |complete|function|结束回调|
 |timeout|number|请求超时|
 
-```javascript
-jsonp({
-    url: 'http://example.com',
-    data: {test: 'true'},
-    success: function (data) {
-        // ...
-    }
-});
-```

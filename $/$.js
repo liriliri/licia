@@ -5,8 +5,9 @@
  * offset, hide, show, first, last, get, eq, on, off, html, text, val, css, attr,
  * data, rmAttr, remove, addClass, rmClass, toggleClass, hasClass, append, prepend,
  * before, after
- *
- * ```javascript
+ */
+
+/* example
  * var $btn = $('#btn');
  * $btn.html('eustia');
  * $btn.addClass('btn');
@@ -14,7 +15,6 @@
  * $btn.on('click', function () {
  *     // Do something...
  * });
- * ```
  */
 
 /* module

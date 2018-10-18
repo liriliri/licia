@@ -7,6 +7,3 @@
 |obj|object|目标对象|
 |返回值|array|所有属性值|
 
-```javascript
-values({one: 1, two: 2}); // -> [1, 2]
-```

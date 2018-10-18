@@ -7,13 +7,13 @@
  * |obj   |object|Object to stringify|
  * |spaces|number|Indent spaces      |
  * |return|string|Stringified object |
- * 
- * ```javascript
+ */
+
+/* example
  * stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
  * var obj = {a: 1};
  * obj.b = obj;
  * stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
- * ```
  */
 
 /* module

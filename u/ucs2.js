@@ -17,13 +17,13 @@
  * |------|------|--------------------|
  * |str   |string|Input string        |
  * |return|array |Array of code points|
- * 
- * ```javascript
+ */
+
+/* example
  * ucs2.encode([0x61, 0x62, 0x63]); // -> 'abc'
  * ucs2.decode('abc'); // -> [0x61, 0x62, 0x63]
  * '𝌆'.length; // -> 2
  * ucs2.decode('𝌆').length; // -> 1
- * ```
  */
 
 /* module

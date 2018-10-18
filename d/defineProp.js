@@ -12,8 +12,9 @@
  * |obj   |object|Object to define    |
  * |prop  |object|Property descriptors|
  * |return|object|Object itself       |
- * 
- * ```javascript
+ */
+
+/* example
  * var obj = {b: {c: 3}, d: 4, e: 5};
  * defineProp(obj, 'a', {
  *     get: function () {
@@ -46,7 +47,6 @@
  * console.log(obj.a); // -> 3
  * obj.b = 4;
  * console.log(obj.a); // -> 2
- * ```
  */
 
 /* module

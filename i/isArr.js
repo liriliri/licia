@@ -4,11 +4,11 @@
  * |------|-------|----------------------------------|
  * |val   |*      |Value to check                    |
  * |return|boolean|True if value is an `Array` object|
- *
- * ```javascript
+ */
+
+/* example
  * isArr([]); // -> true
  * isArr({}); // -> false
- * ```
  */
 
 /* module

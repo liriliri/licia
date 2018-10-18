@@ -23,10 +23,3 @@
 
 如果设置了宽高，最大宽度跟最大高度将被忽略。
 
-```javascript
-compressImg(file, {
-    maxWidth: 200
-}, function (err, file) {
-    // ...
-});
-```

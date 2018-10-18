@@ -4,10 +4,10 @@
  * |------|------|----------------------|
  * |num   |number|Number to convert     |
  * |return|string|Corresponding fraction|
- * 
- * ```javascript
+ */
+
+/* example
  * fraction(1.2); // -> '6/5' 
- * ```
  */
 
 /* module

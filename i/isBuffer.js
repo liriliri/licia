@@ -4,10 +4,10 @@
  * |------|-------|-------------------------|
  * |val   |*      |The value to check       |
  * |return|boolean|True if value is a buffer|
- *
- * ```javascript
+ */
+
+/* example
  * isBuffer(new Buffer(4)); // -> true
- * ```
  */
 
 /* module

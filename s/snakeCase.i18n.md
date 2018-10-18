@@ -7,8 +7,3 @@
 |str|string|源字符串|
 |返回值|string|下划线式字符串|
 
-```javascript
-snakeCase('fooBar'); // -> foo_bar
-snakeCase('foo bar'); // -> foo_bar
-snakeCase('foo.bar'); // -> foo_bar
-```

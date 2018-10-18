@@ -8,6 +8,3 @@
 |[start=0]|number|起始位置|
 |[end=array.length]|number|结束位置，不包含|
 
-```javascript
-slice([1, 2, 3, 4], 1, 2); // -> [2]
-```

@@ -4,13 +4,13 @@
  * |------|------|------------------|
  * |str   |string|String to convert |
  * |return|string|Kebab cased string|
- *
- * ```javascript
+ */
+
+/* example
  * kebabCase('fooBar'); // -> foo-bar
  * kebabCase('foo bar'); // -> foo-bar
  * kebabCase('foo_bar'); // -> foo-bar
  * kebabCase('foo.bar'); // -> foo-bar
- * ```
  */
 
 /* module

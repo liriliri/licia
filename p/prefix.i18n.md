@@ -11,8 +11,3 @@
 
 同上，但返回短横线命名方式的版本。
 
-```javascript
-prefix('text-emphasis'); // -> 'WebkitTextEmphasis'
-prefix.dash('text-emphasis'); // -> '-webkit-text-emphasis'
-prefix('color'); // -> 'color'
-```

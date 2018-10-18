@@ -8,6 +8,3 @@
 |other|*|要比较的对象|
 |返回值|boolean|如果相等，返回真|
 
-```javascript
-isEqual([1, 2, 3], [1, 2, 3]); // -> true
-```

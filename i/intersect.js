@@ -4,10 +4,10 @@
  * |------|-----|------------------------------|
  * |...arr|array|Arrays to inspect             |
  * |return|array|New array of inspecting values|
- *
- * ```javascript
+ */
+
+/* example
  * intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
- * ```
  */
 
 /* module

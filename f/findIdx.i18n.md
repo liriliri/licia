@@ -8,14 +8,3 @@
 |predicate|function|真值检测函数|
 |返回值|number|第一个符合条件元素的位置|
 
-```javascript
-findIdx([{
-    name: 'john',
-    age: 24
-}, {
-    name: 'jane',
-    age: 23
-}], function (val) {
-    return val.age === 23;
-}); // -> 1
-```

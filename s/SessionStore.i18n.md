@@ -11,7 +11,3 @@ SessionStorage 存储。
 |name|string|SessionStorage 存储名|
 |data|object|默认数据|
 
-```javascript
-var store = new SessionStore('licia');
-store.set('name', 'licia');
-```

@@ -4,11 +4,11 @@
  * |------|--------|-------------------|
  * |fn    |function|Function to convert|
  * |return|string  |Source code        |
- * 
- * ```javascript
+ */
+
+/* example
  * toSrc(Math.min); // -> 'function min() { [native code] }'
  * toSrc(function () {}) // -> 'function () { }'
- * ```
  */
 
 /* module

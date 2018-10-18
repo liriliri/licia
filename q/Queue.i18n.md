@@ -36,14 +36,3 @@
 
 将队列转换为 JavaScript 数组。
 
-```javascript
-var queue = new Queue();
-
-console.log(queue.size); // -> 0
-queue.enqueue(2);
-queue.enqueue(3);
-queue.dequeue(); // -> 2
-console.log(queue.size); // -> 1
-queue.peek(); // -> 3
-console.log(queue.size); // -> 1
-```

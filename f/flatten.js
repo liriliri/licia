@@ -4,10 +4,10 @@
  * |------|-----|-------------------|
  * |arr   |array|Array to flatten   |
  * |return|array|New flattened array|
- *
- * ```javascript
+ */
+
+/* example
  * flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
- * ```
  */
 
 /* module

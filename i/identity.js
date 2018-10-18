@@ -4,10 +4,10 @@
  * |------|----|-----------|
  * |val   |*   |Any value  |
  * |return|*   |Given value|
- *
- * ```javascript
+ */
+
+/* example
  * identity('a'); // -> 'a'
- * ```
  */
 
 /* module

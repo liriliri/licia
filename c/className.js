@@ -4,14 +4,14 @@
  * |--------|-------------------|------------------|
  * |...class|string object array|Class names       |
  * |return  |string             |Joined class names|
- * 
- * ```javascript
+ */
+
+/* example
  * className('a', 'b', 'c'); // -> 'a b c'
  * className('a', false, 'b', 0, 1, 'c'); // -> 'a b 1 c'
  * className('a', ['b', 'c']); // -> 'a b c'
  * className('a', {b: false, c: true}); // -> 'a c'
  * className('a', ['b', 'c', {d: true, e: false}]); // -> 'a b c d';
- * ```
  */
 
 /* module

@@ -7,9 +7,3 @@
 |dir|string|文件夹路径|
 |callback|function|回调|
 
-```javascript
-rmdir('/tmp/foo/bar/baz', function (err) {
-    if (err) console.log (err);
-    else console.log('Done');
-});
-```

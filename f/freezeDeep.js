@@ -4,13 +4,13 @@
  * |------|------|----------------|
  * |obj   |object|Object to freeze|
  * |return|object|Object passed in|
- * 
- * ```javascript
+ */
+
+/* example
  * var a = {b: {c: 1}};
  * freezeDeep(a);
  * a.b.c = 2;
  * console.log(a); // -> {b: {c: 1}}
- * ```
  */
 
 /* module

@@ -1,8 +1,9 @@
 /* Lightweight Promise implementation.
  *
  * [Promises spec](https://github.com/promises-aplus/promises-spec)
- * 
- * ```javascript
+ */
+
+/* example
  * function get(url) {
  *     return new Promise(function (resolve, reject) {
  *         var req = new XMLHttpRequest();
@@ -18,7 +19,6 @@
  * get('test.json').then(function (result) {
  *     // Do something...
  * });
- * ```
  */
 
 /* module

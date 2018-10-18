@@ -4,11 +4,11 @@
  * |------------|------|-----------------|
  * |type='local'|string|local or session | 
  * |return      |object|Specified storage|
- * 
- * ```javascript
+ */
+
+/* example
  * var localStorage = safeStorage('local');
  * localStorage.setItem('licia', 'util');
- * ```
  */
 
 /* module

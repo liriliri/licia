@@ -8,6 +8,3 @@
 |prefix|string|字符串前缀|
 |返回值|boolean|如果是前缀，返回真|
 
-```javascript
-startWith('ab', 'a'); // -> true
-```

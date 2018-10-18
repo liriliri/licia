@@ -7,6 +7,3 @@
 |value |element array string|要转换的值|
 |返回值|array|元素集|
 
-```javascript
-$safeEls('.test'); // -> Array of elements with test class
-```

@@ -9,12 +9,3 @@
 |...fn|function|要组合的函数|
 |返回值|function|目标函数|
 
-```javascript
-var welcome = compose(function (name) {
-    return 'hi: ' + name;
-}, function (name) {
-    return name.toUpperCase() + '!';
-});
-
-welcome('licia'); // -> 'hi: LICIA!'
-```

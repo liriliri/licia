@@ -4,11 +4,11 @@
  * |-------|------|----------------------|
  * |percent|number|Number between 0 and 1|
  * |return |number|Calculated number     |
- *
- * ```javascript
+ */
+
+/* example
  * easing.linear(0.5); // -> 0.5
  * easing.inElastic(0.5, 500); // -> 0.03125
- * ```
  */
 
 /* module

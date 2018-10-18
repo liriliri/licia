@@ -4,10 +4,10 @@
  * |------|-------|-------------------------|
  * |val   |*      |Value to check           |
  * |return|boolean|True if value is an error|
- *
- * ```javascript
+ */
+
+/* example
  * isErr(new Error()); // -> true
- * ```
  */
 
 /* module

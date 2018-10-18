@@ -34,18 +34,3 @@ type = POST 的快捷方式。
 |success|function|成功回调|
 |dataType|function|响应类型|
 
-```javascript
-ajax({
-    url: 'http://example.com',
-    data: {test: 'true'},
-    error: function () {},
-    success: function (data) {
-        // ...
-    },
-    dataType: 'json'
-});
-
-ajax.get('http://example.com', {}, function (data) {
-    // ...
-});
-```

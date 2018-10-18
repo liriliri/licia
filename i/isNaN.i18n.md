@@ -9,7 +9,3 @@
 
 跟全局 isNaN 不同的是，Undefined 不是 NaN。
 
-```javascript
-isNaN(0); // -> false
-isNaN(NaN); // -> true
-```

@@ -8,6 +8,3 @@
 |*src|object|源对象|
 |返回值|object|目标对象|
 
-```javascript
-extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
-```

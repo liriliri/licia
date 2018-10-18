@@ -7,12 +7,12 @@
  * Use process.nextTick if available.
  *
  * Otherwise setImmediate or setTimeout is used as fallback.
- *
- * ```javascript
+ */
+
+/* example
  * nextTick(function () {
  *     // Do something...
  * });
- * ```
  */
 
 /* module

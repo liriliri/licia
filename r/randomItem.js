@@ -4,10 +4,10 @@
  * |------|-----|--------------------|
  * |arr   |array|Array to get        |
  * |return|*    |Randomly picked item|
- * 
- * ```javascript
+ */
+
+/* example
  * randomItem([1, 2, 3]); // -> 2
- * ```
  */
 
 /* module

@@ -7,7 +7,3 @@
 |str|string|要解码的字符串|
 |返回值|string|解码后的字符串|
 
-```javascript
-decodeUriComponent('%%25%'); // -> '%%%'
-decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
-```

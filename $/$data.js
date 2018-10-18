@@ -1,8 +1,8 @@
 /* Wrapper of $attr, adds data- prefix to keys.
- *
- * ```javascript
+ */
+
+/* example
  * $data('#test', 'attr1', 'eustia');
- * ```
  */
 
 /* module

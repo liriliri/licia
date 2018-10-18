@@ -4,13 +4,13 @@
  * |------|------|--------------------------|
  * |val   |*     |Value to get type         |
  * |return|string|Type of object, lowercased|
- *
- * ```javascript
+ */
+
+/* example
  * type(5); // -> 'number'
  * type({}); // -> 'object'
  * type(function () {}); // -> 'function'
  * type([]); // -> 'array'
- * ```
  */
 
 /* module

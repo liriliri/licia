@@ -6,12 +6,12 @@
  * |return|boolean|True if value is array like|
  *
  * Function returns false.
- *
- * ```javascript
+ */
+
+/* example
  * isArrLike('test'); // -> true
  * isArrLike(document.body.children); // -> true;
  * isArrLike([1, 2, 3]); // -> true
- * ```
  */
 
 /* module

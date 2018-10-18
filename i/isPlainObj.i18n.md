@@ -7,8 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是 plain object，返回真|
 
-```javascript
-isPlainObj({}); // -> true
-isPlainObj([]); // -> false
-isPlainObj(function () {}); // -> false
-```

@@ -12,8 +12,9 @@
  * |----------|------|-----------------|
  * |names     |object|option names     |
  * |shorthands|object|option shorthands|
- * 
- * ```javascript
+ */
+
+/* example
  * parseArgs(['eustia', '--output', 'util.js', '-w'], {
  *     names: {
  *         output: 'string',
@@ -25,7 +26,6 @@
  *     }
  * }); 
  * // -> {remain: ['eustia'], output: 'util.js', watch: true}
- * ```
  */
 
 /* module

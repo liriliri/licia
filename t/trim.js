@@ -5,12 +5,12 @@
  * |str   |string      |String to trim    |
  * |chars |string array|Characters to trim|
  * |return|string      |Trimmed string    |
- *
- * ```javascript
+ */
+
+/* example
  * trim(' abc  '); // -> 'abc'
  * trim('_abc_', '_'); // -> 'abc'
  * trim('_abc_', ['a', 'c', '_']); // -> 'b'
- * ```
  */
 
 /* module

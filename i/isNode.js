@@ -1,8 +1,8 @@
 /* Check if running in node.
- *
- * ```javascript
+ */
+
+/* example
  * console.log(isNode); // -> true if running in node
- * ```
  */
 
 /* module

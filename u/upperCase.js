@@ -4,10 +4,10 @@
  * |------|------|-----------------|
  * |str   |string|String to convert|
  * |return|string|Uppercased string|
- * 
- * ```javascript
+ */
+
+/* example
  * upperCase('test'); // -> 'TEST'
- * ```
  */
 
 /* module

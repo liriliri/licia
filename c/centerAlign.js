@@ -5,12 +5,12 @@
  * |str    |string array|String to align         |
  * |[width]|number      |Total width of each line|
  * |return |string      |Center aligned string   |
- * 
- * ```javascript
+ */
+
+/* example
  * centerAlign('test', 8); // -> '  test'
  * centerAlign('test\nlines', 8); // -> '  test\n lines'
  * centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
- * ```
  */
 
 /* module

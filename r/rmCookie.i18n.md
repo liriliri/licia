@@ -6,6 +6,3 @@
 |-----|----|---|
 |key|string|cookie 名|
 
-```javascript
-rmCookie('test');
-```

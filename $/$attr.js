@@ -29,8 +29,9 @@
  * |-------|--------------------|----------------------|
  * |element|string array element|Elements to manipulate|
  * |name   |string              |Attribute name        |
- *
- * ```javascript
+ */
+
+/* example
  * $attr('#test', 'attr1', 'test');
  * $attr('#test', 'attr1'); // -> test
  * $attr.remove('#test', 'attr1');
@@ -38,7 +39,6 @@
  *     'attr1': 'test',
  *     'attr2': 'test'
  * });
- * ```
  */
 
 /* module

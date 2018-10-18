@@ -17,11 +17,3 @@
 
 移除事件委托。
 
-```javascript
-var container = document.getElementById('container');
-function clickHandler() {
-    // Do something...
-}
-delegate.add(container, 'click', '.children', clickHandler);
-delegate.remove(container, 'click', '.children', clickHandler);
-```

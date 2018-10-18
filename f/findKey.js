@@ -6,12 +6,12 @@
  * |predicate|function|Function invoked per iteration|
  * |[ctx]    |*       |Predicate context             |
  * |return   |string  |Key of matched element        |
- *
- * ```javascript
+ */
+
+/* example
  * findKey({a: 1, b: 2}, function (val) {
  *     return val === 1;
  * }); // -> a
- * ```
  */
 
 /* module

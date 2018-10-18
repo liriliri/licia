@@ -4,11 +4,11 @@
  * |------|------|---------------------------|
  * |n     |number|Index of fibonacci sequence|
  * |return|number|Expected fibonacci number  |
- * 
- * ```javascript
+ */
+
+/* example
  * fibonacci(1); // -> 1
  * fibonacci(3); // -> 2
- * ```
  */
 
 _('memoize');

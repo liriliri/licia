@@ -7,11 +7,3 @@
 |str|string|目标字符串|
 |返回值|array|拆分成的数组|
 
-```javascript
-splitCase('foo-bar'); // -> ['foo', 'bar']
-splitCase('foo bar'); // -> ['foo', 'bar']
-splitCase('foo_bar'); // -> ['foo', 'bar']
-splitCase('foo.bar'); // -> ['foo', 'bar']
-splitCase('fooBar'); // -> ['foo', 'bar']
-splitCase('foo-Bar'); // -> ['foo', 'bar']
-```

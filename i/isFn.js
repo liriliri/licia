@@ -6,11 +6,11 @@
  * |return|boolean|True if value is a function|
  *
  * Generator function is also classified as true.
- *
- * ```javascript
+ */
+
+/* example
  * isFn(function() {}); // -> true
  * isFn(function*() {}); // -> true
- * ```
  */
 
 /* module

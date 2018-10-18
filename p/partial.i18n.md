@@ -8,7 +8,3 @@
 |...partials|*|局部填充参数|
 |返回值|function|目标函数|
 
-```javascript
-var sub5 = partial(function (a, b) { return b - a }, 5);
-sub(20); // -> 15
-```

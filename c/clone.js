@@ -6,10 +6,10 @@
  * |------|----|--------------|
  * |val   |*   |Value to clone|
  * |return|*   |Cloned value  |
- *
- * ```javascript
+ */
+
+/* example
  * clone({name: 'eustia'}); // -> {name: 'eustia'}
- * ```
  */
 
 /* module

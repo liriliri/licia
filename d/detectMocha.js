@@ -1,8 +1,8 @@
 /* Detect if mocha is running.
- *
- * ```javascript
+ */
+
+/* example
  * detectMocha(); // -> True if mocha is running.
- * ```
  */
 
 /* module

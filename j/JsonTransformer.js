@@ -57,8 +57,9 @@
  * |from|array string|Source values                   |
  * |to  |string      |Target object path              |
  * |fn  |function    |Function to compute target value|
- *
- * ```javascript
+ */
+
+/* example
  * var data = new JsonTransformer({
  *     books: [{
  *         title: 'Book 1',
@@ -76,7 +77,6 @@
  * data.compute('author', function (author) { return author.firstname + author.lastname });
  * data.set('count', data.get('books').length);
  * data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', count: 1}
- * ```
  */
 
 /* module

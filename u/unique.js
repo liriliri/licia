@@ -5,10 +5,10 @@
  * |arr      |array   |Array to inspect             |
  * |[compare]|function|Function for comparing values|
  * |return   |array   |New duplicate free array     |
- *
- * ```javascript
+ */
+
+/* example
  * unique([1, 2, 3, 1]); // -> [1, 2, 3]
- * ```
  */
 
 /* module

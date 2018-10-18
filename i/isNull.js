@@ -4,10 +4,10 @@
  * |------|-------|------------------------|
  * |val   |*      |Value to check          |
  * |return|boolean|True if value is an Null|
- *
- * ```javascript
+ */
+
+/* example
  * isNull(null); // -> true
- * ```
  */
 
 /* module

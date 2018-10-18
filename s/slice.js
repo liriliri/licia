@@ -5,10 +5,10 @@
  * |array             |array |Array to slice            |
  * |[start=0]         |number|Start position            |
  * |[end=array.length]|number|End position, not included|
- *
- * ```javascript
+ */
+
+/* example
  * slice([1, 2, 3, 4], 1, 2); // -> [2]
- * ```
  */
 
 /* module

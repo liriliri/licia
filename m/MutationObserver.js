@@ -1,12 +1,12 @@
 /* Safe MutationObserver, does nothing if MutationObserver is not supported.
- * 
- * ```javascript
+ */
+
+/* example
  * var observer = new MutationObserver(function (mutations) {
  *     // Do something.
  * });
  * observer.observe(document.htmlElement);
  * observer.disconnect();
- * ```
  */
 
 /* module

@@ -4,10 +4,10 @@
  * |------|------|--------------------|
  * |...num|number|Numbers to calculate|
  * |return|number|Sum of numbers      |
- *
- * ```javascript
+ */
+
+/* example
  * sum(1, 2, 5); // -> 8
- * ```
  */
 
 /* module

@@ -4,12 +4,12 @@
  * |------|------|--------------------|
  * |arr   |array |Array to process    |
  * |size=1|number|Length of each chunk|
- * 
- * ```javascript
+ */
+
+/* example
  * chunk([1, 2, 3, 4], 2); // -> [[1, 2], [3, 4]]
  * chunk([1, 2, 3, 4], 3); // -> [[1, 2, 3], [4]]
  * chunk([1, 2, 3, 4]); // -> [[1], [2], [3], [4]]
- * ```
  */
 
 /* module

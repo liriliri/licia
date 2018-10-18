@@ -4,10 +4,10 @@
  * |------|-----|-------------------------|
  * |arr   |array|The array to query       |
  * |return|*    |The last element of array|
- *
- * ```javascript
+ */
+
+/* example
  * last([1, 2]); // -> 2
- * ```
  */
 
 /* module

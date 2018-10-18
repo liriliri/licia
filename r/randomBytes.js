@@ -6,10 +6,10 @@
  * |------|------|----------------------------|
  * |size  |number|Number of bytes to generate |
  * |return|object|Random bytes of given length|
- *
- * ```javascript
+ */
+
+/* example
  * randomBytes(5); // -> [55, 49, 153, 30, 122]
- * ```
  */
 
 /* module

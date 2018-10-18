@@ -7,9 +7,3 @@
 |fn|function|源函数|
 |返回值|function|目标函数|
 
-```javascript
-function init() {};
-var initOnce = once(init);
-initOnce();
-initOnce(); // -> init is invoked once
-```

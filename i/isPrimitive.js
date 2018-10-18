@@ -4,12 +4,12 @@
  * |------|-------|----------------------------|
  * |val   |*      |Value to check              |
  * |return|boolean|True if value is a primitive|
- *
- * ```javascript
+ */
+
+/* example
  * isPrimitive(5); // -> true
  * isPrimitive('abc'); // -> true
  * isPrimitive(false); // -> true
- * ```
  */
 
 /* module

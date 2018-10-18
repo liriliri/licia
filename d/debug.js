@@ -4,12 +4,12 @@
  * |------|--------|-------------------------------|
  * |name  |string  |Namespace                      |
  * |return|function|Function to print decorated log|
- *
- * ```javascript
+ */
+
+/* example
  * var d = debug('test');
  * d('doing lots of uninteresting work');
  * d.enabled = false;
- * ```
  */
 
 /* module

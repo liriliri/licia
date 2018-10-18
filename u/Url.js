@@ -60,14 +60,14 @@
  * |pathname|URL path                                                                              |
  * |query   |Parsed object containing query string                                                 |
  * |hash    |The "fragment" portion of the URL including the pound-sign (#)                        |
- *
- * ```javascript
+ */
+
+/* example
  * var url = new Url('http://example.com:8080?eruda=true');
  * console.log(url.port); // -> '8080'
  * url.query.foo = 'bar';
  * url.rmQuery('eruda');
  * utl.toString(); // -> 'http://example.com:8080/?foo=bar'
- * ```
  */
 
 /* module

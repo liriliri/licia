@@ -1,7 +1,7 @@
 const glob = require('glob');
 const util = require('../lib/util');
 
-glob('**/*.i18n.md', async function(err, files) {
+glob('*/*.i18n.md', async function(err, files) {
     for (let i = 0, len = files.length; i < len; i++) {
         const file = files[i];
         let data = await util.fs.readFile(file, 'utf8');

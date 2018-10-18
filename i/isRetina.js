@@ -1,8 +1,8 @@
 /* Determine if running on a high DPR device or not.
- *
- * ```javascript
+ */
+
+/* example
  * console.log(isRetina); // -> true if high DPR
- * ```
  */
 
 /* module

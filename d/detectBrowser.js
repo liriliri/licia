@@ -6,13 +6,13 @@
  * |return                |object|Object containing name and version|
  * 
  * Browsers supported: ie, chrome, edge, firefox, opera, safari, ios(mobile safari), android(android browser)
- *
- * ```javascript
+ */
+
+/* example
  * var browser = detectBrowser();
  * if (browser.name === 'ie' && browser.version < 9) {
  *     // Do something about old IE...
  * }
- * ```
  */
 
 /* module

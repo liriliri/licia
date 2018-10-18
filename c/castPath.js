@@ -5,13 +5,13 @@
  * |str   |*     |Value to inspect   |
  * |[obj] |object|Object to query    |
  * |return|array |Property path array|
- * 
- * ```javascript
+ */
+
+/* example
  * castPath('a.b.c'); // -> ['a', 'b', 'c']
  * castPath(['a']); // -> ['a']
  * castPath('a[0].b'); // -> ['a', '0', 'b']
  * castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
- * ```
  */
 
 /* module

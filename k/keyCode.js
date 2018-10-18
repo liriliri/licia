@@ -13,11 +13,11 @@
  * |------|------|----------------------|
  * |name  |string|Key name              |
  * |return|number|Corresponding key code|
- *
- * ```javascript
+ */
+
+/* example
  * keyCode(13); // -> 'enter'
  * keyCode('enter'); // -> 13
- * ```
  */
 
 /* module

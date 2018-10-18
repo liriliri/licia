@@ -4,10 +4,10 @@
  * |------|-----|------------------|
  * |arr   |array|Array to randomize|
  * |return|array|Randomized Array  |
- *
- * ```javascript
+ */
+
+/* example
  * shuffle([1, 2, 3]); // -> [3, 1, 2]
- * ```
  */
 
 /* module

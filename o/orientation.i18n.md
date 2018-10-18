@@ -14,9 +14,3 @@
 
 获取当前屏幕方向（横屏 landscape 或 竖屏 portrait）。
 
-```javascript
-orientation.on('change', function (direction) {
-    console.log(direction); // -> 'portrait'
-});
-orientation.get(); // -> 'landscape'
-```

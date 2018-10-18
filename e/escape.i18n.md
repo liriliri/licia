@@ -8,6 +8,3 @@
 |str|string|源字符串|
 |返回值|string|目标字符串|
 
-```javascript
-escape('You & Me'); -> // -> 'You &amp; Me'
-```

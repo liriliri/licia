@@ -8,6 +8,3 @@
 |key|string|键名|
 |返回值|boolean|如果是自身的属性，返回真|
 
-```javascript
-has({one: 1}, 'one'); // -> true
-```

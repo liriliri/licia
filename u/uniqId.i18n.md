@@ -7,6 +7,3 @@
 |[prefix]|string|id 前缀|
 |返回值|string|全局唯一 id|
 
-```javascript
-uniqId('eusita_'); // -> 'eustia_xxx'
-```

@@ -4,11 +4,11 @@
  * |------|-------|--------------------------|
  * |val   |*      |Value to check            |
  * |return|boolean|True if value is a WeakMap|
- * 
- * ```javascript
+ */
+
+/* example
  * isWeakMap(new Map()); // -> false
  * isWeakMap(new WeakMap()); // -> true
- * ```
  */
 
 /* module

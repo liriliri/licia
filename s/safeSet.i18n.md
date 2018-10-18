@@ -10,9 +10,3 @@
 |path|array string|属性路径|
 |val|*|要设置的值|
 
-```javascript
-var obj = {};
-safeSet(obj, 'a.aa.aaa', 1); // obj = {a: {aa: {aaa: 1}}}
-safeSet(obj, ['a', 'aa'], 2); // obj = {a: {aa: 2}}
-safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
-```

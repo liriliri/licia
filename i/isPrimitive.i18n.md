@@ -7,8 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是原始类型，返回真|
 
-```javascript
-isPrimitive(5); // -> true
-isPrimitive('abc'); // -> true
-isPrimitive(false); // -> true
-```

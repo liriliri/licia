@@ -20,14 +20,14 @@
  * In order to keep image ratio, height will be ignored when width is set.
  * 
  * And maxWith, maxHeight will be ignored if width or height is set.
- *
- * ```javascript
+ */
+
+/* example
  * compressImg(file, {
  *     maxWidth: 200
  * }, function (err, file) {
  *     // ...
  * });
- * ```
  */
 
 /* module

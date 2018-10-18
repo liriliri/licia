@@ -12,9 +12,3 @@
 |absTol=0|number|绝对误差|
 |返回值|boolean|如果近似相等，返回真|
 
-```javascript
-isClose(1, 1.0000000001); // -> true
-isClose(1, 2); // -> false
-isClose(1, 1.2, 0.3); // -> true
-isClose(1, 1.2, 0.1, 0.3); // -> true
-```

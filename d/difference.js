@@ -5,10 +5,10 @@
  * |arr      |array|Array to inspect            |
  * |[...rest]|array|Values to exclude           |
  * |return   |array|New array of filtered values|
- *
- * ```javascript
+ */
+
+/* example
  * difference([3, 2, 1], [4, 2]); // -> [3, 1]
- * ```
  */
 
 /* module

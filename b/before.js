@@ -7,11 +7,11 @@
  * |return|function|New restricted function                         |
  *
  * Subsequent calls to the created function return the result of the last fn invocation.
- *
- * ```javascript
+ */
+
+/* example
  * $(element).on('click', before(5, function() {}));
  * // -> allow function to be call 4 times at last.
- * ```
  */
 
 /* module

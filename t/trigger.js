@@ -5,11 +5,11 @@
  * |[el=document]|element|Element to trigger|
  * |type         |string |Event type        |
  * |opts         |object |Options           |
- *
- * ```javascript
+ */
+
+/* example
  * trigger(el, 'mouseup');
  * trigger('keydown', {keyCode: 65});
- * ```
  */
 
 /* module

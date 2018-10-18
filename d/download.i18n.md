@@ -8,6 +8,3 @@
 |name|string|文件名|
 |type=text/plain|string|数据类型|
 
-```javascript
-download('test', 'test.txt');
-```

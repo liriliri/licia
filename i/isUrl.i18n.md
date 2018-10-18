@@ -7,6 +7,3 @@
 |val|string|要检查的值|
 |返回值|boolean|如果是有效的 url 地址，返回真|
 
-```javascript
-isUrl('http://www.example.com?foo=bar&param=test'); // -> true
-```

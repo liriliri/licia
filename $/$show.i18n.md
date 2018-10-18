@@ -6,6 +6,3 @@
 |-----|----|---|
 |element|string array element|目标元素集|
 
-```javascript
-$show('#test');
-```

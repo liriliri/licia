@@ -4,12 +4,12 @@
  * |----|--------|---------------|
  * |src |string  |Script source  |
  * |cb  |function|Onload callback|
- *
- * ```javascript
+ */
+
+/* example
  * loadJs('main.js', function (isLoaded) {
  *     // Do something...
  * });
- * ```
  */
 
 /* module

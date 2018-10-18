@@ -7,6 +7,3 @@
 |...num|number|要计算的数字|
 |返回值|number|平均值|
 
-```javascript
-average(5, 3, 1); // -> 3
-```

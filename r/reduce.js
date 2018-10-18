@@ -7,10 +7,10 @@
  * |[initial]        |*           |Initial value                 |
  * |[ctx]            |*           |Function context              |
  * |return           |*           |Accumulated value             |
- *
- * ```javascript
+ */
+
+/* example
  * reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
- * ```
  */
 
 /* module

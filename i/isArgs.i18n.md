@@ -7,8 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是参数类型，返回真|
 
-```javascript
-(function () {
-    isArgs(arguments); // -> true
-})();
-```

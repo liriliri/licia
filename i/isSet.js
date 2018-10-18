@@ -4,11 +4,11 @@
  * |------|-------|----------------------|
  * |val   |*      |Value to check        |
  * |return|boolean|True if value is a Set|
- * 
- * ```javascript
+ */
+
+/* example
  * isSet(new Set()); // -> true
  * isSet(new WeakSet()); // -> false
- * ```
  */
 
 /* module

@@ -7,13 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是数字，返回真|
 
-```javascript
-isNumeric(1); // -> true
-isNumeric('1'); // -> true
-isNumeric(Number.MAX_VALUE); // -> true
-isNumeric(0144); // -> true
-isNumeric(0xFF); // -> true
-isNumeric(''); // -> false
-isNumeric('1.1.1'); // -> false
-isNumeric(NaN); // -> false
-```

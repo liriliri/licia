@@ -7,9 +7,3 @@
 |val|*|要转换的值|
 |返回值|string|转换后的字符串|
 
-```javascript
-toStr(null); // -> ''
-toStr(1); // -> '1'
-toStr(false); // -> 'false'
-toStr([1, 2, 3]); // -> '1,2,3'
-```

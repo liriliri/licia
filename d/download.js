@@ -5,10 +5,10 @@
  * |data           |Blob File string array|Data to download|
  * |name           |string                |File name       |
  * |type=text/plain|string                |Data type       |
- * 
- * ```javascript
+ */
+
+/* example
  * download('test', 'test.txt');
- * ```
  */
 
 /* module

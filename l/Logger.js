@@ -26,8 +26,9 @@
  * ### Log Levels
  * 
  * TRACE, DEBUG, INFO, WARN, ERROR and SILENT.
- * 
- * ```javascript
+ */
+
+/* example
  * var logger = new Logger('licia', Logger.level.ERROR);
  * logger.trace('test');
  * 
@@ -45,7 +46,6 @@
  * logger.on('debug', function (argList) {
  *     // Affected by log level.
  * });
- * ```
  */
 
 /* module

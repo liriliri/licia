@@ -6,12 +6,12 @@
  * |predicate|function|Function invoked per iteration                |
  * |[ctx]    |*       |Predicate context                             |
  * |return   |array   |Array of all values that didn't pass predicate|
- *
- * ```javascript
+ */
+
+/* example
  * reject([1, 2, 3, 4, 5], function (val) {
  *     return val % 2 === 0;
  * }); // -> [1, 3, 5]
- * ```
  */
 
 _('safeCb negate filter');

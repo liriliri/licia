@@ -9,6 +9,3 @@
 |[ctx]|*|函数上下文|
 |返回值|array|目标集合|
 
-```javascript
-map([4, 8], function (n) { return n * n; }); // -> [16, 64]
-```

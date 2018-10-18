@@ -4,12 +4,12 @@
  * |------|-------|-------------------------------------|
  * |val   |*      |Value to check                       |
  * |return|boolean|True if value is correctly classified|
- * 
- * ```javascript
+ */
+
+/* example
  * isInt(5); // -> true
  * isInt(5.1); // -> false
  * isInt({}); // -> false
- * ```
  */
 
 /* module

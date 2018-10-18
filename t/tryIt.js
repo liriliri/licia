@@ -4,14 +4,14 @@
  * |----|--------|---------------------|
  * |fn  |function|Function to try catch|
  * |[cb]|function|Callback             |
- * 
- * ```javascript
+ */
+
+/* example
  * tryIt(function () {
  *     // Do something that might cause an error.
  * }, function (err, result) {
  *     if (err) console.log(err);
  * });
- * ```
  */
 
 /* module

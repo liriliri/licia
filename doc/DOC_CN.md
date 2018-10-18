@@ -7,7 +7,7 @@
 offset, hide, show, first, last, get, eq, on, off, html, text, val, css, attr,
 data, rmAttr, remove, addClass, rmClass, toggleClass, hasClass, append, prepend,
 before, after
- 
+
 ```javascript
 var $btn = $('#btn');
 $btn.html('eustia');
@@ -1279,7 +1279,7 @@ ajax.get('http://example.com', {}, function (data) {
 |obj|object|目标对象|
 |返回值|array|包含所有键名的数组|
 
-Object 对象原型上的方法不会被获取到。 
+Object 对象原型上的方法不会被获取到。
 
 ```javascript
 var obj = Object.create({zero: 0});
@@ -1339,10 +1339,6 @@ base64 编解码。
 |arr|array|字节数组|
 |返回值|string|base64 编码的字符串|
 
-```javascript
-base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
-```
-
 ### decode
 
 将 base64 字符串解码为字节数组。
@@ -1353,6 +1349,7 @@ base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
 |返回值|array|字节数组|
 
 ```javascript
+base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
 base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
 ```
 
@@ -2080,7 +2077,7 @@ if (browser.name === 'ie' && browser.version < 9) {
 
 ## detectMocha
 
-检测是否有 mocha 测试框架在运行。 
+检测是否有 mocha 测试框架在运行。
 
 ```javascript
 detectMocha(); // -> True if mocha is running.
@@ -4160,6 +4157,7 @@ omit({a: 1, b: 2, c: 3}, ['b', 'c']) // -> {a: 1}
 omit({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
     return val % 2;
 }); // -> {b: 2, d: 4}
+```
 
 ## once
 

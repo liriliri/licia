@@ -7,7 +7,3 @@
 |val|*|要检查的值|
 |返回值|boolean|如果是 undefined，返回真|
 
-```javascript
-isUndef(void 0); // -> true
-isUndef(null); // -> false
-```

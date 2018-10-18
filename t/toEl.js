@@ -6,10 +6,10 @@
  * |------|-------|------------|
  * |str   |string |Html string |
  * |return|element|Html element|
- *
- * ```javascript
+ */
+
+/* example
  * toEl('<div>test</div>');
- * ```
  */
 
 /* module

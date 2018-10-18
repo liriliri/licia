@@ -6,6 +6,3 @@
 |-----|----|---|
 |css|string|css 代码|
 
-```javascript
-evalCss('body{background:#08c}');
-```

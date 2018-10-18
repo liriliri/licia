@@ -4,8 +4,9 @@
  * |----------|--------|-----------|
  * |Class     |function|Child Class|
  * |SuperClass|function|Super Class|
- *
- * ```javascript
+ */
+
+/* example
  * function People(name) {
  *     this._name = name;
  * }
@@ -20,7 +21,6 @@
  * inherits(Student, People);
  * var s = new Student('RedHood');
  * s.getName(); // -> 'RedHood'
- * ```
  */
 
 /* module

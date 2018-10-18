@@ -4,12 +4,12 @@
  * |----|--------|---------------|
  * |src |string  |Style source   |
  * |cb  |function|Onload callback|
- *
- * ```javascript
+ */
+
+/* example
  * loadCss('style.css', function (isLoaded) {
  *     // Do something...
  * });
- * ```
  */
 
 /* module

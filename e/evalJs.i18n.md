@@ -7,7 +7,3 @@
 |js|string|JavaScript 代码|
 |ctx=global|object|上下文|
 
-```javascript
-evalJs('5+2'); // -> 7
-evalJs('this.a', {a: 2}); // -> 2
-```

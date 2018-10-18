@@ -7,6 +7,3 @@
 |arr|array|目标数组|
 |返回值|*|随机项|
 
-```javascript
-randomItem([1, 2, 3]); // -> 2
-```

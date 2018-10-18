@@ -4,10 +4,10 @@
  * |------|------|-----------------|
  * |str   |string|String to convert|
  * |return|string|Converted string |
- *
- * ```javascript
+ */
+
+/* example
  * upperFirst('red'); // -> Red
- * ```
  */
 
 /* module

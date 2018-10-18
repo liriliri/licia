@@ -1,8 +1,8 @@
 /* Check if running in a browser.
- *
- * ```javascript
+ */
+
+/* example
  * console.log(isBrowser); // -> true if running in a browser
- * ```
  */
 
 /* module

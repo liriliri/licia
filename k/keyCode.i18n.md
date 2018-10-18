@@ -16,7 +16,3 @@
 |name|string|键名|
 |返回值|number|对应的键码|
 
-```javascript
-keyCode(13); // -> 'enter'
-keyCode('enter'); // -> 13
-```

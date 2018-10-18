@@ -9,8 +9,3 @@
 |[ctx]|*|函数上下文|
 |返回值|array|包含所有通过真值检测元素的数组|
 
-```javascript
-filter([1, 2, 3, 4, 5], function (val) {
-    return val % 2 === 0;
-}); // -> [2, 4]
-```

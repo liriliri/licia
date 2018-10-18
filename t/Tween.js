@@ -35,8 +35,9 @@
  * |Name      |Type  |Desc                  |
  * |----------|------|----------------------|
  * |[progress]|number|Number between 0 and 1|
- *
- * ```javascript
+ */
+
+/* example
  * var pos = {x: 0, y: 0};
  *
  * var tween = new Tween(pos);
@@ -46,7 +47,6 @@
  *     console.log(target.x, target.y); // -> 100, 100
  * });
  * tween.to({x: 100, y: 100}, 1000, 'inElastic').play();
- * ```
  */
 
 /* module

@@ -4,8 +4,9 @@
  * |------|--------|------------------------------------------------|
  * |fn    |function|Function that returns a Promise                 |
  * |return|function|Function following the error-fist callback style|
- * 
- * ```javascript
+ */
+
+/* example
  * function fn() {
  *     return new Promise(function (resolve, reject) {
  *         // ...
@@ -17,7 +18,6 @@
  * cbFn(function (err, value) {
  *     // ...
  * });
- * ```
  */
 
 /* module

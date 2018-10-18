@@ -5,14 +5,14 @@
  * |arr     |array |Array of strings|
  * |val=true|*     |Key value       |
  * |return  |object|Object map      |
- * 
- * ```javascript
+ */
+
+/* example
  * var needPx = arrToMap([
  *     'column-count', 'columns', 'font-weight', 'line-weight', 'opacity', 'z-index', 'zoom'
  * ]);
  * 
  * if (needPx[key]) val += 'px';
- * ```
  */
 
 /* module

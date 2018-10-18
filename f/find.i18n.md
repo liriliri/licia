@@ -9,14 +9,3 @@
 |[ctx]|*|函数上下文|
 |返回值|*|第一个通过的元素|
 
-```javascript
-find([{
-    name: 'john',
-    age: 24
-}, {
-    name: 'jane',
-    age: 23
-}], function (val) {
-    return val.age === 23;
-}); // -> {name: 'jane', age: 23}
-```

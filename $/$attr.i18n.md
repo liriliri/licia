@@ -31,13 +31,3 @@
 |-----|----|---|
 |element|string array element|目标元素集|
 |name|string|属性名|
-
-```javascript
-$attr('#test', 'attr1', 'test');
-$attr('#test', 'attr1'); // -> test
-$attr.remove('#test', 'attr1');
-$attr('#test', {
-    'attr1': 'test',
-    'attr2': 'test'
-});
-```

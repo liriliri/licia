@@ -15,11 +15,3 @@
 
 注销监听器。
 
-```javascript
-hotkey.on('k', function () {
-    console.log('k is pressed');
-});
-function keyDown() {}
-hotkey.on('shift+a, shift+b', keyDown);
-hotkey.off('shift+a', keyDown);
-```

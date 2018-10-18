@@ -11,13 +11,13 @@
  * ### get
  * 
  * Get current orientation(landscape or portrait).
- * 
- * ```javascript
+ */
+
+/* example
  * orientation.on('change', function (direction) {
  *     console.log(direction); // -> 'portrait'
  * });
  * orientation.get(); // -> 'landscape'
- * ```
  */
 
 /* module

@@ -4,13 +4,13 @@
  * |------|--------|-----------------------|
  * |fn    |function|Function to restrict   |
  * |return|function|New restricted function|
- *
- * ```javascript
+ */
+
+/* example
  * function init() {};
  * var initOnce = once(init);
  * initOnce();
  * initOnce(); // -> init is invoked once
- * ```
  */
 
 /* module

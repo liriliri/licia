@@ -7,15 +7,15 @@
  * |method    |function|Module body |
  *
  * The module won't be executed until it's used by use function.
- *
- * ```javascript
+ */
+
+/* example
  * define('A', function () {
  *     return 'A';
  * });
  * define('B', ['A'], function (A) {
  *     return 'B' + A;
  * });
- * ```
  */
 
 /* module

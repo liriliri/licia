@@ -4,10 +4,10 @@
  * |------|-------|------------------------------|
  * |val   |*      |value to check                |
  * |return|boolean|True if value is a Date object|
- *
- * ```javascript
+ */
+
+/* example
  * isDate(new Date()); // -> true
- * ```
  */
 
 /* module

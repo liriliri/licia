@@ -6,12 +6,12 @@
  * |predicate|function    |Function invoked per iteration               |
  * |ctx      |*           |Predicate context                            |
  * |return   |boolean     |True if all elements pass the predicate check|
- *
- * ```javascript
+ */
+
+/* example
  * every([2, 4], function (val) {
  *     return val % 2 === 0;
  * }); // -> false
- * ```
  */
 
 /* module

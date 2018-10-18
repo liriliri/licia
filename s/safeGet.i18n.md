@@ -8,9 +8,3 @@
 |path|array string|属性路径|
 |返回值|*|属性值或 undefined|
 
-```javascript
-var obj = {a: {aa: {aaa: 1}}};
-safeGet(obj, 'a.aa.aaa'); // -> 1
-safeGet(obj, ['a', 'aa']); // -> {aaa: 1}
-safeGet(obj, 'a.b'); // -> undefined
-```

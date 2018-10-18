@@ -9,8 +9,3 @@
 |[ctx]|*|函数上下文|
 |返回值|string|符合条件的键名|
 
-```javascript
-findKey({a: 1, b: 2}, function (val) {
-    return val === 1;
-}); // -> a
-```

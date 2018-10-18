@@ -4,10 +4,10 @@
  * |------|-------|-----------------------|
  * |val   |*      |Value to check         |
  * |return|boolean|True if value is a file|
- * 
- * ```javascript
+ */
+
+/* example
  * isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
- * ```
  */
 
 /* module

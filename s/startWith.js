@@ -5,10 +5,10 @@
  * |str   |string |String to search                 |
  * |prefix|string |String prefix                    |
  * |return|boolean|True if string starts with prefix|
- *
- * ```javascript
+ */
+
+/* example
  * startWith('ab', 'a'); // -> true
- * ```
  */
 
 /* module
