@@ -1344,10 +1344,6 @@ Turn a byte array into a base64 string.
 |arr   |array |Byte array   |
 |return|string|Base64 string|
 
-```javascript
-base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
-```
-
 ### decode
 
 Turn a base64 string into a byte array.
@@ -1358,6 +1354,7 @@ Turn a base64 string into a byte array.
 |return|array |Byte array   |
 
 ```javascript
+base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
 base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
 ```
 
@@ -4166,6 +4163,7 @@ omit({a: 1, b: 2, c: 3}, ['b', 'c']) // -> {a: 1}
 omit({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
     return val % 2;
 }); // -> {b: 2, d: 4}
+```
 
 ## once 
 
