@@ -1612,6 +1612,20 @@ cmpVersion('3.0.1', '3.0.0.2'); // -> 1
 cmpVersion('1.1.1', '1.2.3'); // -> -1
 ```
 
+## combine 
+
+Create an array by using one array for keys and another for its values.
+
+|Name  |Type  |Desc             |
+|------|------|-----------------|
+|keys  |array |Keys to be used  |
+|values|array |Values to be used|
+|return|object|Created object   |
+
+```javascript
+combine(['a', 'b', 'c'], [1, 2, 3]); -> {a: 1, b: 2, c: 3}
+```
+
 ## compact 
 
 Return a copy of the array with all falsy values removed.

@@ -613,6 +613,12 @@
         "env": "all",
         "test": "all"
     },
+    "combine": {
+        "description": "Create an array by using one array for keys and another for its values.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "compact": {
         "description": "Return a copy of the array with all falsy values removed.",
         "dependencies": [
