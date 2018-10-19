@@ -3,5 +3,6 @@ module.exports = {
     library: '$_abcdefghijklmnopqrstuvwxyz'.split(''),
     output: 'lib/util.js',
     exclude: 'js',
+    removeComments: true,
     format: 'commonjs'
 };
