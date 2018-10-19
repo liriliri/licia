@@ -14,7 +14,7 @@
 /* module
  * env: all
  * test: all
- */ 
+ */
 
 /* typescript
  * export declare function combine(keys: string[], values: any[]): any

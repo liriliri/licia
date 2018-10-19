@@ -1143,6 +1143,14 @@
         "env": "all",
         "test": "all"
     },
+    "getPort": {
+        "description": "Get an available TCP port.",
+        "dependencies": [
+            "toArr"
+        ],
+        "env": "node",
+        "test": "node"
+    },
     "getUrlParam": {
         "description": "Get url param.",
         "dependencies": [

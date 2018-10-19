@@ -2666,6 +2666,23 @@ Compute the greatest common divisor using Euclid's algorithm.
 gcd(121, 44); // -> 11
 ```
 
+## getPort 
+
+Get an available TCP port.
+
+|Name  |Type        |Desc           |
+|------|------------|---------------|
+|[port]|number array|Preferred ports|
+|return|promise     |Available port |
+
+If preferred ports are not available, a random port will be returned.
+
+```javascript
+getPort([3000, 3001]).then(port => {
+    console.log(port);
+});
+```
+
 ## getUrlParam 
 
 Get url param.
