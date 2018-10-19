@@ -10,6 +10,9 @@ var exports = {
         mocha: true,
         jquery: true
     },
+    parserOptions: {
+        ecmaVersion: 2017
+    },
     extends: 'eslint:recommended',
     rules: {
         semi: ['error', 'always'],
