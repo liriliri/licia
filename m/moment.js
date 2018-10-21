@@ -22,7 +22,7 @@
 
 /* module
  * env: all
- * test: all
+ * test: manual 
  */
 
 _('Class toDate dateFormat isLeapYear extend toStr isNil ms');

@@ -1810,6 +1810,14 @@
         "env": "all",
         "test": "all"
     },
+    "md5": {
+        "description": "MD5 implementation.",
+        "dependencies": [
+            "utf8"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "memStorage": {
         "description": "Memory-backed implementation of the Web Storage API.",
         "dependencies": [
@@ -1882,7 +1890,7 @@
             "ms"
         ],
         "env": "all",
-        "test": "all"
+        "test": "manual"
     },
     "ms": {
         "description": "Convert time string formats to milliseconds.",
@@ -2531,7 +2539,7 @@
             "isStr"
         ],
         "env": "all",
-        "test": "all"
+        "test": "manual"
     },
     "toEl": {
         "description": "Convert html string to dom elements.",

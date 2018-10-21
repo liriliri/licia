@@ -3917,6 +3917,19 @@ filter(objects, matcher({a: 4, c: 6 })); // -> [{a: 4, b: 5, c: 6 }]
 max(2.3, 1, 4.5, 2); // 4.5
 ```
 
+## md5
+
+MD5 算法实现。
+
+|参数名|类型|说明|
+|-----|----|---|
+|msg|string|密文|
+|返回值|string|MD5 摘要|
+
+```javascript
+md5('licia'); // -> 'e59f337d85e9a467f1783fab282a41d0'
+```
+
 ## memStorage
 
 Web Storage 接口的纯内存实现。

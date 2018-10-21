@@ -14,7 +14,7 @@
 
 /* module
  * env: all
- * test: all
+ * test: manual 
  */
 
 _('isDate isStr');

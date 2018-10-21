@@ -3921,6 +3921,19 @@ Get maximum value of given numbers.
 max(2.3, 1, 4.5, 2); // 4.5
 ```
 
+## md5 
+
+MD5 implementation.
+
+|Name   |Type  |Desc              |
+|-------|------|------------------|
+|msg    |string|Message to encrypt|
+|return |string|MD5 hash          |
+
+```javascript
+md5('licia'); // -> 'e59f337d85e9a467f1783fab282a41d0'
+```
+
 ## memStorage 
 
 Memory-backed implementation of the Web Storage API.
