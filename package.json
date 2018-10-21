@@ -1,6 +1,6 @@
 {
   "name": "licia",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Useful utility collection with zero dependencies",
   "bin": {
     "licia": "./bin/licia.js"
@@ -8,7 +8,7 @@
   "scripts": {
     "ci": "npm run lint && npm test",
     "update": "licia update",
-    "pack": "licia pack",
+    "pack": "licia pack && npm run format:pkg",
     "lint": "eslint $/*.js [a-z]/*.js",
     "serveDemo": "nws -p 3000 -d demo",
     "test": "npm run test:node && npm run test:browser",
@@ -18,6 +18,7 @@
     "karma": "karma",
     "mocha": "mocha",
     "format": "prettier $/*.js [a-z]/*.js *.js lib/**/*.js lib/*.js bin/*.js script/*.js --write",
+    "format:pkg": "prettier packages/**/*.js --write",
     "benchmark": "node",
     "test:node": "licia test -as",
     "test:browser": "licia test -bas",
@@ -37,6 +38,8 @@
   },
   "homepage": "https://github.com/liriliri/licia#readme",
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
     "chai": "^4.1.2",
