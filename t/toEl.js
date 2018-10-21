@@ -27,7 +27,7 @@ exports = function(str) {
     return fragment.childNodes[0];
 };
 
-if (doc.createRange) {
+if (doc.createRange && doc.body) {
     var range = doc.createRange();
     range.selectNode(doc.body);
 
