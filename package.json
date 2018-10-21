@@ -6,7 +6,7 @@
     "licia": "./bin/licia.js"
   },
   "scripts": {
-    "ci": "npm run update && npm run lint && npm test",
+    "ci": "npm run lint && npm test",
     "update": "licia update",
     "pack": "licia pack",
     "lint": "eslint $/*.js [a-z]/*.js",

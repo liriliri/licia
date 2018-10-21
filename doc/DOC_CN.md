@@ -1409,6 +1409,19 @@ btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 bubbleSort([2, 1]); // -> [1, 2]
 ```
 
+## bytesToStr
+
+将字节数组转换为字符串。
+
+|参数名|类型|说明|
+|-----|----|---|
+|str|array|字节数组|
+|return|string|目标字符串|
+
+```javascript
+bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
+```
+
 ## callbackify
 
 将返回 Promise 的函数转换为使用回调的函数。
@@ -4594,6 +4607,29 @@ range(5); // -> [0, 1, 2, 3, 4]
 range(0, 5, 2) // -> [0, 2, 4]
 ```
 
+## rc4
+
+RC4 对称加密算法实现。
+
+### encrypt
+
+RC4 加密，结果表示为 base64 字符串。
+
+### decrypt
+
+RC4 解密，传入 base64 字符串。
+
+|参数名|类型|说明|
+|-----|----|---|
+|key|string|密钥|
+|str|string|源字符串|
+|return|string|目标字符串|
+
+```javascript
+rc4.encrypt('licia', 'Hello world'); // -> 'j9y2VpSfR3AdNN8='
+rc4.decrypt('licia', 'j9y2VpSfR3AdNN8='); // -> 'Hello world'
+```
+
 ## ready
 
 dom 准备好时调用回调函数，类似于 jQuery 的 ready 方法。
@@ -5067,6 +5103,19 @@ startWith('ab', 'a'); // -> true
 
 ```javascript
 strHash('test'); // -> 2090770981
+```
+
+## strToBytes
+
+将字符串转换为字节数组。
+
+|参数名|类型|说明|
+|-----|----|---|
+|str|string|目标字符串|
+|return|array|字节数组|
+
+```javascript
+strToBytes('licia'); // -> [108, 105, 99, 105, 97]
 ```
 
 ## stringify

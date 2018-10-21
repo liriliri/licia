@@ -19,11 +19,11 @@
  * export declare function md5(msg: string): string
  */
 
-_('utf8');
+_('utf8 strToBytes');
 
 // https://github.com/pvorb/node-md5
 function exports(msg) {
-    const bytes = stringToBytes(msg);
+    const bytes = strToBytes(utf8.encode(msg));
     const m = bytesToWords(bytes);
     const l = bytes.length * 8;
 
@@ -176,18 +176,6 @@ function endian(n) {
 
 function rotl(n, b) {
     return (n << b) | (n >>> (32 - b));
-}
-
-function stringToBytes(msg) {
-    const bytes = [];
-
-    msg = utf8.encode(msg);
-
-    for (let i = 0, len = msg.length; i < len; i++) {
-        bytes.push(msg.charCodeAt(i) & 0xff);
-    }
-
-    return bytes;
 }
 
 function bytesToWords(bytes) {

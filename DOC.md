@@ -1414,6 +1414,19 @@ Bubble sort implementation.
 bubbleSort([2, 1]); // -> [1, 2]
 ```
 
+## bytesToStr 
+
+Convert bytes to string.
+
+|Name  |Type  |Desc         |
+|------|------|-------------|
+|str   |array |Bytes array  |
+|return|string|Result string|
+
+```javascript
+bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
+```
+
 ## callbackify 
 
 Convert a function that returns a Promise to a function following the error-first callback style.
@@ -4600,6 +4613,29 @@ range(5); // -> [0, 1, 2, 3, 4]
 range(0, 5, 2) // -> [0, 2, 4]
 ```
 
+## rc4 
+
+RC4 symmetric encryption implementation.
+
+### encrypt
+
+RC4 encryption, result as base64 string.
+
+### decrypt
+
+RC4 decryption, pass base64 string as input.
+
+|Name  |Type  |Desc                            |
+|------|------|--------------------------------|
+|key   |string|Secret key                      |
+|str   |string|String to be encrypted/decrypted|
+|return|string|Encrypted/decrypted string      |
+
+```javascript
+rc4.encrypt('licia', 'Hello world'); // -> 'j9y2VpSfR3AdNN8='
+rc4.decrypt('licia', 'j9y2VpSfR3AdNN8='); // -> 'Hello world'
+```
+
 ## ready 
 
 Invoke callback when dom is ready, similar to jQuery ready.
@@ -5073,6 +5109,19 @@ String hash function using djb2.
 
 ```javascript
 strHash('test'); // -> 2090770981
+```
+
+## strToBytes 
+
+Convert string into bytes.
+
+|Name  |Type  |Desc             |
+|------|------|-----------------|
+|str   |string|String to convert|
+|return|array |Bytes array      |
+
+```javascript
+strToBytes('licia'); // -> [108, 105, 99, 105, 97]
 ```
 
 ## stringify 

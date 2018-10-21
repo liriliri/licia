@@ -510,6 +510,12 @@
         "env": "all",
         "test": "all"
     },
+    "bytesToStr": {
+        "description": "Convert bytes to string.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "callbackify": {
         "description": "Convert a function that returns a Promise to a function following the error-first callback style.",
         "dependencies": [
@@ -1813,7 +1819,8 @@
     "md5": {
         "description": "MD5 implementation.",
         "dependencies": [
-            "utf8"
+            "utf8",
+            "strToBytes"
         ],
         "env": "all",
         "test": "all"
@@ -2157,6 +2164,17 @@
         "env": "all",
         "test": "all"
     },
+    "rc4": {
+        "description": "RC4 symmetric encryption implementation.",
+        "dependencies": [
+            "utf8",
+            "base64",
+            "bytesToStr",
+            "strToBytes"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "ready": {
         "description": "Invoke callback when dom is ready, similar to jQuery ready.",
         "dependencies": [],
@@ -2417,6 +2435,12 @@
     },
     "strHash": {
         "description": "String hash function using djb2.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
+    "strToBytes": {
+        "description": "Convert string into bytes.",
         "dependencies": [],
         "env": "all",
         "test": "all"
