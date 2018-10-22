@@ -1558,6 +1558,12 @@
         "env": "all",
         "test": "all"
     },
+    "isPrime": {
+        "description": "Check if the provided integer is a prime number.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "isPrimitive": {
         "description": "Check if value is string, number, boolean or null.",
         "dependencies": [],

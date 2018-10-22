@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export default function bytesToStr(bytes: number[]): string
+ * export declare function bytesToStr(bytes: number[]): string
  */
 
 function exports(bytes) {

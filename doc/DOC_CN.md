@@ -3442,6 +3442,20 @@ isPlainObj([]); // -> false
 isPlainObj(function () {}); // -> false
 ```
 
+## isPrime
+
+检查整数是否是质数。
+
+|参数名|类型|说明|
+|-----|----|---|
+|num|number|要检查的数字|
+|return|boolean|如果是质数，返回真|
+
+```javascript
+isPrime(11); // -> true
+isPrime(8); // -> false
+```
+
 ## isPrimitive
 
 检测值是否是字符串，数字，布尔值或 null。

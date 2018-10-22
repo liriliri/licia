@@ -3446,6 +3446,20 @@ isPlainObj([]); // -> false
 isPlainObj(function () {}); // -> false
 ```
 
+## isPrime 
+
+Check if the provided integer is a prime number.
+
+|Name  |Type   |Desc                            |
+|------|-------|--------------------------------|
+|num   |number |Number to check                 |
+|return|boolean|True if number is a prime number|
+
+```javascript
+isPrime(11); // -> true
+isPrime(8); // -> false
+```
+
 ## isPrimitive 
 
 Check if value is string, number, boolean or null.
