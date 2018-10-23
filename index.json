@@ -1967,6 +1967,14 @@
         "env": "all",
         "test": "all"
     },
+    "open": {
+        "description": "Open stuff like url, files.",
+        "dependencies": [
+            "isWindows"
+        ],
+        "env": "node",
+        "test": "manual"
+    },
     "optimizeCb": {
         "description": "Used for function context binding.",
         "dependencies": [

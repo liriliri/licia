@@ -8,5 +8,5 @@
 |-----|----|---|
 |url|string|请求地址|
 |options|object|请求选项|
-|返回值|promise|请求 promise|
+|返回值|Promise|请求 promise|
 

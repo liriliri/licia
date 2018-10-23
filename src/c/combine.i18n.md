@@ -6,4 +6,4 @@
 |-----|----|---|
 |keys|array|键名数组|
 |values|array|键值数组|
-|return|object|目标对象|
+|返回值|object|目标对象|

@@ -14,4 +14,4 @@ RC4 解密，传入 base64 字符串。
 |-----|----|---|
 |key|string|密钥|
 |str|string|源字符串|
-|return|string|目标字符串|
+|返回值|string|目标字符串|

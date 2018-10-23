@@ -2390,7 +2390,7 @@ Note: This is not a complete fetch pollyfill.
 |-------|-------|---------------|
 |url    |string |Request url    |
 |options|object |Request options|
-|return |promise|Request promise|
+|return |Promise|Request promise|
 
 ```javascript
 fetch('test.json', {
@@ -4250,6 +4250,19 @@ function init() {};
 var initOnce = once(init);
 initOnce();
 initOnce(); // -> init is invoked once
+```
+
+## open 
+
+Open stuff like url, files.
+
+|Name  |Type        |Desc         |
+|------|------------|-------------|
+|target|string      |Stuff to open|
+|return|ChildProcess|Child process|
+
+```javascript
+open('https://eustia.liriliri.io/');
 ```
 
 ## optimizeCb 

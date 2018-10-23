@@ -1416,7 +1416,7 @@ bubbleSort([2, 1]); // -> [1, 2]
 |参数名|类型|说明|
 |-----|----|---|
 |str|array|字节数组|
-|return|string|目标字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
@@ -1628,7 +1628,7 @@ cmpVersion('1.1.1', '1.2.3'); // -> -1
 |-----|----|---|
 |keys|array|键名数组|
 |values|array|键值数组|
-|return|object|目标对象|
+|返回值|object|目标对象|
 
 ```javascript
 combine(['a', 'b', 'c'], [1, 2, 3]); -> {a: 1, b: 2, c: 3}
@@ -2386,7 +2386,7 @@ extractUrl(str); // -> ['http://eustia.liriliri.io']
 |-----|----|---|
 |url|string|请求地址|
 |options|object|请求选项|
-|返回值|promise|请求 promise|
+|返回值|Promise|请求 promise|
 
 ```javascript
 fetch('test.json', {
@@ -2682,7 +2682,7 @@ gcd(121, 44); // -> 11
 |参数名|类型|说明|
 |-----|----|---|
 |[port]|number array|首选端口|
-|return|promise|有效端口|
+|返回值|Promise|有效端口|
 
 如果首选端口无法使用，将会返回一个有效的随机端口。
 
@@ -3449,7 +3449,7 @@ isPlainObj(function () {}); // -> false
 |参数名|类型|说明|
 |-----|----|---|
 |num|number|要检查的数字|
-|return|boolean|如果是质数，返回真|
+|返回值|boolean|如果是质数，返回真|
 
 ```javascript
 isPrime(11); // -> true
@@ -4246,6 +4246,19 @@ initOnce();
 initOnce(); // -> init is invoked once
 ```
 
+## open
+
+打开 url 地址或文件。
+
+|参数名|类型|说明|
+|-----|----|---|
+|target|string|要打开的目标|
+|返回值|ChildProcess|子进程对象|
+
+```javascript
+open('https://eustia.liriliri.io/');
+```
+
 ## optimizeCb
 
 用于高效的函数上下文绑定。
@@ -4637,7 +4650,7 @@ RC4 解密，传入 base64 字符串。
 |-----|----|---|
 |key|string|密钥|
 |str|string|源字符串|
-|return|string|目标字符串|
+|返回值|string|目标字符串|
 
 ```javascript
 rc4.encrypt('licia', 'Hello world'); // -> 'j9y2VpSfR3AdNN8='
@@ -5126,7 +5139,7 @@ strHash('test'); // -> 2090770981
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|目标字符串|
-|return|array|字节数组|
+|返回值|array|字节数组|
 
 ```javascript
 strToBytes('licia'); // -> [108, 105, 99, 105, 97]

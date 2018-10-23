@@ -6,7 +6,7 @@
  * |-------|-------|---------------|
  * |url    |string |Request url    |
  * |options|object |Request options|
- * |return |promise|Request promise|
+ * |return |Promise|Request promise|
  */
 
 /* example
