@@ -16,7 +16,7 @@
 
 _('$safeEls');
 
-function exports(els) {
+exports = function(els) {
     els = $safeEls(els);
 
     var el = els[0];

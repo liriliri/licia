@@ -17,7 +17,7 @@
  * test: all
  */
 
-function exports(start, end, step) {
+exports = function(start, end, step) {
     if (end == null) {
         end = start || 0;
         start = 0;
@@ -31,4 +31,4 @@ function exports(start, end, step) {
     for (var i = 0; i < len; i++, start += step) ret[i] = start;
 
     return ret;
-}
+};

@@ -16,7 +16,7 @@
  * test: all
  */
 
-function exports(arr, cmp) {
+exports = function(arr, cmp) {
     cmp = cmp || comparator;
 
     for (var i = 0, len = arr.length; i < len - 1; i++) {
@@ -24,7 +24,7 @@ function exports(arr, cmp) {
     }
 
     return true;
-}
+};
 
 function comparator(a, b) {
     return a - b;

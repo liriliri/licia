@@ -18,14 +18,14 @@
 
 _('isObj isFn toSrc');
 
-function exports(val) {
+exports = function(val) {
     if (!isObj(val)) return false;
 
     if (isFn(val)) return regIsNative.test(toSrc(val));
 
     // Detect host constructors (Safari > 4; really typed array specific)
     return regIsHostCtor.test(toSrc(val));
-}
+};
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 

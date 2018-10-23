@@ -20,7 +20,7 @@
 
 _('freeze keys isObj');
 
-function exports(obj) {
+exports = function(obj) {
     freeze(obj);
 
     keys(obj).forEach(function(prop) {
@@ -30,4 +30,4 @@ function exports(obj) {
     });
 
     return obj;
-}
+};

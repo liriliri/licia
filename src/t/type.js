@@ -20,7 +20,7 @@
 
 _('objToStr isNaN');
 
-function exports(val) {
+exports = function(val) {
     if (val === null) return 'null';
     if (val === undefined) return 'undefined';
     if (isNaN(val)) return 'nan';
@@ -30,6 +30,6 @@ function exports(val) {
     if (!ret) return '';
 
     return ret[1].toLowerCase();
-}
+};
 
 var regObj = /^\[object\s+(.*?)]$/;

@@ -27,10 +27,10 @@
 
 _('findKey findIdx isArrLike isUndef');
 
-function exports(obj, predicate, ctx) {
+exports = function(obj, predicate, ctx) {
     var keyFinder = isArrLike(obj) ? findIdx : findKey;
 
     var key = keyFinder(obj, predicate, ctx);
 
     if (!isUndef(key) && key !== -1) return obj[key];
-}
+};

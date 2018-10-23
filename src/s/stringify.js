@@ -23,9 +23,9 @@
 
 _('type upperFirst toStr isUndef isFn isRegExp');
 
-function exports(obj, spaces) {
+exports = function(obj, spaces) {
     return JSON.stringify(obj, serializer(), spaces);
-}
+};
 
 function serializer() {
     var stack = [],

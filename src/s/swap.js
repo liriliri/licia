@@ -18,10 +18,10 @@
  * test: all
  */
 
-function exports(arr, a, b) {
+exports = function(arr, a, b) {
     var tmp = arr[a];
     arr[a] = arr[b];
     arr[b] = tmp;
 
     return arr;
-}
+};

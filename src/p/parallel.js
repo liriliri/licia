@@ -26,7 +26,7 @@
 
 _('noop each nextTick');
 
-function exports(tasks, cb) {
+exports = function(tasks, cb) {
     cb = cb || noop;
 
     var results = [],
@@ -51,4 +51,4 @@ function exports(tasks, cb) {
             cb = noop;
         });
     }
-}
+};

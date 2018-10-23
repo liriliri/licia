@@ -15,6 +15,6 @@
  * test: browser
  */
 
-function exports(val) {
+exports = function(val) {
     return !!(val && val.nodeType === 1);
-}
+};

@@ -19,7 +19,7 @@
 
 _('isObj isFn isArr mapObj');
 
-function exports(obj) {
+exports = function(obj) {
     if (isArr(obj)) {
         return obj.map(function(val) {
             return exports(val);
@@ -33,4 +33,4 @@ function exports(obj) {
     }
 
     return obj;
-}
+};

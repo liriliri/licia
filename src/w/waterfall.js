@@ -27,7 +27,7 @@
 
 _('noop nextTick restArgs');
 
-function exports(tasks, cb) {
+exports = function(tasks, cb) {
     cb = cb || noop;
 
     var current = 0;
@@ -51,4 +51,4 @@ function exports(tasks, cb) {
             cb();
         });
     }
-}
+};

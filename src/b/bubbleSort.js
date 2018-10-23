@@ -17,7 +17,7 @@
 
 _('swap');
 
-function exports(arr, cmp) {
+exports = function(arr, cmp) {
     cmp = cmp || comparator;
 
     for (var i = 0, len = arr.length; i < len; i++) {
@@ -29,7 +29,7 @@ function exports(arr, cmp) {
     }
 
     return arr;
-}
+};
 
 function comparator(a, b) {
     return a - b;

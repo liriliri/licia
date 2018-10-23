@@ -18,7 +18,7 @@
 
 _('isNil');
 
-function exports(fn) {
+exports = function(fn) {
     if (isNil(fn)) return '';
 
     try {
@@ -32,6 +32,6 @@ function exports(fn) {
     } catch (e) {}
 
     return '';
-}
+};
 
 var fnToStr = Function.prototype.toString;

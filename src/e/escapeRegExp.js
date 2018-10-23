@@ -19,6 +19,6 @@
  * export declare function escapeRegExp(str: string): string
  */
 
-function exports(str) {
+exports = function(str) {
     return str.replace(/\W/g, '\\$&');
-}
+};

@@ -20,7 +20,7 @@
 
 _('longest isArr isUndef map lpad');
 
-function exports(str, width) {
+exports = function(str, width) {
     var ret = str;
     if (!isArr(ret)) {
         ret = ret.split(regLineBreak);
@@ -34,7 +34,7 @@ function exports(str, width) {
     });
 
     return ret.join('\n');
-}
+};
 
 var regLineBreak = /\n/g,
     floor = Math.floor;

@@ -24,7 +24,7 @@
 
 _('isArrLike map isArr isStr');
 
-function exports(val) {
+exports = function(val) {
     if (!val) return [];
 
     if (isArr(val)) return val;
@@ -32,4 +32,4 @@ function exports(val) {
     if (isArrLike(val) && !isStr(val)) return map(val);
 
     return [val];
-}
+};

@@ -27,7 +27,7 @@
 
 _('restArgs');
 
-function exports(fn) {
+exports = function(fn) {
     return restArgs(function(args) {
         var cb = args.pop();
 
@@ -41,4 +41,4 @@ function exports(fn) {
             }
         );
     });
-}
+};

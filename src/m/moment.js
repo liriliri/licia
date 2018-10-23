@@ -27,9 +27,9 @@
 
 _('Class toDate dateFormat isLeapYear extend toStr isNil ms');
 
-function exports(val) {
+exports = function(val) {
     return new Moment(val);
-}
+};
 
 var Moment = Class({
     initialize: function(val) {

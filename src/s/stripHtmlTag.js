@@ -17,6 +17,6 @@
 
 var regHtmlTag = /<[^>]*>/g;
 
-function exports(str) {
+exports = function(str) {
     return str.replace(regHtmlTag, '');
-}
+};

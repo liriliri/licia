@@ -12,7 +12,7 @@
 
 _('root');
 
-function exports() {
+exports = function() {
     for (var i = 0, len = methods.length; i < len; i++) {
         var method = methods[i];
 
@@ -20,6 +20,6 @@ function exports() {
     }
 
     return true;
-}
+};
 
 var methods = ['afterEach', 'after', 'beforeEach', 'before', 'describe', 'it'];

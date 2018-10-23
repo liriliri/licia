@@ -22,6 +22,6 @@
 
 _('pick');
 
-function exports(obj, filter) {
+exports = function(obj, filter) {
     return pick(obj, filter, true);
-}
+};

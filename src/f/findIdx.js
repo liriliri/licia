@@ -26,7 +26,7 @@
 
 _('safeCb');
 
-function exports(arr, predicate, ctx, dir) {
+exports = function(arr, predicate, ctx, dir) {
     dir = dir || 1;
 
     predicate = safeCb(predicate, ctx);
@@ -40,4 +40,4 @@ function exports(arr, predicate, ctx, dir) {
     }
 
     return -1;
-}
+};

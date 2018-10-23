@@ -19,11 +19,11 @@
  * test: all
  */
 
-function exports(obj) {
+exports = function(obj) {
     var ret = [],
         key;
 
     for (key in obj) ret.push(key);
 
     return ret;
-}
+};

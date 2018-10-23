@@ -15,8 +15,8 @@
  * test: all
  */
 
-function exports(val) {
+exports = function(val) {
     return regEmail.test(val);
-}
+};
 
 var regEmail = /.+@.+\..+/;

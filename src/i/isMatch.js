@@ -18,7 +18,7 @@
 
 _('keys');
 
-function exports(obj, src) {
+exports = function(obj, src) {
     var _keys = keys(src),
         len = _keys.length;
 
@@ -32,4 +32,4 @@ function exports(obj, src) {
     }
 
     return true;
-}
+};

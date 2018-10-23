@@ -35,7 +35,7 @@
 
 _('defaults toNum invert toBool');
 
-function exports(args, opts) {
+exports = function(args, opts) {
     opts = opts || {};
     defaults(opts, defOpts);
     var names = opts.names,
@@ -108,7 +108,7 @@ function exports(args, opts) {
     }
 
     return ret;
-}
+};
 
 var defOpts = {
     names: {},

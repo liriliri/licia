@@ -17,8 +17,8 @@
  * test: all
  */
 
-function exports(url) {
+exports = function(url) {
     return regAbsolute.test(url);
-}
+};
 
 var regAbsolute = /^[a-z][a-z0-9+.-]*:/;

@@ -17,6 +17,6 @@
 
 _('sample');
 
-function exports(obj) {
+exports = function(obj) {
     return sample(obj, Infinity);
-}
+};

@@ -16,7 +16,7 @@
  * test: all
  */
 
-function exports(fn, wait, immediate) {
+exports = function(fn, wait, immediate) {
     var timeout;
 
     return function() {
@@ -31,4 +31,4 @@ function exports(fn, wait, immediate) {
         if (!immediate) clearTimeout(timeout);
         if (!immediate || !timeout) timeout = setTimeout(throttler, wait);
     };
-}
+};

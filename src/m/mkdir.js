@@ -34,7 +34,7 @@ var fs = require('fs'),
 
 var _0777 = parseInt('0777', 8);
 
-function exports(p, mode, cb) {
+exports = function(p, mode, cb) {
     if (isFn(mode)) {
         cb = mode;
         mode = _0777;
@@ -61,4 +61,4 @@ function exports(p, mode, cb) {
                 });
         }
     });
-}
+};

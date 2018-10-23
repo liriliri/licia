@@ -19,7 +19,7 @@
 
 _('toArr');
 
-function exports(fn) {
+exports = function(fn) {
     var len = fn.length;
 
     return function curriedFn() {
@@ -33,4 +33,4 @@ function exports(fn) {
 
         return fn.apply(null, args);
     };
-}
+};

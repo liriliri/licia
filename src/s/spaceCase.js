@@ -19,6 +19,6 @@
 
 _('splitCase');
 
-function exports(str) {
+exports = function(str) {
     return splitCase(str).join(' ');
-}
+};

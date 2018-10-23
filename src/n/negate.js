@@ -16,8 +16,8 @@
  * test: all
  */
 
-function exports(predicate) {
+exports = function(predicate) {
     return function() {
         return !predicate.apply(this, arguments);
     };
-}
+};

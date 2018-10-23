@@ -17,7 +17,7 @@
 
 _('each');
 
-function exports(obj) {
+exports = function(obj) {
     var ret = [];
 
     each(obj, function(val) {
@@ -25,4 +25,4 @@ function exports(obj) {
     });
 
     return ret;
-}
+};

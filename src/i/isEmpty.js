@@ -23,7 +23,7 @@
 
 _('isArrLike isArr isStr isArgs keys');
 
-function exports(val) {
+exports = function(val) {
     if (val == null) return true;
 
     if (isArrLike(val) && (isArr(val) || isStr(val) || isArgs(val))) {
@@ -31,4 +31,4 @@ function exports(val) {
     }
 
     return keys(val).length === 0;
-}
+};

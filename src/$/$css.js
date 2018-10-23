@@ -38,7 +38,7 @@
 
 _('isStr isObj kebabCase isUndef contain isNum $safeEls prefix');
 
-function exports(nodes, name, val) {
+exports = function(nodes, name, val) {
     nodes = $safeEls(nodes);
 
     var isGetter = isUndef(val) && isStr(name);

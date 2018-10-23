@@ -15,7 +15,7 @@
  * test: all
  */
 
-function exports(hsl) {
+exports = function(hsl) {
     var h = hsl[0] / 360,
         s = hsl[1] / 100,
         l = hsl[2] / 100,
@@ -60,6 +60,6 @@ function exports(hsl) {
     }
 
     return ret;
-}
+};
 
 var round = Math.round;

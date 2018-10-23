@@ -16,7 +16,7 @@
 
 _('each $safeEls');
 
-function exports(els) {
+exports = function(els) {
     els = $safeEls(els);
 
     each(els, function(el) {

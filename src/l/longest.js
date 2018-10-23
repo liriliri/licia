@@ -17,7 +17,7 @@
 
 _('size');
 
-function exports(arr) {
+exports = function(arr) {
     if (arr.length < 1) return;
 
     var ret = arr[0],
@@ -32,4 +32,4 @@ function exports(arr) {
     }
 
     return ret;
-}
+};

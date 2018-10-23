@@ -18,7 +18,7 @@
 
 _('toArr');
 
-function exports() {
+exports = function() {
     var args = toArr(arguments);
     args = args.sort(nameSort);
 
@@ -49,7 +49,7 @@ function exports() {
     }
 
     return ret;
-}
+};
 
 function nameSort(a, b) {
     return a === b ? 0 : a > b ? 1 : -1;

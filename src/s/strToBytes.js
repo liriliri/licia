@@ -19,7 +19,7 @@
  * export default function strToBytes(str: string): number[]
  */
 
-function exports(str) {
+exports = function(str) {
     const bytes = [];
 
     for (let i = 0, len = str.length; i < len; i++) {
@@ -27,4 +27,4 @@ function exports(str) {
     }
 
     return bytes;
-}
+};

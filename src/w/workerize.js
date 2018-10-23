@@ -22,7 +22,7 @@
 
 _('Promise restArgs uniqId toSrc createUrl isStr');
 
-function exports(fn) {
+exports = function(fn) {
     var promises = {};
 
     var src = [
@@ -83,7 +83,7 @@ function exports(fn) {
             worker.postMessage([id, args]);
         });
     });
-}
+};
 
 function isPromise(val) {
     return (

@@ -20,7 +20,7 @@
 
 var regSpace = /\s+$/;
 
-function exports(str, chars) {
+exports = function(str, chars) {
     if (chars == null) return str.replace(regSpace, '');
 
     var end = str.length - 1,
@@ -44,4 +44,4 @@ function exports(str, chars) {
     }
 
     return end >= 0 ? str.substring(0, end + 1) : '';
-}
+};

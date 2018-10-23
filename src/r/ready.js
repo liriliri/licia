@@ -35,6 +35,6 @@ if (!loaded) {
     );
 }
 
-function exports(fn) {
+exports = function(fn) {
     loaded ? setTimeout(fn, 0) : fns.push(fn);
-}
+};

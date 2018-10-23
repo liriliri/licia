@@ -12,7 +12,7 @@
 
 _('meta clamp trim each map isNaN');
 
-function exports() {
+exports = function() {
     var viewport = meta('viewport');
 
     if (!viewport) return 1;
@@ -42,4 +42,4 @@ function exports() {
     if (isNaN(ret)) return 1;
 
     return ret;
-}
+};

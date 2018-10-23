@@ -17,11 +17,11 @@
 
 _('swap');
 
-function exports(arr, cmp) {
+exports = function(arr, cmp) {
     cmp = cmp || comparator;
 
     return quickSort(arr, 0, arr.length - 1, cmp);
-}
+};
 
 function quickSort(arr, left, right, cmp) {
     var idx;

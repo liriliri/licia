@@ -21,7 +21,7 @@
 
 _('safeCb pluck map isUndef');
 
-function exports(obj, iteratee, ctx) {
+exports = function(obj, iteratee, ctx) {
     iteratee = safeCb(iteratee, ctx);
 
     var idx = 0;
@@ -46,4 +46,4 @@ function exports(obj, iteratee, ctx) {
         }),
         'val'
     );
-}
+};

@@ -15,7 +15,7 @@
  * test: all
  */
 
-function exports(rgb) {
+exports = function(rgb) {
     var r = rgb[0] / 255,
         g = rgb[1] / 255,
         b = rgb[2] / 255,
@@ -55,7 +55,7 @@ function exports(rgb) {
     if (rgb[3]) ret[3] = rgb[3];
 
     return ret;
-}
+};
 
 var mMin = Math.min,
     mMax = Math.max,

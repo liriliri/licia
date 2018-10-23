@@ -17,7 +17,7 @@
  * test: browser
  */
 
-function exports(src, cb) {
+exports = function(src, cb) {
     var script = document.createElement('script');
     script.src = src;
     script.onload = function() {
@@ -29,4 +29,4 @@ function exports(src, cb) {
         cb && cb(!isNotLoaded);
     };
     document.body.appendChild(script);
-}
+};

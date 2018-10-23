@@ -19,7 +19,7 @@
 
 _('isArrLike clone values random swap');
 
-function exports(obj, n) {
+exports = function(obj, n) {
     var sample = isArrLike(obj) ? clone(obj) : values(obj),
         len = sample.length;
 
@@ -33,4 +33,4 @@ function exports(obj, n) {
     }
 
     return sample.slice(0, n);
-}
+};

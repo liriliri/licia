@@ -65,7 +65,7 @@
 
 _('isStr isDate toStr lpad');
 
-function exports(date, mask, utc, gmt) {
+exports = function(date, mask, utc, gmt) {
     if (arguments.length === 1 && isStr(date) && !regNum.test(date)) {
         mask = date;
         date = undefined;
@@ -143,7 +143,7 @@ function exports(date, mask, utc, gmt) {
 
         return match.slice(1, match.length - 1);
     });
-}
+};
 
 function padZero(str, len) {
     return lpad(toStr(str), len || 2, '0');

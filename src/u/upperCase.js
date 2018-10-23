@@ -17,6 +17,6 @@
 
 _('toStr');
 
-function exports(str) {
+exports = function(str) {
     return toStr(str).toLocaleUpperCase();
-}
+};

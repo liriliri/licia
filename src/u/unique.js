@@ -25,7 +25,7 @@
 
 _('filter');
 
-function exports(arr, compare) {
+exports = function(arr, compare) {
     compare = compare || isEqual;
 
     return filter(arr, function(item, idx, arr) {
@@ -37,7 +37,7 @@ function exports(arr, compare) {
 
         return true;
     });
-}
+};
 
 function isEqual(a, b) {
     return a === b;

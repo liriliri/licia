@@ -29,6 +29,6 @@
 
 _('findIdx');
 
-function exports(arr, predicate, ctx) {
+exports = function(arr, predicate, ctx) {
     return findIdx(arr, predicate, ctx, -1);
-}
+};

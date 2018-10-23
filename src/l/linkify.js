@@ -22,7 +22,7 @@
 
 _('extractUrls each escapeRegExp');
 
-function exports(str, hyperlink) {
+exports = function(str, hyperlink) {
     hyperlink = hyperlink || defHyperlink;
 
     var urlList = extractUrls(str);
@@ -32,7 +32,7 @@ function exports(str, hyperlink) {
     });
 
     return str;
-}
+};
 
 function defHyperlink(url) {
     return '<a href="' + url + '">' + url + '</a>';

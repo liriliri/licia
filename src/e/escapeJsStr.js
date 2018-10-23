@@ -23,7 +23,7 @@
 
 _('toStr');
 
-function exports(str) {
+exports = function(str) {
     return toStr(str).replace(regEscapeChars, function(char) {
         switch (char) {
             case '"':
@@ -42,6 +42,6 @@ function exports(str) {
                 return '\\u2029';
         }
     });
-}
+};
 
 var regEscapeChars = /["'\\\n\r\u2028\u2029]/g;

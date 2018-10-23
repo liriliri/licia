@@ -14,4 +14,4 @@
  * export declare function noop(): void
  */
 
-function exports() {}
+exports = function() {};

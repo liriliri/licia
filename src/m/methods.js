@@ -17,7 +17,7 @@
 
 _('isFn');
 
-function exports(obj) {
+exports = function(obj) {
     var ret = [];
 
     for (var key in obj) {
@@ -25,4 +25,4 @@ function exports(obj) {
     }
 
     return ret.sort();
-}
+};

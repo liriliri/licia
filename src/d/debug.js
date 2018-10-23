@@ -19,7 +19,7 @@
 
 _('toArr now format ms isBrowser strHash');
 
-function exports(name) {
+exports = function(name) {
     var prevTime;
 
     function debug() {
@@ -52,7 +52,7 @@ function exports(name) {
     if (isBrowser) debug.color = selectColor(name);
 
     return debug;
-}
+};
 
 var colors = [
     '#0000CC',

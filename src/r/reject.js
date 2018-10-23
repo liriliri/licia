@@ -16,8 +16,8 @@
 
 _('safeCb negate filter');
 
-function exports(obj, predicate, ctx) {
+exports = function(obj, predicate, ctx) {
     predicate = safeCb(negate(predicate), ctx);
 
     return filter(obj, predicate);
-}
+};

@@ -22,7 +22,7 @@
 
 _('isBrowser toInt keys');
 
-function exports(ua) {
+exports = function(ua) {
     ua = ua || (isBrowser ? navigator.userAgent : '');
     ua = ua.toLowerCase();
 
@@ -60,7 +60,7 @@ function exports(ua) {
         name: 'unknown',
         version: -1
     };
-}
+};
 
 var regBrowsers = {
     edge: /edge\/([0-9._]+)/,

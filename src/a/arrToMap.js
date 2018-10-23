@@ -22,7 +22,7 @@
 
 _('each isUndef isFn');
 
-function exports(arr, val) {
+exports = function(arr, val) {
     if (isUndef(val)) val = true;
     var _isFn = isFn(val);
 
@@ -33,4 +33,4 @@ function exports(arr, val) {
     });
 
     return ret;
-}
+};

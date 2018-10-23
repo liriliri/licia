@@ -19,7 +19,7 @@
 
 _('noop');
 
-function exports(src, cb) {
+exports = function(src, cb) {
     cb = cb || noop;
 
     var img = new Image();
@@ -30,4 +30,4 @@ function exports(src, cb) {
         cb(err);
     };
     img.src = src;
-}
+};

@@ -18,7 +18,7 @@
 
 _('unique trim map toArr');
 
-function exports(str) {
+exports = function(str) {
     var urlList = toArr(str.match(regUrl));
 
     return unique(
@@ -26,6 +26,6 @@ function exports(str) {
             return trim(url);
         })
     );
-}
+};
 
 var regUrl = /((https?)|(ftp)):\/\/[\w.]+[^ \f\n\r\t\v"\\<>[\]\u2100-\uFFFF(),]*/gi;

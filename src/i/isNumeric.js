@@ -24,10 +24,10 @@
 
 _('isStr isNaN isFinite isArr');
 
-function exports(val) {
+exports = function(val) {
     if (isStr(val)) val = val.replace(regComma, '');
 
     return !isNaN(parseFloat(val)) && isFinite(val) && !isArr(val);
-}
+};
 
 var regComma = /,/g;

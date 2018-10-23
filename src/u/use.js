@@ -22,7 +22,7 @@
 
 _('map define has toArr');
 
-function exports(requires, method) {
+exports = function(requires, method) {
     if (method == null) {
         method = requires;
         requires = [];
@@ -33,7 +33,7 @@ function exports(requires, method) {
     });
 
     method.apply(null, requires);
-}
+};
 
 var modules = define._modules;
 

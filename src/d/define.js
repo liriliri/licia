@@ -25,14 +25,14 @@
 
 _('toArr');
 
-function exports(name, requires, method) {
+exports = function(name, requires, method) {
     if (arguments.length === 2) {
         method = requires;
         requires = [];
     }
 
     define(name, requires, method);
-}
+};
 
 var modules = (exports._modules = {});
 

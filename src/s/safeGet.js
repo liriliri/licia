@@ -21,7 +21,7 @@
 
 _('isUndef castPath');
 
-function exports(obj, path) {
+exports = function(obj, path) {
     path = castPath(path, obj);
 
     var prop;
@@ -34,4 +34,4 @@ function exports(obj, path) {
     }
 
     return obj;
-}
+};

@@ -20,6 +20,6 @@
  * export declare function isUndef(val: any): boolean
  */
 
-function exports(val) {
+exports = function(val) {
     return val === void 0;
-}
+};

@@ -17,7 +17,7 @@
 
 _('isFn');
 
-function exports(val) {
+exports = function(val) {
     if (val == null) return false;
     if (val._isBuffer) return true;
 
@@ -26,4 +26,4 @@ function exports(val) {
         isFn(val.constructor.isBuffer) &&
         val.constructor.isBuffer(val)
     );
-}
+};

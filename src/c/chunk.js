@@ -17,7 +17,7 @@
  * test: all
  */
 
-function exports(arr, size) {
+exports = function(arr, size) {
     var ret = [];
 
     size = size || 1;
@@ -30,4 +30,4 @@ function exports(arr, size) {
     }
 
     return ret;
-}
+};

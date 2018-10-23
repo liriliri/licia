@@ -19,10 +19,10 @@
 
 _('perfNow');
 
-function exports(fn) {
+exports = function(fn) {
     var start = perfNow();
 
     fn();
 
     return perfNow() - start;
-}
+};

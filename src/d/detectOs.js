@@ -25,7 +25,7 @@
 
 _('isBrowser');
 
-function exports(ua) {
+exports = function(ua) {
     ua = ua || (isBrowser ? navigator.userAgent : '');
 
     ua = ua.toLowerCase();
@@ -42,4 +42,4 @@ function exports(ua) {
     }
 
     return 'unknown';
-}
+};

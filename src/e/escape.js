@@ -17,9 +17,9 @@
 
 _('keys');
 
-function exports(str) {
+exports = function(str) {
     return regTest.test(str) ? str.replace(regReplace, replaceFn) : str;
-}
+};
 
 var map = (exports.map = {
     '&': '&amp;',

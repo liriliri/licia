@@ -23,7 +23,7 @@
 
 _('castPath isUndef');
 
-function exports(obj, path, val) {
+exports = function(obj, path, val) {
     path = castPath(path, obj);
 
     var lastProp = path.pop(),
@@ -37,4 +37,4 @@ function exports(obj, path, val) {
     }
 
     obj[lastProp] = val;
-}
+};

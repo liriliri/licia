@@ -19,6 +19,6 @@
 
 _('objToStr');
 
-function exports(val) {
+exports = function(val) {
     return objToStr(val) === '[object Number]';
-}
+};

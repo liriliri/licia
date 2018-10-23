@@ -19,8 +19,8 @@
 
 _('isInt');
 
-function exports(num) {
+exports = function(num) {
     if (!isInt(num)) return false;
 
     return num % 2 === 0;
-}
+};

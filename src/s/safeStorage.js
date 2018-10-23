@@ -18,7 +18,7 @@
 
 _('memStorage');
 
-function exports(type) {
+exports = function(type) {
     type = type || 'local';
 
     var ret;
@@ -44,4 +44,4 @@ function exports(type) {
     }
 
     return ret;
-}
+};

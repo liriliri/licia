@@ -19,13 +19,13 @@
 
 _('isArr safeGet');
 
-function exports(path) {
+exports = function(path) {
     if (!isArr(path)) return shallowProperty(path);
 
     return function(obj) {
         return safeGet(obj, path);
     };
-}
+};
 
 function shallowProperty(key) {
     return function(obj) {

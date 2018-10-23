@@ -56,7 +56,7 @@
 
 _('isFn noop defaults isObj query');
 
-function exports(options) {
+exports = function(options) {
     defaults(options, exports.setting);
 
     var type = options.type,
@@ -116,7 +116,7 @@ function exports(options) {
     xhr.send(type === 'GET' ? null : data);
 
     return xhr;
-}
+};
 
 exports.setting = {
     type: 'GET',

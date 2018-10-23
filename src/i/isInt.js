@@ -19,6 +19,6 @@
 
 _('isNum');
 
-function exports(val) {
+exports = function(val) {
     return isNum(val) && val % 1 === 0;
-}
+};

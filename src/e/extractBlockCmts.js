@@ -23,7 +23,7 @@ _('map trim');
 
 var regBlockCmt = /(\/\*[\s\S]*?\*\/)/gm;
 
-function exports(str) {
+exports = function(str) {
     var ret = str.match(regBlockCmt);
 
     if (!ret) return [];
@@ -37,4 +37,4 @@ function exports(str) {
     });
 
     return ret;
-}
+};

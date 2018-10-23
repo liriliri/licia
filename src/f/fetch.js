@@ -29,7 +29,7 @@
 
 _('Promise each defaults noop');
 
-function exports(url, options) {
+exports = function(url, options) {
     options = options || {};
 
     defaults(options, exports.setting);
@@ -66,7 +66,7 @@ function exports(url, options) {
 
         xhr.send(body);
     });
-}
+};
 
 var regHeaders = /^(.*?):\s*([\s\S]*?)$/gm;
 

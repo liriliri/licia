@@ -31,7 +31,7 @@
 
 _('Tween defaults noop isNum $offset');
 
-function exports(target, options) {
+exports = function(target, options) {
     options = options || {};
     defaults(options, defOpts);
 
@@ -54,7 +54,7 @@ function exports(target, options) {
             options.easing
         )
         .play();
-}
+};
 
 var defOpts = {
     tolerance: 0,

@@ -11,6 +11,6 @@
  * char(97); // -> 'a'
  */
 
-function exports(num) {
+exports = function(num) {
     return String.fromCodePoint(num);
-}
+};

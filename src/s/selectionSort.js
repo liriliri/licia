@@ -17,7 +17,7 @@
 
 _('swap');
 
-function exports(arr, cmp) {
+exports = function(arr, cmp) {
     cmp = cmp || comparator;
 
     var min;
@@ -35,7 +35,7 @@ function exports(arr, cmp) {
     }
 
     return arr;
-}
+};
 
 function comparator(a, b) {
     return a - b;

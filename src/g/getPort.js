@@ -27,14 +27,14 @@ _('toArr');
 
 const net = require('net');
 
-function exports(ports) {
+exports = function(ports) {
     ports = toArr(ports);
     ports.push(0);
 
     return ports.reduce((seq, port) => {
         return seq.catch(() => isAvailable(port));
     }, Promise.reject());
-}
+};
 
 // Passing 0 will get an available random port.
 function isAvailable(port) {

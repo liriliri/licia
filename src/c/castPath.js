@@ -21,7 +21,7 @@
 
 _('has isArr');
 
-function exports(str, obj) {
+exports = function(str, obj) {
     if (isArr(str)) return str;
     if (obj && has(obj, str)) return [str];
 
@@ -32,7 +32,7 @@ function exports(str, obj) {
     });
 
     return ret;
-}
+};
 
 // Lodash _stringToPath
 var regPropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,

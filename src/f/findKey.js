@@ -21,7 +21,7 @@
 
 _('safeCb keys');
 
-function exports(obj, predicate, ctx) {
+exports = function(obj, predicate, ctx) {
     predicate = safeCb(predicate, ctx);
 
     var _keys = keys(obj),
@@ -31,4 +31,4 @@ function exports(obj, predicate, ctx) {
         key = _keys[i];
         if (predicate(obj[key], key, obj)) return key;
     }
-}
+};

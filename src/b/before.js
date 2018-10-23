@@ -19,7 +19,7 @@
  * test: all
  */
 
-function exports(n, fn) {
+exports = function(n, fn) {
     var memo;
 
     return function() {
@@ -28,4 +28,4 @@ function exports(n, fn) {
 
         return memo;
     };
-}
+};

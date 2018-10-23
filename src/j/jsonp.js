@@ -35,7 +35,7 @@
 
 _('loadJs defaults noop uniqId query');
 
-function exports(opts) {
+exports = function(opts) {
     defaults(opts, exports.settings);
 
     var name = opts.name || uniqId('jsonp'),
@@ -75,7 +75,7 @@ function exports(opts) {
             complete();
         }
     });
-}
+};
 
 exports.settings = {
     data: {},

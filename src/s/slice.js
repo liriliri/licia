@@ -16,7 +16,7 @@
  * test: all
  */
 
-function exports(arr, start, end) {
+exports = function(arr, start, end) {
     var len = arr.length;
 
     if (start == null) {
@@ -39,4 +39,4 @@ function exports(arr, start, end) {
     while (start < end) ret.push(arr[start++]);
 
     return ret;
-}
+};

@@ -22,6 +22,6 @@
 
 _('Url');
 
-function exports(name, url) {
+exports = function(name, url) {
     return new Url(url).query[name];
-}
+};

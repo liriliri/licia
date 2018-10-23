@@ -21,10 +21,10 @@
 
 _('extendOwn isMatch');
 
-function exports(attrs) {
+exports = function(attrs) {
     attrs = extendOwn({}, attrs);
 
     return function(obj) {
         return isMatch(obj, attrs);
     };
-}
+};

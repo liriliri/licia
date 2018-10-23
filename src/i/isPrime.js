@@ -20,7 +20,7 @@
  * export declare function isPrime(num: number): boolean
  */
 
-function exports(num) {
+exports = function(num) {
     const boundary = Math.floor(Math.sqrt(num));
 
     for (let i = 2; i <= boundary; i++) {
@@ -30,4 +30,4 @@ function exports(num) {
     }
 
     return num >= 2;
-}
+};

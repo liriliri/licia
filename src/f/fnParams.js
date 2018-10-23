@@ -17,13 +17,13 @@
 
 _('toSrc stripCmt');
 
-function exports(fn) {
+exports = function(fn) {
     var fnStr = stripCmt(toSrc(fn));
 
     var ret = fnStr.slice(fnStr.indexOf('(') + 1, fnStr.indexOf(')'));
     ret = ret.match(regArgNames);
 
     return ret === null ? [] : ret;
-}
+};
 
 var regArgNames = /[^\s,]+/g;

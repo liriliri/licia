@@ -19,7 +19,7 @@
  * export declare function strHash(str: string): number
  */
 
-function exports(str) {
+exports = function(str) {
     var hash = 5381;
 
     var i = str.length;
@@ -28,4 +28,4 @@ function exports(str) {
     }
 
     return hash >>> 0; // Make sure it's always positive.
-}
+};

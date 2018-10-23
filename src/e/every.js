@@ -21,7 +21,7 @@
 
 _('safeCb isArrLike keys');
 
-function exports(obj, predicate, ctx) {
+exports = function(obj, predicate, ctx) {
     predicate = safeCb(predicate, ctx);
 
     var _keys = !isArrLike(obj) && keys(obj),
@@ -33,4 +33,4 @@ function exports(obj, predicate, ctx) {
     }
 
     return true;
-}
+};

@@ -17,6 +17,6 @@
 
 _('isStr toArr Select');
 
-function exports(val) {
+exports = function(val) {
     return toArr(isStr(val) ? new Select(val) : val);
 }

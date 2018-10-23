@@ -19,6 +19,6 @@
 
 _('isObj isFn');
 
-function exports(val) {
+exports = function(val) {
     return val !== null && isObj(val) && isFn(val.pipe);
-}
+};

@@ -21,7 +21,7 @@
 
 _('each isStr isNum isArr isObj');
 
-function exports() {
+exports = function() {
     var ret = [];
 
     each(arguments, function(arg) {
@@ -36,4 +36,4 @@ function exports() {
     });
 
     return ret.join(' ');
-}
+};

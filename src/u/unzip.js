@@ -17,7 +17,7 @@
 
 _('map pluck max');
 
-function exports(arr) {
+exports = function(arr) {
     var len = max.apply(
             null,
             map(arr, function(arr) {
@@ -31,4 +31,4 @@ function exports(arr) {
     }
 
     return ret;
-}
+};

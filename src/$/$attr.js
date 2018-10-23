@@ -48,7 +48,7 @@
 
 _('toArr isObj isStr each isUndef $safeEls');
 
-function exports(els, name, val) {
+exports = function(els, name, val) {
     els = $safeEls(els);
 
     var isGetter = isUndef(val) && isStr(name);

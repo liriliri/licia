@@ -21,7 +21,7 @@
 
 _('noop');
 
-function exports(fn, cb) {
+exports = function(fn, cb) {
     cb = cb || noop;
 
     try {
@@ -30,4 +30,4 @@ function exports(fn, cb) {
         cb(e);
         return;
     }
-}
+};

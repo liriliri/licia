@@ -15,7 +15,7 @@
  * test: node
  */
 
-function exports(requireFn) {
+exports = function(requireFn) {
     var cache = {};
 
     return function(name) {
@@ -23,4 +23,4 @@ function exports(requireFn) {
             return cache[name] || (cache[name] = requireFn(name));
         };
     };
-}
+};

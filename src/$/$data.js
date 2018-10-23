@@ -12,7 +12,7 @@
 
 _('$attr isStr isObj each');
 
-function exports(nodes, name, val) {
+exports = function(nodes, name, val) {
     var dataName = name;
 
     if (isStr(name)) dataName = 'data-' + name;

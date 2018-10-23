@@ -15,7 +15,7 @@
  * test: all
  */
 
-function exports(num) {
+exports = function(num) {
     num = num.toExponential().match(regExponential);
 
     var coefficient = num[1],
@@ -26,6 +26,6 @@ function exports(num) {
     var ret = places - exponent;
 
     return ret < 0 ? 0 : ret;
-}
+};
 
 var regExponential = /^(-?\d?\.?\d+)e([+-]\d)+/;

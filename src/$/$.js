@@ -26,7 +26,7 @@ _(
     'Select $offset $show $css $attr $property last $remove $data $event $class $insert isUndef isStr'
 );
 
-function exports(selector) {
+exports = function(selector) {
     return new Select(selector);
 }
 

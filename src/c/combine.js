@@ -20,7 +20,7 @@
  * export declare function combine(keys: string[], values: any[]): any
  */
 
-function exports(keys, values) {
+exports = function(keys, values) {
     var ret = {};
 
     for (var i = 0, len = keys.length; i < len; i++) {
@@ -28,4 +28,4 @@ function exports(keys, values) {
     }
 
     return ret;
-}
+};

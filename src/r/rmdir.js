@@ -23,7 +23,7 @@ _('noop parallel');
 var fs = require('fs'),
     path = require('path');
 
-function exports(p, cb) {
+exports = function(p, cb) {
     cb = cb || noop;
     p = path.resolve(p);
 
@@ -63,4 +63,4 @@ function exports(p, cb) {
             });
         });
     });
-}
+};

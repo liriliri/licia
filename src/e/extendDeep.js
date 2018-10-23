@@ -29,7 +29,7 @@
 
 _('isPlainObj each cloneDeep');
 
-function exports(obj) {
+exports = function(obj) {
     var i = 0,
         ret = obj,
         len = arguments.length;
@@ -47,4 +47,4 @@ function exports(obj) {
     }
 
     return ret;
-}
+};

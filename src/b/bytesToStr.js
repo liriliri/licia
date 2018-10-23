@@ -19,7 +19,7 @@
  * export declare function bytesToStr(bytes: number[]): string
  */
 
-function exports(bytes) {
+exports = function(bytes) {
     const str = [];
 
     for (let i = 0, len = bytes.length; i < len; i++) {
@@ -27,4 +27,4 @@ function exports(bytes) {
     }
 
     return str.join('');
-}
+};

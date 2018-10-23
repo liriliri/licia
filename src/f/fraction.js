@@ -17,7 +17,7 @@
 
 _('gcd precision');
 
-function exports(num) {
+exports = function(num) {
     if (num === 0) return '0';
 
     var _precision = precision(num);
@@ -31,7 +31,7 @@ function exports(num) {
     denominator /= _gcd;
 
     return numerator + '/' + denominator;
-}
+};
 
 var abs = Math.abs,
     pow = Math.pow;

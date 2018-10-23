@@ -37,7 +37,7 @@
 
 _('isFn loadImg noop defaults createUrl');
 
-function exports(file, opts, cb) {
+exports = function(file, opts, cb) {
     if (isFn(opts)) {
         cb = opts;
         opts = {};
@@ -53,7 +53,7 @@ function exports(file, opts, cb) {
 
         compress(img, opts, cb);
     });
-}
+};
 
 function compress(img, opts, cb) {
     var canvas = document.createElement('canvas'),

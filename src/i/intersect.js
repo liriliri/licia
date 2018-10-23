@@ -17,7 +17,7 @@
 
 _('contain toArr');
 
-function exports(arr) {
+exports = function(arr) {
     var ret = [],
         args = toArr(arguments),
         argsLen = args.length,
@@ -38,4 +38,4 @@ function exports(arr) {
     }
 
     return ret;
-}
+};

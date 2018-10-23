@@ -18,6 +18,6 @@
  * test: all
  */
 
-function exports(val) {
+exports = function(val) {
     return val == null ? '' : val.toString();
-}
+};

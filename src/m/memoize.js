@@ -20,7 +20,7 @@
 
 _('has');
 
-function exports(fn, hashFn) {
+exports = function(fn, hashFn) {
     var memoize = function(key) {
         var cache = memoize.cache,
             address = '' + (hashFn ? hashFn.apply(this, arguments) : key);
@@ -33,4 +33,4 @@ function exports(fn, hashFn) {
     memoize.cache = {};
 
     return memoize;
-}
+};

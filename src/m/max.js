@@ -15,7 +15,7 @@
  * test: all
  */
 
-function exports() {
+exports = function() {
     var arr = arguments,
         ret = arr[0];
 
@@ -24,4 +24,4 @@ function exports() {
     }
 
     return ret;
-}
+};

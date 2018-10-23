@@ -19,8 +19,8 @@
 
 _('isObj isArr extend');
 
-function exports(obj) {
+exports = function(obj) {
     if (!isObj(obj)) return obj;
 
     return isArr(obj) ? obj.slice() : extend({}, obj);
-}
+};

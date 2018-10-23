@@ -18,9 +18,9 @@
 
 _('objToStr each');
 
-function exports(val) {
+exports = function(val) {
     return !!map[objToStr(val)];
-}
+};
 
 var map = {};
 

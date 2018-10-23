@@ -14,7 +14,7 @@
 
 _('isUndef each');
 
-function exports(keysFn, defaults) {
+exports = function(keysFn, defaults) {
     return function(obj) {
         each(arguments, function(src, idx) {
             if (idx === 0) return;
@@ -28,4 +28,4 @@ function exports(keysFn, defaults) {
 
         return obj;
     };
-}
+};

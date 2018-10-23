@@ -24,7 +24,7 @@ var regUpperCase = /([A-Z])/g,
     regSeparator = /[_.\- ]+/g,
     regTrim = /(^-)|(-$)/g;
 
-function exports(str) {
+exports = function(str) {
     str = str
         .replace(regUpperCase, '-$1')
         .toLowerCase()
@@ -32,4 +32,4 @@ function exports(str) {
         .replace(regTrim, '');
 
     return str.split('-');
-}
+};

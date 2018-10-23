@@ -22,7 +22,7 @@
 
 _('toInt max');
 
-function exports(v1, v2) {
+exports = function(v1, v2) {
     v1 = v1.split('.');
     v2 = v2.split('.');
 
@@ -37,4 +37,4 @@ function exports(v1, v2) {
     }
 
     return 0;
-}
+};

@@ -17,7 +17,7 @@
  * test: all
  */
 
-function exports(fn, startIdx) {
+exports = function(fn, startIdx) {
     startIdx = startIdx == null ? fn.length - 1 : +startIdx;
 
     return function() {
@@ -45,4 +45,4 @@ function exports(fn, startIdx) {
 
         return fn.apply(this, args);
     };
-}
+};

@@ -23,7 +23,7 @@
 
 _('isUndef');
 
-function exports(n, lower, upper) {
+exports = function(n, lower, upper) {
     if (isUndef(upper)) {
         upper = lower;
         lower = undefined;
@@ -34,4 +34,4 @@ function exports(n, lower, upper) {
     if (n > upper) return upper;
 
     return n;
-}
+};

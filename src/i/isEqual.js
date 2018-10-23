@@ -18,9 +18,9 @@
 
 _('isFn has keys');
 
-function exports(a, b) {
+exports = function(a, b) {
     return eq(a, b);
-}
+};
 
 function deepEq(a, b, aStack, bStack) {
     var className = toString.call(a);

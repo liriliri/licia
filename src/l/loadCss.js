@@ -19,7 +19,7 @@
 
 _('noop');
 
-function exports(src, cb) {
+exports = function(src, cb) {
     cb = cb || noop;
 
     var link = document.createElement('link');
@@ -35,4 +35,4 @@ function exports(src, cb) {
     link.href = src;
 
     document.head.appendChild(link);
-}
+};

@@ -18,7 +18,7 @@
 
 _('randomBytes');
 
-function exports() {
+exports = function() {
     var b = randomBytes(16);
 
     b[6] = (b[6] & 0x0f) | 0x40;
@@ -46,7 +46,7 @@ function exports() {
         hexBytes[b[14]] +
         hexBytes[b[15]]
     );
-}
+};
 
 var hexBytes = [];
 

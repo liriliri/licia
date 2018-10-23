@@ -45,9 +45,9 @@
 
 _('extend toArr inherits safeGet isMiniProgram');
 
-function exports(methods, statics) {
+exports = function(methods, statics) {
     return Base.extend(methods, statics);
-}
+};
 
 function makeClass(parent, methods, statics) {
     statics = statics || {};

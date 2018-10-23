@@ -17,7 +17,7 @@
 
 _('keys');
 
-function exports(obj) {
+exports = function(obj) {
     var _keys = keys(obj),
         len = _keys.length,
         ret = Array(len);
@@ -27,4 +27,4 @@ function exports(obj) {
     }
 
     return ret;
-}
+};

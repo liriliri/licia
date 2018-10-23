@@ -19,7 +19,7 @@
  * test: all
  */
 
-function exports(min, max, floating) {
+exports = function(min, max, floating) {
     if (max == null) {
         max = min;
         min = 0;
@@ -37,4 +37,4 @@ function exports(min, max, floating) {
     }
 
     return min + Math.floor(rand * (max - min + 1));
-}
+};

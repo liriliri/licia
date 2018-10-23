@@ -16,7 +16,7 @@
  * test: all
  */
 
-function exports(path) {
+exports = function(path) {
     var match = path.match(regSplit);
 
     return {
@@ -24,6 +24,6 @@ function exports(path) {
         name: match[2],
         ext: match[3]
     };
-}
+};
 
 var regSplit = /^([\s\S]*?)((?:\.{1,2}|[^\\/]+?|)(\.[^./\\]*|))(?:[\\/]*)$/;

@@ -22,8 +22,8 @@
  * export declare function isObj(val: any): boolean
  */
 
-function exports(val) {
+exports = function(val) {
     var type = typeof val;
 
     return !!val && (type === 'function' || type === 'object');
-}
+};

@@ -22,7 +22,7 @@
 _('utf8 strToBytes');
 
 // https://github.com/pvorb/node-md5
-function exports(msg) {
+exports = function(msg) {
     const bytes = strToBytes(utf8.encode(msg));
     const m = bytesToWords(bytes);
     const l = bytes.length * 8;
@@ -124,7 +124,7 @@ function exports(msg) {
     }
 
     return bytesToHex(wordsToBytes(endian([a, b, c, d])));
-}
+};
 
 function FF(a, b, c, d, x, s, t) {
     let n = a + ((b & c) | (~b & d)) + (x >>> 0) + t;

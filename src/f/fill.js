@@ -21,7 +21,7 @@
 
 _('isUndef');
 
-function exports(arr, val, start, end) {
+exports = function(arr, val, start, end) {
     var len = arr.length;
 
     if (!len) return [];
@@ -32,4 +32,4 @@ function exports(arr, val, start, end) {
     while (start < end) arr[start++] = val;
 
     return arr;
-}
+};

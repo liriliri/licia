@@ -18,11 +18,11 @@
  * test: all
  */
 
-function exports(val) {
+exports = function(val) {
     try {
         JSON.parse(val);
         return true;
     } catch (e) {
         return false;
     }
-}
+};

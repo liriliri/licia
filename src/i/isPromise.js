@@ -18,6 +18,6 @@
 
 _('isObj isFn');
 
-function exports(val) {
+exports = function(val) {
     return isObj(val) && isFn(val.then);
-}
+};

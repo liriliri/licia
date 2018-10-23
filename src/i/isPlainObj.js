@@ -19,7 +19,7 @@
 
 _('isObj isArr isFn has');
 
-function exports(val) {
+exports = function(val) {
     if (!isObj(val)) return false;
 
     var ctor = val.constructor;
@@ -27,4 +27,4 @@ function exports(val) {
     if (!has(ctor.prototype, 'isPrototypeOf')) return false;
 
     return !isArr(val) && !isFn(val);
-}
+};

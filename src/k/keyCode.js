@@ -32,11 +32,11 @@
 
 _('isStr invert');
 
-function exports(val) {
+exports = function(val) {
     if (isStr(val)) return codeMap[val];
 
     return nameMap[val];
-}
+};
 
 var codeMap = {
     backspace: 8,

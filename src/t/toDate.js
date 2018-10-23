@@ -19,7 +19,7 @@
 
 _('isDate isStr');
 
-function exports(val) {
+exports = function(val) {
     if (!val) return new Date();
 
     if (isDate(val)) return val;
@@ -30,6 +30,6 @@ function exports(val) {
     }
 
     return new Date(val);
-}
+};
 
 var regDate = /^(\d{4})-?(\d{2})-?(\d{1,2})$/;

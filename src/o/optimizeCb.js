@@ -8,7 +8,7 @@
 
 _('isUndef');
 
-function exports(fn, ctx, argCount) {
+exports = function(fn, ctx, argCount) {
     if (isUndef(ctx)) return fn;
 
     switch (argCount == null ? 3 : argCount) {
@@ -29,4 +29,4 @@ function exports(fn, ctx, argCount) {
     return function() {
         return fn.apply(ctx, arguments);
     };
-}
+};

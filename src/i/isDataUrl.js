@@ -18,9 +18,9 @@
 
 _('trim');
 
-function exports(str) {
+exports = function(str) {
     return regDataUrl.test(trim(str));
-}
+};
 
 // https://tools.ietf.org/html/rfc2397
 var regDataUrl = /^data:([a-z]+\/[a-z0-9-+.]+(;[a-z0-9-.!#$%*+.{}|~`]+=[a-z0-9-.!#$%*+.{}|~`]+)*)?(;base64)?,([a-z0-9!$&',()*+;=\-._~:@/?%\s]*?)$/i;

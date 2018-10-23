@@ -19,7 +19,7 @@
 
 _('extend noop');
 
-function exports(text, cb) {
+exports = function(text, cb) {
     cb = cb || noop;
 
     var el = document.createElement('textarea'),
@@ -51,4 +51,4 @@ function exports(text, cb) {
     } finally {
         body.removeChild(el);
     }
-}
+};

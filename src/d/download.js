@@ -18,7 +18,7 @@
 
 _('createUrl');
 
-function exports(data, name, type) {
+exports = function(data, name, type) {
     type = type || 'text/plain';
 
     var el = document.createElement('a');
@@ -31,4 +31,4 @@ function exports(data, name, type) {
     document.body.appendChild(el);
     el.click();
     document.body.removeChild(el);
-}
+};

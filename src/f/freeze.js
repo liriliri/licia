@@ -22,7 +22,7 @@
 
 _('keys');
 
-function exports(obj) {
+exports = function(obj) {
     if (Object.freeze) return Object.freeze(obj);
 
     keys(obj).forEach(function(prop) {
@@ -35,4 +35,4 @@ function exports(obj) {
     });
 
     return obj;
-}
+};

@@ -21,7 +21,7 @@
 
 _('isDate toInt');
 
-function exports(date, now) {
+exports = function(date, now) {
     if (!isDate(date)) date = new Date(date);
 
     now = now || new Date();
@@ -44,7 +44,7 @@ function exports(date, now) {
     if (diff > (i === 0 ? 9 : 1)) i += 1;
 
     return format(diff, i, ago);
-}
+};
 
 var secArr = [60, 60, 24, 7, 365 / 7 / 12, 12],
     secArrLen = secArr.length;

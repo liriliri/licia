@@ -21,8 +21,8 @@
 
 var idCounter = 0;
 
-function exports(prefix) {
+exports = function(prefix) {
     var id = ++idCounter + '';
 
     return prefix ? prefix + id : id;
-}
+};

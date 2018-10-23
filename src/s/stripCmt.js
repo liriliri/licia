@@ -19,7 +19,7 @@
  * export declare function stripCmt(str: string): string
  */
 
-function exports(str) {
+exports = function(str) {
     str = ('__' + str + '__').split('');
     var mode = {
         singleQuote: false,
@@ -78,4 +78,4 @@ function exports(str) {
     }
 
     return str.join('').slice(2, -2);
-}
+};

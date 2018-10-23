@@ -22,7 +22,7 @@
 
 _('isStr isArr contain each');
 
-function exports(obj, filter, omit) {
+exports = function(obj, filter, omit) {
     if (isStr(filter)) filter = [filter];
 
     if (isArr(filter)) {
@@ -48,4 +48,4 @@ function exports(obj, filter, omit) {
     each(obj, iteratee);
 
     return ret;
-}
+};

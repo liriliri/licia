@@ -22,7 +22,7 @@
 
 _('repeat toStr');
 
-function exports(str, len, chars) {
+exports = function(str, len, chars) {
     str = toStr(str);
 
     var strLen = str.length;
@@ -32,4 +32,4 @@ function exports(str, len, chars) {
     if (strLen < len) str = (repeat(chars, len - strLen) + str).slice(-len);
 
     return str;
-}
+};

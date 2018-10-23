@@ -33,7 +33,7 @@
 
 _('toNum isStr');
 
-function exports(str) {
+exports = function(str) {
     if (isStr(str)) {
         var match = str.match(regStrTime);
 
@@ -53,7 +53,7 @@ function exports(str) {
 
         return +(num / factor[suffix]).toFixed(2) + suffix;
     }
-}
+};
 
 var factor = {
     ms: 1,

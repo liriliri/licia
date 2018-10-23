@@ -25,7 +25,7 @@
 
 _('defaults isBlob isFile Blob toArr');
 
-function exports(data, opts) {
+exports = function(data, opts) {
     opts = opts || {};
     defaults(opts, defOpts);
 
@@ -34,7 +34,7 @@ function exports(data, opts) {
     }
 
     return URL.createObjectURL(data);
-}
+};
 
 var defOpts = {
     type: 'text/plain'

@@ -26,7 +26,7 @@
 
 _('isArrLike keys optimizeCb');
 
-function exports(obj, iteratee, ctx) {
+exports = function(obj, iteratee, ctx) {
     iteratee = optimizeCb(iteratee, ctx);
 
     var i, len;
@@ -41,4 +41,4 @@ function exports(obj, iteratee, ctx) {
     }
 
     return obj;
-}
+};

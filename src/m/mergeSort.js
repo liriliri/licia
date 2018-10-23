@@ -17,7 +17,7 @@
  * test: all
  */
 
-function exports(arr, cmp) {
+exports = function(arr, cmp) {
     cmp = cmp || comparator;
 
     if (arr.length <= 1) return arr;
@@ -27,7 +27,7 @@ function exports(arr, cmp) {
         right = arr.slice(middle);
 
     return merge(exports(left, cmp), exports(right, cmp), cmp);
-}
+};
 
 function merge(left, right, cmp) {
     var ret = [],

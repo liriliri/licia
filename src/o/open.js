@@ -23,7 +23,7 @@ _('isWindows');
 
 const childProcess = require('child_process');
 
-function exports(target) {
+exports = function(target) {
     let cmd;
     const args = [];
 
@@ -40,4 +40,4 @@ function exports(target) {
     cp.unref();
 
     return cp;
-}
+};

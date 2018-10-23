@@ -19,9 +19,9 @@
  * export declare function topoSort(edges: any[]): any[]
  */
 
-function exports(edges) {
+exports = function(edges) {
     return sort(uniqueNodes(edges), edges);
-}
+};
 
 function uniqueNodes(arr) {
     var ret = [];

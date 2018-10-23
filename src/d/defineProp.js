@@ -56,7 +56,7 @@
 
 _('castPath isStr isObj each');
 
-function exports(obj, prop, descriptor) {
+exports = function(obj, prop, descriptor) {
     if (isStr(prop)) {
         defineProp(obj, prop, descriptor);
     } else if (isObj(prop)) {
@@ -66,7 +66,7 @@ function exports(obj, prop, descriptor) {
     }
 
     return obj;
-}
+};
 
 function defineProp(obj, prop, descriptor) {
     var path = castPath(prop, obj),

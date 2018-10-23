@@ -22,6 +22,6 @@
 
 var hasOwnProp = Object.prototype.hasOwnProperty;
 
-function exports(obj, key) {
+exports = function(obj, key) {
     return hasOwnProp.call(obj, key);
-}
+};

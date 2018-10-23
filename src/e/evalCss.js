@@ -14,9 +14,9 @@
  * test: browser
  */
 
-function exports(css) {
+exports = function(css) {
     var style = document.createElement('style');
     style.textContent = css;
     style.type = 'text/css';
     document.head.appendChild(style);
-}
+};

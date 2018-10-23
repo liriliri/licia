@@ -23,7 +23,7 @@
 
 _('repeat toStr');
 
-function exports(str, len, chars) {
+exports = function(str, len, chars) {
     str = toStr(str);
 
     var strLen = str.length;
@@ -37,4 +37,4 @@ function exports(str, len, chars) {
     }
 
     return str;
-}
+};

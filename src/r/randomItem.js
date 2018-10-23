@@ -17,6 +17,6 @@
 
 _('random');
 
-function exports(arr) {
+exports = function(arr) {
     return arr[random(0, arr.length - 1)];
-}
+};

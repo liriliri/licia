@@ -18,8 +18,8 @@
  * test: all
  */
 
-function exports(n, fn) {
+exports = function(n, fn) {
     return function() {
         if (--n < 1) return fn.apply(this, arguments);
     };
-}
+};

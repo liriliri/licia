@@ -24,7 +24,7 @@
 
 _('safeCb');
 
-function exports(arr, predicate, ctx) {
+exports = function(arr, predicate, ctx) {
     var ret = [];
 
     predicate = safeCb(predicate, ctx);
@@ -42,4 +42,4 @@ function exports(arr, predicate, ctx) {
     }
 
     return ret;
-}
+};

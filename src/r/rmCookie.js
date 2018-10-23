@@ -16,7 +16,7 @@
 
 _('cookie');
 
-function exports(key) {
+exports = function(key) {
     var location = window.location,
         hostname = location.hostname,
         pathname = location.pathname,
@@ -58,4 +58,4 @@ function exports(key) {
 
         return !cookie.get(key);
     }
-}
+};

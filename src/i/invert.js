@@ -19,7 +19,7 @@
 
 _('each');
 
-function exports(obj) {
+exports = function(obj) {
     var ret = {};
 
     each(obj, function(val, key) {
@@ -27,4 +27,4 @@ function exports(obj) {
     });
 
     return ret;
-}
+};

@@ -18,7 +18,7 @@
 
 _('each ucs2 map utf8');
 
-function exports(str) {
+exports = function(str) {
     try {
         return decodeURIComponent(str);
     } catch (e) {
@@ -30,7 +30,7 @@ function exports(str) {
 
         return str;
     }
-}
+};
 
 function decode(str) {
     str = str.split('%').slice(1);

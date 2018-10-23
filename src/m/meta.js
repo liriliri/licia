@@ -57,7 +57,7 @@
 
 _('each isStr isUndef contain isArr isObj toArr');
 
-function exports(name, content) {
+exports = function(name, content) {
     if (isUndef(name)) return getAllMeta();
 
     var isGetter = (isStr(name) && isUndef(content)) || isArr(name);
@@ -69,7 +69,7 @@ function exports(name, content) {
         metas[name] = content;
     }
     setMeta(metas);
-}
+};
 
 exports.remove = function(nameList) {
     nameList = toArr(nameList);
