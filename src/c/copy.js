@@ -17,6 +17,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function copy(text: string, cb?: (err?) => void): void
+ */ 
+
 _('extend noop');
 
 exports = function(text, cb) {
