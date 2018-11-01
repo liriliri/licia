@@ -21,6 +21,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function safeSet(obj: any, path: array | string, val: any): void
+ */ 
+
 _('castPath isUndef');
 
 exports = function(obj, path, val) {
