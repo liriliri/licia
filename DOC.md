@@ -2176,12 +2176,12 @@ download('test', 'test.txt');
 
 ## each 
 
-Iterate over elements of collection and invokes iteratee for each element.
+Iterate over elements of collection and invokes iterator for each element.
 
 |Name    |Type        |Desc                          |
 |--------|------------|------------------------------|
 |obj     |object array|Collection to iterate over    |
-|iteratee|function    |Function invoked per iteration|
+|iterator|function    |Function invoked per iteration|
 |[ctx]   |*           |Function context              |
 
 ```javascript

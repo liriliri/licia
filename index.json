@@ -880,7 +880,7 @@
         "demo": true
     },
     "each": {
-        "description": "Iterate over elements of collection and invokes iteratee for each element.",
+        "description": "Iterate over elements of collection and invokes iterator for each element.",
         "dependencies": [
             "isArrLike",
             "keys",
