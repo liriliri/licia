@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function toInt(val: any): number
+ */ 
+
 _('toNum');
 
 exports = function(val) {
