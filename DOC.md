@@ -5339,6 +5339,21 @@ timeTaken(function () {
 }); // -> Time taken to execute given function.
 ```
 
+## times 
+
+Invoke given function n times.
+
+|Name  |Type    |Desc                          |
+|------|--------|------------------------------|
+|n     |number  |Times to invoke function      |
+|fn    |function|Function invoked per iteration|
+|[ctx] |*       |Function context              |
+|return|array   |Array of results              |
+
+```javascript
+times(3, String); // -> ['0', '1', '2', '3']
+```
+
 ## toArr 
 
 Convert value to an array.

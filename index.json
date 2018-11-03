@@ -2551,6 +2551,14 @@
         "env": "all",
         "test": "all"
     },
+    "times": {
+        "description": "Invoke given function n times.",
+        "dependencies": [
+            "optimizeCb"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "toArr": {
         "description": "Convert value to an array.",
         "dependencies": [

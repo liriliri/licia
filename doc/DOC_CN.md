@@ -2171,12 +2171,12 @@ download('test', 'test.txt');
 
 ## each
 
-遍历集合中的所有元素，用每个元素当做参数调用 iteratee 函数。
+遍历集合中的所有元素，用每个元素当做参数调用迭代器。
 
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object array|目标集合|
-|iteratee|function|调用函数|
+|iterator|function|迭代器|
 |[ctx]|*|函数上下文|
 
 ```javascript
@@ -5331,6 +5331,21 @@ timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
 timeTaken(function () {
     // Do something.
 }); // -> Time taken to execute given function.
+```
+
+## times
+
+调用目标函数 n 次。
+
+|参数名|类型|说明|
+|-----|----|---|
+|n|number|调用次数|
+|fn|function|目标函数|
+|[ctx]|*|函数上下文|
+|返回值|array|结果数组|
+
+```javascript
+times(3, String); // -> ['0', '1', '2', '3']
 ```
 
 ## toArr

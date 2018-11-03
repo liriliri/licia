@@ -19,7 +19,7 @@
 
 /* typescript
  * export declare function copy(text: string, cb?: (err?) => void): void
- */ 
+ */
 
 _('extend noop');
 
