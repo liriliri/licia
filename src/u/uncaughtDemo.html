@@ -1,0 +1,25 @@
+<require>uncaught</require>
+
+<script>
+uncaught.start();
+
+uncaught.addListener(err => {
+    console.log('global error', err.message);
+});
+
+function triggerErr() {
+    trigger();
+}
+
+function triggerPromiseErr() {
+    new Promise(function (resolve, reject) {
+        resolve();
+    }).then(function (res) {
+        console.log('a')
+        var a = res.a;
+    })
+}
+
+setTimeout(() => triggerErr(), 0);
+setTimeout(() => triggerPromiseErr(), 0);
+</script>

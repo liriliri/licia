@@ -5582,6 +5582,41 @@ ucs2.decode('abc'); // -> [0x61, 0x62, 0x63]
 ucs2.decode('𝌆').length; // -> 1
 ```
 
+## uncaught 
+
+Handle global uncaught errors and promise rejections.
+
+### start
+
+Start handling of errors.
+
+### stop
+
+Stop handling.
+
+### addListener
+
+Add listener for handling errors.
+
+|Name|Type    |Desc          |
+|----|--------|--------------|
+|fn  |function|Error listener|
+
+### rmListener
+
+Remove listener.
+
+### rmAllListeners
+
+Remove all listeners.
+
+```javascript
+uncaught.start();
+uncaught.addListener(err => {
+    // Do something.
+});
+```
+
 ## unescape 
 
 Convert HTML entities back, the inverse of escape.

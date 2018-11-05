@@ -5576,6 +5576,41 @@ ucs2.decode('abc'); // -> [0x61, 0x62, 0x63]
 ucs2.decode('𝌆').length; // -> 1
 ```
 
+## uncaught
+
+全局错误监听。
+
+### start
+
+开始监听错误。
+
+### stop
+
+停止监听错误。
+
+### addListener
+
+添加监听器。
+
+|参数名|类型|说明|
+|-----|----|---|
+|fn|function|错误监听器|
+
+### rmListener
+
+移除监听器。
+
+### rmAllListeners
+
+移除所有监听器。
+
+```javascript
+uncaught.start();
+uncaught.addListener(err => {
+    // Do something.
+});
+```
+
 ## unescape
 
 和 escape 相反，转义 HTML 实体回去。

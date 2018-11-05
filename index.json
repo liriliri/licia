@@ -2674,6 +2674,15 @@
         "env": "all",
         "test": "all"
     },
+    "uncaught": {
+        "description": "Handle global uncaught errors and promise rejections.",
+        "dependencies": [
+            "isBrowser"
+        ],
+        "env": "all",
+        "test": "manual",
+        "demo": true
+    },
     "unescape": {
         "description": "Convert HTML entities back, the inverse of escape.",
         "dependencies": [
