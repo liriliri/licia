@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function defaults(obj: {}, ...src: any[]): {}
+ * export declare function defaults(obj: any, ...src: any[]): any
  */
 
 _('createAssigner allKeys');
