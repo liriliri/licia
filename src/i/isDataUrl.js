@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isDataUrl(str: string): boolean
+ */ 
+
 _('trim');
 
 exports = function(str) {
