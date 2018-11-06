@@ -10,6 +10,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare const isBrowser: boolean
+ */
+
 exports =
     typeof window === 'object' &&
     typeof document === 'object' &&
