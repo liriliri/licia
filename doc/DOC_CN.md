@@ -4179,12 +4179,12 @@ noop(); // Does nothing
 
 ## normalizeHeader
 
-Normalize http header name.
+标准化 HTTP 头部名。
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|header|string|Header to normalize|
-|return|string|Normalized header  |
+|参数名|类型|说明|
+|-----|----|---|
+|header|string|源头部名|
+|返回值|string|目标头部名|
 
 ```javascript
 normalizeHeader('content-type'); // -> 'Content-Type'
