@@ -4183,6 +4183,20 @@ A no-operation function.
 noop(); // Does nothing
 ```
 
+## normalizeHeader 
+
+Normalize http header name.
+
+|Name  |Type  |Desc               |
+|------|------|-------------------|
+|header|string|Header to normalize|
+|return|string|Normalized header  |
+
+```javascript
+normalizeHeader('content-type'); // -> 'Content-Type'
+normalizeHeader('etag'); // -> 'ETag'
+```
+
 ## normalizePath 
 
 Normalize file path slashes.

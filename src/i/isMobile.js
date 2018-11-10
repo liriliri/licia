@@ -17,7 +17,7 @@
 
 /* typescript
  * export declare function isMobile(ua?: string): boolean
- */ 
+ */
 
 _('isBrowser memoize');
 

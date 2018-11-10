@@ -16,7 +16,7 @@
 
 /* typescript
  * export declare function evalCss(css: string): void
- */ 
+ */
 
 exports = function(css) {
     var style = document.createElement('style');

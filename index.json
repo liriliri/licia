@@ -1932,6 +1932,15 @@
         "env": "all",
         "test": "all"
     },
+    "normalizeHeader": {
+        "description": "Normalize http header name.",
+        "dependencies": [
+            "map",
+            "capitalize"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "normalizePath": {
         "description": "Normalize file path slashes.",
         "dependencies": [],

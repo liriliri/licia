@@ -18,7 +18,7 @@
 
 /* typescript
  * export declare function isDataUrl(str: string): boolean
- */ 
+ */
 
 _('trim');
 
