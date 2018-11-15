@@ -17,6 +17,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function loadJs(src: string, cb?: (isLoaded: boolean) => void): void
+ */
+
 exports = function(src, cb) {
     var script = document.createElement('script');
     script.src = src;
