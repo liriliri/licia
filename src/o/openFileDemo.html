@@ -1,0 +1,15 @@
+<require>openFile $</require>
+<template id="bodyTpl">
+    <button id="open-file">
+        Open file
+    </button>
+</template>
+<script>
+    $('body').html(bodyTpl);
+    $('#open-file').on('click', async () => {
+        console.log(await openFile({
+            multiple: true,
+            accept: 'image/*'
+        }));
+    });
+</script>

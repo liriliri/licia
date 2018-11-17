@@ -4279,6 +4279,28 @@ Open stuff like url, files.
 open('https://eustia.liriliri.io/');
 ```
 
+## openFile 
+
+Open file dialog to select file in browser.
+
+|Name   |Type   |Desc          |
+|-------|-------|--------------|
+|options|object |Dialog options|
+|return |Promise|Files promise |
+
+Available options:
+
+|Name          |Type   |Desc                        |
+|--------------|-------|----------------------------|
+|accept        |string |File types                  |
+|multiple=false|boolean|Select multiple files or not|
+
+```javascript
+openFile({multiple: true}).then(fileList => {
+    console.log(fileList)
+});
+```
+
 ## optimizeCb 
 
 Used for function context binding.

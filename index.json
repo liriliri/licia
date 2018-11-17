@@ -1984,6 +1984,13 @@
         "env": "node",
         "test": "manual"
     },
+    "openFile": {
+        "description": "Open file dialog to select file in browser.",
+        "dependencies": [],
+        "env": "browser",
+        "test": "browser",
+        "demo": true
+    },
     "optimizeCb": {
         "description": "Used for function context binding.",
         "dependencies": [
