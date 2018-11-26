@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function rtrim(str: string, chars: string | string[]): string
+ */
+
 var regSpace = /\s+$/;
 
 exports = function(str, chars) {

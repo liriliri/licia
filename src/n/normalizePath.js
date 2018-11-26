@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function normalizePath(path: string): string
+ */
+
 exports = function(path) {
     return path.replace(regSlashes, '/');
 };
