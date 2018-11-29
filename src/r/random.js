@@ -19,6 +19,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function random(min: number, max?: number, floating?: boolean): number 
+ */
+
 exports = function(min, max, floating) {
     if (max == null) {
         max = min;
