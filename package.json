@@ -18,7 +18,7 @@
     "karma": "karma",
     "mocha": "mocha",
     "format": "prettier $/*.js src/[a-z]/*.js *.js lib/**/*.js lib/*.js bin/*.js script/*.js --write",
-    "format:pkg": "prettier packages/**/*.js --write",
+    "format:pkg": "prettier packages/**/*.js packages/**/*.d.ts --write",
     "benchmark": "node",
     "test:node": "licia test -as",
     "test:browser": "licia test -bas",
