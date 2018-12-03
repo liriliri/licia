@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function average(...num: number[]): number;
+ */
+
 exports = function() {
     var arr = arguments,
         sum = 0;

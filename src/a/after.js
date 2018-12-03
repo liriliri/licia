@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function after(n: number, fn: Function): Function;
+ */
+
 exports = function(n, fn) {
     return function() {
         if (--n < 1) return fn.apply(this, arguments);

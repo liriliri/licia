@@ -19,6 +19,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function allKeys(obj: any): string[];
+ */
+
 exports = function(obj) {
     var ret = [],
         key;

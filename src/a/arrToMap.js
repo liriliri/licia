@@ -20,6 +20,13 @@
  * test: all
  */
 
+/* typescript
+ * export declare function arrToMap<T>(
+ *     arr: string[],
+ *     val?: T
+ * ): { [key: string]: T };
+ */
+
 _('each isUndef isFn');
 
 exports = function(arr, val) {

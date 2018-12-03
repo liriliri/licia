@@ -16,6 +16,12 @@
  * test: all
  */
 
+/* typescript
+ * export declare function abbrev(
+ *     ...arr: string[]
+ * ): { [abbreviation: string]: string };
+ */
+
 _('toArr');
 
 exports = function() {
