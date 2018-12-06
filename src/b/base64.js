@@ -29,6 +29,13 @@
  * test: all
  */
 
+/* typescript
+ * export declare const base64: {
+ *     encode(arr: number[]): string;
+ *     decode(str: string): number[];  
+ * };
+ */
+
 exports = {
     encode: function(arr) {
         var ret = [],

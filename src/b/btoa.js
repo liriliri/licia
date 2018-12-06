@@ -10,6 +10,10 @@
  * test: all
  */
 
+/* typescript 
+ * export declare function btoa(str: string): string;
+ */
+
 _('root isNode base64 map detectMocha');
 
 if (isNode) {

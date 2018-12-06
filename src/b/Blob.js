@@ -17,6 +17,10 @@
  * test: browser
  */
 
+/* typescript
+ * export class Blob extends window.Blob {}
+ */
+
 _('root each');
 
 exports =

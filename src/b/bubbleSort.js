@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function bubbleSort(arr: any[], cmp?: Function): any[];
+ */
+
 _('swap');
 
 exports = function(arr, cmp) {

@@ -20,6 +20,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function bind(fn: Function, ctx: any, ...rest?: any[]): Function;
+ */
+
 _('restArgs');
 
 exports = restArgs(function(fn, ctx, rest) {

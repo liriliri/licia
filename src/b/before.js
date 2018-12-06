@@ -19,6 +19,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function before(n: number, fn: Function): Function;
+ */
+
 exports = function(n, fn) {
     var memo;
 
