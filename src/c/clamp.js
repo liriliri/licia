@@ -21,6 +21,11 @@
  * test: all
  */
 
+/* typescript
+ * export declare function clamp(n: number, lower: number, upper: number): number;
+ * export declare function clamp(n: number, upper: number): number;
+ */
+
 _('isUndef');
 
 exports = function(n, lower, upper) {

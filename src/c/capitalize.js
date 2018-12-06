@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function capitalize(str: string): string;
+ */
+
 exports = function(str) {
     return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
 };

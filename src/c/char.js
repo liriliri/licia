@@ -11,6 +11,10 @@
  * char(97); // -> 'a'
  */
 
+/* typescript
+ * export declare function char(num: number): string; 
+ */
+
 exports = function(num) {
     return String.fromCodePoint(num);
 };

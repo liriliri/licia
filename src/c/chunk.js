@@ -4,6 +4,7 @@
  * |------|------|--------------------|
  * |arr   |array |Array to process    |
  * |size=1|number|Length of each chunk|
+ * |return|array |Chunks of given size|
  */
 
 /* example
@@ -15,6 +16,10 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function chunk(arr: any[], size?: number): Array<any[]>;
  */
 
 exports = function(arr, size) {

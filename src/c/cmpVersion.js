@@ -20,6 +20,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function cmpVersion(v1: string, v2: string): number;
+ */
+
 _('toInt max');
 
 exports = function(v1, v2) {

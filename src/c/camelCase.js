@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function camelCase(str: string): string;
+ */
+
 _('splitCase');
 
 exports = function(str) {

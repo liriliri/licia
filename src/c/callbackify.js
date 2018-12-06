@@ -25,6 +25,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function callbackify(fn: Function): Function;
+ */
+
 _('restArgs');
 
 exports = function(fn) {

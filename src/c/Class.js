@@ -43,6 +43,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function Class(methods: any, statics?: any): Function;
+ */
+
 _('extend toArr inherits safeGet isMiniProgram');
 
 exports = function(methods, statics) {

@@ -19,6 +19,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function className(...arr: any[]): string;
+ */
+
 _('each isStr isNum isArr isObj');
 
 exports = function() {

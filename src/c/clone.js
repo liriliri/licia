@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function clone<T>(val: T): T;
+ */
+
 _('isObj isArr extend');
 
 exports = function(obj) {

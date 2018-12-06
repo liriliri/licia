@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function centerAlign(str: string | string[], width?: number): string;
+ */
+
 _('longest isArr isUndef map lpad');
 
 exports = function(str, width) {

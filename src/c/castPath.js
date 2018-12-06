@@ -1,10 +1,10 @@
 /* Cast value into a property path array.
  *
- * |Name  |Type  |Desc               |
- * |------|------|-------------------|
- * |str   |*     |Value to inspect   |
- * |[obj] |object|Object to query    |
- * |return|array |Property path array|
+ * |Name  |Type        |Desc               |
+ * |------|------------|-------------------|
+ * |path  |string array|Value to inspect   |
+ * |[obj] |object      |Object to query    |
+ * |return|array       |Property path array|
  */
 
 /* example
@@ -17,6 +17,10 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function castPath(path: string | string[], obj?: any): string[];
  */
 
 _('has isArr');

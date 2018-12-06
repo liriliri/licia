@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function cloneDeep<T>(val: T): T;
+ */
+
 _('isObj isFn isArr mapObj');
 
 exports = function(obj) {
