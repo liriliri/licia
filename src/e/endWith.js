@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function endWith(str: string, suffix: string): boolean
+ * export declare function endWith(str: string, suffix: string): boolean;
  */
 
 exports = function(str, suffix) {

@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function combine(keys: string[], values: any[]): any
+ * export declare function combine(keys: string[], values: any[]): any;
  */
 
 exports = function(keys, values) {

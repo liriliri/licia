@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function isUrl(val: string): boolean
+ * export declare function isUrl(val: string): boolean;
  */
 
 exports = function(val) {

@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function topoSort(edges: any[]): any[]
+ * export declare function topoSort(edges: any[]): any[];
  */
 
 exports = function(edges) {

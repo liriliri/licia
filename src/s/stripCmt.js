@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function stripCmt(str: string): string
+ * export declare function stripCmt(str: string): string;
  */
 
 exports = function(str) {

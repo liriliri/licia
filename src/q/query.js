@@ -32,9 +32,9 @@
 
 /* typescript
  * export declare const query: {
- *     parse(str: string): any
- *     stringify(object: any): string
- * }
+ *     parse(str: string): any;
+ *     stringify(object: any): string;
+ * };
  */
 
 _('trim each isUndef isArr map isEmpty filter isObj');

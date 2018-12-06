@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function isUndef(val: any): boolean
+ * export declare function isUndef(val: any): boolean;
  */
 
 exports = function(val) {

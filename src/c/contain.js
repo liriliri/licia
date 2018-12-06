@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export declare function contain(arr: any[], val: any): boolean
+ * export declare function contain(arr: any[], val: any): boolean;
  */
 
 _('idxOf isArrLike values');

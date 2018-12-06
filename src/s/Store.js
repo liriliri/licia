@@ -82,15 +82,15 @@
 
 /* typescript
  * export declare class Store {
- *     constructor(data: {})
- *     set(key: string, val: any): void
- *     set(vals: {}): void
- *     get(key: string): any
- *     get(keys: string[]): {}
- *     remove(key: string): void
- *     remove(keys: string[]): void
- *     clear(): void
- *     each(fn: (...args: any[]) => void): void
+ *     constructor(data: {});
+ *     set(key: string, val: any): void;
+ *     set(vals: {}): void;
+ *     get(key: string): any;
+ *     get(keys: string[]): {};
+ *     remove(key: string): void;
+ *     remove(keys: string[]): void;
+ *     clear(): void;
+ *     each(fn: (...args: any[]) => void): void;
  * }
  */
 

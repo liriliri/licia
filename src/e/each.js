@@ -20,17 +20,17 @@
  * declare namespace each {
  *     interface Collection<T> {}
  *     interface List<T> extends Collection<T> {
- *         [index: number]: T
- *         length: number
+ *         [index: number]: T;
+ *         length: number;
  *     }
  *     interface ListIterator<T, TResult> {
- *         (value: T, index: number, list: List<T>): TResult
+ *         (value: T, index: number, list: List<T>): TResult;
  *     }
  *     interface Dictionary<T> extends Collection<T> {
- *         [index: string]: T
+ *         [index: string]: T;
  *     }
  *     interface ObjectIterator<T, TResult> {
- *         (element: T, key: string, list: Dictionary<T>): TResult
+ *         (element: T, key: string, list: Dictionary<T>): TResult;
  *     }
  * }
  *
@@ -38,13 +38,13 @@
  *     list: each.List<T>, 
  *     iterator: each.ListIterator<T, void>,
  *     ctx?: any
- * ): each.List<T>
+ * ): each.List<T>;
  * 
  * export declare function each<T>(
  *     object: each.Dictionary<T>,
  *     iterator: each.ObjectIterator<T, void>,
  *     ctx?: any
- * ): each.Collection<T>
+ * ): each.Collection<T>;
  */
 
 _('isArrLike keys optimizeCb');

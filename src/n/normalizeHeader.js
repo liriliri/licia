@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function normalizeHeader(header: string): string
+ * export declare function normalizeHeader(header: string): string;
  */
 
 _('map capitalize');

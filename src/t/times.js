@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export declare function times<TResult>(n: number, fn: (n: number) => TResult, ctx?: any): TResult[]
+ * export declare function times<TResult>(n: number, fn: (n: number) => TResult, ctx?: any): TResult[];
  */
 
 _('optimizeCb');

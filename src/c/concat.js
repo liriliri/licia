@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function concat(...args: Array<any[]>): any[]
+ * export declare function concat(...args: Array<any[]>): any[];
  */
 
 _('toArr');

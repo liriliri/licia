@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function normalizePath(path: string): string
+ * export declare function normalizePath(path: string): string;
  */
 
 exports = function(path) {

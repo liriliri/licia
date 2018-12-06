@@ -16,15 +16,15 @@
 
 /* typescript
  * export declare const fs: {
- *     readFile(path: string, encoding: string): Promise<string>
- *     readFile(path: string): Promise<Buffer>
- *     exists(path: string): Promise<boolean>
- *     unlink(path: string): Promise<void>
- *     writeFile(path: string, data: string, options?: string): Promise<void>
- *     readdir(path: string): Promise<string[]>
- *     rmdir(path: string): Promise<void>
- *     [key: string]: any
- * }
+ *     readFile(path: string, encoding: string): Promise<string>;
+ *     readFile(path: string): Promise<Buffer>;
+ *     exists(path: string): Promise<boolean>;
+ *     unlink(path: string): Promise<void>;
+ *     writeFile(path: string, data: string, options?: string): Promise<void>;
+ *     readdir(path: string): Promise<string[]>;
+ *     rmdir(path: string): Promise<void>;
+ *     [key: string]: any;
+ * };
  */
 
 _('promisify root each Promise toArr');

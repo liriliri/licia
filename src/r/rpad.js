@@ -21,7 +21,7 @@
  */
 
 /* typescript
- * export declare function rpad(str: string, len: number, chars?: string): string
+ * export declare function rpad(str: string, len: number, chars?: string): string;
  */
 
 _('repeat toStr');

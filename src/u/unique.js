@@ -20,7 +20,7 @@
  * export declare function unique(
  *     arr: any[], 
  *     compare?: (a: any, b: any) => boolean | number
- * ): any[]
+ * ): any[];
  */
 
 _('filter');

@@ -20,7 +20,7 @@
  */
 
 /* typescript
- * export declare function getPort(port?: number | number[]): Promise<number>
+ * export declare function getPort(port?: number | number[]): Promise<number>;
  */
 
 _('toArr');

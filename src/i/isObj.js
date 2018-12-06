@@ -19,7 +19,7 @@
  */
 
 /* typescript
- * export declare function isObj(val: any): boolean
+ * export declare function isObj(val: any): boolean;
  */
 
 exports = function(val) {

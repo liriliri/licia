@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function open(target: string): any
+ * export declare function open(target: string): any;
  */
 
 _('isWindows');

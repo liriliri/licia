@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function startWith(str: string, prefix: string): boolean
+ * export declare function startWith(str: string, prefix: string): boolean;
  */
 
 exports = function(str, prefix) {

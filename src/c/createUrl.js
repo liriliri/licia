@@ -20,7 +20,7 @@
  */
 
 /* typescript
- * export declare function createUrl(data: any, options?: any): string
+ * export declare function createUrl(data: any, options?: any): string;
  */
 
 _('defaults isBlob isFile Blob toArr');

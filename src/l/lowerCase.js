@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function lowerCase(str: string): string
+ * export declare function lowerCase(str: string): string;
  */
 
 _('toStr');

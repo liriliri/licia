@@ -27,9 +27,9 @@
 
 /* typescript
  * export declare const rc4: {
- *     encrypt(key: string, str: string): string
- *     decrypt(key: string, str: string): string
- * }
+ *     encrypt(key: string, str: string): string;
+ *     decrypt(key: string, str: string): string;
+ * };
  */
 
 _('utf8 base64 bytesToStr strToBytes');

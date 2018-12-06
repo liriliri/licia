@@ -19,7 +19,7 @@
  */
 
 /* typescript
- * export declare function toArr(val: any): any[]
+ * export declare function toArr(val: any): any[];
  */
 
 _('isArrLike map isArr isStr');

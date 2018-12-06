@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function md5(msg: string): string
+ * export declare function md5(msg: string): string;
  */
 
 _('utf8 strToBytes');

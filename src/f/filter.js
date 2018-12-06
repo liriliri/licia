@@ -24,7 +24,7 @@
  *     obj: {} | any[], 
  *     predicate: (val: any, idx?: number | string, obj?: {} | any[]) => boolean, 
  *     ctx?: any
- * ): any[]
+ * ): any[];
  */
 
 _('safeCb each');

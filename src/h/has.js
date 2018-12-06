@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function has(obj: {}, key: string): boolean
+ * export declare function has(obj: {}, key: string): boolean;
  */
 
 var hasOwnProp = Object.prototype.hasOwnProperty;

@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export declare function loadJs(src: string, cb?: (isLoaded: boolean) => void): void
+ * export declare function loadJs(src: string, cb?: (isLoaded: boolean) => void): void;
  */
 
 exports = function(src, cb) {

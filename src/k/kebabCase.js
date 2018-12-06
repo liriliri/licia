@@ -19,7 +19,7 @@
  */
 
 /* typescript
- * export declare function kebabCase(str: string): string
+ * export declare function kebabCase(str: string): string;
  */
 
 _('splitCase');

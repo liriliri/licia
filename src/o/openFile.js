@@ -27,12 +27,12 @@
 /* typescript
  * declare namespace openFile {
  *     interface IOptions {
- *         accept?: string   
- *         multiple?: boolean
+ *         accept?: string;   
+ *         multiple?: boolean;
  *     }
  * }
  *
- * export declare function openFile(options?: openFile.IOptions): Promise<File[]>
+ * export declare function openFile(options?: openFile.IOptions): Promise<File[]>;
  */
 
 exports = function(options = {}) {

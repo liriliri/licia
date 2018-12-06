@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function extractBlockCmts(str: string): string[]
+ * export declare function extractBlockCmts(str: string): string[];
  */
 
 _('map trim');

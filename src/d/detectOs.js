@@ -20,7 +20,7 @@
  */
 
 /* typescript
- * export declare function detectOs(ua?: string): string
+ * export declare function detectOs(ua?: string): string;
  */
 
 _('isBrowser');

@@ -55,12 +55,12 @@
  *     mask: string, 
  *     utc?: boolean,
  *     gmt?: boolean
- * ): string
+ * ): string;
  * export declare function dateFormat(
  *     mask: string, 
  *     utc?: boolean,
  *     gmt?: boolean
- * ): string
+ * ): string;
  */
 
 _('isStr isDate toStr lpad');

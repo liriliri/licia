@@ -24,7 +24,7 @@
  *     dir: string, 
  *     mode?: number, 
  *     cb?: (err: Error) => void
- * ): void
+ * ): void;
  */
 
 _('isFn noop');

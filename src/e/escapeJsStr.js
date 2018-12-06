@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export declare function escapeJsStr(str: string): string
+ * export declare function escapeJsStr(str: string): string;
  */
 
 _('toStr');

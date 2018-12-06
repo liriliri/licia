@@ -11,7 +11,7 @@
  */
 
 /* typescript
- * export declare function now(): number
+ * export declare function now(): number;
  */
 
 exports =

@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function getUrlParam(name: string, url?:string): string | undefined
+ * export declare function getUrlParam(name: string, url?:string): string | undefined;
  */
 
 _('Url');

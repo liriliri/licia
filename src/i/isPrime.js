@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function isPrime(num: number): boolean
+ * export declare function isPrime(num: number): boolean;
  */
 
 exports = function(num) {

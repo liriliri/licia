@@ -13,7 +13,7 @@
  */
 
 /* typescript
- * export declare function uuid(): string
+ * export declare function uuid(): string;
  */
 
 _('randomBytes');

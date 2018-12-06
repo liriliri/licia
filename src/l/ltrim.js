@@ -19,7 +19,7 @@
  */
 
 /* typescript
- * export declare function ltrim(str: string, chars: string | string[]): string
+ * export declare function ltrim(str: string, chars: string | string[]): string;
  */
 
 var regSpace = /^\s+/;

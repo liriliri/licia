@@ -28,8 +28,8 @@
 
 /* typescript
  * export declare class Enum {
- *     public size: number
- *     [key: string]: any
+ *     public size: number;
+ *     [key: string]: any;
  * }
  */
 

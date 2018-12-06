@@ -11,7 +11,7 @@
  */
 
 /* typescript
- * export declare function noop(): void
+ * export declare function noop(): void;
  */
 
 exports = function() {};

@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function strHash(str: string): number
+ * export declare function strHash(str: string): number;
  */
 
 exports = function(str) {

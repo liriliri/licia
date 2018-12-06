@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function stripColor(str: string): string
+ * export declare function stripColor(str: string): string;
  */
 
 /* eslint-disable no-control-regex */
