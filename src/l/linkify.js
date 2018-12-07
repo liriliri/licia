@@ -20,6 +20,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function linkify(str: string, hyperlink?: Function): string;
+ */
+
 _('extractUrls each escapeRegExp');
 
 exports = function(str, hyperlink) {

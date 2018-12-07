@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function pairs(obj: any): Array<any[]>;
+ */
+
 _('keys');
 
 exports = function(obj) {

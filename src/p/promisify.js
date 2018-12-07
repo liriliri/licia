@@ -4,7 +4,7 @@
  * |---------------|--------|--------------------------------------|
  * |fn             |function|Callback based function               |
  * |multiArgs=false|boolean |If callback has multiple success value|
- * |return         |boolean |Result function                       |
+ * |return         |function|Result function                       |
  * 
  * If multiArgs is set to true, the resulting promise will always fulfill with an array of the callback's success values.
  */
@@ -21,6 +21,10 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function promisify(fn: Function, multiArgs?: boolean): Function;
  */
 
 _('restArgs root Promise');

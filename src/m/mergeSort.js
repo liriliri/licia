@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function mergeSort(arr: any[], cmp?: Function): any[];
+ */
+
 exports = function(arr, cmp) {
     cmp = cmp || comparator;
 

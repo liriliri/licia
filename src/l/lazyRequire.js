@@ -15,6 +15,10 @@
  * test: node
  */
 
+/* typescript
+ * export declare function lazyRequire(requireFn: Function): Function;
+ */
+
 exports = function(requireFn) {
     var cache = {};
 

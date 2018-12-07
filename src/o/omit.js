@@ -20,6 +20,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function omit(obj: any, filter: string | string[] | Function): any;
+ */
+
 _('pick');
 
 exports = function(obj, filter) {

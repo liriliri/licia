@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function methods(obj: any): string[];
+ */
+
 _('isFn');
 
 exports = function(obj) {

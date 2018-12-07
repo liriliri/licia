@@ -6,6 +6,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function optimizeCb(fn: Function, ctx: any, argCount?: number): Function;
+ */
+
 _('isUndef');
 
 exports = function(fn, ctx, argCount) {

@@ -17,6 +17,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function loadImg(src: string, cb?: Function);
+ */
+
 _('noop');
 
 exports = function(src, cb) {

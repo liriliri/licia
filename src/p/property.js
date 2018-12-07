@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function property(path: string | string[]): Function;
+ */
+
 _('isArr safeGet');
 
 exports = function(path) {

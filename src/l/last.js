@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function last(arr: any[]): any;
+ */
+
 exports = function(arr) {
     var len = arr ? arr.length : 0;
 

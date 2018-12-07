@@ -31,6 +31,11 @@
  * test: all
  */
 
+/* typescript
+ * export declare function ms(str: string): number;
+ * export declare function ms(num: number): string;
+ */
+
 _('toNum isStr');
 
 exports = function(str) {

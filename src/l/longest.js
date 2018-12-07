@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function longest(arr: string[]): string;
+ */
+
 _('size');
 
 exports = function(arr) {

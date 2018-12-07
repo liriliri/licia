@@ -33,6 +33,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function parseArgs(names: string[], shorthands: any): any;
+ */
+
 _('defaults toNum invert toBool');
 
 exports = function(args, opts) {

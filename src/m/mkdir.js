@@ -20,11 +20,7 @@
  */
 
 /* typescript
- * export declare function mkdir(
- *     dir: string, 
- *     mode?: number, 
- *     cb?: (err: Error) => void
- * ): void;
+ * export declare function mkdir(dir: string, mode?: number, cb?: Function);
  */
 
 _('isFn noop');

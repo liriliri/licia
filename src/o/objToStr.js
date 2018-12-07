@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function objToStr(val: any): string;
+ */
+
 var ObjToStr = Object.prototype.toString;
 
 exports = function(val) {

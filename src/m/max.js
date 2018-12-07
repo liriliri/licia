@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function max(...num: number[]): number;
+ */
+
 exports = function() {
     var arr = arguments,
         ret = arr[0];

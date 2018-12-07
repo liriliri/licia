@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function negate(predicate: Function): Function;
+ */
+
 exports = function(predicate) {
     return function() {
         return !predicate.apply(this, arguments);

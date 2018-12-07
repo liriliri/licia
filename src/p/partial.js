@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function partial(fn: Function, ...partials: any[]): Function;
+ */
+
 _('restArgs toArr');
 
 exports = restArgs(function(fn, partials) {

@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function pascalCase(str: string): string;
+ */
+
 _('camelCase upperFirst');
 
 exports = function(str) {

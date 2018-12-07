@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function once(fn: Function): Function;
+ */
+
 _('partial before');
 
 exports = partial(before, 2);

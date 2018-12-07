@@ -14,6 +14,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function perfNow(): number;
+ */
+
 _('now root');
 
 var performance = root.performance,

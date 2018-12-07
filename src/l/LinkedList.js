@@ -41,6 +41,18 @@
  * test: all
  */
 
+/* typescript
+ * export declare class LinkedList {
+ *     size: number;
+ *     push(val: any): number;
+ *     pop(): any;
+ *     unshift(val: any): number;
+ *     shift(): any;
+ *     forEach(iterator: Function, ctx?: any);
+ *     toArr(): any[];
+ * }
+ */
+
 _('Class');
 
 exports = Class({
@@ -101,11 +113,11 @@ exports = Class({
 
         return node.value;
     },
-    forEach: function(iteratee, ctx) {
+    forEach: function(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
         for (var i = 0, current = this.head; current !== null; i++) {
-            iteratee.call(ctx, current.value, i, this);
+            iterator.call(ctx, current.value, i, this);
             current = current.next;
         }
     },

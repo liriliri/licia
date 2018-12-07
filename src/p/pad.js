@@ -21,6 +21,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function pad(str: string, len: number, chars?: string): string;
+ */
+
 _('repeat toStr');
 
 exports = function(str, len, chars) {

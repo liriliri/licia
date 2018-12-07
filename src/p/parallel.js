@@ -24,6 +24,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function parallel(tasks: Function[], cb?: Function);
+ */
+
 _('noop each nextTick');
 
 exports = function(tasks, cb) {

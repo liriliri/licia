@@ -3,7 +3,7 @@
  * |Name|Type    |Desc           |
  * |----|--------|---------------|
  * |src |string  |Style source   |
- * |cb  |function|Onload callback|
+ * |[cb]|function|Onload callback|
  */
 
 /* example
@@ -15,6 +15,10 @@
 /* module
  * env: browser
  * test: browser
+ */
+
+/* typescript
+ * export declare function loadCss(src: string, cb?: Function);
  */
 
 _('noop');

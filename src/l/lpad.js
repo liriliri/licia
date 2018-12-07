@@ -20,6 +20,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function lpad(str: string, len: number, chars?: string): string;
+ */
+
 _('repeat toStr');
 
 exports = function(str, len, chars) {

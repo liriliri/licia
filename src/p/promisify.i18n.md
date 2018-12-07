@@ -6,7 +6,7 @@
 |-----|----|---|
 |fn|function|源函数|
 |multiArgs=false|boolean|回调是否有多个结果|
-|返回值|boolean|目标函数|
+|返回值|function|目标函数|
 
 如果 multiArgs 设为真，返回的 Promise 会将回调的结果合并成一个数组。
 

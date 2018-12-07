@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function memoize(fn: Function, hashFn?: Function): Function;
+ */
+
 _('has');
 
 exports = function(fn, hashFn) {

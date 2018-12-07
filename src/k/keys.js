@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function keys(obj: any): string[];
+ */
+
 _('has detectMocha');
 
 if (Object.keys && !detectMocha()) {

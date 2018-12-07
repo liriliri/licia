@@ -19,6 +19,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function matcher(attrs: any): Function;
+ */
+
 _('extendOwn isMatch');
 
 exports = function(attrs) {

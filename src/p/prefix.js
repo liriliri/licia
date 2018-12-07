@@ -21,6 +21,10 @@
  * test: browser
  */
 
+/* typescript
+  * export declare function prefix(name: string): string;
+  */
+
 _('memoize camelCase upperFirst has kebabCase');
 
 exports = memoize(function(name) {

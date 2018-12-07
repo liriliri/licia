@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function precision(num: number): number;
+ */
+
 exports = function(num) {
     num = num.toExponential().match(regExponential);
 
