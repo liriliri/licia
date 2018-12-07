@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isArgs(val: any): boolean;
+ */
+
 _('objToStr');
 
 exports = function(val) {

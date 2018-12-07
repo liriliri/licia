@@ -22,6 +22,16 @@
  * test: all
  */
 
+/* typescript
+ * export declare class Dispatcher {
+ *     dispatch(payload: any);
+ *     register(cb: Function);
+ *     waitFor(ids: string[]);
+ *     unregister(id: string);
+ *     isDispatching(): boolean;
+ * }
+ */
+
 _('Class uniqId');
 
 exports = Class({

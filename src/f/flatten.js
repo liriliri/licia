@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function flatten(arr: any[]): any[];
+ */
+
 _('isArr');
 
 exports = function(arr) {

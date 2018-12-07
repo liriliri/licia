@@ -1,10 +1,10 @@
 /* Compress image using canvas.
  * 
- * |Name|Type     |Desc      |
- * |----|---------|----------|
- * |file|File Blob|Image file|
- * |opts|object   |Options   |
- * |cb  |function |Callback  |
+ * |Name  |Type     |Desc      |
+ * |------|---------|----------|
+ * |file  |File Blob|Image file|
+ * |[opts]|object   |Options   |
+ * |[cb]  |function |Callback  |
  * 
  * Available options:
  * 
@@ -14,7 +14,7 @@
  * |maxHeight  |number|Max height                      |
  * |width      |number|Output image width              |
  * |height     |number|Output image height             |
- * |mineType   |string|Mine type                       |
+ * |mimeType   |string|Mime type                       |
  * |quality=0.8|number|Image quality, range from 0 to 1|
  * 
  * In order to keep image ratio, height will be ignored when width is set.
@@ -35,6 +35,25 @@
  * test: browser
  */
 
+/* typescript
+ * declare namespace compressImg {
+ *     interface IOptions {
+ *         maxWidth?: number;
+ *         maxHeight?: number;
+ *         width?: number;
+ *         height?: number;
+ *         mimeType?: string;
+ *         quality?: number;
+ *     }
+ * }
+ * export declare function compressImg(file: File | Blob, cb: Function);
+ * export declare function compressImg(
+ *     file: File | Blob,
+ *     opts?: compressImg.IOptions,
+ *     cb?: Function
+ * );
+ */
+
 _('isFn loadImg noop defaults createUrl');
 
 exports = function(file, opts, cb) {
@@ -46,7 +65,7 @@ exports = function(file, opts, cb) {
     cb = cb || noop;
     opts = opts || {};
     defaults(opts, defOpts);
-    opts.mineType = opts.mineType || file.type;
+    opts.mimeType = opts.mimeType || file.type;
 
     loadImg(createUrl(file), function(err, img) {
         if (err) return cb(err);
@@ -99,7 +118,7 @@ function compress(img, opts, cb) {
             function(file) {
                 cb(null, file);
             },
-            opts.mineType,
+            opts.mimeType,
             opts.quality
         );
     } else {

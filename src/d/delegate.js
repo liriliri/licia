@@ -30,6 +30,13 @@
  * test: browser
  */
 
+/* typescript
+ * export declare const delegate: {
+ *     add(el: Element, type: string, selector: string, cb: Function); 
+ *     remove(el: Element, type: string, selector: string, cb: Function);
+ * };
+ */
+
 _('Class contain');
 
 function retTrue() {

@@ -25,6 +25,10 @@
  * test: all
  */
 
+/* typescript 
+ * export declare function format(str: string, ...values: any[]): string;
+ */
+
 _('restArgs toInt toNum toStr');
 
 exports = restArgs(function(str, values) {

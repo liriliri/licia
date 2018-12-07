@@ -24,6 +24,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function findIdx(arr: any[], predicate: Function): number;
+ */
+
 _('safeCb');
 
 exports = function(arr, predicate, ctx, dir) {

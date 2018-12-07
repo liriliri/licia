@@ -19,6 +19,19 @@
  * test: all
  */
 
+/* typescript
+ * declare namespace intersectRange {
+ *     interface IRange {
+ *         start: number;
+ *         end: number;
+ *     }
+ * }
+ * export declare function intersectRange(
+ *     a: intersectRange.IRange, 
+ *     b: intersectRange.IRange
+ * ): intersectRange.IRange | void;
+ */
+
 exports = function(a, b) {
     var min = a.start < b.start ? a : b,
         max = min === a ? b : a;

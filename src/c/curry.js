@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function curry(fn: Function): Function;
+ */
+
 _('toArr');
 
 exports = function(fn) {

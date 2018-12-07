@@ -12,6 +12,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function createAssigner(keysFn: Function, defaults: boolean): Function;
+ */
+
 _('isUndef each');
 
 exports = function(keysFn, defaults) {

@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function identity<T>(val: T): T;
+ */
+
 exports = function(val) {
     return val;
 };

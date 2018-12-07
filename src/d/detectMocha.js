@@ -10,6 +10,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function detectMocha(): boolean;
+ */
+
 _('root');
 
 exports = function() {

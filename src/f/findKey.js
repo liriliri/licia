@@ -19,6 +19,14 @@
  * test: all
  */
 
+/* typescript
+ * export declare function findKey(
+ *     obj: any,
+ *     predicate: Function,
+ *     ctx?: any
+ * ): string | void;
+ */
+
 _('safeCb keys');
 
 exports = function(obj, predicate, ctx) {

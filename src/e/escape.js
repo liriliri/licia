@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function escape(str: string): string;
+ */
+
 _('keys');
 
 exports = function(str) {

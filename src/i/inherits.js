@@ -28,6 +28,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function inherits(Class: Function, SuperClass: Function);
+ */
+
 exports = function(Class, SuperClass) {
     if (objCreate) return (Class.prototype = objCreate(SuperClass.prototype));
 

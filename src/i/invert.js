@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function invert(obj: any): any;
+ */
+
 _('each');
 
 exports = function(obj) {

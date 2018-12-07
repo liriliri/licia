@@ -28,6 +28,13 @@
  * test: browser
  */
 
+/* typescript
+ * export declare const hotkey: {
+ *     on(key: string, listener: Function);
+ *     off(key: string, listener: Function); 
+ * };
+ */
+
 _('Emitter keyCode each unique trim map');
 
 exports = {

@@ -23,6 +23,11 @@
  * test: all
  */
 
+/* typescript
+ * export declare function define(name: string, requires: string[], method: Function);
+ * export declare function define(name: string, method: Function);
+ */
+
 _('toArr');
 
 exports = function(name, requires, method) {

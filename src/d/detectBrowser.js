@@ -20,6 +20,16 @@
  * test: all
  */
 
+/* typescript
+ * declare namespace detectBrowser {
+ *     interface IBrowser {
+ *         name: string;
+ *         version: number;
+ *     }
+ * }
+ * export declare function detectBrowser(ua?: string): detectBrowser.IBrowser;
+ */
+
 _('isBrowser toInt keys');
 
 exports = function(ua) {

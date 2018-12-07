@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function freezeDeep<T>(obj: T): T;
+ */
+
 _('freeze keys isObj');
 
 exports = function(obj) {

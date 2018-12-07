@@ -19,6 +19,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function fileSize(bytes: number): string;
+ */
+
 exports = function(bytes) {
     if (bytes <= 0) return '0';
 

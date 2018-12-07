@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function gcd(a: number, b: number): number;
+ */
+
 exports = function(a, b) {
     if (b === 0) return a;
     return exports(b, a % b);

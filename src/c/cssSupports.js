@@ -20,6 +20,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function cssSupports(name: string, val?: string): boolean;
+ */
+
 _('memoize isUndef camelCase');
 
 exports = memoize(

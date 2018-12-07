@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function decodeUriComponent(str: string): string;
+ */
+
 _('each ucs2 map utf8');
 
 exports = function(str) {

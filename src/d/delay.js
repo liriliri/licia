@@ -19,6 +19,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function delay(fn: Function, wait: number, ...args: any[]);
+ */
+
 _('restArgs');
 
 exports = restArgs(function(fn, wait, args) {

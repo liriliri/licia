@@ -27,6 +27,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function findLastIdx(arr: any[], predicate: Function): number;
+ */
+
 _('findIdx');
 
 exports = function(arr, predicate, ctx) {

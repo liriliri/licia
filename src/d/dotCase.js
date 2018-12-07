@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function dotCase(str: string): string;
+ */
+
 _('splitCase');
 
 exports = function(str) {

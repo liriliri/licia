@@ -40,6 +40,22 @@
  * test: all
  */
 
+/* typescript
+ * declare namespace Color {
+ *     interface IColor {
+ *         val: number[];
+ *         model: string;
+ *     }
+ *     function parse(colorStr: string): IColor;
+ * }
+ * export declare class Color {
+ *     constructor(color: string | Color.IColor);
+ *     toRgb(): string;
+ *     toHex(): string;
+ *     toHsl(): string;
+ * }
+ */
+
 _('Class isStr clamp rgbToHsl hslToRgb lpad convertBase');
 
 exports = Class(

@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function fnParams(fn: Function): string[];
+ */
+
 _('toSrc stripCmt');
 
 exports = function(fn) {

@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function compact(arr: any[]): any[];
+ */
+
 _('filter');
 
 exports = function(arr) {

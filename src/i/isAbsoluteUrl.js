@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isAbsoluteUrl(url: string): boolean;
+ */
+
 exports = function(url) {
     return regAbsolute.test(url);
 };

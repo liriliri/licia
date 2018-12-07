@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function extractUrls(str: string): string[];
+ */
+
 _('unique trim map toArr');
 
 exports = function(str) {

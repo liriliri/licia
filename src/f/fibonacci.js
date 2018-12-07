@@ -11,6 +11,10 @@
  * fibonacci(3); // -> 2
  */
 
+/* typescript
+ * export declare function fibonacci(n: number): number;
+ */
+
 _('memoize');
 
 exports = memoize(function(n) {

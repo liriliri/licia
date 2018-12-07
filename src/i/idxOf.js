@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function idxOf(arr: any[], val: any, fromIdx?: number): number;
+ */
+
 exports = function(arr, val, fromIdx) {
     return Array.prototype.indexOf.call(arr, val, fromIdx);
 };

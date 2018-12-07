@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function hslToRgb(hsl: number[]): number[];
+ */
+
 exports = function(hsl) {
     var h = hsl[0] / 360,
         s = hsl[1] / 100,

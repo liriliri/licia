@@ -16,6 +16,14 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function download(data: Blob | File | string | any[], name: string, type?: string);declare function download(
+ *     data: Blob | File | string | any[],
+ *     name: string,
+ *     type?: string
+ * );
+ */
+
 _('createUrl');
 
 exports = function(data, name, type) {

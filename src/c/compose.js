@@ -23,6 +23,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function compose(...fn: Function[]): Function;
+ */
+
 _('restArgs');
 
 exports = restArgs(function(fnList) {

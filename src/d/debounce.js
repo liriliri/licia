@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function debounce(fn: Function, wait: number): Function;
+ */
+
 exports = function(fn, wait, immediate) {
     var timeout;
 

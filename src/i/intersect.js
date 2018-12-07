@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function intersect(...arr: Array<any[]>): any[];
+ */
+
 _('contain toArr');
 
 exports = function(arr) {

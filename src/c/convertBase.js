@@ -18,6 +18,14 @@
  * test: all
  */
 
+/* typescript
+ * export declare function convertBase(
+ *     num: number | string,
+ *     from: number,
+ *     to: number
+ * ): string;
+ */
+
 exports = function(num, from, to) {
     return parseInt(num, from).toString(to);
 };

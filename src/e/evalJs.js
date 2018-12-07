@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function evalJs(js: string, ctx?: any);
+ */
+
 _('root');
 
 exports = function(js, ctx) {

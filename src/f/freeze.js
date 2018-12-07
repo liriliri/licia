@@ -20,6 +20,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function freeze<T>(obj: T): T;
+ */
+
 _('keys');
 
 exports = function(obj) {

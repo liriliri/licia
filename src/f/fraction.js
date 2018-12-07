@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function fraction(num: number): string;
+ */
+
 _('gcd precision');
 
 exports = function(num) {

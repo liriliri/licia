@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function difference(arr: any[], ...rest: any[]): any[];
+ */
+
 _('restArgs flatten filter contain');
 
 exports = restArgs(function(arr, rest) {
