@@ -19,6 +19,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function safeDel(obj: any, path: string | string[]): any;
+ */
+
 _('isUndef castPath');
 
 exports = function(obj, path) {

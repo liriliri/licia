@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function randomBytes(size: number): Unit8Array;
+ */
+
 _('random isBrowser isNode');
 
 var crypto;

@@ -6,6 +6,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function safeCb(val?: any, ctx?: any, argCount?: number): Function;
+ */
+
 _('isFn isObj optimizeCb matcher identity');
 
 exports = function(val, ctx, argCount) {

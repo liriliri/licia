@@ -2,10 +2,11 @@
  *
  * Note: It's not an "in-place" sort.
  * 
- * |Name |Type    |Desc         |
- * |-----|--------|-------------|
- * |arr  |array   |Array to sort|
- * |[cmp]|function|Comparator   |
+ * |Name  |Type    |Desc         |
+ * |------|--------|-------------|
+ * |arr   |array   |Array to sort|
+ * |[cmp] |function|Comparator   |
+ * |return|array   |Sorted array |
  */
 
 /* example

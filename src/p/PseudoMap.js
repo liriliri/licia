@@ -14,6 +14,10 @@
  * test: all
  */
 
+/* typescript
+ * export const PseudoMap: typeof Map;
+ */
+
 _('Class root detectMocha defineProp keys each isArr');
 
 if (root.Map && !detectMocha()) {

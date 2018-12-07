@@ -1,9 +1,10 @@
 /* Quick sort implementation.
  *
- * |Name |Type    |Desc         |
- * |-----|--------|-------------|
- * |arr  |array   |Array to sort|
- * |[cmp]|function|Comparator   |
+ * |Name  |Type    |Desc         |
+ * |------|--------|-------------|
+ * |arr   |array   |Array to sort|
+ * |[cmp] |function|Comparator   |
+ * |return|array   |Sorted array |
  */
 
 /* example
@@ -13,6 +14,10 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function quickSort(arr: any[], cmp?: Function): any[];
  */
 
 _('swap');

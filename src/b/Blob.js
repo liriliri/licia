@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export class Blob extends window.Blob {}
+ * export const Blob: typeof Blob; 
  */
 
 _('root each');

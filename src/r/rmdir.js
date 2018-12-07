@@ -18,6 +18,10 @@
  * test: node
  */
 
+/* typescript
+ * export declare function rmdir(dir: string, cb?: Function);
+ */
+
 _('noop parallel');
 
 var fs = require('fs'),

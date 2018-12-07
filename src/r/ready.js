@@ -16,6 +16,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function ready(fn: Function);
+ */
+
 var fns = [],
     listener,
     doc = document,

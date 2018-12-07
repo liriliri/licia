@@ -16,6 +16,13 @@
  * test: all
  */
 
+/* typescript
+ * declare namespace raf {
+ *     function cancel(id: number);
+ * }
+ * export declare function raf(cb: Function): number;
+ */
+
 _('now isBrowser');
 
 var raf, cancel;

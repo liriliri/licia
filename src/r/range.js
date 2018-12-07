@@ -5,6 +5,7 @@
  * |[start]|number|Start of the range                |
  * |end    |number|End of the range                  |
  * |step=1 |number|Value to increment or decrement by|
+ * |return |array |List of integers                  |
  */
 
 /* example
@@ -15,6 +16,10 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function range(start: number, end?: number, step?: number): number[];
  */
 
 exports = function(start, end, step) {

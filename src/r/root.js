@@ -5,6 +5,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare const root: any;
+ */
+
 _('isBrowser');
 
 exports = isBrowser ? window : global;

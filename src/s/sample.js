@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function sample(obj: any, n: number): any[];
+ */
+
 _('isArrLike clone values random swap');
 
 exports = function(obj, n) {

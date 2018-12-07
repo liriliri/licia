@@ -29,6 +29,21 @@
  * test: browser
  */
 
+/* typescript
+ * declare namespace scrollTo {
+ *     interface IOptions {
+ *         tolerance?: number;
+ *         duration?: number;
+ *         easing?: string | Function;
+ *         callback?: Function;
+ *     }
+ * }
+ * export declare function scrollTo(
+ *     target: Element | string | number, 
+ *     options: scrollTo.IOptions
+ * );
+ */
+
 _('Tween defaults noop isNum $offset');
 
 exports = function(target, options) {

@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function randomItem(arr: any[]): any;
+ */
+
 _('random');
 
 exports = function(arr) {

@@ -14,6 +14,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function rmCookie(key: string);
+ */
+
 _('cookie');
 
 exports = function(key) {

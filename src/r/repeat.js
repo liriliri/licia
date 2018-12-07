@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function repeat(str: string, n: number): string;
+ */
+
 exports = function(str, n) {
     var ret = '';
 
