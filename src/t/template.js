@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function template(str: string): Function;
+ */
+
 _('escape');
 
 /* eslint-disable quotes */

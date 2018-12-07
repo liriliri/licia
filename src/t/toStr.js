@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function toStr(val: any): string;
+ */
+
 exports = function(val) {
     return val == null ? '' : val.toString();
 };

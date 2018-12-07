@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function timeTaken(fn: Function): number;
+ */
+
 _('perfNow');
 
 exports = function(fn) {

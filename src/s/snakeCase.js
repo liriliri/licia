@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function snakeCase(str: string): string;
+ */
+
 _('splitCase');
 
 exports = function(str) {

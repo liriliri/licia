@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function size(obj: any): number;
+ */
+
 _('isArrLike keys');
 
 exports = function(obj) {

@@ -20,6 +20,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function splitCase(str: string): string[];
+ */
+
 var regUpperCase = /([A-Z])/g,
     regSeparator = /[_.\- ]+/g,
     regTrim = /(^-)|(-$)/g;

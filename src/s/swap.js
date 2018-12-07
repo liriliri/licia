@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function swap(arr: any[], a: number, b: number): any[];
+ */
+
 exports = function(arr, a, b) {
     var tmp = arr[a];
     arr[a] = arr[b];

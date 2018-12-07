@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function shuffle(arr: any[]): any[];
+ */
+
 _('sample');
 
 exports = function(obj) {

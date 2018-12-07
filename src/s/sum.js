@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function sum(...num: number[]): number;
+ */
+
 exports = function() {
     var arr = arguments,
         ret = 0;

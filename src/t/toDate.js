@@ -17,6 +17,10 @@
  * test: manual 
  */
 
+/* typescript
+ * export declare function toDate(val: any): Date;
+ */
+
 _('isDate isStr');
 
 exports = function(val) {

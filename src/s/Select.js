@@ -35,6 +35,14 @@
  * test: browser
  */
 
+/* typescript
+ * export declare class Select {
+ *     constructor(selector: string);
+ *     find(selector: string): Select;
+ *     each(fn: Function): Select;
+ * }
+ */
+
 _('Class isStr each');
 
 exports = Class({

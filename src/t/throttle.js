@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function throttle(fn: Function, wait: number): Function;
+ */
+
 _('debounce');
 
 exports = function(fn, wait) {

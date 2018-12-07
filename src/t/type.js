@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function type(val: any): string;
+ */
+
 _('objToStr isNaN');
 
 exports = function(val) {

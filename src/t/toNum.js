@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function toNum(val: any): number;
+ */
+
 _('isNum isObj isFn isStr');
 
 exports = function(val) {

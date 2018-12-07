@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function stripHtmlTag(str: string): string;
+ */
+
 var regHtmlTag = /<[^>]*>/g;
 
 exports = function(str) {

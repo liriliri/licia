@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function slice(array: any[], start?: number, end?: number): any[];
+ */
+
 exports = function(arr, start, end) {
     var len = arr.length;
 

@@ -16,6 +16,17 @@
  * test: all
  */
 
+/* typescript
+ * declare namespace splitPath {
+ *     interface IPath {
+ *         dir: string;
+ *         name: string;
+ *         ext: string;
+ *     }
+ * }
+ * export declare function splitPath(path: string): splitPath.IPath;
+ */
+
 exports = function(path) {
     var match = path.match(regSplit);
 

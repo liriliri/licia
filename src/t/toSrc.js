@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function toSrc(fn: Function): string;
+ */
+
 _('isNil');
 
 exports = function(fn) {

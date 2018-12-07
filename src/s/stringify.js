@@ -21,6 +21,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function stringify(obj: any, spaces?: number): string;
+ */
+
 _('type upperFirst toStr isUndef isFn isRegExp');
 
 exports = function(obj, spaces) {

@@ -19,6 +19,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function timeAgo(date: Date, now?: Date): string;
+ */
+
 _('isDate toInt');
 
 exports = function(date, now) {

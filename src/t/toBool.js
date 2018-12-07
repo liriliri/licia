@@ -21,6 +21,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function toBool(val: any): boolean;
+ */
+
 _('isStr');
 
 exports = function(val) {

@@ -17,6 +17,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function toEl(str: string): Element;
+ */
+
 var doc = document;
 
 exports = function(str) {

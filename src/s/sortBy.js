@@ -3,8 +3,8 @@
  * |Name               |Type        |Desc                      |
  * |-------------------|------------|--------------------------|
  * |arr                |object array|Collection to iterate over|
- * |[iteratee=identity]|function    |Iteratee to sort by       |
- * |[ctx]              |*           |Iteratee context          |
+ * |[iterator=identity]|function    |Iterator to sort by       |
+ * |[ctx]              |*           |Iterator context          |
  * |return             |array       |New sorted array          |
  */
 
@@ -17,6 +17,10 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function sortBy(arr: any, iterator?: Function, ctx?: any): any[];
  */
 
 _('safeCb pluck map isUndef');

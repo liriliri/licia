@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function selectionSort(arr: any[], cmp?: Function): any[];
+ */
+
 _('swap');
 
 exports = function(arr, cmp) {
