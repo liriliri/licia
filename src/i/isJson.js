@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isJson(val: string): boolean;
+ */
+
 exports = function(val) {
     try {
         JSON.parse(val);

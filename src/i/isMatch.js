@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isMatch(obj: any, src: any): boolean;
+ */
+
 _('keys');
 
 exports = function(obj, src) {

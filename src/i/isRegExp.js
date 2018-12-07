@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isRegExp(val: any): boolean;
+ */
+
 _('objToStr');
 
 exports = function(val) {

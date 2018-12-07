@@ -15,6 +15,10 @@
  * test: node
  */
 
+/* typescript
+ * export declare function isBuffer(val: any): boolean;
+ */
+
 _('isFn');
 
 exports = function(val) {

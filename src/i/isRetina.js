@@ -10,6 +10,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare const isRetina: boolean;
+ */
+
 _('isBrowser');
 
 var mediaQuery =

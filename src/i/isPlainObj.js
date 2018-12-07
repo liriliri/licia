@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isPlainObj(val: any): boolean;
+ */
+
 _('isObj isArr isFn has');
 
 exports = function(val) {

@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isEqual(val: any, other: any): boolean;
+ */
+
 _('isFn has keys');
 
 exports = function(a, b) {

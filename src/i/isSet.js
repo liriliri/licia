@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isSet(val: any): boolean;
+ */
+
 _('objToStr');
 
 exports = function(val) {

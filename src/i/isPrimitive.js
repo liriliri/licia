@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isPrimitive(val: any): boolean;
+ */
+
 exports = function(val) {
     var type = typeof val;
 

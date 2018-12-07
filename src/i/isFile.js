@@ -15,6 +15,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function isFile(val: any): boolean;
+ */
+
 _('objToStr');
 
 exports = function(val) {

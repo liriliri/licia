@@ -15,6 +15,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function isEl(val: any): boolean;
+ */
+
 exports = function(val) {
     return !!(val && val.nodeType === 1);
 };

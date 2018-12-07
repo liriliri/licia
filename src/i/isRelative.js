@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isRelative(path: string): boolean;
+ */
+
 exports = function(path) {
     return !regAbsolute.test(path);
 };

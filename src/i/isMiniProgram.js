@@ -10,6 +10,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare const isMiniProgram: boolean;
+ */
+
 _('isFn');
 
 /* eslint-disable no-undef */

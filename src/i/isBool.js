@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isBool(val: any): boolean;
+ */
+
 exports = function(val) {
     return val === true || val === false;
 };

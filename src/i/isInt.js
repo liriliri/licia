@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isInt(val: any): boolean;
+ */
+
 _('isNum');
 
 exports = function(val) {

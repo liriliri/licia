@@ -23,6 +23,15 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isClose(
+ *     a: number, 
+ *     b: number, 
+ *     relTol?: number,
+ *     absTol?: number
+ * ): boolean;
+ */
+
 _('isNum');
 
 exports = function(a, b, relTol, absTol) {

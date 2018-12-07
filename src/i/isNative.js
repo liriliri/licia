@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isNative(val: any): boolean;
+ */
+
 _('isObj isFn toSrc');
 
 exports = function(val) {

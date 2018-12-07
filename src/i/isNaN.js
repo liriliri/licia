@@ -18,6 +18,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isNaN(val: any): boolean;
+ */
+
 _('isNum');
 
 exports = function(val) {

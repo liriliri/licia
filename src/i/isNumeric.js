@@ -22,6 +22,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isNumeric(val: any): boolean;
+ */
+
 _('isStr isNaN isFinite isArr');
 
 exports = function(val) {

@@ -17,6 +17,10 @@
  * test: node
  */
 
+/* typescript
+ * export declare function isStream(val: any): boolean;
+ */
+
 _('isObj isFn');
 
 exports = function(val) {

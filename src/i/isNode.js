@@ -10,6 +10,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare const isNode: boolean;
+ */
+
 _('objToStr');
 
 exports =

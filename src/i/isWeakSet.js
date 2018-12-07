@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isWeakSet(val: any): boolean;
+ */
+
 _('objToStr');
 
 exports = function(val) {

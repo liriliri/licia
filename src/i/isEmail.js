@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isEmail(val: string): boolean;
+ */
+
 exports = function(val) {
     return regEmail.test(val);
 };

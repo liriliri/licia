@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isOdd(num: number): boolean;
+ */
+
 _('isInt');
 
 exports = function(num) {

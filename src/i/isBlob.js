@@ -16,6 +16,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function isBlob(val: any): boolean;
+ */
+
 _('objToStr');
 
 exports = function(val) {

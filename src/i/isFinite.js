@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isFinite(val: any): boolean;
+ */
+
 _('root');
 
 var nativeIsFinite = root.isFinite,

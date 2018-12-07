@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isTypedArr(val: any): boolean;
+ */
+
 _('objToStr each');
 
 exports = function(val) {

@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isNull(val: any): boolean;
+ */
+
 exports = function(val) {
     return val === null;
 };

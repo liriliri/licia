@@ -16,6 +16,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isPromise(val: any): boolean;
+ */
+
 _('isObj isFn');
 
 exports = function(val) {

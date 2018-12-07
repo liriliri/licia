@@ -10,6 +10,10 @@
  * test: node
  */
 
+/* typescript
+ * export declare const isWindows: boolean;
+ */
+
 exports = false;
 
 if (typeof process !== 'undefined') {

@@ -20,6 +20,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function isNil(val: any): boolean;
+ */
+
 exports = function(val) {
     return val == null;
 };
