@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function union(...arr: Array<any[]>): any[];
+ */
+
 _('restArgs unique flatten');
 
 exports = restArgs(function(arrays) {

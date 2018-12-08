@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function upperFirst(str: string): string;
+ */
+
 exports = function(str) {
     if (str.length < 1) return str;
 

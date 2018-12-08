@@ -2,7 +2,7 @@
  *
  * |Name  |Type |Desc                         |
  * |------|-----|-----------------------------|
- * |*arr  |array|Arrays to process            |
+ * |...arr|array|Arrays to process            |
  * |return|array|New array of grouped elements|
  */
 
@@ -13,6 +13,10 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function zip(...arr: Array<any[]>): Array<any[]>;
  */
 
 _('restArgs unzip');

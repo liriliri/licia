@@ -2,7 +2,7 @@
  *
  * |Name   |Type    |Desc            |
  * |-------|--------|----------------|
- * |fn     |*       |Function to wrap|
+ * |fn     |function|Function to wrap|
  * |wrapper|function|Wrapper function|
  * |return |function|New function    |
  */
@@ -17,6 +17,10 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function wrap(fn: Function, wrapper: Function): Function;
  */
 
 _('partial');

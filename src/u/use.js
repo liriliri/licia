@@ -20,6 +20,11 @@
  * test: all
  */
 
+/* typescript
+ * export declare function use(requires?: string[], method: Function);
+ * export declare function use(method: Function);
+ */
+
 _('map define has toArr');
 
 exports = function(requires, method) {

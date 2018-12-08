@@ -30,6 +30,13 @@
  * test: all
  */
 
+/* typescript
+ * export declare const utf8: {
+ *     encode(str: string): string;
+ *     decode(str: string, safe?: boolean): string;
+ * };
+ */
+
 _('ucs2');
 
 // https://encoding.spec.whatwg.org/#utf-8

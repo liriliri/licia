@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function upperCase(str: string): string;
+ */
+
 _('toStr');
 
 exports = function(str) {

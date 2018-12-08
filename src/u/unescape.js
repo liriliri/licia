@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function unescape(str: string): string;
+ */
+
 _('escape keys invert');
 
 exports = function(str) {

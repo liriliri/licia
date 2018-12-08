@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function values(obj: any): any[];
+ */
+
 _('each');
 
 exports = function(obj) {

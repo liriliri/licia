@@ -20,6 +20,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function workerize(fn: Function): Function;
+ */
+
 _('Promise restArgs uniqId toSrc createUrl isStr');
 
 exports = function(fn) {

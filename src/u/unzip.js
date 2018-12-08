@@ -15,6 +15,10 @@
  * test: all
  */
 
+/* typescript
+ * declare function unzip(arr: Array<any[]>): Array<any[]>;
+ */
+
 _('map pluck max');
 
 exports = function(arr) {

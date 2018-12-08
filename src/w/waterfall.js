@@ -25,6 +25,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function waterfall(tasks: Function[], cb?: Function);
+ */
+
 _('noop nextTick restArgs');
 
 exports = function(tasks, cb) {

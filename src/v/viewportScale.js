@@ -10,6 +10,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function viewportScale(): number;
+ */
+
 _('meta clamp trim each map isNaN');
 
 exports = function() {

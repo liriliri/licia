@@ -31,6 +31,13 @@
  * test: all
  */
 
+/* typescript
+ * export declare const ucs2: {
+ *     encode(arr: number[]): string;
+ *     decode(str: string): number[];
+ * };
+ */
+
 // https://mathiasbynens.be/notes/javascript-encoding
 exports = {
     encode: function(arr) {
