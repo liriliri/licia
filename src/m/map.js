@@ -20,7 +20,7 @@
 /* typescript
  * export declare function map(
  *     obj: {} | any[],
- *     iteratee: (val: any, idx?: number | string, obj?: {} | any[]) => boolean,
+ *     iteratee: Function,
  *     ctx?: any
  * ): any[];
  */

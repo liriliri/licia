@@ -9,7 +9,8 @@ var knowOpts = {
         silent: Boolean,
         all: Boolean,
         sauce: Boolean,
-        demo: Boolean
+        demo: Boolean,
+        ts: Boolean
     },
     shortHands = {
         b: '--browser',
