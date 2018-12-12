@@ -14,6 +14,25 @@
  * test: browser
  */
 
+/* typescript
+ * export declare const $event: {
+ *     on(
+ *         element: $safeEls.El,
+ *         event: string,
+ *         selector: string,
+ *         handler: Function
+ *     ): void;
+ *     on(element: $safeEls.El, event: string, handler: Function): void;
+ *     off(
+ *         element: $safeEls.El,
+ *         event: string,
+ *         selector: string,
+ *         handler: Function
+ *     ): void;
+ *     off(element: $safeEls.El, event: string, handler: Function): void;
+ * };
+ */ 
+
 _('delegate isUndef $safeEls');
 
 exports = {

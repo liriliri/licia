@@ -37,7 +37,7 @@
 
 /* typescript
  * export declare class Select {
- *     constructor(selector: string);
+ *     constructor(selector: string | Element);
  *     find(selector: string): Select;
  *     each(fn: Function): Select;
  * }

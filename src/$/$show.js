@@ -14,6 +14,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function $show(element: $safeEls.El): void;
+ */ 
+
 _('each $safeEls');
 
 exports = function(els) {

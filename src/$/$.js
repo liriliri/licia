@@ -22,6 +22,53 @@
  * test: browser
  */
 
+/* typescript
+ * declare namespace $ {
+ *     class $ extends Select {
+ *         find(selector: string): $;
+ *         each(fn: Function): $;
+ *         offset(): $offset.IOffset;
+ *         hide(): $;
+ *         show(): $;
+ *         first(): $;
+ *         last(): $;
+ *         get(index: number): Element;
+ *         eq(index: number): Element;
+ *         on(event: string, selector: string, handler: Function): $;
+ *         on(event: string, handler: Function): $;
+ *         off(event: string, selector: string, handler: Function): $;
+ *         off(event: string, handler: Function): $;
+ *         html(): string;
+ *         html(value: string): $;
+ *         text(): string;
+ *         text(value: string): $;
+ *         val(): string;
+ *         val(value: string): $;
+ *         css(name: string): string;
+ *         css(name: string, value: string): $;
+ *         css(properties: { [name: string]: string }): $;
+ *         attr(name: string): string;
+ *         attr(name: string, value: string): $;
+ *         attr(attributes: { [name: string]: string }): $;
+ *         data(name: string): string;
+ *         data(name: string, value: string): $;
+ *         data(attributes: { [name: string]: string }): $;
+ *         rmAttr(name: string): $;
+ *         remove(): $;
+ *         addClass(name: string | string[]): $;
+ *         rmClass(name: string): $;
+ *         toggleClass(name: string): $;
+ *         hasClass(name: string): boolean;
+ *         parent(): $;
+ *         append(content: string): $;
+ *         prepend(content: string): $;
+ *         before(content: string): $;
+ *         after(content: string): $;
+ *     }
+ * }
+ * declare function $(selector: string | Element): $.$;
+ */ 
+
 _(
     'Select $offset $show $css $attr $property last $remove $data $event $class $insert isUndef isStr'
 );

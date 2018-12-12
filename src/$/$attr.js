@@ -46,6 +46,18 @@
  * test: browser
  */
 
+/* typescript
+ * declare namespace $attr {
+ *     interface IAttr {
+ *         (element: $safeEls.El, name: string, value: string): void;
+ *         (element: $safeEls.El, attributes: { [name: string]: string }): void;
+ *         (element: $safeEls.El, name: string): string;
+ *         remove(element: $safeEls.El, name: string): void;
+ *     }
+ * }
+ * export declare const $attr: $attr.IAttr;
+ */  
+
 _('toArr isObj isStr each isUndef $safeEls');
 
 exports = function(els, name, val) {

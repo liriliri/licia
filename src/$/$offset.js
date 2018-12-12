@@ -14,6 +14,18 @@
  * test: browser
  */
 
+/* typescript
+ * declare namespace $offset {
+ *     interface IOffset {
+ *         left: number;
+ *         top: number;
+ *         width: number;
+ *         height: number;
+ *     }
+ * }
+ * export declare function $offset(element: $safeEls.El): $offset.IOffset;
+ */ 
+
 _('$safeEls');
 
 exports = function(els) {

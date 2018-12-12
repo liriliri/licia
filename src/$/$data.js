@@ -10,6 +10,17 @@
  * test: browser
  */
 
+/* typescript
+ * declare namespace $data {
+ *     interface IData {
+ *         (element: $safeEls.El, name: string, value: string): void;
+ *         (element: $safeEls.El, attributes: { [name: string]: string }): void;
+ *         (element: $safeEls.El, name: string): string;
+ *     }
+ * }
+ * export declare const $data: $data.IData;
+ */  
+
 _('$attr isStr isObj each');
 
 exports = function(nodes, name, val) {

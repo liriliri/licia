@@ -39,6 +39,20 @@
  * test: browser
  */
 
+/* typescript
+ * declare namespace $insert {
+ *     interface IInsert {
+ *         (element: $safeEls.El, content: string): void;
+ *     }
+ * }
+ * export declare const $insert: {
+ *     before: $insert.IInsert;
+ *     after: $insert.IInsert;
+ *     append: $insert.IInsert;
+ *     prepend: $insert.IInsert;
+ * };
+ */ 
+
 _('each $safeEls');
 
 exports = {

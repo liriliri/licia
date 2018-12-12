@@ -35,7 +35,7 @@
  * |Name   |Type                |Desc                  |
  * |-------|--------------------|----------------------|
  * |element|string array element|Elements to manipulate|
- * |names  |string              |Class names to remove |
+ * |name   |string              |Class names to remove |
  */
 
 /* example
@@ -52,6 +52,15 @@
  * env: browser
  * test: browser
  */
+
+/* typescript
+ * export declare const $class: {
+ *     add(element: $safeEls.El, name: string | string[]): void;
+ *     has(element: $safeEls.El, name: string): boolean;
+ *     toggle(element: $safeEls.El, name: string): void;
+ *     remove(element: $safeEls.El, name: string): void;
+ * };
+ */ 
 
 _('toArr some $safeEls isStr');
 

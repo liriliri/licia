@@ -24,8 +24,8 @@
 
 /* example
  * $css('#test', {
- *     'color': '#fff',
- *     'background': 'black'
+ *     color: '#fff',
+ *     background: 'black'
  * });
  * $css('#test', 'display', 'block');
  * $css('#test', 'color'); // -> #fff
@@ -35,6 +35,15 @@
  * env: browser
  * test: browser
  */
+
+/* typescript
+ * export declare function $css(element: $safeEls.El, name: string): string;
+ * export declare function $css(element: $safeEls.El, name: string, value: string): void;
+ * export declare function $css(
+ *     element: $safeEls.El,
+ *     properties: { [name: string]: string }
+ * ): void;
+ */ 
 
 _('isStr isObj kebabCase isUndef contain isNum $safeEls prefix');
 

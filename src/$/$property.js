@@ -34,7 +34,6 @@
  *         (element: $safeEls.El): string;
  *     }
  * }
- *
  * export declare const $property: {
  *     html: $property.IProperty;
  *     val: $property.IProperty;
