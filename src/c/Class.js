@@ -44,7 +44,16 @@
  */
 
 /* typescript
- * export declare function Class(methods: any, statics?: any): Function;
+ * declare namespace Class {
+ *     interface IConstructor {
+ *         (...args: any[]): any;
+ *         extend(methods: any, statics: any): IConstructor;
+ *         inherits(Class: Function): void;
+ *         methods(methods: any): IConstructor;
+ *         statics(statics: any): IConstructor;
+ *     }
+ * }
+ * export declare function Class(methods: any, statics?: any): Class;
  */
 
 _('extend toArr inherits safeGet isMiniProgram');

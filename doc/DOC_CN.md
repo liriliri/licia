@@ -102,7 +102,7 @@ $attr('#test', {
 |参数名|类型|说明|
 |-----|----|---|
 |element|string array element|目标元素集|
-|names|string|class 值|
+|name|string|class 值|
 
 ```javascript
 $class.add('#test', 'class1');
@@ -141,8 +141,8 @@ $class.has('#test', 'class1'); // -> true
 
 ```javascript
 $css('#test', {
-    'color': '#fff',
-    'background': 'black'
+    color: '#fff',
+    background: 'black'
 });
 $css('#test', 'display', 'block');
 $css('#test', 'color'); // -> #fff
@@ -454,7 +454,7 @@ Enum 类实现。
 var importance = new Enum([
     'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
 ]);
-
+const val = 1;
 if (val === importance.CRITICAL) {
     // Do something.
 }
@@ -1232,6 +1232,7 @@ var fn = after(5, function() {
 
 |参数名|类型|说明|
 |-----|----|---|
+|type|string|请求类型|
 |url|string|请求地址|
 |data|string object|请求数据|
 |dataType=json|string|响应类型（json，xml）|
@@ -1260,8 +1261,8 @@ type = POST 的快捷方式。
 ajax({
     url: 'http://example.com',
     data: {test: 'true'},
-    error: function () {},
-    success: function (data) {
+    error() {},
+    success(data) {
         // ...
     },
     dataType: 'json'
@@ -1300,11 +1301,13 @@ allKeys(obj) // -> ['zero', 'one']
 |返回值|object|映射|
 
 ```javascript
-var needPx = arrToMap([
+const needPx = arrToMap([
     'column-count', 'columns', 'font-weight', 'line-weight', 'opacity', 'z-index', 'zoom'
 ]);
-
+const key = 'column-count';
+let val = '5';
 if (needPx[key]) val += 'px';
+console.log(val); // -> '5px'
 ```
 
 ## atob
@@ -1368,8 +1371,8 @@ base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
 超过 n 次后再次调用函数将直接返回最后一次函数的调用结果。
 
 ```javascript
-$(element).on('click', before(5, function() {}));
-// -> allow function to be call 4 times at last.
+const fn = before(5, function() {});
+fn(); // Allow function to be call 4 times at last.
 ```
 
 ## bind
@@ -1700,6 +1703,7 @@ welcome('licia'); // -> 'hi: LICIA!'
 如果设置了宽高，最大宽度跟最大高度将被忽略。
 
 ```javascript
+const file = new Blob([]);
 compressImg(file, {
     maxWidth: 200
 }, function (err, file) {
@@ -1726,7 +1730,7 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 
 |参数名|类型|说明|
 |-----|----|---|
-|array|array object|数组|
+|target|array object|目标对象|
 |value|*|要检查的值|
 |返回值|boolean|如果有，返回真|
 
@@ -1924,7 +1928,8 @@ dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
 |返回值|function|目标函数|
 
 ```javascript
-$(window).resize(debounce(calLayout, 300));
+const calLayout = debounce(function () {}, 300);
+// $(window).resize(calLayout);
 ```
 
 ## debug
@@ -2009,13 +2014,13 @@ Object.defineProperty(defineProperties) 的快捷方式。
 |返回值|object|传入对象|
 
 ```javascript
-var obj = {b: {c: 3}, d: 4, e: 5};
+const obj = {b: {c: 3}, d: 4, e: 5};
 defineProp(obj, 'a', {
     get: function () {
         return this.e * 2;
     }
 });
-console.log(obj.a); // -> 10
+// obj.a is equal to 10
 defineProp(obj, 'b.c', {
     set: (function (val) {
         // this is pointed to obj.b
@@ -2023,10 +2028,10 @@ defineProp(obj, 'b.c', {
     }).bind(obj)
 });
 obj.b.c = 2;
-console.log(obj.a); // -> 4;
+// obj.a is equal to 4
 
-obj = {a: 1, b: 2, c: 3};
-defineProp(obj, {
+const obj2 = {a: 1, b: 2, c: 3};
+defineProp(obj2, {
     a: {
         get: function () {
             return this.c;
@@ -2038,9 +2043,9 @@ defineProp(obj, {
         }
     }
 });
-console.log(obj.a); // -> 3
-obj.b = 4;
-console.log(obj.a); // -> 2
+// obj2.a is equal to 3
+obj2.b = 4;
+// obj2.a is equal to 2
 ```
 
 ## delay
@@ -2226,7 +2231,7 @@ endWith('ab', 'b'); // -> true
 |返回值|string|目标字符串|
 
 ```javascript
-escape('You & Me'); -> // -> 'You &amp; Me'
+escape('You & Me'); // -> 'You &amp; Me'
 ```
 
 ## escapeJsStr

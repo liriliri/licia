@@ -8,7 +8,8 @@
  */
 
 /* example
- * $(window).resize(debounce(calLayout, 300));
+ * const calLayout = debounce(function () {}, 300);
+ * // $(window).resize(calLayout);
  */
 
 /* module

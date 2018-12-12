@@ -10,6 +10,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
+|type|string|请求类型|
 |url|string|请求地址|
 |data|string object|请求数据|
 |dataType=json|string|响应类型（json，xml）|

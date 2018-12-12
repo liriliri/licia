@@ -23,6 +23,7 @@
  */
 
 /* example
+ * const file = new Blob([]);
  * compressImg(file, {
  *     maxWidth: 200
  * }, function (err, file) {

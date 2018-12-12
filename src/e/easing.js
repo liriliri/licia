@@ -35,8 +35,8 @@
  *     outSine(percent: number): number;
  *     inCirc(percent: number): number;
  *     outCirc(percent: number): number;
- *     inElastic(percent: number): number;
- *     outElastic(percent: number): number;
+ *     inElastic(percent: number, elasticity?: number): number;
+ *     outElastic(percent: number, elasticity?: number): number;
  *     inBack(percent: number): number;
  *     outBack(percent: number): number;
  *     inOutBack(percent: number): number;
@@ -100,7 +100,7 @@ each(['quad', 'cubic', 'quart', 'quint', 'expo'], function(name, i) {
     };
 });
 
-var DEFAULT_ELASTICITY = 400;
+const DEFAULT_ELASTICITY = 400;
 
 each(fns, function(fn, name) {
     name = upperFirst(name);

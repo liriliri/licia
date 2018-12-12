@@ -4,7 +4,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|array|array object|数组|
+|target|array object|目标对象|
 |value|*|要检查的值|
 |返回值|boolean|如果有，返回真|
 

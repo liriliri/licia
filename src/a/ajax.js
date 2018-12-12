@@ -8,6 +8,7 @@
  *
  * |Name                                         |Type         |Desc                       |
  * |---------------------------------------------|-------------|---------------------------|
+ * |type=get                                     |type         |Request type               |
  * |url                                          |string       |Request url                |
  * |data                                         |string object|Request data               |
  * |dataType=json                                |string       |Response type(json, xml)   |
@@ -37,8 +38,8 @@
  * ajax({
  *     url: 'http://example.com',
  *     data: {test: 'true'},
- *     error: function () {},
- *     success: function (data) {
+ *     error() {},
+ *     success(data) {
  *         // ...
  *     },
  *     dataType: 'json'
@@ -52,6 +53,24 @@
 /* module
  * env: browser
  * test: manual
+ */
+
+/* typescript
+ * declare namespace ajax {
+ *     interface IOptions {
+ *         url: string;
+ *         data?: string | {};
+ *         dataType?: string;
+ *         contentType?: string;
+ *         success?: Function;
+ *         error?: Function;
+ *         complete?: Function;
+ *         timeout?: number;
+ *     } 
+ *     function get(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
+ *     function post(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
+ * }
+ * export declare function ajax(options: ajax.IOptions): XMLHttpRequest;
  */
 
 _('isFn noop defaults isObj query');

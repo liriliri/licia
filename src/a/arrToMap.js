@@ -8,11 +8,13 @@
  */
 
 /* example
- * var needPx = arrToMap([
+ * const needPx = arrToMap([
  *     'column-count', 'columns', 'font-weight', 'line-weight', 'opacity', 'z-index', 'zoom'
  * ]);
- * 
+ * const key = 'column-count';
+ * let val = '5';
  * if (needPx[key]) val += 'px';
+ * console.log(val); // -> '5px'
  */
 
 /* module

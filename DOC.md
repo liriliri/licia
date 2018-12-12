@@ -103,7 +103,7 @@ Remove a single class, multiple classes, or all classes from each element in the
 |Name   |Type                |Desc                  |
 |-------|--------------------|----------------------|
 |element|string array element|Elements to manipulate|
-|names  |string              |Class names to remove |
+|name   |string              |Class names to remove |
 
 ```javascript
 $class.add('#test', 'class1');
@@ -142,8 +142,8 @@ Set one or more CSS properties for the set of matched elements.
 
 ```javascript
 $css('#test', {
-    'color': '#fff',
-    'background': 'black'
+    color: '#fff',
+    background: 'black'
 });
 $css('#test', 'display', 'block');
 $css('#test', 'color'); // -> #fff
@@ -459,7 +459,7 @@ Enum type implementation.
 var importance = new Enum([
     'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
 ]);
-
+const val = 1;
 if (val === importance.CRITICAL) {
     // Do something.
 }
@@ -1237,6 +1237,7 @@ Available options:
 
 |Name                                         |Type         |Desc                       |
 |---------------------------------------------|-------------|---------------------------|
+|type=get                                     |type         |Request type               |
 |url                                          |string       |Request url                |
 |data                                         |string object|Request data               |
 |dataType=json                                |string       |Response type(json, xml)   |
@@ -1265,8 +1266,8 @@ Shortcut for type = POST;
 ajax({
     url: 'http://example.com',
     data: {test: 'true'},
-    error: function () {},
-    success: function (data) {
+    error() {},
+    success(data) {
         // ...
     },
     dataType: 'json'
@@ -1305,11 +1306,13 @@ Make an object map using array of strings.
 |return  |object|Object map      |
 
 ```javascript
-var needPx = arrToMap([
+const needPx = arrToMap([
     'column-count', 'columns', 'font-weight', 'line-weight', 'opacity', 'z-index', 'zoom'
 ]);
-
+const key = 'column-count';
+let val = '5';
 if (needPx[key]) val += 'px';
+console.log(val); // -> '5px'
 ```
 
 ## atob 
@@ -1373,8 +1376,8 @@ Create a function that invokes less than n times.
 Subsequent calls to the created function return the result of the last fn invocation.
 
 ```javascript
-$(element).on('click', before(5, function() {}));
-// -> allow function to be call 4 times at last.
+const fn = before(5, function() {});
+fn(); // Allow function to be call 4 times at last.
 ```
 
 ## bind 
@@ -1705,6 +1708,7 @@ In order to keep image ratio, height will be ignored when width is set.
 And maxWith, maxHeight will be ignored if width or height is set.
 
 ```javascript
+const file = new Blob([]);
 compressImg(file, {
     maxWidth: 200
 }, function (err, file) {
@@ -1731,7 +1735,7 @@ Check if the value is present in the list.
 
 |Name  |Type        |Desc                                |
 |------|------------|------------------------------------|
-|array |array object|Target list                         |
+|target|array object|Target object                       |
 |value |*           |Value to check                      |
 |return|boolean     |True if value is present in the list|
 
@@ -1929,7 +1933,8 @@ Return a new debounced version of the passed function.
 |return|function|New debounced function         |
 
 ```javascript
-$(window).resize(debounce(calLayout, 300));
+const calLayout = debounce(function () {}, 300);
+// $(window).resize(calLayout);
 ```
 
 ## debug 
@@ -2014,13 +2019,13 @@ Shortcut for Object.defineProperty(defineProperties).
 |return|object|Object itself       |
 
 ```javascript
-var obj = {b: {c: 3}, d: 4, e: 5};
+const obj = {b: {c: 3}, d: 4, e: 5};
 defineProp(obj, 'a', {
     get: function () {
         return this.e * 2;
     }
 });
-console.log(obj.a); // -> 10
+// obj.a is equal to 10
 defineProp(obj, 'b.c', {
     set: (function (val) {
         // this is pointed to obj.b
@@ -2028,10 +2033,10 @@ defineProp(obj, 'b.c', {
     }).bind(obj)
 });
 obj.b.c = 2;
-console.log(obj.a); // -> 4;
+// obj.a is equal to 4
 
-obj = {a: 1, b: 2, c: 3};
-defineProp(obj, {
+const obj2 = {a: 1, b: 2, c: 3};
+defineProp(obj2, {
     a: {
         get: function () {
             return this.c;
@@ -2043,9 +2048,9 @@ defineProp(obj, {
         }
     }
 });
-console.log(obj.a); // -> 3
-obj.b = 4;
-console.log(obj.a); // -> 2
+// obj2.a is equal to 3
+obj2.b = 4;
+// obj2.a is equal to 2
 ```
 
 ## delay 
@@ -2230,7 +2235,7 @@ Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' charact
 |return|string|Escaped string  |
 
 ```javascript
-escape('You & Me'); -> // -> 'You &amp; Me'
+escape('You & Me'); // -> 'You &amp; Me'
 ```
 
 ## escapeJsStr 

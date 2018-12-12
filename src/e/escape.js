@@ -7,7 +7,7 @@
  */
 
 /* example
- * escape('You & Me'); -> // -> 'You &amp; Me'
+ * escape('You & Me'); // -> 'You &amp; Me'
  */
 
 /* module

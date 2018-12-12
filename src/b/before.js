@@ -10,8 +10,8 @@
  */
 
 /* example
- * $(element).on('click', before(5, function() {}));
- * // -> allow function to be call 4 times at last.
+ * const fn = before(5, function() {});
+ * fn(); // Allow function to be call 4 times at last.
  */
 
 /* module

@@ -15,13 +15,13 @@
  */
 
 /* example
- * var obj = {b: {c: 3}, d: 4, e: 5};
+ * const obj = {b: {c: 3}, d: 4, e: 5};
  * defineProp(obj, 'a', {
  *     get: function () {
  *         return this.e * 2;
  *     }
  * });
- * console.log(obj.a); // -> 10
+ * // obj.a is equal to 10
  * defineProp(obj, 'b.c', {
  *     set: (function (val) {
  *         // this is pointed to obj.b
@@ -29,10 +29,10 @@
  *     }).bind(obj)
  * });
  * obj.b.c = 2;
- * console.log(obj.a); // -> 4;
+ * // obj.a is equal to 4
  * 
- * obj = {a: 1, b: 2, c: 3};
- * defineProp(obj, {
+ * const obj2 = {a: 1, b: 2, c: 3};
+ * defineProp(obj2, {
  *     a: {
  *         get: function () {
  *             return this.c;
@@ -44,14 +44,23 @@
  *         }
  *     }
  * });
- * console.log(obj.a); // -> 3
- * obj.b = 4;
- * console.log(obj.a); // -> 2
+ * // obj2.a is equal to 3
+ * obj2.b = 4;
+ * // obj2.a is equal to 2
  */
 
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function defineProp<T>(
+ *     obj: T, 
+ *     prop: string, 
+ *     descriptor: PropertyDescriptor
+ * ): T;
+ * export declare function defineProp<T>(obj: T, descriptor: PropertyDescriptorMap): T;
  */
 
 _('castPath isStr isObj each');

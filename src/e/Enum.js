@@ -15,7 +15,7 @@
  * var importance = new Enum([
  *     'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
  * ]);
- *
+ * const val = 1;
  * if (val === importance.CRITICAL) {
  *     // Do something.
  * }
@@ -28,7 +28,8 @@
 
 /* typescript
  * export declare class Enum {
- *     public size: number;
+ *     size: number;
+ *     constructor(map: string[] | { [member: string]: any });
  *     [key: string]: any;
  * }
  */

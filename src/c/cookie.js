@@ -51,9 +51,9 @@
  *         secure?: boolean;
  *     }
  *     interface ICookie {
- *         get(key: string, options: cookie.IOptions): string;
- *         set(key: string, val: string, options: cookie.IOptions): ICookie;
- *         remove(key: string, options: cookie.IOptions): ICookie;
+ *         get(key: string, options?: cookie.IOptions): string;
+ *         set(key: string, val: string, options?: cookie.IOptions): ICookie;
+ *         remove(key: string, options?: cookie.IOptions): ICookie;
  *     }
  * }
  * export declare const cookie: cookie.ICookie;

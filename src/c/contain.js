@@ -2,7 +2,7 @@
  *
  * |Name  |Type        |Desc                                |
  * |------|------------|------------------------------------|
- * |array |array object|Target list                         |
+ * |target|array object|Target object                       |
  * |value |*           |Value to check                      |
  * |return|boolean     |True if value is present in the list|
  */
@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export declare function contain(arr: any[], val: any): boolean;
+ * export declare function contain(arr: any[] | {}, val: any): boolean;
  */
 
 _('idxOf isArrLike values');
