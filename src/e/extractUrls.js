@@ -8,7 +8,7 @@
 
 /* example
  * var str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
- * extractUrl(str); // -> ['http://eustia.liriliri.io']
+ * extractUrls(str); // -> ['http://eustia.liriliri.io']
  */
 
 /* module

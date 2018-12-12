@@ -7,9 +7,7 @@
  */
 
 /* example
- * define('A', function () {
- *     return 'A';
- * });
+ * // define('A', () => 'A');
  * use(['A'], function (A) {
  *     console.log(A + 'B'); // -> 'AB'
  * });

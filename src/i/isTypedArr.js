@@ -8,7 +8,7 @@
 
 /* example
  * isTypedArr([]); // -> false
- * isTypedArr(new Unit8Array); // -> true
+ * isTypedArr(new Uint8Array(8)); // -> true
  */
 
 /* module

@@ -7,9 +7,9 @@
  */
 
 /* example
- * isOdd(0); // -> true
- * isOdd(1); // -> false
- * isOdd(2); // -> true
+ * isEven(0); // -> true
+ * isEven(1); // -> false
+ * isEven(2); // -> true
  */
 
 /* module

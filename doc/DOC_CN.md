@@ -2290,13 +2290,13 @@ evalJs('this.a', {a: 2}); // -> 2
 
 ## every
 
-检查是否集合中的所有元素都能通过 predicate 的真值检测。
+检查是否集合中的所有元素都能通过真值检测。
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|array object|目标集合|
-|predicate|function|真值检测函数|
-|ctx|*|函数上下文|
+|object|array object|目标集合|
+|[iterator]|function|真值检测函数|
+|[context]|*|函数上下文|
 |返回值|boolean|如果都能通过，返回真|
 
 ```javascript
@@ -2311,8 +2311,8 @@ every([2, 4], function (val) {
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|object|目标对象|
-|...src|object|源对象|
+|destination|object|目标对象|
+|...sources|object|源对象|
 |返回值|object|目标对象|
 
 ```javascript
@@ -2382,7 +2382,7 @@ extractBlockCmts('\/*licia*\/'); // -> ['licia']
 
 ```javascript
 var str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
-extractUrl(str); // -> ['http://eustia.liriliri.io']
+extractUrls(str); // -> ['http://eustia.liriliri.io']
 ```
 
 ## fetch
@@ -3146,9 +3146,9 @@ isErr(new Error()); // -> true
 |返回值|boolean|如果是偶数，返回真|
 
 ```javascript
-isOdd(0); // -> true
-isOdd(1); // -> false
-isOdd(2); // -> true
+isEven(0); // -> true
+isEven(1); // -> false
+isEven(2); // -> true
 ```
 
 ## isFile
@@ -3399,7 +3399,6 @@ isNum({}); // -> false
 isNumeric(1); // -> true
 isNumeric('1'); // -> true
 isNumeric(Number.MAX_VALUE); // -> true
-isNumeric(0144); // -> true
 isNumeric(0xFF); // -> true
 isNumeric(''); // -> false
 isNumeric('1.1.1'); // -> false
@@ -3597,7 +3596,7 @@ isStream(new stream.Stream()); // -> true
 
 ```javascript
 isTypedArr([]); // -> false
-isTypedArr(new Unit8Array); // -> true
+isTypedArr(new Uint8Array(8)); // -> true
 ```
 
 ## isUndef
@@ -4883,7 +4882,7 @@ rpad('abc', 5, 'ab'); // -> 'abcab'
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
-|chars|string array|删除字符|
+|[chars]|string array|删除字符|
 |返回值|string|目标字符串|
 
 ```javascript
@@ -5210,7 +5209,7 @@ undefined 被当作 null 处理。
 
 ```javascript
 stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
-var obj = {a: 1};
+var obj = {a: 1, b: {}};
 obj.b = obj;
 stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 ```
@@ -5238,7 +5237,7 @@ stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
 |返回值|string|无注释代码|
 
 ```javascript
-stripCmts('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
+stripCmt('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
 ```
 
 ## stripColor
@@ -5322,7 +5321,8 @@ template('<%if (echo) {%>Hello licia!<%}%>')({echo: true}); // -> 'Hello licia!'
 |返回值|function|目标函数|
 
 ```javascript
-$(window).scroll(throttle(updatePos, 100));
+const updatePos = throttle(function () {}, 100);
+// $(window).scroll(updatePos);
 ```
 
 ## through
@@ -5598,6 +5598,10 @@ type(function () {}); // -> 'function'
 type([]); // -> 'array'
 ```
 
+## types
+
+仅用于生成 ts 定义文件。
+
 ## ucs2
 
 UCS-2 编解码。
@@ -5672,7 +5676,7 @@ uncaught.addListener(err => {
 |返回值|string|目标字符串|
 
 ```javascript
-unescape('You &amp; Me'); -> // -> 'You & Me'
+unescape('You &amp; Me'); // -> 'You & Me'
 ```
 
 ## union
@@ -5764,9 +5768,7 @@ upperFirst('red'); // -> Red
 |method|function|要执行的代码|
 
 ```javascript
-define('A', function () {
-    return 'A';
-});
+// define('A', () => 'A');
 use(['A'], function (A) {
     console.log(A + 'B'); // -> 'AB'
 });

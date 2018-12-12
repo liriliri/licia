@@ -8,7 +8,8 @@
  */
 
 /* example
- * $(window).scroll(throttle(updatePos, 100));
+ * const updatePos = throttle(function () {}, 100);
+ * // $(window).scroll(updatePos);
  */
 
 /* module

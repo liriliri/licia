@@ -884,7 +884,8 @@
         "dependencies": [
             "isArrLike",
             "keys",
-            "optimizeCb"
+            "optimizeCb",
+            "types"
         ],
         "env": "all",
         "test": "all",
@@ -947,7 +948,8 @@
         "dependencies": [
             "safeCb",
             "isArrLike",
-            "keys"
+            "keys",
+            "types"
         ],
         "env": "all",
         "test": "all"
@@ -2683,6 +2685,12 @@
         ],
         "env": "all",
         "test": "all"
+    },
+    "types": {
+        "description": "Used for typescript definitions only.",
+        "dependencies": [],
+        "env": "all",
+        "test": "manual"
     },
     "ucs2": {
         "description": "UCS-2 encoding and decoding.",

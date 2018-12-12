@@ -7,7 +7,7 @@
  */
 
 /* example
- * stripCmts('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
+ * stripCmt('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
  */
 
 /* module

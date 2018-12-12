@@ -11,7 +11,7 @@
 
 /* example
  * stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
- * var obj = {a: 1};
+ * var obj = {a: 1, b: {}};
  * obj.b = obj;
  * stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
  */

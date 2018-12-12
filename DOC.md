@@ -2296,12 +2296,12 @@ evalJs('this.a', {a: 2}); // -> 2
 
 Check if predicate return truthy for all elements.
 
-|Name     |Type        |Desc                                         |
-|---------|------------|---------------------------------------------|
-|obj      |array object|Collection to iterate over                   |
-|predicate|function    |Function invoked per iteration               |
-|ctx      |*           |Predicate context                            |
-|return   |boolean     |True if all elements pass the predicate check|
+|Name      |Type        |Desc                                         |
+|----------|------------|---------------------------------------------|
+|object    |array object|Collection to iterate over                   |
+|[iterator]|function    |Function invoked per iteration               |
+|[context] |*           |Predicate context                            |
+|return    |boolean     |True if all elements pass the predicate check|
 
 ```javascript
 every([2, 4], function (val) {
@@ -2313,11 +2313,11 @@ every([2, 4], function (val) {
 
 Copy all of the properties in the source objects over to the destination object.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|obj   |object|Destination object|
-|...src|object|Sources objects   |
-|return|object|Destination object|
+|Name       |Type  |Desc              |
+|-----------|------|------------------|
+|destination|object|Destination object|
+|...sources |object|Sources objects   |
+|return     |object|Destination object|
 
 ```javascript
 extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
@@ -2386,7 +2386,7 @@ Extract urls from plain text.
 
 ```javascript
 var str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
-extractUrl(str); // -> ['http://eustia.liriliri.io']
+extractUrls(str); // -> ['http://eustia.liriliri.io']
 ```
 
 ## fetch 
@@ -3150,9 +3150,9 @@ Check if number is even.
 |return|boolean|True if number is even|
 
 ```javascript
-isOdd(0); // -> true
-isOdd(1); // -> false
-isOdd(2); // -> true
+isEven(0); // -> true
+isEven(1); // -> false
+isEven(2); // -> true
 ```
 
 ## isFile 
@@ -3403,7 +3403,6 @@ Check if value is numeric.
 isNumeric(1); // -> true
 isNumeric('1'); // -> true
 isNumeric(Number.MAX_VALUE); // -> true
-isNumeric(0144); // -> true
 isNumeric(0xFF); // -> true
 isNumeric(''); // -> false
 isNumeric('1.1.1'); // -> false
@@ -3601,7 +3600,7 @@ Check if value is a typed array.
 
 ```javascript
 isTypedArr([]); // -> false
-isTypedArr(new Unit8Array); // -> true
+isTypedArr(new Uint8Array(8)); // -> true
 ```
 
 ## isUndef 
@@ -3887,11 +3886,11 @@ lpad('abc', 5, 'ab'); // -> 'ababc'
 
 Remove chars or white-spaces from beginning of string.
 
-|Name  |Type        |Desc              |
-|------|------------|------------------|
-|str   |string      |String to trim    |
-|chars |string array|Characters to trim|
-|return|string      |Trimmed string    |
+|Name   |Type        |Desc              |
+|-------|------------|------------------|
+|str    |string      |String to trim    |
+|[chars]|string array|Characters to trim|
+|return |string      |Trimmed string    |
 
 ```javascript
 ltrim(' abc  '); // -> 'abc  '
@@ -4886,11 +4885,11 @@ rpad('abc', 5, 'ab'); // -> 'abcab'
 
 Remove chars or white-spaces from end of string.
 
-|Name  |Type        |Desc              |
-|------|------------|------------------|
-|str   |string      |String to trim    |
-|chars |string array|Characters to trim|
-|return|string      |Trimmed string    |
+|Name   |Type        |Desc              |
+|-------|------------|------------------|
+|str    |string      |String to trim    |
+|[chars]|string array|Characters to trim|
+|return |string      |Trimmed string    |
 
 ```javascript
 rtrim(' abc  '); // -> ' abc'
@@ -5216,7 +5215,7 @@ Undefined is treated as null value.
 
 ```javascript
 stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
-var obj = {a: 1};
+var obj = {a: 1, b: {}};
 obj.b = obj;
 stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 ```
@@ -5244,7 +5243,7 @@ Strip comments from source code.
 |return|string|Code without comments|
 
 ```javascript
-stripCmts('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
+stripCmt('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
 ```
 
 ## stripColor 
@@ -5328,7 +5327,8 @@ Return a new throttled version of the passed function.
 |return|function|New throttled function         |
 
 ```javascript
-$(window).scroll(throttle(updatePos, 100));
+const updatePos = throttle(function () {}, 100);
+// $(window).scroll(updatePos);
 ```
 
 ## through 
@@ -5604,6 +5604,10 @@ type(function () {}); // -> 'function'
 type([]); // -> 'array'
 ```
 
+## types 
+
+Used for typescript definitions only.
+
 ## ucs2 
 
 UCS-2 encoding and decoding.
@@ -5678,7 +5682,7 @@ Convert HTML entities back, the inverse of escape.
 |return|string|unescaped string  |
 
 ```javascript
-unescape('You &amp; Me'); -> // -> 'You & Me'
+unescape('You &amp; Me'); // -> 'You & Me'
 ```
 
 ## union 
@@ -5770,9 +5774,7 @@ Use modules that is created by define.
 |method    |function|Codes to be executed|
 
 ```javascript
-define('A', function () {
-    return 'A';
-});
+// define('A', () => 'A');
 use(['A'], function (A) {
     console.log(A + 'B'); // -> 'AB'
 });

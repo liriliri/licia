@@ -7,7 +7,7 @@
  */
 
 /* example
- * unescape('You &amp; Me'); -> // -> 'You & Me'
+ * unescape('You &amp; Me'); // -> 'You & Me'
  */
 
 /* module

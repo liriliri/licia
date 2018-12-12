@@ -1,10 +1,10 @@
 /* Remove chars or white-spaces from end of string.
  *
- * |Name  |Type        |Desc              |
- * |------|------------|------------------|
- * |str   |string      |String to trim    |
- * |chars |string array|Characters to trim|
- * |return|string      |Trimmed string    |
+ * |Name   |Type        |Desc              |
+ * |-------|------------|------------------|
+ * |str    |string      |String to trim    |
+ * |[chars]|string array|Characters to trim|
+ * |return |string      |Trimmed string    |
  */
 
 /* example
@@ -19,7 +19,7 @@
  */
 
 /* typescript
- * export declare function rtrim(str: string, chars: string | string[]): string;
+ * export declare function rtrim(str: string, chars?: string | string[]): string;
  */
 
 var regSpace = /\s+$/;

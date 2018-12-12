@@ -1,11 +1,11 @@
 /* Check if predicate return truthy for all elements.
  *
- * |Name     |Type        |Desc                                         |
- * |---------|------------|---------------------------------------------|
- * |obj      |array object|Collection to iterate over                   |
- * |predicate|function    |Function invoked per iteration               |
- * |ctx      |*           |Predicate context                            |
- * |return   |boolean     |True if all elements pass the predicate check|
+ * |Name      |Type        |Desc                                         |
+ * |----------|------------|---------------------------------------------|
+ * |object    |array object|Collection to iterate over                   |
+ * |[iterator]|function    |Function invoked per iteration               |
+ * |[context] |*           |Predicate context                            |
+ * |return    |boolean     |True if all elements pass the predicate check|
  */
 
 /* example
@@ -19,7 +19,20 @@
  * test: all
  */
 
-_('safeCb isArrLike keys');
+/* typescript
+ * export declare function every<T>(
+ *     object: types.List<T>,
+ *     iterator?: types.ListIterator<T, boolean>,
+ *     context?: any
+ * ): boolean;
+ * export declare function every<T>(
+ *     object: types.Dictionary<T>,
+ *     iterator?: types.ObjectIterator<T, boolean>,
+ *     context?: any
+ * ): boolean;
+ */
+
+_('safeCb isArrLike keys types');
 
 exports = function(obj, predicate, ctx) {
     predicate = safeCb(predicate, ctx);

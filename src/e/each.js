@@ -17,37 +17,20 @@
  */
 
 /* typescript
- * declare namespace each {
- *     interface Collection<T> {}
- *     interface List<T> extends Collection<T> {
- *         [index: number]: T;
- *         length: number;
- *     }
- *     interface ListIterator<T, TResult> {
- *         (value: T, index: number, list: List<T>): TResult;
- *     }
- *     interface Dictionary<T> extends Collection<T> {
- *         [index: string]: T;
- *     }
- *     interface ObjectIterator<T, TResult> {
- *         (element: T, key: string, list: Dictionary<T>): TResult;
- *     }
- * }
- *
  * export declare function each<T>(
- *     list: each.List<T>, 
- *     iterator: each.ListIterator<T, void>,
+ *     list: types.List<T>, 
+ *     iterator: types.ListIterator<T, void>,
  *     ctx?: any
- * ): each.List<T>;
+ * ): types.List<T>;
  * 
  * export declare function each<T>(
- *     object: each.Dictionary<T>,
- *     iterator: each.ObjectIterator<T, void>,
+ *     object: types.Dictionary<T>,
+ *     iterator: types.ObjectIterator<T, void>,
  *     ctx?: any
- * ): each.Collection<T>;
+ * ): types.Collection<T>;
  */
 
-_('isArrLike keys optimizeCb');
+_('isArrLike keys optimizeCb types');
 
 exports = function(obj, iterator, ctx) {
     iterator = optimizeCb(iterator, ctx);
