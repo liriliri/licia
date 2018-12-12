@@ -4,6 +4,6 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|value |element array string|要转换的值|
+|value|element array string|要转换的值|
 |返回值|array|元素集|
 

@@ -256,10 +256,12 @@ $remove('#test');
 
 |参数名|类型|说明|
 |-----|----|---|
-|value |element array string|要转换的值|
+|value|element array string|要转换的值|
 |返回值|array|元素集|
 
 ```javascript
+$safeEls(document.querySelector('.test'));
+$safeEls(document.querySelectorAll('.test'));
 $safeEls('.test'); // -> Array of elements with test class
 ```
 
@@ -1404,6 +1406,7 @@ btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 |-----|----|---|
 |arr|array|要排序的数组|
 |[cmp]|function|比较器|
+|返回值|array|有序数组|
 
 ```javascript
 bubbleSort([2, 1]); // -> [1, 2]
@@ -1480,7 +1483,7 @@ capitalize('rED'); // -> Red
 
 |参数名|类型|说明|
 |-----|----|---|
-|str|*|要转换的值|
+|path|string array|要转换的值|
 |[obj]|object|目标对象|
 |返回值|array|属性路径数组|
 
@@ -1527,8 +1530,9 @@ char(97); // -> 'a'
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr|array|目标数组|
+|arr|array|源数组|
 |size=1|number|子数组的长度|
+|返回值|array|目标数组|
 
 ```javascript
 chunk([1, 2, 3, 4], 2); // -> [[1, 2], [3, 4]]
@@ -1677,8 +1681,8 @@ welcome('licia'); // -> 'hi: LICIA!'
 |参数名|类型|说明|
 |-----|----|---|
 |file|File Blob|图片文件|
-|opts|object|选项|
-|cb|function|回调|
+|[opts]|object|选项|
+|[cb]|function|回调|
 
 可用选项：
 
@@ -1688,7 +1692,7 @@ welcome('licia'); // -> 'hi: LICIA!'
 |maxHeight|number|最大高度|
 |width|number|输出图片宽度|
 |height|number|输出图片高度|
-|mineType|string|Mine 类型|
+|mimeType|string|Mine 类型|
 |quality=0.8|number|图片质量，从 0 到 1|
 
 为了保持图片比例，当宽度设置时高度将被忽略。
@@ -2836,6 +2840,7 @@ s.getName(); // -> 'RedHood'
 |-----|----|---|
 |arr|array|要排序的数组|
 |[cmp]|function|比较器|
+|返回值|array|有序数组|
 
 ```javascript
 insertionSort([2, 1]); // -> [1, 2]
@@ -3541,6 +3546,7 @@ isSet(new WeakSet()); // -> false
 |-----|----|---|
 |arr|array|目标数组|
 |[cmp]|function|比较器|
+|返回值|boolean|如果数组有序，返回真|
 
 ```javascript
 isSorted([1, 2, 3]); // -> true
@@ -3786,7 +3792,7 @@ linkify(str, function (url) {
 |参数名|类型|说明|
 |-----|----|---|
 |src|string|样式文件地址|
-|cb|function|加载完回调|
+|[cb]|function|加载完回调|
 
 ```javascript
 loadCss('style.css', function (isLoaded) {
@@ -3994,6 +4000,7 @@ var fibonacci = memoize(function(n) {
 |-----|----|---|
 |arr|array|要排序的数组|
 |[cmp]|function|比较器|
+|返回值|array|有序数组|
 
 ```javascript
 mergeSort([2, 1]); // -> [1, 2]
@@ -4527,7 +4534,7 @@ prefix('color'); // -> 'color'
 |-----|----|---|
 |fn|function|源函数|
 |multiArgs=false|boolean|回调是否有多个结果|
-|返回值|boolean|目标函数|
+|返回值|function|目标函数|
 
 如果 multiArgs 设为真，返回的 Promise 会将回调的结果合并成一个数组。
 
@@ -4591,6 +4598,7 @@ query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
 |-----|----|---|
 |arr|array|要排序的数组|
 |[cmp]|function|比较器|
+|返回值|array|有序数组|
 
 ```javascript
 quickSort([2, 1]); // -> [1, 2]
@@ -4664,6 +4672,7 @@ randomItem([1, 2, 3]); // -> 2
 |[start]|number|起始值|
 |end|number|结束值|
 |step=1|number|相邻差|
+|返回值|array|整数数组|
 
 ```javascript
 range(5); // -> [0, 1, 2, 3, 4]
@@ -4999,6 +5008,7 @@ scrollTo('body', {
 |-----|----|---|
 |arr|array|要排序的数组|
 |[cmp]|function|比较器|
+|返回值|array|有序数组|
 
 ```javascript
 selectionSort([2, 1]); // -> [1, 2]
@@ -5863,7 +5873,7 @@ worker(1, 2).then(function (value) {
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn|*|要包裹的函数|
+|fn|function|要包裹的函数|
 |wrapper|function|包裹函数|
 |返回值 |function|目标函数|
 

@@ -265,6 +265,8 @@ Convert value into an array, if it's a string, do querySelector.
 |return|array               |Array of elements|
 
 ```javascript
+$safeEls(document.querySelector('.test'));
+$safeEls(document.querySelectorAll('.test'));
 $safeEls('.test'); // -> Array of elements with test class
 ```
 
@@ -1405,10 +1407,11 @@ btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 
 Bubble sort implementation.
 
-|Name |Type    |Desc         |
-|-----|--------|-------------|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|Name  |Type    |Desc         |
+|------|--------|-------------|
+|arr   |array   |Array to sort|
+|[cmp] |function|Comparator   |
+|return|array   |Sorted array |
 
 ```javascript
 bubbleSort([2, 1]); // -> [1, 2]
@@ -1483,11 +1486,11 @@ capitalize('rED'); // -> Red
 
 Cast value into a property path array.
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|str   |*     |Value to inspect   |
-|[obj] |object|Object to query    |
-|return|array |Property path array|
+|Name  |Type        |Desc               |
+|------|------------|-------------------|
+|path  |string array|Value to inspect   |
+|[obj] |object      |Object to query    |
+|return|array       |Property path array|
 
 ```javascript
 castPath('a.b.c'); // -> ['a', 'b', 'c']
@@ -1534,6 +1537,7 @@ Split array into groups the length of given size.
 |------|------|--------------------|
 |arr   |array |Array to process    |
 |size=1|number|Length of each chunk|
+|return|array |Chunks of given size|
 
 ```javascript
 chunk([1, 2, 3, 4], 2); // -> [[1, 2], [3, 4]]
@@ -1679,11 +1683,11 @@ welcome('licia'); // -> 'hi: LICIA!'
 
 Compress image using canvas.
 
-|Name|Type     |Desc      |
-|----|---------|----------|
-|file|File Blob|Image file|
-|opts|object   |Options   |
-|cb  |function |Callback  |
+|Name  |Type     |Desc      |
+|------|---------|----------|
+|file  |File Blob|Image file|
+|[opts]|object   |Options   |
+|[cb]  |function |Callback  |
 
 Available options:
 
@@ -1693,7 +1697,7 @@ Available options:
 |maxHeight  |number|Max height                      |
 |width      |number|Output image width              |
 |height     |number|Output image height             |
-|mineType   |string|Mine type                       |
+|mimeType   |string|Mime type                       |
 |quality=0.8|number|Image quality, range from 0 to 1|
 
 In order to keep image ratio, height will be ignored when width is set.
@@ -2836,10 +2840,11 @@ s.getName(); // -> 'RedHood'
 
 Insertion sort implementation.
 
-|Name |Type    |Desc         |
-|-----|--------|-------------|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|Name  |Type    |Desc         |
+|------|--------|-------------|
+|arr   |array   |Array to sort|
+|[cmp] |function|Comparator   |
+|return|array   |Sorted array |
 
 ```javascript
 insertionSort([2, 1]); // -> [1, 2]
@@ -3541,10 +3546,11 @@ isSet(new WeakSet()); // -> false
 
 Check if an array is sorted.
 
-|Name |Type    |Desc          |
-|-----|--------|--------------|
-|arr  |array   |Array to check|
-|[cmp]|function|Comparator    |
+|Name  |Type    |Desc                   |
+|------|--------|-----------------------|
+|arr   |array   |Array to check         |
+|[cmp] |function|Comparator             |
+|return|boolean |True if array is sorted|
 
 ```javascript
 isSorted([1, 2, 3]); // -> true
@@ -3790,7 +3796,7 @@ Inject link tag into page with given href value.
 |Name|Type    |Desc           |
 |----|--------|---------------|
 |src |string  |Style source   |
-|cb  |function|Onload callback|
+|[cb]|function|Onload callback|
 
 ```javascript
 loadCss('style.css', function (isLoaded) {
@@ -3994,10 +4000,11 @@ Merge sort implementation.
 
 Note: It's not an "in-place" sort.
 
-|Name |Type    |Desc         |
-|-----|--------|-------------|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|Name  |Type    |Desc         |
+|------|--------|-------------|
+|arr   |array   |Array to sort|
+|[cmp] |function|Comparator   |
+|return|array   |Sorted array |
 
 ```javascript
 mergeSort([2, 1]); // -> [1, 2]
@@ -4533,7 +4540,7 @@ Convert callback based functions into Promises.
 |---------------|--------|--------------------------------------|
 |fn             |function|Callback based function               |
 |multiArgs=false|boolean |If callback has multiple success value|
-|return         |boolean |Result function                       |
+|return         |function|Result function                       |
 
 If multiArgs is set to true, the resulting promise will always fulfill with an array of the callback's success values.
 
@@ -4593,10 +4600,11 @@ query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
 
 Quick sort implementation.
 
-|Name |Type    |Desc         |
-|-----|--------|-------------|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|Name  |Type    |Desc         |
+|------|--------|-------------|
+|arr   |array   |Array to sort|
+|[cmp] |function|Comparator   |
+|return|array   |Sorted array |
 
 ```javascript
 quickSort([2, 1]); // -> [1, 2]
@@ -4670,6 +4678,7 @@ Create flexibly-numbered lists of integers.
 |[start]|number|Start of the range                |
 |end    |number|End of the range                  |
 |step=1 |number|Value to increment or decrement by|
+|return |array |List of integers                  |
 
 ```javascript
 range(5); // -> [0, 1, 2, 3, 4]
@@ -5001,10 +5010,11 @@ scrollTo('body', {
 
 Selection sort implementation.
 
-|Name |Type    |Desc         |
-|-----|--------|-------------|
-|arr  |array   |Array to sort|
-|[cmp]|function|Comparator   |
+|Name  |Type    |Desc         |
+|------|--------|-------------|
+|arr   |array   |Array to sort|
+|[cmp] |function|Comparator   |
+|return|array   |Sorted array |
 
 ```javascript
 selectionSort([2, 1]); // -> [1, 2]
@@ -5090,8 +5100,8 @@ Return an array of elements sorted in ascending order by results of running each
 |Name               |Type        |Desc                      |
 |-------------------|------------|--------------------------|
 |arr                |object array|Collection to iterate over|
-|[iteratee=identity]|function    |Iteratee to sort by       |
-|[ctx]              |*           |Iteratee context          |
+|[iterator=identity]|function    |Iterator to sort by       |
+|[ctx]              |*           |Iterator context          |
 |return             |array       |New sorted array          |
 
 ```javascript
@@ -5869,7 +5879,7 @@ Wrap the function inside a wrapper function, passing it as the first argument.
 
 |Name   |Type    |Desc            |
 |-------|--------|----------------|
-|fn     |*       |Function to wrap|
+|fn     |function|Function to wrap|
 |wrapper|function|Wrapper function|
 |return |function|New function    |
 
@@ -5886,7 +5896,7 @@ Merge together the values of each of the arrays with the values at the correspon
 
 |Name  |Type |Desc                         |
 |------|-----|-----------------------------|
-|*arr  |array|Arrays to process            |
+|...arr|array|Arrays to process            |
 |return|array|New array of grouped elements|
 
 ```javascript

@@ -7,6 +7,8 @@
  */
 
 /* example
+ * $safeEls(document.querySelector('.test'));
+ * $safeEls(document.querySelectorAll('.test'));
  * $safeEls('.test'); // -> Array of elements with test class
  */
 
@@ -14,6 +16,13 @@
  * env: browser
  * test: browser
  */
+
+/* typescript
+ * declare namespace $safeEls {
+ *     type El = Element | Element[] | NodeListOf<Element> | string;
+ * }
+ * export declare function $safeEls(value: $safeEls.El): Element[];
+ */ 
 
 _('isStr toArr Select');
 

@@ -14,6 +14,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function $remove(element: $safeEls.El);
+ */ 
+
 _('each $safeEls');
 
 exports = function(els) {
