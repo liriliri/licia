@@ -36,7 +36,7 @@
  *     iterator: types.ObjectIterator<T, boolean>,
  *     context?: any
  * ): T | undefined;
- */ 
+ */
 
 _('findKey findIdx isArrLike isUndef types');
 

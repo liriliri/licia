@@ -21,7 +21,7 @@
  * export declare const $data: $data.IData;
  */  
 
-_('$attr isStr isObj each');
+_('$attr isStr isObj each $safeEls');
 
 exports = function(nodes, name, val) {
     var dataName = name;

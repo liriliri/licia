@@ -6,5 +6,5 @@
 |-----|----|---|
 |[el=document]|element|目标元素|
 |type|string|事件类型|
-|opts|object|选项|
+|options|object|选项|
 

@@ -9,7 +9,7 @@
  *         var req = new XMLHttpRequest();
  *         req.open('GET', url);
  *         req.onload = function () {
- *             req.status == 200 ? resolve(req.reponse) : reject(Error(req.statusText));
+ *             req.status == 200 ? resolve(req.response) : reject(Error(req.statusText));
  *         };
  *         req.onerror = function () { reject(Error('Network Error')) };
  *         req.send();
@@ -24,6 +24,10 @@
 /* module
  * env: all
  * test: manual
+ */
+
+/* typescript
+ * export declare const Promise: typeof window.Promise;
  */
 
 _('Class isObj isFn State bind nextTick noop');

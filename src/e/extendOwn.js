@@ -18,7 +18,7 @@
 
 /* typescript
  * export declare function extendOwn(destination: any, ...sources: any[]): any;
- */ 
+ */
 
 _('keys createAssigner');
 

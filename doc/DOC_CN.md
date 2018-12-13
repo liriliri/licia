@@ -658,7 +658,7 @@ MutationObserver 安全版本，如果不支持，则什么也不做。
 var observer = new MutationObserver(function (mutations) {
     // Do something.
 });
-observer.observe(document.htmlElement);
+observer.observe(document.documentElement);
 observer.disconnect();
 ```
 
@@ -674,7 +674,7 @@ function get(url) {
         var req = new XMLHttpRequest();
         req.open('GET', url);
         req.onload = function () {
-            req.status == 200 ? resolve(req.reponse) : reject(Error(req.statusText));
+            req.status == 200 ? resolve(req.response) : reject(Error(req.statusText));
         };
         req.onerror = function () { reject(Error('Network Error')) };
         req.send();
@@ -729,7 +729,7 @@ map.get('1'); // -> 1
 
 |参数名|类型|说明|
 |-----|----|---|
-|iteratee|function|调用函数|
+|iterator|function|调用函数|
 |[ctx]|*|函数上下文|
 
 ### toArr
@@ -881,7 +881,7 @@ store.set('name', 'licia');
 
 |参数名|类型|说明|
 |-----|----|---|
-|iteratee|function|调用函数|
+|iterator|function|调用函数|
 |[ctx]|*|函数上下文|
 
 ### toArr
@@ -1090,7 +1090,7 @@ tween.to({x: 100, y: 100}, 1000, 'inElastic').play();
 
 |参数名|类型|说明|
 |-----|----|---|
-|names|object|query 对象|
+|query|object|query 对象|
 |返回值|Url|this|
 
 ### rmQuery
@@ -1138,7 +1138,7 @@ var url = new Url('http://example.com:8080?eruda=true');
 console.log(url.port); // -> '8080'
 url.query.foo = 'bar';
 url.rmQuery('eruda');
-utl.toString(); // -> 'http://example.com:8080/?foo=bar'
+url.toString(); // -> 'http://example.com:8080/?foo=bar'
 ```
 
 ## Validator
@@ -4161,7 +4161,7 @@ ms(60000); // -> '1m'
 
 ```javascript
 function even(n) { return n % 2 === 0 }
-filter([1, 2, 3, 4, 5, 6], negate(even)); // -> [1, 3, 5]
+// filter([1, 2, 3, 4, 5, 6], negate(even)); -> [1, 3, 5]
 ```
 
 ## nextTick
@@ -4430,7 +4430,7 @@ parseArgs(['eustia', '--output', 'util.js', '-w'], {
 
 ```javascript
 var sub5 = partial(function (a, b) { return b - a }, 5);
-sub(20); // -> 15
+sub5(20); // -> 15
 ```
 
 ## pascalCase
@@ -4771,7 +4771,7 @@ reject([1, 2, 3, 4, 5], function (val) {
 |-----|----|---|
 |obj|array|要遍历的集合|
 |predicate|function|真值检测函数|
-|[ctx]|*|函数上下文|
+|[context]|*|函数上下文|
 |返回值|array|包含所有删除元素的数组|
 
 ```javascript
@@ -5542,10 +5542,10 @@ topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
 |-----|----|---|
 |[el=document]|element|目标元素|
 |type|string|事件类型|
-|opts|object|选项|
+|options|object|选项|
 
 ```javascript
-trigger(el, 'mouseup');
+trigger(document.getElementById('#test'), 'mouseup');
 trigger('keydown', {keyCode: 65});
 ```
 

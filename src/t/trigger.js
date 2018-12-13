@@ -4,17 +4,22 @@
  * |-------------|-------|------------------|
  * |[el=document]|element|Element to trigger|
  * |type         |string |Event type        |
- * |opts         |object |Options           |
+ * |options      |object |Options           |
  */
 
 /* example
- * trigger(el, 'mouseup');
+ * trigger(document.getElementById('#test'), 'mouseup');
  * trigger('keydown', {keyCode: 65});
  */
 
 /* module
  * env: browser
  * test: browser
+ */
+
+/* typescript
+ * export declare function trigger(el: Element, type: string, options?: any);
+ * export declare function trigger(type: string, options?: any);
  */
 
 _('isStr defaults extend');

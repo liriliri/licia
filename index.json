@@ -65,7 +65,8 @@
             "$attr",
             "isStr",
             "isObj",
-            "each"
+            "each",
+            "$safeEls"
         ],
         "env": "browser",
         "test": "browser"
@@ -2221,7 +2222,8 @@
             "optimizeCb",
             "isArrLike",
             "isUndef",
-            "keys"
+            "keys",
+            "types"
         ],
         "env": "all",
         "test": "all",
@@ -2230,7 +2232,8 @@
     "reduceRight": {
         "description": "Right-associative version of reduce.",
         "dependencies": [
-            "reduce"
+            "reduce",
+            "types"
         ],
         "env": "all",
         "test": "all"
@@ -2425,7 +2428,8 @@
         "dependencies": [
             "safeCb",
             "isArrLike",
-            "keys"
+            "keys",
+            "types"
         ],
         "env": "all",
         "test": "all"

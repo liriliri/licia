@@ -19,6 +19,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function tryIt(fn: Function, cb?: Function): void;
+ */
+
 _('noop');
 
 exports = function(fn, cb) {

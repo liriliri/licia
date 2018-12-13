@@ -17,6 +17,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function restArgs(fn: Function, startIndex?: number): Function;
+ */
+
 exports = function(fn, startIdx) {
     startIdx = startIdx == null ? fn.length - 1 : +startIdx;
 

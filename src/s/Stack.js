@@ -27,7 +27,7 @@
  *
  * |Name    |Type    |Desc                      |
  * |--------|--------|--------------------------|
- * |iteratee|function|Function invoked iteration|
+ * |iterator|function|Function invoked iteration|
  * |[ctx]   |*       |Function context          |
  *
  * ### toArr
@@ -46,6 +46,18 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare class Stack {
+ *     size: number;
+ *     clear(): void;
+ *     push(item: any): number;
+ *     pop(): any;
+ *     peek(): any;
+ *     forEach(iterator: Function, context?: any): void;
+ *     toArr(): any[];
+ * }
  */
 
 _('Class');
@@ -71,13 +83,13 @@ exports = Class({
     peek: function() {
         return this._items[this.size - 1];
     },
-    forEach: function(iteratee, ctx) {
+    forEach: function(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
         var items = this._items;
 
         for (var i = this.size - 1, j = 0; i >= 0; i--, j++) {
-            iteratee.call(ctx, items[i], j, this);
+            iterator.call(ctx, items[i], j, this);
         }
     },
     toArr: function() {

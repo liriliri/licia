@@ -25,6 +25,15 @@
  * test: browser
  */
 
+/* typescript
+ * declare namespace orientation {
+ *     interface IOrientation extends Emitter {
+ *         get(): string;
+ *     }
+ * }
+ * export declare const orientation: orientation.IOrientation;
+ */
+
 _('Emitter safeGet');
 
 var screen = window.screen;

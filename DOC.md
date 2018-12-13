@@ -663,7 +663,7 @@ Safe MutationObserver, does nothing if MutationObserver is not supported.
 var observer = new MutationObserver(function (mutations) {
     // Do something.
 });
-observer.observe(document.htmlElement);
+observer.observe(document.documentElement);
 observer.disconnect();
 ```
 
@@ -679,7 +679,7 @@ function get(url) {
         var req = new XMLHttpRequest();
         req.open('GET', url);
         req.onload = function () {
-            req.status == 200 ? resolve(req.reponse) : reject(Error(req.statusText));
+            req.status == 200 ? resolve(req.response) : reject(Error(req.statusText));
         };
         req.onerror = function () { reject(Error('Network Error')) };
         req.send();
@@ -734,7 +734,7 @@ Iterate over the queue.
 
 |Name    |Type    |Desc                      |
 |--------|--------|--------------------------|
-|iteratee|function|Function invoked iteration|
+|iterator|function|Function invoked iteration|
 |[ctx]   |*       |Function context          |
 
 ### toArr
@@ -886,7 +886,7 @@ Iterate over the stack.
 
 |Name    |Type    |Desc                      |
 |--------|--------|--------------------------|
-|iteratee|function|Function invoked iteration|
+|iterator|function|Function invoked iteration|
 |[ctx]   |*       |Function context          |
 
 ### toArr
@@ -1095,7 +1095,7 @@ Set query value.
 
 |Name  |Type  |Desc        |
 |------|------|------------|
-|names |object|query object|
+|query |object|query object|
 |return|Url   |this        |
 
 ### rmQuery
@@ -1143,7 +1143,7 @@ var url = new Url('http://example.com:8080?eruda=true');
 console.log(url.port); // -> '8080'
 url.query.foo = 'bar';
 url.rmQuery('eruda');
-utl.toString(); // -> 'http://example.com:8080/?foo=bar'
+url.toString(); // -> 'http://example.com:8080/?foo=bar'
 ```
 
 ## Validator 
@@ -4165,7 +4165,7 @@ Create a function that negates the result of the predicate function.
 
 ```javascript
 function even(n) { return n % 2 === 0 }
-filter([1, 2, 3, 4, 5, 6], negate(even)); // -> [1, 3, 5]
+// filter([1, 2, 3, 4, 5, 6], negate(even)); -> [1, 3, 5]
 ```
 
 ## nextTick 
@@ -4436,7 +4436,7 @@ Partially apply a function by filling in given arguments.
 
 ```javascript
 var sub5 = partial(function (a, b) { return b - a }, 5);
-sub(20); // -> 15
+sub5(20); // -> 15
 ```
 
 ## pascalCase 
@@ -4733,7 +4733,7 @@ Turn a list of values into a single value.
 |Name             |Type        |Desc                          |
 |-----------------|------------|------------------------------|
 |obj              |object array|Collection to iterate over    |
-|iteratee=identity|function    |Function invoked per iteration|
+|iterator=identity|function    |Function invoked per iteration|
 |[initial]        |*           |Initial value                 |
 |[ctx]            |*           |Function context              |
 |return           |*           |Accumulated value             |
@@ -4777,7 +4777,7 @@ Unlike filter, this method mutates array.
 |---------|--------|------------------------------------|
 |obj      |array   |Collection to iterate over          |
 |predicate|function|Function invoked per iteration      |
-|[ctx]    |*       |Predicate context                   |
+|[context]|*       |Predicate context                   |
 |return   |array   |Array of all values that are removed|
 
 ```javascript
@@ -5548,10 +5548,10 @@ Trigger browser events.
 |-------------|-------|------------------|
 |[el=document]|element|Element to trigger|
 |type         |string |Event type        |
-|opts         |object |Options           |
+|options      |object |Options           |
 
 ```javascript
-trigger(el, 'mouseup');
+trigger(document.getElementById('#test'), 'mouseup');
 trigger('keydown', {keyCode: 65});
 ```
 

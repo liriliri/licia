@@ -18,7 +18,7 @@
  *
  * |Name  |Type  |Desc        |
  * |------|------|------------|
- * |names |object|query object|
+ * |query |object|query object|
  * |return|Url   |this        |
  *
  * ### rmQuery
@@ -67,12 +67,44 @@
  * console.log(url.port); // -> '8080'
  * url.query.foo = 'bar';
  * url.rmQuery('eruda');
- * utl.toString(); // -> 'http://example.com:8080/?foo=bar'
+ * url.toString(); // -> 'http://example.com:8080/?foo=bar'
  */
 
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * declare namespace Url {
+ *     interface IUrl {
+ *         protocol: string;
+ *         auth: string;
+ *         hostname: string;
+ *         hash: string;
+ *         query: any;
+ *         port: string;
+ *         pathname: string;
+ *         slashes: boolean;
+ *     }
+ * }
+ * export declare class Url {
+ *     protocol: string;
+ *     auth: string;
+ *     hostname: string;
+ *     hash: string;
+ *     query: any;
+ *     port: string;
+ *     pathname: string;
+ *     slashes: boolean;
+ *     constructor(url: string);
+ *     setQuery(name: string, value: string): Url;
+ *     setQuery(query: { [name: string]: string }): Url;
+ *     rmQuery(name: string | string[]): Url;
+ *     toString(): string;
+ *     static parse(url: string): Url.IUrl;
+ *     static stringify(object: Url.IUrl): string;
+ * }
  */
 
 _('Class extend trim query isEmpty each isArr toArr isBrowser');

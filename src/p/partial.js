@@ -9,7 +9,7 @@
 
 /* example
  * var sub5 = partial(function (a, b) { return b - a }, 5);
- * sub(20); // -> 15
+ * sub5(20); // -> 15
  */
 
 /* module

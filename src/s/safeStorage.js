@@ -16,6 +16,10 @@
  * test: browser
  */
 
+/* typescript
+ * export declare function safeStorage(type?: string): typeof window.localStorage;
+ */
+
 _('memStorage');
 
 exports = function(type) {

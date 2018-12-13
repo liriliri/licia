@@ -53,7 +53,7 @@
  *         statics(statics: any): IConstructor;
  *     }
  * }
- * export declare function Class(methods: any, statics?: any): Class;
+ * export declare function Class(methods: any, statics?: any): Class.IConstructor;
  */
 
 _('extend toArr inherits safeGet isMiniProgram');

@@ -19,7 +19,20 @@
  * test: all
  */
 
-_('safeCb isArrLike keys');
+/* typescript
+ * export declare function some<T>(
+ *     list: types.List<T>,
+ *     iterator?: types.ListIterator<T, boolean>,
+ *     context?: any
+ * ): boolean;
+ * export declare function some<T>(
+ *     object: types.Dictionary<T>,
+ *     iterator?: types.ObjectIterator<T, boolean>,
+ *     context?: any
+ * ): boolean;
+ */
+
+_('safeCb isArrLike keys types');
 
 exports = function(obj, predicate, ctx) {
     predicate = safeCb(predicate, ctx);

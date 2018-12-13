@@ -29,7 +29,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|iteratee|function|调用函数|
+|iterator|function|调用函数|
 |[ctx]|*|函数上下文|
 
 ### toArr

@@ -3,7 +3,7 @@
  * |Name             |Type        |Desc                          |
  * |-----------------|------------|------------------------------|
  * |obj              |object array|Collection to iterate over    |
- * |iteratee=identity|function    |Function invoked per iteration|
+ * |iterator=identity|function    |Function invoked per iteration|
  * |[initial]        |*           |Initial value                 |
  * |[ctx]            |*           |Function context              |
  * |return           |*           |Accumulated value             |
@@ -18,14 +18,29 @@
  * test: all
  */
 
-_('optimizeCb isArrLike isUndef keys');
+/* typescript
+ * export declare function reduce<T, TResult>(
+ *     list: types.List<T>,
+ *     iterator: types.MemoIterator<T, TResult>,
+ *     memo?: TResult,
+ *     context?: any
+ * ): TResult;
+ * export declare function reduce<T, TResult>(
+ *     list: types.Dictionary<T>,
+ *     iterator: types.MemoObjectIterator<T, TResult>,
+ *     memo?: TResult,
+ *     context?: any
+ * ): TResult;
+ */
+
+_('optimizeCb isArrLike isUndef keys types');
 
 exports = createReduce(1);
 exports.create = createReduce;
 
 function createReduce(dir) {
-    return function(obj, iteratee, initial, ctx) {
-        iteratee = optimizeCb(iteratee, ctx);
+    return function(obj, iterator, initial, ctx) {
+        iterator = optimizeCb(iterator, ctx);
 
         var i, len, key;
 
@@ -37,7 +52,7 @@ function createReduce(dir) {
                 i += dir;
             }
             for (; i < len && i >= 0; i += dir) {
-                initial = iteratee(initial, obj[i], i, obj);
+                initial = iterator(initial, obj[i], i, obj);
             }
         } else {
             var _keys = keys(obj);
@@ -49,7 +64,7 @@ function createReduce(dir) {
             }
             for (; i < len && i >= 0; i += dir) {
                 key = _keys[i];
-                initial = iteratee(initial, obj[key], key, obj);
+                initial = iterator(initial, obj[key], key, obj);
             }
         }
 

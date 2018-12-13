@@ -5,13 +5,17 @@
  * var observer = new MutationObserver(function (mutations) {
  *     // Do something.
  * });
- * observer.observe(document.htmlElement);
+ * observer.observe(document.documentElement);
  * observer.disconnect();
  */
 
 /* module
  * env: browser
  * test: browser
+ */
+
+/* typescript
+ * export declare const MutationObserver: typeof window.MutationObserver;
  */
 
 _('Class');

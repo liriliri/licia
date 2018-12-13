@@ -22,8 +22,11 @@
  */
 
 /* typescript
-  * export declare function prefix(name: string): string;
-  */
+ * declare namespace prefix {
+ *     function dash(name: string): string;
+ * }
+ * export declare function prefix(name: string): string;
+ */
 
 _('memoize camelCase upperFirst has kebabCase');
 

@@ -23,7 +23,7 @@
  *     iterator: types.ObjectIterator<T, TResult>,
  *     context?: any
  * ): types.Dictionary<TResult>; 
- */ 
+ */
 
 _('safeCb keys');
 

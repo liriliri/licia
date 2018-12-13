@@ -58,7 +58,7 @@
  *     url: string, 
  *     options?: fetch.IOptions
  * ): Promise<fetch.IResult>;
- */ 
+ */
 
 _('Promise each defaults noop');
 

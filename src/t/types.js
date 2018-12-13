@@ -22,6 +22,12 @@
  *     interface ObjectIterator<T, TResult> {
  *         (element: T, key: string, list: Dictionary<T>): TResult;
  *     }
+ *     interface MemoIterator<T, TResult> {
+ *         (prev: TResult, curr: T, index: number, list: List<T>): TResult;
+ *     }
+ *     interface MemoObjectIterator<T, TResult> {
+ *         (prev: TResult, curr: T, key: string, list: Dictionary<T>): TResult;
+ *     }
  * }
  * export declare const types: {}
  */

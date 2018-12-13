@@ -13,6 +13,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare const memStorage: typeof window.localStorage;
+ */
+
 _('keys');
 
 exports = {

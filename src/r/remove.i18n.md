@@ -8,6 +8,6 @@
 |-----|----|---|
 |obj|array|要遍历的集合|
 |predicate|function|真值检测函数|
-|[ctx]|*|函数上下文|
+|[context]|*|函数上下文|
 |返回值|array|包含所有删除元素的数组|
 

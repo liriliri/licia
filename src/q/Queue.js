@@ -27,7 +27,7 @@
  *
  * |Name    |Type    |Desc                      |
  * |--------|--------|--------------------------|
- * |iteratee|function|Function invoked iteration|
+ * |iterator|function|Function invoked iteration|
  * |[ctx]   |*       |Function context          |
  *
  * ### toArr
@@ -50,6 +50,18 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare class Queue {
+ *     size: number;
+ *     clear(): void;
+ *     enqueue(item: any): number;
+ *     dequeue(): any;
+ *     peek(): any;
+ *     forEach(iterator: Function, context?: any): void;
+ *     toArr(): any[];
+ * }
  */
 
 _('Class');
@@ -79,13 +91,13 @@ exports = Class({
 
         return this._items[0];
     },
-    forEach: function(iteratee, ctx) {
+    forEach: function(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
         var items = this._items;
 
         for (var i = 0, size = this.size; i < size; i++) {
-            iteratee.call(ctx, items[i], i, this);
+            iterator.call(ctx, items[i], i, this);
         }
     },
     toArr: function() {

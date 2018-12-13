@@ -20,6 +20,12 @@
  * test: browser
  */
 
+/* typescript
+ * export declare class sessionStore extends Store {
+ *     constructor(name: string, data?: any);
+ * }
+ */
+
 _('Store safeStorage isEmpty stringify defaults isObj');
 
 var sessionStorage = safeStorage('session');
@@ -27,6 +33,7 @@ var sessionStorage = safeStorage('session');
 exports = Store.extend({
     initialize: function SessionStore(name, data) {
         this._name = name;
+        data = data || {};
 
         var sessionData = sessionStorage.getItem(name);
         try {

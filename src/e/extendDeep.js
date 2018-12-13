@@ -29,7 +29,7 @@
 
 /* typescript
  * export declare function extendDeep(destination: any, ...sources: any[]): any;
- */ 
+ */
 
 _('isPlainObj each cloneDeep');
 

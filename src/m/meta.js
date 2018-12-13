@@ -48,6 +48,9 @@
  */
 
 /* typescript
+ * declare namespace meta {
+ *     function remove(nameList: string | string[]): void;
+ * }
  * export declare function meta(): {};
  * export declare function meta(key: string): string;
  * export declare function meta(keys: string[]): {};

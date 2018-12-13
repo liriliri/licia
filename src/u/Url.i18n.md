@@ -20,7 +20,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|names|object|query 对象|
+|query|object|query 对象|
 |返回值|Url|this|
 
 ### rmQuery

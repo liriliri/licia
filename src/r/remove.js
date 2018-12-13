@@ -6,7 +6,7 @@
  * |---------|--------|------------------------------------|
  * |obj      |array   |Collection to iterate over          |
  * |predicate|function|Function invoked per iteration      |
- * |[ctx]    |*       |Predicate context                   |
+ * |[context]|*       |Predicate context                   |
  * |return   |array   |Array of all values that are removed|
  */
 
@@ -20,6 +20,14 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function remove(
+ *     object: any[], 
+ *     predicate: Function, 
+ *     context?: any
+ * ): any[];
  */
 
 _('safeCb');
