@@ -46,13 +46,13 @@
  *         val: number[];
  *         model: string;
  *     }
- *     function parse(colorStr: string): IColor;
  * }
  * export declare class Color {
  *     constructor(color: string | Color.IColor);
  *     toRgb(): string;
  *     toHex(): string;
  *     toHsl(): string;
+ *     static parse(colorStr: string): Color.IColor;
  * }
  */
 

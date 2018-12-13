@@ -2325,8 +2325,8 @@ extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|object|目标对象|
-|...src|object|源对象|
+|destination|object|目标对象|
+|...sources|object|源对象|
 |返回值|object|目标对象|
 
 ```javascript
@@ -2394,7 +2394,7 @@ extractUrls(str); // -> ['http://eustia.liriliri.io']
 |参数名|类型|说明|
 |-----|----|---|
 |url|string|请求地址|
-|options|object|请求选项|
+|[options]|object|请求选项|
 |返回值|Promise|请求 promise|
 
 ```javascript
@@ -2447,8 +2447,8 @@ fileSize(1500000000000); // -> '1.36T'
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr|array|源数组|
-|val|*|填充数组的值|
+|list|array|源数组|
+|value|*|填充数组的值|
 |start=0|number|起始位置|
 |end=arr.length|number|结束位置，不包括|
 |返回值|array|目标数组|
@@ -2481,9 +2481,9 @@ filter([1, 2, 3, 4, 5], function (val) {
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|array object|目标集合|
-|predicate|function|真值检测函数|
-|[ctx]|*|函数上下文|
+|object|array object|目标集合|
+|iterator|function|真值检测函数|
+|[context]|*|函数上下文|
 |返回值|*|第一个通过的元素|
 
 ```javascript
@@ -3900,9 +3900,9 @@ ltrim('_abc_', ['a', '_']); // -> 'bc_'
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|array object|源集合|
-|iteratee|function|转换函数|
-|[ctx]|*|函数上下文|
+|object|array object|源集合|
+|iterator|function|转换函数|
+|[context]|*|函数上下文|
 |返回值|array|目标集合|
 
 ```javascript
@@ -3915,9 +3915,9 @@ map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|object|源对象|
-|iteratee|function|转换函数|
-|[ctx]|*|函数上下文|
+|object|object|源对象|
+|iterator|function|转换函数|
+|[context]|*|函数上下文|
 |返回值|object|目标对象|
 
 ```javascript
@@ -3934,11 +3934,11 @@ mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
 |返回值|function|真值检测函数|
 
 ```javascript
-var objects = [
+const objects = [
     {a: 1, b: 2, c: 3 },
     {a: 4, b: 5, c: 6 }
 ];
-filter(objects, matcher({a: 4, c: 6 })); // -> [{a: 4, b: 5, c: 6 }]
+// filter(objects, matcher({a: 4, c: 6 }));
 ```
 
 ## max

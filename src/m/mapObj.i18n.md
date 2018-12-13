@@ -4,8 +4,8 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|object|源对象|
-|iteratee|function|转换函数|
-|[ctx]|*|函数上下文|
+|object|object|源对象|
+|iterator|function|转换函数|
+|[context]|*|函数上下文|
 |返回值|object|目标对象|
 

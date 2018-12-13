@@ -1048,7 +1048,8 @@
             "findKey",
             "findIdx",
             "isArrLike",
-            "isUndef"
+            "isUndef",
+            "types"
         ],
         "env": "all",
         "test": "all"
@@ -1795,7 +1796,8 @@
         "dependencies": [
             "safeCb",
             "keys",
-            "isArrLike"
+            "isArrLike",
+            "types"
         ],
         "env": "all",
         "test": "all"

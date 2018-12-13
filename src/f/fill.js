@@ -2,8 +2,8 @@
  *
  * |Name          |Type  |Desc                    |
  * |--------------|------|------------------------|
- * |arr           |array |Array to fill           | 
- * |val           |*     |Value to fill array with|
+ * |list          |array |Array to fill           | 
+ * |value         |*     |Value to fill array with|
  * |start=0       |number|Start position          |
  * |end=arr.length|number|End position            |
  * |return        |array |Filled array            |
@@ -18,6 +18,15 @@
  * env: all
  * test: all
  */
+
+/* typescript
+ * export declare function fill(
+ *     list: any[], 
+ *     value: any, 
+ *     start?: number, 
+ *     end?: number
+ * ): any[];
+ */ 
 
 _('isUndef');
 

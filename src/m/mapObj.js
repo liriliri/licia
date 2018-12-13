@@ -1,11 +1,11 @@
 /* Map for objects.
  *
- * |Name    |Type    |Desc                          |
- * |--------|--------|------------------------------|
- * |obj     |object  |Object to iterate over        |
- * |iteratee|function|Function invoked per iteration|
- * |[ctx]   |*       |Function context              |
- * |return  |object  |New mapped object             |
+ * |Name     |Type    |Desc                          |
+ * |---------|--------|------------------------------|
+ * |object   |object  |Object to iterate over        |
+ * |iterator |function|Function invoked per iteration|
+ * |[context]|*       |Function context              |
+ * |return   |object  |New mapped object             |
  */
 
 /* example
@@ -17,10 +17,18 @@
  * test: all
  */
 
+/* typescript
+ * export declare function mapObj<T, TResult>(
+ *     object: types.Dictionary<T>,
+ *     iterator: types.ObjectIterator<T, TResult>,
+ *     context?: any
+ * ): types.Dictionary<TResult>; 
+ */ 
+
 _('safeCb keys');
 
-exports = function(obj, iteratee, ctx) {
-    iteratee = safeCb(iteratee, ctx);
+exports = function(obj, iterator, ctx) {
+    iterator = safeCb(iterator, ctx);
 
     var _keys = keys(obj),
         len = _keys.length,
@@ -28,7 +36,7 @@ exports = function(obj, iteratee, ctx) {
 
     for (var i = 0; i < len; i++) {
         var curKey = _keys[i];
-        ret[curKey] = iteratee(obj[curKey], curKey, obj);
+        ret[curKey] = iterator(obj[curKey], curKey, obj);
     }
 
     return ret;

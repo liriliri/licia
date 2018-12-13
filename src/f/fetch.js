@@ -2,11 +2,11 @@
  * 
  * Note: This is not a complete fetch pollyfill.
  * 
- * |Name   |Type   |Desc           |
- * |-------|-------|---------------|
- * |url    |string |Request url    |
- * |options|object |Request options|
- * |return |Promise|Request promise|
+ * |Name     |Type   |Desc           |
+ * |---------|-------|---------------|
+ * |url      |string |Request url    |
+ * |[options]|object |Request options|
+ * |return   |Promise|Request promise|
  */
 
 /* example
@@ -26,6 +26,39 @@
  * env: browser
  * test: manual
  */
+
+/* typescript
+ * declare namespace fetch {
+ *     interface IOptions {
+ *         method?: string;
+ *         timeout?: number;
+ *         headers?: { [name: string]: string };
+ *         body?: any;
+ *     }
+ *     interface IHeader {
+ *         keys(): string[]; 
+ *         entries(): Array<string[]>;
+ *         get(name: string): string;
+ *         has(name: string): boolean;
+ *     }
+ *     interface IResult {
+ *         ok: boolean;
+ *         status: number;
+ *         statusText: string;
+ *         url: string;
+ *         clone(): IResult;
+ *         text(): Promise<string>;
+ *         json(): Promise<any>;
+ *         xml(): Promise<Document | null>;
+ *         blob(): Promise<Blob>;
+ *         headers: IHeaders;
+ *     }
+ * }
+ * export declare function fetch(
+ *     url: string, 
+ *     options?: fetch.IOptions
+ * ): Promise<fetch.IResult>;
+ */ 
 
 _('Promise each defaults noop');
 

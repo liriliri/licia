@@ -1,10 +1,10 @@
 /* Recursive object extending.
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |obj   |object|Destination object|
- * |...src|object|Sources objects   |
- * |return|object|Destination object|
+ * |Name       |Type  |Desc              |
+ * |-----------|------|------------------|
+ * |destination|object|Destination object|
+ * |...sources |object|Sources objects   |
+ * |return     |object|Destination object|
  */
 
 /* example
@@ -26,6 +26,10 @@
  * env: all
  * test: all
  */
+
+/* typescript
+ * export declare function extendDeep(destination: any, ...sources: any[]): any;
+ */ 
 
 _('isPlainObj each cloneDeep');
 

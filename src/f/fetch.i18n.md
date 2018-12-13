@@ -7,6 +7,6 @@
 |参数名|类型|说明|
 |-----|----|---|
 |url|string|请求地址|
-|options|object|请求选项|
+|[options]|object|请求选项|
 |返回值|Promise|请求 promise|
 

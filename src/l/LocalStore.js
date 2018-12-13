@@ -22,7 +22,7 @@
 
 /* typescript
  * export declare class LocalStore extends Store {
- *     constructor(name: string, data: {});
+ *     constructor(name: string, data?: {});
  * }
  */
 
@@ -33,6 +33,7 @@ var localStorage = safeStorage('local');
 exports = Store.extend({
     initialize: function LocalStore(name, data) {
         this._name = name;
+        data = data || {};
 
         var localData = localStorage.getItem(name);
         try {

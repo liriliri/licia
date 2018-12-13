@@ -2327,11 +2327,11 @@ extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 
 Recursive object extending.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|obj   |object|Destination object|
-|...src|object|Sources objects   |
-|return|object|Destination object|
+|Name       |Type  |Desc              |
+|-----------|------|------------------|
+|destination|object|Destination object|
+|...sources |object|Sources objects   |
+|return     |object|Destination object|
 
 ```javascript
 extendDeep({
@@ -2352,11 +2352,11 @@ extendDeep({
 
 Like extend, but only copies own properties over to the destination object.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|obj   |object|Destination object|
-|*src  |object|Sources objects   |
-|return|object|Destination object|
+|Name       |Type  |Desc              |
+|-----------|------|------------------|
+|destination|object|Destination object|
+|...sources |object|Sources objects   |
+|return     |object|Destination object|
 
 ```javascript
 extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
@@ -2395,11 +2395,11 @@ Turn XMLHttpRequest into promise like.
 
 Note: This is not a complete fetch pollyfill.
 
-|Name   |Type   |Desc           |
-|-------|-------|---------------|
-|url    |string |Request url    |
-|options|object |Request options|
-|return |Promise|Request promise|
+|Name     |Type   |Desc           |
+|---------|-------|---------------|
+|url      |string |Request url    |
+|[options]|object |Request options|
+|return   |Promise|Request promise|
 
 ```javascript
 fetch('test.json', {
@@ -2451,8 +2451,8 @@ Fill elements of array with value.
 
 |Name          |Type  |Desc                    |
 |--------------|------|------------------------|
-|arr           |array |Array to fill           |
-|val           |*     |Value to fill array with|
+|list          |array |Array to fill           |
+|value         |*     |Value to fill array with|
 |start=0       |number|Start position          |
 |end=arr.length|number|End position            |
 |return        |array |Filled array            |
@@ -2485,9 +2485,9 @@ Find the first value that passes a truth test in a collection.
 
 |Name     |Type        |Desc                             |
 |---------|------------|---------------------------------|
-|obj      |array object|Collection to iterate over       |
-|predicate|function    |Function invoked per iteration   |
-|[ctx]    |*           |Predicate context                |
+|object   |array object|Collection to iterate over       |
+|iterator |function    |Function invoked per iteration   |
+|[context]|*           |Predicate context                |
 |return   |*           |First value that passes predicate|
 
 ```javascript
@@ -3902,12 +3902,12 @@ ltrim('_abc_', ['a', '_']); // -> 'bc_'
 
 Create an array of values by running each element in collection through iteratee.
 
-|Name    |Type        |Desc                          |
-|--------|------------|------------------------------|
-|obj     |array object|Collection to iterate over    |
-|iteratee|function    |Function invoked per iteration|
-|[ctx]   |*           |Function context              |
-|return  |array       |New mapped array              |
+|Name     |Type        |Desc                          |
+|---------|------------|------------------------------|
+|object   |array object|Collection to iterate over    |
+|iterator |function    |Function invoked per iteration|
+|[context]|*           |Function context              |
+|return   |array       |New mapped array              |
 
 ```javascript
 map([4, 8], function (n) { return n * n; }); // -> [16, 64]
@@ -3917,12 +3917,12 @@ map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 
 Map for objects.
 
-|Name    |Type    |Desc                          |
-|--------|--------|------------------------------|
-|obj     |object  |Object to iterate over        |
-|iteratee|function|Function invoked per iteration|
-|[ctx]   |*       |Function context              |
-|return  |object  |New mapped object             |
+|Name     |Type    |Desc                          |
+|---------|--------|------------------------------|
+|object   |object  |Object to iterate over        |
+|iterator |function|Function invoked per iteration|
+|[context]|*       |Function context              |
+|return   |object  |New mapped object             |
 
 ```javascript
 mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
@@ -3938,11 +3938,11 @@ Return a predicate function that checks if attrs are contained in an object.
 |return|function|New predicate function            |
 
 ```javascript
-var objects = [
+const objects = [
     {a: 1, b: 2, c: 3 },
     {a: 4, b: 5, c: 6 }
 ];
-filter(objects, matcher({a: 4, c: 6 })); // -> [{a: 4, b: 5, c: 6 }]
+// filter(objects, matcher({a: 4, c: 6 }));
 ```
 
 ## max 

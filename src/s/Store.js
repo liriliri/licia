@@ -82,7 +82,7 @@
 
 /* typescript
  * export declare class Store {
- *     constructor(data: {});
+ *     constructor(data?: {});
  *     set(key: string, val: any): void;
  *     set(vals: {}): void;
  *     get(key: string): any;

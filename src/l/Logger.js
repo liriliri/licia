@@ -54,8 +54,9 @@
  */
 
 /* typescript
- * export declare class Logger {
+ * export declare class Logger extends Emitter {
  *     name: string;
+ *     formatter(type: string, argList: any[]): any[];
  *     constructor(name: string, level?: string | number);
  *     setLevel(level: string | number): Logger;
  *     getLevel(): number;

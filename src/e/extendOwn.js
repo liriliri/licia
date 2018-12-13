@@ -1,10 +1,10 @@
 /* Like extend, but only copies own properties over to the destination object.
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |obj   |object|Destination object|
- * |*src  |object|Sources objects   |
- * |return|object|Destination object|
+ * |Name       |Type  |Desc              |
+ * |-----------|------|------------------|
+ * |destination|object|Destination object|
+ * |...sources |object|Sources objects   |
+ * |return     |object|Destination object|
  */
 
 /* example
@@ -15,6 +15,10 @@
  * env: all
  * test: all
  */
+
+/* typescript
+ * export declare function extendOwn(destination: any, ...sources: any[]): any;
+ */ 
 
 _('keys createAssigner');
 

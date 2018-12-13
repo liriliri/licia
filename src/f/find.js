@@ -2,9 +2,9 @@
  *
  * |Name     |Type        |Desc                             |
  * |---------|------------|---------------------------------|
- * |obj      |array object|Collection to iterate over       |
- * |predicate|function    |Function invoked per iteration   |
- * |[ctx]    |*           |Predicate context                |
+ * |object   |array object|Collection to iterate over       |
+ * |iterator |function    |Function invoked per iteration   |
+ * |[context]|*           |Predicate context                |
  * |return   |*           |First value that passes predicate|
  */
 
@@ -25,7 +25,20 @@
  * test: all
  */
 
-_('findKey findIdx isArrLike isUndef');
+/* typescript
+ * export declare function find<T>(
+ *     object: types.List<T>,
+ *     iterator: types.ListIterator<T, boolean>,
+ *     context?: any
+ * ): T | undefined;
+ * export declare function find<T>(
+ *     object: types.Dictionary<T>,
+ *     iterator: types.ObjectIterator<T, boolean>,
+ *     context?: any
+ * ): T | undefined;
+ */ 
+
+_('findKey findIdx isArrLike isUndef types');
 
 exports = function(obj, predicate, ctx) {
     var keyFinder = isArrLike(obj) ? findIdx : findKey;

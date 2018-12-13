@@ -1,11 +1,11 @@
 /* Create an array of values by running each element in collection through iteratee.
  *
- * |Name    |Type        |Desc                          |
- * |--------|------------|------------------------------|
- * |obj     |array object|Collection to iterate over    |
- * |iteratee|function    |Function invoked per iteration|
- * |[ctx]   |*           |Function context              |
- * |return  |array       |New mapped array              |
+ * |Name     |Type        |Desc                          |
+ * |---------|------------|------------------------------|
+ * |object   |array object|Collection to iterate over    |
+ * |iterator |function    |Function invoked per iteration|
+ * |[context]|*           |Function context              |
+ * |return   |array       |New mapped array              |
  */
 
 /* example
@@ -18,17 +18,22 @@
  */
 
 /* typescript
- * export declare function map(
- *     obj: {} | any[],
- *     iteratee: Function,
- *     ctx?: any
- * ): any[];
+ * export declare function map<T, TResult>(
+ *     list: types.List<T>,
+ *     iterator: types.ListIterator<T, TResult>,
+ *     context?: any
+ * ): TResult[];
+ * export declare function map<T, TResult>(
+ *     object: types.Dictionary<T>,
+ *     iterator: types.ObjectIterator<T, TResult>,
+ *     context?: any
+ * ): TResult[];
  */
 
-_('safeCb keys isArrLike');
+_('safeCb keys isArrLike types');
 
-exports = function(obj, iteratee, ctx) {
-    iteratee = safeCb(iteratee, ctx);
+exports = function(obj, iterator, ctx) {
+    iterator = safeCb(iterator, ctx);
 
     var _keys = !isArrLike(obj) && keys(obj),
         len = (_keys || obj).length,
@@ -36,7 +41,7 @@ exports = function(obj, iteratee, ctx) {
 
     for (var i = 0; i < len; i++) {
         var curKey = _keys ? _keys[i] : i;
-        results[i] = iteratee(obj[curKey], curKey, obj);
+        results[i] = iterator(obj[curKey], curKey, obj);
     }
 
     return results;
