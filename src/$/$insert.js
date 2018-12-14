@@ -40,7 +40,7 @@
  */
 
 /* typescript
- * declare namespace $insert {
+ * export declare namespace $insert {
  *     interface IInsert {
  *         (element: $safeEls.El, content: string): void;
  *     }

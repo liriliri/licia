@@ -37,7 +37,7 @@
  */
 
 /* typescript
- * declare namespace compressImg {
+ * export declare namespace compressImg {
  *     interface IOptions {
  *         maxWidth?: number;
  *         maxHeight?: number;

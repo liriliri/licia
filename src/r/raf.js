@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * declare namespace raf {
+ * export declare namespace raf {
  *     function cancel(id: number);
  * }
  * export declare function raf(cb: Function): number;

@@ -26,7 +26,7 @@
  */
 
 /* typescript
- * export declare function waterfall(tasks: Function[], cb?: Function);
+ * export declare function waterfall(tasks: Function[], cb?: Function): void;
  */
 
 _('noop nextTick restArgs');

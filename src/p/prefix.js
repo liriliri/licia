@@ -22,7 +22,7 @@
  */
 
 /* typescript
- * declare namespace prefix {
+ * export declare namespace prefix {
  *     function dash(name: string): string;
  * }
  * export declare function prefix(name: string): string;

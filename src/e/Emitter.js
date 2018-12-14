@@ -48,7 +48,7 @@
  */
 
 /* typescript
- * declare namespace Emitter {
+ * export declare namespace Emitter {
  *     function mixin(obj: any): any;
  * }
  * export declare class Emitter {

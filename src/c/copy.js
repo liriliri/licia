@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export declare function copy(text: string, cb?: Function);
+ * export declare function copy(text: string, cb?: Function): void;
  */
 
 _('extend noop');

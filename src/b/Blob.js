@@ -18,7 +18,6 @@
  */
 
 /* typescript
- * export declare const Blob: typeof window.Blob; 
  */
 
 _('root each');

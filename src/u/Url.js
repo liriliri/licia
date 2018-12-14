@@ -76,7 +76,7 @@
  */
 
 /* typescript
- * declare namespace Url {
+ * export declare namespace Url {
  *     interface IUrl {
  *         protocol: string;
  *         auth: string;

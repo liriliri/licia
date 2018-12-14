@@ -30,8 +30,8 @@
 
 /* typescript
  * export declare const hotkey: {
- *     on(key: string, listener: Function);
- *     off(key: string, listener: Function); 
+ *     on(key: string, listener: Function): void;
+ *     off(key: string, listener: Function): void; 
  * };
  */
 

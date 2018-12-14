@@ -28,7 +28,7 @@
  */
 
 /* typescript
- * declare namespace fetch {
+ * export declare namespace fetch {
  *     interface IOptions {
  *         method?: string;
  *         timeout?: number;

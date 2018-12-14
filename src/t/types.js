@@ -7,7 +7,7 @@
  */
 
 /* typescript
- * declare namespace types {
+ * export declare namespace types {
  *     interface Collection<T> {}
  *     interface List<T> extends Collection<T> {
  *         [index: number]: T;

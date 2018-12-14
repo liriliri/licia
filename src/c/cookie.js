@@ -43,7 +43,7 @@
  */
 
 /* typescript
- * declare namespace cookie {
+ * export declare namespace cookie {
  *     interface IOptions {
  *         path?: string;
  *         expires?: number;

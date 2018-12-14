@@ -21,7 +21,7 @@
  */
 
 /* typescript
- * declare namespace detectBrowser {
+ * export declare namespace detectBrowser {
  *     interface IBrowser {
  *         name: string;
  *         version: number;

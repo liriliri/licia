@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * export declare function rmCookie(key: string);
+ * export declare function rmCookie(key: string): void;
  */
 
 _('cookie');

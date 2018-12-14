@@ -28,7 +28,7 @@
  */
 
 /* typescript
- * declare namespace $property {
+ * export declare namespace $property {
  *     interface IProperty {
  *         (element: $safeEls.El, value: string): void;
  *         (element: $safeEls.El): string;

@@ -20,7 +20,7 @@
  */
 
 /* typescript
- * declare namespace intersectRange {
+ * export declare namespace intersectRange {
  *     interface IRange {
  *         start: number;
  *         end: number;

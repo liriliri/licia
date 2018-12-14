@@ -25,7 +25,7 @@
  */
 
 /* typescript
- * declare namespace openFile {
+ * export declare namespace openFile {
  *     interface IOptions {
  *         accept?: string;   
  *         multiple?: boolean;

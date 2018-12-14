@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function ready(fn: Function);
+ * export declare function ready(fn: Function): void;
  */
 
 var fns = [],

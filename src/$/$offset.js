@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * declare namespace $offset {
+ * export declare namespace $offset {
  *     interface IOffset {
  *         left: number;
  *         top: number;

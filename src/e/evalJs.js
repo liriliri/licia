@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function evalJs(js: string, ctx?: any);
+ * export declare function evalJs(js: string, ctx?: any): void;
  */
 
 _('root');

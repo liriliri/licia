@@ -19,7 +19,7 @@
  */
 
 /* typescript
- * export declare function rmdir(dir: string, cb?: Function);
+ * export declare function rmdir(dir: string, cb?: Function): void;
  */
 
 _('noop parallel');

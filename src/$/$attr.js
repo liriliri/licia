@@ -47,7 +47,7 @@
  */
 
 /* typescript
- * declare namespace $attr {
+ * export declare namespace $attr {
  *     interface IAttr {
  *         (element: $safeEls.El, name: string, value: string): void;
  *         (element: $safeEls.El, attributes: { [name: string]: string }): void;

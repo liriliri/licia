@@ -26,7 +26,7 @@
  */
 
 /* typescript
- * declare namespace moment {
+ * export declare namespace moment {
  *    class M {
  *        constructor(value: string | Date);
  *        format(mask: string): string;

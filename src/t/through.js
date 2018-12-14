@@ -32,7 +32,7 @@
 
 /* typescript
  * import stream = require('stream');
- * declare namespace through {
+ * export declare namespace through {
  *     interface ThroughConstructor extends stream.Transform {
  *         new (opts?: stream.DuplexOptions): stream.Transform;
  *         (opts?: stream.DuplexOptions): stream.Transform;

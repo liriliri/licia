@@ -20,7 +20,7 @@
  */
 
 /* typescript
- * declare namespace createUrl {
+ * export declare namespace createUrl {
  *     interface IOptions {
  *         type?: string
  *     }

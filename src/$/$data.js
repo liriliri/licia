@@ -11,7 +11,7 @@
  */
 
 /* typescript
- * declare namespace $data {
+ * export declare namespace $data {
  *     interface IData {
  *         (element: $safeEls.El, name: string, value: string): void;
  *         (element: $safeEls.El, attributes: { [name: string]: string }): void;

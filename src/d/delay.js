@@ -20,7 +20,7 @@
  */
 
 /* typescript
- * export declare function delay(fn: Function, wait: number, ...args: any[]);
+ * export declare function delay(fn: Function, wait: number, ...args: any[]): void;
  */
 
 _('restArgs');

@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export declare function loadImg(src: string, cb?: Function);
+ * export declare function loadImg(src: string, cb?: Function): void;
  */
 
 _('noop');

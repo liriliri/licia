@@ -41,7 +41,7 @@
  */
 
 /* typescript
- * declare namespace Color {
+ * export declare namespace Color {
  *     interface IColor {
  *         val: number[];
  *         model: string;

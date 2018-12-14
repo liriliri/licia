@@ -30,7 +30,7 @@
  */
 
 /* typescript
- * declare namespace scrollTo {
+ * export declare namespace scrollTo {
  *     interface IOptions {
  *         tolerance?: number;
  *         duration?: number;

@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * export declare function evalCss(css: string);
+ * export declare function evalCss(css: string): void;
  */
 
 exports = function(css) {

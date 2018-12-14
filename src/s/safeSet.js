@@ -22,7 +22,7 @@
  */
 
 /* typescript
- * export declare function safeSet(obj: any, path: string | string[], val: any);
+ * export declare function safeSet(obj: any, path: string | string[], val: any): void;
  */
 
 _('castPath isUndef');

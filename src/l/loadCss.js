@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export declare function loadCss(src: string, cb?: Function);
+ * export declare function loadCss(src: string, cb?: Function): void;
  */
 
 _('noop');

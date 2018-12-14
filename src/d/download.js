@@ -17,11 +17,11 @@
  */
 
 /* typescript
- * export declare function download(data: Blob | File | string | any[], name: string, type?: string);declare function download(
+ * export declare function download(
  *     data: Blob | File | string | any[],
  *     name: string,
  *     type?: string
- * );
+ * ): void;
  */
 
 _('createUrl');

@@ -29,7 +29,7 @@
  */
 
 /* typescript
- * export declare function inherits(Class: Function, SuperClass: Function);
+ * export declare function inherits(Class: Function, SuperClass: Function): void;
  */
 
 exports = function(Class, SuperClass) {

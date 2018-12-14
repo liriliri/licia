@@ -24,8 +24,8 @@
  */
 
 /* typescript
- * export declare function define(name: string, requires: string[], method: Function);
- * export declare function define(name: string, method: Function);
+ * export declare function define(name: string, requires: string[], method: Function): void;
+ * export declare function define(name: string, method: Function): void;
  */
 
 _('toArr');

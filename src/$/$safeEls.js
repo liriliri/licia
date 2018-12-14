@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * declare namespace $safeEls {
+ * export declare namespace $safeEls {
  *     type El = Element | Element[] | NodeListOf<Element> | string;
  * }
  * export declare function $safeEls(value: $safeEls.El): Element[];

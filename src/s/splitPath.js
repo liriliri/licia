@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * declare namespace splitPath {
+ * export declare namespace splitPath {
  *     interface IPath {
  *         dir: string;
  *         name: string;

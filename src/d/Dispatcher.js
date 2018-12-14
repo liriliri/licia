@@ -25,9 +25,9 @@
 /* typescript
  * export declare class Dispatcher {
  *     dispatch(payload: any);
- *     register(cb: Function);
- *     waitFor(ids: string[]);
- *     unregister(id: string);
+ *     register(cb: Function): void;
+ *     waitFor(ids: string[]): void;
+ *     unregister(id: string): void;
  *     isDispatching(): boolean;
  * }
  */

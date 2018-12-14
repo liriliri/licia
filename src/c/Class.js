@@ -44,7 +44,7 @@
  */
 
 /* typescript
- * declare namespace Class {
+ * export declare namespace Class {
  *     class Base {
  *         toString(): string;
  *     }    

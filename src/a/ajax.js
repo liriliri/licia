@@ -56,7 +56,7 @@
  */
 
 /* typescript
- * declare namespace ajax {
+ * export declare namespace ajax {
  *     interface IOptions {
  *         url: string;
  *         data?: string | {};

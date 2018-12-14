@@ -21,7 +21,7 @@
  */
 
 /* typescript
- * export declare function nextTick(cb: Function);
+ * export declare function nextTick(cb: Function): void;
  */
 
 if (typeof process === 'object' && process.nextTick) {

@@ -34,7 +34,7 @@
  */
 
 /* typescript
- * declare namespace jsonp {
+ * export declare namespace jsonp {
  *     interface IOptions {
  *         url: string;
  *         data?: any;
@@ -46,7 +46,7 @@
  *         timeout?: number;
  *     }
  * }
- * export declare function jsonp(opts: jsonp.IOptions);
+ * export declare function jsonp(opts: jsonp.IOptions): void;
  */
 
 _('loadJs defaults noop uniqId query');

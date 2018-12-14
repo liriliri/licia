@@ -26,7 +26,7 @@
  */
 
 /* typescript
- * declare namespace orientation {
+ * export declare namespace orientation {
  *     interface IOrientation extends Emitter {
  *         get(): string;
  *     }

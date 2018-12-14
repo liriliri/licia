@@ -23,7 +23,7 @@
  */
 
 /* typescript
- * declare namespace $ {
+ * export declare namespace $ {
  *     class $ extends Select {
  *         find(selector: string): $;
  *         each(fn: Function): $;
