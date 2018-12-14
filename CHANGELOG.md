@@ -1,3 +1,8 @@
+## v1.3.0 (14 Dec 2018)
+
+* Add openFile
+* Add typescript support
+
 ## v1.2.0 (10 Nov 2018)
 
 * Add isPrime

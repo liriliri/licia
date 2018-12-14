@@ -14,7 +14,7 @@ Eustia官方模块
 
 Licia是一套在开发中实践积累起来的实用JavaScript工具库。该库目前拥有超过180个模块，包括Dom操作，cookie设置，类创建，模板函数，日期格式化等实用模块，同时配套有打包工具Eustia进行定制化，使JS脚本加载量缩减在10KB以下，极大优化移动端页面的加载速度。
 
-目前拥有的所有模块可[点此](http://eustia.liriliri.io/module_cn.html)查看。
+目前拥有的所有模块可[点此](https://eustia.liriliri.io/module_cn.html)查看。
 
 ## 开发背景
 
@@ -24,7 +24,7 @@ Licia从一开始就不是为了单纯地替代underscore或lodash而生。它�
 
 ## 使用方法
 
-推荐使用官方打包工具[eustia](http://eustia.liriliri.io/)针对项目定制工具库按需引入。当然安装**licia**模块然后直接引用也是可以的。
+推荐使用官方打包工具[eustia](https://eustia.liriliri.io/)针对项目定制工具库按需引入。当然安装**licia**模块然后直接引用也是可以的。
 
 ```bash
 npm i licia --save
@@ -36,13 +36,13 @@ var uuid = require('licia/uuid');
 console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 ```
 
-你也可以直接使用在线工具进行自定义工具库的生成，请[点此](http://eustia.liriliri.io/builder.html)查看使用。
+你也可以直接使用在线工具进行自定义工具库的生成，请[点此](https://eustia.liriliri.io/builder.html)查看使用。
 
 ## 提交新模块
 
 在无法找到所需模块的情况下，你可以发起issue建议或者自己添加模块合并到该项目中去。
 
-关于如何编写模块，请查看[Eustia文档](http://eustia.liriliri.io/docs.html#create-module)中的相关说明。
+关于如何编写模块，请查看[Eustia文档](https://eustia.liriliri.io/docs.html#create-module)中的相关说明。
 
 ### 基本原则
 
@@ -50,6 +50,8 @@ console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 
 * 必须有详细的使用说明文档（英文，格式参考其它已有模块）。
 * 必须有单元测试。
+* 必须有 typescript 定义。
+* 必须指明运行环境，node，浏览器或全部。
 * 模块名只能包含**a-zA-Z0-9$**等字符。
 * 不能存在功能高度相似的模块，例如不能添加leftPad模块因为已经有模块lpad了。
 * 模块可以依赖其它模块，但所有代码都必须写在一个文件，不能超过500行，包括使用说明和空行。
