@@ -1,11 +1,11 @@
 /* Create a function bound to a given object.
  *
- * |Name     |Type    |Desc                    |
- * |---------|--------|------------------------|
- * |fn       |function|Function to bind        |
- * |ctx      |*       |This binding of given fn|
- * |[...rest]|*       |Optional arguments      |
- * |return   |function|New bound function      |
+ * |Name   |Type    |Desc                    |
+ * |-------|--------|------------------------|
+ * |fn     |function|Function to bind        |
+ * |ctx    |*       |This binding of given fn|
+ * |...rest|*       |Optional arguments      |
+ * |return |function|New bound function      |
  */
 
 /* example
@@ -21,7 +21,7 @@
  */
 
 /* typescript
- * export declare function bind(fn: Function, ctx: any, ...rest?: any[]): Function;
+ * export declare function bind(fn: Function, ctx: any, ...rest: any[]): Function;
  */
 
 _('restArgs');

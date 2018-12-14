@@ -21,6 +21,10 @@
  * test: all
  */
 
+/* typescript
+ * export declare function pluck(object: any, key: string | string[]): any[];
+ */
+
 _('map property');
 
 exports = function(obj, key) {

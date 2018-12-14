@@ -15,7 +15,6 @@
  */
 
 /* typescript
- * export declare const MutationObserver: typeof window.MutationObserver;
  */
 
 _('Class');

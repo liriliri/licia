@@ -9,7 +9,7 @@
 |参数名|类型|说明|
 |-----|----|---|
 |initial|string|初始状态|
-|events|string|改变状态的事件|
+|events|object|改变状态的事件|
 
 ### is
 

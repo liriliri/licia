@@ -907,7 +907,7 @@ stack.pop(); // -> 3
 |参数名|类型|说明|
 |-----|----|---|
 |initial|string|初始状态|
-|events|string|改变状态的事件|
+|events|object|改变状态的事件|
 
 ### is
 
@@ -1383,7 +1383,7 @@ fn(); // Allow function to be call 4 times at last.
 |-----|----|---|
 |fn|function|源函数|
 |ctx|*|绑定对象|
-|[...rest]|*|可选参数|
+|...rest|*|可选参数|
 |返回值|function|输出函数|
 
 ```javascript
@@ -1638,7 +1638,7 @@ cmpVersion('1.1.1', '1.2.3'); // -> -1
 |返回值|object|目标对象|
 
 ```javascript
-combine(['a', 'b', 'c'], [1, 2, 3]); -> {a: 1, b: 2, c: 3}
+combine(['a', 'b', 'c'], [1, 2, 3]); // -> {a: 1, b: 2, c: 3}
 ```
 
 ## compact
@@ -4467,7 +4467,7 @@ console.log(perfNow() - start);
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|object|源对象|
+|object|object|源对象|
 |filter|string array function|对象过滤器|
 |返回值|object|目标对象|
 
@@ -5344,12 +5344,13 @@ stream Transform 类的简单包装。
 返回继承 Transform 的类。
 
 ```javascript
+const fs = require('fs');
 fs.createReadStream('in.txt')
-  .pipe(through(function (chunk, enc, cb) {
-      // Do something to chunk
-      this.push(chunk);
-      cb();
-  })).pipe(fs.createWriteStream('out.txt'));
+    .pipe(through(function (chunk, enc, cb) {
+        // Do something to chunk
+        this.push(chunk);
+        cb();
+    })).pipe(fs.createWriteStream('out.txt'));
 ```
 
 ## timeAgo

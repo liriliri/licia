@@ -771,7 +771,7 @@ Add a change listener.
 |Name    |Type    |Desc                                |
 |--------|--------|------------------------------------|
 |listener|function|Callback to invoke on every dispatch|
-|return  |function|Function to unscribe                |
+|return  |function|Function to unsubscribe             |
 
 ### dispatch
 
@@ -912,7 +912,7 @@ Extend from Emitter.
 |Name   |Type  |Desc                  |
 |-------|------|----------------------|
 |initial|string|Initial state         |
-|events |string|Events to change state|
+|events |object|Events to change state|
 
 ### is
 
@@ -1384,12 +1384,12 @@ fn(); // Allow function to be call 4 times at last.
 
 Create a function bound to a given object.
 
-|Name     |Type    |Desc                    |
-|---------|--------|------------------------|
-|fn       |function|Function to bind        |
-|ctx      |*       |This binding of given fn|
-|[...rest]|*       |Optional arguments      |
-|return   |function|New bound function      |
+|Name   |Type    |Desc                    |
+|-------|--------|------------------------|
+|fn     |function|Function to bind        |
+|ctx    |*       |This binding of given fn|
+|...rest|*       |Optional arguments      |
+|return |function|New bound function      |
 
 ```javascript
 var fn = bind(function (msg) {
@@ -1643,7 +1643,7 @@ Create an array by using one array for keys and another for its values.
 |return|object|Created object   |
 
 ```javascript
-combine(['a', 'b', 'c'], [1, 2, 3]); -> {a: 1, b: 2, c: 3}
+combine(['a', 'b', 'c'], [1, 2, 3]); // -> {a: 1, b: 2, c: 3}
 ```
 
 ## compact 
@@ -4473,7 +4473,7 @@ Return a filtered copy of an object.
 
 |Name  |Type                 |Desc           |
 |------|---------------------|---------------|
-|obj   |object               |Source object  |
+|object|object               |Source object  |
 |filter|string array function|Object filter  |
 |return|object               |Filtered object|
 
@@ -5350,12 +5350,13 @@ Shortcut for setting objectMode to true.
 Return a class that extends stream Transform.
 
 ```javascript
+const fs = require('fs');
 fs.createReadStream('in.txt')
-  .pipe(through(function (chunk, enc, cb) {
-      // Do something to chunk
-      this.push(chunk);
-      cb();
-  })).pipe(fs.createWriteStream('out.txt'));
+    .pipe(through(function (chunk, enc, cb) {
+        // Do something to chunk
+        this.push(chunk);
+        cb();
+    })).pipe(fs.createWriteStream('out.txt'));
 ```
 
 ## timeAgo 

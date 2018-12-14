@@ -2,7 +2,7 @@
  *
  * |Name  |Type                 |Desc           |
  * |------|---------------------|---------------|
- * |obj   |object               |Source object  |
+ * |object|object               |Source object  |
  * |filter|string array function|Object filter  |
  * |return|object               |Filtered object|
  */
@@ -18,6 +18,13 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare function pick(
+ *     object: any, 
+ *     filter: string | string[] | Function,
+ * ): any;
  */
 
 _('isStr isArr contain each');

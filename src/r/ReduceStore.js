@@ -14,7 +14,7 @@
  * |Name    |Type    |Desc                                |
  * |--------|--------|------------------------------------|
  * |listener|function|Callback to invoke on every dispatch|
- * |return  |function|Function to unscribe                |
+ * |return  |function|Function to unsubscribe             |
  * 
  * ### dispatch
  * 
@@ -51,6 +51,15 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare class ReduceStore {
+ *     constructor(reducer: Function, initialState: any);
+ *     subscribe(listener: Function): Function;
+ *     dispatch(action: any): any;
+ *     getState(): any;
+ * }
  */
 
 _('Class clone remove');

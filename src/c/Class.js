@@ -45,12 +45,16 @@
 
 /* typescript
  * declare namespace Class {
- *     interface IConstructor {
- *         (...args: any[]): any;
- *         extend(methods: any, statics: any): IConstructor;
- *         inherits(Class: Function): void;
- *         methods(methods: any): IConstructor;
- *         statics(statics: any): IConstructor;
+ *     class Base {
+ *         toString(): string;
+ *     }    
+ *     class IConstructor extends Base {
+ *         constructor(...args: any[]);
+ *         static extend(methods: any, statics: any): IConstructor;
+ *         static inherits(Class: Function): void;
+ *         static methods(methods: any): IConstructor;
+ *         static statics(statics: any): IConstructor;
+ *         [method: string]: any;
  *     }
  * }
  * export declare function Class(methods: any, statics?: any): Class.IConstructor;

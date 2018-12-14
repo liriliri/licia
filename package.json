@@ -22,7 +22,8 @@
     "benchmark": "node",
     "test:node": "licia test -as",
     "test:browser": "licia test -bas",
-    "test:sauce": "licia test -bas --sauce"
+    "test:sauce": "licia test -bas --sauce",
+    "ts": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -65,6 +66,7 @@
     "prettier": "^1.13.5",
     "promises-aplus-tests": "^2.1.2",
     "sinon": "^4.4.6",
+    "typescript": "^3.2.2",
     "underscore": "^1.8.3",
     "uuid": "^3.2.1"
   },

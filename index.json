@@ -1038,7 +1038,8 @@
         "description": "Iterates over elements of collection, returning an array of all the values that pass a truth test.",
         "dependencies": [
             "safeCb",
-            "each"
+            "each",
+            "types"
         ],
         "env": "all",
         "test": "all"
@@ -1807,7 +1808,8 @@
         "description": "Map for objects.",
         "dependencies": [
             "safeCb",
-            "keys"
+            "keys",
+            "types"
         ],
         "env": "all",
         "test": "all"
@@ -2243,7 +2245,8 @@
         "dependencies": [
             "safeCb",
             "negate",
-            "filter"
+            "filter",
+            "types"
         ]
     },
     "remove": {

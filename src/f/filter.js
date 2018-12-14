@@ -20,14 +20,19 @@
  */
 
 /* typescript
- * export declare function filter(
- *     obj: {} | any[], 
- *     predicate: (val: any, idx?: number | string, obj?: {} | any[]) => boolean, 
- *     ctx?: any
- * ): any[];
+ * export declare function filter<T>(
+ *     list: types.List<T>,
+ *     iterator: types.ListIterator<T, boolean>,
+ *     context?: any
+ * ): T[];
+ * export declare function filter<T>(
+ *     object: types.Dictionary<T>,
+ *     iterator: types.ObjectIterator<T, boolean>,
+ *     context?: any
+ * ): T[];
  */
 
-_('safeCb each');
+_('safeCb each types');
 
 exports = function(obj, predicate, ctx) {
     var ret = [];

@@ -19,7 +19,7 @@
  */
 
 /* typescript
- * export declare function use(requires?: string[], method: Function);
+ * export declare function use(requires: string[], method: Function);
  * export declare function use(method: Function);
  */
 

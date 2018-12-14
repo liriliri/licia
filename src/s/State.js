@@ -7,7 +7,7 @@
  * |Name   |Type  |Desc                  |
  * |-------|------|----------------------|
  * |initial|string|Initial state         |
- * |events |string|Events to change state|
+ * |events |object|Events to change state|
  *
  * ### is
  *
@@ -42,6 +42,14 @@
 /* module
  * env: all
  * test: all
+ */
+
+/* typescript
+ * export declare class State extends Emitter {
+ *     constructor(initial: string, events: any);
+ *     is(state: string): boolean;
+ *     [event: string]: any;
+ * }
  */
 
 _('Emitter each some toArr');

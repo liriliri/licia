@@ -27,7 +27,6 @@
  */
 
 /* typescript
- * export declare const Promise: typeof window.Promise;
  */
 
 _('Class isObj isFn State bind nextTick noop');

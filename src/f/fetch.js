@@ -35,7 +35,7 @@
  *         headers?: { [name: string]: string };
  *         body?: any;
  *     }
- *     interface IHeader {
+ *     interface IHeaders {
  *         keys(): string[]; 
  *         entries(): Array<string[]>;
  *         get(name: string): string;

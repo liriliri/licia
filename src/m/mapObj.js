@@ -25,7 +25,7 @@
  * ): types.Dictionary<TResult>; 
  */
 
-_('safeCb keys');
+_('safeCb keys types');
 
 exports = function(obj, iterator, ctx) {
     iterator = safeCb(iterator, ctx);

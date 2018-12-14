@@ -21,7 +21,7 @@
  */
 
 /* typescript
- * export declare class sessionStore extends Store {
+ * export declare class SessionStore extends Store {
  *     constructor(name: string, data?: any);
  * }
  */

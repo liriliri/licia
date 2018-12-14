@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export declare function randomBytes(size: number): Unit8Array;
+ * export declare function randomBytes(size: number): Uint8Array;
  */
 
 _('random isBrowser isNode');

@@ -7,6 +7,7 @@ packages/
 coverage/
 test/
 testTs/
+testTsOut/
 testUtil/
 karma.conf.js
 package-lock.json

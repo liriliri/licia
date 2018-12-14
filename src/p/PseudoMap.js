@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * export const PseudoMap: typeof Map;
+ * export declare const PseudoMap: typeof Map;
  */
 
 _('Class root detectMocha defineProp keys each isArr');
