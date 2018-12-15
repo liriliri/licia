@@ -47,7 +47,7 @@ about how to write an eustia module.
 
 ### Rules
 
-* Must have full documentation about usage.
+* Must have full documentation about usage. (example is required)
 * Must have test.
 * Must have typescript definition.
 * Must specify running environment, node, browser or all.
@@ -63,7 +63,7 @@ about how to write an eustia module.
 * Create a js file named with the module name and its corresponding test file.
 * Write the source code along with the documentaion and test. (documentation is the first block comment written in markdown)
 * `licia test <module-name>` run the test. (use `-b` if test should run in a browser)
-* `npm run cov` for checking the test coverage. (istanbul is required)
-* Update **index.json** and **doc.md** by running `npm run update`.
+* `npm run cov` for checking the test coverage.
+* Update **index.json** and **DOC.md** by running `npm run update`.
 
 Now it's time to submit a pull request:)
