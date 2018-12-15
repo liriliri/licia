@@ -4511,6 +4511,21 @@ pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
 precision(1.234); // -> 3;
 ```
 
+## prefetch
+
+预获取指定的 url。
+
+|参数名|类型|说明|
+|-----|----|---|
+|url|string|目标 url|
+|返回值|Promise|获取结果 Promise|
+
+如果支持，它将使用`<link rel=prefetch>`进行预加载。
+
+```javascript
+prefetch('https://eustia.liriliri.io/');
+```
+
 ## prefix
 
 给 css 属性名增加浏览器前缀。

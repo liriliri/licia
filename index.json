@@ -2107,6 +2107,13 @@
         "env": "all",
         "test": "all"
     },
+    "prefetch": {
+        "description": "Fetch a given url.",
+        "dependencies": [],
+        "env": "browser",
+        "test": "browser",
+        "demo": true
+    },
     "prefix": {
         "description": "Add vendor prefixes to a CSS attribute.",
         "dependencies": [

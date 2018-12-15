@@ -4517,6 +4517,21 @@ Find decimal precision of a given number.
 precision(1.234); // -> 3;
 ```
 
+## prefetch 
+
+Fetch a given url.
+
+|Name  |Type   |Desc           |
+|------|-------|---------------|
+|url   |string |Url to prefetch|
+|return|Promise|A Promise      |
+
+It uses `<link rel=prefetch>` if possible.
+
+```javascript
+prefetch('https://eustia.liriliri.io/');
+```
+
 ## prefix 
 
 Add vendor prefixes to a CSS attribute.
