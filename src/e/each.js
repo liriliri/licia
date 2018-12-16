@@ -18,7 +18,7 @@
 
 /* typescript
  * export declare function each<T>(
- *     list: types.List<T>, 
+ *     list: types.List<T>,
  *     iterator: types.ListIterator<T, void>,
  *     ctx?: any
  * ): types.List<T>;

@@ -5,9 +5,9 @@
  * |args  |array |Argument array |
  * |opts  |object|Parse options  |
  * |return|object|Parsed result  |
- * 
+ *
  * ### options
- * 
+ *
  * |Name      |Type  |Desc             |
  * |----------|------|-----------------|
  * |names     |object|option names     |
@@ -24,7 +24,7 @@
  *         output: 'o',
  *         watch: 'w'
  *     }
- * }); 
+ * });
  * // -> {remain: ['eustia'], output: 'util.js', watch: true}
  */
 

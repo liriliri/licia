@@ -5,13 +5,13 @@
  * |opts={}  |Object  |Options to initialize stream|
  * |transform|function|Transform implementation    |
  * |[flush]  |function|Flush implementation        |
- * 
+ *
  * ### obj
- * 
+ *
  * Shortcut for setting objectMode to true.
- * 
+ *
  * ### ctor
- * 
+ *
  * Return a class that extends stream Transform.
  */
 
@@ -39,35 +39,35 @@
  *     }
  *     type TransformCallback = (err?: any, data?: any) => void;
  *     type TransformFunction = (
- *         this: stream.Transform, 
- *         chunk: any, enc: string, 
+ *         this: stream.Transform,
+ *         chunk: any, enc: string,
  *         callback: TransformCallback
  *     ) => void;
  *     type FlushCallback = (
- *         this: stream.Transform, 
+ *         this: stream.Transform,
  *         flushCallback: () => void
  *     ) => void;
  *     function obj(
- *         transform?: TransformFunction, 
+ *         transform?: TransformFunction,
  *         flush?: FlushCallback
  *     ): stream.Transform;
  *     function ctor(
- *         transform?: TransformFunction, 
+ *         transform?: TransformFunction,
  *         flush?: FlushCallback
  *     ): ThroughConstructor;
  *     function ctor(
- *         opts?: stream.DuplexOptions, 
- *         transform?: TransformFunction, 
+ *         opts?: stream.DuplexOptions,
+ *         transform?: TransformFunction,
  *         flush?: FlushCallback
  *     ): ThroughConstructor;
  * }
  * export declare function through(
- *     transform?: through.TransformFunction, 
+ *     transform?: through.TransformFunction,
  *     flush?: through.FlushCallback
  * ): stream.Transform;
  * export declare function through(
- *     opts?: stream.DuplexOptions, 
- *     transform?: through.TransformFunction, 
+ *     opts?: stream.DuplexOptions,
+ *     transform?: through.TransformFunction,
  *     flush?: through.FlushCallback
  * ): stream.Transform;
  */

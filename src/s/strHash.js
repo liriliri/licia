@@ -1,5 +1,5 @@
 /* String hash function using djb2.
- * 
+ *
  * |Name  |Type  |Desc          |
  * |------|------|--------------|
  * |str   |string|String to hash|

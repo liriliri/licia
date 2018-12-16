@@ -25,7 +25,7 @@
  * test: all
  */
 
-/* typescript 
+/* typescript
  * export declare function format(str: string, ...values: any[]): string;
  */
 

@@ -51,13 +51,13 @@
 
 /* typescript
  * export declare function dateFormat(
- *     date: Date, 
- *     mask: string, 
+ *     date: Date,
+ *     mask: string,
  *     utc?: boolean,
  *     gmt?: boolean
  * ): string;
  * export declare function dateFormat(
- *     mask: string, 
+ *     mask: string,
  *     utc?: boolean,
  *     gmt?: boolean
  * ): string;
@@ -123,10 +123,10 @@ exports = function(date, mask, utc, gmt) {
             Z: gmt
                 ? 'GMT'
                 : utc
-                    ? 'UTC'
-                    : (toStr(date).match(regTimezone) || [''])
-                          .pop()
-                          .replace(regTimezoneClip, ''),
+                ? 'UTC'
+                : (toStr(date).match(regTimezone) || [''])
+                      .pop()
+                      .replace(regTimezoneClip, ''),
             o:
                 (o > 0 ? '-' : '+') +
                 padZero(

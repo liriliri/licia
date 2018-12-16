@@ -15,7 +15,7 @@
  *         req.send();
  *     });
  * }
- * 
+ *
  * get('test.json').then(function (result) {
  *     // Do something...
  * });

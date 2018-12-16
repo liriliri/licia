@@ -7,7 +7,7 @@
  */
 
 /* example
- * fraction(1.2); // -> '6/5' 
+ * fraction(1.2); // -> '6/5'
  */
 
 /* module

@@ -1,5 +1,5 @@
 /* Check if number is even.
- * 
+ *
  * |Name  |Type   |Desc                  |
  * |------|-------|----------------------|
  * |num   |number |Number to check       |

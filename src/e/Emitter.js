@@ -55,7 +55,7 @@
  *     on(event: string, listener: Function): Emitter;
  *     off(event: string, listener: Function): Emitter;
  *     once(event: string, listener: Function): Emitter;
- *     emit(event: string): Emitter;   
+ *     emit(event: string): Emitter;
  * }
  */
 

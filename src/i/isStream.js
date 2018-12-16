@@ -8,7 +8,7 @@
 
 /* example
  * var stream = require('stream');
- * 
+ *
  * isStream(new stream.Stream()); // -> true
  */
 

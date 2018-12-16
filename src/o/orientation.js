@@ -3,13 +3,13 @@
  * ### on
  *
  * Bind change event.
- *  
- * ### off 
- * 
+ *
+ * ### off
+ *
  * Unbind change event.
- * 
+ *
  * ### get
- * 
+ *
  * Get current orientation(landscape or portrait).
  */
 

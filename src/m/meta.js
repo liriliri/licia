@@ -1,27 +1,27 @@
 /* Document meta manipulation, turn name and content into key value pairs.
  *
  * Get meta content with given name. If name is omitted, all pairs will be return.
- * 
+ *
  * |Name  |Type        |Desc        |
  * |------|------------|------------|
  * |[name]|string array|Meta name   |
  * |return|string      |Meta content|
- * 
+ *
  * Set meta content.
- * 
+ *
  * |Name   |Type  |Desc        |
  * |-------|------|------------|
  * |name   |string|Meta name   |
  * |content|string|Meta content|
- * 
+ *
  * |Name |Type  |Desc                        |
  * |-----|------|----------------------------|
  * |metas|object|Object of name content pairs|
- * 
+ *
  * ### remove
- * 
+ *
  * Remove metas.
- * 
+ *
  * |Name|Type        |Desc     |
  * |----|------------|---------|
  * |name|string array|Meta name|

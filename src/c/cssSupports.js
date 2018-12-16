@@ -1,5 +1,5 @@
 /* Check if browser supports a given CSS feature.
- * 
+ *
  * |Name  |Type   |Desc              |
  * |------|-------|------------------|
  * |name  |string |Css property name |

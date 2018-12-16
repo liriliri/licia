@@ -1,5 +1,5 @@
 /* Hyperlink urls in a string.
- * 
+ *
  * |Name       |Type    |Desc                     |
  * |-----------|--------|-------------------------|
  * |str        |string  |String to hyperlink      |

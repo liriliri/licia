@@ -1,16 +1,16 @@
 /* Get an available TCP port.
- * 
+ *
  * |Name  |Type        |Desc           |
  * |------|------------|---------------|
  * |[port]|number array|Preferred ports|
  * |return|promise     |Available port |
- * 
+ *
  * If preferred ports are not available, a random port will be returned.
  */
 
 /* example
  * getPort([3000, 3001]).then(port => {
- *     console.log(port);       
+ *     console.log(port);
  * });
  */
 

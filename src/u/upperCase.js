@@ -1,5 +1,5 @@
 /* Convert string to upper case.
- * 
+ *
  * |Name  |Type  |Desc             |
  * |------|------|-----------------|
  * |str   |string|String to convert|

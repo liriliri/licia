@@ -25,8 +25,8 @@
 
 /* typescript
  * export declare function isClose(
- *     a: number, 
- *     b: number, 
+ *     a: number,
+ *     b: number,
  *     relTol?: number,
  *     absTol?: number
  * ): boolean;

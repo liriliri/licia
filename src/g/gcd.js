@@ -1,5 +1,5 @@
 /* Compute the greatest common divisor using Euclid's algorithm.
- * 
+ *
  * |Name  |Type  |Desc                   |
  * |------|------|-----------------------|
  * |a     |number|Number to calculate    |

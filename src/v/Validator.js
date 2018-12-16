@@ -54,7 +54,7 @@
 /* typescript
  * export declare class Validator {
  *     constructor(options: { [name: string]: any });
- *     validate(object: any): string | boolean; 
+ *     validate(object: any): string | boolean;
  *     static plugins: any;
  *     static addPlugin(name: string, plugin: Function): void;
  * }

@@ -18,7 +18,7 @@
  */
 
 /* typescript
- * export declare function debug(name: string): any; 
+ * export declare function debug(name: string): any;
  */
 
 _('toArr now format ms isBrowser strHash');

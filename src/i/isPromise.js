@@ -1,5 +1,5 @@
 /* Check if value looks like a promise.
- * 
+ *
  * |Name  |Type   |Desc                              |
  * |------|-------|----------------------------------|
  * |val   |*      |Value to check                    |

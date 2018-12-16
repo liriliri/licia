@@ -5,13 +5,13 @@
 
 /* example
  * var dispatcher = new Dispatcher();
- * 
+ *
  * dispatcher.register(function (payload) {
  *    switch (payload.actionType) {
- *        // Do something 
- *    } 
+ *        // Do something
+ *    }
  * });
- * 
+ *
  * dispatcher.dispatch({
  *     actionType: 'action'
  * });

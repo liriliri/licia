@@ -4,7 +4,7 @@
  * |------|-------|---------------|
  * |url   |string |Url to prefetch|
  * |return|Promise|A Promise      |
- * 
+ *
  * It uses `<link rel=prefetch>` if possible.
  */
 

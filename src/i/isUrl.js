@@ -1,5 +1,5 @@
 /* Loosely validate an url.
- * 
+ *
  * |Name  |Type   |Desc                               |
  * |------|-------|-----------------------------------|
  * |val   |string |Value to check                     |

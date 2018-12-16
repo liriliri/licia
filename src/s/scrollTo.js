@@ -4,9 +4,9 @@
  * |-------|---------------------|--------------|
  * |target |element string number|Scroll target |
  * |options|object               |Scroll options|
- * 
+ *
  * ### Options
- * 
+ *
  * |Name     |Type           |Default |Desc                                   |
  * |---------|---------------|--------|---------------------------------------|
  * |tolerance|number         |0       |Tolerance of target to scroll          |
@@ -39,7 +39,7 @@
  *     }
  * }
  * export declare function scrollTo(
- *     target: Element | string | number, 
+ *     target: Element | string | number,
  *     options: scrollTo.IOptions
  * );
  */

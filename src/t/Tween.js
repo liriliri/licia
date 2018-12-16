@@ -62,7 +62,7 @@
  *     progress(progress: number): Tween;
  *     play(): Tween;
  *     pause(): Tween;
- *     paused(): boolean;   
+ *     paused(): boolean;
  * }
  */
 

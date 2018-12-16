@@ -1,5 +1,5 @@
 /* Check if value is null or undefined, the same as value == null.
- * 
+ *
  * |Name  |Type   |Desc                              |
  * |------|-------|----------------------------------|
  * |val   |*      |Value to check                    |

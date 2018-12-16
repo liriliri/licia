@@ -1,27 +1,27 @@
 /* Handle global uncaught errors and promise rejections.
- * 
+ *
  * ### start
- * 
+ *
  * Start handling of errors.
- * 
+ *
  * ### stop
- * 
+ *
  * Stop handling.
- * 
+ *
  * ### addListener
- * 
+ *
  * Add listener for handling errors.
- * 
+ *
  * |Name|Type    |Desc          |
  * |----|--------|--------------|
  * |fn  |function|Error listener|
- * 
+ *
  * ### rmListener
- * 
+ *
  * Remove listener.
- * 
+ *
  * ### rmAllListeners
- * 
+ *
  * Remove all listeners.
  */
 

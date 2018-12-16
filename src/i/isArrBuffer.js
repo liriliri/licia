@@ -1,5 +1,5 @@
 /* Check if value is an ArrayBuffer.
- * 
+ *
  * |Name  |Type   |Desc                           |
  * |------|-------|-------------------------------|
  * |val   |*      |Value to check                 |

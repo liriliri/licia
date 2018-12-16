@@ -1,57 +1,57 @@
 /* Json to json transformer.
  *
  * ### constructor
- * 
+ *
  * |Name     |Type  |Desc                     |
  * |---------|------|-------------------------|
  * |[data={}]|object|Json object to manipulate|
- * 
+ *
  * ### set
- * 
+ *
  * Set object value.
- * 
+ *
  * |Name |Type  |Desc        |
  * |-----|------|------------|
  * |[key]|string|Object key  |
  * |val  |*     |Value to set|
- * 
+ *
  * If key is not given, the whole source object is replaced by val.
- * 
+ *
  * ### get
- * 
+ *
  * Get object value.
- * 
+ *
  * |Name  |Type  |Desc                           |
  * |------|------|-------------------------------|
  * |[key] |string|Object key                     |
  * |return|*     |Specified value or whole object|
- * 
+ *
  * ### remove
- * 
+ *
  * Remove object value.
- * 
+ *
  * |Name|Type        |Desc                 |
  * |----|------------|---------------------|
  * |key |array string|Object keys to remove|
- * 
+ *
  * ### map
- * 
+ *
  * Shortcut for array map.
- * 
+ *
  * |Name|Type    |Desc                          |
  * |----|--------|------------------------------|
  * |from|string  |From object path              |
  * |to  |string  |Target object path            |
  * |fn  |function|Function invoked per iteration|
- * 
+ *
  * ### filter
- * 
+ *
  * Shortcut for array filter.
- * 
+ *
  * ### compute
- * 
+ *
  * Compute value from several object values.
- * 
+ *
  * |Name|Type        |Desc                            |
  * |----|------------|--------------------------------|
  * |from|array string|Source values                   |
@@ -87,7 +87,7 @@
 /* typescript
  * export declare class JsonTransformer {
  *     constructor(data: any);
- *     set(key: string, val: any): JsonTransformer;   
+ *     set(key: string, val: any): JsonTransformer;
  *     get(key?: string): any;
  *     map(from: string, to: string, fn: Function): JsonTransformer;
  *     map(from: string, fn: Function): JsonTransformer;

@@ -1,7 +1,7 @@
 /* Merge sort implementation.
  *
  * Note: It's not an "in-place" sort.
- * 
+ *
  * |Name  |Type    |Desc         |
  * |------|--------|-------------|
  * |arr   |array   |Array to sort|

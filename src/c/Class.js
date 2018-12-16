@@ -47,7 +47,7 @@
  * export declare namespace Class {
  *     class Base {
  *         toString(): string;
- *     }    
+ *     }
  *     class IConstructor extends Base {
  *         constructor(...args: any[]);
  *         static extend(methods: any, statics: any): IConstructor;

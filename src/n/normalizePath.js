@@ -1,5 +1,5 @@
 /* Normalize file path slashes.
- * 
+ *
  * |Name  |Type  |Desc             |
  * |------|------|-----------------|
  * |path  |string|Path to normalize|

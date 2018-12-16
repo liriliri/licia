@@ -1,7 +1,7 @@
 /* Use Blob when available, otherwise BlobBuilder.
- * 
+ *
  * ### constructor
- * 
+ *
  * |Name  |Type  |Desc      |
  * |------|------|----------|
  * |parts |array |Blob parts|

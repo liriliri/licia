@@ -1,18 +1,18 @@
 /* UTF-8 encoding and decoding.
  *
  * ### encode
- * 
+ *
  * Turn any UTF-8 decoded string into UTF-8 encoded string.
- * 
+ *
  * |Name  |Type  |Desc            |
  * |------|------|----------------|
  * |str   |string|String to encode|
  * |return|string|Encoded string  |
- * 
+ *
  * ### decode
- * 
+ *
  * Turn any UTF-8 encoded string into UTF-8 decoded string.
- * 
+ *
  * |Name      |Type   |Desc                  |
  * |----------|-------|----------------------|
  * |str       |string |String to decode      |

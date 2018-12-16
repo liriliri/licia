@@ -1,13 +1,13 @@
 /* RC4 symmetric encryption implementation.
- * 
+ *
  * ### encrypt
- * 
+ *
  * RC4 encryption, result as base64 string.
- * 
+ *
  * ### decrypt
- * 
+ *
  * RC4 decryption, pass base64 string as input.
- * 
+ *
  * |Name  |Type  |Desc                            |
  * |------|------|--------------------------------|
  * |key   |string|Secret key                      |
@@ -15,7 +15,7 @@
  * |return|string|Encrypted/decrypted string      |
  */
 
-/* example 
+/* example
  * rc4.encrypt('licia', 'Hello world'); // -> 'j9y2VpSfR3AdNN8='
  * rc4.decrypt('licia', 'j9y2VpSfR3AdNN8='); // -> 'Hello world'
  */

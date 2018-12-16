@@ -18,7 +18,7 @@
 
 /* typescript
  * export declare function unique(
- *     arr: any[], 
+ *     arr: any[],
  *     compare?: (a: any, b: any) => boolean | number
  * ): any[];
  */

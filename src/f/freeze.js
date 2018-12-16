@@ -1,7 +1,7 @@
 /* Shortcut for Object.freeze.
  *
  * Use Object.defineProperties if Object.freeze is not supported.
- * 
+ *
  * |Name  |Type  |Desc            |
  * |------|------|----------------|
  * |obj   |object|Object to freeze|

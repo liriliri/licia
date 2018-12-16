@@ -1,18 +1,18 @@
 /* UCS-2 encoding and decoding.
  *
  * ### encode
- * 
+ *
  * Create a string using an array of code point values.
- * 
+ *
  * |Name  |Type  |Desc                |
  * |------|------|--------------------|
  * |arr   |array |Array of code points|
  * |return|string|Encoded string      |
- * 
+ *
  * ### decode
- * 
+ *
  * Create an array of code point values using a string.
- * 
+ *
  * |Name  |Type  |Desc                |
  * |------|------|--------------------|
  * |str   |string|Input string        |

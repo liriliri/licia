@@ -1,32 +1,32 @@
 /* Simplified redux like state container.
- * 
+ *
  * ### constructor
- * 
+ *
  * |Name        |Type    |Desc                       |
  * |------------|--------|---------------------------|
  * |reducer     |function|Function returns next state|
  * |initialState|*       |Initial state              |
- * 
+ *
  * ### subscribe
- * 
+ *
  * Add a change listener.
- * 
+ *
  * |Name    |Type    |Desc                                |
  * |--------|--------|------------------------------------|
  * |listener|function|Callback to invoke on every dispatch|
  * |return  |function|Function to unsubscribe             |
- * 
+ *
  * ### dispatch
- * 
+ *
  * Dispatch an action.
- * 
+ *
  * |Name  |Type  |Desc                       |
  * |------|------|---------------------------|
  * |action|object|Object representing changes|
  * |return|object|Same action object         |
- * 
+ *
  * ### getState
- * 
+ *
  * Get the current state.
  */
 
@@ -36,13 +36,13 @@
  *         case 'INCREMENT': return state + 1;
  *         case 'DECREMENT': return state - 1;
  *         default: return state;
- *     }   
+ *     }
  * }, 0);
- * 
+ *
  * store.subscribe(function () {
  *     console.log(store.getState());
  * });
- * 
+ *
  * store.dispatch({type: 'INCREMENT'}); // 1
  * store.dispatch({type: 'INCREMENT'}); // 2
  * store.dispatch({type: 'DECREMENT'}); // 1

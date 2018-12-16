@@ -1,9 +1,9 @@
 /* LocalStorage wrapper.
- * 
+ *
  * Extend from Store.
- * 
+ *
  * ### constructor
- * 
+ *
  * |Name|Type  |Desc                  |
  * |----|------|----------------------|
  * |name|string|LocalStorage item name|

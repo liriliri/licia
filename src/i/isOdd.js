@@ -1,5 +1,5 @@
 /* Check if number is odd.
- * 
+ *
  * |Name  |Type   |Desc                 |
  * |------|-------|---------------------|
  * |num   |number |Number to check      |

@@ -4846,6 +4846,19 @@ Convert rgb to hsl.
 rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
 ```
 
+## ric 
+
+Shortcut for requestIdleCallback.
+
+Use setTimeout if requestIdleCallback is not supported.
+
+```javascript
+const id = ric(function () {
+    // Called during a browser's idle periods
+});
+ric.cancel(id);
+```
+
 ## rmCookie 
 
 Loop through all possible path and domain to remove cookie.

@@ -1,7 +1,7 @@
 /* Compose a list of functions.
  *
  * Each function consumes the return value of the function that follows.
- * 
+ *
  * |Name  |Type    |Desc                |
  * |------|--------|--------------------|
  * |...fn |function|Functions to compose|
@@ -14,7 +14,7 @@
  * }, function (name) {
  *     return name.toUpperCase() + '!';
  * });
- * 
+ *
  * welcome('licia'); // -> 'hi: LICIA!'
  */
 

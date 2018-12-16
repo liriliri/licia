@@ -1,9 +1,9 @@
 /* SessionStorage wrapper.
- * 
+ *
  * Extend from Store.
- * 
+ *
  * ### constructor
- * 
+ *
  * |Name|Type  |Desc                    |
  * |----|------|------------------------|
  * |name|string|SessionStorage item name|

@@ -1,5 +1,5 @@
 /* Turn bytes into human readable file size.
- * 
+ *
  * |Name  |Type  |Desc              |
  * |------|------|------------------|
  * |bytes |number|File bytes        |

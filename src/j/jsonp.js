@@ -3,9 +3,9 @@
  * |Name|Type  |Desc         |
  * |----|------|-------------|
  * |opts|object|Jsonp Options|
- * 
+ *
  * Available options:
- * 
+ *
  * |Name          |Type    |Desc                  |
  * |--------------|--------|----------------------|
  * |url           |string  |Request url           |

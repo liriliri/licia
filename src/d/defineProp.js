@@ -6,7 +6,7 @@
  * |prop      |string|Property path      |
  * |descriptor|object|Property descriptor|
  * |return    |object|Object itself      |
- * 
+ *
  * |Name  |Type  |Desc                |
  * |------|------|--------------------|
  * |obj   |object|Object to define    |
@@ -30,7 +30,7 @@
  * });
  * obj.b.c = 2;
  * // obj.a is equal to 4
- * 
+ *
  * const obj2 = {a: 1, b: 2, c: 3};
  * defineProp(obj2, {
  *     a: {
@@ -40,7 +40,7 @@
  *     },
  *     b: {
  *         set: function (val) {
- *             this.c = val / 2;   
+ *             this.c = val / 2;
  *         }
  *     }
  * });
@@ -56,8 +56,8 @@
 
 /* typescript
  * export declare function defineProp<T>(
- *     obj: T, 
- *     prop: string, 
+ *     obj: T,
+ *     prop: string,
  *     descriptor: PropertyDescriptor
  * ): T;
  * export declare function defineProp<T>(obj: T, descriptor: PropertyDescriptorMap): T;

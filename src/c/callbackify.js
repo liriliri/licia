@@ -12,9 +12,9 @@
  *         // ...
  *     });
  * }
- * 
+ *
  * var cbFn = callbackify(fn);
- * 
+ *
  * cbFn(function (err, value) {
  *     // ...
  * });

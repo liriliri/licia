@@ -1,12 +1,12 @@
 /* Open file dialog to select file in browser.
- * 
+ *
  * |Name   |Type   |Desc          |
  * |-------|-------|--------------|
  * |options|object |Dialog options|
  * |return |Promise|Files promise |
- * 
+ *
  * Available options:
- * 
+ *
  * |Name          |Type   |Desc                        |
  * |--------------|-------|----------------------------|
  * |accept        |string |File types                  |
@@ -15,7 +15,7 @@
 
 /* example
  * openFile({multiple: true}).then(fileList => {
- *     console.log(fileList)   
+ *     console.log(fileList)
  * });
  */
 
@@ -27,7 +27,7 @@
 /* typescript
  * export declare namespace openFile {
  *     interface IOptions {
- *         accept?: string;   
+ *         accept?: string;
  *         multiple?: boolean;
  *     }
  * }

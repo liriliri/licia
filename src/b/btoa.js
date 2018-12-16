@@ -10,7 +10,7 @@
  * test: all
  */
 
-/* typescript 
+/* typescript
  * export declare function btoa(str: string): string;
  */
 

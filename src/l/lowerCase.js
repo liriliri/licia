@@ -1,5 +1,5 @@
 /* Convert string to lower case.
- * 
+ *
  * |Name  |Type  |Desc              |
  * |------|------|------------------|
  * |str   |string|String to convert |

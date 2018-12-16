@@ -1,7 +1,7 @@
 /* Turn XMLHttpRequest into promise like.
- * 
+ *
  * Note: This is not a complete fetch pollyfill.
- * 
+ *
  * |Name     |Type   |Desc           |
  * |---------|-------|---------------|
  * |url      |string |Request url    |
@@ -18,7 +18,7 @@
  * }).then(function (res) {
  *     return res.json();
  * }).then(function (data) {
- *     console.log(data);   
+ *     console.log(data);
  * });
  */
 
@@ -36,7 +36,7 @@
  *         body?: any;
  *     }
  *     interface IHeaders {
- *         keys(): string[]; 
+ *         keys(): string[];
  *         entries(): Array<string[]>;
  *         get(name: string): string;
  *         has(name: string): boolean;
@@ -55,7 +55,7 @@
  *     }
  * }
  * export declare function fetch(
- *     url: string, 
+ *     url: string,
  *     options?: fetch.IOptions
  * ): Promise<fetch.IResult>;
  */

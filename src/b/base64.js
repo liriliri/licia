@@ -32,7 +32,7 @@
 /* typescript
  * export declare const base64: {
  *     encode(arr: number[]): string;
- *     decode(str: string): number[];  
+ *     decode(str: string): number[];
  * };
  */
 

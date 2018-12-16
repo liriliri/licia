@@ -19,7 +19,7 @@
  *     age: 24
  * }], function (val) {
  *     return val.age === 24;
- * }); // -> 2 
+ * }); // -> 2
  */
 
 /* module

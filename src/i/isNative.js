@@ -1,5 +1,5 @@
 /* Check if value is a native function.
- * 
+ *
  * |Name  |Type   |Desc                              |
  * |------|-------|----------------------------------|
  * |val   |*      |Value to check                    |

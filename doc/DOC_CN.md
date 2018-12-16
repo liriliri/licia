@@ -4840,6 +4840,19 @@ paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
 rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
 ```
 
+## ric
+
+requestIdleCallback 的快捷方式。
+
+如果原生 requestIdleCallback 不支持，使用 setTimeout 进行兼容。
+
+```javascript
+const id = ric(function () {
+    // Called during a browser's idle periods
+});
+ric.cancel(id);
+```
+
 ## rmCookie
 
 遍历所有可能的路径和域名将 cookie 删除。

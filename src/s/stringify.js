@@ -1,7 +1,7 @@
 /* JSON stringify with support for circular object, function etc.
  *
  * Undefined is treated as null value.
- *  
+ *
  * |Name  |Type  |Desc               |
  * |------|------|-------------------|
  * |obj   |object|Object to stringify|

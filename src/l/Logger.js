@@ -1,48 +1,48 @@
 /* Simple logger with level filter.
  *
  * ### constructor
- * 
+ *
  * |Name       |Type  |Desc        |
  * |-----------|------|------------|
  * |name       |string|Logger name |
  * |level=DEBUG|number|Logger level|
- * 
+ *
  * ### setLevel
- * 
+ *
  * Set level.
- * 
+ *
  * |Name |Type         |Desc        |
  * |-----|-------------|------------|
  * |level|number string|Logger level|
- * 
+ *
  * ### getLevel
- * 
+ *
  * Get current level.
- * 
+ *
  * ### trace, debug, info, warn, error
- * 
+ *
  * Logging methods.
- * 
+ *
  * ### Log Levels
- * 
+ *
  * TRACE, DEBUG, INFO, WARN, ERROR and SILENT.
  */
 
 /* example
  * var logger = new Logger('licia', Logger.level.ERROR);
  * logger.trace('test');
- * 
+ *
  * // Format output.
  * logger.formatter = function (type, argList) {
  *     argList.push(new Date().getTime());
- * 
+ *
  *     return argList;
  * };
- * 
+ *
  * logger.on('all', function (type, argList) {
  *     // It's not affected by log level.
  * });
- * 
+ *
  * logger.on('debug', function (argList) {
  *     // Affected by log level.
  * });

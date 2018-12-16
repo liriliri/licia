@@ -27,7 +27,7 @@
  *     }
  * }
  * export declare function intersectRange(
- *     a: intersectRange.IRange, 
+ *     a: intersectRange.IRange,
  *     b: intersectRange.IRange
  * ): intersectRange.IRange | void;
  */

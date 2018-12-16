@@ -1,5 +1,5 @@
 /* Check if a year is a leap year.
- * 
+ *
  * |Name  |Type   |Desc                       |
  * |------|-------|---------------------------|
  * |year  |number |Year to check              |

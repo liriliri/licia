@@ -1,16 +1,16 @@
 /* Capture keyboard input to trigger given events.
  *
  * ### on
- * 
+ *
  * Register keyboard listener.
- * 
+ *
  * |Name    |Type    |Desc        |
  * |--------|--------|------------|
  * |key     |string  |Key string  |
  * |listener|function|Key listener|
- * 
+ *
  * ### off
- * 
+ *
  * Unregister keyboard listener.
  */
 
@@ -31,7 +31,7 @@
 /* typescript
  * export declare const hotkey: {
  *     on(key: string, listener: Function): void;
- *     off(key: string, listener: Function): void; 
+ *     off(key: string, listener: Function): void;
  * };
  */
 

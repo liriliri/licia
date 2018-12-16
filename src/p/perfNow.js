@@ -3,9 +3,9 @@
 
 /* example
  * var start = perfNow();
- * 
+ *
  * // Do something.
- * 
+ *
  * console.log(perfNow() - start);
  */
 

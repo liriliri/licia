@@ -4,9 +4,9 @@
  * |------|------|----------------------|
  * |name  |string|Property name         |
  * |return|string|Prefixed property name|
- * 
+ *
  * ### dash
- * 
+ *
  * Create a dasherize version.
  */
 

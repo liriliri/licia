@@ -1,5 +1,5 @@
 /* Calculate the set of unique abbreviations for a given set of strings.
- * 
+ *
  * |Name  |Type  |Desc            |
  * |------|------|----------------|
  * |...arr|string|List of names   |

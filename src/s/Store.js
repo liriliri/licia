@@ -3,60 +3,60 @@
  * Extend from Emitter.
  *
  * ### constructor
- * 
+ *
  * |Name|Type  |Desc        |
  * |----|------|------------|
  * |data|object|Initial data|
- * 
+ *
  * ### set
- * 
+ *
  * Set value.
- * 
+ *
  * |Name|Type  |Desc        |
  * |----|------|------------|
  * |key |string|Value key   |
  * |val |*     |Value to set|
- * 
+ *
  * Set values.
- * 
+ *
  * |Name|Type  |Desc           |
  * |----|------|---------------|
  * |vals|object|Key value pairs|
- * 
+ *
  * This emit a change event whenever is called.
- * 
+ *
  * ### get
- * 
+ *
  * Get value.
- * 
+ *
  * |Name  |Type  |Desc              |
  * |------|------|------------------|
  * |key   |string|Value key         |
  * |return|*     |Value of given key|
- * 
+ *
  * Get values.
- * 
+ *
  * |Name  |Type  |Desc           |
  * |------|------|---------------|
  * |keys  |array |Array of keys  |
  * |return|object|Key value pairs|
- * 
+ *
  * ### remove
- * 
+ *
  * Remove value.
- * 
+ *
  * |Name|Type        |Desc         |
  * |----|------------|-------------|
  * |key |string array|Key to remove|
- * 
+ *
  * ### clear
- * 
+ *
  * Clear all data.
- * 
+ *
  * ### each
- * 
+ *
  * Iterate over values.
- * 
+ *
  * |Name|Type    |Desc                           |
  * |----|--------|-------------------------------|
  * |fn  |function|Function invoked per interation|

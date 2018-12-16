@@ -1,13 +1,13 @@
 /* Compress image using canvas.
- * 
+ *
  * |Name  |Type     |Desc      |
  * |------|---------|----------|
  * |file  |File Blob|Image file|
  * |[opts]|object   |Options   |
  * |[cb]  |function |Callback  |
- * 
+ *
  * Available options:
- * 
+ *
  * |Name       |Type  |Desc                            |
  * |-----------|------|--------------------------------|
  * |maxWidth   |number|Max width                       |
@@ -16,9 +16,9 @@
  * |height     |number|Output image height             |
  * |mimeType   |string|Mime type                       |
  * |quality=0.8|number|Image quality, range from 0 to 1|
- * 
+ *
  * In order to keep image ratio, height will be ignored when width is set.
- * 
+ *
  * And maxWith, maxHeight will be ignored if width or height is set.
  */
 

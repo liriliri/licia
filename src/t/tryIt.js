@@ -1,5 +1,5 @@
 /* Run function in a try catch.
- * 
+ *
  * |Name|Type    |Desc                 |
  * |----|--------|---------------------|
  * |fn  |function|Function to try catch|

@@ -24,8 +24,8 @@
 
 /* typescript
  * export declare function remove(
- *     object: any[], 
- *     predicate: Function, 
+ *     object: any[],
+ *     predicate: Function,
  *     context?: any
  * ): any[];
  */

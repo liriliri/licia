@@ -1,5 +1,5 @@
 /* Opposite of pick.
- * 
+ *
  * |Name  |Type                 |Desc           |
  * |------|---------------------|---------------|
  * |obj   |object               |Source object  |

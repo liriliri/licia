@@ -2282,6 +2282,15 @@
         "env": "all",
         "test": "all"
     },
+    "ric": {
+        "description": "Shortcut for requestIdleCallback.",
+        "dependencies": [
+            "root",
+            "now"
+        ],
+        "env": "browser",
+        "test": "browser"
+    },
     "rmCookie": {
         "description": "Loop through all possible path and domain to remove cookie.",
         "dependencies": [

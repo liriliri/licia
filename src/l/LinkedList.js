@@ -1,32 +1,32 @@
 /* Doubly-linked list implementation.
  *
  * ### push
- * 
+ *
  * Add an value to the end of the list.
- * 
+ *
  * |Name  |Type  |Desc         |
  * |------|------|-------------|
  * |val   |*     |Value to push|
  * |return|number|Current size |
- * 
+ *
  * ### pop
- * 
+ *
  * Get the last value of the list.
- * 
+ *
  * ### unshift
- * 
+ *
  * Add an value to the head of the list.
- * 
+ *
  * ### shift
- * 
+ *
  * Get the first value of the list.
- * 
+ *
  * ### forEach
- * 
+ *
  * Iterate over the list.
- * 
+ *
  * ### toArr
- * 
+ *
  * Convert the list to a JavaScript array.
  */
 

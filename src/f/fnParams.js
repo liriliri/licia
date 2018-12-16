@@ -1,5 +1,5 @@
 /* Get a function parameter's names.
- * 
+ *
  * |Name  |Type    |Desc                      |
  * |------|--------|--------------------------|
  * |fn    |function|Function to get parameters|

@@ -2,7 +2,7 @@
  *
  * |Name          |Type  |Desc                    |
  * |--------------|------|------------------------|
- * |list          |array |Array to fill           | 
+ * |list          |array |Array to fill           |
  * |value         |*     |Value to fill array with|
  * |start=0       |number|Start position          |
  * |end=arr.length|number|End position            |
@@ -21,9 +21,9 @@
 
 /* typescript
  * export declare function fill(
- *     list: any[], 
- *     value: any, 
- *     start?: number, 
+ *     list: any[],
+ *     value: any,
+ *     start?: number,
  *     end?: number
  * ): any[];
  */

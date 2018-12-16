@@ -1,5 +1,5 @@
 /* Get execution time of a function.
- * 
+ *
  * |Name  |Type    |Desc                    |
  * |------|--------|------------------------|
  * |fn    |function|Function to measure time|

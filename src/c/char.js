@@ -12,7 +12,7 @@
  */
 
 /* typescript
- * export declare function char(num: number): string; 
+ * export declare function char(num: number): string;
  */
 
 exports = function(num) {

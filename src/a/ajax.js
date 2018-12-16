@@ -66,7 +66,7 @@
  *         error?: Function;
  *         complete?: Function;
  *         timeout?: number;
- *     } 
+ *     }
  *     function get(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
  *     function post(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
  * }

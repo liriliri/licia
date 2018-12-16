@@ -1,6 +1,6 @@
 /* Move a stand-alone function to a worker thread.
  *
- * |Name  |Type    |Desc               | 
+ * |Name  |Type    |Desc               |
  * |------|--------|-------------------|
  * |fn    |function|Function to turn   |
  * |return|function|Workerized Function|
@@ -8,7 +8,7 @@
 
 /* example
  * var worker = workerize(function (a, b) {
- *     return a + b;   
+ *     return a + b;
  * });
  * worker(1, 2).then(function (value) {
  *     console.log(value); // -> 3

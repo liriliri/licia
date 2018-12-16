@@ -1,5 +1,5 @@
 /* Check if value is numeric.
- * 
+ *
  * |Name  |Type   |Desc                    |
  * |------|-------|------------------------|
  * |val   |*      |Value to check          |

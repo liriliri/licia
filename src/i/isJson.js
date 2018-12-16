@@ -1,7 +1,7 @@
 /* Check if value is a valid JSON.
  *
  * It uses `JSON.parse()` and a `try... catch` block.
- * 
+ *
  * |Name  |Type   |Desc                         |
  * |------|-------|-----------------------------|
  * |val   |string |JSON string                  |

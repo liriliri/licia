@@ -2,7 +2,7 @@
  *
  * |Name   |Type                  |Desc                                |
  * |-------|----------------------|------------------------------------|
- * |data   |File Blob string array|Url data                            | 
+ * |data   |File Blob string array|Url data                            |
  * |[opts] |object                |Used when data is not a File or Blob|
  * |return |string                |Blob url                            |
  */
