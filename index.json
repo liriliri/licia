@@ -1148,6 +1148,16 @@
         "env": "node",
         "test": "node"
     },
+    "fullscreen": {
+        "description": "Fullscreen api wrapper.",
+        "dependencies": [
+            "Emitter",
+            "toBool"
+        ],
+        "env": "browser",
+        "test": "browser",
+        "demo": true
+    },
     "gcd": {
         "description": "Compute the greatest common divisor using Euclid's algorithm.",
         "dependencies": [],

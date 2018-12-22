@@ -2674,6 +2674,49 @@ fs.readFile('test.js').then(function (data) {
 });
 ```
 
+## fullscreen 
+
+Fullscreen api wrapper.
+
+### request
+
+Request fullscreen.
+
+|Name  |Type   |Desc              |
+|------|-------|------------------|
+|[el]  |Element|Fullscreen element|
+
+### exit
+
+Exit fullscreen.
+
+### toggle
+
+Toggle fullscreen.
+
+|Name  |Type   |Desc              |
+|------|-------|------------------|
+|[el]  |Element|Fullscreen element|
+
+### isActive
+
+Check Whether fullscreen is active.
+
+### getEl
+
+Return Fullscreen element if exists.
+
+### isEnabled
+
+Whether you are allowed to enter fullscreen.
+
+```javascript
+fullscreen.request();
+fullscreen.isActive(); // -> false, not a synchronous api
+fullscreen.on('error', () => {});
+fullscreen.on('change', () => {});
+```
+
 ## gcd 
 
 Compute the greatest common divisor using Euclid's algorithm.

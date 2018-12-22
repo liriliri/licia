@@ -2670,6 +2670,49 @@ fs.readFile('test.js').then(function (data) {
 });
 ```
 
+## fullscreen
+
+全屏接口封装。
+
+### request
+
+进入全屏。
+
+|参数名|类型|说明|
+|-----|----|---|
+|[el]|Element|全屏元素|
+
+### exit
+
+退出全屏。
+
+### toggle
+
+切换全屏。
+
+|参数名|类型|说明|
+|-----|----|---|
+|[el]|Element|全屏元素|
+
+### isActive
+
+是否全屏。
+
+### getEl
+
+获取全屏元素。
+
+### isEnabled
+
+是否可以进入全屏。
+
+```javascript
+fullscreen.request();
+fullscreen.isActive(); // -> false, not a synchronous api
+fullscreen.on('error', () => {});
+fullscreen.on('change', () => {});
+```
+
 ## gcd
 
 使用欧几里德算法求最大公约数。
@@ -4518,7 +4561,7 @@ precision(1.234); // -> 3;
 |参数名|类型|说明|
 |-----|----|---|
 |url|string|目标 url|
-|返回值|Promise|获取结果 Promise|
+|返回值|Promise|Promise|
 
 如果支持，它将使用`<link rel=prefetch>`进行预加载。
 
