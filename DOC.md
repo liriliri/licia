@@ -1380,6 +1380,37 @@ const fn = before(5, function() {});
 fn(); // Allow function to be call 4 times at last.
 ```
 
+## binarySearch 
+
+Binary search implementation.
+
+|Name        |Type    |Desc         |
+|------------|--------|-------------|
+|array       |array   |Sorted array |
+|value       |*       |Value to seek|
+|[comparator]|function|Comparator   |
+|return      |number  |Value index  |
+
+```javascript
+binarySearch([1, 2, 3], 2); // -> 1
+binarySearch([1, 2], 3); // -> -1
+binarySearch(
+    [
+        {
+            key: 1
+        },
+        {
+            key: 2
+        }
+    ],
+    { key: 1 },
+    (a, b) => {
+        if (a.key === b.key) return 0;
+        return a.key < b.key ? -1 : 1;
+    }
+); // -> 0
+```
+
 ## bind 
 
 Create a function bound to a given object.

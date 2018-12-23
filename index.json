@@ -483,6 +483,12 @@
         "env": "all",
         "test": "all"
     },
+    "binarySearch": {
+        "description": "Binary search implementation.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "bind": {
         "description": "Create a function bound to a given object.",
         "dependencies": [
