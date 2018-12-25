@@ -15,7 +15,7 @@
  * ### toggle
  *
  * Toggle fullscreen.
- * 
+ *
  * |Name  |Type   |Desc              |
  * |------|-------|------------------|
  * |[el]  |Element|Fullscreen element|

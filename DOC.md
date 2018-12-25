@@ -5942,6 +5942,35 @@ Get viewport scale.
 viewportScale(); // -> 3
 ```
 
+## vlq 
+
+Variable-length quantity encoding and decoding.
+
+### encode
+
+Encode numbers into vlq string.
+
+|Name  |Type        |Desc            |
+|------|------------|----------------|
+|number|number array|Number to encode|
+|return|string      |Encoded string  |
+
+### decode
+
+Decode vlq string into numbers.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|string|string|String to decode|
+|return|array |Decoded numbers |
+
+```javascript
+vlq.encode(123); // -> '2H'
+vlq.encode([123, 456, 789]); // -> '2HwcqxB'
+vlq.decode('2H'); // -> [123]
+vlq.decode('2HwcqxB'); // -> [123, 456, 789]
+```
+
 ## waterfall 
 
 Run an array of functions in series.

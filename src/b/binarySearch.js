@@ -35,8 +35,8 @@
 
 /* typescript
  * export declare function binarySearch(
- *     array: any[], 
- *     value: any, 
+ *     array: any[],
+ *     value: any,
  *     comparator?: Function
  * ): number;
  */

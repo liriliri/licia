@@ -5936,6 +5936,35 @@ values({one: 1, two: 2}); // -> [1, 2]
 viewportScale(); // -> 3
 ```
 
+## vlq
+
+vlq 编解码。
+
+### encode
+
+将数字编码为 vlq 字符串。
+
+|参数名|类型|说明|
+|-----|----|---|
+|number|number array|源数字|
+|return|string|目标字符串|
+
+### decode
+
+将 vlq 字符串解码为数字。
+
+|参数名|类型|说明|
+|-----|----|---|
+|string|string|源字符串|
+|return|array|目标数字|
+
+```javascript
+vlq.encode(123); // -> '2H'
+vlq.encode([123, 456, 789]); // -> '2HwcqxB'
+vlq.decode('2H'); // -> [123]
+vlq.decode('2HwcqxB'); // -> [123, 456, 789]
+```
+
 ## waterfall
 
 按顺序执行函数序列。

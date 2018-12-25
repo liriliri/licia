@@ -2855,6 +2855,14 @@
         "env": "browser",
         "test": "browser"
     },
+    "vlq": {
+        "description": "Variable-length quantity encoding and decoding.",
+        "dependencies": [
+            "toArr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
     "waterfall": {
         "description": "Run an array of functions in series.",
         "dependencies": [
