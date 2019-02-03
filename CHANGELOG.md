@@ -1,3 +1,11 @@
+## v1.4.0 (3 Feb 2019)
+
+* Add prefetch
+* Add ric
+* Add fullscreen
+* Add binarySearch
+* Add vlq
+
 ## v1.3.0 (14 Dec 2018)
 
 * Add openFile
