@@ -21,6 +21,7 @@
  *     exists(path: string): Promise<boolean>;
  *     unlink(path: string): Promise<void>;
  *     writeFile(path: string, data: string, options?: string): Promise<void>;
+ *     writeFile(path: string, data: Buffer): Promise<void>;
  *     readdir(path: string): Promise<string[]>;
  *     rmdir(path: string): Promise<void>;
  *     [key: string]: any;
