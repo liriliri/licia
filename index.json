@@ -2444,6 +2444,12 @@
         "env": "all",
         "test": "all"
     },
+    "sleep": {
+        "description": "Resolve a promise after a specified timeout.",
+        "dependencies": [],
+        "env": "all",
+        "test": "all"
+    },
     "slice": {
         "description": "Create slice of source array or array-like object.",
         "dependencies": [],

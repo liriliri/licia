@@ -5147,6 +5147,20 @@ size({a: 1, b: 2}); // -> 2
 size([1, 2, 3]); // -> 3
 ```
 
+## sleep
+
+使用 Promise 模拟暂停方法。
+
+|参数名|类型|说明|
+|-----|----|---|
+|timeout|number|暂时时长|
+
+```javascript
+;(async function () {
+    await sleep(2000);
+})();
+```
+
 ## slice
 
 截取数组的一部分生成新数组。

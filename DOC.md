@@ -5153,6 +5153,20 @@ size({a: 1, b: 2}); // -> 2
 size([1, 2, 3]); // -> 3
 ```
 
+## sleep 
+
+Resolve a promise after a specified timeout.
+
+|Name   |Type   |Desc         |
+|-------|-------|-------------|
+|timeout|number |Sleep timeout|
+
+```javascript
+;(async function () {
+    await sleep(2000);
+})();
+```
+
 ## slice 
 
 Create slice of source array or array-like object.
