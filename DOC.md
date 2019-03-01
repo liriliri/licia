@@ -1295,6 +1295,24 @@ obj.one = 1;
 allKeys(obj) // -> ['zero', 'one']
 ```
 
+## ansiColor 
+
+Ansi colors.
+
+### Available colors
+
+black, red, green, yellow, blue, magenta, cyan, white, gray, grey
+
+bgBlack, bgRed, bgGreen, bgYellow, bgBlue, bgMagenta, bgCyan, bgWhite,
+
+blackBright, redBright, greenBright, yellowBright, blueBright, magentaBright, cyanBright, whiteBright
+
+bgBlackBright, bgRedBright, bgGreenBright, bgYellowBright, bgBlueBright, bgMagentaBright, bgCyanBright, bgWhiteBright
+
+```javascript
+ansiColor.red('Warning');
+```
+
 ## arrToMap 
 
 Make an object map using array of strings.

@@ -443,6 +443,12 @@
         "env": "all",
         "test": "all"
     },
+    "ansiColor": {
+        "description": "Ansi colors.",
+        "dependencies": [],
+        "env": "node",
+        "test": "manual"
+    },
     "arrToMap": {
         "description": "Make an object map using array of strings.",
         "dependencies": [

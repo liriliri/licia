@@ -1290,6 +1290,24 @@ obj.one = 1;
 allKeys(obj) // -> ['zero', 'one']
 ```
 
+## ansiColor
+
+控制台颜色。
+
+### 支持颜色
+
+black, red, green, yellow, blue, magenta, cyan, white, gray, grey
+
+bgBlack, bgRed, bgGreen, bgYellow, bgBlue, bgMagenta, bgCyan, bgWhite,
+
+blackBright, redBright, greenBright, yellowBright, blueBright, magentaBright, cyanBright, whiteBright
+
+bgBlackBright, bgRedBright, bgGreenBright, bgYellowBright, bgBlueBright, bgMagentaBright, bgCyanBright, bgWhiteBright
+
+```javascript
+ansiColor.red('Warning');
+```
+
 ## arrToMap
 
 将字符串列表转换为映射。
