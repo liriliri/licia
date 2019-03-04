@@ -14,33 +14,34 @@
 
 /* module
  * env: all
- * test: all
+ * test: manual
  */
 
 /* typescript
  * export declare function debug(name: string): any;
  */
 
-_('toArr now format ms isBrowser strHash');
+_('toArr now format ms isBrowser strHash ansiColor');
 
 exports = function(name) {
-    var prevTime;
+    let prevTime;
 
     function debug() {
         if (!debug.enabled) return;
 
-        var args = toArr(arguments);
+        const args = toArr(arguments);
 
-        var cur = now(),
-            duration = ms(cur - (prevTime || cur));
+        const cur = now();
+        const duration = ms(cur - (prevTime || cur));
         prevTime = cur;
 
-        var content = format.apply(null, args);
+        const content = format.apply(null, args);
+        const color = debug.color;
 
         /* eslint-disable no-console */
         if (isBrowser) {
-            var style = 'color:' + debug.color,
-                inherit = 'color:inherit';
+            const style = 'color:' + color;
+            const inherit = 'color:inherit';
             console.log(
                 '%c' + name + ' %c' + content + ' %c+' + duration,
                 style,
@@ -48,17 +49,22 @@ exports = function(name) {
                 style
             );
         } else {
-            console.log(name + ': ' + content + ' +' + duration);
+            console.log(
+                ansiColor[color](name) +
+                    ': ' +
+                    content +
+                    ansiColor[color](' +' + duration)
+            );
         }
     }
 
     debug.enabled = true;
-    if (isBrowser) debug.color = selectColor(name);
+    debug.color = selectColor(name);
 
     return debug;
 };
 
-var colors = [
+const browserColors = [
     '#0000CC',
     '#0000FF',
     '#0033CC',
@@ -137,6 +143,33 @@ var colors = [
     '#FFCC33'
 ];
 
+const terminalColors = [
+    'black',
+    'red',
+    'green',
+    'yellow',
+    'blue',
+    'magenta',
+    'cyan',
+    'white',
+    'gray',
+    'grey',
+    'blackBright',
+    'redBright',
+    'greenBright',
+    'yellowBright',
+    'blueBright',
+    'magentaBright',
+    'cyanBright',
+    'whiteBright'
+];
+
 function selectColor(name) {
-    return colors[strHash(name) % colors.length];
+    const hash = strHash(name);
+
+    if (isBrowser) {
+        return browserColors[hash % browserColors.length];
+    } else {
+        return terminalColors[hash % terminalColors.length];
+    }
 }
