@@ -100,7 +100,7 @@
  * }
  */
 
-_('Class safeSet safeGet map filter isFn safeDel toArr');
+_('Class safeSet safeGet map filter isFn safeDel toArr each');
 
 exports = Class({
     className: 'JsonTransformer',

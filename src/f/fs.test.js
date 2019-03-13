@@ -14,6 +14,6 @@ it('basic', function(done) {
 it('exists', function(done) {
     fs.exists(path).then(function(exists) {
         expect(exists).to.be.true;
-        done();
+        fs.unlink(path).then(() => done());
     });
 });

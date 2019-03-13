@@ -32,7 +32,7 @@ exports = function(requires, method) {
     }
 
     requires = map(toArr(requires), function(val) {
-        return require(val);
+        return req(val);
     });
 
     method.apply(null, requires);
@@ -42,14 +42,14 @@ var modules = define._modules;
 
 var requireMarks = {};
 
-function require(name) {
+function req(name) {
     if (has(requireMarks, name)) return modules[name];
 
     var requires = modules[name].requires,
         body = modules[name].body,
         len = requires.length;
 
-    for (var i = 0; i < len; i++) requires[i] = require(requires[i]);
+    for (var i = 0; i < len; i++) requires[i] = req(requires[i]);
 
     var exports = body.apply(null, requires);
     if (exports) modules[name] = exports;

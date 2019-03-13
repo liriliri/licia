@@ -18,7 +18,7 @@
  * export declare const PseudoMap: typeof Map;
  */
 
-_('Class root detectMocha defineProp keys each isArr');
+_('Class root detectMocha defineProp keys each isArr isUndef');
 
 if (root.Map && !detectMocha()) {
     exports = root.Map;

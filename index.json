@@ -215,7 +215,8 @@
             "filter",
             "isFn",
             "safeDel",
-            "toArr"
+            "toArr",
+            "each"
         ],
         "env": "all",
         "test": "all"
@@ -288,7 +289,8 @@
             "defineProp",
             "keys",
             "each",
-            "isArr"
+            "isArr",
+            "isUndef"
         ],
         "env": "all",
         "test": "all"
@@ -391,7 +393,8 @@
             "each",
             "isArr",
             "toArr",
-            "isBrowser"
+            "isBrowser",
+            "isObj"
         ],
         "env": "all",
         "test": "all"
@@ -776,10 +779,11 @@
             "format",
             "ms",
             "isBrowser",
-            "strHash"
+            "strHash",
+            "ansiColor"
         ],
         "env": "all",
-        "test": "all",
+        "test": "manual",
         "demo": true
     },
     "decodeUriComponent": {
@@ -2582,7 +2586,8 @@
     "template": {
         "description": "Compile JavaScript template into function that can be evaluated for rendering.",
         "dependencies": [
-            "escape"
+            "escape",
+            "defaults"
         ],
         "env": "all",
         "test": "all"

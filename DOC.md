@@ -5442,12 +5442,18 @@ Compile JavaScript template into function that can be evaluated for rendering.
 |Name  |Type    |Desc                      |
 |------|--------|--------------------------|
 |str   |string  |Template string           |
+|[util]|object  |Utility functions         |
 |return|function|Compiled template function|
 
 ```javascript
 template('Hello <%= name %>!')({name: 'licia'}); // -> 'Hello licia!'
 template('<p><%- name %></p>')({name: '<licia>'}); // -> '<p>&lt;licia&gt;</p>'
 template('<%if (echo) {%>Hello licia!<%}%>')({echo: true}); // -> 'Hello licia!'
+template('<p><%= util["upperCase"](name) %></p>', {
+    upperCase: function (str) {
+        return str.toLocaleUpperCase();
+    }
+})({ name: 'licia' }); // -> '<p>LICIA</p>'
 ```
 
 ## throttle 

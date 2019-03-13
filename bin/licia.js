@@ -10,13 +10,15 @@ var knowOpts = {
         all: Boolean,
         sauce: Boolean,
         demo: Boolean,
-        ts: Boolean
+        ts: Boolean,
+        release: Boolean
     },
     shortHands = {
         b: '--browser',
         s: '--silent',
         a: '--all',
-        d: '--demo'
+        d: '--demo',
+        r: '--release'
     },
     options = nopt(knowOpts, shortHands, process.argv, 2),
     remain = options.argv.remain;

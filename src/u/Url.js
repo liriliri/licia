@@ -107,7 +107,7 @@
  * }
  */
 
-_('Class extend trim query isEmpty each isArr toArr isBrowser');
+_('Class extend trim query isEmpty each isArr toArr isBrowser isObj');
 
 exports = Class(
     {

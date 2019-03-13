@@ -3,6 +3,7 @@
  * |Name  |Type    |Desc                      |
  * |------|--------|--------------------------|
  * |str   |string  |Template string           |
+ * |[util]|object  |Utility functions         |
  * |return|function|Compiled template function|
  */
 
@@ -10,6 +11,11 @@
  * template('Hello <%= name %>!')({name: 'licia'}); // -> 'Hello licia!'
  * template('<p><%- name %></p>')({name: '<licia>'}); // -> '<p>&lt;licia&gt;</p>'
  * template('<%if (echo) {%>Hello licia!<%}%>')({echo: true}); // -> 'Hello licia!'
+ * template('<p><%= util["upperCase"](name) %></p>', {
+ *     upperCase: function (str) {
+ *         return str.toLocaleUpperCase();
+ *     }
+ * })({ name: 'licia' }); // -> '<p>LICIA</p>'
  */
 
 /* module
@@ -18,10 +24,10 @@
  */
 
 /* typescript
- * export declare function template(str: string): Function;
+ * export declare function template(str: string, util?: any): Function;
  */
 
-_('escape');
+_('escape defaults');
 
 /* eslint-disable quotes */
 var regEvaluate = /<%([\s\S]+?)%>/g,
@@ -49,7 +55,13 @@ var escapeChar = function(match) {
     return '\\' + escapes[match];
 };
 
-exports = function(str) {
+exports = function(str, util) {
+    if (!util) {
+        util = typeof _ === 'object' ? _ : { escape };
+    } else {
+        defaults(util, { escape });
+    }
+
     var index = 0,
         src = "__p+='";
 
@@ -84,9 +96,7 @@ exports = function(str) {
 
     var render = new Function('obj', 'util', src);
 
-    return function(data, util) {
-        if (!util) util = typeof _ === 'object' ? _ : {};
-
+    return function(data) {
         return render.call(null, data, util);
     };
 };

@@ -10,8 +10,10 @@ it('basic', function() {
     ).to.equal('Hello licia!');
 
     expect(
-        template('<p><%= util.upperCase(name) %></p>', {
-            upperCase: util.upperCase
+        template('<p><%= util["upperCase"](name) %></p>', {
+            upperCase: function(str) {
+                return str.toLocaleUpperCase();
+            }
         })({ name: 'licia' })
     ).to.equal('<p>LICIA</p>');
 });
