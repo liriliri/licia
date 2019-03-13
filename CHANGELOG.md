@@ -1,3 +1,9 @@
+## v1.4.1 (13 Mar 2019)
+
+* Fix template, use
+* Add ansiColor, sleep
+* debug support terminal color
+
 ## v1.4.0 (3 Feb 2019)
 
 * Add prefetch
