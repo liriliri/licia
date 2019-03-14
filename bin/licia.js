@@ -4,7 +4,7 @@ const nopt = require('nopt');
 const path = require('path');
 const contain = require('licia/contain');
 
-var knowOpts = {
+const knowOpts = {
         browser: Boolean,
         silent: Boolean,
         all: Boolean,
@@ -26,13 +26,19 @@ var knowOpts = {
 process.chdir(path.resolve(__dirname, '../'));
 global.options = options;
 
-var cmd = remain[0];
+const cmd = remain[0];
 
-var LEGAL_COMMANDS = ['test', 'pack', 'update', 'benchmark', 'help'];
+const LEGAL_COMMANDS = ['test', 'pack', 'update', 'benchmark', 'help'];
 
-if (!contain(LEGAL_COMMANDS, cmd)) {
-    require('../lib/help')();
-} else {
-    remain.splice(0, 1);
-    require('../lib/' + cmd)();
-}
+(async () => {
+    if (!contain(LEGAL_COMMANDS, cmd)) {
+        await require('../lib/help')();
+    } else {
+        remain.splice(0, 1);
+        try {
+            await require('../lib/' + cmd)();
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+})();
