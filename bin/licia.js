@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-var nopt = require('nopt'),
-    path = require('path'),
-    util = require('../lib/util');
+const nopt = require('nopt');
+const path = require('path');
+const contain = require('licia/contain');
 
 var knowOpts = {
         browser: Boolean,
@@ -30,7 +30,7 @@ var cmd = remain[0];
 
 var LEGAL_COMMANDS = ['test', 'pack', 'update', 'benchmark', 'help'];
 
-if (!util.contain(LEGAL_COMMANDS, cmd)) {
+if (!contain(LEGAL_COMMANDS, cmd)) {
     require('../lib/help')();
 } else {
     remain.splice(0, 1);

@@ -1,5 +1,6 @@
-var licia = require('./index.json'),
-    util = require('./lib/util');
+const each = require('licia/each');
+
+const licia = require('./index.json');
 
 var exports = {
     env: {
@@ -26,7 +27,7 @@ var globals = {
     expect: true
 };
 
-util.each(licia, function(val, key) {
+each(licia, function(val, key) {
     globals[key] = true;
 });
 
