@@ -4,8 +4,8 @@
  *
  * |Name     |Type    |Desc                                |
  * |---------|--------|------------------------------------|
- * |obj      |array   |Collection to iterate over          |
- * |predicate|function|Function invoked per iteration      |
+ * |list     |array   |Collection to iterate over          |
+ * |iterator |function|Function invoked per iteration      |
  * |[context]|*       |Predicate context                   |
  * |return   |array   |Array of all values that are removed|
  */
@@ -23,27 +23,27 @@
  */
 
 /* typescript
- * export declare function remove(
- *     object: any[],
- *     predicate: Function,
+ * export declare function remove<T, TResult>(
+ *     list: types.List<T>,
+ *     iterator: types.ListIterator<T, boolean>,
  *     context?: any
- * ): any[];
+ * ): TResult[];
  */
 
-_('safeCb');
+_('safeCb types');
 
-exports = function(arr, predicate, ctx) {
-    var ret = [];
+exports = function(arr, iterator, ctx) {
+    const ret = [];
 
-    predicate = safeCb(predicate, ctx);
+    iterator = safeCb(iterator, ctx);
 
-    var i = -1,
-        len = arr.length;
+    let i = -1;
+    let len = arr.length;
 
     while (++i < len) {
-        var val = arr[i];
+        const val = arr[i];
 
-        if (predicate(val, i, arr)) {
+        if (iterator(val, i, arr)) {
             ret.push(val);
             arr.splice(i, 1);
         }

@@ -6,8 +6,8 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|array|要遍历的集合|
-|predicate|function|真值检测函数|
+|list|array|要遍历的集合|
+|iterator|function|真值检测函数|
 |[context]|*|函数上下文|
 |返回值|array|包含所有删除元素的数组|
 
