@@ -1,4 +1,4 @@
-const each = require('licia/each');
+const { each } = require('licia');
 
 const licia = require('./index.json');
 

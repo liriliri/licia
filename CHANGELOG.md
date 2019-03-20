@@ -1,3 +1,9 @@
+## v1.4.2 (20 Mar 2019)
+
+* Remove redundant comments
+* Fix remove ts definition
+* Add browser and node entry
+
 ## v1.4.1 (13 Mar 2019)
 
 * Fix template, use

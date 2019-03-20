@@ -2,7 +2,7 @@
 
 const nopt = require('nopt');
 const path = require('path');
-const contain = require('licia/contain');
+const { contain } = require('licia');
 
 const knowOpts = {
         browser: Boolean,
