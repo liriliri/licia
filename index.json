@@ -2285,7 +2285,8 @@
     "remove": {
         "description": "Remove all elements from array that predicate returns truthy for and return an array of the removed elements.",
         "dependencies": [
-            "safeCb"
+            "safeCb",
+            "types"
         ],
         "env": "all",
         "test": "all"
@@ -2876,6 +2877,14 @@
         "description": "Variable-length quantity encoding and decoding.",
         "dependencies": [
             "toArr"
+        ],
+        "env": "all",
+        "test": "all"
+    },
+    "waitUntil": {
+        "description": "Wait until function returns a truthy value.",
+        "dependencies": [
+            "now"
         ],
         "env": "all",
         "test": "all"

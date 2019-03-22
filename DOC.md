@@ -4882,8 +4882,8 @@ Unlike filter, this method mutates array.
 
 |Name     |Type    |Desc                                |
 |---------|--------|------------------------------------|
-|obj      |array   |Collection to iterate over          |
-|predicate|function|Function invoked per iteration      |
+|list     |array   |Collection to iterate over          |
+|iterator |function|Function invoked per iteration      |
 |[context]|*       |Predicate context                   |
 |return   |array   |Array of all values that are removed|
 
@@ -6007,6 +6007,24 @@ vlq.encode(123); // -> '2H'
 vlq.encode([123, 456, 789]); // -> '2HwcqxB'
 vlq.decode('2H'); // -> [123]
 vlq.decode('2HwcqxB'); // -> [123, 456, 789]
+```
+
+## waitUntil 
+
+Wait until function returns a truthy value.
+
+|Name          |Type    |Desc              |
+|--------------|--------|------------------|
+|condition     |function|Condition function|
+|[timeout=0]   |number  |Timeout           |
+|[interval=250]|number  |Wait interval     |
+
+```javascript
+let a = 5;
+setTimeout(() => a = 10, 500);
+waitUntil(() => a === 10).then(() => {
+    console.log(a); // -> 10
+});
 ```
 
 ## waterfall 

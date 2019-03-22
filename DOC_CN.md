@@ -4876,8 +4876,8 @@ reject([1, 2, 3, 4, 5], function (val) {
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|array|要遍历的集合|
-|predicate|function|真值检测函数|
+|list|array|要遍历的集合|
+|iterator|function|真值检测函数|
 |[context]|*|函数上下文|
 |返回值|array|包含所有删除元素的数组|
 
@@ -6001,6 +6001,24 @@ vlq.encode(123); // -> '2H'
 vlq.encode([123, 456, 789]); // -> '2HwcqxB'
 vlq.decode('2H'); // -> [123]
 vlq.decode('2HwcqxB'); // -> [123, 456, 789]
+```
+
+## waitUntil
+
+等待直到条件函数返回真值。
+
+|参数名|类型|说明|
+|-----|----|---|
+|condition|function|条件函数|
+|[timeout=0]|number|超时|
+|[interval=250]|number|等待间隔|
+
+```javascript
+let a = 5;
+setTimeout(() => a = 10, 500);
+waitUntil(() => a === 10).then(() => {
+    console.log(a); // -> 10
+});
 ```
 
 ## waterfall
