@@ -1,3 +1,8 @@
+## v1.4.3 (27 Mar 2019)
+
+* Add waitUntil
+* Fix entry file ts definition
+
 ## v1.4.2 (20 Mar 2019)
 
 * Remove redundant comments
