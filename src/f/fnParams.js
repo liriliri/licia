@@ -19,12 +19,28 @@
  * export declare function fnParams(fn: Function): string[];
  */
 
-_('toSrc stripCmt');
+_('toSrc stripCmt startWith');
 
 exports = function(fn) {
-    var fnStr = stripCmt(toSrc(fn));
+    const fnStr = stripCmt(toSrc(fn));
 
-    var ret = fnStr.slice(fnStr.indexOf('(') + 1, fnStr.indexOf(')'));
+    let open;
+    let close;
+
+    if (
+        !startWith(fnStr, 'async') &&
+        !startWith(fnStr, 'function') &&
+        !startWith(fnStr, '(')
+    ) {
+        // Arrow function with no brackets
+        open = 0;
+        close = fnStr.indexOf('=>');
+    } else {
+        open = fnStr.indexOf('(') + 1;
+        close = fnStr.indexOf(')');
+    }
+
+    let ret = fnStr.slice(open, close);
     ret = ret.match(regArgNames);
 
     return ret === null ? [] : ret;
