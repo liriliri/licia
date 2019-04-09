@@ -2630,7 +2630,7 @@ flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 
 |参数名|类型|说明|
 |-----|----|---|
-|fn|function|目标函数|
+|fn|function string|目标函数|
 |返回值|array|参数名|
 
 ```javascript

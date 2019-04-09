@@ -2632,10 +2632,10 @@ flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 
 Get a function parameter's names.
 
-|Name  |Type    |Desc                      |
-|------|--------|--------------------------|
-|fn    |function|Function to get parameters|
-|return|array   |Names                     |
+|Name  |Type           |Desc                      |
+|------|---------------|--------------------------|
+|fn    |function string|Function to get parameters|
+|return|array          |Names                     |
 
 ```javascript
 fnParams(function (a, b) {}); // -> ['a', 'b']

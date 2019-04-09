@@ -1,9 +1,9 @@
 /* Get a function parameter's names.
  *
- * |Name  |Type    |Desc                      |
- * |------|--------|--------------------------|
- * |fn    |function|Function to get parameters|
- * |return|array   |Names                     |
+ * |Name  |Type           |Desc                      |
+ * |------|---------------|--------------------------|
+ * |fn    |function string|Function to get parameters|
+ * |return|array          |Names                     |
  */
 
 /* example
@@ -16,13 +16,13 @@
  */
 
 /* typescript
- * export declare function fnParams(fn: Function): string[];
+ * export declare function fnParams(fn: Function | string): string[];
  */
 
-_('toSrc stripCmt startWith');
+_('toSrc stripCmt startWith isStr');
 
 exports = function(fn) {
-    const fnStr = stripCmt(toSrc(fn));
+    const fnStr = stripCmt(isStr(fn) ? fn : toSrc(fn));
 
     let open;
     let close;

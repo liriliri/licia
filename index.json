@@ -1109,7 +1109,9 @@
         "description": "Get a function parameter's names.",
         "dependencies": [
             "toSrc",
-            "stripCmt"
+            "stripCmt",
+            "startWith",
+            "isStr"
         ],
         "env": "all",
         "test": "all"
