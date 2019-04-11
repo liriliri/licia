@@ -3841,6 +3841,18 @@ Create an array of the own enumerable property names of object.
 keys({a: 1}); // -> ['a']
 ```
 
+## kill 
+
+Kill process.
+
+|Name|Type|Desc|
+|----|----|----|
+|pid |number|Process ID|
+
+```javascript
+kill(9420);
+```
+
 ## last 
 
 Get the last element of array.

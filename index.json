@@ -1746,6 +1746,14 @@
         "env": "all",
         "test": "all"
     },
+    "kill": {
+        "description": "Kill process.",
+        "dependencies": [
+            "isWindows"
+        ],
+        "env": "node",
+        "test": "node"
+    },
     "last": {
         "description": "Get the last element of array.",
         "dependencies": [],
