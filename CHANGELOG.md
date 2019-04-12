@@ -1,3 +1,8 @@
+## v1.4.4 (12 Apr 2019)
+
+* Add kill
+* fnParams support arrow functions
+
 ## v1.4.3 (27 Mar 2019)
 
 * Add waitUntil
