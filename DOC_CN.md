@@ -818,6 +818,20 @@ queue.peek(); // -> 3
 console.log(queue.size); // -> 1
 ```
 
+## QuickLru
+
+不使用链表的 LRU 实现。
+
+参考 [hashlru 算法](https://github.com/dominictarr/hashlru#algorithm)，空间占用相比使用链表更多。
+
+API 与 Lru 模块保持一致。
+
+```javascript
+const cache = new QuickLru(50);
+cache.set('test', 'licia');
+cache.get('test'); // -> 'licia'
+```
+
 ## ReduceStore
 
 简单类 redux 状态管理。

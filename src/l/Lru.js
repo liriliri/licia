@@ -57,7 +57,7 @@
  */
 
 /* typescript
- * export declare class LinkedList {
+ * export declare class Lru {
  *     constructor(max: number): void;
  *     has(key: string): boolean;
  *     remove(key: string): void;

@@ -310,6 +310,15 @@
         "env": "all",
         "test": "all"
     },
+    "QuickLru": {
+        "description": "LRU implementation without linked list.",
+        "dependencies": [
+            "isUndef"
+        ],
+        "env": "all",
+        "test": "all",
+        "benchmark": true
+    },
     "ReduceStore": {
         "description": "Simplified redux like state container.",
         "dependencies": [

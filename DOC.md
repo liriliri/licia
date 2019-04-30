@@ -823,6 +823,20 @@ queue.peek(); // -> 3
 console.log(queue.size); // -> 1
 ```
 
+## QuickLru 
+
+LRU implementation without linked list.
+
+Inspired by the [hashlru algorithm](https://github.com/dominictarr/hashlru#algorithm).
+
+The api is the same as Lru module.
+
+```javascript
+const cache = new QuickLru(50);
+cache.set('test', 'licia');
+cache.get('test'); // -> 'licia'
+```
+
 ## ReduceStore 
 
 Simplified redux like state container.
