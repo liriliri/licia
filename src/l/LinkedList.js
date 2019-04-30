@@ -1,5 +1,17 @@
 /* Doubly-linked list implementation.
  *
+ * ### size
+ *
+ * List size.
+ *
+ * ### head.
+ *
+ * First node.
+ *
+ * ### tail
+ *
+ * Last node.
+ *
  * ### push
  *
  * Add an value to the end of the list.
@@ -20,6 +32,10 @@
  * ### shift
  *
  * Get the first value of the list.
+ *
+ * ### rmNode
+ *
+ * Remove node.
  *
  * ### forEach
  *
@@ -42,27 +58,35 @@
  */
 
 /* typescript
+ * export declare namespace LinkedList {
+ *     class Node {
+ *         value: any;
+ *         prev: Node | null;
+ *         next: Node | null;
+ *     }
+ * }
  * export declare class LinkedList {
  *     size: number;
+ *     head: LinkedList.Node;
+ *     tail: LinkedList.Node;
  *     push(val: any): number;
  *     pop(): any;
  *     unshift(val: any): number;
  *     shift(): any;
+ *     delNode(node: LinkedList.Node): void;
  *     forEach(iterator: Function, ctx?: any);
  *     toArr(): any[];
  * }
  */
 
-_('Class');
-
-exports = Class({
-    initialize: function LinkedList() {
+exports = class LinkedList {
+    constructor() {
         this.tail = null;
         this.head = null;
         this.size = 0;
-    },
-    push: function(val) {
-        var node = new Node(val, this.tail);
+    }
+    push(val) {
+        var node = new Node(val, this.tail, null, this);
 
         this.tail = node;
         this.head = this.head || node;
@@ -70,8 +94,8 @@ exports = Class({
         this.size++;
 
         return this.size;
-    },
-    pop: function() {
+    }
+    pop() {
         if (!this.tail) return;
 
         var node = this.tail;
@@ -86,9 +110,9 @@ exports = Class({
         this.size--;
 
         return node.value;
-    },
-    unshift: function(val) {
-        var node = new Node(val, null, this.head);
+    }
+    unshift(val) {
+        var node = new Node(val, null, this.head, this);
 
         this.head = node;
         this.tail = this.tail || node;
@@ -96,8 +120,8 @@ exports = Class({
         this.size++;
 
         return this.size;
-    },
-    shift: function() {
+    }
+    shift() {
         if (!this.head) return;
 
         var node = this.head;
@@ -112,16 +136,41 @@ exports = Class({
         this.size--;
 
         return node.value;
-    },
-    forEach: function(iterator, ctx) {
+    }
+    rmNode(node) {
+        if (node.list !== this) {
+            throw Error('Node does not belong to this list');
+        }
+
+        const { next, prev } = node;
+
+        if (next) {
+            next.prev = prev;
+        }
+        if (prev) {
+            prev.next = next;
+        }
+        if (node === this.head) {
+            this.head = next;
+        }
+        if (node === this.tail) {
+            this.tail = prev;
+        }
+        node.list = null;
+        node.prev = null;
+        node.next = null;
+
+        this.size--;
+    }
+    forEach(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
         for (var i = 0, current = this.head; current !== null; i++) {
             iterator.call(ctx, current.value, i, this);
             current = current.next;
         }
-    },
-    toArr: function() {
+    }
+    toArr() {
         var arr = new Array(this.size);
 
         for (var i = 0, current = this.head; current !== null; i++) {
@@ -131,11 +180,12 @@ exports = Class({
 
         return arr;
     }
-});
+};
 
-var Node = (exports.Node = Class({
-    initialize: function Node(val, prev, next) {
+const Node = (exports.Node = class Node {
+    constructor(val, prev, next, list) {
         this.value = val;
+        this.list = list;
 
         if (prev) {
             prev.next = this;
@@ -151,4 +201,4 @@ var Node = (exports.Node = Class({
             this.next = null;
         }
     }
-}));
+});

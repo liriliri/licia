@@ -24,6 +24,13 @@ it('basic', function() {
     expect(linkedList.shift()).to.be.an.undefined;
     expect(linkedList.size).to.equal(0);
     expect(linkedList.toArr()).to.eql([]);
+
+    linkedList.push(5);
+    linkedList.push(4);
+    const node = linkedList.tail;
+    linkedList.push(3);
+    linkedList.rmNode(node);
+    expect(linkedList.toArr()).to.eql([5, 3]);
 });
 
 it('forEach', function() {

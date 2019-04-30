@@ -223,9 +223,7 @@
     },
     "LinkedList": {
         "description": "Doubly-linked list implementation.",
-        "dependencies": [
-            "Class"
-        ],
+        "dependencies": [],
         "env": "all",
         "test": "all"
     },
@@ -256,6 +254,15 @@
         "env": "all",
         "test": "all",
         "demo": true
+    },
+    "Lru": {
+        "description": "Simple LRU cache.",
+        "dependencies": [
+            "LinkedList",
+            "PseudoMap"
+        ],
+        "env": "all",
+        "test": "all"
     },
     "MutationObserver": {
         "description": "Safe MutationObserver, does nothing if MutationObserver is not supported.",

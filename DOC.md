@@ -551,6 +551,18 @@ data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', c
 
 Doubly-linked list implementation.
 
+### size
+
+List size.
+
+### head.
+
+First node.
+
+### tail
+
+Last node.
+
 ### push
 
 Add an value to the end of the list.
@@ -571,6 +583,10 @@ Add an value to the head of the list.
 ### shift
 
 Get the first value of the list.
+
+### rmNode
+
+Remove node.
 
 ### forEach
 
@@ -653,6 +669,60 @@ logger.on('all', function (type, argList) {
 logger.on('debug', function (argList) {
     // Affected by log level.
 });
+```
+
+## Lru 
+
+Simple LRU cache.
+
+### constructor
+
+|Name|Type  |Desc              |
+|----|------|------------------|
+|max |number|Max items in cache|
+
+### has
+
+Check if has cache.
+
+|Name  |Type  |Desc     |
+|------|------|---------|
+|key   |string|Cache key|
+
+### remove
+
+Remove cache.
+
+|Name  |Type  |Desc     |
+|------|------|---------|
+|key   |string|Cache key|
+
+### get
+
+Get cache value.
+
+|Name  |Type  |Desc       |
+|------|------|-----------|
+|key   |string|Cache key  |
+|return|*     |Cache value|
+
+### set
+
+Set cache.
+
+|Name  |Type  |Desc       |
+|------|------|-----------|
+|key   |string|Cache key  |
+|val   |*     |Cache value|
+
+### clear
+
+Clear cache.
+
+```javascript
+const cache = new Lru(50);
+cache.set('test', 'licia');
+cache.get('test'); // -> 'licia'
 ```
 
 ## MutationObserver 

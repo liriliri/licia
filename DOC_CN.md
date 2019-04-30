@@ -546,6 +546,18 @@ data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', c
 
 双向链表实现。
 
+### size
+
+链表大小。
+
+### head
+
+链表首结点。
+
+### tail
+
+链表尾结点。
+
 ### push
 
 向链表尾部添加值。
@@ -566,6 +578,10 @@ data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', c
 ### shift
 
 获取链表头部值。
+
+### rmNode
+
+删除节点。
 
 ### forEach
 
@@ -648,6 +664,60 @@ logger.on('all', function (type, argList) {
 logger.on('debug', function (argList) {
     // Affected by log level.
 });
+```
+
+## Lru
+
+简单 LRU 缓存。
+
+### constructor
+
+|参数名|类型|说明|
+|-----|----|---|
+|max|number|最大缓存数|
+
+### has
+
+检查是否有缓存。
+
+|参数名|类型|说明|
+|-----|----|---|
+|key|string|缓存键名|
+
+### remove
+
+删除缓存。
+
+|参数名|类型|说明|
+|-----|----|---|
+|key|string|缓存键名|
+
+### get
+
+获取缓存。
+
+|参数名|类型|说明|
+|-----|----|---|
+|key|string|缓存键名|
+|return|*|缓存值|
+
+### set
+
+设置缓存。
+
+|参数名|类型|说明|
+|-----|----|---|
+|key|string|缓存键名|
+|val|*|缓存值|
+
+### clear
+
+清除所有缓存。
+
+```javascript
+const cache = new Lru(50);
+cache.set('test', 'licia');
+cache.get('test'); // -> 'licia'
 ```
 
 ## MutationObserver
