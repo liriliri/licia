@@ -12,7 +12,7 @@
 
 Licia 是一套在开发中实践积累起来的实用 JavaScript 工具库。该库目前拥有超过 300 个模块，包括 Dom 操作，cookie 设置，类创建，模板函数，日期格式化等实用模块，同时配套有打包工具 Eustia 进行定制化，使JS脚本加载量缩减在 10KB 以下，极大优化移动端页面的加载速度。
 
-目前拥有的所有模块可[点此](https://eustia.liriliri.io/module_cn.html)查看。
+目前拥有的所有模块可[点此](https://licia.liriliri.io/module_cn.html)查看。
 
 ## 开发背景
 
