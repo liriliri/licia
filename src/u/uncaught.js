@@ -33,7 +33,7 @@
  */
 
 /* module
- * env: all
+ * env: node browser
  * test: manual
  */
 
