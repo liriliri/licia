@@ -6181,6 +6181,16 @@ var p = wrap(escape, function(fn, text) {
 p('You & Me'); // -> '<p>You &amp; Me</p>'
 ```
 
+## wx 
+
+Promised version of mini program wx object.
+
+```javascript
+wx.getStorage('test').then(res => {
+    console.log(res.data);
+});
+```
+
 ## zip 
 
 Merge together the values of each of the arrays with the values at the corresponding position.

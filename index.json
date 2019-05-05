@@ -5090,6 +5090,19 @@
             "browser"
         ]
     },
+    "wx": {
+        "description": "Promised version of mini program wx object.",
+        "dependencies": [
+            "each",
+            "arrToMap",
+            "startWith",
+            "endWith"
+        ],
+        "env": [
+            "miniprogram"
+        ],
+        "test": []
+    },
     "zip": {
         "description": "Merge together the values of each of the arrays with the values at the corresponding position.",
         "dependencies": [

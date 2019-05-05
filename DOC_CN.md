@@ -6175,6 +6175,16 @@ var p = wrap(escape, function(fn, text) {
 p('You & Me'); // -> '<p>You &amp; Me</p>'
 ```
 
+## wx
+
+小程序 wx 对象的 promise 版本。
+
+```javascript
+wx.getStorage('test').then(res => {
+    console.log(res.data);
+});
+```
+
 ## zip
 
 将每个数组中相应位置的值合并在一起。

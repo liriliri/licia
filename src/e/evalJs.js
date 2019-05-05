@@ -12,7 +12,7 @@
  */
 
 /* module
- * env: node browser 
+ * env: node browser
  * test: all
  */
 
