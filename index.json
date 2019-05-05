@@ -1577,8 +1577,7 @@
         ],
         "env": [
             "node",
-            "browser",
-            "miniprogram"
+            "browser"
         ],
         "test": [
             "node",
