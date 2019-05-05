@@ -1,3 +1,9 @@
+## v1.4.5 (5 May 2019)
+
+* Add Lru
+* Add QuickLru
+* LinkedList support rmNode
+
 ## v1.4.4 (12 Apr 2019)
 
 * Add kill
