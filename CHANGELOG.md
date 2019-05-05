@@ -1,3 +1,8 @@
+## v1.4.6 (5 May 2019)
+
+* Support mini program
+* Add wx
+
 ## v1.4.5 (5 May 2019)
 
 * Add Lru
