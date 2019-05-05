@@ -17,8 +17,12 @@
             "isUndef",
             "isStr"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$attr": {
         "description": "Element attribute manipulation.",
@@ -30,8 +34,12 @@
             "isUndef",
             "$safeEls"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$class": {
         "description": "Element class manipulations.",
@@ -41,8 +49,12 @@
             "$safeEls",
             "isStr"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$css": {
         "description": "Element css manipulation.",
@@ -56,8 +68,12 @@
             "$safeEls",
             "prefix"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$data": {
         "description": "Wrapper of $attr, adds data- prefix to keys.",
@@ -68,8 +84,12 @@
             "each",
             "$safeEls"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$event": {
         "description": "bind events to certain dom elements.",
@@ -78,8 +98,12 @@
             "isUndef",
             "$safeEls"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$insert": {
         "description": "Insert html on different position.",
@@ -87,16 +111,24 @@
             "each",
             "$safeEls"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$offset": {
         "description": "Get the position of the element in document.",
         "dependencies": [
             "$safeEls"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$property": {
         "description": "Element property html, text, val getter and setter.",
@@ -105,8 +137,12 @@
             "each",
             "$safeEls"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$remove": {
         "description": "Remove the set of matched elements from the DOM.",
@@ -114,8 +150,12 @@
             "each",
             "$safeEls"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$safeEls": {
         "description": "Convert value into an array, if it's a string, do querySelector.",
@@ -124,8 +164,12 @@
             "toArr",
             "Select"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "$show": {
         "description": "Show elements.",
@@ -133,8 +177,12 @@
             "each",
             "$safeEls"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "Blob": {
         "description": "Use Blob when available, otherwise BlobBuilder.",
@@ -142,8 +190,12 @@
             "root",
             "each"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "Class": {
         "description": "Create JavaScript class.",
@@ -154,8 +206,15 @@
             "safeGet",
             "isMiniProgram"
         ],
-        "env": "all",
-        "test": "all",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
         "demo": true
     },
     "Color": {
@@ -169,8 +228,15 @@
             "lpad",
             "convertBase"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "Dispatcher": {
         "description": "Flux dispatcher.",
@@ -178,8 +244,15 @@
             "Class",
             "uniqId"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "Emitter": {
         "description": "Event emitter class which provides observer pattern.",
@@ -190,8 +263,15 @@
             "slice",
             "once"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "Enum": {
         "description": "Enum type implementation.",
@@ -202,8 +282,15 @@
             "each",
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "JsonTransformer": {
         "description": "Json to json transformer.",
@@ -218,14 +305,28 @@
             "toArr",
             "each"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "LinkedList": {
         "description": "Doubly-linked list implementation.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "LocalStore": {
         "description": "LocalStorage wrapper.",
@@ -237,8 +338,12 @@
             "defaults",
             "isObj"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "Logger": {
         "description": "Simple logger with level filter.",
@@ -251,8 +356,15 @@
             "isStr",
             "isNum"
         ],
-        "env": "all",
-        "test": "all",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
         "demo": true
     },
     "Lru": {
@@ -261,16 +373,27 @@
             "LinkedList",
             "PseudoMap"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "MutationObserver": {
         "description": "Safe MutationObserver, does nothing if MutationObserver is not supported.",
         "dependencies": [
             "Class"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "Promise": {
         "description": "Lightweight Promise implementation.",
@@ -283,8 +406,12 @@
             "nextTick",
             "noop"
         ],
-        "env": "all",
-        "test": "manual",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [],
         "demo": true
     },
     "PseudoMap": {
@@ -299,24 +426,45 @@
             "isArr",
             "isUndef"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "Queue": {
         "description": "Queue data structure.",
         "dependencies": [
             "Class"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "QuickLru": {
         "description": "LRU implementation without linked list.",
         "dependencies": [
             "isUndef"
         ],
-        "env": "all",
-        "test": "all",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
         "benchmark": true
     },
     "ReduceStore": {
@@ -326,8 +474,15 @@
             "clone",
             "remove"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "Select": {
         "description": "Simple wrapper of querySelectorAll to make dom selection easier.",
@@ -336,8 +491,12 @@
             "isStr",
             "each"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "SessionStore": {
         "description": "SessionStorage wrapper.",
@@ -349,16 +508,27 @@
             "defaults",
             "isObj"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "Stack": {
         "description": "Stack data structure.",
         "dependencies": [
             "Class"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "State": {
         "description": "Simple state machine.",
@@ -368,8 +538,15 @@
             "some",
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "Store": {
         "description": "Memory storage.",
@@ -380,8 +557,15 @@
             "each",
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "Tween": {
         "description": "Tween engine for JavaScript animations.",
@@ -394,8 +578,15 @@
             "raf",
             "isFn"
         ],
-        "env": "all",
-        "test": "all",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
         "demo": true
     },
     "Url": {
@@ -412,8 +603,15 @@
             "isBrowser",
             "isObj"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "Validator": {
         "description": "Object values validation.",
@@ -427,22 +625,43 @@
             "isStr",
             "isBool"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "abbrev": {
         "description": "Calculate the set of unique abbreviations for a given set of strings.",
         "dependencies": [
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "after": {
         "description": "Create a function that invokes once it's called n or more times.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "ajax": {
         "description": "Perform an asynchronous HTTP request.",
@@ -453,20 +672,31 @@
             "isObj",
             "query"
         ],
-        "env": "browser",
-        "test": "manual"
+        "env": [
+            "browser"
+        ],
+        "test": []
     },
     "allKeys": {
         "description": "Retrieve all the names of object's own and inherited properties.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "ansiColor": {
         "description": "Ansi colors.",
         "dependencies": [],
-        "env": "node",
-        "test": "manual"
+        "env": [
+            "node"
+        ],
+        "test": []
     },
     "arrToMap": {
         "description": "Make an object map using array of strings.",
@@ -475,8 +705,15 @@
             "isUndef",
             "isFn"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "atob": {
         "description": "Use Buffer to emulate atob when running in node.",
@@ -487,40 +724,82 @@
             "map",
             "detectMocha"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "average": {
         "description": "Get average value of given numbers.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "base64": {
         "description": "Basic base64 encoding and decoding.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "before": {
         "description": "Create a function that invokes less than n times.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "binarySearch": {
         "description": "Binary search implementation.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "bind": {
         "description": "Create a function bound to a given object.",
         "dependencies": [
             "restArgs"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "btoa": {
         "description": "Use Buffer to emulate btoa when running in node.",
@@ -531,44 +810,86 @@
             "map",
             "detectMocha"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "bubbleSort": {
         "description": "Bubble sort implementation.",
         "dependencies": [
             "swap"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "bytesToStr": {
         "description": "Convert bytes to string.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "callbackify": {
         "description": "Convert a function that returns a Promise to a function following the error-first callback style.",
         "dependencies": [
             "restArgs"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "camelCase": {
         "description": "Convert string to \"camelCase\".",
         "dependencies": [
             "splitCase"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "capitalize": {
         "description": "Convert the first character to upper case and the remaining to lower case.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "castPath": {
         "description": "Cast value into a property path array.",
@@ -576,8 +897,15 @@
             "has",
             "isArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "centerAlign": {
         "description": "Center align text in a string.",
@@ -588,26 +916,56 @@
             "map",
             "lpad"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "char": {
         "description": "Return string representing a character whose Unicode code point is the given integer.",
-        "dependencies": []
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "chunk": {
         "description": "Split array into groups the length of given size.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "clamp": {
         "description": "Clamp number within the inclusive lower and upper bounds.",
         "dependencies": [
             "isUndef"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "className": {
         "description": "Utility for conditionally joining class names.",
@@ -618,8 +976,15 @@
             "isArr",
             "isObj"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "clone": {
         "description": "Create a shallow-copied clone of the provided plain object.",
@@ -628,8 +993,15 @@
             "isArr",
             "extend"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "cloneDeep": {
         "description": "Recursively clone value.",
@@ -639,8 +1011,15 @@
             "isArr",
             "mapObj"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "cmpVersion": {
         "description": "Compare version strings.",
@@ -648,30 +1027,58 @@
             "toInt",
             "max"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "combine": {
         "description": "Create an array by using one array for keys and another for its values.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "compact": {
         "description": "Return a copy of the array with all falsy values removed.",
         "dependencies": [
             "filter"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "compose": {
         "description": "Compose a list of functions.",
         "dependencies": [
             "restArgs"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "compressImg": {
         "description": "Compress image using canvas.",
@@ -682,8 +1089,12 @@
             "defaults",
             "createUrl"
         ],
-        "env": "browser",
-        "test": "browser",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
         "demo": true
     },
     "concat": {
@@ -691,8 +1102,15 @@
         "dependencies": [
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "contain": {
         "description": "Check if the value is present in the list.",
@@ -701,14 +1119,28 @@
             "isArrLike",
             "values"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "convertBase": {
         "description": "Convert base of a number.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "cookie": {
         "description": "Simple api for handling browser cookies.",
@@ -718,8 +1150,12 @@
             "isUndef",
             "decodeUriComponent"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "copy": {
         "description": "Copy text to clipboard using document.execCommand.",
@@ -727,8 +1163,12 @@
             "extend",
             "noop"
         ],
-        "env": "browser",
-        "test": "browser",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
         "demo": true
     },
     "createAssigner": {
@@ -737,8 +1177,15 @@
             "isUndef",
             "each"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "createUrl": {
         "description": "CreateObjectURL wrapper.",
@@ -749,8 +1196,12 @@
             "Blob",
             "toArr"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "cssSupports": {
         "description": "Check if browser supports a given CSS feature.",
@@ -759,16 +1210,27 @@
             "isUndef",
             "camelCase"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "curry": {
         "description": "Function currying.",
         "dependencies": [
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "dateFormat": {
         "description": "Simple but extremely useful date format function.",
@@ -778,14 +1240,28 @@
             "toStr",
             "lpad"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "debounce": {
         "description": "Return a new debounced version of the passed function.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "debug": {
         "description": "A tiny JavaScript debugging utility.",
@@ -798,8 +1274,12 @@
             "strHash",
             "ansiColor"
         ],
-        "env": "all",
-        "test": "manual",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [],
         "demo": true
     },
     "decodeUriComponent": {
@@ -810,8 +1290,15 @@
             "map",
             "utf8"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "defaults": {
         "description": "Fill in undefined properties in object with the first value present in the following list of defaults objects.",
@@ -819,16 +1306,30 @@
             "createAssigner",
             "allKeys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "define": {
         "description": "Define a module, should be used along with use.",
         "dependencies": [
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "defineProp": {
         "description": "Shortcut for Object.defineProperty(defineProperties).",
@@ -838,16 +1339,30 @@
             "isObj",
             "each"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "delay": {
         "description": "Invoke function after certain milliseconds.",
         "dependencies": [
             "restArgs"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "delegate": {
         "description": "Event delegation.",
@@ -855,8 +1370,12 @@
             "Class",
             "contain"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "detectBrowser": {
         "description": "Detect browser info using ua.",
@@ -865,24 +1384,45 @@
             "toInt",
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "detectMocha": {
         "description": "Detect if mocha is running.",
         "dependencies": [
             "root"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "detectOs": {
         "description": "Detect operating system using ua.",
         "dependencies": [
             "isBrowser"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "difference": {
         "description": "Create an array of unique array values not included in the other given array.",
@@ -892,24 +1432,42 @@
             "filter",
             "contain"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "dotCase": {
         "description": "Convert string to \"dotCase\".",
         "dependencies": [
             "splitCase"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "download": {
         "description": "Trigger a file download on client side.",
         "dependencies": [
             "createUrl"
         ],
-        "env": "browser",
-        "test": "browser",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
         "demo": true
     },
     "each": {
@@ -920,8 +1478,15 @@
             "optimizeCb",
             "types"
         ],
-        "env": "all",
-        "test": "all",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
         "benchmark": true
     },
     "easing": {
@@ -930,50 +1495,96 @@
             "each",
             "upperFirst"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "endWith": {
         "description": "Check if string ends with the given target string.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "escape": {
         "description": "Escapes a string for insertion into HTML, replacing &, <, >, \", `, and ' characters.",
         "dependencies": [
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "escapeJsStr": {
         "description": "Escape string to be a valid JavaScript string literal between quotes.",
         "dependencies": [
             "toStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "escapeRegExp": {
         "description": "Escape special chars to be used as literals in RegExp constructors.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "evalCss": {
         "description": "Load css into page.",
         "dependencies": [],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "evalJs": {
         "description": "Execute js in given context.",
         "dependencies": [
             "root"
         ],
-        "env": "all",
-        "test": "all",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
         "benchmark": true
     },
     "every": {
@@ -984,8 +1595,15 @@
             "keys",
             "types"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "extend": {
         "description": "Copy all of the properties in the source objects over to the destination object.",
@@ -993,8 +1611,15 @@
             "createAssigner",
             "allKeys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "extendDeep": {
         "description": "Recursive object extending.",
@@ -1003,8 +1628,15 @@
             "each",
             "cloneDeep"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "extendOwn": {
         "description": "Like extend, but only copies own properties over to the destination object.",
@@ -1012,8 +1644,15 @@
             "keys",
             "createAssigner"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "extractBlockCmts": {
         "description": "Extract block comments from source code.",
@@ -1021,8 +1660,15 @@
             "map",
             "trim"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "extractUrls": {
         "description": "Extract urls from plain text.",
@@ -1032,8 +1678,15 @@
             "map",
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "fetch": {
         "description": "Turn XMLHttpRequest into promise like.",
@@ -1043,28 +1696,53 @@
             "defaults",
             "noop"
         ],
-        "env": "browser",
-        "test": "manual"
+        "env": [
+            "browser"
+        ],
+        "test": []
     },
     "fibonacci": {
         "description": "Calculate fibonacci number.",
         "dependencies": [
             "memoize"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
         ]
     },
     "fileSize": {
         "description": "Turn bytes into human readable file size.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "fill": {
         "description": "Fill elements of array with value.",
         "dependencies": [
             "isUndef"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "filter": {
         "description": "Iterates over elements of collection, returning an array of all the values that pass a truth test.",
@@ -1073,8 +1751,15 @@
             "each",
             "types"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "find": {
         "description": "Find the first value that passes a truth test in a collection.",
@@ -1085,16 +1770,30 @@
             "isUndef",
             "types"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "findIdx": {
         "description": "Return the first index where the predicate truth test passes.",
         "dependencies": [
             "safeCb"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "findKey": {
         "description": "Return the first key where the predicate truth test passes.",
@@ -1102,24 +1801,45 @@
             "safeCb",
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "findLastIdx": {
         "description": "Return the last index where the predicate truth test passes.",
         "dependencies": [
             "findIdx"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "flatten": {
         "description": "Recursively flatten an array.",
         "dependencies": [
             "isArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "fnParams": {
         "description": "Get a function parameter's names.",
@@ -1129,8 +1849,15 @@
             "startWith",
             "isStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "format": {
         "description": "Format string in a printf-like format.",
@@ -1140,8 +1867,15 @@
             "toNum",
             "toStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "fraction": {
         "description": "Convert number to fraction.",
@@ -1149,16 +1883,30 @@
             "gcd",
             "precision"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "freeze": {
         "description": "Shortcut for Object.freeze.",
         "dependencies": [
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "freezeDeep": {
         "description": "Recursively use Object.freeze.",
@@ -1167,8 +1915,15 @@
             "keys",
             "isObj"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "fs": {
         "description": "Promised version of node.js fs module.",
@@ -1179,8 +1934,12 @@
             "Promise",
             "toArr"
         ],
-        "env": "node",
-        "test": "node"
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
     },
     "fullscreen": {
         "description": "Fullscreen api wrapper.",
@@ -1188,37 +1947,66 @@
             "Emitter",
             "toBool"
         ],
-        "env": "browser",
-        "test": "browser",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
         "demo": true
     },
     "gcd": {
         "description": "Compute the greatest common divisor using Euclid's algorithm.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "getPort": {
         "description": "Get an available TCP port.",
         "dependencies": [
             "toArr"
         ],
-        "env": "node",
-        "test": "node"
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
     },
     "getUrlParam": {
         "description": "Get url param.",
         "dependencies": [
             "Url"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "has": {
         "description": "Checks if key is a direct property.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "hotkey": {
         "description": "Capture keyboard input to trigger given events.",
@@ -1230,27 +2018,52 @@
             "trim",
             "map"
         ],
-        "env": "browser",
-        "test": "browser",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
         "demo": true
     },
     "hslToRgb": {
         "description": "Convert hsl to rgb.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "identity": {
         "description": "Return the first argument given.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "idxOf": {
         "description": "Get the index at which the first occurrence of value.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "indent": {
         "description": "Indent each line in a string.",
@@ -1259,22 +2072,43 @@
             "isUndef",
             "repeat"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "inherits": {
         "description": "Inherit the prototype methods from one constructor into another.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "insertionSort": {
         "description": "Insertion sort implementation.",
         "dependencies": [
             "swap"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "intersect": {
         "description": "Compute the list of values that are the intersection of all the arrays.",
@@ -1282,52 +2116,101 @@
             "contain",
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "intersectRange": {
         "description": "Intersect two ranges.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "invert": {
         "description": "Create an object composed of the inverted keys and values of object.",
         "dependencies": [
             "each"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isAbsoluteUrl": {
         "description": "Check if an url is absolute.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isArgs": {
         "description": "Check if value is classified as an arguments object.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isArr": {
         "description": "Check if value is an `Array` object.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isArrBuffer": {
         "description": "Check if value is an ArrayBuffer.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isArrLike": {
         "description": "Check if value is array-like.",
@@ -1335,72 +2218,133 @@
             "isNum",
             "isFn"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isBlob": {
         "description": "Check if value is a Blob.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "isBool": {
         "description": "Check if value is a boolean primitive.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isBrowser": {
         "description": "Check if running in a browser.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isBuffer": {
         "description": "Check if value is a buffer.",
         "dependencies": [
             "isFn"
         ],
-        "env": "node",
-        "test": "node"
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
     },
     "isClose": {
         "description": "Check if values are close(almost equal) to each other.",
         "dependencies": [
             "isNum"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isDataUrl": {
         "description": "Check if a string is a valid data url.",
         "dependencies": [
             "trim"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isDate": {
         "description": "Check if value is classified as a Date object.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isEl": {
         "description": "Check if value is a DOM element.",
         "dependencies": [],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "isEmail": {
         "description": "Loosely validate an email address.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isEmpty": {
         "description": "Check if value is an empty object or array.",
@@ -1411,8 +2355,15 @@
             "isArgs",
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isEqual": {
         "description": "Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.",
@@ -1421,100 +2372,188 @@
             "has",
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isErr": {
         "description": "Check if value is an error.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isEven": {
         "description": "Check if number is even.",
         "dependencies": [
             "isInt"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isFile": {
         "description": "Check if value is a file.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "isFinite": {
         "description": "Check if value is a finite primitive number.",
         "dependencies": [
             "root"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isFn": {
         "description": "Check if value is a function.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isGeneratorFn": {
         "description": "Check if value is a generator function.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isInt": {
         "description": "Checks if value is classified as a Integer.",
         "dependencies": [
             "isNum"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isJson": {
         "description": "Check if value is a valid JSON.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isLeapYear": {
         "description": "Check if a year is a leap year.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isMap": {
         "description": "Check if value is a Map object.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isMatch": {
         "description": "Check if keys and values in src are contained in obj.",
         "dependencies": [
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isMiniProgram": {
         "description": "Check if running in wechat mini program.",
         "dependencies": [
             "isFn"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isMobile": {
         "description": "Check whether client is using a mobile browser using ua.",
@@ -1522,16 +2561,30 @@
             "isBrowser",
             "memoize"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isNaN": {
         "description": "Check if value is an NaN.",
         "dependencies": [
             "isNum"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isNative": {
         "description": "Check if value is a native function.",
@@ -1540,36 +2593,71 @@
             "isFn",
             "toSrc"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isNil": {
         "description": "Check if value is null or undefined, the same as value == null.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isNode": {
         "description": "Check if running in node.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isNull": {
         "description": "Check if value is an Null.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isNum": {
         "description": "Check if value is classified as a Number primitive or object.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isNumeric": {
         "description": "Check if value is numeric.",
@@ -1579,22 +2667,43 @@
             "isFinite",
             "isArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isObj": {
         "description": "Check if value is the language type of Object.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isOdd": {
         "description": "Check if number is odd.",
         "dependencies": [
             "isInt"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isPlainObj": {
         "description": "Check if value is an object created by Object constructor.",
@@ -1604,20 +2713,41 @@
             "isFn",
             "has"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isPrime": {
         "description": "Check if the provided integer is a prime number.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isPrimitive": {
         "description": "Check if value is string, number, boolean or null.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isPromise": {
         "description": "Check if value looks like a promise.",
@@ -1625,52 +2755,98 @@
             "isObj",
             "isFn"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isRegExp": {
         "description": "Check if value is a regular expression.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isRelative": {
         "description": "Check if path appears to be relative.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isRetina": {
         "description": "Determine if running on a high DPR device or not.",
         "dependencies": [
             "isBrowser"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "isSet": {
         "description": "Check if value is a Set object.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isSorted": {
         "description": "Check if an array is sorted.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isStr": {
         "description": "Check if value is a string primitive.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isStream": {
         "description": "Check if value is a Node.js stream.",
@@ -1678,8 +2854,12 @@
             "isObj",
             "isFn"
         ],
-        "env": "node",
-        "test": "node"
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
     },
     "isTypedArr": {
         "description": "Check if value is a typed array.",
@@ -1687,42 +2867,81 @@
             "objToStr",
             "each"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isUndef": {
         "description": "Check if value is undefined.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isUrl": {
         "description": "Loosely validate an url.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isWeakMap": {
         "description": "Check if value is a WeakMap object.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isWeakSet": {
         "description": "Check if value is a WeakSet object.",
         "dependencies": [
             "objToStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "isWindows": {
         "description": "Check if platform is windows.",
         "dependencies": [],
-        "env": "node",
-        "test": "node"
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
     },
     "jsonp": {
         "description": "A simple jsonp implementation.",
@@ -1733,16 +2952,27 @@
             "uniqId",
             "query"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "kebabCase": {
         "description": "Convert string to \"kebabCase\".",
         "dependencies": [
             "splitCase"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "keyCode": {
         "description": "Key codes and key names conversion.",
@@ -1750,8 +2980,15 @@
             "isStr",
             "invert"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "keys": {
         "description": "Create an array of the own enumerable property names of object.",
@@ -1759,28 +2996,50 @@
             "has",
             "detectMocha"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "kill": {
         "description": "Kill process.",
         "dependencies": [
             "isWindows"
         ],
-        "env": "node",
-        "test": "node"
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
     },
     "last": {
         "description": "Get the last element of array.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "lazyRequire": {
         "description": "Require modules lazily.",
         "dependencies": [],
-        "env": "node",
-        "test": "node"
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
     },
     "linkify": {
         "description": "Hyperlink urls in a string.",
@@ -1789,46 +3048,79 @@
             "each",
             "escapeRegExp"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "loadCss": {
         "description": "Inject link tag into page with given href value.",
         "dependencies": [
             "noop"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "loadImg": {
         "description": "Load image with given src.",
         "dependencies": [
             "noop"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "loadJs": {
         "description": "Inject script tag into page with given src value.",
         "dependencies": [],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "longest": {
         "description": "Get the longest item in an array.",
         "dependencies": [
             "size"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "lowerCase": {
         "description": "Convert string to lower case.",
         "dependencies": [
             "toStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "lpad": {
         "description": "Pad string on the left side if it's shorter than length.",
@@ -1836,14 +3128,28 @@
             "repeat",
             "toStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "ltrim": {
         "description": "Remove chars or white-spaces from beginning of string.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "map": {
         "description": "Create an array of values by running each element in collection through iteratee.",
@@ -1853,8 +3159,15 @@
             "isArrLike",
             "types"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "mapObj": {
         "description": "Map for objects.",
@@ -1863,8 +3176,15 @@
             "keys",
             "types"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "matcher": {
         "description": "Return a predicate function that checks if attrs are contained in an object.",
@@ -1872,14 +3192,28 @@
             "extendOwn",
             "isMatch"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "max": {
         "description": "Get maximum value of given numbers.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "md5": {
         "description": "MD5 implementation.",
@@ -1887,30 +3221,58 @@
             "utf8",
             "strToBytes"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "memStorage": {
         "description": "Memory-backed implementation of the Web Storage API.",
         "dependencies": [
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "memoize": {
         "description": "Memoize a given function by caching the computed result.",
         "dependencies": [
             "has"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "mergeSort": {
         "description": "Merge sort implementation.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "meta": {
         "description": "Document meta manipulation, turn name and content into key value pairs.",
@@ -1923,22 +3285,40 @@
             "isObj",
             "toArr"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "methods": {
         "description": "Return a sorted list of the names of every method in an object.",
         "dependencies": [
             "isFn"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "min": {
         "description": "Get minimum value of given numbers.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "mkdir": {
         "description": "Recursively create directories.",
@@ -1946,8 +3326,12 @@
             "isFn",
             "noop"
         ],
-        "env": "node",
-        "test": "node"
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
     },
     "moment": {
         "description": "Tiny moment.js like implementation.",
@@ -1961,8 +3345,12 @@
             "isNil",
             "ms"
         ],
-        "env": "all",
-        "test": "manual"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": []
     },
     "ms": {
         "description": "Convert time string formats to milliseconds.",
@@ -1970,26 +3358,54 @@
             "toNum",
             "isStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "negate": {
         "description": "Create a function that negates the result of the predicate function.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "nextTick": {
         "description": "Next tick for both node and browser.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "noop": {
         "description": "A no-operation function.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "normalizeHeader": {
         "description": "Normalize http header name.",
@@ -1997,34 +3413,69 @@
             "map",
             "capitalize"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "normalizePath": {
         "description": "Normalize file path slashes.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "now": {
         "description": "Gets the number of milliseconds that have elapsed since the Unix epoch.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "objToStr": {
         "description": "Alias of Object.prototype.toString.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "omit": {
         "description": "Opposite of pick.",
         "dependencies": [
             "pick"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "once": {
         "description": "Create a function that invokes once.",
@@ -2032,22 +3483,35 @@
             "partial",
             "before"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "open": {
         "description": "Open stuff like url, files.",
         "dependencies": [
             "isWindows"
         ],
-        "env": "node",
-        "test": "manual"
+        "env": [
+            "node"
+        ],
+        "test": []
     },
     "openFile": {
         "description": "Open file dialog to select file in browser.",
         "dependencies": [],
-        "env": "browser",
-        "test": "browser",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
         "demo": true
     },
     "optimizeCb": {
@@ -2055,8 +3519,15 @@
         "dependencies": [
             "isUndef"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "orientation": {
         "description": "Screen orientation helper.",
@@ -2064,8 +3535,12 @@
             "Emitter",
             "safeGet"
         ],
-        "env": "browser",
-        "test": "browser",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
         "demo": true
     },
     "pad": {
@@ -2074,16 +3549,30 @@
             "repeat",
             "toStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "pairs": {
         "description": "Convert an object into a list of [key, value] pairs.",
         "dependencies": [
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "parallel": {
         "description": "Run an array of functions in parallel.",
@@ -2092,8 +3581,15 @@
             "each",
             "nextTick"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "parseArgs": {
         "description": "Parse command line argument options, the same as minimist.",
@@ -2103,8 +3599,15 @@
             "invert",
             "toBool"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "partial": {
         "description": "Partially apply a function by filling in given arguments.",
@@ -2112,8 +3615,15 @@
             "restArgs",
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "pascalCase": {
         "description": "Convert string to \"pascalCase\".",
@@ -2121,8 +3631,15 @@
             "camelCase",
             "upperFirst"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "perfNow": {
         "description": "High resolution time up to microsecond precision.",
@@ -2130,8 +3647,15 @@
             "now",
             "root"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "pick": {
         "description": "Return a filtered copy of an object.",
@@ -2141,8 +3665,15 @@
             "contain",
             "each"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "pluck": {
         "description": "Extract a list of property values.",
@@ -2150,20 +3681,38 @@
             "map",
             "property"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "precision": {
         "description": "Find decimal precision of a given number.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "prefetch": {
         "description": "Fetch a given url.",
         "dependencies": [],
-        "env": "browser",
-        "test": "browser",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
         "demo": true
     },
     "prefix": {
@@ -2175,8 +3724,12 @@
             "has",
             "kebabCase"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "promisify": {
         "description": "Convert callback based functions into Promises.",
@@ -2185,8 +3738,15 @@
             "root",
             "Promise"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "property": {
         "description": "Return a function that will itself return the key property of any passed-in object.",
@@ -2194,8 +3754,15 @@
             "isArr",
             "safeGet"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "query": {
         "description": "Parse and stringify url query strings.",
@@ -2209,16 +3776,30 @@
             "filter",
             "isObj"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "quickSort": {
         "description": "Quick sort implementation.",
         "dependencies": [
             "swap"
         ],
-        "env": "all",
-        "test": "all",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
         "benchmark": true
     },
     "raf": {
@@ -2227,14 +3808,28 @@
             "now",
             "isBrowser"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "random": {
         "description": "Produces a random number between min and max(inclusive).",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "randomBytes": {
         "description": "Random bytes generator.",
@@ -2243,22 +3838,43 @@
             "isBrowser",
             "isNode"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "randomItem": {
         "description": "Get a random item from an array.",
         "dependencies": [
             "random"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "range": {
         "description": "Create flexibly-numbered lists of integers.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "rc4": {
         "description": "RC4 symmetric encryption implementation.",
@@ -2268,14 +3884,25 @@
             "bytesToStr",
             "strToBytes"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "ready": {
         "description": "Invoke callback when dom is ready, similar to jQuery ready.",
         "dependencies": [],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "reduce": {
         "description": "Turn a list of values into a single value.",
@@ -2286,8 +3913,15 @@
             "keys",
             "types"
         ],
-        "env": "all",
-        "test": "all",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
         "benchmark": true
     },
     "reduceRight": {
@@ -2296,8 +3930,15 @@
             "reduce",
             "types"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "reject": {
         "description": "Opposite of filter.",
@@ -2306,6 +3947,15 @@
             "negate",
             "filter",
             "types"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
         ]
     },
     "remove": {
@@ -2314,26 +3964,54 @@
             "safeCb",
             "types"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "repeat": {
         "description": "Repeat string n-times.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "restArgs": {
         "description": "This accumulates the arguments passed into an array, after a given index.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "rgbToHsl": {
         "description": "Convert rgb to hsl.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "ric": {
         "description": "Shortcut for requestIdleCallback.",
@@ -2341,16 +4019,22 @@
             "root",
             "now"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": []
     },
     "rmCookie": {
         "description": "Loop through all possible path and domain to remove cookie.",
         "dependencies": [
             "cookie"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "rmdir": {
         "description": "Recursively remove directories.",
@@ -2358,16 +4042,27 @@
             "noop",
             "parallel"
         ],
-        "env": "node",
-        "test": "node"
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
     },
     "root": {
         "description": "Root object reference, `global` in nodeJs, `window` in browser.",
         "dependencies": [
             "isBrowser"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "rpad": {
         "description": "Pad string on the right side if it's shorter than length.",
@@ -2375,14 +4070,28 @@
             "repeat",
             "toStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "rtrim": {
         "description": "Remove chars or white-spaces from end of string.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "safeCb": {
         "description": "Create callback based on input value.",
@@ -2393,8 +4102,15 @@
             "matcher",
             "identity"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "safeDel": {
         "description": "Delete object property.",
@@ -2402,8 +4118,15 @@
             "isUndef",
             "castPath"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "safeGet": {
         "description": "Get object property, don't throw undefined error.",
@@ -2411,8 +4134,15 @@
             "isUndef",
             "castPath"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "safeSet": {
         "description": "Set value at path of object.",
@@ -2420,16 +4150,27 @@
             "castPath",
             "isUndef"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "safeStorage": {
         "description": "Use storage safely in safari private browsing and older browsers.",
         "dependencies": [
             "memStorage"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "sample": {
         "description": "Sample random values from a collection.",
@@ -2440,8 +4181,15 @@
             "random",
             "swap"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "scrollTo": {
         "description": "Scroll to a target with animation.",
@@ -2452,8 +4200,12 @@
             "isNum",
             "$offset"
         ],
-        "env": "browser",
-        "test": "browser",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
         "demo": true
     },
     "selectionSort": {
@@ -2461,16 +4213,30 @@
         "dependencies": [
             "swap"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "shuffle": {
         "description": "Randomize the order of the elements in a given array.",
         "dependencies": [
             "sample"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "size": {
         "description": "Get size of object or length of array like object.",
@@ -2478,28 +4244,56 @@
             "isArrLike",
             "keys"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "sleep": {
         "description": "Resolve a promise after a specified timeout.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "slice": {
         "description": "Create slice of source array or array-like object.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "snakeCase": {
         "description": "Convert string to \"snakeCase\".",
         "dependencies": [
             "splitCase"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "some": {
         "description": "Check if predicate return truthy for any element.",
@@ -2509,8 +4303,15 @@
             "keys",
             "types"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "sortBy": {
         "description": "Return an array of elements sorted in ascending order by results of running each element through iteratee.",
@@ -2520,46 +4321,95 @@
             "map",
             "isUndef"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "spaceCase": {
         "description": "Convert string to \"spaceCase\".",
         "dependencies": [
             "splitCase"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "splitCase": {
         "description": "Split different string case to an array.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "splitPath": {
         "description": "Split path into dir, name and ext.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "startWith": {
         "description": "Check if string starts with the given target string.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "strHash": {
         "description": "String hash function using djb2.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "strToBytes": {
         "description": "Convert string into bytes.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "stringify": {
         "description": "JSON stringify with support for circular object, function etc.",
@@ -2571,44 +4421,93 @@
             "isFn",
             "isRegExp"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "stripAnsi": {
         "description": "Strip ansi codes from a string.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "stripCmt": {
         "description": "Strip comments from source code.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "stripColor": {
         "description": "Strip ansi color codes from a string.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "stripHtmlTag": {
         "description": "Strip html tags from a string.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "sum": {
         "description": "Compute sum of given numbers.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "swap": {
         "description": "Swap two items in an array.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "template": {
         "description": "Compile JavaScript template into function that can be evaluated for rendering.",
@@ -2616,16 +4515,30 @@
             "escape",
             "defaults"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "throttle": {
         "description": "Return a new throttled version of the passed function.",
         "dependencies": [
             "debounce"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "through": {
         "description": "Tiny wrapper of stream Transform.",
@@ -2634,8 +4547,12 @@
             "extend",
             "inherits"
         ],
-        "env": "node",
-        "test": "node"
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
     },
     "timeAgo": {
         "description": "Format datetime with *** time ago statement.",
@@ -2643,24 +4560,45 @@
             "isDate",
             "toInt"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "timeTaken": {
         "description": "Get execution time of a function.",
         "dependencies": [
             "perfNow"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "times": {
         "description": "Invoke given function n times.",
         "dependencies": [
             "optimizeCb"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "toArr": {
         "description": "Convert value to an array.",
@@ -2670,16 +4608,30 @@
             "isArr",
             "isStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "toBool": {
         "description": "Convert value to a boolean.",
         "dependencies": [
             "isStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "toDate": {
         "description": "Convert value to a Date.",
@@ -2687,22 +4639,37 @@
             "isDate",
             "isStr"
         ],
-        "env": "all",
-        "test": "manual"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": []
     },
     "toEl": {
         "description": "Convert html string to dom elements.",
         "dependencies": [],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "toInt": {
         "description": "Convert value to an integer.",
         "dependencies": [
             "toNum"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "toNum": {
         "description": "Convert value to a number.",
@@ -2712,28 +4679,56 @@
             "isFn",
             "isStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "toSrc": {
         "description": "Convert function to its source code.",
         "dependencies": [
             "isNil"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "toStr": {
         "description": "Convert value to a string.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "topoSort": {
         "description": "Topological sorting algorithm.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "trigger": {
         "description": "Trigger browser events.",
@@ -2742,8 +4737,12 @@
             "defaults",
             "extend"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "trim": {
         "description": "Remove chars or white-spaces from beginning end of string.",
@@ -2751,16 +4750,30 @@
             "ltrim",
             "rtrim"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "tryIt": {
         "description": "Run function in a try catch.",
         "dependencies": [
             "noop"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "type": {
         "description": "Determine the internal JavaScript [[Class]] of an object.",
@@ -2768,28 +4781,50 @@
             "objToStr",
             "isNaN"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "types": {
         "description": "Used for typescript definitions only.",
         "dependencies": [],
-        "env": "all",
-        "test": "manual"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": []
     },
     "ucs2": {
         "description": "UCS-2 encoding and decoding.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "uncaught": {
         "description": "Handle global uncaught errors and promise rejections.",
         "dependencies": [
             "isBrowser"
         ],
-        "env": "all",
-        "test": "manual",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [],
         "demo": true
     },
     "unescape": {
@@ -2799,8 +4834,15 @@
             "keys",
             "invert"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "union": {
         "description": "Create an array of unique values, in order, from all given arrays.",
@@ -2809,22 +4851,43 @@
             "unique",
             "flatten"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "uniqId": {
         "description": "Generate a globally-unique id.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "unique": {
         "description": "Create duplicate-free version of an array.",
         "dependencies": [
             "filter"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "unzip": {
         "description": "Opposite of zip.",
@@ -2833,22 +4896,43 @@
             "pluck",
             "max"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "upperCase": {
         "description": "Convert string to upper case.",
         "dependencies": [
             "toStr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "upperFirst": {
         "description": "Convert the first character of string to upper case.",
         "dependencies": [],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "use": {
         "description": "Use modules that is created by define.",
@@ -2858,24 +4942,45 @@
             "has",
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "utf8": {
         "description": "UTF-8 encoding and decoding.",
         "dependencies": [
             "ucs2"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "uuid": {
         "description": "RFC4122 version 4 compliant uuid generator.",
         "dependencies": [
             "randomBytes"
         ],
-        "env": "all",
-        "test": "all",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
         "benchmark": true
     },
     "values": {
@@ -2883,8 +4988,15 @@
         "dependencies": [
             "each"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "viewportScale": {
         "description": "Get viewport scale.",
@@ -2896,24 +5008,42 @@
             "map",
             "isNaN"
         ],
-        "env": "browser",
-        "test": "browser"
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
     },
     "vlq": {
         "description": "Variable-length quantity encoding and decoding.",
         "dependencies": [
             "toArr"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "waitUntil": {
         "description": "Wait until function returns a truthy value.",
         "dependencies": [
             "now"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "waterfall": {
         "description": "Run an array of functions in series.",
@@ -2922,8 +5052,15 @@
             "nextTick",
             "restArgs"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "workerize": {
         "description": "Move a stand-alone function to a worker thread.",
@@ -2935,8 +5072,12 @@
             "createUrl",
             "isStr"
         ],
-        "env": "browser",
-        "test": "browser",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
         "demo": true
     },
     "wrap": {
@@ -2944,8 +5085,15 @@
         "dependencies": [
             "partial"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "zip": {
         "description": "Merge together the values of each of the arrays with the values at the corresponding position.",
@@ -2953,7 +5101,14 @@
             "restArgs",
             "unzip"
         ],
-        "env": "all",
-        "test": "all"
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     }
 }

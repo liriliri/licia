@@ -12,7 +12,7 @@
 
 /* module
  * env: browser
- * test: browser
+ * test: manual
  */
 
 /* typescript

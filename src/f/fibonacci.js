@@ -11,6 +11,11 @@
  * fibonacci(3); // -> 2
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 /* typescript
  * export declare function fibonacci(n: number): number;
  */

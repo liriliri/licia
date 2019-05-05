@@ -11,6 +11,11 @@
  * char(97); // -> 'a'
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 /* typescript
  * export declare function char(num: number): string;
  */

@@ -14,6 +14,11 @@
  * }); // -> [1, 3, 5]
  */
 
+/* module
+ * env: all
+ * test: all
+ */
+
 /* typescript
  * export declare function reject<T>(
  *     list: types.List<T>,
