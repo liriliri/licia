@@ -22,7 +22,7 @@ Licia 从一开始就不是为了单纯地替代 underscore 或 lodash 而生。
 
 ## 使用方法
 
-推荐使用官方打包工具 [eustia](https://eustia.liriliri.io/) 针对项目定制工具库按需引入。当然安装 **licia** 模块然后直接引用也是可以的。
+安装 **licia** 模块然后直接引用。
 
 ```bash
 npm i licia --save
@@ -35,6 +35,45 @@ console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 ```
 
 你也可以直接使用在线工具进行自定义工具库的生成，请[点此](https://eustia.liriliri.io/builder.html)查看使用。
+
+## 在小程序中使用
+
+### 使用 npm 安装
+
+1、 安装 npm 包
+
+```bash
+npm i miniprogram-licia --save
+```
+
+2、点击开发者工具中的菜单栏：工具 --> 构建 npm
+
+3、直接在代码中引入使用
+
+```javascript
+const licia = require('miniprogram-licia');
+
+licia.md5('licia'); // -> 'e59f337d85e9a467f1783fab282a41d0'
+licia.safeGet({a: {b: 1}}, 'a.b'); // -> 1
+```
+
+### 生成定制化 util.js
+
+使用 npm 包的方式会将所有功能引入到代码包中，大概会增加 100 kb 的大小。如果你只想引入所需脚本，可以使用在线工具生成定制化 util 库。
+
+1、访问 [https://licia.liriliri.io/builder.html](https://licia.liriliri.io/builder.html)
+
+2、输入需要的模块名，点击生成下载 util.js。
+
+3、将生成的工具库拷贝到小程序项目任意目录下然后直接引入使用。
+
+```javascript
+const util = require('../lib/util');
+
+util.wx.getStorage({
+  key: 'test'
+}).then(res => console.log(res.data));
+```
 
 ## 提交新模块
 
