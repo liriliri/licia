@@ -8,7 +8,7 @@
  */
 
 /* module
- * env: node browser
+ * env: all
  * test: all
  */
 

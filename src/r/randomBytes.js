@@ -13,7 +13,7 @@
  */
 
 /* module
- * env: node browser
+ * env: all
  * test: all
  */
 
@@ -22,6 +22,14 @@
  */
 
 _('random isBrowser isNode');
+
+exports = function(size) {
+    var ret = new Uint8Array(size);
+
+    for (var i = 0; i < size; i++) ret[i] = random(0, 255);
+
+    return ret;
+};
 
 var crypto;
 
@@ -44,13 +52,3 @@ if (isBrowser) {
         return crypto.randomBytes(size);
     };
 }
-
-exports =
-    exports ||
-    function(size) {
-        var ret = new Uint8Array(size);
-
-        for (var i = 0; i < size; i++) ret[i] = random(0, 255);
-
-        return ret;
-    };

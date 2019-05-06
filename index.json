@@ -3838,7 +3838,8 @@
         ],
         "env": [
             "node",
-            "browser"
+            "browser",
+            "miniprogram"
         ],
         "test": [
             "node",
@@ -4970,7 +4971,8 @@
         ],
         "env": [
             "node",
-            "browser"
+            "browser",
+            "miniprogram"
         ],
         "test": [
             "node",
