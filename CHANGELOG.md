@@ -1,3 +1,8 @@
+## v1.4.7 (14 May 2019)
+
+* Fix randomBytes when crypto is not available
+* Use var instead of const when compiled to es5
+
 ## v1.4.6 (5 May 2019)
 
 * Support mini program
