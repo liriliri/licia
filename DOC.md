@@ -4863,6 +4863,21 @@ Use crypto module in node or crypto object in browser if possible.
 randomBytes(5); // -> [55, 49, 153, 30, 122]
 ```
 
+## randomId 
+
+A tiny id generator, similar to nanoid.
+
+|Name   |Type  |Desc                                                |
+|-------|------|----------------------------------------------------|
+|size=21|number|Id size                                             |
+|symbols|string|Symbols used to generate ids, a-zA-Z0-9_- by default|
+
+```javascript
+randomId(); // -> 'oKpy4HwU8E6IvU5I03gyQ'
+randomId(5); // -> 'sM6E9'
+randomId(5, 'abc'); // -> 'cbbcb'
+```
+
 ## randomItem 
 
 Get a random item from an array.

@@ -3846,6 +3846,21 @@
             "browser"
         ]
     },
+    "randomId": {
+        "description": "A tiny id generator, similar to nanoid.",
+        "dependencies": [
+            "randomBytes"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "randomItem": {
         "description": "Get a random item from an array.",
         "dependencies": [

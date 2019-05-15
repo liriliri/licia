@@ -4857,6 +4857,21 @@ random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
 randomBytes(5); // -> [55, 49, 153, 30, 122]
 ```
 
+## randomId
+
+简单 id 生成器，类似于 nanoid。
+
+|参数名|类型|说明|
+|-----|----|---|
+|size=21|number|id 长度|
+|symbols|string|生成 id 字符，默认为 a-zA-Z0-9_-|
+
+```javascript
+randomId(); // -> 'oKpy4HwU8E6IvU5I03gyQ'
+randomId(5); // -> 'sM6E9'
+randomId(5, 'abc'); // -> 'cbbcb'
+```
+
 ## randomItem
 
 随机获取数组中的某项。
