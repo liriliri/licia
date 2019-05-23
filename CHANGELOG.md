@@ -1,3 +1,9 @@
+## v1.4.8 (23 May 2019)
+
+* Add levenshtein
+* Add randomId
+* Fix decodeUriComponent when string is totally not encoded
+
 ## v1.4.7 (14 May 2019)
 
 * Fix randomBytes when crypto is not available
