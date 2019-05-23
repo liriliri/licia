@@ -3039,6 +3039,19 @@
             "node"
         ]
     },
+    "levenshtein": {
+        "description": "Levenshtein distance implementation.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "linkify": {
         "description": "Hyperlink urls in a string.",
         "dependencies": [

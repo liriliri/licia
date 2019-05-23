@@ -3963,6 +3963,16 @@ var _ = r('underscore');
 _().isNumber(5);
 ```
 
+## levenshtein 
+
+Levenshtein distance implementation.
+
+|Name  |Type  |Desc                                |
+|------|------|------------------------------------|
+|a     |string|First string                        |
+|b     |string|Second string                       |
+|return|number|Levenshtein distance between a and b|
+
 ## linkify 
 
 Hyperlink urls in a string.
