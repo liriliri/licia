@@ -28,6 +28,10 @@ exports = function(str) {
     } catch (e) {
         var matches = str.match(regMatcher);
 
+        if (!matches) {
+            return str;
+        }
+
         each(matches, function(match) {
             str = str.replace(match, decode(match));
         });
