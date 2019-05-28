@@ -97,7 +97,7 @@
  *     port: string;
  *     pathname: string;
  *     slashes: boolean;
- *     constructor(url: string);
+ *     constructor(url?: string);
  *     setQuery(name: string, value: string): Url;
  *     setQuery(query: { [name: string]: string }): Url;
  *     rmQuery(name: string | string[]): Url;
