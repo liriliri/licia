@@ -9,7 +9,7 @@
  */
 
 /* example
- * times(3, String); // -> ['0', '1', '2', '3']
+ * times(3, String); // -> ['0', '1', '2']
  */
 
 /* module
