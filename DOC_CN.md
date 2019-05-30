@@ -2846,6 +2846,34 @@ fullscreen.on('error', () => {});
 fullscreen.on('change', () => {});
 ```
 
+## fuzzySearch
+
+模糊搜索。
+
+|参数名|类型|说明|
+|-----|----|---|
+|needle|string|搜索字符串|
+|haystacks|array|搜索集合|
+|options|object|搜索选项|
+
+可用选项：
+
+|参数名|类型|说明|
+|-----|----|---|
+|caseSensitive=false|boolean|是否大小写敏感|
+|[key]|string array|搜索项是对象时的字符串路径|
+
+```javascript
+fuzzySearch('lic', ['licia', 'll', 'lic']); // -> ['lic', 'licia']
+fuzzySearch('alpha-test', [{
+    name: 'alpha-test-1'
+}, {
+    name: 'beta-test'
+}], {
+    key: 'name'
+}); // -> [{ name: 'alpha-test-1' }]
+```
+
 ## gcd
 
 使用欧几里德算法求最大公约数。

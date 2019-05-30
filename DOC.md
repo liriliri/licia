@@ -2850,6 +2850,34 @@ fullscreen.on('error', () => {});
 fullscreen.on('change', () => {});
 ```
 
+## fuzzySearch 
+
+Simple fuzzy search.
+
+|Name     |Type  |Desc            |
+|---------|------|----------------|
+|needle   |string|String to search|
+|haystacks|array |Search list     |
+|options  |object|Search options  |
+
+Available options:
+
+|Name               |Type        |Desc                                        |
+|-------------------|------------|--------------------------------------------|
+|caseSensitive=false|boolean     |Whether comparisons should be case sensitive|
+|[key]             |string array|Object key path if item is object            |
+
+```javascript
+fuzzySearch('lic', ['licia', 'll', 'lic']); // -> ['lic', 'licia']
+fuzzySearch('alpha-test', [{
+    name: 'alpha-test-1'
+}, {
+    name: 'beta-test'
+}], {
+    key: 'name'
+}); // -> [{ name: 'alpha-test-1' }]
+```
+
 ## gcd 
 
 Compute the greatest common divisor using Euclid's algorithm.
