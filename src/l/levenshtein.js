@@ -7,7 +7,7 @@
  * |return|number|Levenshtein distance between a and b|
  */
 
-/* demo
+/* example
  * levenshtein('cat', 'cake'); // -> 2
  */
 

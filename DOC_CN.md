@@ -3969,6 +3969,10 @@ _().isNumber(5);
 |b|string|字符串 b|
 |返回值|number|a 和 b 的字符串编辑距离|
 
+```javascript
+levenshtein('cat', 'cake'); // -> 2
+```
+
 ## linkify
 
 将文本中的 url 地址转换为超链接。

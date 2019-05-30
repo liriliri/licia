@@ -3973,6 +3973,10 @@ Levenshtein distance implementation.
 |b     |string|Second string                       |
 |return|number|Levenshtein distance between a and b|
 
+```javascript
+levenshtein('cat', 'cake'); // -> 2
+```
+
 ## linkify 
 
 Hyperlink urls in a string.
