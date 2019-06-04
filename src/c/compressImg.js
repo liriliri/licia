@@ -47,12 +47,12 @@
  *         quality?: number;
  *     }
  * }
- * export declare function compressImg(file: File | Blob, cb: Function);
+ * export declare function compressImg(file: File | Blob, cb: Function): void;
  * export declare function compressImg(
  *     file: File | Blob,
  *     opts?: compressImg.IOptions,
  *     cb?: Function
- * );
+ * ): void;
  */
 
 _('isFn loadImg noop defaults createUrl');
