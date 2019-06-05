@@ -4302,6 +4302,28 @@ Return a sorted list of the names of every method in an object.
 methods(console); // -> ['Console', 'assert', 'dir', ...]
 ```
 
+## mime 
+
+Common mime types.
+
+|Name  |Type  |Desc     |
+|------|------|---------|
+|name  |string|Extension|
+|return|string|Mime type|
+
+|Name  |Type  |Desc     |
+|------|------|---------|
+|name  |string|Mime type|
+|return|string|Extension|
+
+It contains only the most common file types.
+
+```javascript
+mime('jpg'); // -> 'image/jpeg'
+mime('bmp'); // -> 'image/bmp'
+mime('video/mp4'); // -> 'mp4'
+```
+
 ## min 
 
 Get minimum value of given numbers.
@@ -5696,7 +5718,7 @@ Invoke given function n times.
 |return|array   |Array of results              |
 
 ```javascript
-times(3, String); // -> ['0', '1', '2', '3']
+times(3, String); // -> ['0', '1', '2']
 ```
 
 ## toArr 

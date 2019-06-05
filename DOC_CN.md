@@ -4298,6 +4298,28 @@ meta.remove(['e', 'f']);
 methods(console); // -> ['Console', 'assert', 'dir', ...]
 ```
 
+## mime
+
+常用 mime 类型。
+
+|参数名|类型|说明|
+|-----|----|---|
+|name|string|扩展名|
+|返回值|string|mime 类型|
+
+|参数名|类型|说明|
+|-----|----|---|
+|name|string|mime 类型|
+|返回值|string|扩展名|
+
+该模块只包含常用的文件类型。
+
+```javascript
+mime('jpg'); // -> 'image/jpeg'
+mime('bmp'); // -> 'image/bmp'
+mime('video/mp4'); // -> 'mp4'
+```
+
 ## min
 
 获取数字中的最小值。
@@ -5690,7 +5712,7 @@ timeTaken(function () {
 |返回值|array|结果数组|
 
 ```javascript
-times(3, String); // -> ['0', '1', '2', '3']
+times(3, String); // -> ['0', '1', '2']
 ```
 
 ## toArr

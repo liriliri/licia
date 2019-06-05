@@ -3338,6 +3338,21 @@
             "browser"
         ]
     },
+    "mime": {
+        "description": "Common mime types.",
+        "dependencies": [
+            "each"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "min": {
         "description": "Get minimum value of given numbers.",
         "dependencies": [],
