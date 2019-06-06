@@ -56,9 +56,7 @@ function exports(bin, t) {
         result = new Uint8Array(bin);
     } else if (type(bin) === 'uint8array') {
         result = bin.slice(0);
-    }
-
-    if (isBuffer(bin)) {
+    } else if (isBuffer(bin)) {
         result = new Uint8Array(bin.length);
         for (let i = 0; i < bin.length; i++) {
             result[i] = bin[i];
