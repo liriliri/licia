@@ -1142,6 +1142,27 @@
             "browser"
         ]
     },
+    "convertBin": {
+        "description": "Convert binary data type.",
+        "dependencies": [
+            "isStr",
+            "base64",
+            "isArrBuffer",
+            "isArr",
+            "isBuffer",
+            "type",
+            "lowerCase"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "cookie": {
         "description": "Simple api for handling browser cookies.",
         "dependencies": [

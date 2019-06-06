@@ -1893,6 +1893,38 @@ convertBase('10', 2, 10); // -> '2'
 convertBase('ff', 16, 2); // -> '11111111'
 ```
 
+## convertBin 
+
+Convert binary data type.
+
+|Name  |Type  |Desc                  |
+|------|------|----------------------|
+|bin   |*     |Binary data to convert|
+|type  |string|Binary type           |
+|return|*     |Target binary         |
+
+### Supported binary type
+
+base64, ArrayBuffer, Array, Uint8Array, Blob(browser), Buffer(node)
+
+You can not convert Blob to other types directly since it's an asynchronous process.
+
+### blobToArrBuffer
+
+Convert Blob to ArrayBuffer.
+
+|Name  |Type   |Desc               |
+|------|-------|-------------------|
+|blob  |Blob   |Blob to convert    |
+|return|Promise|ArrayBuffer promise|
+
+```javascript
+convertBin('qK6b/w==', 'Uint8Array'); // -> [168, 174, 155, 255]
+convertBin.blobToArrBuffer(new Blob[]).then(arrBuffer => {
+    // Do something...
+});
+```
+
 ## cookie 
 
 Simple api for handling browser cookies.
