@@ -5351,6 +5351,20 @@ Selection sort implementation.
 selectionSort([2, 1]); // -> [1, 2]
 ```
 
+## shellSort 
+
+Shell sort implementation.
+
+|Name  |Type    |Desc         |
+|------|--------|-------------|
+|arr   |array   |Array to sort|
+|[cmp] |function|Comparator   |
+|return|array   |Sorted array |
+
+```javascript
+shellSort([2, 1]); // -> [1, 2]
+```
+
 ## shuffle 
 
 Randomize the order of the elements in a given array.

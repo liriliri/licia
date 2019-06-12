@@ -1,28 +1,18 @@
-var bubbleSort = util.bubbleSort,
-    insertionSort = util.insertionSort,
-    selectionSort = util.selectionSort,
-    mergeSort = util.mergeSort,
-    random = util.random;
+let bubbleSort = util.bubbleSort;
+let insertionSort = util.insertionSort;
+let selectionSort = util.selectionSort;
+let mergeSort = util.mergeSort;
+let shellSort = util.shellSort;
+let random = util.random;
 
 suite
-    .add('vanilla', function() {
-        randomArr(10000).sort();
-    })
-    .add('quickSort', function() {
-        quickSort(randomArr(10000));
-    })
-    .add('mergeSort', function() {
-        mergeSort(randomArr(10000));
-    })
-    .add('bubbleSort', function() {
-        bubbleSort(randomArr(10000));
-    })
-    .add('insertionSort', function() {
-        insertionSort(randomArr(10000));
-    })
-    .add('selectionSort', function() {
-        selectionSort(randomArr(10000));
-    })
+    .add('vanilla', () => randomArr(10000).sort())
+    .add('quickSort', () => quickSort(randomArr(10000)))
+    .add('shellSort', () => shellSort(randomArr(10000)))
+    .add('mergeSort', () => mergeSort(randomArr(10000)))
+    .add('bubbleSort', () => bubbleSort(randomArr(10000)))
+    .add('insertionSort', () => insertionSort(randomArr(10000)))
+    .add('selectionSort', () => selectionSort(randomArr(10000)))
     .run();
 
 function randomArr(len) {

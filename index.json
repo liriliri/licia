@@ -4305,6 +4305,21 @@
             "browser"
         ]
     },
+    "shellSort": {
+        "description": "Shell sort implementation.",
+        "dependencies": [
+            "swap"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "shuffle": {
         "description": "Randomize the order of the elements in a given array.",
         "dependencies": [

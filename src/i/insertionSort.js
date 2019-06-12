@@ -29,6 +29,8 @@ exports = function(arr, cmp) {
         for (var j = i; j > 0; j--) {
             if (cmp(arr[j], arr[j - 1]) < 0) {
                 swap(arr, j, j - 1);
+            } else {
+                break;
             }
         }
     }

@@ -5345,6 +5345,20 @@ scrollTo('body', {
 selectionSort([2, 1]); // -> [1, 2]
 ```
 
+## shellSort
+
+希尔排序实现。
+
+|参数名|类型|说明|
+|-----|----|---|
+|arr|array|要排序的数组|
+|[cmp]|function|比较器|
+|返回值|array|有序数组|
+
+```javascript
+shellSort([2, 1]); // -> [1, 2]
+```
+
 ## shuffle
 
 将数组中元素的顺序打乱。
