@@ -2263,6 +2263,22 @@ delegate.add(container, 'click', '.children', clickHandler);
 delegate.remove(container, 'click', '.children', clickHandler);
 ```
 
+## deprecate 
+
+Node.js util.deprecate with browser support.
+
+|Name  |Type    |Desc                     |
+|------|--------|-------------------------|
+|fn    |function|Function to be deprecated|
+|msg   |string  |Warning message          |
+|return|function|Deprecated function      |
+
+```javascript
+const fn = () => {};
+const obsoleteFn = deprecate(fn);
+obsoleteFn();
+```
+
 ## detectBrowser 
 
 Detect browser info using ua.

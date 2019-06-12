@@ -1397,6 +1397,24 @@
             "browser"
         ]
     },
+    "deprecate": {
+        "description": "Node.js util.deprecate with browser support.",
+        "dependencies": [
+            "isNode",
+            "root",
+            "memStorage"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
+        "demo": true
+    },
     "detectBrowser": {
         "description": "Detect browser info using ua.",
         "dependencies": [

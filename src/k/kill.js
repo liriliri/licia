@@ -32,6 +32,6 @@ exports = function(pid) {
         }
         childProcess.execSync(cmd);
     } catch (e) {
-        // eslint-disable no-empty
+        /* eslint-disable no-empty */
     }
 };
