@@ -36,7 +36,7 @@
 
 /* typescript
  * export declare namespace convertBin {
- *     declare function blobToArrBuffer(blob: any): ArrayBuffer;
+ *     function blobToArrBuffer(blob: any): ArrayBuffer;
  * }
  * export declare function convertBin(bin: any, type: string): any;
  */
