@@ -1,3 +1,13 @@
+## v1.5.0 (13 June 2019)
+
+* Add fuzzySearch
+* Add mime
+* Add convertBin
+* Add shellSort
+* Add deprecate
+* Fix Url ts definition
+* Fix compressImg ts definition
+
 ## v1.4.8 (23 May 2019)
 
 * Add levenshtein
