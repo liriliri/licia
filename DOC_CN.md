@@ -699,7 +699,7 @@ logger.on('debug', function (argList) {
 |参数名|类型|说明|
 |-----|----|---|
 |key|string|缓存键名|
-|return|*|缓存值|
+|返回值|*|缓存值|
 
 ### set
 
@@ -1911,7 +1911,7 @@ base64, ArrayBuffer, Array, Uint8Array, Blob(browser), Buffer(node)
 |参数名|类型|说明|
 |-----|----|---|
 |blob|Blob|Blob 数据|
-|return|Promise|ArrayBuffer promise|
+|返回值|Promise|ArrayBuffer promise|
 
 ```javascript
 convertBin('qK6b/w==', 'Uint8Array'); // -> [168, 174, 155, 255]
@@ -2266,7 +2266,7 @@ Node.js util.deprecate 方法，支持浏览器。
 |-----|----|---|
 |fn|function|即将废弃的方法|
 |msg|string|调用警告|
-|return|function|废弃方法，调用时会打印警告|
+|返回值|function|废弃方法，调用时会打印警告|
 
 ```javascript
 const fn = () => {};
@@ -6222,7 +6222,7 @@ vlq 编解码。
 |参数名|类型|说明|
 |-----|----|---|
 |number|number array|源数字|
-|return|string|目标字符串|
+|返回值|string|目标字符串|
 
 ### decode
 
@@ -6231,7 +6231,7 @@ vlq 编解码。
 |参数名|类型|说明|
 |-----|----|---|
 |string|string|源字符串|
-|return|array|目标数字|
+|返回值|array|目标数字|
 
 ```javascript
 vlq.encode(123); // -> '2H'

@@ -9,7 +9,7 @@ vlq 编解码。
 |参数名|类型|说明|
 |-----|----|---|
 |number|number array|源数字|
-|return|string|目标字符串|
+|返回值|string|目标字符串|
 
 ### decode
 
@@ -18,4 +18,4 @@ vlq 编解码。
 |参数名|类型|说明|
 |-----|----|---|
 |string|string|源字符串|
-|return|array|目标数字|
+|返回值|array|目标数字|

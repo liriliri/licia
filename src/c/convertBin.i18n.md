@@ -21,4 +21,4 @@ base64, ArrayBuffer, Array, Uint8Array, Blob(browser), Buffer(node)
 |参数名|类型|说明|
 |-----|----|---|
 |blob|Blob|Blob 数据|
-|return|Promise|ArrayBuffer promise|
+|返回值|Promise|ArrayBuffer promise|
