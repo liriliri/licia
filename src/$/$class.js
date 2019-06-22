@@ -76,8 +76,9 @@ exports = {
                 if (!exports.has(el, name)) classList.push(name);
             });
 
-            if (classList.length !== 0)
-                el.className += ' ' + classList.join(' ');
+            if (classList.length !== 0) {
+                el.className += (el.className ? ' ' : '') + classList.join(' ');
+            }
         });
     },
     has: function(els, name) {

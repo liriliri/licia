@@ -2971,6 +2971,25 @@ Get url param.
 getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 ```
 
+## h 
+
+Create html with JavaScript.
+
+|Name      |Type              |Desc           |
+|----------|------------------|---------------|
+|tag       |string            |Tag name       |
+|[attrs]   |object            |Attributes     |
+|[...child]|string HTMLElement|Children       |
+|return    |HTMLElement       |Created element|
+
+```javascript
+const el = h('div#test.title', {
+    onclick: function () {},
+    title: 'test'
+}, 'inner text');
+document.body.appendChild(el);
+```
+
 ## has 
 
 Checks if key is a direct property.

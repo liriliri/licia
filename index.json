@@ -2052,6 +2052,24 @@
             "browser"
         ]
     },
+    "h": {
+        "description": "Create html with JavaScript.",
+        "dependencies": [
+            "isEl",
+            "isStr",
+            "startWith",
+            "$class",
+            "$css",
+            "each",
+            "isFn"
+        ],
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "has": {
         "description": "Checks if key is a direct property.",
         "dependencies": [],

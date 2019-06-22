@@ -2967,6 +2967,25 @@ getPort([3000, 3001]).then(port => {
 getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 ```
 
+## h
+
+创建 HTML 元素。
+
+|参数名|类型|说明|
+|-----|----|---|
+|tag|string|标签名|
+|[attrs]|object|属性|
+|[...child]|string HTMLElement|子节点|
+|return|HTMLElement|目标元素|
+
+```javascript
+const el = h('div#test.title', {
+    onclick: function () {},
+    title: 'test'
+}, 'inner text');
+document.body.appendChild(el);
+```
+
 ## has
 
 检查属性是否是对象自身的属性（原型链上的不算）。
