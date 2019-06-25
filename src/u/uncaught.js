@@ -35,6 +35,7 @@
 /* module
  * env: node browser
  * test: manual
+ * since: 1.2.0
  */
 
 /* typescript

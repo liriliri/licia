@@ -15,6 +15,7 @@
 /* module
  * env: browser
  * test: browser
+ * since: 1.4.0
  */
 
 /* typescript

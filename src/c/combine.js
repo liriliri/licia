@@ -14,6 +14,7 @@
 /* module
  * env: all
  * test: all
+ * since: 1.1.0
  */
 
 /* typescript

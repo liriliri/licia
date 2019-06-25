@@ -381,7 +381,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.4.5"
     },
     "MutationObserver": {
         "description": "Safe MutationObserver, does nothing if MutationObserver is not supported.",
@@ -465,6 +466,7 @@
             "node",
             "browser"
         ],
+        "since": "1.4.5",
         "benchmark": true
     },
     "ReduceStore": {
@@ -696,7 +698,8 @@
         "env": [
             "node"
         ],
-        "test": []
+        "test": [],
+        "since": "1.4.1"
     },
     "arrToMap": {
         "description": "Make an object map using array of strings.",
@@ -784,7 +787,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.4.0"
     },
     "bind": {
         "description": "Create a function bound to a given object.",
@@ -846,7 +850,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.1.0"
     },
     "callbackify": {
         "description": "Convert a function that returns a Promise to a function following the error-first callback style.",
@@ -1048,7 +1053,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.1.0"
     },
     "compact": {
         "description": "Return a copy of the array with all falsy values removed.",
@@ -1161,7 +1167,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.0"
     },
     "cookie": {
         "description": "Simple api for handling browser cookies.",
@@ -1413,6 +1420,7 @@
             "node",
             "browser"
         ],
+        "since": "1.5.0",
         "demo": true
     },
     "detectBrowser": {
@@ -1990,6 +1998,7 @@
         "test": [
             "browser"
         ],
+        "since": "1.4.0",
         "demo": true
     },
     "fuzzySearch": {
@@ -2010,7 +2019,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.0"
     },
     "gcd": {
         "description": "Compute the greatest common divisor using Euclid's algorithm.",
@@ -2035,7 +2045,8 @@
         ],
         "test": [
             "node"
-        ]
+        ],
+        "since": "1.1.0"
     },
     "getUrlParam": {
         "description": "Get url param.",
@@ -2809,7 +2820,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.2.0"
     },
     "isPrimitive": {
         "description": "Check if value is string, number, boolean or null.",
@@ -3091,7 +3103,8 @@
         ],
         "test": [
             "node"
-        ]
+        ],
+        "since": "1.4.4"
     },
     "last": {
         "description": "Get the last element of array.",
@@ -3127,7 +3140,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.4.8"
     },
     "linkify": {
         "description": "Hyperlink urls in a string.",
@@ -3317,7 +3331,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.1.0"
     },
     "memStorage": {
         "description": "Memory-backed implementation of the Web Storage API.",
@@ -3408,7 +3423,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.0"
     },
     "min": {
         "description": "Get minimum value of given numbers.",
@@ -3524,7 +3540,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.2.0"
     },
     "normalizePath": {
         "description": "Normalize file path slashes.",
@@ -3604,7 +3621,8 @@
         "env": [
             "node"
         ],
-        "test": []
+        "test": [],
+        "since": "1.2.0"
     },
     "openFile": {
         "description": "Open file dialog to select file in browser.",
@@ -3615,6 +3633,7 @@
         "test": [
             "browser"
         ],
+        "since": "1.3.0",
         "demo": true
     },
     "optimizeCb": {
@@ -3816,6 +3835,7 @@
         "test": [
             "browser"
         ],
+        "since": "1.4.0",
         "demo": true
     },
     "prefix": {
@@ -3964,7 +3984,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.4.8"
     },
     "randomItem": {
         "description": "Get a random item from an array.",
@@ -4010,7 +4031,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.1.0"
     },
     "ready": {
         "description": "Invoke callback when dom is ready, similar to jQuery ready.",
@@ -4140,7 +4162,8 @@
         "env": [
             "browser"
         ],
-        "test": []
+        "test": [],
+        "since": "1.4.0"
     },
     "rmCookie": {
         "description": "Loop through all possible path and domain to remove cookie.",
@@ -4354,7 +4377,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.0"
     },
     "shuffle": {
         "description": "Randomize the order of the elements in a given array.",
@@ -4398,7 +4422,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.4.1"
     },
     "slice": {
         "description": "Create slice of source array or array-like object.",
@@ -4542,7 +4567,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.1.0"
     },
     "stringify": {
         "description": "JSON stringify with support for circular object, function etc.",
@@ -4731,7 +4757,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.2.0"
     },
     "toArr": {
         "description": "Convert value to an array.",
@@ -4957,6 +4984,7 @@
             "browser"
         ],
         "test": [],
+        "since": "1.2.0",
         "demo": true
     },
     "unescape": {
@@ -5160,7 +5188,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.4.0"
     },
     "waitUntil": {
         "description": "Wait until function returns a truthy value.",
@@ -5175,7 +5204,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.4.3"
     },
     "waterfall": {
         "description": "Run an array of functions in series.",
@@ -5238,7 +5268,8 @@
         "env": [
             "miniprogram"
         ],
-        "test": []
+        "test": [],
+        "since": "1.4.6"
     },
     "zip": {
         "description": "Merge together the values of each of the arrays with the values at the corresponding position.",

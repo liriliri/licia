@@ -13,6 +13,7 @@
 /* module
  * env: node
  * test: manual
+ * since: 1.2.0
  */
 
 /* typescript

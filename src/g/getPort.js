@@ -17,6 +17,7 @@
 /* module
  * env: node
  * test: node
+ * since: 1.1.0
  */
 
 /* typescript

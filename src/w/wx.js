@@ -10,6 +10,7 @@
 /* module
  * env: miniprogram
  * test: manual
+ * since: 1.4.6
  */
 
 /* typescript
