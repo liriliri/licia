@@ -2570,6 +2570,19 @@
             "browser"
         ]
     },
+    "isIp": {
+        "description": "Check if value is an IP address.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "isJson": {
         "description": "Check if value is a valid JSON.",
         "dependencies": [],

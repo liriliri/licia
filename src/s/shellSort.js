@@ -1,5 +1,5 @@
 /* Shell sort implementation.
- * 
+ *
  * |Name  |Type    |Desc         |
  * |------|--------|-------------|
  * |arr   |array   |Array to sort|

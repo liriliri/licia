@@ -1,5 +1,5 @@
 /* Node.js util.deprecate with browser support.
- * 
+ *
  * |Name  |Type    |Desc                     |
  * |------|--------|-------------------------|
  * |fn    |function|Function to be deprecated|

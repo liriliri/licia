@@ -11,7 +11,7 @@
 /* example
  * const el = h('div#test.title', {
  *     onclick: function () {},
- *     title: 'test' 
+ *     title: 'test'
  * }, 'inner text');
  * document.body.appendChild(el);
  */

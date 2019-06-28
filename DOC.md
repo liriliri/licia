@@ -3498,6 +3498,31 @@ isInt(5.1); // -> false
 isInt({}); // -> false
 ```
 
+## isIp 
+
+Check if value is an IP address.
+
+|Name  |Type   |Desc                          |
+|------|-------|------------------------------|
+|str   |string |String to check               |
+|return|boolean|True if value is an IP address|
+
+### v4
+
+Check if value is an IPv4 address.
+
+### v6
+
+Check if value is an IPv6 address.
+
+```javascript
+isIp('192.168.191.1'); // -> true
+isIp('1:2:3:4:5:6:7:8'); // -> true
+isIp('test'); // -> false
+isIp.v4('192.168.191.1'); // -> true
+isIp.v6('1:2:3:4:5:6:7:8'); // -> true
+```
+
 ## isJson 
 
 Check if value is a valid JSON.
