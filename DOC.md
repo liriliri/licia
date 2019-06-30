@@ -2626,6 +2626,25 @@ fileSize(1500000000); // -> '1.4G'
 fileSize(1500000000000); // -> '1.36T'
 ```
 
+## fileType 
+
+Detect file type using magic number.
+
+|Name  |Type                         |Desc                          |
+|------|-----------------------------|------------------------------|
+|input |Buffer ArrayBuffer Uint8Array|File input                    |
+|return|object                       |Object containing ext and mime|
+
+### Supported file types
+
+jpg, png, gif, webp, bmp, gz, zip, rar, pdf, exe
+
+```javascript
+const fs = require('fs');
+const file = fs.readFileSync('path/to/file');
+console.log(fileType(file)); // -> { ext: 'jpg', mime: 'image/jpeg' }
+```
+
 ## fill 
 
 Fill elements of array with value.

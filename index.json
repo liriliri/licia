@@ -1774,6 +1774,23 @@
             "browser"
         ]
     },
+    "fileType": {
+        "description": "Detect file type using magic number.",
+        "dependencies": [
+            "type",
+            "mime",
+            "isFn"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "fill": {
         "description": "Fill elements of array with value.",
         "dependencies": [
