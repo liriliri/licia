@@ -1789,7 +1789,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.1"
     },
     "fill": {
         "description": "Fill elements of array with value.",
@@ -2096,7 +2097,8 @@
         ],
         "test": [
             "browser"
-        ]
+        ],
+        "since": "1.5.1"
     },
     "has": {
         "description": "Checks if key is a direct property.",
@@ -2598,7 +2600,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.1"
     },
     "isJson": {
         "description": "Check if value is a valid JSON.",

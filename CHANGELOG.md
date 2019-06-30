@@ -1,4 +1,11 @@
-## v1.5.0 (13 June 2019)
+## v1.5.1 (1 Jul 2019)
+
+* Add h
+* Add isIp
+* Add fileType
+* Fix convertBin ts definition
+
+## v1.5.0 (13 Jun 2019)
 
 * Add fuzzySearch
 * Add mime
