@@ -2966,7 +2966,7 @@ Get an available TCP port.
 |Name  |Type        |Desc           |
 |------|------------|---------------|
 |[port]|number array|Preferred ports|
-|return|promise     |Available port |
+|return|Promise     |Available port |
 
 If preferred ports are not available, a random port will be returned.
 
@@ -3768,6 +3768,21 @@ Check if value is an object created by Object constructor.
 isPlainObj({}); // -> true
 isPlainObj([]); // -> false
 isPlainObj(function () {}); // -> false
+```
+
+## isPortFree 
+
+Check if a TCP port is free.
+
+|Name  |Type   |Desc                      |
+|------|-------|--------------------------|
+|port  |number |TCP port                  |
+|return|Promise|True if given port is free|
+
+```javascript
+isPortFree(3000).then(isFree => {
+    // Do something.
+});
 ```
 
 ## isPrime 

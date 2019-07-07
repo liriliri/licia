@@ -3766,6 +3766,21 @@ isPlainObj([]); // -> false
 isPlainObj(function () {}); // -> false
 ```
 
+## isPortFree
+
+检查 TCP 端口是否可用。
+
+|参数名|类型|说明|
+|-----|----|---|
+|port|number|TCP 端口|
+|返回值|Promise|如果端口可用，返回真|
+
+```javascript
+isPortFree(3000).then(isFree => {
+    // Do something.
+});
+```
+
 ## isPrime
 
 检查整数是否是质数。

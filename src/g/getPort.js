@@ -3,7 +3,7 @@
  * |Name  |Type        |Desc           |
  * |------|------------|---------------|
  * |[port]|number array|Preferred ports|
- * |return|promise     |Available port |
+ * |return|Promise     |Available port |
  *
  * If preferred ports are not available, a random port will be returned.
  */

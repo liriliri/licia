@@ -2842,6 +2842,16 @@
             "browser"
         ]
     },
+    "isPortFree": {
+        "description": "Check if a TCP port is free.",
+        "dependencies": [],
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
+    },
     "isPrime": {
         "description": "Check if the provided integer is a prime number.",
         "dependencies": [],
