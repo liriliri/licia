@@ -2995,7 +2995,7 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 |tag|string|标签名|
 |[attrs]|object|属性|
 |[...child]|string HTMLElement|子节点|
-|return|HTMLElement|目标元素|
+|返回值|HTMLElement|目标元素|
 
 ```javascript
 const el = h('div#test.title', {
@@ -4687,6 +4687,20 @@ openFile({multiple: true}).then(fileList => {
 ## optimizeCb
 
 用于高效的函数上下文绑定。
+
+## ordinal
+
+转换数字为序数形式。
+
+|参数名|类型|说明|
+|-----|----|---|
+|num|number|要转换的数字|
+|返回值|string|目标序数|
+
+```javascript
+ordinal(1); // -> '1st'
+ordinal(2); // -> '2nd'
+```
 
 ## orientation
 

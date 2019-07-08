@@ -3694,6 +3694,19 @@
             "browser"
         ]
     },
+    "ordinal": {
+        "description": "Add ordinal indicator to number.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "orientation": {
         "description": "Screen orientation helper.",
         "dependencies": [

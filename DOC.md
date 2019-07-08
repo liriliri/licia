@@ -4694,6 +4694,20 @@ openFile({multiple: true}).then(fileList => {
 
 Used for function context binding.
 
+## ordinal 
+
+Add ordinal indicator to number.
+
+|Name  |Type  |Desc                   |
+|------|------|-----------------------|
+|num   |number|Number to add indicator|
+|return|string|Result ordinal number  |
+
+```javascript
+ordinal(1); // -> '1st'
+ordinal(2); // -> '2nd'
+```
+
 ## orientation 
 
 Screen orientation helper.
