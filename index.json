@@ -395,6 +395,7 @@
         "test": [
             "browser"
         ],
+        "since": "1.5.2",
         "demo": true
     },
     "MutationObserver": {
@@ -2863,7 +2864,8 @@
         ],
         "test": [
             "node"
-        ]
+        ],
+        "since": "1.5.2"
     },
     "isPrime": {
         "description": "Check if the provided integer is a prime number.",
@@ -3718,7 +3720,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.2"
     },
     "orientation": {
         "description": "Screen orientation helper.",
