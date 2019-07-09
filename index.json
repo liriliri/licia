@@ -384,6 +384,19 @@
         ],
         "since": "1.4.5"
     },
+    "MediaQuery": {
+        "description": "CSS media query listener.",
+        "dependencies": [
+            "Emitter"
+        ],
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
+        "demo": true
+    },
     "MutationObserver": {
         "description": "Safe MutationObserver, does nothing if MutationObserver is not supported.",
         "dependencies": [

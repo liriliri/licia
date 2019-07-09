@@ -725,6 +725,40 @@ cache.set('test', 'licia');
 cache.get('test'); // -> 'licia'
 ```
 
+## MediaQuery 
+
+CSS media query listener.
+
+Extend from Emitter.
+
+### constructor
+
+|Name |Type  |Desc       |
+|-----|------|-----------|
+|query|string|Media query|
+
+### isMatch
+
+Return true if given media query matches.
+
+### Events
+
+#### match
+
+Triggered when a media query matches.
+
+#### unmatch
+
+Opposite of match.
+
+```javascript
+const mediaQuery = new MediaQuery('screen and (max-width:1000px)');
+mediaQuery.isMatch(); // -> false
+mediaQuery.on('match', () => {
+    // Do something...
+});
+```
+
 ## MutationObserver 
 
 Safe MutationObserver, does nothing if MutationObserver is not supported.
