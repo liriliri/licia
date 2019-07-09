@@ -1,3 +1,9 @@
+## v1.5.2 (9 Jul 2019)
+
+* Add isPortFree
+* Add ordinal
+* Add MediaQuery
+
 ## v1.5.1 (1 Jul 2019)
 
 * Add h
