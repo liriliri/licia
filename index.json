@@ -1918,6 +1918,25 @@
             "browser"
         ]
     },
+    "fnArgs": {
+        "description": "Validate function arguments.",
+        "dependencies": [
+            "startWith",
+            "last",
+            "lowerCase",
+            "isObj",
+            "type"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "fnParams": {
         "description": "Get a function parameter's names.",
         "dependencies": [

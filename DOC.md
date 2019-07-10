@@ -2813,6 +2813,34 @@ Recursively flatten an array.
 flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 ```
 
+## fnArgs 
+
+Validate function arguments.
+
+|Name |Type    |Desc           |
+|-----|--------|---------------|
+|types|array   |Argument types |
+|args |Argument|Argument object|
+
+It throws an exception when validation failed.
+
+```javascript
+function test(a, b, c) {
+    fnArgs([
+        'number|string',
+        '?Function',
+        '...number',
+    ], arguments);
+    // Do something.
+}
+test(15);
+test('test', () => {});
+test('test', () => {}, 5);
+test(); // Throw error
+test('test', 'test'); // Throw error
+test('test', () => {}, 5, 'test') // Throw error
+```
+
 ## fnParams 
 
 Get a function parameter's names.

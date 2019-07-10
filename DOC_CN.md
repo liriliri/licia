@@ -2809,6 +2809,34 @@ findLastIdx([{
 flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 ```
 
+## fnArgs
+
+检验函数参数。
+
+|参数名|类型|说明|
+|-----|----|---|
+|types|array|参数类型|
+|args|Argument|Argument 对象|
+
+如果检验失败，抛出异常。
+
+```javascript
+function test(a, b, c) {
+    fnArgs([
+        'number|string',
+        '?Function',
+        '...number',
+    ], arguments);
+    // Do something.
+}
+test(15);
+test('test', () => {});
+test('test', () => {}, 5);
+test(); // Throw error
+test('test', 'test'); // Throw error
+test('test', () => {}, 5, 'test') // Throw error
+```
+
 ## fnParams
 
 获取函数的参数名列表。
