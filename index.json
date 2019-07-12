@@ -1136,6 +1136,7 @@
         "description": "Check if the value is present in the list.",
         "dependencies": [
             "idxOf",
+            "isStr",
             "isArrLike",
             "values"
         ],
@@ -4619,6 +4620,16 @@
         "test": [
             "node",
             "browser"
+        ]
+    },
+    "stackTrace": {
+        "description": "Get CallSite objects in v8.",
+        "dependencies": [],
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
         ]
     },
     "startWith": {

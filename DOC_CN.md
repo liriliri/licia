@@ -1897,13 +1897,14 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 
 |参数名|类型|说明|
 |-----|----|---|
-|target|array object|目标对象|
+|target|array object string|目标对象|
 |value|*|要检查的值|
 |返回值|boolean|如果有，返回真|
 
 ```javascript
 contain([1, 2, 3], 1); // -> true
 contain({a: 1, b: 2}, 1); // -> true
+contain('abc', 'a'); // -> true
 ```
 
 ## convertBase
@@ -5678,6 +5679,16 @@ splitCase('foo-Bar'); // -> ['foo', 'bar']
 ```javascript
 splitPath('f:/foo/bar.txt'); // -> {dir: 'f:/foo/', name: 'bar.txt', ext: '.txt'}
 splitPath('/home/foo/bar.txt'); // -> {dir: '/home/foo/', name: 'bar.txt', ext: '.txt'}
+```
+
+## stackTrace
+
+获取 v8 的 CallSite 对象。
+
+[Stack trace 接口说明](https://v8.dev/docs/stack-trace-api)
+
+```javascript
+stackTrace(); // -> List of CallSite objects
 ```
 
 ## startWith
