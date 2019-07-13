@@ -80,15 +80,3 @@ function rc4(key, str, decrypt) {
 
     return !decrypt ? base64.encode(result) : utf8.decode(bytesToStr(result));
 }
-
-function stringToBytes(msg) {
-    const bytes = [];
-
-    msg = utf8.encode(msg);
-
-    for (let i = 0, len = msg.length; i < len; i++) {
-        bytes.push(msg.charCodeAt(i) & 0xff);
-    }
-
-    return bytes;
-}
