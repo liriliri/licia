@@ -1,3 +1,9 @@
+## v1.5.3 (15 Jul 2019)
+
+* Add fnArgs
+* Add stackTrace
+* Fix mime ts definition
+
 ## v1.5.2 (9 Jul 2019)
 
 * Add isPortFree

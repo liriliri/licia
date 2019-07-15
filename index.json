@@ -1936,7 +1936,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.3"
     },
     "fnParams": {
         "description": "Get a function parameter's names.",
@@ -4630,7 +4631,8 @@
         ],
         "test": [
             "node"
-        ]
+        ],
+        "since": "1.5.3"
     },
     "startWith": {
         "description": "Check if string starts with the given target string.",

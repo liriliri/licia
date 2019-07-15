@@ -10,6 +10,7 @@
 /* module
  * env: node
  * test: node
+ * since: 1.5.3
  */
 
 /* typescript
