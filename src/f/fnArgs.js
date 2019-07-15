@@ -1,10 +1,10 @@
 /* Validate function arguments.
- * 
+ *
  * |Name |Type    |Desc           |
  * |-----|--------|---------------|
  * |types|array   |Argument types |
  * |args |Argument|Argument object|
- * 
+ *
  * It throws an exception when validation failed.
  */
 

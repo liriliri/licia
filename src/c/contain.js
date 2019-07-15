@@ -20,7 +20,7 @@
 
 /* typescript
  * export declare function contain(
- *     arr: any[] | {} | string, 
+ *     arr: any[] | {} | string,
  *     val: any
  * ): boolean;
  */

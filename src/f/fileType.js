@@ -1,12 +1,12 @@
 /* Detect file type using magic number.
- * 
+ *
  * |Name  |Type                         |Desc                          |
  * |------|-----------------------------|------------------------------|
  * |input |Buffer ArrayBuffer Uint8Array|File input                    |
  * |return|object                       |Object containing ext and mime|
- * 
+ *
  * ### Supported file types
- * 
+ *
  * jpg, png, gif, webp, bmp, gz, zip, rar, pdf, exe
  */
 

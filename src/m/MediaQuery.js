@@ -1,25 +1,25 @@
 /* CSS media query listener.
  *
  * Extend from Emitter.
- * 
+ *
  * ### constructor
- * 
+ *
  * |Name |Type  |Desc       |
  * |-----|------|-----------|
  * |query|string|Media query|
- * 
+ *
  * ### isMatch
- * 
+ *
  * Return true if given media query matches.
- * 
+ *
  * ### Events
- * 
+ *
  * #### match
- * 
+ *
  * Triggered when a media query matches.
- * 
+ *
  * #### unmatch
- * 
+ *
  * Opposite of match.
  */
 
