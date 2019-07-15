@@ -2668,7 +2668,7 @@ Detect file type using magic number.
 |Name  |Type                         |Desc                          |
 |------|-----------------------------|------------------------------|
 |input |Buffer ArrayBuffer Uint8Array|File input                    |
-|return|object                       |Object containing ext and mime|
+|return|object null                  |Object containing ext and mime|
 
 ### Supported file types
 
@@ -4495,15 +4495,15 @@ methods(console); // -> ['Console', 'assert', 'dir', ...]
 
 Common mime types.
 
-|Name  |Type  |Desc     |
-|------|------|---------|
-|name  |string|Extension|
-|return|string|Mime type|
+|Name  |Type       |Desc     |
+|------|-----------|---------|
+|name  |string     |Extension|
+|return|string null|Mime type|
 
-|Name  |Type  |Desc     |
-|------|------|---------|
-|name  |string|Mime type|
-|return|string|Extension|
+|Name  |Type       |Desc     |
+|------|-----------|---------|
+|name  |string     |Mime type|
+|return|string null|Extension|
 
 It contains only the most common file types.
 
@@ -4511,6 +4511,7 @@ It contains only the most common file types.
 mime('jpg'); // -> 'image/jpeg'
 mime('bmp'); // -> 'image/bmp'
 mime('video/mp4'); // -> 'mp4'
+mime('test'); // -> null
 ```
 
 ## min 

@@ -1,14 +1,14 @@
 /* Common mime types.
  *
- * |Name  |Type  |Desc     |
- * |------|------|---------|
- * |name  |string|Extension|
- * |return|string|Mime type|
+ * |Name  |Type       |Desc     |
+ * |------|-----------|---------|
+ * |name  |string     |Extension|
+ * |return|string null|Mime type|
  *
- * |Name  |Type  |Desc     |
- * |------|------|---------|
- * |name  |string|Mime type|
- * |return|string|Extension|
+ * |Name  |Type       |Desc     |
+ * |------|-----------|---------|
+ * |name  |string     |Mime type|
+ * |return|string null|Extension|
  *
  * It contains only the most common file types.
  */
@@ -17,6 +17,7 @@
  * mime('jpg'); // -> 'image/jpeg'
  * mime('bmp'); // -> 'image/bmp'
  * mime('video/mp4'); // -> 'mp4'
+ * mime('test'); // -> null
  */
 
 /* module
@@ -26,7 +27,7 @@
  */
 
 /* typescript
- * export declare function mime(name: string): string;
+ * export declare function mime(name: string): string | null;
  */
 
 _('each');
@@ -102,7 +103,7 @@ each(exts, (ext, mimeType) => {
 });
 
 exports = function(name) {
-    return isMimeType(name) ? getExt(name) : getType(name);
+    return (isMimeType(name) ? getExt(name) : getType(name)) || null;
 };
 
 function getType(name) {

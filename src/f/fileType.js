@@ -3,7 +3,7 @@
  * |Name  |Type                         |Desc                          |
  * |------|-----------------------------|------------------------------|
  * |input |Buffer ArrayBuffer Uint8Array|File input                    |
- * |return|object                       |Object containing ext and mime|
+ * |return|object null                  |Object containing ext and mime|
  *
  * ### Supported file types
  *
@@ -31,7 +31,7 @@
  * }
  * export declare function fileType(
  *     input: Buffer | ArrayBuffer | Uint8Array
- * ): fileType.IFileType | void;
+ * ): fileType.IFileType | null;
  */
 
 _('type mime isFn');
@@ -58,6 +58,8 @@ exports = function(input) {
             };
         }
     }
+
+    return null;
 };
 
 const types = [

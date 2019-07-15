@@ -2664,7 +2664,7 @@ fileSize(1500000000000); // -> '1.36T'
 |参数名|类型|说明|
 |-----|----|---|
 |input|Buffer ArrayBuffer Uint8Array|文件输入|
-|返回值|object|包括扩展名和 mime 类型的对象|
+|返回值|object null|包括扩展名和 mime 类型的对象|
 
 ### 支持的文件类型
 
@@ -4494,12 +4494,12 @@ methods(console); // -> ['Console', 'assert', 'dir', ...]
 |参数名|类型|说明|
 |-----|----|---|
 |name|string|扩展名|
-|返回值|string|mime 类型|
+|返回值|string null|mime 类型|
 
 |参数名|类型|说明|
 |-----|----|---|
 |name|string|mime 类型|
-|返回值|string|扩展名|
+|返回值|string null|扩展名|
 
 该模块只包含常用的文件类型。
 
@@ -4507,6 +4507,7 @@ methods(console); // -> ['Console', 'assert', 'dir', ...]
 mime('jpg'); // -> 'image/jpeg'
 mime('bmp'); // -> 'image/bmp'
 mime('video/mp4'); // -> 'mp4'
+mime('test'); // -> null
 ```
 
 ## min
