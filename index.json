@@ -2116,6 +2116,22 @@
             "browser"
         ]
     },
+    "golangify": {
+        "description": "Handle errors like golang.",
+        "dependencies": [
+            "isFn",
+            "restArgs"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "h": {
         "description": "Create html with JavaScript.",
         "dependencies": [

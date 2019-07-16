@@ -3049,6 +3049,34 @@ getPort([3000, 3001]).then(port => {
 getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 ```
 
+## golangify
+
+像 Go 一样处理错误。
+
+|参数名|类型|说明|
+|-----|----|---|
+|fn|function|返回 Promise 的函数| 
+|返回值|function|同上，但 Promise 的结果形式为 [result, error]|
+
+|参数名|类型|说明|
+|-----|----|---|
+|p|Promise|要转换的 Promise|
+|返回值|Promise|目标 Promise，结果形式为 [result, error]|
+
+```javascript
+;(async () => {
+    let fn = golangify(async () => {
+        throw Error('err')
+    });
+    await fn(); // -> [undefined, Error]
+    fn = golangify(async (num) => num * 2);
+    await fn(2); // -> [4, null]
+
+    await golangify(Promise.reject(Error('err'))); // -> [undefined, Error]
+    await golangify(Promise.resolve(4)); // -> [4, null]
+})();
+```
+
 ## h
 
 创建 HTML 元素。
@@ -3545,6 +3573,7 @@ Generator 函数返回真。
 ```javascript
 isFn(function() {}); // -> true
 isFn(function*() {}); // -> true
+isFn(async function() {}); // -> true
 ```
 
 ## isGeneratorFn

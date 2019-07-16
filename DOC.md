@@ -3053,6 +3053,34 @@ Get url param.
 getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 ```
 
+## golangify 
+
+Handle errors like golang.
+
+|Name  |Type    |Desc                                      |
+|------|--------|------------------------------------------|
+|fn    |function|Function that returns a Promise           |
+|return|function|Like fn, but resolves with [result, error]|
+
+|Name  |Type   |Desc                                      |
+|------|-------|------------------------------------------|
+|p     |Promise|Promise to transform                      |
+|return|Promise|Promise that resolves with [result, error]|
+
+```javascript
+;(async () => {
+    let fn = golangify(async () => {
+        throw Error('err')
+    });
+    await fn(); // -> [undefined, Error]
+    fn = golangify(async (num) => num * 2);
+    await fn(2); // -> [4, null]
+
+    await golangify(Promise.reject(Error('err'))); // -> [undefined, Error]
+    await golangify(Promise.resolve(4)); // -> [4, null]
+})();
+```
+
 ## h 
 
 Create html with JavaScript.
@@ -3549,6 +3577,7 @@ Generator function is also classified as true.
 ```javascript
 isFn(function() {}); // -> true
 isFn(function*() {}); // -> true
+isFn(async function() {}); // -> true
 ```
 
 ## isGeneratorFn 
