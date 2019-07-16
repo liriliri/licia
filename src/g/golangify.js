@@ -17,7 +17,7 @@
  *         throw Error('err')
  *     });
  *     await fn(); // -> [undefined, Error]
- *     fn = golangify(async (num) => num * 2);
+ *     fn = golangify(async num => num * 2);
  *     await fn(2); // -> [4, null]
  * 
  *     await golangify(Promise.reject(Error('err'))); // -> [undefined, Error]
