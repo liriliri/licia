@@ -11,6 +11,7 @@
 /* example
  * isFn(function() {}); // -> true
  * isFn(function*() {}); // -> true
+ * isFn(async function() {}); // -> true
  */
 
 /* module
@@ -25,10 +26,11 @@
 _('objToStr');
 
 exports = function(val) {
-    var objStr = objToStr(val);
+    const objStr = objToStr(val);
 
     return (
         objStr === '[object Function]' ||
-        objStr === '[object GeneratorFunction]'
+        objStr === '[object GeneratorFunction]' ||
+        objStr === '[object AsyncFunction]'
     );
 };

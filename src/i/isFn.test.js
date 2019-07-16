@@ -1,5 +1,6 @@
 it('true', function() {
     expect(isFn(function() {})).to.be.true;
+    expect(isFn(async function() {})).to.be.true;
 });
 
 it('false', function() {
