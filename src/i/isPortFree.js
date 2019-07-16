@@ -3,6 +3,7 @@
  * |Name  |Type   |Desc                      |
  * |------|-------|--------------------------|
  * |port  |number |TCP port                  |
+ * |[host]|string |Host address              |
  * |return|Promise|True if given port is free|
  */
 
@@ -19,26 +20,28 @@
  */
 
 /* typescript
- * export declare function isPortFree(port: number): boolean;
+ * export declare function isPortFree(
+ *     port: number,
+ *     host?: string
+ * ): boolean;
  */
 
 const net = require('net');
 
-exports = function(port) {
+exports = function(port, host) {
     return new Promise(resolve => {
         const server = net.createServer();
 
         server.unref();
         server.on('error', () => resolve(false));
-        server.listen(
-            {
-                port
-            },
-            () => {
-                server.close(() => {
-                    resolve(true);
-                });
-            }
-        );
+        const options = {
+            port
+        };
+        if (host) options.host = host;
+        server.listen(options, () => {
+            server.close(() => {
+                resolve(true);
+            });
+        });
     });
 };

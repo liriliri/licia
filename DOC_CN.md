@@ -3025,12 +3025,13 @@ gcd(121, 44); // -> 11
 |参数名|类型|说明|
 |-----|----|---|
 |[port]|number array|首选端口|
+|[host]|string|地址|
 |返回值|Promise|有效端口|
 
 如果首选端口无法使用，将会返回一个有效的随机端口。
 
 ```javascript
-getPort([3000, 3001]).then(port => {
+getPort([3000, 3001], '127.0.0.1').then(port => {
     console.log(port);
 });
 ```
@@ -3069,7 +3070,7 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
         throw Error('err')
     });
     await fn(); // -> [undefined, Error]
-    fn = golangify(async (num) => num * 2);
+    fn = golangify(async num => num * 2);
     await fn(2); // -> [4, null]
 
     await golangify(Promise.reject(Error('err'))); // -> [undefined, Error]
@@ -3865,6 +3866,7 @@ isPlainObj(function () {}); // -> false
 |参数名|类型|说明|
 |-----|----|---|
 |port|number|TCP 端口|
+|[host]|string|地址|
 |返回值|Promise|如果端口可用，返回真|
 
 ```javascript

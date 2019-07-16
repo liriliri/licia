@@ -3029,12 +3029,13 @@ Get an available TCP port.
 |Name  |Type        |Desc           |
 |------|------------|---------------|
 |[port]|number array|Preferred ports|
+|[host]|string      |Host address   |
 |return|Promise     |Available port |
 
 If preferred ports are not available, a random port will be returned.
 
 ```javascript
-getPort([3000, 3001]).then(port => {
+getPort([3000, 3001], '127.0.0.1').then(port => {
     console.log(port);
 });
 ```
@@ -3073,7 +3074,7 @@ Handle errors like golang.
         throw Error('err')
     });
     await fn(); // -> [undefined, Error]
-    fn = golangify(async (num) => num * 2);
+    fn = golangify(async num => num * 2);
     await fn(2); // -> [4, null]
 
     await golangify(Promise.reject(Error('err'))); // -> [undefined, Error]
@@ -3869,6 +3870,7 @@ Check if a TCP port is free.
 |Name  |Type   |Desc                      |
 |------|-------|--------------------------|
 |port  |number |TCP port                  |
+|[host]|string |Host address              |
 |return|Promise|True if given port is free|
 
 ```javascript
