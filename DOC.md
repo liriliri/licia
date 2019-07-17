@@ -3194,7 +3194,7 @@ Indent each line in a string.
 |return|string|Indented string     |
 
 ```javascript
-indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
+indent('foo\nbar', ' ', 4); // -> '    foo\n    bar'
 ```
 
 ## inherits 

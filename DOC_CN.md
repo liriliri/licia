@@ -3190,7 +3190,7 @@ idxOf([1, 2, 1, 2], 2, 2); // -> 3
 |返回值|string|目标字符串|
 
 ```javascript
-indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
+indent('foo\nbar', ' ', 4); // -> '    foo\n    bar'
 ```
 
 ## inherits

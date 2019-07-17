@@ -9,7 +9,7 @@
  */
 
 /* example
- * indent('foo\nbar', ' ', 4); // -> 'foo\n    bar'
+ * indent('foo\nbar', ' ', 4); // -> '    foo\n    bar'
  */
 
 /* module
