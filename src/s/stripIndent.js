@@ -16,7 +16,7 @@
  * `; // -> 'Test string\n    * item one\n    * item two'
  */
 
-/* module 
+/* module
  * env: all
  * test: all
  */

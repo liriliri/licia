@@ -2248,6 +2248,21 @@ obj2.b = 4;
 // obj2.a is equal to 2
 ```
 
+## delRequireCache
+
+删除 node.js require 缓存。
+
+|参数名|类型|说明|
+|-----|----|---|
+|id|string|模块名或路径|
+
+```javascript
+const licia = require('licia');
+licia.a = 5;
+delRequireCache('licia');
+require('licia').a; // -> undefined
+```
+
 ## delay
 
 在指定时长后执行函数。

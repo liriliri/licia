@@ -2253,6 +2253,21 @@ obj2.b = 4;
 // obj2.a is equal to 2
 ```
 
+## delRequireCache 
+
+Delete node.js require cache.
+
+|Name|Type  |Desc               |
+|----|------|-------------------|
+|id  |string|Module name or path|
+
+```javascript
+const licia = require('licia');
+licia.a = 5;
+delRequireCache('licia');
+require('licia').a; // -> undefined
+```
+
 ## delay 
 
 Invoke function after certain milliseconds.
