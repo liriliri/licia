@@ -4323,7 +4323,7 @@ Pad string on the left side if it's shorter than length.
 |str    |string|String to pad         |
 |len    |number|Padding length        |
 |[chars]|string|String used as padding|
-|return |string|Resulted string       |
+|return |string|Result string         |
 
 ```javascript
 lpad('a', 5); // -> '    a'
@@ -4835,7 +4835,7 @@ Pad string on the left and right sides if it's shorter than length.
 |str   |string|String to pad         |
 |len   |number|Padding length        |
 |chars |string|String used as padding|
-|return|string|Resulted string       |
+|return|string|Result string         |
 
 ```javascript
 pad('a', 5); // -> '  a  '
@@ -5402,7 +5402,7 @@ Pad string on the right side if it's shorter than length.
 |str   |string|String to pad         |
 |len   |number|Padding length        |
 |chars |string|String used as padding|
-|return|string|Resulted string       |
+|return|string|Result string         |
 
 ```javascript
 rpad('a', 5); // -> 'a    '
@@ -5795,7 +5795,7 @@ Strip ansi codes from a string.
 |Name  |Type  |Desc           |
 |------|------|---------------|
 |str   |string|String to strip|
-|return|string|Resulted string|
+|return|string|Result string  |
 
 ```javascript
 stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
@@ -5821,7 +5821,7 @@ Strip ansi color codes from a string.
 |Name  |Type  |Desc           |
 |------|------|---------------|
 |str   |string|String to strip|
-|return|string|Resulted string|
+|return|string|Result string  |
 
 ```javascript
 stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
@@ -5834,10 +5834,29 @@ Strip html tags from a string.
 |Name  |Type  |Desc           |
 |------|------|---------------|
 |str   |string|String to strip|
-|return|string|Resulted string|
+|return|string|Result string  |
 
 ```javascript
 stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
+```
+
+## stripIndent 
+
+Strip indentation from multi-line strings.
+
+|Name  |Type  |Desc           |
+|------|------|---------------|
+|str   |string|String to strip|
+|return|string|Result string  |
+
+It can be used as function or template tag.
+
+```javascript
+stripIndent`
+    Test string
+        * item one
+        * item two
+`; // -> 'Test string\n    * item one\n    * item two'
 ```
 
 ## sum 
@@ -6066,7 +6085,7 @@ Convert value to a number.
 |Name  |Type  |Desc            |
 |------|------|----------------|
 |val   |*     |Value to process|
-|return|number|Resulted number |
+|return|number|Result number   |
 
 ```javascript
 toNum('5'); // -> 5
@@ -6093,7 +6112,7 @@ Convert value to a string.
 |Name  |Type  |Desc            |
 |------|------|----------------|
 |val   |*     |Value to convert|
-|return|string|Resulted string |
+|return|string|Result string   |
 
 ```javascript
 toStr(null); // -> ''

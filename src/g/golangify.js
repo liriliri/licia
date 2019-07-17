@@ -2,9 +2,9 @@
  *
  * |Name  |Type    |Desc                                      |
  * |------|--------|------------------------------------------|
- * |fn    |function|Function that returns a Promise           | 
+ * |fn    |function|Function that returns a Promise           |
  * |return|function|Like fn, but resolves with [result, error]|
- * 
+ *
  * |Name  |Type   |Desc                                      |
  * |------|-------|------------------------------------------|
  * |p     |Promise|Promise to transform                      |
@@ -19,7 +19,7 @@
  *     await fn(); // -> [undefined, Error]
  *     fn = golangify(async num => num * 2);
  *     await fn(2); // -> [4, null]
- * 
+ *
  *     await golangify(Promise.reject(Error('err'))); // -> [undefined, Error]
  *     await golangify(Promise.resolve(4)); // -> [4, null]
  * })();

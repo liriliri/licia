@@ -5834,6 +5834,25 @@ stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
 stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 ```
 
+## stripIndent
+
+清除多行文本的缩进。
+
+|参数名|类型|说明|
+|-----|----|---|
+|str|string|源字符串|
+|返回值|string|目标字符串|
+
+它可以像函数一样调用，也可以当成标签模板使用。
+
+```javascript
+stripIndent`
+    Test string
+        * item one
+        * item two
+`; // -> 'Test string\n    * item one\n    * item two'
+```
+
 ## sum
 
 计算数字和。

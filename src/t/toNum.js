@@ -3,7 +3,7 @@
  * |Name  |Type  |Desc            |
  * |------|------|----------------|
  * |val   |*     |Value to process|
- * |return|number|Resulted number |
+ * |return|number|Result number   |
  */
 
 /* example

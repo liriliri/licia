@@ -3,7 +3,7 @@
  * |Name  |Type  |Desc           |
  * |------|------|---------------|
  * |str   |string|String to strip|
- * |return|string|Resulted string|
+ * |return|string|Result string  |
  */
 
 /* example

@@ -3,7 +3,7 @@
  * |Name  |Type  |Desc            |
  * |------|------|----------------|
  * |val   |*     |Value to convert|
- * |return|string|Resulted string |
+ * |return|string|Result string   |
  */
 
 /* example

@@ -5,7 +5,7 @@
  * |str    |string|String to pad         |
  * |len    |number|Padding length        |
  * |[chars]|string|String used as padding|
- * |return |string|Resulted string       |
+ * |return |string|Result string         |
  */
 
 /* example

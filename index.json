@@ -4762,6 +4762,25 @@
             "browser"
         ]
     },
+    "stripIndent": {
+        "description": "Strip indentation from multi-line strings.",
+        "dependencies": [
+            "isStr",
+            "toArr",
+            "min",
+            "map",
+            "trim"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "sum": {
         "description": "Compute sum of given numbers.",
         "dependencies": [],
