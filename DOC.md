@@ -3238,6 +3238,50 @@ var s = new Student('RedHood');
 s.getName(); // -> 'RedHood'
 ```
 
+## ini 
+
+Ini parser and serializer.
+
+### parse
+
+Parse ini string into js object.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|ini   |string|Ini string      |
+|return|object|Parsed js object|
+
+### stringify
+
+Stringify object into an ini formatted string.
+
+|Name   |Type  |Desc                |
+|------ |------|--------------------|
+|obj    |*     |Object to stringify |
+|options|object|Stringify options   |
+|return |string|Ini formatted string|
+
+Options:
+
+|Name            |Type   |Desc               |
+|----------------|-------|-------------------|
+|[section]       |string |Top section        |
+|whitespace=false|boolean|Whitespace around =|
+
+```javascript
+const config = ini.parse(`
+; This is a comment
+library = licia
+
+[user.info]
+name = surunzi
+alias[] = redhoodsu
+alias[] = red
+`); // -> {library: 'licia', user: {info: {name: 'surunzi', alias: ['redhoodsu', 'red']}}}
+
+ini.stringify(config);
+```
+
 ## insertionSort 
 
 Insertion sort implementation.

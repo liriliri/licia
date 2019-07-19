@@ -2265,6 +2265,27 @@
             "browser"
         ]
     },
+    "ini": {
+        "description": "Ini parser and serializer.",
+        "dependencies": [
+            "each",
+            "trim",
+            "safeSet",
+            "safeGet",
+            "endWith",
+            "isArr",
+            "isObj"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "insertionSort": {
         "description": "Insertion sort implementation.",
         "dependencies": [
