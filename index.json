@@ -1403,7 +1403,8 @@
         ],
         "test": [
             "node"
-        ]
+        ],
+        "since": "1.5.4"
     },
     "delay": {
         "description": "Invoke function after certain milliseconds.",
@@ -2144,7 +2145,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.4"
     },
     "h": {
         "description": "Create html with JavaScript.",
@@ -2284,7 +2286,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.4"
     },
     "insertionSort": {
         "description": "Insertion sort implementation.",
@@ -4814,7 +4817,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.4"
     },
     "sum": {
         "description": "Compute sum of given numbers.",

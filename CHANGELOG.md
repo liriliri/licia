@@ -1,3 +1,12 @@
+## v1.5.4 (20 Jul 2019)
+
+* add: golangify
+* add: stripIndent
+* add: delRequireCache
+* add: ini
+* feat(isPortFree, getPort): support host
+* feat(isFn): support async function
+
 ## v1.5.3 (15 Jul 2019)
 
 * Add fnArgs
