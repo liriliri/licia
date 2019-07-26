@@ -5847,6 +5847,14 @@ obj.b = obj;
 stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 ```
 
+## stringifyAll 
+
+Stringify object into json with types.
+
+```javascript
+stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function"}'
+```
+
 ## stripAnsi 
 
 Strip ansi codes from a string.
@@ -6245,16 +6253,19 @@ tryIt(function () {
 
 Determine the internal JavaScript [[Class]] of an object.
 
-|Name  |Type  |Desc                      |
-|------|------|--------------------------|
-|val   |*     |Value to get type         |
-|return|string|Type of object, lowercased|
+|Name          |Type   |Desc             |
+|--------------|-------|-----------------|
+|val           |*      |Value to get type|
+|lowerCase=true|boolean|LowerCase result |
+|return        |string |Type of object   |
 
 ```javascript
 type(5); // -> 'number'
 type({}); // -> 'object'
 type(function () {}); // -> 'function'
 type([]); // -> 'array'
+type([], false); // -> 'Array'
+type(async function () {}, false); // -> 'AsyncFunction'
 ```
 
 ## types 

@@ -5841,6 +5841,14 @@ obj.b = obj;
 stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 ```
 
+## stringifyAll
+
+序列化对象，保留类型信息。
+
+```javascript
+stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function"}'
+```
+
 ## stripAnsi
 
 清除字符串中的 ansi 控制码。
@@ -6242,13 +6250,16 @@ tryIt(function () {
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|目标对象|
-|返回值|string|对象类型，小写|
+|lowerCase=true|boolean|是否小写|
+|返回值|string|对象类型|
 
 ```javascript
 type(5); // -> 'number'
 type({}); // -> 'object'
 type(function () {}); // -> 'function'
 type([]); // -> 'array'
+type([], false); // -> 'Array'
+type(async function () {}, false); // -> 'AsyncFunction'
 ```
 
 ## types

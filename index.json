@@ -4748,6 +4748,25 @@
             "browser"
         ]
     },
+    "stringifyAll": {
+        "description": "Stringify object into json with types.",
+        "dependencies": [
+            "escapeJsStr",
+            "type",
+            "toStr",
+            "endWith",
+            "toSrc"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "stripAnsi": {
         "description": "Strip ansi codes from a string.",
         "dependencies": [],
