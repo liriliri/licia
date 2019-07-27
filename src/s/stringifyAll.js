@@ -1,4 +1,9 @@
 /* Stringify object into json with types.
+ * 
+ * |Name  |Type  |Desc               |
+ * |------|------|-------------------|
+ * |obj   |*     |Object to stringify|
+ * |return|string|Stringified object |
  */
 
 /* example
@@ -14,7 +19,7 @@
  * export declare function stringifyAll(obj: any): string;
  */
 
-_('escapeJsStr type toStr endWith toSrc');
+_('escapeJsStr type toStr endWith toSrc keys each');
 
 exports = function(obj) {
     let json = '';
@@ -43,6 +48,24 @@ exports = function(obj) {
         } else if (t === 'RegExp') {
             parts.push(`"value":${wrapStr(obj)}`);
         }
+
+        const enumerableKeys = keys(obj);
+        if (enumerableKeys.length) {
+            let enumerable = `"enumerable":{`;
+            const enumerableParts = [];
+            each(keys(obj), key => {
+                enumerableParts.push(`${wrapKey(key)}:${exports(obj[key])}`);
+            });
+            enumerable += enumerableParts.join(',') + '}';
+            parts.push(enumerable);
+        }
+
+        const prototype = Object.getPrototypeOf(obj);
+        if (prototype) {
+            const proto = `"proto":${exports(prototype)}`;
+            parts.push(proto);
+        }
+
         json += parts.join(',') + '}';
     }
 

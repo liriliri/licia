@@ -4755,7 +4755,9 @@
             "type",
             "toStr",
             "endWith",
-            "toSrc"
+            "toSrc",
+            "keys",
+            "each"
         ],
         "env": [
             "node",

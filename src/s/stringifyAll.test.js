@@ -2,6 +2,23 @@ function transform(obj) {
     return JSON.parse(stringifyAll(obj));
 }
 
+it('enumerable', () => {
+    const obj = transform({ a: 1, b: 2 });
+    expect(obj.enumerable).to.eql({
+        a: 1,
+        b: 2
+    });
+});
+
+it('proto', () => {
+    function Test() {}
+    Test.prototype = {
+        a: 5
+    };
+    const obj = transform(new Test());
+    expect(obj.proto.enumerable.a).to.equal(5);
+});
+
 it('string', () => {
     expect(transform('test')).to.equal('test');
 });
@@ -32,15 +49,13 @@ it('null', () => {
 });
 
 it('function', () => {
-    expect(transform(function test() {})).to.eql({
-        type: 'Function',
-        value: 'function test() {}'
-    });
+    const obj = transform(function test() {});
+    expect(obj.type).to.equal('Function');
+    expect(obj.value).to.equal('function test() {}');
 });
 
 it('regexp', () => {
-    expect(transform(/test/g)).to.eql({
-        type: 'RegExp',
-        value: '/test/g'
-    });
+    const obj = transform(/test/g);
+    expect(obj.type).to.equal('RegExp');
+    expect(obj.value).to.equal('/test/g');
 });

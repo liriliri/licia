@@ -5851,6 +5851,11 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 
 Stringify object into json with types.
 
+|Name  |Type  |Desc               |
+|------|------|-------------------|
+|obj   |*     |Object to stringify|
+|return|string|Stringified object |
+
 ```javascript
 stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function"}'
 ```

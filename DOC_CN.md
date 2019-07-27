@@ -5845,6 +5845,11 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 
 序列化对象，保留类型信息。
 
+|参数名|类型|说明|
+|-----|----|---|
+|obj|object|目标对象|
+|返回值|string|序列化后的字符串|
+
 ```javascript
 stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function"}'
 ```
