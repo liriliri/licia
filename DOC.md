@@ -3055,6 +3055,20 @@ getPort([3000, 3001], '127.0.0.1').then(port => {
 });
 ```
 
+## getProto 
+
+Get prototype of an object.
+
+|Name  |Type|Desc                                         |
+|------|----|---------------------------------------------|
+|obj   |*   |Target object                                |
+|return|*   |Prototype of given object, null if not exists|
+
+```javascript
+const a = {};
+getProto(Object.create(a)); // -> a
+```
+
 ## getUrlParam 
 
 Get url param.

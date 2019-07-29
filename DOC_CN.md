@@ -3051,6 +3051,20 @@ getPort([3000, 3001], '127.0.0.1').then(port => {
 });
 ```
 
+## getProto
+
+获取对象的原型。
+
+|参数名|类型|说明|
+|-----|----|---|
+|obj|*|目标对象|
+|返回值|*|对象原型，如果不存在，返回 null|
+
+```javascript
+const a = {};
+getProto(Object.create(a)); // -> a
+```
+
 ## getUrlParam
 
 获取 url 参数值。

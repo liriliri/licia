@@ -2116,6 +2116,22 @@
         ],
         "since": "1.1.0"
     },
+    "getProto": {
+        "description": "Get prototype of an object.",
+        "dependencies": [
+            "isObj",
+            "isFn"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "getUrlParam": {
         "description": "Get url param.",
         "dependencies": [
@@ -4758,7 +4774,8 @@
             "toSrc",
             "keys",
             "each",
-            "Class"
+            "Class",
+            "getProto"
         ],
         "env": [
             "node",

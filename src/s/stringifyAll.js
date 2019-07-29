@@ -1,5 +1,5 @@
 /* Stringify object into json with types.
- * 
+ *
  * |Name  |Type  |Desc               |
  * |------|------|-------------------|
  * |obj   |*     |Object to stringify|
@@ -19,7 +19,7 @@
  * export declare function stringifyAll(obj: any): string;
  */
 
-_('escapeJsStr type toStr endWith toSrc keys each Class');
+_('escapeJsStr type toStr endWith toSrc keys each Class getProto');
 
 exports = function(obj, { visitor = new Visitor() } = {}) {
     let json = '';
@@ -84,7 +84,7 @@ exports = function(obj, { visitor = new Visitor() } = {}) {
                 parts.push(enumerable);
             }
 
-            const prototype = Object.getPrototypeOf(obj);
+            const prototype = getProto(obj);
             if (prototype) {
                 const proto = `"proto":${exports(prototype, options)}`;
                 parts.push(proto);
@@ -98,11 +98,17 @@ exports = function(obj, { visitor = new Visitor() } = {}) {
 };
 
 function wrapKey(key) {
-    return `"${escapeJsStr(key)}"`;
+    return `"${escapeJsonStr(key)}"`;
 }
 
 function wrapStr(str) {
-    return `"${escapeJsStr(toStr(str))}"`;
+    return `"${escapeJsonStr(toStr(str))}"`;
+}
+
+function escapeJsonStr(str) {
+    return escapeJsStr(str)
+        .replace(/\\'/g, "'")
+        .replace(/\t/g, '\\t');
 }
 
 const Visitor = Class({
