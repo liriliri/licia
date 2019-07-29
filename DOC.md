@@ -5857,7 +5857,7 @@ Stringify object into json with types.
 |return|string|Stringified object |
 
 ```javascript
-stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function"}'
+stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function",...}'
 ```
 
 ## stripAnsi 

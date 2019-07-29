@@ -4757,7 +4757,8 @@
             "endWith",
             "toSrc",
             "keys",
-            "each"
+            "each",
+            "Class"
         ],
         "env": [
             "node",
@@ -4767,7 +4768,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "demo": true
     },
     "stripAnsi": {
         "description": "Strip ansi codes from a string.",

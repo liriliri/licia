@@ -5851,7 +5851,7 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 |返回值|string|序列化后的字符串|
 
 ```javascript
-stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function"}'
+stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function",...}'
 ```
 
 ## stripAnsi

@@ -48,6 +48,12 @@ it('null', () => {
     expect(transform(null)).to.equal(null);
 });
 
+it('undefined', () => {
+    expect(transform(undefined)).to.eql({
+        type: 'Undefined'
+    });
+});
+
 it('function', () => {
     const obj = transform(function test() {});
     expect(obj.type).to.equal('Function');
