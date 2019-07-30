@@ -1400,10 +1400,19 @@ ajax.get('http://example.com', {}, function (data) {
 
 Retrieve all the names of object's own and inherited properties.
 
-|Name  |Type  |Desc                       |
-|------|------|---------------------------|
-|obj   |object|Object to query            |
-|return|array |Array of all property names|
+|Name     |Type  |Desc                       |
+|---------|------|---------------------------|
+|obj      |object|Object to query            |
+|[options]|object|Options                    |
+|return   |array |Array of all property names|
+
+Available options:
+
+|Name              |Type   |Desc                     |
+|------------------|-------|-------------------------|
+|prototype=true    |boolean|Include prototype keys   |
+|unenumerable=false|boolean|Include unenumerable keys|
+|symbol=false      |boolean|Include symbol keys      |
 
 Members of Object's prototype won't be retrieved.
 

@@ -695,7 +695,11 @@
     },
     "allKeys": {
         "description": "Retrieve all the names of object's own and inherited properties.",
-        "dependencies": [],
+        "dependencies": [
+            "keys",
+            "getProto",
+            "unique"
+        ],
         "env": [
             "node",
             "browser",
