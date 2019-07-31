@@ -3101,6 +3101,19 @@
             "node"
         ]
     },
+    "isSymbol": {
+        "description": "Check if value is a symbol.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "isTypedArr": {
         "description": "Check if value is a typed array.",
         "dependencies": [

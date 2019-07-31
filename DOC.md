@@ -4095,6 +4095,19 @@ var stream = require('stream');
 isStream(new stream.Stream()); // -> true
 ```
 
+## isSymbol 
+
+Check if value is a symbol.
+
+|Name  |Type   |Desc                     |
+|------|-------|-------------------------|
+|val   |*      |Value to check           |
+|return|boolean|True if value is a symbol|
+
+```javascript
+isSymbol(Symbol('test')); // -> true
+```
+
 ## isTypedArr 
 
 Check if value is a typed array.
