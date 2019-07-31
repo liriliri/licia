@@ -14,6 +14,7 @@
  * |symbol=false      |boolean|Include symbol keys      |
  * |accessGetter=false|boolean|Access getter value      |
  * |timeout=0         |number |Timeout of stringify     |
+ * |depth=0           |number |Max depth of recursion   |
  *
  * When time is out, all remaining values will all be "Timeout".
  */
@@ -34,6 +35,7 @@
  *         symbol?: boolean;
  *         accessGetter?: boolean;
  *         timeout?: number;
+ *         depth?: number;
  *     }
  * }
  * export declare function stringifyAll(
@@ -52,6 +54,8 @@ exports = function(
         self,
         startTime = now(),
         timeout = 0,
+        depth = 0,
+        curDepth = 1,
         visitor = new Visitor(),
         unenumerable = false,
         symbol = false,
@@ -64,6 +68,8 @@ exports = function(
         unenumerable,
         symbol,
         accessGetter,
+        depth,
+        curDepth: curDepth + 1,
         timeout,
         startTime
     };
@@ -95,6 +101,9 @@ exports = function(
     } else {
         if (timeout && now() - startTime > timeout) {
             return wrapStr('Timeout');
+        }
+        if (depth && curDepth > depth) {
+            return wrapStr('{...}');
         }
         json = '{';
         const parts = [];

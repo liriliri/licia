@@ -4784,7 +4784,8 @@
             "extend",
             "isPromise",
             "filter",
-            "now"
+            "now",
+            "allKeys"
         ],
         "env": [
             "node",

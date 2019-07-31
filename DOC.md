@@ -5888,6 +5888,7 @@ Available options:
 |symbol=false      |boolean|Include symbol keys      |
 |accessGetter=false|boolean|Access getter value      |
 |timeout=0         |number |Timeout of stringify     |
+|depth=0           |number |Max depth of recursion   |
 
 When time is out, all remaining values will all be "Timeout".
 

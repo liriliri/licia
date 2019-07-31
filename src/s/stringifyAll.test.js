@@ -114,3 +114,8 @@ it('setter', () => {
     const obj = transform(origObj);
     expect(obj.enumerable['set one'].type).to.equal('Function');
 });
+
+it('depth', () => {
+    const obj = transform({ one: 1, two: { three: 3 } }, { depth: 1 });
+    expect(obj.enumerable.two).to.equal('{...}');
+});
