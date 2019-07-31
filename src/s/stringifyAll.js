@@ -43,7 +43,7 @@
  */
 
 _(
-    'escapeJsStr type toStr endWith toSrc keys each Class getProto difference extend isPromise filter now'
+    'escapeJsStr type toStr endWith toSrc keys each Class getProto difference extend isPromise filter now allKeys'
 );
 
 exports = function(
@@ -89,6 +89,7 @@ exports = function(
         let val = 'Symbol';
         try {
             val = toStr(obj);
+            /* eslint-disable no-empty */
         } catch (e) {}
         json = `{"value":${wrapStr(val)},"type":"Symbol"}`;
     } else {
