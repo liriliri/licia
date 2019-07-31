@@ -4779,7 +4779,12 @@
             "keys",
             "each",
             "Class",
-            "getProto"
+            "getProto",
+            "difference",
+            "extend",
+            "isPromise",
+            "filter",
+            "now"
         ],
         "env": [
             "node",

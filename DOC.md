@@ -5874,10 +5874,22 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 
 Stringify object into json with types.
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|obj   |*     |Object to stringify|
-|return|string|Stringified object |
+|Name     |Type  |Desc               |
+|---------|------|-------------------|
+|obj      |*     |Object to stringify|
+|[options]|object|Stringify options  |
+|return   |string|Stringified object |
+
+Available options:
+
+|Name              |Type   |Desc                     |
+|------------------|-------|-------------------------|
+|unenumerable=false|boolean|Include unenumerable keys|
+|symbol=false      |boolean|Include symbol keys      |
+|accessGetter=false|boolean|Access getter value      |
+|timeout=0         |number |Timeout of stringify     |
+
+When time is out, all remaining values will all be "Timeout".
 
 ```javascript
 stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function",...}'

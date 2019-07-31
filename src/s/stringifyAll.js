@@ -1,9 +1,21 @@
 /* Stringify object into json with types.
  *
- * |Name  |Type  |Desc               |
- * |------|------|-------------------|
- * |obj   |*     |Object to stringify|
- * |return|string|Stringified object |
+ * |Name     |Type  |Desc               |
+ * |---------|------|-------------------|
+ * |obj      |*     |Object to stringify|
+ * |[options]|object|Stringify options  |
+ * |return   |string|Stringified object |
+ *
+ * Available options:
+ *
+ * |Name              |Type   |Desc                     |
+ * |------------------|-------|-------------------------|
+ * |unenumerable=false|boolean|Include unenumerable keys|
+ * |symbol=false      |boolean|Include symbol keys      |
+ * |accessGetter=false|boolean|Access getter value      |
+ * |timeout=0         |number |Timeout of stringify     |
+ *
+ * When time is out, all remaining values will all be "Timeout".
  */
 
 /* example
@@ -16,15 +28,44 @@
  */
 
 /* typescript
- * export declare function stringifyAll(obj: any): string;
+ * export declare namespace stringifyAll {
+ *     interface IOptions {
+ *         unenumerable?: boolean;
+ *         symbol?: boolean;
+ *         accessGetter?: boolean;
+ *         timeout?: number;
+ *     }
+ * }
+ * export declare function stringifyAll(
+ *     obj: any,
+ *     options?: stringifyAll.IOptions
+ * ): string;
  */
 
-_('escapeJsStr type toStr endWith toSrc keys each Class getProto');
+_(
+    'escapeJsStr type toStr endWith toSrc keys each Class getProto difference extend isPromise filter now'
+);
 
-exports = function(obj, { visitor = new Visitor() } = {}) {
+exports = function(
+    obj,
+    {
+        self,
+        startTime = now(),
+        timeout = 0,
+        visitor = new Visitor(),
+        unenumerable = false,
+        symbol = false,
+        accessGetter = false
+    } = {}
+) {
     let json = '';
     const options = {
-        visitor
+        visitor,
+        unenumerable,
+        symbol,
+        accessGetter,
+        timeout,
+        startTime
     };
 
     const t = type(obj, false);
@@ -44,7 +85,16 @@ exports = function(obj, { visitor = new Visitor() } = {}) {
         json = 'null';
     } else if (t === 'Undefined') {
         json = '{"type":"Undefined"}';
+    } else if (t === 'Symbol') {
+        let val = 'Symbol';
+        try {
+            val = toStr(obj);
+        } catch (e) {}
+        json = `{"value":${wrapStr(val)},"type":"Symbol"}`;
     } else {
+        if (timeout && now() - startTime > timeout) {
+            return wrapStr('Timeout');
+        }
         json = '{';
         const parts = [];
 
@@ -67,26 +117,59 @@ exports = function(obj, { visitor = new Visitor() } = {}) {
         if (!visitedObj) {
             const enumerableKeys = keys(obj);
             if (enumerableKeys.length) {
-                let enumerable = `"enumerable":{`;
-                const enumerableParts = [];
-                each(keys(obj), key => {
-                    let val;
-                    try {
-                        val = obj[key];
-                    } catch (e) {
-                        val = e.message;
-                    }
-                    enumerableParts.push(
-                        `${wrapKey(key)}:${exports(val, options)}`
+                parts.push(
+                    iterateObj(
+                        'enumerable',
+                        enumerableKeys,
+                        self || obj,
+                        options
+                    )
+                );
+            }
+
+            if (unenumerable) {
+                const unenumerableKeys = difference(
+                    allKeys(obj, {
+                        prototype: false,
+                        unenumerable: true
+                    }),
+                    enumerableKeys
+                );
+                if (unenumerableKeys.length) {
+                    parts.push(
+                        iterateObj(
+                            'unenumerable',
+                            unenumerableKeys,
+                            self || obj,
+                            options
+                        )
                     );
-                });
-                enumerable += enumerableParts.join(',') + '}';
-                parts.push(enumerable);
+                }
+            }
+
+            if (symbol) {
+                const symbolKeys = filter(
+                    allKeys(obj, {
+                        prototype: false,
+                        symbol: true
+                    }),
+                    key => {
+                        return typeof key === 'symbol';
+                    }
+                );
+                if (symbolKeys.length) {
+                    parts.push(
+                        iterateObj('symbol', symbolKeys, self || obj, options)
+                    );
+                }
             }
 
             const prototype = getProto(obj);
             if (prototype) {
-                const proto = `"proto":${exports(prototype, options)}`;
+                const proto = `"proto":${exports(
+                    prototype,
+                    extend(options, { self: self || obj })
+                )}`;
                 parts.push(proto);
             }
         }
@@ -96,6 +179,46 @@ exports = function(obj, { visitor = new Visitor() } = {}) {
 
     return json;
 };
+
+function iterateObj(name, keys, obj, options) {
+    const parts = [];
+    each(keys, key => {
+        let val;
+        let descriptor = Object.getOwnPropertyDescriptor(obj, key);
+        let hasGetter = descriptor && descriptor.get;
+        let hasSetter = descriptor && descriptor.set;
+        if (!options.accessGetter && hasGetter) {
+            val = '(...)';
+        } else {
+            try {
+                val = obj[key];
+                if (isPromise(val)) {
+                    val.catch(() => {});
+                }
+            } catch (e) {
+                val = e.message;
+            }
+        }
+        parts.push(`${wrapKey(key)}:${exports(val, options)}`);
+        if (hasGetter) {
+            parts.push(
+                `${wrapKey('get ' + toStr(key))}:${exports(
+                    descriptor.get,
+                    options
+                )}`
+            );
+        }
+        if (hasSetter) {
+            parts.push(
+                `${wrapKey('set ' + toStr(key))}:${exports(
+                    descriptor.set,
+                    options
+                )}`
+            );
+        }
+    });
+    return `"${name}":{` + parts.join(',') + '}';
+}
 
 function wrapKey(key) {
     return `"${escapeJsonStr(key)}"`;

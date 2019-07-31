@@ -5870,8 +5870,20 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 
 |参数名|类型|说明|
 |-----|----|---|
-|obj|object|目标对象|
+|obj|*|目标对象|
+|[options]|object|序列化选项|
 |返回值|string|序列化后的字符串|
+
+可用选项：
+
+|参数名|类型|说明|
+|-----|----|---|
+|unenumerable=false|boolean|包含不可枚举值|
+|symbol=false|boolean|包含 Symbol 键名|
+|accessGetter=false|boolean|获取 getter 值|
+|timeout=0|number|序列化超时时间|
+
+超时后，所有未序列化的值都会变成 “Timeout”。
 
 ```javascript
 stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function",...}'

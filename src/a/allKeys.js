@@ -5,15 +5,15 @@
  * |obj      |object|Object to query            |
  * |[options]|object|Options                    |
  * |return   |array |Array of all property names|
- * 
+ *
  * Available options:
- * 
+ *
  * |Name              |Type   |Desc                     |
  * |------------------|-------|-------------------------|
  * |prototype=true    |boolean|Include prototype keys   |
  * |unenumerable=false|boolean|Include unenumerable keys|
  * |symbol=false      |boolean|Include symbol keys      |
- * 
+ *
  * Members of Object's prototype won't be retrieved.
  */
 
@@ -36,11 +36,11 @@
  *     }
  * }
  * export declare function allKeys(
- *     obj: any, 
+ *     obj: any,
  *     options: { symbol: true } & allKeys.IOptions
  * ): Array<string | Symbol>;
  * export declare function allKeys(
- *     obj: any, 
+ *     obj: any,
  *     options?: ({ symbol: false } & allKeys.IOptions) | allKeys.IOptions
  * ): string[];
  */

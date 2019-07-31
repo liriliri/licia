@@ -1,7 +1,42 @@
 <require>stringifyAll</require>
 
 <script>
-console.time('window')
+console.time('window');
 console.log(JSON.parse(stringifyAll(window)));
-console.timeEnd('window')
+console.timeEnd('window');
+
+console.time('window unenumerable');
+console.log(JSON.parse(stringifyAll(window, {
+  unenumerable: true
+})));
+console.timeEnd('window unenumerable');
+
+console.time('window symbol');
+console.log(JSON.parse(stringifyAll(window, {
+  symbol: true
+})));
+console.timeEnd('window symbol');
+
+console.time('window accessGetter');
+console.log(JSON.parse(stringifyAll(window, {
+  accessGetter: true
+})));
+console.timeEnd('window accessGetter');
+
+console.time('window all');
+console.log(JSON.parse(stringifyAll(window, {
+  unenumerable: true,
+  symbol: true,
+  accessGetter: true
+})));
+console.timeEnd('window all');
+
+console.time('window timeout 50ms');
+console.log(JSON.parse(stringifyAll(window, {
+  unenumerable: true,
+  symbol: true,
+  accessGetter: true,
+  timeout: 50
+})));
+console.timeEnd('window timeout 50ms');
 </script>
