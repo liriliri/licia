@@ -2134,7 +2134,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.5"
     },
     "getUrlParam": {
         "description": "Get url param.",
@@ -3112,7 +3113,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.5"
     },
     "isTypedArr": {
         "description": "Check if value is a typed array.",
@@ -4809,6 +4811,7 @@
             "node",
             "browser"
         ],
+        "since": "1.5.5",
         "demo": true
     },
     "stripAnsi": {

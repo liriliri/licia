@@ -1,3 +1,10 @@
+## v1.5.5 (1 Aug 2019)
+
+* add: stringifyAll
+* add: getProto
+* add: isSymbol
+* feat(allKeys): support unenumerable and symbol
+
 ## v1.5.4 (20 Jul 2019)
 
 * add: golangify
