@@ -112,11 +112,12 @@ exports = function(
         let id;
         if (visitedObj) {
             id = visitedObj.id;
+            parts.push(`"reference":${id}`);
         } else {
             id = visitor.set(obj);
+            parts.push(`"id":${id}`);
         }
 
-        parts.push(`"id":${id}`);
         parts.push(`"type":"${t}"`);
         if (endWith(t, 'Function')) {
             parts.push(`"value":${wrapStr(toSrc(obj))}`);
