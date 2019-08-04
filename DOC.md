@@ -5902,6 +5902,7 @@ Available options:
 |accessGetter=false|boolean|Access getter value      |
 |timeout=0         |number |Timeout of stringify     |
 |depth=0           |number |Max depth of recursion   |
+|[ignore]          |array  |Values to ignore         |
 
 When time is out, all remaining values will all be "Timeout".
 

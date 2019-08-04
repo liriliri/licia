@@ -119,3 +119,11 @@ it('depth', () => {
     const obj = transform({ one: 1, two: { three: 3 } }, { depth: 1 });
     expect(obj.enumerable.two).to.equal('{...}');
 });
+
+it('ignore', () => {
+    let obj = transform({}, { ignore: [Object.prototype] });
+    expect(obj.prototype).to.be.undefined;
+    let b = {};
+    obj = transform({ b }, { ignore: [b] });
+    expect(obj.enumerable.b).to.be.undefined;
+});

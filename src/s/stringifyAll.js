@@ -15,6 +15,7 @@
  * |accessGetter=false|boolean|Access getter value      |
  * |timeout=0         |number |Timeout of stringify     |
  * |depth=0           |number |Max depth of recursion   |
+ * |[ignore]          |array  |Values to ignore         |
  *
  * When time is out, all remaining values will all be "Timeout".
  */
@@ -37,6 +38,7 @@
  *         accessGetter?: boolean;
  *         timeout?: number;
  *         depth?: number;
+ *         ignore?: any[];
  *     }
  * }
  * export declare function stringifyAll(
@@ -46,7 +48,7 @@
  */
 
 _(
-    'escapeJsStr type toStr endWith toSrc keys each Class getProto difference extend isPromise filter now allKeys'
+    'escapeJsStr type toStr endWith toSrc keys each Class getProto difference extend isPromise filter now allKeys contain'
 );
 
 exports = function(
@@ -60,7 +62,8 @@ exports = function(
         visitor = new Visitor(),
         unenumerable = false,
         symbol = false,
-        accessGetter = false
+        accessGetter = false,
+        ignore = []
     } = {}
 ) {
     let json = '';
@@ -72,7 +75,8 @@ exports = function(
         depth,
         curDepth: curDepth + 1,
         timeout,
-        startTime
+        startTime,
+        ignore
     };
 
     const t = type(obj, false);
@@ -177,7 +181,7 @@ exports = function(
             }
 
             const prototype = getProto(obj);
-            if (prototype) {
+            if (prototype && !contain(ignore, prototype)) {
                 const proto = `"proto":${exports(
                     prototype,
                     extend(options, { self: self || obj })
@@ -204,6 +208,9 @@ function iterateObj(name, keys, obj, options) {
         } else {
             try {
                 val = obj[key];
+                if (contain(options.ignore, val)) {
+                    return;
+                }
                 if (isPromise(val)) {
                     val.catch(() => {});
                 }

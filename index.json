@@ -4800,7 +4800,8 @@
             "isPromise",
             "filter",
             "now",
-            "allKeys"
+            "allKeys",
+            "contain"
         ],
         "env": [
             "node",

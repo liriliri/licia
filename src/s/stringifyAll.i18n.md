@@ -17,5 +17,6 @@
 |accessGetter=false|boolean|获取 getter 值|
 |timeout=0|number|序列化超时时间|
 |depth=0|number|遍历对象的最大深度|
+|[ignore]|array|忽略的对象|
 
 超时后，所有未序列化的值都会变成 “Timeout”。
