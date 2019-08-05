@@ -3153,6 +3153,27 @@ Checks if key is a direct property.
 has({one: 1}, 'one'); // -> true
 ```
 
+## highlight 
+
+Highlight code.
+
+|Name   |Type  |Desc                        |
+|-------|------|----------------------------|
+|str    |string|Code string                 |
+|lang=js|string|Language, js, html or css   |
+|[style]|object|Keyword highlight style     |
+|return |string|Highlighted html code string|
+
+Available styles:
+
+comment, string, number, keyword, operator
+
+```javascript
+highlight('const a = 5;', 'js', {
+    number: 'color:#0086b3;'
+}); // -> '<span style="color:#a71d5d;">const</span> a <span style="color:#994500;">=</span> <span style="color:#0086b3;">5</span>;'
+```
+
 ## hotkey 
 
 Capture keyboard input to trigger given events.

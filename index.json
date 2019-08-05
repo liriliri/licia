@@ -2201,6 +2201,21 @@
             "browser"
         ]
     },
+    "highlight": {
+        "description": "Highlight code.",
+        "dependencies": [
+            "each"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "hotkey": {
         "description": "Capture keyboard input to trigger given events.",
         "dependencies": [
