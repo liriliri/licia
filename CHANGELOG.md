@@ -1,3 +1,8 @@
+## v1.5.6 (6 Aug 2019)
+
+* add: highlight
+* feat(stringifyAll): support ignore
+
 ## v1.5.5 (1 Aug 2019)
 
 * add: stringifyAll
