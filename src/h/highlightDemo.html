@@ -1,0 +1,32 @@
+<require>highlight $ stripIndent</require>
+
+<template id="jsTpl">
+const uuid = require('licia/uuid');
+
+console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
+</template>
+
+<template id="styleTpl">
+body, html {
+    background: black;
+}  
+</template>
+
+<script>
+$('body').append(`<pre>${highlight(jsTpl, 'js')}</pre>`)
+$('body').append(`<pre>${highlight(styleTpl, 'css')}</pre>`)
+$('body').append(`<pre>${highlight(stripIndent`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    This is the test.
+</body>
+</html>
+`, 'html')}</pre>`)
+</script>

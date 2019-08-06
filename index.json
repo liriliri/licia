@@ -2214,7 +2214,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "demo": true
     },
     "hotkey": {
         "description": "Capture keyboard input to trigger given events.",
