@@ -60,7 +60,7 @@ exports = Class({
         }
     },
     find: function(selector) {
-        var ret = new Select();
+        var ret = new exports();
 
         this.each(function() {
             mergeArr(ret, this.querySelectorAll(selector));
