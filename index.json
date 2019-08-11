@@ -1218,6 +1218,24 @@
         ],
         "demo": true
     },
+    "crc1": {
+        "description": "CRC1 implementation.",
+        "dependencies": [
+            "type",
+            "isStr",
+            "utf8",
+            "strToBytes"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "createAssigner": {
         "description": "Used to create extend, extendOwn and defaults.",
         "dependencies": [

@@ -2024,6 +2024,20 @@ copy('text', function (err) {
 });
 ```
 
+## crc1 
+
+CRC1 implementation.
+
+|Name      |Type                                |Desc                |
+|----------|------------------------------------|--------------------|
+|input     |string Buffer ArrayBuffer Uint8Array|Data to calculate   |
+|[previous]|number                              |Previous CRC1 result|
+|return    |number                              |CRC1 result         |
+
+```javascript
+crc1('1234567890').toString(16); // -> 'd'
+```
+
 ## createAssigner 
 
 Used to create extend, extendOwn and defaults.
