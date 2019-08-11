@@ -1,3 +1,8 @@
+## v1.5.7 (11 Aug 2019)
+
+* add: crc1
+* fix(Select): [#10](https://github.com/liriliri/licia/issues/10)
+
 ## v1.5.6 (6 Aug 2019)
 
 * add: highlight

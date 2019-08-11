@@ -1234,7 +1234,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.7"
     },
     "createAssigner": {
         "description": "Used to create extend, extendOwn and defaults.",
