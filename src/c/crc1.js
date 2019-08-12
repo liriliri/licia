@@ -1,5 +1,5 @@
-/* CRC1 implementation. 
- * 
+/* CRC1 implementation.
+ *
  * |Name      |Type                                |Desc                |
  * |----------|------------------------------------|--------------------|
  * |input     |string Buffer ArrayBuffer Uint8Array|Data to calculate   |
@@ -20,7 +20,7 @@
 /* typescript
  * export declare function crc1(
  *     input: string | Buffer | ArrayBuffer | Uint8Array,
- *     previous?: number 
+ *     previous?: number
  * ): number;
  */
 

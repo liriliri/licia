@@ -67,7 +67,7 @@
  *     }
  * }
  * declare function $(selector: string | Element): $.$;
- */ 
+ */
 
 _(
     'Select $offset $show $css $attr $property last $remove $data $event $class $insert isUndef isStr'
@@ -75,7 +75,7 @@ _(
 
 exports = function(selector) {
     return new Select(selector);
-}
+};
 
 Select.methods({
     offset: function() {

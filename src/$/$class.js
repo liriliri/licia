@@ -60,9 +60,9 @@
  *     toggle(element: $safeEls.El, name: string): void;
  *     remove(element: $safeEls.El, name: string): void;
  * };
- */ 
+ */
 
-_('toArr some $safeEls isStr');
+_('toArr some $safeEls isStr each');
 
 exports = {
     add: function(els, name) {

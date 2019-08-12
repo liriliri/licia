@@ -178,7 +178,7 @@ it('complete', function(done) {
 
     ajax({
         url: 'test',
-        complete: function(xhr) {
+        complete: function() {
             done();
         }
     });

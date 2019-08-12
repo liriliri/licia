@@ -17,7 +17,7 @@ it('basic', function() {
 });
 
 it('start index', function() {
-    restArgs(function(a, b, rest) {
+    restArgs(function(a, b) {
         expect(b).to.eql([2, 3]);
     }, 1)(1, 2, 3);
 });

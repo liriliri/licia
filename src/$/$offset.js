@@ -24,7 +24,7 @@
  *     }
  * }
  * export declare function $offset(element: $safeEls.El): $offset.IOffset;
- */ 
+ */
 
 _('$safeEls');
 
@@ -41,4 +41,4 @@ exports = function(els) {
         width: Math.round(clientRect.width),
         height: Math.round(clientRect.height)
     };
-}
+};

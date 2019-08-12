@@ -32,6 +32,7 @@
  * ): boolean;
  */
 
+/* eslint-disable no-unused-vars */
 _('safeCb isArrLike keys types');
 
 exports = function(obj, predicate, ctx) {

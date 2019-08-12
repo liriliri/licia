@@ -29,7 +29,7 @@
 /* typescript
  */
 
-_('Class isObj isFn State bind nextTick noop');
+_('Class isObj isFn State bind nextTick noop toArr');
 
 var Promise = (exports = Class(
     {

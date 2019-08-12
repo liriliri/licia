@@ -6,7 +6,7 @@ it('basic', function() {
     ).to.eql([5, 4, 6, 3, 1, 2]);
 
     expect(
-        sortBy({ a: 1, b: 2, c: 3 }, function(val, key) {
+        sortBy({ a: 1, b: 2, c: 3 }, function(val) {
             return 1 / val;
         })
     ).to.eql([3, 2, 1]);

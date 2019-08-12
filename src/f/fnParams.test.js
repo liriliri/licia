@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 it('basic', function() {
     expect(fnParams(function(a, b) {})).to.eql(['a', 'b']);
     expect(fnParams(function() {})).to.eql([]);

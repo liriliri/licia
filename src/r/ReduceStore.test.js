@@ -76,4 +76,6 @@ it('delay unscribe', function() {
     store.dispatch({});
     expect(a).to.equal(2);
     expect(b).to.equal(1);
+
+    unsubscribeA();
 });

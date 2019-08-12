@@ -16,8 +16,7 @@ var exports = {
     },
     extends: 'eslint:recommended',
     rules: {
-        semi: ['error', 'always'],
-        'no-unused-vars': ['off']
+        semi: ['error', 'always']
     }
 };
 

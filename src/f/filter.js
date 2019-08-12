@@ -32,6 +32,7 @@
  * ): T[];
  */
 
+/* eslint-disable no-unused-vars */
 _('safeCb each types');
 
 exports = function(obj, predicate, ctx) {

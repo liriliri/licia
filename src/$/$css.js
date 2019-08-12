@@ -43,9 +43,9 @@
  *     element: $safeEls.El,
  *     properties: { [name: string]: string }
  * ): void;
- */ 
+ */
 
-_('isStr isObj kebabCase isUndef contain isNum $safeEls prefix');
+_('isStr isObj kebabCase isUndef contain isNum $safeEls prefix each');
 
 exports = function(nodes, name, val) {
     nodes = $safeEls(nodes);
@@ -60,7 +60,7 @@ exports = function(nodes, name, val) {
     }
 
     setCss(nodes, css);
-}
+};
 
 function getCss(node, name) {
     return (

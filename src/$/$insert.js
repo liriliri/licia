@@ -51,7 +51,7 @@
  *     append: $insert.IInsert;
  *     prepend: $insert.IInsert;
  * };
- */ 
+ */
 
 _('each $safeEls');
 

@@ -16,7 +16,7 @@
 
 /* typescript
  * export declare function $remove(element: $safeEls.El);
- */ 
+ */
 
 _('each $safeEls');
 
@@ -28,4 +28,4 @@ exports = function(els) {
 
         if (parent) parent.removeChild(el);
     });
-}
+};

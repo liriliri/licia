@@ -1,5 +1,4 @@
-var each = util.each,
-    PI = Math.PI;
+var each = util.each;
 
 it('basic', function() {
     var tests = [

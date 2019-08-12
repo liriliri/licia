@@ -39,7 +39,7 @@
  *     val: $property.IProperty;
  *     text: $property.IProperty;
  * };
- */ 
+ */
 
 _('isUndef each $safeEls');
 

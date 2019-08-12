@@ -60,7 +60,7 @@
  * ): Promise<fetch.IResult>;
  */
 
-_('Promise each defaults noop');
+_('Promise each defaults noop has');
 
 exports = function(url, options) {
     options = options || {};

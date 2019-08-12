@@ -19,8 +19,9 @@
  *     }
  * }
  * export declare const $data: $data.IData;
- */  
+ */
 
+/* eslint-disable no-unused-vars */
 _('$attr isStr isObj each $safeEls');
 
 exports = function(nodes, name, val) {
@@ -35,4 +36,4 @@ exports = function(nodes, name, val) {
     }
 
     return $attr(nodes, dataName, val);
-}
+};

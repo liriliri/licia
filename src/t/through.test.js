@@ -1,8 +1,3 @@
-var Duplex = require('stream').Duplex;
-
-var inherits = util.inherits,
-    extend = util.extend;
-
 it('basic', function() {
     var t = through(function(chunk, enc, cb) {
         for (var i = 0, len = chunk.length; i < len; i++) {

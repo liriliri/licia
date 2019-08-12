@@ -22,10 +22,10 @@
  *     type El = Element | Element[] | NodeListOf<Element> | string;
  * }
  * export declare function $safeEls(value: $safeEls.El): Element[];
- */ 
+ */
 
 _('isStr toArr Select');
 
 exports = function(val) {
     return toArr(isStr(val) ? new Select(val) : val);
-}
+};

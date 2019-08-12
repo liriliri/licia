@@ -1,14 +1,14 @@
 /* Highlight code.
- * 
+ *
  * |Name   |Type  |Desc                        |
  * |-------|------|----------------------------|
  * |str    |string|Code string                 |
  * |lang=js|string|Language, js, html or css   |
  * |[style]|object|Keyword highlight style     |
  * |return |string|Highlighted html code string|
- * 
+ *
  * Available styles:
- * 
+ *
  * comment, string, number, keyword, operator
  */
 
@@ -58,7 +58,7 @@ exports = function(str, lang) {
         if (!val.language) return;
 
         str = str.replace(val.re, function($1, $2) {
-            subLangs[subLangSi++] = highlight($2, val.language);
+            subLangs[subLangSi++] = exports($2, val.language);
             return $1.replace($2, '___subtmpl' + (subLangSi - 1) + '___');
         });
     });

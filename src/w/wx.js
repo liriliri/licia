@@ -19,6 +19,7 @@
 
 _('each arrToMap startWith endWith');
 
+/* global wx */
 // https://github.com/Tencent/wepy
 const noPromiseMethods = arrToMap([
     'stopRecord',

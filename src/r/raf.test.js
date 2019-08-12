@@ -14,7 +14,6 @@ it('node', function(done) {
     }
 
     var count = 0,
-        isPause = false,
         id;
 
     function update() {

@@ -32,7 +32,7 @@ it('initialize data', function() {
 it('forEach', function() {
     var map = new PseudoMap([['1', 1], ['2', 2]]);
     var sum = 0;
-    map.forEach(function(val, key) {
+    map.forEach(function(val) {
         sum += val;
     });
     expect(sum).to.equal(3);

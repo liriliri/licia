@@ -31,9 +31,9 @@
  *     ): void;
  *     off(element: $safeEls.El, event: string, handler: Function): void;
  * };
- */ 
+ */
 
-_('delegate isUndef $safeEls');
+_('delegate isUndef $safeEls each');
 
 exports = {
     on: eventFactory('add'),

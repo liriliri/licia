@@ -37,7 +37,7 @@ it('all', function(done) {
         new Promise(function(resolve) {
             resolve('a');
         }),
-        new Promise(function(resolve, reject) {
+        new Promise(function() {
             throw new Error('error');
         })
     ]).catch(function(val) {

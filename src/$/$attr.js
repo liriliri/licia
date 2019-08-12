@@ -56,7 +56,7 @@
  *     }
  * }
  * export declare const $attr: $attr.IAttr;
- */  
+ */
 
 _('toArr isObj isStr each isUndef $safeEls');
 
@@ -73,7 +73,7 @@ exports = function(els, name, val) {
     }
 
     setAttr(els, attrs);
-}
+};
 
 exports.remove = function(els, names) {
     els = $safeEls(els);

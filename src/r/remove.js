@@ -30,6 +30,7 @@
  * ): TResult[];
  */
 
+/* eslint-disable no-unused-vars */
 _('safeCb types');
 
 exports = function(arr, iterator, ctx) {

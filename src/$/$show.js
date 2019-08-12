@@ -16,7 +16,7 @@
 
 /* typescript
  * export declare function $show(element: $safeEls.El): void;
- */ 
+ */
 
 _('each $safeEls');
 
@@ -28,7 +28,7 @@ exports = function(els) {
             el.style.display = getDefDisplay(el.nodeName);
         }
     });
-}
+};
 
 function isHidden(el) {
     return getComputedStyle(el, '').getPropertyValue('display') == 'none';

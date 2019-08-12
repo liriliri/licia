@@ -33,6 +33,7 @@
  * ): TResult;
  */
 
+/* eslint-disable no-unused-vars */
 _('optimizeCb isArrLike isUndef keys types');
 
 exports = createReduce(1);

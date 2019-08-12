@@ -29,6 +29,7 @@
 
 _('escape defaults');
 
+/* global _ */
 /* eslint-disable quotes */
 var regEvaluate = /<%([\s\S]+?)%>/g,
     regInterpolate = /<%=([\s\S]+?)%>/g,
