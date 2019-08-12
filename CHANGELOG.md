@@ -1,3 +1,7 @@
+## v1.5.8 (12 Aug 2019)
+
+* add: eslint for release package
+
 ## v1.5.7 (11 Aug 2019)
 
 * add: crc1

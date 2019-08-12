@@ -47,7 +47,8 @@
             "toArr",
             "some",
             "$safeEls",
-            "isStr"
+            "isStr",
+            "each"
         ],
         "env": [
             "browser"
@@ -66,7 +67,8 @@
             "contain",
             "isNum",
             "$safeEls",
-            "prefix"
+            "prefix",
+            "each"
         ],
         "env": [
             "browser"
@@ -96,7 +98,8 @@
         "dependencies": [
             "delegate",
             "isUndef",
-            "$safeEls"
+            "$safeEls",
+            "each"
         ],
         "env": [
             "browser"
@@ -419,7 +422,8 @@
             "State",
             "bind",
             "nextTick",
-            "noop"
+            "noop",
+            "toArr"
         ],
         "env": [
             "node",
@@ -1792,7 +1796,8 @@
             "Promise",
             "each",
             "defaults",
-            "noop"
+            "noop",
+            "has"
         ],
         "env": [
             "browser"
