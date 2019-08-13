@@ -2038,6 +2038,20 @@ CRC1 implementation.
 crc1('1234567890').toString(16); // -> 'd'
 ```
 
+## crc8 
+
+CRC8 implementation.
+
+|Name      |Type                                |Desc                |
+|----------|------------------------------------|--------------------|
+|input     |string Buffer ArrayBuffer Uint8Array|Data to calculate   |
+|[previous]|number                              |Previous CRC8 result|
+|return    |number                              |CRC8 result         |
+
+```javascript
+crc8('1234567890').toString(16); // -> '52'
+```
+
 ## createAssigner 
 
 Used to create extend, extendOwn and defaults.

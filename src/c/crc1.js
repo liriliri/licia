@@ -32,11 +32,7 @@ exports = function(input, previous) {
 };
 
 exports.signed = function(input, previous) {
-    if (isStr(input)) {
-        input = strToBytes(utf8.encode(input));
-    } else if (type(input) !== 'uint8array') {
-        input = new Uint8Array(input);
-    }
+    input = exports.transInput(input);
 
     let crc = ~~previous;
     let accum = 0;
@@ -48,4 +44,14 @@ exports.signed = function(input, previous) {
     crc += accum % 256;
 
     return crc % 256;
+};
+
+exports.transInput = function(input) {
+    if (isStr(input)) {
+        input = strToBytes(utf8.encode(input));
+    } else if (type(input) !== 'uint8array') {
+        input = new Uint8Array(input);
+    }
+
+    return input;
 };
