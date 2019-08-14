@@ -2047,6 +2047,20 @@ CRC16 算法实现。
 crc16('1234567890').toString(16); // -> 'c57a'
 ```
 
+## crc32
+
+CRC32 算法实现。 
+
+|参数名|类型|说明|
+|-----|----|---|
+|input|string Buffer ArrayBuffer Uint8Array|信息码|
+|[previous]|number|用于累积计算的 CRC32 校验码|
+|返回值|number|CRC32 校验码|
+
+```javascript
+crc32('1234567890').toString(16); // -> '261daee5'
+```
+
 ## crc8
 
 CRC8 算法实现。 

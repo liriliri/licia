@@ -1256,6 +1256,21 @@
             "browser"
         ]
     },
+    "crc32": {
+        "description": "CRC32 implementation.",
+        "dependencies": [
+            "crc1"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "crc8": {
         "description": "CRC8 implementation.",
         "dependencies": [

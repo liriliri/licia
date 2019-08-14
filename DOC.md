@@ -2052,6 +2052,20 @@ CRC16 implementation.
 crc16('1234567890').toString(16); // -> 'c57a'
 ```
 
+## crc32 
+
+CRC32 implementation.
+
+|Name      |Type                                |Desc                 |
+|----------|------------------------------------|---------------------|
+|input     |string Buffer ArrayBuffer Uint8Array|Data to calculate    |
+|[previous]|number                              |Previous CRC32 result|
+|return    |number                              |CRC16 result         |
+
+```javascript
+crc32('1234567890').toString(16); // -> '261daee5'
+```
+
 ## crc8 
 
 CRC8 implementation.
