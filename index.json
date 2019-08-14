@@ -1241,6 +1241,21 @@
         ],
         "since": "1.5.7"
     },
+    "crc16": {
+        "description": "CRC16 implementation.",
+        "dependencies": [
+            "crc1"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "crc8": {
         "description": "CRC8 implementation.",
         "dependencies": [
