@@ -1254,7 +1254,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.9"
     },
     "crc32": {
         "description": "CRC32 implementation.",
@@ -1269,7 +1270,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.9"
     },
     "crc8": {
         "description": "CRC8 implementation.",
@@ -1284,7 +1286,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.5.9"
     },
     "createAssigner": {
         "description": "Used to create extend, extendOwn and defaults.",

@@ -1,6 +1,6 @@
 {
   "name": "licia-src",
-  "version": "1.5.8",
+  "version": "1.5.9",
   "description": "Useful utility collection with zero dependencies",
   "bin": {
     "licia": "./bin/licia.js"

@@ -1,3 +1,9 @@
+## v1.5.9 (17 Aug 2019)
+
+* add: crc8
+* add: crc16
+* add: crc32
+
 ## v1.5.8 (12 Aug 2019)
 
 * add: eslint for release package
