@@ -1,11 +1,12 @@
 {
-  "name": "licia-src",
+  "name": "licia",
   "version": "1.5.9",
   "description": "Useful utility collection with zero dependencies",
   "bin": {
     "licia": "./bin/licia.js"
   },
   "scripts": {
+    "postinstall": "node ./lib/setup",
     "ci": "npm run lint && npm test",
     "update": "licia update",
     "pack": "licia pack && npm run format:pkg && copyfiles -u 1 ./packages/**/* ./node_modules",
@@ -61,7 +62,6 @@
     "karma-jquery": "^0.2.2",
     "karma-mocha": "^1.3.0",
     "karma-sauce-launcher": "^1.2.0",
-    "licia": "latest",
     "mocha": "^5.0.4",
     "ncp": "^2.0.0",
     "npm": "5.7.1",
@@ -73,5 +73,7 @@
     "underscore": "^1.8.3",
     "uuid": "^3.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "licia": "^1.5.9"
+  }
 }
