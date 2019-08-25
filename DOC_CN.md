@@ -3265,6 +3265,34 @@ hotkey.off('shift+a', keyDown);
 hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
 ```
 
+## html
+
+HTML 解析器。
+
+### parse
+
+将 HTML 字符串转换为 js 对象。
+
+|参数名|类型|说明|
+|-----|----|---|
+|html|string|HTML 字符串|
+|返回值|array|js 对象|
+
+### stringify
+
+将 js 对象序列化成 HTML 字符串。
+
+|参数名|类型|说明|
+|-----|----|---|
+|tree|array|要序列化的对象|
+|返回值|string|HTML 字符串|
+
+```javascript
+const tree = html.parse('<div id="name">licia</div>');
+// -> [{tag: 'div', attrs: {id: 'name'}, content: ['licia']}]
+html.stringify(tree);
+```
+
 ## identity
 
 返回传入的第一个参数。
@@ -3340,7 +3368,7 @@ ini 文件解析器。
 
 ### parse
 
-转 ini 文件转换为 js 对象。
+将 ini 文件转换为 js 对象。
 
 |参数名|类型|说明|
 |-----|----|---|

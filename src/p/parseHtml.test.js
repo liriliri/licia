@@ -47,7 +47,7 @@ it('basic', () => {
     );
 
     expect(comments).to.eql(['start', 'end']);
-    expect(texts.length).to.equal(17);
+    expect(texts.length).to.equal(18);
     expect(starts.length).to.equal(8);
     expect(starts[0]).to.eql({
         tag: 'html',

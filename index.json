@@ -2321,6 +2321,26 @@
             "browser"
         ]
     },
+    "html": {
+        "description": "Html parser and serializer.",
+        "dependencies": [
+            "parseHtml",
+            "Stack",
+            "isArr",
+            "each",
+            "isStr",
+            "mapObj"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "identity": {
         "description": "Return the first argument given.",
         "dependencies": [],

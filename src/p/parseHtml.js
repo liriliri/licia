@@ -56,6 +56,8 @@ exports = function(html, handler) {
             } else if (startWith(html, '<!')) {
                 const match = html.match(regDoctype);
                 if (match) {
+                    if (handler.text)
+                        handler.text(html.substring(0, match[0].length));
                     html = html.substring(match[0].length);
                     text = false;
                 }
@@ -87,7 +89,6 @@ exports = function(html, handler) {
                 let text = html.substring(0, execRes.index);
                 html = html.substring(execRes.index + execRes[0].length);
 
-                text = text.replace(regCmt, '$1').replace(regCDATA, '$1');
                 if (text && handler.text) handler.text(text);
             }
 
@@ -145,8 +146,6 @@ const regDoctype = /^<!\s*doctype((?:\s+[\w:]+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*
 const regEndTag = /^<\/([-A-Za-z0-9_]+)[^>]*>/;
 const regStartTag = /^<([-A-Za-z0-9_]+)((?:\s+[-A-Za-z0-9_:@.]+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/i;
 const regAttr = /([-A-Za-z0-9_:@.]+)(?:\s*=\s*(?:(?:"((?:\\.|[^"])*)")|(?:'((?:\\.|[^'])*)')|([^>\s]+)))?/g;
-const regCmt = /<!--(.*?)-->/g;
-const regCDATA = /<!\[CDATA\[(.*?)]]>/g;
 
 // https://www.w3.org/TR/html/syntax.html#raw-text
 const SPECIAL = arrToMap('script,style'.split(','));

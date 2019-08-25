@@ -3269,6 +3269,34 @@ Convert hsl to rgb.
 hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
 ```
 
+## html 
+
+Html parser and serializer.
+
+### parse
+
+Parse html string into js object.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|html  |string|Html string     |
+|return|array |Parsed js object|
+
+### stringify
+
+Stringify object into an html string.
+
+|Name  |Type  |Desc               |
+|------|------|-------------------|
+|tree  |array |Object to stringify|
+|return|string|Html string        |
+
+```javascript
+const tree = html.parse('<div id="name">licia</div>');
+// -> [{tag: 'div', attrs: {id: 'name'}, content: ['licia']}]
+html.stringify(tree);
+```
+
 ## identity 
 
 Return the first argument given.
