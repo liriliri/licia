@@ -4002,6 +4002,24 @@
             "browser"
         ]
     },
+    "parseHtml": {
+        "description": "Simple html parser.",
+        "dependencies": [
+            "last",
+            "arrToMap",
+            "startWith",
+            "lowerCase"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "partial": {
         "description": "Partially apply a function by filling in given arguments.",
         "dependencies": [

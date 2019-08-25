@@ -5083,6 +5083,24 @@ parseArgs(['eustia', '--output', 'util.js', '-w'], {
 // -> {remain: ['eustia'], output: 'util.js', watch: true}
 ```
 
+## parseHtml 
+
+Simple html parser.
+
+|Name   |Type  |Desc         |
+|-------|------|-------------|
+|html   |string|Html to parse|
+|handler|object|Handlers     |
+
+```javascript
+parseHtml('<div>licia</div>', {
+    start: (tag, attrs, unary) => {},
+    end: (tag) => {},
+    comment: (text) => {},
+    text: (text) => {}
+});
+```
+
 ## partial 
 
 Partially apply a function by filling in given arguments.

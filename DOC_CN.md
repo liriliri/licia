@@ -5077,6 +5077,24 @@ parseArgs(['eustia', '--output', 'util.js', '-w'], {
 // -> {remain: ['eustia'], output: 'util.js', watch: true}
 ```
 
+## parseHtml
+
+Simple html parser.
+
+|Name   |Type  |Desc         |
+|-------|------|-------------|
+|html   |string|Html to parse|
+|handler|object|Handlers     |
+
+```javascript
+parseHtml('<div>licia</div>', {
+    start: (tag, attrs, unary) => {},
+    end: (tag) => {},
+    comment: (text) => {},
+    text: (text) => {}
+});
+```
+
 ## partial
 
 返回局部填充参数的函数，与 bind 模块相似。
