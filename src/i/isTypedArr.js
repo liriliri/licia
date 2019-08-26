@@ -26,7 +26,7 @@ exports = function(val) {
     return !!map[objToStr(val)];
 };
 
-var map = {};
+const map = {};
 
 each(
     [

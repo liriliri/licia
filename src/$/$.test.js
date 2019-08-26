@@ -1,6 +1,6 @@
 // No need to write full tests because each module is already tested.
 
-var $dom, dom;
+let $dom, dom;
 
 before(function() {
     jQuery('body').append('<div id="dollar"></div>');
@@ -27,14 +27,14 @@ it('show', function() {
 });
 
 it('first', function() {
-    var $first = dom.first();
+    const $first = dom.first();
 
     expect($first).to.be.an.instanceof(util.Select);
     expect($first[0]).to.equal(dom[0]);
 });
 
 it('last', function() {
-    var $last = dom.last();
+    const $last = dom.last();
 
     expect($last).to.be.an.instanceof(util.Select);
     expect($last[0]).to.equal(dom[0]);
@@ -45,7 +45,7 @@ it('get', function() {
 });
 
 it('eq', function() {
-    var $dom = dom.eq(0);
+    const $dom = dom.eq(0);
 
     expect($dom).to.be.an.instanceof(util.Select);
     expect($dom[0]).to.equal(dom[0]);
@@ -113,7 +113,7 @@ it('class', function() {
 });
 
 it('parent', function() {
-    var parent = dom.parent();
+    const parent = dom.parent();
 
     expect(parent).to.be.an.instanceof(util.Select);
     expect(parent[0]).to.equal($dom.parent()[0]);
@@ -126,7 +126,7 @@ it('insert', function() {
     dom.prepend('test0');
     expect($dom.html()).to.equal('test0<div>test1</div>test2');
     dom.html('<div>test</div>');
-    var div = dom.find('div');
+    const div = dom.find('div');
     div.before('<div>before</div>');
     div.after('<div>after</div>');
     expect($dom.html()).to.equal(

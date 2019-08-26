@@ -1,8 +1,8 @@
-var trigger = util.trigger;
+const trigger = util.trigger;
 
 it('basic', function() {
-    var num = 0,
-        a = 65;
+    let num = 0;
+    const a = 65;
     function addOne() {
         num++;
     }
@@ -16,9 +16,9 @@ it('basic', function() {
 });
 
 it('multiple', function() {
-    var num = 0,
-        a = 65,
-        b = 66;
+    let num = 0;
+    const a = 65;
+    const b = 66;
     function addOne() {
         num++;
     }

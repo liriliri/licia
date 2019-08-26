@@ -31,9 +31,9 @@ _('$safeEls');
 exports = function(els) {
     els = $safeEls(els);
 
-    var el = els[0];
+    const el = els[0];
 
-    var clientRect = el.getBoundingClientRect();
+    const clientRect = el.getBoundingClientRect();
 
     return {
         left: clientRect.left + window.pageXOffset,

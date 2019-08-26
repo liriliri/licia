@@ -1,4 +1,4 @@
-var $dom;
+let $dom;
 
 before(function() {
     jQuery('body').append('<div id="evalCss"></div>');

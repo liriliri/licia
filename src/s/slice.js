@@ -21,7 +21,7 @@
  */
 
 exports = function(arr, start, end) {
-    var len = arr.length;
+    const len = arr.length;
 
     if (start == null) {
         start = 0;
@@ -39,7 +39,7 @@ exports = function(arr, start, end) {
         end = Math.min(end, len);
     }
 
-    var ret = [];
+    const ret = [];
     while (start < end) ret.push(arr[start++]);
 
     return ret;

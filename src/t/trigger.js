@@ -35,7 +35,7 @@ exports = function(el, type, opts) {
     opts = opts || {};
     defaults(opts, defOpts);
 
-    var event = document.createEvent('Event');
+    const event = document.createEvent('Event');
     event.initEvent(type, opts.bubbles, opts.cancelable);
     delete opts.bubbles;
     delete opts.cancelable;
@@ -44,7 +44,7 @@ exports = function(el, type, opts) {
     el.dispatchEvent(event);
 };
 
-var defOpts = {
+const defOpts = {
     bubbles: true,
     cancelable: true
 };

@@ -1,4 +1,4 @@
-var dom;
+let dom;
 
 before(function() {
     $('body').append('<div id="dollarSafeEls"></div>');

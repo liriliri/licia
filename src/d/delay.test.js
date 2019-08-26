@@ -1,5 +1,5 @@
 it('basic', function(done) {
-    var count = 1;
+    let count = 1;
 
     delay(
         function(val) {

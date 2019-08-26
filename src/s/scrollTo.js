@@ -71,7 +71,7 @@ exports = function(target, options) {
         .play();
 };
 
-var defOpts = {
+const defOpts = {
     tolerance: 0,
     duration: 800,
     easing: 'outQuart',

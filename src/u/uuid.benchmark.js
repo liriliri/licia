@@ -1,4 +1,4 @@
-var nodeUuid = require('uuid/v4');
+const nodeUuid = require('uuid/v4');
 
 suite
     .add('node uuid', function() {

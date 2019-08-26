@@ -63,10 +63,10 @@ _('each isStr isUndef contain isArr isObj toArr');
 exports = function(name, content) {
     if (isUndef(name)) return getAllMeta();
 
-    var isGetter = (isStr(name) && isUndef(content)) || isArr(name);
+    const isGetter = (isStr(name) && isUndef(content)) || isArr(name);
     if (isGetter) return getMeta(name);
 
-    var metas = name;
+    let metas = name;
     if (!isObj(metas)) {
         metas = {};
         metas[name] = content;
@@ -78,15 +78,15 @@ exports.remove = function(nameList) {
     nameList = toArr(nameList);
 
     each(nameList, function(name) {
-        var meta = selectMeta(name);
+        const meta = selectMeta(name);
         if (meta) doc.head.removeChild(meta);
     });
 };
 
-var doc = document;
+const doc = document;
 
 function getAllMeta() {
-    var ret = {};
+    const ret = {};
 
     metaEach(function(name, content) {
         ret[name] = content;
@@ -97,11 +97,11 @@ function getAllMeta() {
 
 function getMeta(name) {
     if (isStr(name)) {
-        var meta = selectMeta(name);
+        const meta = selectMeta(name);
 
         if (meta) return meta.getAttribute('content');
     } else {
-        var ret = {};
+        const ret = {};
 
         metaEach(function(key, val) {
             if (contain(name, key)) ret[key] = val;
@@ -113,7 +113,7 @@ function getMeta(name) {
 
 function setMeta(metas) {
     each(metas, function(content, name) {
-        var meta = selectMeta(name);
+        let meta = selectMeta(name);
         if (meta) return meta.setAttribute('content', content);
 
         meta = doc.createElement('meta');
@@ -124,11 +124,11 @@ function setMeta(metas) {
 }
 
 function metaEach(fn) {
-    var metaList = doc.querySelectorAll('meta');
+    const metaList = doc.querySelectorAll('meta');
 
     each(metaList, function(meta) {
-        var name = meta.getAttribute('name'),
-            content = meta.getAttribute('content');
+        const name = meta.getAttribute('name');
+        const content = meta.getAttribute('content');
 
         if (!name || !content) return;
 

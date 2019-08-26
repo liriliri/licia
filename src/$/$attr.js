@@ -63,10 +63,10 @@ _('toArr isObj isStr each isUndef $safeEls');
 exports = function(els, name, val) {
     els = $safeEls(els);
 
-    var isGetter = isUndef(val) && isStr(name);
+    const isGetter = isUndef(val) && isStr(name);
     if (isGetter) return getAttr(els[0], name);
 
-    var attrs = name;
+    let attrs = name;
     if (!isObj(attrs)) {
         attrs = {};
         attrs[name] = val;

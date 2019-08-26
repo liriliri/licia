@@ -47,7 +47,7 @@ it('error', function(done) {
 });
 
 it('no callback', function() {
-    var invoked = false;
+    let invoked = false;
 
     parallel([
         function(cb) {
@@ -63,7 +63,7 @@ it('no callback', function() {
 });
 
 it('callback always async', function(done) {
-    var invoked = false;
+    let invoked = false;
 
     parallel(
         [

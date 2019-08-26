@@ -24,8 +24,8 @@
 
 _('noop parallel');
 
-var fs = require('fs'),
-    path = require('path');
+const fs = require('fs');
+const path = require('path');
 
 exports = function(p, cb) {
     cb = cb || noop;
@@ -34,7 +34,7 @@ exports = function(p, cb) {
     fs.lstat(p, function(err, stat) {
         if (err) return cb(err);
 
-        var isDir = stat.isDirectory();
+        const isDir = stat.isDirectory();
 
         if (!isDir) {
             return fs.unlink(p, function(err) {
@@ -45,10 +45,10 @@ exports = function(p, cb) {
         fs.readdir(p, function(err, files) {
             if (err) return cb(err);
 
-            var len = files.length;
+            const len = files.length;
 
-            var cbs = [];
-            for (var i = 0; i < len; i++) {
+            const cbs = [];
+            for (let i = 0; i < len; i++) {
                 cbs.push(
                     (function(file) {
                         return function(cb) {

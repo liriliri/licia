@@ -21,15 +21,15 @@ it('isSame', function() {
 });
 
 it('isBefore isAfter', function() {
-    var m1 = moment(1525161584274),
-        m2 = moment(1425161584274);
+    const m1 = moment(1525161584274);
+    const m2 = moment(1425161584274);
 
     expect(m2.isBefore(m1)).to.be.true;
     expect(m1.isAfter(m2)).to.be.true;
 });
 
 it('year month date hour minute millisecond', function() {
-    var m = moment(1525305141649);
+    const m = moment(1525305141649);
 
     expect(m.year()).to.equal(2018);
     m.year(2019);
@@ -65,14 +65,14 @@ it('unix', function() {
 });
 
 it('clone', function() {
-    var m1 = moment(1525161584274),
-        m2 = m1.clone();
+    const m1 = moment(1525161584274);
+    const m2 = m1.clone();
 
     expect(m1.isSame(m2)).to.be.true;
 });
 
 it('toDate toArray toJSON toISOString toObject toString', function() {
-    var m = moment(1525305141649);
+    const m = moment(1525305141649);
 
     expect(m.toDate()).to.be.a('Date');
     expect(m.toArray()).to.eql([2018, 4, 3, 7, 52, 21, 649]);
@@ -91,7 +91,7 @@ it('toDate toArray toJSON toISOString toObject toString', function() {
 });
 
 it('set', function() {
-    var m = moment(1525305141649);
+    const m = moment(1525305141649);
 
     m.set('y', 2016);
     expect(m.year()).to.equal(2016);
@@ -108,7 +108,7 @@ it('set', function() {
 });
 
 it('startOf', function() {
-    var m = moment(1525305141649);
+    const m = moment(1525305141649);
 
     m.startOf('second');
     expect(m.millisecond()).to.equal(0);
@@ -127,7 +127,7 @@ it('startOf', function() {
 });
 
 it('endOf', function() {
-    var m = moment(1525305141649);
+    const m = moment(1525305141649);
 
     m.endOf('second');
     expect(m.millisecond()).to.equal(999);
@@ -151,7 +151,7 @@ it('daysInMonth', function() {
 });
 
 it('add subtract', function() {
-    var m = moment(1525305141649);
+    const m = moment(1525305141649);
 
     m.add(1, 'y');
     expect(m.year()).to.equal(2019);
@@ -197,8 +197,8 @@ it('add subtract', function() {
 });
 
 it('diff', function() {
-    var m1 = moment('20180508'),
-        m2 = moment('20170505');
+    const m1 = moment('20180508');
+    const m2 = moment('20170505');
 
     expect(m1.diff(m2, 'year')).to.equal(1);
     expect(m1.diff(m2, 'year', true)).to.be.above(1);

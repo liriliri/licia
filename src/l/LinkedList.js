@@ -47,7 +47,7 @@
  */
 
 /* example
- * var linkedList = new LinkedList();
+ * const linkedList = new LinkedList();
  * linkedList.push(5);
  * linkedList.pop(); // -> 5
  */
@@ -86,7 +86,7 @@ exports = class LinkedList {
         this.size = 0;
     }
     push(val) {
-        var node = new Node(val, this.tail, null, this);
+        const node = new Node(val, this.tail, null, this);
 
         this.tail = node;
         this.head = this.head || node;
@@ -98,7 +98,7 @@ exports = class LinkedList {
     pop() {
         if (!this.tail) return;
 
-        var node = this.tail;
+        const node = this.tail;
 
         this.tail = node.prev;
         if (this.tail) {
@@ -112,7 +112,7 @@ exports = class LinkedList {
         return node.value;
     }
     unshift(val) {
-        var node = new Node(val, null, this.head, this);
+        const node = new Node(val, null, this.head, this);
 
         this.head = node;
         this.tail = this.tail || node;
@@ -124,7 +124,7 @@ exports = class LinkedList {
     shift() {
         if (!this.head) return;
 
-        var node = this.head;
+        const node = this.head;
 
         this.head = node.next;
         if (this.head) {
@@ -165,15 +165,15 @@ exports = class LinkedList {
     forEach(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
-        for (var i = 0, current = this.head; current !== null; i++) {
+        for (let i = 0, current = this.head; current !== null; i++) {
             iterator.call(ctx, current.value, i, this);
             current = current.next;
         }
     }
     toArr() {
-        var arr = new Array(this.size);
+        const arr = new Array(this.size);
 
-        for (var i = 0, current = this.head; current !== null; i++) {
+        for (let i = 0, current = this.head; current !== null; i++) {
             arr[i] = current.value;
             current = current.next;
         }

@@ -26,8 +26,8 @@ _('extend noop');
 exports = function(text, cb) {
     cb = cb || noop;
 
-    var el = document.createElement('textarea'),
-        body = document.body;
+    const el = document.createElement('textarea');
+    const body = document.body;
 
     extend(el.style, {
         fontSize: '12pt',

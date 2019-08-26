@@ -23,7 +23,7 @@
  */
 
 exports = function(val) {
-    var type = typeof val;
+    const type = typeof val;
 
     return !!val && (type === 'function' || type === 'object');
 };

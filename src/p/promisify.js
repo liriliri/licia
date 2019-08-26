@@ -10,9 +10,9 @@
  */
 
 /* example
- * var fs = require('fs');
+ * const fs = require('fs');
  *
- * var readFile = promisify(fs.readFile);
+ * const readFile = promisify(fs.readFile);
  * readFile('test.js', 'utf-8').then(function (data) {
  *     // Do something with file content.
  * });

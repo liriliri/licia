@@ -28,7 +28,7 @@
  */
 
 exports = function(path) {
-    var match = path.match(regSplit);
+    const match = path.match(regSplit);
 
     return {
         dir: match[1],
@@ -37,4 +37,4 @@ exports = function(path) {
     };
 };
 
-var regSplit = /^([\s\S]*?)((?:\.{1,2}|[^\\/]+?|)(\.[^./\\]*|))(?:[\\/]*)$/;
+const regSplit = /^([\s\S]*?)((?:\.{1,2}|[^\\/]+?|)(\.[^./\\]*|))(?:[\\/]*)$/;

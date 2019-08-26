@@ -38,7 +38,7 @@ exports = function(val) {
     return nameMap[val];
 };
 
-var codeMap = {
+const codeMap = {
     backspace: 8,
     tab: 9,
     enter: 13,
@@ -83,12 +83,12 @@ var codeMap = {
 };
 
 // Lower case chars
-for (var i = 97; i < 123; i++) codeMap[String.fromCharCode(i)] = i - 32;
+for (let i = 97; i < 123; i++) codeMap[String.fromCharCode(i)] = i - 32;
 // Numbers
-for (i = 48; i < 58; i++) codeMap[i - 48] = i;
+for (let i = 48; i < 58; i++) codeMap[i - 48] = i;
 // Function keys
-for (i = 1; i < 13; i++) codeMap['f' + i] = i + 111;
+for (let i = 1; i < 13; i++) codeMap['f' + i] = i + 111;
 // Numpad keys
-for (i = 0; i < 10; i++) codeMap['numpad ' + i] = i + 96;
+for (let i = 0; i < 10; i++) codeMap['numpad ' + i] = i + 96;
 
-var nameMap = invert(codeMap);
+const nameMap = invert(codeMap);

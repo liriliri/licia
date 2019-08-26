@@ -41,6 +41,6 @@ exports = function(data, opts) {
     return URL.createObjectURL(data);
 };
 
-var defOpts = {
+const defOpts = {
     type: 'text/plain'
 };

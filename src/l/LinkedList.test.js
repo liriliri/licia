@@ -1,4 +1,4 @@
-var linkedList;
+let linkedList;
 
 beforeEach(function() {
     linkedList = new LinkedList();
@@ -39,7 +39,7 @@ it('forEach', function() {
     linkedList.push(3);
     linkedList.push(4);
 
-    var sum = 0;
+    let sum = 0;
 
     linkedList.forEach(function(val) {
         sum += val;

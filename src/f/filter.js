@@ -36,7 +36,7 @@
 _('safeCb each types');
 
 exports = function(obj, predicate, ctx) {
-    var ret = [];
+    const ret = [];
 
     predicate = safeCb(predicate, ctx);
 

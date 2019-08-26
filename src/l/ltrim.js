@@ -22,17 +22,17 @@
  * export declare function ltrim(str: string, chars?: string | string[]): string;
  */
 
-var regSpace = /^\s+/;
+const regSpace = /^\s+/;
 
 exports = function(str, chars) {
     if (chars == null) return str.replace(regSpace, '');
 
-    var start = 0,
-        len = str.length,
-        charLen = chars.length,
-        found = true,
-        i,
-        c;
+    let start = 0;
+    const len = str.length;
+    const charLen = chars.length;
+    let found = true;
+    let i;
+    let c;
 
     while (found && start < len) {
         found = false;

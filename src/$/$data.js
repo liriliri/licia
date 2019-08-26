@@ -25,7 +25,7 @@
 _('$attr isStr isObj each $safeEls');
 
 exports = function(nodes, name, val) {
-    var dataName = name;
+    let dataName = name;
 
     if (isStr(name)) dataName = 'data-' + name;
     if (isObj(name)) {

@@ -19,7 +19,7 @@
  */
 
 exports = function(css) {
-    var style = document.createElement('style');
+    const style = document.createElement('style');
     style.textContent = css;
     style.type = 'text/css';
     document.head.appendChild(style);

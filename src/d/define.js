@@ -39,7 +39,7 @@ exports = function(name, requires, method) {
     define(name, requires, method);
 };
 
-var modules = (exports._modules = {});
+const modules = (exports._modules = {});
 
 function define(name, requires, method) {
     modules[name] = {

@@ -19,7 +19,7 @@
  *     this._name = name;
  * }
  * inherits(Student, People);
- * var s = new Student('RedHood');
+ * const s = new Student('RedHood');
  * s.getName(); // -> 'RedHood'
  */
 
@@ -39,6 +39,6 @@ exports = function(Class, SuperClass) {
     Class.prototype = new noop();
 };
 
-var objCreate = Object.create;
+const objCreate = Object.create;
 
 function noop() {}

@@ -1,6 +1,7 @@
-var testCase = 'http://surunzi@github.com:8080/foo/bar?test=1&eruda=true#hash';
+const testCase =
+    'http://surunzi@github.com:8080/foo/bar?test=1&eruda=true#hash';
 
-var parseUrl = Url.parse(testCase);
+const parseUrl = Url.parse(testCase);
 
 it('parse', function() {
     expect(parseUrl.protocol).to.equal('http:');
@@ -21,7 +22,7 @@ it('stringify', function() {
 });
 
 it('manipulate query', function() {
-    var url = new Url('http://liriliri.github.io?eruda=true&foo=bar');
+    const url = new Url('http://liriliri.github.io?eruda=true&foo=bar');
     expect(url.query.eruda).to.equal('true');
     url.setQuery('foo', 'bar');
     expect(url.query.foo).to.equal('bar');

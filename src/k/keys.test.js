@@ -4,7 +4,7 @@ it('basic', function() {
 });
 
 it('only own properties', function() {
-    var obj = Object.create({ b: 1 });
+    const obj = Object.create({ b: 1 });
     obj.a = 1;
     expect(keys(obj)).to.eql(['a']);
 });

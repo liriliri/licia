@@ -1,5 +1,5 @@
 it('basic', function() {
-    var obj = {
+    const obj = {
         name: 'RedHood',
         family: {
             mother: 'Jane',

@@ -9,7 +9,7 @@
  */
 
 /* example
- * var blob = new Blob([]);
+ * const blob = new Blob([]);
  */
 
 /* module
@@ -27,7 +27,7 @@ exports =
     function Blob(parts, opts) {
         opts = opts || {};
 
-        var blobBuilder = new BlobBuilder();
+        const blobBuilder = new BlobBuilder();
 
         each(parts, function(part) {
             blobBuilder.append(part);
@@ -38,7 +38,7 @@ exports =
             : blobBuilder.getBlob();
     };
 
-var BlobBuilder =
+const BlobBuilder =
     root.BlobBuilder ||
     root.WebKitBlobBuilder ||
     root.MSBlobBuilder ||

@@ -6,7 +6,7 @@ it('basic', function() {
 });
 
 it('circular', function() {
-    var obj = { a: 1 };
+    let obj = { a: 1 };
     obj.b = obj;
     expect(stringify(obj)).to.equal('{"a":1,"b":"[Circular ~]"}');
 

@@ -1,6 +1,6 @@
 it('before', function() {
-    var count = 0;
-    var fn = before(5, function() {
+    let count = 0;
+    const fn = before(5, function() {
         count++;
     });
     fn();

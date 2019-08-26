@@ -13,7 +13,7 @@ after(function() {
 });
 
 it('get', function() {
-    var metaList = meta();
+    const metaList = meta();
     expect(metaList.a).to.equal('1');
     expect(metaList.b).to.equal('2');
     expect(metaList.c).to.equal('3');

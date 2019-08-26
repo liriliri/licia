@@ -20,14 +20,13 @@
  */
 
 exports = function(hsl) {
-    var h = hsl[0] / 360,
-        s = hsl[1] / 100,
-        l = hsl[2] / 100,
-        ret = [],
-        t1,
-        t2,
-        t3,
-        val;
+    const h = hsl[0] / 360;
+    const s = hsl[1] / 100;
+    const l = hsl[2] / 100;
+    const ret = [];
+    let t2;
+    let t3;
+    let val;
 
     if (hsl[3]) ret[3] = hsl[3];
 
@@ -43,9 +42,9 @@ exports = function(hsl) {
         t2 = l + s - l * s;
     }
 
-    t1 = 2 * l - t2;
+    const t1 = 2 * l - t2;
 
-    for (var i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         t3 = h + (1 / 3) * -(i - 1);
         if (t3 < 0) t3++;
         if (t3 > 1) t3--;
@@ -66,4 +65,4 @@ exports = function(hsl) {
     return ret;
 };
 
-var round = Math.round;
+const round = Math.round;

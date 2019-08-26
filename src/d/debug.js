@@ -7,7 +7,7 @@
  */
 
 /* example
- * var d = debug('test');
+ * const d = debug('test');
  * d('doing lots of uninteresting work');
  * d.enabled = false;
  */

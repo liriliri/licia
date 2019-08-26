@@ -4,7 +4,7 @@
  */
 
 /* example
- * var localStorage = window.localStorage || memStorage;
+ * const localStorage = window.localStorage || memStorage;
  * localStorage.setItem('test', 'licia');
  */
 
@@ -30,20 +30,20 @@ exports = {
         API_KEYS[key] ? delete cloak[key] : delete this[key];
     },
     key: function(i) {
-        var keys = enumerableKeys();
+        const keys = enumerableKeys();
 
         return i >= 0 && i < keys.length ? keys[i] : null;
     },
     clear: function() {
-        var keys = uncloakedKeys();
+        let keys = uncloakedKeys();
 
         /* eslint-disable no-cond-assign */
-        for (var i = 0, key; (key = keys[i]); i++) delete this[key];
+        for (let i = 0, key; (key = keys[i]); i++) delete this[key];
 
         keys = cloakedKeys();
 
         /* eslint-disable no-cond-assign */
-        for (i = 0; (key = keys[i]); i++) delete cloak[key];
+        for (let i = 0, key; (key = keys[i]); i++) delete cloak[key];
     }
 };
 
@@ -55,9 +55,9 @@ Object.defineProperty(exports, 'length', {
     }
 });
 
-var cloak = {};
+const cloak = {};
 
-var API_KEYS = {
+const API_KEYS = {
     getItem: 1,
     setItem: 1,
     removeItem: 1,

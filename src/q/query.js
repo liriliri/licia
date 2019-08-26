@@ -41,14 +41,14 @@ _('trim each isUndef isArr map isEmpty filter isObj');
 
 exports = {
     parse: function(str) {
-        var ret = {};
+        const ret = {};
 
         str = trim(str).replace(regIllegalChars, '');
 
         each(str.split('&'), function(param) {
-            var parts = param.split('=');
+            const parts = param.split('=');
 
-            var key = parts.shift(),
+            let key = parts.shift(),
                 val = parts.length > 0 ? parts.join('=') : null;
 
             key = decodeURIComponent(key);
@@ -86,4 +86,4 @@ exports = {
     }
 };
 
-var regIllegalChars = /^(\?|#|&)/g;
+const regIllegalChars = /^(\?|#|&)/g;

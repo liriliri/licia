@@ -10,7 +10,7 @@
  */
 
 /* example
- * var obj = {};
+ * const obj = {};
  * safeSet(obj, 'a.aa.aaa', 1); // obj = {a: {aa: {aaa: 1}}}
  * safeSet(obj, ['a', 'aa'], 2); // obj = {a: {aa: 2}}
  * safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
@@ -30,8 +30,8 @@ _('castPath isUndef');
 exports = function(obj, path, val) {
     path = castPath(path, obj);
 
-    var lastProp = path.pop(),
-        prop;
+    const lastProp = path.pop();
+    let prop;
 
     prop = path.shift();
     while (!isUndef(prop)) {

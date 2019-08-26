@@ -1,7 +1,7 @@
-var each = util.each;
+const each = util.each;
 
 it('basic', function() {
-    var tests = [
+    const tests = [
         [new ArrayBuffer(8), true],
         [[], false],
         [new Int16Array(), false],

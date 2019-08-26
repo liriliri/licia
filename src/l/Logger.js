@@ -29,7 +29,7 @@
  */
 
 /* example
- * var logger = new Logger('licia', Logger.level.ERROR);
+ * const logger = new Logger('licia', Logger.level.ERROR);
  * logger.trace('test');
  *
  * // Format output.
@@ -119,7 +119,8 @@ exports = Emitter.extend(
             if (exports.level[type.toUpperCase()] < this._level) return this;
             this.emit(type, clone(argList));
             /* eslint-disable no-console */
-            var consoleMethod = type === 'debug' ? console.log : console[type];
+            const consoleMethod =
+                type === 'debug' ? console.log : console[type];
             consoleMethod.apply(console, this.formatter(type, argList));
 
             return this;

@@ -31,7 +31,7 @@
  */
 
 /* example
- * var store = new ReduceStore(function (state, action) {
+ * const store = new ReduceStore(function (state, action) {
  *     switch (action.type) {
  *         case 'INCREMENT': return state + 1;
  *         case 'DECREMENT': return state - 1;
@@ -72,12 +72,12 @@ exports = Class({
         this._nextListeners = this._curListeners;
     },
     subscribe: function(listener) {
-        var isSubscribed = true;
+        let isSubscribed = true;
 
         this._ensureCanMutateNextListeners();
         this._nextListeners.push(listener);
 
-        var self = this;
+        const self = this;
 
         return function() {
             if (!isSubscribed) return;
@@ -94,9 +94,9 @@ exports = Class({
     dispatch: function(action) {
         this._state = this._reducer(this._state, action);
 
-        var listeners = (this._curListeners = this._nextListeners);
+        const listeners = (this._curListeners = this._nextListeners);
 
-        for (var i = 0, len = listeners.length; i < len; i++) listeners[i]();
+        for (let i = 0, len = listeners.length; i < len; i++) listeners[i]();
 
         return action;
     },

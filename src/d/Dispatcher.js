@@ -4,7 +4,7 @@
  */
 
 /* example
- * var dispatcher = new Dispatcher();
+ * const dispatcher = new Dispatcher();
  *
  * dispatcher.register(function (payload) {
  *    switch (payload.actionType) {
@@ -44,7 +44,7 @@ exports = Class({
     dispatch: function(payload) {
         this._startDispatching(payload);
 
-        for (var id in this._callbacks) {
+        for (const id in this._callbacks) {
             if (this._isPending[id]) continue;
             this._invokeCb(id);
         }
@@ -52,15 +52,15 @@ exports = Class({
         this._stopDispatching();
     },
     register: function(cb) {
-        var id = uniqId('ID_');
+        const id = uniqId('ID_');
 
         this._callbacks[id] = cb;
 
         return id;
     },
     waitFor: function(ids) {
-        for (var i = 0, len = ids.length; i < len; i++) {
-            var id = ids[i];
+        for (let i = 0, len = ids.length; i < len; i++) {
+            const id = ids[i];
             if (this._isPending[id]) continue;
 
             this._invokeCb(id);
@@ -73,7 +73,7 @@ exports = Class({
         return this._isDispatching;
     },
     _startDispatching: function(payload) {
-        for (var id in this._callbacks) {
+        for (const id in this._callbacks) {
             this._isPending[id] = false;
             this._isHandled[id] = false;
         }

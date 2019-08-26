@@ -1,5 +1,5 @@
 it('basic', function() {
-    var source = [
+    const source = [
         '// comment',
         'var a = 5;',
         '/* comment2',
@@ -11,7 +11,7 @@ it('basic', function() {
 });
 
 it('comment inside string', function() {
-    var source = [
+    const source = [
         'var a = "// Not a comment";',
         "var b = '// Not a comment';"
     ].join('\n');
@@ -22,7 +22,7 @@ it('comment inside string', function() {
 });
 
 it('regexp', function() {
-    var source = ['var reg = /test/g;'].join('\n');
+    const source = ['var reg = /test/g;'].join('\n');
 
     expect(stripCmt(source)).to.equal('var reg = /test/g;');
 });

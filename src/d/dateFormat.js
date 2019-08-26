@@ -77,7 +77,7 @@ exports = function(date, mask, utc, gmt) {
 
     mask = toStr(exports.masks[mask] || mask || exports.masks['default']);
 
-    var maskSlice = mask.slice(0, 4);
+    const maskSlice = mask.slice(0, 4);
 
     if (maskSlice === 'UTC:' || maskSlice === 'GMT:') {
         mask = mask.slice(4);
@@ -85,58 +85,55 @@ exports = function(date, mask, utc, gmt) {
         if (maskSlice === 'GMT:') gmt = true;
     }
 
-    var prefix = utc ? 'getUTC' : 'get',
-        d = date[prefix + 'Date'](),
-        D = date[prefix + 'Day'](),
-        m = date[prefix + 'Month'](),
-        y = date[prefix + 'FullYear'](),
-        H = date[prefix + 'Hours'](),
-        M = date[prefix + 'Minutes'](),
-        s = date[prefix + 'Seconds'](),
-        L = date[prefix + 'Milliseconds'](),
-        o = utc ? 0 : date.getTimezoneOffset(),
-        flags = {
-            d: d,
-            dd: padZero(d),
-            ddd: exports.i18n.dayNames[D],
-            dddd: exports.i18n.dayNames[D + 7],
-            m: m + 1,
-            mm: padZero(m + 1),
-            mmm: exports.i18n.monthNames[m],
-            mmmm: exports.i18n.monthNames[m + 12],
-            yy: toStr(y).slice(2),
-            yyyy: y,
-            h: H % 12 || 12,
-            hh: padZero(H % 12 || 12),
-            H: H,
-            HH: padZero(H),
-            M: M,
-            MM: padZero(M),
-            s: s,
-            ss: padZero(s),
-            l: padZero(L, 3),
-            L: padZero(Math.round(L / 10)),
-            t: H < 12 ? 'a' : 'p',
-            tt: H < 12 ? 'am' : 'pm',
-            T: H < 12 ? 'A' : 'P',
-            TT: H < 12 ? 'AM' : 'PM',
-            Z: gmt
-                ? 'GMT'
-                : utc
-                ? 'UTC'
-                : (toStr(date).match(regTimezone) || [''])
-                      .pop()
-                      .replace(regTimezoneClip, ''),
-            o:
-                (o > 0 ? '-' : '+') +
-                padZero(
-                    Math.floor(Math.abs(o) / 60) * 100 + (Math.abs(o) % 60),
-                    4
-                ),
-            S: ['th', 'st', 'nd', 'rd'][
-                d % 10 > 3 ? 0 : (((d % 100) - (d % 10) != 10) * d) % 10
-            ]
-        };
+    const prefix = utc ? 'getUTC' : 'get';
+    const d = date[prefix + 'Date']();
+    const D = date[prefix + 'Day']();
+    const m = date[prefix + 'Month']();
+    const y = date[prefix + 'FullYear']();
+    const H = date[prefix + 'Hours']();
+    const M = date[prefix + 'Minutes']();
+    const s = date[prefix + 'Seconds']();
+    const L = date[prefix + 'Milliseconds']();
+    const o = utc ? 0 : date.getTimezoneOffset();
+    const flags = {
+        d: d,
+        dd: padZero(d),
+        ddd: exports.i18n.dayNames[D],
+        dddd: exports.i18n.dayNames[D + 7],
+        m: m + 1,
+        mm: padZero(m + 1),
+        mmm: exports.i18n.monthNames[m],
+        mmmm: exports.i18n.monthNames[m + 12],
+        yy: toStr(y).slice(2),
+        yyyy: y,
+        h: H % 12 || 12,
+        hh: padZero(H % 12 || 12),
+        H: H,
+        HH: padZero(H),
+        M: M,
+        MM: padZero(M),
+        s: s,
+        ss: padZero(s),
+        l: padZero(L, 3),
+        L: padZero(Math.round(L / 10)),
+        t: H < 12 ? 'a' : 'p',
+        tt: H < 12 ? 'am' : 'pm',
+        T: H < 12 ? 'A' : 'P',
+        TT: H < 12 ? 'AM' : 'PM',
+        Z: gmt
+            ? 'GMT'
+            : utc
+            ? 'UTC'
+            : (toStr(date).match(regTimezone) || [''])
+                  .pop()
+                  .replace(regTimezoneClip, ''),
+        o:
+            (o > 0 ? '-' : '+') +
+            padZero(Math.floor(Math.abs(o) / 60) * 100 + (Math.abs(o) % 60), 4),
+        S: ['th', 'st', 'nd', 'rd'][
+            d % 10 > 3 ? 0 : (((d % 100) - (d % 10) != 10) * d) % 10
+        ]
+    };
 
     return mask.replace(regToken, function(match) {
         if (match in flags) return flags[match];
@@ -149,10 +146,10 @@ function padZero(str, len) {
     return lpad(toStr(str), len || 2, '0');
 }
 
-var regToken = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZWN]|'[^']*'|'[^']*'/g,
-    regTimezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
-    regNum = /\d/,
-    regTimezoneClip = /[^-+\dA-Z]/g;
+const regToken = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZWN]|'[^']*'|'[^']*'/g;
+const regTimezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g;
+const regNum = /\d/;
+const regTimezoneClip = /[^-+\dA-Z]/g;
 
 exports.masks = {
     default: 'ddd mmm dd yyyy HH:MM:ss',

@@ -21,19 +21,19 @@
 _('cookie');
 
 exports = function(key) {
-    var location = window.location,
-        hostname = location.hostname,
-        pathname = location.pathname,
-        hostNames = hostname.split('.'),
-        pathNames = pathname.split('/'),
-        domain = '',
-        pathLen = pathNames.length,
-        path;
+    const location = window.location;
+    const hostname = location.hostname;
+    const pathname = location.pathname;
+    const hostNames = hostname.split('.');
+    const pathNames = pathname.split('/');
+    let domain = '';
+    const pathLen = pathNames.length;
+    let path;
 
     if (del()) return;
 
-    for (var i = hostNames.length - 1; i >= 0; i--) {
-        var hostName = hostNames[i];
+    for (let i = hostNames.length - 1; i >= 0; i--) {
+        const hostName = hostNames[i];
         if (hostName === '') continue;
         domain = domain === '' ? hostName : hostName + '.' + domain;
 
@@ -41,8 +41,8 @@ exports = function(key) {
         if (del({ domain: domain, path: path }) || del({ domain: domain }))
             return;
 
-        for (var j = 0; j < pathLen; j++) {
-            var pathName = pathNames[j];
+        for (let j = 0; j < pathLen; j++) {
+            const pathName = pathNames[j];
             if (pathName === '') continue;
 
             path += pathName;

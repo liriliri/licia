@@ -1,7 +1,7 @@
 it('basic', function(done) {
-    var counter = 0;
+    let counter = 0;
 
-    var debounceFn = debounce(function() {
+    const debounceFn = debounce(function() {
         counter++;
     }, 50);
 

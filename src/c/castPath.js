@@ -29,7 +29,7 @@ exports = function(str, obj) {
     if (isArr(str)) return str;
     if (obj && has(obj, str)) return [str];
 
-    var ret = [];
+    const ret = [];
 
     str.replace(regPropName, function(match, number, quote, str) {
         ret.push(quote ? str.replace(regEscapeChar, '$1') : number || match);
@@ -39,5 +39,5 @@ exports = function(str, obj) {
 };
 
 // Lodash _stringToPath
-var regPropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,
-    regEscapeChar = /\\(\\)?/g;
+const regPropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+const regEscapeChar = /\\(\\)?/g;

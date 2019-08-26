@@ -26,7 +26,7 @@ _('isObj isArr isFn has');
 exports = function(val) {
     if (!isObj(val)) return false;
 
-    var ctor = val.constructor;
+    const ctor = val.constructor;
     if (!isFn(ctor)) return false;
     if (!has(ctor.prototype, 'isPrototypeOf')) return false;
 

@@ -11,7 +11,7 @@
 
 /* example
  * stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
- * var obj = {a: 1, b: {}};
+ * const obj = {a: 1, b: {}};
  * obj.b = obj;
  * stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
  */
@@ -32,12 +32,12 @@ exports = function(obj, spaces) {
 };
 
 function serializer() {
-    var stack = [],
-        keys = [];
+    const stack = [];
+    const keys = [];
 
     return function(key, val) {
         if (stack.length > 0) {
-            var pos = stack.indexOf(this);
+            const pos = stack.indexOf(this);
             if (pos > -1) {
                 stack.splice(pos + 1);
                 keys.splice(pos, Infinity, key);
@@ -46,7 +46,7 @@ function serializer() {
                 keys.push(key);
             }
 
-            var valPos = stack.indexOf(val);
+            const valPos = stack.indexOf(val);
             if (valPos > -1) {
                 if (stack[0] === val) {
                     val = '[Circular ~]';

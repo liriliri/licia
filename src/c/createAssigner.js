@@ -23,7 +23,7 @@ exports = function(keysFn, defaults) {
         each(arguments, function(src, idx) {
             if (idx === 0) return;
 
-            var keys = keysFn(src);
+            const keys = keysFn(src);
 
             each(keys, function(key) {
                 if (!defaults || isUndef(obj[key])) obj[key] = src[key];

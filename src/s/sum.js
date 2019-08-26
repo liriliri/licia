@@ -20,10 +20,10 @@
  */
 
 exports = function() {
-    var arr = arguments,
-        ret = 0;
+    const arr = arguments;
+    let ret = 0;
 
-    for (var i = 0, len = arr.length; i < len; i++) ret += arr[i];
+    for (let i = 0, len = arr.length; i < len; i++) ret += arr[i];
 
     return ret;
 };

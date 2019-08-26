@@ -9,7 +9,7 @@
  */
 
 /* example
- * var browser = detectBrowser();
+ * const browser = detectBrowser();
  * if (browser.name === 'ie' && browser.version < 9) {
  *     // Do something about old IE...
  * }
@@ -36,7 +36,7 @@ exports = function(ua) {
     ua = ua || (isBrowser ? navigator.userAgent : '');
     ua = ua.toLowerCase();
 
-    var ieVer = getVer(ua, 'msie ');
+    const ieVer = getVer(ua, 'msie ');
 
     if (ieVer)
         return {
@@ -50,13 +50,13 @@ exports = function(ua) {
             name: 'ie'
         };
 
-    for (var i = 0, len = browsers.length; i < len; i++) {
-        var name = browsers[i],
-            match = ua.match(regBrowsers[name]);
+    for (let i = 0, len = browsers.length; i < len; i++) {
+        const name = browsers[i];
+        const match = ua.match(regBrowsers[name]);
 
         if (match == null) continue;
 
-        var version = toInt(match[1].split('.')[0]);
+        let version = toInt(match[1].split('.')[0]);
 
         if (name === 'opera') version = getVer(ua, 'version/') || version;
 
@@ -72,7 +72,7 @@ exports = function(ua) {
     };
 };
 
-var regBrowsers = {
+const regBrowsers = {
     edge: /edge\/([0-9._]+)/,
     firefox: /firefox\/([0-9.]+)(?:\s|$)/,
     opera: /opera\/([0-9.]+)(?:\s|$)/,
@@ -82,11 +82,11 @@ var regBrowsers = {
     chrome: /(?!chrom.*opr)chrom(?:e|ium)\/([0-9.]+)(:?\s|$)/
 };
 
-var regIe11 = /trident\/7\./,
-    browsers = keys(regBrowsers);
+const regIe11 = /trident\/7\./;
+const browsers = keys(regBrowsers);
 
 function getVer(ua, mark) {
-    var idx = ua.indexOf(mark);
+    const idx = ua.indexOf(mark);
 
     if (idx > -1)
         return toInt(ua.substring(idx + mark.length, ua.indexOf('.', idx)));

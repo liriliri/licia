@@ -8,7 +8,7 @@
  */
 
 /* example
- * var p = wrap(escape, function(fn, text) {
+ * const p = wrap(escape, function(fn, text) {
  *     return '<p>' + fn(text) + '</p>';
  * });
  * p('You & Me'); // -> '<p>You &amp; Me</p>'

@@ -54,10 +54,10 @@ exports = {
         return ret;
     },
     decode(str) {
-        let ret = [];
+        const ret = [];
 
         let i = 0;
-        let len = str.length;
+        const len = str.length;
         while (i < len) {
             let value = 0;
             let continuation = false;

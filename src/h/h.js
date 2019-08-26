@@ -74,7 +74,7 @@ function parseTag(tag) {
 
     let word = '';
     for (let i = 0, len = tag.length; i < len; i++) {
-        let c = tag[i];
+        const c = tag[i];
         if (c === '#' || c === '.') {
             words.push(word);
             word = c;

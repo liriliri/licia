@@ -1,5 +1,5 @@
 it('basic', function() {
-    var queue = new Queue();
+    const queue = new Queue();
 
     expect(queue.size).to.equal(0);
     queue.enqueue(2);
@@ -17,14 +17,14 @@ it('basic', function() {
 });
 
 it('forEach', function() {
-    var queue = new Queue();
+    const queue = new Queue();
 
     queue.enqueue(1);
     queue.enqueue(2);
     queue.enqueue(3);
     queue.enqueue(4);
 
-    var sum = 0;
+    let sum = 0;
 
     queue.forEach(function(val) {
         sum += val;

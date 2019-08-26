@@ -35,8 +35,8 @@ exports = function(arr, predicate, ctx, dir) {
 
     predicate = safeCb(predicate, ctx);
 
-    var len = arr.length,
-        i = dir > 0 ? 0 : len - 1;
+    const len = arr.length;
+    let i = dir > 0 ? 0 : len - 1;
 
     while (i >= 0 && i < len) {
         if (predicate(arr[i], i, arr)) return i;

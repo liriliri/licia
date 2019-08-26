@@ -1,9 +1,9 @@
-var sinon = require('sinon');
+const sinon = require('sinon');
 
-var requests = [];
+let requests = [];
 
 before(function() {
-    var fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest();
+    const fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest();
 
     fakeXMLHttpRequest.onCreate = function(xhr) {
         requests.push(xhr);
@@ -28,7 +28,7 @@ it('basic', function(done) {
         }
     });
 
-    var request = requests[0];
+    const request = requests[0];
 
     expect(request.method).to.equal('GET');
     expect(request.requestBody).to.be.a('null');
@@ -43,7 +43,7 @@ it('request data', function(done) {
         success: function() {}
     });
 
-    var request = requests[0];
+    let request = requests[0];
 
     expect(request.url).to.equal('test?a=1');
     request.respond(200, {}, '');
@@ -83,7 +83,7 @@ it('get', function(done) {
         'json'
     );
 
-    var request = requests[0];
+    let request = requests[0];
 
     expect(request.url).to.equal('test?a=1');
     request.respond(200, {}, '{"a":1}');
@@ -112,7 +112,7 @@ it('post', function(done) {
         'json'
     );
 
-    var request = requests[0];
+    const request = requests[0];
     expect(request.requestBody).to.equal('a=1');
     request.respond(200, {}, '{"a": 1}');
 });
@@ -128,7 +128,7 @@ it('post json', function(done) {
         }
     });
 
-    var request = requests[0];
+    const request = requests[0];
 
     expect(request.requestBody).to.equal('{"foo":"bar"}');
     request.respond(200, {}, '{"a": 1}');
@@ -143,13 +143,13 @@ it('error', function(done) {
         }
     });
 
-    var request = requests[0];
+    const request = requests[0];
 
     request.respond(500, {}, 'Error');
 });
 
 it('xml dataType', function(done) {
-    var xhr = ajax.get(
+    const xhr = ajax.get(
         'test',
         function(res) {
             // It's not going to work in nodejs environment because of sinon's implementation details.
@@ -159,7 +159,7 @@ it('xml dataType', function(done) {
         'xml'
     );
 
-    var request = requests[0];
+    const request = requests[0];
 
     request.respond(200, { 'Content-Type': 'text/xml' }, '<html>test</html>');
 });
@@ -172,7 +172,7 @@ it('complete', function(done) {
         }
     });
 
-    var request = requests[0];
+    let request = requests[0];
 
     request.respond(200, {}, '');
 
@@ -197,7 +197,7 @@ it('timeout', function(done) {
         }
     });
 
-    var request = requests[0];
+    const request = requests[0];
 
     setTimeout(function() {
         request.respond(200, {}, '');

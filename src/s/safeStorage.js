@@ -7,7 +7,7 @@
  */
 
 /* example
- * var localStorage = safeStorage('local');
+ * const localStorage = safeStorage('local');
  * localStorage.setItem('licia', 'util');
  */
 
@@ -25,7 +25,7 @@ _('memStorage');
 exports = function(type) {
     type = type || 'local';
 
-    var ret;
+    let ret;
 
     switch (type) {
         case 'local':
@@ -38,9 +38,9 @@ exports = function(type) {
 
     try {
         // Safari private browsing
-        var x = 'test-localStorage-' + Date.now();
+        const x = 'test-localStorage-' + Date.now();
         ret.setItem(x, x);
-        var y = ret.getItem(x);
+        const y = ret.getItem(x);
         ret.removeItem(x);
         if (y !== x) throw new Error();
     } catch (e) {

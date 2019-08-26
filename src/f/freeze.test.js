@@ -1,5 +1,5 @@
 it('basic', function() {
-    var a = { b: 1 };
+    const a = { b: 1 };
     a.b = 2;
     expect(a).to.eql({ b: 2 });
     freeze(a);
@@ -8,7 +8,7 @@ it('basic', function() {
 });
 
 it('shallow', function() {
-    var a = {
+    const a = {
         b: { c: 1 }
     };
 
@@ -20,10 +20,10 @@ it('shallow', function() {
 });
 
 it('fallback', function() {
-    var objFreeze = Object.freeze;
+    const objFreeze = Object.freeze;
     Object.freeze = null;
 
-    var a = { b: 1 };
+    const a = { b: 1 };
     a.b = 2;
     expect(a).to.eql({ b: 2 });
     freeze(a);

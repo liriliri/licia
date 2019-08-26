@@ -22,16 +22,16 @@
  * export declare function rtrim(str: string, chars?: string | string[]): string;
  */
 
-var regSpace = /\s+$/;
+const regSpace = /\s+$/;
 
 exports = function(str, chars) {
     if (chars == null) return str.replace(regSpace, '');
 
-    var end = str.length - 1,
-        charLen = chars.length,
-        found = true,
-        i,
-        c;
+    let end = str.length - 1;
+    const charLen = chars.length;
+    let found = true;
+    let i;
+    let c;
 
     while (found && end >= 0) {
         found = false;

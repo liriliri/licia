@@ -1,5 +1,5 @@
 it('basic', function() {
-    var letter = new Enum(['a', 'b', 'c']);
+    let letter = new Enum(['a', 'b', 'c']);
 
     expect(letter.a).to.be.a('number');
     letter.a = 'test';

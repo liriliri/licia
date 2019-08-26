@@ -8,7 +8,7 @@
  */
 
 /* example
- * var fn = after(5, function() {
+ * const fn = after(5, function() {
  *     // -> Only invoke after fn is called 5 times.
  * });
  */

@@ -67,10 +67,10 @@ _('toArr some $safeEls isStr each');
 exports = {
     add: function(els, name) {
         els = $safeEls(els);
-        var names = safeName(name);
+        const names = safeName(name);
 
         each(els, function(el) {
-            var classList = [];
+            const classList = [];
 
             each(names, function(name) {
                 if (!exports.has(el, name)) classList.push(name);
@@ -84,7 +84,7 @@ exports = {
     has: function(els, name) {
         els = $safeEls(els);
 
-        var regName = new RegExp('(^|\\s)' + name + '(\\s|$)');
+        const regName = new RegExp('(^|\\s)' + name + '(\\s|$)');
 
         return some(els, function(el) {
             return regName.test(el.className);
@@ -101,7 +101,7 @@ exports = {
     },
     remove: function(els, name) {
         els = $safeEls(els);
-        var names = safeName(name);
+        const names = safeName(name);
 
         each(els, function(el) {
             each(names, function(name) {

@@ -12,8 +12,8 @@ it('number', function() {
 
 it('object', function() {
     expect(format('%o %o', [1, 2], { a: 1 })).to.equal('[1,2] {"a":1}');
-    var a = {},
-        b = { a: a };
+    const a = {};
+    const b = { a: a };
 
     a.b = b;
     expect(format('%o %o', a, b)).to.equal(

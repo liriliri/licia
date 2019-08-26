@@ -1,13 +1,13 @@
-var dispatcher;
+let dispatcher;
 
 beforeEach(function() {
     dispatcher = new Dispatcher();
 });
 
 it('basic', function() {
-    var payload = {},
-        a = 0,
-        b = 0;
+    const payload = {};
+    let a = 0;
+    let b = 0;
 
     dispatcher.register(function(p) {
         a++;
@@ -31,10 +31,10 @@ it('basic', function() {
 });
 
 it('wait for', function() {
-    var a = 0,
+    let a = 0,
         b = 0;
 
-    var tokenA = dispatcher.register(function() {
+    const tokenA = dispatcher.register(function() {
         a++;
     });
 
@@ -45,7 +45,7 @@ it('wait for', function() {
         expect(b).to.equal(1);
     });
 
-    var tokenB = dispatcher.register(function() {
+    const tokenB = dispatcher.register(function() {
         b++;
     });
 
@@ -53,9 +53,9 @@ it('wait for', function() {
 });
 
 it('unregister', function() {
-    var a = 0;
+    let a = 0;
 
-    var tokenA = dispatcher.register(function() {
+    const tokenA = dispatcher.register(function() {
         a++;
     });
 

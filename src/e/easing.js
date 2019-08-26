@@ -52,14 +52,14 @@ exports.linear = function(t) {
     return t;
 };
 
-var pow = Math.pow,
-    sqrt = Math.sqrt,
-    sin = Math.sin,
-    min = Math.min,
-    asin = Math.asin,
-    PI = Math.PI;
+const pow = Math.pow;
+const sqrt = Math.sqrt;
+const sin = Math.sin;
+const min = Math.min;
+const asin = Math.asin;
+const PI = Math.PI;
 
-var fns = {
+const fns = {
     sine: function(t) {
         return 1 + sin((PI / 2) * t - PI / 2);
     },
@@ -71,10 +71,10 @@ var fns = {
 
         if (t === 0 || t === 1) return t;
 
-        var p = 1 - min(m, 998) / 1000,
-            st = t / 1,
-            st1 = st - 1,
-            s = (p / (2 * PI)) * asin(1);
+        const p = 1 - min(m, 998) / 1000;
+        const st = t / 1;
+        const st1 = st - 1;
+        const s = (p / (2 * PI)) * asin(1);
 
         return -(pow(2, 10 * st1) * sin(((st1 - s) * (2 * PI)) / p));
     },
@@ -82,7 +82,7 @@ var fns = {
         return t * t * (3 * t - 2);
     },
     bounce: function(t) {
-        var pow2,
+        let pow2,
             bounce = 4;
 
         /* eslint-disable no-empty */

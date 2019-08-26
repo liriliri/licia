@@ -31,17 +31,16 @@ _('escape defaults');
 
 /* global _ */
 /* eslint-disable quotes */
-var regEvaluate = /<%([\s\S]+?)%>/g,
-    regInterpolate = /<%=([\s\S]+?)%>/g,
-    regEscape = /<%-([\s\S]+?)%>/g,
-    regMatcher = RegExp(
-        [regEscape.source, regInterpolate.source, regEvaluate.source].join(
-            '|'
-        ) + '|$',
-        'g'
-    );
+const regEvaluate = /<%([\s\S]+?)%>/g;
+const regInterpolate = /<%=([\s\S]+?)%>/g;
+const regEscape = /<%-([\s\S]+?)%>/g;
+const regMatcher = RegExp(
+    [regEscape.source, regInterpolate.source, regEvaluate.source].join('|') +
+        '|$',
+    'g'
+);
 
-var escapes = {
+const escapes = {
     "'": "'",
     '\\': '\\',
     '\r': 'r',
@@ -50,9 +49,9 @@ var escapes = {
     '\u2029': 'u2029'
 };
 
-var regEscapeChar = /\\|'|\r|\n|\u2028|\u2029/g;
+const regEscapeChar = /\\|'|\r|\n|\u2028|\u2029/g;
 
-var escapeChar = function(match) {
+const escapeChar = function(match) {
     return '\\' + escapes[match];
 };
 
@@ -63,7 +62,7 @@ exports = function(str, util) {
         defaults(util, { escape });
     }
 
-    var index = 0,
+    let index = 0,
         src = "__p+='";
 
     str.replace(regMatcher, function(
@@ -95,7 +94,7 @@ exports = function(str, util) {
         src +
         'return __p;\n';
 
-    var render = new Function('obj', 'util', src);
+    const render = new Function('obj', 'util', src);
 
     return function(data) {
         return render.call(null, data, util);

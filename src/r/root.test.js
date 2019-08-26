@@ -1,4 +1,4 @@
-var isNode = typeof window !== 'object';
+const isNode = typeof window !== 'object';
 
 it('browser', function() {
     if (!isNode) expect(root).to.equal(window);

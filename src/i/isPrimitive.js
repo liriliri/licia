@@ -22,7 +22,7 @@
  */
 
 exports = function(val) {
-    var type = typeof val;
+    const type = typeof val;
 
     return val == null || (type !== 'function' && type !== 'object');
 };

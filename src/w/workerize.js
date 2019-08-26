@@ -7,7 +7,7 @@
  */
 
 /* example
- * var worker = workerize(function (a, b) {
+ * const worker = workerize(function (a, b) {
  *     return a + b;
  * });
  * worker(1, 2).then(function (value) {
@@ -27,17 +27,17 @@
 _('Promise restArgs uniqId toSrc createUrl isStr');
 
 exports = function(fn) {
-    var promises = {};
+    const promises = {};
 
-    var src = [
+    const src = [
         toSrc(isPromise),
         'onmessage=(',
         toSrc(function(fn) {
             return function(e) {
-                var data = e.data,
-                    id = data[0],
-                    args = data[1],
-                    value;
+                const data = e.data;
+                const id = data[0];
+                const args = data[1];
+                let value;
 
                 try {
                     value = fn.apply(fn, args);
@@ -61,13 +61,13 @@ exports = function(fn) {
         ')(' + toSrc(fn) + ')'
     ].join('\n');
 
-    var worker = new Worker(createUrl(src));
+    const worker = new Worker(createUrl(src));
 
     worker.onmessage = function(e) {
-        var data = e.data,
-            id = data[0],
-            err = data[1],
-            value = data[2];
+        const data = e.data;
+        const id = data[0];
+        let err = data[1];
+        const value = data[2];
 
         if (isStr(err)) err = new Error(err);
         promises[id](err, value);
@@ -75,7 +75,7 @@ exports = function(fn) {
     };
 
     return restArgs(function(args) {
-        var id = uniqId('workerize');
+        const id = uniqId('workerize');
 
         return new Promise(function(resolve, reject) {
             promises[id] = function(err, value) {

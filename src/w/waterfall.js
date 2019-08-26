@@ -34,9 +34,9 @@ _('noop nextTick restArgs');
 exports = function(tasks, cb) {
     cb = cb || noop;
 
-    var current = 0;
+    let current = 0;
 
-    var taskCb = restArgs(function(err, args) {
+    const taskCb = restArgs(function(err, args) {
         if (++current >= tasks.length || err) {
             args.unshift(err);
             nextTick(function() {

@@ -25,11 +25,11 @@ _('swap');
 exports = function(arr, cmp) {
     cmp = cmp || comparator;
 
-    var min;
+    let min;
 
-    for (var i = 0, len = arr.length; i < len; i++) {
+    for (let i = 0, len = arr.length; i < len; i++) {
         min = i;
-        for (var j = i + 1; j < len; j++) {
+        for (let j = i + 1; j < len; j++) {
             if (cmp(arr[j], arr[min]) < 0) {
                 min = j;
             }

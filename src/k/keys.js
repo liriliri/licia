@@ -25,10 +25,9 @@ if (Object.keys && !detectMocha()) {
     exports = Object.keys;
 } else {
     exports = function(obj) {
-        var ret = [],
-            key;
+        const ret = [];
 
-        for (key in obj) {
+        for (const key in obj) {
             if (has(obj, key)) ret.push(key);
         }
 

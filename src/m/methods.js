@@ -22,9 +22,9 @@
 _('isFn');
 
 exports = function(obj) {
-    var ret = [];
+    const ret = [];
 
-    for (var key in obj) {
+    for (const key in obj) {
         if (isFn(obj[key])) ret.push(key);
     }
 

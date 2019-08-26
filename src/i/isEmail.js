@@ -23,4 +23,4 @@ exports = function(val) {
     return regEmail.test(val);
 };
 
-var regEmail = /.+@.+\..+/;
+const regEmail = /.+@.+\..+/;

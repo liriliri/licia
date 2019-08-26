@@ -54,10 +54,10 @@ exports = {
     }
 };
 
-var emitter = new Emitter();
+const emitter = new Emitter();
 
 document.addEventListener('keydown', function(e) {
-    var keys = [];
+    const keys = [];
 
     if (e.ctrlKey) keys.push('ctrl');
     if (e.shiftKey) keys.push('shift');
@@ -68,7 +68,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 function normalizeKey(keyStr) {
-    var keys = keyStr.split(regPlus);
+    let keys = keyStr.split(regPlus);
     keys = map(keys, function(key) {
         return trim(key);
     });
@@ -78,5 +78,5 @@ function normalizeKey(keyStr) {
     return keys.join('+');
 }
 
-var regComma = /,/g,
-    regPlus = /\+/g;
+const regComma = /,/g;
+const regPlus = /\+/g;

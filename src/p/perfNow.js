@@ -2,7 +2,7 @@
  */
 
 /* example
- * var start = perfNow();
+ * const start = perfNow();
  *
  * // Do something.
  *
@@ -20,17 +20,17 @@
 
 _('now root');
 
-var performance = root.performance,
-    process = root.process,
-    loadTime;
+const performance = root.performance;
+const process = root.process;
+let loadTime;
 
 if (performance && performance.now) {
     exports = function() {
         return performance.now();
     };
 } else if (process && process.hrtime) {
-    var getNanoSeconds = function() {
-        var hr = process.hrtime();
+    const getNanoSeconds = function() {
+        const hr = process.hrtime();
         return hr[0] * 1e9 + hr[1];
     };
     loadTime = getNanoSeconds() - process.uptime() * 1e9;

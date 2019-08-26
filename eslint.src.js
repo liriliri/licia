@@ -16,7 +16,15 @@ var exports = {
     },
     extends: 'eslint:recommended',
     rules: {
-        semi: ['error', 'always']
+        semi: ['error', 'always'],
+        'no-var': ['error'],
+        'prefer-const': [
+            'error',
+            {
+                destructuring: 'any',
+                ignoreReadBeforeAssign: false
+            }
+        ]
     }
 };
 

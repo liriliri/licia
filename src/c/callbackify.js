@@ -13,7 +13,7 @@
  *     });
  * }
  *
- * var cbFn = callbackify(fn);
+ * const cbFn = callbackify(fn);
  *
  * cbFn(function (err, value) {
  *     // ...
@@ -33,7 +33,7 @@ _('restArgs');
 
 exports = function(fn) {
     return restArgs(function(args) {
-        var cb = args.pop();
+        const cb = args.pop();
 
         fn.apply(this, args).then(
             function(value) {

@@ -1,4 +1,4 @@
-var A = Class({
+const A = Class({
     initialize: function A(name, height) {
         this._name = name;
         this._height = height;
@@ -21,7 +21,7 @@ var A = Class({
     }
 });
 
-var B = A.extend({
+const B = A.extend({
     initialize: function B(name, height, bloodType) {
         this.callSuper(A, 'initialize', arguments);
         this._bloodType = bloodType;
@@ -39,7 +39,7 @@ var B = A.extend({
     }
 });
 
-var C = Class({
+const C = Class({
     initialize: function(name, height) {
         this._name = name;
         this._height = height;
@@ -48,9 +48,9 @@ var C = Class({
 
 C.inherits(A);
 
-var a = new A('eustia', 1.496),
-    b = new B('eustia', 1.496, 'A'),
-    c = new C('eustia', 1.496);
+const a = new A('eustia', 1.496);
+const b = new B('eustia', 1.496, 'A');
+const c = new C('eustia', 1.496);
 
 it('basic', function() {
     expect(a.getName()).to.equal('eustia');

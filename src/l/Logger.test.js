@@ -1,5 +1,5 @@
 it('basic', function() {
-    var logger = new Logger('Licia', Logger.level.ERROR);
+    const logger = new Logger('Licia', Logger.level.ERROR);
     expect(logger.name).to.equal('Licia');
     expect(logger.getLevel()).to.equal(Logger.level.ERROR);
 

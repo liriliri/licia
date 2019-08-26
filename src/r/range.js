@@ -30,10 +30,10 @@ exports = function(start, end, step) {
 
     if (!step) step = end < start ? -1 : 1;
 
-    var len = Math.max(Math.ceil((end - start) / step), 0),
-        ret = Array(len);
+    const len = Math.max(Math.ceil((end - start) / step), 0);
+    const ret = Array(len);
 
-    for (var i = 0; i < len; i++, start += step) ret[i] = start;
+    for (let i = 0; i < len; i++, start += step) ret[i] = start;
 
     return ret;
 };

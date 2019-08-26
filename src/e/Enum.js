@@ -12,7 +12,7 @@
  */
 
 /* example
- * var importance = new Enum([
+ * const importance = new Enum([
  *     'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
  * ]);
  * const val = 1;

@@ -1,6 +1,6 @@
 it('basic', function() {
-    var e = new Emitter(),
-        a = 1;
+    const e = new Emitter();
+    let a = 1;
 
     function add() {
         a++;
@@ -19,13 +19,13 @@ it('basic', function() {
 });
 
 it('mixin', function() {
-    var a = 1;
+    let a = 1;
 
     function add(n) {
         a += n;
     }
 
-    var b = {};
+    const b = {};
     Emitter.mixin(b);
     b.on('add', add);
     b.emit('add', 2);
@@ -33,7 +33,7 @@ it('mixin', function() {
 });
 
 it('nonsense off and emit', function() {
-    var e = new Emitter();
+    const e = new Emitter();
 
     e.emit('test');
     e.off('test', function() {});

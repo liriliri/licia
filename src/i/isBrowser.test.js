@@ -1,4 +1,4 @@
-var isNode = typeof window !== 'object';
+const isNode = typeof window !== 'object';
 
 it('node', function() {
     if (isNode) expect(isBrowser).to.be.false;

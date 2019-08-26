@@ -43,7 +43,7 @@ function createReduce(dir) {
     return function(obj, iterator, initial, ctx) {
         iterator = optimizeCb(iterator, ctx);
 
-        var i, len, key;
+        let i, len, key;
 
         if (isArrLike(obj)) {
             len = obj.length;
@@ -56,7 +56,7 @@ function createReduce(dir) {
                 initial = iterator(initial, obj[i], i, obj);
             }
         } else {
-            var _keys = keys(obj);
+            const _keys = keys(obj);
             len = _keys.length;
             i = dir > 0 ? 0 : len - 1;
             if (isUndef(initial)) {

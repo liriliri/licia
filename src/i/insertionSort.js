@@ -25,8 +25,8 @@ _('swap');
 exports = function(arr, cmp) {
     cmp = cmp || comparator;
 
-    for (var i = 1, len = arr.length; i < len; i++) {
-        for (var j = i; j > 0; j--) {
+    for (let i = 1, len = arr.length; i < len; i++) {
+        for (let j = i; j > 0; j--) {
             if (cmp(arr[j], arr[j - 1]) < 0) {
                 swap(arr, j, j - 1);
             } else {

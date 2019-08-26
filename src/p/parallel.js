@@ -33,8 +33,8 @@ _('noop each nextTick');
 exports = function(tasks, cb) {
     cb = cb || noop;
 
-    var results = [],
-        pending = tasks.length;
+    const results = [];
+    let pending = tasks.length;
 
     if (!pending) return done(null);
 

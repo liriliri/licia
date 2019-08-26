@@ -22,11 +22,11 @@
 _('keys');
 
 exports = function(obj) {
-    var _keys = keys(obj),
-        len = _keys.length,
-        ret = Array(len);
+    const _keys = keys(obj);
+    const len = _keys.length;
+    const ret = Array(len);
 
-    for (var i = 0; i < len; i++) {
+    for (let i = 0; i < len; i++) {
         ret[i] = [_keys[i], obj[_keys[i]]];
     }
 

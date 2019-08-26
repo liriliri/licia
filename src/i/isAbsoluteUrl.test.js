@@ -1,7 +1,7 @@
-var each = util.each;
+const each = util.each;
 
 it('basic', function() {
-    var tests = [
+    const tests = [
         ['http://www.surunzi.com', true],
         ['//www.surunzi.com', false],
         ['surunzi.com', false]

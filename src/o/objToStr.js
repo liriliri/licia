@@ -19,7 +19,7 @@
  * export declare function objToStr(val: any): string;
  */
 
-var ObjToStr = Object.prototype.toString;
+const ObjToStr = Object.prototype.toString;
 
 exports = function(val) {
     return ObjToStr.call(val);

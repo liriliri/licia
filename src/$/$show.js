@@ -34,10 +34,10 @@ function isHidden(el) {
     return getComputedStyle(el, '').getPropertyValue('display') == 'none';
 }
 
-var elDisplay = {};
+const elDisplay = {};
 
 function getDefDisplay(elName) {
-    var el, display;
+    let el, display;
 
     if (!elDisplay[elName]) {
         el = document.createElement(elName);

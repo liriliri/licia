@@ -32,7 +32,7 @@ exports = function(val, lowerCase = true) {
     if (val === undefined) return lowerCase ? 'undefined' : 'Undefined';
     if (isNaN(val)) return lowerCase ? 'nan' : 'NaN';
 
-    var ret = objToStr(val).match(regObj);
+    const ret = objToStr(val).match(regObj);
 
     if (!ret) return '';
 

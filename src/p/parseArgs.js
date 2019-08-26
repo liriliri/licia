@@ -42,21 +42,19 @@ _('defaults toNum invert toBool');
 exports = function(args, opts) {
     opts = opts || {};
     defaults(opts, defOpts);
-    var names = opts.names,
-        shorthands = invert(opts.shorthands);
+    const names = opts.names;
+    const shorthands = invert(opts.shorthands);
 
-    var remain = [],
-        ret = { remain: remain },
-        name,
-        type;
+    const remain = [];
+    const ret = { remain: remain };
+    let name;
+    let type;
 
-    for (var i = 0, len = args.length; i < len; i++) {
-        var arg = args[i],
-            nextArg = args[i + 1];
+    for (let i = 0, len = args.length; i < len; i++) {
+        const arg = args[i];
+        const nextArg = args[i + 1];
 
-        var match;
-
-        match = arg.match(regDoubleDash);
+        let match = arg.match(regDoubleDash);
 
         if (match) {
             name = match[1];
@@ -76,10 +74,10 @@ exports = function(args, opts) {
         match = arg.match(regSingleDash);
 
         if (match) {
-            var letters = match[1];
+            const letters = match[1];
 
-            for (var j = 0; j < letters.length; j++) {
-                var letter = letters[j];
+            for (let j = 0; j < letters.length; j++) {
+                const letter = letters[j];
 
                 name = shorthands[letter];
                 if (!name) continue;
@@ -95,7 +93,7 @@ exports = function(args, opts) {
     }
 
     function setArg(name, val) {
-        var type = names[name];
+        const type = names[name];
 
         switch (type) {
             case 'number':
@@ -114,11 +112,11 @@ exports = function(args, opts) {
     return ret;
 };
 
-var defOpts = {
+const defOpts = {
     names: {},
     shorthands: {}
 };
 
-var regDoubleDash = /^--(.+)/,
-    regSingleDash = /^-([^-]+)/,
-    regDashStart = /^-/;
+const regDoubleDash = /^--(.+)/;
+const regSingleDash = /^-([^-]+)/;
+const regDashStart = /^-/;

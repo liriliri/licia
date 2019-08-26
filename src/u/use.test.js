@@ -1,7 +1,7 @@
-var define = util.define;
+const define = util.define;
 
 it('basic', function() {
-    var count = 0;
+    let count = 0;
 
     define('A', function() {
         count++;

@@ -1,5 +1,5 @@
 it('prop', function() {
-    var obj = { b: { c: 3 }, d: 4, e: 5 };
+    const obj = { b: { c: 3 }, d: 4, e: 5 };
 
     defineProp(obj);
 
@@ -27,7 +27,7 @@ it('prop', function() {
 });
 
 it('props', function() {
-    var obj = { a: 1, b: 2, c: 3 };
+    const obj = { a: 1, b: 2, c: 3 };
     defineProp(obj, {
         a: {
             get: function() {

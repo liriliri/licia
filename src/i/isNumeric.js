@@ -33,4 +33,4 @@ exports = function(val) {
     return !isNaN(parseFloat(val)) && isFinite(val) && !isArr(val);
 };
 
-var regComma = /,/g;
+const regComma = /,/g;

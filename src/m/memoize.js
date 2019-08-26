@@ -8,7 +8,7 @@
  */
 
 /* example
- * var fibonacci = memoize(function(n) {
+ * const fibonacci = memoize(function(n) {
  *     return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
  * });
  */
@@ -25,9 +25,9 @@
 _('has');
 
 exports = function(fn, hashFn) {
-    var memoize = function(key) {
-        var cache = memoize.cache,
-            address = '' + (hashFn ? hashFn.apply(this, arguments) : key);
+    const memoize = function(key) {
+        const cache = memoize.cache;
+        const address = '' + (hashFn ? hashFn.apply(this, arguments) : key);
 
         if (!has(cache, address)) cache[address] = fn.apply(this, arguments);
 

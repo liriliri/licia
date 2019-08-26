@@ -6,7 +6,7 @@
 /* example
  * function get(url) {
  *     return new Promise(function (resolve, reject) {
- *         var req = new XMLHttpRequest();
+ *         const req = new XMLHttpRequest();
  *         req.open('GET', url);
  *         req.onload = function () {
  *             req.status == 200 ? resolve(req.response) : reject(Error(req.statusText));
@@ -31,14 +31,14 @@
 
 _('Class isObj isFn State bind nextTick noop toArr');
 
-var Promise = (exports = Class(
+const Promise = (exports = Class(
     {
         initialize: function Promise(fn) {
             if (!isObj(this))
                 throw new TypeError('Promises must be constructed via new');
             if (!isFn(fn)) throw new TypeError(fn + ' is not a function');
 
-            var self = this;
+            const self = this;
 
             this._state = new State('pending', {
                 fulfill: { from: 'pending', to: 'fulfilled' },
@@ -63,7 +63,7 @@ var Promise = (exports = Class(
             return this.then(null, onRejected);
         },
         then: function(onFulfilled, onRejected) {
-            var promise = new Promise(noop);
+            const promise = new Promise(noop);
 
             handle(this, new Handler(onFulfilled, onRejected, promise));
 
@@ -72,17 +72,17 @@ var Promise = (exports = Class(
     },
     {
         all: function(arr) {
-            var args = toArr(arr);
+            const args = toArr(arr);
 
             return new Promise(function(resolve, reject) {
                 if (args.length === 0) return resolve([]);
 
-                var remaining = args.length;
+                let remaining = args.length;
 
                 function res(i, val) {
                     try {
                         if (val && (isObj(val) || isFn(val))) {
-                            var then = val.then;
+                            const then = val.then;
                             if (isFn(then)) {
                                 then.call(
                                     val,
@@ -104,7 +104,7 @@ var Promise = (exports = Class(
                     }
                 }
 
-                for (var i = 0; i < args.length; i++) res(i, args[i]);
+                for (let i = 0; i < args.length; i++) res(i, args[i]);
             });
         },
         resolve: function(val) {
@@ -121,7 +121,7 @@ var Promise = (exports = Class(
         },
         race: function(values) {
             return new Promise(function(resolve, reject) {
-                for (var i = 0, len = values.length; i < len; i++) {
+                for (let i = 0, len = values.length; i < len; i++) {
                     values[i].then(resolve, reject);
                 }
             });
@@ -129,7 +129,7 @@ var Promise = (exports = Class(
     }
 ));
 
-var Handler = Class({
+const Handler = Class({
     initialize: function Handler(onFulfilled, onRejected, promise) {
         this.onFulfilled = isFn(onFulfilled) ? onFulfilled : null;
         this.onRejected = isFn(onRejected) ? onRejected : null;
@@ -147,7 +147,7 @@ function resolve(self, val) {
         if (val === self)
             throw new TypeError('A promise cannot be resolved with itself');
         if (val && (isObj(val) || isFn(val))) {
-            var then = val.then;
+            const then = val.then;
             if (val instanceof Promise) {
                 self._state.adopt(val);
                 return finale(self);
@@ -164,7 +164,7 @@ function resolve(self, val) {
 }
 
 function finale(self) {
-    for (var i = 0, len = self._deferreds.length; i < len; i++) {
+    for (let i = 0, len = self._deferreds.length; i < len; i++) {
         handle(self, self._deferreds[i]);
     }
 
@@ -179,9 +179,9 @@ function handle(self, deferred) {
     self._handled = true;
 
     nextTick(function() {
-        var isFulfilled = self._state.is('fulfilled');
+        const isFulfilled = self._state.is('fulfilled');
 
-        var cb = isFulfilled ? deferred.onFulfilled : deferred.onRejected;
+        const cb = isFulfilled ? deferred.onFulfilled : deferred.onRejected;
 
         if (cb === null)
             return (isFulfilled ? resolve : reject)(
@@ -189,7 +189,7 @@ function handle(self, deferred) {
                 self._value
             );
 
-        var ret;
+        let ret;
 
         try {
             ret = cb(self._value);
@@ -202,7 +202,7 @@ function handle(self, deferred) {
 }
 
 function doResolve(fn, self) {
-    var done = false;
+    let done = false;
 
     try {
         fn(

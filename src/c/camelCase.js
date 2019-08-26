@@ -25,9 +25,9 @@
 _('splitCase');
 
 exports = function(str) {
-    var arr = splitCase(str);
+    const arr = splitCase(str);
 
-    var ret = arr[0];
+    let ret = arr[0];
     arr.shift();
 
     arr.forEach(capitalize, arr);

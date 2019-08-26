@@ -78,8 +78,8 @@ exports = function(obj, prop, descriptor) {
 };
 
 function defineProp(obj, prop, descriptor) {
-    var path = castPath(prop, obj),
-        lastProp = path.pop();
+    const path = castPath(prop, obj);
+    const lastProp = path.pop();
 
     /* eslint-disable no-cond-assign */
     while ((prop = path.shift())) {

@@ -1,9 +1,9 @@
-let bubbleSort = util.bubbleSort;
-let insertionSort = util.insertionSort;
-let selectionSort = util.selectionSort;
-let mergeSort = util.mergeSort;
-let shellSort = util.shellSort;
-let random = util.random;
+const bubbleSort = util.bubbleSort;
+const insertionSort = util.insertionSort;
+const selectionSort = util.selectionSort;
+const mergeSort = util.mergeSort;
+const shellSort = util.shellSort;
+const random = util.random;
 
 suite
     .add('vanilla', () => randomArr(10000).sort())
@@ -16,9 +16,9 @@ suite
     .run();
 
 function randomArr(len) {
-    var arr = new Array(len);
+    const arr = new Array(len);
 
-    for (var i = 0; i < len; i++) arr[i] = random(0, len);
+    for (let i = 0; i < len; i++) arr[i] = random(0, len);
 
     return arr;
 }

@@ -1,5 +1,5 @@
 it('basic', function() {
-    var obj = {
+    const obj = {
         a: 'b',
         c: 'd',
         e: 'f'

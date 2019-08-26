@@ -21,7 +21,7 @@
 
 exports = function(str) {
     str = ('__' + str + '__').split('');
-    var mode = {
+    const mode = {
         singleQuote: false,
         doubleQuote: false,
         regex: false,
@@ -29,7 +29,7 @@ exports = function(str) {
         lineComment: false,
         condComp: false
     };
-    for (var i = 0, l = str.length; i < l; i++) {
+    for (let i = 0, l = str.length; i < l; i++) {
         if (mode.regex) {
             if (str[i] === '/' && str[i - 1] !== '\\') mode.regex = false;
             continue;

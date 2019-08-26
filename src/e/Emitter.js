@@ -36,7 +36,7 @@
  */
 
 /* example
- * var event = new Emitter();
+ * const event = new Emitter();
  * event.on('test', function () { console.log('test') });
  * event.emit('test'); // Logs out 'test'.
  * Emitter.mixin({});
@@ -90,7 +90,7 @@ exports = Class(
         emit: function(event) {
             if (!has(this._events, event)) return;
 
-            var args = slice(arguments, 1);
+            const args = slice(arguments, 1);
 
             each(
                 this._events[event],

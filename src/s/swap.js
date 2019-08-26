@@ -9,7 +9,7 @@
  */
 
 /* example
- * var arr = [1, 2];
+ * const arr = [1, 2];
  * swap(arr, 0, 1); // -> [2, 1]
  */
 
@@ -23,7 +23,7 @@
  */
 
 exports = function(arr, a, b) {
-    var tmp = arr[a];
+    const tmp = arr[a];
     arr[a] = arr[b];
     arr[b] = tmp;
 

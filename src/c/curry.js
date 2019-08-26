@@ -7,8 +7,8 @@
  */
 
 /* example
- * var add = curry(function (a, b) { return a + b });
- * var add1 = add(1);
+ * const add = curry(function (a, b) { return a + b });
+ * const add1 = add(1);
  * add1(2); // -> 3
  */
 
@@ -24,10 +24,10 @@
 _('toArr');
 
 exports = function(fn) {
-    var len = fn.length;
+    const len = fn.length;
 
     return function curriedFn() {
-        var args = toArr(arguments);
+        const args = toArr(arguments);
 
         if (args.length < len) {
             return function() {

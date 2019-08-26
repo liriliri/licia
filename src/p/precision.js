@@ -22,14 +22,14 @@
 exports = function(num) {
     num = num.toExponential().match(regExponential);
 
-    var coefficient = num[1],
-        exponent = parseInt(num[2], 10);
+    const coefficient = num[1];
+    const exponent = parseInt(num[2], 10);
 
-    var places = (coefficient.split('.')[1] || '').length;
+    const places = (coefficient.split('.')[1] || '').length;
 
-    var ret = places - exponent;
+    const ret = places - exponent;
 
     return ret < 0 ? 0 : ret;
 };
 
-var regExponential = /^(-?\d?\.?\d+)e([+-]\d)+/;
+const regExponential = /^(-?\d?\.?\d+)e([+-]\d)+/;

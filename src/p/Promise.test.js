@@ -1,9 +1,9 @@
-var adapter = {
+const adapter = {
     resolved: Promise.resolve,
     rejected: Promise.rejected,
     deferred: function() {
-        var obj = {};
-        var prom = new Promise(function(resolve, reject) {
+        const obj = {};
+        const prom = new Promise(function(resolve, reject) {
             obj.resolve = resolve;
             obj.reject = reject;
         });
@@ -18,7 +18,7 @@ require('promises-aplus-tests').mocha(adapter);
 it('all', function(done) {
     expect(Promise.all([])).to.be.an.instanceof(Promise);
 
-    var step = 0;
+    let step = 0;
 
     Promise.all([
         new Promise(function(resolve) {
@@ -48,7 +48,7 @@ it('all', function(done) {
 });
 
 it('reject', function(done) {
-    var promise = Promise.reject('a');
+    const promise = Promise.reject('a');
 
     promise.catch(function(val) {
         expect(val).to.equal('a');

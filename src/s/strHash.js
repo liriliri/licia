@@ -20,9 +20,9 @@
  */
 
 exports = function(str) {
-    var hash = 5381;
+    let hash = 5381;
 
-    var i = str.length;
+    let i = str.length;
     while (i) {
         hash = (hash << 5) + hash + str.charCodeAt(--i);
     }

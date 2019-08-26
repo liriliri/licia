@@ -1,8 +1,8 @@
 it('basic', function(done) {
-    var start = perfNow();
+    const start = perfNow();
 
     setTimeout(function() {
-        var end = perfNow();
+        const end = perfNow();
         expect(start).to.be.a('number');
         expect(end).to.be.above(start);
         done();

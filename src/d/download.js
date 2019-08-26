@@ -29,7 +29,7 @@ _('createUrl');
 exports = function(data, name, type) {
     type = type || 'text/plain';
 
-    var el = document.createElement('a');
+    const el = document.createElement('a');
     el.setAttribute('href', createUrl(data, { type: type }));
     el.setAttribute('download', name);
     el.addEventListener('click', function(e) {

@@ -25,22 +25,22 @@
 _('toArr');
 
 exports = function() {
-    var args = toArr(arguments);
+    let args = toArr(arguments);
     args = args.sort(nameSort);
 
-    var ret = {},
-        idleMap = {};
+    const ret = {};
+    const idleMap = {};
 
-    for (var i = 0, len = args.length; i < len; i++) {
-        var str = args[i],
-            nextStr = args[i + 1] || '';
+    for (let i = 0, len = args.length; i < len; i++) {
+        const str = args[i];
+        const nextStr = args[i + 1] || '';
 
         if (str === nextStr) continue;
 
-        var start = false,
+        let start = false,
             abbrev = '';
 
-        for (var j = 0, strLen = str.length; j < strLen; j++) {
+        for (let j = 0, strLen = str.length; j < strLen; j++) {
             abbrev += str[j];
 
             if (!start && (str[j] !== nextStr[j] || j === strLen - 1))

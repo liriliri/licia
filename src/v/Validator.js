@@ -35,7 +35,7 @@
  *
  *     return key + ' should be a string with length 5';
  * });
- * var validator = new Validator({
+ * const validator = new Validator({
  *     'test': {
  *         required: true,
  *         custom: true
@@ -72,13 +72,13 @@ exports = Class(
         validate: function(obj) {
             obj = obj || {};
 
-            var options = this._options,
-                objKeys = this._optKeys;
+            const options = this._options;
+            const objKeys = this._optKeys;
 
-            for (var i = 0, len = objKeys.length; i < len; i++) {
-                var key = objKeys[i];
+            for (let i = 0, len = objKeys.length; i < len; i++) {
+                const key = objKeys[i];
 
-                var result = this._validateVal(
+                const result = this._validateVal(
                     safeGet(obj, key),
                     options[key],
                     key
@@ -90,20 +90,20 @@ exports = Class(
             return true;
         },
         _validateVal: function(val, rules, objKey) {
-            var plugins = exports.plugins;
+            const plugins = exports.plugins;
 
             if (isFn(rules)) return rules(val);
 
-            var ruleKeys = keys(rules);
+            const ruleKeys = keys(rules);
 
-            for (var i = 0, len = ruleKeys.length; i < len; i++) {
-                var key = ruleKeys[i],
-                    config = rules[key],
-                    result = true;
+            for (let i = 0, len = ruleKeys.length; i < len; i++) {
+                const key = ruleKeys[i];
+                const config = rules[key];
+                let result = true;
 
                 if (isFn(config)) result = config(val, objKey);
 
-                var plugin = plugins[key];
+                const plugin = plugins[key];
                 if (plugin) result = plugin(val, objKey, config);
 
                 if (result !== true) return result;

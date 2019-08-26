@@ -1,4 +1,4 @@
-var stream = require('stream');
+const stream = require('stream');
 
 it('basic', function() {
     expect(isStream(new stream.Stream())).to.be.true;

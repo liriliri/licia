@@ -22,19 +22,16 @@
 _('contain toArr');
 
 exports = function(arr) {
-    var ret = [],
-        args = toArr(arguments),
-        argsLen = args.length,
-        item,
-        i,
-        j,
-        len;
+    const ret = [];
+    const args = toArr(arguments);
+    const argsLen = args.length;
 
-    for (i = 0, len = arr.length; i < len; i++) {
-        item = arr[i];
+    for (let i = 0, len = arr.length; i < len; i++) {
+        const item = arr[i];
         if (contain(ret, item)) continue;
 
-        for (j = 1; j < argsLen; j++) {
+        let j = 1;
+        for (; j < argsLen; j++) {
             if (!contain(args[j], item)) break;
         }
 

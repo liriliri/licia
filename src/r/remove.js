@@ -11,8 +11,8 @@
  */
 
 /* example
- * var arr = [1, 2, 3, 4, 5];
- * var evens = remove(arr, function (val) { return val % 2 === 0 });
+ * const arr = [1, 2, 3, 4, 5];
+ * const evens = remove(arr, function (val) { return val % 2 === 0 });
  * console.log(arr); // -> [1, 3, 5]
  * console.log(evens); // -> [2, 4]
  */
@@ -39,7 +39,7 @@ exports = function(arr, iterator, ctx) {
     iterator = safeCb(iterator, ctx);
 
     let i = -1;
-    let len = arr.length;
+    const len = arr.length;
 
     while (++i < len) {
         const val = arr[i];

@@ -36,7 +36,7 @@
  */
 
 /* example
- * var queue = new Queue();
+ * const queue = new Queue();
  *
  * console.log(queue.size); // -> 0
  * queue.enqueue(2);
@@ -94,9 +94,9 @@ exports = Class({
     forEach: function(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
-        var items = this._items;
+        const items = this._items;
 
-        for (var i = 0, size = this.size; i < size; i++) {
+        for (let i = 0, size = this.size; i < size; i++) {
             iterator.call(ctx, items[i], i, this);
         }
     },

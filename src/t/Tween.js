@@ -38,9 +38,9 @@
  */
 
 /* example
- * var pos = {x: 0, y: 0};
+ * const pos = {x: 0, y: 0};
  *
- * var tween = new Tween(pos);
+ * const tween = new Tween(pos);
  * tween.on('update', function (target) {
  *     console.log(target.x, target.y);
  * }).on('end', function (target) {
@@ -86,9 +86,9 @@ exports = Emitter.extend({
         });
     },
     to: function(props, duration, ease) {
-        var origin = {},
-            target = this._target,
-            diff = {};
+        const origin = {};
+        const target = this._target;
+        const diff = {};
 
         ease = ease || this._ease;
 
@@ -107,12 +107,12 @@ exports = Emitter.extend({
         return this;
     },
     progress: function(progress) {
-        var ease = this._ease,
-            target = this._target,
-            origin = this._origin,
-            diff = this._diff,
-            dest = this._dest,
-            self = this;
+        const ease = this._ease;
+        const target = this._target;
+        const origin = this._origin;
+        const diff = this._diff;
+        const dest = this._dest;
+        const self = this;
 
         if (progress != null) {
             progress = progress < 1 ? progress : 1;
@@ -130,22 +130,22 @@ exports = Emitter.extend({
         return this._progress;
     },
     play: function() {
-        var state = this._state;
+        const state = this._state;
 
         if (state.is('play')) return;
 
         state.play();
 
-        var startTime = now(),
-            progress = this._progress,
-            duration = this._duration * (1 - progress),
-            target = this._target,
-            self = this;
+        const startTime = now();
+        const progress = this._progress;
+        const duration = this._duration * (1 - progress);
+        const target = this._target;
+        const self = this;
 
         function render() {
             if (state.is('pause')) return;
 
-            var time = now();
+            const time = now();
 
             self.progress(progress + (time - startTime) / duration);
 
@@ -163,7 +163,7 @@ exports = Emitter.extend({
         return this;
     },
     pause: function() {
-        var state = this._state;
+        const state = this._state;
 
         if (state.is('pause')) return;
         state.pause();

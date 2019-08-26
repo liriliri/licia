@@ -33,8 +33,8 @@
  */
 
 exports = function(a, b) {
-    var min = a.start < b.start ? a : b,
-        max = min === a ? b : a;
+    const min = a.start < b.start ? a : b;
+    const max = min === a ? b : a;
 
     if (min.end < max.start) return;
 

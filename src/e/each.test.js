@@ -1,5 +1,5 @@
 it('object', function() {
-    var ctx = { keys: [] };
+    const ctx = { keys: [] };
 
     each(
         { a: 1, b: 2 },
@@ -14,7 +14,7 @@ it('object', function() {
 });
 
 it('array', function() {
-    var arr = [0, 1];
+    const arr = [0, 1];
     each(arr, function(val, i) {
         arr[i] = val * 2;
     });

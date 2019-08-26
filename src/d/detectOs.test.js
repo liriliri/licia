@@ -1,4 +1,4 @@
-var each = util.each;
+const each = util.each;
 
 it('basic', function() {
     each(

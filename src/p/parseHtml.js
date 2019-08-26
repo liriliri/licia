@@ -45,7 +45,7 @@ exports = function(html, handler) {
 
         if (!last(stack) || !SPECIAL[last(stack)]) {
             if (startWith(html, '<!--')) {
-                let endIdx = html.indexOf('-->');
+                const endIdx = html.indexOf('-->');
                 if (endIdx >= 0) {
                     if (handler.comment) {
                         handler.comment(html.substring(4, endIdx));
@@ -77,7 +77,7 @@ exports = function(html, handler) {
                 }
             }
             if (text) {
-                let endIdx = html.indexOf('<');
+                const endIdx = html.indexOf('<');
                 const text = endIdx < 0 ? html : html.substring(0, endIdx);
                 html = endIdx < 0 ? '' : html.substring(endIdx);
                 if (handler.text) handler.text(text);
@@ -86,7 +86,7 @@ exports = function(html, handler) {
             const execRes = new RegExp(`</${last(stack)}[^>]*>`).exec(html);
 
             if (execRes) {
-                let text = html.substring(0, execRes.index);
+                const text = html.substring(0, execRes.index);
                 html = html.substring(execRes.index + execRes[0].length);
 
                 if (text && handler.text) handler.text(text);

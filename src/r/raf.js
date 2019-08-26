@@ -4,7 +4,7 @@
  */
 
 /* example
- * var id = raf(function tick() {
+ * const id = raf(function tick() {
  *     // Animation stuff
  *     raf(tick);
  * });
@@ -25,16 +25,16 @@
 
 _('now isBrowser');
 
-var raf, cancel;
+let raf, cancel;
+let lastTime = 0;
 
 if (isBrowser) {
     raf = window.requestAnimationFrame;
     cancel = window.cancelAnimationFrame;
 
-    var lastTime = 0,
-        vendors = ['ms', 'moz', 'webkit', 'o'];
+    const vendors = ['ms', 'moz', 'webkit', 'o'];
 
-    for (var i = 0, len = vendors.length; i < len && !raf; i++) {
+    for (let i = 0, len = vendors.length; i < len && !raf; i++) {
         raf = window[vendors[i] + 'RequestAnimationFrame'];
         cancel =
             window[vendors[i] + 'CancelAnimationFrame'] ||
@@ -45,12 +45,12 @@ if (isBrowser) {
 raf =
     raf ||
     function(cb) {
-        var curTime = now();
+        const curTime = now();
 
-        var timeToCall = Math.max(0, 16 - (curTime - lastTime)),
-            id = setTimeout(function() {
-                cb(curTime + timeToCall);
-            }, timeToCall);
+        const timeToCall = Math.max(0, 16 - (curTime - lastTime));
+        const id = setTimeout(function() {
+            cb(curTime + timeToCall);
+        }, timeToCall);
 
         lastTime = curTime + timeToCall;
 

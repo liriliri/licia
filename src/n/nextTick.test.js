@@ -1,5 +1,5 @@
 it('basic', function() {
-    var invoked = false;
+    let invoked = false;
 
     nextTick(function() {
         invoked = true;

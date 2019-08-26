@@ -8,7 +8,7 @@
  */
 
 /* example
- * var obj = {a: {aa: {aaa: 1}}};
+ * const obj = {a: {aa: {aaa: 1}}};
  * safeDel(obj, 'a.aa.aaa'); // -> 1
  * safeDel(obj, ['a', 'aa']); // -> {}
  * safeDel(obj, 'a.b'); // -> undefined
@@ -28,7 +28,7 @@ _('isUndef castPath');
 exports = function(obj, path) {
     path = castPath(path, obj);
 
-    var prop, ret;
+    let prop, ret;
 
     /* eslint-disable no-cond-assign */
     while ((prop = path.shift())) {

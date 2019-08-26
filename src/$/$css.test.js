@@ -1,4 +1,4 @@
-var $dom;
+let $dom;
 
 before(function() {
     $('body').append('<div id="dollarCss"></div>');
@@ -12,7 +12,7 @@ after(function() {
 it('get', function() {
     $dom.append('<div class="getter"></div>');
 
-    var $el = $dom.find('.getter');
+    const $el = $dom.find('.getter');
 
     $el.css('width', '100%');
     expect($css($el, 'width')).to.equal('100%');
@@ -22,7 +22,7 @@ it('get', function() {
 it('set', function() {
     $dom.append('<div class="setter"></div>');
 
-    var $el = $dom.find('.setter');
+    const $el = $dom.find('.setter');
 
     $css($el, 'width', 14);
     expect($el.css('width')).to.equal('14px');

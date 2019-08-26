@@ -19,7 +19,7 @@ it('basic', function(done) {
 });
 
 it('occur error', function(done) {
-    var invoked = false;
+    let invoked = false;
 
     waterfall(
         [
@@ -53,7 +53,7 @@ it('no callback', function(done) {
 });
 
 it('callback always async', function(done) {
-    var invoked = false;
+    let invoked = false;
 
     waterfall([], function() {
         invoked = true;

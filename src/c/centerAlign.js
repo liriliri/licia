@@ -25,14 +25,14 @@
 _('longest isArr isUndef map lpad');
 
 exports = function(str, width) {
-    var ret = str;
+    let ret = str;
     if (!isArr(ret)) {
         ret = ret.split(regLineBreak);
     }
     if (isUndef(width)) width = longest(str);
 
     ret = map(ret, function(str) {
-        var len = str.length;
+        const len = str.length;
 
         return lpad(str, floor((width - len) / 2) + len);
     });
@@ -40,5 +40,5 @@ exports = function(str, width) {
     return ret.join('\n');
 };
 
-var regLineBreak = /\n/g,
-    floor = Math.floor;
+const regLineBreak = /\n/g;
+const floor = Math.floor;

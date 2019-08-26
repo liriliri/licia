@@ -1,5 +1,5 @@
 it('basic', function() {
-    var arr = [
+    const arr = [
         {
             name: 'john',
             age: 24

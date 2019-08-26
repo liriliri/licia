@@ -20,15 +20,14 @@
  */
 
 exports = function(rgb) {
-    var r = rgb[0] / 255,
-        g = rgb[1] / 255,
-        b = rgb[2] / 255,
-        min = mMin(r, g, b),
-        max = mMax(r, g, b),
-        delta = max - min,
-        h,
-        s,
-        l;
+    const r = rgb[0] / 255;
+    const g = rgb[1] / 255;
+    const b = rgb[2] / 255;
+    const min = mMin(r, g, b);
+    const max = mMax(r, g, b);
+    const delta = max - min;
+    let h;
+    let s;
 
     if (max === min) {
         h = 0;
@@ -44,7 +43,7 @@ exports = function(rgb) {
 
     if (h < 0) h += 360;
 
-    l = (min + max) / 2;
+    const l = (min + max) / 2;
 
     if (max === min) {
         s = 0;
@@ -54,13 +53,13 @@ exports = function(rgb) {
         s = delta / (2 - max - min);
     }
 
-    var ret = [round(h), round(s * 100), round(l * 100)];
+    const ret = [round(h), round(s * 100), round(l * 100)];
 
     if (rgb[3]) ret[3] = rgb[3];
 
     return ret;
 };
 
-var mMin = Math.min,
-    mMax = Math.max,
-    round = Math.round;
+const mMin = Math.min;
+const mMax = Math.max;
+const round = Math.round;

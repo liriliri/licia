@@ -1,4 +1,4 @@
-var cookie = util.cookie;
+const cookie = util.cookie;
 
 it('basic', function() {
     cookie.set('test', 'test');

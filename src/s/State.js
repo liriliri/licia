@@ -20,7 +20,7 @@
  */
 
 /* example
- * var state = new State('empty', {
+ * const state = new State('empty', {
  *     load: {from: 'empty', to: 'pause'},
  *     play: {from: 'pause', to: 'play'},
  *     pause: {from: ['play', 'empty'], to: 'pause'},
@@ -61,7 +61,7 @@ exports = Emitter.extend({
 
         this.current = initial;
 
-        var self = this;
+        const self = this;
 
         each(events, function(event, key) {
             self[key] = buildEvent(key, event);
@@ -73,14 +73,14 @@ exports = Emitter.extend({
 });
 
 function buildEvent(name, event) {
-    var from = toArr(event.from),
-        to = event.to;
+    const from = toArr(event.from);
+    const to = event.to;
 
     return function() {
-        var args = toArr(arguments);
+        const args = toArr(arguments);
         args.unshift(name);
 
-        var hasEvent = some(
+        const hasEvent = some(
             from,
             function(val) {
                 return this.current === val;

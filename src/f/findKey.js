@@ -32,10 +32,10 @@ _('safeCb keys');
 exports = function(obj, predicate, ctx) {
     predicate = safeCb(predicate, ctx);
 
-    var _keys = keys(obj),
-        key;
+    const _keys = keys(obj);
+    let key;
 
-    for (var i = 0, len = _keys.length; i < len; i++) {
+    for (let i = 0, len = _keys.length; i < len; i++) {
         key = _keys[i];
         if (predicate(obj[key], key, obj)) return key;
     }

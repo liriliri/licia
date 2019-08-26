@@ -22,15 +22,15 @@
 _('map pluck max');
 
 exports = function(arr) {
-    var len = max.apply(
-            null,
-            map(arr, function(arr) {
-                return arr.length;
-            })
-        ),
-        ret = Array(len);
+    const len = max.apply(
+        null,
+        map(arr, function(arr) {
+            return arr.length;
+        })
+    );
+    const ret = Array(len);
 
-    for (var i = 0; i < len; i++) {
+    for (let i = 0; i < len; i++) {
         ret[i] = pluck(arr, i);
     }
 

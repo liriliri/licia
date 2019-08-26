@@ -1,9 +1,9 @@
-var sessionStorage = window.sessionStorage;
+const sessionStorage = window.sessionStorage;
 
 it('basic', function() {
     sessionStorage.setItem('SessionStore', '{licia}');
 
-    var store = new SessionStore('SessionStore', {
+    let store = new SessionStore('SessionStore', {
         a: 1,
         b: 2,
         c: 3

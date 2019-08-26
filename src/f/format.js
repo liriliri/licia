@@ -32,10 +32,10 @@
 _('restArgs toInt toNum toStr');
 
 exports = restArgs(function(str, values) {
-    var ret = '';
+    let ret = '';
 
-    for (var i = 0, len = str.length; i < len; i++) {
-        var c = str[i];
+    for (let i = 0, len = str.length; i < len; i++) {
+        const c = str[i];
 
         if (c !== '%' || values.length === 0) {
             ret += c;
@@ -44,7 +44,7 @@ exports = restArgs(function(str, values) {
 
         i++;
 
-        var val = values.shift();
+        const val = values.shift();
 
         switch (str[i]) {
             case 'i':

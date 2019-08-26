@@ -24,4 +24,4 @@ exports = function(path) {
     return path.replace(regSlashes, '/');
 };
 
-var regSlashes = /[\\/]+/g;
+const regSlashes = /[\\/]+/g;

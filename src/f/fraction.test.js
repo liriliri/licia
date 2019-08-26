@@ -1,7 +1,7 @@
-var each = util.each;
+const each = util.each;
 
 it('basic', function() {
-    var tests = [
+    const tests = [
         [0, '0'],
         [0.2, '1/5'],
         [1.2, '6/5'],

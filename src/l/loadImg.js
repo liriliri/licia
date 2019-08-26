@@ -26,7 +26,7 @@ _('noop');
 exports = function(src, cb) {
     cb = cb || noop;
 
-    var img = new Image();
+    const img = new Image();
     img.onload = function() {
         cb(null, img);
     };

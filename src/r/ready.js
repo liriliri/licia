@@ -20,12 +20,12 @@
  * export declare function ready(fn: Function): void;
  */
 
-var fns = [],
-    listener,
-    doc = document,
-    hack = doc.documentElement.doScroll,
-    domContentLoaded = 'DOMContentLoaded',
-    loaded = (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState);
+const fns = [];
+let listener;
+const doc = document;
+const hack = doc.documentElement.doScroll;
+const domContentLoaded = 'DOMContentLoaded';
+let loaded = (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState);
 
 if (!loaded) {
     doc.addEventListener(

@@ -1,13 +1,13 @@
-var path = require('path');
+const path = require('path');
 
-var r = lazyRequire(require),
-    _ = r('underscore');
+const r = lazyRequire(require);
+const _ = r('underscore');
 
 it('basic', function() {
-    var cache = require.cache;
+    const cache = require.cache;
     if (!cache) return;
 
-    var underscorePath = path.resolve(
+    const underscorePath = path.resolve(
         __dirname,
         '../node_modules/underscore/underscore.js'
     );

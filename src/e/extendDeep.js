@@ -34,9 +34,9 @@
 _('isPlainObj each cloneDeep');
 
 exports = function(obj) {
-    var i = 0,
-        ret = obj,
-        len = arguments.length;
+    let i = 0;
+    let ret = obj;
+    const len = arguments.length;
 
     while (++i < len) {
         obj = arguments[i];

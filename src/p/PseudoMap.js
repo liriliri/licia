@@ -4,7 +4,7 @@
  */
 
 /* example
- * var map = new PseudoMap();
+ * const map = new PseudoMap();
  * map.set('1', 1);
  * map.get('1'); // -> 1
  */
@@ -27,7 +27,7 @@ if (root.Map && !detectMocha()) {
         initialize: function PseudoMap(data) {
             this.clear();
 
-            var self = this;
+            const self = this;
 
             defineProp(this, 'size', {
                 get: function() {

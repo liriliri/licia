@@ -1,7 +1,7 @@
 it('basic', function(done) {
-    var counter = 0;
+    let counter = 0;
 
-    var throttleFn = throttle(function() {
+    const throttleFn = throttle(function() {
         counter++;
     }, 50);
 

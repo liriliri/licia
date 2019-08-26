@@ -29,11 +29,9 @@ exports = function(arr, cmp) {
 };
 
 function quickSort(arr, left, right, cmp) {
-    var idx;
-
     if (arr.length <= 1) return arr;
 
-    idx = partition(arr, left, right, cmp);
+    const idx = partition(arr, left, right, cmp);
 
     if (left < idx - 1) quickSort(arr, left, idx - 1, cmp);
     if (idx < right) quickSort(arr, idx, right, cmp);
@@ -42,7 +40,7 @@ function quickSort(arr, left, right, cmp) {
 }
 
 function partition(arr, left, right, cmp) {
-    var pivot = arr[floor((right + left) / 2)];
+    const pivot = arr[floor((right + left) / 2)];
 
     while (left <= right) {
         while (cmp(arr[left], pivot) < 0) left++;
@@ -57,7 +55,7 @@ function partition(arr, left, right, cmp) {
     return left;
 }
 
-var floor = Math.floor;
+const floor = Math.floor;
 
 function comparator(a, b) {
     return a - b;

@@ -9,7 +9,7 @@
  */
 
 /* example
- * var welcome = compose(function (name) {
+ * const welcome = compose(function (name) {
  *     return 'hi: ' + name;
  * }, function (name) {
  *     return name.toUpperCase() + '!';
@@ -31,9 +31,9 @@ _('restArgs');
 
 exports = restArgs(function(fnList) {
     return function() {
-        var i = fnList.length - 1;
+        let i = fnList.length - 1;
 
-        var result = fnList[i].apply(this, arguments);
+        let result = fnList[i].apply(this, arguments);
         while (i--) result = fnList[i].call(this, result);
 
         return result;

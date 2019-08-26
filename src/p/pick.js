@@ -33,16 +33,16 @@ exports = function(obj, filter, omit) {
     if (isStr(filter)) filter = [filter];
 
     if (isArr(filter)) {
-        var keys = filter;
+        const keys = filter;
 
         filter = function(val, key) {
             return contain(keys, key);
         };
     }
 
-    var ret = {};
+    const ret = {};
 
-    var iteratee = function(val, key) {
+    let iteratee = function(val, key) {
         if (filter(val, key)) ret[key] = val;
     };
 

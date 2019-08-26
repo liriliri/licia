@@ -26,7 +26,7 @@ exports = function(arr) {
 };
 
 function flat(arr, res) {
-    var len = arr.length,
+    let len = arr.length,
         i = -1,
         cur;
 

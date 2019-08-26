@@ -46,4 +46,4 @@ exports = function(fn) {
     return ret === null ? [] : ret;
 };
 
-var regArgNames = /[^\s,]+/g;
+const regArgNames = /[^\s,]+/g;

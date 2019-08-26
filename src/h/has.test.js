@@ -1,4 +1,4 @@
-var obj = Object.create({ one: 1 });
+const obj = Object.create({ one: 1 });
 obj.two = 2;
 
 it('true', function() {

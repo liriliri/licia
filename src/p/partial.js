@@ -8,7 +8,7 @@
  */
 
 /* example
- * var sub5 = partial(function (a, b) { return b - a }, 5);
+ * const sub5 = partial(function (a, b) { return b - a }, 5);
  * sub5(20); // -> 15
  */
 
@@ -25,7 +25,7 @@ _('restArgs toArr');
 
 exports = restArgs(function(fn, partials) {
     return function() {
-        var args = [];
+        let args = [];
 
         args = args.concat(partials);
         args = args.concat(toArr(arguments));

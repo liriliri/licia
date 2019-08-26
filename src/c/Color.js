@@ -30,7 +30,7 @@
 
 /* example
  * Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model: 'rgb'}
- * var color = new Color('#abc');
+ * const color = new Color('#abc');
  * color.toRgb(); // -> 'rgb(170, 187, 204)'
  * color.toHsl(); // -> 'hsl(210, 25%, 73%)'
  */
@@ -67,10 +67,10 @@ exports = Class(
             this.val = color.val;
         },
         toRgb: function() {
-            var val = this.val;
+            let val = this.val;
             if (this.model === 'hsl') val = hslToRgb(val);
 
-            var prefix = 'rgba';
+            let prefix = 'rgba';
             if (val[3] === 1) {
                 prefix = 'rgb';
                 val = val.slice(0, 3);
@@ -79,10 +79,10 @@ exports = Class(
             return prefix + '(' + val.join(', ') + ')';
         },
         toHex: function() {
-            var val = this.val;
+            let val = this.val;
             if (this.model === 'hsl') val = hslToRgb(val);
 
-            var ret = hexDouble(val[0]) + hexDouble(val[1]) + hexDouble(val[2]);
+            let ret = hexDouble(val[0]) + hexDouble(val[1]) + hexDouble(val[2]);
 
             if (ret[0] === ret[1] && ret[2] === ret[3] && ret[4] === ret[5]) {
                 ret = ret[0] + ret[2] + ret[5];
@@ -91,10 +91,10 @@ exports = Class(
             return '#' + ret;
         },
         toHsl: function() {
-            var val = this.val;
+            let val = this.val;
             if (this.model === 'rgb') val = rgbToHsl(val);
 
-            var prefix = 'hsla';
+            let prefix = 'hsla';
             if (val[3] === 1) {
                 prefix = 'hsl';
                 val = val.slice(0, 3);
@@ -108,9 +108,9 @@ exports = Class(
     },
     {
         parse: function(colorStr) {
-            var i, match;
+            let i, match;
 
-            var val = [0, 0, 0, 1],
+            let val = [0, 0, 0, 1],
                 model = 'rgb';
 
             /* eslint-disable no-cond-assign */
@@ -124,7 +124,7 @@ exports = Class(
                 match = match[1];
 
                 for (i = 0; i < 3; i++) {
-                    var i2 = i * 2;
+                    const i2 = i * 2;
                     val[i] = parseInt(match.slice(i2, i2 + 2), 16);
                 }
             } else if ((match = colorStr.match(regRgba))) {
@@ -157,11 +157,11 @@ exports = Class(
     }
 );
 
-var regHexAbbr = /^#([a-fA-F0-9]{3})$/,
-    regHex = /^#([a-fA-F0-9]{6})$/,
-    regRgba = /^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d.]+)\s*)?\)$/,
-    regRgbaPer = /^rgba?\(\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*(?:,\s*([+-]?[\d.]+)\s*)?\)$/,
-    regHsla = /^hsla?\(\s*([+-]?\d*[.]?\d+)(?:deg)?\s*,\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*(?:,\s*([+-]?[\d.]+)\s*)?\)$/;
+const regHexAbbr = /^#([a-fA-F0-9]{3})$/;
+const regHex = /^#([a-fA-F0-9]{6})$/;
+const regRgba = /^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d.]+)\s*)?\)$/;
+const regRgbaPer = /^rgba?\(\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*(?:,\s*([+-]?[\d.]+)\s*)?\)$/;
+const regHsla = /^hsla?\(\s*([+-]?\d*[.]?\d+)(?:deg)?\s*,\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*(?:,\s*([+-]?[\d.]+)\s*)?\)$/;
 
 function hexDouble(num) {
     return lpad(convertBase(num, 10, 16), '0', 2);

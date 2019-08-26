@@ -25,12 +25,12 @@
 
 _('isNum isFn');
 
-var MAX_ARR_IDX = Math.pow(2, 53) - 1;
+const MAX_ARR_IDX = Math.pow(2, 53) - 1;
 
 exports = function(val) {
     if (!val) return false;
 
-    var len = val.length;
+    const len = val.length;
 
     return isNum(len) && len >= 0 && len <= MAX_ARR_IDX && !isFn(val);
 };

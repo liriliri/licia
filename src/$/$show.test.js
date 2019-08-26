@@ -1,4 +1,4 @@
-var $dom;
+let $dom;
 
 before(function() {
     $('body').append('<div id="dollarShow" style="display:none"></div>');

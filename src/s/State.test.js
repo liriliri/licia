@@ -1,5 +1,5 @@
 it('basic', function() {
-    var state = new State('empty', {
+    const state = new State('empty', {
         load: { from: 'empty', to: 'pause' },
         play: { from: 'pause', to: 'play' },
         pause: { from: ['play', 'empty'], to: 'pause' },

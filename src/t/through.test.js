@@ -1,6 +1,6 @@
 it('basic', function() {
-    var t = through(function(chunk, enc, cb) {
-        for (var i = 0, len = chunk.length; i < len; i++) {
+    const t = through(function(chunk, enc, cb) {
+        for (let i = 0, len = chunk.length; i < len; i++) {
             chunk[i]++;
         }
         this.push(chunk);
@@ -16,7 +16,7 @@ it('basic', function() {
 });
 
 it('obj', function() {
-    var t = through.obj(function(chunk, enc, cb) {
+    const t = through.obj(function(chunk, enc, cb) {
         chunk.a++;
         this.push(chunk);
         cb();
@@ -31,13 +31,13 @@ it('obj', function() {
 });
 
 it('ctor', function() {
-    var Through = through.ctor(function(chunk, enc, cb) {
+    const Through = through.ctor(function(chunk, enc, cb) {
         chunk.a++;
         this.push(chunk);
         cb();
     });
 
-    var t = new Through({ objectMode: true });
+    const t = new Through({ objectMode: true });
     t.on('data', function(chunk) {
         expect(chunk).to.eql({ a: 2 });
     });

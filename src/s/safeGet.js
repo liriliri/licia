@@ -8,7 +8,7 @@
  */
 
 /* example
- * var obj = {a: {aa: {aaa: 1}}};
+ * const obj = {a: {aa: {aaa: 1}}};
  * safeGet(obj, 'a.aa.aaa'); // -> 1
  * safeGet(obj, ['a', 'aa']); // -> {aaa: 1}
  * safeGet(obj, 'a.b'); // -> undefined
@@ -28,7 +28,7 @@ _('isUndef castPath');
 exports = function(obj, path) {
     path = castPath(path, obj);
 
-    var prop;
+    let prop;
 
     prop = path.shift();
     while (!isUndef(prop)) {

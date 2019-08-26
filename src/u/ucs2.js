@@ -44,17 +44,17 @@ exports = {
         return String.fromCodePoint.apply(String, arr);
     },
     decode: function(str) {
-        var ret = [];
+        const ret = [];
 
-        var i = 0,
-            len = str.length;
+        let i = 0;
+        const len = str.length;
 
         while (i < len) {
-            var c = str.charCodeAt(i++);
+            const c = str.charCodeAt(i++);
 
             // A high surrogate
             if (c >= 0xd800 && c <= 0xdbff && i < len) {
-                var tail = str.charCodeAt(i++);
+                const tail = str.charCodeAt(i++);
                 // nextC >= 0xDC00 && nextC <= 0xDFFF
                 if ((tail & 0xfc00) === 0xdc00) {
                     // C = (H - 0xD800) * 0x400 + L - 0xDC00 + 0x10000

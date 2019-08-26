@@ -24,9 +24,9 @@
  * export declare function splitCase(str: string): string[];
  */
 
-var regUpperCase = /([A-Z])/g,
-    regSeparator = /[_.\- ]+/g,
-    regTrim = /(^-)|(-$)/g;
+const regUpperCase = /([A-Z])/g;
+const regSeparator = /[_.\- ]+/g;
+const regTrim = /(^-)|(-$)/g;
 
 exports = function(str) {
     str = str

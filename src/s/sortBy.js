@@ -28,7 +28,7 @@ _('safeCb pluck map isUndef');
 exports = function(obj, iteratee, ctx) {
     iteratee = safeCb(iteratee, ctx);
 
-    var idx = 0;
+    let idx = 0;
 
     return pluck(
         map(obj, function(val, key) {
@@ -38,8 +38,8 @@ exports = function(obj, iteratee, ctx) {
                 criteria: iteratee(val, key, obj)
             };
         }).sort(function(left, right) {
-            var a = left.criteria,
-                b = right.criteria;
+            const a = left.criteria;
+            const b = right.criteria;
 
             if (a !== b) {
                 if (a > b || isUndef(a)) return 1;

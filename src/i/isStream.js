@@ -7,7 +7,7 @@
  */
 
 /* example
- * var stream = require('stream');
+ * const stream = require('stream');
  *
  * isStream(new stream.Stream()); // -> true
  */

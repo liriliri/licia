@@ -60,7 +60,7 @@
  */
 
 /* example
- * var data = new JsonTransformer({
+ * const data = new JsonTransformer({
  *     books: [{
  *         title: 'Book 1',
  *         price: 5
@@ -145,7 +145,7 @@ exports = Class({
     remove: function(keys) {
         keys = toArr(keys);
 
-        var data = this._data;
+        const data = this._data;
 
         each(keys, function(key) {
             safeDel(data, key);

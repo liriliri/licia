@@ -23,13 +23,13 @@
  */
 
 exports = function(arr, size) {
-    var ret = [];
+    const ret = [];
 
     size = size || 1;
 
-    for (var i = 0, len = Math.ceil(arr.length / size); i < len; i++) {
-        var start = i * size,
-            end = start + size;
+    for (let i = 0, len = Math.ceil(arr.length / size); i < len; i++) {
+        const start = i * size;
+        const end = start + size;
 
         ret.push(arr.slice(start, end));
     }

@@ -1,4 +1,4 @@
-var each = util.each;
+const each = util.each;
 
 it('basic', function() {
     test([['Nonsense', 'unknown', -1]]);
@@ -129,7 +129,7 @@ it('android', function() {
 
 function test(expects) {
     each(expects, function(val) {
-        var result = detectBrowser(val[0]);
+        const result = detectBrowser(val[0]);
 
         expect(result).to.eql({
             name: val[1],

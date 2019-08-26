@@ -1,4 +1,4 @@
-var promiseFn = function(value) {
+const promiseFn = function(value) {
     return new Promise(function(resolve, reject) {
         if (value < 5) return reject(new Error("value shouldn't less then 5"));
 
@@ -7,7 +7,7 @@ var promiseFn = function(value) {
 };
 
 it('basic', function() {
-    var cbFn = callbackify(promiseFn);
+    const cbFn = callbackify(promiseFn);
 
     cbFn(4, function(err) {
         expect(err).to.be.an('error');

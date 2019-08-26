@@ -19,7 +19,7 @@
  * export declare function stripHtmlTag(str: string): string;
  */
 
-var regHtmlTag = /<[^>]*>/g;
+const regHtmlTag = /<[^>]*>/g;
 
 exports = function(str) {
     return str.replace(regHtmlTag, '');

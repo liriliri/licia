@@ -22,7 +22,7 @@
 _('each');
 
 exports = function(obj) {
-    var ret = [];
+    const ret = [];
 
     each(obj, function(val) {
         ret.push(val);

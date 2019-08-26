@@ -76,15 +76,15 @@ exports = function(file, opts, cb) {
 };
 
 function compress(img, opts, cb) {
-    var canvas = document.createElement('canvas'),
-        ctx = canvas.getContext('2d');
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
 
-    var width = img.width,
-        height = img.height,
-        ratio = width / height;
+    let width = img.width;
+    let height = img.height;
+    const ratio = width / height;
 
-    var maxWidth = opts.maxWidth,
-        maxHeight = opts.maxHeight;
+    const maxWidth = opts.maxWidth;
+    const maxHeight = opts.maxHeight;
 
     if (opts.width || opts.height) {
         if (opts.width) {
@@ -127,10 +127,10 @@ function compress(img, opts, cb) {
     }
 }
 
-var defOpts = {
+const defOpts = {
     maxWidth: Infinity,
     maxHeight: Infinity,
     quality: 0.8
 };
 
-var floor = Math.floor;
+const floor = Math.floor;

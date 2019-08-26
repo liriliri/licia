@@ -24,7 +24,7 @@ exports = function(els) {
     els = $safeEls(els);
 
     each(els, function(el) {
-        var parent = el.parentNode;
+        const parent = el.parentNode;
 
         if (parent) parent.removeChild(el);
     });

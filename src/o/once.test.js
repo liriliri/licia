@@ -1,6 +1,6 @@
 it('basic', function() {
-    var count = 0;
-    var fn = once(function() {
+    let count = 0;
+    const fn = once(function() {
         count++;
     });
     fn();

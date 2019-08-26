@@ -42,11 +42,11 @@ _('ucs2');
 // https://encoding.spec.whatwg.org/#utf-8
 exports = {
     encode: function(str) {
-        var codePoints = ucs2.decode(str);
+        const codePoints = ucs2.decode(str);
 
-        var byteArr = '';
+        let byteArr = '';
 
-        for (var i = 0, len = codePoints.length; i < len; i++) {
+        for (let i = 0, len = codePoints.length; i < len; i++) {
             byteArr += encodeCodePoint(codePoints[i]);
         }
 
@@ -62,9 +62,9 @@ exports = {
         lowerBoundary = 0x80;
         upperBoundary = 0xbf;
 
-        var codePoints = [];
+        const codePoints = [];
 
-        var tmp;
+        let tmp;
 
         while ((tmp = decodeCodePoint(safe)) !== false) {
             codePoints.push(tmp);
@@ -74,7 +74,7 @@ exports = {
     }
 };
 
-var fromCharCode = String.fromCharCode;
+const fromCharCode = String.fromCharCode;
 
 function encodeCodePoint(codePoint) {
     // U+0000 to U+0080, ASCII code point
@@ -82,7 +82,7 @@ function encodeCodePoint(codePoint) {
         return fromCharCode(codePoint);
     }
 
-    var ret = '',
+    let ret = '',
         count,
         offset;
 
@@ -103,7 +103,7 @@ function encodeCodePoint(codePoint) {
     ret += fromCharCode((codePoint >> (6 * count)) + offset);
 
     while (count > 0) {
-        var tmp = codePoint >> (6 * (count - 1));
+        const tmp = codePoint >> (6 * (count - 1));
         ret += fromCharCode(0x80 | (tmp & 0x3f));
         count--;
     }
@@ -111,7 +111,7 @@ function encodeCodePoint(codePoint) {
     return ret;
 }
 
-var byteArr,
+let byteArr,
     byteIdx,
     byteCount,
     codePoint,
@@ -130,7 +130,7 @@ function decodeCodePoint(safe) {
 
         if (byteIdx === byteCount) return false;
 
-        var byte = byteArr[byteIdx];
+        const byte = byteArr[byteIdx];
         byteIdx++;
 
         if (!bytesNeeded) {
@@ -179,7 +179,7 @@ function decodeCodePoint(safe) {
 
         if (bytesSeen !== bytesNeeded) continue;
 
-        var tmp = codePoint;
+        const tmp = codePoint;
 
         codePoint = 0;
         bytesNeeded = 0;
@@ -190,7 +190,7 @@ function decodeCodePoint(safe) {
 }
 
 function goBack() {
-    var start = byteIdx - bytesSeen - 1;
+    const start = byteIdx - bytesSeen - 1;
     byteIdx = start + 1;
     codePoint = 0;
     bytesNeeded = 0;

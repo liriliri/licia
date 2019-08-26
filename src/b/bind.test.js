@@ -1,5 +1,5 @@
 it('basic', function() {
-    var fn = bind(
+    const fn = bind(
         function(msg) {
             return this.name + ': ' + msg;
         },

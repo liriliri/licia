@@ -26,7 +26,7 @@
 _('each isStr isNum isArr isObj');
 
 exports = function() {
-    var ret = [];
+    const ret = [];
 
     each(arguments, function(arg) {
         if (!arg) return;

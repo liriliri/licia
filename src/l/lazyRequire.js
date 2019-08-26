@@ -2,9 +2,9 @@
  */
 
 /* example
- * var r = lazyRequire(require);
+ * const r = lazyRequire(require);
  *
- * var _ = r('underscore');
+ * const _ = r('underscore');
  *
  * // underscore is required only when _ is called.
  * _().isNumber(5);
@@ -20,7 +20,7 @@
  */
 
 exports = function(requireFn) {
-    var cache = {};
+    const cache = {};
 
     return function(name) {
         return function() {

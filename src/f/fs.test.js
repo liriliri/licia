@@ -1,4 +1,4 @@
-var path = __dirname + '/test.js';
+const path = __dirname + '/test.js';
 
 it('basic', function(done) {
     fs.writeFile(path, 'test', 'utf8')

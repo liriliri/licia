@@ -54,16 +54,16 @@ _('loadJs defaults noop uniqId query');
 exports = function(opts) {
     defaults(opts, exports.settings);
 
-    var name = opts.name || uniqId('jsonp'),
-        param = opts.param,
-        timeout = opts.timeout,
-        error = opts.error,
-        success = opts.success,
-        complete = opts.complete,
-        data = opts.data,
-        url = opts.url,
-        timer,
-        isTimeout = false;
+    const name = opts.name || uniqId('jsonp');
+    const param = opts.param;
+    const timeout = opts.timeout;
+    const error = opts.error;
+    const success = opts.success;
+    const complete = opts.complete;
+    let data = opts.data;
+    let url = opts.url;
+    let timer;
+    let isTimeout = false;
 
     if (timeout > 0) {
         timer = setTimeout(function() {

@@ -31,9 +31,9 @@ exports = function(val) {
     return regIsHostCtor.test(toSrc(val));
 };
 
-var hasOwnProperty = Object.prototype.hasOwnProperty;
+const hasOwnProperty = Object.prototype.hasOwnProperty;
 
-var regIsNative = new RegExp(
+const regIsNative = new RegExp(
     '^' +
         toSrc(hasOwnProperty)
             .replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
@@ -44,4 +44,4 @@ var regIsNative = new RegExp(
         '$'
 );
 
-var regIsHostCtor = /^\[object .+?Constructor\]$/;
+const regIsHostCtor = /^\[object .+?Constructor\]$/;

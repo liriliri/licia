@@ -1,4 +1,4 @@
-var $dom;
+let $dom;
 
 before(function() {
     $('body').append('<div id="dollarAttr"></div>');
@@ -12,7 +12,7 @@ after(function() {
 it('get', function() {
     $dom.append('<div class="getter"></div>');
 
-    var $el = $dom.find('.getter');
+    const $el = $dom.find('.getter');
 
     $el.attr('data-one', 'true');
     expect($attr($el, 'data-one')).to.equal('true');
@@ -22,7 +22,7 @@ it('get', function() {
 it('set', function() {
     $dom.append('<div class="setter"></div>');
 
-    var $el = $dom.find('.setter');
+    const $el = $dom.find('.setter');
 
     $attr($el, 'data-one', 'true');
     expect($el.attr('data-one')).to.equal('true');
@@ -38,7 +38,7 @@ it('set', function() {
 it('remove', function() {
     $dom.append('<div class="remove"></div>');
 
-    var $el = $dom.find('.remove');
+    const $el = $dom.find('.remove');
 
     $el.attr('data-one', 'true')
         .attr('data-two', 'true')

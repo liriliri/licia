@@ -1,5 +1,5 @@
 it('validate data', function() {
-    var validator = new Validator({
+    const validator = new Validator({
         test: {
             required: true
         }
@@ -10,7 +10,7 @@ it('validate data', function() {
 });
 
 it('custom function', function() {
-    var validator = new Validator({
+    const validator = new Validator({
         test: function(val) {
             return !!(val && val.length === 6);
         }
@@ -22,7 +22,7 @@ it('custom function', function() {
 });
 
 it('default plugins', function() {
-    var validator = new Validator({
+    const validator = new Validator({
         testNum: {
             number: true
         },
@@ -66,7 +66,7 @@ it('add plugin', function() {
         return true;
     });
 
-    var validator = new Validator({
+    const validator = new Validator({
         test: {
             custom: true
         }

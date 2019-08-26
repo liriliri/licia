@@ -6,9 +6,9 @@ it('basic', function() {
 
     expect(orientation.get()).to.be.a('string');
 
-    var screen = window.screen;
+    const screen = window.screen;
     if (screen.orientation) {
-        var o = screen.orientation;
+        const o = screen.orientation;
         screen.orientation = null;
         expect(orientation.get()).to.be.a('string');
         screen.orientation = o;

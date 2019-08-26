@@ -1,4 +1,4 @@
-var store;
+let store;
 
 beforeEach(function() {
     store = new Store({
@@ -55,7 +55,7 @@ it('clear', function() {
 });
 
 it('each', function() {
-    var data = {};
+    const data = {};
     store.each(function(val, key) {
         data[key] = val;
     });

@@ -1,5 +1,5 @@
-var isDate = util.isDate,
-    dateFormat = util.dateFormat;
+const isDate = util.isDate;
+const dateFormat = util.dateFormat;
 
 it('basic', function() {
     expect(isDate(toDate())).to.be.true;

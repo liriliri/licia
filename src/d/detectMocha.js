@@ -17,8 +17,8 @@
 _('root');
 
 exports = function() {
-    for (var i = 0, len = methods.length; i < len; i++) {
-        var method = methods[i];
+    for (let i = 0, len = methods.length; i < len; i++) {
+        const method = methods[i];
 
         if (typeof root[method] !== 'function') return false;
     }
@@ -26,4 +26,11 @@ exports = function() {
     return true;
 };
 
-var methods = ['afterEach', 'after', 'beforeEach', 'before', 'describe', 'it'];
+const methods = [
+    'afterEach',
+    'after',
+    'beforeEach',
+    'before',
+    'describe',
+    'it'
+];

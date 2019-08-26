@@ -1,9 +1,9 @@
-var localStorage = window.localStorage;
+const localStorage = window.localStorage;
 
 it('basic', function() {
     localStorage.setItem('LocalStore', '{licia}');
 
-    var store = new LocalStore('LocalStore', {
+    let store = new LocalStore('LocalStore', {
         a: 1,
         b: 2,
         c: 3

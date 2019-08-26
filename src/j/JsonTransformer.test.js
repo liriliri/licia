@@ -1,5 +1,5 @@
 it('basic', function() {
-    var data = new JsonTransformer({
+    const data = new JsonTransformer({
         books: [
             {
                 title: 'Book 1',
@@ -30,7 +30,7 @@ it('basic', function() {
 });
 
 it('get', function() {
-    var data = new JsonTransformer({ a: { b: 1 } });
+    const data = new JsonTransformer({ a: { b: 1 } });
 
     expect(data.get('a')).to.eql({ b: 1 });
     expect(data.get('b')).to.be.an('undefined');
@@ -39,7 +39,7 @@ it('get', function() {
 });
 
 it('set', function() {
-    var data = new JsonTransformer();
+    const data = new JsonTransformer();
 
     data.set('a', { b: 1 });
     expect(data.get('a')).to.eql({ b: 1 });
@@ -52,7 +52,7 @@ it('set', function() {
 });
 
 it('map', function() {
-    var data = new JsonTransformer([1, 2]);
+    let data = new JsonTransformer([1, 2]);
 
     data.map(double);
     expect(data.get()).to.eql([2, 4]);
@@ -70,7 +70,7 @@ it('map', function() {
 });
 
 it('remove', function() {
-    var data = new JsonTransformer({ a: 1, b: { c: 3 }, d: 4 });
+    const data = new JsonTransformer({ a: 1, b: { c: 3 }, d: 4 });
 
     data.remove('a');
     expect(data.get()).to.eql({ b: { c: 3 }, d: 4 });
@@ -79,7 +79,7 @@ it('remove', function() {
 });
 
 it('filter', function() {
-    var data = new JsonTransformer([1, 2, 3, 4]);
+    let data = new JsonTransformer([1, 2, 3, 4]);
 
     data.filter(odd);
     expect(data.get()).to.eql([1, 3]);
@@ -96,7 +96,7 @@ it('filter', function() {
 });
 
 it('compute', function() {
-    var data = new JsonTransformer({ a: 1 });
+    let data = new JsonTransformer({ a: 1 });
 
     data.compute(function(val) {
         val.a = 2;
@@ -116,7 +116,7 @@ it('compute', function() {
 });
 
 it('toString', function() {
-    var data = new JsonTransformer({ a: 1 });
+    const data = new JsonTransformer({ a: 1 });
 
     expect(data + '').to.equal('{"a":1}');
 });

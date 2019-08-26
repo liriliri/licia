@@ -17,7 +17,7 @@
  */
 
 /* example
- * var container = document.getElementById('container');
+ * const container = document.getElementById('container');
  * function clickHandler() {
  *     // Do something...
  * }
@@ -47,13 +47,13 @@ function retFalse() {
 }
 
 function trigger(e) {
-    var handlers = this.events[e.type],
-        handler,
-        handlerQueue = formatHandlers.call(this, e, handlers);
+    const handlers = this.events[e.type];
+    let handler;
+    const handlerQueue = formatHandlers.call(this, e, handlers);
 
     e = new exports.Event(e);
 
-    var i = 0,
+    let i = 0,
         j,
         matched,
         ret;
@@ -76,13 +76,13 @@ function trigger(e) {
 }
 
 function formatHandlers(e, handlers) {
-    var current = e.target,
-        ret = [],
-        delegateCount = handlers.delegateCount,
-        selector,
-        matches,
-        handler,
-        i;
+    let current = e.target;
+    const ret = [];
+    const delegateCount = handlers.delegateCount;
+    let selector;
+    let matches;
+    let handler;
+    let i;
 
     if (current.nodeType) {
         for (; current !== this; current = current.parentNode || this) {
@@ -114,11 +114,11 @@ function formatHandlers(e, handlers) {
 
 exports = {
     add: function(el, type, selector, fn) {
-        var handler = {
-                selector: selector,
-                handler: fn
-            },
-            handlers;
+        const handler = {
+            selector: selector,
+            handler: fn
+        };
+        let handlers;
 
         if (!el.events) el.events = {};
 
@@ -139,13 +139,13 @@ exports = {
             : handlers.push(handler);
     },
     remove: function(el, type, selector, fn) {
-        var events = el.events;
+        const events = el.events;
 
         if (!events || !events[type]) return;
 
-        var handlers = events[type],
-            i = handlers.length,
-            handler;
+        const handlers = events[type];
+        let i = handlers.length;
+        let handler;
 
         while (i--) {
             handler = handlers[i];
@@ -170,19 +170,19 @@ exports = {
         isPropagationStopped: retFalse,
         isImmediatePropagationStopped: retFalse,
         preventDefault: function() {
-            var e = this.origEvent;
+            const e = this.origEvent;
 
             this.isDefaultPrevented = retTrue;
             if (e && e.preventDefault) e.preventDefault();
         },
         stopPropagation: function() {
-            var e = this.origEvent;
+            const e = this.origEvent;
 
             this.isPropagationStopped = retTrue;
             if (e && e.stopPropagation) e.stopPropagation();
         },
         stopImmediatePropagation: function() {
-            var e = this.origEvent;
+            const e = this.origEvent;
 
             this.isImmediatePropagationStopped = retTrue;
             if (e && e.stopImmediatePropagation) e.stopImmediatePropagation();

@@ -24,7 +24,7 @@
  */
 
 exports = function(n, fn) {
-    var memo;
+    let memo;
 
     return function() {
         if (--n > 0) memo = fn.apply(this, arguments);

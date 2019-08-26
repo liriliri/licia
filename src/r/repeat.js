@@ -23,7 +23,7 @@
  */
 
 exports = function(str, n) {
-    var ret = '';
+    let ret = '';
 
     if (n < 1) return '';
 

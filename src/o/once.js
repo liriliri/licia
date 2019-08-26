@@ -8,7 +8,7 @@
 
 /* example
  * function init() {};
- * var initOnce = once(init);
+ * const initOnce = once(init);
  * initOnce();
  * initOnce(); // -> init is invoked once
  */

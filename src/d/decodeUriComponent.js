@@ -26,7 +26,7 @@ exports = function(str) {
     try {
         return decodeURIComponent(str);
     } catch (e) {
-        var matches = str.match(regMatcher);
+        const matches = str.match(regMatcher);
 
         if (!matches) {
             return str;
@@ -43,7 +43,7 @@ exports = function(str) {
 function decode(str) {
     str = str.split('%').slice(1);
 
-    var bytes = map(str, hexToInt);
+    const bytes = map(str, hexToInt);
 
     str = ucs2.encode(bytes);
     str = utf8.decode(str, true);
@@ -55,4 +55,4 @@ function hexToInt(numStr) {
     return +('0x' + numStr);
 }
 
-var regMatcher = /(%[a-f0-9]{2})+/gi;
+const regMatcher = /(%[a-f0-9]{2})+/gi;

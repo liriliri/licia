@@ -8,7 +8,7 @@
  */
 
 /* example
- * var now = new Date().getTime();
+ * const now = new Date().getTime();
  * timeAgo(now - 1000 * 6); // -> right now
  * timeAgo(now + 1000 * 15); // -> in 15 minutes
  * timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
@@ -31,9 +31,9 @@ exports = function(date, now) {
     now = now || new Date();
     if (!isDate(now)) now = new Date(now);
 
-    var diff = (now - date) / 1000,
-        i = 0,
-        ago = diff > 0;
+    let diff = (now - date) / 1000;
+    let i = 0;
+    const ago = diff > 0;
 
     diff = Math.abs(diff);
 
@@ -50,8 +50,8 @@ exports = function(date, now) {
     return format(diff, i, ago);
 };
 
-var secArr = [60, 60, 24, 7, 365 / 7 / 12, 12],
-    secArrLen = secArr.length;
+const secArr = [60, 60, 24, 7, 365 / 7 / 12, 12];
+const secArrLen = secArr.length;
 
 function format(diff, i, ago) {
     return exports.i18n[i][ago ? 0 : 1].replace('%s', diff);

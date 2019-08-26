@@ -76,14 +76,14 @@ exports = function(val) {
     return new Moment(val);
 };
 
-var Moment = Class({
+const Moment = Class({
     initialize: function(val) {
         this._d = toDate(val);
 
         this._init();
     },
     _init: function() {
-        var d = this._d;
+        const d = this._d;
 
         extend(this, {
             _year: d.getFullYear(),
@@ -166,7 +166,7 @@ var Moment = Class({
         return this._d.toUTCString();
     },
     set: function(unit, num) {
-        var d = this._d;
+        const d = this._d;
 
         unit = normalizeUnit(unit);
 
@@ -231,12 +231,12 @@ var Moment = Class({
     add: createAdder(1),
     subtract: createAdder(-1),
     diff: function(input, unit, asFloat) {
-        var that = input instanceof Moment ? input : new Moment(input),
-            ret;
+        const that = input instanceof Moment ? input : new Moment(input);
+        let ret;
 
         unit = normalizeUnit(unit);
 
-        var diff = this - that;
+        const diff = this - that;
 
         switch (unit) {
             case 'year':
@@ -265,14 +265,14 @@ var Moment = Class({
     }
 });
 
-var floor = Math.floor,
-    ceil = Math.ceil;
+const floor = Math.floor;
+const ceil = Math.ceil;
 
 function absFloor(num) {
     return num < 0 ? ceil(num) || 0 : floor(num);
 }
 
-var unitShorthandMap = {
+const unitShorthandMap = {
     y: 'year',
     M: 'month',
     D: 'date',
@@ -283,7 +283,7 @@ var unitShorthandMap = {
     ms: 'millisecond'
 };
 
-var regEndS = /s$/;
+const regEndS = /s$/;
 
 // Turn 'y' or 'years' into 'year'
 function normalizeUnit(unit) {
@@ -307,14 +307,14 @@ function createAdder(dir) {
         if (unit === 'month') return this.month(this._month + dir * num);
         if (unit === 'year') return this.year(this._year + dir * num);
 
-        var duration = createDuration(num, unit);
+        const duration = createDuration(num, unit);
         this._d = new Date(this.valueOf() + dir * duration);
 
         return this._init();
     };
 }
 
-var msMap = {
+const msMap = {
     day: 'd',
     hour: 'h',
     minute: 'm',
@@ -328,10 +328,10 @@ function createDuration(num, unit) {
 
 // From moment.js
 function monthDiff(a, b) {
-    var wholeMonthDiff = (b.year() - a.year()) * 12 + (b.month() - a.month()),
-        anchor = a.clone().add(wholeMonthDiff, 'months'),
-        anchor2,
-        adjust;
+    const wholeMonthDiff = (b.year() - a.year()) * 12 + (b.month() - a.month());
+    const anchor = a.clone().add(wholeMonthDiff, 'months');
+    let anchor2;
+    let adjust;
 
     if (b - anchor < 0) {
         anchor2 = a.clone().add(wholeMonthDiff - 1, 'months');

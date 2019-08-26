@@ -45,10 +45,10 @@ exports = function(msg) {
     m[(((l + 64) >>> 9) << 4) + 14] = l;
 
     for (let i = 0; i < m.length; i += 16) {
-        let aa = a;
-        let bb = b;
-        let cc = c;
-        let dd = d;
+        const aa = a;
+        const bb = b;
+        const cc = c;
+        const dd = d;
 
         a = FF(a, b, c, d, m[i + 0], 7, -680876936);
         d = FF(d, a, b, c, m[i + 1], 12, -389564586);
@@ -128,22 +128,22 @@ exports = function(msg) {
 };
 
 function FF(a, b, c, d, x, s, t) {
-    let n = a + ((b & c) | (~b & d)) + (x >>> 0) + t;
+    const n = a + ((b & c) | (~b & d)) + (x >>> 0) + t;
     return ((n << s) | (n >>> (32 - s))) + b;
 }
 
 function GG(a, b, c, d, x, s, t) {
-    let n = a + ((b & d) | (c & ~d)) + (x >>> 0) + t;
+    const n = a + ((b & d) | (c & ~d)) + (x >>> 0) + t;
     return ((n << s) | (n >>> (32 - s))) + b;
 }
 
 function HH(a, b, c, d, x, s, t) {
-    let n = a + (b ^ c ^ d) + (x >>> 0) + t;
+    const n = a + (b ^ c ^ d) + (x >>> 0) + t;
     return ((n << s) | (n >>> (32 - s))) + b;
 }
 
 function II(a, b, c, d, x, s, t) {
-    let n = a + (c ^ (b | ~d)) + (x >>> 0) + t;
+    const n = a + (c ^ (b | ~d)) + (x >>> 0) + t;
     return ((n << s) | (n >>> (32 - s))) + b;
 }
 

@@ -30,7 +30,7 @@
 
 _('promisify root each Promise toArr');
 
-var fs = require('fs');
+const fs = require('fs');
 
 each(
     [
@@ -72,7 +72,7 @@ each(
 );
 
 exports.exists = function() {
-    var args = toArr(arguments);
+    const args = toArr(arguments);
 
     return new exports.Promise(function(resolve) {
         args.push(resolve);

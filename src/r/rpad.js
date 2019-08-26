@@ -29,7 +29,7 @@ _('repeat toStr');
 exports = function(str, len, chars) {
     str = toStr(str);
 
-    var strLen = str.length;
+    const strLen = str.length;
 
     chars = chars || ' ';
 

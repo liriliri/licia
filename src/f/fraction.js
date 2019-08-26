@@ -24,18 +24,18 @@ _('gcd precision');
 exports = function(num) {
     if (num === 0) return '0';
 
-    var _precision = precision(num);
+    let _precision = precision(num);
     _precision = pow(10, _precision);
 
-    var numerator = num * _precision,
+    let numerator = num * _precision,
         denominator = _precision;
 
-    var _gcd = abs(gcd(numerator, denominator));
+    const _gcd = abs(gcd(numerator, denominator));
     numerator /= _gcd;
     denominator /= _gcd;
 
     return numerator + '/' + denominator;
 };
 
-var abs = Math.abs,
-    pow = Math.pow;
+const abs = Math.abs;
+const pow = Math.pow;

@@ -42,9 +42,9 @@
 _('findKey findIdx isArrLike isUndef types');
 
 exports = function(obj, predicate, ctx) {
-    var keyFinder = isArrLike(obj) ? findIdx : findKey;
+    const keyFinder = isArrLike(obj) ? findIdx : findKey;
 
-    var key = keyFinder(obj, predicate, ctx);
+    const key = keyFinder(obj, predicate, ctx);
 
     if (!isUndef(key) && key !== -1) return obj[key];
 };

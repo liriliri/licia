@@ -61,7 +61,7 @@
 
 _('defaults isNum isUndef decodeUriComponent');
 
-var defOpts = { path: '/' };
+const defOpts = { path: '/' };
 
 function setCookie(key, val, options) {
     if (!isUndef(val)) {
@@ -69,7 +69,7 @@ function setCookie(key, val, options) {
         options = defaults(options, defOpts);
 
         if (isNum(options.expires)) {
-            var expires = new Date();
+            const expires = new Date();
             expires.setMilliseconds(
                 expires.getMilliseconds() + options.expires * 864e5
             );
@@ -92,13 +92,13 @@ function setCookie(key, val, options) {
         return exports;
     }
 
-    var cookies = document.cookie ? document.cookie.split('; ') : [],
-        result = key ? undefined : {};
+    const cookies = document.cookie ? document.cookie.split('; ') : [];
+    let result = key ? undefined : {};
 
-    for (var i = 0, len = cookies.length; i < len; i++) {
-        var c = cookies[i],
-            parts = c.split('='),
-            name = decodeUriComponent(parts.shift());
+    for (let i = 0, len = cookies.length; i < len; i++) {
+        let c = cookies[i];
+        const parts = c.split('=');
+        const name = decodeUriComponent(parts.shift());
 
         c = parts.join('=');
         c = decodeUriComponent(c);

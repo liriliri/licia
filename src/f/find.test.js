@@ -1,5 +1,5 @@
 it('basic', function() {
-    var arr = [
+    const arr = [
         {
             name: 'john',
             age: 24
@@ -27,7 +27,7 @@ it('basic', function() {
 });
 
 it('object', function() {
-    var obj = {
+    const obj = {
         jane: {
             height: 158,
             age: 23

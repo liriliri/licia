@@ -36,12 +36,12 @@ _('safeCb keys isArrLike types');
 exports = function(obj, iterator, ctx) {
     iterator = safeCb(iterator, ctx);
 
-    var _keys = !isArrLike(obj) && keys(obj),
-        len = (_keys || obj).length,
-        results = Array(len);
+    const _keys = !isArrLike(obj) && keys(obj);
+    const len = (_keys || obj).length;
+    const results = Array(len);
 
-    for (var i = 0; i < len; i++) {
-        var curKey = _keys ? _keys[i] : i;
+    for (let i = 0; i < len; i++) {
+        const curKey = _keys ? _keys[i] : i;
         results[i] = iterator(obj[curKey], curKey, obj);
     }
 

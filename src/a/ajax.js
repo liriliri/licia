@@ -78,25 +78,25 @@ _('isFn noop defaults isObj query');
 exports = function(options) {
     defaults(options, exports.setting);
 
-    var type = options.type,
-        url = options.url,
-        data = options.data,
-        dataType = options.dataType,
-        success = options.success,
-        error = options.error,
-        timeout = options.timeout,
-        complete = options.complete,
-        xhr = options.xhr(),
-        abortTimeout;
+    const type = options.type;
+    let url = options.url;
+    let data = options.data;
+    const dataType = options.dataType;
+    const success = options.success;
+    const error = options.error;
+    const timeout = options.timeout;
+    const complete = options.complete;
+    const xhr = options.xhr();
+    let abortTimeout;
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState !== 4) return;
 
         clearTimeout(abortTimeout);
 
-        var result;
+        let result;
 
-        var status = xhr.status;
+        const status = xhr.status;
         if ((status >= 200 && status < 300) || status === 304) {
             result = xhr.responseText;
             if (dataType === 'xml') result = xhr.responseXML;
@@ -156,7 +156,7 @@ exports.get = function() {
 };
 
 exports.post = function() {
-    var options = parseArgs.apply(null, arguments);
+    const options = parseArgs.apply(null, arguments);
     options.type = 'POST';
 
     return exports(options);

@@ -38,11 +38,11 @@ _('safeCb isArrLike keys types');
 exports = function(obj, predicate, ctx) {
     predicate = safeCb(predicate, ctx);
 
-    var _keys = !isArrLike(obj) && keys(obj),
-        len = (_keys || obj).length;
+    const _keys = !isArrLike(obj) && keys(obj);
+    const len = (_keys || obj).length;
 
-    for (var i = 0; i < len; i++) {
-        var curKey = _keys ? _keys[i] : i;
+    for (let i = 0; i < len; i++) {
+        const curKey = _keys ? _keys[i] : i;
         if (!predicate(obj[curKey], curKey, obj)) return false;
     }
 

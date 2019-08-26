@@ -63,7 +63,7 @@
  */
 
 /* example
- * var store = new Store('test');
+ * const store = new Store('test');
  * store.set('user', {name: 'licia'});
  * store.get('user').name; // -> 'licia'
  * store.clear();
@@ -103,7 +103,7 @@ exports = Emitter.extend({
         this.save(this._data);
     },
     set: function(key, val) {
-        var data;
+        let data;
 
         if (isStr(key)) {
             data = {};
@@ -112,10 +112,10 @@ exports = Emitter.extend({
             data = key;
         }
 
-        var self = this;
+        const self = this;
 
         each(data, function(val, key) {
-            var oldVal = self._data[key];
+            const oldVal = self._data[key];
             self._data[key] = val;
             self.emit('change', key, val, oldVal);
         });
@@ -123,11 +123,11 @@ exports = Emitter.extend({
         this.save(this._data);
     },
     get: function(key) {
-        var data = this._data;
+        const data = this._data;
 
         if (isStr(key)) return data[key];
 
-        var ret = {};
+        const ret = {};
         each(key, function(val) {
             ret[val] = data[val];
         });
@@ -137,7 +137,7 @@ exports = Emitter.extend({
     remove: function(key) {
         key = toArr(key);
 
-        var data = this._data;
+        const data = this._data;
 
         each(key, function(val) {
             delete data[val];

@@ -1,8 +1,8 @@
-var isUrl = util.isUrl,
-    each = util.each;
+const isUrl = util.isUrl;
+const each = util.each;
 
 it('basic', function() {
-    var tests = [
+    const tests = [
         ['test', { type: 'text/plain' }],
         [['test', 'test']],
         [new Blob([])],
@@ -10,10 +10,10 @@ it('basic', function() {
     ];
 
     each(tests, function(test) {
-        var content = test[0],
-            opts = test[1];
+        const content = test[0];
+        const opts = test[1];
 
-        var url = opts ? createUrl(content, opts) : createUrl(content);
+        const url = opts ? createUrl(content, opts) : createUrl(content);
 
         expect(isBlobUrl(url)).to.be.true;
     });
@@ -23,4 +23,4 @@ function isBlobUrl(url) {
     return isUrl(url.replace(regBlob, ''));
 }
 
-var regBlob = /^blob:/;
+const regBlob = /^blob:/;

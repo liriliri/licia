@@ -1,6 +1,6 @@
-var fs = require('fs');
+const fs = require('fs');
 
-var mkdir = util.mkdir;
+const mkdir = util.mkdir;
 
 it('basic', function(done) {
     mkdir(__dirname + '/rmdirTest/1', function(err) {

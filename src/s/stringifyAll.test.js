@@ -123,7 +123,7 @@ it('depth', () => {
 it('ignore', () => {
     let obj = transform({}, { ignore: [Object.prototype] });
     expect(obj.prototype).to.be.undefined;
-    let b = {};
+    const b = {};
     obj = transform({ b }, { ignore: [b] });
     expect(obj.enumerable.b).to.be.undefined;
 });

@@ -38,20 +38,20 @@
 
 exports = {
     encode: function(arr) {
-        var ret = [],
-            len = arr.length,
-            remain = len % 3;
+        const ret = [];
+        let len = arr.length;
+        const remain = len % 3;
 
         len = len - remain;
 
-        for (var i = 0; i < len; i += 3) {
+        for (let i = 0; i < len; i += 3) {
             ret.push(
                 numToBase64((arr[i] << 16) + (arr[i + 1] << 8) + arr[i + 2])
             );
         }
 
         len = arr.length;
-        var tmp;
+        let tmp;
 
         if (remain === 1) {
             tmp = arr[len - 1];
@@ -69,24 +69,26 @@ exports = {
         return ret.join('');
     },
     decode: function(str) {
-        var len = str.length,
+        let len = str.length,
             remain = 0;
 
         if (str[len - 2] === '=') remain = 2;
         else if (str[len - 1] === '=') remain = 1;
 
-        var ret = new Array((len * 3) / 4 - remain);
+        const ret = new Array((len * 3) / 4 - remain);
 
         len = remain > 0 ? len - 4 : len;
 
-        for (var i = 0, j = 0; i < len; i += 4) {
-            var num = base64ToNum(str[i], str[i + 1], str[i + 2], str[i + 3]);
+        let i, j;
+
+        for (i = 0, j = 0; i < len; i += 4) {
+            const num = base64ToNum(str[i], str[i + 1], str[i + 2], str[i + 3]);
             ret[j++] = (num >> 16) & 0xff;
             ret[j++] = (num >> 8) & 0xff;
             ret[j++] = num & 0xff;
         }
 
-        var tmp;
+        let tmp;
 
         if (remain === 2) {
             tmp =
@@ -106,10 +108,10 @@ exports = {
     }
 };
 
-var codeMap = [],
-    code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+const codeMap = [];
+const code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
-for (var i = 0, len = code.length; i < len; i++) {
+for (let i = 0, len = code.length; i < len; i++) {
     codeMap[code.charCodeAt(i)] = i;
 }
 

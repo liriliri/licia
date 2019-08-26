@@ -24,7 +24,7 @@
 _('swap');
 
 exports = function(arr, cmp = comparator) {
-    let len = arr.length;
+    const len = arr.length;
     let gap = Math.floor(len / 2);
 
     while (gap > 0) {

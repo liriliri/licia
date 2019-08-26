@@ -25,7 +25,7 @@ exports = function(val) {
     if (isNum(val)) return val;
 
     if (isObj(val)) {
-        var temp = isFn(val.valueOf) ? val.valueOf() : val;
+        const temp = isFn(val.valueOf) ? val.valueOf() : val;
         val = isObj(temp) ? temp + '' : temp;
     }
 

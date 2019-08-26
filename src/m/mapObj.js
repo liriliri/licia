@@ -31,12 +31,12 @@ _('safeCb keys types');
 exports = function(obj, iterator, ctx) {
     iterator = safeCb(iterator, ctx);
 
-    var _keys = keys(obj),
-        len = _keys.length,
-        ret = {};
+    const _keys = keys(obj);
+    const len = _keys.length;
+    const ret = {};
 
-    for (var i = 0; i < len; i++) {
-        var curKey = _keys[i];
+    for (let i = 0; i < len; i++) {
+        const curKey = _keys[i];
         ret[curKey] = iterator(obj[curKey], curKey, obj);
     }
 

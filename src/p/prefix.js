@@ -36,9 +36,9 @@ exports = memoize(function(name) {
 
     if (has(style, name)) return name;
 
-    var i = prefixes.length;
+    let i = prefixes.length;
     while (i--) {
-        var prefixName = prefixes[i] + upperFirst(name);
+        const prefixName = prefixes[i] + upperFirst(name);
         if (has(style, prefixName)) return prefixName;
     }
 
@@ -46,7 +46,7 @@ exports = memoize(function(name) {
 });
 
 exports.dash = memoize(function(name) {
-    var camelCaseResult = exports(name);
+    const camelCaseResult = exports(name);
 
     return (
         (regPrefixes.test(camelCaseResult) ? '-' : '') +
@@ -54,6 +54,6 @@ exports.dash = memoize(function(name) {
     );
 });
 
-var prefixes = ['O', 'ms', 'Moz', 'Webkit'],
-    regPrefixes = /^(O)|(ms)|(Moz)|(Webkit)|(-o-)|(-ms-)|(-moz-)|(-webkit-)/g,
-    style = document.createElement('p').style;
+const prefixes = ['O', 'ms', 'Moz', 'Webkit'];
+const regPrefixes = /^(O)|(ms)|(Moz)|(Webkit)|(-o-)|(-ms-)|(-moz-)|(-webkit-)/g;
+const style = document.createElement('p').style;

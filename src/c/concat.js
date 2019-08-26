@@ -22,10 +22,10 @@
 _('toArr');
 
 exports = function() {
-    var args = toArr(arguments),
-        ret = [];
+    const args = toArr(arguments);
+    let ret = [];
 
-    for (var i = 0, len = args.length; i < len; i++) {
+    for (let i = 0, len = args.length; i < len; i++) {
         ret = ret.concat(toArr(args[i]));
     }
 

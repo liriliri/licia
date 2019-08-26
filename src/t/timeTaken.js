@@ -24,7 +24,7 @@
 _('perfNow');
 
 exports = function(fn) {
-    var start = perfNow();
+    const start = perfNow();
 
     fn();
 

@@ -1,5 +1,5 @@
 it('basic', function() {
-    var store = new ReduceStore(function(state, action) {
+    const store = new ReduceStore(function(state, action) {
         switch (action.type) {
             case 'INCREMENT':
                 return state + 1;
@@ -20,21 +20,21 @@ it('basic', function() {
 });
 
 it('subscribe', function() {
-    var store = new ReduceStore(function(state) {
+    const store = new ReduceStore(function(state) {
         return state;
     }, 0);
 
-    var a = 0,
+    let a = 0,
         b = 0;
 
-    var unsubscribeA = store.subscribe(function() {
+    const unsubscribeA = store.subscribe(function() {
         a++;
     });
 
     store.dispatch({});
     expect(a).to.equal(1);
 
-    var unsubscribeB = store.subscribe(function() {
+    const unsubscribeB = store.subscribe(function() {
         b++;
     });
     store.dispatch({});
@@ -53,19 +53,19 @@ it('subscribe', function() {
 });
 
 it('delay unscribe', function() {
-    var store = new ReduceStore(function(state) {
+    const store = new ReduceStore(function(state) {
         return state;
     }, 0);
 
-    var a = 0,
+    let a = 0,
         b = 0;
 
-    var unsubscribeA = store.subscribe(function() {
+    const unsubscribeA = store.subscribe(function() {
         a++;
         unsubscribeB();
     });
 
-    var unsubscribeB = store.subscribe(function() {
+    const unsubscribeB = store.subscribe(function() {
         b++;
     });
 

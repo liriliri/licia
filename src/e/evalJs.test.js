@@ -4,7 +4,7 @@ it('basic', function() {
 });
 
 it('context', function() {
-    var ctx = { a: 1 };
+    const ctx = { a: 1 };
     expect(evalJs('this.a', ctx)).to.equal(1);
     evalJs('this.a = 2;', ctx);
     expect(ctx.a).to.equal(2);

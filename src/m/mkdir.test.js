@@ -1,4 +1,4 @@
-var fs = require('fs');
+const fs = require('fs');
 
 it('basic', function(done) {
     fs.unlink(__dirname + '/mkdirTest/', function() {

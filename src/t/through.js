@@ -74,10 +74,10 @@
 
 _('isFn extend inherits');
 
-var Transform = require('stream').Transform;
+const Transform = require('stream').Transform;
 
 exports = through(function(opts, transform, flush) {
-    var t = new Transform(opts);
+    const t = new Transform(opts);
 
     t._transform = transform;
     if (flush) t._flush = flush;
@@ -86,7 +86,7 @@ exports = through(function(opts, transform, flush) {
 });
 
 exports.obj = through(function(opts, transform, flush) {
-    var t = new Transform(
+    const t = new Transform(
         extend(
             {
                 objectMode: true,
@@ -111,7 +111,7 @@ exports.ctor = through(function(opts, transform, flush) {
 
     inherits(Through, Transform);
 
-    var proto = Through.prototype;
+    const proto = Through.prototype;
     proto._transform = transform;
     if (flush) proto._flush = flush;
 

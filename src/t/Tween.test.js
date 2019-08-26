@@ -1,5 +1,5 @@
 it('play', function(done) {
-    var tween = new Tween({ a: 0 });
+    const tween = new Tween({ a: 0 });
 
     tween.on('update', function(target) {
         expect(target.a).to.be.at.least(0);
@@ -14,9 +14,9 @@ it('play', function(done) {
 });
 
 it('pause', function(done) {
-    var obj = { a: 0 };
+    const obj = { a: 0 };
 
-    var tween = new Tween(obj);
+    const tween = new Tween(obj);
 
     tween.to({ a: 100 }, 100).play();
     expect(tween.paused()).to.equal(false);
@@ -33,9 +33,9 @@ it('pause', function(done) {
 });
 
 it('progress', function() {
-    var obj = { a: 0 };
+    const obj = { a: 0 };
 
-    var tween = new Tween(obj);
+    const tween = new Tween(obj);
     tween.to({ a: 100 }, 100);
 
     expect(tween.progress()).to.equal(0);

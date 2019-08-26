@@ -42,4 +42,4 @@ exports = memoize(
     }
 );
 
-var style = document.createElement('p').style;
+const style = document.createElement('p').style;

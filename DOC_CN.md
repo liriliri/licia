@@ -9,7 +9,7 @@ data, rmAttr, remove, addClass, rmClass, toggleClass, hasClass, append, prepend,
 before, after
 
 ```javascript
-var $btn = $('#btn');
+const $btn = $('#btn');
 $btn.html('eustia');
 $btn.addClass('btn');
 $btn.show();
@@ -289,7 +289,7 @@ $show('#test');
 |[opts]|object|选项|
 
 ```javascript
-var blob = new Blob([]);
+const blob = new Blob([]);
 ```
 
 ## Class
@@ -303,7 +303,7 @@ var blob = new Blob([]);
 |返回值|function|用于创建实例的函数|
 
 ```javascript
-var People = Class({
+const People = Class({
     initialize: function People(name, age) {
         this.name = name;
         this.age = age;
@@ -313,7 +313,7 @@ var People = Class({
     }
 });
 
-var Student = People.extend({
+const Student = People.extend({
     initialize: function Student(name, age, school) {
         this.callSuper(People, 'initialize', arguments);
 
@@ -328,7 +328,7 @@ var Student = People.extend({
     }
 });
 
-var a = new Student('allen', 17, 'Hogwarts');
+const a = new Student('allen', 17, 'Hogwarts');
 a.introduce(); // -> 'I am allen, 17 years old. \n I study at Hogwarts.'
 Student.is(a); // -> true
 ```
@@ -366,7 +366,7 @@ Student.is(a); // -> true
 
 ```javascript
 Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model: 'rgb'}
-var color = new Color('#abc');
+const color = new Color('#abc');
 color.toRgb(); // -> 'rgb(170, 187, 204)'
 color.toHsl(); // -> 'hsl(210, 25%, 73%)'
 ```
@@ -378,7 +378,7 @@ Flux 调度器。
 [相关文档](https://facebook.github.io/flux/docs/dispatcher.html)
 
 ```javascript
-var dispatcher = new Dispatcher();
+const dispatcher = new Dispatcher();
 
 dispatcher.register(function (payload) {
    switch (payload.actionType) {
@@ -430,7 +430,7 @@ dispatcher.dispatch({
 |obj |object|目标对象|
 
 ```javascript
-var event = new Emitter();
+const event = new Emitter();
 event.on('test', function () { console.log('test') });
 event.emit('test'); // Logs out 'test'.
 Emitter.mixin({});
@@ -451,7 +451,7 @@ Enum 类实现。
 |obj|object|键值对|
 
 ```javascript
-var importance = new Enum([
+const importance = new Enum([
     'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
 ]);
 const val = 1;
@@ -523,7 +523,7 @@ JSON 转换器。
 |fn|function|计算函数|
 
 ```javascript
-var data = new JsonTransformer({
+const data = new JsonTransformer({
     books: [{
         title: 'Book 1',
         price: 5
@@ -592,7 +592,7 @@ data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', c
 将链表转换成 JavaScript 数组。
 
 ```javascript
-var linkedList = new LinkedList();
+const linkedList = new LinkedList();
 linkedList.push(5);
 linkedList.pop(); // -> 5
 ```
@@ -611,7 +611,7 @@ LocalStorage 存储。
 |data|object|默认数据|
 
 ```javascript
-var store = new LocalStore('licia');
+const store = new LocalStore('licia');
 store.set('name', 'licia');
 ```
 
@@ -647,7 +647,7 @@ store.set('name', 'licia');
 TRACE，DEBUG，INFO，WARN，ERROR 和 SILENT。
 
 ```javascript
-var logger = new Logger('licia', Logger.level.ERROR);
+const logger = new Logger('licia', Logger.level.ERROR);
 logger.trace('test');
 
 // Format output.
@@ -759,7 +759,7 @@ mediaQuery.on('match', () => {
 MutationObserver 安全版本，如果不支持，则什么也不做。
 
 ```javascript
-var observer = new MutationObserver(function (mutations) {
+const observer = new MutationObserver(function (mutations) {
     // Do something.
 });
 observer.observe(document.documentElement);
@@ -775,7 +775,7 @@ observer.disconnect();
 ```javascript
 function get(url) {
     return new Promise(function (resolve, reject) {
-        var req = new XMLHttpRequest();
+        const req = new XMLHttpRequest();
         req.open('GET', url);
         req.onload = function () {
             req.status == 200 ? resolve(req.response) : reject(Error(req.statusText));
@@ -797,7 +797,7 @@ get('test.json').then(function (result) {
 只支持字符串键名，当 Map 存在时会直接使用 Map。
 
 ```javascript
-var map = new PseudoMap();
+const map = new PseudoMap();
 map.set('1', 1);
 map.get('1'); // -> 1
 ```
@@ -841,7 +841,7 @@ map.get('1'); // -> 1
 将队列转换为 JavaScript 数组。
 
 ```javascript
-var queue = new Queue();
+const queue = new Queue();
 
 console.log(queue.size); // -> 0
 queue.enqueue(2);
@@ -900,7 +900,7 @@ cache.get('test'); // -> 'licia'
 获取当前状态。
 
 ```javascript
-var store = new ReduceStore(function (state, action) {
+const store = new ReduceStore(function (state, action) {
     switch (action.type) {
         case 'INCREMENT': return state + 1;
         case 'DECREMENT': return state - 1;
@@ -944,7 +944,7 @@ querySelectorAll 的简单包装类。
 |fn|function|调用函数|
 
 ```javascript
-var $test = new Select('#test');
+const $test = new Select('#test');
 $test.find('.test').each(function (idx, element) {
     // Manipulate dom nodes
 });
@@ -964,7 +964,7 @@ SessionStorage 存储。
 |data|object|默认数据|
 
 ```javascript
-var store = new SessionStore('licia');
+const store = new SessionStore('licia');
 store.set('name', 'licia');
 ```
 
@@ -1007,7 +1007,7 @@ store.set('name', 'licia');
 将栈转换为 JavaScript 数组。
 
 ```javascript
-var stack = new Stack();
+const stack = new Stack();
 
 stack.push(2); // -> 1
 stack.push(3); // -> 2
@@ -1037,7 +1037,7 @@ stack.pop(); // -> 3
 |返回值|boolean|如果是，返回真|
 
 ```javascript
-var state = new State('empty', {
+const state = new State('empty', {
     load: {from: 'empty', to: 'pause'},
     play: {from: 'pause', to: 'play'},
     pause: {from: ['play', 'empty'], to: 'pause'},
@@ -1122,7 +1122,7 @@ state.play('eustia');
 |fn|function|遍历函数|
 
 ```javascript
-var store = new Store('test');
+const store = new Store('test');
 store.set('user', {name: 'licia'});
 store.get('user').name; // -> 'licia'
 store.clear();
@@ -1175,9 +1175,9 @@ JavaScript 补间动画库。
 |[progress]|number|介于 0 到 1 之间的数字|
 
 ```javascript
-var pos = {x: 0, y: 0};
+const pos = {x: 0, y: 0};
 
-var tween = new Tween(pos);
+const tween = new Tween(pos);
 tween.on('update', function (target) {
     console.log(target.x, target.y);
 }).on('end', function (target) {
@@ -1252,7 +1252,7 @@ url 对象包含以下属性值：
 |hash|URL # 字符后边的部分，# 包含在内|
 
 ```javascript
-var url = new Url('http://example.com:8080?eruda=true');
+const url = new Url('http://example.com:8080?eruda=true');
 console.log(url.port); // -> '8080'
 url.query.foo = 'bar';
 url.rmQuery('eruda');
@@ -1297,7 +1297,7 @@ Validator.addPlugin('custom', function (val, key, config) {
 
     return key + ' should be a string with length 5';
 });
-var validator = new Validator({
+const validator = new Validator({
     'test': {
         required: true,
         custom: true
@@ -1333,7 +1333,7 @@ abbrev('lina', 'luna');
 |返回值|function|输出函数|
 
 ```javascript
-var fn = after(5, function() {
+const fn = after(5, function() {
     // -> Only invoke after fn is called 5 times.
 });
 ```
@@ -1412,7 +1412,7 @@ ajax.get('http://example.com', {}, function (data) {
 Object 对象原型上的方法不会被获取到。
 
 ```javascript
-var obj = Object.create({zero: 0});
+const obj = Object.create({zero: 0});
 obj.one = 1;
 allKeys(obj) // -> ['zero', 'one']
 ```
@@ -1563,7 +1563,7 @@ binarySearch(
 |返回值|function|输出函数|
 
 ```javascript
-var fn = bind(function (msg) {
+const fn = bind(function (msg) {
     console.log(this.name + ':' + msg);
 }, {name: 'eustia'}, 'I am a utility library.');
 fn(); // -> 'eustia: I am a utility library.'
@@ -1620,7 +1620,7 @@ function fn() {
     });
 }
 
-var cbFn = callbackify(fn);
+const cbFn = callbackify(fn);
 
 cbFn(function (err, value) {
     // ...
@@ -1780,8 +1780,8 @@ clone({name: 'eustia'}); // -> {name: 'eustia'}
 |返回值|*|克隆值|
 
 ```javascript
-var obj = [{a: 1}, {a: 2}];
-var obj2 = cloneDeep(obj);
+const obj = [{a: 1}, {a: 2}];
+const obj2 = cloneDeep(obj);
 console.log(obj[0] === obj2[1]); // -> false
 ```
 
@@ -1844,7 +1844,7 @@ compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
 |返回值|function|目标函数|
 
 ```javascript
-var welcome = compose(function (name) {
+const welcome = compose(function (name) {
     return 'hi: ' + name;
 }, function (name) {
     return name.toUpperCase() + '!';
@@ -2130,8 +2130,8 @@ cssSupports('invalid'); // -> false
 |返回值|function|目标函数|
 
 ```javascript
-var add = curry(function (a, b) { return a + b });
-var add1 = add(1);
+const add = curry(function (a, b) { return a + b });
+const add1 = add(1);
 add1(2); // -> 3
 ```
 
@@ -2207,7 +2207,7 @@ const calLayout = debounce(function () {}, 300);
 |返回值|function|打印格式化日志的函数|
 
 ```javascript
-var d = debug('test');
+const d = debug('test');
 d('doing lots of uninteresting work');
 d.enabled = false;
 ```
@@ -2365,7 +2365,7 @@ delay(function (text) {
 移除事件委托。
 
 ```javascript
-var container = document.getElementById('container');
+const container = document.getElementById('container');
 function clickHandler() {
     // Do something...
 }
@@ -2401,7 +2401,7 @@ obsoleteFn();
 支持浏览器：ie，chrome，edge，firefox，opera，safari，ios（mobile safari），android（android browser）
 
 ```javascript
-var browser = detectBrowser();
+const browser = detectBrowser();
 if (browser.name === 'ie' && browser.version < 9) {
     // Do something about old IE...
 }
@@ -2677,7 +2677,7 @@ extractBlockCmts('\/*licia*\/'); // -> ['licia']
 |返回值|array|url 列表|
 
 ```javascript
-var str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
+const str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
 extractUrls(str); // -> ['http://eustia.liriliri.io']
 ```
 
@@ -2979,7 +2979,7 @@ Object.freeze 的快捷方式。
 |返回值|object|目标对象|
 
 ```javascript
-var a = {b: 1};
+const a = {b: 1};
 freeze(a);
 a.b = 2;
 console.log(a); // -> {b: 1}
@@ -2995,7 +2995,7 @@ console.log(a); // -> {b: 1}
 |返回值|object|目标对象|
 
 ```javascript
-var a = {b: {c: 1}};
+const a = {b: {c: 1}};
 freezeDeep(a);
 a.b.c = 2;
 console.log(a); // -> {b: {c: 1}}
@@ -3358,7 +3358,7 @@ function Student(name) {
     this._name = name;
 }
 inherits(Student, People);
-var s = new Student('RedHood');
+const s = new Student('RedHood');
 s.getName(); // -> 'RedHood'
 ```
 
@@ -4191,7 +4191,7 @@ isStr('licia'); // -> true
 |返回值|boolean|如果是 Node.js Stream 类型，返回真|
 
 ```javascript
-var stream = require('stream');
+const stream = require('stream');
 
 isStream(new stream.Stream()); // -> true
 ```
@@ -4399,9 +4399,9 @@ last([1, 2]); // -> 2
 模块懒加载。
 
 ```javascript
-var r = lazyRequire(require);
+const r = lazyRequire(require);
 
-var _ = r('underscore');
+const _ = r('underscore');
 
 // underscore is required only when _ is called.
 _().isNumber(5);
@@ -4432,7 +4432,7 @@ levenshtein('cat', 'cake'); // -> 2
 |返回值|string|目标字符串|
 
 ```javascript
-var str = 'Official site: http://eustia.liriliri.io'
+const str = 'Official site: http://eustia.liriliri.io'
 linkify(str); // -> 'Official site: <a href="http://eustia.liriliri.io">http://eustia.liriliri.io</a>'
 linkify(str, function (url) {
     return '<a href="' + url + '" target="_blank">' + url + '</a>';
@@ -4624,7 +4624,7 @@ Web Storage 接口的纯内存实现。
 当 localStorage 或者 sessionStorage 无法使用时可以使用其作为替代。
 
 ```javascript
-var localStorage = window.localStorage || memStorage;
+const localStorage = window.localStorage || memStorage;
 localStorage.setItem('test', 'licia');
 ```
 
@@ -4639,7 +4639,7 @@ localStorage.setItem('test', 'licia');
 |返回值|function|目标函数|
 
 ```javascript
-var fibonacci = memoize(function(n) {
+const fibonacci = memoize(function(n) {
     return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
 });
 ```
@@ -4939,7 +4939,7 @@ omit({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 
 ```javascript
 function init() {};
-var initOnce = once(init);
+const initOnce = once(init);
 initOnce();
 initOnce(); // -> init is invoked once
 ```
@@ -5134,7 +5134,7 @@ parseHtml('<div>licia</div>', {
 |返回值|function|目标函数|
 
 ```javascript
-var sub5 = partial(function (a, b) { return b - a }, 5);
+const sub5 = partial(function (a, b) { return b - a }, 5);
 sub5(20); // -> 15
 ```
 
@@ -5159,7 +5159,7 @@ pascalCase('foo.bar'); // -> FooBar
 高精度时间戳。
 
 ```javascript
-var start = perfNow();
+const start = perfNow();
 
 // Do something.
 
@@ -5195,7 +5195,7 @@ pick({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 |返回值|array|指定属性值列表|
 
 ```javascript
-var stooges = [
+const stooges = [
     {name: 'moe', age: 40},
     {name: 'larry', age: 50},
     {name: 'curly', age: 60}
@@ -5263,9 +5263,9 @@ prefix('color'); // -> 'color'
 如果 multiArgs 设为真，返回的 Promise 会将回调的结果合并成一个数组。
 
 ```javascript
-var fs = require('fs');
+const fs = require('fs');
 
-var readFile = promisify(fs.readFile);
+const readFile = promisify(fs.readFile);
 readFile('test.js', 'utf-8').then(function (data) {
     // Do something with file content.
 });
@@ -5281,7 +5281,7 @@ readFile('test.js', 'utf-8').then(function (data) {
 |返回值|function|目标函数|
 
 ```javascript
-var obj = {a: {b: 1}};
+const obj = {a: {b: 1}};
 property('a')(obj); // -> {b: 1}
 property(['a', 'b'])(obj); // -> 1
 ```
@@ -5335,7 +5335,7 @@ requestAnimationFrame 快捷方式。
 如果原生 requestAnimationFrame 不支持，使用 setTimeout 进行兼容。
 
 ```javascript
-var id = raf(function tick() {
+const id = raf(function tick() {
     // Animation stuff
     raf(tick);
 });
@@ -5510,8 +5510,8 @@ reject([1, 2, 3, 4, 5], function (val) {
 |返回值|array|包含所有删除元素的数组|
 
 ```javascript
-var arr = [1, 2, 3, 4, 5];
-var evens = remove(arr, function (val) { return val % 2 === 0 });
+const arr = [1, 2, 3, 4, 5];
+const evens = remove(arr, function (val) { return val % 2 === 0 });
 console.log(arr); // -> [1, 3, 5]
 console.log(evens); // -> [2, 4]
 ```
@@ -5543,7 +5543,7 @@ repeat('*', 0); // -> ''
 |返回值|function|目标函数|
 
 ```javascript
-var paramArr = restArgs(function (rest) { return rest });
+const paramArr = restArgs(function (rest) { return rest });
 paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
 ```
 
@@ -5654,7 +5654,7 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 |返回值|*|删除值或 undefined|
 
 ```javascript
-var obj = {a: {aa: {aaa: 1}}};
+const obj = {a: {aa: {aaa: 1}}};
 safeDel(obj, 'a.aa.aaa'); // -> 1
 safeDel(obj, ['a', 'aa']); // -> {}
 safeDel(obj, 'a.b'); // -> undefined
@@ -5671,7 +5671,7 @@ safeDel(obj, 'a.b'); // -> undefined
 |返回值|*|属性值或 undefined|
 
 ```javascript
-var obj = {a: {aa: {aaa: 1}}};
+const obj = {a: {aa: {aaa: 1}}};
 safeGet(obj, 'a.aa.aaa'); // -> 1
 safeGet(obj, ['a', 'aa']); // -> {aaa: 1}
 safeGet(obj, 'a.b'); // -> undefined
@@ -5690,7 +5690,7 @@ safeGet(obj, 'a.b'); // -> undefined
 |val|*|要设置的值|
 
 ```javascript
-var obj = {};
+const obj = {};
 safeSet(obj, 'a.aa.aaa', 1); // obj = {a: {aa: {aaa: 1}}}
 safeSet(obj, ['a', 'aa'], 2); // obj = {a: {aa: 2}}
 safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
@@ -5706,7 +5706,7 @@ safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
 |返回值|object|指定 storage|
 
 ```javascript
-var localStorage = safeStorage('local');
+const localStorage = safeStorage('local');
 localStorage.setItem('licia', 'util');
 ```
 
@@ -5995,7 +5995,7 @@ undefined 被当作 null 处理。
 
 ```javascript
 stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
-var obj = {a: 1, b: {}};
+const obj = {a: 1, b: {}};
 obj.b = obj;
 stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 ```
@@ -6123,7 +6123,7 @@ sum(1, 2, 5); // -> 8
 |返回值|array|数组本身|
 
 ```javascript
-var arr = [1, 2];
+const arr = [1, 2];
 swap(arr, 0, 1); // -> [2, 1]
 ```
 
@@ -6202,7 +6202,7 @@ fs.createReadStream('in.txt')
 |返回值|string|格式化时间表示|
 
 ```javascript
-var now = new Date().getTime();
+const now = new Date().getTime();
 timeAgo(now - 1000 * 6); // -> right now
 timeAgo(now + 1000 * 15); // -> in 15 minutes
 timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
@@ -6755,7 +6755,7 @@ waterfall([
 |返回值|function|目标函数|
 
 ```javascript
-var worker = workerize(function (a, b) {
+const worker = workerize(function (a, b) {
     return a + b;
 });
 worker(1, 2).then(function (value) {
@@ -6774,7 +6774,7 @@ worker(1, 2).then(function (value) {
 |返回值 |function|目标函数|
 
 ```javascript
-var p = wrap(escape, function(fn, text) {
+const p = wrap(escape, function(fn, text) {
     return '<p>' + fn(text) + '</p>';
 });
 p('You & Me'); // -> '<p>You &amp; Me</p>'

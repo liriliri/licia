@@ -1,5 +1,5 @@
 it('basic', function() {
-    var welcome = compose(
+    const welcome = compose(
         function(name) {
             return 'hi: ' + name;
         },

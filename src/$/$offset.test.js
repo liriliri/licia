@@ -1,4 +1,4 @@
-var $dom;
+let $dom;
 
 before(function() {
     $('body').append('<div id="dollarOffset"></div>');
@@ -10,7 +10,7 @@ after(function() {
 });
 
 it('basic', function() {
-    var offset = $dom.offset();
+    const offset = $dom.offset();
 
     expect($offset('#dollarOffset')).to.eql({
         left: offset.left,

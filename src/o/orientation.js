@@ -36,12 +36,12 @@
 
 _('Emitter safeGet');
 
-var screen = window.screen;
+const screen = window.screen;
 
 exports = {
     get: function() {
         if (screen) {
-            var orientation = safeGet(screen, 'orientation.type');
+            const orientation = safeGet(screen, 'orientation.type');
             if (orientation) return orientation.split('-').shift();
         }
 

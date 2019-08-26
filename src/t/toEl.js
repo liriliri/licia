@@ -21,10 +21,10 @@
  * export declare function toEl(str: string): Element;
  */
 
-var doc = document;
+const doc = document;
 
 exports = function(str) {
-    var fragment = doc.createElement('body');
+    const fragment = doc.createElement('body');
 
     fragment.innerHTML = str;
 
@@ -32,7 +32,7 @@ exports = function(str) {
 };
 
 if (doc.createRange && doc.body) {
-    var range = doc.createRange();
+    const range = doc.createRange();
     range.selectNode(doc.body);
 
     if (range.createContextualFragment) {

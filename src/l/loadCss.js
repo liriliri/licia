@@ -26,7 +26,7 @@ _('noop');
 exports = function(src, cb) {
     cb = cb || noop;
 
-    var link = document.createElement('link');
+    const link = document.createElement('link');
 
     link.rel = 'stylesheet';
     link.type = 'text/css';

@@ -41,5 +41,5 @@ exports = function(a, b, relTol, absTol) {
     return abs(a - b) <= max(relTol * max(abs(a), abs(b)), absTol);
 };
 
-var abs = Math.abs,
-    max = Math.max;
+const abs = Math.abs;
+const max = Math.max;

@@ -24,7 +24,7 @@
 
 _('ltrim rtrim');
 
-var regSpace = /^\s+|\s+$/g;
+const regSpace = /^\s+|\s+$/g;
 
 exports = function(str, chars) {
     if (chars == null) return str.replace(regSpace, '');

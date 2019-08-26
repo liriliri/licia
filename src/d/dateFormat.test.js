@@ -1,9 +1,9 @@
-var each = util.each;
+const each = util.each;
 
 it('format date using mask', function() {
-    var now = new Date(2016, 10, 19, 19, 0, 4);
+    const now = new Date(2016, 10, 19, 19, 0, 4);
 
-    var expects = {
+    const expects = {
         default: 'Sat Nov 19 2016 19:00:04',
         shortDate: '11/19/16',
         mediumDate: 'Nov 19, 2016',

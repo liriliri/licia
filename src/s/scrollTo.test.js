@@ -1,4 +1,4 @@
-var $dom, windowY, origScroll;
+let $dom, windowY, origScroll;
 
 before(function() {
     origScroll = window.scroll;

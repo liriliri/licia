@@ -8,7 +8,7 @@
  */
 
 /* example
- * var str = 'Official site: http://eustia.liriliri.io'
+ * const str = 'Official site: http://eustia.liriliri.io'
  * linkify(str); // -> 'Official site: <a href="http://eustia.liriliri.io">http://eustia.liriliri.io</a>'
  * linkify(str, function (url) {
  *     return '<a href="' + url + '" target="_blank">' + url + '</a>';
@@ -29,7 +29,7 @@ _('extractUrls each escapeRegExp');
 exports = function(str, hyperlink) {
     hyperlink = hyperlink || defHyperlink;
 
-    var urlList = extractUrls(str);
+    const urlList = extractUrls(str);
 
     each(urlList, function(url) {
         str = str.replace(new RegExp(escapeRegExp(url), 'g'), hyperlink);

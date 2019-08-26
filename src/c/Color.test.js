@@ -38,7 +38,7 @@ it('parse', function() {
 });
 
 it('convert', function() {
-    var color = new Color('#abc');
+    let color = new Color('#abc');
     expect(color.toRgb()).to.eql('rgb(170, 187, 204)');
     expect(color.toHsl()).to.eql('hsl(210, 25%, 73%)');
     expect(color.toHex()).to.eql('#abc');

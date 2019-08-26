@@ -1,5 +1,5 @@
 it('basic', function() {
-    var stack = new Stack();
+    const stack = new Stack();
 
     expect(stack.push(2)).to.equal(1);
     expect(stack.size).to.equal(1);
@@ -14,7 +14,7 @@ it('basic', function() {
 });
 
 it('forEach', function() {
-    var stack = new Stack();
+    const stack = new Stack();
 
     stack.push(1);
     stack.push(2);
@@ -28,7 +28,7 @@ it('forEach', function() {
         [1, 2, 3, 4]
     );
 
-    var sum = 0;
+    let sum = 0;
 
     stack.forEach(function(val) {
         sum += val;

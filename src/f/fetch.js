@@ -68,11 +68,11 @@ exports = function(url, options) {
     defaults(options, exports.setting);
 
     return new Promise(function(resolve, reject) {
-        var xhr = options.xhr(),
-            headers = options.headers,
-            body = options.body,
-            timeout = options.timeout,
-            abortTimer;
+        const xhr = options.xhr();
+        const headers = options.headers;
+        const body = options.body;
+        const timeout = options.timeout;
+        let abortTimer;
 
         xhr.withCredentials = options.credentials == 'include';
 
@@ -101,13 +101,13 @@ exports = function(url, options) {
     });
 };
 
-var regHeaders = /^(.*?):\s*([\s\S]*?)$/gm;
+const regHeaders = /^(.*?):\s*([\s\S]*?)$/gm;
 
 function getRes(xhr) {
-    var keys = [],
-        all = [],
-        headers = {},
-        header;
+    const keys = [];
+    const all = [];
+    const headers = {};
+    let header;
 
     xhr.getAllResponseHeaders().replace(regHeaders, function(m, key, val) {
         key = key.toLowerCase();

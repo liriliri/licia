@@ -24,10 +24,10 @@ exports = function(edges) {
 };
 
 function uniqueNodes(arr) {
-    var ret = [];
+    const ret = [];
 
-    for (var i = 0, len = arr.length; i < len; i++) {
-        var edge = arr[i];
+    for (let i = 0, len = arr.length; i < len; i++) {
+        const edge = arr[i];
         if (ret.indexOf(edge[0]) < 0) ret.push(edge[0]);
         if (ret.indexOf(edge[1]) < 0) ret.push(edge[1]);
     }
@@ -36,10 +36,10 @@ function uniqueNodes(arr) {
 }
 
 function sort(nodes, edges) {
-    var cursor = nodes.length,
-        sorted = new Array(cursor),
-        visited = {},
-        i = cursor;
+    let cursor = nodes.length;
+    const sorted = new Array(cursor);
+    const visited = {};
+    let i = cursor;
 
     while (i--) {
         if (!visited[i]) visit(nodes[i], i, []);
@@ -53,15 +53,15 @@ function sort(nodes, edges) {
         if (visited[i]) return;
         visited[i] = true;
 
-        var outgoing = edges.filter(function(edge) {
+        const outgoing = edges.filter(function(edge) {
             return edge[0] === node;
         });
 
         /* eslint-disable no-cond-assign */
         if ((i = outgoing.length)) {
-            var preds = predecessors.concat(node);
+            const preds = predecessors.concat(node);
             do {
-                var child = outgoing[--i][1];
+                const child = outgoing[--i][1];
                 visit(child, nodes.indexOf(child), preds);
             } while (i);
         }

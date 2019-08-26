@@ -38,7 +38,7 @@ exports = function(id) {
     function run(current) {
         visited[current.id] = true;
         each(current.children, child => {
-            let { filename, id } = child;
+            const { filename, id } = child;
             if (path.extname(filename) !== '.node' && !visited[id]) {
                 run(child);
             }
@@ -55,7 +55,7 @@ exports = function(id) {
 function findPath(id) {
     if (id[0] === '.') {
         const stack = stackTrace();
-        for (let item of stack) {
+        for (const item of stack) {
             const fileName = item.getFileName();
             if (fileName !== module.filename) {
                 id = path.resolve(path.dirname(fileName), id);

@@ -24,15 +24,15 @@
 _('isArrLike clone values random swap');
 
 exports = function(obj, n) {
-    var sample = isArrLike(obj) ? clone(obj) : values(obj),
-        len = sample.length;
+    const sample = isArrLike(obj) ? clone(obj) : values(obj);
+    const len = sample.length;
 
     n = Math.max(Math.min(n, len), 0);
 
-    var last = len - 1;
+    const last = len - 1;
 
-    for (var i = 0; i < n; i++) {
-        var rand = random(i, last);
+    for (let i = 0; i < n; i++) {
+        const rand = random(i, last);
         swap(sample, i, rand);
     }
 

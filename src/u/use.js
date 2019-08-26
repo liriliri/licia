@@ -38,20 +38,20 @@ exports = function(requires, method) {
     method.apply(null, requires);
 };
 
-var modules = define._modules;
+const modules = define._modules;
 
-var requireMarks = {};
+const requireMarks = {};
 
 function req(name) {
     if (has(requireMarks, name)) return modules[name];
 
-    var requires = modules[name].requires,
-        body = modules[name].body,
-        len = requires.length;
+    const requires = modules[name].requires;
+    const body = modules[name].body;
+    const len = requires.length;
 
-    for (var i = 0; i < len; i++) requires[i] = req(requires[i]);
+    for (let i = 0; i < len; i++) requires[i] = req(requires[i]);
 
-    var exports = body.apply(null, requires);
+    const exports = body.apply(null, requires);
     if (exports) modules[name] = exports;
 
     requireMarks[name] = true;

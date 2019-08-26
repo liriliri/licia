@@ -31,7 +31,7 @@
 _('isUndef');
 
 exports = function(arr, val, start, end) {
-    var len = arr.length;
+    const len = arr.length;
 
     if (!len) return [];
 

@@ -22,10 +22,10 @@
  */
 
 exports = function(src, cb) {
-    var script = document.createElement('script');
+    const script = document.createElement('script');
     script.src = src;
     script.onload = function() {
-        var isNotLoaded =
+        const isNotLoaded =
             script.readyState &&
             script.readyState != 'complete' &&
             script.readyState != 'loaded';

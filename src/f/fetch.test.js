@@ -1,9 +1,9 @@
-var sinon = require('sinon');
+const sinon = require('sinon');
 
-var requests = [];
+let requests = [];
 
 before(function() {
-    var fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest();
+    const fakeXMLHttpRequest = sinon.useFakeXMLHttpRequest();
 
     fakeXMLHttpRequest.onCreate = function(xhr) {
         requests.push(xhr);
@@ -40,7 +40,7 @@ it('basic', function(done) {
             done();
         });
 
-    var request = requests[0];
+    const request = requests[0];
 
     expect(request.requestHeaders).to.eql({ a: 1 });
     expect(request.requestBody).to.equal('test');
@@ -55,7 +55,7 @@ it('timeout', function(done) {
         done();
     });
 
-    var request = requests[0];
+    const request = requests[0];
 
     setTimeout(function() {
         request.respond(200, {}, '');

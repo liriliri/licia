@@ -20,10 +20,11 @@
  */
 
 exports = function() {
-    var arr = arguments,
-        sum = 0;
+    const arr = arguments;
+    let sum = 0;
+    const len = arr.length;
 
-    for (var i = 0, len = arr.length; i < len; i++) sum += arr[i];
+    for (let i = 0; i < len; i++) sum += arr[i];
 
     return sum / len;
 };

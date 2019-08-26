@@ -1,5 +1,5 @@
 it('basic', function() {
-    var obj = {};
+    const obj = {};
     safeSet(obj, 'a.aa.aaa', 1);
     expect(obj).to.eql({ a: { aa: { aaa: 1 } } });
     safeSet(obj, ['a', 'aa'], 2);

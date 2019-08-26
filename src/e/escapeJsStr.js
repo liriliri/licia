@@ -44,4 +44,4 @@ exports = function(str) {
     });
 };
 
-var regEscapeChars = /["'\\\n\r\u2028\u2029]/g;
+const regEscapeChars = /["'\\\n\r\u2028\u2029]/g;

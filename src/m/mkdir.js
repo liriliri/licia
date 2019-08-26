@@ -26,10 +26,10 @@
 
 _('isFn noop');
 
-var fs = require('fs'),
-    path = require('path');
+const fs = require('fs');
+const path = require('path');
 
-var _0777 = parseInt('0777', 8);
+const _0777 = parseInt('0777', 8);
 
 exports = function(p, mode, cb) {
     if (isFn(mode)) {

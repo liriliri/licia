@@ -20,7 +20,7 @@ it('basic', function() {
         return 'Student';
     };
 
-    var s = new Student('RedHood');
+    const s = new Student('RedHood');
 
     expect(s.getName()).to.equal('RedHood');
     expect(s.is()).to.equal('Student');

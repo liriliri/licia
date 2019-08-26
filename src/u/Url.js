@@ -63,7 +63,7 @@
  */
 
 /* example
- * var url = new Url('http://example.com:8080?eruda=true');
+ * const url = new Url('http://example.com:8080?eruda=true');
  * console.log(url.port); // -> '8080'
  * url.query.foo = 'bar';
  * url.rmQuery('eruda');
@@ -117,7 +117,7 @@ exports = Class(
             extend(this, exports.parse(url || ''));
         },
         setQuery: function(name, val) {
-            var query = this.query;
+            const query = this.query;
 
             if (isObj(name)) {
                 each(name, function(val, key) {
@@ -130,7 +130,7 @@ exports = Class(
             return this;
         },
         rmQuery: function(name) {
-            var query = this.query;
+            const query = this.query;
 
             if (!isArr(name)) name = toArr(name);
             each(name, function(key) {
@@ -145,19 +145,20 @@ exports = Class(
     },
     {
         parse: function(url) {
-            var ret = {
-                    protocol: '',
-                    auth: '',
-                    hostname: '',
-                    hash: '',
-                    query: {},
-                    port: '',
-                    pathname: '',
-                    slashes: false
-                },
-                rest = trim(url);
+            const ret = {
+                protocol: '',
+                auth: '',
+                hostname: '',
+                hash: '',
+                query: {},
+                port: '',
+                pathname: '',
+                slashes: false
+            };
+            let rest = trim(url);
+            let slashes = false;
 
-            var proto = rest.match(regProto);
+            let proto = rest.match(regProto);
             if (proto) {
                 proto = proto[0];
                 ret.protocol = proto.toLowerCase();
@@ -165,7 +166,7 @@ exports = Class(
             }
 
             if (proto) {
-                var slashes = rest.substr(0, 2) === '//';
+                slashes = rest.substr(0, 2) === '//';
                 if (slashes) {
                     rest = rest.slice(2);
                     ret.slashes = true;
@@ -173,17 +174,17 @@ exports = Class(
             }
 
             if (slashes) {
-                var hostEnd = -1;
-                for (var i = 0, len = hostEndingChars.length; i < len; i++) {
-                    var pos = rest.indexOf(hostEndingChars[i]);
+                let hostEnd = -1;
+                for (let i = 0, len = hostEndingChars.length; i < len; i++) {
+                    const pos = rest.indexOf(hostEndingChars[i]);
                     if (pos !== -1 && (hostEnd === -1 || pos < hostEnd))
                         hostEnd = pos;
                 }
 
-                var host = rest.slice(0, hostEnd);
+                let host = rest.slice(0, hostEnd);
                 rest = rest.slice(hostEnd);
 
-                var atSign = host.lastIndexOf('@');
+                const atSign = host.lastIndexOf('@');
 
                 if (atSign !== -1) {
                     ret.auth = decodeURIComponent(host.slice(0, atSign));
@@ -191,7 +192,7 @@ exports = Class(
                 }
 
                 ret.hostname = host;
-                var port = host.match(regPort);
+                let port = host.match(regPort);
                 if (port) {
                     port = port[0];
                     if (port !== ':') ret.port = port.substr(1);
@@ -199,14 +200,14 @@ exports = Class(
                 }
             }
 
-            var hash = rest.indexOf('#');
+            const hash = rest.indexOf('#');
 
             if (hash !== -1) {
                 ret.hash = rest.substr(hash);
                 rest = rest.slice(0, hash);
             }
 
-            var queryMark = rest.indexOf('?');
+            const queryMark = rest.indexOf('?');
 
             if (queryMark !== -1) {
                 ret.query = query.parse(rest.substr(queryMark + 1));
@@ -218,7 +219,7 @@ exports = Class(
             return ret;
         },
         stringify: function(obj) {
-            var ret =
+            let ret =
                 obj.protocol +
                 (obj.slashes ? '//' : '') +
                 (obj.auth ? encodeURIComponent(obj.auth) + '@' : '') +
@@ -234,6 +235,6 @@ exports = Class(
     }
 );
 
-var regProto = /^([a-z0-9.+-]+:)/i,
-    regPort = /:[0-9]*$/,
-    hostEndingChars = ['/', '?', '#'];
+const regProto = /^([a-z0-9.+-]+:)/i;
+const regPort = /:[0-9]*$/;
+const hostEndingChars = ['/', '?', '#'];

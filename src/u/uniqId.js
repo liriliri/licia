@@ -19,10 +19,10 @@
  * export declare function uniqId(prefix?: string): string;
  */
 
-var idCounter = 0;
+let idCounter = 0;
 
 exports = function(prefix) {
-    var id = ++idCounter + '';
+    const id = ++idCounter + '';
 
     return prefix ? prefix + id : id;
 };

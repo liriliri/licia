@@ -24,7 +24,7 @@
  */
 
 /* example
- * var $test = new Select('#test');
+ * const $test = new Select('#test');
  * $test.find('.test').each(function (idx, element) {
  *     // Manipulate dom nodes
  * });
@@ -60,7 +60,7 @@ exports = Class({
         }
     },
     find: function(selector) {
-        var ret = new exports();
+        const ret = new exports();
 
         this.each(function() {
             mergeArr(ret, this.querySelectorAll(selector));
@@ -77,13 +77,13 @@ exports = Class({
     }
 });
 
-var rootSelect = new exports(document);
+const rootSelect = new exports(document);
 
 function mergeArr(first, second) {
-    var len = second.length,
-        i = first.length;
+    const len = second.length;
+    let i = first.length;
 
-    for (var j = 0; j < len; j++) first[i++] = second[j];
+    for (let j = 0; j < len; j++) first[i++] = second[j];
 
     first.length = i;
 

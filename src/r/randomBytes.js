@@ -24,21 +24,21 @@
 _('random isBrowser isNode');
 
 exports = function(size) {
-    var ret = new Uint8Array(size);
+    const ret = new Uint8Array(size);
 
-    for (var i = 0; i < size; i++) ret[i] = random(0, 255);
+    for (let i = 0; i < size; i++) ret[i] = random(0, 255);
 
     return ret;
 };
 
-var crypto;
+let crypto;
 
 if (isBrowser) {
     crypto = window.crypto || window.msCrypto;
 
     if (crypto) {
         exports = function(size) {
-            var ret = new Uint8Array(size);
+            const ret = new Uint8Array(size);
 
             crypto.getRandomValues(ret);
 

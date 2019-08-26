@@ -44,7 +44,7 @@ exports = function(types, args) {
     let maxLen = typesLen;
 
     for (let i = 0; i < typesLen; i++) {
-        let type = types[i].split('|');
+        const type = types[i].split('|');
         if (startWith(type[0], '?')) {
             type[0] = type[0].slice(1);
             if (minLen === typesLen) {

@@ -200,9 +200,9 @@ function iterateObj(name, keys, obj, options) {
     const parts = [];
     each(keys, key => {
         let val;
-        let descriptor = Object.getOwnPropertyDescriptor(obj, key);
-        let hasGetter = descriptor && descriptor.get;
-        let hasSetter = descriptor && descriptor.set;
+        const descriptor = Object.getOwnPropertyDescriptor(obj, key);
+        const hasGetter = descriptor && descriptor.get;
+        const hasSetter = descriptor && descriptor.set;
         if (!options.accessGetter && hasGetter) {
             val = '(...)';
         } else {

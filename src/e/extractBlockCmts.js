@@ -21,10 +21,10 @@
 
 _('map trim');
 
-var regBlockCmt = /(\/\*[\s\S]*?\*\/)/gm;
+const regBlockCmt = /(\/\*[\s\S]*?\*\/)/gm;
 
 exports = function(str) {
-    var ret = str.match(regBlockCmt);
+    let ret = str.match(regBlockCmt);
 
     if (!ret) return [];
 

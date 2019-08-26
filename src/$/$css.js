@@ -50,10 +50,10 @@ _('isStr isObj kebabCase isUndef contain isNum $safeEls prefix each');
 exports = function(nodes, name, val) {
     nodes = $safeEls(nodes);
 
-    var isGetter = isUndef(val) && isStr(name);
+    const isGetter = isUndef(val) && isStr(name);
     if (isGetter) return getCss(nodes[0], name);
 
-    var css = name;
+    let css = name;
     if (!isObj(css)) {
         css = {};
         css[name] = val;
@@ -71,7 +71,7 @@ function getCss(node, name) {
 
 function setCss(nodes, css) {
     each(nodes, function(node) {
-        var cssText = ';';
+        let cssText = ';';
         each(css, function(val, key) {
             key = prefix.dash(key);
             cssText += key + ':' + addPx(key, val) + ';';
@@ -80,7 +80,7 @@ function setCss(nodes, css) {
     });
 }
 
-var cssNumProps = [
+const cssNumProps = [
     'column-count',
     'columns',
     'font-weight',
@@ -91,7 +91,7 @@ var cssNumProps = [
 ];
 
 function addPx(key, val) {
-    var needPx = isNum(val) && !contain(cssNumProps, kebabCase(key));
+    const needPx = isNum(val) && !contain(cssNumProps, kebabCase(key));
 
     return needPx ? val + 'px' : val;
 }

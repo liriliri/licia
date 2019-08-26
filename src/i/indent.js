@@ -23,7 +23,7 @@
 
 _('isNum isUndef repeat');
 
-var regLineBegin = /^(?!\s*$)/gm;
+const regLineBegin = /^(?!\s*$)/gm;
 
 exports = function(str, char, len) {
     if (isNum(char)) {

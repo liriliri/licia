@@ -8,7 +8,7 @@
  */
 
 /* example
- * var People = Class({
+ * const People = Class({
  *     initialize: function People(name, age) {
  *         this.name = name;
  *         this.age = age;
@@ -18,7 +18,7 @@
  *     }
  * });
  *
- * var Student = People.extend({
+ * const Student = People.extend({
  *     initialize: function Student(name, age, school) {
  *         this.callSuper(People, 'initialize', arguments);
  *
@@ -33,7 +33,7 @@
  *     }
  * });
  *
- * var a = new Student('allen', 17, 'Hogwarts');
+ * const a = new Student('allen', 17, 'Hogwarts');
  * a.introduce(); // -> 'I am allen, 17 years old. \n I study at Hogwarts.'
  * Student.is(a); // -> true
  */
@@ -68,14 +68,14 @@ exports = function(methods, statics) {
 
 function makeClass(parent, methods, statics) {
     statics = statics || {};
-    var className =
+    const className =
         methods.className || safeGet(methods, 'initialize.name') || '';
     delete methods.className;
 
-    var ctor;
+    let ctor;
     if (isMiniProgram) {
         ctor = function() {
-            var args = toArr(arguments);
+            const args = toArr(arguments);
             return this.initialize
                 ? this.initialize.apply(this, args) || this
                 : this;
@@ -116,10 +116,10 @@ function makeClass(parent, methods, statics) {
     return ctor;
 }
 
-var Base = (exports.Base = makeClass(Object, {
+const Base = (exports.Base = makeClass(Object, {
     className: 'Base',
     callSuper: function(parent, name, args) {
-        var superMethod = parent.prototype[name];
+        const superMethod = parent.prototype[name];
 
         return superMethod.apply(this, args);
     },

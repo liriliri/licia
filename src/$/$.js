@@ -8,7 +8,7 @@
  */
 
 /* example
- * var $btn = $('#btn');
+ * const $btn = $('#btn');
  * $btn.html('eustia');
  * $btn.addClass('btn');
  * $btn.show();
@@ -112,42 +112,42 @@ Select.methods({
         return this;
     },
     html: function(val) {
-        var result = $property.html(this, val);
+        const result = $property.html(this, val);
 
         if (isUndef(val)) return result;
 
         return this;
     },
     text: function(val) {
-        var result = $property.text(this, val);
+        const result = $property.text(this, val);
 
         if (isUndef(val)) return result;
 
         return this;
     },
     val: function(val) {
-        var result = $property.val(this, val);
+        const result = $property.val(this, val);
 
         if (isUndef(val)) return result;
 
         return this;
     },
     css: function(name, val) {
-        var result = $css(this, name, val);
+        const result = $css(this, name, val);
 
         if (isGetter(name, val)) return result;
 
         return this;
     },
     attr: function(name, val) {
-        var result = $attr(this, name, val);
+        const result = $attr(this, name, val);
 
         if (isGetter(name, val)) return result;
 
         return this;
     },
     data: function(name, val) {
-        var result = $data(this, name, val);
+        const result = $data(this, name, val);
 
         if (isGetter(name, val)) return result;
 

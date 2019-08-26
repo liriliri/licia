@@ -1,6 +1,6 @@
-var each = util.each;
+const each = util.each;
 
-var tests = [
+const tests = [
     [[255, 255, 255], '////'],
     [[255, 255, 255, 255], '/////w=='],
     [[255, 255, 255, 255, 255], '//////8='],

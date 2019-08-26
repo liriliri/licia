@@ -7,7 +7,7 @@
  */
 
 /* example
- * var str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
+ * const str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
  * extractUrls(str); // -> ['http://eustia.liriliri.io']
  */
 
@@ -23,7 +23,7 @@
 _('unique trim map toArr');
 
 exports = function(str) {
-    var urlList = toArr(str.match(regUrl));
+    const urlList = toArr(str.match(regUrl));
 
     return unique(
         map(urlList, function(url) {
@@ -32,4 +32,4 @@ exports = function(str) {
     );
 };
 
-var regUrl = /((https?)|(ftp)):\/\/[\w.]+[^ \f\n\r\t\v"\\<>[\]\u2100-\uFFFF(),]*/gi;
+const regUrl = /((https?)|(ftp)):\/\/[\w.]+[^ \f\n\r\t\v"\\<>[\]\u2100-\uFFFF(),]*/gi;

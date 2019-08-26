@@ -1,7 +1,7 @@
 it('basic', function() {
-    var a = 65;
+    const a = 65;
 
-    var el = document.createElement('div');
+    const el = document.createElement('div');
     el.addEventListener('keydown', function(e) {
         expect(e.keyCode).to.equal(a);
     });

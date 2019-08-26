@@ -23,8 +23,8 @@
 
 // https://stackoverflow.com/questions/13627308/add-st-nd-rd-and-th-ordinal-suffix-to-a-number
 exports = function(num) {
-    let j = num % 10;
-    let k = num % 100;
+    const j = num % 10;
+    const k = num % 100;
     let indicator = 'th';
     if (j == 1 && k != 11) {
         indicator = 'st';

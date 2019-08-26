@@ -22,13 +22,13 @@
  */
 
 exports = function(fn, wait, immediate) {
-    var timeout;
+    let timeout;
 
     return function() {
-        var ctx = this,
-            args = arguments;
+        const ctx = this;
+        const args = arguments;
 
-        var throttler = function() {
+        const throttler = function() {
             timeout = null;
             fn.apply(ctx, args);
         };

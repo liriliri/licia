@@ -11,7 +11,7 @@
  */
 
 /* example
- * var store = new SessionStore('licia');
+ * const store = new SessionStore('licia');
  * store.set('name', 'licia');
  */
 
@@ -28,14 +28,14 @@
 
 _('Store safeStorage isEmpty stringify defaults isObj');
 
-var sessionStorage = safeStorage('session');
+const sessionStorage = safeStorage('session');
 
 exports = Store.extend({
     initialize: function SessionStore(name, data) {
         this._name = name;
         data = data || {};
 
-        var sessionData = sessionStorage.getItem(name);
+        let sessionData = sessionStorage.getItem(name);
         try {
             sessionData = JSON.parse(sessionData);
         } catch (e) {

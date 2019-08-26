@@ -36,7 +36,7 @@
  */
 
 /* example
- * var stack = new Stack();
+ * const stack = new Stack();
  *
  * stack.push(2); // -> 1
  * stack.push(3); // -> 2
@@ -86,9 +86,9 @@ exports = Class({
     forEach: function(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
-        var items = this._items;
+        const items = this._items;
 
-        for (var i = this.size - 1, j = 0; i >= 0; i--, j++) {
+        for (let i = this.size - 1, j = 0; i >= 0; i--, j++) {
             iterator.call(ctx, items[i], j, this);
         }
     },

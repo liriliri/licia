@@ -18,7 +18,7 @@
  */
 
 /* example
- * var obj = Object.create({zero: 0});
+ * const obj = Object.create({zero: 0});
  * obj.one = 1;
  * allKeys(obj) // -> ['zero', 'one']
  */
@@ -72,7 +72,7 @@ exports = function(
         ret = unique(ret);
     } else {
         if (prototype) {
-            for (let key in obj) ret.push(key);
+            for (const key in obj) ret.push(key);
         } else {
             ret = keys(obj);
         }

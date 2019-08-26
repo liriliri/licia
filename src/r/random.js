@@ -29,7 +29,7 @@ exports = function(min, max, floating) {
         min = 0;
     }
 
-    var rand = Math.random();
+    const rand = Math.random();
 
     if (floating || min % 1 || max % 1) {
         return Math.min(

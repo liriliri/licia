@@ -38,4 +38,4 @@ exports = function(fn) {
     return '';
 };
 
-var fnToStr = Function.prototype.toString;
+const fnToStr = Function.prototype.toString;

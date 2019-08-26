@@ -25,11 +25,11 @@ exports = function(str) {
     return regTest.test(str) ? str.replace(regReplace, replaceFn) : str;
 };
 
-var map = invert(escape.map);
+const map = invert(escape.map);
 
-var regSrc = '(?:' + keys(map).join('|') + ')',
-    regTest = new RegExp(regSrc),
-    regReplace = new RegExp(regSrc, 'g');
+const regSrc = '(?:' + keys(map).join('|') + ')';
+const regTest = new RegExp(regSrc);
+const regReplace = new RegExp(regSrc, 'g');
 
 function replaceFn(match) {
     return map[match];

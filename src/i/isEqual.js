@@ -27,7 +27,7 @@ exports = function(a, b) {
 };
 
 function deepEq(a, b, aStack, bStack) {
-    var className = toString.call(a);
+    const className = toString.call(a);
     if (className !== toString.call(b)) return false;
 
     switch (className) {
@@ -42,12 +42,12 @@ function deepEq(a, b, aStack, bStack) {
             return +a === +b;
     }
 
-    var areArrays = className === '[object Array]';
+    const areArrays = className === '[object Array]';
     if (!areArrays) {
         if (typeof a != 'object' || typeof b != 'object') return false;
 
-        var aCtor = a.constructor,
-            bCtor = b.constructor;
+        const aCtor = a.constructor;
+        const bCtor = b.constructor;
         if (
             aCtor !== bCtor &&
             !(
@@ -62,7 +62,7 @@ function deepEq(a, b, aStack, bStack) {
     }
     aStack = aStack || [];
     bStack = bStack || [];
-    var length = aStack.length;
+    let length = aStack.length;
     while (length--) if (aStack[length] === a) return bStack[length] === b;
 
     aStack.push(a);
@@ -74,8 +74,8 @@ function deepEq(a, b, aStack, bStack) {
         while (length--)
             if (!eq(a[length], b[length], aStack, bStack)) return false;
     } else {
-        var _keys = keys(a),
-            key;
+        const _keys = keys(a);
+        let key;
         length = _keys.length;
         if (keys(b).length !== length) return false;
         while (length--) {
@@ -94,7 +94,7 @@ function eq(a, b, aStack, bStack) {
     if (a === b) return a !== 0 || 1 / a === 1 / b;
     if (a == null || b == null) return a === b;
     if (a !== a) return b !== b;
-    var type = typeof a;
+    const type = typeof a;
     if (type !== 'function' && type !== 'object' && typeof b != 'object')
         return false;
 

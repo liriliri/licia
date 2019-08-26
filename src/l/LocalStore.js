@@ -11,7 +11,7 @@
  */
 
 /* example
- * var store = new LocalStore('licia');
+ * const store = new LocalStore('licia');
  * store.set('name', 'licia');
  */
 
@@ -28,14 +28,14 @@
 
 _('Store safeStorage isEmpty stringify defaults isObj');
 
-var localStorage = safeStorage('local');
+const localStorage = safeStorage('local');
 
 exports = Store.extend({
     initialize: function LocalStore(name, data) {
         this._name = name;
         data = data || {};
 
-        var localData = localStorage.getItem(name);
+        let localData = localStorage.getItem(name);
         try {
             localData = JSON.parse(localData);
         } catch (e) {

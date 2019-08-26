@@ -1,9 +1,9 @@
-var isBrowser = util.isBrowser;
+const isBrowser = util.isBrowser;
 
 it('borwser', function() {
     if (!isBrowser) return;
 
-    var windowRaf = window.requestAnimationFrame;
+    const windowRaf = window.requestAnimationFrame;
     if (windowRaf) expect(raf).to.equal(windowRaf);
 });
 
@@ -13,7 +13,7 @@ it('node', function(done) {
         return;
     }
 
-    var count = 0,
+    let count = 0,
         id;
 
     function update() {
