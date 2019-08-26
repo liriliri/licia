@@ -1,3 +1,8 @@
+## v1.6.0 (26 Aug 2019)
+
+* add: parseHtml
+* add: html
+
 ## v1.5.9 (17 Aug 2019)
 
 * add: crc8
