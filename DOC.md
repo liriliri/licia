@@ -2955,7 +2955,7 @@ Format string in a printf-like format.
 |%o       |Object              |
 
 ```javascript
-format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
+format('%s_%s', 'foo', 'bar'); // -> 'foo_bar'
 ```
 
 ## fraction 

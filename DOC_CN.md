@@ -2951,7 +2951,7 @@ fnParams(function (a, b) {}); // -> ['a', 'b']
 |%o|对象|
 
 ```javascript
-format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
+format('%s_%s', 'foo', 'bar'); // -> 'foo_bar'
 ```
 
 ## fraction

@@ -17,7 +17,7 @@
  */
 
 /* example
- * format('%s_%s', 'foo', 'bar'); // -> 'foo bar'
+ * format('%s_%s', 'foo', 'bar'); // -> 'foo_bar'
  */
 
 /* module
