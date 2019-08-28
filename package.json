@@ -77,8 +77,5 @@
     "typescript": "^3.2.2",
     "underscore": "^1.8.3",
     "uuid": "^3.2.1"
-  },
-  "dependencies": {
-    "licia": "^1.5.9"
   }
 }
