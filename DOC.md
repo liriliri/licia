@@ -4594,7 +4594,7 @@ const objects = [
     {a: 1, b: 2, c: 3 },
     {a: 4, b: 5, c: 6 }
 ];
-filter(objects, matcher({a: 4, c: 6 }));
+filter(objects, matcher({a: 4, c: 6 })); // -> {a: 4, b: 5, c: 6}
 ```
 
 ## max 
