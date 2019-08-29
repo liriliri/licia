@@ -1410,7 +1410,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.6.1"
     },
     "decodeUriComponent": {
         "description": "Better decodeURIComponent that does not throw if input is invalid.",
@@ -2352,7 +2353,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.6.0"
     },
     "identity": {
         "description": "Return the first argument given.",
@@ -4051,7 +4053,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.6.0"
     },
     "partial": {
         "description": "Partially apply a function by filling in given arguments.",

@@ -1,3 +1,7 @@
+## v1.6.1 (29 Aug 2019)
+
+* add: deburr
+
 ## v1.6.0 (26 Aug 2019)
 
 * add: parseHtml
