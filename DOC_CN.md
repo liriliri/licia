@@ -2212,6 +2212,19 @@ d('doing lots of uninteresting work');
 d.enabled = false;
 ```
 
+## deburr
+
+转换拉丁语-1补充字母和拉丁语扩展字母-A为基本拉丁字母，并且去除组合变音标记。
+
+|参数名|类型|说明|
+|-----|----|---|
+|str|string|要处理的字符串|
+|返回值|string|目标字符串|
+
+```javascript
+deburr('déjà vu'); // -> 'deja vu'
+```
+
 ## decodeUriComponent
 
 类似 decodeURIComponent 函数，只是输入不合法时不抛出错误并尽可能地对其进行解码。

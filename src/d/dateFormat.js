@@ -123,10 +123,10 @@ exports = function(date, mask, utc, gmt) {
         Z: gmt
             ? 'GMT'
             : utc
-                ? 'UTC'
-                : (toStr(date).match(regTimezone) || [''])
-                      .pop()
-                      .replace(regTimezoneClip, ''),
+            ? 'UTC'
+            : (toStr(date).match(regTimezone) || [''])
+                  .pop()
+                  .replace(regTimezoneClip, ''),
         o:
             (o > 0 ? '-' : '+') +
             padZero(Math.floor(Math.abs(o) / 60) * 100 + (Math.abs(o) % 60), 4),

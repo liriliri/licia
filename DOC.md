@@ -2217,6 +2217,19 @@ d('doing lots of uninteresting work');
 d.enabled = false;
 ```
 
+## deburr 
+
+Convert Latin-1 Supplement and Latin Extended-A letters to basic Latin letters and remove combining diacritical marks.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|str   |string|String to deburr|
+|return|string|Deburred string |
+
+```javascript
+deburr('déjà vu'); // -> 'deja vu'
+```
+
 ## decodeUriComponent 
 
 Better decodeURIComponent that does not throw if input is invalid.

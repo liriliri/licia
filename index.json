@@ -1399,6 +1399,19 @@
         "test": [],
         "demo": true
     },
+    "deburr": {
+        "description": "Convert Latin-1 Supplement and Latin Extended-A letters to basic Latin letters and remove combining diacritical marks.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "decodeUriComponent": {
         "description": "Better decodeURIComponent that does not throw if input is invalid.",
         "dependencies": [
