@@ -5856,6 +5856,21 @@ Create slice of source array or array-like object.
 slice([1, 2, 3, 4], 1, 2); // -> [2]
 ```
 
+## slugify 
+
+Slugify a string.
+
+|Name         |Type  |Desc              |
+|-------------|------|------------------|
+|str          |string|String to slugify |
+|[replacement]|object|Custom replacement|
+|return       |string|Slugified string  |
+
+```javascript
+slugify('I ♥ pony'); // -> 'I-love-pony'
+slugify('I ♥ pony', {' ': '_'}); // -> 'I_love_pony'
+```
+
 ## snakeCase 
 
 Convert string to "snakeCase".

@@ -4763,6 +4763,23 @@
             "browser"
         ]
     },
+    "slugify": {
+        "description": "Slugify a string.",
+        "dependencies": [
+            "defaults",
+            "each",
+            "reduce"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "snakeCase": {
         "description": "Convert string to \"snakeCase\".",
         "dependencies": [
