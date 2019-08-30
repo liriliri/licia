@@ -19,7 +19,7 @@
 
 /* typescript
  * export declare function slugify(
- *     str: string, 
+ *     str: string,
  *     replacement?: { [index: string]: string }
  * ): string;
  */

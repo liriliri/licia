@@ -24,7 +24,8 @@ var exports = {
                 destructuring: 'any',
                 ignoreReadBeforeAssign: false
             }
-        ]
+        ],
+        'no-redeclare': ['error', { builtinGlobals: false }]
     }
 };
 
