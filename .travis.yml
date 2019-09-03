@@ -3,7 +3,6 @@ node_js:
   - "8"
 addons:
   chrome: stable  
-before_script:
-  - npm link
 script:
+  - npm link
   - npm run ci
