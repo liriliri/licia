@@ -1862,11 +1862,11 @@ welcome('licia'); // -> 'hi: LICIA!'
 
 Compress image using canvas.
 
-|Name  |Type     |Desc      |
-|------|---------|----------|
-|file  |File Blob|Image file|
-|[opts]|object   |Options   |
-|[cb]  |function |Callback  |
+|Name  |Type            |Desc             |
+|------|----------------|-----------------|
+|file  |File Blob string|Image file or url|
+|[opts]|object          |Options          |
+|[cb]  |function        |Callback         |
 
 Available options:
 

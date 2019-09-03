@@ -1115,7 +1115,8 @@
             "loadImg",
             "noop",
             "defaults",
-            "createUrl"
+            "createUrl",
+            "isStr"
         ],
         "env": [
             "browser"

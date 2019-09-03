@@ -1,10 +1,10 @@
 /* Compress image using canvas.
  *
- * |Name  |Type     |Desc      |
- * |------|---------|----------|
- * |file  |File Blob|Image file|
- * |[opts]|object   |Options   |
- * |[cb]  |function |Callback  |
+ * |Name  |Type            |Desc             |
+ * |------|----------------|-----------------|
+ * |file  |File Blob string|Image file or url|
+ * |[opts]|object          |Options          |
+ * |[cb]  |function        |Callback         |
  *
  * Available options:
  *
@@ -47,15 +47,15 @@
  *         quality?: number;
  *     }
  * }
- * export declare function compressImg(file: File | Blob, cb: Function): void;
+ * export declare function compressImg(file: File | Blob | string, cb: Function): void;
  * export declare function compressImg(
- *     file: File | Blob,
+ *     file: File | Blob | string,
  *     opts?: compressImg.IOptions,
  *     cb?: Function
  * ): void;
  */
 
-_('isFn loadImg noop defaults createUrl');
+_('isFn loadImg noop defaults createUrl isStr');
 
 exports = function(file, opts, cb) {
     if (isFn(opts)) {
@@ -67,8 +67,13 @@ exports = function(file, opts, cb) {
     opts = opts || {};
     defaults(opts, defOpts);
     opts.mimeType = opts.mimeType || file.type;
+    if (isStr(file)) {
+        opts.isUrl = true;
+    } else {
+        file = createUrl(file);
+    }
 
-    loadImg(createUrl(file), function(err, img) {
+    loadImg(file, function(err, img) {
         if (err) return cb(err);
 
         compress(img, opts, cb);
@@ -113,15 +118,19 @@ function compress(img, opts, cb) {
     canvas.height = height;
 
     ctx.drawImage(img, 0, 0, width, height);
-    if (URL) URL.revokeObjectURL(img.src);
+    if (URL && opts.isUrl) URL.revokeObjectURL(img.src);
     if (canvas.toBlob) {
-        canvas.toBlob(
-            function(file) {
-                cb(null, file);
-            },
-            opts.mimeType,
-            opts.quality
-        );
+        try {
+            canvas.toBlob(
+                function(file) {
+                    cb(null, file);
+                },
+                opts.mimeType,
+                opts.quality
+            );
+        } catch (e) {
+            cb(e);
+        }
     } else {
         cb(new Error('Canvas toBlob is not supported'));
     }

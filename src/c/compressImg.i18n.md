@@ -4,7 +4,7 @@
 
 |参数名|类型|说明|
 |-----|----|---|
-|file|File Blob|图片文件|
+|file|File Blob string|图片文件或 url|
 |[opts]|object|选项|
 |[cb]|function|回调|
 
