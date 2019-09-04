@@ -5455,6 +5455,24 @@
             "browser"
         ]
     },
+    "universalify": {
+        "description": "Make an async function support both promises and callbacks.",
+        "dependencies": [
+            "promisify",
+            "callbackify",
+            "last",
+            "isFn"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "unzip": {
         "description": "Opposite of zip.",
         "dependencies": [

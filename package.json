@@ -72,6 +72,7 @@
     "nws": "^1.1.1",
     "prettier": "^1.18.2",
     "promises-aplus-tests": "^2.1.2",
+    "request": "^2.88.0",
     "sinon": "^7.4.1",
     "typescript": "^3.6.2",
     "underscore": "^1.9.1",

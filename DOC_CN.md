@@ -6591,6 +6591,30 @@ uniqId('eusita_'); // -> 'eustia_xxx'
 unique([1, 2, 3, 1]); // -> [1, 2, 3]
 ```
 
+## universalify
+
+使用异步函数同时支持 promise 及回调模式。
+
+|参数名|类型|说明|
+|-----|----|---|
+|fn|function|异步函数|
+|type|string|源类型，promise 或 callback|
+|返回值|function|目标函数|
+
+```javascript
+function callbackFn(str, cb) {
+    setTimeout(() => { cb(null, str); }, 10);
+}
+
+const fn = universalify(callbackFn, 'callback');
+fn('licia', (err, result) => {
+    console.log(result); // -> 'licia'
+});
+fn('licia').then(result => {
+    console.log(result); // -> 'licia'
+});
+```
+
 ## unzip
 
 与 zip 相反。 

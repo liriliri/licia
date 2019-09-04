@@ -6597,6 +6597,30 @@ Create duplicate-free version of an array.
 unique([1, 2, 3, 1]); // -> [1, 2, 3]
 ```
 
+## universalify 
+
+Make an async function support both promises and callbacks.
+
+|Name  |Type    |Desc                            |
+|------|--------|--------------------------------|
+|fn    |function|Async function                  |
+|type  |string  |Source type, promise or callback|
+|return|function|Result function                 |
+
+```javascript
+function callbackFn(str, cb) {
+    setTimeout(() => { cb(null, str); }, 10);
+}
+
+const fn = universalify(callbackFn, 'callback');
+fn('licia', (err, result) => {
+    console.log(result); // -> 'licia'
+});
+fn('licia').then(result => {
+    console.log(result); // -> 'licia'
+});
+```
+
 ## unzip 
 
 Opposite of zip.
