@@ -14,8 +14,8 @@
 
 /* example
  * highlight('const a = 5;', 'js', {
- *     number: 'color:#0086b3;'
- * }); // -> '<span style="color:#a71d5d;">const</span> a <span style="color:#994500;">=</span> <span style="color:#0086b3;">5</span>;'
+ *     keyword: 'color:#569cd6;'
+ * }); // -> '<span style="color:#569cd6;">const</span> a <span style="color:#994500;">=</span> <span style="color:#0086b3;">5</span>;'
  */
 
 /* module
@@ -37,15 +37,16 @@
  * export declare function highlight(
  *     str: string,
  *     lang?: string,
- *     style: highlight.IStyle
+ *     style?: highlight.IStyle
  * ): string;
  */
 
-_('each');
+_('each defaults');
 
 // https://github.com/trentrichardson/jQuery-Litelighter
-exports = function(str, lang) {
+exports = function(str, lang, style) {
     lang = lang || 'js';
+    defaults(style, defStyle);
 
     str = str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -119,7 +120,7 @@ exports = function(str, lang) {
     return str;
 };
 
-const style = {
+const defStyle = {
     comment: 'color:#63a35c;',
     string: 'color:#183691;',
     number: 'color:#0086b3;',

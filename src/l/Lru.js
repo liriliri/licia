@@ -59,7 +59,7 @@
 
 /* typescript
  * export declare class Lru {
- *     constructor(max: number): void;
+ *     constructor(max: number);
  *     has(key: string): boolean;
  *     remove(key: string): void;
  *     get(key: string): any;

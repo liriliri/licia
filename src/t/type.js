@@ -22,7 +22,7 @@
  */
 
 /* typescript
- * export declare function type(val: any, lowerCase: boolean): string;
+ * export declare function type(val: any, lowerCase?: boolean): string;
  */
 
 _('objToStr isNaN');

@@ -9,7 +9,7 @@
 
 /* example
  * const fn = () => {};
- * const obsoleteFn = deprecate(fn);
+ * const obsoleteFn = deprecate(fn, 'obsoleteFn is deprecated.');
  * obsoleteFn();
  */
 

@@ -23,7 +23,7 @@
  * export declare function isPortFree(
  *     port: number,
  *     host?: string
- * ): boolean;
+ * ): Promise<boolean>;
  */
 
 const net = require('net');

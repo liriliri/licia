@@ -6,7 +6,7 @@
 |-----|----|---|
 |needle|string|搜索字符串|
 |haystacks|array|搜索集合|
-|options|object|搜索选项|
+|[options]|object|搜索选项|
 
 可用选项：
 

@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "outDir": "testTsOut",
+    "outDir": ".licia/testTsOut",
     "lib": ["es2017", "dom"]
   },
   "include": [
-    "testTs/**/*"
+    ".licia/testTs/**/*"
   ]
 }

@@ -1959,7 +1959,7 @@ base64, ArrayBuffer, Array, Uint8Array, Blob(browser), Buffer(node)
 
 ```javascript
 convertBin('qK6b/w==', 'Uint8Array'); // -> [168, 174, 155, 255]
-convertBin.blobToArrBuffer(new Blob[]).then(arrBuffer => {
+convertBin.blobToArrBuffer(new Blob([])).then(arrBuffer => {
     // Do something...
 });
 ```
@@ -2398,7 +2398,7 @@ Node.js util.deprecate 方法，支持浏览器。
 
 ```javascript
 const fn = () => {};
-const obsoleteFn = deprecate(fn);
+const obsoleteFn = deprecate(fn, 'obsoleteFn is deprecated.');
 obsoleteFn();
 ```
 
@@ -3077,7 +3077,7 @@ fullscreen.on('change', () => {});
 |-----|----|---|
 |needle|string|搜索字符串|
 |haystacks|array|搜索集合|
-|options|object|搜索选项|
+|[options]|object|搜索选项|
 
 可用选项：
 
@@ -3173,12 +3173,12 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 
 ```javascript
 ;(async () => {
-    let fn = golangify(async () => {
+    let fnA = golangify(async () => {
         throw Error('err')
     });
-    await fn(); // -> [undefined, Error]
-    fn = golangify(async num => num * 2);
-    await fn(2); // -> [4, null]
+    await fnA(); // -> [undefined, Error]
+    let fnB = golangify(async num => num * 2);
+    await fnB(2); // -> [4, null]
 
     await golangify(Promise.reject(Error('err'))); // -> [undefined, Error]
     await golangify(Promise.resolve(4)); // -> [4, null]
@@ -3235,8 +3235,8 @@ comment，string，number，keyword，operator
 
 ```javascript
 highlight('const a = 5;', 'js', {
-    number: 'color:#0086b3;'
-}); // -> '<span style="color:#a71d5d;">const</span> a <span style="color:#994500;">=</span> <span style="color:#0086b3;">5</span>;'
+    keyword: 'color:#569cd6;'
+}); // -> '<span style="color:#569cd6;">const</span> a <span style="color:#994500;">=</span> <span style="color:#0086b3;">5</span>;'
 ```
 
 ## hotkey

@@ -24,7 +24,7 @@
 
 /* example
  * convertBin('qK6b/w==', 'Uint8Array'); // -> [168, 174, 155, 255]
- * convertBin.blobToArrBuffer(new Blob[]).then(arrBuffer => {
+ * convertBin.blobToArrBuffer(new Blob([])).then(arrBuffer => {
  *     // Do something...
  * });
  */
@@ -37,7 +37,7 @@
 
 /* typescript
  * export declare namespace convertBin {
- *     function blobToArrBuffer(blob: any): ArrayBuffer;
+ *     function blobToArrBuffer(blob: any): Promise<ArrayBuffer>;
  * }
  * export declare function convertBin(bin: any, type: string): any;
  */

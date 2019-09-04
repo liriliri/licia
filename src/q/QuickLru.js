@@ -19,7 +19,7 @@
 
 /* typescript
  * export declare class QuickLru {
- *     constructor(max: number): void;
+ *     constructor(max: number);
  *     has(key: string): boolean;
  *     remove(key: string): void;
  *     get(key: string): any;

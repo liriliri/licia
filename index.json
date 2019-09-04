@@ -2291,7 +2291,8 @@
     "highlight": {
         "description": "Highlight code.",
         "dependencies": [
-            "each"
+            "each",
+            "defaults"
         ],
         "env": [
             "node",

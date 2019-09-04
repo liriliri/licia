@@ -14,7 +14,7 @@
  */
 
 /* typescript
- * export default function stackTrace(): any[];
+ * export declare function stackTrace(): any[];
  */
 
 // https://github.com/tj/callsite

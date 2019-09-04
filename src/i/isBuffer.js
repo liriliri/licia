@@ -11,7 +11,7 @@
  */
 
 /* module
- * env: all 
+ * env: all
  * test: node
  */
 

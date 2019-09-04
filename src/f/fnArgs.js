@@ -17,11 +17,16 @@
  *     ], arguments);
  *     // Do something.
  * }
+ * // @ts-ignore
  * test(15);
+ * // @ts-ignore
  * test('test', () => {});
  * test('test', () => {}, 5);
+ * // @ts-ignore
  * test(); // Throw error
+ * // @ts-ignore
  * test('test', 'test'); // Throw error
+ * // @ts-ignore
  * test('test', () => {}, 5, 'test') // Throw error
  */
 

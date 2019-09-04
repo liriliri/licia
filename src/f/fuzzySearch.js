@@ -4,7 +4,7 @@
  * |---------|------|----------------|
  * |needle   |string|String to search|
  * |haystacks|array |Search list     |
- * |options  |object|Search options  |
+ * |[options]|object|Search options  |
  *
  * Available options:
  *
@@ -41,7 +41,7 @@
  * export declare function fuzzySearch(
  *     needle: string,
  *     haystack: any[],
- *     options: fuzzySearch.IOptions
+ *     options?: fuzzySearch.IOptions
  * ): any[];
  */
 

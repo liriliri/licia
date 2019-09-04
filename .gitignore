@@ -1,13 +1,5 @@
 *swp
 .idea/
+.licia/
 node_modules/
-demo/
-benchmark/
-packages/
-coverage/
-test/
-testTs/
-testTsOut/
-testUtil/
-karma.conf.js
 package-lock.json

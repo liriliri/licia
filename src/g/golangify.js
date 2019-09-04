@@ -13,12 +13,12 @@
 
 /* example
  * ;(async () => {
- *     let fn = golangify(async () => {
+ *     let fnA = golangify(async () => {
  *         throw Error('err')
  *     });
- *     await fn(); // -> [undefined, Error]
- *     fn = golangify(async num => num * 2);
- *     await fn(2); // -> [4, null]
+ *     await fnA(); // -> [undefined, Error]
+ *     let fnB = golangify(async num => num * 2);
+ *     await fnB(2); // -> [4, null]
  *
  *     await golangify(Promise.reject(Error('err'))); // -> [undefined, Error]
  *     await golangify(Promise.resolve(4)); // -> [4, null]
