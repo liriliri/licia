@@ -7,12 +7,12 @@
   },
   "scripts": {
     "postinstall": "node ./lib/setup",
-    "ci": "npm run lint && npm run pack && npm test",
+    "ci": "npm run lint && npm run pack && npm run lint:release && npm test",
     "update": "licia update",
     "pack": "licia pack && npm run format:pkg && copyfiles -u 2 .licia/packages/**/* ./node_modules",
     "lint": "eslint -c eslint.src.js src/$/*.js src/[a-z]/*.js",
     "lint:fix": "npm run lint -- --fix",
-    "lint:release": "eslint -c eslint.release.js .licia/packages/licia-src/*.js",
+    "lint:release": "eslint -c eslint.release.js .licia/packages/licia-src/*.js --no-ignore",
     "serveDemo": "nws -p 3000 -d .licia/demo",
     "test": "npm run test:node && npm run test:browser && npm run test:release && npm run test:ts",
     "demo": "licia test -ad",
@@ -22,7 +22,7 @@
     "format:pkg": "prettier .licia/packages/**/*.js .licia/packages/**/*.d.ts .licia/packages/**/**/*.js --write",
     "test:node": "licia test -as",
     "test:browser": "licia test -bas",
-    "test:release": "licia test -r && npm run lint:release",
+    "test:release": "licia test -r",
     "test:sauce": "licia test -bas --sauce",
     "test:ts": "licia test -as --ts && tsc"
   },
