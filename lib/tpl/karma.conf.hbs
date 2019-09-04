@@ -11,6 +11,13 @@ module.exports = function(config) {
             'karma-coverage'
         ],
         reporters: ['progress', 'coverage'],
+        coverageReporter: {
+            dir: 'coverage',
+            reporters: [
+                {type: 'text'},
+                {type: 'html', subdir: 'karma'}
+            ]
+        },
         preprocessors: {
             'testUtil/*.js': ['coverage']
         },
