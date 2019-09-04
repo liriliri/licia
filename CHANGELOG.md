@@ -1,3 +1,10 @@
+## v1.7.0 (4 Sep 2019)
+
+* add: slugify
+* add: universalify
+* feat(compressImg): support url
+* feat(isBuffer): change env to all
+
 ## v1.6.1 (29 Aug 2019)
 
 * add: deburr

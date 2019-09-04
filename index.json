@@ -4782,7 +4782,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.7.0"
     },
     "snakeCase": {
         "description": "Convert string to \"snakeCase\".",
@@ -5474,7 +5475,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.7.0"
     },
     "unzip": {
         "description": "Opposite of zip.",
