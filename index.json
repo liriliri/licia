@@ -2612,7 +2612,9 @@
             "isFn"
         ],
         "env": [
-            "node"
+            "node",
+            "browser",
+            "miniprogram"
         ],
         "test": [
             "node"
