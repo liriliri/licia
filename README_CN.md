@@ -74,33 +74,3 @@ util.wx.getStorage({
   key: 'test'
 }).then(res => console.log(res.data));
 ```
-
-## 提交新模块
-
-在无法找到所需模块的情况下，你可以发起 issue 建议或者自己添加模块合并到该项目中去。
-
-关于如何编写模块，请查看[Eustia文档](https://eustia.liriliri.io/docs.html#create-module)中的相关说明。
-
-### 基本原则
-
-每个模块都必须满足以下几点要求：
-
-* 必须有详细的使用说明文档（英文，格式参考其它已有模块）。
-* 必须有单元测试。
-* 必须有 typescript 定义。
-* 必须指明运行环境，node，浏览器或全部。
-* 模块名只能包含 **a-zA-Z0-9$** 等字符。
-* 不能存在功能高度相似的模块，例如不能添加 leftPad 模块因为已经有模块 lpad 了。
-* 模块可以依赖其它模块，但所有代码都必须写在一个文件，不能超过 500 行，包括使用说明和空行。
-
-### 怎么添加
-
-* Fork 该仓库。
-* `npm i && npm link`将 **licia** 命令行工具添加到系统中。
-* 创建一个文件名为模块名的 js 文件，还有相应的单元测试文件，以 test.js 结尾。
-* 编写模块代码，使用文档（顶部块注释，Markdown 格式）和单元测试。
-* `licia test <module-name>`执行测试。如果模块只能跑在浏览器端，使用`-b`选项。
-* `npm run cov`检查测试覆盖率。
-* 输入`npm run update`命令更新 **index.json** 和 **DOC.md** 文件。
-
-做完这一切就可以发起 pull request 了:)
