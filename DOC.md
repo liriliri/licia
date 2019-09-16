@@ -6290,6 +6290,26 @@ toArr(1); // -> [1]
 toArr(null); // -> []
 ```
 
+## toAsync 
+
+Use generator like async/await.
+
+|Name  |Type             |Desc              |
+|------|-----------------|------------------|
+|fn    |GeneratorFunction|Generator function|
+|return|function         |Result function   |
+
+```javascript
+const sleep = require('licia/sleep');
+
+const fn = toAsync(function *() {
+    yield sleep(200);
+    return 'licia';
+});
+
+fn().then(str => {});
+```
+
 ## toBool 
 
 Convert value to a boolean.

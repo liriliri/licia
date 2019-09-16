@@ -5188,6 +5188,24 @@
             "browser"
         ]
     },
+    "toAsync": {
+        "description": "Use generator like async/await.",
+        "dependencies": [
+            "toArr",
+            "isGeneratorFn",
+            "isPromise",
+            "toStr"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "toBool": {
         "description": "Convert value to a boolean.",
         "dependencies": [
