@@ -1,3 +1,10 @@
+it('basic', function() {
+    const parseUrl = Url.parse('http://surunzi.com:80');
+    expect(parseUrl.protocol).to.equal('http:');
+    expect(parseUrl.hostname).to.equal('surunzi.com');
+    expect(parseUrl.port).to.equal('80');
+});
+
 const testCase =
     'http://surunzi@github.com:8080/foo/bar?test=1&eruda=true#hash';
 

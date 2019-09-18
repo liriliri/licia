@@ -174,6 +174,7 @@ exports = Class(
             }
 
             if (slashes) {
+                let host = rest
                 let hostEnd = -1;
                 for (let i = 0, len = hostEndingChars.length; i < len; i++) {
                     const pos = rest.indexOf(hostEndingChars[i]);
@@ -181,8 +182,10 @@ exports = Class(
                         hostEnd = pos;
                 }
 
-                let host = rest.slice(0, hostEnd);
-                rest = rest.slice(hostEnd);
+                if (hostEnd > -1) {
+                    host = rest.slice(0, hostEnd);
+                    rest = rest.slice(hostEnd);
+                }
 
                 const atSign = host.lastIndexOf('@');
 
