@@ -5204,7 +5204,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.8.0"
     },
     "toBool": {
         "description": "Convert value to a boolean.",

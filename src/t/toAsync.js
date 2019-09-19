@@ -20,6 +20,7 @@
 /* module
  * env: all
  * test: all
+ * since: 1.8.0
  */
 
 /* typescript
