@@ -5082,12 +5082,12 @@
         "description": "Compile JavaScript template into function that can be evaluated for rendering.",
         "dependencies": [
             "escape",
-            "defaults"
+            "defaults",
+            "escapeJsStr"
         ],
         "env": [
             "node",
-            "browser",
-            "miniprogram"
+            "browser"
         ],
         "test": [
             "node",

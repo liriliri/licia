@@ -16,4 +16,7 @@ it('basic', function() {
             }
         })({ name: 'licia' })
     ).to.equal('<p>LICIA</p>');
+    expect(template('<p>\u2028<%= "\\u2028\\u2029" %>\u2029</p>')()).to.equal(
+        '<p>\u2028\u2028\u2029\u2029</p>'
+    );
 });
