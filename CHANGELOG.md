@@ -1,3 +1,8 @@
+## v1.8.0 (19 Sep 2019)
+
+* add: toAsync
+* fix(Url): incorrect result for urls without path
+
 ## v1.7.0 (4 Sep 2019)
 
 * add: slugify
