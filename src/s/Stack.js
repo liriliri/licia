@@ -76,6 +76,8 @@ exports = Class({
         return ++this.size;
     },
     pop: function() {
+        if (!this.size) return;
+
         this.size--;
 
         return this._items.pop();

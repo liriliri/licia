@@ -11,6 +11,7 @@ it('basic', function() {
     stack.clear();
     expect(stack.pop()).to.be.an('undefined');
     expect(stack.peek()).to.be.an('undefined');
+    expect(stack.size).to.equal(0);
 });
 
 it('forEach', function() {
