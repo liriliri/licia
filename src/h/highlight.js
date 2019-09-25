@@ -44,8 +44,7 @@
 _('each defaults');
 
 // https://github.com/trentrichardson/jQuery-Litelighter
-exports = function(str, lang, style) {
-    lang = lang || 'js';
+exports = function(str, lang = 'js', style = {}) {
     defaults(style, defStyle);
 
     str = str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
