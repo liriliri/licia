@@ -1,3 +1,8 @@
+## v1.8.1 (26 Sep 2019)
+
+* fix(highlight): style should be optional
+* fix(Stack): size should not below 0 
+
 ## v1.8.0 (19 Sep 2019)
 
 * add: toAsync
