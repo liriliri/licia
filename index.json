@@ -200,6 +200,23 @@
             "browser"
         ]
     },
+    "Caseless": {
+        "description": "Modify object props without caring about letter case.",
+        "dependencies": [
+            "Class",
+            "lowerCase",
+            "keys"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "Class": {
         "description": "Create JavaScript class.",
         "dependencies": [

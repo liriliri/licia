@@ -297,6 +297,70 @@ Use Blob when available, otherwise BlobBuilder.
 const blob = new Blob([]);
 ```
 
+## Caseless 
+
+Modify object props without caring about letter case.
+
+### constructor
+
+|Name|Type  |Desc         |
+|----|------|-------------|
+|obj |object|Target object|
+
+### getKey
+
+Get key with preserved casing.
+
+|Name  |Type  |Desc        |
+|------|------|------------|
+|key   |string|Caseless key|
+|return|string|Object key  |
+
+### set
+
+Set value.
+
+|Name|Type  |Desc        |
+|----|------|------------|
+|key |string|Caseless key|
+|val |*     |Value to set|
+
+### get
+
+Get value.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|key   |string|Caseless key      |
+|return|*     |Value of given key|
+
+### remove
+
+Remove value.
+
+|Name|Type  |Desc        |
+|----|------|------------|
+|key |string|Caseless key|
+
+### has
+
+Determine whether target object has given key.
+
+|Name  |Type   |Desc                 |
+|------|-------|---------------------|
+|key   |string |Caseless key         |
+|return|boolean|True if has given key|
+
+```javascript
+const headers = { 'Content-Type': 'text/javascript' };
+const c = new Caseless(headers);
+c.set('content-type', 'text/css');
+console.log(headers); // -> { 'Content-Type': 'text/css' }
+c.getKey('content-type'); // -> 'Content-Type'
+c.remove('content-type');
+c.has('content-type'); // -> false
+```
+
 ## Class 
 
 Create JavaScript class.
