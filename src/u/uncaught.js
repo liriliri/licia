@@ -76,7 +76,9 @@ exports = {
 };
 
 if (isBrowser) {
-    window.addEventListener('error', callListeners);
+    window.addEventListener('error', event => {
+        callListeners(event.error);
+    });
     window.addEventListener('unhandledrejection', e => {
         callListeners(e.reason);
     });
