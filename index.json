@@ -2098,6 +2098,19 @@
             "browser"
         ]
     },
+    "formatCellphone": {
+        "description": "Format a cellphone number into international format or local format.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "fraction": {
         "description": "Convert number to fraction.",
         "dependencies": [

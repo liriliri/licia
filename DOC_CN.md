@@ -3031,6 +3031,25 @@ fnParams(function (a, b) {}); // -> ['a', 'b']
 format('%s_%s', 'foo', 'bar'); // -> 'foo_bar'
 ```
 
+## formatCellphone
+
+Format a cellphone number into international format or local format.
+
+|Name               |Type   |Desc                                                  |
+|-------------------|-------|------------------------------------------------------|
+|cellphoneNumber    |string |cellphone number to format                            |
+|internationalString|string |international string used for cellphone number        |
+|international=false|boolean|should the number be converted to international format|
+|return             |string |new formatted cellphone number                        |
+
+```javascript
+formatCellphone('0820000001', '+27', true);   // -> '+27820000001'
+formatCellphone('0820000001', '+27');         // -> '0820000001'
+formatCellphone('+27820000001', '+27', true); // -> '+27820000001'
+formatCellphone('+27820000001', '+27');       // -> '0820000001'
+formatCellphone('820000001', '+27');       // -> '820000001'
+```
+
 ## fraction
 
 转换数字为分数形式。
