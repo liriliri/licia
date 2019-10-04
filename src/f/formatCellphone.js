@@ -13,6 +13,7 @@
  * formatCellphone('0820000001', '+27');         // -> '0820000001'
  * formatCellphone('+27820000001', '+27', true); // -> '+27820000001'
  * formatCellphone('+27820000001', '+27');       // -> '0820000001'
+ * formatCellphone('820000001', '+27');       // -> '820000001'
  */
 
 /* module
@@ -34,4 +35,5 @@ exports = function (cellNumber, internationalString, internationFormat = false) 
   if (cellNumber.indexOf(internationalString) === 0) {
     return internationFormat ? cellNumber : `0${cellNumber.replace(internationalString, '')}`;
   }
+  return internationFormat ? `${internationalString}${cellNumber}` : cellNumber;
 }
