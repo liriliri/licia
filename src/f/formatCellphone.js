@@ -24,16 +24,17 @@
 /* typescript
  * export declare function formatCellphone(
  *     cellphoneNumber: string,
- *     internationalString: string
+ *     internationalString: string,
+ *     international?: boolean
  * ): string;
  */
 
-exports = function (cellNumber, internationalString, internationFormat = false) {
+exports = function (cellNumber, internationalString, international = false) {
   if (cellNumber[0] === '0') {
-    return internationFormat ? `${internationalString}${cellNumber.slice(1)}` : cellNumber;
+    return international ? `${internationalString}${cellNumber.slice(1)}` : cellNumber;
   }
   if (cellNumber.indexOf(internationalString) === 0) {
-    return internationFormat ? cellNumber : `0${cellNumber.replace(internationalString, '')}`;
+    return international ? cellNumber : `0${cellNumber.replace(internationalString, '')}`;
   }
-  return internationFormat ? `${internationalString}${cellNumber}` : cellNumber;
+  return international ? `${internationalString}${cellNumber}` : cellNumber;
 };
