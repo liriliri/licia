@@ -36,4 +36,4 @@ exports = function (cellNumber, internationalString, internationFormat = false) 
     return internationFormat ? cellNumber : `0${cellNumber.replace(internationalString, '')}`;
   }
   return internationFormat ? `${internationalString}${cellNumber}` : cellNumber;
-}
+};
