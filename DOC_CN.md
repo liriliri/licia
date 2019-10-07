@@ -2579,6 +2579,20 @@ easing.linear(0.5); // -> 0.5
 easing.inElastic(0.5, 500); // -> 0.03125
 ```
 
+## emulateTouch
+
+在桌面端浏览器模拟 touch 事件。
+
+|参数名|类型|说明|
+|-----|----|---|
+|el|Element|目标元素|
+
+```javascript
+const el = document.querySelector('#test');
+emulateTouch(el);
+el.addEventListener('touchstart', () => {}, false);
+```
+
 ## endWith
 
 检查字符串是否以指定字符串结尾。

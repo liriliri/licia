@@ -1,0 +1,23 @@
+<require>emulateTouch $ evalCss</require>
+
+<style>
+#touch {
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+</style>
+
+<template id="bodyTpl">
+    <div id="touch"></div>
+</template>
+
+<script>
+evalCss(style);
+$('body').html(bodyTpl);
+const touch = document.getElementById('touch');
+emulateTouch(touch);
+touch.addEventListener('touchstart', e => console.log(e), false);
+touch.addEventListener('touchmove', e => console.log(e), false);
+touch.addEventListener('touchend', e => console.log(e), false);
+</script>

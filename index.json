@@ -1688,6 +1688,20 @@
             "browser"
         ]
     },
+    "emulateTouch": {
+        "description": "Emulate touch events on desktop browsers.",
+        "dependencies": [
+            "trigger",
+            "root"
+        ],
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
+        "demo": true
+    },
     "endWith": {
         "description": "Check if string ends with the given target string.",
         "dependencies": [],

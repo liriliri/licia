@@ -2584,6 +2584,20 @@ easing.linear(0.5); // -> 0.5
 easing.inElastic(0.5, 500); // -> 0.03125
 ```
 
+## emulateTouch 
+
+Emulate touch events on desktop browsers.
+
+|Name|Type   |Desc          |
+|----|-------|--------------|
+|el  |Element|Target element|
+
+```javascript
+const el = document.querySelector('#test');
+emulateTouch(el);
+el.addEventListener('touchstart', () => {}, false);
+```
+
 ## endWith 
 
 Check if string ends with the given target string.
