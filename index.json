@@ -215,7 +215,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.9.0"
     },
     "Class": {
         "description": "Create JavaScript class.",
@@ -1700,6 +1701,7 @@
         "test": [
             "browser"
         ],
+        "since": "1.9.0",
         "demo": true
     },
     "endWith": {

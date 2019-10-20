@@ -1,3 +1,9 @@
+## v1.9.0 (20 Oct 2019)
+
+* add: Caseless
+* add: emulateTouch
+* fix(uncaught): pass error object instead of event
+
 ## v1.8.1 (26 Sep 2019)
 
 * fix(highlight): style should be optional
