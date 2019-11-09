@@ -5752,6 +5752,16 @@
         "test": [],
         "since": "1.4.6"
     },
+    "xpath": {
+        "description": "Select elements using xpath, IE is not supported.",
+        "dependencies": [],
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "zip": {
         "description": "Merge together the values of each of the arrays with the values at the corresponding position.",
         "dependencies": [

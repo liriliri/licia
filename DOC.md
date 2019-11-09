@@ -6948,6 +6948,19 @@ wx.getStorage('test').then(res => {
 });
 ```
 
+## xpath 
+
+Select elements using xpath, IE is not supported.
+
+|Name  |Type  |Desc           |
+|------|------|---------------|
+|xpath |string|Xpath          |
+|return|array |Target elements|
+
+```javascript
+xpath('//html/body'); // -> [body]
+```
+
 ## zip 
 
 Merge together the values of each of the arrays with the values at the corresponding position.

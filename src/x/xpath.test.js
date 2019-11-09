@@ -1,0 +1,3 @@
+it('basic', () => {
+    expect(xpath('//html/body')).to.eql([document.body]);
+});
