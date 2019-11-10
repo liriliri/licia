@@ -297,6 +297,43 @@ Use Blob when available, otherwise BlobBuilder.
 const blob = new Blob([]);
 ```
 
+## BloomFilter 
+
+Bloom filter implementation.
+
+### constructor
+
+|Name     |Type  |Desc                    |
+|---------|------|------------------------|
+|size=1024|number|Number of buckets       |
+|k=3      |number|Number of Hash functions|
+
+### add
+
+Add an element to the filter.
+
+|Name|Type  |Desc        |
+|----|------|------------|
+|val |string|Value to add|
+
+### test
+
+Test if an element is in the filter.
+
+|Name  |Type   |Desc                                     |
+|------|-------|-----------------------------------------|
+|val   |string |Value to test                            |
+|return|boolean|True if probably, false if definitely not|
+
+```javascript
+const bloom = new BloomFilter(256, 3);
+bloom.add('Bruce Wayne');
+bloom.add('Clark Kent');
+bloom.test('Clark Kent'); // -> true
+bloom.test('Bruce Wayne'); // -> true
+bloom.test('Tony Stark'); // -> false
+```
+
 ## Caseless 
 
 Modify object props without caring about letter case.

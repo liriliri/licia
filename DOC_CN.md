@@ -292,6 +292,43 @@ $show('#test');
 const blob = new Blob([]);
 ```
 
+## BloomFilter
+
+布隆过滤器实现。
+
+### constructor
+
+|参数名|类型|说明|
+|-----|----|---|
+|size=1024|number|桶数目|
+|k=3|number|哈希函数数目|
+
+### add
+
+添加元素。
+
+|参数名|类型|说明|
+|-----|----|---|
+|val|string|要加的值|
+
+### test
+
+检测元素是否在过滤器中。
+
+|参数名|类型|说明|
+|-----|----|---|
+|val|string|要检查的值|
+|返回值|boolean|如果可能在返回真，如果绝对不在返回假|
+
+```javascript
+const bloom = new BloomFilter(256, 3);
+bloom.add('Bruce Wayne');
+bloom.add('Clark Kent');
+bloom.test('Clark Kent'); // -> true
+bloom.test('Bruce Wayne'); // -> true
+bloom.test('Tony Stark'); // -> false
+```
+
 ## Caseless
 
 修复对象的属性值时，无需关心键值的大小写情况。

@@ -200,6 +200,26 @@
             "browser"
         ]
     },
+    "BloomFilter": {
+        "description": "Bloom filter implementation.",
+        "dependencies": [
+            "Class",
+            "fill",
+            "fnv1a",
+            "strHash",
+            "each",
+            "some"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "Caseless": {
         "description": "Modify object props without caring about letter case.",
         "dependencies": [
