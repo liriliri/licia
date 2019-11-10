@@ -1,3 +1,9 @@
+## v1.10.0 (10 Nov 2019)
+
+* add: xpath
+* add: fnv1a
+* add: BloomFilter
+
 ## v1.9.0 (20 Oct 2019)
 
 * add: Caseless

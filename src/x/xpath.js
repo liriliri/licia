@@ -13,6 +13,7 @@
 /* module
  * env: browser
  * test: browser
+ * since: 1.10.0
  */
 
 /* typescript

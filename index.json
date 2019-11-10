@@ -218,7 +218,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.10.0"
     },
     "Caseless": {
         "description": "Modify object props without caring about letter case.",
@@ -2127,7 +2128,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.10.0"
     },
     "format": {
         "description": "Format string in a printf-like format.",
@@ -5793,7 +5795,8 @@
         ],
         "test": [
             "browser"
-        ]
+        ],
+        "since": "1.10.0"
     },
     "zip": {
         "description": "Merge together the values of each of the arrays with the values at the corresponding position.",
