@@ -2096,6 +2096,19 @@
             "browser"
         ]
     },
+    "fnv1a": {
+        "description": "Simple FNV-1a implementation.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "format": {
         "description": "Format string in a printf-like format.",
         "dependencies": [

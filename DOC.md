@@ -3026,6 +3026,19 @@ Get a function parameter's names.
 fnParams(function (a, b) {}); // -> ['a', 'b']
 ```
 
+## fnv1a 
+
+Simple FNV-1a implementation.
+
+|Name  |Type  |Desc          |
+|------|------|--------------|
+|str   |string|String to hash|
+|return|number|Hast result   |
+
+```javascript
+fnv1a('test'); // -> 2949673445
+```
+
 ## format 
 
 Format string in a printf-like format.

@@ -3022,6 +3022,19 @@ test('test', () => {}, 5, 'test') // Throw error
 fnParams(function (a, b) {}); // -> ['a', 'b']
 ```
 
+## fnv1a
+
+简单 FNV-1a 哈希算法实现。
+
+|参数名|类型|说明|
+|-----|----|---|
+|str|string|目标字符串|
+|返回值|number|哈希结果|
+
+```javascript
+fnv1a('test'); // -> 2949673445
+```
+
 ## format
 
 使用类似于 printf 的方式来格式化字符串。
