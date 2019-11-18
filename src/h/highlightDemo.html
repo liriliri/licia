@@ -26,7 +26,15 @@ $('body').append(`<pre>${highlight(stripIndent`
 </head>
 <body>
     This is the test.
+    <${'script'}>
+    function test() {
+        var a = 5 + 1;
+        return a;
+    }    
+    </${'script'}>    
 </body>
 </html>
-`, 'html')}</pre>`)
+`, 'html', {
+    keyword: 'color:#569cd6'
+})}</pre>`)
 </script>
