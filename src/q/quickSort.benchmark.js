@@ -4,6 +4,7 @@ const selectionSort = util.selectionSort;
 const mergeSort = util.mergeSort;
 const shellSort = util.shellSort;
 const random = util.random;
+const heapSort = util.heapSort;
 
 suite
     .add('vanilla', () => randomArr(10000).sort())
@@ -13,6 +14,7 @@ suite
     .add('bubbleSort', () => bubbleSort(randomArr(10000)))
     .add('insertionSort', () => insertionSort(randomArr(10000)))
     .add('selectionSort', () => selectionSort(randomArr(10000)))
+    .add('heapSort', () => heapSort(randomArr(10000)))
     .run();
 
 function randomArr(len) {

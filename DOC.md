@@ -3405,6 +3405,20 @@ Checks if key is a direct property.
 has({one: 1}, 'one'); // -> true
 ```
 
+## heapSort 
+
+Heap sort implementation.
+
+|Name  |Type    |Desc         |
+|------|--------|-------------|
+|arr   |array   |Array to sort|
+|[cmp] |function|Comparator   |
+|return|array   |Sorted array |
+
+```javascript
+heapSort([2, 1]); // -> [1, 2]
+```
+
 ## highlight 
 
 Highlight code.

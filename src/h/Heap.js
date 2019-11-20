@@ -109,7 +109,7 @@ exports = Class({
 
         while (leftChildIdx(idx) < size) {
             let smallerIdx = leftChildIdx(idx);
-            let rightChild = rightChildIdx(idx);
+            const rightChild = rightChildIdx(idx);
             if (
                 rightChild < size &&
                 cmp(data[rightChildIdx], data[smallerIdx]) < 0

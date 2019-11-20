@@ -3401,6 +3401,20 @@ document.body.appendChild(el);
 has({one: 1}, 'one'); // -> true
 ```
 
+## heapSort
+
+堆排序实现。
+
+|参数名|类型|说明|
+|-----|----|---|
+|arr|array|要排序的数组|
+|[cmp]|function|比较器|
+|返回值|array|有序数组|
+
+```javascript
+heapSort([2, 1]); // -> [1, 2]
+```
+
 ## highlight
 
 高亮代码。

@@ -2372,6 +2372,21 @@
             "browser"
         ]
     },
+    "heapSort": {
+        "description": "Heap sort implementation.",
+        "dependencies": [
+            "Heap"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "highlight": {
         "description": "Highlight code.",
         "dependencies": [
