@@ -349,7 +349,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.11.0"
     },
     "JsonTransformer": {
         "description": "Json to json transformer.",
@@ -485,7 +486,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.11.0"
     },
     "Promise": {
         "description": "Lightweight Promise implementation.",
@@ -2408,7 +2410,8 @@
         "test": [
             "node",
             "browser"
-        ]
+        ],
+        "since": "1.11.0"
     },
     "highlight": {
         "description": "Highlight code.",

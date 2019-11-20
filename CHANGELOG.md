@@ -1,3 +1,10 @@
+## v1.11.0 (20 Nov 2019)
+
+* add: PriorityQueue
+* add: heapSort
+* add: Heap
+* fix(highlight): style for sub language
+
 ## v1.10.0 (10 Nov 2019)
 
 * add: xpath
