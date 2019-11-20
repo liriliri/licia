@@ -469,6 +469,24 @@
             "browser"
         ]
     },
+    "PriorityQueue": {
+        "description": "Priority queue implementation.",
+        "dependencies": [
+            "Class",
+            "Heap",
+            "isSorted",
+            "wrap"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "Promise": {
         "description": "Lightweight Promise implementation.",
         "dependencies": [

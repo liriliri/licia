@@ -577,7 +577,7 @@ if (val === importance.CRITICAL) {
 
 ### clear
 
-清除堆数据。
+清空堆数据。
 
 ### add
 
@@ -912,6 +912,58 @@ const observer = new MutationObserver(function (mutations) {
 });
 observer.observe(document.documentElement);
 observer.disconnect();
+```
+
+## PriorityQueue
+
+优先队列实现。
+
+### size
+
+队列大小。
+
+### constructor
+
+|参数名|类型|说明|
+|-----|----|---|
+|[cmp]|function|比较函数|
+
+### clear
+
+清空队列。
+
+### enqueue
+
+元素入列。
+
+|参数名|类型|说明|
+|-----|----|---|
+|item|*|入列元素|
+|返回值|number|当前大小|
+
+### dequeue
+
+获取并删除队列中拥有最高优先级的元素。
+
+### peek
+
+同 dequeue，只是不删除。
+
+```javascript
+const queue = new PriorityQueue(function (a, b) {
+    if (a.priority > b.priority) return 1;
+    if (a.priority === b.priority) return -1;
+    return 0;
+});
+queue.enqueue({
+    priority: 1000,
+    value: 'apple',
+});
+queue.enqueue({
+    priority: 500,
+    value: 'orange'
+});
+queue.dequeue(); // -> { priority: 1000, value: 'apple' }
 ```
 
 ## Promise

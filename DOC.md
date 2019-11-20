@@ -919,6 +919,58 @@ observer.observe(document.documentElement);
 observer.disconnect();
 ```
 
+## PriorityQueue 
+
+Priority queue implementation.
+
+### size
+
+Queue size.
+
+### constructor
+
+|Name |Type    |Desc      |
+|-----|--------|----------|
+|[cmp]|function|Comparator|
+
+### clear
+
+Clear the queue.
+
+### enqueue
+
+Add an item to the queue.
+
+|Name  |Type  |Desc        |
+|------|------|------------|
+|item  |*     |Item to add |
+|return|number|Current size|
+
+### dequeue
+
+Retrieve and remove the highest priority item of the queue.
+
+### peek
+
+Same as dequeue, but does not remove the item.
+
+```javascript
+const queue = new PriorityQueue(function (a, b) {
+    if (a.priority > b.priority) return 1;
+    if (a.priority === b.priority) return -1;
+    return 0;
+});
+queue.enqueue({
+    priority: 1000,
+    value: 'apple',
+});
+queue.enqueue({
+    priority: 500,
+    value: 'orange'
+});
+queue.dequeue(); // -> { priority: 1000, value: 'apple' }
+```
+
 ## Promise 
 
 Lightweight Promise implementation.
