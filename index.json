@@ -338,7 +338,8 @@
         "description": "Heap implementation.",
         "dependencies": [
             "Class",
-            "swap"
+            "swap",
+            "isSorted"
         ],
         "env": [
             "node",
@@ -855,7 +856,9 @@
     },
     "binarySearch": {
         "description": "Binary search implementation.",
-        "dependencies": [],
+        "dependencies": [
+            "isSorted"
+        ],
         "env": [
             "node",
             "browser",
@@ -904,7 +907,8 @@
     "bubbleSort": {
         "description": "Bubble sort implementation.",
         "dependencies": [
-            "swap"
+            "swap",
+            "isSorted"
         ],
         "env": [
             "node",
@@ -2375,7 +2379,8 @@
     "heapSort": {
         "description": "Heap sort implementation.",
         "dependencies": [
-            "Heap"
+            "Heap",
+            "isSorted"
         ],
         "env": [
             "node",
@@ -2538,7 +2543,8 @@
     "insertionSort": {
         "description": "Insertion sort implementation.",
         "dependencies": [
-            "swap"
+            "swap",
+            "isSorted"
         ],
         "env": [
             "node",
@@ -3761,7 +3767,9 @@
     },
     "mergeSort": {
         "description": "Merge sort implementation.",
-        "dependencies": [],
+        "dependencies": [
+            "isSorted"
+        ],
         "env": [
             "node",
             "browser",
@@ -4340,7 +4348,8 @@
     "quickSort": {
         "description": "Quick sort implementation.",
         "dependencies": [
-            "swap"
+            "swap",
+            "isSorted"
         ],
         "env": [
             "node",
@@ -4780,7 +4789,8 @@
     "selectionSort": {
         "description": "Selection sort implementation.",
         "dependencies": [
-            "swap"
+            "swap",
+            "isSorted"
         ],
         "env": [
             "node",
@@ -4795,7 +4805,8 @@
     "shellSort": {
         "description": "Shell sort implementation.",
         "dependencies": [
-            "swap"
+            "swap",
+            "isSorted"
         ],
         "env": [
             "node",

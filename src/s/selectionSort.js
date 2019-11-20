@@ -20,11 +20,9 @@
  * export declare function selectionSort(arr: any[], cmp?: Function): any[];
  */
 
-_('swap');
+_('swap isSorted');
 
-exports = function(arr, cmp) {
-    cmp = cmp || comparator;
-
+exports = function(arr, cmp = isSorted.defComparator) {
     let min;
 
     for (let i = 0, len = arr.length; i < len; i++) {
@@ -41,7 +39,3 @@ exports = function(arr, cmp) {
 
     return arr;
 };
-
-function comparator(a, b) {
-    return a - b;
-}

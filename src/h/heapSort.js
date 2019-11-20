@@ -20,9 +20,9 @@
  * export declare function heapSort(arr: any[], cmp?: Function): any[];
  */
 
-_('Heap');
+_('Heap isSorted');
 
-exports = function(arr, cmp = comparator) {
+exports = function(arr, cmp = isSorted.defComparator) {
     const heap = new Heap(cmp);
     const len = arr.length;
     for (let i = 0; i < len; i++) {
@@ -33,7 +33,3 @@ exports = function(arr, cmp = comparator) {
     }
     return arr;
 };
-
-function comparator(a, b) {
-    return a - b;
-}

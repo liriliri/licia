@@ -20,11 +20,9 @@
  * export declare function insertionSort(arr: any[], cmp?: Function): any[];
  */
 
-_('swap');
+_('swap isSorted');
 
-exports = function(arr, cmp) {
-    cmp = cmp || comparator;
-
+exports = function(arr, cmp = isSorted.defComparator) {
     for (let i = 1, len = arr.length; i < len; i++) {
         for (let j = i; j > 0; j--) {
             if (cmp(arr[j], arr[j - 1]) < 0) {
@@ -37,7 +35,3 @@ exports = function(arr, cmp) {
 
     return arr;
 };
-
-function comparator(a, b) {
-    return a - b;
-}

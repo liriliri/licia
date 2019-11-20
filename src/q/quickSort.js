@@ -20,11 +20,9 @@
  * export declare function quickSort(arr: any[], cmp?: Function): any[];
  */
 
-_('swap');
+_('swap isSorted');
 
-exports = function(arr, cmp) {
-    cmp = cmp || comparator;
-
+exports = function(arr, cmp = isSorted.defComparator) {
     return quickSort(arr, 0, arr.length - 1, cmp);
 };
 
@@ -56,7 +54,3 @@ function partition(arr, left, right, cmp) {
 }
 
 const floor = Math.floor;
-
-function comparator(a, b) {
-    return a - b;
-}

@@ -22,9 +22,9 @@
  * export declare function mergeSort(arr: any[], cmp?: Function): any[];
  */
 
-exports = function(arr, cmp) {
-    cmp = cmp || comparator;
+_('isSorted');
 
+exports = function(arr, cmp = isSorted.defComparator) {
     if (arr.length <= 1) return arr;
 
     const middle = floor(arr.length / 2);
@@ -47,10 +47,6 @@ function merge(left, right, cmp) {
     while (j < right.length) ret.push(right[j++]);
 
     return ret;
-}
-
-function comparator(a, b) {
-    return a - b;
 }
 
 const floor = Math.floor;

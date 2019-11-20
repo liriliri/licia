@@ -21,9 +21,9 @@
  * export declare function shellSort(arr: any[], cmp?: Function): any[];
  */
 
-_('swap');
+_('swap isSorted');
 
-exports = function(arr, cmp = comparator) {
+exports = function(arr, cmp = isSorted.defComparator) {
     const len = arr.length;
     let gap = Math.floor(len / 2);
 
@@ -43,7 +43,3 @@ exports = function(arr, cmp = comparator) {
 
     return arr;
 };
-
-function comparator(a, b) {
-    return a - b;
-}

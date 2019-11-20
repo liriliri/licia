@@ -60,10 +60,10 @@
  * }
  */
 
-_('Class swap');
+_('Class swap isSorted');
 
 exports = Class({
-    initialize: function Heap(cmp = comparator) {
+    initialize: function Heap(cmp = isSorted.defComparator) {
         this._cmp = cmp;
         this.clear();
     },
@@ -136,8 +136,4 @@ function leftChildIdx(idx) {
 
 function rightChildIdx(idx) {
     return 2 * idx + 2;
-}
-
-function comparator(a, b) {
-    return a - b;
 }

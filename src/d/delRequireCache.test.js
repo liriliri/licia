@@ -2,7 +2,8 @@ const path = require('path');
 
 const fs = util.fs;
 
-it('basic', async () => {
+it('basic', async function() {
+    this.timeout(10000);
     const licia = require('licia');
     licia.a = 5;
     delRequireCache('licia');

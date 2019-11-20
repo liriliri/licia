@@ -42,9 +42,9 @@
  * ): number;
  */
 
-exports = function(arr, val, cmp) {
-    cmp = cmp || comparator;
+_('isSorted');
 
+exports = function(arr, val, cmp = isSorted.defComparator) {
     let startIdx = 0;
     let endIdx = arr.length - 1;
 
@@ -65,7 +65,3 @@ exports = function(arr, val, cmp) {
 
     return -1;
 };
-
-function comparator(a, b) {
-    return a - b;
-}
