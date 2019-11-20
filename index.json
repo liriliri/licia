@@ -334,6 +334,22 @@
             "browser"
         ]
     },
+    "Heap": {
+        "description": "Heap implementation.",
+        "dependencies": [
+            "Class",
+            "swap"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "JsonTransformer": {
         "description": "Json to json transformer.",
         "dependencies": [

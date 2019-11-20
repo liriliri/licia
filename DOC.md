@@ -566,6 +566,53 @@ if (val === importance.CRITICAL) {
 }
 ```
 
+## Heap 
+
+Heap implementation.
+
+### size
+
+Heap size.
+
+### constructor
+
+|Name |Type    |Desc      |
+|-----|--------|----------|
+|[cmp]|function|Comparator|
+
+### clear
+
+Clear the heap.
+
+### add
+
+Add an item to the heap.
+
+|Name  |Type  |Desc        |
+|------|------|------------|
+|item  |*     |Item to add |
+|return|number|Current size|
+
+### poll
+
+Retrieve and remove the root item of the heap.
+
+### peek
+
+Same as poll, but does not remove the item.
+
+```javascript
+const heap = new Heap(function(a, b) {
+     return b - a;
+});
+heap.add(2);
+heap.add(1);
+heap.add(4);
+heap.add(5);
+heap.poll(); // -> 5
+console.log(heap.size); // -> 4
+```
+
 ## JsonTransformer 
 
 Json to json transformer.
@@ -912,6 +959,10 @@ map.get('1'); // -> 1
 
 Queue data structure.
 
+### size
+
+Queue size.
+
 ### clear
 
 Clear the queue.
@@ -1077,6 +1128,10 @@ store.set('name', 'licia');
 ## Stack 
 
 Stack data structure.
+
+### size
+
+Stack size.
 
 ### clear
 

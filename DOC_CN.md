@@ -561,6 +561,53 @@ if (val === importance.CRITICAL) {
 }
 ```
 
+## Heap
+
+堆实现。
+
+### size
+
+堆大小。
+
+### constructor
+
+|参数名|类型|说明|
+|-----|----|---|
+|[cmp]|function|比较函数|
+
+### clear
+
+清除堆数据。
+
+### add
+
+往堆里添加元素。
+
+|参数名|类型|说明|
+|-----|----|---|
+|item|*|入堆元素|
+|返回值|number|当前大小|
+
+### poll
+
+获取并删除堆的根元素。
+
+### peek
+
+与 poll 一样，只是不删除。
+
+```javascript
+const heap = new Heap(function(a, b) {
+     return b - a;
+});
+heap.add(2);
+heap.add(1);
+heap.add(4);
+heap.add(5);
+heap.poll(); // -> 5
+console.log(heap.size); // -> 4
+```
+
 ## JsonTransformer
 
 JSON 转换器。
@@ -907,6 +954,10 @@ map.get('1'); // -> 1
 
 队列数据结构。
 
+### size
+
+队列大小。
+
 ### clear
 
 清空队列。
@@ -1072,6 +1123,10 @@ store.set('name', 'licia');
 ## Stack
 
 栈数据结构。
+
+### size
+
+栈大小。
 
 ### clear
 

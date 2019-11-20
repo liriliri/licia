@@ -1,5 +1,9 @@
 /* Stack data structure.
  *
+ * ### size
+ *
+ * Stack size.
+ *
  * ### clear
  *
  * Clear the stack.

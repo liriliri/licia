@@ -1,5 +1,9 @@
 /* Queue data structure.
  *
+ * ### size
+ *
+ * Queue size.
+ *
  * ### clear
  *
  * Clear the queue.
@@ -70,28 +74,28 @@ exports = Class({
     initialize: function Queue() {
         this.clear();
     },
-    clear: function() {
+    clear() {
         this._items = [];
         this.size = 0;
     },
-    enqueue: function(item) {
+    enqueue(item) {
         this._items.push(item);
 
         return ++this.size;
     },
-    dequeue: function() {
+    dequeue() {
         if (!this.size) return;
 
         this.size--;
 
         return this._items.shift();
     },
-    peek: function() {
+    peek() {
         if (!this.size) return;
 
         return this._items[0];
     },
-    forEach: function(iterator, ctx) {
+    forEach(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
         const items = this._items;
@@ -100,7 +104,7 @@ exports = Class({
             iterator.call(ctx, items[i], i, this);
         }
     },
-    toArr: function() {
+    toArr() {
         return this._items.slice(0);
     }
 });
