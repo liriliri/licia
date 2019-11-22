@@ -6022,6 +6022,24 @@ scrollTo('body', {
 });
 ```
 
+## seedRandom 
+
+Seeded random number generator.
+
+|Name         |Type    |Desc                                          |
+|-------------|--------|----------------------------------------------|
+|seed         |number  |Random seed                                   |
+|min=0        |number  |Min possible value                            |
+|max=1        |number  |Maximum possible value                        |
+|floating=true|boolean |Float or not                                  |
+|return       |function|Function that generates random number sequence|
+
+```javascript
+const random = seedRandom(19920719, 0, 100, false);
+random(); // -> 7
+random(); // -> 68
+```
+
 ## selectionSort 
 
 Selection sort implementation.

@@ -4807,6 +4807,19 @@
         ],
         "demo": true
     },
+    "seedRandom": {
+        "description": "Seeded random number generator.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "selectionSort": {
         "description": "Selection sort implementation.",
         "dependencies": [
