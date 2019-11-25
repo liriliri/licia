@@ -39,15 +39,18 @@ it('parse', function() {
 
 it('convert', function() {
     let color = new Color('#abc');
-    expect(color.toRgb()).to.eql('rgb(170, 187, 204)');
-    expect(color.toHsl()).to.eql('hsl(210, 25%, 73%)');
-    expect(color.toHex()).to.eql('#abc');
+    expect(color.toRgb()).to.equal('rgb(170, 187, 204)');
+    expect(color.toHsl()).to.equal('hsl(210, 25%, 73%)');
+    expect(color.toHex()).to.equal('#abc');
 
     color = new Color({
         val: [210, 25, 73, 0.5],
         model: 'hsl'
     });
-    expect(color.toRgb()).to.eql('rgba(169, 186, 203, 0.5)');
-    expect(color.toHex()).to.eql('#a9bacb');
-    expect(color.toHsl()).to.eql('hsla(210, 25%, 73%, 0.5)');
+    expect(color.toRgb()).to.equal('rgba(169, 186, 203, 0.5)');
+    expect(color.toHex()).to.equal('#a9bacb');
+    expect(color.toHsl()).to.equal('hsla(210, 25%, 73%, 0.5)');
+
+    color = new Color('hsl(180, 92%, 50%)');
+    expect(color.toHex()).to.equal('#0af5f5');
 });

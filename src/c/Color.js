@@ -164,5 +164,5 @@ const regRgbaPer = /^rgba?\(\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*,\s*([+-]?[
 const regHsla = /^hsla?\(\s*([+-]?\d*[.]?\d+)(?:deg)?\s*,\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*(?:,\s*([+-]?[\d.]+)\s*)?\)$/;
 
 function hexDouble(num) {
-    return lpad(convertBase(num, 10, 16), '0', 2);
+    return lpad(convertBase(num, 10, 16), 2, '0');
 }
