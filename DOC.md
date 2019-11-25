@@ -5648,10 +5648,10 @@ randomBytes(5); // -> [55, 49, 153, 30, 122]
 
 Random color generator.
 
-|Name   |Type        |Desc         |
-|-------|------------|-------------|
-|options|object      |Color options|
-|return |string array|Random color |
+|Name   |Type        |Desc          |
+|-------|------------|--------------|
+|options|object      |Random options|
+|return |string array|Random color  |
 
 Available options:
 
@@ -5664,6 +5664,9 @@ Available options:
 |[seed]     |number|Random color seed                |
 
 ```javascript
+randomColor({
+    count: 2
+}); // -> ['#fed7f4', '#526498']
 ```
 
 ## randomId 

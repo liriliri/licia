@@ -12,22 +12,30 @@
 
 <template id="bodyTpl">
     <div class="colors"></div>  
-    <button id="generate">Generate Colors</button>
+    <button id="generate">Generate</button>
+    <button id="generate-hue">Generate Hue 100</button>
+    <button id="generate-lightness">Generate Lightness 0.6</button>
+    <button id="generate-seed">Generate Seed 252</button>
 </template>
 
 <script>
 evalCss(style);
 $('body').html(bodyTpl);
 
-$('#generate').on('click', () => {
+function generate(options = {}) {
     const count = 100;
-    const colors = randomColor({ 
-        count 
-    });
+    options.count = count;
+    const colors = randomColor(options);
     let html = '';
     for (let i = 0; i < count; i++) {
         html += `<span class="color" style="background:${colors[i]}"></span>`;
     }
     $('.colors').html(html);
-})
+}
+
+$('#generate').on('click', () => generate());
+$('#generate-hue').on('click', () => generate({ hue: 100 }));
+$('#generate-lightness').on('click', () => generate({ lightness: 0.6 }));
+$('#generate-seed').on('click', () => generate({ seed: 252 }));
+
 </script>

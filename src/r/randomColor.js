@@ -1,9 +1,9 @@
 /* Random color generator.
  *
- * |Name   |Type        |Desc         |
- * |-------|------------|-------------|
- * |options|object      |Color options|
- * |return |string array|Random color |
+ * |Name   |Type        |Desc          |
+ * |-------|------------|--------------|
+ * |options|object      |Random options|
+ * |return |string array|Random color  |
  *
  * Available options:
  *
@@ -17,6 +17,9 @@
  */
 
 /* example
+ * randomColor({
+ *     count: 2   
+ * }); // -> ['#fed7f4', '#526498']
  */
 
 /* module
@@ -37,17 +40,19 @@
  * export declare function randomColor(options: randomColor.IOptions): string | string[];
  */
 
-_('defaults random Color seedRandom');
+_('defaults random Color seedRandom isFn');
 
 exports = function(options = {}) {
     defaults(options, defOpts);
 
     const { count } = options;
     let { randomH, randomL, randomS } = options;
-    const seed = options.seed || random(0, 100000);
-    randomH = seedRandom(seed, 0, 360, false);
-    randomL = seedRandom(seed + 1, 0, 1);
-    randomS = seedRandom(seed + 2, 0, 1);
+    if (!isFn(randomH)) {
+        const seed = options.seed || random(0, 100000);
+        randomH = seedRandom(seed, 0, 360, false);
+        randomL = seedRandom(seed + 1, 0, 1);
+        randomS = seedRandom(seed + 2, 0, 1);
+    }
     if (count > 1) {
         const colors = [];
         for (let i = 0; i < count; i++) {
@@ -56,7 +61,9 @@ exports = function(options = {}) {
                     defaults(
                         {
                             count: 1,
-                            seed: seed + 1 + i
+                            randomH,
+                            randomL,
+                            randomS
                         },
                         options
                     )

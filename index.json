@@ -4435,7 +4435,8 @@
             "defaults",
             "random",
             "Color",
-            "seedRandom"
+            "seedRandom",
+            "isFn"
         ],
         "env": [
             "node",
