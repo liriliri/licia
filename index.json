@@ -4429,6 +4429,25 @@
             "browser"
         ]
     },
+    "randomColor": {
+        "description": "Random color generator.",
+        "dependencies": [
+            "defaults",
+            "random",
+            "Color",
+            "seedRandom"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
+        "demo": true
+    },
     "randomId": {
         "description": "A tiny id generator, similar to nanoid.",
         "dependencies": [

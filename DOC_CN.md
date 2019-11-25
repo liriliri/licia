@@ -5638,6 +5638,29 @@ random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
 randomBytes(5); // -> [55, 49, 153, 30, 122]
 ```
 
+## randomColor
+
+Random color generator.
+
+|Name   |Type        |Desc         |
+|-------|------------|-------------|
+|options|object      |Color options|
+|return |string array|Random color |
+
+Available options:
+
+|Name       |Type  |Desc                             |
+|-----------|------|---------------------------------|
+|count=1    |number|Color number                     |
+|[hue]      |number|Hue, number between 0 and 360    |
+|[lightness]|number|Lightness, number between 0 and 1|
+|format=hex |string|Color format, hex, hsl or rgb    |
+|[seed]     |number|Random color seed                |
+
+```javascript
+
+```
+
 ## randomId
 
 简单 id 生成器，类似于 nanoid。
