@@ -1,46 +1,49 @@
 <require>stringifyAll</require>
 
 <script>
-console.log(JSON.parse(stringifyAll({}, { 
+function log(obj, options = {}) {
+    console.log(JSON.parse(stringifyAll(obj, options)))
+}    
+log({}, { 
     ignore: [Object.prototype] 
-})));
+});
 
 console.time('window');
-console.log(JSON.parse(stringifyAll(window)));
+log(window);
 console.timeEnd('window');
 
 console.time('window unenumerable');
-console.log(JSON.parse(stringifyAll(window, {
+log(window, {
     unenumerable: true
-})));
+});
 console.timeEnd('window unenumerable');
 
 console.time('window symbol');
-console.log(JSON.parse(stringifyAll(window, {
+log(window, {
     symbol: true
-})));
+});
 console.timeEnd('window symbol');
 
 console.time('window accessGetter');
-console.log(JSON.parse(stringifyAll(window, {
+log(window, {
   accessGetter: true
-})));
+});
 console.timeEnd('window accessGetter');
 
 console.time('window all');
-console.log(JSON.parse(stringifyAll(window, {
+log(window, {
     unenumerable: true,
     symbol: true,
     accessGetter: true
-})));
+});
 console.timeEnd('window all');
 
 console.time('window timeout 50ms');
-console.log(JSON.parse(stringifyAll(window, {
+log(window, {
     unenumerable: true,
     symbol: true,
     accessGetter: true,
     timeout: 50
-})));
+});
 console.timeEnd('window timeout 50ms');
 </script>
