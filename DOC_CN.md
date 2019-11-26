@@ -4548,6 +4548,19 @@ isWeakSet(new WeakSet()); // -> true
 console.log(isWindows); // -> true if running on windows
 ```
 
+## jsonClone
+
+使用 JSON parse 和 stringify 方法对指定对象进行复制。
+
+|参数名|类型|说明|
+|-----|----|---|
+|val|*|要克隆的值|
+|返回值|*|克隆值|
+
+```javascript
+jsonClone({ name: 'licia' }); // -> { name: 'licia' }
+```
+
 ## jsonp
 
 简单 jsonp 实现。

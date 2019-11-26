@@ -3452,6 +3452,19 @@
             "node"
         ]
     },
+    "jsonClone": {
+        "description": "Use JSON parse and stringify to clone object.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "jsonp": {
         "description": "A simple jsonp implementation.",
         "dependencies": [

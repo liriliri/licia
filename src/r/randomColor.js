@@ -18,7 +18,7 @@
 
 /* example
  * randomColor({
- *     count: 2   
+ *     count: 2
  * }); // -> ['#fed7f4', '#526498']
  */
 

@@ -4552,6 +4552,19 @@ Check if platform is windows.
 console.log(isWindows); // -> true if running on windows
 ```
 
+## jsonClone 
+
+Use JSON parse and stringify to clone object.
+
+|Name  |Type|Desc          |
+|------|----|--------------|
+|val   |*   |Value to clone|
+|return|*   |Cloned value  |
+
+```javascript
+jsonClone({ name: 'licia' }); // -> { name: 'licia' }
+```
+
 ## jsonp 
 
 A simple jsonp implementation.
