@@ -24,6 +24,7 @@
 
 /* module
  * env: all
+ * since: 1.12.0
  */
 
 /* typescript

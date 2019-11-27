@@ -1,3 +1,10 @@
+## v1.12.0 (27 Nov 2019)
+
+* add: seedRandom
+* add: randomColor
+* add: jsonClone
+* fix(Color): toHex
+
 ## v1.11.0 (20 Nov 2019)
 
 * add: PriorityQueue
