@@ -68,17 +68,17 @@
  * }
  */
 
-_('LinkedList PseudoMap');
+_('LinkedList PseudoMap Class');
 
-exports = class Lru {
-    constructor(max) {
+exports = Class({
+    initialize: function Lru(max) {
         this._max = max;
         this._list = new LinkedList();
         this._map = new PseudoMap();
-    }
+    },
     has(key) {
         return this._map.has(key);
-    }
+    },
     remove(key) {
         const map = this._map;
 
@@ -87,7 +87,7 @@ exports = class Lru {
             this._list.rmNode(node);
             map.delete(key);
         }
-    }
+    },
     get(key) {
         const list = this._list;
         const map = this._map;
@@ -103,7 +103,7 @@ exports = class Lru {
         }
 
         return ret;
-    }
+    },
     set(key, val) {
         const list = this._list;
         const map = this._map;
@@ -127,9 +127,9 @@ exports = class Lru {
                 map.delete(item.key);
             }
         }
-    }
+    },
     clear() {
         this._map = new PseudoMap();
         this._list = new LinkedList();
     }
-};
+});

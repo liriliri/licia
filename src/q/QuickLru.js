@@ -28,22 +28,22 @@
  * }
  */
 
-_('isUndef');
+_('isUndef Class');
 
-exports = class QuickLru {
-    constructor(max) {
+exports = Class({
+    initialize: function QuickLru(max) {
         this._max = max;
         this._cache = {};
         this._oldCache = {};
         this._size = 0;
-    }
+    },
     has(key) {
         return !isUndef(this._cache[key]) || !isUndef(this._oldCache[key]);
-    }
+    },
     remove(key) {
         if (!isUndef(this._cache[key])) this._cache[key] = undefined;
         if (!isUndef(this._oldCache[key])) this._oldCache[key] = undefined;
-    }
+    },
     get(key) {
         if (!isUndef(this._cache[key])) {
             return this._cache[key];
@@ -53,18 +53,18 @@ exports = class QuickLru {
             this._update(key, val);
             return val;
         }
-    }
+    },
     set(key, val) {
         if (!isUndef(this._cache[key])) {
             this._cache[key] = val;
         } else {
             this._update(key, val);
         }
-    }
+    },
     clear() {
         this._cache = {};
         this._oldCache = {};
-    }
+    },
     _update(key, val) {
         this._cache[key] = val;
         this._size++;
@@ -75,4 +75,4 @@ exports = class QuickLru {
             this._cache = {};
         }
     }
-};
+});

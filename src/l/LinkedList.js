@@ -79,12 +79,14 @@
  * }
  */
 
-exports = class LinkedList {
-    constructor() {
+_('Class');
+
+exports = Class({
+    initialize: function LinkedList() {
         this.tail = null;
         this.head = null;
         this.size = 0;
-    }
+    },
     push(val) {
         const node = new Node(val, this.tail, null, this);
 
@@ -94,7 +96,7 @@ exports = class LinkedList {
         this.size++;
 
         return this.size;
-    }
+    },
     pop() {
         if (!this.tail) return;
 
@@ -110,7 +112,7 @@ exports = class LinkedList {
         this.size--;
 
         return node.value;
-    }
+    },
     unshift(val) {
         const node = new Node(val, null, this.head, this);
 
@@ -120,7 +122,7 @@ exports = class LinkedList {
         this.size++;
 
         return this.size;
-    }
+    },
     shift() {
         if (!this.head) return;
 
@@ -136,7 +138,7 @@ exports = class LinkedList {
         this.size--;
 
         return node.value;
-    }
+    },
     rmNode(node) {
         if (node.list !== this) {
             throw Error('Node does not belong to this list');
@@ -161,7 +163,7 @@ exports = class LinkedList {
         node.next = null;
 
         this.size--;
-    }
+    },
     forEach(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
@@ -169,7 +171,7 @@ exports = class LinkedList {
             iterator.call(ctx, current.value, i, this);
             current = current.next;
         }
-    }
+    },
     toArr() {
         const arr = new Array(this.size);
 
@@ -180,7 +182,7 @@ exports = class LinkedList {
 
         return arr;
     }
-};
+});
 
 const Node = (exports.Node = class Node {
     constructor(val, prev, next, list) {
