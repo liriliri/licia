@@ -377,7 +377,9 @@
     },
     "LinkedList": {
         "description": "Doubly-linked list implementation.",
-        "dependencies": [],
+        "dependencies": [
+            "Class"
+        ],
         "env": [
             "node",
             "browser",
@@ -431,7 +433,8 @@
         "description": "Simple LRU cache.",
         "dependencies": [
             "LinkedList",
-            "PseudoMap"
+            "PseudoMap",
+            "Class"
         ],
         "env": [
             "node",
@@ -549,7 +552,8 @@
     "QuickLru": {
         "description": "LRU implementation without linked list.",
         "dependencies": [
-            "isUndef"
+            "isUndef",
+            "Class"
         ],
         "env": [
             "node",
@@ -3984,6 +3988,21 @@
     "normalizePath": {
         "description": "Normalize file path slashes.",
         "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
+    "normalizePhone": {
+        "description": "Normalize phone numbers into E.164 format.",
+        "dependencies": [
+            "trim"
+        ],
         "env": [
             "node",
             "browser",

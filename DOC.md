@@ -5172,6 +5172,36 @@ normalizePath('\\foo\\bar\\'); // -> '/foo/bar/'
 normalizePath('./foo//bar'); // -> './foo/bar'
 ```
 
+## normalizePhone 
+
+Normalize phone numbers into E.164 format.
+
+|Name   |Type  |Desc              |
+|-------|------|------------------|
+|phone  |string|Phone to normalize|
+|options|object|Normalize options |
+|return |string|Normalized phone  |
+
+Available options:
+
+|Name             |Type   |Desc                                 |
+|-----------------|-------|-------------------------------------|
+|countryCode      |number |Country code                         |
+|trunkPrefix=false|boolean|True if local format has trunk prefix|
+
+```javascript
+normalizePhone('13512345678', {
+    countryCode: 86
+}); // -> '+8613512345678'
+normalizePhone('(415) 555-2671', {
+    countryCode: 1
+}); // -> '+14155552671'
+normalizePhone('020 7183 8750', {
+    countryCode: 44,
+    trunkPrefix: true
+}); // -> '+442071838750'
+```
+
 ## now 
 
 Gets the number of milliseconds that have elapsed since the Unix epoch.
