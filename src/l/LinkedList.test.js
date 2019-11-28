@@ -29,6 +29,7 @@ it('basic', function() {
     linkedList.push(4);
     const node = linkedList.tail;
     linkedList.push(3);
+    expect(linkedList.find(value => value === 4)).to.equal(node);
     linkedList.rmNode(node);
     expect(linkedList.toArr()).to.eql([5, 3]);
 });

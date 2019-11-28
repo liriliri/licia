@@ -736,6 +736,15 @@ Get the first value of the list.
 
 Remove node.
 
+### find
+
+Find node.
+
+|Name  |Type    |Desc                             |
+|------|--------|---------------------------------|
+|fn    |function|Function invoked per iteration   |
+|return|node    |First value that passes predicate|
+
 ### forEach
 
 Iterate over the list.

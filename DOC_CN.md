@@ -731,6 +731,15 @@ data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', c
 
 删除节点。
 
+### find
+
+查找节点。
+
+|参数名|类型|说明|
+|-----|----|---|
+|fn|function|真值检测函数|
+|返回值|node|第一个通过的节点|
+
 ### forEach
 
 遍历链表。

@@ -37,6 +37,15 @@
  *
  * Remove node.
  *
+ * ### find
+ *
+ * Find node.
+ *
+ * |Name  |Type    |Desc                             |
+ * |------|--------|---------------------------------|
+ * |fn    |function|Function invoked per iteration   |
+ * |return|node    |First value that passes predicate|
+ *
  * ### forEach
  *
  * Iterate over the list.
@@ -73,6 +82,7 @@
  *     pop(): any;
  *     unshift(val: any): number;
  *     shift(): any;
+ *     find(fn: Function): LinkList.Node | void;
  *     delNode(node: LinkedList.Node): void;
  *     forEach(iterator: Function, ctx?: any);
  *     toArr(): any[];
@@ -163,6 +173,14 @@ exports = Class({
         node.next = null;
 
         this.size--;
+    },
+    find(fn) {
+        for (let i = 0, current = this.head; current !== null; i++) {
+            if (fn(current.value)) {
+                return current;
+            }
+            current = current.next;
+        }
     },
     forEach(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
