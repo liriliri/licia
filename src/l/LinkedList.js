@@ -82,7 +82,7 @@
  *     pop(): any;
  *     unshift(val: any): number;
  *     shift(): any;
- *     find(fn: Function): LinkList.Node | void;
+ *     find(fn: Function): LinkedList.Node | void;
  *     delNode(node: LinkedList.Node): void;
  *     forEach(iterator: Function, ctx?: any);
  *     toArr(): any[];
