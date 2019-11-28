@@ -7,8 +7,9 @@
   },
   "scripts": {
     "postinstall": "node ./lib/setup",
-    "ci": "npm run lint && npm run pack && npm run lint:release && npm test",
+    "ci": "npm run lint && npm run pack && npm run es5 && npm run lint:release && npm test",
     "update": "licia update",
+    "es5": "node ./lib/es5",
     "pack": "licia pack && npm run format:pkg && copyfiles -u 2 .licia/packages/**/* ./node_modules",
     "lint": "eslint -c eslint.src.js src/$/*.js src/[a-z]/*.js",
     "lint:fix": "npm run lint -- --fix",
@@ -74,6 +75,7 @@
     "request": "^2.88.0",
     "sinon": "^7.4.1",
     "typescript": "^3.6.2",
+    "uglify-js": "^3.7.0",
     "underscore": "^1.9.1",
     "uuid": "^3.3.3"
   }

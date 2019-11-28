@@ -184,8 +184,8 @@ exports = Class({
     }
 });
 
-const Node = (exports.Node = class Node {
-    constructor(val, prev, next, list) {
+const Node = (exports.Node = Class({
+    initialize: function Node(val, prev, next, list) {
         this.value = val;
         this.list = list;
 
@@ -203,4 +203,4 @@ const Node = (exports.Node = class Node {
             this.next = null;
         }
     }
-});
+}));
