@@ -17,7 +17,7 @@
  * export declare const wx: any;
  */
 
-_('each arrToMap startWith endWith');
+_('each arrToMap startWith endWith extend');
 
 /* global wx */
 // https://github.com/Tencent/wepy
@@ -75,15 +75,17 @@ each(wx, (fn, name) => {
 
     exports[name] = function(obj) {
         return new Promise((resolve, reject) => {
-            fn.call(wx, {
-                ...obj,
-                success(res) {
-                    resolve(res);
-                },
-                fail(res) {
-                    reject(res);
-                }
-            });
+            fn.call(
+                wx,
+                extend(obj, {
+                    success(res) {
+                        resolve(res);
+                    },
+                    fail(res) {
+                        reject(res);
+                    }
+                })
+            );
         });
     };
 });
