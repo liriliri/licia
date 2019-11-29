@@ -10,9 +10,10 @@
  *
  * Check if has cache.
  *
- * |Name  |Type  |Desc     |
- * |------|------|---------|
- * |key   |string|Cache key|
+ * |Name  |Type   |Desc                |
+ * |------|-------|--------------------|
+ * |key   |string |Cache key           |
+ * |return|boolean|True if value exists|
  *
  * ### remove
  *

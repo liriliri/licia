@@ -566,6 +566,56 @@ if (val === importance.CRITICAL) {
 }
 ```
 
+## HashTable 
+
+Hash table implementation.
+
+### constructor
+
+|Name   |Type  |Desc       |
+|-------|------|-----------|
+|size=32|number|Bucket size|
+
+### set
+
+Set value.
+
+|Name|Type  |Desc        |
+|----|------|------------|
+|key |string|Value key   |
+|val |*     |Value to set|
+
+### get
+
+Get value.
+
+|Name  |Type  |Desc              |
+|------|------|------------------|
+|key   |string|Value key         |
+|return|*     |Value of given key|
+
+### has
+
+Check if has value.
+
+|Name  |Type   |Desc                |
+|------|-------|--------------------|
+|key   |string |Value key           |
+|return|boolean|True if value exists|
+
+### delete
+
+Delete value.
+
+```javascript
+const hashTable = new HashTable(128);
+hashTable.set('name', 'redhoodsu');
+hashTable.get('name'); // -> 'redhoodsu'
+hashTable.has('name'); // -> true
+hashTable.delete('name');
+hashTable.has('name'); // -> false
+```
+
 ## Heap 
 
 Heap implementation.
@@ -842,9 +892,10 @@ Simple LRU cache.
 
 Check if has cache.
 
-|Name  |Type  |Desc     |
-|------|------|---------|
-|key   |string|Cache key|
+|Name  |Type   |Desc                |
+|------|-------|--------------------|
+|key   |string |Cache key           |
+|return|boolean|True if value exists|
 
 ### remove
 

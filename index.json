@@ -334,6 +334,25 @@
             "browser"
         ]
     },
+    "HashTable": {
+        "description": "Hash table implementation.",
+        "dependencies": [
+            "Class",
+            "LinkedList",
+            "map",
+            "strHash",
+            "has"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "Heap": {
         "description": "Heap implementation.",
         "dependencies": [
@@ -5910,7 +5929,8 @@
             "each",
             "arrToMap",
             "startWith",
-            "endWith"
+            "endWith",
+            "extend"
         ],
         "env": [
             "miniprogram"

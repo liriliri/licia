@@ -561,6 +561,56 @@ if (val === importance.CRITICAL) {
 }
 ```
 
+## HashTable
+
+哈希表实现。
+
+### constructor
+
+|参数名|类型|说明|
+|-----|----|---|
+|size=32|number|桶数目|
+
+### set
+
+设置值。
+
+|参数名|类型|说明|
+|-----|----|---|
+|key|string|键名|
+|val|*|键值|
+
+### get
+
+获取值。
+
+|参数名|类型|说明|
+|-----|----|---|
+|key|string|键名|
+|返回值|*|键值|
+
+### has
+
+检查是否有指定值。
+
+|参数名|类型|说明|
+|-----|----|---|
+|key|string|键名|
+|返回值|boolean|如果值存在，返回真|
+
+### delete
+
+删除值。
+
+```javascript
+const hashTable = new HashTable(128);
+hashTable.set('name', 'redhoodsu');
+hashTable.get('name'); // -> 'redhoodsu'
+hashTable.has('name'); // -> true
+hashTable.delete('name');
+hashTable.has('name'); // -> false
+```
+
 ## Heap
 
 堆实现。
@@ -840,6 +890,7 @@ logger.on('debug', function (argList) {
 |参数名|类型|说明|
 |-----|----|---|
 |key|string|缓存键名|
+|返回值|boolean|如果有，返回真|
 
 ### remove
 
