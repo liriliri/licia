@@ -1,3 +1,9 @@
+## v1.13.0 (2 Dec 2019)
+
+* add: normalizePhone
+* add: HashTable
+* feat(LinkedList): find
+
 ## v1.12.0 (27 Nov 2019)
 
 * add: seedRandom
