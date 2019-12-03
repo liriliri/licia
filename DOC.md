@@ -5262,6 +5262,33 @@ normalizePhone('020 7183 8750', {
 }); // -> '+442071838750'
 ```
 
+## notify 
+
+Wrapper for the Web Notifications API.
+
+|Name   |Type  |Desc                |
+|-------|------|--------------------|
+|title  |string|Notification title  |
+|options|object|Notification options|
+
+You can pass exactly the same options supported in the [Web Notification](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification).
+
+### Notification
+
+Use this to create instance when certain events like close, show, click or error needed to be handled.
+
+```javascript
+notify('licia', {
+    body: 'This is the notification content'
+});
+const notification = new notify.Notification('licia', {
+    body: 'This is the notification content'
+});
+notification.on('error', err => console.log(err));
+notification.on('click', e => console.log(e));
+notification.show();
+```
+
 ## now 
 
 Gets the number of milliseconds that have elapsed since the Unix epoch.

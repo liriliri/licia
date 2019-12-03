@@ -54,7 +54,7 @@
 
 /* typescript
  * export declare class HashTable {
- *     constructor(size?: number);    
+ *     constructor(size?: number);
  *     set(key: string, val: any): void;
  *     get(key: string): any;
  *     has(key: string): boolean;

@@ -4034,6 +4034,21 @@
             "browser"
         ]
     },
+    "notify": {
+        "description": "Wrapper for the Web Notifications API.",
+        "dependencies": [
+            "Emitter",
+            "root",
+            "each"
+        ],
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ],
+        "demo": true
+    },
     "now": {
         "description": "Gets the number of milliseconds that have elapsed since the Unix epoch.",
         "dependencies": [],

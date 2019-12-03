@@ -5256,6 +5256,33 @@ normalizePhone('020 7183 8750', {
 }); // -> '+442071838750'
 ```
 
+## notify
+
+Web Notifications 接口简单包装。
+
+|参数名|类型|说明|
+|-----|----|---|
+|title|string|通知标题|
+|options|object|通知选项|
+
+你可以传入所有在 [Web Notification](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification) 中支持的选项。
+
+### Notification
+
+如果你想要监听并处理像 close，show，click 或者 error 等事件，使用这个类创建实例。
+
+```javascript
+notify('licia', {
+    body: 'This is the notification content'
+});
+const notification = new notify.Notification('licia', {
+    body: 'This is the notification content'
+});
+notification.on('error', err => console.log(err));
+notification.on('click', e => console.log(e));
+notification.show();
+```
+
 ## now
 
 获取当前时间戳。
