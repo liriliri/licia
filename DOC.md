@@ -6209,6 +6209,34 @@ Selection sort implementation.
 selectionSort([2, 1]); // -> [1, 2]
 ```
 
+## selector 
+
+Css selector parser and serializer.
+
+### parse
+
+Parse css selector into js object.
+
+|Name    |Type  |Desc            |
+|--------|------|----------------|
+|selector|string|Css selector    |
+|return  |array |Parsed js object|
+
+### stringify
+
+Stringify object into an css selector.
+
+|Name  |Type  |Desc               |
+|------|------|-------------------|
+|groups|array |Object to stringify|
+|return|string|Css selector       |
+
+```javascript
+const groups = selector.parse('#test, input.user[name="licia"]');
+// -> [[{type: 'id', value: 'test'}],[{type: 'tag', value: 'input'}...]]
+selector.stringify(groups);
+```
+
 ## shellSort 
 
 Shell sort implementation.

@@ -4927,6 +4927,24 @@
             "browser"
         ]
     },
+    "selector": {
+        "description": "Css selector parser and serializer.",
+        "dependencies": [
+            "trim",
+            "each",
+            "identity",
+            "map"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "shellSort": {
         "description": "Shell sort implementation.",
         "dependencies": [

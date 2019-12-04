@@ -33,7 +33,7 @@
 
 /* typescript
  * export declare const html: {
- *     parse(html: string): any;
+ *     parse(html: string): any[];
  *     stringify(tree: any[]): string;
  * };
  */

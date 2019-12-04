@@ -1,9 +1,11 @@
 {
     "cSpell.words": [
         "Caseless",
+        "Combinators",
         "eruda",
         "eustia",
         "heapify",
-        "miniprogram"
+        "miniprogram",
+        "serializer"
     ]
 }
