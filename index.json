@@ -1431,7 +1431,8 @@
             "Class",
             "trim",
             "repeat",
-            "defaults"
+            "defaults",
+            "camelCase"
         ],
         "env": [
             "node",

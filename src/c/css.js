@@ -45,8 +45,8 @@
  *     }
  * }
  * export declare const css: {
- *     parse(css: string): any[];
- *     stringify(stylesheet: any[], options?: css.IOptions): string;
+ *     parse(css: string): object;
+ *     stringify(stylesheet: object, options?: css.IOptions): string;
  * }
  */
 
