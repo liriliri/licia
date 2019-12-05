@@ -18,7 +18,7 @@ ini 文件解析器。
 |参数名|类型|说明|
 |-----|----|---|
 |obj|*|要序列化的对象|
-|options|object|序列化选项|
+|[options]|object|序列化选项|
 |返回值|string|ini 文件|
 
 选项：

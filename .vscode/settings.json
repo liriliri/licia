@@ -1,11 +1,31 @@
 {
     "cSpell.words": [
         "Caseless",
+        "Cmts",
         "Combinators",
+        "Proto",
+        "callbackify",
+        "datetime",
+        "debounced",
+        "deburr",
         "eruda",
         "eustia",
+        "fullscreen",
+        "golangify",
         "heapify",
+        "linkify",
+        "lpad",
+        "ltrim",
         "miniprogram",
-        "serializer"
+        "prefetch",
+        "printf",
+        "rpad",
+        "rtrim",
+        "serializer",
+        "slugify",
+        "topo",
+        "universalify",
+        "wechat",
+        "workerize"
     ]
 }

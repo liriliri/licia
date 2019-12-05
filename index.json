@@ -1425,6 +1425,24 @@
             "browser"
         ]
     },
+    "css": {
+        "description": "Css parser and serializer.",
+        "dependencies": [
+            "Class",
+            "trim",
+            "repeat",
+            "defaults"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "cssSupports": {
         "description": "Check if browser supports a given CSS feature.",
         "dependencies": [

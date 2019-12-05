@@ -13,11 +13,11 @@
  *
  * Stringify object into an ini formatted string.
  *
- * |Name   |Type  |Desc                |
- * |------ |------|--------------------|
- * |obj    |*     |Object to stringify |
- * |options|object|Stringify options   |
- * |return |string|Ini formatted string|
+ * |Name     |Type  |Desc                |
+ * |---------|------|--------------------|
+ * |obj      |*     |Object to stringify |
+ * |[options]|object|Stringify options   |
+ * |return   |string|Ini formatted string|
  *
  * Options:
  *

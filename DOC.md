@@ -2375,6 +2375,43 @@ createUrl(new Blob([]));
 createUrl(new File(['test'], 'test.txt'));
 ```
 
+## css 
+
+Css parser and serializer.
+
+Comments will be stripped.
+
+### parse
+
+Parse css into js object.
+
+|Name  |Type  |Desc            |
+|------|------|----------------|
+|css   |string|Css string      |
+|return|object|Parsed js object|
+
+### stringify
+
+Stringify object into css.
+
+|Name      |Type  |Desc               |
+|----------|------|-------------------|
+|stylesheet|object|Object to stringify|
+|[options] |object|Stringify options  |
+|return    |string|Css string         |
+
+Options:
+
+|Name       |Type  |Desc                 |
+|-----------|------|---------------------|
+|indent='  '|string|String used to indent|
+
+```javascript
+const stylesheet = css.parse('.name { background: #000; color: red; }');
+// {type: 'stylesheet', rules: [{type: 'rule', selector: '.name', declarations: [...]}]}
+css.stringify(stylesheet);
+```
+
 ## cssSupports 
 
 Check if browser supports a given CSS feature.
@@ -3705,11 +3742,11 @@ Parse ini string into js object.
 
 Stringify object into an ini formatted string.
 
-|Name   |Type  |Desc                |
-|------ |------|--------------------|
-|obj    |*     |Object to stringify |
-|options|object|Stringify options   |
-|return |string|Ini formatted string|
+|Name     |Type  |Desc                |
+|---------|------|--------------------|
+|obj      |*     |Object to stringify |
+|[options]|object|Stringify options   |
+|return   |string|Ini formatted string|
 
 Options:
 
