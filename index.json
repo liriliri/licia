@@ -5012,6 +5012,22 @@
             "browser"
         ]
     },
+    "sizeof": {
+        "description": "Get approximate size of a js object.",
+        "dependencies": [
+            "isArr",
+            "keys"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "sleep": {
         "description": "Resolve a promise after a specified timeout.",
         "dependencies": [],

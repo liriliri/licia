@@ -6315,6 +6315,27 @@ size({a: 1, b: 2}); // -> 2
 size([1, 2, 3]); // -> 3
 ```
 
+## sizeof 
+
+Get approximate size of a js object.
+
+|Name  |Type  |Desc               |
+|------|------|-------------------|
+|obj   |*     |Object to calculate|
+|return|number|Size in bytes      |
+
+A char of string is counted as 2 bytes. And 4 bytes for boolean, 8 bytes for number.
+
+Object keys are treated as strings.
+
+```javascript
+sizeof('a'); // -> 2
+sizeof(8); // -> 8
+sizeof(false); // -> 4
+sizeof(function () {}); // -> 0
+sizeof({ a: 'b' }); // -> 4
+```
+
 ## sleep 
 
 Resolve a promise after a specified timeout.
