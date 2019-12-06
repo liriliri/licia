@@ -22,3 +22,9 @@ it('big object', () => {
         expect(sizeof(process)).to.be.above(0);
     }
 });
+
+if (isNode) {
+    it('buffer', () => {
+        expect(sizeof(new Buffer(10))).to.equal(10);
+    });
+}
