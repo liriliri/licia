@@ -1439,6 +1439,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.14.0",
         "test": [
             "node",
             "browser"
@@ -4063,6 +4064,7 @@
         "env": [
             "browser"
         ],
+        "since": "1.14.0",
         "test": [
             "browser"
         ],
@@ -4959,6 +4961,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.14.0",
         "test": [
             "node",
             "browser"
@@ -5016,13 +5019,15 @@
         "description": "Get approximate size of a js object.",
         "dependencies": [
             "isArr",
-            "keys"
+            "keys",
+            "isBuffer"
         ],
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.14.0",
         "test": [
             "node",
             "browser"

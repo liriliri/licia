@@ -1,3 +1,10 @@
+## v1.14.0 (10 Dec 2019)
+
+* add: notify
+* add: selector
+* add: css
+* add: sizeof
+
 ## v1.13.0 (2 Dec 2019)
 
 * add: normalizePhone
