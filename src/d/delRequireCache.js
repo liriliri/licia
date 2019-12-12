@@ -14,7 +14,7 @@
 
 /* module
  * env: node
- * test: node
+ * test: manual
  * since: 1.5.4
  */
 

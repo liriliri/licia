@@ -1,0 +1,16 @@
+const test = function(fn, { strictEqual = false } = {}) {
+    const isUndef = util.isUndef;
+    const each = util.each;
+    const clone = util.clone;
+    
+    return function(a, b) {
+        let tests = isUndef(b) ? a : [[a, b]];
+        each(tests, test => {
+            test = clone(test);
+            const expected = test.pop();
+            expect(fn.apply(null, test)).to[strictEqual ? 'equal' : 'eql'](
+                expected
+            );
+        });
+    };
+};

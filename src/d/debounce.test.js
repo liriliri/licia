@@ -17,5 +17,5 @@ it('basic', function(done) {
     setTimeout(function() {
         expect(counter).to.equal(1);
         done();
-    }, 220);
+    }, 300);
 });

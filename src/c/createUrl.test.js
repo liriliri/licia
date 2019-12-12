@@ -1,5 +1,4 @@
 const isUrl = util.isUrl;
-const each = util.each;
 
 function isBlobUrl(url) {
     return isUrl(url.replace(regBlob, ''));
@@ -14,7 +13,7 @@ const tests = [
     [new File(['test'], 'test.txt')]
 ];
 
-each(tests, function(test) {
+util.each(tests, function(test) {
     const content = test[0];
     const opts = test[1];
 

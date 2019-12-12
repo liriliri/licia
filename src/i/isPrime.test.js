@@ -1,2 +1,1 @@
-expect(isPrime(11)).to.be.true;
-expect(isPrime(8)).to.be.false;
+test(isPrime)([[11, true], [8, false]]);

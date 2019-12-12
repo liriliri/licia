@@ -1,6 +1,6 @@
 it('basic', () => {
-    test('#test, input.user[name="licia"]', [
-        [{ type: 'id', value: 'test' }],
+    t('#t, input.user[name="licia"]', [
+        [{ type: 'id', value: 't' }],
         [
             { type: 'tag', value: 'input' },
             { type: 'class', value: 'user' },
@@ -10,16 +10,16 @@ it('basic', () => {
 });
 
 it('combinator', () => {
-    test('#test input', [
+    t('#t input', [
         [
-            { type: 'id', value: 'test' },
+            { type: 'id', value: 't' },
             { type: 'combinator', value: ' ' },
             { type: 'tag', value: 'input' }
         ]
     ]);
-    test('#test > li', [
+    t('#t > li', [
         [
-            { type: 'id', value: 'test' },
+            { type: 'id', value: 't' },
             { type: 'combinator', value: '>' },
             { type: 'tag', value: 'li' }
         ]
@@ -27,17 +27,17 @@ it('combinator', () => {
 });
 
 it('group', () => {
-    test('#test, .test', [
-        [{ type: 'id', value: 'test' }],
-        [{ type: 'class', value: 'test' }]
+    t('#t, .t', [
+        [{ type: 'id', value: 't' }],
+        [{ type: 'class', value: 't' }]
     ]);
 });
 
 it('pseudo', () => {
-    test('.test:hover', [
-        [{ type: 'class', value: 'test' }, { type: 'pseudo', value: ':hover' }]
+    t('.t:hover', [
+        [{ type: 'class', value: 't' }, { type: 'pseudo', value: ':hover' }]
     ]);
-    test('input::placeholder', [
+    t('input::placeholder', [
         [
             { type: 'tag', value: 'input' },
             { type: 'pseudo', value: '::placeholder' }
@@ -45,7 +45,7 @@ it('pseudo', () => {
     ]);
 });
 
-function test(cssSelector, targetGroups) {
+function t(cssSelector, targetGroups) {
     const groups = selector.parse(cssSelector);
     expect(groups).to.eql(targetGroups);
     expect(selector.stringify(groups)).to.equal(cssSelector);

@@ -1,21 +1,30 @@
-expect(arrToMap(['a', 'b', 'c'])).to.eql({
-    a: true,
-    b: true,
-    c: true
-});
-
-expect(arrToMap(['a', 'b', 'c'], 1)).to.eql({
-    a: 1,
-    b: 1,
-    c: 1
-});
-
-expect(
-    arrToMap(['a', 'b', 'c'], function(key) {
-        return key;
-    })
-).to.eql({
-    a: 'a',
-    b: 'b',
-    c: 'c'
-});
+test(arrToMap)([
+    [
+        ['a', 'b', 'c'],
+        {
+            a: true,
+            b: true,
+            c: true
+        }
+    ],
+    [
+        ['a', 'b', 'c'],
+        1,
+        {
+            a: 1,
+            b: 1,
+            c: 1
+        }
+    ],
+    [
+        ['a', 'b', 'c'],
+        function(key) {
+            return key;
+        },
+        {
+            a: 'a',
+            b: 'b',
+            c: 'c'
+        }
+    ]
+]);

@@ -1,11 +1,12 @@
 const stream = require('stream');
 
-expect(isStream(new stream.Stream())).to.be.true;
-expect(isStream(new stream.Readable())).to.be.true;
-expect(isStream(new stream.Writable())).to.be.true;
-expect(isStream(new stream.Duplex())).to.be.true;
-expect(isStream(new stream.Transform())).to.be.true;
-expect(isStream(new stream.PassThrough())).to.be.true;
-
-expect(isStream({})).to.be.false;
-expect(isStream(function() {})).to.be.false;
+test(isStream)([
+    [new stream.Stream(), true],
+    [new stream.Readable(), true],
+    [new stream.Writable(), true],
+    [new stream.Duplex(), true],
+    [new stream.Transform(), true],
+    [new stream.PassThrough(), true],
+    [{}, false],
+    [function() {}, false]
+]);

@@ -1614,9 +1614,7 @@
         "env": [
             "node"
         ],
-        "test": [
-            "node"
-        ],
+        "test": [],
         "since": "1.5.4"
     },
     "delay": {

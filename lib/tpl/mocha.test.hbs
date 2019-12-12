@@ -1,9 +1,11 @@
-var util = require('../testUtil/{{utilPath}}'),
-    chai = require('chai');
+const util = require('../testUtil/{{utilPath}}');
+const chai = require('chai');
 
-var expect = chai.expect,
-    {{modName}} = util.{{modName}};
+const expect = chai.expect;
+const {{modName}} = util.{{modName}};
 
 describe('{{modName}}', function () {
+{{{testHelper}}}
+
 {{{data}}}
 });

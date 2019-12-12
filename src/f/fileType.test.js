@@ -1,36 +1,30 @@
-const each = util.each;
-const convertBin = util.convertBin;
-
 // https://github.com/mathiasbynens/small
-const tests = [
+test(function(input) {
+    return fileType(util.convertBin(input, 'Uint8Array')).ext;
+})([
     [
-        'jpg',
-        '/9j/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/yQALCAABAAEBAREA/8wABgAQEAX/2gAIAQEAAD8A0s8g/9k='
+        '/9j/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/yQALCAABAAEBAREA/8wABgAQEAX/2gAIAQEAAD8A0s8g/9k=',
+        'jpg'
     ],
     [
-        'png',
-        'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQAB'
+        'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQAB',
+        'png'
     ],
-    ['gif', 'R0lGODlhAQABAAAAADs='],
-    ['webp', 'UklGRhIAAABXRUJQVlA4TAYAAAAvQWxvAGs='],
-    ['bmp', 'Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A'],
-    ['gz', 'H4sIAK6G4VsCAwMAAAAAAAAAAAA='],
-    ['zip', 'UEsFBgAAAAAAAAAAAAAAAAAAAAAAAA=='],
+    ['R0lGODlhAQABAAAAADs=', 'gif'],
+    ['UklGRhIAAABXRUJQVlA4TAYAAAAvQWxvAGs=', 'webp'],
+    ['Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A', 'bmp'],
+    ['H4sIAK6G4VsCAwMAAAAAAAAAAAA=', 'gz'],
+    ['UEsFBgAAAAAAAAAAAAAAAAAAAAAAAA==', 'zip'],
     [
-        'rar',
-        'UmFyIRoHAM+QcwAADQAAAAAAAAA/HnQAgCEAAAAAAAAAAAAAAAAAAAdjZk0PMwEAIAAAAG4='
-    ],
-    [
-        'pdf',
-        'JVBERi0xLgoxIDAgb2JqPDwvUGFnZXMgMiAwIFI+PmVuZG9iagoyIDAgb2JqPDwvS2lkc1szIDAgUl0vQ291bnQgMT4+ZW5kb2JqCjMgMCBvYmo8PC9QYXJlbnQgMiAwIFI+PmVuZG9iagp0cmFpbGVyIDw8L1Jvb3QgMSAwIFI+Pg=='
+        'UmFyIRoHAM+QcwAADQAAAAAAAAA/HnQAgCEAAAAAAAAAAAAAAAAAAAdjZk0PMwEAIAAAAG4=',
+        'rar'
     ],
     [
-        'exe',
-        'TVoAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC4AUzNIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=='
+        'JVBERi0xLgoxIDAgb2JqPDwvUGFnZXMgMiAwIFI+PmVuZG9iagoyIDAgb2JqPDwvS2lkc1szIDAgUl0vQ291bnQgMT4+ZW5kb2JqCjMgMCBvYmo8PC9QYXJlbnQgMiAwIFI+PmVuZG9iagp0cmFpbGVyIDw8L1Jvb3QgMSAwIFI+Pg==',
+        'pdf'
+    ],
+    [
+        'TVoAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC4AUzNIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==',
+        'exe'
     ]
-];
-
-each(tests, test => {
-    const result = fileType(convertBin(test[1], 'Uint8Array'));
-    expect(result.ext).to.equal(test[0]);
-});
+]);

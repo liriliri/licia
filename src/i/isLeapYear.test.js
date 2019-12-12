@@ -1,7 +1,1 @@
-const each = util.each;
-
-const tests = [[2000, true], [2002, false], [2004, true], [1900, false]];
-
-each(tests, function(test) {
-    expect(isLeapYear(test[0])).to.equal(test[1]);
-});
+test(isLeapYear)([[2000, true], [2002, false], [2004, true], [1900, false]]);

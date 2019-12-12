@@ -1,6 +1,4 @@
-const each = util.each;
-
-const tests = [
+test(toBool)([
     [true, true],
     [false, false],
     [0, false],
@@ -15,8 +13,4 @@ const tests = [
     [undefined, false],
     [{}, true],
     [[], true]
-];
-
-each(tests, function(test) {
-    expect(toBool(test[0])).to.equal(test[1]);
-});
+]);

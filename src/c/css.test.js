@@ -1,7 +1,7 @@
 const stripIndent = util.stripIndent;
 
 it('basic', () => {
-    test(
+    t(
         stripIndent`
         .name {
             background: #000;
@@ -33,7 +33,7 @@ it('comment', () => {
 });
 
 it('media', () => {
-    test(
+    t(
         stripIndent`
         @media only screen and (max-width: 600px) {
             body {
@@ -63,19 +63,19 @@ it('media', () => {
 });
 
 it('import charset namespace', () => {
-    test('@import "custom.css";', [
+    t('@import "custom.css";', [
         {
             type: 'import',
             import: '"custom.css"'
         }
     ]);
-    test('@charset "utf-8";', [
+    t('@charset "utf-8";', [
         {
             type: 'charset',
             charset: '"utf-8"'
         }
     ]);
-    test('@namespace url(http://www.w3.org/1999/xhtml);', [
+    t('@namespace url(http://www.w3.org/1999/xhtml);', [
         {
             type: 'namespace',
             namespace: 'url(http://www.w3.org/1999/xhtml)'
@@ -84,7 +84,7 @@ it('import charset namespace', () => {
 });
 
 it('keyframes', () => {
-    test(
+    t(
         stripIndent`
         @-webkit-keyframes slideIn {
             from {
@@ -129,7 +129,7 @@ it('keyframes', () => {
 });
 
 it('font-face', () => {
-    test(
+    t(
         stripIndent`
         @font-face {
             font-family: "Open Sans";
@@ -158,7 +158,7 @@ it('font-face', () => {
 });
 
 it('supports', () => {
-    test(
+    t(
         stripIndent`
         @supports (display: grid) {
             div {
@@ -187,7 +187,7 @@ it('supports', () => {
     );
 });
 
-function test(cssStr, parsedObj) {
+function t(cssStr, parsedObj) {
     parsedObj = {
         type: 'stylesheet',
         rules: parsedObj

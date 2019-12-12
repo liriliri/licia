@@ -1,11 +1,11 @@
 const each = util.each;
 
 it('basic', function() {
-    test([['Nonsense', 'unknown', -1]]);
+    t([['Nonsense', 'unknown', -1]]);
 });
 
 it('ie', function() {
-    test([
+    t([
         [
             'Mozilla/5.0 (Windows; U; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)',
             'ie',
@@ -32,7 +32,7 @@ it('ie', function() {
 });
 
 it('chrome', function() {
-    test([
+    t([
         [
             'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
             'chrome',
@@ -47,7 +47,7 @@ it('chrome', function() {
 });
 
 it('edge', function() {
-    test([
+    t([
         [
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246',
             'edge',
@@ -62,7 +62,7 @@ it('edge', function() {
 });
 
 it('firefox', function() {
-    test([
+    t([
         [
             'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10; rv:33.0) Gecko/20100101 Firefox/33.0',
             'firefox',
@@ -77,7 +77,7 @@ it('firefox', function() {
 });
 
 it('opera', function() {
-    test([
+    t([
         [
             'Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52',
             'opera',
@@ -93,7 +93,7 @@ it('opera', function() {
 });
 
 it('safari', function() {
-    test([
+    t([
         [
             'Mozilla/5.0 (X11; U; Linux x86_64; en-us) AppleWebKit/531.2+ (KHTML, like Gecko) Version/5.0 Safari/531.2+',
             'safari',
@@ -108,7 +108,7 @@ it('safari', function() {
 });
 
 it('ios', function() {
-    test([
+    t([
         [
             'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
             'ios',
@@ -118,7 +118,7 @@ it('ios', function() {
 });
 
 it('android', function() {
-    test([
+    t([
         [
             'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Mobile Safari/537.36',
             'android',
@@ -127,7 +127,7 @@ it('android', function() {
     ]);
 });
 
-function test(expects) {
+function t(expects) {
     each(expects, function(val) {
         const result = detectBrowser(val[0]);
 

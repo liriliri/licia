@@ -1,5 +1,3 @@
-const each = util.each;
-
 const tests = [
     [[255, 255, 255], '////'],
     [[255, 255, 255, 255], '/////w=='],
@@ -7,14 +5,9 @@ const tests = [
     [[168, 174, 155, 255], 'qK6b/w==']
 ];
 
-it('encode', function() {
-    each(tests, function(test) {
-        expect(base64.encode(test[0])).to.equal(test[1]);
-    });
-});
+it('encode', () => test(base64.encode)(tests));
 
 it('decode', function() {
-    each(tests, function(test) {
-        expect(base64.decode(test[1])).to.eql(test[0]);
-    });
+    util.each(tests, test => test.reverse());
+    test(base64.decode)(tests);
 });
