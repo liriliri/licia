@@ -1,3 +1,1 @@
-it('basic', () => {
-    expect(kill).to.be.a('function');
-});
+expect(kill).to.be.a('function');

@@ -1,13 +1,12 @@
 const last = util.last;
 
-it('basic', () => {
-    const comments = [];
-    const starts = [];
-    const texts = [];
-    const ends = [];
+const comments = [];
+const starts = [];
+const texts = [];
+const ends = [];
 
-    parseHtml(
-        `
+parseHtml(
+    `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -27,33 +26,32 @@ it('basic', () => {
         </body>
         </html>
     `,
-        {
-            comment(text) {
-                comments.push(text);
-            },
-            text(text) {
-                texts.push(text);
-            },
-            start(tag, attrs) {
-                starts.push({
-                    tag,
-                    attrs
-                });
-            },
-            end(tag) {
-                ends.push(tag);
-            }
+    {
+        comment(text) {
+            comments.push(text);
+        },
+        text(text) {
+            texts.push(text);
+        },
+        start(tag, attrs) {
+            starts.push({
+                tag,
+                attrs
+            });
+        },
+        end(tag) {
+            ends.push(tag);
         }
-    );
+    }
+);
 
-    expect(comments).to.eql(['start', 'end']);
-    expect(texts.length).to.equal(18);
-    expect(starts.length).to.equal(8);
-    expect(starts[0]).to.eql({
-        tag: 'html',
-        attrs: {
-            lang: 'en'
-        }
-    });
-    expect(last(ends)).to.equal('html');
+expect(comments).to.eql(['start', 'end']);
+expect(texts.length).to.equal(18);
+expect(starts.length).to.equal(8);
+expect(starts[0]).to.eql({
+    tag: 'html',
+    attrs: {
+        lang: 'en'
+    }
 });
+expect(last(ends)).to.equal('html');

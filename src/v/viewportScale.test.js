@@ -1,3 +1,1 @@
-it('basic', function() {
-    expect(viewportScale()).to.equal(1);
-});
+expect(viewportScale()).to.equal(1);

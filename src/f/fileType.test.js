@@ -30,9 +30,7 @@ const tests = [
     ]
 ];
 
-it('basic', () => {
-    each(tests, test => {
-        const result = fileType(convertBin(test[1], 'Uint8Array'));
-        expect(result.ext).to.equal(test[0]);
-    });
+each(tests, test => {
+    const result = fileType(convertBin(test[1], 'Uint8Array'));
+    expect(result.ext).to.equal(test[0]);
 });

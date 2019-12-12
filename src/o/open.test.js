@@ -1,3 +1,1 @@
-it('basic', () => {
-    open('https://eustia.liriliri.io/');
-});
+open('https://eustia.liriliri.io/');

@@ -1,3 +1,1 @@
-it('basic', () => {
-    expect(prefetch).to.be.a('function');
-});
+expect(prefetch).to.be.a('function');

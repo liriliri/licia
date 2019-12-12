@@ -1,3 +1,1 @@
-it('basic', function() {
-    expect(isMiniProgram).to.be.false;
-});
+expect(isMiniProgram).to.be.false;

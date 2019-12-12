@@ -1,13 +1,11 @@
-it('basic', function() {
-    const obj = {
-        a: 'b',
-        c: 'd',
-        e: 'f'
-    };
+const obj = {
+    a: 'b',
+    c: 'd',
+    e: 'f'
+};
 
-    expect(invert(obj)).to.deep.equal({
-        b: 'a',
-        d: 'c',
-        f: 'e'
-    });
+expect(invert(obj)).to.deep.equal({
+    b: 'a',
+    d: 'c',
+    f: 'e'
 });

@@ -1,3 +1,1 @@
-it('basic', () => {
-    expect(deburr('déjà vu')).to.equal('deja vu');
-});
+expect(deburr('déjà vu')).to.equal('deja vu');

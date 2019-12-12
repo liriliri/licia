@@ -1,3 +1,1 @@
-it('basic', function() {
-    expect(detectMocha()).to.be.true;
-});
+expect(detectMocha()).to.be.true;

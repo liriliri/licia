@@ -1,3 +1,1 @@
-it('basic', function() {
-    expect(capitalize('rED')).to.equal('Red');
-});
+expect(capitalize('rED')).to.equal('Red');

@@ -1,3 +1,1 @@
-it('basic', () => {
-    expect(fnv1a('test')).to.equal(2949673445);
-});
+expect(fnv1a('test')).to.equal(2949673445);

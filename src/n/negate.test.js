@@ -1,8 +1,6 @@
-it('basic', function() {
-    function even(n) {
-        return n % 2 === 0;
-    }
-    const odd = negate(even);
+function even(n) {
+    return n % 2 === 0;
+}
+const odd = negate(even);
 
-    expect(odd(5)).to.be.true;
-});
+expect(odd(5)).to.be.true;

@@ -6,15 +6,13 @@ const promiseFn = function(value) {
     });
 };
 
-it('basic', function() {
-    const cbFn = callbackify(promiseFn);
+const cbFn = callbackify(promiseFn);
 
-    cbFn(4, function(err) {
-        expect(err).to.be.an('error');
-    });
+cbFn(4, function(err) {
+    expect(err).to.be.an('error');
+});
 
-    cbFn(5, function(err, value) {
-        expect(err).to.be.null;
-        expect(value).to.equal(10);
-    });
+cbFn(5, function(err, value) {
+    expect(err).to.be.null;
+    expect(value).to.equal(10);
 });

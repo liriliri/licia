@@ -1,3 +1,1 @@
-it('basic', () => {
-    expect(xpath('//html/body')).to.eql([document.body]);
-});
+expect(xpath('//html/body')).to.eql([document.body]);

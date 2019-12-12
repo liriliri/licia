@@ -1,3 +1,1 @@
-it('basic', function() {
-    expect(max(1, 2, 8, 4)).to.equal(8);
-});
+expect(max(1, 2, 8, 4)).to.equal(8);

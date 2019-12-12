@@ -1,4 +1,2 @@
-it('basic', function() {
-    expect(longest(['a', 'abcde', 'abc'])).to.equal('abcde');
-    expect(longest([])).to.be.undefined;
-});
+expect(longest(['a', 'abcde', 'abc'])).to.equal('abcde');
+expect(longest([])).to.be.undefined;

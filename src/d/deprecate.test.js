@@ -1,3 +1,1 @@
-it('basic', () => {
-    expect(deprecate(() => {})).to.be.a('function');
-});
+expect(deprecate(() => {})).to.be.a('function');

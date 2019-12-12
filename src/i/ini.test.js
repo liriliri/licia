@@ -15,10 +15,9 @@ const obj = {
     user: { info: { name: 'surunzi', alias: ['redhoodsu', 'red'] } }
 };
 
-it('basic', () => {
-    expect(ini.parse(iniStr)).to.eql(obj);
-    expect(ini.stringify(obj, { whitespace: true })).to.equal(
-        stripIndent`
+expect(ini.parse(iniStr)).to.eql(obj);
+expect(ini.stringify(obj, { whitespace: true })).to.equal(
+    stripIndent`
         library = licia
 
         [user.info]
@@ -26,5 +25,4 @@ it('basic', () => {
         alias[] = redhoodsu
         alias[] = red
     ` + '\n'
-    );
-});
+);
