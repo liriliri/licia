@@ -6642,6 +6642,20 @@ stripIndent`
 `; // -> 'Test string\n    * item one\n    * item two'
 ```
 
+## stripNum 
+
+Strip number to a specified precision.
+
+|Name        |Type  |Desc           |
+|------------|------|---------------|
+|num         |number|Number to strip|
+|precision=12|number|Precision      |
+|return      |number|Result number  |
+
+```javascript
+stripNum(0.1 + 0.2); // -> 0.3
+```
+
 ## sum 
 
 Compute sum of given numbers.

@@ -5345,6 +5345,19 @@
         ],
         "since": "1.5.4"
     },
+    "stripNum": {
+        "description": "Strip number to a specified precision.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "sum": {
         "description": "Compute sum of given numbers.",
         "dependencies": [],

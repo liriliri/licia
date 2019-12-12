@@ -6636,6 +6636,20 @@ stripIndent`
 `; // -> 'Test string\n    * item one\n    * item two'
 ```
 
+## stripNum
+
+将数字转换为指定的精度。
+
+|参数名|类型|说明|
+|-----|----|---|
+|num|number|源数字|
+|precision=12|number|精度|
+|返回值|number|目标数字|
+
+```javascript
+stripNum(0.1 + 0.2); // -> 0.3
+```
+
 ## sum
 
 计算数字和。
