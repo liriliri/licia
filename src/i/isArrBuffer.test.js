@@ -1,4 +1,4 @@
-test(isArrBuffer)([
+test([
     [new ArrayBuffer(8), true],
     [[], false],
     [new Int16Array(), false],

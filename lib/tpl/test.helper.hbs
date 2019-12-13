@@ -1,10 +1,9 @@
-const test = function(fn, { strictEqual = false } = {}) {
-    const isUndef = util.isUndef;
+const test = function(fn = {{modName}}, { strictEqual = false } = {}) {
     const each = util.each;
     const clone = util.clone;
-    
-    return function(a, b) {
-        let tests = isUndef(b) ? a : [[a, b]];
+    const isFn = util.isFn;
+
+    function ret(tests) {
         each(tests, test => {
             test = clone(test);
             const expected = test.pop();
@@ -13,4 +12,12 @@ const test = function(fn, { strictEqual = false } = {}) {
             );
         });
     };
+
+    if (!isFn(fn)) {
+        const tests = fn;
+        fn = {{modName}};
+        return ret(tests);
+    }
+
+    return ret;
 };
