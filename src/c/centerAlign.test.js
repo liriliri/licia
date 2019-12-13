@@ -1,3 +1,5 @@
-expect(centerAlign('test', 8)).to.equal('  test');
-expect(centerAlign('test\nlines', 8)).to.equal('  test\n lines');
-expect(centerAlign(['test', 'lines'], 8)).to.equal('  test\n lines');
+test([
+    ['test', 8, '  test'],
+    ['test\nlines', 8, '  test\n lines'],
+    [['test', 'lines'], 8, '  test\n lines']
+]);

@@ -1,1 +1,1 @@
-expect(strToBytes('licia')).to.eql([108, 105, 99, 105, 97]);
+test([['licia', [108, 105, 99, 105, 97]]]);

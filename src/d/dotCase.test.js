@@ -1,5 +1,7 @@
-expect(dotCase('foo')).to.equal('foo');
-expect(dotCase('foo--bar')).to.equal('foo.bar');
-expect(dotCase('__foo__bar__')).to.equal('foo.bar');
-expect(dotCase('foo bar')).to.equal('foo.bar');
-expect(dotCase('fooBar')).to.equal('foo.bar');
+test([
+    ['foo', 'foo'],
+    ['foo--bar', 'foo.bar'],
+    ['__foo__bar__', 'foo.bar'],
+    ['foo bar', 'foo.bar'],
+    ['fooBar', 'foo.bar']
+]);

@@ -1,2 +1,1 @@
-expect(slugify('I ♥ pony')).to.equal('I-love-pony');
-expect(slugify('I ♥ pony', { ' ': '_' })).to.equal('I_love_pony');
+test([['I ♥ pony', 'I-love-pony'], ['I ♥ pony', { ' ': '_' }, 'I_love_pony']]);

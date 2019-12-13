@@ -1,6 +1,1 @@
-expect(quickSort([3, 2, 1])).to.eql([1, 2, 3]);
-expect(
-    quickSort([1, 2, 3], function(a, b) {
-        return b - a;
-    })
-).to.eql([3, 2, 1]);
+test([[[3, 2, 1], [1, 2, 3]], [[1, 2, 3], (a, b) => b - a, [3, 2, 1]]]);

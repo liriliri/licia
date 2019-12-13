@@ -1,1 +1,1 @@
-expect(deburr('déjà vu')).to.equal('deja vu');
+test([['déjà vu', 'deja vu']]);

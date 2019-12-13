@@ -1,1 +1,1 @@
-test(isSymbol)([[Symbol('test'), true], [function() {}, false]]);
+test([[Symbol('test'), true], [function() {}, false]]);

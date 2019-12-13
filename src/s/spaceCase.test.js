@@ -1,4 +1,6 @@
-expect(spaceCase('foo')).to.equal('foo');
-expect(spaceCase('foo--bar')).to.equal('foo bar');
-expect(spaceCase('__foo__bar__')).to.equal('foo bar');
-expect(spaceCase('fooBar')).to.equal('foo bar');
+test([
+    ['foo', 'foo'],
+    ['foo--bar', 'foo bar'],
+    ['__foo__bar__', 'foo bar'],
+    ['fooBar', 'foo bar']
+]);

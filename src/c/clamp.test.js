@@ -1,5 +1,1 @@
-expect(clamp(-10, -5, 5)).to.equal(-5);
-expect(clamp(10, -5, 5)).to.equal(5);
-expect(clamp(2, -5, 5)).to.equal(2);
-expect(clamp(10, 5)).to.equal(5);
-expect(clamp(2, 5)).to.equal(2);
+test([[-10, -5, 5, -5], [10, -5, 5, 5], [2, -5, 5, 2], [10, 5, 5], [2, 5, 2]]);

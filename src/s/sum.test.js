@@ -1,2 +1,1 @@
-expect(sum(5, 12, 6)).to.equal(23);
-expect(sum()).to.equal(0);
+test([[5, 12, 6, 23], [0]]);

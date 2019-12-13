@@ -1,1 +1,1 @@
-expect(difference(['a', 'd'], ['a', 'b', 'c'])).to.deep.equal(['d']);
+test([[['a', 'd'], ['a', 'b', 'c'], ['d']]]);

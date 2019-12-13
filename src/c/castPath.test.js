@@ -1,11 +1,15 @@
-expect(castPath('a')).to.eql(['a']);
-expect(castPath(['a'])).to.eql(['a']);
-expect(castPath('a.b.c')).to.eql(['a', 'b', 'c']);
-expect(
-    castPath('a.b.c', {
-        'a.b.c': true
-    })
-).to.eql(['a.b.c']);
-expect(castPath('a[0]')).to.eql(['a', '0']);
-expect(castPath('a["b"]')).to.eql(['a', 'b']);
-expect(castPath('a["b"][0].c')).to.eql(['a', 'b', '0', 'c']);
+test([
+    ['a', ['a']],
+    [['a'], ['a']],
+    ['a.b.c', ['a', 'b', 'c']],
+    [
+        'a.b.c',
+        {
+            'a.b.c': true
+        },
+        ['a.b.c']
+    ],
+    ['a[0]', ['a', '0']],
+    ['a["b"]', ['a', 'b']],
+    ['a["b"][0].c', ['a', 'b', '0', 'c']]
+]);

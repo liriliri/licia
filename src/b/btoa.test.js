@@ -1,1 +1,1 @@
-expect(btoa('Hello World')).to.equal('SGVsbG8gV29ybGQ=');
+test([['Hello World', 'SGVsbG8gV29ybGQ=']]);

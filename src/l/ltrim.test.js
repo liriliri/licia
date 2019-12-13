@@ -1,4 +1,6 @@
-expect(ltrim(' abc  ')).to.equal('abc  ');
-expect(ltrim('_abc_', '_')).to.equal('abc_');
-expect(ltrim('_abc_', ['a', '_'])).to.equal('bc_');
-expect(ltrim('_abc_', 'a_')).to.equal('bc_');
+test([
+    [' abc  ', 'abc  '],
+    ['_abc_', '_', 'abc_'],
+    ['_abc_', ['a', '_'], 'bc_'],
+    ['_abc_', 'a_', 'bc_']
+]);

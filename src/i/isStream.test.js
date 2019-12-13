@@ -1,6 +1,6 @@
 const stream = require('stream');
 
-test(isStream)([
+test([
     [new stream.Stream(), true],
     [new stream.Readable(), true],
     [new stream.Writable(), true],

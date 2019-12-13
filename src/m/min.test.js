@@ -1,2 +1,1 @@
-expect(min(1, 2, 8, 4)).to.equal(1);
-expect(min(2, 1)).to.equal(1);
+test([[1, 2, 8, 4, 1], [2, 1, 1]]);

@@ -1,4 +1,4 @@
-test(toBool)([
+test([
     [true, true],
     [false, false],
     [0, false],

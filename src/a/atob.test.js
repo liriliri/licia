@@ -1,1 +1,1 @@
-expect(atob('SGVsbG8gV29ybGQ=')).to.equal('Hello World');
+test([['SGVsbG8gV29ybGQ=', 'Hello World']]);

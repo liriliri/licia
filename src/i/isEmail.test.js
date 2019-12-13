@@ -1,3 +1,1 @@
-expect(isEmail('surunzi@foxmail.com')).to.be.true;
-expect(isEmail('surunzi')).to.be.false;
-expect(isEmail('surunzi@')).to.be.false;
+test([['surunzi@foxmail.com', true], ['surunzi', false], ['surunzi@', false]]);

@@ -1,2 +1,1 @@
-expect(char(65)).to.equal('A');
-expect(char(97)).to.equal('a');
+test([[65, 'A'], [97, 'a']]);

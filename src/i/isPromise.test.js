@@ -1,2 +1,1 @@
-expect(isPromise(new Promise(function() {}))).to.be.true;
-expect(isPromise({})).to.be.false;
+test([[new Promise(function() {}), true], [{}, false]]);

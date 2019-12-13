@@ -25,6 +25,7 @@ var exports = {
                 ignoreReadBeforeAssign: false
             }
         ],
+        'no-sparse-arrays': 'off',
         'no-redeclare': ['error', { builtinGlobals: false }]
     }
 };

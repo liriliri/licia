@@ -1,1 +1,1 @@
-expect(capitalize('rED')).to.equal('Red');
+test([['rED', 'Red']]);

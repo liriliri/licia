@@ -1,4 +1,4 @@
-test(isUrl)([
+test([
     ['http://www.example.com?foo=bar&param=test', true],
     ['test', false],
     ['ftp://www.example.com', true],

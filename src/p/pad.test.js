@@ -1,6 +1,8 @@
-expect(pad('a', 5)).to.equal('  a  ');
-expect(pad('a', 5, '-')).to.equal('--a--');
-expect(pad('abc', 3, '-')).to.equal('abc');
-expect(pad('abc', 5, 'ab')).to.equal('babca');
-expect(pad('ab', 5, 'ab')).to.equal('babab');
-expect(pad(5, 3, '0')).to.equal('050');
+test([
+    ['a', 5, '  a  '],
+    ['a', 5, '-', '--a--'],
+    ['abc', 3, '-', 'abc'],
+    ['abc', 5, 'ab', 'babca'],
+    ['ab', 5, 'ab', 'babab'],
+    [5, 3, '0', '050']
+]);

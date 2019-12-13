@@ -1,2 +1,1 @@
-expect(normalizePath('\\foo\\bar\\')).to.equal('/foo/bar/');
-expect(normalizePath('./foo//bar')).to.equal('./foo/bar');
+test([['\\foo\\bar\\', '/foo/bar/'], ['./foo//bar', './foo/bar']]);

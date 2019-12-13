@@ -1,4 +1,4 @@
-test(abbrev)([
+test([
     [{}],
     ['a', { a: 'a' }],
     [

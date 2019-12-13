@@ -1,4 +1,4 @@
-test(isTypedArr)([
+test([
     [new Int16Array(), true],
     [new Int32Array(), true],
     [new Uint8Array(), true],

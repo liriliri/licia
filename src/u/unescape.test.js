@@ -1,1 +1,1 @@
-expect(unescape('&amp;&lt;&gt;&quot;&#x27;&#x60;')).to.equal('&<>"\'`');
+test([['&amp;&lt;&gt;&quot;&#x27;&#x60;', '&<>"\'`']]);

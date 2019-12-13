@@ -1,2 +1,1 @@
-expect(upperCase('test')).to.equal('TEST');
-expect(upperCase(null)).to.equal('');
+test([['test', 'TEST'], [null, '']]);

@@ -1,1 +1,1 @@
-expect(stripHtmlTag('<p>Hello</p>')).to.equal('Hello');
+test([['<p>Hello</p>', 'Hello']]);

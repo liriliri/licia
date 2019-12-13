@@ -1,4 +1,4 @@
-test(arrToMap)([
+test([
     [
         ['a', 'b', 'c'],
         {

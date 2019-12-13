@@ -1,7 +1,9 @@
-expect(splitCase('foo').length).to.equal(1);
-expect(splitCase('foo-bar').length).to.equal(2);
-expect(splitCase('foo--bar').length).to.equal(2);
-expect(splitCase('__foo__bar__').length).to.equal(2);
-expect(splitCase('foo bar').length).to.equal(2);
-expect(splitCase('foo.bar').length).to.equal(2);
-expect(splitCase('fooBar').length).to.equal(2);
+test(input => splitCase(input).length)([
+    ['foo', 1],
+    ['foo-bar', 2],
+    ['foo--bar', 2],
+    ['__foo__bar__', 2],
+    ['foo bar', 2],
+    ['foo.bar', 2],
+    ['fooBar', 2]
+]);

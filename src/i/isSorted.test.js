@@ -1,7 +1,11 @@
-expect(isSorted([1, 2, 3])).to.be.true;
-expect(isSorted([3, 2, 1])).to.be.false;
-expect(
-    isSorted([3, 2, 1], function(a, b) {
-        return b - a;
-    })
-).to.be.true;
+test([
+    [[1, 2, 3], true],
+    [[3, 2, 1], false],
+    [
+        [3, 2, 1],
+        function(a, b) {
+            return b - a;
+        },
+        true
+    ]
+]);
