@@ -1,14 +1,11 @@
 it('basic', () => {
-    expect(contain([1, 2, 3], 1)).to.be.true;
-    expect(contain([1, 2, 3], 4)).to.be.false;
+    test([[[1, 2, 3], 1, true], [[1, 2, 3], 4, false]]);
 });
 
 it('object', () => {
-    expect(contain({ a: 1, b: 2 }, 1)).to.be.true;
-    expect(contain({ b: 2 }, 1)).to.be.false;
+    test([[{ a: 1, b: 2 }, 1, true], [{ b: 2 }, 1, false]]);
 });
 
 it('string', () => {
-    expect(contain('abc', 'a')).to.be.true;
-    expect(contain('abc', 'd')).to.be.false;
+    test([['abc', 'a', true], ['abc', 'd', false]]);
 });

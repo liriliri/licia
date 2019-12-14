@@ -1,40 +1,69 @@
 it('parse', function() {
-    expect(Color.parse('#abc')).to.eql({
-        val: [170, 187, 204, 1],
-        model: 'rgb'
-    });
-    expect(Color.parse('#aabbcc')).to.eql({
-        val: [170, 187, 204, 1],
-        model: 'rgb'
-    });
-    expect(Color.parse('rgb(232, 188, 260)')).to.eql({
-        val: [232, 188, 260, 1],
-        model: 'rgb'
-    });
-    expect(Color.parse('rgba(180, 119, 59)')).to.eql({
-        val: [180, 119, 59, 1],
-        model: 'rgb'
-    });
-    expect(Color.parse('rgba(180, 119, 59, 0.5)')).to.eql({
-        val: [180, 119, 59, 0.5],
-        model: 'rgb'
-    });
-    expect(Color.parse('rgba(20%, 10%, 15%, 0.5)')).to.eql({
-        val: [51, 26, 38, 0.5],
-        model: 'rgb'
-    });
-    expect(Color.parse('rgba(20%, 10%, 15%)')).to.eql({
-        val: [51, 26, 38, 1],
-        model: 'rgb'
-    });
-    expect(Color.parse('hsla(328, 100%, 44%, 0.64)')).to.eql({
-        val: [328, 100, 44, 0.64],
-        model: 'hsl'
-    });
-    expect(Color.parse('unknown(1, 2)')).to.eql({
-        val: [0, 0, 0, 1],
-        model: 'rgb'
-    });
+    test(Color.parse)([
+        [
+            '#abc',
+            {
+                val: [170, 187, 204, 1],
+                model: 'rgb'
+            }
+        ],
+        [
+            '#aabbcc',
+            {
+                val: [170, 187, 204, 1],
+                model: 'rgb'
+            }
+        ],
+        [
+            'rgb(232, 188, 260)',
+            {
+                val: [232, 188, 260, 1],
+                model: 'rgb'
+            }
+        ],
+        [
+            'rgba(180, 119, 59)',
+            {
+                val: [180, 119, 59, 1],
+                model: 'rgb'
+            }
+        ],
+        [
+            'rgba(180, 119, 59, 0.5)',
+            {
+                val: [180, 119, 59, 0.5],
+                model: 'rgb'
+            }
+        ],
+        [
+            'rgba(20%, 10%, 15%, 0.5)',
+            {
+                val: [51, 26, 38, 0.5],
+                model: 'rgb'
+            }
+        ],
+        [
+            'rgba(20%, 10%, 15%)',
+            {
+                val: [51, 26, 38, 1],
+                model: 'rgb'
+            }
+        ],
+        [
+            'hsla(328, 100%, 44%, 0.64)',
+            {
+                val: [328, 100, 44, 0.64],
+                model: 'hsl'
+            }
+        ],
+        [
+            'unknown(1, 2)',
+            {
+                val: [0, 0, 0, 1],
+                model: 'rgb'
+            }
+        ]
+    ]);
 });
 
 it('convert', function() {

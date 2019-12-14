@@ -1,15 +1,14 @@
 it('basic', function() {
-    expect(className('a', 'b', 'c')).to.equal('a b c');
-    expect(className('a', false, 'b', 0, 1, 'c')).to.equal('a b 1 c');
+    test([['a', 'b', 'c', 'a b c'], ['a', false, 'b', 0, 1, 'c', 'a b 1 c']]);
 });
 
 it('object', function() {
-    expect(className('a', { b: false, c: true })).to.equal('a c');
+    test([['a', { b: false, c: true }, 'a c']]);
 });
 
 it('array', function() {
-    expect(className('a', ['b', 'c'])).to.equal('a b c');
-    expect(className('a', ['b', 'c', { d: true, e: false }])).to.equal(
-        'a b c d'
-    );
+    test([
+        ['a', ['b', 'c'], 'a b c'],
+        ['a', ['b', 'c', { d: true, e: false }], 'a b c d']
+    ]);
 });

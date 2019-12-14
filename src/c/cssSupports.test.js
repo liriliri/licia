@@ -1,13 +1,14 @@
 it('name', function() {
-    expect(cssSupports('grid')).to.be.true;
-    expect(cssSupports('invalid')).to.be.false;
+    test([['grid', true], ['invalid', false]]);
 });
 
 it('value', function() {
-    expect(cssSupports('display', 'flex')).to.be.true;
-    expect(cssSupports('display', 'invalid')).to.be.false;
-    expect(cssSupports('text-decoration-line', 'underline')).to.be.true;
-    expect(cssSupports('text-decoration-style', 'underline')).to.be.false;
-    expect(cssSupports('opacity', '0.1')).to.be.true;
-    expect(cssSupports('opacity', '10px')).to.be.false;
+    test([
+        ['display', 'flex', true],
+        ['display', 'invalid', false],
+        ['text-decoration-line', 'underline', true],
+        ['text-decoration-style', 'underline', false],
+        ['opacity', '0.1', true],
+        ['opacity', '10px', false]
+    ]);
 });
