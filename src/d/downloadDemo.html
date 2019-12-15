@@ -1,16 +1,15 @@
 <require>download $</require>
 
 <template id="bodyTpl">
-    <input id="data" type="text">
+    <input id="data" type="text" />
     <button id="download">Download</button>
 </template>
 
 <script>
-$('body').append(bodyTpl);
-$('#download').on('click', function () 
-{
-    var val = $('#data').val();
+    $('body').append(bodyTpl);
+    $('#download').on('click', function() {
+        var val = $('#data').val();
 
-    download(val, 'download.txt');
-});
+        download(val, 'download.txt');
+    });
 </script>

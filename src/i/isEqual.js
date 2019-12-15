@@ -56,7 +56,8 @@ function deepEq(a, b, aStack, bStack) {
                 isFn(bCtor) &&
                 bCtor instanceof bCtor
             ) &&
-            ('constructor' in a && 'constructor' in b)
+            'constructor' in a &&
+            'constructor' in b
         )
             return false;
     }

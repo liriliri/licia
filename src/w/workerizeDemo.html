@@ -1,43 +1,35 @@
 <require>workerize</require>
 
 <script>
-var worker = workerize(function (a, b) 
-{
-    return a + b;
-});
-worker(1, 2).then(function (value) 
-{
-    console.log(value);
-});
-
-worker = workerize(function (a) 
-{
-    if (a < 5) throw new Error('a is less than 5');
-
-    return a;
-});
-worker(2).catch(function (e) 
-{
-    console.error(e);
-});
-
-worker = workerize(function (a) 
-{
-    return new Promise(function (resolve, reject) 
-    {
-        if (a < 5) reject(new Error('a is less than 5'));
-
-        resolve(a);
+    var worker = workerize(function(a, b) {
+        return a + b;
     });
-});
+    worker(1, 2).then(function(value) {
+        console.log(value);
+    });
 
-worker(6).then(function (value) 
-{
-    console.log(value);
-});
+    worker = workerize(function(a) {
+        if (a < 5) throw new Error('a is less than 5');
 
-worker(2).catch(function (e) 
-{
-    console.error(e);
-});
+        return a;
+    });
+    worker(2).catch(function(e) {
+        console.error(e);
+    });
+
+    worker = workerize(function(a) {
+        return new Promise(function(resolve, reject) {
+            if (a < 5) reject(new Error('a is less than 5'));
+
+            resolve(a);
+        });
+    });
+
+    worker(6).then(function(value) {
+        console.log(value);
+    });
+
+    worker(2).catch(function(e) {
+        console.error(e);
+    });
 </script>

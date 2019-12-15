@@ -1,21 +1,20 @@
 <require>highlight $ stripIndent</require>
 
 <template id="jsTpl">
-const uuid = require('licia/uuid');
-
-console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
+    const uuid = require('licia/uuid'); console.log(uuid()); // ->
+    0e3b84af-f911-4a55-b78a-cedf6f0bd815
 </template>
 
 <template id="styleTpl">
-body, html {
-    background: black;
-}  
+    body, html { background: black; }
 </template>
 
 <script>
-$('body').append(`<pre>${highlight(jsTpl, 'js')}</pre>`)
-$('body').append(`<pre>${highlight(styleTpl, 'css')}</pre>`)
-$('body').append(`<pre>${highlight(stripIndent`
+    $('body').append(`<pre>${highlight(jsTpl, 'js')}</pre>`);
+    $('body').append(`<pre>${highlight(styleTpl, 'css')}</pre>`);
+    $('body').append(
+        `<pre>${highlight(
+            stripIndent`
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +33,11 @@ $('body').append(`<pre>${highlight(stripIndent`
     </${'script'}>    
 </body>
 </html>
-`, 'html', {
-    keyword: 'color:#569cd6'
-})}</pre>`)
+`,
+            'html',
+            {
+                keyword: 'color:#569cd6'
+            }
+        )}</pre>`
+    );
 </script>

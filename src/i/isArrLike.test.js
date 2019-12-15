@@ -7,5 +7,8 @@ it('true', () => {
 });
 
 it('false', () => {
-    test([[function() {}, false], [{}, false]]);
+    test([
+        [function() {}, false],
+        [{}, false]
+    ]);
 });

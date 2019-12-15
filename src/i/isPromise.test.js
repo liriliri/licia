@@ -1,1 +1,4 @@
-test([[new Promise(function() {}), true], [{}, false]]);
+test([
+    [new Promise(function() {}), true],
+    [{}, false]
+]);

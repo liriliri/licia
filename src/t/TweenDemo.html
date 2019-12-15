@@ -1,64 +1,65 @@
 <require>Tween $ evalCss each methods easing random</require>
 
 <style>
-body, html {
-    background: #18212D;
-}
+    body,
+    html {
+        background: #18212d;
+    }
 
-body {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    flex-wrap: wrap;
-    color: white;
-    font-family: 'Circular', sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
+    body {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        color: white;
+        font-family: 'Circular', sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
 
-#container {
-    min-width: 400px;
-    position: relative;
-}
+    #container {
+        min-width: 400px;
+        position: relative;
+    }
 
-#block {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: #fed477;
-    line-height: 40px;
-    text-align: center;
-}
+    #block {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #fed477;
+        line-height: 40px;
+        text-align: center;
+    }
 
-#progress {
-    margin-top: 100px;
-    width: 375px;
-    cursor: pointer;
-}
+    #progress {
+        margin-top: 100px;
+        width: 375px;
+        cursor: pointer;
+    }
 
-#buttons {
-    margin-top: 10px;
-}
+    #buttons {
+        margin-top: 10px;
+    }
 
-button {
-    background: #d97c98;
-    color: #fff;
-    padding: 1em 2em;
-    border: 1px solid #fff;
-    cursor: pointer;
-    outline: none;
-    margin-right: 5px;
-}
+    button {
+        background: #d97c98;
+        color: #fff;
+        padding: 1em 2em;
+        border: 1px solid #fff;
+        cursor: pointer;
+        outline: none;
+        margin-right: 5px;
+    }
 </style>
 
 <template id="bodyTpl">
     <div id="container">
         <div id="block"></div>
-        <input id="progress" type="range" value="0" min="0" max="100"/>
+        <input id="progress" type="range" value="0" min="0" max="100" />
         <div id="buttons">
             <button id="play">PLAY</button>
             <button id="pause">PAUSE</button>
@@ -68,63 +69,70 @@ button {
 </template>
 
 <script>
-evalCss(style);
-$('body').html(bodyTpl);
+    evalCss(style);
+    $('body').html(bodyTpl);
 
-var block = $('#block').get(0);
+    var block = $('#block').get(0);
 
-var tween = new Tween({
-    left: 0,
-    top: 0,
-    size: 40,
-    rotate: 0
-});
+    var tween = new Tween({
+        left: 0,
+        top: 0,
+        size: 40,
+        rotate: 0
+    });
 
-var $progress = $('#progress'),
-    progress = $progress.get(0);
+    var $progress = $('#progress'),
+        progress = $progress.get(0);
 
-tween.on('update', function (target)
-{
-    block.style.transform = 'translateX(' + target.left + 'px) ' +
-                            'translateY(' + target.top + 'px) ' +
-                            'scale(' + target.size / 40 + ') ' +
-                            'rotate(' + Math.floor(target.rotate) + 'deg)';
+    tween.on('update', function(target) {
+        block.style.transform =
+            'translateX(' +
+            target.left +
+            'px) ' +
+            'translateY(' +
+            target.top +
+            'px) ' +
+            'scale(' +
+            target.size / 40 +
+            ') ' +
+            'rotate(' +
+            Math.floor(target.rotate) +
+            'deg)';
 
-    progress.value = tween.progress() * 100;
-});
+        progress.value = tween.progress() * 100;
+    });
 
-var easingNames = methods(easing);
+    var easingNames = methods(easing);
 
-tween.to({
-    left: 300,
-    top: -25,
-    size: 100,
-    rotate: 360
-}, 1500, easingNames[random(0, easingNames.length - 1)]);
+    tween.to(
+        {
+            left: 300,
+            top: -25,
+            size: 100,
+            rotate: 360
+        },
+        1500,
+        easingNames[random(0, easingNames.length - 1)]
+    );
 
-$('#play').on('click', function ()
-{
-    tween.play();
-});
-
-$('#pause').on('click', function ()
-{
-    tween.pause();
-});
-
-$('#restart').on('click', function ()
-{
-    tween.pause();
-    setTimeout(function ()
-    {
-        tween.progress(0);
+    $('#play').on('click', function() {
         tween.play();
-    }, 100);
-});
+    });
 
-$progress.on('input', function ()
-{
-    tween.pause();
-    tween.progress(progress.value / 100);
-});
+    $('#pause').on('click', function() {
+        tween.pause();
+    });
+
+    $('#restart').on('click', function() {
+        tween.pause();
+        setTimeout(function() {
+            tween.progress(0);
+            tween.play();
+        }, 100);
+    });
+
+    $progress.on('input', function() {
+        tween.pause();
+        tween.progress(progress.value / 100);
+    });
 </script>

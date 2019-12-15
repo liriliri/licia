@@ -5,16 +5,16 @@
 </template>
 
 <script>
-$('body').html(bodyTpl);
+    $('body').html(bodyTpl);
 
-$('#notify').on('click', () => {
-    const notification = new notify.Notification('licia', {
-        body: 'This is the notification content'
+    $('#notify').on('click', () => {
+        const notification = new notify.Notification('licia', {
+            body: 'This is the notification content'
+        });
+        notification.on('error', err => console.log('error', err));
+        notification.on('show', e => console.log('show', e));
+        notification.on('close', e => console.log('close', e));
+        notification.on('click', e => console.log('click', e));
+        notification.show();
     });
-    notification.on('error', err => console.log('error', err));
-    notification.on('show', e => console.log('show', e));
-    notification.on('close', e => console.log('close', e));
-    notification.on('click', e => console.log('click', e));
-    notification.show(); 
-});
 </script>

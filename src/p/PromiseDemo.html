@@ -1,10 +1,9 @@
 <require>Promise</require>
 
 <script>
-var promise = Promise.resolve('test');
-promise.then(function (val) 
-{
-    console.log(val);
-});
-console.log(Promise.all([]) instanceof Promise);
+    var promise = Promise.resolve('test');
+    promise.then(function(val) {
+        console.log(val);
+    });
+    console.log(Promise.all([]) instanceof Promise);
 </script>

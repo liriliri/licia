@@ -5,14 +5,14 @@
     <button id="toggle">toggle</button>
     <div id="is-active">isActive: false</div>
     <div id="is-enabled"></div>
-    <img src="https://eustia.liriliri.io/static/img/banner.jpg"/>
+    <img src="https://eustia.liriliri.io/static/img/banner.jpg" />
 </template>
 <script>
     $('body').html(bodyTpl);
     $('#request').on('click', () => fullscreen.request());
     $('#exit').on('click', () => fullscreen.exit());
     $('#toggle').on('click', () => fullscreen.toggle());
-    $('img').on('click', function () {
+    $('img').on('click', function() {
         fullscreen.toggle(this);
     });
     $('#is-enabled').text(`isEnabled: ${fullscreen.isEnabled()}`);

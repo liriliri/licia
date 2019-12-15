@@ -35,7 +35,10 @@ it('group', () => {
 
 it('pseudo', () => {
     t('.t:hover', [
-        [{ type: 'class', value: 't' }, { type: 'pseudo', value: ':hover' }]
+        [
+            { type: 'class', value: 't' },
+            { type: 'pseudo', value: ':hover' }
+        ]
     ]);
     t('input::placeholder', [
         [

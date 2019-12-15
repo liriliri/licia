@@ -1,1 +1,4 @@
-test([[['a', 'abcde', 'abc'], 'abcde'], [[], undefined]]);
+test([
+    [['a', 'abcde', 'abc'], 'abcde'],
+    [[], undefined]
+]);

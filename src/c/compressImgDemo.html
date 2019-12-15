@@ -1,32 +1,38 @@
 <require>compressImg $ createUrl fileSize</require>
 
 <template id="bodyTpl">
-    <input type="file"/>
+    <input type="file" />
     <div id="info"></div>
     <div>
-        <img style="display: none">
-    </div>    
-</template>    
+        <img style="display: none" />
+    </div>
+</template>
 
 <script>
-$('body').append(bodyTpl);    
+    $('body').append(bodyTpl);
 
-$('input').on('change', function (e) 
-{
-    e = e.origEvent;
-    var file = e.target.files[0];
-    if (!file) return;
+    $('input').on('change', function(e) {
+        e = e.origEvent;
+        var file = e.target.files[0];
+        if (!file) return;
 
-    var size = fileSize(file.size);
+        var size = fileSize(file.size);
 
-    compressImg(file, {
-        maxWidth: 400,
-        maxHeight: 300,
-        quality: 0.4
-    }, function (err, file) 
-    {
-        $('img').attr('src', createUrl(file)).show();
-        $('#info').text('Size: ' + size + ' Compressed: ' + fileSize(file.size));
+        compressImg(
+            file,
+            {
+                maxWidth: 400,
+                maxHeight: 300,
+                quality: 0.4
+            },
+            function(err, file) {
+                $('img')
+                    .attr('src', createUrl(file))
+                    .show();
+                $('#info').text(
+                    'Size: ' + size + ' Compressed: ' + fileSize(file.size)
+                );
+            }
+        );
     });
-});
 </script>

@@ -24,13 +24,19 @@ it('initialize data', function() {
     const map2 = new PseudoMap(map);
     expect(map2.get('1')).to.equal(1);
 
-    map = new PseudoMap([['1', 1], ['2', 2]]);
+    map = new PseudoMap([
+        ['1', 1],
+        ['2', 2]
+    ]);
     expect(map.get('1')).to.equal(1);
     expect(map.get('2')).to.equal(2);
 });
 
 it('forEach', function() {
-    const map = new PseudoMap([['1', 1], ['2', 2]]);
+    const map = new PseudoMap([
+        ['1', 1],
+        ['2', 2]
+    ]);
     let sum = 0;
     map.forEach(function(val) {
         sum += val;

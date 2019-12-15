@@ -7,9 +7,11 @@
 <script>
     $('body').html(bodyTpl);
     $('#open-file').on('click', async () => {
-        console.log(await openFile({
-            multiple: true,
-            accept: 'image/*'
-        }));
+        console.log(
+            await openFile({
+                multiple: true,
+                accept: 'image/*'
+            })
+        );
     });
 </script>

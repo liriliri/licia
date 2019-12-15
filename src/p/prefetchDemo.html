@@ -1,19 +1,20 @@
 <require>prefetch $</require>
 
 <template id="bodyTpl">
-    <input type="text" value="https://eustia.liriliri.io/"/>
+    <input type="text" value="https://eustia.liriliri.io/" />
     <button>Fetch</button>
 </template>
 
 <script>
-$('body').html(bodyTpl);
+    $('body').html(bodyTpl);
 
-$('button').on('click', function () 
-{
-    prefetch($('input').val()).then(() => {
-        console.log('success');
-    }).catch(() => {
-        console.log('error');
+    $('button').on('click', function() {
+        prefetch($('input').val())
+            .then(() => {
+                console.log('success');
+            })
+            .catch(() => {
+                console.log('error');
+            });
     });
-});
 </script>

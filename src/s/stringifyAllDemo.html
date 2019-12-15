@@ -1,49 +1,52 @@
 <require>stringifyAll</require>
 
 <script>
-function log(obj, options = {}) {
-    console.log(JSON.parse(stringifyAll(obj, options)))
-}    
-log({}, { 
-    ignore: [Object.prototype] 
-});
+    function log(obj, options = {}) {
+        console.log(JSON.parse(stringifyAll(obj, options)));
+    }
+    log(
+        {},
+        {
+            ignore: [Object.prototype]
+        }
+    );
 
-console.time('window');
-log(window);
-console.timeEnd('window');
+    console.time('window');
+    log(window);
+    console.timeEnd('window');
 
-console.time('window unenumerable');
-log(window, {
-    unenumerable: true
-});
-console.timeEnd('window unenumerable');
+    console.time('window unenumerable');
+    log(window, {
+        unenumerable: true
+    });
+    console.timeEnd('window unenumerable');
 
-console.time('window symbol');
-log(window, {
-    symbol: true
-});
-console.timeEnd('window symbol');
+    console.time('window symbol');
+    log(window, {
+        symbol: true
+    });
+    console.timeEnd('window symbol');
 
-console.time('window accessGetter');
-log(window, {
-  accessGetter: true
-});
-console.timeEnd('window accessGetter');
+    console.time('window accessGetter');
+    log(window, {
+        accessGetter: true
+    });
+    console.timeEnd('window accessGetter');
 
-console.time('window all');
-log(window, {
-    unenumerable: true,
-    symbol: true,
-    accessGetter: true
-});
-console.timeEnd('window all');
+    console.time('window all');
+    log(window, {
+        unenumerable: true,
+        symbol: true,
+        accessGetter: true
+    });
+    console.timeEnd('window all');
 
-console.time('window timeout 50ms');
-log(window, {
-    unenumerable: true,
-    symbol: true,
-    accessGetter: true,
-    timeout: 50
-});
-console.timeEnd('window timeout 50ms');
+    console.time('window timeout 50ms');
+    log(window, {
+        unenumerable: true,
+        symbol: true,
+        accessGetter: true,
+        timeout: 50
+    });
+    console.timeEnd('window timeout 50ms');
 </script>

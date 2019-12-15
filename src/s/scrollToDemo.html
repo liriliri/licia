@@ -1,65 +1,63 @@
 <require>scrollTo evalCss $</require>
 
 <style>
-body, html {
-    background: #18212D;
-}
+    body,
+    html {
+        background: #18212d;
+    }
 
-.section {
-    min-height: 100vh;
-    display: flex;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
-    flex-direction: column;
-}
+    .section {
+        min-height: 100vh;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        flex-direction: column;
+    }
 
-h1 {
-    color: #fff;
-    font-size: 4.5rem;
-}
+    h1 {
+        color: #fff;
+        font-size: 4.5rem;
+    }
 
-.btn {
-    background: #d97c98;
-    color: #fff;
-    padding: 1em 2em;
-    border: 1px solid #fff;
-    cursor: pointer;
-    display: inline-block;
-    outline: none;
-    font-size: 1.25rem;
-}
+    .btn {
+        background: #d97c98;
+        color: #fff;
+        padding: 1em 2em;
+        border: 1px solid #fff;
+        cursor: pointer;
+        display: inline-block;
+        outline: none;
+        font-size: 1.25rem;
+    }
 </style>
 
 <template id="bodyTpl">
     <div id="section-1" class="section">
         <h1>scrollTo</h1>
-        <button id="try" class="btn">Lets try!</a>
-    </div>    
+        <a id="try" class="btn">Lets try!</a>
+    </div>
     <div id="section-2" class="section">
-        <button id="back" class="btn">Back to Top!</a>
-    </div>    
+        <a id="back" class="btn">Back to Top!</a>
+    </div>
 </template>
 
 <script>
-evalCss(style);
-$('body').html(bodyTpl);
+    evalCss(style);
+    $('body').html(bodyTpl);
 
-$('#try').on('click', function () 
-{
-    scrollTo('#section-2', {
-        easing: 'inQuad',
-        callback: function () 
-        {
-            console.log('Section 2 arrrived!');
-        }
+    $('#try').on('click', function() {
+        scrollTo('#section-2', {
+            easing: 'inQuad',
+            callback: function() {
+                console.log('Section 2 arrrived!');
+            }
+        });
     });
-});
 
-$('#back').on('click', function () 
-{
-    scrollTo('#section-1', {
-        duration: 300,
-        easing: 'outQuad'
+    $('#back').on('click', function() {
+        scrollTo('#section-1', {
+            duration: 300,
+            easing: 'outQuad'
+        });
     });
-});
 </script>

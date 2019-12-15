@@ -1,1 +1,5 @@
-test([[new Set(), false], [new WeakSet(), true], [{}, false]]);
+test([
+    [new Set(), false],
+    [new WeakSet(), true],
+    [{}, false]
+]);

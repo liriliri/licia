@@ -1,5 +1,8 @@
 it('basic', function() {
-    test([['a', 'b', 'c', 'a b c'], ['a', false, 'b', 0, 1, 'c', 'a b 1 c']]);
+    test([
+        ['a', 'b', 'c', 'a b c'],
+        ['a', false, 'b', 0, 1, 'c', 'a b 1 c']
+    ]);
 });
 
 it('object', function() {

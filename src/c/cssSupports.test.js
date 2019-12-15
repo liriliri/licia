@@ -1,5 +1,8 @@
 it('name', function() {
-    test([['grid', true], ['invalid', false]]);
+    test([
+        ['grid', true],
+        ['invalid', false]
+    ]);
 });
 
 it('value', function() {

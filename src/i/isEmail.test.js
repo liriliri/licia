@@ -1,1 +1,5 @@
-test([['surunzi@foxmail.com', true], ['surunzi', false], ['surunzi@', false]]);
+test([
+    ['surunzi@foxmail.com', true],
+    ['surunzi', false],
+    ['surunzi@', false]
+]);
