@@ -1,4 +1,4 @@
-test([
+tests([
     [{}, NaN],
     [[], 0],
     [null, 0],

@@ -1,4 +1,4 @@
-test([
+tests([
     [
         'f:/foo/bar.txt',
         {

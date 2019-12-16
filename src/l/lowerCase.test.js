@@ -1,4 +1,4 @@
-test([
+tests([
     ['TEST', 'test'],
     [null, '']
 ]);

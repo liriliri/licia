@@ -6,14 +6,14 @@ function isBlobUrl(url) {
 
 const regBlob = /^blob:/;
 
-const tests = [
+const testData = [
     ['test', { type: 'text/plain' }],
     [['test', 'test']],
     [new Blob([])],
     [new File(['test'], 'test.txt')]
 ];
 
-util.each(tests, function(test) {
+util.each(testData, function(test) {
     const content = test[0];
     const opts = test[1];
 

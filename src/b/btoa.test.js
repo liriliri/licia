@@ -1,1 +1,1 @@
-test([['Hello World', 'SGVsbG8gV29ybGQ=']]);
+tests([['Hello World', 'SGVsbG8gV29ybGQ=']]);

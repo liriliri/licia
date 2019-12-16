@@ -1,4 +1,4 @@
-test([
+tests([
     ['foo', 'Foo'],
     ['FooBar', 'FooBar'],
     ['foo--bar', 'FooBar'],

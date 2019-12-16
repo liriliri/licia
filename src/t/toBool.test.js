@@ -1,4 +1,4 @@
-test([
+tests([
     [true, true],
     [false, false],
     [0, false],

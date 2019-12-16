@@ -1,4 +1,4 @@
-test([
+tests([
     [' abc  ', 'abc  '],
     ['_abc_', '_', 'abc_'],
     ['_abc_', ['a', '_'], 'bc_'],

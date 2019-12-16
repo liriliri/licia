@@ -1,4 +1,4 @@
-test(input => splitCase(input).length)([
+tests(input => splitCase(input).length)([
     ['foo', 1],
     ['foo-bar', 2],
     ['foo--bar', 2],

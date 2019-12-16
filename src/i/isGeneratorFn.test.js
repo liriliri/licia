@@ -1,4 +1,4 @@
-test([
+tests([
     [function*() {}, true],
     [function() {}, false]
 ]);

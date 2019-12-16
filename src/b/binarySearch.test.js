@@ -1,5 +1,5 @@
 it('basic', () => {
-    test([
+    tests([
         [[1, 2, 3], 2, 1],
         [[1, 2], 3, -1],
         [
@@ -23,5 +23,5 @@ it('basic', () => {
 
 it('big array', () => {
     const arr = util.range(10000);
-    test([[arr, 500, 500]]);
+    tests([[arr, 500, 500]]);
 });

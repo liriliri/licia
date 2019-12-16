@@ -1,12 +1,12 @@
 it('name', function() {
-    test([
+    tests([
         ['grid', true],
         ['invalid', false]
     ]);
 });
 
 it('value', function() {
-    test([
+    tests([
         ['display', 'flex', true],
         ['display', 'invalid', false],
         ['text-decoration-line', 'underline', true],

@@ -1,4 +1,4 @@
-test((tpl, data, util) => template(tpl, util)(data))([
+tests((tpl, data, util) => template(tpl, util)(data))([
     ['Hello <%= name %>!', { name: 'licia' }, 'Hello licia!'],
     ['<p><%- name %></p>', { name: '<licia>' }, '<p>&lt;licia&gt;</p>'],
     ['<%if (echo) {%>Hello licia!<%}%>', { echo: true }, 'Hello licia!'],

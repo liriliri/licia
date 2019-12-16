@@ -1,4 +1,4 @@
-test([
+tests([
     ['http://eustia.liriliri.io', false],
     ['data:,Hello%2C%20World!', true],
     ['data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D', true],

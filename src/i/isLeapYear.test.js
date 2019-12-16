@@ -1,4 +1,4 @@
-test([
+tests([
     [2000, true],
     [2002, false],
     [2004, true],

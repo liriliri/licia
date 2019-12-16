@@ -1,4 +1,4 @@
-test([
+tests([
     [{}, 'object'],
     [[], 'array'],
     [[], false, 'Array'],

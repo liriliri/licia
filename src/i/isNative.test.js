@@ -1,4 +1,4 @@
-test([
+tests([
     [function() {}, false],
     [isNative, false],
     [Math.min, true],

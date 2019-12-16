@@ -33,7 +33,8 @@ var exports = {
 var globals = {
     _: true,
     util: true,
-    expect: true
+    expect: true,
+    tests: true
 };
 
 each(licia, function(val, key) {

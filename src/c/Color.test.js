@@ -1,5 +1,5 @@
 it('parse', function() {
-    test(Color.parse)([
+    tests(Color.parse)([
         [
             '#abc',
             {

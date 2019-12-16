@@ -1,4 +1,4 @@
-test([
+tests([
     ['cat', 'cat', 0],
     ['', 'cat', 3],
     ['t', 'cat', 2],

@@ -1,4 +1,4 @@
-test([
+tests([
     [null, true],
     [void 0, true],
     [undefined, true],

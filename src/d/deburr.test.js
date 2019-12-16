@@ -1,1 +1,1 @@
-test([['déjà vu', 'deja vu']]);
+tests([['déjà vu', 'deja vu']]);

@@ -1,4 +1,4 @@
-test([
+tests([
     [null, ''],
     [undefined, ''],
     [1, '1'],

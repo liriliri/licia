@@ -1,5 +1,5 @@
 // https://github.com/mathiasbynens/small
-test(function(input) {
+tests(function(input) {
     return fileType(util.convertBin(input, 'Uint8Array')).ext;
 })([
     [
