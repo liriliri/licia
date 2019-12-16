@@ -1,1 +1,1 @@
-tests([['rED', 'Red']]);
+test(['rED', 'Red']);

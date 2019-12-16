@@ -23,5 +23,5 @@ it('basic', () => {
 
 it('big array', () => {
     const arr = util.range(10000);
-    tests([[arr, 500, 500]]);
+    test([arr, 500, 500]);
 });

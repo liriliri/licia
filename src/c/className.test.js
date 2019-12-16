@@ -6,7 +6,7 @@ it('basic', function() {
 });
 
 it('object', function() {
-    tests([['a', { b: false, c: true }, 'a c']]);
+    test(['a', { b: false, c: true }, 'a c']);
 });
 
 it('array', function() {

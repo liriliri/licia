@@ -1,1 +1,1 @@
-tests([['<p>Hello</p>', 'Hello']]);
+test(['<p>Hello</p>', 'Hello']);
