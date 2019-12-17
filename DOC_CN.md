@@ -1873,6 +1873,21 @@ bubbleSort([2, 1]); // -> [1, 2]
 bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
 ```
 
+## bytesToWords
+
+将字节数组转换为 32 位字长数组。
+
+在使用 CryptoJS 时会派上用处。
+
+|参数名|类型|说明|
+|-----|----|---|
+|bytes|array|字节数组|
+|返回值|array|字长数组|
+
+```javascript
+bytesToWords([0x12, 0x34, 0x56, 0x78]); // -> [0x12345678]
+```
+
 ## callbackify
 
 将返回 Promise 的函数转换为使用回调的函数。

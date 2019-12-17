@@ -20,7 +20,7 @@
  * export declare function md5(msg: string): string;
  */
 
-_('strToBytes hex');
+_('strToBytes hex bytesToWords');
 
 // https://github.com/pvorb/node-md5
 exports = function(msg) {
@@ -168,14 +168,4 @@ function endian(n) {
 
 function rotl(n, b) {
     return (n << b) | (n >>> (32 - b));
-}
-
-function bytesToWords(bytes) {
-    const words = [];
-
-    for (let i = 0, b = 0, len = bytes.length; i < len; i++, b += 8) {
-        words[b >>> 5] |= bytes[i] << (24 - (b % 32));
-    }
-
-    return words;
 }

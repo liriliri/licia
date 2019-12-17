@@ -981,6 +981,19 @@
         ],
         "since": "1.1.0"
     },
+    "bytesToWords": {
+        "description": "Convert bytes to 32-bit words.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "callbackify": {
         "description": "Convert a function that returns a Promise to a function following the error-first callback style.",
         "dependencies": [
@@ -3817,7 +3830,8 @@
         "description": "MD5 implementation.",
         "dependencies": [
             "strToBytes",
-            "hex"
+            "hex",
+            "bytesToWords"
         ],
         "env": [
             "node",
