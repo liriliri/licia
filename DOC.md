@@ -2312,11 +2312,11 @@ copy('text', function (err) {
 
 CRC1 implementation.
 
-|Name      |Type                                |Desc                |
-|----------|------------------------------------|--------------------|
-|input     |string Buffer ArrayBuffer Uint8Array|Data to calculate   |
-|[previous]|number                              |Previous CRC1 result|
-|return    |number                              |CRC1 result         |
+|Name      |Type        |Desc                |
+|----------|------------|--------------------|
+|input     |string array|Data to calculate   |
+|[previous]|number      |Previous CRC1 result|
+|return    |number      |CRC1 result         |
 
 ```javascript
 crc1('1234567890').toString(16); // -> 'd'
@@ -2326,11 +2326,11 @@ crc1('1234567890').toString(16); // -> 'd'
 
 CRC16 implementation.
 
-|Name      |Type                                |Desc                 |
-|----------|------------------------------------|---------------------|
-|input     |string Buffer ArrayBuffer Uint8Array|Data to calculate    |
-|[previous]|number                              |Previous CRC16 result|
-|return    |number                              |CRC16 result         |
+|Name      |Type        |Desc                 |
+|----------|------------|---------------------|
+|input     |string array|Data to calculate    |
+|[previous]|number      |Previous CRC16 result|
+|return    |number      |CRC16 result         |
 
 ```javascript
 crc16('1234567890').toString(16); // -> 'c57a'
@@ -2340,11 +2340,11 @@ crc16('1234567890').toString(16); // -> 'c57a'
 
 CRC32 implementation.
 
-|Name      |Type                                |Desc                 |
-|----------|------------------------------------|---------------------|
-|input     |string Buffer ArrayBuffer Uint8Array|Data to calculate    |
-|[previous]|number                              |Previous CRC32 result|
-|return    |number                              |CRC16 result         |
+|Name      |Type        |Desc                 |
+|----------|------------|---------------------|
+|input     |string array|Data to calculate    |
+|[previous]|number      |Previous CRC32 result|
+|return    |number      |CRC16 result         |
 
 ```javascript
 crc32('1234567890').toString(16); // -> '261daee5'
@@ -2354,11 +2354,11 @@ crc32('1234567890').toString(16); // -> '261daee5'
 
 CRC8 implementation.
 
-|Name      |Type                                |Desc                |
-|----------|------------------------------------|--------------------|
-|input     |string Buffer ArrayBuffer Uint8Array|Data to calculate   |
-|[previous]|number                              |Previous CRC8 result|
-|return    |number                              |CRC8 result         |
+|Name      |Type        |Desc                |
+|----------|------------|--------------------|
+|input     |string array|Data to calculate   |
+|[previous]|number      |Previous CRC8 result|
+|return    |number      |CRC8 result         |
 
 ```javascript
 crc8('1234567890').toString(16); // -> '52'
@@ -5029,10 +5029,10 @@ max(2.3, 1, 4.5, 2); // 4.5
 
 MD5 implementation.
 
-|Name   |Type  |Desc              |
-|-------|------|------------------|
-|msg    |string|Message to encrypt|
-|return |string|MD5 hash          |
+|Name   |Type        |Desc              |
+|-------|------------|------------------|
+|msg    |string array|Message to encrypt|
+|return |string      |MD5 hash          |
 
 ```javascript
 md5('licia'); // -> 'e59f337d85e9a467f1783fab282a41d0'

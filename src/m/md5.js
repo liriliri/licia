@@ -1,9 +1,9 @@
 /* MD5 implementation.
  *
- * |Name   |Type  |Desc              |
- * |-------|------|------------------|
- * |msg    |string|Message to encrypt|
- * |return |string|MD5 hash          |
+ * |Name   |Type        |Desc              |
+ * |-------|------------|------------------|
+ * |msg    |string array|Message to encrypt|
+ * |return |string      |MD5 hash          |
  */
 
 /* example
@@ -17,16 +17,16 @@
  */
 
 /* typescript
- * export declare function md5(msg: string): string;
+ * export declare function md5(msg: string | number[]): string;
  */
 
-_('strToBytes hex bytesToWords wordsToBytes');
+_('isStr strToBytes hex bytesToWords wordsToBytes');
 
 // https://github.com/pvorb/node-md5
 exports = function(msg) {
-    const bytes = strToBytes(msg);
-    const m = bytesToWords(bytes);
-    const l = bytes.length * 8;
+    if (isStr(msg)) msg = strToBytes(msg);
+    const m = bytesToWords(msg);
+    const l = msg.length * 8;
 
     let a = 1732584193;
     let b = -271733879;

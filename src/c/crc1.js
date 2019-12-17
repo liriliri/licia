@@ -1,10 +1,10 @@
 /* CRC1 implementation.
  *
- * |Name      |Type                                |Desc                |
- * |----------|------------------------------------|--------------------|
- * |input     |string Buffer ArrayBuffer Uint8Array|Data to calculate   |
- * |[previous]|number                              |Previous CRC1 result|
- * |return    |number                              |CRC1 result         |
+ * |Name      |Type        |Desc                |
+ * |----------|------------|--------------------|
+ * |input     |string array|Data to calculate   |
+ * |[previous]|number      |Previous CRC1 result|
+ * |return    |number      |CRC1 result         |
  */
 
 /* example
@@ -19,12 +19,12 @@
 
 /* typescript
  * export declare function crc1(
- *     input: string | Buffer | ArrayBuffer | Uint8Array,
+ *     input: string | number[],
  *     previous?: number
  * ): number;
  */
 
-_('type isStr strToBytes');
+_('isStr strToBytes');
 
 // https://github.com/alexgorbatchev/node-crc
 exports = function(input, previous) {
@@ -32,7 +32,7 @@ exports = function(input, previous) {
 };
 
 exports.signed = function(input, previous) {
-    input = exports.transInput(input);
+    if (isStr(input)) input = strToBytes(input);
 
     let crc = ~~previous;
     let accum = 0;
@@ -44,14 +44,4 @@ exports.signed = function(input, previous) {
     crc += accum % 256;
 
     return crc % 256;
-};
-
-exports.transInput = function(input) {
-    if (isStr(input)) {
-        input = strToBytes(input);
-    } else if (type(input) !== 'uint8array') {
-        input = new Uint8Array(input);
-    }
-
-    return input;
 };

@@ -2309,7 +2309,7 @@ CRC1 算法实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|input|string Buffer ArrayBuffer Uint8Array|信息码|
+|input|string array|信息码|
 |[previous]|number|用于累积计算的 CRC1 校验码|
 |返回值|number|CRC1 校验码|
 
@@ -2323,7 +2323,7 @@ CRC16 算法实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|input|string Buffer ArrayBuffer Uint8Array|信息码|
+|input|string array|信息码|
 |[previous]|number|用于累积计算的 CRC16 校验码|
 |返回值|number|CRC16 校验码|
 
@@ -2337,7 +2337,7 @@ CRC32 算法实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|input|string Buffer ArrayBuffer Uint8Array|信息码|
+|input|string array|信息码|
 |[previous]|number|用于累积计算的 CRC32 校验码|
 |返回值|number|CRC32 校验码|
 
@@ -2351,7 +2351,7 @@ CRC8 算法实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|input|string Buffer ArrayBuffer Uint8Array|信息码|
+|input|string array|信息码|
 |[previous]|number|用于累积计算的 CRC8 校验码|
 |返回值|number|CRC8 校验码|
 
@@ -5027,7 +5027,7 @@ MD5 算法实现。
 
 |参数名|类型|说明|
 |-----|----|---|
-|msg|string|密文|
+|msg|string array|密文|
 |返回值|string|MD5 摘要|
 
 ```javascript

@@ -1,10 +1,10 @@
 /* CRC16 implementation.
  *
- * |Name      |Type                                |Desc                 |
- * |----------|------------------------------------|---------------------|
- * |input     |string Buffer ArrayBuffer Uint8Array|Data to calculate    |
- * |[previous]|number                              |Previous CRC16 result|
- * |return    |number                              |CRC16 result         |
+ * |Name      |Type        |Desc                 |
+ * |----------|------------|---------------------|
+ * |input     |string array|Data to calculate    |
+ * |[previous]|number      |Previous CRC16 result|
+ * |return    |number      |CRC16 result         |
  */
 
 /* example
@@ -19,12 +19,12 @@
 
 /* typescript
  * export declare function crc16(
- *     input: string | Buffer | ArrayBuffer | Uint8Array,
+ *     input: string | number[],
  *     previous?: number
  * ): number;
  */
 
-_('crc1');
+_('isStr strToBytes');
 
 // prettier-ignore
 let TABLE = [
@@ -69,7 +69,7 @@ exports = function(input, previous) {
 };
 
 exports.signed = function(input, previous) {
-    input = crc1.transInput(input);
+    if (isStr(input)) input = strToBytes(input);
 
     let crc = ~~previous;
 

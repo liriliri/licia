@@ -1345,7 +1345,6 @@
     "crc1": {
         "description": "CRC1 implementation.",
         "dependencies": [
-            "type",
             "isStr",
             "strToBytes"
         ],
@@ -1363,7 +1362,8 @@
     "crc16": {
         "description": "CRC16 implementation.",
         "dependencies": [
-            "crc1"
+            "isStr",
+            "strToBytes"
         ],
         "env": [
             "node",
@@ -1379,7 +1379,8 @@
     "crc32": {
         "description": "CRC32 implementation.",
         "dependencies": [
-            "crc1"
+            "isStr",
+            "strToBytes"
         ],
         "env": [
             "node",
@@ -1395,7 +1396,8 @@
     "crc8": {
         "description": "CRC8 implementation.",
         "dependencies": [
-            "crc1"
+            "isStr",
+            "strToBytes"
         ],
         "env": [
             "node",
@@ -3829,6 +3831,7 @@
     "md5": {
         "description": "MD5 implementation.",
         "dependencies": [
+            "isStr",
             "strToBytes",
             "hex",
             "bytesToWords",
