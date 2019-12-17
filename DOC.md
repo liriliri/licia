@@ -7394,6 +7394,19 @@ waterfall([
 });
 ```
 
+## wordsToBytes 
+
+Convert 32-bit words to bytes.
+
+|Name  |Type |Desc      |
+|------|-----|----------|
+|words |array|word array|
+|return|array|byte array|
+
+```javascript
+wordsToBytes([0x12345678]); // -> [0x12, 0x34, 0x56, 0x78]
+```
+
 ## workerize 
 
 Move a stand-alone function to a worker thread.

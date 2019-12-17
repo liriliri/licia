@@ -3831,7 +3831,8 @@
         "dependencies": [
             "strToBytes",
             "hex",
-            "bytesToWords"
+            "bytesToWords",
+            "wordsToBytes"
         ],
         "env": [
             "node",
@@ -6002,6 +6003,19 @@
             "nextTick",
             "restArgs"
         ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
+    "wordsToBytes": {
+        "description": "Convert 32-bit words to bytes.",
+        "dependencies": [],
         "env": [
             "node",
             "browser",

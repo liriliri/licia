@@ -7388,6 +7388,19 @@ waterfall([
 });
 ```
 
+## wordsToBytes
+
+将 32 位字长数组转换为字节数组。
+
+|参数名|类型|说明|
+|-----|----|---|
+|words|array|字长数组|
+|返回值|array|字节数组|
+
+```javascript
+wordsToBytes([0x12345678]); // -> [0x12, 0x34, 0x56, 0x78]
+```
+
 ## workerize
 
 将函数运行在 worker 线程中。
