@@ -1759,7 +1759,7 @@ Turn a byte array into a base64 string.
 
 |Name  |Type  |Desc         |
 |------|------|-------------|
-|arr   |array |Byte array   |
+|bytes |array |Byte array   |
 |return|string|Base64 string|
 
 ### decode
@@ -3567,6 +3567,33 @@ Heap sort implementation.
 
 ```javascript
 heapSort([2, 1]); // -> [1, 2]
+```
+
+## hex 
+
+Hex encoding and decoding.
+
+### encode
+
+Turn a byte array into a hex string.
+
+|Name  |Type  |Desc      |
+|------|------|----------|
+|bytes |array |Byte array|
+|return|string|hex string|
+
+### decode
+
+Turn a hex string into a byte array.
+
+|Name  |Type  |Desc      |
+|------|------|----------|
+|str   |string|hex string|
+|return|array |Byte array|
+
+```javascript
+hex.encode([168, 174, 155, 255]); // -> 'a8ae9bff'
+hex.decode('a8ae9bff'); // -> [168, 174, 155, 255]
 ```
 
 ## highlight 

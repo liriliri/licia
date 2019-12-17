@@ -6,7 +6,7 @@
  *
  * |Name  |Type  |Desc         |
  * |------|------|-------------|
- * |arr   |array |Byte array   |
+ * |bytes |array |Byte array   |
  * |return|string|Base64 string|
  *
  * ### decode
@@ -31,35 +31,37 @@
 
 /* typescript
  * export declare const base64: {
- *     encode(arr: number[]): string;
+ *     encode(bytes: number[]): string;
  *     decode(str: string): number[];
  * };
  */
 
 exports = {
-    encode: function(arr) {
+    encode: function(bytes) {
         const ret = [];
-        let len = arr.length;
+        let len = bytes.length;
         const remain = len % 3;
 
         len = len - remain;
 
         for (let i = 0; i < len; i += 3) {
             ret.push(
-                numToBase64((arr[i] << 16) + (arr[i + 1] << 8) + arr[i + 2])
+                numToBase64(
+                    (bytes[i] << 16) + (bytes[i + 1] << 8) + bytes[i + 2]
+                )
             );
         }
 
-        len = arr.length;
+        len = bytes.length;
         let tmp;
 
         if (remain === 1) {
-            tmp = arr[len - 1];
+            tmp = bytes[len - 1];
             ret.push(code[tmp >> 2]);
             ret.push(code[(tmp << 4) & 0x3f]);
             ret.push('==');
         } else if (remain === 2) {
-            tmp = (arr[len - 2] << 8) + arr[len - 1];
+            tmp = (bytes[len - 2] << 8) + bytes[len - 1];
             ret.push(code[tmp >> 10]);
             ret.push(code[(tmp >> 4) & 0x3f]);
             ret.push(code[(tmp << 2) & 0x3f]);

@@ -5,9 +5,8 @@ const testData = [
     [[168, 174, 155, 255], 'qK6b/w==']
 ];
 
+const testDataReverse = util.map(testData, test => test.slice().reverse());
+
 it('encode', () => tests(base64.encode)(testData));
 
-it('decode', function() {
-    util.each(testData, test => test.reverse());
-    tests(base64.decode)(testData);
-});
+it('decode', () => tests(base64.decode)(testDataReverse));

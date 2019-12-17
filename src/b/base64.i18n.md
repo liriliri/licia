@@ -8,7 +8,7 @@ base64 编解码。
 
 |参数名|类型|说明|
 |-----|----|---|
-|arr|array|字节数组|
+|bytes|array|字节数组|
 |返回值|string|base64 编码的字符串|
 
 ### decode

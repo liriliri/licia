@@ -2456,6 +2456,21 @@
         ],
         "since": "1.11.0"
     },
+    "hex": {
+        "description": "Hex encoding and decoding.",
+        "dependencies": [
+            "isOdd"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "highlight": {
         "description": "Highlight code.",
         "dependencies": [
