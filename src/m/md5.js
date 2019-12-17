@@ -20,7 +20,7 @@
  * export declare function md5(msg: string): string;
  */
 
-_('strToBytes');
+_('strToBytes hex');
 
 // https://github.com/pvorb/node-md5
 exports = function(msg) {
@@ -124,7 +124,7 @@ exports = function(msg) {
         d = (d + dd) >>> 0;
     }
 
-    return bytesToHex(wordsToBytes(endian([a, b, c, d])));
+    return hex.encode(wordsToBytes(endian([a, b, c, d])));
 };
 
 function FF(a, b, c, d, x, s, t) {
@@ -155,15 +155,6 @@ function wordsToBytes(words) {
     }
 
     return bytes;
-}
-
-function bytesToHex(bytes) {
-    const hex = [];
-    for (let i = 0, len = bytes.length; i < len; i++) {
-        hex.push((bytes[i] >>> 4).toString(16));
-        hex.push((bytes[i] & 0xf).toString(16));
-    }
-    return hex.join('');
 }
 
 function endian(n) {

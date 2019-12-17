@@ -56,7 +56,7 @@
  * }
  */
 
-_('Class isStr clamp rgbToHsl hslToRgb lpad convertBase');
+_('Class isStr clamp rgbToHsl hslToRgb hex');
 
 exports = Class(
     {
@@ -82,7 +82,7 @@ exports = Class(
             let val = this.val;
             if (this.model === 'hsl') val = hslToRgb(val);
 
-            let ret = hexDouble(val[0]) + hexDouble(val[1]) + hexDouble(val[2]);
+            let ret = hex.encode(val.slice(0, 3));
 
             if (ret[0] === ret[1] && ret[2] === ret[3] && ret[4] === ret[5]) {
                 ret = ret[0] + ret[2] + ret[5];
@@ -162,7 +162,3 @@ const regHex = /^#([a-fA-F0-9]{6})$/;
 const regRgba = /^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d.]+)\s*)?\)$/;
 const regRgbaPer = /^rgba?\(\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*(?:,\s*([+-]?[\d.]+)\s*)?\)$/;
 const regHsla = /^hsla?\(\s*([+-]?\d*[.]?\d+)(?:deg)?\s*,\s*([+-]?[\d.]+)%\s*,\s*([+-]?[\d.]+)%\s*(?:,\s*([+-]?[\d.]+)\s*)?\)$/;
-
-function hexDouble(num) {
-    return lpad(convertBase(num, 10, 16), 2, '0');
-}
