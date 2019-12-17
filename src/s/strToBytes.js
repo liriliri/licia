@@ -1,9 +1,10 @@
 /* Convert string into bytes.
  *
- * |Name  |Type  |Desc             |
- * |------|------|-----------------|
- * |str   |string|String to convert|
- * |return|array |Bytes array      |
+ * |Name         |Type  |Desc              |
+ * |-------------|------|------------------|
+ * |str          |string|String to convert |
+ * |encoding=utf8|string|Encoding of string|
+ * |return       |array |Bytes array       |
  */
 
 /* example
@@ -17,11 +18,20 @@
  */
 
 /* typescript
- * export declare function strToBytes(str: string): number[];
+ * export declare function strToBytes(
+ *     str: string,
+ *     encoding?: string
+ * ): number[];
  */
 
-exports = function(str) {
+_('utf8');
+
+exports = function(str, encoding = 'utf8') {
     const bytes = [];
+
+    if (encoding === 'utf8') {
+        str = utf8.encode(str);
+    }
 
     for (let i = 0, len = str.length; i < len; i++) {
         bytes.push(str.charCodeAt(i) & 0xff);

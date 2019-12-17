@@ -966,7 +966,9 @@
     },
     "bytesToStr": {
         "description": "Convert bytes to string.",
-        "dependencies": [],
+        "dependencies": [
+            "utf8"
+        ],
         "env": [
             "node",
             "browser",
@@ -1331,7 +1333,6 @@
         "dependencies": [
             "type",
             "isStr",
-            "utf8",
             "strToBytes"
         ],
         "env": [
@@ -3798,7 +3799,6 @@
     "md5": {
         "description": "MD5 implementation.",
         "dependencies": [
-            "utf8",
             "strToBytes"
         ],
         "env": [
@@ -4585,7 +4585,6 @@
     "rc4": {
         "description": "RC4 symmetric encryption implementation.",
         "dependencies": [
-            "utf8",
             "base64",
             "bytesToStr",
             "strToBytes"
@@ -5207,7 +5206,9 @@
     },
     "strToBytes": {
         "description": "Convert string into bytes.",
-        "dependencies": [],
+        "dependencies": [
+            "utf8"
+        ],
         "env": [
             "node",
             "browser",

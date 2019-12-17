@@ -20,11 +20,11 @@
  * export declare function md5(msg: string): string;
  */
 
-_('utf8 strToBytes');
+_('strToBytes');
 
 // https://github.com/pvorb/node-md5
 exports = function(msg) {
-    const bytes = strToBytes(utf8.encode(msg));
+    const bytes = strToBytes(msg);
     const m = bytesToWords(bytes);
     const l = bytes.length * 8;
 

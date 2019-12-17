@@ -33,7 +33,7 @@
  * };
  */
 
-_('utf8 base64 bytesToStr strToBytes');
+_('base64 bytesToStr strToBytes');
 
 exports = {
     encrypt: function(key, str) {
@@ -45,9 +45,9 @@ exports = {
 };
 
 function rc4(key, str, decrypt) {
-    key = strToBytes(utf8.encode(key));
+    key = strToBytes(key);
     if (!decrypt) {
-        str = strToBytes(utf8.encode(str));
+        str = strToBytes(str);
     } else {
         str = base64.decode(str);
     }
@@ -78,5 +78,5 @@ function rc4(key, str, decrypt) {
         result.push(str[y] ^ s[(s[i] + s[j]) % 256]);
     }
 
-    return !decrypt ? base64.encode(result) : utf8.decode(bytesToStr(result));
+    return !decrypt ? base64.encode(result) : bytesToStr(result);
 }

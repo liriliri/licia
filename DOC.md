@@ -1868,10 +1868,11 @@ bubbleSort([2, 1]); // -> [1, 2]
 
 Convert bytes to string.
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
-|str   |array |Bytes array  |
-|return|string|Result string|
+|Name         |Type  |Desc              |
+|-------------|------|------------------|
+|str          |array |Bytes array       |
+|encoding=utf8|string|Encoding of string|
+|return       |string|Result string     |
 
 ```javascript
 bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
@@ -6516,10 +6517,11 @@ strHash('test'); // -> 2090770981
 
 Convert string into bytes.
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|str   |string|String to convert|
-|return|array |Bytes array      |
+|Name         |Type  |Desc              |
+|-------------|------|------------------|
+|str          |string|String to convert |
+|encoding=utf8|string|Encoding of string|
+|return       |array |Bytes array       |
 
 ```javascript
 strToBytes('licia'); // -> [108, 105, 99, 105, 97]

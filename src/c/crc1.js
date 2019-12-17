@@ -24,7 +24,7 @@
  * ): number;
  */
 
-_('type isStr utf8 strToBytes');
+_('type isStr strToBytes');
 
 // https://github.com/alexgorbatchev/node-crc
 exports = function(input, previous) {
@@ -48,7 +48,7 @@ exports.signed = function(input, previous) {
 
 exports.transInput = function(input) {
     if (isStr(input)) {
-        input = strToBytes(utf8.encode(input));
+        input = strToBytes(input);
     } else if (type(input) !== 'uint8array') {
         input = new Uint8Array(input);
     }
