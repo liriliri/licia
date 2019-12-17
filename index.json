@@ -267,8 +267,7 @@
             "clamp",
             "rgbToHsl",
             "hslToRgb",
-            "lpad",
-            "convertBase"
+            "hex"
         ],
         "env": [
             "node",
@@ -2468,6 +2467,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.15.0",
         "test": [
             "node",
             "browser"
@@ -3816,7 +3816,8 @@
     "md5": {
         "description": "MD5 implementation.",
         "dependencies": [
-            "strToBytes"
+            "strToBytes",
+            "hex"
         ],
         "env": [
             "node",
@@ -5371,6 +5372,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.15.0",
         "test": [
             "node",
             "browser"

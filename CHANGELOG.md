@@ -1,3 +1,9 @@
+## v1.15.0 (17 Dec 2019)
+
+* add: stripNum
+* add: hex
+* feat(strToBytes, bytesToStr): encoding
+
 ## v1.14.0 (10 Dec 2019)
 
 * add: notify
