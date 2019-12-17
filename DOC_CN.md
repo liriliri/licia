@@ -6544,8 +6544,11 @@ strHash('test'); // -> 2090770981
 |encoding=utf8|string|字符串编码|
 |返回值|array|字节数组|
 
+支持编码：utf8，hex，base64
+
 ```javascript
 strToBytes('licia'); // -> [108, 105, 99, 105, 97]
+strToBytes('qK6b/w==', 'base64'); // -> [168, 174, 155, 255]
 ```
 
 ## stringify

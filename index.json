@@ -967,7 +967,9 @@
     "bytesToStr": {
         "description": "Convert bytes to string.",
         "dependencies": [
-            "utf8"
+            "utf8",
+            "hex",
+            "base64"
         ],
         "env": [
             "node",
@@ -5222,7 +5224,9 @@
     "strToBytes": {
         "description": "Convert string into bytes.",
         "dependencies": [
-            "utf8"
+            "utf8",
+            "hex",
+            "base64"
         ],
         "env": [
             "node",

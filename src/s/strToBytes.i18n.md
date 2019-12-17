@@ -7,3 +7,5 @@
 |str|string|目标字符串|
 |encoding=utf8|string|字符串编码|
 |返回值|array|字节数组|
+
+支持编码：utf8，hex，base64

@@ -24,9 +24,12 @@
  * ): string;
  */
 
-_('utf8');
+_('utf8 hex base64');
 
 exports = function(bytes, encoding = 'utf8') {
+    if (encoding === 'hex') return hex.encode(bytes);
+    if (encoding === 'base64') return base64.encode(bytes);
+
     let str = [];
 
     for (let i = 0, len = bytes.length; i < len; i++) {

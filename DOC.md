@@ -6550,8 +6550,11 @@ Convert string into bytes.
 |encoding=utf8|string|Encoding of string|
 |return       |array |Bytes array       |
 
+Supported encoding: utf8, hex, base64
+
 ```javascript
 strToBytes('licia'); // -> [108, 105, 99, 105, 97]
+strToBytes('qK6b/w==', 'base64'); // -> [168, 174, 155, 255]
 ```
 
 ## stringify 
