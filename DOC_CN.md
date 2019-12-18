@@ -6046,6 +6046,19 @@ const paramArr = restArgs(function (rest) { return rest });
 paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
 ```
 
+## reverse
+
+将数组元素颠倒，不改变原数组。
+
+|参数名|类型|说明|
+|-----|----|---|
+|arr|array|源数组|
+|返回值|array|目标数组|
+
+```javascript
+reverse([1, 2, 3]); // -> [3, 2, 1]
+```
+
 ## rgbToHsl
 
 将 rgb 格式的颜色值转换为 hsl 格式。

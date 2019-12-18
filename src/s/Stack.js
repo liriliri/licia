@@ -64,7 +64,7 @@
  * }
  */
 
-_('Class');
+_('Class reverse');
 
 exports = Class({
     initialize: function Stack() {
@@ -99,6 +99,6 @@ exports = Class({
         }
     },
     toArr: function() {
-        return this._items.slice(0).reverse();
+        return reverse(this._items);
     }
 });

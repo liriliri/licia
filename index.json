@@ -4742,6 +4742,20 @@
             "browser"
         ]
     },
+    "reverse": {
+        "description": "Reverse array without mutating it.",
+        "dependencies": [],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ],
+        "benchmark": true
+    },
     "rgbToHsl": {
         "description": "Convert rgb to hsl.",
         "dependencies": [],

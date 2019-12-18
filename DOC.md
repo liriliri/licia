@@ -6052,6 +6052,19 @@ const paramArr = restArgs(function (rest) { return rest });
 paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
 ```
 
+## reverse 
+
+Reverse array without mutating it.
+
+|Name  |Type |Desc           |
+|------|-----|---------------|
+|arr   |array|Array to modify|
+|return|array|Reversed array |
+
+```javascript
+reverse([1, 2, 3]); // -> [3, 2, 1]
+```
+
 ## rgbToHsl 
 
 Convert rgb to hsl.
