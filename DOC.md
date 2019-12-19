@@ -2364,6 +2364,20 @@ CRC8 implementation.
 crc8('1234567890').toString(16); // -> '52'
 ```
 
+## create 
+
+Create new object using given object as prototype.
+
+|Name   |Type  |Desc                   |
+|-------|------|-----------------------|
+|[proto]|object|Prototype of new object|
+|return |object|Created object         |
+
+```javascript
+const obj = create({ a: 1 });
+console.log(obj.a); // -> 1
+```
+
 ## createAssigner 
 
 Used to create extend, extendOwn and defaults.

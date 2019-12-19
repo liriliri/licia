@@ -637,7 +637,8 @@
     "Stack": {
         "description": "Stack data structure.",
         "dependencies": [
-            "Class"
+            "Class",
+            "reverse"
         ],
         "env": [
             "node",
@@ -1409,6 +1410,21 @@
             "browser"
         ],
         "since": "1.5.9"
+    },
+    "create": {
+        "description": "Create new object using given object as prototype.",
+        "dependencies": [
+            "isObj"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "createAssigner": {
         "description": "Used to create extend, extendOwn and defaults.",
@@ -2603,7 +2619,9 @@
     },
     "inherits": {
         "description": "Inherit the prototype methods from one constructor into another.",
-        "dependencies": [],
+        "dependencies": [
+            "create"
+        ],
         "env": [
             "node",
             "browser",

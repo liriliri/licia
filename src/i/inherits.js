@@ -25,20 +25,14 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript
  * export declare function inherits(Class: Function, SuperClass: Function): void;
  */
 
+_('create');
+
 exports = function(Class, SuperClass) {
-    if (objCreate) return (Class.prototype = objCreate(SuperClass.prototype));
-
-    noop.prototype = SuperClass.prototype;
-    Class.prototype = new noop();
+    Class.prototype = create(SuperClass.prototype);
 };
-
-const objCreate = Object.create;
-
-function noop() {}

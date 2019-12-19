@@ -2359,6 +2359,20 @@ CRC8 算法实现。
 crc8('1234567890').toString(16); // -> '52'
 ```
 
+## create
+
+创建对象并指定它的原型。
+
+|参数名|类型|说明|
+|-----|----|---|
+|[proto]|object|新对象原型|
+|返回值|object|目标对象|
+
+```javascript
+const obj = create({ a: 1 });
+console.log(obj.a); // -> 1
+```
+
 ## createAssigner
 
 用于创建 extend，extendOwn 和 defaults 等模块。
