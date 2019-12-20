@@ -65,11 +65,11 @@ _('Class keys safeGet isFn isUndef isNum isStr isBool');
 exports = Class(
     {
         className: 'Validator',
-        initialize: function(options) {
+        initialize(options) {
             this._options = options;
             this._optKeys = keys(options);
         },
-        validate: function(obj) {
+        validate(obj) {
             obj = obj || {};
 
             const options = this._options;
@@ -89,7 +89,7 @@ exports = Class(
 
             return true;
         },
-        _validateVal: function(val, rules, objKey) {
+        _validateVal(val, rules, objKey) {
             const plugins = exports.plugins;
 
             if (isFn(rules)) return rules(val);
@@ -114,30 +114,30 @@ exports = Class(
     },
     {
         plugins: {
-            required: function(val, key, config) {
+            required(val, key, config) {
                 if (config && isUndef(val)) return key + ' is required';
 
                 return true;
             },
-            number: function(val, key, config) {
+            number(val, key, config) {
                 if (config && !isUndef(val) && !isNum(val))
                     return key + ' should be a number';
 
                 return true;
             },
-            boolean: function(val, key, config) {
+            boolean(val, key, config) {
                 if (config && !isUndef(val) && !isBool(val))
                     return key + ' should be a boolean';
 
                 return true;
             },
-            string: function(val, key, config) {
+            string(val, key, config) {
                 if (config && !isUndef(val) && !isStr(val))
                     return key + ' should be a string';
 
                 return true;
             },
-            regexp: function(val, key, config) {
+            regexp(val, key, config) {
                 if (isStr(val) && !config.test(val))
                     return (
                         key + ' should match given regexp ' + config.toString()
@@ -146,7 +146,7 @@ exports = Class(
                 return true;
             }
         },
-        addPlugin: function(name, plugin) {
+        addPlugin(name, plugin) {
             exports.plugins[name] = plugin;
         }
     }

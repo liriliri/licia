@@ -36,10 +36,10 @@
 _('base64 bytesToStr strToBytes');
 
 exports = {
-    encrypt: function(key, str) {
+    encrypt(key, str) {
         return rc4(key, str, false);
     },
-    decrypt: function(key, str) {
+    decrypt(key, str) {
         return rc4(key, str, true);
     }
 };

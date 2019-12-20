@@ -2,10 +2,10 @@ function People(name) {
     this._name = name;
 }
 People.prototype = {
-    getName: function() {
+    getName() {
         return this._name;
     },
-    is: function() {
+    is() {
         return 'People';
     }
 };

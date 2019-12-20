@@ -37,7 +37,7 @@
  */
 
 exports = {
-    encode: function(bytes) {
+    encode(bytes) {
         const ret = [];
         let len = bytes.length;
         const remain = len % 3;
@@ -70,7 +70,7 @@ exports = {
 
         return ret.join('');
     },
-    decode: function(str) {
+    decode(str) {
         let len = str.length,
             remain = 0;
 

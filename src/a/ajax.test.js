@@ -22,7 +22,7 @@ it('basic', function(done) {
 
     ajax({
         url: 'test',
-        success: function(res) {
+        success(res) {
             expect(res).to.eql({ a: 1, b: 2 });
             done();
         }
@@ -40,7 +40,7 @@ it('request data', function(done) {
     ajax({
         url: 'test',
         data: { a: 1 },
-        success: function() {}
+        success() {}
     });
 
     let request = requests[0];
@@ -52,7 +52,7 @@ it('request data', function(done) {
         type: 'post',
         url: 'test',
         data: { a: 1, b: 2 },
-        success: function() {}
+        success() {}
     });
 
     request = requests[1];
@@ -63,7 +63,7 @@ it('request data', function(done) {
         type: 'post',
         url: 'test',
         data: 'test',
-        success: function() {
+        success() {
             done();
         }
     });
@@ -123,7 +123,7 @@ it('post json', function(done) {
         url: 'test',
         data: { foo: 'bar' },
         contentType: 'application/json',
-        success: function() {
+        success() {
             done();
         }
     });
@@ -137,7 +137,7 @@ it('post json', function(done) {
 it('error', function(done) {
     ajax({
         url: 'test',
-        error: function(xhr) {
+        error(xhr) {
             expect(xhr.status).to.equal(500);
             done();
         }
@@ -167,7 +167,7 @@ it('xml dataType', function(done) {
 it('complete', function(done) {
     ajax({
         url: 'test',
-        complete: function(xhr) {
+        complete(xhr) {
             expect(xhr).to.equal(xhr);
         }
     });
@@ -178,7 +178,7 @@ it('complete', function(done) {
 
     ajax({
         url: 'test',
-        complete: function() {
+        complete() {
             done();
         }
     });
@@ -191,7 +191,7 @@ it('timeout', function(done) {
     ajax({
         url: 'test',
         timeout: 50,
-        error: function(xhr, type) {
+        error(xhr, type) {
             expect(type).to.equal('timeout');
             done();
         }

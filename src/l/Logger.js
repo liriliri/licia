@@ -79,7 +79,7 @@ exports = Emitter.extend(
             this.setLevel(isUndef(level) ? exports.level.DEBUG : level);
             this.callSuper(Emitter, 'initialize', arguments);
         },
-        setLevel: function(level) {
+        setLevel(level) {
             if (isStr(level)) {
                 level = exports.level[level.toUpperCase()];
                 if (level) this._level = level;
@@ -89,28 +89,28 @@ exports = Emitter.extend(
 
             return this;
         },
-        getLevel: function() {
+        getLevel() {
             return this._level;
         },
-        formatter: function(type, argList) {
+        formatter(type, argList) {
             return argList;
         },
-        trace: function() {
+        trace() {
             return this._log('trace', arguments);
         },
-        debug: function() {
+        debug() {
             return this._log('debug', arguments);
         },
-        info: function() {
+        info() {
             return this._log('info', arguments);
         },
-        warn: function() {
+        warn() {
             return this._log('warn', arguments);
         },
-        error: function() {
+        error() {
             return this._log('error', arguments);
         },
-        _log: function(type, argList) {
+        _log(type, argList) {
             argList = toArr(argList);
             if (argList.length === 0) return this;
 

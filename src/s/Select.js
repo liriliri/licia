@@ -47,7 +47,7 @@ _('Class isStr each');
 
 exports = Class({
     className: 'Select',
-    initialize: function(selector) {
+    initialize(selector) {
         this.length = 0;
 
         if (!selector) return this;
@@ -59,7 +59,7 @@ exports = Class({
             this.length = 1;
         }
     },
-    find: function(selector) {
+    find(selector) {
         const ret = new exports();
 
         this.each(function() {
@@ -68,7 +68,7 @@ exports = Class({
 
         return ret;
     },
-    each: function(fn) {
+    each(fn) {
         each(this, function(element, idx) {
             fn.call(element, idx, element);
         });

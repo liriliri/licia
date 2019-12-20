@@ -40,10 +40,10 @@
 
 // https://mathiasbynens.be/notes/javascript-encoding
 exports = {
-    encode: function(arr) {
+    encode(arr) {
         return String.fromCodePoint.apply(String, arr);
     },
-    decode: function(str) {
+    decode(str) {
         const ret = [];
 
         let i = 0;

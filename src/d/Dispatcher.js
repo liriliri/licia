@@ -41,7 +41,7 @@ exports = Class({
         this._isHandled = {};
         this._isPending = {};
     },
-    dispatch: function(payload) {
+    dispatch(payload) {
         this._startDispatching(payload);
 
         for (const id in this._callbacks) {
@@ -51,14 +51,14 @@ exports = Class({
 
         this._stopDispatching();
     },
-    register: function(cb) {
+    register(cb) {
         const id = uniqId('ID_');
 
         this._callbacks[id] = cb;
 
         return id;
     },
-    waitFor: function(ids) {
+    waitFor(ids) {
         for (let i = 0, len = ids.length; i < len; i++) {
             const id = ids[i];
             if (this._isPending[id]) continue;
@@ -66,13 +66,13 @@ exports = Class({
             this._invokeCb(id);
         }
     },
-    unregister: function(id) {
+    unregister(id) {
         delete this._callbacks[id];
     },
-    isDispatching: function() {
+    isDispatching() {
         return this._isDispatching;
     },
-    _startDispatching: function(payload) {
+    _startDispatching(payload) {
         for (const id in this._callbacks) {
             this._isPending[id] = false;
             this._isHandled[id] = false;
@@ -81,11 +81,11 @@ exports = Class({
         this._pendingPayload = payload;
         this._isDispatching = true;
     },
-    _stopDispatching: function() {
+    _stopDispatching() {
         delete this._pendingPayload;
         this._isDispatching = false;
     },
-    _invokeCb: function(id) {
+    _invokeCb(id) {
         this._isPending[id] = true;
         this._callbacks[id](this._pendingPayload);
         this._isHandled[id] = true;

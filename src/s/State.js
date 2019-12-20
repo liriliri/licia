@@ -56,7 +56,7 @@ _('Emitter each some toArr');
 
 exports = Emitter.extend({
     className: 'State',
-    initialize: function(initial, events) {
+    initialize(initial, events) {
         this.callSuper(Emitter, 'initialize');
 
         this.current = initial;
@@ -67,7 +67,7 @@ exports = Emitter.extend({
             self[key] = buildEvent(key, event);
         });
     },
-    is: function(state) {
+    is(state) {
         return this.current === state;
     }
 });

@@ -30,10 +30,10 @@ if (root.Map && !detectMocha()) {
             const self = this;
 
             defineProp(this, 'size', {
-                get: function() {
+                get() {
                     return keys(self._data).length;
                 },
-                set: function() {},
+                set() {},
                 enumerable: true,
                 configurable: true
             });
@@ -52,7 +52,7 @@ if (root.Map && !detectMocha()) {
                 );
             }
         },
-        forEach: function(fn, ctx) {
+        forEach(fn, ctx) {
             each(
                 this._data,
                 function(val, key) {
@@ -61,19 +61,19 @@ if (root.Map && !detectMocha()) {
                 ctx
             );
         },
-        has: function(key) {
+        has(key) {
             return !isUndef(this._data[key]);
         },
-        get: function(key) {
+        get(key) {
             return this._data[key];
         },
-        set: function(key, val) {
+        set(key, val) {
             this._data[key] = val;
         },
-        delete: function(key) {
+        delete(key) {
             delete this._data[key];
         },
-        clear: function() {
+        clear() {
             this._data = {};
         }
     });

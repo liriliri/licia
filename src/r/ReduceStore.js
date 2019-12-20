@@ -71,7 +71,7 @@ exports = Class({
         this._curListeners = [];
         this._nextListeners = this._curListeners;
     },
-    subscribe: function(listener) {
+    subscribe(listener) {
         let isSubscribed = true;
 
         this._ensureCanMutateNextListeners();
@@ -91,7 +91,7 @@ exports = Class({
             });
         };
     },
-    dispatch: function(action) {
+    dispatch(action) {
         this._state = this._reducer(this._state, action);
 
         const listeners = (this._curListeners = this._nextListeners);
@@ -100,10 +100,10 @@ exports = Class({
 
         return action;
     },
-    getState: function() {
+    getState() {
         return this._state;
     },
-    _ensureCanMutateNextListeners: function() {
+    _ensureCanMutateNextListeners() {
         if (this._nextListeners === this._curListeners) {
             this._nextListeners = clone(this._curListeners);
         }

@@ -70,26 +70,26 @@ exports = Class({
     initialize: function Stack() {
         this.clear();
     },
-    clear: function() {
+    clear() {
         this._items = [];
         this.size = 0;
     },
-    push: function(item) {
+    push(item) {
         this._items.push(item);
 
         return ++this.size;
     },
-    pop: function() {
+    pop() {
         if (!this.size) return;
 
         this.size--;
 
         return this._items.pop();
     },
-    peek: function() {
+    peek() {
         return this._items[this.size - 1];
     },
-    forEach: function(iterator, ctx) {
+    forEach(iterator, ctx) {
         ctx = arguments.length > 1 ? ctx : this;
 
         const items = this._items;
@@ -98,7 +98,7 @@ exports = Class({
             iterator.call(ctx, items[i], j, this);
         }
     },
-    toArr: function() {
+    toArr() {
         return reverse(this._items);
     }
 });

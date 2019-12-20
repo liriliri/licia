@@ -2,7 +2,7 @@ expect(
     h(
         'div#test.title',
         {
-            onclick: function() {},
+            onclick() {},
             title: 'test'
         },
         'inner text'

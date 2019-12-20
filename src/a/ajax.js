@@ -145,7 +145,7 @@ exports.setting = {
     dataType: 'json',
     contentType: 'application/x-www-form-urlencoded',
     data: {},
-    xhr: function() {
+    xhr() {
         return new XMLHttpRequest();
     },
     timeout: 0

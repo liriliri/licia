@@ -3,13 +3,13 @@ const A = Class({
         this._name = name;
         this._height = height;
     },
-    getName: function() {
+    getName() {
         return this._name;
     },
-    getHeight: function() {
+    getHeight() {
         return this._height;
     },
-    introduce: function() {
+    introduce() {
         return (
             'My name is ' +
             this._name +
@@ -26,10 +26,10 @@ const B = A.extend({
         this.callSuper(A, 'initialize', arguments);
         this._bloodType = bloodType;
     },
-    getBloodType: function() {
+    getBloodType() {
         return this._bloodType;
     },
-    introduce: function() {
+    introduce() {
         return (
             this.callSuper(A, 'introduce') +
             'And my blood type is ' +
@@ -40,7 +40,7 @@ const B = A.extend({
 });
 
 const C = Class({
-    initialize: function(name, height) {
+    initialize(name, height) {
         this._name = name;
         this._height = height;
     }

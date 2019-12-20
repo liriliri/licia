@@ -123,32 +123,32 @@ function getRes(xhr) {
         status: xhr.status,
         statusText: xhr.statusText,
         url: xhr.responseURL,
-        clone: function() {
+        clone() {
             return getRes(xhr);
         },
-        text: function() {
+        text() {
             return Promise.resolve(xhr.responseText);
         },
-        json: function() {
+        json() {
             return Promise.resolve(xhr.responseText).then(JSON.parse);
         },
-        xml: function() {
+        xml() {
             return Promise.resolve(xhr.responseXML);
         },
-        blob: function() {
+        blob() {
             return Promise.resolve(new Blob([xhr.response]));
         },
         headers: {
-            keys: function() {
+            keys() {
                 return keys;
             },
-            entries: function() {
+            entries() {
                 return all;
             },
-            get: function(name) {
+            get(name) {
                 return headers[name.toLowerCase()];
             },
-            has: function(name) {
+            has(name) {
                 return has(headers, name);
             }
         }
@@ -159,7 +159,7 @@ exports.setting = {
     method: 'GET',
     headers: {},
     timeout: 0,
-    xhr: function() {
+    xhr() {
         return new XMLHttpRequest();
     }
 };

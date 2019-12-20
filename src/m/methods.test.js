@@ -1,7 +1,7 @@
 const obj = {
     a: 0,
-    b: function() {},
-    c: function() {}
+    b() {},
+    c() {}
 };
 
 expect(methods(obj)).to.eql(['b', 'c']);

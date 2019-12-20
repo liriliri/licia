@@ -4,7 +4,7 @@ it('prop', function() {
     defineProp(obj);
 
     defineProp(obj, 'a', {
-        get: function() {
+        get() {
             return this.e * 2;
         }
     });
@@ -19,7 +19,7 @@ it('prop', function() {
     expect(obj.a).to.equal(4);
 
     defineProp(obj, 'b.d.a', {
-        get: function() {
+        get() {
             return 2;
         }
     });
@@ -30,12 +30,12 @@ it('props', function() {
     const obj = { a: 1, b: 2, c: 3 };
     defineProp(obj, {
         a: {
-            get: function() {
+            get() {
                 return this.c;
             }
         },
         b: {
-            set: function(val) {
+            set(val) {
                 this.c = val / 2;
             }
         }

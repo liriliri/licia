@@ -60,13 +60,13 @@ const asin = Math.asin;
 const PI = Math.PI;
 
 const fns = {
-    sine: function(t) {
+    sine(t) {
         return 1 + sin((PI / 2) * t - PI / 2);
     },
-    circ: function(t) {
+    circ(t) {
         return 1 - sqrt(1 - t * t);
     },
-    elastic: function(t, m) {
+    elastic(t, m) {
         m = m || DEFAULT_ELASTICITY;
 
         if (t === 0 || t === 1) return t;
@@ -78,10 +78,10 @@ const fns = {
 
         return -(pow(2, 10 * st1) * sin(((st1 - s) * (2 * PI)) / p));
     },
-    back: function(t) {
+    back(t) {
         return t * t * (3 * t - 2);
     },
-    bounce: function(t) {
+    bounce(t) {
         let pow2,
             bounce = 4;
 

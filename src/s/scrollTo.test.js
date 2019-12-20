@@ -17,7 +17,7 @@ after(function() {
 it('basic', function(done) {
     scrollTo(50, {
         tolerance: -50,
-        callback: function() {
+        callback() {
             expect(windowY).to.equal(100);
             done();
         }
@@ -26,7 +26,7 @@ it('basic', function(done) {
 
 it('dom', function(done) {
     scrollTo('#scrollTo', {
-        callback: function() {
+        callback() {
             expect(windowY).to.not.equal(0);
             done();
         }

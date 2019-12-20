@@ -27,8 +27,8 @@ exports =
 if (!exports) {
     exports = Class({
         initialize: function MutationObserver() {},
-        observe: function() {},
-        disconnect: function() {},
-        takeRecords: function() {}
+        observe() {},
+        disconnect() {},
+        takeRecords() {}
     });
 }

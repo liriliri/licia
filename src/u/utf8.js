@@ -41,7 +41,7 @@ _('ucs2');
 
 // https://encoding.spec.whatwg.org/#utf-8
 exports = {
-    encode: function(str) {
+    encode(str) {
         const codePoints = ucs2.decode(str);
 
         let byteArr = '';
@@ -52,7 +52,7 @@ exports = {
 
         return byteArr;
     },
-    decode: function decode(str, safe) {
+    decode(str, safe) {
         byteArr = ucs2.decode(str);
         byteIdx = 0;
         byteCount = byteArr.length;

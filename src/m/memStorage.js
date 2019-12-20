@@ -20,21 +20,21 @@
 _('keys');
 
 exports = {
-    getItem: function(key) {
+    getItem(key) {
         return (API_KEYS[key] ? cloak[key] : this[key]) || null;
     },
-    setItem: function(key, val) {
+    setItem(key, val) {
         API_KEYS[key] ? (cloak[key] = val) : (this[key] = val);
     },
-    removeItem: function(key) {
+    removeItem(key) {
         API_KEYS[key] ? delete cloak[key] : delete this[key];
     },
-    key: function(i) {
+    key(i) {
         const keys = enumerableKeys();
 
         return i >= 0 && i < keys.length ? keys[i] : null;
     },
-    clear: function() {
+    clear() {
         let keys = uncloakedKeys();
 
         /* eslint-disable no-cond-assign */
@@ -50,7 +50,7 @@ exports = {
 Object.defineProperty(exports, 'length', {
     enumerable: false,
     configurable: true,
-    get: function() {
+    get() {
         return enumerableKeys().length;
     }
 });

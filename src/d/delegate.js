@@ -113,7 +113,7 @@ function formatHandlers(e, handlers) {
 }
 
 exports = {
-    add: function(el, type, selector, fn) {
+    add(el, type, selector, fn) {
         const handler = {
             selector: selector,
             handler: fn
@@ -138,7 +138,7 @@ exports = {
             ? handlers.splice(handlers.delegateCount++, 0, handler)
             : handlers.push(handler);
     },
-    remove: function(el, type, selector, fn) {
+    remove(el, type, selector, fn) {
         const events = el.events;
 
         if (!events || !events[type]) return;
@@ -169,19 +169,19 @@ exports = {
         isDefaultPrevented: retFalse,
         isPropagationStopped: retFalse,
         isImmediatePropagationStopped: retFalse,
-        preventDefault: function() {
+        preventDefault() {
             const e = this.origEvent;
 
             this.isDefaultPrevented = retTrue;
             if (e && e.preventDefault) e.preventDefault();
         },
-        stopPropagation: function() {
+        stopPropagation() {
             const e = this.origEvent;
 
             this.isPropagationStopped = retTrue;
             if (e && e.stopPropagation) e.stopPropagation();
         },
-        stopImmediatePropagation: function() {
+        stopImmediatePropagation() {
             const e = this.origEvent;
 
             this.isImmediatePropagationStopped = retTrue;

@@ -118,12 +118,12 @@ function makeClass(parent, methods, statics) {
 
 const Base = (exports.Base = makeClass(Object, {
     className: 'Base',
-    callSuper: function(parent, name, args) {
+    callSuper(parent, name, args) {
         const superMethod = parent.prototype[name];
 
         return superMethod.apply(this, args);
     },
-    toString: function() {
+    toString() {
         return this.constructor.name;
     }
 }));

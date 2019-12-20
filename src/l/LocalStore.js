@@ -45,7 +45,7 @@ exports = Store.extend({
         data = defaults(localData, data);
         this.callSuper(Store, 'initialize', [data]);
     },
-    save: function(data) {
+    save(data) {
         if (isEmpty(data)) return localStorage.removeItem(this._name);
         localStorage.setItem(this._name, stringify(data));
     }

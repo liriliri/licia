@@ -70,7 +70,7 @@ _('Emitter State easing now each raf isFn');
 
 exports = Emitter.extend({
     className: 'Tween',
-    initialize: function(target) {
+    initialize(target) {
         this.callSuper(Emitter, 'initialize', arguments);
 
         this._target = target;
@@ -85,7 +85,7 @@ exports = Emitter.extend({
             pause: { from: 'play', to: 'pause' }
         });
     },
-    to: function(props, duration, ease) {
+    to(props, duration, ease) {
         const origin = {};
         const target = this._target;
         const diff = {};
@@ -106,7 +106,7 @@ exports = Emitter.extend({
 
         return this;
     },
-    progress: function(progress) {
+    progress(progress) {
         const ease = this._ease;
         const target = this._target;
         const origin = this._origin;
@@ -129,7 +129,7 @@ exports = Emitter.extend({
 
         return this._progress;
     },
-    play: function() {
+    play() {
         const state = this._state;
 
         if (state.is('play')) return;
@@ -162,7 +162,7 @@ exports = Emitter.extend({
 
         return this;
     },
-    pause: function() {
+    pause() {
         const state = this._state;
 
         if (state.is('pause')) return;
@@ -170,7 +170,7 @@ exports = Emitter.extend({
 
         return this;
     },
-    paused: function() {
+    paused() {
         return this._state.is('pause');
     }
 });

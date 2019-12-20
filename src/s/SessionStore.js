@@ -45,7 +45,7 @@ exports = Store.extend({
         data = defaults(sessionData, data);
         this.callSuper(Store, 'initialize', [data]);
     },
-    save: function(data) {
+    save(data) {
         if (isEmpty(data)) return sessionStorage.removeItem(this._name);
         sessionStorage.setItem(this._name, stringify(data));
     }

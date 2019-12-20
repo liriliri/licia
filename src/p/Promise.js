@@ -59,10 +59,10 @@ const Promise = (exports = Class(
 
             doResolve(fn, this);
         },
-        catch: function(onRejected) {
+        catch(onRejected) {
             return this.then(null, onRejected);
         },
-        then: function(onFulfilled, onRejected) {
+        then(onFulfilled, onRejected) {
             const promise = new Promise(noop);
 
             handle(this, new Handler(onFulfilled, onRejected, promise));
@@ -71,7 +71,7 @@ const Promise = (exports = Class(
         }
     },
     {
-        all: function(arr) {
+        all(arr) {
             const args = toArr(arr);
 
             return new Promise(function(resolve, reject) {
@@ -107,19 +107,19 @@ const Promise = (exports = Class(
                 for (let i = 0; i < args.length; i++) res(i, args[i]);
             });
         },
-        resolve: function(val) {
+        resolve(val) {
             if (val && isObj(val) && val.constructor === Promise) return val;
 
             return new Promise(function(resolve) {
                 resolve(val);
             });
         },
-        reject: function(val) {
+        reject(val) {
             return new Promise(function(resolve, reject) {
                 reject(val);
             });
         },
-        race: function(values) {
+        race(values) {
             return new Promise(function(resolve, reject) {
                 for (let i = 0, len = values.length; i < len; i++) {
                     values[i].then(resolve, reject);

@@ -66,13 +66,13 @@ exports = Class(
         initialize: function Emitter() {
             this._events = this._events || {};
         },
-        on: function(event, listener) {
+        on(event, listener) {
             this._events[event] = this._events[event] || [];
             this._events[event].push(listener);
 
             return this;
         },
-        off: function(event, listener) {
+        off(event, listener) {
             if (!has(this._events, event)) return;
 
             this._events[event].splice(
@@ -82,12 +82,12 @@ exports = Class(
 
             return this;
         },
-        once: function(event, listener) {
+        once(event, listener) {
             this.on(event, once(listener));
 
             return this;
         },
-        emit: function(event) {
+        emit(event) {
             if (!has(this._events, event)) return;
 
             const args = slice(arguments, 1);
@@ -104,7 +104,7 @@ exports = Class(
         }
     },
     {
-        mixin: function(obj) {
+        mixin(obj) {
             each(['on', 'off', 'once', 'emit'], function(val) {
                 obj[val] = exports.prototype[val];
             });

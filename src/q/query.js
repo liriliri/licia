@@ -40,7 +40,7 @@
 _('trim each isUndef isArr map isEmpty filter isObj');
 
 exports = {
-    parse: function(str) {
+    parse(str) {
         const ret = {};
 
         str = trim(str).replace(regIllegalChars, '');
@@ -65,7 +65,7 @@ exports = {
 
         return ret;
     },
-    stringify: function(obj, arrKey) {
+    stringify(obj, arrKey) {
         return filter(
             map(obj, function(val, key) {
                 if (isObj(val) && isEmpty(val)) return '';

@@ -1,7 +1,7 @@
 const adapter = {
     resolved: Promise.resolve,
     rejected: Promise.rejected,
-    deferred: function() {
+    deferred() {
         const obj = {};
         const prom = new Promise(function(resolve, reject) {
             obj.resolve = resolve;

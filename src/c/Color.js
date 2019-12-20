@@ -66,7 +66,7 @@ exports = Class(
             this.model = color.model;
             this.val = color.val;
         },
-        toRgb: function() {
+        toRgb() {
             let val = this.val;
             if (this.model === 'hsl') val = hslToRgb(val);
 
@@ -78,7 +78,7 @@ exports = Class(
 
             return prefix + '(' + val.join(', ') + ')';
         },
-        toHex: function() {
+        toHex() {
             let val = this.val;
             if (this.model === 'hsl') val = hslToRgb(val);
 
@@ -90,7 +90,7 @@ exports = Class(
 
             return '#' + ret;
         },
-        toHsl: function() {
+        toHsl() {
             let val = this.val;
             if (this.model === 'rgb') val = rgbToHsl(val);
 
@@ -107,7 +107,7 @@ exports = Class(
         }
     },
     {
-        parse: function(colorStr) {
+        parse(colorStr) {
             let i, match;
 
             let val = [0, 0, 0, 1],

@@ -32,7 +32,7 @@ exports =
         return setTimeout(function() {
             cb({
                 didTimeout: false,
-                timeRemaining: function() {
+                timeRemaining() {
                     return Math.max(0, 50 - (now() - start));
                 }
             });

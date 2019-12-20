@@ -38,14 +38,14 @@
 _('Emitter keyCode each unique trim map');
 
 exports = {
-    on: function(keys, listener) {
+    on(keys, listener) {
         keys = keys.split(regComma);
 
         each(keys, function(key) {
             emitter.on(normalizeKey(key), listener);
         });
     },
-    off: function(keys, listener) {
+    off(keys, listener) {
         keys = keys.split(regComma);
 
         each(keys, function(key) {

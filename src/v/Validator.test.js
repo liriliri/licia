@@ -11,7 +11,7 @@ it('validate data', function() {
 
 it('custom function', function() {
     const validator = new Validator({
-        test: function(val) {
+        test(val) {
             return !!(val && val.length === 6);
         }
     });

@@ -102,7 +102,7 @@ exports = Emitter.extend({
         this._data = data || {};
         this.save(this._data);
     },
-    set: function(key, val) {
+    set(key, val) {
         let data;
 
         if (isStr(key)) {
@@ -122,7 +122,7 @@ exports = Emitter.extend({
 
         this.save(this._data);
     },
-    get: function(key) {
+    get(key) {
         const data = this._data;
 
         if (isStr(key)) return data[key];
@@ -134,7 +134,7 @@ exports = Emitter.extend({
 
         return ret;
     },
-    remove: function(key) {
+    remove(key) {
         key = toArr(key);
 
         const data = this._data;
@@ -145,16 +145,16 @@ exports = Emitter.extend({
 
         this.save(data);
     },
-    clear: function() {
+    clear() {
         this._data = {};
 
         this.save(this._data);
     },
-    each: function(fn) {
+    each(fn) {
         each(this._data, fn);
     },
     // This methods exists to be overwritten.
-    save: function(data) {
+    save(data) {
         this._data = data;
     }
 });

@@ -6,7 +6,7 @@ tests((tpl, data, util) => template(tpl, util)(data))([
         '<p><%= util["upperCase"](name) %></p>',
         { name: 'licia' },
         {
-            upperCase: function(str) {
+            upperCase(str) {
                 return str.toLocaleUpperCase();
             }
         },

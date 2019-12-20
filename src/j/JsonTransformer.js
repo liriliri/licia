@@ -104,10 +104,10 @@ _('Class safeSet safeGet map filter isFn safeDel toArr each');
 
 exports = Class({
     className: 'JsonTransformer',
-    initialize: function(data) {
+    initialize(data) {
         this._data = data || {};
     },
-    set: function(key, val) {
+    set(key, val) {
         if (arguments.length === 1) {
             this._data = key;
             return this;
@@ -117,12 +117,12 @@ exports = Class({
 
         return this;
     },
-    get: function(key) {
+    get(key) {
         if (key == null) return this._data;
 
         return safeGet(this._data, key);
     },
-    map: function(from, to, fn) {
+    map(from, to, fn) {
         if (isFn(from)) return this.set(map(this._data, from, this));
 
         if (isFn(to)) {
@@ -132,7 +132,7 @@ exports = Class({
 
         return this.set(to, map(this.get(from), fn, this));
     },
-    filter: function(from, to, fn) {
+    filter(from, to, fn) {
         if (isFn(from)) return this.set(filter(this._data, from, this));
 
         if (isFn(to)) {
@@ -142,7 +142,7 @@ exports = Class({
 
         return this.set(to, filter(this.get(from), fn, this));
     },
-    remove: function(keys) {
+    remove(keys) {
         keys = toArr(keys);
 
         const data = this._data;
@@ -153,7 +153,7 @@ exports = Class({
 
         return this;
     },
-    compute: function(from, to, fn) {
+    compute(from, to, fn) {
         if (isFn(from)) return this.set(from.call(this, this._data));
 
         if (isFn(to)) return this.set(from, to.call(this, this.get(from)));
@@ -168,7 +168,7 @@ exports = Class({
 
         return this.set(to, fn.apply(this, from));
     },
-    toString: function() {
+    toString() {
         return JSON.stringify(this._data);
     }
 });

@@ -73,139 +73,135 @@ _(
     'Select $offset $show $css $attr $property last $remove $data $event $class $insert isUndef isStr'
 );
 
-exports = function(selector) {
-    return new Select(selector);
-};
+exports = selector => new Select(selector);
 
 Select.methods({
-    offset: function() {
+    offset() {
         return $offset(this);
     },
-    hide: function() {
+    hide() {
         return this.css('display', 'none');
     },
-    show: function() {
+    show() {
         $show(this);
 
         return this;
     },
-    first: function() {
+    first() {
         return exports(this[0]);
     },
-    last: function() {
+    last() {
         return exports(last(this));
     },
-    get: function(idx) {
+    get(idx) {
         return this[idx];
     },
-    eq: function(idx) {
+    eq(idx) {
         return exports(this[idx]);
     },
-    on: function(event, selector, handler) {
+    on(event, selector, handler) {
         $event.on(this, event, selector, handler);
 
         return this;
     },
-    off: function(event, selector, handler) {
+    off(event, selector, handler) {
         $event.off(this, event, selector, handler);
 
         return this;
     },
-    html: function(val) {
+    html(val) {
         const result = $property.html(this, val);
 
         if (isUndef(val)) return result;
 
         return this;
     },
-    text: function(val) {
+    text(val) {
         const result = $property.text(this, val);
 
         if (isUndef(val)) return result;
 
         return this;
     },
-    val: function(val) {
+    val(val) {
         const result = $property.val(this, val);
 
         if (isUndef(val)) return result;
 
         return this;
     },
-    css: function(name, val) {
+    css(name, val) {
         const result = $css(this, name, val);
 
         if (isGetter(name, val)) return result;
 
         return this;
     },
-    attr: function(name, val) {
+    attr(name, val) {
         const result = $attr(this, name, val);
 
         if (isGetter(name, val)) return result;
 
         return this;
     },
-    data: function(name, val) {
+    data(name, val) {
         const result = $data(this, name, val);
 
         if (isGetter(name, val)) return result;
 
         return this;
     },
-    rmAttr: function(name) {
+    rmAttr(name) {
         $attr.remove(this, name);
 
         return this;
     },
-    remove: function() {
+    remove() {
         $remove(this);
 
         return this;
     },
-    addClass: function(name) {
+    addClass(name) {
         $class.add(this, name);
 
         return this;
     },
-    rmClass: function(name) {
+    rmClass(name) {
         $class.remove(this, name);
 
         return this;
     },
-    toggleClass: function(name) {
+    toggleClass(name) {
         $class.toggle(this, name);
 
         return this;
     },
-    hasClass: function(name) {
+    hasClass(name) {
         return $class.has(this, name);
     },
-    parent: function() {
+    parent() {
         return exports(this[0].parentNode);
     },
-    append: function(val) {
+    append(val) {
         $insert.append(this, val);
 
         return this;
     },
-    prepend: function(val) {
+    prepend(val) {
         $insert.prepend(this, val);
 
         return this;
     },
-    before: function(val) {
+    before(val) {
         $insert.before(this, val);
 
         return this;
     },
-    after: function(val) {
+    after(val) {
         $insert.after(this, val);
 
         return this;
     }
 });
 
-function isGetter(name, val) {
-    return isUndef(val) && isStr(name);
-}
+const isGetter = (name, val) => isUndef(val) && isStr(name);

@@ -77,12 +77,12 @@ exports = function(val) {
 };
 
 const Moment = Class({
-    initialize: function(val) {
+    initialize: function Moment(val) {
         this._d = toDate(val);
 
         this._init();
     },
-    _init: function() {
+    _init() {
         const d = this._d;
 
         extend(this, {
@@ -97,25 +97,25 @@ const Moment = Class({
 
         return this;
     },
-    format: function(mask) {
+    format(mask) {
         return dateFormat(this._d, mask);
     },
-    isValid: function() {
+    isValid() {
         return !(this._d.toString() === 'Invalid Date');
     },
-    isLeapYear: function() {
+    isLeapYear() {
         return isLeapYear(this._year);
     },
-    isSame: function(that) {
+    isSame(that) {
         return this.valueOf() === that.valueOf();
     },
-    valueOf: function() {
+    valueOf() {
         return this._d.getTime();
     },
-    isBefore: function(that) {
+    isBefore(that) {
         return this.valueOf() < that.valueOf();
     },
-    isAfter: function(that) {
+    isAfter(that) {
         return this.valueOf() > that.valueOf();
     },
     year: makeGetSet('year'),
@@ -125,16 +125,16 @@ const Moment = Class({
     minute: makeGetSet('minute'),
     second: makeGetSet('second'),
     millisecond: makeGetSet('millisecond'),
-    unix: function() {
+    unix() {
         return floor(this.valueOf() / 1000);
     },
-    clone: function() {
+    clone() {
         return new Moment(this);
     },
-    toDate: function() {
+    toDate() {
         return new Date(this._d);
     },
-    toArray: function() {
+    toArray() {
         return [
             this._year,
             this._month,
@@ -145,13 +145,13 @@ const Moment = Class({
             this._millisecond
         ];
     },
-    toJSON: function() {
+    toJSON() {
         return this.toISOString();
     },
-    toISOString: function() {
+    toISOString() {
         return this.toDate().toISOString();
     },
-    toObject: function() {
+    toObject() {
         return {
             years: this._year,
             months: this._month,
@@ -162,10 +162,10 @@ const Moment = Class({
             milliseconds: this._millisecond
         };
     },
-    toString: function() {
+    toString() {
         return this._d.toUTCString();
     },
-    set: function(unit, num) {
+    set(unit, num) {
         const d = this._d;
 
         unit = normalizeUnit(unit);
@@ -196,7 +196,7 @@ const Moment = Class({
 
         return this._init();
     },
-    startOf: function(unit) {
+    startOf(unit) {
         unit = normalizeUnit(unit);
 
         /* eslint-disable no-fallthrough */
@@ -218,19 +218,19 @@ const Moment = Class({
 
         return this;
     },
-    endOf: function(unit) {
+    endOf(unit) {
         return this.startOf(unit)
             .add(1, unit)
             .subtract(1, 'ms');
     },
-    daysInMonth: function() {
+    daysInMonth() {
         return this.clone()
             .endOf('month')
             .date();
     },
     add: createAdder(1),
     subtract: createAdder(-1),
-    diff: function(input, unit, asFloat) {
+    diff(input, unit, asFloat) {
         const that = input instanceof Moment ? input : new Moment(input);
         let ret;
 

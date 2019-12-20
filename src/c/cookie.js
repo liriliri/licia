@@ -117,7 +117,7 @@ function setCookie(key, val, options) {
 exports = {
     get: setCookie,
     set: setCookie,
-    remove: function(key, options) {
+    remove(key, options) {
         options = options || {};
         options.expires = -1;
 

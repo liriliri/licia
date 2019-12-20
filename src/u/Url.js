@@ -112,11 +112,11 @@ _('Class extend trim query isEmpty each isArr toArr isBrowser isObj');
 exports = Class(
     {
         className: 'Url',
-        initialize: function(url) {
+        initialize(url) {
             if (!url && isBrowser) url = window.location.href;
             extend(this, exports.parse(url || ''));
         },
-        setQuery: function(name, val) {
+        setQuery(name, val) {
             const query = this.query;
 
             if (isObj(name)) {
@@ -129,7 +129,7 @@ exports = Class(
 
             return this;
         },
-        rmQuery: function(name) {
+        rmQuery(name) {
             const query = this.query;
 
             if (!isArr(name)) name = toArr(name);
@@ -139,12 +139,12 @@ exports = Class(
 
             return this;
         },
-        toString: function() {
+        toString() {
             return exports.stringify(this);
         }
     },
     {
-        parse: function(url) {
+        parse(url) {
             const ret = {
                 protocol: '',
                 auth: '',
@@ -221,7 +221,7 @@ exports = Class(
 
             return ret;
         },
-        stringify: function(obj) {
+        stringify(obj) {
             let ret =
                 obj.protocol +
                 (obj.slashes ? '//' : '') +
