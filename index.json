@@ -1637,6 +1637,21 @@
             "browser"
         ]
     },
+    "defined": {
+        "description": "Return the first argument that is not undefined.",
+        "dependencies": [
+            "isUndef"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "delRequireCache": {
         "description": "Delete node.js require cache.",
         "dependencies": [

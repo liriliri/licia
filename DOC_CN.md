@@ -2661,6 +2661,19 @@ obj2.b = 4;
 // obj2.a is equal to 2
 ```
 
+## defined
+
+返回第一个不是未定义的参数。
+
+|参数名|类型|说明|
+|-----|----|---|
+|...args|*|参数列表|
+|返回值|*|第一个定义了的参数|
+
+```javascript
+defined(false, 2, void 0, 100); // -> false
+```
+
 ## delRequireCache
 
 删除 node.js require 缓存。
