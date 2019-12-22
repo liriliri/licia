@@ -1,3 +1,12 @@
+## v1.16.0 (22 Dec 2019)
+
+* add: bytesToWords
+* add: wordsToBytes
+* add: reverse
+* add: create
+* add: defined
+* feat(md5): bytes
+
 ## v1.15.0 (17 Dec 2019)
 
 * add: stripNum
