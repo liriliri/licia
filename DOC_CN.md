@@ -3879,6 +3879,19 @@ intersectRange({start: 0, end: 5}, {start: 6, end: 7});
 // -> undefined
 ```
 
+## invariant
+
+Facebook 的 invariant 模块。
+
+[相关文档](https://github.com/zertosh/invariant)
+
+```javascript
+invariant(true, 'This will not throw');
+// No errors
+invariant(false, 'This will throw an error with this message');
+// Error: Invariant Violation: This will throw an error with this message
+```
+
 ## invert
 
 生成一个新对象，该对象的键名和键值进行调换。

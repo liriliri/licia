@@ -2717,6 +2717,21 @@
             "browser"
         ]
     },
+    "invariant": {
+        "description": "Facebook's invariant.",
+        "dependencies": [
+            "root"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "invert": {
         "description": "Create an object composed of the inverted keys and values of object.",
         "dependencies": [
