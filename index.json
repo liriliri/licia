@@ -2821,6 +2821,21 @@
             "browser"
         ]
     },
+    "isAsyncFn": {
+        "description": "Check if value is an async function.",
+        "dependencies": [
+            "objToStr"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "isBlob": {
         "description": "Check if value is a Blob.",
         "dependencies": [

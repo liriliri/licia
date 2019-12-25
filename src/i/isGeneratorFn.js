@@ -7,8 +7,8 @@
  */
 
 /* example
- * isGeneratorFn(function * () {}); // -> true;
- * isGeneratorFn(function () {}); // -> false;
+ * isGeneratorFn(function * () {}); // -> true
+ * isGeneratorFn(function () {}); // -> false
  */
 
 /* module

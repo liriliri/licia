@@ -3985,6 +3985,21 @@ isArrLike(document.body.children); // -> true;
 isArrLike([1, 2, 3]); // -> true
 ```
 
+## isAsyncFn 
+
+Check if value is an async function.
+
+|Name  |Type   |Desc                              |
+|------|-------|----------------------------------|
+|val   |*      |Value to check                    |
+|return|boolean|True if value is an async function|
+
+```javascript
+isAsyncFn(function * () {}); // -> false
+isAsyncFn(function () {}); // -> false
+isAsyncFn(async function () {}); // -> true
+```
+
 ## isBlob 
 
 Check if value is a Blob.
@@ -4220,8 +4235,8 @@ Check if value is a generator function.
 |return|boolean|True if value is a generator function|
 
 ```javascript
-isGeneratorFn(function * () {}); // -> true;
-isGeneratorFn(function () {}); // -> false;
+isGeneratorFn(function * () {}); // -> true
+isGeneratorFn(function () {}); // -> false
 ```
 
 ## isInt 

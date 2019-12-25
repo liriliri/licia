@@ -3981,6 +3981,21 @@ isArrLike(document.body.children); // -> true;
 isArrLike([1, 2, 3]); // -> true
 ```
 
+## isAsyncFn
+
+检查值是否是 Async 函数。
+
+|参数名|类型|说明|
+|-----|----|---|
+|val|*|要检查的值|
+|返回值|boolean|如果是 Async 函数，返回真|
+
+```javascript
+isAsyncFn(function * () {}); // -> false
+isAsyncFn(function () {}); // -> false
+isAsyncFn(async function () {}); // -> true
+```
+
 ## isBlob
 
 检查值是否是 Blob 类型。
@@ -4216,8 +4231,8 @@ isFn(async function() {}); // -> true
 |返回值|boolean|如果是 Generator 函数，返回真|
 
 ```javascript
-isGeneratorFn(function * () {}); // -> true;
-isGeneratorFn(function () {}); // -> false;
+isGeneratorFn(function * () {}); // -> true
+isGeneratorFn(function () {}); // -> false
 ```
 
 ## isInt
