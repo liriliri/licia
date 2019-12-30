@@ -1,6 +1,5 @@
 {
     "$": {
-        "description": "jQuery like style dom manipulator.",
         "dependencies": [
             "Select",
             "$offset",
@@ -17,6 +16,7 @@
             "isUndef",
             "isStr"
         ],
+        "description": "jQuery like style dom manipulator.",
         "env": [
             "browser"
         ],
@@ -25,7 +25,6 @@
         ]
     },
     "$attr": {
-        "description": "Element attribute manipulation.",
         "dependencies": [
             "toArr",
             "isObj",
@@ -34,6 +33,7 @@
             "isUndef",
             "$safeEls"
         ],
+        "description": "Element attribute manipulation.",
         "env": [
             "browser"
         ],
@@ -42,7 +42,6 @@
         ]
     },
     "$class": {
-        "description": "Element class manipulations.",
         "dependencies": [
             "toArr",
             "some",
@@ -50,6 +49,7 @@
             "isStr",
             "each"
         ],
+        "description": "Element class manipulations.",
         "env": [
             "browser"
         ],
@@ -58,7 +58,6 @@
         ]
     },
     "$css": {
-        "description": "Element css manipulation.",
         "dependencies": [
             "isStr",
             "isObj",
@@ -70,6 +69,7 @@
             "prefix",
             "each"
         ],
+        "description": "Element css manipulation.",
         "env": [
             "browser"
         ],
@@ -78,7 +78,6 @@
         ]
     },
     "$data": {
-        "description": "Wrapper of $attr, adds data- prefix to keys.",
         "dependencies": [
             "$attr",
             "isStr",
@@ -86,6 +85,7 @@
             "each",
             "$safeEls"
         ],
+        "description": "Wrapper of $attr, adds data- prefix to keys.",
         "env": [
             "browser"
         ],
@@ -94,13 +94,13 @@
         ]
     },
     "$event": {
-        "description": "bind events to certain dom elements.",
         "dependencies": [
             "delegate",
             "isUndef",
             "$safeEls",
             "each"
         ],
+        "description": "bind events to certain dom elements.",
         "env": [
             "browser"
         ],
@@ -109,11 +109,11 @@
         ]
     },
     "$insert": {
-        "description": "Insert html on different position.",
         "dependencies": [
             "each",
             "$safeEls"
         ],
+        "description": "Insert html on different position.",
         "env": [
             "browser"
         ],
@@ -122,10 +122,10 @@
         ]
     },
     "$offset": {
-        "description": "Get the position of the element in document.",
         "dependencies": [
             "$safeEls"
         ],
+        "description": "Get the position of the element in document.",
         "env": [
             "browser"
         ],
@@ -134,12 +134,12 @@
         ]
     },
     "$property": {
-        "description": "Element property html, text, val getter and setter.",
         "dependencies": [
             "isUndef",
             "each",
             "$safeEls"
         ],
+        "description": "Element property html, text, val getter and setter.",
         "env": [
             "browser"
         ],
@@ -148,11 +148,11 @@
         ]
     },
     "$remove": {
-        "description": "Remove the set of matched elements from the DOM.",
         "dependencies": [
             "each",
             "$safeEls"
         ],
+        "description": "Remove the set of matched elements from the DOM.",
         "env": [
             "browser"
         ],
@@ -161,12 +161,12 @@
         ]
     },
     "$safeEls": {
-        "description": "Convert value into an array, if it's a string, do querySelector.",
         "dependencies": [
             "isStr",
             "toArr",
             "Select"
         ],
+        "description": "Convert value into an array, if it's a string, do querySelector.",
         "env": [
             "browser"
         ],
@@ -175,11 +175,11 @@
         ]
     },
     "$show": {
-        "description": "Show elements.",
         "dependencies": [
             "each",
             "$safeEls"
         ],
+        "description": "Show elements.",
         "env": [
             "browser"
         ],
@@ -188,11 +188,11 @@
         ]
     },
     "Blob": {
-        "description": "Use Blob when available, otherwise BlobBuilder.",
         "dependencies": [
             "root",
             "each"
         ],
+        "description": "Use Blob when available, otherwise BlobBuilder.",
         "env": [
             "browser"
         ],
@@ -201,7 +201,6 @@
         ]
     },
     "BloomFilter": {
-        "description": "Bloom filter implementation.",
         "dependencies": [
             "Class",
             "fill",
@@ -210,37 +209,38 @@
             "each",
             "some"
         ],
+        "description": "Bloom filter implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.10.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.10.0"
+        ]
     },
     "Caseless": {
-        "description": "Modify object props without caring about letter case.",
         "dependencies": [
             "Class",
             "lowerCase",
             "keys"
         ],
+        "description": "Modify object props without caring about letter case.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.9.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.9.0"
+        ]
     },
     "Class": {
-        "description": "Create JavaScript class.",
+        "demo": true,
         "dependencies": [
             "extend",
             "toArr",
@@ -248,6 +248,7 @@
             "safeGet",
             "isMiniProgram"
         ],
+        "description": "Create JavaScript class.",
         "env": [
             "node",
             "browser",
@@ -256,11 +257,9 @@
         "test": [
             "node",
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "Color": {
-        "description": "Color converter.",
         "dependencies": [
             "Class",
             "isStr",
@@ -269,6 +268,7 @@
             "hslToRgb",
             "hex"
         ],
+        "description": "Color converter.",
         "env": [
             "node",
             "browser",
@@ -280,13 +280,13 @@
         ]
     },
     "Delegator": {
-        "description": "Object delegation.",
         "dependencies": [
             "Class",
             "safeGet",
             "defineProp",
             "isStr"
         ],
+        "description": "Object delegation.",
         "env": [
             "node",
             "browser",
@@ -298,11 +298,11 @@
         ]
     },
     "Dispatcher": {
-        "description": "Flux dispatcher.",
         "dependencies": [
             "Class",
             "uniqId"
         ],
+        "description": "Flux dispatcher.",
         "env": [
             "node",
             "browser",
@@ -314,7 +314,6 @@
         ]
     },
     "Emitter": {
-        "description": "Event emitter class which provides observer pattern.",
         "dependencies": [
             "Class",
             "has",
@@ -322,6 +321,7 @@
             "slice",
             "once"
         ],
+        "description": "Event emitter class which provides observer pattern.",
         "env": [
             "node",
             "browser",
@@ -333,7 +333,6 @@
         ]
     },
     "Enum": {
-        "description": "Enum type implementation.",
         "dependencies": [
             "Class",
             "freeze",
@@ -341,6 +340,7 @@
             "each",
             "keys"
         ],
+        "description": "Enum type implementation.",
         "env": [
             "node",
             "browser",
@@ -352,7 +352,6 @@
         ]
     },
     "HashTable": {
-        "description": "Hash table implementation.",
         "dependencies": [
             "Class",
             "LinkedList",
@@ -360,6 +359,7 @@
             "strHash",
             "has"
         ],
+        "description": "Hash table implementation.",
         "env": [
             "node",
             "browser",
@@ -372,25 +372,24 @@
         ]
     },
     "Heap": {
-        "description": "Heap implementation.",
         "dependencies": [
             "Class",
             "swap",
             "isSorted"
         ],
+        "description": "Heap implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.11.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.11.0"
+        ]
     },
     "JsonTransformer": {
-        "description": "Json to json transformer.",
         "dependencies": [
             "Class",
             "safeSet",
@@ -402,6 +401,7 @@
             "toArr",
             "each"
         ],
+        "description": "Json to json transformer.",
         "env": [
             "node",
             "browser",
@@ -413,10 +413,10 @@
         ]
     },
     "LinkedList": {
-        "description": "Doubly-linked list implementation.",
         "dependencies": [
             "Class"
         ],
+        "description": "Doubly-linked list implementation.",
         "env": [
             "node",
             "browser",
@@ -428,7 +428,6 @@
         ]
     },
     "LocalStore": {
-        "description": "LocalStorage wrapper.",
         "dependencies": [
             "Store",
             "safeStorage",
@@ -437,6 +436,7 @@
             "defaults",
             "isObj"
         ],
+        "description": "LocalStorage wrapper.",
         "env": [
             "browser"
         ],
@@ -445,7 +445,7 @@
         ]
     },
     "Logger": {
-        "description": "Simple logger with level filter.",
+        "demo": true,
         "dependencies": [
             "Emitter",
             "Enum",
@@ -455,6 +455,7 @@
             "isStr",
             "isNum"
         ],
+        "description": "Simple logger with level filter.",
         "env": [
             "node",
             "browser",
@@ -463,46 +464,45 @@
         "test": [
             "node",
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "Lru": {
-        "description": "Simple LRU cache.",
         "dependencies": [
             "LinkedList",
             "PseudoMap",
             "Class"
         ],
+        "description": "Simple LRU cache.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.4.5",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.4.5"
+        ]
     },
     "MediaQuery": {
-        "description": "CSS media query listener.",
+        "demo": true,
         "dependencies": [
             "Emitter"
         ],
+        "description": "CSS media query listener.",
         "env": [
             "browser"
         ],
+        "since": "1.5.2",
         "test": [
             "browser"
-        ],
-        "since": "1.5.2",
-        "demo": true
+        ]
     },
     "MutationObserver": {
-        "description": "Safe MutationObserver, does nothing if MutationObserver is not supported.",
         "dependencies": [
             "Class"
         ],
+        "description": "Safe MutationObserver, does nothing if MutationObserver is not supported.",
         "env": [
             "browser"
         ],
@@ -511,26 +511,26 @@
         ]
     },
     "PriorityQueue": {
-        "description": "Priority queue implementation.",
         "dependencies": [
             "Class",
             "Heap",
             "isSorted",
             "wrap"
         ],
+        "description": "Priority queue implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.11.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.11.0"
+        ]
     },
     "Promise": {
-        "description": "Lightweight Promise implementation.",
+        "demo": true,
         "dependencies": [
             "Class",
             "isObj",
@@ -541,16 +541,15 @@
             "noop",
             "toArr"
         ],
+        "description": "Lightweight Promise implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
-        "test": [],
-        "demo": true
+        "test": []
     },
     "PseudoMap": {
-        "description": "Like es6 Map, without iterators.",
         "dependencies": [
             "Class",
             "root",
@@ -561,6 +560,7 @@
             "isArr",
             "isUndef"
         ],
+        "description": "Like es6 Map, without iterators.",
         "env": [
             "node",
             "browser",
@@ -572,10 +572,10 @@
         ]
     },
     "Queue": {
-        "description": "Queue data structure.",
         "dependencies": [
             "Class"
         ],
+        "description": "Queue data structure.",
         "env": [
             "node",
             "browser",
@@ -587,30 +587,30 @@
         ]
     },
     "QuickLru": {
-        "description": "LRU implementation without linked list.",
+        "benchmark": true,
         "dependencies": [
             "isUndef",
             "Class"
         ],
+        "description": "LRU implementation without linked list.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.4.5",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.4.5",
-        "benchmark": true
+        ]
     },
     "ReduceStore": {
-        "description": "Simplified redux like state container.",
         "dependencies": [
             "Class",
             "clone",
             "remove"
         ],
+        "description": "Simplified redux like state container.",
         "env": [
             "node",
             "browser",
@@ -622,12 +622,12 @@
         ]
     },
     "Select": {
-        "description": "Simple wrapper of querySelectorAll to make dom selection easier.",
         "dependencies": [
             "Class",
             "isStr",
             "each"
         ],
+        "description": "Simple wrapper of querySelectorAll to make dom selection easier.",
         "env": [
             "browser"
         ],
@@ -636,7 +636,6 @@
         ]
     },
     "SessionStore": {
-        "description": "SessionStorage wrapper.",
         "dependencies": [
             "Store",
             "safeStorage",
@@ -645,6 +644,7 @@
             "defaults",
             "isObj"
         ],
+        "description": "SessionStorage wrapper.",
         "env": [
             "browser"
         ],
@@ -653,11 +653,11 @@
         ]
     },
     "Stack": {
-        "description": "Stack data structure.",
         "dependencies": [
             "Class",
             "reverse"
         ],
+        "description": "Stack data structure.",
         "env": [
             "node",
             "browser",
@@ -669,13 +669,13 @@
         ]
     },
     "State": {
-        "description": "Simple state machine.",
         "dependencies": [
             "Emitter",
             "each",
             "some",
             "toArr"
         ],
+        "description": "Simple state machine.",
         "env": [
             "node",
             "browser",
@@ -687,7 +687,6 @@
         ]
     },
     "Store": {
-        "description": "Memory storage.",
         "dependencies": [
             "Emitter",
             "isStr",
@@ -695,6 +694,7 @@
             "each",
             "toArr"
         ],
+        "description": "Memory storage.",
         "env": [
             "node",
             "browser",
@@ -706,7 +706,7 @@
         ]
     },
     "Tween": {
-        "description": "Tween engine for JavaScript animations.",
+        "demo": true,
         "dependencies": [
             "Emitter",
             "State",
@@ -716,6 +716,7 @@
             "raf",
             "isFn"
         ],
+        "description": "Tween engine for JavaScript animations.",
         "env": [
             "node",
             "browser",
@@ -724,11 +725,9 @@
         "test": [
             "node",
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "Url": {
-        "description": "Simple url manipulator.",
         "dependencies": [
             "Class",
             "extend",
@@ -741,6 +740,7 @@
             "isBrowser",
             "isObj"
         ],
+        "description": "Simple url manipulator.",
         "env": [
             "node",
             "browser",
@@ -752,7 +752,6 @@
         ]
     },
     "Validator": {
-        "description": "Object values validation.",
         "dependencies": [
             "Class",
             "keys",
@@ -763,6 +762,7 @@
             "isStr",
             "isBool"
         ],
+        "description": "Object values validation.",
         "env": [
             "node",
             "browser",
@@ -774,10 +774,10 @@
         ]
     },
     "abbrev": {
-        "description": "Calculate the set of unique abbreviations for a given set of strings.",
         "dependencies": [
             "toArr"
         ],
+        "description": "Calculate the set of unique abbreviations for a given set of strings.",
         "env": [
             "node",
             "browser",
@@ -789,8 +789,8 @@
         ]
     },
     "after": {
-        "description": "Create a function that invokes once it's called n or more times.",
         "dependencies": [],
+        "description": "Create a function that invokes once it's called n or more times.",
         "env": [
             "node",
             "browser",
@@ -802,7 +802,6 @@
         ]
     },
     "ajax": {
-        "description": "Perform an asynchronous HTTP request.",
         "dependencies": [
             "isFn",
             "noop",
@@ -810,18 +809,19 @@
             "isObj",
             "query"
         ],
+        "description": "Perform an asynchronous HTTP request.",
         "env": [
             "browser"
         ],
         "test": []
     },
     "allKeys": {
-        "description": "Retrieve all the names of object's own and inherited properties.",
         "dependencies": [
             "keys",
             "getProto",
             "unique"
         ],
+        "description": "Retrieve all the names of object's own and inherited properties.",
         "env": [
             "node",
             "browser",
@@ -833,21 +833,21 @@
         ]
     },
     "ansiColor": {
-        "description": "Ansi colors.",
         "dependencies": [],
+        "description": "Ansi colors.",
         "env": [
             "node"
         ],
-        "test": [],
-        "since": "1.4.1"
+        "since": "1.4.1",
+        "test": []
     },
     "arrToMap": {
-        "description": "Make an object map using array of strings.",
         "dependencies": [
             "each",
             "isUndef",
             "isFn"
         ],
+        "description": "Make an object map using array of strings.",
         "env": [
             "node",
             "browser",
@@ -859,7 +859,6 @@
         ]
     },
     "atob": {
-        "description": "Use Buffer to emulate atob when running in node.",
         "dependencies": [
             "root",
             "isNode",
@@ -867,6 +866,7 @@
             "map",
             "detectMocha"
         ],
+        "description": "Use Buffer to emulate atob when running in node.",
         "env": [
             "node",
             "browser",
@@ -878,8 +878,8 @@
         ]
     },
     "average": {
-        "description": "Get average value of given numbers.",
         "dependencies": [],
+        "description": "Get average value of given numbers.",
         "env": [
             "node",
             "browser",
@@ -891,8 +891,8 @@
         ]
     },
     "base64": {
-        "description": "Basic base64 encoding and decoding.",
         "dependencies": [],
+        "description": "Basic base64 encoding and decoding.",
         "env": [
             "node",
             "browser",
@@ -904,8 +904,8 @@
         ]
     },
     "before": {
-        "description": "Create a function that invokes less than n times.",
         "dependencies": [],
+        "description": "Create a function that invokes less than n times.",
         "env": [
             "node",
             "browser",
@@ -917,26 +917,26 @@
         ]
     },
     "binarySearch": {
-        "description": "Binary search implementation.",
         "dependencies": [
             "isSorted"
         ],
+        "description": "Binary search implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.4.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.4.0"
+        ]
     },
     "bind": {
-        "description": "Create a function bound to a given object.",
         "dependencies": [
             "restArgs"
         ],
+        "description": "Create a function bound to a given object.",
         "env": [
             "node",
             "browser",
@@ -948,7 +948,6 @@
         ]
     },
     "btoa": {
-        "description": "Use Buffer to emulate btoa when running in node.",
         "dependencies": [
             "root",
             "isNode",
@@ -956,6 +955,7 @@
             "map",
             "detectMocha"
         ],
+        "description": "Use Buffer to emulate btoa when running in node.",
         "env": [
             "node",
             "browser",
@@ -967,11 +967,11 @@
         ]
     },
     "bubbleSort": {
-        "description": "Bubble sort implementation.",
         "dependencies": [
             "swap",
             "isSorted"
         ],
+        "description": "Bubble sort implementation.",
         "env": [
             "node",
             "browser",
@@ -983,26 +983,26 @@
         ]
     },
     "bytesToStr": {
-        "description": "Convert bytes to string.",
         "dependencies": [
             "utf8",
             "hex",
             "base64"
         ],
+        "description": "Convert bytes to string.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.1.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.1.0"
+        ]
     },
     "bytesToWords": {
-        "description": "Convert bytes to 32-bit words.",
         "dependencies": [],
+        "description": "Convert bytes to 32-bit words.",
         "env": [
             "node",
             "browser",
@@ -1015,10 +1015,10 @@
         ]
     },
     "callbackify": {
-        "description": "Convert a function that returns a Promise to a function following the error-first callback style.",
         "dependencies": [
             "restArgs"
         ],
+        "description": "Convert a function that returns a Promise to a function following the error-first callback style.",
         "env": [
             "node",
             "browser",
@@ -1030,10 +1030,10 @@
         ]
     },
     "camelCase": {
-        "description": "Convert string to \"camelCase\".",
         "dependencies": [
             "splitCase"
         ],
+        "description": "Convert string to \"camelCase\".",
         "env": [
             "node",
             "browser",
@@ -1045,8 +1045,8 @@
         ]
     },
     "capitalize": {
-        "description": "Convert the first character to upper case and the remaining to lower case.",
         "dependencies": [],
+        "description": "Convert the first character to upper case and the remaining to lower case.",
         "env": [
             "node",
             "browser",
@@ -1058,11 +1058,11 @@
         ]
     },
     "castPath": {
-        "description": "Cast value into a property path array.",
         "dependencies": [
             "has",
             "isArr"
         ],
+        "description": "Cast value into a property path array.",
         "env": [
             "node",
             "browser",
@@ -1074,7 +1074,6 @@
         ]
     },
     "centerAlign": {
-        "description": "Center align text in a string.",
         "dependencies": [
             "longest",
             "isArr",
@@ -1082,6 +1081,7 @@
             "map",
             "lpad"
         ],
+        "description": "Center align text in a string.",
         "env": [
             "node",
             "browser",
@@ -1093,8 +1093,8 @@
         ]
     },
     "char": {
-        "description": "Return string representing a character whose Unicode code point is the given integer.",
         "dependencies": [],
+        "description": "Return string representing a character whose Unicode code point is the given integer.",
         "env": [
             "node",
             "browser",
@@ -1106,8 +1106,8 @@
         ]
     },
     "chunk": {
-        "description": "Split array into groups the length of given size.",
         "dependencies": [],
+        "description": "Split array into groups the length of given size.",
         "env": [
             "node",
             "browser",
@@ -1119,10 +1119,10 @@
         ]
     },
     "clamp": {
-        "description": "Clamp number within the inclusive lower and upper bounds.",
         "dependencies": [
             "isUndef"
         ],
+        "description": "Clamp number within the inclusive lower and upper bounds.",
         "env": [
             "node",
             "browser",
@@ -1134,7 +1134,6 @@
         ]
     },
     "className": {
-        "description": "Utility for conditionally joining class names.",
         "dependencies": [
             "each",
             "isStr",
@@ -1142,6 +1141,7 @@
             "isArr",
             "isObj"
         ],
+        "description": "Utility for conditionally joining class names.",
         "env": [
             "node",
             "browser",
@@ -1153,12 +1153,12 @@
         ]
     },
     "clone": {
-        "description": "Create a shallow-copied clone of the provided plain object.",
         "dependencies": [
             "isObj",
             "isArr",
             "extend"
         ],
+        "description": "Create a shallow-copied clone of the provided plain object.",
         "env": [
             "node",
             "browser",
@@ -1170,13 +1170,13 @@
         ]
     },
     "cloneDeep": {
-        "description": "Recursively clone value.",
         "dependencies": [
             "isObj",
             "isFn",
             "isArr",
             "mapObj"
         ],
+        "description": "Recursively clone value.",
         "env": [
             "node",
             "browser",
@@ -1188,11 +1188,11 @@
         ]
     },
     "cmpVersion": {
-        "description": "Compare version strings.",
         "dependencies": [
             "toInt",
             "max"
         ],
+        "description": "Compare version strings.",
         "env": [
             "node",
             "browser",
@@ -1204,24 +1204,24 @@
         ]
     },
     "combine": {
-        "description": "Create an array by using one array for keys and another for its values.",
         "dependencies": [],
+        "description": "Create an array by using one array for keys and another for its values.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.1.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.1.0"
+        ]
     },
     "compact": {
-        "description": "Return a copy of the array with all falsy values removed.",
         "dependencies": [
             "filter"
         ],
+        "description": "Return a copy of the array with all falsy values removed.",
         "env": [
             "node",
             "browser",
@@ -1233,10 +1233,10 @@
         ]
     },
     "compose": {
-        "description": "Compose a list of functions.",
         "dependencies": [
             "restArgs"
         ],
+        "description": "Compose a list of functions.",
         "env": [
             "node",
             "browser",
@@ -1248,7 +1248,7 @@
         ]
     },
     "compressImg": {
-        "description": "Compress image using canvas.",
+        "demo": true,
         "dependencies": [
             "isFn",
             "loadImg",
@@ -1257,19 +1257,19 @@
             "createUrl",
             "isStr"
         ],
+        "description": "Compress image using canvas.",
         "env": [
             "browser"
         ],
         "test": [
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "concat": {
-        "description": "Concat multiple arrays into a single array.",
         "dependencies": [
             "toArr"
         ],
+        "description": "Concat multiple arrays into a single array.",
         "env": [
             "node",
             "browser",
@@ -1281,13 +1281,13 @@
         ]
     },
     "contain": {
-        "description": "Check if the value is present in the list.",
         "dependencies": [
             "idxOf",
             "isStr",
             "isArrLike",
             "values"
         ],
+        "description": "Check if the value is present in the list.",
         "env": [
             "node",
             "browser",
@@ -1299,8 +1299,8 @@
         ]
     },
     "convertBase": {
-        "description": "Convert base of a number.",
         "dependencies": [],
+        "description": "Convert base of a number.",
         "env": [
             "node",
             "browser",
@@ -1312,7 +1312,6 @@
         ]
     },
     "convertBin": {
-        "description": "Convert binary data type.",
         "dependencies": [
             "isStr",
             "base64",
@@ -1322,25 +1321,26 @@
             "type",
             "lowerCase"
         ],
+        "description": "Convert binary data type.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.0"
+        ]
     },
     "cookie": {
-        "description": "Simple api for handling browser cookies.",
         "dependencies": [
             "defaults",
             "isNum",
             "isUndef",
             "decodeUriComponent"
         ],
+        "description": "Simple api for handling browser cookies.",
         "env": [
             "browser"
         ],
@@ -1349,92 +1349,92 @@
         ]
     },
     "copy": {
-        "description": "Copy text to clipboard using document.execCommand.",
+        "demo": true,
         "dependencies": [
             "extend",
             "noop"
         ],
+        "description": "Copy text to clipboard using document.execCommand.",
         "env": [
             "browser"
         ],
         "test": [
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "crc1": {
-        "description": "CRC1 implementation.",
         "dependencies": [
             "isStr",
             "strToBytes"
         ],
+        "description": "CRC1 implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.7",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.7"
+        ]
     },
     "crc16": {
-        "description": "CRC16 implementation.",
         "dependencies": [
             "isStr",
             "strToBytes"
         ],
+        "description": "CRC16 implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.9",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.9"
+        ]
     },
     "crc32": {
-        "description": "CRC32 implementation.",
         "dependencies": [
             "isStr",
             "strToBytes"
         ],
+        "description": "CRC32 implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.9",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.9"
+        ]
     },
     "crc8": {
-        "description": "CRC8 implementation.",
         "dependencies": [
             "isStr",
             "strToBytes"
         ],
+        "description": "CRC8 implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.9",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.9"
+        ]
     },
     "create": {
-        "description": "Create new object using given object as prototype.",
         "dependencies": [
             "isObj"
         ],
+        "description": "Create new object using given object as prototype.",
         "env": [
             "node",
             "browser",
@@ -1447,11 +1447,11 @@
         ]
     },
     "createAssigner": {
-        "description": "Used to create extend, extendOwn and defaults.",
         "dependencies": [
             "isUndef",
             "each"
         ],
+        "description": "Used to create extend, extendOwn and defaults.",
         "env": [
             "node",
             "browser",
@@ -1463,7 +1463,6 @@
         ]
     },
     "createUrl": {
-        "description": "CreateObjectURL wrapper.",
         "dependencies": [
             "defaults",
             "isBlob",
@@ -1471,6 +1470,7 @@
             "Blob",
             "toArr"
         ],
+        "description": "CreateObjectURL wrapper.",
         "env": [
             "browser"
         ],
@@ -1479,7 +1479,6 @@
         ]
     },
     "css": {
-        "description": "Css parser and serializer.",
         "dependencies": [
             "Class",
             "trim",
@@ -1487,6 +1486,7 @@
             "defaults",
             "camelCase"
         ],
+        "description": "Css parser and serializer.",
         "env": [
             "node",
             "browser",
@@ -1499,12 +1499,12 @@
         ]
     },
     "cssSupports": {
-        "description": "Check if browser supports a given CSS feature.",
         "dependencies": [
             "memoize",
             "isUndef",
             "camelCase"
         ],
+        "description": "Check if browser supports a given CSS feature.",
         "env": [
             "browser"
         ],
@@ -1513,10 +1513,10 @@
         ]
     },
     "curry": {
-        "description": "Function currying.",
         "dependencies": [
             "toArr"
         ],
+        "description": "Function currying.",
         "env": [
             "node",
             "browser",
@@ -1528,13 +1528,13 @@
         ]
     },
     "dateFormat": {
-        "description": "Simple but extremely useful date format function.",
         "dependencies": [
             "isStr",
             "isDate",
             "toStr",
             "lpad"
         ],
+        "description": "Simple but extremely useful date format function.",
         "env": [
             "node",
             "browser",
@@ -1546,8 +1546,8 @@
         ]
     },
     "debounce": {
-        "description": "Return a new debounced version of the passed function.",
         "dependencies": [],
+        "description": "Return a new debounced version of the passed function.",
         "env": [
             "node",
             "browser",
@@ -1559,7 +1559,7 @@
         ]
     },
     "debug": {
-        "description": "A tiny JavaScript debugging utility.",
+        "demo": true,
         "dependencies": [
             "toArr",
             "now",
@@ -1569,35 +1569,35 @@
             "strHash",
             "ansiColor"
         ],
+        "description": "A tiny JavaScript debugging utility.",
         "env": [
             "node",
             "browser"
         ],
-        "test": [],
-        "demo": true
+        "test": []
     },
     "deburr": {
-        "description": "Convert Latin-1 Supplement and Latin Extended-A letters to basic Latin letters and remove combining diacritical marks.",
         "dependencies": [],
+        "description": "Convert Latin-1 Supplement and Latin Extended-A letters to basic Latin letters and remove combining diacritical marks.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.6.1",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.6.1"
+        ]
     },
     "decodeUriComponent": {
-        "description": "Better decodeURIComponent that does not throw if input is invalid.",
         "dependencies": [
             "each",
             "ucs2",
             "map",
             "utf8"
         ],
+        "description": "Better decodeURIComponent that does not throw if input is invalid.",
         "env": [
             "node",
             "browser",
@@ -1609,11 +1609,11 @@
         ]
     },
     "defaults": {
-        "description": "Fill in undefined properties in object with the first value present in the following list of defaults objects.",
         "dependencies": [
             "createAssigner",
             "allKeys"
         ],
+        "description": "Fill in undefined properties in object with the first value present in the following list of defaults objects.",
         "env": [
             "node",
             "browser",
@@ -1625,10 +1625,10 @@
         ]
     },
     "define": {
-        "description": "Define a module, should be used along with use.",
         "dependencies": [
             "toArr"
         ],
+        "description": "Define a module, should be used along with use.",
         "env": [
             "node",
             "browser",
@@ -1640,13 +1640,13 @@
         ]
     },
     "defineProp": {
-        "description": "Shortcut for Object.defineProperty(defineProperties).",
         "dependencies": [
             "castPath",
             "isStr",
             "isObj",
             "each"
         ],
+        "description": "Shortcut for Object.defineProperty(defineProperties).",
         "env": [
             "node",
             "browser",
@@ -1658,10 +1658,10 @@
         ]
     },
     "defined": {
-        "description": "Return the first argument that is not undefined.",
         "dependencies": [
             "isUndef"
         ],
+        "description": "Return the first argument that is not undefined.",
         "env": [
             "node",
             "browser",
@@ -1674,23 +1674,23 @@
         ]
     },
     "delRequireCache": {
-        "description": "Delete node.js require cache.",
         "dependencies": [
             "stackTrace",
             "each",
             "contain"
         ],
+        "description": "Delete node.js require cache.",
         "env": [
             "node"
         ],
-        "test": [],
-        "since": "1.5.4"
+        "since": "1.5.4",
+        "test": []
     },
     "delay": {
-        "description": "Invoke function after certain milliseconds.",
         "dependencies": [
             "restArgs"
         ],
+        "description": "Invoke function after certain milliseconds.",
         "env": [
             "node",
             "browser",
@@ -1702,11 +1702,11 @@
         ]
     },
     "delegate": {
-        "description": "Event delegation.",
         "dependencies": [
             "Class",
             "contain"
         ],
+        "description": "Event delegation.",
         "env": [
             "browser"
         ],
@@ -1715,31 +1715,31 @@
         ]
     },
     "deprecate": {
-        "description": "Node.js util.deprecate with browser support.",
+        "demo": true,
         "dependencies": [
             "isNode",
             "root",
             "memStorage"
         ],
+        "description": "Node.js util.deprecate with browser support.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.0",
-        "demo": true
+        ]
     },
     "detectBrowser": {
-        "description": "Detect browser info using ua.",
         "dependencies": [
             "isBrowser",
             "toInt",
             "keys"
         ],
+        "description": "Detect browser info using ua.",
         "env": [
             "node",
             "browser",
@@ -1751,10 +1751,10 @@
         ]
     },
     "detectMocha": {
-        "description": "Detect if mocha is running.",
         "dependencies": [
             "root"
         ],
+        "description": "Detect if mocha is running.",
         "env": [
             "node",
             "browser",
@@ -1766,10 +1766,10 @@
         ]
     },
     "detectOs": {
-        "description": "Detect operating system using ua.",
         "dependencies": [
             "isBrowser"
         ],
+        "description": "Detect operating system using ua.",
         "env": [
             "node",
             "browser",
@@ -1781,13 +1781,13 @@
         ]
     },
     "difference": {
-        "description": "Create an array of unique array values not included in the other given array.",
         "dependencies": [
             "restArgs",
             "flatten",
             "filter",
             "contain"
         ],
+        "description": "Create an array of unique array values not included in the other given array.",
         "env": [
             "node",
             "browser",
@@ -1799,10 +1799,10 @@
         ]
     },
     "dotCase": {
-        "description": "Convert string to \"dotCase\".",
         "dependencies": [
             "splitCase"
         ],
+        "description": "Convert string to \"dotCase\".",
         "env": [
             "node",
             "browser",
@@ -1814,26 +1814,27 @@
         ]
     },
     "download": {
-        "description": "Trigger a file download on client side.",
+        "demo": true,
         "dependencies": [
             "createUrl"
         ],
+        "description": "Trigger a file download on client side.",
         "env": [
             "browser"
         ],
         "test": [
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "each": {
-        "description": "Iterate over elements of collection and invokes iterator for each element.",
+        "benchmark": true,
         "dependencies": [
             "isArrLike",
             "keys",
             "optimizeCb",
             "types"
         ],
+        "description": "Iterate over elements of collection and invokes iterator for each element.",
         "env": [
             "node",
             "browser",
@@ -1842,15 +1843,14 @@
         "test": [
             "node",
             "browser"
-        ],
-        "benchmark": true
+        ]
     },
     "easing": {
-        "description": "Easing functions adapted from http://jqueryui.com/ .",
         "dependencies": [
             "each",
             "upperFirst"
         ],
+        "description": "Easing functions adapted from http://jqueryui.com/ .",
         "env": [
             "node",
             "browser",
@@ -1862,23 +1862,23 @@
         ]
     },
     "emulateTouch": {
-        "description": "Emulate touch events on desktop browsers.",
+        "demo": true,
         "dependencies": [
             "trigger",
             "root"
         ],
+        "description": "Emulate touch events on desktop browsers.",
         "env": [
             "browser"
         ],
+        "since": "1.9.0",
         "test": [
             "browser"
-        ],
-        "since": "1.9.0",
-        "demo": true
+        ]
     },
     "endWith": {
-        "description": "Check if string ends with the given target string.",
         "dependencies": [],
+        "description": "Check if string ends with the given target string.",
         "env": [
             "node",
             "browser",
@@ -1890,10 +1890,10 @@
         ]
     },
     "escape": {
-        "description": "Escapes a string for insertion into HTML, replacing &, <, >, \", `, and ' characters.",
         "dependencies": [
             "keys"
         ],
+        "description": "Escapes a string for insertion into HTML, replacing &, <, >, \", `, and ' characters.",
         "env": [
             "node",
             "browser",
@@ -1905,10 +1905,10 @@
         ]
     },
     "escapeJsStr": {
-        "description": "Escape string to be a valid JavaScript string literal between quotes.",
         "dependencies": [
             "toStr"
         ],
+        "description": "Escape string to be a valid JavaScript string literal between quotes.",
         "env": [
             "node",
             "browser",
@@ -1920,8 +1920,8 @@
         ]
     },
     "escapeRegExp": {
-        "description": "Escape special chars to be used as literals in RegExp constructors.",
         "dependencies": [],
+        "description": "Escape special chars to be used as literals in RegExp constructors.",
         "env": [
             "node",
             "browser",
@@ -1933,8 +1933,8 @@
         ]
     },
     "evalCss": {
-        "description": "Load css into page.",
         "dependencies": [],
+        "description": "Load css into page.",
         "env": [
             "browser"
         ],
@@ -1943,10 +1943,11 @@
         ]
     },
     "evalJs": {
-        "description": "Execute js in given context.",
+        "benchmark": true,
         "dependencies": [
             "root"
         ],
+        "description": "Execute js in given context.",
         "env": [
             "node",
             "browser"
@@ -1954,17 +1955,16 @@
         "test": [
             "node",
             "browser"
-        ],
-        "benchmark": true
+        ]
     },
     "every": {
-        "description": "Check if predicate return truthy for all elements.",
         "dependencies": [
             "safeCb",
             "isArrLike",
             "keys",
             "types"
         ],
+        "description": "Check if predicate return truthy for all elements.",
         "env": [
             "node",
             "browser",
@@ -1976,11 +1976,11 @@
         ]
     },
     "extend": {
-        "description": "Copy all of the properties in the source objects over to the destination object.",
         "dependencies": [
             "createAssigner",
             "allKeys"
         ],
+        "description": "Copy all of the properties in the source objects over to the destination object.",
         "env": [
             "node",
             "browser",
@@ -1992,12 +1992,12 @@
         ]
     },
     "extendDeep": {
-        "description": "Recursive object extending.",
         "dependencies": [
             "isPlainObj",
             "each",
             "cloneDeep"
         ],
+        "description": "Recursive object extending.",
         "env": [
             "node",
             "browser",
@@ -2009,11 +2009,11 @@
         ]
     },
     "extendOwn": {
-        "description": "Like extend, but only copies own properties over to the destination object.",
         "dependencies": [
             "keys",
             "createAssigner"
         ],
+        "description": "Like extend, but only copies own properties over to the destination object.",
         "env": [
             "node",
             "browser",
@@ -2025,11 +2025,11 @@
         ]
     },
     "extractBlockCmts": {
-        "description": "Extract block comments from source code.",
         "dependencies": [
             "map",
             "trim"
         ],
+        "description": "Extract block comments from source code.",
         "env": [
             "node",
             "browser",
@@ -2041,13 +2041,13 @@
         ]
     },
     "extractUrls": {
-        "description": "Extract urls from plain text.",
         "dependencies": [
             "unique",
             "trim",
             "map",
             "toArr"
         ],
+        "description": "Extract urls from plain text.",
         "env": [
             "node",
             "browser",
@@ -2059,7 +2059,6 @@
         ]
     },
     "fetch": {
-        "description": "Turn XMLHttpRequest into promise like.",
         "dependencies": [
             "Promise",
             "each",
@@ -2067,16 +2066,17 @@
             "noop",
             "has"
         ],
+        "description": "Turn XMLHttpRequest into promise like.",
         "env": [
             "browser"
         ],
         "test": []
     },
     "fibonacci": {
-        "description": "Calculate fibonacci number.",
         "dependencies": [
             "memoize"
         ],
+        "description": "Calculate fibonacci number.",
         "env": [
             "node",
             "browser",
@@ -2088,8 +2088,8 @@
         ]
     },
     "fileSize": {
-        "description": "Turn bytes into human readable file size.",
         "dependencies": [],
+        "description": "Turn bytes into human readable file size.",
         "env": [
             "node",
             "browser",
@@ -2101,28 +2101,28 @@
         ]
     },
     "fileType": {
-        "description": "Detect file type using magic number.",
         "dependencies": [
             "type",
             "mime",
             "isFn"
         ],
+        "description": "Detect file type using magic number.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.1",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.1"
+        ]
     },
     "fill": {
-        "description": "Fill elements of array with value.",
         "dependencies": [
             "isUndef"
         ],
+        "description": "Fill elements of array with value.",
         "env": [
             "node",
             "browser",
@@ -2134,12 +2134,12 @@
         ]
     },
     "filter": {
-        "description": "Iterates over elements of collection, returning an array of all the values that pass a truth test.",
         "dependencies": [
             "safeCb",
             "each",
             "types"
         ],
+        "description": "Iterates over elements of collection, returning an array of all the values that pass a truth test.",
         "env": [
             "node",
             "browser",
@@ -2151,7 +2151,6 @@
         ]
     },
     "find": {
-        "description": "Find the first value that passes a truth test in a collection.",
         "dependencies": [
             "findKey",
             "findIdx",
@@ -2159,6 +2158,7 @@
             "isUndef",
             "types"
         ],
+        "description": "Find the first value that passes a truth test in a collection.",
         "env": [
             "node",
             "browser",
@@ -2170,10 +2170,10 @@
         ]
     },
     "findIdx": {
-        "description": "Return the first index where the predicate truth test passes.",
         "dependencies": [
             "safeCb"
         ],
+        "description": "Return the first index where the predicate truth test passes.",
         "env": [
             "node",
             "browser",
@@ -2185,11 +2185,11 @@
         ]
     },
     "findKey": {
-        "description": "Return the first key where the predicate truth test passes.",
         "dependencies": [
             "safeCb",
             "keys"
         ],
+        "description": "Return the first key where the predicate truth test passes.",
         "env": [
             "node",
             "browser",
@@ -2201,10 +2201,10 @@
         ]
     },
     "findLastIdx": {
-        "description": "Return the last index where the predicate truth test passes.",
         "dependencies": [
             "findIdx"
         ],
+        "description": "Return the last index where the predicate truth test passes.",
         "env": [
             "node",
             "browser",
@@ -2216,10 +2216,10 @@
         ]
     },
     "flatten": {
-        "description": "Recursively flatten an array.",
         "dependencies": [
             "isArr"
         ],
+        "description": "Recursively flatten an array.",
         "env": [
             "node",
             "browser",
@@ -2231,7 +2231,6 @@
         ]
     },
     "fnArgs": {
-        "description": "Validate function arguments.",
         "dependencies": [
             "startWith",
             "last",
@@ -2239,25 +2238,26 @@
             "isObj",
             "type"
         ],
+        "description": "Validate function arguments.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.3",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.3"
+        ]
     },
     "fnParams": {
-        "description": "Get a function parameter's names.",
         "dependencies": [
             "toSrc",
             "stripCmt",
             "startWith",
             "isStr"
         ],
+        "description": "Get a function parameter's names.",
         "env": [
             "node",
             "browser",
@@ -2269,27 +2269,27 @@
         ]
     },
     "fnv1a": {
-        "description": "Simple FNV-1a implementation.",
         "dependencies": [],
+        "description": "Simple FNV-1a implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.10.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.10.0"
+        ]
     },
     "format": {
-        "description": "Format string in a printf-like format.",
         "dependencies": [
             "restArgs",
             "toInt",
             "toNum",
             "toStr"
         ],
+        "description": "Format string in a printf-like format.",
         "env": [
             "node",
             "browser",
@@ -2301,11 +2301,11 @@
         ]
     },
     "fraction": {
-        "description": "Convert number to fraction.",
         "dependencies": [
             "gcd",
             "precision"
         ],
+        "description": "Convert number to fraction.",
         "env": [
             "node",
             "browser",
@@ -2317,10 +2317,10 @@
         ]
     },
     "freeze": {
-        "description": "Shortcut for Object.freeze.",
         "dependencies": [
             "keys"
         ],
+        "description": "Shortcut for Object.freeze.",
         "env": [
             "node",
             "browser",
@@ -2332,12 +2332,12 @@
         ]
     },
     "freezeDeep": {
-        "description": "Recursively use Object.freeze.",
         "dependencies": [
             "freeze",
             "keys",
             "isObj"
         ],
+        "description": "Recursively use Object.freeze.",
         "env": [
             "node",
             "browser",
@@ -2349,7 +2349,6 @@
         ]
     },
     "fs": {
-        "description": "Promised version of node.js fs module.",
         "dependencies": [
             "promisify",
             "root",
@@ -2357,6 +2356,7 @@
             "Promise",
             "toArr"
         ],
+        "description": "Promised version of node.js fs module.",
         "env": [
             "node"
         ],
@@ -2365,22 +2365,21 @@
         ]
     },
     "fullscreen": {
-        "description": "Fullscreen api wrapper.",
+        "demo": true,
         "dependencies": [
             "Emitter",
             "toBool"
         ],
+        "description": "Fullscreen api wrapper.",
         "env": [
             "browser"
         ],
+        "since": "1.4.0",
         "test": [
             "browser"
-        ],
-        "since": "1.4.0",
-        "demo": true
+        ]
     },
     "fuzzySearch": {
-        "description": "Simple fuzzy search.",
         "dependencies": [
             "filter",
             "map",
@@ -2389,20 +2388,21 @@
             "levenshtein",
             "pluck"
         ],
+        "description": "Simple fuzzy search.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.0"
+        ]
     },
     "gcd": {
-        "description": "Compute the greatest common divisor using Euclid's algorithm.",
         "dependencies": [],
+        "description": "Compute the greatest common divisor using Euclid's algorithm.",
         "env": [
             "node",
             "browser",
@@ -2414,40 +2414,40 @@
         ]
     },
     "getPort": {
-        "description": "Get an available TCP port.",
         "dependencies": [
             "toArr"
         ],
+        "description": "Get an available TCP port.",
         "env": [
             "node"
         ],
+        "since": "1.1.0",
         "test": [
             "node"
-        ],
-        "since": "1.1.0"
+        ]
     },
     "getProto": {
-        "description": "Get prototype of an object.",
         "dependencies": [
             "isObj",
             "isFn"
         ],
+        "description": "Get prototype of an object.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.5",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.5"
+        ]
     },
     "getUrlParam": {
-        "description": "Get url param.",
         "dependencies": [
             "Url"
         ],
+        "description": "Get url param.",
         "env": [
             "node",
             "browser",
@@ -2459,24 +2459,23 @@
         ]
     },
     "golangify": {
-        "description": "Handle errors like golang.",
         "dependencies": [
             "isFn",
             "restArgs"
         ],
+        "description": "Handle errors like golang.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.4",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.4"
+        ]
     },
     "h": {
-        "description": "Create html with JavaScript.",
         "dependencies": [
             "isEl",
             "isStr",
@@ -2486,17 +2485,18 @@
             "each",
             "isFn"
         ],
+        "description": "Create html with JavaScript.",
         "env": [
             "browser"
         ],
+        "since": "1.5.1",
         "test": [
             "browser"
-        ],
-        "since": "1.5.1"
+        ]
     },
     "has": {
-        "description": "Checks if key is a direct property.",
         "dependencies": [],
+        "description": "Checks if key is a direct property.",
         "env": [
             "node",
             "browser",
@@ -2508,27 +2508,27 @@
         ]
     },
     "heapSort": {
-        "description": "Heap sort implementation.",
         "dependencies": [
             "Heap",
             "isSorted"
         ],
+        "description": "Heap sort implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.11.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.11.0"
+        ]
     },
     "hex": {
-        "description": "Hex encoding and decoding.",
         "dependencies": [
             "isOdd"
         ],
+        "description": "Hex encoding and decoding.",
         "env": [
             "node",
             "browser",
@@ -2541,25 +2541,25 @@
         ]
     },
     "highlight": {
-        "description": "Highlight code.",
+        "demo": true,
         "dependencies": [
             "each",
             "defaults"
         ],
+        "description": "Highlight code.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.6",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.6",
-        "demo": true
+        ]
     },
     "hotkey": {
-        "description": "Capture keyboard input to trigger given events.",
+        "demo": true,
         "dependencies": [
             "Emitter",
             "keyCode",
@@ -2568,17 +2568,17 @@
             "trim",
             "map"
         ],
+        "description": "Capture keyboard input to trigger given events.",
         "env": [
             "browser"
         ],
         "test": [
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "hslToRgb": {
-        "description": "Convert hsl to rgb.",
         "dependencies": [],
+        "description": "Convert hsl to rgb.",
         "env": [
             "node",
             "browser",
@@ -2590,7 +2590,6 @@
         ]
     },
     "html": {
-        "description": "Html parser and serializer.",
         "dependencies": [
             "parseHtml",
             "Stack",
@@ -2599,20 +2598,21 @@
             "isStr",
             "mapObj"
         ],
+        "description": "Html parser and serializer.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.6.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.6.0"
+        ]
     },
     "identity": {
-        "description": "Return the first argument given.",
         "dependencies": [],
+        "description": "Return the first argument given.",
         "env": [
             "node",
             "browser",
@@ -2624,8 +2624,8 @@
         ]
     },
     "idxOf": {
-        "description": "Get the index at which the first occurrence of value.",
         "dependencies": [],
+        "description": "Get the index at which the first occurrence of value.",
         "env": [
             "node",
             "browser",
@@ -2637,12 +2637,12 @@
         ]
     },
     "indent": {
-        "description": "Indent each line in a string.",
         "dependencies": [
             "isNum",
             "isUndef",
             "repeat"
         ],
+        "description": "Indent each line in a string.",
         "env": [
             "node",
             "browser",
@@ -2654,10 +2654,10 @@
         ]
     },
     "inherits": {
-        "description": "Inherit the prototype methods from one constructor into another.",
         "dependencies": [
             "create"
         ],
+        "description": "Inherit the prototype methods from one constructor into another.",
         "env": [
             "node",
             "browser",
@@ -2669,7 +2669,6 @@
         ]
     },
     "ini": {
-        "description": "Ini parser and serializer.",
         "dependencies": [
             "each",
             "trim",
@@ -2679,23 +2678,24 @@
             "isArr",
             "isObj"
         ],
+        "description": "Ini parser and serializer.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.4",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.4"
+        ]
     },
     "insertionSort": {
-        "description": "Insertion sort implementation.",
         "dependencies": [
             "swap",
             "isSorted"
         ],
+        "description": "Insertion sort implementation.",
         "env": [
             "node",
             "browser",
@@ -2707,11 +2707,11 @@
         ]
     },
     "intersect": {
-        "description": "Compute the list of values that are the intersection of all the arrays.",
         "dependencies": [
             "contain",
             "toArr"
         ],
+        "description": "Compute the list of values that are the intersection of all the arrays.",
         "env": [
             "node",
             "browser",
@@ -2723,8 +2723,8 @@
         ]
     },
     "intersectRange": {
-        "description": "Intersect two ranges.",
         "dependencies": [],
+        "description": "Intersect two ranges.",
         "env": [
             "node",
             "browser",
@@ -2736,10 +2736,10 @@
         ]
     },
     "invariant": {
-        "description": "Facebook's invariant.",
         "dependencies": [
             "root"
         ],
+        "description": "Facebook's invariant.",
         "env": [
             "node",
             "browser",
@@ -2751,10 +2751,10 @@
         ]
     },
     "invert": {
-        "description": "Create an object composed of the inverted keys and values of object.",
         "dependencies": [
             "each"
         ],
+        "description": "Create an object composed of the inverted keys and values of object.",
         "env": [
             "node",
             "browser",
@@ -2766,8 +2766,8 @@
         ]
     },
     "isAbsoluteUrl": {
-        "description": "Check if an url is absolute.",
         "dependencies": [],
+        "description": "Check if an url is absolute.",
         "env": [
             "node",
             "browser",
@@ -2779,10 +2779,10 @@
         ]
     },
     "isArgs": {
-        "description": "Check if value is classified as an arguments object.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is classified as an arguments object.",
         "env": [
             "node",
             "browser",
@@ -2794,10 +2794,10 @@
         ]
     },
     "isArr": {
-        "description": "Check if value is an `Array` object.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is an `Array` object.",
         "env": [
             "node",
             "browser",
@@ -2809,10 +2809,10 @@
         ]
     },
     "isArrBuffer": {
-        "description": "Check if value is an ArrayBuffer.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is an ArrayBuffer.",
         "env": [
             "node",
             "browser",
@@ -2824,11 +2824,11 @@
         ]
     },
     "isArrLike": {
-        "description": "Check if value is array-like.",
         "dependencies": [
             "isNum",
             "isFn"
         ],
+        "description": "Check if value is array-like.",
         "env": [
             "node",
             "browser",
@@ -2840,10 +2840,10 @@
         ]
     },
     "isAsyncFn": {
-        "description": "Check if value is an async function.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is an async function.",
         "env": [
             "node",
             "browser",
@@ -2855,10 +2855,10 @@
         ]
     },
     "isBlob": {
-        "description": "Check if value is a Blob.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is a Blob.",
         "env": [
             "browser"
         ],
@@ -2867,8 +2867,8 @@
         ]
     },
     "isBool": {
-        "description": "Check if value is a boolean primitive.",
         "dependencies": [],
+        "description": "Check if value is a boolean primitive.",
         "env": [
             "node",
             "browser",
@@ -2880,8 +2880,8 @@
         ]
     },
     "isBrowser": {
-        "description": "Check if running in a browser.",
         "dependencies": [],
+        "description": "Check if running in a browser.",
         "env": [
             "node",
             "browser",
@@ -2893,10 +2893,10 @@
         ]
     },
     "isBuffer": {
-        "description": "Check if value is a buffer.",
         "dependencies": [
             "isFn"
         ],
+        "description": "Check if value is a buffer.",
         "env": [
             "node",
             "browser",
@@ -2907,10 +2907,10 @@
         ]
     },
     "isClose": {
-        "description": "Check if values are close(almost equal) to each other.",
         "dependencies": [
             "isNum"
         ],
+        "description": "Check if values are close(almost equal) to each other.",
         "env": [
             "node",
             "browser",
@@ -2922,10 +2922,10 @@
         ]
     },
     "isDataUrl": {
-        "description": "Check if a string is a valid data url.",
         "dependencies": [
             "trim"
         ],
+        "description": "Check if a string is a valid data url.",
         "env": [
             "node",
             "browser",
@@ -2937,10 +2937,10 @@
         ]
     },
     "isDate": {
-        "description": "Check if value is classified as a Date object.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is classified as a Date object.",
         "env": [
             "node",
             "browser",
@@ -2952,8 +2952,8 @@
         ]
     },
     "isEl": {
-        "description": "Check if value is a DOM element.",
         "dependencies": [],
+        "description": "Check if value is a DOM element.",
         "env": [
             "browser"
         ],
@@ -2962,8 +2962,8 @@
         ]
     },
     "isEmail": {
-        "description": "Loosely validate an email address.",
         "dependencies": [],
+        "description": "Loosely validate an email address.",
         "env": [
             "node",
             "browser",
@@ -2975,7 +2975,6 @@
         ]
     },
     "isEmpty": {
-        "description": "Check if value is an empty object or array.",
         "dependencies": [
             "isArrLike",
             "isArr",
@@ -2983,6 +2982,7 @@
             "isArgs",
             "keys"
         ],
+        "description": "Check if value is an empty object or array.",
         "env": [
             "node",
             "browser",
@@ -2994,12 +2994,12 @@
         ]
     },
     "isEqual": {
-        "description": "Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.",
         "dependencies": [
             "isFn",
             "has",
             "keys"
         ],
+        "description": "Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.",
         "env": [
             "node",
             "browser",
@@ -3011,10 +3011,10 @@
         ]
     },
     "isErr": {
-        "description": "Check if value is an error.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is an error.",
         "env": [
             "node",
             "browser",
@@ -3026,10 +3026,10 @@
         ]
     },
     "isEven": {
-        "description": "Check if number is even.",
         "dependencies": [
             "isInt"
         ],
+        "description": "Check if number is even.",
         "env": [
             "node",
             "browser",
@@ -3041,10 +3041,10 @@
         ]
     },
     "isFile": {
-        "description": "Check if value is a file.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is a file.",
         "env": [
             "browser"
         ],
@@ -3053,10 +3053,10 @@
         ]
     },
     "isFinite": {
-        "description": "Check if value is a finite primitive number.",
         "dependencies": [
             "root"
         ],
+        "description": "Check if value is a finite primitive number.",
         "env": [
             "node",
             "browser",
@@ -3068,10 +3068,10 @@
         ]
     },
     "isFn": {
-        "description": "Check if value is a function.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is a function.",
         "env": [
             "node",
             "browser",
@@ -3083,10 +3083,10 @@
         ]
     },
     "isGeneratorFn": {
-        "description": "Check if value is a generator function.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is a generator function.",
         "env": [
             "node",
             "browser",
@@ -3098,10 +3098,10 @@
         ]
     },
     "isInt": {
-        "description": "Checks if value is classified as a Integer.",
         "dependencies": [
             "isNum"
         ],
+        "description": "Checks if value is classified as a Integer.",
         "env": [
             "node",
             "browser",
@@ -3113,22 +3113,22 @@
         ]
     },
     "isIp": {
-        "description": "Check if value is an IP address.",
         "dependencies": [],
+        "description": "Check if value is an IP address.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.1",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.1"
+        ]
     },
     "isJson": {
-        "description": "Check if value is a valid JSON.",
         "dependencies": [],
+        "description": "Check if value is a valid JSON.",
         "env": [
             "node",
             "browser",
@@ -3140,8 +3140,8 @@
         ]
     },
     "isLeapYear": {
-        "description": "Check if a year is a leap year.",
         "dependencies": [],
+        "description": "Check if a year is a leap year.",
         "env": [
             "node",
             "browser",
@@ -3153,10 +3153,10 @@
         ]
     },
     "isMap": {
-        "description": "Check if value is a Map object.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is a Map object.",
         "env": [
             "node",
             "browser",
@@ -3168,10 +3168,10 @@
         ]
     },
     "isMatch": {
-        "description": "Check if keys and values in src are contained in obj.",
         "dependencies": [
             "keys"
         ],
+        "description": "Check if keys and values in src are contained in obj.",
         "env": [
             "node",
             "browser",
@@ -3183,10 +3183,10 @@
         ]
     },
     "isMiniProgram": {
-        "description": "Check if running in wechat mini program.",
         "dependencies": [
             "isFn"
         ],
+        "description": "Check if running in wechat mini program.",
         "env": [
             "node",
             "browser",
@@ -3198,11 +3198,11 @@
         ]
     },
     "isMobile": {
-        "description": "Check whether client is using a mobile browser using ua.",
         "dependencies": [
             "isBrowser",
             "memoize"
         ],
+        "description": "Check whether client is using a mobile browser using ua.",
         "env": [
             "node",
             "browser",
@@ -3214,10 +3214,10 @@
         ]
     },
     "isNaN": {
-        "description": "Check if value is an NaN.",
         "dependencies": [
             "isNum"
         ],
+        "description": "Check if value is an NaN.",
         "env": [
             "node",
             "browser",
@@ -3229,12 +3229,12 @@
         ]
     },
     "isNative": {
-        "description": "Check if value is a native function.",
         "dependencies": [
             "isObj",
             "isFn",
             "toSrc"
         ],
+        "description": "Check if value is a native function.",
         "env": [
             "node",
             "browser",
@@ -3246,8 +3246,8 @@
         ]
     },
     "isNil": {
-        "description": "Check if value is null or undefined, the same as value == null.",
         "dependencies": [],
+        "description": "Check if value is null or undefined, the same as value == null.",
         "env": [
             "node",
             "browser",
@@ -3259,10 +3259,10 @@
         ]
     },
     "isNode": {
-        "description": "Check if running in node.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if running in node.",
         "env": [
             "node",
             "browser",
@@ -3274,8 +3274,8 @@
         ]
     },
     "isNull": {
-        "description": "Check if value is an Null.",
         "dependencies": [],
+        "description": "Check if value is an Null.",
         "env": [
             "node",
             "browser",
@@ -3287,10 +3287,10 @@
         ]
     },
     "isNum": {
-        "description": "Check if value is classified as a Number primitive or object.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is classified as a Number primitive or object.",
         "env": [
             "node",
             "browser",
@@ -3302,13 +3302,13 @@
         ]
     },
     "isNumeric": {
-        "description": "Check if value is numeric.",
         "dependencies": [
             "isStr",
             "isNaN",
             "isFinite",
             "isArr"
         ],
+        "description": "Check if value is numeric.",
         "env": [
             "node",
             "browser",
@@ -3320,8 +3320,8 @@
         ]
     },
     "isObj": {
-        "description": "Check if value is the language type of Object.",
         "dependencies": [],
+        "description": "Check if value is the language type of Object.",
         "env": [
             "node",
             "browser",
@@ -3333,10 +3333,10 @@
         ]
     },
     "isOdd": {
-        "description": "Check if number is odd.",
         "dependencies": [
             "isInt"
         ],
+        "description": "Check if number is odd.",
         "env": [
             "node",
             "browser",
@@ -3348,13 +3348,13 @@
         ]
     },
     "isPlainObj": {
-        "description": "Check if value is an object created by Object constructor.",
         "dependencies": [
             "isObj",
             "isArr",
             "isFn",
             "has"
         ],
+        "description": "Check if value is an object created by Object constructor.",
         "env": [
             "node",
             "browser",
@@ -3366,33 +3366,33 @@
         ]
     },
     "isPortFree": {
-        "description": "Check if a TCP port is free.",
         "dependencies": [],
+        "description": "Check if a TCP port is free.",
         "env": [
             "node"
         ],
+        "since": "1.5.2",
         "test": [
             "node"
-        ],
-        "since": "1.5.2"
+        ]
     },
     "isPrime": {
-        "description": "Check if the provided integer is a prime number.",
         "dependencies": [],
+        "description": "Check if the provided integer is a prime number.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.2.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.2.0"
+        ]
     },
     "isPrimitive": {
-        "description": "Check if value is string, number, boolean or null.",
         "dependencies": [],
+        "description": "Check if value is string, number, boolean or null.",
         "env": [
             "node",
             "browser",
@@ -3404,11 +3404,11 @@
         ]
     },
     "isPromise": {
-        "description": "Check if value looks like a promise.",
         "dependencies": [
             "isObj",
             "isFn"
         ],
+        "description": "Check if value looks like a promise.",
         "env": [
             "node",
             "browser",
@@ -3420,10 +3420,10 @@
         ]
     },
     "isRegExp": {
-        "description": "Check if value is a regular expression.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is a regular expression.",
         "env": [
             "node",
             "browser",
@@ -3435,8 +3435,8 @@
         ]
     },
     "isRelative": {
-        "description": "Check if path appears to be relative.",
         "dependencies": [],
+        "description": "Check if path appears to be relative.",
         "env": [
             "node",
             "browser",
@@ -3448,10 +3448,10 @@
         ]
     },
     "isRetina": {
-        "description": "Determine if running on a high DPR device or not.",
         "dependencies": [
             "isBrowser"
         ],
+        "description": "Determine if running on a high DPR device or not.",
         "env": [
             "browser"
         ],
@@ -3460,10 +3460,10 @@
         ]
     },
     "isSet": {
-        "description": "Check if value is a Set object.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is a Set object.",
         "env": [
             "node",
             "browser",
@@ -3475,8 +3475,8 @@
         ]
     },
     "isSorted": {
-        "description": "Check if an array is sorted.",
         "dependencies": [],
+        "description": "Check if an array is sorted.",
         "env": [
             "node",
             "browser",
@@ -3488,10 +3488,10 @@
         ]
     },
     "isStr": {
-        "description": "Check if value is a string primitive.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is a string primitive.",
         "env": [
             "node",
             "browser",
@@ -3503,11 +3503,11 @@
         ]
     },
     "isStream": {
-        "description": "Check if value is a Node.js stream.",
         "dependencies": [
             "isObj",
             "isFn"
         ],
+        "description": "Check if value is a Node.js stream.",
         "env": [
             "node"
         ],
@@ -3516,25 +3516,25 @@
         ]
     },
     "isSymbol": {
-        "description": "Check if value is a symbol.",
         "dependencies": [],
+        "description": "Check if value is a symbol.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.5",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.5"
+        ]
     },
     "isTypedArr": {
-        "description": "Check if value is a typed array.",
         "dependencies": [
             "objToStr",
             "each"
         ],
+        "description": "Check if value is a typed array.",
         "env": [
             "node",
             "browser",
@@ -3546,8 +3546,8 @@
         ]
     },
     "isUndef": {
-        "description": "Check if value is undefined.",
         "dependencies": [],
+        "description": "Check if value is undefined.",
         "env": [
             "node",
             "browser",
@@ -3559,8 +3559,8 @@
         ]
     },
     "isUrl": {
-        "description": "Loosely validate an url.",
         "dependencies": [],
+        "description": "Loosely validate an url.",
         "env": [
             "node",
             "browser",
@@ -3572,10 +3572,10 @@
         ]
     },
     "isWeakMap": {
-        "description": "Check if value is a WeakMap object.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is a WeakMap object.",
         "env": [
             "node",
             "browser",
@@ -3587,10 +3587,10 @@
         ]
     },
     "isWeakSet": {
-        "description": "Check if value is a WeakSet object.",
         "dependencies": [
             "objToStr"
         ],
+        "description": "Check if value is a WeakSet object.",
         "env": [
             "node",
             "browser",
@@ -3602,8 +3602,8 @@
         ]
     },
     "isWindows": {
-        "description": "Check if platform is windows.",
         "dependencies": [],
+        "description": "Check if platform is windows.",
         "env": [
             "node"
         ],
@@ -3612,8 +3612,8 @@
         ]
     },
     "jsonClone": {
-        "description": "Use JSON parse and stringify to clone object.",
         "dependencies": [],
+        "description": "Use JSON parse and stringify to clone object.",
         "env": [
             "node",
             "browser",
@@ -3626,7 +3626,6 @@
         ]
     },
     "jsonp": {
-        "description": "A simple jsonp implementation.",
         "dependencies": [
             "loadJs",
             "defaults",
@@ -3634,6 +3633,7 @@
             "uniqId",
             "query"
         ],
+        "description": "A simple jsonp implementation.",
         "env": [
             "browser"
         ],
@@ -3642,10 +3642,10 @@
         ]
     },
     "kebabCase": {
-        "description": "Convert string to \"kebabCase\".",
         "dependencies": [
             "splitCase"
         ],
+        "description": "Convert string to \"kebabCase\".",
         "env": [
             "node",
             "browser",
@@ -3657,11 +3657,11 @@
         ]
     },
     "keyCode": {
-        "description": "Key codes and key names conversion.",
         "dependencies": [
             "isStr",
             "invert"
         ],
+        "description": "Key codes and key names conversion.",
         "env": [
             "node",
             "browser",
@@ -3673,11 +3673,11 @@
         ]
     },
     "keys": {
-        "description": "Create an array of the own enumerable property names of object.",
         "dependencies": [
             "has",
             "detectMocha"
         ],
+        "description": "Create an array of the own enumerable property names of object.",
         "env": [
             "node",
             "browser",
@@ -3689,21 +3689,21 @@
         ]
     },
     "kill": {
-        "description": "Kill process.",
         "dependencies": [
             "isWindows"
         ],
+        "description": "Kill process.",
         "env": [
             "node"
         ],
+        "since": "1.4.4",
         "test": [
             "node"
-        ],
-        "since": "1.4.4"
+        ]
     },
     "last": {
-        "description": "Get the last element of array.",
         "dependencies": [],
+        "description": "Get the last element of array.",
         "env": [
             "node",
             "browser",
@@ -3715,8 +3715,8 @@
         ]
     },
     "lazyRequire": {
-        "description": "Require modules lazily.",
         "dependencies": [],
+        "description": "Require modules lazily.",
         "env": [
             "node"
         ],
@@ -3725,26 +3725,26 @@
         ]
     },
     "levenshtein": {
-        "description": "Levenshtein distance implementation.",
         "dependencies": [],
+        "description": "Levenshtein distance implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.4.8",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.4.8"
+        ]
     },
     "linkify": {
-        "description": "Hyperlink urls in a string.",
         "dependencies": [
             "extractUrls",
             "each",
             "escapeRegExp"
         ],
+        "description": "Hyperlink urls in a string.",
         "env": [
             "node",
             "browser",
@@ -3756,10 +3756,10 @@
         ]
     },
     "loadCss": {
-        "description": "Inject link tag into page with given href value.",
         "dependencies": [
             "noop"
         ],
+        "description": "Inject link tag into page with given href value.",
         "env": [
             "browser"
         ],
@@ -3768,10 +3768,10 @@
         ]
     },
     "loadImg": {
-        "description": "Load image with given src.",
         "dependencies": [
             "noop"
         ],
+        "description": "Load image with given src.",
         "env": [
             "browser"
         ],
@@ -3780,8 +3780,8 @@
         ]
     },
     "loadJs": {
-        "description": "Inject script tag into page with given src value.",
         "dependencies": [],
+        "description": "Inject script tag into page with given src value.",
         "env": [
             "browser"
         ],
@@ -3790,10 +3790,10 @@
         ]
     },
     "longest": {
-        "description": "Get the longest item in an array.",
         "dependencies": [
             "size"
         ],
+        "description": "Get the longest item in an array.",
         "env": [
             "node",
             "browser",
@@ -3805,10 +3805,10 @@
         ]
     },
     "lowerCase": {
-        "description": "Convert string to lower case.",
         "dependencies": [
             "toStr"
         ],
+        "description": "Convert string to lower case.",
         "env": [
             "node",
             "browser",
@@ -3820,11 +3820,11 @@
         ]
     },
     "lpad": {
-        "description": "Pad string on the left side if it's shorter than length.",
         "dependencies": [
             "repeat",
             "toStr"
         ],
+        "description": "Pad string on the left side if it's shorter than length.",
         "env": [
             "node",
             "browser",
@@ -3836,8 +3836,8 @@
         ]
     },
     "ltrim": {
-        "description": "Remove chars or white-spaces from beginning of string.",
         "dependencies": [],
+        "description": "Remove chars or white-spaces from beginning of string.",
         "env": [
             "node",
             "browser",
@@ -3849,13 +3849,13 @@
         ]
     },
     "map": {
-        "description": "Create an array of values by running each element in collection through iteratee.",
         "dependencies": [
             "safeCb",
             "keys",
             "isArrLike",
             "types"
         ],
+        "description": "Create an array of values by running each element in collection through iteratee.",
         "env": [
             "node",
             "browser",
@@ -3867,12 +3867,12 @@
         ]
     },
     "mapObj": {
-        "description": "Map for objects.",
         "dependencies": [
             "safeCb",
             "keys",
             "types"
         ],
+        "description": "Map for objects.",
         "env": [
             "node",
             "browser",
@@ -3884,11 +3884,11 @@
         ]
     },
     "matcher": {
-        "description": "Return a predicate function that checks if attrs are contained in an object.",
         "dependencies": [
             "extendOwn",
             "isMatch"
         ],
+        "description": "Return a predicate function that checks if attrs are contained in an object.",
         "env": [
             "node",
             "browser",
@@ -3900,8 +3900,8 @@
         ]
     },
     "max": {
-        "description": "Get maximum value of given numbers.",
         "dependencies": [],
+        "description": "Get maximum value of given numbers.",
         "env": [
             "node",
             "browser",
@@ -3913,7 +3913,6 @@
         ]
     },
     "md5": {
-        "description": "MD5 implementation.",
         "dependencies": [
             "isStr",
             "strToBytes",
@@ -3921,22 +3920,23 @@
             "bytesToWords",
             "wordsToBytes"
         ],
+        "description": "MD5 implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.1.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.1.0"
+        ]
     },
     "memStorage": {
-        "description": "Memory-backed implementation of the Web Storage API.",
         "dependencies": [
             "keys"
         ],
+        "description": "Memory-backed implementation of the Web Storage API.",
         "env": [
             "node",
             "browser",
@@ -3948,10 +3948,10 @@
         ]
     },
     "memoize": {
-        "description": "Memoize a given function by caching the computed result.",
         "dependencies": [
             "has"
         ],
+        "description": "Memoize a given function by caching the computed result.",
         "env": [
             "node",
             "browser",
@@ -3963,10 +3963,10 @@
         ]
     },
     "mergeSort": {
-        "description": "Merge sort implementation.",
         "dependencies": [
             "isSorted"
         ],
+        "description": "Merge sort implementation.",
         "env": [
             "node",
             "browser",
@@ -3978,7 +3978,6 @@
         ]
     },
     "meta": {
-        "description": "Document meta manipulation, turn name and content into key value pairs.",
         "dependencies": [
             "each",
             "isStr",
@@ -3988,6 +3987,7 @@
             "isObj",
             "toArr"
         ],
+        "description": "Document meta manipulation, turn name and content into key value pairs.",
         "env": [
             "browser"
         ],
@@ -3996,10 +3996,10 @@
         ]
     },
     "methods": {
-        "description": "Return a sorted list of the names of every method in an object.",
         "dependencies": [
             "isFn"
         ],
+        "description": "Return a sorted list of the names of every method in an object.",
         "env": [
             "node",
             "browser",
@@ -4011,24 +4011,24 @@
         ]
     },
     "mime": {
-        "description": "Common mime types.",
         "dependencies": [
             "each"
         ],
+        "description": "Common mime types.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.0"
+        ]
     },
     "min": {
-        "description": "Get minimum value of given numbers.",
         "dependencies": [],
+        "description": "Get minimum value of given numbers.",
         "env": [
             "node",
             "browser",
@@ -4040,11 +4040,11 @@
         ]
     },
     "mkdir": {
-        "description": "Recursively create directories.",
         "dependencies": [
             "isFn",
             "noop"
         ],
+        "description": "Recursively create directories.",
         "env": [
             "node"
         ],
@@ -4053,7 +4053,6 @@
         ]
     },
     "moment": {
-        "description": "Tiny moment.js like implementation.",
         "dependencies": [
             "Class",
             "toDate",
@@ -4064,6 +4063,7 @@
             "isNil",
             "ms"
         ],
+        "description": "Tiny moment.js like implementation.",
         "env": [
             "node",
             "browser",
@@ -4072,11 +4072,11 @@
         "test": []
     },
     "ms": {
-        "description": "Convert time string formats to milliseconds.",
         "dependencies": [
             "toNum",
             "isStr"
         ],
+        "description": "Convert time string formats to milliseconds.",
         "env": [
             "node",
             "browser",
@@ -4088,8 +4088,8 @@
         ]
     },
     "negate": {
-        "description": "Create a function that negates the result of the predicate function.",
         "dependencies": [],
+        "description": "Create a function that negates the result of the predicate function.",
         "env": [
             "node",
             "browser",
@@ -4101,8 +4101,8 @@
         ]
     },
     "nextTick": {
-        "description": "Next tick for both node and browser.",
         "dependencies": [],
+        "description": "Next tick for both node and browser.",
         "env": [
             "node",
             "browser",
@@ -4114,8 +4114,8 @@
         ]
     },
     "noop": {
-        "description": "A no-operation function.",
         "dependencies": [],
+        "description": "A no-operation function.",
         "env": [
             "node",
             "browser",
@@ -4127,25 +4127,25 @@
         ]
     },
     "normalizeHeader": {
-        "description": "Normalize http header name.",
         "dependencies": [
             "map",
             "capitalize"
         ],
+        "description": "Normalize http header name.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.2.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.2.0"
+        ]
     },
     "normalizePath": {
-        "description": "Normalize file path slashes.",
         "dependencies": [],
+        "description": "Normalize file path slashes.",
         "env": [
             "node",
             "browser",
@@ -4157,10 +4157,10 @@
         ]
     },
     "normalizePhone": {
-        "description": "Normalize phone numbers into E.164 format.",
         "dependencies": [
             "trim"
         ],
+        "description": "Normalize phone numbers into E.164 format.",
         "env": [
             "node",
             "browser",
@@ -4173,24 +4173,24 @@
         ]
     },
     "notify": {
-        "description": "Wrapper for the Web Notifications API.",
+        "demo": true,
         "dependencies": [
             "Emitter",
             "root",
             "each"
         ],
+        "description": "Wrapper for the Web Notifications API.",
         "env": [
             "browser"
         ],
         "since": "1.14.0",
         "test": [
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "now": {
-        "description": "Gets the number of milliseconds that have elapsed since the Unix epoch.",
         "dependencies": [],
+        "description": "Gets the number of milliseconds that have elapsed since the Unix epoch.",
         "env": [
             "node",
             "browser",
@@ -4202,8 +4202,8 @@
         ]
     },
     "objToStr": {
-        "description": "Alias of Object.prototype.toString.",
         "dependencies": [],
+        "description": "Alias of Object.prototype.toString.",
         "env": [
             "node",
             "browser",
@@ -4215,10 +4215,10 @@
         ]
     },
     "omit": {
-        "description": "Opposite of pick.",
         "dependencies": [
             "pick"
         ],
+        "description": "Opposite of pick.",
         "env": [
             "node",
             "browser",
@@ -4230,11 +4230,11 @@
         ]
     },
     "once": {
-        "description": "Create a function that invokes once.",
         "dependencies": [
             "partial",
             "before"
         ],
+        "description": "Create a function that invokes once.",
         "env": [
             "node",
             "browser",
@@ -4246,33 +4246,33 @@
         ]
     },
     "open": {
-        "description": "Open stuff like url, files.",
         "dependencies": [
             "isWindows"
         ],
+        "description": "Open stuff like url, files.",
         "env": [
             "node"
         ],
-        "test": [],
-        "since": "1.2.0"
+        "since": "1.2.0",
+        "test": []
     },
     "openFile": {
-        "description": "Open file dialog to select file in browser.",
+        "demo": true,
         "dependencies": [],
+        "description": "Open file dialog to select file in browser.",
         "env": [
             "browser"
         ],
+        "since": "1.3.0",
         "test": [
             "browser"
-        ],
-        "since": "1.3.0",
-        "demo": true
+        ]
     },
     "optimizeCb": {
-        "description": "Used for function context binding.",
         "dependencies": [
             "isUndef"
         ],
+        "description": "Used for function context binding.",
         "env": [
             "node",
             "browser",
@@ -4284,39 +4284,39 @@
         ]
     },
     "ordinal": {
-        "description": "Add ordinal indicator to number.",
         "dependencies": [],
+        "description": "Add ordinal indicator to number.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.2",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.2"
+        ]
     },
     "orientation": {
-        "description": "Screen orientation helper.",
+        "demo": true,
         "dependencies": [
             "Emitter",
             "safeGet"
         ],
+        "description": "Screen orientation helper.",
         "env": [
             "browser"
         ],
         "test": [
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "pad": {
-        "description": "Pad string on the left and right sides if it's shorter than length.",
         "dependencies": [
             "repeat",
             "toStr"
         ],
+        "description": "Pad string on the left and right sides if it's shorter than length.",
         "env": [
             "node",
             "browser",
@@ -4328,10 +4328,10 @@
         ]
     },
     "pairs": {
-        "description": "Convert an object into a list of [key, value] pairs.",
         "dependencies": [
             "keys"
         ],
+        "description": "Convert an object into a list of [key, value] pairs.",
         "env": [
             "node",
             "browser",
@@ -4343,12 +4343,12 @@
         ]
     },
     "parallel": {
-        "description": "Run an array of functions in parallel.",
         "dependencies": [
             "noop",
             "each",
             "nextTick"
         ],
+        "description": "Run an array of functions in parallel.",
         "env": [
             "node",
             "browser",
@@ -4360,13 +4360,13 @@
         ]
     },
     "parseArgs": {
-        "description": "Parse command line argument options, the same as minimist.",
         "dependencies": [
             "defaults",
             "toNum",
             "invert",
             "toBool"
         ],
+        "description": "Parse command line argument options, the same as minimist.",
         "env": [
             "node",
             "browser",
@@ -4378,30 +4378,30 @@
         ]
     },
     "parseHtml": {
-        "description": "Simple html parser.",
         "dependencies": [
             "last",
             "arrToMap",
             "startWith",
             "lowerCase"
         ],
+        "description": "Simple html parser.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.6.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.6.0"
+        ]
     },
     "partial": {
-        "description": "Partially apply a function by filling in given arguments.",
         "dependencies": [
             "restArgs",
             "toArr"
         ],
+        "description": "Partially apply a function by filling in given arguments.",
         "env": [
             "node",
             "browser",
@@ -4413,11 +4413,11 @@
         ]
     },
     "pascalCase": {
-        "description": "Convert string to \"pascalCase\".",
         "dependencies": [
             "camelCase",
             "upperFirst"
         ],
+        "description": "Convert string to \"pascalCase\".",
         "env": [
             "node",
             "browser",
@@ -4429,11 +4429,11 @@
         ]
     },
     "perfNow": {
-        "description": "High resolution time up to microsecond precision.",
         "dependencies": [
             "now",
             "root"
         ],
+        "description": "High resolution time up to microsecond precision.",
         "env": [
             "node",
             "browser",
@@ -4445,13 +4445,13 @@
         ]
     },
     "pick": {
-        "description": "Return a filtered copy of an object.",
         "dependencies": [
             "isStr",
             "isArr",
             "contain",
             "each"
         ],
+        "description": "Return a filtered copy of an object.",
         "env": [
             "node",
             "browser",
@@ -4463,11 +4463,11 @@
         ]
     },
     "pluck": {
-        "description": "Extract a list of property values.",
         "dependencies": [
             "map",
             "property"
         ],
+        "description": "Extract a list of property values.",
         "env": [
             "node",
             "browser",
@@ -4479,8 +4479,8 @@
         ]
     },
     "precision": {
-        "description": "Find decimal precision of a given number.",
         "dependencies": [],
+        "description": "Find decimal precision of a given number.",
         "env": [
             "node",
             "browser",
@@ -4492,19 +4492,18 @@
         ]
     },
     "prefetch": {
-        "description": "Fetch a given url.",
+        "demo": true,
         "dependencies": [],
+        "description": "Fetch a given url.",
         "env": [
             "browser"
         ],
+        "since": "1.4.0",
         "test": [
             "browser"
-        ],
-        "since": "1.4.0",
-        "demo": true
+        ]
     },
     "prefix": {
-        "description": "Add vendor prefixes to a CSS attribute.",
         "dependencies": [
             "memoize",
             "camelCase",
@@ -4512,6 +4511,7 @@
             "has",
             "kebabCase"
         ],
+        "description": "Add vendor prefixes to a CSS attribute.",
         "env": [
             "browser"
         ],
@@ -4520,12 +4520,12 @@
         ]
     },
     "promisify": {
-        "description": "Convert callback based functions into Promises.",
         "dependencies": [
             "restArgs",
             "root",
             "Promise"
         ],
+        "description": "Convert callback based functions into Promises.",
         "env": [
             "node",
             "browser",
@@ -4537,11 +4537,11 @@
         ]
     },
     "property": {
-        "description": "Return a function that will itself return the key property of any passed-in object.",
         "dependencies": [
             "isArr",
             "safeGet"
         ],
+        "description": "Return a function that will itself return the key property of any passed-in object.",
         "env": [
             "node",
             "browser",
@@ -4553,7 +4553,6 @@
         ]
     },
     "query": {
-        "description": "Parse and stringify url query strings.",
         "dependencies": [
             "trim",
             "each",
@@ -4564,6 +4563,7 @@
             "filter",
             "isObj"
         ],
+        "description": "Parse and stringify url query strings.",
         "env": [
             "node",
             "browser",
@@ -4575,11 +4575,12 @@
         ]
     },
     "quickSort": {
-        "description": "Quick sort implementation.",
+        "benchmark": true,
         "dependencies": [
             "swap",
             "isSorted"
         ],
+        "description": "Quick sort implementation.",
         "env": [
             "node",
             "browser",
@@ -4588,15 +4589,14 @@
         "test": [
             "node",
             "browser"
-        ],
-        "benchmark": true
+        ]
     },
     "raf": {
-        "description": "Shortcut for requestAnimationFrame.",
         "dependencies": [
             "now",
             "isBrowser"
         ],
+        "description": "Shortcut for requestAnimationFrame.",
         "env": [
             "node",
             "browser",
@@ -4608,8 +4608,8 @@
         ]
     },
     "random": {
-        "description": "Produces a random number between min and max(inclusive).",
         "dependencies": [],
+        "description": "Produces a random number between min and max(inclusive).",
         "env": [
             "node",
             "browser",
@@ -4621,12 +4621,12 @@
         ]
     },
     "randomBytes": {
-        "description": "Random bytes generator.",
         "dependencies": [
             "random",
             "isBrowser",
             "isNode"
         ],
+        "description": "Random bytes generator.",
         "env": [
             "node",
             "browser",
@@ -4638,7 +4638,7 @@
         ]
     },
     "randomColor": {
-        "description": "Random color generator.",
+        "demo": true,
         "dependencies": [
             "defaults",
             "random",
@@ -4646,6 +4646,7 @@
             "seedRandom",
             "isFn"
         ],
+        "description": "Random color generator.",
         "env": [
             "node",
             "browser",
@@ -4655,30 +4656,29 @@
         "test": [
             "node",
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "randomId": {
-        "description": "A tiny id generator, similar to nanoid.",
         "dependencies": [
             "randomBytes"
         ],
+        "description": "A tiny id generator, similar to nanoid.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.4.8",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.4.8"
+        ]
     },
     "randomItem": {
-        "description": "Get a random item from an array.",
         "dependencies": [
             "random"
         ],
+        "description": "Get a random item from an array.",
         "env": [
             "node",
             "browser",
@@ -4690,8 +4690,8 @@
         ]
     },
     "range": {
-        "description": "Create flexibly-numbered lists of integers.",
         "dependencies": [],
+        "description": "Create flexibly-numbered lists of integers.",
         "env": [
             "node",
             "browser",
@@ -4703,26 +4703,26 @@
         ]
     },
     "rc4": {
-        "description": "RC4 symmetric encryption implementation.",
         "dependencies": [
             "base64",
             "bytesToStr",
             "strToBytes"
         ],
+        "description": "RC4 symmetric encryption implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.1.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.1.0"
+        ]
     },
     "ready": {
-        "description": "Invoke callback when dom is ready, similar to jQuery ready.",
         "dependencies": [],
+        "description": "Invoke callback when dom is ready, similar to jQuery ready.",
         "env": [
             "browser"
         ],
@@ -4731,7 +4731,7 @@
         ]
     },
     "reduce": {
-        "description": "Turn a list of values into a single value.",
+        "benchmark": true,
         "dependencies": [
             "optimizeCb",
             "isArrLike",
@@ -4739,6 +4739,7 @@
             "keys",
             "types"
         ],
+        "description": "Turn a list of values into a single value.",
         "env": [
             "node",
             "browser",
@@ -4747,15 +4748,14 @@
         "test": [
             "node",
             "browser"
-        ],
-        "benchmark": true
+        ]
     },
     "reduceRight": {
-        "description": "Right-associative version of reduce.",
         "dependencies": [
             "reduce",
             "types"
         ],
+        "description": "Right-associative version of reduce.",
         "env": [
             "node",
             "browser",
@@ -4767,13 +4767,13 @@
         ]
     },
     "reject": {
-        "description": "Opposite of filter.",
         "dependencies": [
             "safeCb",
             "negate",
             "filter",
             "types"
         ],
+        "description": "Opposite of filter.",
         "env": [
             "node",
             "browser",
@@ -4785,11 +4785,11 @@
         ]
     },
     "remove": {
-        "description": "Remove all elements from array that predicate returns truthy for and return an array of the removed elements.",
         "dependencies": [
             "safeCb",
             "types"
         ],
+        "description": "Remove all elements from array that predicate returns truthy for and return an array of the removed elements.",
         "env": [
             "node",
             "browser",
@@ -4801,8 +4801,8 @@
         ]
     },
     "repeat": {
-        "description": "Repeat string n-times.",
         "dependencies": [],
+        "description": "Repeat string n-times.",
         "env": [
             "node",
             "browser",
@@ -4814,8 +4814,8 @@
         ]
     },
     "restArgs": {
-        "description": "This accumulates the arguments passed into an array, after a given index.",
         "dependencies": [],
+        "description": "This accumulates the arguments passed into an array, after a given index.",
         "env": [
             "node",
             "browser",
@@ -4827,8 +4827,9 @@
         ]
     },
     "reverse": {
-        "description": "Reverse array without mutating it.",
+        "benchmark": true,
         "dependencies": [],
+        "description": "Reverse array without mutating it.",
         "env": [
             "node",
             "browser",
@@ -4838,12 +4839,11 @@
         "test": [
             "node",
             "browser"
-        ],
-        "benchmark": true
+        ]
     },
     "rgbToHsl": {
-        "description": "Convert rgb to hsl.",
         "dependencies": [],
+        "description": "Convert rgb to hsl.",
         "env": [
             "node",
             "browser",
@@ -4855,22 +4855,22 @@
         ]
     },
     "ric": {
-        "description": "Shortcut for requestIdleCallback.",
         "dependencies": [
             "root",
             "now"
         ],
+        "description": "Shortcut for requestIdleCallback.",
         "env": [
             "browser"
         ],
-        "test": [],
-        "since": "1.4.0"
+        "since": "1.4.0",
+        "test": []
     },
     "rmCookie": {
-        "description": "Loop through all possible path and domain to remove cookie.",
         "dependencies": [
             "cookie"
         ],
+        "description": "Loop through all possible path and domain to remove cookie.",
         "env": [
             "browser"
         ],
@@ -4879,11 +4879,11 @@
         ]
     },
     "rmdir": {
-        "description": "Recursively remove directories.",
         "dependencies": [
             "noop",
             "parallel"
         ],
+        "description": "Recursively remove directories.",
         "env": [
             "node"
         ],
@@ -4892,10 +4892,10 @@
         ]
     },
     "root": {
-        "description": "Root object reference, `global` in nodeJs, `window` in browser.",
         "dependencies": [
             "isBrowser"
         ],
+        "description": "Root object reference, `global` in nodeJs, `window` in browser.",
         "env": [
             "node",
             "browser",
@@ -4907,11 +4907,11 @@
         ]
     },
     "rpad": {
-        "description": "Pad string on the right side if it's shorter than length.",
         "dependencies": [
             "repeat",
             "toStr"
         ],
+        "description": "Pad string on the right side if it's shorter than length.",
         "env": [
             "node",
             "browser",
@@ -4923,8 +4923,8 @@
         ]
     },
     "rtrim": {
-        "description": "Remove chars or white-spaces from end of string.",
         "dependencies": [],
+        "description": "Remove chars or white-spaces from end of string.",
         "env": [
             "node",
             "browser",
@@ -4936,7 +4936,6 @@
         ]
     },
     "safeCb": {
-        "description": "Create callback based on input value.",
         "dependencies": [
             "isFn",
             "isObj",
@@ -4944,6 +4943,7 @@
             "matcher",
             "identity"
         ],
+        "description": "Create callback based on input value.",
         "env": [
             "node",
             "browser",
@@ -4955,11 +4955,11 @@
         ]
     },
     "safeDel": {
-        "description": "Delete object property.",
         "dependencies": [
             "isUndef",
             "castPath"
         ],
+        "description": "Delete object property.",
         "env": [
             "node",
             "browser",
@@ -4971,11 +4971,11 @@
         ]
     },
     "safeGet": {
-        "description": "Get object property, don't throw undefined error.",
         "dependencies": [
             "isUndef",
             "castPath"
         ],
+        "description": "Get object property, don't throw undefined error.",
         "env": [
             "node",
             "browser",
@@ -4987,11 +4987,11 @@
         ]
     },
     "safeSet": {
-        "description": "Set value at path of object.",
         "dependencies": [
             "castPath",
             "isUndef"
         ],
+        "description": "Set value at path of object.",
         "env": [
             "node",
             "browser",
@@ -5003,10 +5003,10 @@
         ]
     },
     "safeStorage": {
-        "description": "Use storage safely in safari private browsing and older browsers.",
         "dependencies": [
             "memStorage"
         ],
+        "description": "Use storage safely in safari private browsing and older browsers.",
         "env": [
             "browser"
         ],
@@ -5015,7 +5015,6 @@
         ]
     },
     "sample": {
-        "description": "Sample random values from a collection.",
         "dependencies": [
             "isArrLike",
             "clone",
@@ -5023,6 +5022,7 @@
             "random",
             "swap"
         ],
+        "description": "Sample random values from a collection.",
         "env": [
             "node",
             "browser",
@@ -5034,7 +5034,7 @@
         ]
     },
     "scrollTo": {
-        "description": "Scroll to a target with animation.",
+        "demo": true,
         "dependencies": [
             "Tween",
             "defaults",
@@ -5042,17 +5042,17 @@
             "isNum",
             "$offset"
         ],
+        "description": "Scroll to a target with animation.",
         "env": [
             "browser"
         ],
         "test": [
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "seedRandom": {
-        "description": "Seeded random number generator.",
         "dependencies": [],
+        "description": "Seeded random number generator.",
         "env": [
             "node",
             "browser",
@@ -5065,11 +5065,11 @@
         ]
     },
     "selectionSort": {
-        "description": "Selection sort implementation.",
         "dependencies": [
             "swap",
             "isSorted"
         ],
+        "description": "Selection sort implementation.",
         "env": [
             "node",
             "browser",
@@ -5081,13 +5081,13 @@
         ]
     },
     "selector": {
-        "description": "Css selector parser and serializer.",
         "dependencies": [
             "trim",
             "each",
             "identity",
             "map"
         ],
+        "description": "Css selector parser and serializer.",
         "env": [
             "node",
             "browser",
@@ -5100,27 +5100,27 @@
         ]
     },
     "shellSort": {
-        "description": "Shell sort implementation.",
         "dependencies": [
             "swap",
             "isSorted"
         ],
+        "description": "Shell sort implementation.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.0"
+        ]
     },
     "shuffle": {
-        "description": "Randomize the order of the elements in a given array.",
         "dependencies": [
             "sample"
         ],
+        "description": "Randomize the order of the elements in a given array.",
         "env": [
             "node",
             "browser",
@@ -5132,11 +5132,11 @@
         ]
     },
     "size": {
-        "description": "Get size of object or length of array like object.",
         "dependencies": [
             "isArrLike",
             "keys"
         ],
+        "description": "Get size of object or length of array like object.",
         "env": [
             "node",
             "browser",
@@ -5148,12 +5148,12 @@
         ]
     },
     "sizeof": {
-        "description": "Get approximate size of a js object.",
         "dependencies": [
             "isArr",
             "keys",
             "isBuffer"
         ],
+        "description": "Get approximate size of a js object.",
         "env": [
             "node",
             "browser",
@@ -5166,22 +5166,22 @@
         ]
     },
     "sleep": {
-        "description": "Resolve a promise after a specified timeout.",
         "dependencies": [],
+        "description": "Resolve a promise after a specified timeout.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.4.1",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.4.1"
+        ]
     },
     "slice": {
-        "description": "Create slice of source array or array-like object.",
         "dependencies": [],
+        "description": "Create slice of source array or array-like object.",
         "env": [
             "node",
             "browser",
@@ -5193,28 +5193,28 @@
         ]
     },
     "slugify": {
-        "description": "Slugify a string.",
         "dependencies": [
             "defaults",
             "each",
             "reduce"
         ],
+        "description": "Slugify a string.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.7.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.7.0"
+        ]
     },
     "snakeCase": {
-        "description": "Convert string to \"snakeCase\".",
         "dependencies": [
             "splitCase"
         ],
+        "description": "Convert string to \"snakeCase\".",
         "env": [
             "node",
             "browser",
@@ -5226,13 +5226,13 @@
         ]
     },
     "some": {
-        "description": "Check if predicate return truthy for any element.",
         "dependencies": [
             "safeCb",
             "isArrLike",
             "keys",
             "types"
         ],
+        "description": "Check if predicate return truthy for any element.",
         "env": [
             "node",
             "browser",
@@ -5244,13 +5244,32 @@
         ]
     },
     "sortBy": {
-        "description": "Return an array of elements sorted in ascending order by results of running each element through iteratee.",
         "dependencies": [
             "safeCb",
             "pluck",
             "map",
             "isUndef"
         ],
+        "description": "Return an array of elements sorted in ascending order by results of running each element through iteratee.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
+    "sortKeys": {
+        "dependencies": [
+            "isSorted",
+            "defaults",
+            "keys",
+            "isArr",
+            "isObj"
+        ],
+        "description": "Sort keys of an object.",
         "env": [
             "node",
             "browser",
@@ -5262,10 +5281,10 @@
         ]
     },
     "spaceCase": {
-        "description": "Convert string to \"spaceCase\".",
         "dependencies": [
             "splitCase"
         ],
+        "description": "Convert string to \"spaceCase\".",
         "env": [
             "node",
             "browser",
@@ -5277,8 +5296,8 @@
         ]
     },
     "splitCase": {
-        "description": "Split different string case to an array.",
         "dependencies": [],
+        "description": "Split different string case to an array.",
         "env": [
             "node",
             "browser",
@@ -5290,8 +5309,8 @@
         ]
     },
     "splitPath": {
-        "description": "Split path into dir, name and ext.",
         "dependencies": [],
+        "description": "Split path into dir, name and ext.",
         "env": [
             "node",
             "browser",
@@ -5303,19 +5322,19 @@
         ]
     },
     "stackTrace": {
-        "description": "Get CallSite objects in v8.",
         "dependencies": [],
+        "description": "Get CallSite objects in v8.",
         "env": [
             "node"
         ],
+        "since": "1.5.3",
         "test": [
             "node"
-        ],
-        "since": "1.5.3"
+        ]
     },
     "startWith": {
-        "description": "Check if string starts with the given target string.",
         "dependencies": [],
+        "description": "Check if string starts with the given target string.",
         "env": [
             "node",
             "browser",
@@ -5327,8 +5346,8 @@
         ]
     },
     "strHash": {
-        "description": "String hash function using djb2.",
         "dependencies": [],
+        "description": "String hash function using djb2.",
         "env": [
             "node",
             "browser",
@@ -5340,25 +5359,24 @@
         ]
     },
     "strToBytes": {
-        "description": "Convert string into bytes.",
         "dependencies": [
             "utf8",
             "hex",
             "base64"
         ],
+        "description": "Convert string into bytes.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.1.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.1.0"
+        ]
     },
     "stringify": {
-        "description": "JSON stringify with support for circular object, function etc.",
         "dependencies": [
             "type",
             "upperFirst",
@@ -5367,6 +5385,7 @@
             "isFn",
             "isRegExp"
         ],
+        "description": "JSON stringify with support for circular object, function etc.",
         "env": [
             "node",
             "browser",
@@ -5378,7 +5397,7 @@
         ]
     },
     "stringifyAll": {
-        "description": "Stringify object into json with types.",
+        "demo": true,
         "dependencies": [
             "escapeJsStr",
             "type",
@@ -5397,21 +5416,21 @@
             "allKeys",
             "contain"
         ],
+        "description": "Stringify object into json with types.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.5",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.5",
-        "demo": true
+        ]
     },
     "stripAnsi": {
-        "description": "Strip ansi codes from a string.",
         "dependencies": [],
+        "description": "Strip ansi codes from a string.",
         "env": [
             "node",
             "browser",
@@ -5423,8 +5442,8 @@
         ]
     },
     "stripCmt": {
-        "description": "Strip comments from source code.",
         "dependencies": [],
+        "description": "Strip comments from source code.",
         "env": [
             "node",
             "browser",
@@ -5436,8 +5455,8 @@
         ]
     },
     "stripColor": {
-        "description": "Strip ansi color codes from a string.",
         "dependencies": [],
+        "description": "Strip ansi color codes from a string.",
         "env": [
             "node",
             "browser",
@@ -5449,8 +5468,8 @@
         ]
     },
     "stripHtmlTag": {
-        "description": "Strip html tags from a string.",
         "dependencies": [],
+        "description": "Strip html tags from a string.",
         "env": [
             "node",
             "browser",
@@ -5462,7 +5481,6 @@
         ]
     },
     "stripIndent": {
-        "description": "Strip indentation from multi-line strings.",
         "dependencies": [
             "isStr",
             "toArr",
@@ -5470,20 +5488,21 @@
             "map",
             "trim"
         ],
+        "description": "Strip indentation from multi-line strings.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.5.4",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.5.4"
+        ]
     },
     "stripNum": {
-        "description": "Strip number to a specified precision.",
         "dependencies": [],
+        "description": "Strip number to a specified precision.",
         "env": [
             "node",
             "browser",
@@ -5496,8 +5515,8 @@
         ]
     },
     "sum": {
-        "description": "Compute sum of given numbers.",
         "dependencies": [],
+        "description": "Compute sum of given numbers.",
         "env": [
             "node",
             "browser",
@@ -5509,8 +5528,8 @@
         ]
     },
     "swap": {
-        "description": "Swap two items in an array.",
         "dependencies": [],
+        "description": "Swap two items in an array.",
         "env": [
             "node",
             "browser",
@@ -5522,12 +5541,12 @@
         ]
     },
     "template": {
-        "description": "Compile JavaScript template into function that can be evaluated for rendering.",
         "dependencies": [
             "escape",
             "defaults",
             "escapeJsStr"
         ],
+        "description": "Compile JavaScript template into function that can be evaluated for rendering.",
         "env": [
             "node",
             "browser"
@@ -5538,10 +5557,10 @@
         ]
     },
     "throttle": {
-        "description": "Return a new throttled version of the passed function.",
         "dependencies": [
             "debounce"
         ],
+        "description": "Return a new throttled version of the passed function.",
         "env": [
             "node",
             "browser",
@@ -5553,12 +5572,12 @@
         ]
     },
     "through": {
-        "description": "Tiny wrapper of stream Transform.",
         "dependencies": [
             "isFn",
             "extend",
             "inherits"
         ],
+        "description": "Tiny wrapper of stream Transform.",
         "env": [
             "node"
         ],
@@ -5567,11 +5586,11 @@
         ]
     },
     "timeAgo": {
-        "description": "Format datetime with *** time ago statement.",
         "dependencies": [
             "isDate",
             "toInt"
         ],
+        "description": "Format datetime with *** time ago statement.",
         "env": [
             "node",
             "browser",
@@ -5583,10 +5602,10 @@
         ]
     },
     "timeTaken": {
-        "description": "Get execution time of a function.",
         "dependencies": [
             "perfNow"
         ],
+        "description": "Get execution time of a function.",
         "env": [
             "node",
             "browser",
@@ -5598,29 +5617,29 @@
         ]
     },
     "times": {
-        "description": "Invoke given function n times.",
         "dependencies": [
             "optimizeCb"
         ],
+        "description": "Invoke given function n times.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.2.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.2.0"
+        ]
     },
     "toArr": {
-        "description": "Convert value to an array.",
         "dependencies": [
             "isArrLike",
             "map",
             "isArr",
             "isStr"
         ],
+        "description": "Convert value to an array.",
         "env": [
             "node",
             "browser",
@@ -5632,29 +5651,29 @@
         ]
     },
     "toAsync": {
-        "description": "Use generator like async/await.",
         "dependencies": [
             "toArr",
             "isGeneratorFn",
             "isPromise",
             "toStr"
         ],
+        "description": "Use generator like async/await.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.8.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.8.0"
+        ]
     },
     "toBool": {
-        "description": "Convert value to a boolean.",
         "dependencies": [
             "isStr"
         ],
+        "description": "Convert value to a boolean.",
         "env": [
             "node",
             "browser",
@@ -5666,11 +5685,11 @@
         ]
     },
     "toDate": {
-        "description": "Convert value to a Date.",
         "dependencies": [
             "isDate",
             "isStr"
         ],
+        "description": "Convert value to a Date.",
         "env": [
             "node",
             "browser",
@@ -5679,8 +5698,8 @@
         "test": []
     },
     "toEl": {
-        "description": "Convert html string to dom elements.",
         "dependencies": [],
+        "description": "Convert html string to dom elements.",
         "env": [
             "browser"
         ],
@@ -5689,10 +5708,10 @@
         ]
     },
     "toInt": {
-        "description": "Convert value to an integer.",
         "dependencies": [
             "toNum"
         ],
+        "description": "Convert value to an integer.",
         "env": [
             "node",
             "browser",
@@ -5704,13 +5723,13 @@
         ]
     },
     "toNum": {
-        "description": "Convert value to a number.",
         "dependencies": [
             "isNum",
             "isObj",
             "isFn",
             "isStr"
         ],
+        "description": "Convert value to a number.",
         "env": [
             "node",
             "browser",
@@ -5722,10 +5741,10 @@
         ]
     },
     "toSrc": {
-        "description": "Convert function to its source code.",
         "dependencies": [
             "isNil"
         ],
+        "description": "Convert function to its source code.",
         "env": [
             "node",
             "browser",
@@ -5737,8 +5756,8 @@
         ]
     },
     "toStr": {
-        "description": "Convert value to a string.",
         "dependencies": [],
+        "description": "Convert value to a string.",
         "env": [
             "node",
             "browser",
@@ -5750,8 +5769,8 @@
         ]
     },
     "topoSort": {
-        "description": "Topological sorting algorithm.",
         "dependencies": [],
+        "description": "Topological sorting algorithm.",
         "env": [
             "node",
             "browser",
@@ -5763,12 +5782,12 @@
         ]
     },
     "trigger": {
-        "description": "Trigger browser events.",
         "dependencies": [
             "isStr",
             "defaults",
             "extend"
         ],
+        "description": "Trigger browser events.",
         "env": [
             "browser"
         ],
@@ -5777,11 +5796,11 @@
         ]
     },
     "trim": {
-        "description": "Remove chars or white-spaces from beginning end of string.",
         "dependencies": [
             "ltrim",
             "rtrim"
         ],
+        "description": "Remove chars or white-spaces from beginning end of string.",
         "env": [
             "node",
             "browser",
@@ -5793,10 +5812,10 @@
         ]
     },
     "tryIt": {
-        "description": "Run function in a try catch.",
         "dependencies": [
             "noop"
         ],
+        "description": "Run function in a try catch.",
         "env": [
             "node",
             "browser",
@@ -5808,11 +5827,11 @@
         ]
     },
     "type": {
-        "description": "Determine the internal JavaScript [[Class]] of an object.",
         "dependencies": [
             "objToStr",
             "isNaN"
         ],
+        "description": "Determine the internal JavaScript [[Class]] of an object.",
         "env": [
             "node",
             "browser",
@@ -5824,8 +5843,8 @@
         ]
     },
     "types": {
-        "description": "Used for typescript definitions only.",
         "dependencies": [],
+        "description": "Used for typescript definitions only.",
         "env": [
             "node",
             "browser",
@@ -5834,8 +5853,8 @@
         "test": []
     },
     "ucs2": {
-        "description": "UCS-2 encoding and decoding.",
         "dependencies": [],
+        "description": "UCS-2 encoding and decoding.",
         "env": [
             "node",
             "browser",
@@ -5847,25 +5866,25 @@
         ]
     },
     "uncaught": {
-        "description": "Handle global uncaught errors and promise rejections.",
+        "demo": true,
         "dependencies": [
             "isBrowser"
         ],
+        "description": "Handle global uncaught errors and promise rejections.",
         "env": [
             "node",
             "browser"
         ],
-        "test": [],
         "since": "1.2.0",
-        "demo": true
+        "test": []
     },
     "unescape": {
-        "description": "Convert HTML entities back, the inverse of escape.",
         "dependencies": [
             "escape",
             "keys",
             "invert"
         ],
+        "description": "Convert HTML entities back, the inverse of escape.",
         "env": [
             "node",
             "browser",
@@ -5877,12 +5896,12 @@
         ]
     },
     "union": {
-        "description": "Create an array of unique values, in order, from all given arrays.",
         "dependencies": [
             "restArgs",
             "unique",
             "flatten"
         ],
+        "description": "Create an array of unique values, in order, from all given arrays.",
         "env": [
             "node",
             "browser",
@@ -5894,8 +5913,8 @@
         ]
     },
     "uniqId": {
-        "description": "Generate a globally-unique id.",
         "dependencies": [],
+        "description": "Generate a globally-unique id.",
         "env": [
             "node",
             "browser",
@@ -5907,10 +5926,10 @@
         ]
     },
     "unique": {
-        "description": "Create duplicate-free version of an array.",
         "dependencies": [
             "filter"
         ],
+        "description": "Create duplicate-free version of an array.",
         "env": [
             "node",
             "browser",
@@ -5922,31 +5941,31 @@
         ]
     },
     "universalify": {
-        "description": "Make an async function support both promises and callbacks.",
         "dependencies": [
             "promisify",
             "callbackify",
             "last",
             "isFn"
         ],
+        "description": "Make an async function support both promises and callbacks.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.7.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.7.0"
+        ]
     },
     "unzip": {
-        "description": "Opposite of zip.",
         "dependencies": [
             "map",
             "pluck",
             "max"
         ],
+        "description": "Opposite of zip.",
         "env": [
             "node",
             "browser",
@@ -5958,10 +5977,10 @@
         ]
     },
     "upperCase": {
-        "description": "Convert string to upper case.",
         "dependencies": [
             "toStr"
         ],
+        "description": "Convert string to upper case.",
         "env": [
             "node",
             "browser",
@@ -5973,8 +5992,8 @@
         ]
     },
     "upperFirst": {
-        "description": "Convert the first character of string to upper case.",
         "dependencies": [],
+        "description": "Convert the first character of string to upper case.",
         "env": [
             "node",
             "browser",
@@ -5986,13 +6005,13 @@
         ]
     },
     "use": {
-        "description": "Use modules that is created by define.",
         "dependencies": [
             "map",
             "define",
             "has",
             "toArr"
         ],
+        "description": "Use modules that is created by define.",
         "env": [
             "node",
             "browser",
@@ -6004,10 +6023,10 @@
         ]
     },
     "utf8": {
-        "description": "UTF-8 encoding and decoding.",
         "dependencies": [
             "ucs2"
         ],
+        "description": "UTF-8 encoding and decoding.",
         "env": [
             "node",
             "browser",
@@ -6019,10 +6038,11 @@
         ]
     },
     "uuid": {
-        "description": "RFC4122 version 4 compliant uuid generator.",
+        "benchmark": true,
         "dependencies": [
             "randomBytes"
         ],
+        "description": "RFC4122 version 4 compliant uuid generator.",
         "env": [
             "node",
             "browser",
@@ -6031,14 +6051,13 @@
         "test": [
             "node",
             "browser"
-        ],
-        "benchmark": true
+        ]
     },
     "values": {
-        "description": "Create an array of the own enumerable property values of object.",
         "dependencies": [
             "each"
         ],
+        "description": "Create an array of the own enumerable property values of object.",
         "env": [
             "node",
             "browser",
@@ -6050,7 +6069,6 @@
         ]
     },
     "viewportScale": {
-        "description": "Get viewport scale.",
         "dependencies": [
             "meta",
             "clamp",
@@ -6059,6 +6077,7 @@
             "map",
             "isNaN"
         ],
+        "description": "Get viewport scale.",
         "env": [
             "browser"
         ],
@@ -6067,44 +6086,44 @@
         ]
     },
     "vlq": {
-        "description": "Variable-length quantity encoding and decoding.",
         "dependencies": [
             "toArr"
         ],
+        "description": "Variable-length quantity encoding and decoding.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.4.0",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.4.0"
+        ]
     },
     "waitUntil": {
-        "description": "Wait until function returns a truthy value.",
         "dependencies": [
             "now"
         ],
+        "description": "Wait until function returns a truthy value.",
         "env": [
             "node",
             "browser",
             "miniprogram"
         ],
+        "since": "1.4.3",
         "test": [
             "node",
             "browser"
-        ],
-        "since": "1.4.3"
+        ]
     },
     "waterfall": {
-        "description": "Run an array of functions in series.",
         "dependencies": [
             "noop",
             "nextTick",
             "restArgs"
         ],
+        "description": "Run an array of functions in series.",
         "env": [
             "node",
             "browser",
@@ -6116,8 +6135,8 @@
         ]
     },
     "wordsToBytes": {
-        "description": "Convert 32-bit words to bytes.",
         "dependencies": [],
+        "description": "Convert 32-bit words to bytes.",
         "env": [
             "node",
             "browser",
@@ -6130,7 +6149,7 @@
         ]
     },
     "workerize": {
-        "description": "Move a stand-alone function to a worker thread.",
+        "demo": true,
         "dependencies": [
             "Promise",
             "restArgs",
@@ -6139,19 +6158,19 @@
             "createUrl",
             "isStr"
         ],
+        "description": "Move a stand-alone function to a worker thread.",
         "env": [
             "browser"
         ],
         "test": [
             "browser"
-        ],
-        "demo": true
+        ]
     },
     "wrap": {
-        "description": "Wrap the function inside a wrapper function, passing it as the first argument.",
         "dependencies": [
             "partial"
         ],
+        "description": "Wrap the function inside a wrapper function, passing it as the first argument.",
         "env": [
             "node",
             "browser",
@@ -6163,7 +6182,6 @@
         ]
     },
     "wx": {
-        "description": "Promised version of mini program wx object.",
         "dependencies": [
             "each",
             "arrToMap",
@@ -6171,29 +6189,30 @@
             "endWith",
             "extend"
         ],
+        "description": "Promised version of mini program wx object.",
         "env": [
             "miniprogram"
         ],
-        "test": [],
-        "since": "1.4.6"
+        "since": "1.4.6",
+        "test": []
     },
     "xpath": {
-        "description": "Select elements using xpath, IE is not supported.",
         "dependencies": [],
+        "description": "Select elements using xpath, IE is not supported.",
         "env": [
             "browser"
         ],
+        "since": "1.10.0",
         "test": [
             "browser"
-        ],
-        "since": "1.10.0"
+        ]
     },
     "zip": {
-        "description": "Merge together the values of each of the arrays with the values at the corresponding position.",
         "dependencies": [
             "restArgs",
             "unzip"
         ],
+        "description": "Merge together the values of each of the arrays with the values at the corresponding position.",
         "env": [
             "node",
             "browser",

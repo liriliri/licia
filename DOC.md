@@ -6592,6 +6592,29 @@ sortBy([1, 2, 3, 4, 5, 6], function (num) {
 }); // -> [5, 4, 6, 3, 1, 2]
 ```
 
+## sortKeys 
+
+Sort keys of an object.
+
+|Name   |Type  |Desc                   |
+|-------|------|-----------------------|
+|obj    |object|Object to sort         |
+|options|object|Sort options           |
+|return |object|Object with sorted keys|
+
+Available options:
+
+|Name        |Type    |Desc                 |
+|------------|--------|---------------------|
+|deep=false  |boolean |Sort keys recursively|
+|[comparator]|function|Comparator           |
+
+```javascript
+sortKeys({b: {d: 2, c: 1}, a: 0}, {
+    deep: true
+}); // -> {a: 0, b: {c: 1, d: 2}}
+```
+
 ## spaceCase 
 
 Convert string to "spaceCase".

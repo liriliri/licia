@@ -676,7 +676,7 @@ hashTable.has('name'); // -> false
 
 |参数名|类型|说明|
 |-----|----|---|
-|[cmp]|function|比较函数|
+|[cmp]|function|比较器|
 
 ### clear
 
@@ -1039,7 +1039,7 @@ observer.disconnect();
 
 |参数名|类型|说明|
 |-----|----|---|
-|[cmp]|function|比较函数|
+|[cmp]|function|比较器|
 
 ### clear
 
@@ -6586,6 +6586,29 @@ sortBy([1, 2, 3, 4, 5, 6], function (num) {
 }); // -> [5, 4, 6, 3, 1, 2]
 ```
 
+## sortKeys
+
+排序对象的键名。
+
+|参数名|类型|说明|
+|-----|----|---|
+|obj|object|要排序的对象|
+|options|object|排序选项|
+|返回值|object|排序后的对象|
+
+可用选项：
+
+|参数名|类型|说明|
+|-----|----|---|
+|deep=false|boolean|是否递归|
+|[comparator]|function|比较器|
+
+```javascript
+sortKeys({b: {d: 2, c: 1}, a: 0}, {
+    deep: true
+}); // -> {a: 0, b: {c: 1, d: 2}}
+```
+
 ## spaceCase
 
 将字符串转换为空格式。
@@ -7294,7 +7317,7 @@ uniqId('eusita_'); // -> 'eustia_xxx'
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|源数组|
-|[cmp]|function|比较函数|
+|[cmp]|function|比较器|
 |返回值|array|目标数组|
 
 ```javascript
