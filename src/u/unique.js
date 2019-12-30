@@ -1,10 +1,10 @@
 /* Create duplicate-free version of an array.
  *
- * |Name     |Type    |Desc                         |
- * |---------|--------|-----------------------------|
- * |arr      |array   |Array to inspect             |
- * |[compare]|function|Function for comparing values|
- * |return   |array   |New duplicate free array     |
+ * |Name  |Type    |Desc                         |
+ * |------|--------|-----------------------------|
+ * |arr   |array   |Array to inspect             |
+ * |[cmp] |function|Function for comparing values|
+ * |return|array   |New duplicate free array     |
  */
 
 /* example
@@ -19,20 +19,20 @@
 /* typescript
  * export declare function unique(
  *     arr: any[],
- *     compare?: (a: any, b: any) => boolean | number
+ *     cmp?: (a: any, b: any) => boolean | number
  * ): any[];
  */
 
 _('filter');
 
-exports = function(arr, compare) {
-    compare = compare || isEqual;
+exports = function(arr, cmp) {
+    cmp = cmp || isEqual;
 
     return filter(arr, function(item, idx, arr) {
         const len = arr.length;
 
         while (++idx < len) {
-            if (compare(item, arr[idx])) return false;
+            if (cmp(item, arr[idx])) return false;
         }
 
         return true;

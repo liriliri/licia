@@ -7294,7 +7294,7 @@ uniqId('eusita_'); // -> 'eustia_xxx'
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|源数组|
-|[compare]|function|比较函数|
+|[cmp]|function|比较函数|
 |返回值|array|目标数组|
 
 ```javascript
