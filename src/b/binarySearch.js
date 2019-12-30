@@ -1,11 +1,11 @@
 /* Binary search implementation.
  *
- * |Name        |Type    |Desc         |
- * |------------|--------|-------------|
- * |array       |array   |Sorted array |
- * |value       |*       |Value to seek|
- * |[comparator]|function|Comparator   |
- * |return      |number  |Value index  |
+ * |Name  |Type    |Desc         |
+ * |------|--------|-------------|
+ * |array |array   |Sorted array |
+ * |value |*       |Value to seek|
+ * |[cmp] |function|Comparator   |
+ * |return|number  |Value index  |
  */
 
 /* example
@@ -38,7 +38,7 @@
  * export declare function binarySearch(
  *     array: any[],
  *     value: any,
- *     comparator?: Function
+ *     cmp?: Function
  * ): number;
  */
 

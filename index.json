@@ -284,7 +284,8 @@
         "dependencies": [
             "Class",
             "safeGet",
-            "defineProp"
+            "defineProp",
+            "isStr"
         ],
         "env": [
             "node",

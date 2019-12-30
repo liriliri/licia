@@ -523,11 +523,7 @@ const delegator = new Delegator(host, 'target');
 delegator.method('a').getter('b').setter('c').access('d');
 host.a(); // -> 'a'
 host.b; // -> 'b'
-host.b = 5;
-host.b; // -> 'b'
-host.c; // -> undefined
 host.c = 5;
-host.c; // -> undefined
 host.target.c; // -> 5
 host.d; // -> 'd'
 host.d = 5;
@@ -1854,12 +1850,12 @@ fn(); // Allow function to be call 4 times at last.
 
 Binary search implementation.
 
-|Name        |Type    |Desc         |
-|------------|--------|-------------|
-|array       |array   |Sorted array |
-|value       |*       |Value to seek|
-|[comparator]|function|Comparator   |
-|return      |number  |Value index  |
+|Name  |Type    |Desc         |
+|------|--------|-------------|
+|array |array   |Sorted array |
+|value |*       |Value to seek|
+|[cmp] |function|Comparator   |
+|return|number  |Value index  |
 
 ```javascript
 binarySearch([1, 2, 3], 2); // -> 1

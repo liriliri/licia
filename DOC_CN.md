@@ -518,11 +518,7 @@ const delegator = new Delegator(host, 'target');
 delegator.method('a').getter('b').setter('c').access('d');
 host.a(); // -> 'a'
 host.b; // -> 'b'
-host.b = 5;
-host.b; // -> 'b'
-host.c; // -> undefined
 host.c = 5;
-host.c; // -> undefined
 host.target.c; // -> 5
 host.d; // -> 'd'
 host.d = 5;
@@ -1853,7 +1849,7 @@ fn(); // Allow function to be call 4 times at last.
 |-----|----|---|
 |array|array|目标数组|
 |value|*|要查找的值|
-|[comparator]|function|比较器|
+|[cmp]|function|比较器|
 |返回值|number|第一次出现的位置，如果没有，返回 -1|
 
 ```javascript
