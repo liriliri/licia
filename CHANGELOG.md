@@ -1,3 +1,10 @@
+## v1.17.0 (30 Dec 2019)
+
+* add: invariant
+* add: isAsyncFn
+* add: Delegator
+* add: sortKeys
+
 ## v1.16.0 (22 Dec 2019)
 
 * add: bytesToWords
