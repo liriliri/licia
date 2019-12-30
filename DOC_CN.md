@@ -472,6 +472,63 @@ color.toRgb(); // -> 'rgb(170, 187, 204)'
 color.toHsl(); // -> 'hsl(210, 25%, 73%)'
 ```
 
+## Delegator
+
+对象委托。
+
+### constructor
+
+|参数名|类型|说明|
+|-----|----|---|
+|host|object|宿主对象|
+|target|string object|委托目标|
+
+### method
+
+允许在宿主对象上访问目标方法。
+
+|参数名|类型|说明|
+|-----|----|---|
+|name|string|宿主方法名|
+|target=name|string|目标方法名|
+
+### getter
+
+创建 getter。
+
+### setter
+
+创建 setter。
+
+### access
+
+创建 accessor，效果等于同时调用 setter 和 getter。
+
+```javascript
+const host = {
+    target: {
+        a() { return 'a'; },
+        b: 'b',
+        c: 'c',
+        d: 'd',
+        e() { return 'e'; }
+    }
+};
+const delegator = new Delegator(host, 'target');
+delegator.method('a').getter('b').setter('c').access('d');
+host.a(); // -> 'a'
+host.b; // -> 'b'
+host.b = 5;
+host.b; // -> 'b'
+host.c; // -> undefined
+host.c = 5;
+host.c; // -> undefined
+host.target.c; // -> 5
+host.d; // -> 'd'
+host.d = 5;
+host.d; // -> 5
+```
+
 ## Dispatcher
 
 Flux 调度器。

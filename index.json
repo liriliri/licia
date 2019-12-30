@@ -279,6 +279,23 @@
             "browser"
         ]
     },
+    "Delegator": {
+        "description": "Object delegation.",
+        "dependencies": [
+            "Class",
+            "safeGet",
+            "defineProp"
+        ],
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "Dispatcher": {
         "description": "Flux dispatcher.",
         "dependencies": [

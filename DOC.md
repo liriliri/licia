@@ -477,6 +477,63 @@ color.toRgb(); // -> 'rgb(170, 187, 204)'
 color.toHsl(); // -> 'hsl(210, 25%, 73%)'
 ```
 
+## Delegator 
+
+Object delegation.
+
+### constructor
+
+|Name  |Type         |Desc             |
+|------|-------------|-----------------|
+|host  |object       |Host object      |
+|target|string object|Delegation target|
+
+### method
+
+Allow method to be accessed on the host object.
+
+|Name       |Type  |Desc              |
+|-----------|------|------------------|
+|name       |string|Host method name  |
+|target=name|string|Target method name|
+
+### getter
+
+Create a getter.
+
+### setter
+
+Create a setter.
+
+### access
+
+Create a accessor, same as calling both setter and getter.
+
+```javascript
+const host = {
+    target: {
+        a() { return 'a'; },
+        b: 'b',
+        c: 'c',
+        d: 'd',
+        e() { return 'e'; }
+    }
+};
+const delegator = new Delegator(host, 'target');
+delegator.method('a').getter('b').setter('c').access('d');
+host.a(); // -> 'a'
+host.b; // -> 'b'
+host.b = 5;
+host.b; // -> 'b'
+host.c; // -> undefined
+host.c = 5;
+host.c; // -> undefined
+host.target.c; // -> 5
+host.d; // -> 'd'
+host.d = 5;
+host.d; // -> 5
+```
+
 ## Dispatcher 
 
 Flux dispatcher.
