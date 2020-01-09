@@ -3100,6 +3100,18 @@
             "browser"
         ]
     },
+    "isHidden": {
+        "dependencies": [
+            "root"
+        ],
+        "description": "Check if element is hidden.",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "isInt": {
         "dependencies": [
             "isNum"

@@ -4292,6 +4292,31 @@ isGeneratorFn(function * () {}); // -> true
 isGeneratorFn(function () {}); // -> false
 ```
 
+## isHidden 
+
+Check if element is hidden.
+
+|Name   |Type   |Desc                     |
+|-------|-------|-------------------------|
+|el     |element|Target element           |
+|options|object |Check options            |
+|return |boolean|True if element is hidden|
+
+Available options:
+
+|Name            |Type   |Desc                         |
+|----------------|-------|-----------------------------|
+|display=true    |boolean|Check if it is displayed     |
+|visibility=false|boolean|Check visibility css property|
+|opacity=false   |boolean|Check opacity css property   |
+|size=false      |boolean|Check width and height       |
+|viewport=false  |boolean|Check if it is in viewport   |
+|overflow=false  |boolean|Check if hidden in overflow  |
+
+```javascript
+isHidden(document.createElement('div')); // -> true
+```
+
 ## isInt 
 
 Checks if value is classified as a Integer.
