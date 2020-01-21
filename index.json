@@ -1827,6 +1827,23 @@
             "browser"
         ]
     },
+    "durationFormat": {
+        "dependencies": [
+            "toInt",
+            "lpad",
+            "toStr"
+        ],
+        "description": "Simple duration format function.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "each": {
         "benchmark": true,
         "dependencies": [

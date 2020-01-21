@@ -6,8 +6,9 @@
  * |mask         |string |Format mask          |
  * |utc=false    |boolean|UTC or not           |
  * |gmt=false    |boolean|GMT or not           |
+ * |return       |string |Formatted duration   |
  *
- * |Mask|Description                                                      |
+ * |Mask|Desc                                                             |
  * |----|-----------------------------------------------------------------|
  * |d   |Day of the month as digits; no leading zero for single-digit days|
  * |dd  |Day of the month as digits; leading zero for single-digit days   |
@@ -96,7 +97,7 @@ exports = function(date, mask, utc, gmt) {
     const L = date[prefix + 'Milliseconds']();
     const o = utc ? 0 : date.getTimezoneOffset();
     const flags = {
-        d: d,
+        d,
         dd: padZero(d),
         ddd: exports.i18n.dayNames[D],
         dddd: exports.i18n.dayNames[D + 7],
@@ -108,11 +109,11 @@ exports = function(date, mask, utc, gmt) {
         yyyy: y,
         h: H % 12 || 12,
         hh: padZero(H % 12 || 12),
-        H: H,
+        H,
         HH: padZero(H),
-        M: M,
+        M,
         MM: padZero(M),
-        s: s,
+        s,
         ss: padZero(s),
         l: padZero(L, 3),
         L: padZero(Math.round(L / 10)),
@@ -142,11 +143,9 @@ exports = function(date, mask, utc, gmt) {
     });
 };
 
-function padZero(str, len) {
-    return lpad(toStr(str), len || 2, '0');
-}
+const padZero = (str, len = 2) => lpad(toStr(str), len, '0');
 
-const regToken = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZWN]|'[^']*'|'[^']*'/g;
+const regToken = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZWN]|"[^"]*"|'[^']*'/g;
 const regTimezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g;
 const regNum = /\d/;
 const regTimezoneClip = /[^-+\dA-Z]/g;

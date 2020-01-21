@@ -2538,8 +2538,9 @@ Simple but extremely useful date format function.
 |mask         |string |Format mask          |
 |utc=false    |boolean|UTC or not           |
 |gmt=false    |boolean|GMT or not           |
+|return       |string |Formatted duration   |
 
-|Mask|Description                                                      |
+|Mask|Desc                                                             |
 |----|-----------------------------------------------------------------|
 |d   |Day of the month as digits; no leading zero for single-digit days|
 |dd  |Day of the month as digits; leading zero for single-digit days   |
@@ -2891,6 +2892,29 @@ Trigger a file download on client side.
 
 ```javascript
 download('test', 'test.txt');
+```
+
+## durationFormat 
+
+Simple duration format function.
+
+|Name           |Type  |Desc                           |
+|---------------|------|-------------------------------|
+|duration       |number|Duration to format, millisecond|
+|mask='hh:mm:ss'|string|Format mask                    |
+|return         |string|Formatted duration             |
+
+|Mask|Desc        |
+|----|------------|
+|d   |Days        |
+|h   |Hours       |
+|m   |Minutes     |
+|s   |Seconds     |
+|l   |Milliseconds|
+
+```javascript
+durationFormat(12345678); // -> '03:25:45'
+durationFormat(12345678, 'h:m:s:l'); -> '3:25:45:678'
 ```
 
 ## each 

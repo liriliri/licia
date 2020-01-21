@@ -2530,9 +2530,10 @@ add1(2); // -> 3
 |参数名|类型|说明|
 |-----|----|---|
 |date=new Date|Date|要格式化的日期对象|
-|mask|string|日期格式|
+|mask|string|日期掩码|
 |utc=false|boolean|是否是 UTC|
 |gmt=false|boolean|是否是 GMT|
+|返回值|string|格式化日期|
 
 |掩码|说明|
 |----|----|
@@ -2886,6 +2887,29 @@ dotCase('foo bar'); // -> foo.bar
 
 ```javascript
 download('test', 'test.txt');
+```
+
+## durationFormat
+
+简单时间格式化。
+
+|参数名|类型|说明|
+|-----|----|---|
+|duration|number|要格式化的时间，单位为毫秒|
+|mask='hh:mm:ss'|string|时间掩码|
+|返回值|string|格式化时间|
+
+|掩码|说明|
+|----|----|
+|d|天数|
+|h|小时数|
+|m|分钟数|
+|s|秒数|
+|l|毫秒数|
+
+```javascript
+durationFormat(12345678); // -> '03:25:45'
+durationFormat(12345678, 'h:m:s:l'); -> '3:25:45:678'
 ```
 
 ## each
