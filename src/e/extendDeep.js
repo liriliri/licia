@@ -43,6 +43,7 @@ exports = function(obj) {
 
         if (isPlainObj(ret) && isPlainObj(obj)) {
             each(obj, function(val, key) {
+                if (key === '__proto__') return;
                 ret[key] = exports(ret[key], obj[key]);
             });
         } else {
