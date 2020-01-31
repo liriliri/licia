@@ -2914,7 +2914,7 @@ Simple duration format function.
 
 ```javascript
 durationFormat(12345678); // -> '03:25:45'
-durationFormat(12345678, 'h:m:s:l'); -> '3:25:45:678'
+durationFormat(12345678, 'h:m:s:l'); // -> '3:25:45:678'
 ```
 
 ## each 

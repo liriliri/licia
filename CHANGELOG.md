@@ -1,3 +1,9 @@
+## v1.18.0 (31 Jan 2020)
+
+* add: isHidden
+* add: durationFormat
+* fix(extendDeep): prototype pollution #17
+
 ## v1.17.0 (30 Dec 2019)
 
 * add: invariant

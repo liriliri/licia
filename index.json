@@ -1839,6 +1839,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.18.0",
         "test": [
             "node",
             "browser"
@@ -3125,6 +3126,7 @@
         "env": [
             "browser"
         ],
+        "since": "1.18.0",
         "test": [
             "browser"
         ]
