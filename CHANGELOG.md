@@ -2,7 +2,7 @@
 
 * add: isHidden
 * add: durationFormat
-* fix(extendDeep): prototype pollution #17
+* fix(extendDeep): prototype pollution [#17](https://github.com/liriliri/licia/issues/17)
 
 ## v1.17.0 (30 Dec 2019)
 
