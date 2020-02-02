@@ -5368,6 +5368,34 @@ startOf，endOf，add，subtract，diff
 moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
 ```
 
+## morse
+
+摩尔斯电码编解码。
+
+### encode
+
+将文本转换为摩尔斯电码。
+
+|参数名|类型|说明|
+|-----|----|---|
+|txt|string|要编码的文本|
+|返回值|string|摩尔斯电码|
+
+### decode
+
+将摩尔斯电码转换为文本。
+
+|参数名|类型|说明|
+|-----|----|---|
+|morse|string|摩尔斯电码|
+|返回值|string|解码后的文本|
+
+```javascript
+const str = morse.encode('Hello, world.');
+// -> '.... . .-.. .-.. --- --..-- ....... .-- --- .-. .-.. -.. .-.-.-'
+morse.decode(str); // -> 'Hello, world.'
+```
+
 ## ms
 
 时长字符串与毫秒转换库。

@@ -37,7 +37,4 @@ const map = (exports.map = {
 const regSrc = '(?:' + keys(map).join('|') + ')';
 const regTest = new RegExp(regSrc);
 const regReplace = new RegExp(regSrc, 'g');
-
-function replaceFn(match) {
-    return map[match];
-}
+const replaceFn = match => map[match];

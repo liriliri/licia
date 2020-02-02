@@ -4105,6 +4105,22 @@
         ],
         "test": []
     },
+    "morse": {
+        "dependencies": [
+            "upperCase",
+            "invert"
+        ],
+        "description": "Morse code encoding and decoding.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "ms": {
         "dependencies": [
             "toNum",

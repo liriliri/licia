@@ -5372,6 +5372,34 @@ Note: Format uses dateFormat module, so the mask is not quite the same as moment
 moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
 ```
 
+## morse 
+
+Morse code encoding and decoding.
+
+### encode
+
+Turn text into Morse code.
+
+|Name  |Type  |Desc          |
+|------|------|--------------|
+|txt   |string|Text to encode|
+|return|string|Morse code    |
+
+### decode
+
+Decode Morse code into text.
+
+|Name  |Type  |Desc          |
+|------|------|--------------|
+|morse |string|Morse code    |
+|return|string|Decoded string|
+
+```javascript
+const str = morse.encode('Hello, world.');
+// -> '.... . .-.. .-.. --- --..-- ....... .-- --- .-. .-.. -.. .-.-.-'
+morse.decode(str); // -> 'Hello, world.'
+```
+
 ## ms 
 
 Convert time string formats to milliseconds.
