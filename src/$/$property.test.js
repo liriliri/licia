@@ -26,3 +26,8 @@ it('set', function() {
     $property.text($el, 'Eustia rocks!!');
     expect($el.text()).to.equal('Eustia rocks!!');
 });
+
+it('empty', function() {
+    expect($property.text([])).to.equal('');
+    $property.text([], 'No effects');
+});
