@@ -16,7 +16,7 @@ Licia 是一套在开发中实践积累起来的实用 JavaScript 工具库。�
 
 ## 开发背景
 
-Licia 从一开始就不是为了单纯地替代 underscore 或 lodash 而生。它的目标是提供一系列在日常开发中使用率较高的 JavaScript 模块。因此，每一个新加入的模块都是在项目中实际使用到时才被添加进去。当前已经累积 300+ 模块，而且还在不断更新中，已经可以满足移动端日常开发的绝大部分需求。
+Licia 从一开始就不是为了单纯地替代 underscore 或 lodash 而生。它的目标是提供一系列在日常开发中使用率较高的 JavaScript 模块。因此，每一个新加入的模块都是在项目中实际使用到时才被添加进去。当前已经累积 400+ 模块，而且还在不断更新中，已经可以满足移动端日常开发的绝大部分需求。
 
 你不再需要引入 zepto 了，因为已经有个类 jQuery 的模块了；不再需要引入 cookie 库了，因为已经有 cookie 操作模块了；不再需要 moment 了，因为有个 dateFormat 可以满足大部分格式化需求了；不再需要引入Promise pollyfill，因为已经有个通过 Promise A+ 测试的 Promise 库了；不再需要引入 EventEmitter 库了，因为已经有了；不再需要引入 ajax 库了，因为有 ajax，而且还有 fetch；不再需要引入 underscore，仅仅是为了使用一个打乱数组的 shuffle 函数；还有那个引用数奇高的mkdirp 模块，再也不需要再把它装到 node_modules 里去了……
 

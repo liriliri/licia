@@ -12,7 +12,7 @@
 [travis-url]: https://travis-ci.org/liriliri/licia
 [license-image]: https://img.shields.io/npm/l/licia.svg
 
-[Licia](https://licia.liriliri.io/) is a utility library that focus on getting daily works done. Unlike other libraries such as underscore, mout, which strictly separates its functions into several categories like array, string and function etc. licia is just a deadly simple collection of over 300 micro modules dealing problems in different aspects. 
+[Licia](https://licia.liriliri.io/) is a utility library that focus on getting daily works done. Unlike other libraries such as underscore, mout, which strictly separates its functions into several categories like array, string and function etc. licia is just a deadly simple collection of over 400 micro modules dealing problems in different aspects. 
 
 ## Benefits
 
