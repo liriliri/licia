@@ -4148,6 +4148,14 @@ isClose(1, 1.2, 0.3); // -> true
 isClose(1, 1.2, 0.1, 0.3); // -> true
 ```
 
+## isDarkMode 
+
+Detect dark mode.
+
+```javascript
+console.log(isDarkMode()); // true if dark mode
+```
+
 ## isDataUrl 
 
 Check if a string is a valid data url.

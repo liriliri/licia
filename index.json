@@ -2942,6 +2942,18 @@
             "browser"
         ]
     },
+    "isDarkMode": {
+        "dependencies": [
+            "MediaQuery"
+        ],
+        "description": "Detect dark mode.",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "isDataUrl": {
         "dependencies": [
             "trim"

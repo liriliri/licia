@@ -4144,6 +4144,14 @@ isClose(1, 1.2, 0.3); // -> true
 isClose(1, 1.2, 0.1, 0.3); // -> true
 ```
 
+## isDarkMode
+
+检测是否暗黑模式。
+
+```javascript
+console.log(isDarkMode()); // true if dark mode
+```
+
 ## isDataUrl
 
 检查字符串是否是有效的 Data Url。
