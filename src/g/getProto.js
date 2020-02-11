@@ -27,7 +27,7 @@ const getPrototypeOf = Object.getPrototypeOf;
 const ObjectCtr = {}.constructor;
 
 exports = function(obj) {
-    if (!isObj(obj)) return null;
+    if (!isObj(obj)) return;
 
     if (getPrototypeOf) return getPrototypeOf(obj);
 
@@ -35,6 +35,4 @@ exports = function(obj) {
     if (proto || proto === null) return proto;
     if (isFn(obj.constructor)) return obj.constructor.prototype;
     if (obj instanceof ObjectCtr) return ObjectCtr.prototype;
-
-    return null;
 };

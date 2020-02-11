@@ -31,7 +31,7 @@
  * }
  * export declare function fileType(
  *     input: Buffer | ArrayBuffer | Uint8Array
- * ): fileType.IFileType | null;
+ * ): fileType.IFileType | undefined;
  */
 
 _('type mime isFn');
@@ -58,8 +58,6 @@ exports = function(input) {
             };
         }
     }
-
-    return null;
 };
 
 const types = [

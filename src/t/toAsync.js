@@ -50,8 +50,6 @@ exports = function(fn) {
                 }
 
                 next(ret);
-
-                return null;
             }
 
             function onRejected(err) {
