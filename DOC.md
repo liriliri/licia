@@ -444,7 +444,7 @@ Convert value into an array, if it's a string, do querySelector.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace $safeEls {
-    type El = Element | Element[] | NodeListOf<Element> | string;
+    type El = Element | Element[] | NodeListOf&lt;Element&gt; | string;
 }
  function $safeEls(value: $safeEls.El): Element[];</code>
 </pre>
@@ -1944,7 +1944,7 @@ Memory storage.
     remove(key: string): void;
     remove(keys: string[]): void;
     clear(): void;
-    each(fn: (...args: any[]) => void): void;
+    each(fn: (...args: any[]) =&gt; void): void;
 }</code>
 </pre>
 </details>
@@ -2394,11 +2394,11 @@ Retrieve all the names of object's own and inherited properties.
 }
  function allKeys(
     obj: any,
-    options: { symbol: true } & allKeys.IOptions
-): Array<string | Symbol>;
+    options: { symbol: true } &amp; allKeys.IOptions
+): Array&lt;string | Symbol&gt;;
  function allKeys(
     obj: any,
-    options?: ({ symbol: false } & allKeys.IOptions) | allKeys.IOptions
+    options?: ({ symbol: false } &amp; allKeys.IOptions) | allKeys.IOptions
 ): string[];</code>
 </pre>
 </details>
@@ -2497,7 +2497,7 @@ Make an object map using array of strings.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function arrToMap<T>(
+<code class="language-typescript">function arrToMap&lt;T&gt;(
     arr: string[],
     val?: T
 ): { [key: string]: T };</code>
@@ -2913,7 +2913,7 @@ Split array into groups the length of given size.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function chunk(arr: any[], size?: number): Array<any[]>;</code>
+<code class="language-typescript">function chunk(arr: any[], size?: number): Array&lt;any[]&gt;;</code>
 </pre>
 </details>
 
@@ -2987,7 +2987,7 @@ Create a shallow-copied clone of the provided plain object.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function clone<T>(val: T): T;</code>
+<code class="language-typescript">function clone&lt;T&gt;(val: T): T;</code>
 </pre>
 </details>
 
@@ -3009,7 +3009,7 @@ Recursively clone value.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function cloneDeep<T>(val: T): T;</code>
+<code class="language-typescript">function cloneDeep&lt;T&gt;(val: T): T;</code>
 </pre>
 </details>
 
@@ -3183,7 +3183,7 @@ Concat multiple arrays into a single array.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function concat(...args: Array<any[]>): any[];</code>
+<code class="language-typescript">function concat(...args: Array&lt;any[]&gt;): any[];</code>
 </pre>
 </details>
 
@@ -3257,7 +3257,7 @@ Convert binary data type.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace convertBin {
-    function blobToArrBuffer(blob: any): Promise<ArrayBuffer>;
+    function blobToArrBuffer(blob: any): Promise&lt;ArrayBuffer&gt;;
 }
  function convertBin(bin: any, type: string): any;</code>
 </pre>
@@ -3842,12 +3842,12 @@ Shortcut for Object.defineProperty(defineProperties).
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function defineProp<T>(
+<code class="language-typescript">function defineProp&lt;T&gt;(
     obj: T,
     prop: string,
     descriptor: PropertyDescriptor
 ): T;
- function defineProp<T>(obj: T, descriptor: PropertyDescriptorMap): T;</code>
+ function defineProp&lt;T&gt;(obj: T, descriptor: PropertyDescriptorMap): T;</code>
 </pre>
 </details>
 
@@ -4200,16 +4200,16 @@ Iterate over elements of collection and invokes iterator for each element.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function each<T>(
-    list: types.List<T>,
-    iterator: types.ListIterator<T, void>,
+<code class="language-typescript">function each&lt;T&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, void&gt;,
     ctx?: any
-): types.List<T>;
- function each<T>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, void>,
+): types.List&lt;T&gt;;
+ function each&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, void&gt;,
     ctx?: any
-): types.Collection<T>;</code>
+): types.Collection&lt;T&gt;;</code>
 </pre>
 </details>
 
@@ -4421,14 +4421,14 @@ Check if predicate return truthy for all elements.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function every<T>(
-    object: types.List<T>,
-    iterator?: types.ListIterator<T, boolean>,
+<code class="language-typescript">function every&lt;T&gt;(
+    object: types.List&lt;T&gt;,
+    iterator?: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;
- function every<T>(
-    object: types.Dictionary<T>,
-    iterator?: types.ObjectIterator<T, boolean>,
+ function every&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator?: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;</code>
 </pre>
@@ -4578,7 +4578,7 @@ Turn XMLHttpRequest into promise like.
     }
     interface IHeaders {
         keys(): string[];
-        entries(): Array<string[]>;
+        entries(): Array&lt;string[]&gt;;
         get(name: string): string;
         has(name: string): boolean;
     }
@@ -4588,17 +4588,17 @@ Turn XMLHttpRequest into promise like.
         statusText: string;
         url: string;
         clone(): IResult;
-        text(): Promise<string>;
-        json(): Promise<any>;
-        xml(): Promise<Document | null>;
-        blob(): Promise<Blob>;
+        text(): Promise&lt;string&gt;;
+        json(): Promise&lt;any&gt;;
+        xml(): Promise&lt;Document | null&gt;;
+        blob(): Promise&lt;Blob&gt;;
         headers: IHeaders;
     }
 }
  function fetch(
     url: string,
     options?: fetch.IOptions
-): Promise<fetch.IResult>;</code>
+): Promise&lt;fetch.IResult&gt;;</code>
 </pre>
 </details>
 
@@ -4738,14 +4738,14 @@ Iterates over elements of collection, returning an array of all the values that 
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function filter<T>(
-    list: types.List<T>,
-    iterator: types.ListIterator<T, boolean>,
+<code class="language-typescript">function filter&lt;T&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];
- function filter<T>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, boolean>,
+ function filter&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];</code>
 </pre>
@@ -4771,14 +4771,14 @@ Find the first value that passes a truth test in a collection.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function find<T>(
-    object: types.List<T>,
-    iterator: types.ListIterator<T, boolean>,
+<code class="language-typescript">function find&lt;T&gt;(
+    object: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T | undefined;
- function find<T>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, boolean>,
+ function find&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
 ): T | undefined;</code>
 </pre>
@@ -5044,7 +5044,7 @@ Shortcut for Object.freeze.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function freeze<T>(obj: T): T;</code>
+<code class="language-typescript">function freeze&lt;T&gt;(obj: T): T;</code>
 </pre>
 </details>
 
@@ -5069,7 +5069,7 @@ Recursively use Object.freeze.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function freezeDeep<T>(obj: T): T;</code>
+<code class="language-typescript">function freezeDeep&lt;T&gt;(obj: T): T;</code>
 </pre>
 </details>
 
@@ -5093,14 +5093,14 @@ Promised version of node.js fs module.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">const fs: {
-    readFile(path: string, encoding: string): Promise<string>;
-    readFile(path: string): Promise<Buffer>;
-    exists(path: string): Promise<boolean>;
-    unlink(path: string): Promise<void>;
-    writeFile(path: string, data: string, options?: string): Promise<void>;
-    writeFile(path: string, data: Buffer): Promise<void>;
-    readdir(path: string): Promise<string[]>;
-    rmdir(path: string): Promise<void>;
+    readFile(path: string, encoding: string): Promise&lt;string&gt;;
+    readFile(path: string): Promise&lt;Buffer&gt;;
+    exists(path: string): Promise&lt;boolean&gt;;
+    unlink(path: string): Promise&lt;void&gt;;
+    writeFile(path: string, data: string, options?: string): Promise&lt;void&gt;;
+    writeFile(path: string, data: Buffer): Promise&lt;void&gt;;
+    readdir(path: string): Promise&lt;string[]&gt;;
+    rmdir(path: string): Promise&lt;void&gt;;
     [key: string]: any;
 };</code>
 </pre>
@@ -5250,7 +5250,7 @@ Get an available TCP port.
 <code class="language-typescript">function getPort(
     port?: number | number[],
     host?: string
-): Promise<number>;</code>
+): Promise&lt;number&gt;;</code>
 </pre>
 </details>
 
@@ -5317,12 +5317,12 @@ Handle errors like golang.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function golangify<T, U = Error>(
-    fn: (...args: any[]) => Promise<T>
-): (...args: any[]) => Promise<[T | undefined, U | null]>;
- function golangify<T, U = Error>(
-    p: Promise<T>
-): Promise<[T | undefined, U | null]>;</code>
+<code class="language-typescript">function golangify&lt;T, U = Error&gt;(
+    fn: (...args: any[]) =&gt; Promise&lt;T&gt;
+): (...args: any[]) =&gt; Promise&lt;[T | undefined, U | null]&gt;;
+ function golangify&lt;T, U = Error&gt;(
+    p: Promise&lt;T&gt;
+): Promise&lt;[T | undefined, U | null]&gt;;</code>
 </pre>
 </details>
 
@@ -5360,7 +5360,7 @@ Create html with JavaScript.
 <code class="language-typescript">function h(
     tag: string,
     attrs?: { [name: string]: any },
-    ...child: Array<string | HTMLElement>
+    ...child: Array&lt;string | HTMLElement&gt;
 ): HTMLElement;</code>
 </pre>
 </details>
@@ -5601,7 +5601,7 @@ Return the first argument given.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function identity<T>(val: T): T;</code>
+<code class="language-typescript">function identity&lt;T&gt;(val: T): T;</code>
 </pre>
 </details>
 
@@ -5779,7 +5779,7 @@ Compute the list of values that are the intersection of all the arrays.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function intersect(...arr: Array<any[]>): any[];</code>
+<code class="language-typescript">function intersect(...arr: Array&lt;any[]&gt;): any[];</code>
 </pre>
 </details>
 
@@ -6832,7 +6832,7 @@ Check if a TCP port is free.
 <code class="language-typescript">function isPortFree(
     port: number,
     host?: string
-): Promise<boolean>;</code>
+): Promise&lt;boolean&gt;;</code>
 </pre>
 </details>
 
@@ -7198,7 +7198,7 @@ Use JSON parse and stringify to clone object.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function jsonClone<T>(val: T): T;</code>
+<code class="language-typescript">function jsonClone&lt;T&gt;(val: T): T;</code>
 </pre>
 </details>
 
@@ -7601,14 +7601,14 @@ Create an array of values by running each element in collection through iteratee
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function map<T, TResult>(
-    list: types.List<T>,
-    iterator: types.ListIterator<T, TResult>,
+<code class="language-typescript">function map&lt;T, TResult&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, TResult&gt;,
     context?: any
 ): TResult[];
- function map<T, TResult>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, TResult>,
+ function map&lt;T, TResult&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, TResult&gt;,
     context?: any
 ): TResult[];</code>
 </pre>
@@ -7632,11 +7632,11 @@ Map for objects.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function mapObj<T, TResult>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, TResult>,
+<code class="language-typescript">function mapObj&lt;T, TResult&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, TResult&gt;,
     context?: any
-): types.Dictionary<TResult>;</code>
+): types.Dictionary&lt;TResult&gt;;</code>
 </pre>
 </details>
 
@@ -8387,7 +8387,7 @@ Open file dialog to select file in browser.
     }
 }
 
- function openFile(options?: openFile.IOptions): Promise<File[]>;</code>
+ function openFile(options?: openFile.IOptions): Promise&lt;File[]&gt;;</code>
 </pre>
 </details>
 
@@ -8509,7 +8509,7 @@ Convert an object into a list of [key, value] pairs.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function pairs(obj: any): Array<any[]>;</code>
+<code class="language-typescript">function pairs(obj: any): Array&lt;any[]&gt;;</code>
 </pre>
 </details>
 
@@ -8598,10 +8598,10 @@ Simple html parser.
 <pre>
 <code class="language-typescript">namespace parseHtml {
     interface IHandlers {
-        start?: (tag: string, attrs: any, unary: boolean) => void;
-        end?: (tag: string) => void;
-        comment?: (text: string) => void;
-        text?: (text: string) => void;
+        start?: (tag: string, attrs: any, unary: boolean) =&gt; void;
+        end?: (tag: string) =&gt; void;
+        comment?: (text: string) =&gt; void;
+        text?: (text: string) =&gt; void;
     }
 }
  function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
@@ -8767,7 +8767,7 @@ Fetch a given url.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function prefetch(url: string): Promise<void>;</code>
+<code class="language-typescript">function prefetch(url: string): Promise&lt;void&gt;;</code>
 </pre>
 </details>
 
@@ -9158,15 +9158,15 @@ Turn a list of values into a single value.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function reduce<T, TResult>(
-    list: types.List<T>,
-    iterator: types.MemoIterator<T, TResult>,
+<code class="language-typescript">function reduce&lt;T, TResult&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.MemoIterator&lt;T, TResult&gt;,
     memo?: TResult,
     context?: any
 ): TResult;
- function reduce<T, TResult>(
-    list: types.Dictionary<T>,
-    iterator: types.MemoObjectIterator<T, TResult>,
+ function reduce&lt;T, TResult&gt;(
+    list: types.Dictionary&lt;T&gt;,
+    iterator: types.MemoObjectIterator&lt;T, TResult&gt;,
     memo?: TResult,
     context?: any
 ): TResult;</code>
@@ -9192,9 +9192,9 @@ Right-associative version of reduce.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function reduceRight<T, TResult>(
-    list: types.Collection<T>,
-    iterator: types.MemoIterator<T, TResult>,
+<code class="language-typescript">function reduceRight&lt;T, TResult&gt;(
+    list: types.Collection&lt;T&gt;,
+    iterator: types.MemoIterator&lt;T, TResult&gt;,
     memo?: TResult,
     context?: any
 ): TResult;</code>
@@ -9212,14 +9212,14 @@ Opposite of filter.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function reject<T>(
-    list: types.List<T>,
-    iterator: types.ListIterator<T, boolean>,
+<code class="language-typescript">function reject&lt;T&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];
- function reject<T>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, boolean>,
+ function reject&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];</code>
 </pre>
@@ -9245,9 +9245,9 @@ Remove all elements from array that predicate returns truthy for and return an a
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function remove<T, TResult>(
-    list: types.List<T>,
-    iterator: types.ListIterator<T, boolean>,
+<code class="language-typescript">function remove&lt;T, TResult&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): TResult[];</code>
 </pre>
@@ -9663,7 +9663,7 @@ Seeded random number generator.
     min?: number,
     max?: number,
     floating?: boolean
-): () => number;</code>
+): () =&gt; number;</code>
 </pre>
 </details>
 
@@ -9716,8 +9716,8 @@ Css selector parser and serializer.
     }
 }
  const selector: {
-    parse(selector: string): Array<selector.IToken[]>;
-    stringify(selector: Array<selector.IToken[]>): string;
+    parse(selector: string): Array&lt;selector.IToken[]&gt;;
+    stringify(selector: Array&lt;selector.IToken[]&gt;): string;
 }</code>
 </pre>
 </details>
@@ -9843,7 +9843,7 @@ Resolve a promise after a specified timeout.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function sleep(timeout: number): Promise<void>;</code>
+<code class="language-typescript">function sleep(timeout: number): Promise&lt;void&gt;;</code>
 </pre>
 </details>
 
@@ -9932,14 +9932,14 @@ Check if predicate return truthy for any element.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function some<T>(
-    list: types.List<T>,
-    iterator?: types.ListIterator<T, boolean>,
+<code class="language-typescript">function some&lt;T&gt;(
+    list: types.List&lt;T&gt;,
+    iterator?: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;
- function some<T>(
-    object: types.Dictionary<T>,
-    iterator?: types.ObjectIterator<T, boolean>,
+ function some&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator?: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;</code>
 </pre>
@@ -10482,22 +10482,22 @@ Tiny wrapper of stream Transform.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">import stream = require('stream');
+<code class="language-typescript">import stream = require(&#x27;stream&#x27;);
  namespace through {
     interface ThroughConstructor extends stream.Transform {
         new (opts?: stream.DuplexOptions): stream.Transform;
         (opts?: stream.DuplexOptions): stream.Transform;
     }
-    type TransformCallback = (err?: any, data?: any) => void;
+    type TransformCallback = (err?: any, data?: any) =&gt; void;
     type TransformFunction = (
         this: stream.Transform,
         chunk: any, enc: string,
         callback: TransformCallback
-    ) => void;
+    ) =&gt; void;
     type FlushCallback = (
         this: stream.Transform,
-        flushCallback: () => void
-    ) => void;
+        flushCallback: () =&gt; void
+    ) =&gt; void;
     function obj(
         transform?: TransformFunction,
         flush?: FlushCallback
@@ -10601,7 +10601,7 @@ Invoke given function n times.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function times<T>(n: number, fn: (n: number) => T, ctx?: any): T[];</code>
+<code class="language-typescript">function times&lt;T&gt;(n: number, fn: (n: number) =&gt; T, ctx?: any): T[];</code>
 </pre>
 </details>
 
@@ -10945,25 +10945,25 @@ Used for typescript definitions only.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace types {
-    interface Collection<T> {}
-    interface List<T> extends Collection<T> {
+    interface Collection&lt;T&gt; {}
+    interface List&lt;T&gt; extends Collection&lt;T&gt; {
         [index: number]: T;
         length: number;
     }
-    interface ListIterator<T, TResult> {
-        (value: T, index: number, list: List<T>): TResult;
+    interface ListIterator&lt;T, TResult&gt; {
+        (value: T, index: number, list: List&lt;T&gt;): TResult;
     }
-    interface Dictionary<T> extends Collection<T> {
+    interface Dictionary&lt;T&gt; extends Collection&lt;T&gt; {
         [index: string]: T;
     }
-    interface ObjectIterator<T, TResult> {
-        (element: T, key: string, list: Dictionary<T>): TResult;
+    interface ObjectIterator&lt;T, TResult&gt; {
+        (element: T, key: string, list: Dictionary&lt;T&gt;): TResult;
     }
-    interface MemoIterator<T, TResult> {
-        (prev: TResult, curr: T, index: number, list: List<T>): TResult;
+    interface MemoIterator&lt;T, TResult&gt; {
+        (prev: TResult, curr: T, index: number, list: List&lt;T&gt;): TResult;
     }
-    interface MemoObjectIterator<T, TResult> {
-        (prev: TResult, curr: T, key: string, list: Dictionary<T>): TResult;
+    interface MemoObjectIterator&lt;T, TResult&gt; {
+        (prev: TResult, curr: T, key: string, list: Dictionary&lt;T&gt;): TResult;
     }
 }
  const types: {}</code>
@@ -11019,8 +11019,8 @@ Handle global uncaught errors and promise rejections.
 <code class="language-typescript">const uncaught: {
     start(): void;
     stop(): void;
-    addListener(fn: (err: Error) => void): void;
-    rmListener(fn: (err: Error) => void): void;
+    addListener(fn: (err: Error) =&gt; void): void;
+    rmListener(fn: (err: Error) =&gt; void): void;
     rmAllListeners(): void;
 };</code>
 </pre>
@@ -11084,7 +11084,7 @@ Create an array of unique values, in order, from all given arrays.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function union(...arr: Array<any[]>): any[];</code>
+<code class="language-typescript">function union(...arr: Array&lt;any[]&gt;): any[];</code>
 </pre>
 </details>
 
@@ -11126,7 +11126,7 @@ Create duplicate-free version of an array.
 <pre>
 <code class="language-typescript">function unique(
     arr: any[],
-    cmp?: (a: any, b: any) => boolean | number
+    cmp?: (a: any, b: any) =&gt; boolean | number
 ): any[];</code>
 </pre>
 </details>
@@ -11179,7 +11179,7 @@ Opposite of zip.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">declare function unzip(arr: Array<any[]>): Array<any[]>;</code>
+<code class="language-typescript">declare function unzip(arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;</code>
 </pre>
 </details>
 
@@ -11396,7 +11396,7 @@ Wait until function returns a truthy value.
     condition: Function,
     timeout?: number,
     interval?: number
-): Promise<any>;</code>
+): Promise&lt;any&gt;;</code>
 </pre>
 </details>
 
@@ -11557,7 +11557,7 @@ Merge together the values of each of the arrays with the values at the correspon
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function zip(...arr: Array<any[]>): Array<any[]>;</code>
+<code class="language-typescript">function zip(...arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;</code>
 </pre>
 </details>
 

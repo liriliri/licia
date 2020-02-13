@@ -439,7 +439,7 @@ $remove('#test');
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">namespace $safeEls {
-    type El = Element | Element[] | NodeListOf<Element> | string;
+    type El = Element | Element[] | NodeListOf&lt;Element&gt; | string;
 }
  function $safeEls(value: $safeEls.El): Element[];</code>
 </pre>
@@ -1939,7 +1939,7 @@ state.play('eustia');
     remove(key: string): void;
     remove(keys: string[]): void;
     clear(): void;
-    each(fn: (...args: any[]) => void): void;
+    each(fn: (...args: any[]) =&gt; void): void;
 }</code>
 </pre>
 </details>
@@ -2389,11 +2389,11 @@ ajax.get('http://example.com', {}, function (data) {
 }
  function allKeys(
     obj: any,
-    options: { symbol: true } & allKeys.IOptions
-): Array<string | Symbol>;
+    options: { symbol: true } &amp; allKeys.IOptions
+): Array&lt;string | Symbol&gt;;
  function allKeys(
     obj: any,
-    options?: ({ symbol: false } & allKeys.IOptions) | allKeys.IOptions
+    options?: ({ symbol: false } &amp; allKeys.IOptions) | allKeys.IOptions
 ): string[];</code>
 </pre>
 </details>
@@ -2492,7 +2492,7 @@ ansiColor.red('Warning');
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function arrToMap<T>(
+<code class="language-typescript">function arrToMap&lt;T&gt;(
     arr: string[],
     val?: T
 ): { [key: string]: T };</code>
@@ -2908,7 +2908,7 @@ char(97); // -> 'a'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function chunk(arr: any[], size?: number): Array<any[]>;</code>
+<code class="language-typescript">function chunk(arr: any[], size?: number): Array&lt;any[]&gt;;</code>
 </pre>
 </details>
 
@@ -2982,7 +2982,7 @@ className('a', ['b', 'c', {d: true, e: false}]); // -> 'a b c d';
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function clone<T>(val: T): T;</code>
+<code class="language-typescript">function clone&lt;T&gt;(val: T): T;</code>
 </pre>
 </details>
 
@@ -3004,7 +3004,7 @@ clone({name: 'eustia'}); // -> {name: 'eustia'}
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function cloneDeep<T>(val: T): T;</code>
+<code class="language-typescript">function cloneDeep&lt;T&gt;(val: T): T;</code>
 </pre>
 </details>
 
@@ -3178,7 +3178,7 @@ compressImg(file, {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function concat(...args: Array<any[]>): any[];</code>
+<code class="language-typescript">function concat(...args: Array&lt;any[]&gt;): any[];</code>
 </pre>
 </details>
 
@@ -3252,7 +3252,7 @@ convertBase('ff', 16, 2); // -> '11111111'
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">namespace convertBin {
-    function blobToArrBuffer(blob: any): Promise<ArrayBuffer>;
+    function blobToArrBuffer(blob: any): Promise&lt;ArrayBuffer&gt;;
 }
  function convertBin(bin: any, type: string): any;</code>
 </pre>
@@ -3837,12 +3837,12 @@ Object.defineProperty(defineProperties) 的快捷方式。
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function defineProp<T>(
+<code class="language-typescript">function defineProp&lt;T&gt;(
     obj: T,
     prop: string,
     descriptor: PropertyDescriptor
 ): T;
- function defineProp<T>(obj: T, descriptor: PropertyDescriptorMap): T;</code>
+ function defineProp&lt;T&gt;(obj: T, descriptor: PropertyDescriptorMap): T;</code>
 </pre>
 </details>
 
@@ -4195,16 +4195,16 @@ durationFormat(12345678, 'h:m:s:l'); // -> '3:25:45:678'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function each<T>(
-    list: types.List<T>,
-    iterator: types.ListIterator<T, void>,
+<code class="language-typescript">function each&lt;T&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, void&gt;,
     ctx?: any
-): types.List<T>;
- function each<T>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, void>,
+): types.List&lt;T&gt;;
+ function each&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, void&gt;,
     ctx?: any
-): types.Collection<T>;</code>
+): types.Collection&lt;T&gt;;</code>
 </pre>
 </details>
 
@@ -4417,14 +4417,14 @@ evalJs('this.a', {a: 2}); // -> 2
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function every<T>(
-    object: types.List<T>,
-    iterator?: types.ListIterator<T, boolean>,
+<code class="language-typescript">function every&lt;T&gt;(
+    object: types.List&lt;T&gt;,
+    iterator?: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;
- function every<T>(
-    object: types.Dictionary<T>,
-    iterator?: types.ObjectIterator<T, boolean>,
+ function every&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator?: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;</code>
 </pre>
@@ -4574,7 +4574,7 @@ extractUrls(str); // -> ['http://eustia.liriliri.io']
     }
     interface IHeaders {
         keys(): string[];
-        entries(): Array<string[]>;
+        entries(): Array&lt;string[]&gt;;
         get(name: string): string;
         has(name: string): boolean;
     }
@@ -4584,17 +4584,17 @@ extractUrls(str); // -> ['http://eustia.liriliri.io']
         statusText: string;
         url: string;
         clone(): IResult;
-        text(): Promise<string>;
-        json(): Promise<any>;
-        xml(): Promise<Document | null>;
-        blob(): Promise<Blob>;
+        text(): Promise&lt;string&gt;;
+        json(): Promise&lt;any&gt;;
+        xml(): Promise&lt;Document | null&gt;;
+        blob(): Promise&lt;Blob&gt;;
         headers: IHeaders;
     }
 }
  function fetch(
     url: string,
     options?: fetch.IOptions
-): Promise<fetch.IResult>;</code>
+): Promise&lt;fetch.IResult&gt;;</code>
 </pre>
 </details>
 
@@ -4734,14 +4734,14 @@ fill([1, 2, 3], '*', 1, 2); // -> [1, '*', 3]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function filter<T>(
-    list: types.List<T>,
-    iterator: types.ListIterator<T, boolean>,
+<code class="language-typescript">function filter&lt;T&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];
- function filter<T>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, boolean>,
+ function filter&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];</code>
 </pre>
@@ -4767,14 +4767,14 @@ filter([1, 2, 3, 4, 5], function (val) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function find<T>(
-    object: types.List<T>,
-    iterator: types.ListIterator<T, boolean>,
+<code class="language-typescript">function find&lt;T&gt;(
+    object: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T | undefined;
- function find<T>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, boolean>,
+ function find&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
 ): T | undefined;</code>
 </pre>
@@ -5040,7 +5040,7 @@ Object.freeze 的快捷方式。
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function freeze<T>(obj: T): T;</code>
+<code class="language-typescript">function freeze&lt;T&gt;(obj: T): T;</code>
 </pre>
 </details>
 
@@ -5065,7 +5065,7 @@ console.log(a); // -> {b: 1}
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function freezeDeep<T>(obj: T): T;</code>
+<code class="language-typescript">function freezeDeep&lt;T&gt;(obj: T): T;</code>
 </pre>
 </details>
 
@@ -5089,14 +5089,14 @@ node.js fs 模块的 promise 版本。
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">const fs: {
-    readFile(path: string, encoding: string): Promise<string>;
-    readFile(path: string): Promise<Buffer>;
-    exists(path: string): Promise<boolean>;
-    unlink(path: string): Promise<void>;
-    writeFile(path: string, data: string, options?: string): Promise<void>;
-    writeFile(path: string, data: Buffer): Promise<void>;
-    readdir(path: string): Promise<string[]>;
-    rmdir(path: string): Promise<void>;
+    readFile(path: string, encoding: string): Promise&lt;string&gt;;
+    readFile(path: string): Promise&lt;Buffer&gt;;
+    exists(path: string): Promise&lt;boolean&gt;;
+    unlink(path: string): Promise&lt;void&gt;;
+    writeFile(path: string, data: string, options?: string): Promise&lt;void&gt;;
+    writeFile(path: string, data: Buffer): Promise&lt;void&gt;;
+    readdir(path: string): Promise&lt;string[]&gt;;
+    rmdir(path: string): Promise&lt;void&gt;;
     [key: string]: any;
 };</code>
 </pre>
@@ -5246,7 +5246,7 @@ gcd(121, 44); // -> 11
 <code class="language-typescript">function getPort(
     port?: number | number[],
     host?: string
-): Promise<number>;</code>
+): Promise&lt;number&gt;;</code>
 </pre>
 </details>
 
@@ -5313,12 +5313,12 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function golangify<T, U = Error>(
-    fn: (...args: any[]) => Promise<T>
-): (...args: any[]) => Promise<[T | undefined, U | null]>;
- function golangify<T, U = Error>(
-    p: Promise<T>
-): Promise<[T | undefined, U | null]>;</code>
+<code class="language-typescript">function golangify&lt;T, U = Error&gt;(
+    fn: (...args: any[]) =&gt; Promise&lt;T&gt;
+): (...args: any[]) =&gt; Promise&lt;[T | undefined, U | null]&gt;;
+ function golangify&lt;T, U = Error&gt;(
+    p: Promise&lt;T&gt;
+): Promise&lt;[T | undefined, U | null]&gt;;</code>
 </pre>
 </details>
 
@@ -5356,7 +5356,7 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 <code class="language-typescript">function h(
     tag: string,
     attrs?: { [name: string]: any },
-    ...child: Array<string | HTMLElement>
+    ...child: Array&lt;string | HTMLElement&gt;
 ): HTMLElement;</code>
 </pre>
 </details>
@@ -5597,7 +5597,7 @@ html.stringify(tree);
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function identity<T>(val: T): T;</code>
+<code class="language-typescript">function identity&lt;T&gt;(val: T): T;</code>
 </pre>
 </details>
 
@@ -5775,7 +5775,7 @@ insertionSort([2, 1]); // -> [1, 2]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function intersect(...arr: Array<any[]>): any[];</code>
+<code class="language-typescript">function intersect(...arr: Array&lt;any[]&gt;): any[];</code>
 </pre>
 </details>
 
@@ -6828,7 +6828,7 @@ isPlainObj(function () {}); // -> false
 <code class="language-typescript">function isPortFree(
     port: number,
     host?: string
-): Promise<boolean>;</code>
+): Promise&lt;boolean&gt;;</code>
 </pre>
 </details>
 
@@ -7194,7 +7194,7 @@ console.log(isWindows); // -> true if running on windows
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function jsonClone<T>(val: T): T;</code>
+<code class="language-typescript">function jsonClone&lt;T&gt;(val: T): T;</code>
 </pre>
 </details>
 
@@ -7597,14 +7597,14 @@ ltrim('_abc_', ['a', '_']); // -> 'bc_'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function map<T, TResult>(
-    list: types.List<T>,
-    iterator: types.ListIterator<T, TResult>,
+<code class="language-typescript">function map&lt;T, TResult&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, TResult&gt;,
     context?: any
 ): TResult[];
- function map<T, TResult>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, TResult>,
+ function map&lt;T, TResult&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, TResult&gt;,
     context?: any
 ): TResult[];</code>
 </pre>
@@ -7628,11 +7628,11 @@ map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function mapObj<T, TResult>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, TResult>,
+<code class="language-typescript">function mapObj&lt;T, TResult&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, TResult&gt;,
     context?: any
-): types.Dictionary<TResult>;</code>
+): types.Dictionary&lt;TResult&gt;;</code>
 </pre>
 </details>
 
@@ -8381,7 +8381,7 @@ open('https://eustia.liriliri.io/');
     }
 }
 
- function openFile(options?: openFile.IOptions): Promise<File[]>;</code>
+ function openFile(options?: openFile.IOptions): Promise&lt;File[]&gt;;</code>
 </pre>
 </details>
 
@@ -8503,7 +8503,7 @@ pad('ab', 5, 'ab'); // -> 'ababa'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function pairs(obj: any): Array<any[]>;</code>
+<code class="language-typescript">function pairs(obj: any): Array&lt;any[]&gt;;</code>
 </pre>
 </details>
 
@@ -8592,10 +8592,10 @@ Simple html parser.
 <pre>
 <code class="language-typescript">namespace parseHtml {
     interface IHandlers {
-        start?: (tag: string, attrs: any, unary: boolean) => void;
-        end?: (tag: string) => void;
-        comment?: (text: string) => void;
-        text?: (text: string) => void;
+        start?: (tag: string, attrs: any, unary: boolean) =&gt; void;
+        end?: (tag: string) =&gt; void;
+        comment?: (text: string) =&gt; void;
+        text?: (text: string) =&gt; void;
     }
 }
  function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
@@ -8607,10 +8607,10 @@ Simple html parser.
 <pre>
 <code class="language-typescript">namespace parseHtml {
     interface IHandlers {
-        start?: (tag: string, attrs: any, unary: boolean) => void;
-        end?: (tag: string) => void;
-        comment?: (text: string) => void;
-        text?: (text: string) => void;
+        start?: (tag: string, attrs: any, unary: boolean) =&gt; void;
+        end?: (tag: string) =&gt; void;
+        comment?: (text: string) =&gt; void;
+        text?: (text: string) =&gt; void;
     }
 }
  function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
@@ -8776,7 +8776,7 @@ precision(1.234); // -> 3;
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function prefetch(url: string): Promise<void>;</code>
+<code class="language-typescript">function prefetch(url: string): Promise&lt;void&gt;;</code>
 </pre>
 </details>
 
@@ -9167,15 +9167,15 @@ ready(function () {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function reduce<T, TResult>(
-    list: types.List<T>,
-    iterator: types.MemoIterator<T, TResult>,
+<code class="language-typescript">function reduce&lt;T, TResult&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.MemoIterator&lt;T, TResult&gt;,
     memo?: TResult,
     context?: any
 ): TResult;
- function reduce<T, TResult>(
-    list: types.Dictionary<T>,
-    iterator: types.MemoObjectIterator<T, TResult>,
+ function reduce&lt;T, TResult&gt;(
+    list: types.Dictionary&lt;T&gt;,
+    iterator: types.MemoObjectIterator&lt;T, TResult&gt;,
     memo?: TResult,
     context?: any
 ): TResult;</code>
@@ -9201,9 +9201,9 @@ reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function reduceRight<T, TResult>(
-    list: types.Collection<T>,
-    iterator: types.MemoIterator<T, TResult>,
+<code class="language-typescript">function reduceRight&lt;T, TResult&gt;(
+    list: types.Collection&lt;T&gt;,
+    iterator: types.MemoIterator&lt;T, TResult&gt;,
     memo?: TResult,
     context?: any
 ): TResult;</code>
@@ -9221,14 +9221,14 @@ reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> 
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function reject<T>(
-    list: types.List<T>,
-    iterator: types.ListIterator<T, boolean>,
+<code class="language-typescript">function reject&lt;T&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];
- function reject<T>(
-    object: types.Dictionary<T>,
-    iterator: types.ObjectIterator<T, boolean>,
+ function reject&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];</code>
 </pre>
@@ -9254,9 +9254,9 @@ reject([1, 2, 3, 4, 5], function (val) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function remove<T, TResult>(
-    list: types.List<T>,
-    iterator: types.ListIterator<T, boolean>,
+<code class="language-typescript">function remove&lt;T, TResult&gt;(
+    list: types.List&lt;T&gt;,
+    iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): TResult[];</code>
 </pre>
@@ -9672,7 +9672,7 @@ scrollTo('body', {
     min?: number,
     max?: number,
     floating?: boolean
-): () => number;</code>
+): () =&gt; number;</code>
 </pre>
 </details>
 
@@ -9725,8 +9725,8 @@ CSS 选择器解析器。
     }
 }
  const selector: {
-    parse(selector: string): Array<selector.IToken[]>;
-    stringify(selector: Array<selector.IToken[]>): string;
+    parse(selector: string): Array&lt;selector.IToken[]&gt;;
+    stringify(selector: Array&lt;selector.IToken[]&gt;): string;
 }</code>
 </pre>
 </details>
@@ -9852,7 +9852,7 @@ sizeof({ a: 'b' }); // -> 4
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function sleep(timeout: number): Promise<void>;</code>
+<code class="language-typescript">function sleep(timeout: number): Promise&lt;void&gt;;</code>
 </pre>
 </details>
 
@@ -9941,14 +9941,14 @@ snakeCase('foo.bar'); // -> foo_bar
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function some<T>(
-    list: types.List<T>,
-    iterator?: types.ListIterator<T, boolean>,
+<code class="language-typescript">function some&lt;T&gt;(
+    list: types.List&lt;T&gt;,
+    iterator?: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;
- function some<T>(
-    object: types.Dictionary<T>,
-    iterator?: types.ObjectIterator<T, boolean>,
+ function some&lt;T&gt;(
+    object: types.Dictionary&lt;T&gt;,
+    iterator?: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;</code>
 </pre>
@@ -10491,22 +10491,22 @@ stream Transform 类的简单包装。
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">import stream = require('stream');
+<code class="language-typescript">import stream = require(&#x27;stream&#x27;);
  namespace through {
     interface ThroughConstructor extends stream.Transform {
         new (opts?: stream.DuplexOptions): stream.Transform;
         (opts?: stream.DuplexOptions): stream.Transform;
     }
-    type TransformCallback = (err?: any, data?: any) => void;
+    type TransformCallback = (err?: any, data?: any) =&gt; void;
     type TransformFunction = (
         this: stream.Transform,
         chunk: any, enc: string,
         callback: TransformCallback
-    ) => void;
+    ) =&gt; void;
     type FlushCallback = (
         this: stream.Transform,
-        flushCallback: () => void
-    ) => void;
+        flushCallback: () =&gt; void
+    ) =&gt; void;
     function obj(
         transform?: TransformFunction,
         flush?: FlushCallback
@@ -10610,7 +10610,7 @@ timeTaken(function () {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function times<T>(n: number, fn: (n: number) => T, ctx?: any): T[];</code>
+<code class="language-typescript">function times&lt;T&gt;(n: number, fn: (n: number) =&gt; T, ctx?: any): T[];</code>
 </pre>
 </details>
 
@@ -10954,25 +10954,25 @@ type(async function () {}, false); // -> 'AsyncFunction'
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">namespace types {
-    interface Collection<T> {}
-    interface List<T> extends Collection<T> {
+    interface Collection&lt;T&gt; {}
+    interface List&lt;T&gt; extends Collection&lt;T&gt; {
         [index: number]: T;
         length: number;
     }
-    interface ListIterator<T, TResult> {
-        (value: T, index: number, list: List<T>): TResult;
+    interface ListIterator&lt;T, TResult&gt; {
+        (value: T, index: number, list: List&lt;T&gt;): TResult;
     }
-    interface Dictionary<T> extends Collection<T> {
+    interface Dictionary&lt;T&gt; extends Collection&lt;T&gt; {
         [index: string]: T;
     }
-    interface ObjectIterator<T, TResult> {
-        (element: T, key: string, list: Dictionary<T>): TResult;
+    interface ObjectIterator&lt;T, TResult&gt; {
+        (element: T, key: string, list: Dictionary&lt;T&gt;): TResult;
     }
-    interface MemoIterator<T, TResult> {
-        (prev: TResult, curr: T, index: number, list: List<T>): TResult;
+    interface MemoIterator&lt;T, TResult&gt; {
+        (prev: TResult, curr: T, index: number, list: List&lt;T&gt;): TResult;
     }
-    interface MemoObjectIterator<T, TResult> {
-        (prev: TResult, curr: T, key: string, list: Dictionary<T>): TResult;
+    interface MemoObjectIterator&lt;T, TResult&gt; {
+        (prev: TResult, curr: T, key: string, list: Dictionary&lt;T&gt;): TResult;
     }
 }
  const types: {}</code>
@@ -11028,8 +11028,8 @@ ucs2.decode('𝌆').length; // -> 1
 <code class="language-typescript">const uncaught: {
     start(): void;
     stop(): void;
-    addListener(fn: (err: Error) => void): void;
-    rmListener(fn: (err: Error) => void): void;
+    addListener(fn: (err: Error) =&gt; void): void;
+    rmListener(fn: (err: Error) =&gt; void): void;
     rmAllListeners(): void;
 };</code>
 </pre>
@@ -11093,7 +11093,7 @@ unescape('You &amp; Me'); // -> 'You & Me'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function union(...arr: Array<any[]>): any[];</code>
+<code class="language-typescript">function union(...arr: Array&lt;any[]&gt;): any[];</code>
 </pre>
 </details>
 
@@ -11135,7 +11135,7 @@ uniqId('eusita_'); // -> 'eustia_xxx'
 <pre>
 <code class="language-typescript">function unique(
     arr: any[],
-    cmp?: (a: any, b: any) => boolean | number
+    cmp?: (a: any, b: any) =&gt; boolean | number
 ): any[];</code>
 </pre>
 </details>
@@ -11188,7 +11188,7 @@ fn('licia').then(result => {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">declare function unzip(arr: Array<any[]>): Array<any[]>;</code>
+<code class="language-typescript">declare function unzip(arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;</code>
 </pre>
 </details>
 
@@ -11405,7 +11405,7 @@ vlq.decode('2HwcqxB'); // -> [123, 456, 789]
     condition: Function,
     timeout?: number,
     interval?: number
-): Promise<any>;</code>
+): Promise&lt;any&gt;;</code>
 </pre>
 </details>
 
@@ -11566,7 +11566,7 @@ xpath('//html/body'); // -> [body]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function zip(...arr: Array<any[]>): Array<any[]>;</code>
+<code class="language-typescript">function zip(...arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;</code>
 </pre>
 </details>
 
