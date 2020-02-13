@@ -91,11 +91,11 @@ const $attr: $attr.IAttr;</code>
 
 Get the value of an attribute for the first element in the set of matched elements.
 
-|Name   |Type                |Desc                            |
-|-------|--------------------|--------------------------------|
-|element|string array element|Elements to manipulate          |
-|name   |string              |Attribute name                  |
-|return |string              |Attribute value of first element|
+|Name   |Desc                            |
+|-------|--------------------------------|
+|element|Elements to manipulate          |
+|name   |Attribute name                  |
+|return |Attribute value of first element|
 
 Set one or more attributes for the set of matched elements.
 
@@ -331,10 +331,10 @@ Insert content to the beginning of elements.
 
 Insert content to the end of elements.
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|content|string              |Html strings          |
+|Name   |Desc                  |
+|-------|----------------------|
+|element|Elements to manipulate|
+|content|Html strings          |
 
 ```javascript
 // <div id="test"><div class="mark"></div></div>
@@ -367,9 +367,10 @@ function $offset(element: $safeEls.El): $offset.IOffset;</code>
 </pre>
 </details>
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to get offset|
+|Name   |Desc                  |
+|-------|----------------------|
+|element|Elements to get offset|
+|return |Element position      |
 
 ```javascript
 $offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
@@ -2293,11 +2294,11 @@ Create a function that invokes once it's called n or more times.
 </pre>
 </details>
 
-|Name  |Type    |Desc                          |
-|------|--------|------------------------------|
-|n     |number  |Number of calls before invoked|
-|fn    |function|Function to restrict          |
-|return|function|New restricted function       |
+|Name  |Desc                          |
+|------|------------------------------|
+|n     |Number of calls before invoked|
+|fn    |Function to restrict          |
+|return|New restricted function       |
 
 ```javascript
 const fn = after(5, function() {
@@ -2314,6 +2315,7 @@ Perform an asynchronous HTTP request.
 <pre>
 <code class="language-typescript">namespace ajax {
     interface IOptions {
+        type?: string;
         url: string;
         data?: string | {};
         dataType?: string;
@@ -2323,30 +2325,32 @@ Perform an asynchronous HTTP request.
         complete?: Function;
         timeout?: number;
     }
-    function get(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
-    function post(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
+    function get(url: string, data: string | {}, success: Function, dataType?: string): XMLHttpRequest;
+    function get(url: string, success: Function, dataType?: string): XMLHttpRequest;
+    function post(url: string, data: string | {}, success: Function, dataType?: string): XMLHttpRequest;
+    function post(url: string, success: Function, dataType?: string): XMLHttpRequest;
 }
 function ajax(options: ajax.IOptions): XMLHttpRequest;</code>
 </pre>
 </details>
 
-|Name   |Type  |Desc        |
-|-------|------|------------|
-|options|object|Ajax options|
+|Name   |Desc        |
+|-------|------------|
+|options|Ajax options|
 
 Available options:
 
-|Name                                         |Type         |Desc                       |
-|---------------------------------------------|-------------|---------------------------|
-|type=get                                     |type         |Request type               |
-|url                                          |string       |Request url                |
-|data                                         |string object|Request data               |
-|dataType=json                                |string       |Response type(json, xml)   |
-|contentType=application/x-www-form-urlencoded|string       |Request header Content-Type|
-|success                                      |function     |Success callback           |
-|error                                        |function     |Error callback             |
-|complete                                     |function     |Callback after request     |
-|timeout                                      |number       |Request timeout            |
+|Name                                         |Desc                       |
+|---------------------------------------------|---------------------------|
+|type=get                                     |Request type               |
+|url                                          |Request url                |
+|data                                         |Request data               |
+|dataType=json                                |Response type(json, xml)   |
+|contentType=application/x-www-form-urlencoded|Request header Content-Type|
+|success                                      |Success callback           |
+|error                                        |Error callback             |
+|complete                                     |Callback after request     |
+|timeout                                      |Request timeout            |
 
 ### get
 
@@ -2356,12 +2360,12 @@ Shortcut for type = GET;
 
 Shortcut for type = POST;
 
-|Name    |Type         |Desc            |
-|--------|-------------|----------------|
-|url     |string       |Request url     |
-|[data]  |string object|Request data    |
-|success |function     |Success callback|
-|dataType|function     |Response type   |
+|Name    |Desc            |
+|--------|----------------|
+|url     |Request url     |
+|data    |Request data    |
+|success |Success callback|
+|dataType|Response type   |
 
 ```javascript
 ajax({
@@ -2403,19 +2407,19 @@ function allKeys(
 </pre>
 </details>
 
-|Name     |Type  |Desc                       |
-|---------|------|---------------------------|
-|obj      |object|Object to query            |
-|[options]|object|Options                    |
-|return   |array |Array of all property names|
+|Name   |Desc                       |
+|-------|---------------------------|
+|obj    |Object to query            |
+|options|Options                    |
+|return |Array of all property names|
 
 Available options:
 
-|Name              |Type   |Desc                     |
-|------------------|-------|-------------------------|
-|prototype=true    |boolean|Include prototype keys   |
-|unenumerable=false|boolean|Include unenumerable keys|
-|symbol=false      |boolean|Include symbol keys      |
+|Name              |Desc                     |
+|------------------|-------------------------|
+|prototype=true    |Include prototype keys   |
+|unenumerable=false|Include unenumerable keys|
+|symbol=false      |Include symbol keys      |
 
 Members of Object's prototype won't be retrieved.
 

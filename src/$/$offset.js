@@ -1,8 +1,9 @@
 /* Get the position of the element in document.
  *
- * |Name   |Type                |Desc                  |
- * |-------|--------------------|----------------------|
- * |element|string array element|Elements to get offset|
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |element|Elements to get offset|
+ * |return |Element position      |
  */
 
 /* example
@@ -11,7 +12,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

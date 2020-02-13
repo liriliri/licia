@@ -89,11 +89,11 @@ const $attr: $attr.IAttr;</code>
 
 获取元素集中第一个元素的指定属性值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|name|string|属性名|
-|返回值|string|第一个元素的属性值|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|name|属性名|
+|返回值|第一个元素的属性值|
 
 设置元素集中一个或多个属性的值。
 
@@ -330,10 +330,10 @@ const $insert: {
 
 插入 html 到元素内部后。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|content|string|html 字符串|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|content|html 字符串|
 
 ```javascript
 // <div id="test"><div class="mark"></div></div>
@@ -366,9 +366,10 @@ function $offset(element: $safeEls.El): $offset.IOffset;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|返回值|元素位置|
 
 ```javascript
 $offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
@@ -2288,11 +2289,11 @@ abbrev('lina', 'luna');
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|n|number|调用次数|
-|fn|function|源函数|
-|返回值|function|输出函数|
+|参数名|说明|
+|-----|---|
+|n|调用次数|
+|fn|源函数|
+|返回值|输出函数|
 
 ```javascript
 const fn = after(5, function() {
@@ -2309,6 +2310,7 @@ const fn = after(5, function() {
 <pre>
 <code class="language-typescript">namespace ajax {
     interface IOptions {
+        type?: string;
         url: string;
         data?: string | {};
         dataType?: string;
@@ -2318,30 +2320,32 @@ const fn = after(5, function() {
         complete?: Function;
         timeout?: number;
     }
-    function get(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
-    function post(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
+    function get(url: string, data: string | {}, success: Function, dataType?: string): XMLHttpRequest;
+    function get(url: string, success: Function, dataType?: string): XMLHttpRequest;
+    function post(url: string, data: string | {}, success: Function, dataType?: string): XMLHttpRequest;
+    function post(url: string, success: Function, dataType?: string): XMLHttpRequest;
 }
 function ajax(options: ajax.IOptions): XMLHttpRequest;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|options|object|Ajax 选项|
+|参数名|说明|
+|-----|---|
+|options|Ajax 选项|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|type|string|请求类型|
-|url|string|请求地址|
-|data|string object|请求数据|
-|dataType=json|string|响应类型（json，xml）|
-|contentType=application/x-www-form-urlencoded|string|请求内容类型|
-|success|function|成功回调|
-|error|function|失败回调|
-|complete|function|结束回调|
-|timeout|number|请求超时|
+|参数名|说明|
+|-----|---|
+|type|请求类型|
+|url|请求地址|
+|data|请求数据|
+|dataType=json|响应类型（json，xml）|
+|contentType=application/x-www-form-urlencoded|请求内容类型|
+|success|成功回调|
+|error|失败回调|
+|complete|结束回调|
+|timeout|请求超时|
 
 ### get
 
@@ -2351,12 +2355,12 @@ type = GET 的快捷方式。
 
 type = POST 的快捷方式。
 
-|参数名|类型|说明|
-|-----|----|---|
-|url|string|请求地址|
-|[data]|string object|请求数据|
-|success|function|成功回调|
-|dataType|function|响应类型|
+|参数名|说明|
+|-----|---|
+|url|请求地址|
+|data|请求数据|
+|success|成功回调|
+|dataType|响应类型|
 
 ```javascript
 ajax({
@@ -2398,19 +2402,19 @@ function allKeys(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|[options]|object|选项|
-|返回值|array|包含所有键名的数组|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|options|选项|
+|返回值|包含所有键名的数组|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|prototype=true|boolean|包含原型键名|
-|unenumerable=false|boolean|包含不可枚举键名|
-|symbol=false|boolean|包含 Symbol 键名|
+|参数名|说明|
+|-----|---|
+|prototype=true|包含原型键名|
+|unenumerable=false|包含不可枚举键名|
+|symbol=false|包含 Symbol 键名|
 
 Object 对象原型上的方法不会被获取到。
 

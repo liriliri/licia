@@ -18,8 +18,8 @@
 
 插入 html 到元素内部后。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|content|string|html 字符串|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|content|html 字符串|
 

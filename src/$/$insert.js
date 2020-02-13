@@ -16,10 +16,10 @@
  *
  * Insert content to the end of elements.
  *
- * |Name   |Type                |Desc                  |
- * |-------|--------------------|----------------------|
- * |element|string array element|Elements to manipulate|
- * |content|string              |Html strings          |
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |element|Elements to manipulate|
+ * |content|Html strings          |
  */
 
 /* example

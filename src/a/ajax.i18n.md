@@ -2,23 +2,23 @@
 
 执行异步 HTTP 请求。
 
-|参数名|类型|说明|
-|-----|----|---|
-|options|object|Ajax 选项|
+|参数名|说明|
+|-----|---|
+|options|Ajax 选项|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|type|string|请求类型|
-|url|string|请求地址|
-|data|string object|请求数据|
-|dataType=json|string|响应类型（json，xml）|
-|contentType=application/x-www-form-urlencoded|string|请求内容类型|
-|success|function|成功回调|
-|error|function|失败回调|
-|complete|function|结束回调|
-|timeout|number|请求超时|
+|参数名|说明|
+|-----|---|
+|type|请求类型|
+|url|请求地址|
+|data|请求数据|
+|dataType=json|响应类型（json，xml）|
+|contentType=application/x-www-form-urlencoded|请求内容类型|
+|success|成功回调|
+|error|失败回调|
+|complete|结束回调|
+|timeout|请求超时|
 
 ### get
 
@@ -28,10 +28,10 @@ type = GET 的快捷方式。
 
 type = POST 的快捷方式。
 
-|参数名|类型|说明|
-|-----|----|---|
-|url|string|请求地址|
-|[data]|string object|请求数据|
-|success|function|成功回调|
-|dataType|function|响应类型|
+|参数名|说明|
+|-----|---|
+|url|请求地址|
+|data|请求数据|
+|success|成功回调|
+|dataType|响应类型|
 

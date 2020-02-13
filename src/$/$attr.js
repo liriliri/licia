@@ -2,11 +2,11 @@
  *
  * Get the value of an attribute for the first element in the set of matched elements.
  *
- * |Name   |Type                |Desc                            |
- * |-------|--------------------|--------------------------------|
- * |element|string array element|Elements to manipulate          |
- * |name   |string              |Attribute name                  |
- * |return |string              |Attribute value of first element|
+ * |Name   |Desc                            |
+ * |-------|--------------------------------|
+ * |element|Elements to manipulate          |
+ * |name   |Attribute name                  |
+ * |return |Attribute value of first element|
  *
  * Set one or more attributes for the set of matched elements.
  *
@@ -43,7 +43,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

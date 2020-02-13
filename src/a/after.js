@@ -1,10 +1,10 @@
 /* Create a function that invokes once it's called n or more times.
  *
- * |Name  |Type    |Desc                          |
- * |------|--------|------------------------------|
- * |n     |number  |Number of calls before invoked|
- * |fn    |function|Function to restrict          |
- * |return|function|New restricted function       |
+ * |Name  |Desc                          |
+ * |------|------------------------------|
+ * |n     |Number of calls before invoked|
+ * |fn    |Function to restrict          |
+ * |return|New restricted function       |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

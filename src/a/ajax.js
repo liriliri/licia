@@ -1,22 +1,22 @@
 /* Perform an asynchronous HTTP request.
  *
- * |Name   |Type  |Desc        |
- * |-------|------|------------|
- * |options|object|Ajax options|
+ * |Name   |Desc        |
+ * |-------|------------|
+ * |options|Ajax options|
  *
  * Available options:
  *
- * |Name                                         |Type         |Desc                       |
- * |---------------------------------------------|-------------|---------------------------|
- * |type=get                                     |type         |Request type               |
- * |url                                          |string       |Request url                |
- * |data                                         |string object|Request data               |
- * |dataType=json                                |string       |Response type(json, xml)   |
- * |contentType=application/x-www-form-urlencoded|string       |Request header Content-Type|
- * |success                                      |function     |Success callback           |
- * |error                                        |function     |Error callback             |
- * |complete                                     |function     |Callback after request     |
- * |timeout                                      |number       |Request timeout            |
+ * |Name                                         |Desc                       |
+ * |---------------------------------------------|---------------------------|
+ * |type=get                                     |Request type               |
+ * |url                                          |Request url                |
+ * |data                                         |Request data               |
+ * |dataType=json                                |Response type(json, xml)   |
+ * |contentType=application/x-www-form-urlencoded|Request header Content-Type|
+ * |success                                      |Success callback           |
+ * |error                                        |Error callback             |
+ * |complete                                     |Callback after request     |
+ * |timeout                                      |Request timeout            |
  *
  * ### get
  *
@@ -26,12 +26,12 @@
  *
  * Shortcut for type = POST;
  *
- * |Name    |Type         |Desc            |
- * |--------|-------------|----------------|
- * |url     |string       |Request url     |
- * |[data]  |string object|Request data    |
- * |success |function     |Success callback|
- * |dataType|function     |Response type   |
+ * |Name    |Desc            |
+ * |--------|----------------|
+ * |url     |Request url     |
+ * |data    |Request data    |
+ * |success |Success callback|
+ * |dataType|Response type   |
  */
 
 /* example
@@ -58,6 +58,7 @@
 /* typescript
  * export declare namespace ajax {
  *     interface IOptions {
+ *         type?: string;
  *         url: string;
  *         data?: string | {};
  *         dataType?: string;
@@ -67,8 +68,10 @@
  *         complete?: Function;
  *         timeout?: number;
  *     }
- *     function get(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
- *     function post(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
+ *     function get(url: string, data: string | {}, success: Function, dataType?: string): XMLHttpRequest;
+ *     function get(url: string, success: Function, dataType?: string): XMLHttpRequest;
+ *     function post(url: string, data: string | {}, success: Function, dataType?: string): XMLHttpRequest;
+ *     function post(url: string, success: Function, dataType?: string): XMLHttpRequest;
  * }
  * export declare function ajax(options: ajax.IOptions): XMLHttpRequest;
  */
