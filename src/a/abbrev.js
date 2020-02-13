@@ -1,9 +1,9 @@
 /* Calculate the set of unique abbreviations for a given set of strings.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |...arr|string|List of names   |
- * |return|object|Abbreviation map|
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |...arr|List of names   |
+ * |return|Abbreviation map|
  */
 
 /* example

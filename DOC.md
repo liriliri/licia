@@ -85,7 +85,7 @@ Element attribute manipulation.
         remove(element: $safeEls.El, name: string): void;
     }
 }
- const $attr: $attr.IAttr;</code>
+const $attr: $attr.IAttr;</code>
 </pre>
 </details>
 
@@ -200,8 +200,8 @@ Element css manipulation.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function $css(element: $safeEls.El, name: string): string;
- function $css(element: $safeEls.El, name: string, value: string): void;
- function $css(
+function $css(element: $safeEls.El, name: string, value: string): void;
+function $css(
     element: $safeEls.El,
     properties: { [name: string]: string }
 ): void;</code>
@@ -252,7 +252,7 @@ Wrapper of $attr, adds data- prefix to keys.
         (element: $safeEls.El, name: string): string;
     }
 }
- const $data: $data.IData;</code>
+const $data: $data.IData;</code>
 </pre>
 </details>
 
@@ -306,7 +306,7 @@ Insert html on different position.
         (element: $safeEls.El, content: string): void;
     }
 }
- const $insert: {
+const $insert: {
     before: $insert.IInsert;
     after: $insert.IInsert;
     append: $insert.IInsert;
@@ -363,7 +363,7 @@ Get the position of the element in document.
         height: number;
     }
 }
- function $offset(element: $safeEls.El): $offset.IOffset;</code>
+function $offset(element: $safeEls.El): $offset.IOffset;</code>
 </pre>
 </details>
 
@@ -388,7 +388,7 @@ Element property html, text, val getter and setter.
         (element: $safeEls.El): string;
     }
 }
- const $property: {
+const $property: {
     html: $property.IProperty;
     val: $property.IProperty;
     text: $property.IProperty;
@@ -446,7 +446,7 @@ Convert value into an array, if it's a string, do querySelector.
 <code class="language-typescript">namespace $safeEls {
     type El = Element | Element[] | NodeListOf&lt;Element&gt; | string;
 }
- function $safeEls(value: $safeEls.El): Element[];</code>
+function $safeEls(value: $safeEls.El): Element[];</code>
 </pre>
 </details>
 
@@ -641,7 +641,7 @@ Create JavaScript class.
         [method: string]: any;
     }
 }
- function Class(methods: any, statics?: any): Class.IConstructor;</code>
+function Class(methods: any, statics?: any): Class.IConstructor;</code>
 </pre>
 </details>
 
@@ -695,7 +695,7 @@ Color converter.
         model: string;
     }
 }
- class Color {
+class Color {
     constructor(color: string | Color.IColor);
     toRgb(): string;
     toHex(): string;
@@ -848,7 +848,7 @@ Event emitter class which provides observer pattern.
 <code class="language-typescript">namespace Emitter {
     function mixin(obj: any): any;
 }
- class Emitter {
+class Emitter {
     on(event: string, listener: Function): Emitter;
     off(event: string, listener: Function): Emitter;
     once(event: string, listener: Function): Emitter;
@@ -1172,7 +1172,7 @@ Doubly-linked list implementation.
         next: Node | null;
     }
 }
- class LinkedList {
+class LinkedList {
     size: number;
     head: LinkedList.Node;
     tail: LinkedList.Node;
@@ -2109,7 +2109,7 @@ Simple url manipulator.
         slashes: boolean;
     }
 }
- class Url {
+class Url {
     protocol: string;
     auth: string;
     hostname: string;
@@ -2272,10 +2272,10 @@ Calculate the set of unique abbreviations for a given set of strings.
 </pre>
 </details>
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|...arr|string|List of names   |
-|return|object|Abbreviation map|
+|Name  |Desc            |
+|------|----------------|
+|...arr|List of names   |
+|return|Abbreviation map|
 
 ```javascript
 abbrev('lina', 'luna');
@@ -2326,7 +2326,7 @@ Perform an asynchronous HTTP request.
     function get(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
     function post(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
 }
- function ajax(options: ajax.IOptions): XMLHttpRequest;</code>
+function ajax(options: ajax.IOptions): XMLHttpRequest;</code>
 </pre>
 </details>
 
@@ -2392,11 +2392,11 @@ Retrieve all the names of object's own and inherited properties.
         unenumerable?: boolean;
     }
 }
- function allKeys(
+function allKeys(
     obj: any,
     options: { symbol: true } &amp; allKeys.IOptions
 ): Array&lt;string | Symbol&gt;;
- function allKeys(
+function allKeys(
     obj: any,
     options?: ({ symbol: false } &amp; allKeys.IOptions) | allKeys.IOptions
 ): string[];</code>
@@ -2437,7 +2437,7 @@ Ansi colors.
         (str: string): string;
     }
 }
- const ansiColor: {
+const ansiColor: {
     black: ansiColor.IFn;
     red: ansiColor.IFn;
     green: ansiColor.IFn;
@@ -2937,7 +2937,7 @@ Clamp number within the inclusive lower and upper bounds.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function clamp(n: number, lower: number, upper: number): number;
- function clamp(n: number, upper: number): number;</code>
+function clamp(n: number, upper: number): number;</code>
 </pre>
 </details>
 
@@ -3137,8 +3137,8 @@ Compress image using canvas.
         quality?: number;
     }
 }
- function compressImg(file: File | Blob | string, cb: Function): void;
- function compressImg(
+function compressImg(file: File | Blob | string, cb: Function): void;
+function compressImg(
     file: File | Blob | string,
     opts?: compressImg.IOptions,
     cb?: Function
@@ -3259,7 +3259,7 @@ Convert binary data type.
 <code class="language-typescript">namespace convertBin {
     function blobToArrBuffer(blob: any): Promise&lt;ArrayBuffer&gt;;
 }
- function convertBin(bin: any, type: string): any;</code>
+function convertBin(bin: any, type: string): any;</code>
 </pre>
 </details>
 
@@ -3311,7 +3311,7 @@ Simple api for handling browser cookies.
         remove(key: string, options?: cookie.IOptions): ICookie;
     }
 }
- const cookie: cookie.ICookie;</code>
+const cookie: cookie.ICookie;</code>
 </pre>
 </details>
 
@@ -3519,7 +3519,7 @@ CreateObjectURL wrapper.
         type?: string
     }
 }
- function createUrl(data: any, options?: createUrl.IOptions): string;</code>
+function createUrl(data: any, options?: createUrl.IOptions): string;</code>
 </pre>
 </details>
 
@@ -3548,7 +3548,7 @@ Css parser and serializer.
         indent?: string;
     }
 }
- const css: {
+const css: {
     parse(css: string): object;
     stringify(stylesheet: object, options?: css.IOptions): string;
 }</code>
@@ -3648,7 +3648,7 @@ Simple but extremely useful date format function.
     utc?: boolean,
     gmt?: boolean
 ): string;
- function dateFormat(
+function dateFormat(
     mask: string,
     utc?: boolean,
     gmt?: boolean
@@ -3814,7 +3814,7 @@ Define a module, should be used along with use.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function define(name: string, requires: string[], method: Function): void;
- function define(name: string, method: Function): void;</code>
+function define(name: string, method: Function): void;</code>
 </pre>
 </details>
 
@@ -3847,7 +3847,7 @@ Shortcut for Object.defineProperty(defineProperties).
     prop: string,
     descriptor: PropertyDescriptor
 ): T;
- function defineProp&lt;T&gt;(obj: T, descriptor: PropertyDescriptorMap): T;</code>
+function defineProp&lt;T&gt;(obj: T, descriptor: PropertyDescriptorMap): T;</code>
 </pre>
 </details>
 
@@ -4039,7 +4039,7 @@ Detect browser info using ua.
         version: number;
     }
 }
- function detectBrowser(ua?: string): detectBrowser.IBrowser;</code>
+function detectBrowser(ua?: string): detectBrowser.IBrowser;</code>
 </pre>
 </details>
 
@@ -4205,7 +4205,7 @@ Iterate over elements of collection and invokes iterator for each element.
     iterator: types.ListIterator&lt;T, void&gt;,
     ctx?: any
 ): types.List&lt;T&gt;;
- function each&lt;T&gt;(
+function each&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, void&gt;,
     ctx?: any
@@ -4426,7 +4426,7 @@ Check if predicate return truthy for all elements.
     iterator?: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;
- function every&lt;T&gt;(
+function every&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator?: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
@@ -4595,7 +4595,7 @@ Turn XMLHttpRequest into promise like.
         headers: IHeaders;
     }
 }
- function fetch(
+function fetch(
     url: string,
     options?: fetch.IOptions
 ): Promise&lt;fetch.IResult&gt;;</code>
@@ -4681,7 +4681,7 @@ Detect file type using magic number.
         mime: string;
     }
 }
- function fileType(
+function fileType(
     input: Buffer | ArrayBuffer | Uint8Array
 ): fileType.IFileType | undefined;</code>
 </pre>
@@ -4743,7 +4743,7 @@ Iterates over elements of collection, returning an array of all the values that 
     iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];
- function filter&lt;T&gt;(
+function filter&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
@@ -4776,7 +4776,7 @@ Find the first value that passes a truth test in a collection.
     iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T | undefined;
- function find&lt;T&gt;(
+function find&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
@@ -5131,7 +5131,7 @@ Fullscreen api wrapper.
         isEnabled(): boolean;
     }
 }
- const fullscreen: fullscreen.IFullscreen;</code>
+const fullscreen: fullscreen.IFullscreen;</code>
 </pre>
 </details>
 
@@ -5187,7 +5187,7 @@ Simple fuzzy search.
         key?: string | string[];
     }
 }
- function fuzzySearch(
+function fuzzySearch(
     needle: string,
     haystack: any[],
     options?: fuzzySearch.IOptions
@@ -5320,7 +5320,7 @@ Handle errors like golang.
 <code class="language-typescript">function golangify&lt;T, U = Error&gt;(
     fn: (...args: any[]) =&gt; Promise&lt;T&gt;
 ): (...args: any[]) =&gt; Promise&lt;[T | undefined, U | null]&gt;;
- function golangify&lt;T, U = Error&gt;(
+function golangify&lt;T, U = Error&gt;(
     p: Promise&lt;T&gt;
 ): Promise&lt;[T | undefined, U | null]&gt;;</code>
 </pre>
@@ -5475,7 +5475,7 @@ Highlight code.
         operator?: string;
     }
 }
- function highlight(
+function highlight(
     str: string,
     lang?: string,
     style?: highlight.IStyle
@@ -5704,7 +5704,7 @@ Ini parser and serializer.
         whitespace: boolean;
     }
 }
- const ini: {
+const ini: {
     parse(ini: string): any;
     stringify(obj: any, options?: ini.IOptions): string;
 };</code>
@@ -5805,7 +5805,7 @@ Intersect two ranges.
         end: number;
     }
 }
- function intersectRange(
+function intersectRange(
     a: intersectRange.IRange,
     b: intersectRange.IRange
 ): intersectRange.IRange | void;</code>
@@ -6457,7 +6457,7 @@ Check if value is an IP address.
     function v4(str: string): boolean;
     function v6(str: string): boolean;
 }
- function isIp(str: string): boolean;</code>
+function isIp(str: string): boolean;</code>
 </pre>
 </details>
 
@@ -7230,7 +7230,7 @@ A simple jsonp implementation.
         timeout?: number;
     }
 }
- function jsonp(opts: jsonp.IOptions): void;</code>
+function jsonp(opts: jsonp.IOptions): void;</code>
 </pre>
 </details>
 
@@ -7292,7 +7292,7 @@ Key codes and key names conversion.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function keyCode(name: string): number;
- function keyCode(code: number): string;</code>
+function keyCode(code: number): string;</code>
 </pre>
 </details>
 
@@ -7606,7 +7606,7 @@ Create an array of values by running each element in collection through iteratee
     iterator: types.ListIterator&lt;T, TResult&gt;,
     context?: any
 ): TResult[];
- function map&lt;T, TResult&gt;(
+function map&lt;T, TResult&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, TResult&gt;,
     context?: any
@@ -7791,11 +7791,11 @@ Document meta manipulation, turn name and content into key value pairs.
 <code class="language-typescript">namespace meta {
     function remove(nameList: string | string[]): void;
 }
- function meta(): {};
- function meta(key: string): string;
- function meta(keys: string[]): {};
- function meta(key, value): void;
- function meta(pairs: {}): void;</code>
+function meta(): {};
+function meta(key: string): string;
+function meta(keys: string[]): {};
+function meta(key, value): void;
+function meta(pairs: {}): void;</code>
 </pre>
 </details>
 
@@ -7918,7 +7918,7 @@ Recursively create directories.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function mkdir(dir: string, mode?: number, cb?: Function): void;
- function mkdir(dir: string, cb?: Function): void;</code>
+function mkdir(dir: string, cb?: Function): void;</code>
 </pre>
 </details>
 
@@ -7983,7 +7983,7 @@ Tiny moment.js like implementation.
        diff(input: M | string | Date, unit: string, asFloat: boolean): number;
    }
 }
- function moment(value: string | Date): moment.M;</code>
+function moment(value: string | Date): moment.M;</code>
 </pre>
 </details>
 
@@ -8052,7 +8052,7 @@ Convert time string formats to milliseconds.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function ms(str: string): number;
- function ms(num: number): string;</code>
+function ms(num: number): string;</code>
 </pre>
 </details>
 
@@ -8197,7 +8197,7 @@ Normalize phone numbers into E.164 format.
         trunkPrefix?: boolean;
     }
 }
- function normalizePhone(
+function normalizePhone(
     phone: string,
     options: normalizePhone.IOptions
 ): string;</code>
@@ -8243,7 +8243,7 @@ Wrapper for the Web Notifications API.
         show(): void;
     }
 }
- function notify(title: string, options?: object): void;</code>
+function notify(title: string, options?: object): void;</code>
 </pre>
 </details>
 
@@ -8387,7 +8387,7 @@ Open file dialog to select file in browser.
     }
 }
 
- function openFile(options?: openFile.IOptions): Promise&lt;File[]&gt;;</code>
+function openFile(options?: openFile.IOptions): Promise&lt;File[]&gt;;</code>
 </pre>
 </details>
 
@@ -8453,7 +8453,7 @@ Screen orientation helper.
         get(): string;
     }
 }
- const orientation: orientation.IOrientation;</code>
+const orientation: orientation.IOrientation;</code>
 </pre>
 </details>
 
@@ -8604,7 +8604,7 @@ Simple html parser.
         text?: (text: string) =&gt; void;
     }
 }
- function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
+function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
 </pre>
 </details>
 
@@ -8792,7 +8792,7 @@ Add vendor prefixes to a CSS attribute.
 <code class="language-typescript">namespace prefix {
     function dash(name: string): string;
 }
- function prefix(name: string): string;</code>
+function prefix(name: string): string;</code>
 </pre>
 </details>
 
@@ -8930,7 +8930,7 @@ Shortcut for requestAnimationFrame.
 <code class="language-typescript">namespace raf {
     function cancel(id: number);
 }
- function raf(cb: Function): number;</code>
+function raf(cb: Function): number;</code>
 </pre>
 </details>
 
@@ -9006,8 +9006,8 @@ Random color generator.
         seed?: number
     }
 }
- function randomColor(): string;
- function randomColor(options: randomColor.IOptions): string | string[];</code>
+function randomColor(): string;
+function randomColor(options: randomColor.IOptions): string | string[];</code>
 </pre>
 </details>
 
@@ -9164,7 +9164,7 @@ Turn a list of values into a single value.
     memo?: TResult,
     context?: any
 ): TResult;
- function reduce&lt;T, TResult&gt;(
+function reduce&lt;T, TResult&gt;(
     list: types.Dictionary&lt;T&gt;,
     iterator: types.MemoObjectIterator&lt;T, TResult&gt;,
     memo?: TResult,
@@ -9217,7 +9217,7 @@ Opposite of filter.
     iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];
- function reject&lt;T&gt;(
+function reject&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
@@ -9364,7 +9364,7 @@ Shortcut for requestIdleCallback.
 <code class="language-typescript">namespace ric {
     function cancel(id: number);
 }
- function ric(cb: Function): number;</code>
+function ric(cb: Function): number;</code>
 </pre>
 </details>
 
@@ -9621,7 +9621,7 @@ Scroll to a target with animation.
         callback?: Function;
     }
 }
- function scrollTo(
+function scrollTo(
     target: Element | string | number,
     options: scrollTo.IOptions
 );</code>
@@ -9715,7 +9715,7 @@ Css selector parser and serializer.
         value: string;
     }
 }
- const selector: {
+const selector: {
     parse(selector: string): Array&lt;selector.IToken[]&gt;;
     stringify(selector: Array&lt;selector.IToken[]&gt;): string;
 }</code>
@@ -9937,7 +9937,7 @@ Check if predicate return truthy for any element.
     iterator?: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;
- function some&lt;T&gt;(
+function some&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator?: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
@@ -10079,7 +10079,7 @@ Split path into dir, name and ext.
         ext: string;
     }
 }
- function splitPath(path: string): splitPath.IPath;</code>
+function splitPath(path: string): splitPath.IPath;</code>
 </pre>
 </details>
 
@@ -10221,7 +10221,7 @@ Stringify object into json with types.
         ignore?: any[];
     }
 }
- function stringifyAll(
+function stringifyAll(
     obj: any,
     options?: stringifyAll.IOptions
 ): string;</code>
@@ -10339,7 +10339,7 @@ Strip indentation from multi-line strings.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function stripIndent(str: string): string;
- function stripIndent(
+function stripIndent(
     literals: TemplateStringsArray,
     ...placeholders: any[]
 ): string;</code>
@@ -10483,7 +10483,7 @@ Tiny wrapper of stream Transform.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">import stream = require(&#x27;stream&#x27;);
- namespace through {
+namespace through {
     interface ThroughConstructor extends stream.Transform {
         new (opts?: stream.DuplexOptions): stream.Transform;
         (opts?: stream.DuplexOptions): stream.Transform;
@@ -10512,11 +10512,11 @@ Tiny wrapper of stream Transform.
         flush?: FlushCallback
     ): ThroughConstructor;
 }
- function through(
+function through(
     transform?: through.TransformFunction,
     flush?: through.FlushCallback
 ): stream.Transform;
- function through(
+function through(
     opts?: stream.DuplexOptions,
     transform?: through.TransformFunction,
     flush?: through.FlushCallback
@@ -10849,7 +10849,7 @@ Trigger browser events.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function trigger(el: Element, type: string, options?: any);
- function trigger(type: string, options?: any);</code>
+function trigger(type: string, options?: any);</code>
 </pre>
 </details>
 
@@ -10966,7 +10966,7 @@ Used for typescript definitions only.
         (prev: TResult, curr: T, key: string, list: Dictionary&lt;T&gt;): TResult;
     }
 }
- const types: {}</code>
+const types: {}</code>
 </pre>
 </details>
 
@@ -11240,7 +11240,7 @@ Use modules that is created by define.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function use(requires: string[], method: Function): void;
- function use(method: Function): void;</code>
+function use(method: Function): void;</code>
 </pre>
 </details>
 

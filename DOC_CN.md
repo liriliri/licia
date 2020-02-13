@@ -83,7 +83,7 @@ $btn.on('click', function () {
         remove(element: $safeEls.El, name: string): void;
     }
 }
- const $attr: $attr.IAttr;</code>
+const $attr: $attr.IAttr;</code>
 </pre>
 </details>
 
@@ -199,8 +199,8 @@ $class.has('#test', 'class1'); // -> true
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function $css(element: $safeEls.El, name: string): string;
- function $css(element: $safeEls.El, name: string, value: string): void;
- function $css(
+function $css(element: $safeEls.El, name: string, value: string): void;
+function $css(
     element: $safeEls.El,
     properties: { [name: string]: string }
 ): void;</code>
@@ -251,7 +251,7 @@ $css('#test', 'color'); // -> #fff
         (element: $safeEls.El, name: string): string;
     }
 }
- const $data: $data.IData;</code>
+const $data: $data.IData;</code>
 </pre>
 </details>
 
@@ -305,7 +305,7 @@ $event.off('#test', 'click', clickHandler);
         (element: $safeEls.El, content: string): void;
     }
 }
- const $insert: {
+const $insert: {
     before: $insert.IInsert;
     after: $insert.IInsert;
     append: $insert.IInsert;
@@ -362,7 +362,7 @@ $insert.append('#test', '<div>licia</div>');
         height: number;
     }
 }
- function $offset(element: $safeEls.El): $offset.IOffset;</code>
+function $offset(element: $safeEls.El): $offset.IOffset;</code>
 </pre>
 </details>
 
@@ -387,7 +387,7 @@ $offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
         (element: $safeEls.El): string;
     }
 }
- const $property: {
+const $property: {
     html: $property.IProperty;
     val: $property.IProperty;
     text: $property.IProperty;
@@ -441,7 +441,7 @@ $remove('#test');
 <code class="language-typescript">namespace $safeEls {
     type El = Element | Element[] | NodeListOf&lt;Element&gt; | string;
 }
- function $safeEls(value: $safeEls.El): Element[];</code>
+function $safeEls(value: $safeEls.El): Element[];</code>
 </pre>
 </details>
 
@@ -636,7 +636,7 @@ c.has('content-type'); // -> false
         [method: string]: any;
     }
 }
- function Class(methods: any, statics?: any): Class.IConstructor;</code>
+function Class(methods: any, statics?: any): Class.IConstructor;</code>
 </pre>
 </details>
 
@@ -690,7 +690,7 @@ Student.is(a); // -> true
         model: string;
     }
 }
- class Color {
+class Color {
     constructor(color: string | Color.IColor);
     toRgb(): string;
     toHex(): string;
@@ -843,7 +843,7 @@ dispatcher.dispatch({
 <code class="language-typescript">namespace Emitter {
     function mixin(obj: any): any;
 }
- class Emitter {
+class Emitter {
     on(event: string, listener: Function): Emitter;
     off(event: string, listener: Function): Emitter;
     once(event: string, listener: Function): Emitter;
@@ -1167,7 +1167,7 @@ data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', c
         next: Node | null;
     }
 }
- class LinkedList {
+class LinkedList {
     size: number;
     head: LinkedList.Node;
     tail: LinkedList.Node;
@@ -2104,7 +2104,7 @@ tween.to({x: 100, y: 100}, 1000, 'inElastic').play();
         slashes: boolean;
     }
 }
- class Url {
+class Url {
     protocol: string;
     auth: string;
     hostname: string;
@@ -2267,10 +2267,10 @@ validator.validate({test: 'licia'}); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|...arr|string|字符串集|
-|返回值|object|缩写集合|
+|参数名|说明|
+|-----|---|
+|...arr|字符串集|
+|返回值|缩写集合|
 
 ```javascript
 abbrev('lina', 'luna');
@@ -2321,7 +2321,7 @@ const fn = after(5, function() {
     function get(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
     function post(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
 }
- function ajax(options: ajax.IOptions): XMLHttpRequest;</code>
+function ajax(options: ajax.IOptions): XMLHttpRequest;</code>
 </pre>
 </details>
 
@@ -2387,11 +2387,11 @@ ajax.get('http://example.com', {}, function (data) {
         unenumerable?: boolean;
     }
 }
- function allKeys(
+function allKeys(
     obj: any,
     options: { symbol: true } &amp; allKeys.IOptions
 ): Array&lt;string | Symbol&gt;;
- function allKeys(
+function allKeys(
     obj: any,
     options?: ({ symbol: false } &amp; allKeys.IOptions) | allKeys.IOptions
 ): string[];</code>
@@ -2432,7 +2432,7 @@ allKeys(obj) // -> ['zero', 'one']
         (str: string): string;
     }
 }
- const ansiColor: {
+const ansiColor: {
     black: ansiColor.IFn;
     red: ansiColor.IFn;
     green: ansiColor.IFn;
@@ -2932,7 +2932,7 @@ chunk([1, 2, 3, 4]); // -> [[1], [2], [3], [4]]
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function clamp(n: number, lower: number, upper: number): number;
- function clamp(n: number, upper: number): number;</code>
+function clamp(n: number, upper: number): number;</code>
 </pre>
 </details>
 
@@ -3132,8 +3132,8 @@ welcome('licia'); // -> 'hi: LICIA!'
         quality?: number;
     }
 }
- function compressImg(file: File | Blob | string, cb: Function): void;
- function compressImg(
+function compressImg(file: File | Blob | string, cb: Function): void;
+function compressImg(
     file: File | Blob | string,
     opts?: compressImg.IOptions,
     cb?: Function
@@ -3254,7 +3254,7 @@ convertBase('ff', 16, 2); // -> '11111111'
 <code class="language-typescript">namespace convertBin {
     function blobToArrBuffer(blob: any): Promise&lt;ArrayBuffer&gt;;
 }
- function convertBin(bin: any, type: string): any;</code>
+function convertBin(bin: any, type: string): any;</code>
 </pre>
 </details>
 
@@ -3306,7 +3306,7 @@ convertBin.blobToArrBuffer(new Blob([])).then(arrBuffer => {
         remove(key: string, options?: cookie.IOptions): ICookie;
     }
 }
- const cookie: cookie.ICookie;</code>
+const cookie: cookie.ICookie;</code>
 </pre>
 </details>
 
@@ -3514,7 +3514,7 @@ CreateObjectURL 的包裹函数。
         type?: string
     }
 }
- function createUrl(data: any, options?: createUrl.IOptions): string;</code>
+function createUrl(data: any, options?: createUrl.IOptions): string;</code>
 </pre>
 </details>
 
@@ -3543,7 +3543,7 @@ CSS 解析器。
         indent?: string;
     }
 }
- const css: {
+const css: {
     parse(css: string): object;
     stringify(stylesheet: object, options?: css.IOptions): string;
 }</code>
@@ -3643,7 +3643,7 @@ add1(2); // -> 3
     utc?: boolean,
     gmt?: boolean
 ): string;
- function dateFormat(
+function dateFormat(
     mask: string,
     utc?: boolean,
     gmt?: boolean
@@ -3809,7 +3809,7 @@ defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood',
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function define(name: string, requires: string[], method: Function): void;
- function define(name: string, method: Function): void;</code>
+function define(name: string, method: Function): void;</code>
 </pre>
 </details>
 
@@ -3842,7 +3842,7 @@ Object.defineProperty(defineProperties) 的快捷方式。
     prop: string,
     descriptor: PropertyDescriptor
 ): T;
- function defineProp&lt;T&gt;(obj: T, descriptor: PropertyDescriptorMap): T;</code>
+function defineProp&lt;T&gt;(obj: T, descriptor: PropertyDescriptorMap): T;</code>
 </pre>
 </details>
 
@@ -4034,7 +4034,7 @@ obsoleteFn();
         version: number;
     }
 }
- function detectBrowser(ua?: string): detectBrowser.IBrowser;</code>
+function detectBrowser(ua?: string): detectBrowser.IBrowser;</code>
 </pre>
 </details>
 
@@ -4200,7 +4200,7 @@ durationFormat(12345678, 'h:m:s:l'); // -> '3:25:45:678'
     iterator: types.ListIterator&lt;T, void&gt;,
     ctx?: any
 ): types.List&lt;T&gt;;
- function each&lt;T&gt;(
+function each&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, void&gt;,
     ctx?: any
@@ -4422,7 +4422,7 @@ evalJs('this.a', {a: 2}); // -> 2
     iterator?: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;
- function every&lt;T&gt;(
+function every&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator?: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
@@ -4591,7 +4591,7 @@ extractUrls(str); // -> ['http://eustia.liriliri.io']
         headers: IHeaders;
     }
 }
- function fetch(
+function fetch(
     url: string,
     options?: fetch.IOptions
 ): Promise&lt;fetch.IResult&gt;;</code>
@@ -4677,7 +4677,7 @@ fileSize(1500000000000); // -> '1.36T'
         mime: string;
     }
 }
- function fileType(
+function fileType(
     input: Buffer | ArrayBuffer | Uint8Array
 ): fileType.IFileType | undefined;</code>
 </pre>
@@ -4739,7 +4739,7 @@ fill([1, 2, 3], '*', 1, 2); // -> [1, '*', 3]
     iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];
- function filter&lt;T&gt;(
+function filter&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
@@ -4772,7 +4772,7 @@ filter([1, 2, 3, 4, 5], function (val) {
     iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T | undefined;
- function find&lt;T&gt;(
+function find&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
@@ -5127,7 +5127,7 @@ fs.readFile('test.js').then(function (data) {
         isEnabled(): boolean;
     }
 }
- const fullscreen: fullscreen.IFullscreen;</code>
+const fullscreen: fullscreen.IFullscreen;</code>
 </pre>
 </details>
 
@@ -5183,7 +5183,7 @@ fullscreen.on('change', () => {});
         key?: string | string[];
     }
 }
- function fuzzySearch(
+function fuzzySearch(
     needle: string,
     haystack: any[],
     options?: fuzzySearch.IOptions
@@ -5316,7 +5316,7 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 <code class="language-typescript">function golangify&lt;T, U = Error&gt;(
     fn: (...args: any[]) =&gt; Promise&lt;T&gt;
 ): (...args: any[]) =&gt; Promise&lt;[T | undefined, U | null]&gt;;
- function golangify&lt;T, U = Error&gt;(
+function golangify&lt;T, U = Error&gt;(
     p: Promise&lt;T&gt;
 ): Promise&lt;[T | undefined, U | null]&gt;;</code>
 </pre>
@@ -5471,7 +5471,7 @@ hex.decode('a8ae9bff'); // -> [168, 174, 155, 255]
         operator?: string;
     }
 }
- function highlight(
+function highlight(
     str: string,
     lang?: string,
     style?: highlight.IStyle
@@ -5700,7 +5700,7 @@ ini 文件解析器。
         whitespace: boolean;
     }
 }
- const ini: {
+const ini: {
     parse(ini: string): any;
     stringify(obj: any, options?: ini.IOptions): string;
 };</code>
@@ -5801,7 +5801,7 @@ intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
         end: number;
     }
 }
- function intersectRange(
+function intersectRange(
     a: intersectRange.IRange,
     b: intersectRange.IRange
 ): intersectRange.IRange | void;</code>
@@ -6453,7 +6453,7 @@ isInt({}); // -> false
     function v4(str: string): boolean;
     function v6(str: string): boolean;
 }
- function isIp(str: string): boolean;</code>
+function isIp(str: string): boolean;</code>
 </pre>
 </details>
 
@@ -7226,7 +7226,7 @@ jsonClone({ name: 'licia' }); // -> { name: 'licia' }
         timeout?: number;
     }
 }
- function jsonp(opts: jsonp.IOptions): void;</code>
+function jsonp(opts: jsonp.IOptions): void;</code>
 </pre>
 </details>
 
@@ -7288,7 +7288,7 @@ kebabCase('foo.bar'); // -> foo-bar
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function keyCode(name: string): number;
- function keyCode(code: number): string;</code>
+function keyCode(code: number): string;</code>
 </pre>
 </details>
 
@@ -7602,7 +7602,7 @@ ltrim('_abc_', ['a', '_']); // -> 'bc_'
     iterator: types.ListIterator&lt;T, TResult&gt;,
     context?: any
 ): TResult[];
- function map&lt;T, TResult&gt;(
+function map&lt;T, TResult&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, TResult&gt;,
     context?: any
@@ -7787,11 +7787,11 @@ meta 操作库，将 name 和 content 属性值转换为键值对。
 <code class="language-typescript">namespace meta {
     function remove(nameList: string | string[]): void;
 }
- function meta(): {};
- function meta(key: string): string;
- function meta(keys: string[]): {};
- function meta(key, value): void;
- function meta(pairs: {}): void;</code>
+function meta(): {};
+function meta(key: string): string;
+function meta(keys: string[]): {};
+function meta(key, value): void;
+function meta(pairs: {}): void;</code>
 </pre>
 </details>
 
@@ -7914,7 +7914,7 @@ min(2.3, 1, 4.5, 2); // 1
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function mkdir(dir: string, mode?: number, cb?: Function): void;
- function mkdir(dir: string, cb?: Function): void;</code>
+function mkdir(dir: string, cb?: Function): void;</code>
 </pre>
 </details>
 
@@ -7979,7 +7979,7 @@ mkdir('/tmp/foo/bar/baz', function (err) {
        diff(input: M | string | Date, unit: string, asFloat: boolean): number;
    }
 }
- function moment(value: string | Date): moment.M;</code>
+function moment(value: string | Date): moment.M;</code>
 </pre>
 </details>
 
@@ -8048,7 +8048,7 @@ morse.decode(str); // -> 'Hello, world.'
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function ms(str: string): number;
- function ms(num: number): string;</code>
+function ms(num: number): string;</code>
 </pre>
 </details>
 
@@ -8191,7 +8191,7 @@ normalizePath('./foo//bar'); // -> './foo/bar'
         trunkPrefix?: boolean;
     }
 }
- function normalizePhone(
+function normalizePhone(
     phone: string,
     options: normalizePhone.IOptions
 ): string;</code>
@@ -8237,7 +8237,7 @@ Web Notifications 接口简单包装。
         show(): void;
     }
 }
- function notify(title: string, options?: object): void;</code>
+function notify(title: string, options?: object): void;</code>
 </pre>
 </details>
 
@@ -8381,7 +8381,7 @@ open('https://eustia.liriliri.io/');
     }
 }
 
- function openFile(options?: openFile.IOptions): Promise&lt;File[]&gt;;</code>
+function openFile(options?: openFile.IOptions): Promise&lt;File[]&gt;;</code>
 </pre>
 </details>
 
@@ -8447,7 +8447,7 @@ ordinal(2); // -> '2nd'
         get(): string;
     }
 }
- const orientation: orientation.IOrientation;</code>
+const orientation: orientation.IOrientation;</code>
 </pre>
 </details>
 
@@ -8598,7 +8598,7 @@ Simple html parser.
         text?: (text: string) =&gt; void;
     }
 }
- function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
+function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
 </pre>
 </details>
 
@@ -8613,7 +8613,7 @@ Simple html parser.
         text?: (text: string) =&gt; void;
     }
 }
- function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
+function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
 </pre>
 </details>
 
@@ -8801,7 +8801,7 @@ prefetch('https://eustia.liriliri.io/');
 <code class="language-typescript">namespace prefix {
     function dash(name: string): string;
 }
- function prefix(name: string): string;</code>
+function prefix(name: string): string;</code>
 </pre>
 </details>
 
@@ -8939,7 +8939,7 @@ requestAnimationFrame 快捷方式。
 <code class="language-typescript">namespace raf {
     function cancel(id: number);
 }
- function raf(cb: Function): number;</code>
+function raf(cb: Function): number;</code>
 </pre>
 </details>
 
@@ -9015,8 +9015,8 @@ randomBytes(5); // -> [55, 49, 153, 30, 122]
         seed?: number
     }
 }
- function randomColor(): string;
- function randomColor(options: randomColor.IOptions): string | string[];</code>
+function randomColor(): string;
+function randomColor(options: randomColor.IOptions): string | string[];</code>
 </pre>
 </details>
 
@@ -9173,7 +9173,7 @@ ready(function () {
     memo?: TResult,
     context?: any
 ): TResult;
- function reduce&lt;T, TResult&gt;(
+function reduce&lt;T, TResult&gt;(
     list: types.Dictionary&lt;T&gt;,
     iterator: types.MemoObjectIterator&lt;T, TResult&gt;,
     memo?: TResult,
@@ -9226,7 +9226,7 @@ reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> 
     iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): T[];
- function reject&lt;T&gt;(
+function reject&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
@@ -9373,7 +9373,7 @@ requestIdleCallback 的快捷方式。
 <code class="language-typescript">namespace ric {
     function cancel(id: number);
 }
- function ric(cb: Function): number;</code>
+function ric(cb: Function): number;</code>
 </pre>
 </details>
 
@@ -9630,7 +9630,7 @@ sample({a: 1, b: 2, c: 3}, 1); // -> [2]
         callback?: Function;
     }
 }
- function scrollTo(
+function scrollTo(
     target: Element | string | number,
     options: scrollTo.IOptions
 );</code>
@@ -9724,7 +9724,7 @@ CSS 选择器解析器。
         value: string;
     }
 }
- const selector: {
+const selector: {
     parse(selector: string): Array&lt;selector.IToken[]&gt;;
     stringify(selector: Array&lt;selector.IToken[]&gt;): string;
 }</code>
@@ -9946,7 +9946,7 @@ snakeCase('foo.bar'); // -> foo_bar
     iterator?: types.ListIterator&lt;T, boolean&gt;,
     context?: any
 ): boolean;
- function some&lt;T&gt;(
+function some&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator?: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
@@ -10088,7 +10088,7 @@ splitCase('foo-Bar'); // -> ['foo', 'bar']
         ext: string;
     }
 }
- function splitPath(path: string): splitPath.IPath;</code>
+function splitPath(path: string): splitPath.IPath;</code>
 </pre>
 </details>
 
@@ -10230,7 +10230,7 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
         ignore?: any[];
     }
 }
- function stringifyAll(
+function stringifyAll(
     obj: any,
     options?: stringifyAll.IOptions
 ): string;</code>
@@ -10348,7 +10348,7 @@ stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function stripIndent(str: string): string;
- function stripIndent(
+function stripIndent(
     literals: TemplateStringsArray,
     ...placeholders: any[]
 ): string;</code>
@@ -10492,7 +10492,7 @@ stream Transform 类的简单包装。
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">import stream = require(&#x27;stream&#x27;);
- namespace through {
+namespace through {
     interface ThroughConstructor extends stream.Transform {
         new (opts?: stream.DuplexOptions): stream.Transform;
         (opts?: stream.DuplexOptions): stream.Transform;
@@ -10521,11 +10521,11 @@ stream Transform 类的简单包装。
         flush?: FlushCallback
     ): ThroughConstructor;
 }
- function through(
+function through(
     transform?: through.TransformFunction,
     flush?: through.FlushCallback
 ): stream.Transform;
- function through(
+function through(
     opts?: stream.DuplexOptions,
     transform?: through.TransformFunction,
     flush?: through.FlushCallback
@@ -10858,7 +10858,7 @@ topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function trigger(el: Element, type: string, options?: any);
- function trigger(type: string, options?: any);</code>
+function trigger(type: string, options?: any);</code>
 </pre>
 </details>
 
@@ -10975,7 +10975,7 @@ type(async function () {}, false); // -> 'AsyncFunction'
         (prev: TResult, curr: T, key: string, list: Dictionary&lt;T&gt;): TResult;
     }
 }
- const types: {}</code>
+const types: {}</code>
 </pre>
 </details>
 
@@ -11249,7 +11249,7 @@ upperFirst('red'); // -> Red
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function use(requires: string[], method: Function): void;
- function use(method: Function): void;</code>
+function use(method: Function): void;</code>
 </pre>
 </details>
 
