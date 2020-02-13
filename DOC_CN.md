@@ -2,6 +2,56 @@
 
 类似 jQuery 的 dom 操作库。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace $ {
+    class $ extends Select {
+        find(selector: string): $;
+        each(fn: Function): $;
+        offset(): $offset.IOffset;
+        hide(): $;
+        show(): $;
+        first(): $;
+        last(): $;
+        get(index: number): Element;
+        eq(index: number): Element;
+        on(event: string, selector: string, handler: Function): $;
+        on(event: string, handler: Function): $;
+        off(event: string, selector: string, handler: Function): $;
+        off(event: string, handler: Function): $;
+        html(): string;
+        html(value: string): $;
+        text(): string;
+        text(value: string): $;
+        val(): string;
+        val(value: string): $;
+        css(name: string): string;
+        css(name: string, value: string): $;
+        css(properties: { [name: string]: string }): $;
+        attr(name: string): string;
+        attr(name: string, value: string): $;
+        attr(attributes: { [name: string]: string }): $;
+        data(name: string): string;
+        data(name: string, value: string): $;
+        data(attributes: { [name: string]: string }): $;
+        rmAttr(name: string): $;
+        remove(): $;
+        addClass(name: string | string[]): $;
+        rmClass(name: string): $;
+        toggleClass(name: string): $;
+        hasClass(name: string): boolean;
+        parent(): $;
+        append(content: string): $;
+        prepend(content: string): $;
+        before(content: string): $;
+        after(content: string): $;
+    }
+}
+declare function $(selector: string | Element): $.$;</code>
+</pre>
+</details>
+
 ### 支持方法列表 
  
 offset, hide, show, first, last, get, eq, on, off, html, text, val, css, attr,
@@ -21,6 +71,21 @@ $btn.on('click', function () {
 ## $attr
 
 操作元素属性。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace $attr {
+    interface IAttr {
+        (element: $safeEls.El, name: string, value: string): void;
+        (element: $safeEls.El, attributes: { [name: string]: string }): void;
+        (element: $safeEls.El, name: string): string;
+        remove(element: $safeEls.El, name: string): void;
+    }
+}
+ const $attr: $attr.IAttr;</code>
+</pre>
+</details>
 
 获取元素集中第一个元素的指定属性值。
 
@@ -65,6 +130,18 @@ $attr('#test', {
 ## $class
 
 操作元素 class。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const $class: {
+    add(element: $safeEls.El, name: string | string[]): void;
+    has(element: $safeEls.El, name: string): boolean;
+    toggle(element: $safeEls.El, name: string): void;
+    remove(element: $safeEls.El, name: string): void;
+};</code>
+</pre>
+</details>
 
 ### add
 
@@ -118,6 +195,18 @@ $class.has('#test', 'class1'); // -> true
 
 操作元素样式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function $css(element: $safeEls.El, name: string): string;
+ function $css(element: $safeEls.El, name: string, value: string): void;
+ function $css(
+    element: $safeEls.El,
+    properties: { [name: string]: string }
+): void;</code>
+</pre>
+</details>
+
 获取元素集中第一个元素的指定样式。
 
 |参数名|类型|说明|
@@ -152,6 +241,20 @@ $css('#test', 'color'); // -> #fff
 
 同 $attr，自动给属性名加 data- 前缀。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace $data {
+    interface IData {
+        (element: $safeEls.El, name: string, value: string): void;
+        (element: $safeEls.El, attributes: { [name: string]: string }): void;
+        (element: $safeEls.El, name: string): string;
+    }
+}
+ const $data: $data.IData;</code>
+</pre>
+</details>
+
 ```javascript
 $data('#test', 'attr1', 'eustia');
 ```
@@ -159,6 +262,28 @@ $data('#test', 'attr1', 'eustia');
 ## $event
 
 给指定 dom 元素绑定事件。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const $event: {
+    on(
+        element: $safeEls.El,
+        event: string,
+        selector: string,
+        handler: Function
+    ): void;
+    on(element: $safeEls.El, event: string, handler: Function): void;
+    off(
+        element: $safeEls.El,
+        event: string,
+        selector: string,
+        handler: Function
+    ): void;
+    off(element: $safeEls.El, event: string, handler: Function): void;
+};</code>
+</pre>
+</details>
 
 ```javascript
 function clickHandler() {
@@ -171,6 +296,23 @@ $event.off('#test', 'click', clickHandler);
 ## $insert
 
 插入 html 到不同位置。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace $insert {
+    interface IInsert {
+        (element: $safeEls.El, content: string): void;
+    }
+}
+ const $insert: {
+    before: $insert.IInsert;
+    after: $insert.IInsert;
+    append: $insert.IInsert;
+    prepend: $insert.IInsert;
+};</code>
+</pre>
+</details>
 
 ### before
 
@@ -209,6 +351,21 @@ $insert.append('#test', '<div>licia</div>');
 
 获取元素在文档中的位置。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace $offset {
+    interface IOffset {
+        left: number;
+        top: number;
+        width: number;
+        height: number;
+    }
+}
+ function $offset(element: $safeEls.El): $offset.IOffset;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |element|string array element|目标元素集|
@@ -220,6 +377,23 @@ $offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
 ## $property
 
 设置或获取元素的 html， text，val 等值。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace $property {
+    interface IProperty {
+        (element: $safeEls.El, value: string): void;
+        (element: $safeEls.El): string;
+    }
+}
+ const $property: {
+    html: $property.IProperty;
+    val: $property.IProperty;
+    text: $property.IProperty;
+};</code>
+</pre>
+</details>
 
 ### html
 
@@ -242,6 +416,13 @@ $property.html('#test'); // -> licia
 
 移除指定元素集。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function $remove(element: $safeEls.El);</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |element|string array element|目标元素集|
@@ -253,6 +434,16 @@ $remove('#test');
 ## $safeEls
 
 将值转换为数组，如果值为字符串，使用 querySelector 获取元素集。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace $safeEls {
+    type El = Element | Element[] | NodeListOf<Element> | string;
+}
+ function $safeEls(value: $safeEls.El): Element[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -268,6 +459,13 @@ $safeEls('.test'); // -> Array of elements with test class
 ## $show
 
 显示元素。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function $show(element: $safeEls.El): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -295,6 +493,17 @@ const blob = new Blob([]);
 ## BloomFilter
 
 布隆过滤器实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class BloomFilter {
+    constructor(size?: number, k?: number);
+    add(val: string): void;
+    test(val: string): boolean;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -332,6 +541,20 @@ bloom.test('Tony Stark'); // -> false
 ## Caseless
 
 修复对象的属性值时，无需关心键值的大小写情况。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Caseless {
+    constructor(obj: any);
+    getKey(key: string): string | void;
+    set(key: string, val: any): void;
+    get(key: string): any;
+    remove(key: string): void;
+    has(key: string): boolean;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -397,6 +620,26 @@ c.has('content-type'); // -> false
 
 创建 JavaScript 类。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace Class {
+    class Base {
+        toString(): string;
+    }
+    class IConstructor extends Base {
+        constructor(...args: any[]);
+        static extend(methods: any, statics: any): IConstructor;
+        static inherits(Class: Function): void;
+        static methods(methods: any): IConstructor;
+        static statics(statics: any): IConstructor;
+        [method: string]: any;
+    }
+}
+ function Class(methods: any, statics?: any): Class.IConstructor;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |methods|object|公有方法|
@@ -438,6 +681,25 @@ Student.is(a); // -> true
 
 颜色转换。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace Color {
+    interface IColor {
+        val: number[];
+        model: string;
+    }
+}
+ class Color {
+    constructor(color: string | Color.IColor);
+    toRgb(): string;
+    toHex(): string;
+    toHsl(): string;
+    static parse(colorStr: string): Color.IColor;
+}</code>
+</pre>
+</details>
+
 ### constructor
 
 |参数名|类型|说明|
@@ -475,6 +737,19 @@ color.toHsl(); // -> 'hsl(210, 25%, 73%)'
 ## Delegator
 
 对象委托。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Delegator {
+    constructor(host: object, target: object | string);
+    method(name: string, target?: string): Delegator;
+    getter(name: string, target?: string): Delegator;
+    setter(name: string, target?: string): Delegator;
+    access(name: string, target?: string): Delegator;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -529,6 +804,19 @@ host.d; // -> 5
 
 Flux 调度器。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Dispatcher {
+    dispatch(payload: any);
+    register(cb: Function): void;
+    waitFor(ids: string[]): void;
+    unregister(id: string): void;
+    isDispatching(): boolean;
+}</code>
+</pre>
+</details>
+
 [相关文档](https://facebook.github.io/flux/docs/dispatcher.html)
 
 ```javascript
@@ -548,6 +836,21 @@ dispatcher.dispatch({
 ## Emitter
 
 提供观察者模式的 Event emitter 类。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace Emitter {
+    function mixin(obj: any): any;
+}
+ class Emitter {
+    on(event: string, listener: Function): Emitter;
+    off(event: string, listener: Function): Emitter;
+    once(event: string, listener: Function): Emitter;
+    emit(event: string): Emitter;
+}</code>
+</pre>
+</details>
 
 ### on
 
@@ -594,6 +897,17 @@ Emitter.mixin({});
 
 Enum 类实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Enum {
+    size: number;
+    constructor(map: string[] | { [member: string]: any });
+    [key: string]: any;
+}</code>
+</pre>
+</details>
+
 ### constructor
 
 |参数名|类型|说明|
@@ -617,6 +931,19 @@ if (val === importance.CRITICAL) {
 ## HashTable
 
 哈希表实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class HashTable {
+    constructor(size?: number);
+    set(key: string, val: any): void;
+    get(key: string): any;
+    has(key: string): boolean;
+    delete(key: string): void;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -668,6 +995,20 @@ hashTable.has('name'); // -> false
 
 堆实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Heap {
+    size: number;
+    constructor(cmp?: Function);
+    clear(): void;
+    add(item: any): number;
+    poll(): any;
+    peek(): any;
+}</code>
+</pre>
+</details>
+
 ### size
 
 堆大小。
@@ -714,6 +1055,25 @@ console.log(heap.size); // -> 4
 ## JsonTransformer
 
 JSON 转换器。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class JsonTransformer {
+    constructor(data: any);
+    set(key: string, val: any): JsonTransformer;
+    get(key?: string): any;
+    map(from: string, to: string, fn: Function): JsonTransformer;
+    map(from: string, fn: Function): JsonTransformer;
+    filter(from: string, to: string, fn: Function): JsonTransformer;
+    filter(from: string, fn: Function): JsonTransformer;
+    remove(keys: string | string[]): JsonTransformer;
+    compute(from: string | string[], to: string, fn: Function): JsonTransformer;
+    compute(from: string, fn: Function): JsonTransformer;
+    toString(): string;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -797,6 +1157,32 @@ data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', c
 
 双向链表实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace LinkedList {
+    class Node {
+        value: any;
+        prev: Node | null;
+        next: Node | null;
+    }
+}
+ class LinkedList {
+    size: number;
+    head: LinkedList.Node;
+    tail: LinkedList.Node;
+    push(val: any): number;
+    pop(): any;
+    unshift(val: any): number;
+    shift(): any;
+    find(fn: Function): LinkedList.Node | void;
+    delNode(node: LinkedList.Node): void;
+    forEach(iterator: Function, ctx?: any);
+    toArr(): any[];
+}</code>
+</pre>
+</details>
+
 ### size
 
 链表大小。
@@ -861,6 +1247,15 @@ linkedList.pop(); // -> 5
 
 LocalStorage 存储。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class LocalStore extends Store {
+    constructor(name: string, data?: {});
+}</code>
+</pre>
+</details>
+
 继承自 Store 类。
 
 ### constructor
@@ -878,6 +1273,25 @@ store.set('name', 'licia');
 ## Logger
 
 带日志级别的简单日志库。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Logger extends Emitter {
+    name: string;
+    formatter(type: string, argList: any[]): any[];
+    constructor(name: string, level?: string | number);
+    setLevel(level: string | number): Logger;
+    getLevel(): number;
+    trace(...args: any[]): Logger;
+    debug(...args: any[]): Logger;
+    info(...args: any[]): Logger;
+    warn(...args: any[]): Logger;
+    error(...args: any[]): Logger;
+    static level: Enum;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -929,6 +1343,20 @@ logger.on('debug', function (argList) {
 ## Lru
 
 简单 LRU 缓存。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Lru {
+    constructor(max: number);
+    has(key: string): boolean;
+    remove(key: string): void;
+    get(key: string): any;
+    set(key: string, val: any): void;
+    clear(): void;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -985,6 +1413,16 @@ cache.get('test'); // -> 'licia'
 
 CSS 媒体查询监听器。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class MediaQuery extends Emitter {
+    constructor(query: string);
+    isMatch(): boolean;
+}</code>
+</pre>
+</details>
+
 继承自 Emitter 类。
 
 ### constructor
@@ -1030,6 +1468,20 @@ observer.disconnect();
 ## PriorityQueue
 
 优先队列实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class PriorityQueue {
+    size: number;
+    constructor(cmp?: Function);
+    clear(): void;
+    enqueue(item: any): number;
+    dequeue(): any;
+    peek(): any;
+}</code>
+</pre>
+</details>
 
 ### size
 
@@ -1107,6 +1559,13 @@ get('test.json').then(function (result) {
 
 类似 es6 的 Map，不支持遍历器。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const PseudoMap: typeof Map;</code>
+</pre>
+</details>
+
 只支持字符串键名，当 Map 存在时会直接使用 Map。
 
 ```javascript
@@ -1118,6 +1577,21 @@ map.get('1'); // -> 1
 ## Queue
 
 队列数据结构。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Queue {
+    size: number;
+    clear(): void;
+    enqueue(item: any): number;
+    dequeue(): any;
+    peek(): any;
+    forEach(iterator: Function, context?: any): void;
+    toArr(): any[];
+}</code>
+</pre>
+</details>
 
 ### size
 
@@ -1173,6 +1647,20 @@ console.log(queue.size); // -> 1
 
 不使用链表的 LRU 实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class QuickLru {
+    constructor(max: number);
+    has(key: string): boolean;
+    remove(key: string): void;
+    get(key: string): any;
+    set(key: string, val: any): void;
+    clear(): void;
+}</code>
+</pre>
+</details>
+
 参考 [hashlru 算法](https://github.com/dominictarr/hashlru#algorithm)，空间占用相比使用链表更多。
 
 API 与 Lru 模块保持一致。
@@ -1186,6 +1674,18 @@ cache.get('test'); // -> 'licia'
 ## ReduceStore
 
 简单类 redux 状态管理。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class ReduceStore {
+    constructor(reducer: Function, initialState: any);
+    subscribe(listener: Function): Function;
+    dispatch(action: any): any;
+    getState(): any;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -1238,6 +1738,17 @@ store.dispatch({type: 'DECREMENT'}); // 1
 
 querySelectorAll 的简单包装类。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Select {
+    constructor(selector: string | Element);
+    find(selector: string): Select;
+    each(fn: Function): Select;
+}</code>
+</pre>
+</details>
+
 ### constructor
 
 |参数名|类型|说明|
@@ -1271,6 +1782,15 @@ $test.find('.test').each(function (idx, element) {
 
 SessionStorage 存储。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class SessionStore extends Store {
+    constructor(name: string, data?: any);
+}</code>
+</pre>
+</details>
+
 继承自 Store 类。
 
 ### constructor
@@ -1288,6 +1808,21 @@ store.set('name', 'licia');
 ## Stack
 
 栈数据结构。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Stack {
+    size: number;
+    clear(): void;
+    push(item: any): number;
+    pop(): any;
+    peek(): any;
+    forEach(iterator: Function, context?: any): void;
+    toArr(): any[];
+}</code>
+</pre>
+</details>
 
 ### size
 
@@ -1339,6 +1874,17 @@ stack.pop(); // -> 3
 
 简单状态机。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class State extends Emitter {
+    constructor(initial: string, events: any);
+    is(state: string): boolean;
+    [event: string]: any;
+}</code>
+</pre>
+</details>
+
 继承自 Emitter 类。
 
 ### constructor
@@ -1380,6 +1926,23 @@ state.play('eustia');
 ## Store
 
 内存存储。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Store extends Emitter {
+    constructor(data?: {});
+    set(key: string, val: any): void;
+    set(vals: {}): void;
+    get(key: string): any;
+    get(keys: string[]): {};
+    remove(key: string): void;
+    remove(keys: string[]): void;
+    clear(): void;
+    each(fn: (...args: any[]) => void): void;
+}</code>
+</pre>
+</details>
 
 继承自 Emitter 类。
 
@@ -1459,6 +2022,21 @@ store.on('change', function (key, newVal, oldVal) {
 
 JavaScript 补间动画库。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Tween extends Emitter {
+    constructor(target: any);
+    to(props: any, duration?: number, ease?: string | Function): Tween;
+    progress(): number;
+    progress(progress: number): Tween;
+    play(): Tween;
+    pause(): Tween;
+    paused(): boolean;
+}</code>
+</pre>
+</details>
+
 继承自 Emitter 类。
 
 ### constructor
@@ -1510,6 +2088,41 @@ tween.to({x: 100, y: 100}, 1000, 'inElastic').play();
 ## Url
 
 简单 url 操作库。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace Url {
+    interface IUrl {
+        protocol: string;
+        auth: string;
+        hostname: string;
+        hash: string;
+        query: any;
+        port: string;
+        pathname: string;
+        slashes: boolean;
+    }
+}
+ class Url {
+    protocol: string;
+    auth: string;
+    hostname: string;
+    hash: string;
+    query: any;
+    port: string;
+    pathname: string;
+    slashes: boolean;
+    constructor(url?: string);
+    setQuery(name: string, value: string): Url;
+    setQuery(query: { [name: string]: string }): Url;
+    rmQuery(name: string | string[]): Url;
+    toString(): string;
+    static parse(url: string): Url.IUrl;
+    static stringify(object: Url.IUrl): string;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -1584,6 +2197,18 @@ url.toString(); // -> 'http://example.com:8080/?foo=bar'
 
 对象属性值校验。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Validator {
+    constructor(options: { [name: string]: any });
+    validate(object: any): string | boolean;
+    static plugins: any;
+    static addPlugin(name: string, plugin: Function): void;
+}</code>
+</pre>
+</details>
+
 ### constructor
 
 |参数名|类型|说明|
@@ -1633,6 +2258,15 @@ validator.validate({test: 'licia'}); // -> true
 
 计算字符串集的缩写集合。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function abbrev(
+    ...arr: string[]
+): { [abbreviation: string]: string };</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |...arr|string|字符串集|
@@ -1646,6 +2280,13 @@ abbrev('lina', 'luna');
 ## after
 
 创建一个函数，只有在调用 n 次后才会调用一次。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function after(n: number, fn: Function): Function;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -1662,6 +2303,27 @@ const fn = after(5, function() {
 ## ajax
 
 执行异步 HTTP 请求。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace ajax {
+    interface IOptions {
+        url: string;
+        data?: string | {};
+        dataType?: string;
+        contentType?: string;
+        success?: Function;
+        error?: Function;
+        complete?: Function;
+        timeout?: number;
+    }
+    function get(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
+    function post(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
+}
+ function ajax(options: ajax.IOptions): XMLHttpRequest;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -1716,6 +2378,26 @@ ajax.get('http://example.com', {}, function (data) {
 
 获取对象的所有键名，包括自身的及继承的。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace allKeys {
+    interface IOptions {
+        prototype?: boolean;
+        unenumerable?: boolean;
+    }
+}
+ function allKeys(
+    obj: any,
+    options: { symbol: true } & allKeys.IOptions
+): Array<string | Symbol>;
+ function allKeys(
+    obj: any,
+    options?: ({ symbol: false } & allKeys.IOptions) | allKeys.IOptions
+): string[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -1742,6 +2424,53 @@ allKeys(obj) // -> ['zero', 'one']
 
 控制台颜色。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace ansiColor {
+    interface IFn {
+        (str: string): string;
+    }
+}
+ const ansiColor: {
+    black: ansiColor.IFn;
+    red: ansiColor.IFn;
+    green: ansiColor.IFn;
+    yellow: ansiColor.IFn;
+    blue: ansiColor.IFn;
+    magenta: ansiColor.IFn;
+    cyan: ansiColor.IFn;
+    white: ansiColor.IFn;
+    gray: ansiColor.IFn;
+    grey: ansiColor.IFn;
+    bgBlack: ansiColor.IFn;
+    bgRed: ansiColor.IFn;
+    bgGreen: ansiColor.IFn;
+    bgYellow: ansiColor.IFn;
+    bgBlue: ansiColor.IFn;
+    bgMagenta: ansiColor.IFn;
+    bgCyan: ansiColor.IFn;
+    bgWhite: ansiColor.IFn;
+    blackBright: ansiColor.IFn;
+    redBright: ansiColor.IFn;
+    greenBright: ansiColor.IFn;
+    yellowBright: ansiColor.IFn;
+    blueBright: ansiColor.IFn;
+    magentaBright: ansiColor.IFn;
+    cyanBright: ansiColor.IFn;
+    whiteBright: ansiColor.IFn;
+    bgBlackBright: ansiColor.IFn;
+    bgRedBright: ansiColor.IFn;
+    bgGreenBright: ansiColor.IFn;
+    bgYellowBright: ansiColor.IFn;
+    bgBlueBright: ansiColor.IFn;
+    bgMagentaBright: ansiColor.IFn;
+    bgCyanBright: ansiColor.IFn;
+    bgWhiteBright: ansiColor.IFn;
+}</code>
+</pre>
+</details>
+
 ### 支持颜色
 
 black, red, green, yellow, blue, magenta, cyan, white, gray, grey
@@ -1759,6 +2488,16 @@ ansiColor.red('Warning');
 ## arrToMap
 
 将字符串列表转换为映射。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function arrToMap<T>(
+    arr: string[],
+    val?: T
+): { [key: string]: T };</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -1780,6 +2519,13 @@ console.log(val); // -> '5px'
 
 window.atob，运行在 node 环境时使用 Buffer 进行模拟。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function atob(str: string): string;</code>
+</pre>
+</details>
+
 ```javascript
 atob('SGVsbG8gV29ybGQ='); // -> 'Hello World'
 ```
@@ -1787,6 +2533,13 @@ atob('SGVsbG8gV29ybGQ='); // -> 'Hello World'
 ## average
 
 获取数字的平均值。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function average(...num: number[]): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -1800,6 +2553,16 @@ average(5, 3, 1); // -> 3
 ## base64
 
 base64 编解码。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const base64: {
+    encode(bytes: number[]): string;
+    decode(str: string): number[];
+};</code>
+</pre>
+</details>
 
 ### encode
 
@@ -1828,6 +2591,13 @@ base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
 
 创建一个函数，只能调用少于 n 次。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function before(n: number, fn: Function): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |n|number|调用次数|
@@ -1844,6 +2614,17 @@ fn(); // Allow function to be call 4 times at last.
 ## binarySearch
 
 二分查找实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function binarySearch(
+    array: any[],
+    value: any,
+    cmp?: Function
+): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -1876,6 +2657,13 @@ binarySearch(
 
 创建一个绑定到指定对象的函数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function bind(fn: Function, ctx: any, ...rest: any[]): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|源函数|
@@ -1894,6 +2682,13 @@ fn(); // -> 'eustia: I am a utility library.'
 
 window.btoa，运行在 node 环境时使用 Buffer 进行模拟。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function btoa(str: string): string;</code>
+</pre>
+</details>
+
 ```javascript
 btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 ```
@@ -1901,6 +2696,13 @@ btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 ## bubbleSort
 
 冒泡排序实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function bubbleSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -1916,6 +2718,16 @@ bubbleSort([2, 1]); // -> [1, 2]
 
 将字节数组转换为字符串。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function bytesToStr(
+    bytes: number[],
+    encoding?: string
+): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|array|字节数组|
@@ -1929,6 +2741,13 @@ bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
 ## bytesToWords
 
 将字节数组转换为 32 位字长数组。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function bytesToWords(bytes: number[]): number[];</code>
+</pre>
+</details>
 
 在使用 CryptoJS 时会派上用处。
 
@@ -1944,6 +2763,13 @@ bytesToWords([0x12, 0x34, 0x56, 0x78]); // -> [0x12345678]
 ## callbackify
 
 将返回 Promise 的函数转换为使用回调的函数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function callbackify(fn: Function): Function;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -1968,6 +2794,13 @@ cbFn(function (err, value) {
 
 将字符串转换为驼峰式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function camelCase(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -1984,6 +2817,13 @@ camelCase('foo.bar'); // -> fooBar
 
 将字符串的第一个字符转换为大写，其余字符转换为小写。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function capitalize(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -1996,6 +2836,13 @@ capitalize('rED'); // -> Red
 ## castPath
 
 将值转换为属性路径数组。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function castPath(path: string | string[], obj?: any): string[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2014,6 +2861,13 @@ castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
 
 字符串居中。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function centerAlign(str: string | string[], width?: number): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string array|源字符串|
@@ -2030,6 +2884,13 @@ centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
 
 根据指定的整数返回 unicode 编码为该整数的字符。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function char(num: number): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |num|number|要转换的整数|
@@ -2043,6 +2904,13 @@ char(97); // -> 'a'
 ## chunk
 
 将数组拆分为指定长度的子数组。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function chunk(arr: any[], size?: number): Array<any[]>;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2059,6 +2927,14 @@ chunk([1, 2, 3, 4]); // -> [[1], [2], [3], [4]]
 ## clamp
 
 将数字限定于指定区间。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function clamp(n: number, lower: number, upper: number): number;
+ function clamp(n: number, upper: number): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2079,6 +2955,13 @@ clamp(2, 5); // -> 2
 
 合并 class。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function className(...arr: any[]): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |...class|string object array|要合并的 class|
@@ -2096,6 +2979,13 @@ className('a', ['b', 'c', {d: true, e: false}]); // -> 'a b c d';
 
 对指定对象进行浅复制。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function clone<T>(val: T): T;</code>
+</pre>
+</details>
+
 任何嵌套的对象或数组只会拷贝其引用。
 
 |参数名|类型|说明|
@@ -2111,6 +3001,13 @@ clone({name: 'eustia'}); // -> {name: 'eustia'}
 
 深复制。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function cloneDeep<T>(val: T): T;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要克隆的值|
@@ -2125,6 +3022,13 @@ console.log(obj[0] === obj2[1]); // -> false
 ## cmpVersion
 
 比较版本号。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function cmpVersion(v1: string, v2: string): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2144,6 +3048,13 @@ cmpVersion('1.1.1', '1.2.3'); // -> -1
 
 创建一个数组，用一个数组的值作为其键名，另一个数组的值作为其值。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function combine(keys: string[], values: any[]): any;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |keys|array|键名数组|
@@ -2157,6 +3068,13 @@ combine(['a', 'b', 'c'], [1, 2, 3]); // -> {a: 1, b: 2, c: 3}
 ## compact
 
 返回数组的拷贝并移除其中的虚值。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function compact(arr: any[]): any[];</code>
+</pre>
+</details>
 
 虚值包括 false，null，0，空字符串，undefined 和 NaN。
 
@@ -2172,6 +3090,13 @@ compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
 ## compose
 
 将多个函数组合成一个函数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function compose(...fn: Function[]): Function;</code>
+</pre>
+</details>
 
 每个函数使用下一个函数的返回值作为参数。
 
@@ -2193,6 +3118,28 @@ welcome('licia'); // -> 'hi: LICIA!'
 ## compressImg
 
 使用 canvas 对图像进行压缩。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace compressImg {
+    interface IOptions {
+        maxWidth?: number;
+        maxHeight?: number;
+        width?: number;
+        height?: number;
+        mimeType?: string;
+        quality?: number;
+    }
+}
+ function compressImg(file: File | Blob | string, cb: Function): void;
+ function compressImg(
+    file: File | Blob | string,
+    opts?: compressImg.IOptions,
+    cb?: Function
+): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2228,6 +3175,13 @@ compressImg(file, {
 
 将多个数组合并成一个数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function concat(...args: Array<any[]>): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |...arr|array|要合并的数组|
@@ -2240,6 +3194,16 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 ## contain
 
 检查数组中是否有指定值。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function contain(
+    arr: any[] | {} | string,
+    val: any
+): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2257,6 +3221,17 @@ contain('abc', 'a'); // -> true
 
 对数字进行进制转换。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function convertBase(
+    num: number | string,
+    from: number,
+    to: number
+): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |num|number string|要转换的数字|
@@ -2272,6 +3247,16 @@ convertBase('ff', 16, 2); // -> '11111111'
 ## convertBin
 
 二进制数据格式转换。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace convertBin {
+    function blobToArrBuffer(blob: any): Promise<ArrayBuffer>;
+}
+ function convertBin(bin: any, type: string): any;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2304,6 +3289,26 @@ convertBin.blobToArrBuffer(new Blob([])).then(arrBuffer => {
 ## cookie
 
 浏览器 cookie 操作库。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace cookie {
+    interface IOptions {
+        path?: string;
+        expires?: number;
+        domain?: string;
+        secure?: boolean;
+    }
+    interface ICookie {
+        get(key: string, options?: cookie.IOptions): string;
+        set(key: string, val: string, options?: cookie.IOptions): ICookie;
+        remove(key: string, options?: cookie.IOptions): ICookie;
+    }
+}
+ const cookie: cookie.ICookie;</code>
+</pre>
+</details>
 
 ### get
 
@@ -2345,6 +3350,13 @@ cookie.remove('a');
 
 使用 document.execCommand 将文本拷贝到剪贴板。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function copy(text: string, cb?: Function): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |text|string|要拷贝的文本|
@@ -2360,6 +3372,16 @@ copy('text', function (err) {
 
 CRC1 算法实现。 
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function crc1(
+    input: string | number[],
+    previous?: number
+): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |input|string array|信息码|
@@ -2373,6 +3395,16 @@ crc1('1234567890').toString(16); // -> 'd'
 ## crc16
 
 CRC16 算法实现。 
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function crc16(
+    input: string | number[],
+    previous?: number
+): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2388,6 +3420,16 @@ crc16('1234567890').toString(16); // -> 'c57a'
 
 CRC32 算法实现。 
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function crc32(
+    input: string | number[],
+    previous?: number
+): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |input|string array|信息码|
@@ -2401,6 +3443,16 @@ crc32('1234567890').toString(16); // -> '261daee5'
 ## crc8
 
 CRC8 算法实现。 
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function crc8(
+    input: string | number[],
+    previous?: number
+): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2416,6 +3468,13 @@ crc8('1234567890').toString(16); // -> '52'
 
 创建对象并指定它的原型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function create(proto?: object): any;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |[proto]|object|新对象原型|
@@ -2430,6 +3489,13 @@ console.log(obj.a); // -> 1
 
 用于创建 extend，extendOwn 和 defaults 等模块。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function createAssigner(keysFn: Function, defaults: boolean): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |keysFn|function|获取对象键名的函数|
@@ -2439,6 +3505,18 @@ console.log(obj.a); // -> 1
 ## createUrl
 
 CreateObjectURL 的包裹函数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace createUrl {
+    interface IOptions {
+        type?: string
+    }
+}
+ function createUrl(data: any, options?: createUrl.IOptions): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2456,6 +3534,21 @@ createUrl(new File(['test'], 'test.txt'));
 ## css
 
 CSS 解析器。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace css {
+    interface IOptions {
+        indent?: string;
+    }
+}
+ const css: {
+    parse(css: string): object;
+    stringify(stylesheet: object, options?: css.IOptions): string;
+}</code>
+</pre>
+</details>
 
 注释会被移除掉。
 
@@ -2494,6 +3587,13 @@ css.stringify(stylesheet);
 
 检查浏览器是否支持某项 CSS 特性。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function cssSupports(name: string, val?: string): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |name|string|Css 属性名|
@@ -2512,6 +3612,13 @@ cssSupports('invalid'); // -> false
 
 函数柯里化。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function curry(fn: Function): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|源函数|
@@ -2526,6 +3633,23 @@ add1(2); // -> 3
 ## dateFormat
 
 简单日期格式化。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function dateFormat(
+    date: Date,
+    mask: string,
+    utc?: boolean,
+    gmt?: boolean
+): string;
+ function dateFormat(
+    mask: string,
+    utc?: boolean,
+    gmt?: boolean
+): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2575,6 +3699,13 @@ dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
 
 返回函数的防反跳版本。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function debounce(fn: Function, wait: number): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|源函数|
@@ -2589,6 +3720,13 @@ const calLayout = debounce(function () {}, 300);
 ## debug
 
 简单的 JavaScript 输出 debug 日志函数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function debug(name: string): any;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2605,6 +3743,13 @@ d.enabled = false;
 
 转换拉丁语-1补充字母和拉丁语扩展字母-A为基本拉丁字母，并且去除组合变音标记。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function deburr(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|要处理的字符串|
@@ -2617,6 +3762,13 @@ deburr('déjà vu'); // -> 'deja vu'
 ## decodeUriComponent
 
 类似 decodeURIComponent 函数，只是输入不合法时不抛出错误并尽可能地对其进行解码。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function decodeUriComponent(str: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2632,6 +3784,13 @@ decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
 
 填充对象的默认值。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function defaults(obj: any, ...src: any[]): any;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -2645,6 +3804,14 @@ defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood',
 ## define
 
 定义一个模块，需要跟 use 模块配合使用。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function define(name: string, requires: string[], method: Function): void;
+ function define(name: string, method: Function): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2666,6 +3833,18 @@ define('B', ['A'], function (A) {
 ## defineProp
 
 Object.defineProperty(defineProperties) 的快捷方式。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function defineProp<T>(
+    obj: T,
+    prop: string,
+    descriptor: PropertyDescriptor
+): T;
+ function defineProp<T>(obj: T, descriptor: PropertyDescriptorMap): T;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2719,6 +3898,13 @@ obj2.b = 4;
 
 返回第一个不是未定义的参数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function defined(...args: any[]): any;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |...args|*|参数列表|
@@ -2731,6 +3917,13 @@ defined(false, 2, void 0, 100); // -> false
 ## delRequireCache
 
 删除 node.js require 缓存。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function delRequireCache(id: string): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2746,6 +3939,13 @@ require('licia').a; // -> undefined
 ## delay
 
 在指定时长后执行函数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function delay(fn: Function, wait: number, ...args: any[]): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2763,6 +3963,16 @@ delay(function (text) {
 ## delegate
 
 事件委托。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const delegate: {
+    add(el: Element, type: string, selector: string, cb: Function): void;
+    remove(el: Element, type: string, selector: string, cb: Function): void;
+};</code>
+</pre>
+</details>
 
 ### add
 
@@ -2792,6 +4002,13 @@ delegate.remove(container, 'click', '.children', clickHandler);
 
 Node.js util.deprecate 方法，支持浏览器。 
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function deprecate(fn: Function, msg: string): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|即将废弃的方法|
@@ -2807,6 +4024,19 @@ obsoleteFn();
 ## detectBrowser
 
 使用 ua 检测浏览器信息。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace detectBrowser {
+    interface IBrowser {
+        name: string;
+        version: number;
+    }
+}
+ function detectBrowser(ua?: string): detectBrowser.IBrowser;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2826,6 +4056,13 @@ if (browser.name === 'ie' && browser.version < 9) {
 
 检测是否有 mocha 测试框架在运行。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function detectMocha(): boolean;</code>
+</pre>
+</details>
+
 ```javascript
 detectMocha(); // -> True if mocha is running.
 ```
@@ -2833,6 +4070,13 @@ detectMocha(); // -> True if mocha is running.
 ## detectOs
 
 使用 ua 检测操作系统。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function detectOs(ua?: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2851,6 +4095,13 @@ if (detectOs() === 'ios') {
 
 创建一个数组，该数组的元素不存在于给定的其它数组中。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function difference(arr: any[], ...rest: any[]): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|源数组|
@@ -2864,6 +4115,13 @@ difference([3, 2, 1], [4, 2]); // -> [3, 1]
 ## dotCase
 
 将字符串转换为点式。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function dotCase(str: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2879,6 +4137,17 @@ dotCase('foo bar'); // -> foo.bar
 
 在浏览器端触发文件下载。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function download(
+    data: Blob | File | string | any[],
+    name: string,
+    type?: string
+): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |data|Blob File string array|下载的数据|
@@ -2892,6 +4161,13 @@ download('test', 'test.txt');
 ## durationFormat
 
 简单时间格式化。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function durationFormat(duration: number, mask?: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2916,6 +4192,22 @@ durationFormat(12345678, 'h:m:s:l'); // -> '3:25:45:678'
 
 遍历集合中的所有元素，用每个元素当做参数调用迭代器。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function each<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, void>,
+    ctx?: any
+): types.List<T>;
+ function each<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, void>,
+    ctx?: any
+): types.Collection<T>;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object array|目标集合|
@@ -2929,6 +4221,39 @@ each({'a': 1, 'b': 2}, function (val, key) {});
 ## easing
 
 缓动函数，参考 http://jqueryui.com/ 。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const easing: {
+    linear(percent: number): number;
+    inQuad(percent: number): number;
+    outQuad(percent: number): number;
+    inOutQuad(percent: number): number;
+    outInQuad(percent: number): number;
+    inCubic(percent: number): number;
+    outCubic(percent: number): number;
+    inQuart(percent: number): number;
+    outQuart(percent: number): number;
+    inQuint(percent: number): number;
+    outQuint(percent: number): number;
+    inExpo(percent: number): number;
+    outExpo(percent: number): number;
+    inSine(percent: number): number;
+    outSine(percent: number): number;
+    inCirc(percent: number): number;
+    outCirc(percent: number): number;
+    inElastic(percent: number, elasticity?: number): number;
+    outElastic(percent: number, elasticity?: number): number;
+    inBack(percent: number): number;
+    outBack(percent: number): number;
+    inOutBack(percent: number): number;
+    outInBack(percent: number): number;
+    inBounce(percent: number): number;
+    outBounce(percent: number): number;
+};</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2944,6 +4269,13 @@ easing.inElastic(0.5, 500); // -> 0.03125
 
 在桌面端浏览器模拟 touch 事件。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function emulateTouch(el: Element): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |el|Element|目标元素|
@@ -2957,6 +4289,13 @@ el.addEventListener('touchstart', () => {}, false);
 ## endWith
 
 检查字符串是否以指定字符串结尾。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function endWith(str: string, suffix: string): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2972,6 +4311,13 @@ endWith('ab', 'b'); // -> true
 
 转义 HTML 字符串，替换 &，<，>，"，`，和 ' 字符。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function escape(str: string): string;</code>
+</pre>
+</details>
+
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -2985,6 +4331,13 @@ escape('You & Me'); // -> 'You &amp; Me'
 ## escapeJsStr
 
 转义字符串为合法的 JavaScript 字符串字面量。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function escapeJsStr(str: string): string;</code>
+</pre>
+</details>
 
 http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
 
@@ -3001,6 +4354,13 @@ escapeJsStr('\"\n'); // -> '\\"\\\\n'
 
 转义特殊字符用于 RegExp 构造函数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function escapeRegExp(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -3014,6 +4374,13 @@ escapeRegExp('[licia]'); // -> '\\[licia\\]'
 
 加载 css 到页面中。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function evalCss(css: string): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |css|string|css 代码|
@@ -3025,6 +4392,13 @@ evalCss('body{background:#08c}');
 ## evalJs
 
 在指定的上下文执行 js 代码。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function evalJs(js: string, ctx?: any): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3039,6 +4413,22 @@ evalJs('this.a', {a: 2}); // -> 2
 ## every
 
 检查是否集合中的所有元素都能通过真值检测。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function every<T>(
+    object: types.List<T>,
+    iterator?: types.ListIterator<T, boolean>,
+    context?: any
+): boolean;
+ function every<T>(
+    object: types.Dictionary<T>,
+    iterator?: types.ObjectIterator<T, boolean>,
+    context?: any
+): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3057,6 +4447,13 @@ every([2, 4], function (val) {
 
 复制多个对象中的所有属性到目标对象上。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function extend(destination: any, ...sources: any[]): any;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |destination|object|目标对象|
@@ -3070,6 +4467,13 @@ extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 ## extendDeep
 
 类似 extend，但会递归进行扩展。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function extendDeep(destination: any, ...sources: any[]): any;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3096,6 +4500,13 @@ extendDeep({
 
 类似 extend，但只复制自己的属性，不包括原型链上的属性。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function extendOwn(destination: any, ...sources: any[]): any;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -3110,6 +4521,13 @@ extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 
 从源码中提取块注释。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function extractBlockCmts(str: string): string[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源码|
@@ -3122,6 +4540,13 @@ extractBlockCmts('\/*licia*\/'); // -> ['licia']
 ## extractUrls
 
 从文本中提取 url。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function extractUrls(str: string): string[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3136,6 +4561,42 @@ extractUrls(str); // -> ['http://eustia.liriliri.io']
 ## fetch
 
 将 XMLHttpRequest 转换为 promise 的形式。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace fetch {
+    interface IOptions {
+        method?: string;
+        timeout?: number;
+        headers?: { [name: string]: string };
+        body?: any;
+    }
+    interface IHeaders {
+        keys(): string[];
+        entries(): Array<string[]>;
+        get(name: string): string;
+        has(name: string): boolean;
+    }
+    interface IResult {
+        ok: boolean;
+        status: number;
+        statusText: string;
+        url: string;
+        clone(): IResult;
+        text(): Promise<string>;
+        json(): Promise<any>;
+        xml(): Promise<Document | null>;
+        blob(): Promise<Blob>;
+        headers: IHeaders;
+    }
+}
+ function fetch(
+    url: string,
+    options?: fetch.IOptions
+): Promise<fetch.IResult>;</code>
+</pre>
+</details>
 
 注意：这并不是 fetch 的 pollyfill。
 
@@ -3162,6 +4623,13 @@ fetch('test.json', {
 
 计算斐波那契数列中某位数字。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function fibonacci(n: number): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |n|number|序号 n|
@@ -3175,6 +4643,13 @@ fibonacci(3); // -> 2
 ## fileSize
 
 将字节数转换为易于阅读的形式。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function fileSize(bytes: number): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3192,6 +4667,21 @@ fileSize(1500000000000); // -> '1.36T'
 ## fileType
 
 使用幻数检测文件类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace fileType {
+    interface IFileType {
+        ext: string;
+        mime: string;
+    }
+}
+ function fileType(
+    input: Buffer | ArrayBuffer | Uint8Array
+): fileType.IFileType | undefined;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3212,6 +4702,18 @@ console.log(fileType(file)); // -> { ext: 'jpg', mime: 'image/jpeg' }
 
 在数组指定位置填充指定值。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function fill(
+    list: any[],
+    value: any,
+    start?: number,
+    end?: number
+): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |list|array|源数组|
@@ -3229,6 +4731,22 @@ fill([1, 2, 3], '*', 1, 2); // -> [1, '*', 3]
 
 遍历集合中的每个元素，返回所有通过真值检测的元素组成的数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function filter<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
+    context?: any
+): T[];
+ function filter<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
+    context?: any
+): T[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|array|要遍历的集合|
@@ -3245,6 +4763,22 @@ filter([1, 2, 3, 4, 5], function (val) {
 ## find
 
 找到集合中第一个通过真值检测的元素。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function find<T>(
+    object: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
+    context?: any
+): T | undefined;
+ function find<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
+    context?: any
+): T | undefined;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3269,6 +4803,13 @@ find([{
 
 返回第一个通过真值检测元素在数组中的位置。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function findIdx(arr: any[], predicate: Function): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|目标集合|
@@ -3291,6 +4832,17 @@ findIdx([{
 
 返回对象中第一个通过真值检测的属性键名。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function findKey(
+    obj: any,
+    predicate: Function,
+    ctx?: any
+): string | void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -3307,6 +4859,13 @@ findKey({a: 1, b: 2}, function (val) {
 ## findLastIdx
 
 同 findIdx，只是查找顺序改为从后往前。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function findLastIdx(arr: any[], predicate: Function): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3333,6 +4892,13 @@ findLastIdx([{
 
 递归拍平数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function flatten(arr: any[]): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|源数组|
@@ -3345,6 +4911,13 @@ flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 ## fnArgs
 
 检验函数参数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function fnArgs(types: string[], args: any): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3374,6 +4947,13 @@ test('test', () => {}, 5, 'test') // Throw error
 
 获取函数的参数名列表。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function fnParams(fn: Function | string): string[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function string|目标函数|
@@ -3387,6 +4967,13 @@ fnParams(function (a, b) {}); // -> ['a', 'b']
 
 简单 FNV-1a 哈希算法实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function fnv1a(str: string): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|目标字符串|
@@ -3399,6 +4986,13 @@ fnv1a('test'); // -> 2949673445
 ## format
 
 使用类似于 printf 的方式来格式化字符串。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function format(str: string, ...values: any[]): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3423,6 +5017,13 @@ format('%s_%s', 'foo', 'bar'); // -> 'foo_bar'
 
 转换数字为分数形式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function fraction(num: number): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |num|number|数字|
@@ -3435,6 +5036,13 @@ fraction(1.2); // -> '6/5'
 ## freeze
 
 Object.freeze 的快捷方式。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function freeze<T>(obj: T): T;</code>
+</pre>
+</details>
 
 如果不支持 Object.freeze，使用 Object.defineProperties 进行模拟。
 
@@ -3454,6 +5062,13 @@ console.log(a); // -> {b: 1}
 
 递归进行 Object.freeze。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function freezeDeep<T>(obj: T): T;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -3470,6 +5085,23 @@ console.log(a); // -> {b: {c: 1}}
 
 node.js fs 模块的 promise 版本。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const fs: {
+    readFile(path: string, encoding: string): Promise<string>;
+    readFile(path: string): Promise<Buffer>;
+    exists(path: string): Promise<boolean>;
+    unlink(path: string): Promise<void>;
+    writeFile(path: string, data: string, options?: string): Promise<void>;
+    writeFile(path: string, data: Buffer): Promise<void>;
+    readdir(path: string): Promise<string[]>;
+    rmdir(path: string): Promise<void>;
+    [key: string]: any;
+};</code>
+</pre>
+</details>
+
 ```javascript
 fs.readFile('test.js').then(function (data) {
     // Do something
@@ -3481,6 +5113,23 @@ fs.readFile('test.js').then(function (data) {
 ## fullscreen
 
 全屏接口封装。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace fullscreen {
+    interface IFullscreen extends Emitter {
+        request(el?: Element): void;
+        exit(): void;
+        toggle(el?: Element): void;
+        isActive(): boolean;
+        getEl(): Element | null;
+        isEnabled(): boolean;
+    }
+}
+ const fullscreen: fullscreen.IFullscreen;</code>
+</pre>
+</details>
 
 ### request
 
@@ -3525,6 +5174,23 @@ fullscreen.on('change', () => {});
 
 模糊搜索。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace fuzzySearch {
+    interface IOptions {
+        caseSensitive?: boolean;
+        key?: string | string[];
+    }
+}
+ function fuzzySearch(
+    needle: string,
+    haystack: any[],
+    options?: fuzzySearch.IOptions
+): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |needle|string|搜索字符串|
@@ -3553,6 +5219,13 @@ fuzzySearch('alpha-test', [{
 
 使用欧几里德算法求最大公约数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function gcd(a: number, b: number): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |a|number|要计算的数字|
@@ -3566,6 +5239,16 @@ gcd(121, 44); // -> 11
 ## getPort
 
 获取有效的 TCP 端口。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function getPort(
+    port?: number | number[],
+    host?: string
+): Promise<number>;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3585,6 +5268,13 @@ getPort([3000, 3001], '127.0.0.1').then(port => {
 
 获取对象的原型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function getProto(obj: any): any;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|*|目标对象|
@@ -3599,6 +5289,13 @@ getProto(Object.create(a)); // -> a
 
 获取 url 参数值。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function getUrlParam(name: string, url?:string): string | undefined;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |name|string|参数名|
@@ -3612,6 +5309,18 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 ## golangify
 
 像 Go 一样处理错误。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function golangify<T, U = Error>(
+    fn: (...args: any[]) => Promise<T>
+): (...args: any[]) => Promise<[T | undefined, U | null]>;
+ function golangify<T, U = Error>(
+    p: Promise<T>
+): Promise<[T | undefined, U | null]>;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3641,6 +5350,17 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 
 创建 HTML 元素。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function h(
+    tag: string,
+    attrs?: { [name: string]: any },
+    ...child: Array<string | HTMLElement>
+): HTMLElement;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |tag|string|标签名|
@@ -3660,6 +5380,13 @@ document.body.appendChild(el);
 
 检查属性是否是对象自身的属性（原型链上的不算）。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function has(obj: {}, key: string): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -3674,6 +5401,13 @@ has({one: 1}, 'one'); // -> true
 
 堆排序实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function heapSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|要排序的数组|
@@ -3687,6 +5421,16 @@ heapSort([2, 1]); // -> [1, 2]
 ## hex
 
 hex 编解码。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const hex: {
+    encode(bytes: number[]): string;
+    decode(str: string): number[];
+};</code>
+</pre>
+</details>
 
 ### encode
 
@@ -3715,6 +5459,26 @@ hex.decode('a8ae9bff'); // -> [168, 174, 155, 255]
 
 高亮代码。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace highlight {
+    interface IStyle {
+        comment?: string;
+        string?: string;
+        number?: string;
+        keyword?: string;
+        operator?: string;
+    }
+}
+ function highlight(
+    str: string,
+    lang?: string,
+    style?: highlight.IStyle
+): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|代码字符串|
@@ -3735,6 +5499,16 @@ highlight('const a = 5;', 'js', {
 ## hotkey
 
 监听键盘触发对应的事件。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const hotkey: {
+    on(key: string, listener: Function): void;
+    off(key: string, listener: Function): void;
+};</code>
+</pre>
+</details>
 
 ### on
 
@@ -3762,6 +5536,13 @@ hotkey.off('shift+a', keyDown);
 
 将 hsl 格式的颜色值转换为 rgb 格式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function hslToRgb(hsl: number[]): number[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |hsl|array|hsl 值|
@@ -3774,6 +5555,16 @@ hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
 ## html
 
 HTML 解析器。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const html: {
+    parse(html: string): any[];
+    stringify(tree: any[]): string;
+};</code>
+</pre>
+</details>
 
 ### parse
 
@@ -3803,6 +5594,13 @@ html.stringify(tree);
 
 返回传入的第一个参数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function identity<T>(val: T): T;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|任何值|
@@ -3815,6 +5613,13 @@ identity('a'); // -> 'a'
 ## idxOf
 
 返回指定值第一次在数组中出现的位置。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function idxOf(arr: any[], val: any, fromIdx?: number): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3831,6 +5636,13 @@ idxOf([1, 2, 1, 2], 2, 2); // -> 3
 
 对文本的每一行进行缩进处理。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function indent(str: string, char?: string, len?: number): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -3845,6 +5657,13 @@ indent('foo\nbar', ' ', 4); // -> '    foo\n    bar'
 ## inherits
 
 使构造函数继承另一个构造函数原型链上的方法。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function inherits(Class: Function, SuperClass: Function): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3871,6 +5690,22 @@ s.getName(); // -> 'RedHood'
 ## ini
 
 ini 文件解析器。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace ini {
+    interface IOptions {
+        section?: string;
+        whitespace: boolean;
+    }
+}
+ const ini: {
+    parse(ini: string): any;
+    stringify(obj: any, options?: ini.IOptions): string;
+};</code>
+</pre>
+</details>
 
 ### parse
 
@@ -3916,6 +5751,13 @@ ini.stringify(config);
 
 插入排序实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function insertionSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|要排序的数组|
@@ -3930,6 +5772,13 @@ insertionSort([2, 1]); // -> [1, 2]
 
 计算所有数组的交集。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function intersect(...arr: Array<any[]>): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |...arr|array|源数组|
@@ -3942,6 +5791,22 @@ intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
 ## intersectRange
 
 计算两个区间的交集。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace intersectRange {
+    interface IRange {
+        start: number;
+        end: number;
+    }
+}
+ function intersectRange(
+    a: intersectRange.IRange,
+    b: intersectRange.IRange
+): intersectRange.IRange | void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3960,6 +5825,22 @@ intersectRange({start: 0, end: 5}, {start: 6, end: 7});
 
 Facebook 的 invariant 模块。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function invariant(
+    condition: boolean,
+    format?: string,
+    a?: string,
+    b?: string,
+    c?: string,
+    d?: string,
+    e?: string,
+    f?: string
+): void;</code>
+</pre>
+</details>
+
 [相关文档](https://github.com/zertosh/invariant)
 
 ```javascript
@@ -3972,6 +5853,13 @@ invariant(false, 'This will throw an error with this message');
 ## invert
 
 生成一个新对象，该对象的键名和键值进行调换。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function invert(obj: any): any;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -3988,6 +5876,13 @@ invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
 
 检查 url 是否是绝对地址。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isAbsoluteUrl(url: string): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |url|string|目标 url|
@@ -4002,6 +5897,13 @@ isAbsoluteUrl('surunzi.com'); // -> false
 ## isArgs
 
 检查值是否是参数类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isArgs(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4018,6 +5920,13 @@ isAbsoluteUrl('surunzi.com'); // -> false
 
 检查值是否是数组类型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isArr(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4032,6 +5941,13 @@ isArr({}); // -> false
 
 检查值是否是 ArrayBuffer 类型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isArrBuffer(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4044,6 +5960,13 @@ isArrBuffer(new ArrayBuffer(8)); // -> true
 ## isArrLike
 
 检查值是否是类数组对象。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isArrLike(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4062,6 +5985,13 @@ isArrLike([1, 2, 3]); // -> true
 
 检查值是否是 Async 函数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isAsyncFn(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4077,6 +6007,13 @@ isAsyncFn(async function () {}); // -> true
 
 检查值是否是 Blob 类型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isBlob(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4090,6 +6027,13 @@ isBlob([]); // -> false
 ## isBool
 
 检查值是否是布尔类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isBool(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4106,6 +6050,13 @@ isBool(1); // -> false
 
 检测是否运行于浏览器环境。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const isBrowser: boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isBrowser); // -> true if running in a browser
 ```
@@ -4113,6 +6064,13 @@ console.log(isBrowser); // -> true if running in a browser
 ## isBuffer
 
 检查值是否是 Buffer 类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isBuffer(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4126,6 +6084,18 @@ isBuffer(new Buffer(4)); // -> true
 ## isClose
 
 检查两个数字是否近似相等。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isClose(
+    a: number,
+    b: number,
+    relTol?: number,
+    absTol?: number
+): boolean;</code>
+</pre>
+</details>
 
 `abs(a-b) <= max(relTol * max(abs(a), abs(b)), absTol)`
 
@@ -4148,6 +6118,13 @@ isClose(1, 1.2, 0.1, 0.3); // -> true
 
 检测是否暗黑模式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isDarkMode(): boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isDarkMode()); // true if dark mode
 ```
@@ -4155,6 +6132,13 @@ console.log(isDarkMode()); // true if dark mode
 ## isDataUrl
 
 检查字符串是否是有效的 Data Url。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isDataUrl(str: string): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4170,6 +6154,13 @@ isDataUrl('data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D'); // -> true
 
 检查值是否是 Date 类型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isDate(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4182,6 +6173,13 @@ isDate(new Date()); // -> true
 ## isEl
 
 检查值是否是 DOM 元素。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isEl(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4196,6 +6194,13 @@ isEl(document.body); // -> true
 
 简单检查值是否是合法的邮件地址。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isEmail(val: string): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|string|要检查的值|
@@ -4208,6 +6213,13 @@ isEmail('surunzi@foxmail.com'); // -> true
 ## isEmpty
 
 检查值是否是空对象或空数组。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isEmpty(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4224,6 +6236,13 @@ isEmpty(''); // -> true
 
 对两个对象进行深度比较，如果相等，返回真。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isEqual(val: any, other: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要比较的对象|
@@ -4238,6 +6257,13 @@ isEqual([1, 2, 3], [1, 2, 3]); // -> true
 
 检查值是否是 Error 类型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isErr(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4250,6 +6276,13 @@ isErr(new Error()); // -> true
 ## isEven
 
 检查数字是否是偶数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isEven(num: number): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4266,6 +6299,13 @@ isEven(2); // -> true
 
 检查值是否是 File 类型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isFile(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4278,6 +6318,13 @@ isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
 ## isFinite
 
 检查值是否是有限数字。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isFinite(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4292,6 +6339,13 @@ isFinite(Infinity); // -> false
 ## isFn
 
 检查值是否是函数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isFn(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4310,6 +6364,13 @@ isFn(async function() {}); // -> true
 
 检查值是否是 Generator 函数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isGeneratorFn(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4323,6 +6384,20 @@ isGeneratorFn(function () {}); // -> false
 ## isHidden
 
 检查元素是否隐藏。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isHidden(el: Element, options?: {
+    display?: boolean;
+    visibility?: boolean;
+    opacity?: boolean;
+    size?: boolean;
+    viewport?: boolean;
+    overflow?: boolean;
+}): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4349,6 +6424,13 @@ isHidden(document.createElement('div')); // -> true
 
 检查值是否是整数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isInt(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4363,6 +6445,17 @@ isInt({}); // -> false
 ## isIp
 
 检查值是否是 IP 地址。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace isIp {
+    function v4(str: string): boolean;
+    function v6(str: string): boolean;
+}
+ function isIp(str: string): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4389,6 +6482,13 @@ isIp.v6('1:2:3:4:5:6:7:8'); // -> true
 
 检查值是否是有效的 JSON。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isJson(val: string): boolean;</code>
+</pre>
+</details>
+
 该模块使用 `JSON.parse()` 和 `try... catch` 进行检测。
 
 |参数名|类型|说明|
@@ -4405,6 +6505,13 @@ isJson("{'a': 5}"); // -> false
 
 检查年份是否是闰年。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isLeapYear(year: number): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |year|number|要检查的年份|
@@ -4418,6 +6525,13 @@ isLeapYear(2002); // -> false
 ## isMap
 
 检查值是否是 Map 对象。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isMap(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4433,6 +6547,13 @@ isMap(new WeakMap()); // -> false
 
 检查对象所有键名和键值是否在指定的对象中。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isMatch(obj: any, src: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -4447,6 +6568,13 @@ isMatch({a: 1, b: 2}, {a: 1}); // -> true
 
 检测是否运行于微信小程序环境中。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const isMiniProgram: boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isMiniProgram); // -> true if running in mini program.
 ```
@@ -4454,6 +6582,13 @@ console.log(isMiniProgram); // -> true if running in mini program.
 ## isMobile
 
 使用 ua 检测是否运行于移动端浏览器。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isMobile(ua?: string): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4467,6 +6602,13 @@ isMobile(navigator.userAgent);
 ## isNaN
 
 检测值是否是 NaN。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isNaN(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4484,6 +6626,13 @@ isNaN(NaN); // -> true
 
 检查值是否是原生函数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isNative(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4497,6 +6646,13 @@ isNative(Math.min); // -> true
 ## isNil
 
 检查值是否是 null 或 undefined，等价于 value == null。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isNil(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4516,6 +6672,13 @@ isNil([]); // -> false
 
 检测是否运行于 node 环境中。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const isNode: boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isNode); // -> true if running in node
 ```
@@ -4523,6 +6686,13 @@ console.log(isNode); // -> true if running in node
 ## isNull
 
 检查值是否是 Null 类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isNull(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4536,6 +6706,13 @@ isNull(null); // -> true
 ## isNum
 
 检测值是否是数字类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isNum(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4551,6 +6728,13 @@ isNum({}); // -> false
 ## isNumeric
 
 检查值是否是数字，包括数字字符串。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isNumeric(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4571,6 +6755,13 @@ isNumeric(NaN); // -> false
 
 检查值是否是对象。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isObj(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4587,6 +6778,13 @@ isObj([]); // -> true
 
 检查数字是否是奇数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isOdd(num: number): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |num|number|要检查的数字|
@@ -4602,6 +6800,13 @@ isOdd(2); // -> false
 
 检查值是否是用 Object 构造函数创建的对象。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isPlainObj(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4616,6 +6821,16 @@ isPlainObj(function () {}); // -> false
 ## isPortFree
 
 检查 TCP 端口是否可用。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isPortFree(
+    port: number,
+    host?: string
+): Promise<boolean>;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4633,6 +6848,13 @@ isPortFree(3000).then(isFree => {
 
 检查整数是否是质数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isPrime(num: number): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |num|number|要检查的数字|
@@ -4646,6 +6868,13 @@ isPrime(8); // -> false
 ## isPrimitive
 
 检测值是否是字符串，数字，布尔值或 null。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isPrimitive(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4662,6 +6891,13 @@ isPrimitive(false); // -> true
 
 检查值是否是类 promise 对象。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isPromise(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4676,6 +6912,13 @@ isPromise({}); // -> false
 
 检查值是否是正则类型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isRegExp(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4688,6 +6931,13 @@ isRegExp(/a/); // -> true
 ## isRelative
 
 检查路径是否是相对路径。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isRelative(path: string): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4702,6 +6952,13 @@ isRelative('README.md'); // -> true
 
 判断是否运行在 retina 屏幕的设备上。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const isRetina: boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isRetina); // -> true if high DPR
 ```
@@ -4709,6 +6966,13 @@ console.log(isRetina); // -> true if high DPR
 ## isSet
 
 检查值是否是 Set 类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isSet(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4723,6 +6987,13 @@ isSet(new WeakSet()); // -> false
 ## isSorted
 
 检查数组是否有序。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isSorted(arr: any[], cmp?: Function): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4739,6 +7010,13 @@ isSorted([3, 2, 1]); // -> false
 
 检查值是否是字符串。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isStr(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4751,6 +7029,13 @@ isStr('licia'); // -> true
 ## isStream
 
 检查值是否是 Node.js Stream 类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isStream(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4767,6 +7052,13 @@ isStream(new stream.Stream()); // -> true
 
 检查值是否是 Symbol 类型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isSymbol(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4779,6 +7071,13 @@ isSymbol(Symbol('test')); // -> true
 ## isTypedArr
 
 检查值是否 TypedArray 类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isTypedArr(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4794,6 +7093,13 @@ isTypedArr(new Uint8Array(8)); // -> true
 
 检查值是否是 undefined。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isUndef(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4808,6 +7114,13 @@ isUndef(null); // -> false
 
 简单检查值是否是有效的 url 地址。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isUrl(val: string): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|string|要检查的值|
@@ -4820,6 +7133,13 @@ isUrl('http://www.example.com?foo=bar&param=test'); // -> true
 ## isWeakMap
 
 检查值是否是 WeakMap 类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isWeakMap(val: any): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4835,6 +7155,13 @@ isWeakMap(new WeakMap()); // -> true
 
 检查值是否是 WeakSet 类型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isWeakSet(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要检查的值|
@@ -4849,6 +7176,13 @@ isWeakSet(new WeakSet()); // -> true
 
 检测是否运行在 windows 操作系统上。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const isWindows: boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isWindows); // -> true if running on windows
 ```
@@ -4856,6 +7190,13 @@ console.log(isWindows); // -> true if running on windows
 ## jsonClone
 
 使用 JSON parse 和 stringify 方法对指定对象进行复制。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function jsonClone<T>(val: T): T;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4869,6 +7210,25 @@ jsonClone({ name: 'licia' }); // -> { name: 'licia' }
 ## jsonp
 
 简单 jsonp 实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace jsonp {
+    interface IOptions {
+        url: string;
+        data?: any;
+        success?: Function;
+        param?: string;
+        name?: string;
+        error?: Function;
+        complete?: Function;
+        timeout?: number;
+    }
+}
+ function jsonp(opts: jsonp.IOptions): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4901,6 +7261,13 @@ jsonp({
 
 将字符串转换为短横线式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function kebabCase(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -4916,6 +7283,14 @@ kebabCase('foo.bar'); // -> foo-bar
 ## keyCode
 
 键码键名转换。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function keyCode(name: string): number;
+ function keyCode(code: number): string;</code>
+</pre>
+</details>
 
 获取键码对应的键名。
 
@@ -4940,6 +7315,13 @@ keyCode('enter'); // -> 13
 
 返回包含对象自身可遍历所有键名的数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function keys(obj: any): string[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -4953,6 +7335,13 @@ keys({a: 1}); // -> ['a']
 
 杀死进程。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function kill(pid: number): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |pid|number|进程 ID|
@@ -4964,6 +7353,13 @@ kill(9420);
 ## last
 
 获取数组的最后一个元素。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function last(arr: any[]): any;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -4978,6 +7374,13 @@ last([1, 2]); // -> 2
 
 模块懒加载。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function lazyRequire(requireFn: Function): Function;</code>
+</pre>
+</details>
+
 ```javascript
 const r = lazyRequire(require);
 
@@ -4990,6 +7393,13 @@ _().isNumber(5);
 ## levenshtein
 
 计算字符串编辑距离，使用 levenshtein 算法。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function levenshtein(a: string, b: string): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5004,6 +7414,13 @@ levenshtein('cat', 'cake'); // -> 2
 ## linkify
 
 将文本中的 url 地址转换为超链接。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function linkify(str: string, hyperlink?: Function): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5023,6 +7440,13 @@ linkify(str, function (url) {
 
 往页面插入样式链接。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function loadCss(src: string, cb?: Function): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |src|string|样式文件地址|
@@ -5037,6 +7461,13 @@ loadCss('style.css', function (isLoaded) {
 ## loadImg
 
 加载指定地址的图片。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function loadImg(src: string, cb?: Function): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5053,6 +7484,13 @@ loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
 
 往页面插入脚本链接。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function loadJs(src: string, cb?: Function): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |src|string|脚本地址|
@@ -5068,6 +7506,13 @@ loadJs('main.js', function (isLoaded) {
 
 获取数组中最长的一项。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function longest(arr: string[]): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|目标数组|
@@ -5081,6 +7526,13 @@ longest(['a', 'abcde', 'abc']); // -> 'abcde'
 
 转换字符串为小写。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function lowerCase(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -5093,6 +7545,13 @@ lowerCase('TEST'); // -> 'test'
 ## lpad
 
 对字符串进行左填充。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function lpad(str: string, len: number, chars?: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5112,6 +7571,13 @@ lpad('abc', 5, 'ab'); // -> 'ababc'
 
 删除字符串头部指定字符或空格。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function ltrim(str: string, chars?: string | string[]): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -5128,6 +7594,22 @@ ltrim('_abc_', ['a', '_']); // -> 'bc_'
 
 对集合的每个元素调用转换函数生成与之对应的数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function map<T, TResult>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, TResult>,
+    context?: any
+): TResult[];
+ function map<T, TResult>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, TResult>,
+    context?: any
+): TResult[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |object|array object|源集合|
@@ -5143,6 +7625,17 @@ map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 
 类似 map，但针对对象，生成一个新对象。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function mapObj<T, TResult>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, TResult>,
+    context?: any
+): types.Dictionary<TResult>;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |object|object|源对象|
@@ -5157,6 +7650,13 @@ mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
 ## matcher
 
 传入对象返回函数，如果传入参数中包含该对象则返回真。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function matcher(attrs: any): Function;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5177,6 +7677,13 @@ filter(objects, matcher({a: 4, c: 6 })); // -> [{a: 4, b: 5, c: 6}]
 
 获取数字中的最大值。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function max(...num: number[]): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |...num|number|要计算的数字|
@@ -5189,6 +7696,13 @@ max(2.3, 1, 4.5, 2); // 4.5
 ## md5
 
 MD5 算法实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function md5(msg: string | number[]): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5203,6 +7717,13 @@ md5('licia'); // -> 'e59f337d85e9a467f1783fab282a41d0'
 
 Web Storage 接口的纯内存实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const memStorage: typeof window.localStorage;</code>
+</pre>
+</details>
+
 当 localStorage 或者 sessionStorage 无法使用时可以使用其作为替代。
 
 ```javascript
@@ -5213,6 +7734,13 @@ localStorage.setItem('test', 'licia');
 ## memoize
 
 缓存函数计算结果。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function memoize(fn: Function, hashFn?: Function): Function;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5230,6 +7758,13 @@ const fibonacci = memoize(function(n) {
 
 归并排序实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function mergeSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 注意：它不改变原数组。
 
 |参数名|类型|说明|
@@ -5245,6 +7780,20 @@ mergeSort([2, 1]); // -> [1, 2]
 ## meta
 
 meta 操作库，将 name 和 content 属性值转换为键值对。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace meta {
+    function remove(nameList: string | string[]): void;
+}
+ function meta(): {};
+ function meta(key: string): string;
+ function meta(keys: string[]): {};
+ function meta(key, value): void;
+ function meta(pairs: {}): void;</code>
+</pre>
+</details>
 
 获取指定 meta 值。如果忽略 meta 名，所有的 meta 键值对都被返回。
 
@@ -5291,6 +7840,13 @@ meta.remove(['e', 'f']);
 
 获取对象中所有方法名。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function methods(obj: any): string[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -5303,6 +7859,13 @@ methods(console); // -> ['Console', 'assert', 'dir', ...]
 ## mime
 
 常用 mime 类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function mime(name: string): string | null;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5327,6 +7890,13 @@ mime('test'); // -> null
 
 获取数字中的最小值。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function min(...num: number[]): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |...num|number|要计算的数字|
@@ -5339,6 +7909,14 @@ min(2.3, 1, 4.5, 2); // 1
 ## mkdir
 
 递归地创建文件夹。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function mkdir(dir: string, mode?: number, cb?: Function): void;
+ function mkdir(dir: string, cb?: Function): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5356,6 +7934,54 @@ mkdir('/tmp/foo/bar/baz', function (err) {
 ## moment
 
 简单的类 moment.js 实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace moment {
+   class M {
+       constructor(value: string | Date);
+       format(mask: string): string;
+       isValid(): boolean;
+       isLeapYear(): boolean;
+       isSame(that: M): boolean;
+       valueOf(): number;
+       isBefore(that: M): boolean;
+       isAfter(that: M): boolean;
+       year(): number;
+       year(number): M;
+       month(): number;
+       month(number): M;
+       date(): number;
+       date(number): M;
+       hour(): number;
+       hour(number): M;
+       minute(): number;
+       minute(number): M;
+       second(): number;
+       second(number): M;
+       millisecond(): number;
+       millisecond(number): M;
+       unix(): number;
+       clone(): M;
+       toDate(): Date;
+       toArray(): number[];
+       toJSON(): string;
+       toISOString(): string;
+       toObject(): any;
+       toString(): string;
+       set(unit: string, num: number): M;
+       startOf(unit: string): M;
+       endOf(unit: string): M;
+       daysInMonth(): number;
+       add(num: number, unit: string): M;
+       subtract(num: number, unit: string): M;
+       diff(input: M | string | Date, unit: string, asFloat: boolean): number;
+   }
+}
+ function moment(value: string | Date): moment.M;</code>
+</pre>
+</details>
 
 它只支持一小部分的 moment.js api。
 
@@ -5379,6 +8005,16 @@ moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
 ## morse
 
 摩尔斯电码编解码。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const morse: {
+    encode(txt: string): string;
+    decode(morse: string): string;
+}</code>
+</pre>
+</details>
 
 ### encode
 
@@ -5407,6 +8043,14 @@ morse.decode(str); // -> 'Hello, world.'
 ## ms
 
 时长字符串与毫秒转换库。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function ms(str: string): number;
+ function ms(num: number): string;</code>
+</pre>
+</details>
 
 转换时长字符串为毫秒。
 
@@ -5437,6 +8081,13 @@ ms(60000); // -> '1m'
 
 创建一个将原函数结果取反的函数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function negate(predicate: Function): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |predicate|function|源函数|
@@ -5450,6 +8101,13 @@ function even(n) { return n % 2 === 0 }
 ## nextTick
 
 能够同时运行在 node 和浏览器端的 next tick 实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function nextTick(cb: Function): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5467,6 +8125,13 @@ nextTick(function () {
 
 一个什么也不做的空函数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function noop(): void;</code>
+</pre>
+</details>
+
 ```javascript
 noop(); // Does nothing
 ```
@@ -5474,6 +8139,13 @@ noop(); // Does nothing
 ## normalizeHeader
 
 标准化 HTTP 头部名。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function normalizeHeader(header: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5489,6 +8161,13 @@ normalizeHeader('etag'); // -> 'ETag'
 
 标准化文件路径中的斜杠。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function normalizePath(path: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |path|string|源路径|
@@ -5502,6 +8181,22 @@ normalizePath('./foo//bar'); // -> './foo/bar'
 ## normalizePhone
 
 标准化电话号码为 E.164 格式。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace normalizePhone {
+    interface IOptions {
+        countryCode: number;
+        trunkPrefix?: boolean;
+    }
+}
+ function normalizePhone(
+    phone: string,
+    options: normalizePhone.IOptions
+): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5533,6 +8228,19 @@ normalizePhone('020 7183 8750', {
 
 Web Notifications 接口简单包装。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace notify {
+    class Notification extends Emitter {
+        constructor(title: string, options?: object);
+        show(): void;
+    }
+}
+ function notify(title: string, options?: object): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |title|string|通知标题|
@@ -5560,6 +8268,13 @@ notification.show();
 
 获取当前时间戳。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function now(): number;</code>
+</pre>
+</details>
+
 ```javascript
 now(); // -> 1468826678701
 ```
@@ -5567,6 +8282,13 @@ now(); // -> 1468826678701
 ## objToStr
 
 Object.prototype.toString 的别名。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function objToStr(val: any): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5580,6 +8302,13 @@ objToStr(5); // -> '[object Number]'
 ## omit
 
 类似 pick，但结果相反。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function omit(obj: any, filter: string | string[] | Function): any;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5599,6 +8328,13 @@ omit({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 
 创建只能调用一次的函数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function once(fn: Function): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|源函数|
@@ -5615,6 +8351,13 @@ initOnce(); // -> init is invoked once
 
 打开 url 地址或文件。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function open(target: string): any;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |target|string|要打开的目标|
@@ -5627,6 +8370,20 @@ open('https://eustia.liriliri.io/');
 ## openFile
 
 在浏览器中打开文件选择框。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace openFile {
+    interface IOptions {
+        accept?: string;
+        multiple?: boolean;
+    }
+}
+
+ function openFile(options?: openFile.IOptions): Promise<File[]>;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5650,9 +8407,23 @@ openFile({multiple: true}).then(fileList => {
 
 用于高效的函数上下文绑定。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function optimizeCb(fn: Function, ctx: any, argCount?: number): Function;</code>
+</pre>
+</details>
+
 ## ordinal
 
 转换数字为序数形式。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function ordinal(num: number): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5667,6 +8438,18 @@ ordinal(2); // -> '2nd'
 ## orientation
 
 屏幕方向工具库。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace orientation {
+    interface IOrientation extends Emitter {
+        get(): string;
+    }
+}
+ const orientation: orientation.IOrientation;</code>
+</pre>
+</details>
 
 ### on
 
@@ -5691,6 +8474,13 @@ orientation.get(); // -> 'landscape'
 
 对字符串进行左右填充。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function pad(str: string, len: number, chars?: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -5710,6 +8500,13 @@ pad('ab', 5, 'ab'); // -> 'ababa'
 
 将对象转换为包含【键名，键值】对的数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function pairs(obj: any): Array<any[]>;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -5722,6 +8519,13 @@ pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
 ## parallel
 
 同时执行多个函数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function parallel(tasks: Function[], cb?: Function): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5744,6 +8548,13 @@ parallel([
 ## parseArgs
 
 命令行参数简单解析。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function parseArgs(names: string[], shorthands: any): any;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5776,6 +8587,36 @@ parseArgs(['eustia', '--output', 'util.js', '-w'], {
 
 Simple html parser.
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace parseHtml {
+    interface IHandlers {
+        start?: (tag: string, attrs: any, unary: boolean) => void;
+        end?: (tag: string) => void;
+        comment?: (text: string) => void;
+        text?: (text: string) => void;
+    }
+}
+ function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
+</pre>
+</details>
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace parseHtml {
+    interface IHandlers {
+        start?: (tag: string, attrs: any, unary: boolean) => void;
+        end?: (tag: string) => void;
+        comment?: (text: string) => void;
+        text?: (text: string) => void;
+    }
+}
+ function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
+</pre>
+</details>
+
 |Name   |Type  |Desc         |
 |-------|------|-------------|
 |html   |string|Html to parse|
@@ -5794,6 +8635,13 @@ parseHtml('<div>licia</div>', {
 
 返回局部填充参数的函数，与 bind 模块相似。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function partial(fn: Function, ...partials: any[]): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|源函数|
@@ -5808,6 +8656,13 @@ sub5(20); // -> 15
 ## pascalCase
 
 将字符串转换为帕斯卡式。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function pascalCase(str: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5825,6 +8680,13 @@ pascalCase('foo.bar'); // -> FooBar
 
 高精度时间戳。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function perfNow(): number;</code>
+</pre>
+</details>
+
 ```javascript
 const start = perfNow();
 
@@ -5836,6 +8698,16 @@ console.log(perfNow() - start);
 ## pick
 
 过滤对象。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function pick(
+    object: any,
+    filter: string | string[] | Function,
+): any;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5854,6 +8726,13 @@ pick({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 ## pluck
 
 提取数组对象中指定属性值，返回一个数组。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function pluck(object: any, key: string | string[]): any[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5874,6 +8753,13 @@ pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
 
 获取数字的精度。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function precision(num: number): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |num|number|要检查的数字|
@@ -5886,6 +8772,13 @@ precision(1.234); // -> 3;
 ## prefetch
 
 预获取指定的 url。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function prefetch(url: string): Promise<void>;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5901,6 +8794,16 @@ prefetch('https://eustia.liriliri.io/');
 ## prefix
 
 给 css 属性名增加浏览器前缀。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace prefix {
+    function dash(name: string): string;
+}
+ function prefix(name: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5920,6 +8823,13 @@ prefix('color'); // -> 'color'
 ## promisify
 
 转换使用回调的异步函数，使其返回 Promise。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function promisify(fn: Function, multiArgs?: boolean): Function;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -5942,6 +8852,13 @@ readFile('test.js', 'utf-8').then(function (data) {
 
 返回一个函数，该函数返回任何传入对象的指定属性。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function property(path: string | string[]): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |path|string array|属性路径|
@@ -5956,6 +8873,16 @@ property(['a', 'b'])(obj); // -> 1
 ## query
 
 解析序列化 url 的 query 部分。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const query: {
+    parse(str: string): any;
+    stringify(object: any): string;
+};</code>
+</pre>
+</details>
 
 ### parse
 
@@ -5985,6 +8912,13 @@ query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
 
 快排实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function quickSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|要排序的数组|
@@ -5999,6 +8933,16 @@ quickSort([2, 1]); // -> [1, 2]
 
 requestAnimationFrame 快捷方式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace raf {
+    function cancel(id: number);
+}
+ function raf(cb: Function): number;</code>
+</pre>
+</details>
+
 如果原生 requestAnimationFrame 不支持，使用 setTimeout 进行兼容。
 
 ```javascript
@@ -6012,6 +8956,13 @@ raf.cancel(id);
 ## random
 
 在给定区间内生成随机数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function random(min: number, max?: number, floating?: boolean): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6030,6 +8981,13 @@ random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
 
 随机字节序列生成器。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function randomBytes(size: number): Uint8Array;</code>
+</pre>
+</details>
+
 如果支持，使用 node 的 crypto 模块或浏览器的 crypto 对象。
 
 |参数名|类型|说明|
@@ -6044,6 +9002,23 @@ randomBytes(5); // -> [55, 49, 153, 30, 122]
 ## randomColor
 
 随机颜色生成器。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace randomColor {
+    interface IOptions {
+        count?: number;
+        hue?: number;
+        lightness?: number;
+        format?: string;
+        seed?: number
+    }
+}
+ function randomColor(): string;
+ function randomColor(options: randomColor.IOptions): string | string[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6070,6 +9045,13 @@ randomColor({
 
 简单 id 生成器，类似于 nanoid。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function randomId(size?: number, symbols?: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |size=21|number|id 长度|
@@ -6085,6 +9067,13 @@ randomId(5, 'abc'); // -> 'cbbcb'
 
 随机获取数组中的某项。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function randomItem(arr: any[]): any;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|目标数组|
@@ -6097,6 +9086,13 @@ randomItem([1, 2, 3]); // -> 2
 ## range
 
 创建整数数组。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function range(start: number, end?: number, step?: number): number[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6113,6 +9109,16 @@ range(0, 5, 2) // -> [0, 2, 4]
 ## rc4
 
 RC4 对称加密算法实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const rc4: {
+    encrypt(key: string, str: string): string;
+    decrypt(key: string, str: string): string;
+};</code>
+</pre>
+</details>
 
 ### encrypt
 
@@ -6137,6 +9143,13 @@ rc4.decrypt('licia', 'j9y2VpSfR3AdNN8='); // -> 'Hello world'
 
 dom 准备好时调用回调函数，类似于 jQuery 的 ready 方法。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function ready(fn: Function): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|回调函数|
@@ -6150,6 +9163,24 @@ ready(function () {
 ## reduce
 
 合并多个值成一个值。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function reduce<T, TResult>(
+    list: types.List<T>,
+    iterator: types.MemoIterator<T, TResult>,
+    memo?: TResult,
+    context?: any
+): TResult;
+ function reduce<T, TResult>(
+    list: types.Dictionary<T>,
+    iterator: types.MemoObjectIterator<T, TResult>,
+    memo?: TResult,
+    context?: any
+): TResult;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6167,6 +9198,18 @@ reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
 
 类似于 reduce，只是从后往前合并。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function reduceRight<T, TResult>(
+    list: types.Collection<T>,
+    iterator: types.MemoIterator<T, TResult>,
+    memo?: TResult,
+    context?: any
+): TResult;</code>
+</pre>
+</details>
+
 ```javascript
 reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> [3, 2, 1]
 ```
@@ -6174,6 +9217,22 @@ reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> 
 ## reject
 
 类似 filter，但结果相反。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function reject<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
+    context?: any
+): T[];
+ function reject<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
+    context?: any
+): T[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6191,6 +9250,17 @@ reject([1, 2, 3, 4, 5], function (val) {
 ## remove
 
 移除集合中所有通过真值检测的元素，返回包含所有删除元素的数组。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function remove<T, TResult>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
+    context?: any
+): TResult[];</code>
+</pre>
+</details>
 
 与 filter 不同，该模块会改变原数组。
 
@@ -6212,6 +9282,13 @@ console.log(evens); // -> [2, 4]
 
 重复字符串指定次数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function repeat(str: string, n: number): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -6228,6 +9305,13 @@ repeat('*', 0); // -> ''
 
 将给定序号后的参数合并成一个数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function restArgs(fn: Function, startIndex?: number): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |function|function|源函数|
@@ -6243,6 +9327,13 @@ paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
 
 将数组元素颠倒，不改变原数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function reverse(arr: any[]): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|源数组|
@@ -6255,6 +9346,13 @@ reverse([1, 2, 3]); // -> [3, 2, 1]
 ## rgbToHsl
 
 将 rgb 格式的颜色值转换为 hsl 格式。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function rgbToHsl(rgb: number[]): number[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6269,6 +9367,16 @@ rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
 
 requestIdleCallback 的快捷方式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace ric {
+    function cancel(id: number);
+}
+ function ric(cb: Function): number;</code>
+</pre>
+</details>
+
 如果原生 requestIdleCallback 不支持，使用 setTimeout 进行兼容。
 
 ```javascript
@@ -6282,6 +9390,13 @@ ric.cancel(id);
 
 遍历所有可能的路径和域名将 cookie 删除。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function rmCookie(key: string): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |key|string|cookie 名|
@@ -6293,6 +9408,13 @@ rmCookie('test');
 ## rmdir
 
 递归地删除文件夹。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function rmdir(dir: string, cb?: Function): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6310,9 +9432,23 @@ rmdir('/tmp/foo/bar/baz', function (err) {
 
 根对象引用，对于 nodeJs，取 `global` 对象，对于浏览器，取 `window` 对象。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const root: any;</code>
+</pre>
+</details>
+
 ## rpad
 
 对字符串进行右填充。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function rpad(str: string, len: number, chars?: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6332,6 +9468,13 @@ rpad('abc', 5, 'ab'); // -> 'abcab'
 
 删除字符串尾部指定字符或空格。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function rtrim(str: string, chars?: string | string[]): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -6348,9 +9491,23 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 
 创建回调函数，内部模块使用。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function safeCb(val?: any, ctx?: any, argCount?: number): Function;</code>
+</pre>
+</details>
+
 ## safeDel
 
 删除对象属性。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function safeDel(obj: any, path: string | string[]): any;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6369,6 +9526,13 @@ safeDel(obj, 'a.b'); // -> undefined
 
 获取对象属性值，路径不存在时不报错。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function safeGet(obj: any, path: string | string[]): any;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |obj|object|目标对象|
@@ -6385,6 +9549,13 @@ safeGet(obj, 'a.b'); // -> undefined
 ## safeSet
 
 设置对象属性值。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function safeSet(obj: any, path: string | string[], val: any): void;</code>
+</pre>
+</details>
 
 如果路径的某一层不存在，将会创建一个空对象。
 
@@ -6405,6 +9576,13 @@ safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
 
 安全地使用 storage，使其在旧浏览器及 safari 无痕模式下能正常运行。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function safeStorage(type?: string): typeof window.localStorage;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |type='local'|string|模式，local 或 session|
@@ -6418,6 +9596,13 @@ localStorage.setItem('licia', 'util');
 ## sample
 
 从集合中随机抽取部分样本。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function sample(obj: any, n: number): any[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6433,6 +9618,24 @@ sample({a: 1, b: 2, c: 3}, 1); // -> [2]
 ## scrollTo
 
 以动画的形式滚动到指定目标。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace scrollTo {
+    interface IOptions {
+        tolerance?: number;
+        duration?: number;
+        easing?: string | Function;
+        callback?: Function;
+    }
+}
+ function scrollTo(
+    target: Element | string | number,
+    options: scrollTo.IOptions
+);</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6461,6 +9664,18 @@ scrollTo('body', {
 
 随机数生成器。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function seedRandom(
+    seed: number,
+    min?: number,
+    max?: number,
+    floating?: boolean
+): () => number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |seed|number|随机种子|
@@ -6479,6 +9694,13 @@ random(); // -> 68
 
 选择排序实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function selectionSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|要排序的数组|
@@ -6492,6 +9714,22 @@ selectionSort([2, 1]); // -> [1, 2]
 ## selector
 
 CSS 选择器解析器。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace selector {
+    interface IToken {
+        type: string;
+        value: string;
+    }
+}
+ const selector: {
+    parse(selector: string): Array<selector.IToken[]>;
+    stringify(selector: Array<selector.IToken[]>): string;
+}</code>
+</pre>
+</details>
 
 ### parse
 
@@ -6521,6 +9759,13 @@ selector.stringify(groups);
 
 希尔排序实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function shellSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|要排序的数组|
@@ -6535,6 +9780,13 @@ shellSort([2, 1]); // -> [1, 2]
 
 将数组中元素的顺序打乱。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function shuffle(arr: any[]): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|源数组|
@@ -6547,6 +9799,13 @@ shuffle([1, 2, 3]); // -> [3, 1, 2]
 ## size
 
 获取对象的大小或类数组元素的长度。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function size(obj: any): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6561,6 +9820,13 @@ size([1, 2, 3]); // -> 3
 ## sizeof
 
 计算 js 对象大概的内存占用。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function sizeof(obj: any): number;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6583,6 +9849,13 @@ sizeof({ a: 'b' }); // -> 4
 
 使用 Promise 模拟暂停方法。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function sleep(timeout: number): Promise<void>;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |timeout|number|暂时时长|
@@ -6597,6 +9870,13 @@ sizeof({ a: 'b' }); // -> 4
 
 截取数组的一部分生成新数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function slice(array: any[], start?: number, end?: number): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |array|array|目标数组|
@@ -6610,6 +9890,16 @@ slice([1, 2, 3, 4], 1, 2); // -> [2]
 ## slugify
 
 Slug 化字符串。 
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function slugify(
+    str: string,
+    replacement?: { [index: string]: string }
+): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6626,6 +9916,13 @@ slugify('I ♥ pony', {' ': '_'}); // -> 'I_love_pony'
 
 转换字符串为下划线式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function snakeCase(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -6640,6 +9937,22 @@ snakeCase('foo.bar'); // -> foo_bar
 ## some
 
 检查集合中是否有元素通过真值检测。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function some<T>(
+    list: types.List<T>,
+    iterator?: types.ListIterator<T, boolean>,
+    context?: any
+): boolean;
+ function some<T>(
+    object: types.Dictionary<T>,
+    iterator?: types.ObjectIterator<T, boolean>,
+    context?: any
+): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6658,6 +9971,13 @@ some([2, 5], function (val) {
 
 遍历集合中的元素，将其作为参数调用函数，并以得到的结果为依据对数组进行排序。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function sortBy(arr: any, iterator?: Function, ctx?: any): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|object array|源集合|
@@ -6674,6 +9994,19 @@ sortBy([1, 2, 3, 4, 5, 6], function (num) {
 ## sortKeys
 
 排序对象的键名。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function sortKeys(
+    obj: object,
+    options?: {
+        deep?: boolean,
+        comparator?: Function
+    }
+): object;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6698,6 +10031,13 @@ sortKeys({b: {d: 2, c: 1}, a: 0}, {
 
 将字符串转换为空格式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function spaceCase(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -6712,6 +10052,13 @@ spaceCase('foo.bar'); // -> foo bar
 ## splitCase
 
 将不同命名式的字符串拆分成数组。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function splitCase(str: string): string[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6731,6 +10078,20 @@ splitCase('foo-Bar'); // -> ['foo', 'bar']
 
 将路径拆分为文件夹路径，文件名和扩展名。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace splitPath {
+    interface IPath {
+        dir: string;
+        name: string;
+        ext: string;
+    }
+}
+ function splitPath(path: string): splitPath.IPath;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |path|string|目标路径|
@@ -6745,6 +10106,13 @@ splitPath('/home/foo/bar.txt'); // -> {dir: '/home/foo/', name: 'bar.txt', ext: 
 
 获取 v8 的 CallSite 对象。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function stackTrace(): any[];</code>
+</pre>
+</details>
+
 [Stack trace 接口说明](https://v8.dev/docs/stack-trace-api)
 
 ```javascript
@@ -6754,6 +10122,13 @@ stackTrace(); // -> List of CallSite objects
 ## startWith
 
 检查字符串是否以指定字符串开头。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function startWith(str: string, prefix: string): boolean;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6769,6 +10144,13 @@ startWith('ab', 'a'); // -> true
 
 使用 djb2 算法进行字符串哈希。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function strHash(str: string): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|目标字符串|
@@ -6781,6 +10163,16 @@ strHash('test'); // -> 2090770981
 ## strToBytes
 
 将字符串转换为字节数组。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function strToBytes(
+    str: string,
+    encoding?: string
+): number[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6798,6 +10190,13 @@ strToBytes('qK6b/w==', 'base64'); // -> [168, 174, 155, 255]
 ## stringify
 
 JSON 序列化，支持循环引用和函数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function stringify(obj: any, spaces?: number): string;</code>
+</pre>
+</details>
 
 undefined 被当作 null 处理。
 
@@ -6817,6 +10216,26 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 ## stringifyAll
 
 序列化对象，保留类型信息。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace stringifyAll {
+    interface IOptions {
+        unenumerable?: boolean;
+        symbol?: boolean;
+        accessGetter?: boolean;
+        timeout?: number;
+        depth?: number;
+        ignore?: any[];
+    }
+}
+ function stringifyAll(
+    obj: any,
+    options?: stringifyAll.IOptions
+): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6845,6 +10264,13 @@ stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"F
 
 清除字符串中的 ansi 控制码。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function stripAnsi(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -6857,6 +10283,13 @@ stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
 ## stripCmt
 
 清除源码中的注释。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function stripCmt(str: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6871,6 +10304,13 @@ stripCmt('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var
 
 清除字符串中的 ansi 颜色控制码。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function stripColor(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -6884,6 +10324,13 @@ stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
 
 清除字符串中的 html 标签。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function stripHtmlTag(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -6896,6 +10343,17 @@ stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 ## stripIndent
 
 清除多行文本的缩进。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function stripIndent(str: string): string;
+ function stripIndent(
+    literals: TemplateStringsArray,
+    ...placeholders: any[]
+): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6916,6 +10374,13 @@ stripIndent`
 
 将数字转换为指定的精度。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function stripNum(num: number, precision?: number): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |num|number|源数字|
@@ -6930,6 +10395,13 @@ stripNum(0.1 + 0.2); // -> 0.3
 
 计算数字和。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function sum(...num: number[]): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |...num|number|要计算的数字|
@@ -6942,6 +10414,13 @@ sum(1, 2, 5); // -> 8
 ## swap
 
 交换数组中的两项。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function swap(arr: any[], a: number, b: number): any[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6958,6 +10437,13 @@ swap(arr, 0, 1); // -> [2, 1]
 ## template
 
 将模板字符串编译成函数用于渲染。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function template(str: string, util?: any): Function;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -6980,6 +10466,13 @@ template('<p><%= util["upperCase"](name) %></p>', {
 
 返回函数的节流阀版本。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function throttle(fn: Function, wait: number): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|源函数|
@@ -6994,6 +10487,51 @@ const updatePos = throttle(function () {}, 100);
 ## through
 
 stream Transform 类的简单包装。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">import stream = require('stream');
+ namespace through {
+    interface ThroughConstructor extends stream.Transform {
+        new (opts?: stream.DuplexOptions): stream.Transform;
+        (opts?: stream.DuplexOptions): stream.Transform;
+    }
+    type TransformCallback = (err?: any, data?: any) => void;
+    type TransformFunction = (
+        this: stream.Transform,
+        chunk: any, enc: string,
+        callback: TransformCallback
+    ) => void;
+    type FlushCallback = (
+        this: stream.Transform,
+        flushCallback: () => void
+    ) => void;
+    function obj(
+        transform?: TransformFunction,
+        flush?: FlushCallback
+    ): stream.Transform;
+    function ctor(
+        transform?: TransformFunction,
+        flush?: FlushCallback
+    ): ThroughConstructor;
+    function ctor(
+        opts?: stream.DuplexOptions,
+        transform?: TransformFunction,
+        flush?: FlushCallback
+    ): ThroughConstructor;
+}
+ function through(
+    transform?: through.TransformFunction,
+    flush?: through.FlushCallback
+): stream.Transform;
+ function through(
+    opts?: stream.DuplexOptions,
+    transform?: through.TransformFunction,
+    flush?: through.FlushCallback
+): stream.Transform;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7023,6 +10561,13 @@ fs.createReadStream('in.txt')
 
 将时间格式化成多久之前的形式。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function timeAgo(date: Date | number, now?: Date | number): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |date|Date|目标日期|
@@ -7040,6 +10585,13 @@ timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
 
 获取函数的执行时间。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function timeTaken(fn: Function): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|要计算执行时间的函数|
@@ -7054,6 +10606,13 @@ timeTaken(function () {
 ## times
 
 调用目标函数 n 次。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function times<T>(n: number, fn: (n: number) => T, ctx?: any): T[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7070,6 +10629,13 @@ times(3, String); // -> ['0', '1', '2']
 
 将任意值转换为数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function toArr(val: any): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要转换的值|
@@ -7085,6 +10651,13 @@ toArr(null); // -> []
 ## toAsync
 
 让 generator 可以像 async/await 一样使用。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function toAsync(fn: Function): Function;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7106,6 +10679,13 @@ fn().then(str => {});
 
 将任意值转换为布尔值。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function toBool(val: any): boolean;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要转换的值|
@@ -7125,6 +10705,13 @@ toBool('false'); // -> false
 
 将任意值转换为日期类型。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function toDate(val: any): Date;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要转换的值|
@@ -7139,6 +10726,13 @@ toDate(1525107450849);
 ## toEl
 
 将 html 字符串转换为 dom 元素。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function toEl(str: string): Element;</code>
+</pre>
+</details>
 
 必须只有一个根元素。
 
@@ -7155,6 +10749,13 @@ toEl('<div>test</div>');
 
 将任意值转换为整数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function toInt(val: any): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要转换的值|
@@ -7169,6 +10770,13 @@ toInt(undefined); // -> 0
 
 将任意值转换为数字。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function toNum(val: any): number;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |val|*|要转换的值|
@@ -7181,6 +10789,13 @@ toNum('5'); // -> 5
 ## toSrc
 
 将函数转换为源码。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function toSrc(fn: Function): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7195,6 +10810,13 @@ toSrc(function () {}) // -> 'function () { }'
 ## toStr
 
 将任意值转换为字符串。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function toStr(val: any): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7212,6 +10834,13 @@ toStr([1, 2, 3]); // -> '1,2,3'
 
 拓扑排序实现。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function topoSort(edges: any[]): any[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |edges|array|依赖关系|
@@ -7224,6 +10853,14 @@ topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
 ## trigger
 
 触发浏览器事件。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function trigger(el: Element, type: string, options?: any);
+ function trigger(type: string, options?: any);</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7239,6 +10876,13 @@ trigger('keydown', {keyCode: 65});
 ## trim
 
 删除字符串两边指定字符或空格。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function trim(str: string, chars?: string | string[]): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7256,6 +10900,13 @@ trim('_abc_', ['a', 'c', '_']); // -> 'b'
 
 在 try catch 块中运行函数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function tryIt(fn: Function, cb?: Function): void;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|目标函数|
@@ -7272,6 +10923,13 @@ tryIt(function () {
 ## type
 
 获取 JavaScript 对象的内部类型。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function type(val: any, lowerCase?: boolean): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7292,9 +10950,48 @@ type(async function () {}, false); // -> 'AsyncFunction'
 
 仅用于生成 ts 定义文件。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace types {
+    interface Collection<T> {}
+    interface List<T> extends Collection<T> {
+        [index: number]: T;
+        length: number;
+    }
+    interface ListIterator<T, TResult> {
+        (value: T, index: number, list: List<T>): TResult;
+    }
+    interface Dictionary<T> extends Collection<T> {
+        [index: string]: T;
+    }
+    interface ObjectIterator<T, TResult> {
+        (element: T, key: string, list: Dictionary<T>): TResult;
+    }
+    interface MemoIterator<T, TResult> {
+        (prev: TResult, curr: T, index: number, list: List<T>): TResult;
+    }
+    interface MemoObjectIterator<T, TResult> {
+        (prev: TResult, curr: T, key: string, list: Dictionary<T>): TResult;
+    }
+}
+ const types: {}</code>
+</pre>
+</details>
+
 ## ucs2
 
 UCS-2 编解码。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const ucs2: {
+    encode(arr: number[]): string;
+    decode(str: string): number[];
+};</code>
+</pre>
+</details>
 
 ### encode
 
@@ -7324,6 +11021,19 @@ ucs2.decode('𝌆').length; // -> 1
 ## uncaught
 
 全局错误监听。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const uncaught: {
+    start(): void;
+    stop(): void;
+    addListener(fn: (err: Error) => void): void;
+    rmListener(fn: (err: Error) => void): void;
+    rmAllListeners(): void;
+};</code>
+</pre>
+</details>
 
 ### start
 
@@ -7360,6 +11070,13 @@ uncaught.addListener(err => {
 
 和 escape 相反，转义 HTML 实体回去。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function unescape(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -7372,6 +11089,13 @@ unescape('You &amp; Me'); // -> 'You & Me'
 ## union
 
 返回传入所有数组的并集。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function union(...arr: Array<any[]>): any[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7386,6 +11110,13 @@ union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
 
 生成全局唯一 id。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function uniqId(prefix?: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |[prefix]|string|id 前缀|
@@ -7398,6 +11129,16 @@ uniqId('eusita_'); // -> 'eustia_xxx'
 ## unique
 
 返回数组去重后的副本。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function unique(
+    arr: any[],
+    cmp?: (a: any, b: any) => boolean | number
+): any[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7412,6 +11153,13 @@ unique([1, 2, 3, 1]); // -> [1, 2, 3]
 ## universalify
 
 使用异步函数同时支持 promise 及回调模式。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function universalify(fn: Function, type: string): Function;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7437,6 +11185,13 @@ fn('licia').then(result => {
 
 与 zip 相反。 
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">declare function unzip(arr: Array<any[]>): Array<any[]>;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |arr|array|源数组|
@@ -7449,6 +11204,13 @@ unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, fals
 ## upperCase
 
 转换字符串为大写。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function upperCase(str: string): string;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7463,6 +11225,13 @@ upperCase('test'); // -> 'TEST'
 
 将字符串的第一个字符转换为大写。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function upperFirst(str: string): string;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |str|string|源字符串|
@@ -7475,6 +11244,14 @@ upperFirst('red'); // -> Red
 ## use
 
 使用 define 创建的模块。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function use(requires: string[], method: Function): void;
+ function use(method: Function): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7491,6 +11268,16 @@ use(['A'], function (A) {
 ## utf8
 
 UTF-8 编解码。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const utf8: {
+    encode(str: string): string;
+    decode(str: string, safe?: boolean): string;
+};</code>
+</pre>
+</details>
 
 ### encode
 
@@ -7520,6 +11307,13 @@ utf8.decode('\xF0\x90\x80\x80'); // -> '\uD800\uDC00'
 
 生成符合 RFC4112 版本 4 协议的 uuid。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function uuid(): string;</code>
+</pre>
+</details>
+
 相关标准 [RFC4122 4.4](http://www.ietf.org/rfc/rfc4122.txt)。
 
 ```javascript
@@ -7529,6 +11323,13 @@ uuid(); // -> '53ce0497-6554-49e9-8d79-347406d2a88b'
 ## values
 
 返回对象所有的属性值。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function values(obj: any): any[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7543,6 +11344,13 @@ values({one: 1, two: 2}); // -> [1, 2]
 
 获取窗口缩放比。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function viewportScale(): number;</code>
+</pre>
+</details>
+
 ```javascript
 viewportScale(); // -> 3
 ```
@@ -7550,6 +11358,16 @@ viewportScale(); // -> 3
 ## vlq
 
 vlq 编解码。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const vlq: {
+    encode(number: number | number[]): string;
+    decode(string: string): number[];
+};</code>
+</pre>
+</details>
 
 ### encode
 
@@ -7580,6 +11398,17 @@ vlq.decode('2HwcqxB'); // -> [123, 456, 789]
 
 等待直到条件函数返回真值。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function waitUntil(
+    condition: Function,
+    timeout?: number,
+    interval?: number
+): Promise<any>;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |condition|function|条件函数|
@@ -7597,6 +11426,13 @@ waitUntil(() => a === 10).then(() => {
 ## waterfall
 
 按顺序执行函数序列。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function waterfall(tasks: Function[], cb?: Function): void;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7621,6 +11457,13 @@ waterfall([
 
 将 32 位字长数组转换为字节数组。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function wordsToBytes(words: number[]): number[];</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |words|array|字长数组|
@@ -7633,6 +11476,13 @@ wordsToBytes([0x12345678]); // -> [0x12, 0x34, 0x56, 0x78]
 ## workerize
 
 将函数运行在 worker 线程中。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function workerize(fn: Function): Function;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7652,6 +11502,13 @@ worker(1, 2).then(function (value) {
 
 将函数封装到包裹函数里面, 并把它作为第一个参数传给包裹函数。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function wrap(fn: Function, wrapper: Function): Function;</code>
+</pre>
+</details>
+
 |参数名|类型|说明|
 |-----|----|---|
 |fn|function|要包裹的函数|
@@ -7669,6 +11526,13 @@ p('You & Me'); // -> '<p>You &amp; Me</p>'
 
 小程序 wx 对象的 promise 版本。
 
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const wx: any;</code>
+</pre>
+</details>
+
 ```javascript
 wx.getStorage('test').then(res => {
     console.log(res.data);
@@ -7678,6 +11542,13 @@ wx.getStorage('test').then(res => {
 ## xpath
 
 使用 xpath 选择元素，不支持 IE。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function xpath(xpath: string): HTMLElement[];</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|
@@ -7691,6 +11562,13 @@ xpath('//html/body'); // -> [body]
 ## zip
 
 将每个数组中相应位置的值合并在一起。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function zip(...arr: Array<any[]>): Array<any[]>;</code>
+</pre>
+</details>
 
 |参数名|类型|说明|
 |-----|----|---|

@@ -4,6 +4,56 @@
 
 jQuery like style dom manipulator.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace $ {
+    class $ extends Select {
+        find(selector: string): $;
+        each(fn: Function): $;
+        offset(): $offset.IOffset;
+        hide(): $;
+        show(): $;
+        first(): $;
+        last(): $;
+        get(index: number): Element;
+        eq(index: number): Element;
+        on(event: string, selector: string, handler: Function): $;
+        on(event: string, handler: Function): $;
+        off(event: string, selector: string, handler: Function): $;
+        off(event: string, handler: Function): $;
+        html(): string;
+        html(value: string): $;
+        text(): string;
+        text(value: string): $;
+        val(): string;
+        val(value: string): $;
+        css(name: string): string;
+        css(name: string, value: string): $;
+        css(properties: { [name: string]: string }): $;
+        attr(name: string): string;
+        attr(name: string, value: string): $;
+        attr(attributes: { [name: string]: string }): $;
+        data(name: string): string;
+        data(name: string, value: string): $;
+        data(attributes: { [name: string]: string }): $;
+        rmAttr(name: string): $;
+        remove(): $;
+        addClass(name: string | string[]): $;
+        rmClass(name: string): $;
+        toggleClass(name: string): $;
+        hasClass(name: string): boolean;
+        parent(): $;
+        append(content: string): $;
+        prepend(content: string): $;
+        before(content: string): $;
+        after(content: string): $;
+    }
+}
+declare function $(selector: string | Element): $.$;</code>
+</pre>
+</details>
+
 ### Available methods
 
 offset, hide, show, first, last, get, eq, on, off, html, text, val, css, attr,
@@ -23,6 +73,21 @@ $btn.on('click', function () {
 ## $attr 
 
 Element attribute manipulation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace $attr {
+    interface IAttr {
+        (element: $safeEls.El, name: string, value: string): void;
+        (element: $safeEls.El, attributes: { [name: string]: string }): void;
+        (element: $safeEls.El, name: string): string;
+        remove(element: $safeEls.El, name: string): void;
+    }
+}
+ const $attr: $attr.IAttr;</code>
+</pre>
+</details>
 
 Get the value of an attribute for the first element in the set of matched elements.
 
@@ -67,6 +132,18 @@ $attr('#test', {
 ## $class 
 
 Element class manipulations.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const $class: {
+    add(element: $safeEls.El, name: string | string[]): void;
+    has(element: $safeEls.El, name: string): boolean;
+    toggle(element: $safeEls.El, name: string): void;
+    remove(element: $safeEls.El, name: string): void;
+};</code>
+</pre>
+</details>
 
 ### add
 
@@ -119,6 +196,18 @@ $class.has('#test', 'class1'); // -> true
 
 Element css manipulation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function $css(element: $safeEls.El, name: string): string;
+ function $css(element: $safeEls.El, name: string, value: string): void;
+ function $css(
+    element: $safeEls.El,
+    properties: { [name: string]: string }
+): void;</code>
+</pre>
+</details>
+
 Get the computed style properties for the first element in the set of matched elements.
 
 |Name   |Type                |Desc                      |
@@ -153,6 +242,20 @@ $css('#test', 'color'); // -> #fff
 
 Wrapper of $attr, adds data- prefix to keys.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace $data {
+    interface IData {
+        (element: $safeEls.El, name: string, value: string): void;
+        (element: $safeEls.El, attributes: { [name: string]: string }): void;
+        (element: $safeEls.El, name: string): string;
+    }
+}
+ const $data: $data.IData;</code>
+</pre>
+</details>
+
 ```javascript
 $data('#test', 'attr1', 'eustia');
 ```
@@ -160,6 +263,28 @@ $data('#test', 'attr1', 'eustia');
 ## $event 
 
 bind events to certain dom elements.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const $event: {
+    on(
+        element: $safeEls.El,
+        event: string,
+        selector: string,
+        handler: Function
+    ): void;
+    on(element: $safeEls.El, event: string, handler: Function): void;
+    off(
+        element: $safeEls.El,
+        event: string,
+        selector: string,
+        handler: Function
+    ): void;
+    off(element: $safeEls.El, event: string, handler: Function): void;
+};</code>
+</pre>
+</details>
 
 ```javascript
 function clickHandler() {
@@ -172,6 +297,23 @@ $event.off('#test', 'click', clickHandler);
 ## $insert 
 
 Insert html on different position.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace $insert {
+    interface IInsert {
+        (element: $safeEls.El, content: string): void;
+    }
+}
+ const $insert: {
+    before: $insert.IInsert;
+    after: $insert.IInsert;
+    append: $insert.IInsert;
+    prepend: $insert.IInsert;
+};</code>
+</pre>
+</details>
 
 ### before
 
@@ -210,6 +352,21 @@ $insert.append('#test', '<div>licia</div>');
 
 Get the position of the element in document.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace $offset {
+    interface IOffset {
+        left: number;
+        top: number;
+        width: number;
+        height: number;
+    }
+}
+ function $offset(element: $safeEls.El): $offset.IOffset;</code>
+</pre>
+</details>
+
 |Name   |Type                |Desc                  |
 |-------|--------------------|----------------------|
 |element|string array element|Elements to get offset|
@@ -221,6 +378,23 @@ $offset('#test'); // -> {left: 0, top: 0, width: 0, height: 0}
 ## $property 
 
 Element property html, text, val getter and setter.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace $property {
+    interface IProperty {
+        (element: $safeEls.El, value: string): void;
+        (element: $safeEls.El): string;
+    }
+}
+ const $property: {
+    html: $property.IProperty;
+    val: $property.IProperty;
+    text: $property.IProperty;
+};</code>
+</pre>
+</details>
 
 ### html
 
@@ -247,6 +421,13 @@ $property.html('#test'); // -> licia
 
 Remove the set of matched elements from the DOM.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function $remove(element: $safeEls.El);</code>
+</pre>
+</details>
+
 |Name   |Type                |Desc              |
 |-------|--------------------|------------------|
 |element|string array element|Elements to delete|
@@ -258,6 +439,16 @@ $remove('#test');
 ## $safeEls 
 
 Convert value into an array, if it's a string, do querySelector.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace $safeEls {
+    type El = Element | Element[] | NodeListOf<Element> | string;
+}
+ function $safeEls(value: $safeEls.El): Element[];</code>
+</pre>
+</details>
 
 |Name  |Type                |Desc             |
 |------|--------------------|-----------------|
@@ -273,6 +464,13 @@ $safeEls('.test'); // -> Array of elements with test class
 ## $show 
 
 Show elements.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function $show(element: $safeEls.El): void;</code>
+</pre>
+</details>
 
 |Name   |Type                |Desc            |
 |-------|--------------------|----------------|
@@ -300,6 +498,17 @@ const blob = new Blob([]);
 ## BloomFilter 
 
 Bloom filter implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class BloomFilter {
+    constructor(size?: number, k?: number);
+    add(val: string): void;
+    test(val: string): boolean;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -337,6 +546,20 @@ bloom.test('Tony Stark'); // -> false
 ## Caseless 
 
 Modify object props without caring about letter case.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Caseless {
+    constructor(obj: any);
+    getKey(key: string): string | void;
+    set(key: string, val: any): void;
+    get(key: string): any;
+    remove(key: string): void;
+    has(key: string): boolean;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -402,6 +625,26 @@ c.has('content-type'); // -> false
 
 Create JavaScript class.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace Class {
+    class Base {
+        toString(): string;
+    }
+    class IConstructor extends Base {
+        constructor(...args: any[]);
+        static extend(methods: any, statics: any): IConstructor;
+        static inherits(Class: Function): void;
+        static methods(methods: any): IConstructor;
+        static statics(statics: any): IConstructor;
+        [method: string]: any;
+    }
+}
+ function Class(methods: any, statics?: any): Class.IConstructor;</code>
+</pre>
+</details>
+
 |Name     |Type    |Desc                             |
 |---------|--------|---------------------------------|
 |methods  |object  |Public methods                   |
@@ -443,6 +686,25 @@ Student.is(a); // -> true
 
 Color converter.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace Color {
+    interface IColor {
+        val: number[];
+        model: string;
+    }
+}
+ class Color {
+    constructor(color: string | Color.IColor);
+    toRgb(): string;
+    toHex(): string;
+    toHsl(): string;
+    static parse(colorStr: string): Color.IColor;
+}</code>
+</pre>
+</details>
+
 ### constructor
 
 |Name |Type         |Desc            |
@@ -480,6 +742,19 @@ color.toHsl(); // -> 'hsl(210, 25%, 73%)'
 ## Delegator 
 
 Object delegation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Delegator {
+    constructor(host: object, target: object | string);
+    method(name: string, target?: string): Delegator;
+    getter(name: string, target?: string): Delegator;
+    setter(name: string, target?: string): Delegator;
+    access(name: string, target?: string): Delegator;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -534,6 +809,19 @@ host.d; // -> 5
 
 Flux dispatcher.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Dispatcher {
+    dispatch(payload: any);
+    register(cb: Function): void;
+    waitFor(ids: string[]): void;
+    unregister(id: string): void;
+    isDispatching(): boolean;
+}</code>
+</pre>
+</details>
+
 [Related docs](https://facebook.github.io/flux/docs/dispatcher.html)
 
 ```javascript
@@ -553,6 +841,21 @@ dispatcher.dispatch({
 ## Emitter 
 
 Event emitter class which provides observer pattern.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace Emitter {
+    function mixin(obj: any): any;
+}
+ class Emitter {
+    on(event: string, listener: Function): Emitter;
+    off(event: string, listener: Function): Emitter;
+    once(event: string, listener: Function): Emitter;
+    emit(event: string): Emitter;
+}</code>
+</pre>
+</details>
 
 ### on
 
@@ -599,6 +902,17 @@ Emitter.mixin({});
 
 Enum type implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Enum {
+    size: number;
+    constructor(map: string[] | { [member: string]: any });
+    [key: string]: any;
+}</code>
+</pre>
+</details>
+
 ### constructor
 
 |Name|Type |Desc            |
@@ -622,6 +936,19 @@ if (val === importance.CRITICAL) {
 ## HashTable 
 
 Hash table implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class HashTable {
+    constructor(size?: number);
+    set(key: string, val: any): void;
+    get(key: string): any;
+    has(key: string): boolean;
+    delete(key: string): void;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -673,6 +1000,20 @@ hashTable.has('name'); // -> false
 
 Heap implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Heap {
+    size: number;
+    constructor(cmp?: Function);
+    clear(): void;
+    add(item: any): number;
+    poll(): any;
+    peek(): any;
+}</code>
+</pre>
+</details>
+
 ### size
 
 Heap size.
@@ -719,6 +1060,25 @@ console.log(heap.size); // -> 4
 ## JsonTransformer 
 
 Json to json transformer.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class JsonTransformer {
+    constructor(data: any);
+    set(key: string, val: any): JsonTransformer;
+    get(key?: string): any;
+    map(from: string, to: string, fn: Function): JsonTransformer;
+    map(from: string, fn: Function): JsonTransformer;
+    filter(from: string, to: string, fn: Function): JsonTransformer;
+    filter(from: string, fn: Function): JsonTransformer;
+    remove(keys: string | string[]): JsonTransformer;
+    compute(from: string | string[], to: string, fn: Function): JsonTransformer;
+    compute(from: string, fn: Function): JsonTransformer;
+    toString(): string;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -802,6 +1162,32 @@ data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', c
 
 Doubly-linked list implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace LinkedList {
+    class Node {
+        value: any;
+        prev: Node | null;
+        next: Node | null;
+    }
+}
+ class LinkedList {
+    size: number;
+    head: LinkedList.Node;
+    tail: LinkedList.Node;
+    push(val: any): number;
+    pop(): any;
+    unshift(val: any): number;
+    shift(): any;
+    find(fn: Function): LinkedList.Node | void;
+    delNode(node: LinkedList.Node): void;
+    forEach(iterator: Function, ctx?: any);
+    toArr(): any[];
+}</code>
+</pre>
+</details>
+
 ### size
 
 List size.
@@ -866,6 +1252,15 @@ linkedList.pop(); // -> 5
 
 LocalStorage wrapper.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class LocalStore extends Store {
+    constructor(name: string, data?: {});
+}</code>
+</pre>
+</details>
+
 Extend from Store.
 
 ### constructor
@@ -883,6 +1278,25 @@ store.set('name', 'licia');
 ## Logger 
 
 Simple logger with level filter.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Logger extends Emitter {
+    name: string;
+    formatter(type: string, argList: any[]): any[];
+    constructor(name: string, level?: string | number);
+    setLevel(level: string | number): Logger;
+    getLevel(): number;
+    trace(...args: any[]): Logger;
+    debug(...args: any[]): Logger;
+    info(...args: any[]): Logger;
+    warn(...args: any[]): Logger;
+    error(...args: any[]): Logger;
+    static level: Enum;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -934,6 +1348,20 @@ logger.on('debug', function (argList) {
 ## Lru 
 
 Simple LRU cache.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Lru {
+    constructor(max: number);
+    has(key: string): boolean;
+    remove(key: string): void;
+    get(key: string): any;
+    set(key: string, val: any): void;
+    clear(): void;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -990,6 +1418,16 @@ cache.get('test'); // -> 'licia'
 
 CSS media query listener.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class MediaQuery extends Emitter {
+    constructor(query: string);
+    isMatch(): boolean;
+}</code>
+</pre>
+</details>
+
 Extend from Emitter.
 
 ### constructor
@@ -1035,6 +1473,20 @@ observer.disconnect();
 ## PriorityQueue 
 
 Priority queue implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class PriorityQueue {
+    size: number;
+    constructor(cmp?: Function);
+    clear(): void;
+    enqueue(item: any): number;
+    dequeue(): any;
+    peek(): any;
+}</code>
+</pre>
+</details>
 
 ### size
 
@@ -1112,6 +1564,13 @@ get('test.json').then(function (result) {
 
 Like es6 Map, without iterators.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const PseudoMap: typeof Map;</code>
+</pre>
+</details>
+
 It supports only string keys, and uses Map if exists.
 
 ```javascript
@@ -1123,6 +1582,21 @@ map.get('1'); // -> 1
 ## Queue 
 
 Queue data structure.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Queue {
+    size: number;
+    clear(): void;
+    enqueue(item: any): number;
+    dequeue(): any;
+    peek(): any;
+    forEach(iterator: Function, context?: any): void;
+    toArr(): any[];
+}</code>
+</pre>
+</details>
 
 ### size
 
@@ -1178,6 +1652,20 @@ console.log(queue.size); // -> 1
 
 LRU implementation without linked list.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class QuickLru {
+    constructor(max: number);
+    has(key: string): boolean;
+    remove(key: string): void;
+    get(key: string): any;
+    set(key: string, val: any): void;
+    clear(): void;
+}</code>
+</pre>
+</details>
+
 Inspired by the [hashlru algorithm](https://github.com/dominictarr/hashlru#algorithm).
 
 The api is the same as Lru module.
@@ -1191,6 +1679,18 @@ cache.get('test'); // -> 'licia'
 ## ReduceStore 
 
 Simplified redux like state container.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class ReduceStore {
+    constructor(reducer: Function, initialState: any);
+    subscribe(listener: Function): Function;
+    dispatch(action: any): any;
+    getState(): any;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -1243,6 +1743,17 @@ store.dispatch({type: 'DECREMENT'}); // 1
 
 Simple wrapper of querySelectorAll to make dom selection easier.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Select {
+    constructor(selector: string | Element);
+    find(selector: string): Select;
+    each(fn: Function): Select;
+}</code>
+</pre>
+</details>
+
 ### constructor
 
 |Name    |Type  |Desc               |
@@ -1276,6 +1787,15 @@ $test.find('.test').each(function (idx, element) {
 
 SessionStorage wrapper.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class SessionStore extends Store {
+    constructor(name: string, data?: any);
+}</code>
+</pre>
+</details>
+
 Extend from Store.
 
 ### constructor
@@ -1293,6 +1813,21 @@ store.set('name', 'licia');
 ## Stack 
 
 Stack data structure.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Stack {
+    size: number;
+    clear(): void;
+    push(item: any): number;
+    pop(): any;
+    peek(): any;
+    forEach(iterator: Function, context?: any): void;
+    toArr(): any[];
+}</code>
+</pre>
+</details>
 
 ### size
 
@@ -1344,6 +1879,17 @@ stack.pop(); // -> 3
 
 Simple state machine.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class State extends Emitter {
+    constructor(initial: string, events: any);
+    is(state: string): boolean;
+    [event: string]: any;
+}</code>
+</pre>
+</details>
+
 Extend from Emitter.
 
 ### constructor
@@ -1385,6 +1931,23 @@ state.play('eustia');
 ## Store 
 
 Memory storage.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Store extends Emitter {
+    constructor(data?: {});
+    set(key: string, val: any): void;
+    set(vals: {}): void;
+    get(key: string): any;
+    get(keys: string[]): {};
+    remove(key: string): void;
+    remove(keys: string[]): void;
+    clear(): void;
+    each(fn: (...args: any[]) => void): void;
+}</code>
+</pre>
+</details>
 
 Extend from Emitter.
 
@@ -1464,6 +2027,21 @@ store.on('change', function (key, newVal, oldVal) {
 
 Tween engine for JavaScript animations.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Tween extends Emitter {
+    constructor(target: any);
+    to(props: any, duration?: number, ease?: string | Function): Tween;
+    progress(): number;
+    progress(progress: number): Tween;
+    play(): Tween;
+    pause(): Tween;
+    paused(): boolean;
+}</code>
+</pre>
+</details>
+
 Extend from Emitter.
 
 ### constructor
@@ -1515,6 +2093,41 @@ tween.to({x: 100, y: 100}, 1000, 'inElastic').play();
 ## Url 
 
 Simple url manipulator.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace Url {
+    interface IUrl {
+        protocol: string;
+        auth: string;
+        hostname: string;
+        hash: string;
+        query: any;
+        port: string;
+        pathname: string;
+        slashes: boolean;
+    }
+}
+ class Url {
+    protocol: string;
+    auth: string;
+    hostname: string;
+    hash: string;
+    query: any;
+    port: string;
+    pathname: string;
+    slashes: boolean;
+    constructor(url?: string);
+    setQuery(name: string, value: string): Url;
+    setQuery(query: { [name: string]: string }): Url;
+    rmQuery(name: string | string[]): Url;
+    toString(): string;
+    static parse(url: string): Url.IUrl;
+    static stringify(object: Url.IUrl): string;
+}</code>
+</pre>
+</details>
 
 ### constructor
 
@@ -1589,6 +2202,18 @@ url.toString(); // -> 'http://example.com:8080/?foo=bar'
 
 Object values validation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Validator {
+    constructor(options: { [name: string]: any });
+    validate(object: any): string | boolean;
+    static plugins: any;
+    static addPlugin(name: string, plugin: Function): void;
+}</code>
+</pre>
+</details>
+
 ### constructor
 
 |Name   |Type  |Desc                    |
@@ -1638,6 +2263,15 @@ validator.validate({test: 'licia'}); // -> true
 
 Calculate the set of unique abbreviations for a given set of strings.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function abbrev(
+    ...arr: string[]
+): { [abbreviation: string]: string };</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc            |
 |------|------|----------------|
 |...arr|string|List of names   |
@@ -1651,6 +2285,13 @@ abbrev('lina', 'luna');
 ## after 
 
 Create a function that invokes once it's called n or more times.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function after(n: number, fn: Function): Function;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc                          |
 |------|--------|------------------------------|
@@ -1667,6 +2308,27 @@ const fn = after(5, function() {
 ## ajax 
 
 Perform an asynchronous HTTP request.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace ajax {
+    interface IOptions {
+        url: string;
+        data?: string | {};
+        dataType?: string;
+        contentType?: string;
+        success?: Function;
+        error?: Function;
+        complete?: Function;
+        timeout?: number;
+    }
+    function get(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
+    function post(url: string, data: any, success: Function, dataType?: string): XMLHttpRequest;
+}
+ function ajax(options: ajax.IOptions): XMLHttpRequest;</code>
+</pre>
+</details>
 
 |Name   |Type  |Desc        |
 |-------|------|------------|
@@ -1721,6 +2383,26 @@ ajax.get('http://example.com', {}, function (data) {
 
 Retrieve all the names of object's own and inherited properties.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace allKeys {
+    interface IOptions {
+        prototype?: boolean;
+        unenumerable?: boolean;
+    }
+}
+ function allKeys(
+    obj: any,
+    options: { symbol: true } & allKeys.IOptions
+): Array<string | Symbol>;
+ function allKeys(
+    obj: any,
+    options?: ({ symbol: false } & allKeys.IOptions) | allKeys.IOptions
+): string[];</code>
+</pre>
+</details>
+
 |Name     |Type  |Desc                       |
 |---------|------|---------------------------|
 |obj      |object|Object to query            |
@@ -1747,6 +2429,53 @@ allKeys(obj) // -> ['zero', 'one']
 
 Ansi colors.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace ansiColor {
+    interface IFn {
+        (str: string): string;
+    }
+}
+ const ansiColor: {
+    black: ansiColor.IFn;
+    red: ansiColor.IFn;
+    green: ansiColor.IFn;
+    yellow: ansiColor.IFn;
+    blue: ansiColor.IFn;
+    magenta: ansiColor.IFn;
+    cyan: ansiColor.IFn;
+    white: ansiColor.IFn;
+    gray: ansiColor.IFn;
+    grey: ansiColor.IFn;
+    bgBlack: ansiColor.IFn;
+    bgRed: ansiColor.IFn;
+    bgGreen: ansiColor.IFn;
+    bgYellow: ansiColor.IFn;
+    bgBlue: ansiColor.IFn;
+    bgMagenta: ansiColor.IFn;
+    bgCyan: ansiColor.IFn;
+    bgWhite: ansiColor.IFn;
+    blackBright: ansiColor.IFn;
+    redBright: ansiColor.IFn;
+    greenBright: ansiColor.IFn;
+    yellowBright: ansiColor.IFn;
+    blueBright: ansiColor.IFn;
+    magentaBright: ansiColor.IFn;
+    cyanBright: ansiColor.IFn;
+    whiteBright: ansiColor.IFn;
+    bgBlackBright: ansiColor.IFn;
+    bgRedBright: ansiColor.IFn;
+    bgGreenBright: ansiColor.IFn;
+    bgYellowBright: ansiColor.IFn;
+    bgBlueBright: ansiColor.IFn;
+    bgMagentaBright: ansiColor.IFn;
+    bgCyanBright: ansiColor.IFn;
+    bgWhiteBright: ansiColor.IFn;
+}</code>
+</pre>
+</details>
+
 ### Available colors
 
 black, red, green, yellow, blue, magenta, cyan, white, gray, grey
@@ -1764,6 +2493,16 @@ ansiColor.red('Warning');
 ## arrToMap 
 
 Make an object map using array of strings.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function arrToMap<T>(
+    arr: string[],
+    val?: T
+): { [key: string]: T };</code>
+</pre>
+</details>
 
 |Name    |Type  |Desc            |
 |--------|------|----------------|
@@ -1785,6 +2524,13 @@ console.log(val); // -> '5px'
 
 Use Buffer to emulate atob when running in node.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function atob(str: string): string;</code>
+</pre>
+</details>
+
 ```javascript
 atob('SGVsbG8gV29ybGQ='); // -> 'Hello World'
 ```
@@ -1792,6 +2538,13 @@ atob('SGVsbG8gV29ybGQ='); // -> 'Hello World'
 ## average 
 
 Get average value of given numbers.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function average(...num: number[]): number;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                |
 |------|------|--------------------|
@@ -1805,6 +2558,16 @@ average(5, 3, 1); // -> 3
 ## base64 
 
 Basic base64 encoding and decoding.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const base64: {
+    encode(bytes: number[]): string;
+    decode(str: string): number[];
+};</code>
+</pre>
+</details>
 
 ### encode
 
@@ -1833,6 +2596,13 @@ base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
 
 Create a function that invokes less than n times.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function before(n: number, fn: Function): Function;</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc                                            |
 |------|--------|------------------------------------------------|
 |n     |number  |Number of calls at which fn is no longer invoked|
@@ -1849,6 +2619,17 @@ fn(); // Allow function to be call 4 times at last.
 ## binarySearch 
 
 Binary search implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function binarySearch(
+    array: any[],
+    value: any,
+    cmp?: Function
+): number;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc         |
 |------|--------|-------------|
@@ -1881,6 +2662,13 @@ binarySearch(
 
 Create a function bound to a given object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function bind(fn: Function, ctx: any, ...rest: any[]): Function;</code>
+</pre>
+</details>
+
 |Name   |Type    |Desc                    |
 |-------|--------|------------------------|
 |fn     |function|Function to bind        |
@@ -1899,6 +2687,13 @@ fn(); // -> 'eustia: I am a utility library.'
 
 Use Buffer to emulate btoa when running in node.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function btoa(str: string): string;</code>
+</pre>
+</details>
+
 ```javascript
 btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 ```
@@ -1906,6 +2701,13 @@ btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 ## bubbleSort 
 
 Bubble sort implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function bubbleSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc         |
 |------|--------|-------------|
@@ -1921,6 +2723,16 @@ bubbleSort([2, 1]); // -> [1, 2]
 
 Convert bytes to string.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function bytesToStr(
+    bytes: number[],
+    encoding?: string
+): string;</code>
+</pre>
+</details>
+
 |Name         |Type  |Desc              |
 |-------------|------|------------------|
 |str          |array |Bytes array       |
@@ -1934,6 +2746,13 @@ bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
 ## bytesToWords 
 
 Convert bytes to 32-bit words.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function bytesToWords(bytes: number[]): number[];</code>
+</pre>
+</details>
 
 Useful when using CryptoJS.
 
@@ -1949,6 +2768,13 @@ bytesToWords([0x12, 0x34, 0x56, 0x78]); // -> [0x12345678]
 ## callbackify 
 
 Convert a function that returns a Promise to a function following the error-first callback style.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function callbackify(fn: Function): Function;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc                                            |
 |------|--------|------------------------------------------------|
@@ -1973,6 +2799,13 @@ cbFn(function (err, value) {
 
 Convert string to "camelCase".
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function camelCase(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc              |
 |------|------|------------------|
 |str   |string|String to convert |
@@ -1989,6 +2822,13 @@ camelCase('foo.bar'); // -> fooBar
 
 Convert the first character to upper case and the remaining to lower case.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function capitalize(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                |
 |------|------|--------------------|
 |str   |string|String to capitalize|
@@ -2001,6 +2841,13 @@ capitalize('rED'); // -> Red
 ## castPath 
 
 Cast value into a property path array.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function castPath(path: string | string[], obj?: any): string[];</code>
+</pre>
+</details>
 
 |Name  |Type        |Desc               |
 |------|------------|-------------------|
@@ -2019,6 +2866,13 @@ castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
 
 Center align text in a string.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function centerAlign(str: string | string[], width?: number): string;</code>
+</pre>
+</details>
+
 |Name   |Type        |Desc                    |
 |-------|------------|------------------------|
 |str    |string array|String to align         |
@@ -2035,6 +2889,13 @@ centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
 
 Return string representing a character whose Unicode code point is the given integer.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function char(num: number): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                                  |
 |------|------|--------------------------------------|
 |num   |number|Integer to convert                    |
@@ -2048,6 +2909,13 @@ char(97); // -> 'a'
 ## chunk 
 
 Split array into groups the length of given size.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function chunk(arr: any[], size?: number): Array<any[]>;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                |
 |------|------|--------------------|
@@ -2064,6 +2932,14 @@ chunk([1, 2, 3, 4]); // -> [[1], [2], [3], [4]]
 ## clamp 
 
 Clamp number within the inclusive lower and upper bounds.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function clamp(n: number, lower: number, upper: number): number;
+ function clamp(n: number, upper: number): number;</code>
+</pre>
+</details>
 
 |Name   |Type  |Desc           |
 |-------|------|---------------|
@@ -2084,6 +2960,13 @@ clamp(2, 5); // -> 2
 
 Utility for conditionally joining class names.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function className(...arr: any[]): string;</code>
+</pre>
+</details>
+
 |Name    |Type               |Desc              |
 |--------|-------------------|------------------|
 |...class|string object array|Class names       |
@@ -2101,6 +2984,13 @@ className('a', ['b', 'c', {d: true, e: false}]); // -> 'a b c d';
 
 Create a shallow-copied clone of the provided plain object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function clone<T>(val: T): T;</code>
+</pre>
+</details>
+
 Any nested objects or arrays will be copied by reference, not duplicated.
 
 |Name  |Type|Desc          |
@@ -2116,6 +3006,13 @@ clone({name: 'eustia'}); // -> {name: 'eustia'}
 
 Recursively clone value.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function cloneDeep<T>(val: T): T;</code>
+</pre>
+</details>
+
 |Name  |Type|Desc             |
 |------|----|-----------------|
 |val   |*   |Value to clone   |
@@ -2130,6 +3027,13 @@ console.log(obj[0] === obj2[1]); // -> false
 ## cmpVersion 
 
 Compare version strings.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function cmpVersion(v1: string, v2: string): number;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc              |
 |------|------|------------------|
@@ -2149,6 +3053,13 @@ cmpVersion('1.1.1', '1.2.3'); // -> -1
 
 Create an array by using one array for keys and another for its values.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function combine(keys: string[], values: any[]): any;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc             |
 |------|------|-----------------|
 |keys  |array |Keys to be used  |
@@ -2162,6 +3073,13 @@ combine(['a', 'b', 'c'], [1, 2, 3]); // -> {a: 1, b: 2, c: 3}
 ## compact 
 
 Return a copy of the array with all falsy values removed.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function compact(arr: any[]): any[];</code>
+</pre>
+</details>
 
 The values false, null, 0, "", undefined, and NaN are falsey.
 
@@ -2177,6 +3095,13 @@ compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
 ## compose 
 
 Compose a list of functions.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function compose(...fn: Function[]): Function;</code>
+</pre>
+</details>
 
 Each function consumes the return value of the function that follows.
 
@@ -2198,6 +3123,28 @@ welcome('licia'); // -> 'hi: LICIA!'
 ## compressImg 
 
 Compress image using canvas.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace compressImg {
+    interface IOptions {
+        maxWidth?: number;
+        maxHeight?: number;
+        width?: number;
+        height?: number;
+        mimeType?: string;
+        quality?: number;
+    }
+}
+ function compressImg(file: File | Blob | string, cb: Function): void;
+ function compressImg(
+    file: File | Blob | string,
+    opts?: compressImg.IOptions,
+    cb?: Function
+): void;</code>
+</pre>
+</details>
 
 |Name  |Type            |Desc             |
 |------|----------------|-----------------|
@@ -2233,6 +3180,13 @@ compressImg(file, {
 
 Concat multiple arrays into a single array.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function concat(...args: Array<any[]>): any[];</code>
+</pre>
+</details>
+
 |Name  |Type |Desc              |
 |------|-----|------------------|
 |...arr|array|Arrays to concat  |
@@ -2245,6 +3199,16 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 ## contain 
 
 Check if the value is present in the list.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function contain(
+    arr: any[] | {} | string,
+    val: any
+): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type               |Desc                                |
 |------|-------------------|------------------------------------|
@@ -2262,6 +3226,17 @@ contain('abc', 'a'); // -> true
 
 Convert base of a number.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function convertBase(
+    num: number | string,
+    from: number,
+    to: number
+): string;</code>
+</pre>
+</details>
+
 |Name  |Type         |Desc             |
 |------|-------------|-----------------|
 |num   |number string|Number to convert|
@@ -2277,6 +3252,16 @@ convertBase('ff', 16, 2); // -> '11111111'
 ## convertBin 
 
 Convert binary data type.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace convertBin {
+    function blobToArrBuffer(blob: any): Promise<ArrayBuffer>;
+}
+ function convertBin(bin: any, type: string): any;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                  |
 |------|------|----------------------|
@@ -2309,6 +3294,26 @@ convertBin.blobToArrBuffer(new Blob([])).then(arrBuffer => {
 ## cookie 
 
 Simple api for handling browser cookies.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace cookie {
+    interface IOptions {
+        path?: string;
+        expires?: number;
+        domain?: string;
+        secure?: boolean;
+    }
+    interface ICookie {
+        get(key: string, options?: cookie.IOptions): string;
+        set(key: string, val: string, options?: cookie.IOptions): ICookie;
+        remove(key: string, options?: cookie.IOptions): ICookie;
+    }
+}
+ const cookie: cookie.ICookie;</code>
+</pre>
+</details>
 
 ### get
 
@@ -2350,6 +3355,13 @@ cookie.remove('a');
 
 Copy text to clipboard using document.execCommand.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function copy(text: string, cb?: Function): void;</code>
+</pre>
+</details>
+
 |Name|Type    |Desc             |
 |----|--------|-----------------|
 |text|string  |Text to copy     |
@@ -2365,6 +3377,16 @@ copy('text', function (err) {
 
 CRC1 implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function crc1(
+    input: string | number[],
+    previous?: number
+): number;</code>
+</pre>
+</details>
+
 |Name      |Type        |Desc                |
 |----------|------------|--------------------|
 |input     |string array|Data to calculate   |
@@ -2378,6 +3400,16 @@ crc1('1234567890').toString(16); // -> 'd'
 ## crc16 
 
 CRC16 implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function crc16(
+    input: string | number[],
+    previous?: number
+): number;</code>
+</pre>
+</details>
 
 |Name      |Type        |Desc                 |
 |----------|------------|---------------------|
@@ -2393,6 +3425,16 @@ crc16('1234567890').toString(16); // -> 'c57a'
 
 CRC32 implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function crc32(
+    input: string | number[],
+    previous?: number
+): number;</code>
+</pre>
+</details>
+
 |Name      |Type        |Desc                 |
 |----------|------------|---------------------|
 |input     |string array|Data to calculate    |
@@ -2406,6 +3448,16 @@ crc32('1234567890').toString(16); // -> '261daee5'
 ## crc8 
 
 CRC8 implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function crc8(
+    input: string | number[],
+    previous?: number
+): number;</code>
+</pre>
+</details>
 
 |Name      |Type        |Desc                |
 |----------|------------|--------------------|
@@ -2421,6 +3473,13 @@ crc8('1234567890').toString(16); // -> '52'
 
 Create new object using given object as prototype.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function create(proto?: object): any;</code>
+</pre>
+</details>
+
 |Name   |Type  |Desc                   |
 |-------|------|-----------------------|
 |[proto]|object|Prototype of new object|
@@ -2435,6 +3494,13 @@ console.log(obj.a); // -> 1
 
 Used to create extend, extendOwn and defaults.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function createAssigner(keysFn: Function, defaults: boolean): Function;</code>
+</pre>
+</details>
+
 |Name    |Type    |Desc                          |
 |--------|--------|------------------------------|
 |keysFn  |function|Function to get object keys   |
@@ -2444,6 +3510,18 @@ Used to create extend, extendOwn and defaults.
 ## createUrl 
 
 CreateObjectURL wrapper.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace createUrl {
+    interface IOptions {
+        type?: string
+    }
+}
+ function createUrl(data: any, options?: createUrl.IOptions): string;</code>
+</pre>
+</details>
 
 |Name   |Type                  |Desc                                |
 |-------|----------------------|------------------------------------|
@@ -2461,6 +3539,21 @@ createUrl(new File(['test'], 'test.txt'));
 ## css 
 
 Css parser and serializer.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace css {
+    interface IOptions {
+        indent?: string;
+    }
+}
+ const css: {
+    parse(css: string): object;
+    stringify(stylesheet: object, options?: css.IOptions): string;
+}</code>
+</pre>
+</details>
 
 Comments will be stripped.
 
@@ -2499,6 +3592,13 @@ css.stringify(stylesheet);
 
 Check if browser supports a given CSS feature.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function cssSupports(name: string, val?: string): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc              |
 |------|-------|------------------|
 |name  |string |Css property name |
@@ -2517,6 +3617,13 @@ cssSupports('invalid'); // -> false
 
 Function currying.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function curry(fn: Function): Function;</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc                |
 |------|--------|--------------------|
 |fn    |function|Function to curry   |
@@ -2531,6 +3638,23 @@ add1(2); // -> 3
 ## dateFormat 
 
 Simple but extremely useful date format function.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function dateFormat(
+    date: Date,
+    mask: string,
+    utc?: boolean,
+    gmt?: boolean
+): string;
+ function dateFormat(
+    mask: string,
+    utc?: boolean,
+    gmt?: boolean
+): string;</code>
+</pre>
+</details>
 
 |Name         |Type   |Desc                 |
 |-------------|-------|---------------------|
@@ -2580,6 +3704,13 @@ dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
 
 Return a new debounced version of the passed function.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function debounce(fn: Function, wait: number): Function;</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc                           |
 |------|--------|-------------------------------|
 |fn    |function|Function to debounce           |
@@ -2594,6 +3725,13 @@ const calLayout = debounce(function () {}, 300);
 ## debug 
 
 A tiny JavaScript debugging utility.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function debug(name: string): any;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc                           |
 |------|--------|-------------------------------|
@@ -2610,6 +3748,13 @@ d.enabled = false;
 
 Convert Latin-1 Supplement and Latin Extended-A letters to basic Latin letters and remove combining diacritical marks.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function deburr(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc            |
 |------|------|----------------|
 |str   |string|String to deburr|
@@ -2622,6 +3767,13 @@ deburr('déjà vu'); // -> 'deja vu'
 ## decodeUriComponent 
 
 Better decodeURIComponent that does not throw if input is invalid.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function decodeUriComponent(str: string): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc            |
 |------|------|----------------|
@@ -2637,6 +3789,13 @@ decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
 
 Fill in undefined properties in object with the first value present in the following list of defaults objects.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function defaults(obj: any, ...src: any[]): any;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc              |
 |------|------|------------------|
 |obj   |object|Destination object|
@@ -2650,6 +3809,14 @@ defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood',
 ## define 
 
 Define a module, should be used along with use.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function define(name: string, requires: string[], method: Function): void;
+ function define(name: string, method: Function): void;</code>
+</pre>
+</details>
 
 |Name      |Type    |Desc        |
 |----------|--------|------------|
@@ -2671,6 +3838,18 @@ define('B', ['A'], function (A) {
 ## defineProp 
 
 Shortcut for Object.defineProperty(defineProperties).
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function defineProp<T>(
+    obj: T,
+    prop: string,
+    descriptor: PropertyDescriptor
+): T;
+ function defineProp<T>(obj: T, descriptor: PropertyDescriptorMap): T;</code>
+</pre>
+</details>
 
 |Name      |Type  |Desc               |
 |----------|------|-------------------|
@@ -2724,6 +3903,13 @@ obj2.b = 4;
 
 Return the first argument that is not undefined.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function defined(...args: any[]): any;</code>
+</pre>
+</details>
+
 |Name   |Type|Desc                  |
 |-------|----|----------------------|
 |...args|*   |Arguments to check    |
@@ -2736,6 +3922,13 @@ defined(false, 2, void 0, 100); // -> false
 ## delRequireCache 
 
 Delete node.js require cache.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function delRequireCache(id: string): void;</code>
+</pre>
+</details>
 
 |Name|Type  |Desc               |
 |----|------|-------------------|
@@ -2751,6 +3944,13 @@ require('licia').a; // -> undefined
 ## delay 
 
 Invoke function after certain milliseconds.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function delay(fn: Function, wait: number, ...args: any[]): void;</code>
+</pre>
+</details>
 
 |Name     |Type    |Desc                                      |
 |---------|--------|------------------------------------------|
@@ -2768,6 +3968,16 @@ delay(function (text) {
 ## delegate 
 
 Event delegation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const delegate: {
+    add(el: Element, type: string, selector: string, cb: Function): void;
+    remove(el: Element, type: string, selector: string, cb: Function): void;
+};</code>
+</pre>
+</details>
 
 ### add
 
@@ -2797,6 +4007,13 @@ delegate.remove(container, 'click', '.children', clickHandler);
 
 Node.js util.deprecate with browser support.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function deprecate(fn: Function, msg: string): Function;</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc                     |
 |------|--------|-------------------------|
 |fn    |function|Function to be deprecated|
@@ -2812,6 +4029,19 @@ obsoleteFn();
 ## detectBrowser 
 
 Detect browser info using ua.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace detectBrowser {
+    interface IBrowser {
+        name: string;
+        version: number;
+    }
+}
+ function detectBrowser(ua?: string): detectBrowser.IBrowser;</code>
+</pre>
+</details>
 
 |Name                  |Type  |Desc                              |
 |----------------------|------|----------------------------------|
@@ -2831,6 +4061,13 @@ if (browser.name === 'ie' && browser.version < 9) {
 
 Detect if mocha is running.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function detectMocha(): boolean;</code>
+</pre>
+</details>
+
 ```javascript
 detectMocha(); // -> True if mocha is running.
 ```
@@ -2838,6 +4075,13 @@ detectMocha(); // -> True if mocha is running.
 ## detectOs 
 
 Detect operating system using ua.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function detectOs(ua?: string): string;</code>
+</pre>
+</details>
 
 |Name                  |Type  |Desc                 |
 |----------------------|------|---------------------|
@@ -2856,6 +4100,13 @@ if (detectOs() === 'ios') {
 
 Create an array of unique array values not included in the other given array.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function difference(arr: any[], ...rest: any[]): any[];</code>
+</pre>
+</details>
+
 |Name     |Type |Desc                        |
 |---------|-----|----------------------------|
 |arr      |array|Array to inspect            |
@@ -2869,6 +4120,13 @@ difference([3, 2, 1], [4, 2]); // -> [3, 1]
 ## dotCase 
 
 Convert string to "dotCase".
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function dotCase(str: string): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc             |
 |------|------|-----------------|
@@ -2884,6 +4142,17 @@ dotCase('foo bar'); // -> foo.bar
 
 Trigger a file download on client side.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function download(
+    data: Blob | File | string | any[],
+    name: string,
+    type?: string
+): void;</code>
+</pre>
+</details>
+
 |Name           |Type                  |Desc            |
 |---------------|----------------------|----------------|
 |data           |Blob File string array|Data to download|
@@ -2897,6 +4166,13 @@ download('test', 'test.txt');
 ## durationFormat 
 
 Simple duration format function.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function durationFormat(duration: number, mask?: string): string;</code>
+</pre>
+</details>
 
 |Name           |Type  |Desc                           |
 |---------------|------|-------------------------------|
@@ -2921,6 +4197,22 @@ durationFormat(12345678, 'h:m:s:l'); // -> '3:25:45:678'
 
 Iterate over elements of collection and invokes iterator for each element.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function each<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, void>,
+    ctx?: any
+): types.List<T>;
+ function each<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, void>,
+    ctx?: any
+): types.Collection<T>;</code>
+</pre>
+</details>
+
 |Name    |Type        |Desc                          |
 |--------|------------|------------------------------|
 |obj     |object array|Collection to iterate over    |
@@ -2934,6 +4226,39 @@ each({'a': 1, 'b': 2}, function (val, key) {});
 ## easing 
 
 Easing functions adapted from http://jqueryui.com/ .
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const easing: {
+    linear(percent: number): number;
+    inQuad(percent: number): number;
+    outQuad(percent: number): number;
+    inOutQuad(percent: number): number;
+    outInQuad(percent: number): number;
+    inCubic(percent: number): number;
+    outCubic(percent: number): number;
+    inQuart(percent: number): number;
+    outQuart(percent: number): number;
+    inQuint(percent: number): number;
+    outQuint(percent: number): number;
+    inExpo(percent: number): number;
+    outExpo(percent: number): number;
+    inSine(percent: number): number;
+    outSine(percent: number): number;
+    inCirc(percent: number): number;
+    outCirc(percent: number): number;
+    inElastic(percent: number, elasticity?: number): number;
+    outElastic(percent: number, elasticity?: number): number;
+    inBack(percent: number): number;
+    outBack(percent: number): number;
+    inOutBack(percent: number): number;
+    outInBack(percent: number): number;
+    inBounce(percent: number): number;
+    outBounce(percent: number): number;
+};</code>
+</pre>
+</details>
 
 |Name   |Type  |Desc                  |
 |-------|------|----------------------|
@@ -2949,6 +4274,13 @@ easing.inElastic(0.5, 500); // -> 0.03125
 
 Emulate touch events on desktop browsers.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function emulateTouch(el: Element): void;</code>
+</pre>
+</details>
+
 |Name|Type   |Desc          |
 |----|-------|--------------|
 |el  |Element|Target element|
@@ -2962,6 +4294,13 @@ el.addEventListener('touchstart', () => {}, false);
 ## endWith 
 
 Check if string ends with the given target string.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function endWith(str: string, suffix: string): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                           |
 |------|-------|-------------------------------|
@@ -2977,6 +4316,13 @@ endWith('ab', 'b'); // -> true
 
 Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' characters.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function escape(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc            |
 |------|------|----------------|
 |str   |string|String to escape|
@@ -2989,6 +4335,13 @@ escape('You & Me'); // -> 'You &amp; Me'
 ## escapeJsStr 
 
 Escape string to be a valid JavaScript string literal between quotes.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function escapeJsStr(str: string): string;</code>
+</pre>
+</details>
 
 http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
 
@@ -3005,6 +4358,13 @@ escapeJsStr('\"\n'); // -> '\\"\\\\n'
 
 Escape special chars to be used as literals in RegExp constructors.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function escapeRegExp(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc            |
 |------|------|----------------|
 |str   |string|String to escape|
@@ -3018,6 +4378,13 @@ escapeRegExp('[licia]'); // -> '\\[licia\\]'
 
 Load css into page.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function evalCss(css: string): void;</code>
+</pre>
+</details>
+
 |Name|Type  |Desc    |
 |----|------|--------|
 |css |string|Css code|
@@ -3029,6 +4396,13 @@ evalCss('body{background:#08c}');
 ## evalJs 
 
 Execute js in given context.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function evalJs(js: string, ctx?: any): void;</code>
+</pre>
+</details>
 
 |Name      |Type  |Desc           |
 |----------|------|---------------|
@@ -3043,6 +4417,22 @@ evalJs('this.a', {a: 2}); // -> 2
 ## every 
 
 Check if predicate return truthy for all elements.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function every<T>(
+    object: types.List<T>,
+    iterator?: types.ListIterator<T, boolean>,
+    context?: any
+): boolean;
+ function every<T>(
+    object: types.Dictionary<T>,
+    iterator?: types.ObjectIterator<T, boolean>,
+    context?: any
+): boolean;</code>
+</pre>
+</details>
 
 |Name      |Type        |Desc                                         |
 |----------|------------|---------------------------------------------|
@@ -3061,6 +4451,13 @@ every([2, 4], function (val) {
 
 Copy all of the properties in the source objects over to the destination object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function extend(destination: any, ...sources: any[]): any;</code>
+</pre>
+</details>
+
 |Name       |Type  |Desc              |
 |-----------|------|------------------|
 |destination|object|Destination object|
@@ -3074,6 +4471,13 @@ extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 ## extendDeep 
 
 Recursive object extending.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function extendDeep(destination: any, ...sources: any[]): any;</code>
+</pre>
+</details>
 
 |Name       |Type  |Desc              |
 |-----------|------|------------------|
@@ -3100,6 +4504,13 @@ extendDeep({
 
 Like extend, but only copies own properties over to the destination object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function extendOwn(destination: any, ...sources: any[]): any;</code>
+</pre>
+</details>
+
 |Name       |Type  |Desc              |
 |-----------|------|------------------|
 |destination|object|Destination object|
@@ -3114,6 +4525,13 @@ extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 
 Extract block comments from source code.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function extractBlockCmts(str: string): string[];</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc             |
 |------|------|-----------------|
 |str   |string|String to extract|
@@ -3126,6 +4544,13 @@ extractBlockCmts('\/*licia*\/'); // -> ['licia']
 ## extractUrls 
 
 Extract urls from plain text.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function extractUrls(str: string): string[];</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc           |
 |------|------|---------------|
@@ -3140,6 +4565,42 @@ extractUrls(str); // -> ['http://eustia.liriliri.io']
 ## fetch 
 
 Turn XMLHttpRequest into promise like.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace fetch {
+    interface IOptions {
+        method?: string;
+        timeout?: number;
+        headers?: { [name: string]: string };
+        body?: any;
+    }
+    interface IHeaders {
+        keys(): string[];
+        entries(): Array<string[]>;
+        get(name: string): string;
+        has(name: string): boolean;
+    }
+    interface IResult {
+        ok: boolean;
+        status: number;
+        statusText: string;
+        url: string;
+        clone(): IResult;
+        text(): Promise<string>;
+        json(): Promise<any>;
+        xml(): Promise<Document | null>;
+        blob(): Promise<Blob>;
+        headers: IHeaders;
+    }
+}
+ function fetch(
+    url: string,
+    options?: fetch.IOptions
+): Promise<fetch.IResult>;</code>
+</pre>
+</details>
 
 Note: This is not a complete fetch pollyfill.
 
@@ -3166,6 +4627,13 @@ fetch('test.json', {
 
 Calculate fibonacci number.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function fibonacci(n: number): number;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                       |
 |------|------|---------------------------|
 |n     |number|Index of fibonacci sequence|
@@ -3179,6 +4647,13 @@ fibonacci(3); // -> 2
 ## fileSize 
 
 Turn bytes into human readable file size.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function fileSize(bytes: number): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc              |
 |------|------|------------------|
@@ -3196,6 +4671,21 @@ fileSize(1500000000000); // -> '1.36T'
 ## fileType 
 
 Detect file type using magic number.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace fileType {
+    interface IFileType {
+        ext: string;
+        mime: string;
+    }
+}
+ function fileType(
+    input: Buffer | ArrayBuffer | Uint8Array
+): fileType.IFileType | undefined;</code>
+</pre>
+</details>
 
 |Name  |Type                         |Desc                          |
 |------|-----------------------------|------------------------------|
@@ -3216,6 +4706,18 @@ console.log(fileType(file)); // -> { ext: 'jpg', mime: 'image/jpeg' }
 
 Fill elements of array with value.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function fill(
+    list: any[],
+    value: any,
+    start?: number,
+    end?: number
+): any[];</code>
+</pre>
+</details>
+
 |Name          |Type  |Desc                    |
 |--------------|------|------------------------|
 |list          |array |Array to fill           |
@@ -3233,6 +4735,22 @@ fill([1, 2, 3], '*', 1, 2); // -> [1, '*', 3]
 
 Iterates over elements of collection, returning an array of all the values that pass a truth test.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function filter<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
+    context?: any
+): T[];
+ function filter<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
+    context?: any
+): T[];</code>
+</pre>
+</details>
+
 |Name     |Type    |Desc                                   |
 |---------|--------|---------------------------------------|
 |obj      |array   |Collection to iterate over             |
@@ -3249,6 +4767,22 @@ filter([1, 2, 3, 4, 5], function (val) {
 ## find 
 
 Find the first value that passes a truth test in a collection.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function find<T>(
+    object: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
+    context?: any
+): T | undefined;
+ function find<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
+    context?: any
+): T | undefined;</code>
+</pre>
+</details>
 
 |Name     |Type        |Desc                             |
 |---------|------------|---------------------------------|
@@ -3273,6 +4807,13 @@ find([{
 
 Return the first index where the predicate truth test passes.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function findIdx(arr: any[], predicate: Function): number;</code>
+</pre>
+</details>
+
 |Name     |Type    |Desc                          |
 |---------|--------|------------------------------|
 |arr      |array   |Array to search               |
@@ -3295,6 +4836,17 @@ findIdx([{
 
 Return the first key where the predicate truth test passes.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function findKey(
+    obj: any,
+    predicate: Function,
+    ctx?: any
+): string | void;</code>
+</pre>
+</details>
+
 |Name     |Type    |Desc                          |
 |---------|--------|------------------------------|
 |obj      |object  |Object to search              |
@@ -3311,6 +4863,13 @@ findKey({a: 1, b: 2}, function (val) {
 ## findLastIdx 
 
 Return the last index where the predicate truth test passes.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function findLastIdx(arr: any[], predicate: Function): number;</code>
+</pre>
+</details>
 
 |Name     |Type    |Desc                          |
 |---------|--------|------------------------------|
@@ -3337,6 +4896,13 @@ findLastIdx([{
 
 Recursively flatten an array.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function flatten(arr: any[]): any[];</code>
+</pre>
+</details>
+
 |Name  |Type |Desc               |
 |------|-----|-------------------|
 |arr   |array|Array to flatten   |
@@ -3349,6 +4915,13 @@ flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 ## fnArgs 
 
 Validate function arguments.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function fnArgs(types: string[], args: any): void;</code>
+</pre>
+</details>
 
 |Name |Type    |Desc           |
 |-----|--------|---------------|
@@ -3378,6 +4951,13 @@ test('test', () => {}, 5, 'test') // Throw error
 
 Get a function parameter's names.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function fnParams(fn: Function | string): string[];</code>
+</pre>
+</details>
+
 |Name  |Type           |Desc                      |
 |------|---------------|--------------------------|
 |fn    |function string|Function to get parameters|
@@ -3391,6 +4971,13 @@ fnParams(function (a, b) {}); // -> ['a', 'b']
 
 Simple FNV-1a implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function fnv1a(str: string): number;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc          |
 |------|------|--------------|
 |str   |string|String to hash|
@@ -3403,6 +4990,13 @@ fnv1a('test'); // -> 2949673445
 ## format 
 
 Format string in a printf-like format.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function format(str: string, ...values: any[]): string;</code>
+</pre>
+</details>
 
 |Name     |Type  |Desc                               |
 |---------|------|-----------------------------------|
@@ -3427,6 +5021,13 @@ format('%s_%s', 'foo', 'bar'); // -> 'foo_bar'
 
 Convert number to fraction.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function fraction(num: number): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                  |
 |------|------|----------------------|
 |num   |number|Number to convert     |
@@ -3439,6 +5040,13 @@ fraction(1.2); // -> '6/5'
 ## freeze 
 
 Shortcut for Object.freeze.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function freeze<T>(obj: T): T;</code>
+</pre>
+</details>
 
 Use Object.defineProperties if Object.freeze is not supported.
 
@@ -3458,6 +5066,13 @@ console.log(a); // -> {b: 1}
 
 Recursively use Object.freeze.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function freezeDeep<T>(obj: T): T;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc            |
 |------|------|----------------|
 |obj   |object|Object to freeze|
@@ -3474,6 +5089,23 @@ console.log(a); // -> {b: {c: 1}}
 
 Promised version of node.js fs module.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const fs: {
+    readFile(path: string, encoding: string): Promise<string>;
+    readFile(path: string): Promise<Buffer>;
+    exists(path: string): Promise<boolean>;
+    unlink(path: string): Promise<void>;
+    writeFile(path: string, data: string, options?: string): Promise<void>;
+    writeFile(path: string, data: Buffer): Promise<void>;
+    readdir(path: string): Promise<string[]>;
+    rmdir(path: string): Promise<void>;
+    [key: string]: any;
+};</code>
+</pre>
+</details>
+
 ```javascript
 fs.readFile('test.js').then(function (data) {
     // Do something
@@ -3485,6 +5117,23 @@ fs.readFile('test.js').then(function (data) {
 ## fullscreen 
 
 Fullscreen api wrapper.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace fullscreen {
+    interface IFullscreen extends Emitter {
+        request(el?: Element): void;
+        exit(): void;
+        toggle(el?: Element): void;
+        isActive(): boolean;
+        getEl(): Element | null;
+        isEnabled(): boolean;
+    }
+}
+ const fullscreen: fullscreen.IFullscreen;</code>
+</pre>
+</details>
 
 ### request
 
@@ -3529,6 +5178,23 @@ fullscreen.on('change', () => {});
 
 Simple fuzzy search.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace fuzzySearch {
+    interface IOptions {
+        caseSensitive?: boolean;
+        key?: string | string[];
+    }
+}
+ function fuzzySearch(
+    needle: string,
+    haystack: any[],
+    options?: fuzzySearch.IOptions
+): any[];</code>
+</pre>
+</details>
+
 |Name     |Type  |Desc            |
 |---------|------|----------------|
 |needle   |string|String to search|
@@ -3557,6 +5223,13 @@ fuzzySearch('alpha-test', [{
 
 Compute the greatest common divisor using Euclid's algorithm.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function gcd(a: number, b: number): number;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                   |
 |------|------|-----------------------|
 |a     |number|Number to calculate    |
@@ -3570,6 +5243,16 @@ gcd(121, 44); // -> 11
 ## getPort 
 
 Get an available TCP port.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function getPort(
+    port?: number | number[],
+    host?: string
+): Promise<number>;</code>
+</pre>
+</details>
 
 |Name  |Type        |Desc           |
 |------|------------|---------------|
@@ -3589,6 +5272,13 @@ getPort([3000, 3001], '127.0.0.1').then(port => {
 
 Get prototype of an object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function getProto(obj: any): any;</code>
+</pre>
+</details>
+
 |Name  |Type|Desc                                         |
 |------|----|---------------------------------------------|
 |obj   |*   |Target object                                |
@@ -3603,6 +5293,13 @@ getProto(Object.create(a)); // -> a
 
 Get url param.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function getUrlParam(name: string, url?:string): string | undefined;</code>
+</pre>
+</details>
+
 |Name        |Type  |Desc            |
 |------------|------|----------------|
 |name        |string|Param name      |
@@ -3616,6 +5313,18 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 ## golangify 
 
 Handle errors like golang.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function golangify<T, U = Error>(
+    fn: (...args: any[]) => Promise<T>
+): (...args: any[]) => Promise<[T | undefined, U | null]>;
+ function golangify<T, U = Error>(
+    p: Promise<T>
+): Promise<[T | undefined, U | null]>;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc                                      |
 |------|--------|------------------------------------------|
@@ -3645,6 +5354,17 @@ Handle errors like golang.
 
 Create html with JavaScript.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function h(
+    tag: string,
+    attrs?: { [name: string]: any },
+    ...child: Array<string | HTMLElement>
+): HTMLElement;</code>
+</pre>
+</details>
+
 |Name      |Type              |Desc           |
 |----------|------------------|---------------|
 |tag       |string            |Tag name       |
@@ -3664,6 +5384,13 @@ document.body.appendChild(el);
 
 Checks if key is a direct property.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function has(obj: {}, key: string): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                            |
 |------|-------|--------------------------------|
 |obj   |object |Object to query                 |
@@ -3678,6 +5405,13 @@ has({one: 1}, 'one'); // -> true
 
 Heap sort implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function heapSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc         |
 |------|--------|-------------|
 |arr   |array   |Array to sort|
@@ -3691,6 +5425,16 @@ heapSort([2, 1]); // -> [1, 2]
 ## hex 
 
 Hex encoding and decoding.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const hex: {
+    encode(bytes: number[]): string;
+    decode(str: string): number[];
+};</code>
+</pre>
+</details>
 
 ### encode
 
@@ -3719,6 +5463,26 @@ hex.decode('a8ae9bff'); // -> [168, 174, 155, 255]
 
 Highlight code.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace highlight {
+    interface IStyle {
+        comment?: string;
+        string?: string;
+        number?: string;
+        keyword?: string;
+        operator?: string;
+    }
+}
+ function highlight(
+    str: string,
+    lang?: string,
+    style?: highlight.IStyle
+): string;</code>
+</pre>
+</details>
+
 |Name   |Type  |Desc                        |
 |-------|------|----------------------------|
 |str    |string|Code string                 |
@@ -3739,6 +5503,16 @@ highlight('const a = 5;', 'js', {
 ## hotkey 
 
 Capture keyboard input to trigger given events.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const hotkey: {
+    on(key: string, listener: Function): void;
+    off(key: string, listener: Function): void;
+};</code>
+</pre>
+</details>
 
 ### on
 
@@ -3766,6 +5540,13 @@ hotkey.off('shift+a', keyDown);
 
 Convert hsl to rgb.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function hslToRgb(hsl: number[]): number[];</code>
+</pre>
+</details>
+
 |Name  |Type |Desc      |
 |------|-----|----------|
 |hsl   |array|Hsl values|
@@ -3778,6 +5559,16 @@ hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
 ## html 
 
 Html parser and serializer.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const html: {
+    parse(html: string): any[];
+    stringify(tree: any[]): string;
+};</code>
+</pre>
+</details>
 
 ### parse
 
@@ -3807,6 +5598,13 @@ html.stringify(tree);
 
 Return the first argument given.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function identity<T>(val: T): T;</code>
+</pre>
+</details>
+
 |Name  |Type|Desc       |
 |------|----|-----------|
 |val   |*   |Any value  |
@@ -3819,6 +5617,13 @@ identity('a'); // -> 'a'
 ## idxOf 
 
 Get the index at which the first occurrence of value.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function idxOf(arr: any[], val: any, fromIdx?: number): number;</code>
+</pre>
+</details>
 
 |Name     |Type  |Desc                |
 |---------|------|--------------------|
@@ -3835,6 +5640,13 @@ idxOf([1, 2, 1, 2], 2, 2); // -> 3
 
 Indent each line in a string.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function indent(str: string, char?: string, len?: number): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                |
 |------|------|--------------------|
 |str   |string|String to indent    |
@@ -3849,6 +5661,13 @@ indent('foo\nbar', ' ', 4); // -> '    foo\n    bar'
 ## inherits 
 
 Inherit the prototype methods from one constructor into another.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function inherits(Class: Function, SuperClass: Function): void;</code>
+</pre>
+</details>
 
 |Name      |Type    |Desc       |
 |----------|--------|-----------|
@@ -3875,6 +5694,22 @@ s.getName(); // -> 'RedHood'
 ## ini 
 
 Ini parser and serializer.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace ini {
+    interface IOptions {
+        section?: string;
+        whitespace: boolean;
+    }
+}
+ const ini: {
+    parse(ini: string): any;
+    stringify(obj: any, options?: ini.IOptions): string;
+};</code>
+</pre>
+</details>
 
 ### parse
 
@@ -3920,6 +5755,13 @@ ini.stringify(config);
 
 Insertion sort implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function insertionSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc         |
 |------|--------|-------------|
 |arr   |array   |Array to sort|
@@ -3934,6 +5776,13 @@ insertionSort([2, 1]); // -> [1, 2]
 
 Compute the list of values that are the intersection of all the arrays.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function intersect(...arr: Array<any[]>): any[];</code>
+</pre>
+</details>
+
 |Name  |Type |Desc                          |
 |------|-----|------------------------------|
 |...arr|array|Arrays to inspect             |
@@ -3946,6 +5795,22 @@ intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
 ## intersectRange 
 
 Intersect two ranges.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace intersectRange {
+    interface IRange {
+        start: number;
+        end: number;
+    }
+}
+ function intersectRange(
+    a: intersectRange.IRange,
+    b: intersectRange.IRange
+): intersectRange.IRange | void;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                 |
 |------|------|---------------------|
@@ -3964,6 +5829,22 @@ intersectRange({start: 0, end: 5}, {start: 6, end: 7});
 
 Facebook's invariant.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function invariant(
+    condition: boolean,
+    format?: string,
+    a?: string,
+    b?: string,
+    c?: string,
+    d?: string,
+    e?: string,
+    f?: string
+): void;</code>
+</pre>
+</details>
+
 [Related docs](https://github.com/zertosh/invariant)
 
 ```javascript
@@ -3976,6 +5857,13 @@ invariant(false, 'This will throw an error with this message');
 ## invert 
 
 Create an object composed of the inverted keys and values of object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function invert(obj: any): any;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc               |
 |------|------|-------------------|
@@ -3992,6 +5880,13 @@ invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
 
 Check if an url is absolute.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isAbsoluteUrl(url: string): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                   |
 |------|-------|-----------------------|
 |url   |string |Url to check           |
@@ -4006,6 +5901,13 @@ isAbsoluteUrl('surunzi.com'); // -> false
 ## isArgs 
 
 Check if value is classified as an arguments object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isArgs(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                                |
 |------|-------|------------------------------------|
@@ -4022,6 +5924,13 @@ Check if value is classified as an arguments object.
 
 Check if value is an `Array` object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isArr(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                              |
 |------|-------|----------------------------------|
 |val   |*      |Value to check                    |
@@ -4036,6 +5945,13 @@ isArr({}); // -> false
 
 Check if value is an ArrayBuffer.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isArrBuffer(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                           |
 |------|-------|-------------------------------|
 |val   |*      |Value to check                 |
@@ -4048,6 +5964,13 @@ isArrBuffer(new ArrayBuffer(8)); // -> true
 ## isArrLike 
 
 Check if value is array-like.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isArrLike(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                       |
 |------|-------|---------------------------|
@@ -4066,6 +5989,13 @@ isArrLike([1, 2, 3]); // -> true
 
 Check if value is an async function.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isAsyncFn(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                              |
 |------|-------|----------------------------------|
 |val   |*      |Value to check                    |
@@ -4081,6 +6011,13 @@ isAsyncFn(async function () {}); // -> true
 
 Check if value is a Blob.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isBlob(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                   |
 |------|-------|-----------------------|
 |val   |*      |Value to check         |
@@ -4094,6 +6031,13 @@ isBlob([]); // -> false
 ## isBool 
 
 Check if value is a boolean primitive.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isBool(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                      |
 |------|-------|--------------------------|
@@ -4110,6 +6054,13 @@ isBool(1); // -> false
 
 Check if running in a browser.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const isBrowser: boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isBrowser); // -> true if running in a browser
 ```
@@ -4117,6 +6068,13 @@ console.log(isBrowser); // -> true if running in a browser
 ## isBuffer 
 
 Check if value is a buffer.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isBuffer(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                     |
 |------|-------|-------------------------|
@@ -4130,6 +6088,18 @@ isBuffer(new Buffer(4)); // -> true
 ## isClose 
 
 Check if values are close(almost equal) to each other.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isClose(
+    a: number,
+    b: number,
+    relTol?: number,
+    absTol?: number
+): boolean;</code>
+</pre>
+</details>
 
 `abs(a-b) <= max(relTol * max(abs(a), abs(b)), absTol)`
 
@@ -4152,6 +6122,13 @@ isClose(1, 1.2, 0.1, 0.3); // -> true
 
 Detect dark mode.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isDarkMode(): boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isDarkMode()); // true if dark mode
 ```
@@ -4159,6 +6136,13 @@ console.log(isDarkMode()); // true if dark mode
 ## isDataUrl 
 
 Check if a string is a valid data url.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isDataUrl(str: string): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                        |
 |------|-------|----------------------------|
@@ -4174,6 +6158,13 @@ isDataUrl('data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D'); // -> true
 
 Check if value is classified as a Date object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isDate(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                          |
 |------|-------|------------------------------|
 |val   |*      |value to check                |
@@ -4186,6 +6177,13 @@ isDate(new Date()); // -> true
 ## isEl 
 
 Check if value is a DOM element.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isEl(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                          |
 |------|-------|------------------------------|
@@ -4200,6 +6198,13 @@ isEl(document.body); // -> true
 
 Loosely validate an email address.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isEmail(val: string): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                                 |
 |------|-------|-------------------------------------|
 |val   |string |Value to check                       |
@@ -4212,6 +6217,13 @@ isEmail('surunzi@foxmail.com'); // -> true
 ## isEmpty 
 
 Check if value is an empty object or array.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isEmpty(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                  |
 |------|-------|----------------------|
@@ -4228,6 +6240,13 @@ isEmpty(''); // -> true
 
 Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isEqual(val: any, other: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                         |
 |------|-------|-----------------------------|
 |val   |*      |Value to compare             |
@@ -4242,6 +6261,13 @@ isEqual([1, 2, 3], [1, 2, 3]); // -> true
 
 Check if value is an error.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isErr(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                     |
 |------|-------|-------------------------|
 |val   |*      |Value to check           |
@@ -4254,6 +6280,13 @@ isErr(new Error()); // -> true
 ## isEven 
 
 Check if number is even.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isEven(num: number): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                  |
 |------|-------|----------------------|
@@ -4270,6 +6303,13 @@ isEven(2); // -> true
 
 Check if value is a file.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isFile(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                   |
 |------|-------|-----------------------|
 |val   |*      |Value to check         |
@@ -4282,6 +6322,13 @@ isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
 ## isFinite 
 
 Check if value is a finite primitive number.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isFinite(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                            |
 |------|-------|--------------------------------|
@@ -4296,6 +6343,13 @@ isFinite(Infinity); // -> false
 ## isFn 
 
 Check if value is a function.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isFn(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                       |
 |------|-------|---------------------------|
@@ -4314,6 +6368,13 @@ isFn(async function() {}); // -> true
 
 Check if value is a generator function.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isGeneratorFn(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                                 |
 |------|-------|-------------------------------------|
 |val   |*      |Value to check                       |
@@ -4327,6 +6388,20 @@ isGeneratorFn(function () {}); // -> false
 ## isHidden 
 
 Check if element is hidden.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isHidden(el: Element, options?: {
+    display?: boolean;
+    visibility?: boolean;
+    opacity?: boolean;
+    size?: boolean;
+    viewport?: boolean;
+    overflow?: boolean;
+}): boolean;</code>
+</pre>
+</details>
 
 |Name   |Type   |Desc                     |
 |-------|-------|-------------------------|
@@ -4353,6 +6428,13 @@ isHidden(document.createElement('div')); // -> true
 
 Checks if value is classified as a Integer.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isInt(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                                 |
 |------|-------|-------------------------------------|
 |val   |*      |Value to check                       |
@@ -4367,6 +6449,17 @@ isInt({}); // -> false
 ## isIp 
 
 Check if value is an IP address.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace isIp {
+    function v4(str: string): boolean;
+    function v6(str: string): boolean;
+}
+ function isIp(str: string): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                          |
 |------|-------|------------------------------|
@@ -4393,6 +6486,13 @@ isIp.v6('1:2:3:4:5:6:7:8'); // -> true
 
 Check if value is a valid JSON.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isJson(val: string): boolean;</code>
+</pre>
+</details>
+
 It uses `JSON.parse()` and a `try... catch` block.
 
 |Name  |Type   |Desc                         |
@@ -4409,6 +6509,13 @@ isJson("{'a': 5}"); // -> false
 
 Check if a year is a leap year.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isLeapYear(year: number): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                       |
 |------|-------|---------------------------|
 |year  |number |Year to check              |
@@ -4422,6 +6529,13 @@ isLeapYear(2002); // -> false
 ## isMap 
 
 Check if value is a Map object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isMap(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                  |
 |------|-------|----------------------|
@@ -4437,6 +6551,13 @@ isMap(new WeakMap()); // -> false
 
 Check if keys and values in src are contained in obj.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isMatch(obj: any, src: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                              |
 |------|-------|----------------------------------|
 |obj   |object |Object to inspect                 |
@@ -4451,6 +6572,13 @@ isMatch({a: 1, b: 2}, {a: 1}); // -> true
 
 Check if running in wechat mini program.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const isMiniProgram: boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isMiniProgram); // -> true if running in mini program.
 ```
@@ -4458,6 +6586,13 @@ console.log(isMiniProgram); // -> true if running in mini program.
 ## isMobile 
 
 Check whether client is using a mobile browser using ua.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isMobile(ua?: string): boolean;</code>
+</pre>
+</details>
 
 |Name                  |Type   |Desc                                 |
 |----------------------|-------|-------------------------------------|
@@ -4471,6 +6606,13 @@ isMobile(navigator.userAgent);
 ## isNaN 
 
 Check if value is an NaN.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isNaN(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                   |
 |------|-------|-----------------------|
@@ -4488,6 +6630,13 @@ isNaN(NaN); // -> true
 
 Check if value is a native function.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isNative(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                              |
 |------|-------|----------------------------------|
 |val   |*      |Value to check                    |
@@ -4501,6 +6650,13 @@ isNative(Math.min); // -> true
 ## isNil 
 
 Check if value is null or undefined, the same as value == null.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isNil(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                              |
 |------|-------|----------------------------------|
@@ -4520,6 +6676,13 @@ isNil([]); // -> false
 
 Check if running in node.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const isNode: boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isNode); // -> true if running in node
 ```
@@ -4527,6 +6690,13 @@ console.log(isNode); // -> true if running in node
 ## isNull 
 
 Check if value is an Null.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isNull(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                    |
 |------|-------|------------------------|
@@ -4540,6 +6710,13 @@ isNull(null); // -> true
 ## isNum 
 
 Check if value is classified as a Number primitive or object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isNum(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                                 |
 |------|-------|-------------------------------------|
@@ -4555,6 +6732,13 @@ isNum({}); // -> false
 ## isNumeric 
 
 Check if value is numeric.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isNumeric(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                    |
 |------|-------|------------------------|
@@ -4575,6 +6759,13 @@ isNumeric(NaN); // -> false
 
 Check if value is the language type of Object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isObj(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                      |
 |------|-------|--------------------------|
 |val   |*      |Value to check            |
@@ -4591,6 +6782,13 @@ isObj([]); // -> true
 
 Check if number is odd.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isOdd(num: number): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                 |
 |------|-------|---------------------|
 |num   |number |Number to check      |
@@ -4606,6 +6804,13 @@ isOdd(2); // -> false
 
 Check if value is an object created by Object constructor.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isPlainObj(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                           |
 |------|-------|-------------------------------|
 |val   |*      |Value to check                 |
@@ -4620,6 +6825,16 @@ isPlainObj(function () {}); // -> false
 ## isPortFree 
 
 Check if a TCP port is free.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isPortFree(
+    port: number,
+    host?: string
+): Promise<boolean>;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                      |
 |------|-------|--------------------------|
@@ -4637,6 +6852,13 @@ isPortFree(3000).then(isFree => {
 
 Check if the provided integer is a prime number.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isPrime(num: number): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                            |
 |------|-------|--------------------------------|
 |num   |number |Number to check                 |
@@ -4650,6 +6872,13 @@ isPrime(8); // -> false
 ## isPrimitive 
 
 Check if value is string, number, boolean or null.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isPrimitive(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                        |
 |------|-------|----------------------------|
@@ -4666,6 +6895,13 @@ isPrimitive(false); // -> true
 
 Check if value looks like a promise.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isPromise(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                              |
 |------|-------|----------------------------------|
 |val   |*      |Value to check                    |
@@ -4680,6 +6916,13 @@ isPromise({}); // -> false
 
 Check if value is a regular expression.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isRegExp(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                                 |
 |------|-------|-------------------------------------|
 |val   |*      |Value to check                       |
@@ -4692,6 +6935,13 @@ isRegExp(/a/); // -> true
 ## isRelative 
 
 Check if path appears to be relative.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isRelative(path: string): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                               |
 |------|-------|-----------------------------------|
@@ -4706,6 +6956,13 @@ isRelative('README.md'); // -> true
 
 Determine if running on a high DPR device or not.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const isRetina: boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isRetina); // -> true if high DPR
 ```
@@ -4713,6 +6970,13 @@ console.log(isRetina); // -> true if high DPR
 ## isSet 
 
 Check if value is a Set object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isSet(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                  |
 |------|-------|----------------------|
@@ -4727,6 +6991,13 @@ isSet(new WeakSet()); // -> false
 ## isSorted 
 
 Check if an array is sorted.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isSorted(arr: any[], cmp?: Function): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc                   |
 |------|--------|-----------------------|
@@ -4743,6 +7014,13 @@ isSorted([3, 2, 1]); // -> false
 
 Check if value is a string primitive.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isStr(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                               |
 |------|-------|-----------------------------------|
 |val   |*      |Value to check                     |
@@ -4755,6 +7033,13 @@ isStr('licia'); // -> true
 ## isStream 
 
 Check if value is a Node.js stream.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isStream(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                             |
 |------|-------|---------------------------------|
@@ -4771,6 +7056,13 @@ isStream(new stream.Stream()); // -> true
 
 Check if value is a symbol.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isSymbol(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                     |
 |------|-------|-------------------------|
 |val   |*      |Value to check           |
@@ -4783,6 +7075,13 @@ isSymbol(Symbol('test')); // -> true
 ## isTypedArr 
 
 Check if value is a typed array.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isTypedArr(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                          |
 |------|-------|------------------------------|
@@ -4798,6 +7097,13 @@ isTypedArr(new Uint8Array(8)); // -> true
 
 Check if value is undefined.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isUndef(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                      |
 |------|-------|--------------------------|
 |val   |*      |Value to check            |
@@ -4812,6 +7118,13 @@ isUndef(null); // -> false
 
 Loosely validate an url.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isUrl(val: string): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                               |
 |------|-------|-----------------------------------|
 |val   |string |Value to check                     |
@@ -4824,6 +7137,13 @@ isUrl('http://www.example.com?foo=bar&param=test'); // -> true
 ## isWeakMap 
 
 Check if value is a WeakMap object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isWeakMap(val: any): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                      |
 |------|-------|--------------------------|
@@ -4839,6 +7159,13 @@ isWeakMap(new WeakMap()); // -> true
 
 Check if value is a WeakSet object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isWeakSet(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc                      |
 |------|-------|--------------------------|
 |val   |*      |Value to check            |
@@ -4853,6 +7180,13 @@ isWeakSet(new WeakSet()); // -> true
 
 Check if platform is windows.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const isWindows: boolean;</code>
+</pre>
+</details>
+
 ```javascript
 console.log(isWindows); // -> true if running on windows
 ```
@@ -4860,6 +7194,13 @@ console.log(isWindows); // -> true if running on windows
 ## jsonClone 
 
 Use JSON parse and stringify to clone object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function jsonClone<T>(val: T): T;</code>
+</pre>
+</details>
 
 |Name  |Type|Desc          |
 |------|----|--------------|
@@ -4873,6 +7214,25 @@ jsonClone({ name: 'licia' }); // -> { name: 'licia' }
 ## jsonp 
 
 A simple jsonp implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace jsonp {
+    interface IOptions {
+        url: string;
+        data?: any;
+        success?: Function;
+        param?: string;
+        name?: string;
+        error?: Function;
+        complete?: Function;
+        timeout?: number;
+    }
+}
+ function jsonp(opts: jsonp.IOptions): void;</code>
+</pre>
+</details>
 
 |Name|Type  |Desc         |
 |----|------|-------------|
@@ -4905,6 +7265,13 @@ jsonp({
 
 Convert string to "kebabCase".
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function kebabCase(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc              |
 |------|------|------------------|
 |str   |string|String to convert |
@@ -4920,6 +7287,14 @@ kebabCase('foo.bar'); // -> foo-bar
 ## keyCode 
 
 Key codes and key names conversion.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function keyCode(name: string): number;
+ function keyCode(code: number): string;</code>
+</pre>
+</details>
 
 Get key code's name.
 
@@ -4944,6 +7319,13 @@ keyCode('enter'); // -> 13
 
 Create an array of the own enumerable property names of object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function keys(obj: any): string[];</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                   |
 |------|------|-----------------------|
 |obj   |object|Object to query        |
@@ -4957,6 +7339,13 @@ keys({a: 1}); // -> ['a']
 
 Kill process.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function kill(pid: number): void;</code>
+</pre>
+</details>
+
 |Name|Type|Desc|
 |----|----|----|
 |pid |number|Process ID|
@@ -4968,6 +7357,13 @@ kill(9420);
 ## last 
 
 Get the last element of array.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function last(arr: any[]): any;</code>
+</pre>
+</details>
 
 |Name  |Type |Desc                     |
 |------|-----|-------------------------|
@@ -4982,6 +7378,13 @@ last([1, 2]); // -> 2
 
 Require modules lazily.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function lazyRequire(requireFn: Function): Function;</code>
+</pre>
+</details>
+
 ```javascript
 const r = lazyRequire(require);
 
@@ -4994,6 +7397,13 @@ _().isNumber(5);
 ## levenshtein 
 
 Levenshtein distance implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function levenshtein(a: string, b: string): number;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                                |
 |------|------|------------------------------------|
@@ -5008,6 +7418,13 @@ levenshtein('cat', 'cake'); // -> 2
 ## linkify 
 
 Hyperlink urls in a string.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function linkify(str: string, hyperlink?: Function): string;</code>
+</pre>
+</details>
 
 |Name       |Type    |Desc                     |
 |-----------|--------|-------------------------|
@@ -5027,6 +7444,13 @@ linkify(str, function (url) {
 
 Inject link tag into page with given href value.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function loadCss(src: string, cb?: Function): void;</code>
+</pre>
+</details>
+
 |Name|Type    |Desc           |
 |----|--------|---------------|
 |src |string  |Style source   |
@@ -5041,6 +7465,13 @@ loadCss('style.css', function (isLoaded) {
 ## loadImg 
 
 Load image with given src.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function loadImg(src: string, cb?: Function): void;</code>
+</pre>
+</details>
 
 |Name|Type    |Desc           |
 |----|--------|---------------|
@@ -5057,6 +7488,13 @@ loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
 
 Inject script tag into page with given src value.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function loadJs(src: string, cb?: Function): void;</code>
+</pre>
+</details>
+
 |Name|Type    |Desc           |
 |----|--------|---------------|
 |src |string  |Script source  |
@@ -5072,6 +7510,13 @@ loadJs('main.js', function (isLoaded) {
 
 Get the longest item in an array.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function longest(arr: string[]): string;</code>
+</pre>
+</details>
+
 |Name  |Type |Desc            |
 |------|-----|----------------|
 |arr   |array|Array to inspect|
@@ -5085,6 +7530,13 @@ longest(['a', 'abcde', 'abc']); // -> 'abcde'
 
 Convert string to lower case.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function lowerCase(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc              |
 |------|------|------------------|
 |str   |string|String to convert |
@@ -5097,6 +7549,13 @@ lowerCase('TEST'); // -> 'test'
 ## lpad 
 
 Pad string on the left side if it's shorter than length.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function lpad(str: string, len: number, chars?: string): string;</code>
+</pre>
+</details>
 
 |Name   |Type  |Desc                  |
 |-------|------|----------------------|
@@ -5116,6 +7575,13 @@ lpad('abc', 5, 'ab'); // -> 'ababc'
 
 Remove chars or white-spaces from beginning of string.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function ltrim(str: string, chars?: string | string[]): string;</code>
+</pre>
+</details>
+
 |Name   |Type        |Desc              |
 |-------|------------|------------------|
 |str    |string      |String to trim    |
@@ -5132,6 +7598,22 @@ ltrim('_abc_', ['a', '_']); // -> 'bc_'
 
 Create an array of values by running each element in collection through iteratee.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function map<T, TResult>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, TResult>,
+    context?: any
+): TResult[];
+ function map<T, TResult>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, TResult>,
+    context?: any
+): TResult[];</code>
+</pre>
+</details>
+
 |Name     |Type        |Desc                          |
 |---------|------------|------------------------------|
 |object   |array object|Collection to iterate over    |
@@ -5147,6 +7629,17 @@ map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 
 Map for objects.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function mapObj<T, TResult>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, TResult>,
+    context?: any
+): types.Dictionary<TResult>;</code>
+</pre>
+</details>
+
 |Name     |Type    |Desc                          |
 |---------|--------|------------------------------|
 |object   |object  |Object to iterate over        |
@@ -5161,6 +7654,13 @@ mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
 ## matcher 
 
 Return a predicate function that checks if attrs are contained in an object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function matcher(attrs: any): Function;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc                              |
 |------|--------|----------------------------------|
@@ -5181,6 +7681,13 @@ filter(objects, matcher({a: 4, c: 6 })); // -> [{a: 4, b: 5, c: 6}]
 
 Get maximum value of given numbers.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function max(...num: number[]): number;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                |
 |------|------|--------------------|
 |...num|number|Numbers to calculate|
@@ -5193,6 +7700,13 @@ max(2.3, 1, 4.5, 2); // 4.5
 ## md5 
 
 MD5 implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function md5(msg: string | number[]): string;</code>
+</pre>
+</details>
 
 |Name   |Type        |Desc              |
 |-------|------------|------------------|
@@ -5207,6 +7721,13 @@ md5('licia'); // -> 'e59f337d85e9a467f1783fab282a41d0'
 
 Memory-backed implementation of the Web Storage API.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const memStorage: typeof window.localStorage;</code>
+</pre>
+</details>
+
 A replacement for environments where localStorage or sessionStorage is not available.
 
 ```javascript
@@ -5217,6 +7738,13 @@ localStorage.setItem('test', 'licia');
 ## memoize 
 
 Memoize a given function by caching the computed result.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function memoize(fn: Function, hashFn?: Function): Function;</code>
+</pre>
+</details>
 
 |Name    |Type    |Desc                                |
 |--------|--------|------------------------------------|
@@ -5234,6 +7762,13 @@ const fibonacci = memoize(function(n) {
 
 Merge sort implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function mergeSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 Note: It's not an "in-place" sort.
 
 |Name  |Type    |Desc         |
@@ -5249,6 +7784,20 @@ mergeSort([2, 1]); // -> [1, 2]
 ## meta 
 
 Document meta manipulation, turn name and content into key value pairs.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace meta {
+    function remove(nameList: string | string[]): void;
+}
+ function meta(): {};
+ function meta(key: string): string;
+ function meta(keys: string[]): {};
+ function meta(key, value): void;
+ function meta(pairs: {}): void;</code>
+</pre>
+</details>
 
 Get meta content with given name. If name is omitted, all pairs will be return.
 
@@ -5295,6 +7844,13 @@ meta.remove(['e', 'f']);
 
 Return a sorted list of the names of every method in an object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function methods(obj: any): string[];</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                    |
 |------|------|------------------------|
 |obj   |object|Object to check         |
@@ -5307,6 +7863,13 @@ methods(console); // -> ['Console', 'assert', 'dir', ...]
 ## mime 
 
 Common mime types.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function mime(name: string): string | null;</code>
+</pre>
+</details>
 
 |Name  |Type       |Desc     |
 |------|-----------|---------|
@@ -5331,6 +7894,13 @@ mime('test'); // -> null
 
 Get minimum value of given numbers.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function min(...num: number[]): number;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                |
 |------|------|--------------------|
 |...num|number|Numbers to calculate|
@@ -5343,6 +7913,14 @@ min(2.3, 1, 4.5, 2); // 1
 ## mkdir 
 
 Recursively create directories.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function mkdir(dir: string, mode?: number, cb?: Function): void;
+ function mkdir(dir: string, cb?: Function): void;</code>
+</pre>
+</details>
 
 |Name      |Type    |Desc               |
 |----------|--------|-------------------|
@@ -5360,6 +7938,54 @@ mkdir('/tmp/foo/bar/baz', function (err) {
 ## moment 
 
 Tiny moment.js like implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace moment {
+   class M {
+       constructor(value: string | Date);
+       format(mask: string): string;
+       isValid(): boolean;
+       isLeapYear(): boolean;
+       isSame(that: M): boolean;
+       valueOf(): number;
+       isBefore(that: M): boolean;
+       isAfter(that: M): boolean;
+       year(): number;
+       year(number): M;
+       month(): number;
+       month(number): M;
+       date(): number;
+       date(number): M;
+       hour(): number;
+       hour(number): M;
+       minute(): number;
+       minute(number): M;
+       second(): number;
+       second(number): M;
+       millisecond(): number;
+       millisecond(number): M;
+       unix(): number;
+       clone(): M;
+       toDate(): Date;
+       toArray(): number[];
+       toJSON(): string;
+       toISOString(): string;
+       toObject(): any;
+       toString(): string;
+       set(unit: string, num: number): M;
+       startOf(unit: string): M;
+       endOf(unit: string): M;
+       daysInMonth(): number;
+       add(num: number, unit: string): M;
+       subtract(num: number, unit: string): M;
+       diff(input: M | string | Date, unit: string, asFloat: boolean): number;
+   }
+}
+ function moment(value: string | Date): moment.M;</code>
+</pre>
+</details>
 
 It only supports a subset of moment.js api.
 
@@ -5383,6 +8009,16 @@ moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
 ## morse 
 
 Morse code encoding and decoding.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const morse: {
+    encode(txt: string): string;
+    decode(morse: string): string;
+}</code>
+</pre>
+</details>
 
 ### encode
 
@@ -5411,6 +8047,14 @@ morse.decode(str); // -> 'Hello, world.'
 ## ms 
 
 Convert time string formats to milliseconds.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function ms(str: string): number;
+ function ms(num: number): string;</code>
+</pre>
+</details>
 
 Turn time string into milliseconds.
 
@@ -5441,6 +8085,13 @@ ms(60000); // -> '1m'
 
 Create a function that negates the result of the predicate function.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function negate(predicate: Function): Function;</code>
+</pre>
+</details>
+
 |Name     |Type    |Desc               |
 |---------|--------|-------------------|
 |predicate|function|Predicate to negate|
@@ -5454,6 +8105,13 @@ function even(n) { return n % 2 === 0 }
 ## nextTick 
 
 Next tick for both node and browser.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function nextTick(cb: Function): void;</code>
+</pre>
+</details>
 
 |Name|Type    |Desc            |
 |----|--------|----------------|
@@ -5473,6 +8131,13 @@ nextTick(function () {
 
 A no-operation function.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function noop(): void;</code>
+</pre>
+</details>
+
 ```javascript
 noop(); // Does nothing
 ```
@@ -5480,6 +8145,13 @@ noop(); // Does nothing
 ## normalizeHeader 
 
 Normalize http header name.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function normalizeHeader(header: string): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc               |
 |------|------|-------------------|
@@ -5495,6 +8167,13 @@ normalizeHeader('etag'); // -> 'ETag'
 
 Normalize file path slashes.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function normalizePath(path: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc             |
 |------|------|-----------------|
 |path  |string|Path to normalize|
@@ -5508,6 +8187,22 @@ normalizePath('./foo//bar'); // -> './foo/bar'
 ## normalizePhone 
 
 Normalize phone numbers into E.164 format.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace normalizePhone {
+    interface IOptions {
+        countryCode: number;
+        trunkPrefix?: boolean;
+    }
+}
+ function normalizePhone(
+    phone: string,
+    options: normalizePhone.IOptions
+): string;</code>
+</pre>
+</details>
 
 |Name   |Type  |Desc              |
 |-------|------|------------------|
@@ -5539,6 +8234,19 @@ normalizePhone('020 7183 8750', {
 
 Wrapper for the Web Notifications API.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace notify {
+    class Notification extends Emitter {
+        constructor(title: string, options?: object);
+        show(): void;
+    }
+}
+ function notify(title: string, options?: object): void;</code>
+</pre>
+</details>
+
 |Name   |Type  |Desc                |
 |-------|------|--------------------|
 |title  |string|Notification title  |
@@ -5566,6 +8274,13 @@ notification.show();
 
 Gets the number of milliseconds that have elapsed since the Unix epoch.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function now(): number;</code>
+</pre>
+</details>
+
 ```javascript
 now(); // -> 1468826678701
 ```
@@ -5573,6 +8288,13 @@ now(); // -> 1468826678701
 ## objToStr 
 
 Alias of Object.prototype.toString.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function objToStr(val: any): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                                |
 |------|------|------------------------------------|
@@ -5586,6 +8308,13 @@ objToStr(5); // -> '[object Number]'
 ## omit 
 
 Opposite of pick.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function omit(obj: any, filter: string | string[] | Function): any;</code>
+</pre>
+</details>
 
 |Name  |Type                 |Desc           |
 |------|---------------------|---------------|
@@ -5605,6 +8334,13 @@ omit({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 
 Create a function that invokes once.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function once(fn: Function): Function;</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc                   |
 |------|--------|-----------------------|
 |fn    |function|Function to restrict   |
@@ -5621,6 +8357,13 @@ initOnce(); // -> init is invoked once
 
 Open stuff like url, files.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function open(target: string): any;</code>
+</pre>
+</details>
+
 |Name  |Type        |Desc         |
 |------|------------|-------------|
 |target|string      |Stuff to open|
@@ -5633,6 +8376,20 @@ open('https://eustia.liriliri.io/');
 ## openFile 
 
 Open file dialog to select file in browser.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace openFile {
+    interface IOptions {
+        accept?: string;
+        multiple?: boolean;
+    }
+}
+
+ function openFile(options?: openFile.IOptions): Promise<File[]>;</code>
+</pre>
+</details>
 
 |Name   |Type   |Desc          |
 |-------|-------|--------------|
@@ -5656,9 +8413,23 @@ openFile({multiple: true}).then(fileList => {
 
 Used for function context binding.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function optimizeCb(fn: Function, ctx: any, argCount?: number): Function;</code>
+</pre>
+</details>
+
 ## ordinal 
 
 Add ordinal indicator to number.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function ordinal(num: number): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                   |
 |------|------|-----------------------|
@@ -5673,6 +8444,18 @@ ordinal(2); // -> '2nd'
 ## orientation 
 
 Screen orientation helper.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace orientation {
+    interface IOrientation extends Emitter {
+        get(): string;
+    }
+}
+ const orientation: orientation.IOrientation;</code>
+</pre>
+</details>
 
 ### on
 
@@ -5697,6 +8480,13 @@ orientation.get(); // -> 'landscape'
 
 Pad string on the left and right sides if it's shorter than length.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function pad(str: string, len: number, chars?: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                  |
 |------|------|----------------------|
 |str   |string|String to pad         |
@@ -5716,6 +8506,13 @@ pad('ab', 5, 'ab'); // -> 'ababa'
 
 Convert an object into a list of [key, value] pairs.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function pairs(obj: any): Array<any[]>;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                      |
 |------|------|--------------------------|
 |obj   |object|Object to convert         |
@@ -5728,6 +8525,13 @@ pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
 ## parallel 
 
 Run an array of functions in parallel.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function parallel(tasks: Function[], cb?: Function): void;</code>
+</pre>
+</details>
 
 |Name |Type    |Desc                   |
 |-----|--------|-----------------------|
@@ -5750,6 +8554,13 @@ parallel([
 ## parseArgs 
 
 Parse command line argument options, the same as minimist.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function parseArgs(names: string[], shorthands: any): any;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc           |
 |------|------|---------------|
@@ -5782,6 +8593,21 @@ parseArgs(['eustia', '--output', 'util.js', '-w'], {
 
 Simple html parser.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace parseHtml {
+    interface IHandlers {
+        start?: (tag: string, attrs: any, unary: boolean) => void;
+        end?: (tag: string) => void;
+        comment?: (text: string) => void;
+        text?: (text: string) => void;
+    }
+}
+ function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
+</pre>
+</details>
+
 |Name   |Type  |Desc         |
 |-------|------|-------------|
 |html   |string|Html to parse|
@@ -5800,6 +8626,13 @@ parseHtml('<div>licia</div>', {
 
 Partially apply a function by filling in given arguments.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function partial(fn: Function, ...partials: any[]): Function;</code>
+</pre>
+</details>
+
 |Name       |Type    |Desc                                    |
 |-----------|--------|----------------------------------------|
 |fn         |function|Function to partially apply arguments to|
@@ -5814,6 +8647,13 @@ sub5(20); // -> 15
 ## pascalCase 
 
 Convert string to "pascalCase".
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function pascalCase(str: string): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc               |
 |------|------|-------------------|
@@ -5831,6 +8671,13 @@ pascalCase('foo.bar'); // -> FooBar
 
 High resolution time up to microsecond precision.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function perfNow(): number;</code>
+</pre>
+</details>
+
 ```javascript
 const start = perfNow();
 
@@ -5842,6 +8689,16 @@ console.log(perfNow() - start);
 ## pick 
 
 Return a filtered copy of an object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function pick(
+    object: any,
+    filter: string | string[] | Function,
+): any;</code>
+</pre>
+</details>
 
 |Name  |Type                 |Desc           |
 |------|---------------------|---------------|
@@ -5860,6 +8717,13 @@ pick({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 ## pluck 
 
 Extract a list of property values.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function pluck(object: any, key: string | string[]): any[];</code>
+</pre>
+</details>
 
 |Name  |Type        |Desc                           |
 |------|------------|-------------------------------|
@@ -5880,6 +8744,13 @@ pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
 
 Find decimal precision of a given number.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function precision(num: number): number;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc           |
 |------|------|---------------|
 |num   |number|Number to check|
@@ -5892,6 +8763,13 @@ precision(1.234); // -> 3;
 ## prefetch 
 
 Fetch a given url.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function prefetch(url: string): Promise<void>;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc           |
 |------|-------|---------------|
@@ -5907,6 +8785,16 @@ prefetch('https://eustia.liriliri.io/');
 ## prefix 
 
 Add vendor prefixes to a CSS attribute.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace prefix {
+    function dash(name: string): string;
+}
+ function prefix(name: string): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                  |
 |------|------|----------------------|
@@ -5926,6 +8814,13 @@ prefix('color'); // -> 'color'
 ## promisify 
 
 Convert callback based functions into Promises.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function promisify(fn: Function, multiArgs?: boolean): Function;</code>
+</pre>
+</details>
 
 |Name           |Type    |Desc                                  |
 |---------------|--------|--------------------------------------|
@@ -5948,6 +8843,13 @@ readFile('test.js', 'utf-8').then(function (data) {
 
 Return a function that will itself return the key property of any passed-in object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function property(path: string | string[]): Function;</code>
+</pre>
+</details>
+
 |Name  |Type        |Desc                       |
 |------|------------|---------------------------|
 |path  |string array|Path of the property to get|
@@ -5962,6 +8864,16 @@ property(['a', 'b'])(obj); // -> 1
 ## query 
 
 Parse and stringify url query strings.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const query: {
+    parse(str: string): any;
+    stringify(object: any): string;
+};</code>
+</pre>
+</details>
 
 ### parse
 
@@ -5991,6 +8903,13 @@ query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
 
 Quick sort implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function quickSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc         |
 |------|--------|-------------|
 |arr   |array   |Array to sort|
@@ -6005,6 +8924,16 @@ quickSort([2, 1]); // -> [1, 2]
 
 Shortcut for requestAnimationFrame.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace raf {
+    function cancel(id: number);
+}
+ function raf(cb: Function): number;</code>
+</pre>
+</details>
+
 Use setTimeout if native requestAnimationFrame is not supported.
 
 ```javascript
@@ -6018,6 +8947,13 @@ raf.cancel(id);
 ## random 
 
 Produces a random number between min and max(inclusive).
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function random(min: number, max?: number, floating?: boolean): number;</code>
+</pre>
+</details>
 
 |Name          |Type   |Desc                  |
 |--------------|-------|----------------------|
@@ -6036,6 +8972,13 @@ random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
 
 Random bytes generator.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function randomBytes(size: number): Uint8Array;</code>
+</pre>
+</details>
+
 Use crypto module in node or crypto object in browser if possible.
 
 |Name  |Type  |Desc                        |
@@ -6050,6 +8993,23 @@ randomBytes(5); // -> [55, 49, 153, 30, 122]
 ## randomColor 
 
 Random color generator.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace randomColor {
+    interface IOptions {
+        count?: number;
+        hue?: number;
+        lightness?: number;
+        format?: string;
+        seed?: number
+    }
+}
+ function randomColor(): string;
+ function randomColor(options: randomColor.IOptions): string | string[];</code>
+</pre>
+</details>
 
 |Name   |Type        |Desc          |
 |-------|------------|--------------|
@@ -6076,6 +9036,13 @@ randomColor({
 
 A tiny id generator, similar to nanoid.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function randomId(size?: number, symbols?: string): string;</code>
+</pre>
+</details>
+
 |Name   |Type  |Desc                                                |
 |-------|------|----------------------------------------------------|
 |size=21|number|Id size                                             |
@@ -6091,6 +9058,13 @@ randomId(5, 'abc'); // -> 'cbbcb'
 
 Get a random item from an array.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function randomItem(arr: any[]): any;</code>
+</pre>
+</details>
+
 |Name  |Type |Desc                |
 |------|-----|--------------------|
 |arr   |array|Array to get        |
@@ -6103,6 +9077,13 @@ randomItem([1, 2, 3]); // -> 2
 ## range 
 
 Create flexibly-numbered lists of integers.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function range(start: number, end?: number, step?: number): number[];</code>
+</pre>
+</details>
 
 |Name   |Type  |Desc                              |
 |-------|------|----------------------------------|
@@ -6119,6 +9100,16 @@ range(0, 5, 2) // -> [0, 2, 4]
 ## rc4 
 
 RC4 symmetric encryption implementation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const rc4: {
+    encrypt(key: string, str: string): string;
+    decrypt(key: string, str: string): string;
+};</code>
+</pre>
+</details>
 
 ### encrypt
 
@@ -6143,6 +9134,13 @@ rc4.decrypt('licia', 'j9y2VpSfR3AdNN8='); // -> 'Hello world'
 
 Invoke callback when dom is ready, similar to jQuery ready.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function ready(fn: Function): void;</code>
+</pre>
+</details>
+
 |Name|Type    |Desc             |
 |----|--------|-----------------|
 |fn  |function|Callback function|
@@ -6156,6 +9154,24 @@ ready(function () {
 ## reduce 
 
 Turn a list of values into a single value.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function reduce<T, TResult>(
+    list: types.List<T>,
+    iterator: types.MemoIterator<T, TResult>,
+    memo?: TResult,
+    context?: any
+): TResult;
+ function reduce<T, TResult>(
+    list: types.Dictionary<T>,
+    iterator: types.MemoObjectIterator<T, TResult>,
+    memo?: TResult,
+    context?: any
+): TResult;</code>
+</pre>
+</details>
 
 |Name             |Type        |Desc                          |
 |-----------------|------------|------------------------------|
@@ -6173,6 +9189,18 @@ reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
 
 Right-associative version of reduce.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function reduceRight<T, TResult>(
+    list: types.Collection<T>,
+    iterator: types.MemoIterator<T, TResult>,
+    memo?: TResult,
+    context?: any
+): TResult;</code>
+</pre>
+</details>
+
 ```javascript
 reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> [3, 2, 1]
 ```
@@ -6180,6 +9208,22 @@ reduceRight([[1], [2], [3]], function (a, b) { return a.concat(b) }, []); // -> 
 ## reject 
 
 Opposite of filter.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function reject<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
+    context?: any
+): T[];
+ function reject<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
+    context?: any
+): T[];</code>
+</pre>
+</details>
 
 |Name     |Type    |Desc                                          |
 |---------|--------|----------------------------------------------|
@@ -6197,6 +9241,17 @@ reject([1, 2, 3, 4, 5], function (val) {
 ## remove 
 
 Remove all elements from array that predicate returns truthy for and return an array of the removed elements.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function remove<T, TResult>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
+    context?: any
+): TResult[];</code>
+</pre>
+</details>
 
 Unlike filter, this method mutates array.
 
@@ -6218,6 +9273,13 @@ console.log(evens); // -> [2, 4]
 
 Repeat string n-times.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function repeat(str: string, n: number): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc            |
 |------|------|----------------|
 |str   |string|String to repeat|
@@ -6234,6 +9296,13 @@ repeat('*', 0); // -> ''
 
 This accumulates the arguments passed into an array, after a given index.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function restArgs(fn: Function, startIndex?: number): Function;</code>
+</pre>
+</details>
+
 |Name        |Type    |Desc                                   |
 |------------|--------|---------------------------------------|
 |function    |function|Function that needs rest parameters    |
@@ -6249,6 +9318,13 @@ paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
 
 Reverse array without mutating it.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function reverse(arr: any[]): any[];</code>
+</pre>
+</details>
+
 |Name  |Type |Desc           |
 |------|-----|---------------|
 |arr   |array|Array to modify|
@@ -6261,6 +9337,13 @@ reverse([1, 2, 3]); // -> [3, 2, 1]
 ## rgbToHsl 
 
 Convert rgb to hsl.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function rgbToHsl(rgb: number[]): number[];</code>
+</pre>
+</details>
 
 |Name  |Type |Desc      |
 |------|-----|----------|
@@ -6275,6 +9358,16 @@ rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
 
 Shortcut for requestIdleCallback.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace ric {
+    function cancel(id: number);
+}
+ function ric(cb: Function): number;</code>
+</pre>
+</details>
+
 Use setTimeout if requestIdleCallback is not supported.
 
 ```javascript
@@ -6288,6 +9381,13 @@ ric.cancel(id);
 
 Loop through all possible path and domain to remove cookie.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function rmCookie(key: string): void;</code>
+</pre>
+</details>
+
 |Name|Type  |Desc      |
 |----|------|----------|
 |key |string|Cookie key|
@@ -6299,6 +9399,13 @@ rmCookie('test');
 ## rmdir 
 
 Recursively remove directories.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function rmdir(dir: string, cb?: Function): void;</code>
+</pre>
+</details>
 
 |Name    |Type    |Desc               |
 |--------|--------|-------------------|
@@ -6316,9 +9423,23 @@ rmdir('/tmp/foo/bar/baz', function (err) {
 
 Root object reference, `global` in nodeJs, `window` in browser.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const root: any;</code>
+</pre>
+</details>
+
 ## rpad 
 
 Pad string on the right side if it's shorter than length.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function rpad(str: string, len: number, chars?: string): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                  |
 |------|------|----------------------|
@@ -6338,6 +9459,13 @@ rpad('abc', 5, 'ab'); // -> 'abcab'
 
 Remove chars or white-spaces from end of string.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function rtrim(str: string, chars?: string | string[]): string;</code>
+</pre>
+</details>
+
 |Name   |Type        |Desc              |
 |-------|------------|------------------|
 |str    |string      |String to trim    |
@@ -6354,9 +9482,23 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 
 Create callback based on input value.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function safeCb(val?: any, ctx?: any, argCount?: number): Function;</code>
+</pre>
+</details>
+
 ## safeDel 
 
 Delete object property.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function safeDel(obj: any, path: string | string[]): any;</code>
+</pre>
+</details>
 
 |Name  |Type        |Desc                      |
 |------|------------|--------------------------|
@@ -6375,6 +9517,13 @@ safeDel(obj, 'a.b'); // -> undefined
 
 Get object property, don't throw undefined error.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function safeGet(obj: any, path: string | string[]): any;</code>
+</pre>
+</details>
+
 |Name  |Type        |Desc                     |
 |------|------------|-------------------------|
 |obj   |object      |Object to query          |
@@ -6391,6 +9540,13 @@ safeGet(obj, 'a.b'); // -> undefined
 ## safeSet 
 
 Set value at path of object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function safeSet(obj: any, path: string | string[], val: any): void;</code>
+</pre>
+</details>
 
 If a portion of path doesn't exist, it's created.
 
@@ -6411,6 +9567,13 @@ safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
 
 Use storage safely in safari private browsing and older browsers.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function safeStorage(type?: string): typeof window.localStorage;</code>
+</pre>
+</details>
+
 |Name        |Type  |Desc             |
 |------------|------|-----------------|
 |type='local'|string|local or session |
@@ -6424,6 +9587,13 @@ localStorage.setItem('licia', 'util');
 ## sample 
 
 Sample random values from a collection.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function sample(obj: any, n: number): any[];</code>
+</pre>
+</details>
 
 |Name  |Type        |Desc                  |
 |------|------------|----------------------|
@@ -6439,6 +9609,24 @@ sample({a: 1, b: 2, c: 3}, 1); // -> [2]
 ## scrollTo 
 
 Scroll to a target with animation.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace scrollTo {
+    interface IOptions {
+        tolerance?: number;
+        duration?: number;
+        easing?: string | Function;
+        callback?: Function;
+    }
+}
+ function scrollTo(
+    target: Element | string | number,
+    options: scrollTo.IOptions
+);</code>
+</pre>
+</details>
 
 |Name   |Type                 |Desc          |
 |-------|---------------------|--------------|
@@ -6467,6 +9655,18 @@ scrollTo('body', {
 
 Seeded random number generator.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function seedRandom(
+    seed: number,
+    min?: number,
+    max?: number,
+    floating?: boolean
+): () => number;</code>
+</pre>
+</details>
+
 |Name         |Type    |Desc                                          |
 |-------------|--------|----------------------------------------------|
 |seed         |number  |Random seed                                   |
@@ -6485,6 +9685,13 @@ random(); // -> 68
 
 Selection sort implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function selectionSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc         |
 |------|--------|-------------|
 |arr   |array   |Array to sort|
@@ -6498,6 +9705,22 @@ selectionSort([2, 1]); // -> [1, 2]
 ## selector 
 
 Css selector parser and serializer.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace selector {
+    interface IToken {
+        type: string;
+        value: string;
+    }
+}
+ const selector: {
+    parse(selector: string): Array<selector.IToken[]>;
+    stringify(selector: Array<selector.IToken[]>): string;
+}</code>
+</pre>
+</details>
 
 ### parse
 
@@ -6527,6 +9750,13 @@ selector.stringify(groups);
 
 Shell sort implementation.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function shellSort(arr: any[], cmp?: Function): any[];</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc         |
 |------|--------|-------------|
 |arr   |array   |Array to sort|
@@ -6541,6 +9771,13 @@ shellSort([2, 1]); // -> [1, 2]
 
 Randomize the order of the elements in a given array.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function shuffle(arr: any[]): any[];</code>
+</pre>
+</details>
+
 |Name  |Type |Desc              |
 |------|-----|------------------|
 |arr   |array|Array to randomize|
@@ -6553,6 +9790,13 @@ shuffle([1, 2, 3]); // -> [3, 1, 2]
 ## size 
 
 Get size of object or length of array like object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function size(obj: any): number;</code>
+</pre>
+</details>
 
 |Name  |Type        |Desc                 |
 |------|------------|---------------------|
@@ -6567,6 +9811,13 @@ size([1, 2, 3]); // -> 3
 ## sizeof 
 
 Get approximate size of a js object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function sizeof(obj: any): number;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc               |
 |------|------|-------------------|
@@ -6589,6 +9840,13 @@ sizeof({ a: 'b' }); // -> 4
 
 Resolve a promise after a specified timeout.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function sleep(timeout: number): Promise<void>;</code>
+</pre>
+</details>
+
 |Name   |Type   |Desc         |
 |-------|-------|-------------|
 |timeout|number |Sleep timeout|
@@ -6603,6 +9861,13 @@ Resolve a promise after a specified timeout.
 
 Create slice of source array or array-like object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function slice(array: any[], start?: number, end?: number): any[];</code>
+</pre>
+</details>
+
 |Name              |Type  |Desc                      |
 |------------------|------|--------------------------|
 |array             |array |Array to slice            |
@@ -6616,6 +9881,16 @@ slice([1, 2, 3, 4], 1, 2); // -> [2]
 ## slugify 
 
 Slugify a string.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function slugify(
+    str: string,
+    replacement?: { [index: string]: string }
+): string;</code>
+</pre>
+</details>
 
 |Name         |Type  |Desc              |
 |-------------|------|------------------|
@@ -6632,6 +9907,13 @@ slugify('I ♥ pony', {' ': '_'}); // -> 'I_love_pony'
 
 Convert string to "snakeCase".
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function snakeCase(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc              |
 |------|------|------------------|
 |str   |string|String to convert |
@@ -6646,6 +9928,22 @@ snakeCase('foo.bar'); // -> foo_bar
 ## some 
 
 Check if predicate return truthy for any element.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function some<T>(
+    list: types.List<T>,
+    iterator?: types.ListIterator<T, boolean>,
+    context?: any
+): boolean;
+ function some<T>(
+    object: types.Dictionary<T>,
+    iterator?: types.ObjectIterator<T, boolean>,
+    context?: any
+): boolean;</code>
+</pre>
+</details>
 
 |Name     |Type        |Desc                                          |
 |---------|------------|----------------------------------------------|
@@ -6664,6 +9962,13 @@ some([2, 5], function (val) {
 
 Return an array of elements sorted in ascending order by results of running each element through iteratee.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function sortBy(arr: any, iterator?: Function, ctx?: any): any[];</code>
+</pre>
+</details>
+
 |Name               |Type        |Desc                      |
 |-------------------|------------|--------------------------|
 |arr                |object array|Collection to iterate over|
@@ -6680,6 +9985,19 @@ sortBy([1, 2, 3, 4, 5, 6], function (num) {
 ## sortKeys 
 
 Sort keys of an object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function sortKeys(
+    obj: object,
+    options?: {
+        deep?: boolean,
+        comparator?: Function
+    }
+): object;</code>
+</pre>
+</details>
 
 |Name   |Type  |Desc                   |
 |-------|------|-----------------------|
@@ -6704,6 +10022,13 @@ sortKeys({b: {d: 2, c: 1}, a: 0}, {
 
 Convert string to "spaceCase".
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function spaceCase(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc              |
 |------|------|------------------|
 |str   |string|String to convert |
@@ -6718,6 +10043,13 @@ spaceCase('foo.bar'); // -> foo bar
 ## splitCase 
 
 Split different string case to an array.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function splitCase(str: string): string[];</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc           |
 |------|------|---------------|
@@ -6737,6 +10069,20 @@ splitCase('foo-Bar'); // -> ['foo', 'bar']
 
 Split path into dir, name and ext.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace splitPath {
+    interface IPath {
+        dir: string;
+        name: string;
+        ext: string;
+    }
+}
+ function splitPath(path: string): splitPath.IPath;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                               |
 |------|------|-----------------------------------|
 |path  |string|Path to split                      |
@@ -6751,6 +10097,13 @@ splitPath('/home/foo/bar.txt'); // -> {dir: '/home/foo/', name: 'bar.txt', ext: 
 
 Get CallSite objects in v8.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function stackTrace(): any[];</code>
+</pre>
+</details>
+
 [Stack trace API](https://v8.dev/docs/stack-trace-api)
 
 ```javascript
@@ -6760,6 +10113,13 @@ stackTrace(); // -> List of CallSite objects
 ## startWith 
 
 Check if string starts with the given target string.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function startWith(str: string, prefix: string): boolean;</code>
+</pre>
+</details>
 
 |Name  |Type   |Desc                             |
 |------|-------|---------------------------------|
@@ -6775,6 +10135,13 @@ startWith('ab', 'a'); // -> true
 
 String hash function using djb2.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function strHash(str: string): number;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc          |
 |------|------|--------------|
 |str   |string|String to hash|
@@ -6787,6 +10154,16 @@ strHash('test'); // -> 2090770981
 ## strToBytes 
 
 Convert string into bytes.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function strToBytes(
+    str: string,
+    encoding?: string
+): number[];</code>
+</pre>
+</details>
 
 |Name         |Type  |Desc              |
 |-------------|------|------------------|
@@ -6804,6 +10181,13 @@ strToBytes('qK6b/w==', 'base64'); // -> [168, 174, 155, 255]
 ## stringify 
 
 JSON stringify with support for circular object, function etc.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function stringify(obj: any, spaces?: number): string;</code>
+</pre>
+</details>
 
 Undefined is treated as null value.
 
@@ -6823,6 +10207,26 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 ## stringifyAll 
 
 Stringify object into json with types.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace stringifyAll {
+    interface IOptions {
+        unenumerable?: boolean;
+        symbol?: boolean;
+        accessGetter?: boolean;
+        timeout?: number;
+        depth?: number;
+        ignore?: any[];
+    }
+}
+ function stringifyAll(
+    obj: any,
+    options?: stringifyAll.IOptions
+): string;</code>
+</pre>
+</details>
 
 |Name     |Type  |Desc               |
 |---------|------|-------------------|
@@ -6851,6 +10255,13 @@ stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"F
 
 Strip ansi codes from a string.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function stripAnsi(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc           |
 |------|------|---------------|
 |str   |string|String to strip|
@@ -6863,6 +10274,13 @@ stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
 ## stripCmt 
 
 Strip comments from source code.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function stripCmt(str: string): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                 |
 |------|------|---------------------|
@@ -6877,6 +10295,13 @@ stripCmt('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var
 
 Strip ansi color codes from a string.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function stripColor(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc           |
 |------|------|---------------|
 |str   |string|String to strip|
@@ -6890,6 +10315,13 @@ stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
 
 Strip html tags from a string.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function stripHtmlTag(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc           |
 |------|------|---------------|
 |str   |string|String to strip|
@@ -6902,6 +10334,17 @@ stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
 ## stripIndent 
 
 Strip indentation from multi-line strings.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function stripIndent(str: string): string;
+ function stripIndent(
+    literals: TemplateStringsArray,
+    ...placeholders: any[]
+): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc           |
 |------|------|---------------|
@@ -6922,6 +10365,13 @@ stripIndent`
 
 Strip number to a specified precision.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function stripNum(num: number, precision?: number): number;</code>
+</pre>
+</details>
+
 |Name        |Type  |Desc           |
 |------------|------|---------------|
 |num         |number|Number to strip|
@@ -6936,6 +10386,13 @@ stripNum(0.1 + 0.2); // -> 0.3
 
 Compute sum of given numbers.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function sum(...num: number[]): number;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc                |
 |------|------|--------------------|
 |...num|number|Numbers to calculate|
@@ -6948,6 +10405,13 @@ sum(1, 2, 5); // -> 8
 ## swap 
 
 Swap two items in an array.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function swap(arr: any[], a: number, b: number): any[];</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc         |
 |------|------|-------------|
@@ -6964,6 +10428,13 @@ swap(arr, 0, 1); // -> [2, 1]
 ## template 
 
 Compile JavaScript template into function that can be evaluated for rendering.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function template(str: string, util?: any): Function;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc                      |
 |------|--------|--------------------------|
@@ -6986,6 +10457,13 @@ template('<p><%= util["upperCase"](name) %></p>', {
 
 Return a new throttled version of the passed function.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function throttle(fn: Function, wait: number): Function;</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc                           |
 |------|--------|-------------------------------|
 |fn    |function|Function to throttle           |
@@ -7000,6 +10478,51 @@ const updatePos = throttle(function () {}, 100);
 ## through 
 
 Tiny wrapper of stream Transform.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">import stream = require('stream');
+ namespace through {
+    interface ThroughConstructor extends stream.Transform {
+        new (opts?: stream.DuplexOptions): stream.Transform;
+        (opts?: stream.DuplexOptions): stream.Transform;
+    }
+    type TransformCallback = (err?: any, data?: any) => void;
+    type TransformFunction = (
+        this: stream.Transform,
+        chunk: any, enc: string,
+        callback: TransformCallback
+    ) => void;
+    type FlushCallback = (
+        this: stream.Transform,
+        flushCallback: () => void
+    ) => void;
+    function obj(
+        transform?: TransformFunction,
+        flush?: FlushCallback
+    ): stream.Transform;
+    function ctor(
+        transform?: TransformFunction,
+        flush?: FlushCallback
+    ): ThroughConstructor;
+    function ctor(
+        opts?: stream.DuplexOptions,
+        transform?: TransformFunction,
+        flush?: FlushCallback
+    ): ThroughConstructor;
+}
+ function through(
+    transform?: through.TransformFunction,
+    flush?: through.FlushCallback
+): stream.Transform;
+ function through(
+    opts?: stream.DuplexOptions,
+    transform?: through.TransformFunction,
+    flush?: through.FlushCallback
+): stream.Transform;</code>
+</pre>
+</details>
 
 |Name     |Type    |Desc                        |
 |---------|--------|----------------------------|
@@ -7029,6 +10552,13 @@ fs.createReadStream('in.txt')
 
 Format datetime with *** time ago statement.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function timeAgo(date: Date | number, now?: Date | number): string;</code>
+</pre>
+</details>
+
 |Name          |Type  |Desc                     |
 |--------------|------|-------------------------|
 |date          |Date  |Date to calculate        |
@@ -7046,6 +10576,13 @@ timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
 
 Get execution time of a function.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function timeTaken(fn: Function): number;</code>
+</pre>
+</details>
+
 |Name  |Type    |Desc                    |
 |------|--------|------------------------|
 |fn    |function|Function to measure time|
@@ -7060,6 +10597,13 @@ timeTaken(function () {
 ## times 
 
 Invoke given function n times.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function times<T>(n: number, fn: (n: number) => T, ctx?: any): T[];</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc                          |
 |------|--------|------------------------------|
@@ -7076,6 +10620,13 @@ times(3, String); // -> ['0', '1', '2']
 
 Convert value to an array.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function toArr(val: any): any[];</code>
+</pre>
+</details>
+
 |Name  |Type |Desc            |
 |------|-----|----------------|
 |val   |*    |Value to convert|
@@ -7091,6 +10642,13 @@ toArr(null); // -> []
 ## toAsync 
 
 Use generator like async/await.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function toAsync(fn: Function): Function;</code>
+</pre>
+</details>
 
 |Name  |Type             |Desc              |
 |------|-----------------|------------------|
@@ -7112,6 +10670,13 @@ fn().then(str => {});
 
 Convert value to a boolean.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function toBool(val: any): boolean;</code>
+</pre>
+</details>
+
 |Name  |Type   |Desc             |
 |------|-------|-----------------|
 |val   |*      |Value to convert |
@@ -7131,6 +10696,13 @@ toBool('false'); // -> false
 
 Convert value to a Date.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function toDate(val: any): Date;</code>
+</pre>
+</details>
+
 |Name  |Type|Desc            |
 |------|----|----------------|
 |val   |*   |Value to convert|
@@ -7145,6 +10717,13 @@ toDate(1525107450849);
 ## toEl 
 
 Convert html string to dom elements.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function toEl(str: string): Element;</code>
+</pre>
+</details>
 
 There should be only one root element.
 
@@ -7161,6 +10740,13 @@ toEl('<div>test</div>');
 
 Convert value to an integer.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function toInt(val: any): number;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc             |
 |------|------|-----------------|
 |val   |*     |Value to convert |
@@ -7175,6 +10761,13 @@ toInt(undefined); // -> 0
 
 Convert value to a number.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function toNum(val: any): number;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc            |
 |------|------|----------------|
 |val   |*     |Value to process|
@@ -7187,6 +10780,13 @@ toNum('5'); // -> 5
 ## toSrc 
 
 Convert function to its source code.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function toSrc(fn: Function): string;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc               |
 |------|--------|-------------------|
@@ -7201,6 +10801,13 @@ toSrc(function () {}) // -> 'function () { }'
 ## toStr 
 
 Convert value to a string.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function toStr(val: any): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc            |
 |------|------|----------------|
@@ -7218,6 +10825,13 @@ toStr([1, 2, 3]); // -> '1,2,3'
 
 Topological sorting algorithm.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function topoSort(edges: any[]): any[];</code>
+</pre>
+</details>
+
 |Name  |Type |Desc        |
 |------|-----|------------|
 |edges |array|Dependencies|
@@ -7230,6 +10844,14 @@ topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
 ## trigger 
 
 Trigger browser events.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function trigger(el: Element, type: string, options?: any);
+ function trigger(type: string, options?: any);</code>
+</pre>
+</details>
 
 |Name         |Type   |Desc              |
 |-------------|-------|------------------|
@@ -7245,6 +10867,13 @@ trigger('keydown', {keyCode: 65});
 ## trim 
 
 Remove chars or white-spaces from beginning end of string.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function trim(str: string, chars?: string | string[]): string;</code>
+</pre>
+</details>
 
 |Name  |Type        |Desc              |
 |------|------------|------------------|
@@ -7262,6 +10891,13 @@ trim('_abc_', ['a', 'c', '_']); // -> 'b'
 
 Run function in a try catch.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function tryIt(fn: Function, cb?: Function): void;</code>
+</pre>
+</details>
+
 |Name|Type    |Desc                 |
 |----|--------|---------------------|
 |fn  |function|Function to try catch|
@@ -7278,6 +10914,13 @@ tryIt(function () {
 ## type 
 
 Determine the internal JavaScript [[Class]] of an object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function type(val: any, lowerCase?: boolean): string;</code>
+</pre>
+</details>
 
 |Name          |Type   |Desc             |
 |--------------|-------|-----------------|
@@ -7298,9 +10941,48 @@ type(async function () {}, false); // -> 'AsyncFunction'
 
 Used for typescript definitions only.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace types {
+    interface Collection<T> {}
+    interface List<T> extends Collection<T> {
+        [index: number]: T;
+        length: number;
+    }
+    interface ListIterator<T, TResult> {
+        (value: T, index: number, list: List<T>): TResult;
+    }
+    interface Dictionary<T> extends Collection<T> {
+        [index: string]: T;
+    }
+    interface ObjectIterator<T, TResult> {
+        (element: T, key: string, list: Dictionary<T>): TResult;
+    }
+    interface MemoIterator<T, TResult> {
+        (prev: TResult, curr: T, index: number, list: List<T>): TResult;
+    }
+    interface MemoObjectIterator<T, TResult> {
+        (prev: TResult, curr: T, key: string, list: Dictionary<T>): TResult;
+    }
+}
+ const types: {}</code>
+</pre>
+</details>
+
 ## ucs2 
 
 UCS-2 encoding and decoding.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const ucs2: {
+    encode(arr: number[]): string;
+    decode(str: string): number[];
+};</code>
+</pre>
+</details>
 
 ### encode
 
@@ -7330,6 +11012,19 @@ ucs2.decode('𝌆').length; // -> 1
 ## uncaught 
 
 Handle global uncaught errors and promise rejections.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const uncaught: {
+    start(): void;
+    stop(): void;
+    addListener(fn: (err: Error) => void): void;
+    rmListener(fn: (err: Error) => void): void;
+    rmAllListeners(): void;
+};</code>
+</pre>
+</details>
 
 ### start
 
@@ -7366,6 +11061,13 @@ uncaught.addListener(err => {
 
 Convert HTML entities back, the inverse of escape.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function unescape(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc              |
 |------|------|------------------|
 |str   |string|String to unescape|
@@ -7378,6 +11080,13 @@ unescape('You &amp; Me'); // -> 'You & Me'
 ## union 
 
 Create an array of unique values, in order, from all given arrays.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function union(...arr: Array<any[]>): any[];</code>
+</pre>
+</details>
 
 |Name  |Type |Desc                        |
 |------|-----|----------------------------|
@@ -7392,6 +11101,13 @@ union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
 
 Generate a globally-unique id.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function uniqId(prefix?: string): string;</code>
+</pre>
+</details>
+
 |Name    |Type  |Desc              |
 |--------|------|------------------|
 |[prefix]|string|Id prefix         |
@@ -7404,6 +11120,16 @@ uniqId('eusita_'); // -> 'eustia_xxx'
 ## unique 
 
 Create duplicate-free version of an array.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function unique(
+    arr: any[],
+    cmp?: (a: any, b: any) => boolean | number
+): any[];</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc                         |
 |------|--------|-----------------------------|
@@ -7418,6 +11144,13 @@ unique([1, 2, 3, 1]); // -> [1, 2, 3]
 ## universalify 
 
 Make an async function support both promises and callbacks.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function universalify(fn: Function, type: string): Function;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc                            |
 |------|--------|--------------------------------|
@@ -7443,6 +11176,13 @@ fn('licia').then(result => {
 
 Opposite of zip.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">declare function unzip(arr: Array<any[]>): Array<any[]>;</code>
+</pre>
+</details>
+
 |Name  |Type |Desc                                |
 |------|-----|------------------------------------|
 |arr   |array|Array of grouped elements to process|
@@ -7455,6 +11195,13 @@ unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, fals
 ## upperCase 
 
 Convert string to upper case.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function upperCase(str: string): string;</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc             |
 |------|------|-----------------|
@@ -7469,6 +11216,13 @@ upperCase('test'); // -> 'TEST'
 
 Convert the first character of string to upper case.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function upperFirst(str: string): string;</code>
+</pre>
+</details>
+
 |Name  |Type  |Desc             |
 |------|------|-----------------|
 |str   |string|String to convert|
@@ -7481,6 +11235,14 @@ upperFirst('red'); // -> Red
 ## use 
 
 Use modules that is created by define.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function use(requires: string[], method: Function): void;
+ function use(method: Function): void;</code>
+</pre>
+</details>
 
 |Name      |Type    |Desc                |
 |----------|--------|--------------------|
@@ -7497,6 +11259,16 @@ use(['A'], function (A) {
 ## utf8 
 
 UTF-8 encoding and decoding.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const utf8: {
+    encode(str: string): string;
+    decode(str: string, safe?: boolean): string;
+};</code>
+</pre>
+</details>
 
 ### encode
 
@@ -7526,6 +11298,13 @@ utf8.decode('\xF0\x90\x80\x80'); // -> '\uD800\uDC00'
 
 RFC4122 version 4 compliant uuid generator.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function uuid(): string;</code>
+</pre>
+</details>
+
 Check [RFC4122 4.4](http://www.ietf.org/rfc/rfc4122.txt) for reference.
 
 ```javascript
@@ -7535,6 +11314,13 @@ uuid(); // -> '53ce0497-6554-49e9-8d79-347406d2a88b'
 ## values 
 
 Create an array of the own enumerable property values of object.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function values(obj: any): any[];</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc                    |
 |------|------|------------------------|
@@ -7549,6 +11335,13 @@ values({one: 1, two: 2}); // -> [1, 2]
 
 Get viewport scale.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function viewportScale(): number;</code>
+</pre>
+</details>
+
 ```javascript
 viewportScale(); // -> 3
 ```
@@ -7556,6 +11349,16 @@ viewportScale(); // -> 3
 ## vlq 
 
 Variable-length quantity encoding and decoding.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const vlq: {
+    encode(number: number | number[]): string;
+    decode(string: string): number[];
+};</code>
+</pre>
+</details>
 
 ### encode
 
@@ -7586,6 +11389,17 @@ vlq.decode('2HwcqxB'); // -> [123, 456, 789]
 
 Wait until function returns a truthy value.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function waitUntil(
+    condition: Function,
+    timeout?: number,
+    interval?: number
+): Promise<any>;</code>
+</pre>
+</details>
+
 |Name          |Type    |Desc              |
 |--------------|--------|------------------|
 |condition     |function|Condition function|
@@ -7603,6 +11417,13 @@ waitUntil(() => a === 10).then(() => {
 ## waterfall 
 
 Run an array of functions in series.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function waterfall(tasks: Function[], cb?: Function): void;</code>
+</pre>
+</details>
 
 |Name |Type    |Desc                   |
 |-----|--------|-----------------------|
@@ -7627,6 +11448,13 @@ waterfall([
 
 Convert 32-bit words to bytes.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function wordsToBytes(words: number[]): number[];</code>
+</pre>
+</details>
+
 |Name  |Type |Desc      |
 |------|-----|----------|
 |words |array|word array|
@@ -7639,6 +11467,13 @@ wordsToBytes([0x12345678]); // -> [0x12, 0x34, 0x56, 0x78]
 ## workerize 
 
 Move a stand-alone function to a worker thread.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function workerize(fn: Function): Function;</code>
+</pre>
+</details>
 
 |Name  |Type    |Desc               |
 |------|--------|-------------------|
@@ -7658,6 +11493,13 @@ worker(1, 2).then(function (value) {
 
 Wrap the function inside a wrapper function, passing it as the first argument.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function wrap(fn: Function, wrapper: Function): Function;</code>
+</pre>
+</details>
+
 |Name   |Type    |Desc            |
 |-------|--------|----------------|
 |fn     |function|Function to wrap|
@@ -7675,6 +11517,13 @@ p('You & Me'); // -> '<p>You &amp; Me</p>'
 
 Promised version of mini program wx object.
 
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const wx: any;</code>
+</pre>
+</details>
+
 ```javascript
 wx.getStorage('test').then(res => {
     console.log(res.data);
@@ -7684,6 +11533,13 @@ wx.getStorage('test').then(res => {
 ## xpath 
 
 Select elements using xpath, IE is not supported.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function xpath(xpath: string): HTMLElement[];</code>
+</pre>
+</details>
 
 |Name  |Type  |Desc           |
 |------|------|---------------|
@@ -7697,6 +11553,13 @@ xpath('//html/body'); // -> [body]
 ## zip 
 
 Merge together the values of each of the arrays with the values at the corresponding position.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function zip(...arr: Array<any[]>): Array<any[]>;</code>
+</pre>
+</details>
 
 |Name  |Type |Desc                         |
 |------|-----|-----------------------------|
