@@ -1,9 +1,9 @@
 /* Convert string to "dotCase".
  *
- * |Name  |Type  |Desc             |
- * |------|------|-----------------|
- * |str   |string|String to convert|
- * |return|string|Dot cased string |
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |str   |String to convert|
+ * |return|Dot cased string |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

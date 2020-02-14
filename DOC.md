@@ -2508,11 +2508,11 @@ Make an object map using array of strings.
 </pre>
 </details>
 
-|Name    |Type  |Desc            |
-|--------|------|----------------|
-|arr     |array |Array of strings|
-|val=true|*     |Key value       |
-|return  |object|Object map      |
+|Name    |Desc            |
+|--------|----------------|
+|arr     |Array of strings|
+|val=true|Key value       |
+|return  |Object map      |
 
 ```javascript
 const needPx = arrToMap([
@@ -2635,12 +2635,12 @@ Binary search implementation.
 </pre>
 </details>
 
-|Name  |Type    |Desc         |
-|------|--------|-------------|
-|array |array   |Sorted array |
-|value |*       |Value to seek|
-|[cmp] |function|Comparator   |
-|return|number  |Value index  |
+|Name  |Desc         |
+|------|-------------|
+|array |Sorted array |
+|value |Value to seek|
+|cmp   |Comparator   |
+|return|Value index  |
 
 ```javascript
 binarySearch([1, 2, 3], 2); // -> 1
@@ -2713,11 +2713,11 @@ Bubble sort implementation.
 </pre>
 </details>
 
-|Name  |Type    |Desc         |
-|------|--------|-------------|
-|arr   |array   |Array to sort|
-|[cmp] |function|Comparator   |
-|return|array   |Sorted array |
+|Name  |Desc         |
+|------|-------------|
+|arr   |Array to sort|
+|cmp   |Comparator   |
+|return|Sorted array |
 
 ```javascript
 bubbleSort([2, 1]); // -> [1, 2]
@@ -2853,11 +2853,11 @@ Cast value into a property path array.
 </pre>
 </details>
 
-|Name  |Type        |Desc               |
-|------|------------|-------------------|
-|path  |string array|Value to inspect   |
-|[obj] |object      |Object to query    |
-|return|array       |Property path array|
+|Name  |Desc               |
+|------|-------------------|
+|path  |Value to inspect   |
+|obj   |Object to query    |
+|return|Property path array|
 
 ```javascript
 castPath('a.b.c'); // -> ['a', 'b', 'c']
@@ -2877,11 +2877,11 @@ Center align text in a string.
 </pre>
 </details>
 
-|Name   |Type        |Desc                    |
-|-------|------------|------------------------|
-|str    |string array|String to align         |
-|[width]|number      |Total width of each line|
-|return |string      |Center aligned string   |
+|Name  |Desc                    |
+|------|------------------------|
+|str   |String to align         |
+|width |Total width of each line|
+|return|Center aligned string   |
 
 ```javascript
 centerAlign('test', 8); // -> '  test'
@@ -2900,10 +2900,10 @@ Return string representing a character whose Unicode code point is the given int
 </pre>
 </details>
 
-|Name  |Type  |Desc                                  |
-|------|------|--------------------------------------|
-|num   |number|Integer to convert                    |
-|return|string|String representing corresponding char|
+|Name  |Desc                                  |
+|------|--------------------------------------|
+|num   |Integer to convert                    |
+|return|String representing corresponding char|
 
 ```javascript
 char(65); // -> 'A'
@@ -2921,11 +2921,11 @@ Split array into groups the length of given size.
 </pre>
 </details>
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|arr   |array |Array to process    |
-|size=1|number|Length of each chunk|
-|return|array |Chunks of given size|
+|Name  |Desc                |
+|------|--------------------|
+|arr   |Array to process    |
+|size=1|Length of each chunk|
+|return|Chunks of given size|
 
 ```javascript
 chunk([1, 2, 3, 4], 2); // -> [[1, 2], [3, 4]]
@@ -2945,12 +2945,12 @@ function clamp(n: number, upper: number): number;</code>
 </pre>
 </details>
 
-|Name   |Type  |Desc           |
-|-------|------|---------------|
-|n      |number|Number to clamp|
-|[lower]|number|Lower bound    |
-|upper  |number|Upper bound    |
-|return |number|Clamped number |
+|Name  |Desc           |
+|------|---------------|
+|n     |Number to clamp|
+|lower |Lower bound    |
+|upper |Upper bound    |
+|return|Clamped number |
 
 ```javascript
 clamp(-10, -5, 5); // -> -5
@@ -2971,10 +2971,10 @@ Utility for conditionally joining class names.
 </pre>
 </details>
 
-|Name    |Type               |Desc              |
-|--------|-------------------|------------------|
-|...class|string object array|Class names       |
-|return  |string             |Joined class names|
+|Name    |Desc              |
+|--------|------------------|
+|...class|Class names       |
+|return  |Joined class names|
 
 ```javascript
 className('a', 'b', 'c'); // -> 'a b c'
@@ -2997,10 +2997,10 @@ Create a shallow-copied clone of the provided plain object.
 
 Any nested objects or arrays will be copied by reference, not duplicated.
 
-|Name  |Type|Desc          |
-|------|----|--------------|
-|val   |*   |Value to clone|
-|return|*   |Cloned value  |
+|Name  |Desc          |
+|------|--------------|
+|val   |Value to clone|
+|return|Cloned value  |
 
 ```javascript
 clone({name: 'eustia'}); // -> {name: 'eustia'}
@@ -3017,10 +3017,10 @@ Recursively clone value.
 </pre>
 </details>
 
-|Name  |Type|Desc             |
-|------|----|-----------------|
-|val   |*   |Value to clone   |
-|return|*   |Deep cloned Value|
+|Name  |Desc             |
+|------|-----------------|
+|val   |Value to clone   |
+|return|Deep cloned Value|
 
 ```javascript
 const obj = [{a: 1}, {a: 2}];
@@ -3039,11 +3039,11 @@ Compare version strings.
 </pre>
 </details>
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|v1    |string|Version to compare|
-|v2    |string|Version to compare|
-|return|number|Comparison result |
+|Name  |Desc              |
+|------|------------------|
+|v1    |Version to compare|
+|v2    |Version to compare|
+|return|Comparison result |
 
 ```javascript
 cmpVersion('1.1.8', '1.0.4'); // -> 1
@@ -3064,11 +3064,11 @@ Create an array by using one array for keys and another for its values.
 </pre>
 </details>
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|keys  |array |Keys to be used  |
-|values|array |Values to be used|
-|return|object|Created object   |
+|Name  |Desc             |
+|------|-----------------|
+|keys  |Keys to be used  |
+|values|Values to be used|
+|return|Created object   |
 
 ```javascript
 combine(['a', 'b', 'c'], [1, 2, 3]); // -> {a: 1, b: 2, c: 3}
@@ -3087,10 +3087,10 @@ Return a copy of the array with all falsy values removed.
 
 The values false, null, 0, "", undefined, and NaN are falsey.
 
-|Name  |Type |Desc                        |
-|------|-----|----------------------------|
-|arr   |array|Array to compact            |
-|return|array|New array of filtered values|
+|Name  |Desc                        |
+|------|----------------------------|
+|arr   |Array to compact            |
+|return|New array of filtered values|
 
 ```javascript
 compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
@@ -3109,10 +3109,10 @@ Compose a list of functions.
 
 Each function consumes the return value of the function that follows.
 
-|Name  |Type    |Desc                |
-|------|--------|--------------------|
-|...fn |function|Functions to compose|
-|return|function|Composed function   |
+|Name  |Desc                |
+|------|--------------------|
+|...fn |Functions to compose|
+|return|Composed function   |
 
 ```javascript
 const welcome = compose(function (name) {
@@ -3191,10 +3191,10 @@ Concat multiple arrays into a single array.
 </pre>
 </details>
 
-|Name  |Type |Desc              |
-|------|-----|------------------|
-|...arr|array|Arrays to concat  |
-|return|array|Concatenated array|
+|Name  |Desc              |
+|------|------------------|
+|...arr|Arrays to concat  |
+|return|Concatenated array|
 
 ```javascript
 concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
@@ -3214,11 +3214,11 @@ Check if the value is present in the list.
 </pre>
 </details>
 
-|Name  |Type               |Desc                                |
-|------|-------------------|------------------------------------|
-|target|array object string|Target object                       |
-|value |*                  |Value to check                      |
-|return|boolean            |True if value is present in the list|
+|Name  |Desc                                |
+|------|------------------------------------|
+|target|Target object                       |
+|value |Value to check                      |
+|return|True if value is present in the list|
 
 ```javascript
 contain([1, 2, 3], 1); // -> true
@@ -3241,12 +3241,12 @@ Convert base of a number.
 </pre>
 </details>
 
-|Name  |Type         |Desc             |
-|------|-------------|-----------------|
-|num   |number string|Number to convert|
-|from  |number       |Base from        |
-|to    |number       |Base to          |
-|return|string       |Converted number |
+|Name  |Desc             |
+|------|-----------------|
+|num   |Number to convert|
+|from  |Base from        |
+|to    |Base to          |
+|return|Converted number |
 
 ```javascript
 convertBase('10', 2, 10); // -> '2'
@@ -3267,11 +3267,11 @@ function convertBin(bin: any, type: string): any;</code>
 </pre>
 </details>
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
-|bin   |*     |Binary data to convert|
-|type  |string|Binary type           |
-|return|*     |Target binary         |
+|Name  |Desc                  |
+|------|----------------------|
+|bin   |Binary data to convert|
+|type  |Binary type           |
+|return|Target binary         |
 
 ### Supported binary type
 
@@ -3283,10 +3283,10 @@ You can not convert Blob to other types directly since it's an asynchronous proc
 
 Convert Blob to ArrayBuffer.
 
-|Name  |Type   |Desc               |
-|------|-------|-------------------|
-|blob  |Blob   |Blob to convert    |
-|return|Promise|ArrayBuffer promise|
+|Name  |Desc               |
+|------|-------------------|
+|blob  |Blob to convert    |
+|return|ArrayBuffer promise|
 
 ```javascript
 convertBin('qK6b/w==', 'Uint8Array'); // -> [168, 174, 155, 255]
@@ -3366,10 +3366,10 @@ Copy text to clipboard using document.execCommand.
 </pre>
 </details>
 
-|Name|Type    |Desc             |
-|----|--------|-----------------|
-|text|string  |Text to copy     |
-|[cb]|function|Optional callback|
+|Name|Desc             |
+|----|-----------------|
+|text|Text to copy     |
+|cb  |Optional callback|
 
 ```javascript
 copy('text', function (err) {
@@ -3603,11 +3603,11 @@ Check if browser supports a given CSS feature.
 </pre>
 </details>
 
-|Name  |Type   |Desc              |
-|------|-------|------------------|
-|name  |string |Css property name |
-|[val] |string |Css property value|
-|return|boolean|True if supports  |
+|Name  |Desc              |
+|------|------------------|
+|name  |Css property name |
+|val   |Css property value|
+|return|True if supports  |
 
 ```javascript
 cssSupports('display', 'flex'); // -> true
@@ -3628,10 +3628,10 @@ Function currying.
 </pre>
 </details>
 
-|Name  |Type    |Desc                |
-|------|--------|--------------------|
-|fn    |function|Function to curry   |
-|return|function|New curried function|
+|Name  |Desc                |
+|------|--------------------|
+|fn    |Function to curry   |
+|return|New curried function|
 
 ```javascript
 const add = curry(function (a, b) { return a + b });
@@ -3715,11 +3715,11 @@ Return a new debounced version of the passed function.
 </pre>
 </details>
 
-|Name  |Type    |Desc                           |
-|------|--------|-------------------------------|
-|fn    |function|Function to debounce           |
-|wait  |number  |Number of milliseconds to delay|
-|return|function|New debounced function         |
+|Name  |Desc                           |
+|------|-------------------------------|
+|fn    |Function to debounce           |
+|wait  |Number of milliseconds to delay|
+|return|New debounced function         |
 
 ```javascript
 const calLayout = debounce(function () {}, 300);
@@ -3737,10 +3737,10 @@ A tiny JavaScript debugging utility.
 </pre>
 </details>
 
-|Name  |Type    |Desc                           |
-|------|--------|-------------------------------|
-|name  |string  |Namespace                      |
-|return|function|Function to print decorated log|
+|Name  |Desc                           |
+|------|-------------------------------|
+|name  |Namespace                      |
+|return|Function to print decorated log|
 
 ```javascript
 const d = debug('test');
@@ -3759,10 +3759,10 @@ Convert Latin-1 Supplement and Latin Extended-A letters to basic Latin letters a
 </pre>
 </details>
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|str   |string|String to deburr|
-|return|string|Deburred string |
+|Name  |Desc            |
+|------|----------------|
+|str   |String to deburr|
+|return|Deburred string |
 
 ```javascript
 deburr('déjà vu'); // -> 'deja vu'
@@ -3779,10 +3779,10 @@ Better decodeURIComponent that does not throw if input is invalid.
 </pre>
 </details>
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|str   |string|String to decode|
-|return|string|Decoded string  |
+|Name  |Desc            |
+|------|----------------|
+|str   |String to decode|
+|return|Decoded string  |
 
 ```javascript
 decodeUriComponent('%%25%'); // -> '%%%'
@@ -3800,11 +3800,11 @@ Fill in undefined properties in object with the first value present in the follo
 </pre>
 </details>
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|obj   |object|Destination object|
-|*src  |object|Sources objects   |
-|return|object|Destination object|
+|Name  |Desc              |
+|------|------------------|
+|obj   |Destination object|
+|...src|Sources objects   |
+|return|Destination object|
 
 ```javascript
 defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood', age: 24}
@@ -3914,10 +3914,10 @@ Return the first argument that is not undefined.
 </pre>
 </details>
 
-|Name   |Type|Desc                  |
-|-------|----|----------------------|
-|...args|*   |Arguments to check    |
-|return |*   |First defined argument|
+|Name   |Desc                  |
+|-------|----------------------|
+|...args|Arguments to check    |
+|return |First defined argument|
 
 ```javascript
 defined(false, 2, void 0, 100); // -> false
@@ -3934,9 +3934,9 @@ Delete node.js require cache.
 </pre>
 </details>
 
-|Name|Type  |Desc               |
-|----|------|-------------------|
-|id  |string|Module name or path|
+|Name|Desc               |
+|----|-------------------|
+|id  |Module name or path|
 
 ```javascript
 const licia = require('licia');
@@ -3956,11 +3956,11 @@ Invoke function after certain milliseconds.
 </pre>
 </details>
 
-|Name     |Type    |Desc                                      |
-|---------|--------|------------------------------------------|
-|fn       |function|Function to delay                         |
-|wait     |number  |Number of milliseconds to delay invocation|
-|[...args]|*       |Arguments to invoke fn with               |
+|Name   |Desc                                      |
+|-------|------------------------------------------|
+|fn     |Function to delay                         |
+|wait   |Number of milliseconds to delay invocation|
+|...args|Arguments to invoke fn with               |
 
 ```javascript
 delay(function (text) {
@@ -3987,12 +3987,12 @@ Event delegation.
 
 Add event delegation.
 
-|Name    |Type    |Desc          |
-|--------|--------|--------------|
-|el      |element |Parent element|
-|type    |string  |Event type    |
-|selector|string  |Match selector|
-|cb      |function|Event callback|
+|Name    |Desc          |
+|--------|--------------|
+|el      |Parent element|
+|type    |Event type    |
+|selector|Match selector|
+|cb      |Event callback|
 
 ### remove
 
@@ -4018,11 +4018,11 @@ Node.js util.deprecate with browser support.
 </pre>
 </details>
 
-|Name  |Type    |Desc                     |
-|------|--------|-------------------------|
-|fn    |function|Function to be deprecated|
-|msg   |string  |Warning message          |
-|return|function|Deprecated function      |
+|Name  |Desc                     |
+|------|-------------------------|
+|fn    |Function to be deprecated|
+|msg   |Warning message          |
+|return|Deprecated function      |
 
 ```javascript
 const fn = () => {};
@@ -4047,10 +4047,10 @@ function detectBrowser(ua?: string): detectBrowser.IBrowser;</code>
 </pre>
 </details>
 
-|Name                  |Type  |Desc                              |
-|----------------------|------|----------------------------------|
-|ua=navigator.userAgent|string|Browser userAgent                 |
-|return                |object|Object containing name and version|
+|Name                  |Desc                              |
+|----------------------|----------------------------------|
+|ua=navigator.userAgent|Browser userAgent                 |
+|return                |Object containing name and version|
 
 Browsers supported: ie, chrome, edge, firefox, opera, safari, ios(mobile safari), android(android browser)
 
@@ -4087,10 +4087,10 @@ Detect operating system using ua.
 </pre>
 </details>
 
-|Name                  |Type  |Desc                 |
-|----------------------|------|---------------------|
-|ua=navigator.userAgent|string|Browser userAgent    |
-|return                |string|Operating system name|
+|Name                  |Desc                 |
+|----------------------|---------------------|
+|ua=navigator.userAgent|Browser userAgent    |
+|return                |Operating system name|
 
 Supported os: windows, os x, linux, ios, android, windows phone
 
@@ -4111,11 +4111,11 @@ Create an array of unique array values not included in the other given array.
 </pre>
 </details>
 
-|Name     |Type |Desc                        |
-|---------|-----|----------------------------|
-|arr      |array|Array to inspect            |
-|[...rest]|array|Values to exclude           |
-|return   |array|New array of filtered values|
+|Name   |Desc                        |
+|-------|----------------------------|
+|arr    |Array to inspect            |
+|...rest|Values to exclude           |
+|return |New array of filtered values|
 
 ```javascript
 difference([3, 2, 1], [4, 2]); // -> [3, 1]
@@ -4132,10 +4132,10 @@ Convert string to "dotCase".
 </pre>
 </details>
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|str   |string|String to convert|
-|return|string|Dot cased string |
+|Name  |Desc             |
+|------|-----------------|
+|str   |String to convert|
+|return|Dot cased string |
 
 ```javascript
 dotCase('fooBar'); // -> foo.bar
@@ -4264,10 +4264,10 @@ Easing functions adapted from http://jqueryui.com/ .
 </pre>
 </details>
 
-|Name   |Type  |Desc                  |
-|-------|------|----------------------|
-|percent|number|Number between 0 and 1|
-|return |number|Calculated number     |
+|Name   |Desc                  |
+|-------|----------------------|
+|percent|Number between 0 and 1|
+|return |Calculated number     |
 
 ```javascript
 easing.linear(0.5); // -> 0.5
@@ -4285,9 +4285,9 @@ Emulate touch events on desktop browsers.
 </pre>
 </details>
 
-|Name|Type   |Desc          |
-|----|-------|--------------|
-|el  |Element|Target element|
+|Name|Desc          |
+|----|--------------|
+|el  |Target element|
 
 ```javascript
 const el = document.querySelector('#test');
@@ -4349,10 +4349,10 @@ Escape string to be a valid JavaScript string literal between quotes.
 
 http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|str   |string|String to escape|
-|return|string|Escaped string  |
+|Name  |Desc            |
+|------|----------------|
+|str   |String to escape|
+|return|Escaped string  |
 
 ```javascript
 escapeJsStr('\"\n'); // -> '\\"\\\\n'
@@ -4389,9 +4389,9 @@ Load css into page.
 </pre>
 </details>
 
-|Name|Type  |Desc    |
-|----|------|--------|
-|css |string|Css code|
+|Name|Desc    |
+|----|--------|
+|css |Css code|
 
 ```javascript
 evalCss('body{background:#08c}');
@@ -4462,11 +4462,11 @@ Copy all of the properties in the source objects over to the destination object.
 </pre>
 </details>
 
-|Name       |Type  |Desc              |
-|-----------|------|------------------|
-|destination|object|Destination object|
-|...sources |object|Sources objects   |
-|return     |object|Destination object|
+|Name       |Desc              |
+|-----------|------------------|
+|destination|Destination object|
+|...sources |Sources objects   |
+|return     |Destination object|
 
 ```javascript
 extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
@@ -4638,10 +4638,10 @@ Calculate fibonacci number.
 </pre>
 </details>
 
-|Name  |Type  |Desc                       |
-|------|------|---------------------------|
-|n     |number|Index of fibonacci sequence|
-|return|number|Expected fibonacci number  |
+|Name  |Desc                       |
+|------|---------------------------|
+|n     |Index of fibonacci sequence|
+|return|Expected fibonacci number  |
 
 ```javascript
 fibonacci(1); // -> 1
@@ -4659,10 +4659,10 @@ Turn bytes into human readable file size.
 </pre>
 </details>
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|bytes |number|File bytes        |
-|return|string|Readable file size|
+|Name  |Desc              |
+|------|------------------|
+|bytes |File bytes        |
+|return|Readable file size|
 
 ```javascript
 fileSize(5); // -> '5'
@@ -5787,10 +5787,10 @@ Compute the list of values that are the intersection of all the arrays.
 </pre>
 </details>
 
-|Name  |Type |Desc                          |
-|------|-----|------------------------------|
-|...arr|array|Arrays to inspect             |
-|return|array|New array of inspecting values|
+|Name  |Desc                          |
+|------|------------------------------|
+|...arr|Arrays to inspect             |
+|return|New array of inspecting values|
 
 ```javascript
 intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
@@ -5913,10 +5913,10 @@ Check if value is classified as an arguments object.
 </pre>
 </details>
 
-|Name  |Type   |Desc                                |
-|------|-------|------------------------------------|
-|val   |*      |Value to check                      |
-|return|boolean|True if value is an arguments object|
+|Name  |Desc                                |
+|------|------------------------------------|
+|val   |Value to check                      |
+|return|True if value is an arguments object|
 
 ```javascript
 (function () {
@@ -6107,13 +6107,13 @@ Check if values are close(almost equal) to each other.
 
 `abs(a-b) <= max(relTol * max(abs(a), abs(b)), absTol)`
 
-|Name       |Type   |Desc                    |
-|-----------|-------|------------------------|
-|a          |number |Number to compare       |
-|b          |number |Number to compare       |
-|relTol=1e-9|number |Relative tolerance      |
-|absTol=0   |number |Absolute tolerance      |
-|return     |boolean|True if values are close|
+|Name       |Desc                    |
+|-----------|------------------------|
+|a          |Number to compare       |
+|b          |Number to compare       |
+|relTol=1e-9|Relative tolerance      |
+|absTol=0   |Absolute tolerance      |
+|return     |True if values are close|
 
 ```javascript
 isClose(1, 1.0000000001); // -> true
@@ -6189,10 +6189,10 @@ Check if value is a DOM element.
 </pre>
 </details>
 
-|Name  |Type   |Desc                          |
-|------|-------|------------------------------|
-|val   |*      |Value to check                |
-|return|boolean|True if value is a DOM element|
+|Name  |Desc                          |
+|------|------------------------------|
+|val   |Value to check                |
+|return|True if value is a DOM element|
 
 ```javascript
 isEl(document.body); // -> true
@@ -6229,10 +6229,10 @@ Check if value is an empty object or array.
 </pre>
 </details>
 
-|Name  |Type   |Desc                  |
-|------|-------|----------------------|
-|val   |*      |Value to check        |
-|return|boolean|True if value is empty|
+|Name  |Desc                  |
+|------|----------------------|
+|val   |Value to check        |
+|return|True if value is empty|
 
 ```javascript
 isEmpty([]); // -> true
@@ -10926,11 +10926,11 @@ Determine the internal JavaScript [[Class]] of an object.
 </pre>
 </details>
 
-|Name          |Type   |Desc             |
-|--------------|-------|-----------------|
-|val           |*      |Value to get type|
-|lowerCase=true|boolean|LowerCase result |
-|return        |string |Type of object   |
+|Name          |Desc             |
+|--------------|-----------------|
+|val           |Value to get type|
+|lowerCase=true|LowerCase result |
+|return        |Type of object   |
 
 ```javascript
 type(5); // -> 'number'
@@ -11565,10 +11565,10 @@ Merge together the values of each of the arrays with the values at the correspon
 </pre>
 </details>
 
-|Name  |Type |Desc                         |
-|------|-----|-----------------------------|
-|...arr|array|Arrays to process            |
-|return|array|New array of grouped elements|
+|Name  |Desc                         |
+|------|-----------------------------|
+|...arr|Arrays to process            |
+|return|New array of grouped elements|
 
 ```javascript
 zip(['a', 'b'], [1, 2], [true, false]); // -> [['a', 1, true], ['b', 2, false]]

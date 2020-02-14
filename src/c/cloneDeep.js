@@ -1,9 +1,9 @@
 /* Recursively clone value.
  *
- * |Name  |Type|Desc             |
- * |------|----|-----------------|
- * |val   |*   |Value to clone   |
- * |return|*   |Deep cloned Value|
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |val   |Value to clone   |
+ * |return|Deep cloned Value|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

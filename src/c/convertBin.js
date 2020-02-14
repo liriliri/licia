@@ -1,10 +1,10 @@
 /* Convert binary data type.
  *
- * |Name  |Type  |Desc                  |
- * |------|------|----------------------|
- * |bin   |*     |Binary data to convert|
- * |type  |string|Binary type           |
- * |return|*     |Target binary         |
+ * |Name  |Desc                  |
+ * |------|----------------------|
+ * |bin   |Binary data to convert|
+ * |type  |Binary type           |
+ * |return|Target binary         |
  *
  * ### Supported binary type
  *
@@ -16,10 +16,10 @@
  *
  * Convert Blob to ArrayBuffer.
  *
- * |Name  |Type   |Desc               |
- * |------|-------|-------------------|
- * |blob  |Blob   |Blob to convert    |
- * |return|Promise|ArrayBuffer promise|
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |blob  |Blob to convert    |
+ * |return|ArrayBuffer promise|
  */
 
 /* example

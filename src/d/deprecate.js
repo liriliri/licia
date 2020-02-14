@@ -1,10 +1,10 @@
 /* Node.js util.deprecate with browser support.
  *
- * |Name  |Type    |Desc                     |
- * |------|--------|-------------------------|
- * |fn    |function|Function to be deprecated|
- * |msg   |string  |Warning message          |
- * |return|function|Deprecated function      |
+ * |Name  |Desc                     |
+ * |------|-------------------------|
+ * |fn    |Function to be deprecated|
+ * |msg   |Warning message          |
+ * |return|Deprecated function      |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.0
  */
 

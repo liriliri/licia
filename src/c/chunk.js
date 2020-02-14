@@ -1,10 +1,10 @@
 /* Split array into groups the length of given size.
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |arr   |array |Array to process    |
- * |size=1|number|Length of each chunk|
- * |return|array |Chunks of given size|
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |arr   |Array to process    |
+ * |size=1|Length of each chunk|
+ * |return|Chunks of given size|
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Copy text to clipboard using document.execCommand.
  *
- * |Name|Type    |Desc             |
- * |----|--------|-----------------|
- * |text|string  |Text to copy     |
- * |[cb]|function|Optional callback|
+ * |Name|Desc             |
+ * |----|-----------------|
+ * |text|Text to copy     |
+ * |cb  |Optional callback|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

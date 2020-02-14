@@ -2,11 +2,11 @@
 
 二进制数据格式转换。
 
-|参数名|类型|说明|
-|-----|----|---|
-|bin|*|源二进制数据|
-|type|string|二进制类型|
-|返回值|*|目标二进制数据|
+|参数名|说明|
+|-----|---|
+|bin|源二进制数据|
+|type|二进制类型|
+|返回值|目标二进制数据|
 
 ### 支持格式
 
@@ -18,7 +18,7 @@ base64, ArrayBuffer, Array, Uint8Array, Blob(browser), Buffer(node)
 
 将 Blob 类型转换为 ArrayBuffer 类型。
 
-|参数名|类型|说明|
-|-----|----|---|
-|blob|Blob|Blob 数据|
-|返回值|Promise|ArrayBuffer promise|
+|参数名|说明|
+|-----|---|
+|blob|Blob 数据|
+|返回值|ArrayBuffer promise|

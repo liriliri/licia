@@ -1,10 +1,10 @@
 /* Determine the internal JavaScript [[Class]] of an object.
  *
- * |Name          |Type   |Desc             |
- * |--------------|-------|-----------------|
- * |val           |*      |Value to get type|
- * |lowerCase=true|boolean|LowerCase result |
- * |return        |string |Type of object   |
+ * |Name          |Desc             |
+ * |--------------|-----------------|
+ * |val           |Value to get type|
+ * |lowerCase=true|LowerCase result |
+ * |return        |Type of object   |
  */
 
 /* example
@@ -18,7 +18,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

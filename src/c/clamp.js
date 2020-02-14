@@ -1,11 +1,11 @@
 /* Clamp number within the inclusive lower and upper bounds.
  *
- * |Name   |Type  |Desc           |
- * |-------|------|---------------|
- * |n      |number|Number to clamp|
- * |[lower]|number|Lower bound    |
- * |upper  |number|Upper bound    |
- * |return |number|Clamped number |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |n     |Number to clamp|
+ * |lower |Lower bound    |
+ * |upper |Upper bound    |
+ * |return|Clamped number |
  */
 
 /* example
@@ -18,7 +18,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

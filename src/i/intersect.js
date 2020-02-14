@@ -1,9 +1,9 @@
 /* Compute the list of values that are the intersection of all the arrays.
  *
- * |Name  |Type |Desc                          |
- * |------|-----|------------------------------|
- * |...arr|array|Arrays to inspect             |
- * |return|array|New array of inspecting values|
+ * |Name  |Desc                          |
+ * |------|------------------------------|
+ * |...arr|Arrays to inspect             |
+ * |return|New array of inspecting values|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

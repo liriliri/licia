@@ -1,9 +1,9 @@
 /* Return string representing a character whose Unicode code point is the given integer.
  *
- * |Name  |Type  |Desc                                  |
- * |------|------|--------------------------------------|
- * |num   |number|Integer to convert                    |
- * |return|string|String representing corresponding char|
+ * |Name  |Desc                                  |
+ * |------|--------------------------------------|
+ * |num   |Integer to convert                    |
+ * |return|String representing corresponding char|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

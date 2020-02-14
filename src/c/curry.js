@@ -1,9 +1,9 @@
 /* Function currying.
  *
- * |Name  |Type    |Desc                |
- * |------|--------|--------------------|
- * |fn    |function|Function to curry   |
- * |return|function|New curried function|
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |fn    |Function to curry   |
+ * |return|New curried function|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

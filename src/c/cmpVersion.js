@@ -1,10 +1,10 @@
 /* Compare version strings.
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |v1    |string|Version to compare|
- * |v2    |string|Version to compare|
- * |return|number|Comparison result |
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |v1    |Version to compare|
+ * |v2    |Version to compare|
+ * |return|Comparison result |
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

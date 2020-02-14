@@ -1,9 +1,9 @@
 /* Convert Latin-1 Supplement and Latin Extended-A letters to basic Latin letters and remove combining diacritical marks.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |str   |string|String to deburr|
- * |return|string|Deburred string |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |str   |String to deburr|
+ * |return|Deburred string |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.6.1
  */
 

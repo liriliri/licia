@@ -1,8 +1,8 @@
 /* Load css into page.
  *
- * |Name|Type  |Desc    |
- * |----|------|--------|
- * |css |string|Css code|
+ * |Name|Desc    |
+ * |----|--------|
+ * |css |Css code|
  */
 
 /* example
@@ -11,7 +11,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

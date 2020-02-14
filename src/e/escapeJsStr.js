@@ -2,10 +2,10 @@
  *
  * http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |str   |string|String to escape|
- * |return|string|Escaped string  |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |str   |String to escape|
+ * |return|Escaped string  |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

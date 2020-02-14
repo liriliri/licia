@@ -1,10 +1,10 @@
 /* Cast value into a property path array.
  *
- * |Name  |Type        |Desc               |
- * |------|------------|-------------------|
- * |path  |string array|Value to inspect   |
- * |[obj] |object      |Object to query    |
- * |return|array       |Property path array|
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |path  |Value to inspect   |
+ * |obj   |Object to query    |
+ * |return|Property path array|
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

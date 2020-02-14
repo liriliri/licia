@@ -1,11 +1,11 @@
 /* Binary search implementation.
  *
- * |Name  |Type    |Desc         |
- * |------|--------|-------------|
- * |array |array   |Sorted array |
- * |value |*       |Value to seek|
- * |[cmp] |function|Comparator   |
- * |return|number  |Value index  |
+ * |Name  |Desc         |
+ * |------|-------------|
+ * |array |Sorted array |
+ * |value |Value to seek|
+ * |cmp   |Comparator   |
+ * |return|Value index  |
  */
 
 /* example
@@ -30,7 +30,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.4.0
  */
 

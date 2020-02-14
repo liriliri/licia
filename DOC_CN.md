@@ -2503,11 +2503,11 @@ ansiColor.red('Warning');
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|字符串列表|
-|val=true|*|键值|
-|返回值|object|映射|
+|参数名|说明|
+|-----|---|
+|arr|字符串列表|
+|val=true|键值|
+|返回值|映射|
 
 ```javascript
 const needPx = arrToMap([
@@ -2630,12 +2630,12 @@ fn(); // Allow function to be call 4 times at last.
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|array|array|目标数组|
-|value|*|要查找的值|
-|[cmp]|function|比较器|
-|返回值|number|第一次出现的位置，如果没有，返回 -1|
+|参数名|说明|
+|-----|---|
+|array|目标数组|
+|value|要查找的值|
+|cmp|比较器|
+|返回值|第一次出现的位置，如果没有，返回 -1|
 
 ```javascript
 binarySearch([1, 2, 3], 2); // -> 1
@@ -2708,11 +2708,11 @@ btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|要排序的数组|
-|[cmp]|function|比较器|
-|返回值|array|有序数组|
+|参数名|说明|
+|-----|---|
+|arr|要排序的数组|
+|cmp|比较器|
+|返回值|有序数组|
 
 ```javascript
 bubbleSort([2, 1]); // -> [1, 2]
@@ -2848,11 +2848,11 @@ capitalize('rED'); // -> Red
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|path|string array|要转换的值|
-|[obj]|object|目标对象|
-|返回值|array|属性路径数组|
+|参数名|说明|
+|-----|---|
+|path|要转换的值|
+|obj|目标对象|
+|返回值|属性路径数组|
 
 ```javascript
 castPath('a.b.c'); // -> ['a', 'b', 'c']
@@ -2872,11 +2872,11 @@ castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string array|源字符串|
-|[width]|number|每行宽度|
-|返回值|string|居中字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|width|每行宽度|
+|返回值|居中字符串|
 
 ```javascript
 centerAlign('test', 8); // -> '  test'
@@ -2895,10 +2895,10 @@ centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|num|number|要转换的整数|
-|返回值|string|对应字符|
+|参数名|说明|
+|-----|---|
+|num|要转换的整数|
+|返回值|对应字符|
 
 ```javascript
 char(65); // -> 'A'
@@ -2916,11 +2916,11 @@ char(97); // -> 'a'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|源数组|
-|size=1|number|子数组的长度|
-|返回值|array|目标数组|
+|参数名|说明|
+|-----|---|
+|arr|源数组|
+|size=1|子数组的长度|
+|返回值|目标数组|
 
 ```javascript
 chunk([1, 2, 3, 4], 2); // -> [[1, 2], [3, 4]]
@@ -2940,12 +2940,12 @@ function clamp(n: number, upper: number): number;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|n|number|要处理的数字|
-|[lower]|number|下限|
-|upper|number|上限|
-|返回值|number|限定后的数字|
+|参数名|说明|
+|-----|---|
+|n|要处理的数字|
+|lower|下限|
+|upper|上限|
+|返回值|限定后的数字|
 
 ```javascript
 clamp(-10, -5, 5); // -> -5
@@ -2966,10 +2966,10 @@ clamp(2, 5); // -> 2
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|...class|string object array|要合并的 class|
-|返回值|string|合并后的 class 字符串|
+|参数名|说明|
+|-----|---|
+|...class|要合并的 class|
+|返回值|合并后的 class 字符串|
 
 ```javascript
 className('a', 'b', 'c'); // -> 'a b c'
@@ -2992,10 +2992,10 @@ className('a', ['b', 'c', {d: true, e: false}]); // -> 'a b c d';
 
 任何嵌套的对象或数组只会拷贝其引用。
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要克隆的值|
-|返回值|*|克隆值|
+|参数名|说明|
+|-----|---|
+|val|要克隆的值|
+|返回值|克隆值|
 
 ```javascript
 clone({name: 'eustia'}); // -> {name: 'eustia'}
@@ -3012,10 +3012,10 @@ clone({name: 'eustia'}); // -> {name: 'eustia'}
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要克隆的值|
-|返回值|*|克隆值|
+|参数名|说明|
+|-----|---|
+|val|要克隆的值|
+|返回值|克隆值|
 
 ```javascript
 const obj = [{a: 1}, {a: 2}];
@@ -3034,11 +3034,11 @@ console.log(obj[0] === obj2[1]); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|v1|string|版本号|
-|v2|string|版本号|
-|返回值|number|比较结果|
+|参数名|说明|
+|-----|---|
+|v1|版本号|
+|v2|版本号|
+|返回值|比较结果|
 
 ```javascript
 cmpVersion('1.1.8', '1.0.4'); // -> 1
@@ -3059,11 +3059,11 @@ cmpVersion('1.1.1', '1.2.3'); // -> -1
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|keys|array|键名数组|
-|values|array|键值数组|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|keys|键名数组|
+|values|键值数组|
+|返回值|目标对象|
 
 ```javascript
 combine(['a', 'b', 'c'], [1, 2, 3]); // -> {a: 1, b: 2, c: 3}
@@ -3082,10 +3082,10 @@ combine(['a', 'b', 'c'], [1, 2, 3]); // -> {a: 1, b: 2, c: 3}
 
 虚值包括 false，null，0，空字符串，undefined 和 NaN。
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|源数组|
-|返回值|array|目标数组|
+|参数名|说明|
+|-----|---|
+|arr|源数组|
+|返回值|目标数组|
 
 ```javascript
 compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
@@ -3104,10 +3104,10 @@ compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
 
 每个函数使用下一个函数的返回值作为参数。
 
-|参数名|类型|说明|
-|-----|----|---|
-|...fn|function|要组合的函数|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|...fn|要组合的函数|
+|返回值|目标函数|
 
 ```javascript
 const welcome = compose(function (name) {
@@ -3186,10 +3186,10 @@ compressImg(file, {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|...arr|array|要合并的数组|
-|返回值|array|合并后的数组|
+|参数名|说明|
+|-----|---|
+|...arr|要合并的数组|
+|返回值|合并后的数组|
 
 ```javascript
 concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
@@ -3209,11 +3209,11 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|target|array object string|目标对象|
-|value|*|要检查的值|
-|返回值|boolean|如果有，返回真|
+|参数名|说明|
+|-----|---|
+|target|目标对象|
+|value|要检查的值|
+|返回值|如果有，返回真|
 
 ```javascript
 contain([1, 2, 3], 1); // -> true
@@ -3236,12 +3236,12 @@ contain('abc', 'a'); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|num|number string|要转换的数字|
-|from|number|源进制|
-|to|number|目标进制|
-|返回值|string|转换后的数字|
+|参数名|说明|
+|-----|---|
+|num|要转换的数字|
+|from|源进制|
+|to|目标进制|
+|返回值|转换后的数字|
 
 ```javascript
 convertBase('10', 2, 10); // -> '2'
@@ -3262,11 +3262,11 @@ function convertBin(bin: any, type: string): any;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|bin|*|源二进制数据|
-|type|string|二进制类型|
-|返回值|*|目标二进制数据|
+|参数名|说明|
+|-----|---|
+|bin|源二进制数据|
+|type|二进制类型|
+|返回值|目标二进制数据|
 
 ### 支持格式
 
@@ -3278,10 +3278,10 @@ base64, ArrayBuffer, Array, Uint8Array, Blob(browser), Buffer(node)
 
 将 Blob 类型转换为 ArrayBuffer 类型。
 
-|参数名|类型|说明|
-|-----|----|---|
-|blob|Blob|Blob 数据|
-|返回值|Promise|ArrayBuffer promise|
+|参数名|说明|
+|-----|---|
+|blob|Blob 数据|
+|返回值|ArrayBuffer promise|
 
 ```javascript
 convertBin('qK6b/w==', 'Uint8Array'); // -> [168, 174, 155, 255]
@@ -3361,10 +3361,10 @@ cookie.remove('a');
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|text|string|要拷贝的文本|
-|[cb]|function|可选回调|
+|参数名|说明|
+|-----|---|
+|text|要拷贝的文本|
+|cb|可选回调|
 
 ```javascript
 copy('text', function (err) {
@@ -3598,11 +3598,11 @@ css.stringify(stylesheet);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|Css 属性名|
-|[val]|string|Css 属性值|
-|返回值|boolean|如果支持，返回真|
+|参数名|说明|
+|-----|---|
+|name|Css 属性名|
+|val|Css 属性值|
+|返回值|如果支持，返回真|
 
 ```javascript
 cssSupports('display', 'flex'); // -> true
@@ -3623,10 +3623,10 @@ cssSupports('invalid'); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|源函数|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|fn|源函数|
+|返回值|目标函数|
 
 ```javascript
 const add = curry(function (a, b) { return a + b });
@@ -3710,11 +3710,11 @@ dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|源函数|
-|wait|number|延迟毫秒数|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|fn|源函数|
+|wait|延迟毫秒数|
+|返回值|目标函数|
 
 ```javascript
 const calLayout = debounce(function () {}, 300);
@@ -3732,10 +3732,10 @@ const calLayout = debounce(function () {}, 300);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|名称|
-|返回值|function|打印格式化日志的函数|
+|参数名|说明|
+|-----|---|
+|name|名称|
+|返回值|打印格式化日志的函数|
 
 ```javascript
 const d = debug('test');
@@ -3754,10 +3754,10 @@ d.enabled = false;
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|要处理的字符串|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|要处理的字符串|
+|返回值|目标字符串|
 
 ```javascript
 deburr('déjà vu'); // -> 'deja vu'
@@ -3774,10 +3774,10 @@ deburr('déjà vu'); // -> 'deja vu'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|要解码的字符串|
-|返回值|string|解码后的字符串|
+|参数名|说明|
+|-----|---|
+|str|要解码的字符串|
+|返回值|解码后的字符串|
 
 ```javascript
 decodeUriComponent('%%25%'); // -> '%%%'
@@ -3795,11 +3795,11 @@ decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|...src|object|提供默认值对象|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|...src|提供默认值对象|
+|返回值|目标对象|
 
 ```javascript
 defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood', age: 24}
@@ -3909,10 +3909,10 @@ obj2.b = 4;
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|...args|*|参数列表|
-|返回值|*|第一个定义了的参数|
+|参数名|说明|
+|-----|---|
+|...args|参数列表|
+|返回值|第一个定义了的参数|
 
 ```javascript
 defined(false, 2, void 0, 100); // -> false
@@ -3929,9 +3929,9 @@ defined(false, 2, void 0, 100); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|id|string|模块名或路径|
+|参数名|说明|
+|-----|---|
+|id|模块名或路径|
 
 ```javascript
 const licia = require('licia');
@@ -3951,11 +3951,11 @@ require('licia').a; // -> undefined
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|源函数|
-|wait|number|延迟的毫秒数|
-|[...args]|*|绑定参数|
+|参数名|说明|
+|-----|---|
+|fn|源函数|
+|wait|延迟的毫秒数|
+|...args|绑定参数|
 
 ```javascript
 delay(function (text) {
@@ -3982,12 +3982,12 @@ delay(function (text) {
 
 添加事件委托。
 
-|参数名|类型|说明|
-|-----|----|---|
-|el|element|父元素|
-|type|string|事件类型|
-|selector|string|匹配选择器|
-|cb|function|事件回调|
+|参数名|说明|
+|-----|---|
+|el|父元素|
+|type|事件类型|
+|selector|匹配选择器|
+|cb|事件回调|
 
 ### remove
 
@@ -4013,11 +4013,11 @@ Node.js util.deprecate 方法，支持浏览器。
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|即将废弃的方法|
-|msg|string|调用警告|
-|返回值|function|废弃方法，调用时会打印警告|
+|参数名|说明|
+|-----|---|
+|fn|即将废弃的方法|
+|msg|调用警告|
+|返回值|废弃方法，调用时会打印警告|
 
 ```javascript
 const fn = () => {};
@@ -4042,10 +4042,10 @@ function detectBrowser(ua?: string): detectBrowser.IBrowser;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|ua=navigator.userAgent|string|浏览器用户代理|
-|返回值|object|包含名称和版本的对象|
+|参数名|说明|
+|-----|---|
+|ua=navigator.userAgent|浏览器用户代理|
+|返回值|包含名称和版本的对象|
 
 支持浏览器：ie，chrome，edge，firefox，opera，safari，ios（mobile safari），android（android browser）
 
@@ -4082,10 +4082,10 @@ detectMocha(); // -> True if mocha is running.
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|ua=navigator.userAgent|string|浏览器用户代理|
-|返回值|string|操作系统名称|
+|参数名|说明|
+|-----|---|
+|ua=navigator.userAgent|浏览器用户代理|
+|返回值|操作系统名称|
 
 支持操作系统: windows, os x, linux, ios, android, windows phone
 
@@ -4106,11 +4106,11 @@ if (detectOs() === 'ios') {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|源数组|
-|[...rest]|array|要排除的元素|
-|返回值|array|目标数组|
+|参数名|说明|
+|-----|---|
+|arr|源数组|
+|...rest|要排除的元素|
+|返回值|目标数组|
 
 ```javascript
 difference([3, 2, 1], [4, 2]); // -> [3, 1]
@@ -4127,10 +4127,10 @@ difference([3, 2, 1], [4, 2]); // -> [3, 1]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|点式字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|点式字符串|
 
 ```javascript
 dotCase('fooBar'); // -> foo.bar
@@ -4259,10 +4259,10 @@ each({'a': 1, 'b': 2}, function (val, key) {});
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|percent|number|位于 0 到 1 之前的数字|
-|返回值|number|计算结果|
+|参数名|说明|
+|-----|---|
+|percent|位于 0 到 1 之前的数字|
+|返回值|计算结果|
 
 ```javascript
 easing.linear(0.5); // -> 0.5
@@ -4280,9 +4280,9 @@ easing.inElastic(0.5, 500); // -> 0.03125
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|el|Element|目标元素|
+|参数名|说明|
+|-----|---|
+|el|目标元素|
 
 ```javascript
 const el = document.querySelector('#test');
@@ -4345,10 +4345,10 @@ escape('You & Me'); // -> 'You &amp; Me'
 
 http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|目标字符串|
 
 ```javascript
 escapeJsStr('\"\n'); // -> '\\"\\\\n'
@@ -4385,9 +4385,9 @@ escapeRegExp('[licia]'); // -> '\\[licia\\]'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|css|string|css 代码|
+|参数名|说明|
+|-----|---|
+|css|css 代码|
 
 ```javascript
 evalCss('body{background:#08c}');
@@ -4458,11 +4458,11 @@ every([2, 4], function (val) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|destination|object|目标对象|
-|...sources|object|源对象|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|destination|目标对象|
+|...sources|源对象|
+|返回值|目标对象|
 
 ```javascript
 extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
@@ -4634,10 +4634,10 @@ fetch('test.json', {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|n|number|序号 n|
-|返回值|number|斐波那契数列 n 位的数字|
+|参数名|说明|
+|-----|---|
+|n|序号 n|
+|返回值|斐波那契数列 n 位的数字|
 
 ```javascript
 fibonacci(1); // -> 1
@@ -4655,10 +4655,10 @@ fibonacci(3); // -> 2
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|bytes|number|文件字节大小|
-|返回值|string|易于阅读的文件大小|
+|参数名|说明|
+|-----|---|
+|bytes|文件字节大小|
+|返回值|易于阅读的文件大小|
 
 ```javascript
 fileSize(5); // -> '5'
@@ -5783,10 +5783,10 @@ insertionSort([2, 1]); // -> [1, 2]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|...arr|array|源数组|
-|返回值|array|交集|
+|参数名|说明|
+|-----|---|
+|...arr|源数组|
+|返回值|交集|
 
 ```javascript
 intersect([1, 2, 3, 4], [2, 1, 10], [2, 1]); // -> [1, 2]
@@ -5909,10 +5909,10 @@ isAbsoluteUrl('surunzi.com'); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是参数类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是参数类型，返回真|
 
 ```javascript
 (function () {
@@ -6103,13 +6103,13 @@ isBuffer(new Buffer(4)); // -> true
 
 `abs(a-b) <= max(relTol * max(abs(a), abs(b)), absTol)`
 
-|参数名|类型|说明|
-|-----|----|---|
-|a|number|要比较的数字|
-|b|number|要比较的数字|
-|relTol=1e-9|number|相对误差|
-|absTol=0|number|绝对误差|
-|返回值|boolean|如果近似相等，返回真|
+|参数名|说明|
+|-----|---|
+|a|要比较的数字|
+|b|要比较的数字|
+|relTol=1e-9|相对误差|
+|absTol=0|绝对误差|
+|返回值|如果近似相等，返回真|
 
 ```javascript
 isClose(1, 1.0000000001); // -> true
@@ -6185,10 +6185,10 @@ isDate(new Date()); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 DOM 元素，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 DOM 元素，返回真|
 
 ```javascript
 isEl(document.body); // -> true
@@ -6225,10 +6225,10 @@ isEmail('surunzi@foxmail.com'); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果为空，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果为空，返回真|
 
 ```javascript
 isEmpty([]); // -> true
@@ -10935,11 +10935,11 @@ tryIt(function () {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|目标对象|
-|lowerCase=true|boolean|是否小写|
-|返回值|string|对象类型|
+|参数名|说明|
+|-----|---|
+|val|目标对象|
+|lowerCase=true|是否小写|
+|返回值|对象类型|
 
 ```javascript
 type(5); // -> 'number'
@@ -11574,10 +11574,10 @@ xpath('//html/body'); // -> [body]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|...arr|array|源数组|
-|返回值|array|目标数组|
+|参数名|说明|
+|-----|---|
+|...arr|源数组|
+|返回值|目标数组|
 
 ```javascript
 zip(['a', 'b'], [1, 2], [true, false]); // -> [['a', 1, true], ['b', 2, false]]

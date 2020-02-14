@@ -1,9 +1,9 @@
 /* Check if value is classified as an arguments object.
  *
- * |Name  |Type   |Desc                                |
- * |------|-------|------------------------------------|
- * |val   |*      |Value to check                      |
- * |return|boolean|True if value is an arguments object|
+ * |Name  |Desc                                |
+ * |------|------------------------------------|
+ * |val   |Value to check                      |
+ * |return|True if value is an arguments object|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,8 +1,8 @@
 /* Emulate touch events on desktop browsers.
  *
- * |Name|Type   |Desc          |
- * |----|-------|--------------|
- * |el  |Element|Target element|
+ * |Name|Desc          |
+ * |----|--------------|
+ * |el  |Target element|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: browser
- * test: browser
  * since: 1.9.0
  */
 

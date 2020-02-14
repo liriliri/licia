@@ -1,9 +1,9 @@
 /* Better decodeURIComponent that does not throw if input is invalid.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |str   |string|String to decode|
- * |return|string|Decoded string  |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |str   |String to decode|
+ * |return|Decoded string  |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

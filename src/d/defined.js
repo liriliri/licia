@@ -1,9 +1,9 @@
 /* Return the first argument that is not undefined.
  *
- * |Name   |Type|Desc                  |
- * |-------|----|----------------------|
- * |...args|*   |Arguments to check    |
- * |return |*   |First defined argument|
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |...args|Arguments to check    |
+ * |return |First defined argument|
  */
 
 /* example

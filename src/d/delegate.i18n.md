@@ -6,12 +6,12 @@
 
 添加事件委托。
 
-|参数名|类型|说明|
-|-----|----|---|
-|el|element|父元素|
-|type|string|事件类型|
-|selector|string|匹配选择器|
-|cb|function|事件回调|
+|参数名|说明|
+|-----|---|
+|el|父元素|
+|type|事件类型|
+|selector|匹配选择器|
+|cb|事件回调|
 
 ### remove
 

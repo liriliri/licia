@@ -1,10 +1,10 @@
 /* Return a new debounced version of the passed function.
  *
- * |Name  |Type    |Desc                           |
- * |------|--------|-------------------------------|
- * |fn    |function|Function to debounce           |
- * |wait  |number  |Number of milliseconds to delay|
- * |return|function|New debounced function         |
+ * |Name  |Desc                           |
+ * |------|-------------------------------|
+ * |fn    |Function to debounce           |
+ * |wait  |Number of milliseconds to delay|
+ * |return|New debounced function         |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

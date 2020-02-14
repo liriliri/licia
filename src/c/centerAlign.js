@@ -1,10 +1,10 @@
 /* Center align text in a string.
  *
- * |Name   |Type        |Desc                    |
- * |-------|------------|------------------------|
- * |str    |string array|String to align         |
- * |[width]|number      |Total width of each line|
- * |return |string      |Center aligned string   |
+ * |Name  |Desc                    |
+ * |------|------------------------|
+ * |str   |String to align         |
+ * |width |Total width of each line|
+ * |return|Center aligned string   |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

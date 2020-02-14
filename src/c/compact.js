@@ -2,10 +2,10 @@
  *
  * The values false, null, 0, "", undefined, and NaN are falsey.
  *
- * |Name  |Type |Desc                        |
- * |------|-----|----------------------------|
- * |arr   |array|Array to compact            |
- * |return|array|New array of filtered values|
+ * |Name  |Desc                        |
+ * |------|----------------------------|
+ * |arr   |Array to compact            |
+ * |return|New array of filtered values|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

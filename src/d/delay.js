@@ -1,10 +1,10 @@
 /* Invoke function after certain milliseconds.
  *
- * |Name     |Type    |Desc                                      |
- * |---------|--------|------------------------------------------|
- * |fn       |function|Function to delay                         |
- * |wait     |number  |Number of milliseconds to delay invocation|
- * |[...args]|*       |Arguments to invoke fn with               |
+ * |Name   |Desc                                      |
+ * |-------|------------------------------------------|
+ * |fn     |Function to delay                         |
+ * |wait   |Number of milliseconds to delay invocation|
+ * |...args|Arguments to invoke fn with               |
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Easing functions adapted from http://jqueryui.com/ .
  *
- * |Name   |Type  |Desc                  |
- * |-------|------|----------------------|
- * |percent|number|Number between 0 and 1|
- * |return |number|Calculated number     |
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |percent|Number between 0 and 1|
+ * |return |Calculated number     |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

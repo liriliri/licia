@@ -1,9 +1,9 @@
 /* Turn bytes into human readable file size.
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |bytes |number|File bytes        |
- * |return|string|Readable file size|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |bytes |File bytes        |
+ * |return|Readable file size|
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

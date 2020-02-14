@@ -1,8 +1,8 @@
 /* Delete node.js require cache.
  *
- * |Name|Type  |Desc               |
- * |----|------|-------------------|
- * |id  |string|Module name or path|
+ * |Name|Desc               |
+ * |----|-------------------|
+ * |id  |Module name or path|
  */
 
 /* example

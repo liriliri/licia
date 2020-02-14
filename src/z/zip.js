@@ -1,9 +1,9 @@
 /* Merge together the values of each of the arrays with the values at the corresponding position.
  *
- * |Name  |Type |Desc                         |
- * |------|-----|-----------------------------|
- * |...arr|array|Arrays to process            |
- * |return|array|New array of grouped elements|
+ * |Name  |Desc                         |
+ * |------|-----------------------------|
+ * |...arr|Arrays to process            |
+ * |return|New array of grouped elements|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

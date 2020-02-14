@@ -2,13 +2,13 @@
  *
  * `abs(a-b) <= max(relTol * max(abs(a), abs(b)), absTol)`
  *
- * |Name       |Type   |Desc                    |
- * |-----------|-------|------------------------|
- * |a          |number |Number to compare       |
- * |b          |number |Number to compare       |
- * |relTol=1e-9|number |Relative tolerance      |
- * |absTol=0   |number |Absolute tolerance      |
- * |return     |boolean|True if values are close|
+ * |Name       |Desc                    |
+ * |-----------|------------------------|
+ * |a          |Number to compare       |
+ * |b          |Number to compare       |
+ * |relTol=1e-9|Relative tolerance      |
+ * |absTol=0   |Absolute tolerance      |
+ * |return     |True if values are close|
  */
 
 /* example
@@ -20,7 +20,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Calculate fibonacci number.
  *
- * |Name  |Type  |Desc                       |
- * |------|------|---------------------------|
- * |n     |number|Index of fibonacci sequence|
- * |return|number|Expected fibonacci number  |
+ * |Name  |Desc                       |
+ * |------|---------------------------|
+ * |n     |Index of fibonacci sequence|
+ * |return|Expected fibonacci number  |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

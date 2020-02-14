@@ -4,12 +4,12 @@
  *
  * Add event delegation.
  *
- * |Name    |Type    |Desc          |
- * |--------|--------|--------------|
- * |el      |element |Parent element|
- * |type    |string  |Event type    |
- * |selector|string  |Match selector|
- * |cb      |function|Event callback|
+ * |Name    |Desc          |
+ * |--------|--------------|
+ * |el      |Parent element|
+ * |type    |Event type    |
+ * |selector|Match selector|
+ * |cb      |Event callback|
  *
  * ### remove
  *
@@ -27,7 +27,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

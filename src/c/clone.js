@@ -2,10 +2,10 @@
  *
  * Any nested objects or arrays will be copied by reference, not duplicated.
  *
- * |Name  |Type|Desc          |
- * |------|----|--------------|
- * |val   |*   |Value to clone|
- * |return|*   |Cloned value  |
+ * |Name  |Desc          |
+ * |------|--------------|
+ * |val   |Value to clone|
+ * |return|Cloned value  |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

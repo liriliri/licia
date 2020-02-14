@@ -1,10 +1,10 @@
 /* Check if browser supports a given CSS feature.
  *
- * |Name  |Type   |Desc              |
- * |------|-------|------------------|
- * |name  |string |Css property name |
- * |[val] |string |Css property value|
- * |return|boolean|True if supports  |
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |name  |Css property name |
+ * |val   |Css property value|
+ * |return|True if supports  |
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Check if value is an empty object or array.
  *
- * |Name  |Type   |Desc                  |
- * |------|-------|----------------------|
- * |val   |*      |Value to check        |
- * |return|boolean|True if value is empty|
+ * |Name  |Desc                  |
+ * |------|----------------------|
+ * |val   |Value to check        |
+ * |return|True if value is empty|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

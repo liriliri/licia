@@ -1,9 +1,9 @@
 /* Detect browser info using ua.
  *
- * |Name                  |Type  |Desc                              |
- * |----------------------|------|----------------------------------|
- * |ua=navigator.userAgent|string|Browser userAgent                 |
- * |return                |object|Object containing name and version|
+ * |Name                  |Desc                              |
+ * |----------------------|----------------------------------|
+ * |ua=navigator.userAgent|Browser userAgent                 |
+ * |return                |Object containing name and version|
  *
  * Browsers supported: ie, chrome, edge, firefox, opera, safari, ios(mobile safari), android(android browser)
  */
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

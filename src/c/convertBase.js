@@ -1,11 +1,11 @@
 /* Convert base of a number.
  *
- * |Name  |Type         |Desc             |
- * |------|-------------|-----------------|
- * |num   |number string|Number to convert|
- * |from  |number       |Base from        |
- * |to    |number       |Base to          |
- * |return|string       |Converted number |
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |num   |Number to convert|
+ * |from  |Base from        |
+ * |to    |Base to          |
+ * |return|Converted number |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

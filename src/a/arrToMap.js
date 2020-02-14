@@ -1,10 +1,10 @@
 /* Make an object map using array of strings.
  *
- * |Name    |Type  |Desc            |
- * |--------|------|----------------|
- * |arr     |array |Array of strings|
- * |val=true|*     |Key value       |
- * |return  |object|Object map      |
+ * |Name    |Desc            |
+ * |--------|----------------|
+ * |arr     |Array of strings|
+ * |val=true|Key value       |
+ * |return  |Object map      |
  */
 
 /* example
@@ -19,7 +19,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Check if value is a DOM element.
  *
- * |Name  |Type   |Desc                          |
- * |------|-------|------------------------------|
- * |val   |*      |Value to check                |
- * |return|boolean|True if value is a DOM element|
+ * |Name  |Desc                          |
+ * |------|------------------------------|
+ * |val   |Value to check                |
+ * |return|True if value is a DOM element|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

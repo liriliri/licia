@@ -1,10 +1,10 @@
 /* Check if the value is present in the list.
  *
- * |Name  |Type               |Desc                                |
- * |------|-------------------|------------------------------------|
- * |target|array object string|Target object                       |
- * |value |*                  |Value to check                      |
- * |return|boolean            |True if value is present in the list|
+ * |Name  |Desc                                |
+ * |------|------------------------------------|
+ * |target|Target object                       |
+ * |value |Value to check                      |
+ * |return|True if value is present in the list|
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

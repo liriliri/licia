@@ -1,9 +1,9 @@
 /* A tiny JavaScript debugging utility.
  *
- * |Name  |Type    |Desc                           |
- * |------|--------|-------------------------------|
- * |name  |string  |Namespace                      |
- * |return|function|Function to print decorated log|
+ * |Name  |Desc                           |
+ * |------|-------------------------------|
+ * |name  |Namespace                      |
+ * |return|Function to print decorated log|
  */
 
 /* example

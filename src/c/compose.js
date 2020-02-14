@@ -2,10 +2,10 @@
  *
  * Each function consumes the return value of the function that follows.
  *
- * |Name  |Type    |Desc                |
- * |------|--------|--------------------|
- * |...fn |function|Functions to compose|
- * |return|function|Composed function   |
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |...fn |Functions to compose|
+ * |return|Composed function   |
  */
 
 /* example
@@ -20,7 +20,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

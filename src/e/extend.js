@@ -1,10 +1,10 @@
 /* Copy all of the properties in the source objects over to the destination object.
  *
- * |Name       |Type  |Desc              |
- * |-----------|------|------------------|
- * |destination|object|Destination object|
- * |...sources |object|Sources objects   |
- * |return     |object|Destination object|
+ * |Name       |Desc              |
+ * |-----------|------------------|
+ * |destination|Destination object|
+ * |...sources |Sources objects   |
+ * |return     |Destination object|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

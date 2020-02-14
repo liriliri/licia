@@ -1,10 +1,10 @@
 /* Create an array by using one array for keys and another for its values.
  *
- * |Name  |Type  |Desc             |
- * |------|------|-----------------|
- * |keys  |array |Keys to be used  |
- * |values|array |Values to be used|
- * |return|object|Created object   |
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |keys  |Keys to be used  |
+ * |values|Values to be used|
+ * |return|Created object   |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.1.0
  */
 

@@ -1,9 +1,9 @@
 /* Utility for conditionally joining class names.
  *
- * |Name    |Type               |Desc              |
- * |--------|-------------------|------------------|
- * |...class|string object array|Class names       |
- * |return  |string             |Joined class names|
+ * |Name    |Desc              |
+ * |--------|------------------|
+ * |...class|Class names       |
+ * |return  |Joined class names|
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

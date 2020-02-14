@@ -1,9 +1,9 @@
 /* Concat multiple arrays into a single array.
  *
- * |Name  |Type |Desc              |
- * |------|-----|------------------|
- * |...arr|array|Arrays to concat  |
- * |return|array|Concatenated array|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |...arr|Arrays to concat  |
+ * |return|Concatenated array|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript
