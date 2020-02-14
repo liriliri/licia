@@ -1,9 +1,9 @@
 /* Check if value is an IP address.
  *
- * |Name  |Type   |Desc                          |
- * |------|-------|------------------------------|
- * |str   |string |String to check               |
- * |return|boolean|True if value is an IP address|
+ * |Name  |Desc                          |
+ * |------|------------------------------|
+ * |str   |String to check               |
+ * |return|True if value is an IP address|
  *
  * ### v4
  *
@@ -24,7 +24,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.1
  */
 

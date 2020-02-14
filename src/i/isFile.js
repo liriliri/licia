@@ -1,9 +1,9 @@
 /* Check if value is a file.
  *
- * |Name  |Type   |Desc                   |
- * |------|-------|-----------------------|
- * |val   |*      |Value to check         |
- * |return|boolean|True if value is a file|
+ * |Name  |Desc                   |
+ * |------|-----------------------|
+ * |val   |Value to check         |
+ * |return|True if value is a file|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

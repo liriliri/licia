@@ -1,9 +1,9 @@
 /* Check if a string is a valid data url.
  *
- * |Name  |Type   |Desc                        |
- * |------|-------|----------------------------|
- * |str   |string |String to check             |
- * |return|boolean|True if string is a data url|
+ * |Name  |Desc                        |
+ * |------|----------------------------|
+ * |str   |String to check             |
+ * |return|True if string is a data url|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -2,10 +2,10 @@
  *
  * It uses `JSON.parse()` and a `try... catch` block.
  *
- * |Name  |Type   |Desc                         |
- * |------|-------|-----------------------------|
- * |val   |string |JSON string                  |
- * |return|boolean|True if value is a valid JSON|
+ * |Name  |Desc                         |
+ * |------|-----------------------------|
+ * |val   |JSON string                  |
+ * |return|True if value is a valid JSON|
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

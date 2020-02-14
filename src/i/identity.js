@@ -1,9 +1,9 @@
 /* Return the first argument given.
  *
- * |Name  |Type|Desc       |
- * |------|----|-----------|
- * |val   |*   |Any value  |
- * |return|*   |Given value|
+ * |Name  |Desc       |
+ * |------|-----------|
+ * |val   |Any value  |
+ * |return|Given value|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

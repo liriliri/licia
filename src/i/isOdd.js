@@ -1,9 +1,9 @@
 /* Check if number is odd.
  *
- * |Name  |Type   |Desc                 |
- * |------|-------|---------------------|
- * |num   |number |Number to check      |
- * |return|boolean|True if number is odd|
+ * |Name  |Desc                 |
+ * |------|---------------------|
+ * |num   |Number to check      |
+ * |return|True if number is odd|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

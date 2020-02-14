@@ -2,9 +2,9 @@
 
 创建 HTML 元素。
 
-|参数名|类型|说明|
-|-----|----|---|
-|tag|string|标签名|
-|[attrs]|object|属性|
-|[...child]|string HTMLElement|子节点|
-|返回值|HTMLElement|目标元素|
+|参数名|说明|
+|-----|---|
+|tag|标签名|
+|attrs|属性|
+|...child|子节点|
+|返回值|目标元素|

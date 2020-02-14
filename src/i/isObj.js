@@ -1,9 +1,9 @@
 /* Check if value is the language type of Object.
  *
- * |Name  |Type   |Desc                      |
- * |------|-------|--------------------------|
- * |val   |*      |Value to check            |
- * |return|boolean|True if value is an object|
+ * |Name  |Desc                      |
+ * |------|--------------------------|
+ * |val   |Value to check            |
+ * |return|True if value is an object|
  *
  * [Language Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
  */
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Check if value is a finite primitive number.
  *
- * |Name  |Type   |Desc                            |
- * |------|-------|--------------------------------|
- * |val   |*      |Value to check                  |
- * |return|boolean|True if value is a finite number|
+ * |Name  |Desc                            |
+ * |------|--------------------------------|
+ * |val   |Value to check                  |
+ * |return|True if value is a finite number|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

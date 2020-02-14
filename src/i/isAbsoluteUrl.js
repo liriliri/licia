@@ -1,9 +1,9 @@
 /* Check if an url is absolute.
  *
- * |Name  |Type   |Desc                   |
- * |------|-------|-----------------------|
- * |url   |string |Url to check           |
- * |return|boolean|True if url is absolute|
+ * |Name  |Desc                   |
+ * |------|-----------------------|
+ * |url   |Url to check           |
+ * |return|True if url is absolute|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

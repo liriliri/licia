@@ -4604,11 +4604,11 @@ function fetch(
 
 注意：这并不是 fetch 的 pollyfill。
 
-|参数名|类型|说明|
-|-----|----|---|
-|url|string|请求地址|
-|[options]|object|请求选项|
-|返回值|Promise|请求 promise|
+|参数名|说明|
+|-----|---|
+|url|请求地址|
+|options|请求选项|
+|返回值|请求 promise|
 
 ```javascript
 fetch('test.json', {
@@ -5365,12 +5365,12 @@ function golangify&lt;T, U = Error&gt;(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|tag|string|标签名|
-|[attrs]|object|属性|
-|[...child]|string HTMLElement|子节点|
-|返回值|HTMLElement|目标元素|
+|参数名|说明|
+|-----|---|
+|tag|标签名|
+|attrs|属性|
+|...child|子节点|
+|返回值|目标元素|
 
 ```javascript
 const el = h('div#test.title', {
@@ -5391,11 +5391,11 @@ document.body.appendChild(el);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|key|string|键名|
-|返回值|boolean|如果是自身的属性，返回真|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|key|键名|
+|返回值|如果是自身的属性，返回真|
 
 ```javascript
 has({one: 1}, 'one'); // -> true
@@ -5412,11 +5412,11 @@ has({one: 1}, 'one'); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|要排序的数组|
-|[cmp]|function|比较器|
-|返回值|array|有序数组|
+|参数名|说明|
+|-----|---|
+|arr|要排序的数组|
+|cmp|比较器|
+|返回值|有序数组|
 
 ```javascript
 heapSort([2, 1]); // -> [1, 2]
@@ -5483,12 +5483,12 @@ function highlight(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|代码字符串|
-|lang=js|string|语言，js，html 或者 css|
-|[style]|object|高亮样式|
-|返回值|string|高亮后的 html 代码字符串|
+|参数名|说明|
+|-----|---|
+|str|代码字符串|
+|lang=js|语言，js，html 或者 css|
+|style|高亮样式|
+|返回值|高亮后的 html 代码字符串|
 
 可设置样式：
 
@@ -5547,10 +5547,10 @@ hotkey.off('shift+a', keyDown);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|hsl|array|hsl 值|
-|返回值|array|rgb 值|
+|参数名|说明|
+|-----|---|
+|hsl|hsl 值|
+|返回值|rgb 值|
 
 ```javascript
 hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
@@ -5605,10 +5605,10 @@ html.stringify(tree);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|任何值|
-|返回值|*|第一个参数|
+|参数名|说明|
+|-----|---|
+|val|任何值|
+|返回值|第一个参数|
 
 ```javascript
 identity('a'); // -> 'a'
@@ -5762,11 +5762,11 @@ ini.stringify(config);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|要排序的数组|
-|[cmp]|function|比较器|
-|返回值|array|有序数组|
+|参数名|说明|
+|-----|---|
+|arr|要排序的数组|
+|cmp|比较器|
+|返回值|有序数组|
 
 ```javascript
 insertionSort([2, 1]); // -> [1, 2]
@@ -5865,10 +5865,10 @@ invariant(false, 'This will throw an error with this message');
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|源对象|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|obj|源对象|
+|返回值|目标对象|
 
 如果对象存在重复的键值，后面的值会覆盖前面的值。
 
@@ -5887,10 +5887,10 @@ invert({a: 'b', c: 'd', e: 'f'}); // -> {b: 'a', d: 'c', f: 'e'}
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|url|string|目标 url|
-|返回值|boolean|如果是绝对地址，返回真|
+|参数名|说明|
+|-----|---|
+|url|目标 url|
+|返回值|如果是绝对地址，返回真|
 
 ```javascript
 isAbsoluteUrl('http://www.surunzi.com'); // -> true
@@ -5931,10 +5931,10 @@ isAbsoluteUrl('surunzi.com'); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是数组类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是数组类型，返回真|
 
 ```javascript
 isArr([]); // -> true
@@ -5952,10 +5952,10 @@ isArr({}); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 ArrayBuffer 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 ArrayBuffer 类型，返回真|
 
 ```javascript
 isArrBuffer(new ArrayBuffer(8)); // -> true
@@ -5972,10 +5972,10 @@ isArrBuffer(new ArrayBuffer(8)); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是类数组对象，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是类数组对象，返回真|
 
 对于函数，返回假。
 
@@ -5996,10 +5996,10 @@ isArrLike([1, 2, 3]); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Async 函数，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Async 函数，返回真|
 
 ```javascript
 isAsyncFn(function * () {}); // -> false
@@ -6018,10 +6018,10 @@ isAsyncFn(async function () {}); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Blob 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Blob 类型，返回真|
 
 ```javascript
 isBlob(new Blob([])); // -> true;
@@ -6039,10 +6039,10 @@ isBlob([]); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是布尔类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是布尔类型，返回真|
 
 ```javascript
 isBool(true); // -> true
@@ -6076,10 +6076,10 @@ console.log(isBrowser); // -> true if running in a browser
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Buffer 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Buffer 类型，返回真|
 
 ```javascript
 isBuffer(new Buffer(4)); // -> true
@@ -6144,10 +6144,10 @@ console.log(isDarkMode()); // true if dark mode
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|要检查的字符串|
-|返回值|boolean|如果是有效的 Data Url，返回真|
+|参数名|说明|
+|-----|---|
+|str|要检查的字符串|
+|返回值|如果是有效的 Data Url，返回真|
 
 ```javascript
 isDataUrl('http://eustia.liriliri.io'); // -> false
@@ -6165,10 +6165,10 @@ isDataUrl('data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D'); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Date 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Date 类型，返回真|
 
 ```javascript
 isDate(new Date()); // -> true
@@ -6205,10 +6205,10 @@ isEl(document.body); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|string|要检查的值|
-|返回值|boolean|如果是合法的邮件地址，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是合法的邮件地址，返回真|
 
 ```javascript
 isEmail('surunzi@foxmail.com'); // -> true
@@ -6247,11 +6247,11 @@ isEmpty(''); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要比较的对象|
-|other|*|要比较的对象|
-|返回值|boolean|如果相等，返回真|
+|参数名|说明|
+|-----|---|
+|val|要比较的对象|
+|other|要比较的对象|
+|返回值|如果相等，返回真|
 
 ```javascript
 isEqual([1, 2, 3], [1, 2, 3]); // -> true
@@ -6268,10 +6268,10 @@ isEqual([1, 2, 3], [1, 2, 3]); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Error 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Error 类型，返回真|
 
 ```javascript
 isErr(new Error()); // -> true
@@ -6288,10 +6288,10 @@ isErr(new Error()); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|num|number|要检查的数字|
-|返回值|boolean|如果是偶数，返回真|
+|参数名|说明|
+|-----|---|
+|num|要检查的数字|
+|返回值|如果是偶数，返回真|
 
 ```javascript
 isEven(0); // -> true
@@ -6310,10 +6310,10 @@ isEven(2); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 File 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 File 类型，返回真|
 
 ```javascript
 isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
@@ -6330,10 +6330,10 @@ isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是有限数字，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是有限数字，返回真|
 
 ```javascript
 isFinite(3); // -> true
@@ -6351,10 +6351,10 @@ isFinite(Infinity); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是函数，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是函数，返回真|
 
 Generator 函数返回真。
 
@@ -6375,10 +6375,10 @@ isFn(async function() {}); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Generator 函数，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Generator 函数，返回真|
 
 ```javascript
 isGeneratorFn(function * () {}); // -> true
@@ -6403,22 +6403,22 @@ isGeneratorFn(function () {}); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|el|element|目标元素|
-|options|object|检查选项|
-|返回值|boolean|如果元素隐藏，返回真|
+|参数名|说明|
+|-----|---|
+|el|目标元素|
+|options|检查选项|
+|返回值|如果元素隐藏，返回真|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|display=true|boolean|检查是否显示|
-|visibility=false|boolean|检查 visibility css 属性|
-|opacity=false|boolean|检查 opacity css 属性|
-|size=false|boolean|检查宽高|
-|viewport=false|boolean|检查是否在可视区域|
-|overflow=false|boolean|检查是否因 overflow 隐藏|
+|参数名|说明|
+|-----|---|
+|display=true|检查是否显示|
+|visibility=false|检查 visibility css 属性|
+|opacity=false|检查 opacity css 属性|
+|size=false|检查宽高|
+|viewport=false|检查是否在可视区域|
+|overflow=false|检查是否因 overflow 隐藏|
 
 ```javascript
 isHidden(document.createElement('div')); // -> true
@@ -6435,10 +6435,10 @@ isHidden(document.createElement('div')); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是整数，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是整数，返回真|
 
 ```javascript
 isInt(5); // -> true
@@ -6461,10 +6461,10 @@ function isIp(str: string): boolean;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|要检查的字符串|
-|返回值|boolean|如果是 IP 地址，返回真|
+|参数名|说明|
+|-----|---|
+|str|要检查的字符串|
+|返回值|如果是 IP 地址，返回真|
 
 ### v4
 
@@ -6495,10 +6495,10 @@ isIp.v6('1:2:3:4:5:6:7:8'); // -> true
 
 该模块使用 `JSON.parse()` 和 `try... catch` 进行检测。
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|string|JSON 字符串|
-|返回值|boolean|如果是有效的 JSON，返回真|
+|参数名|说明|
+|-----|---|
+|val|JSON 字符串|
+|返回值|如果是有效的 JSON，返回真|
 
 ```javascript
 isJson('{"a": 5}'); // -> true
@@ -6516,10 +6516,10 @@ isJson("{'a': 5}"); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|year|number|要检查的年份|
-|返回值|boolean|如果是闰年，返回真|
+|参数名|说明|
+|-----|---|
+|year|要检查的年份|
+|返回值|如果是闰年，返回真|
 
 ```javascript
 isLeapYear(2000); // -> true
@@ -6537,10 +6537,10 @@ isLeapYear(2002); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Map 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Map 类型，返回真|
 
 ```javascript
 isMap(new Map()); // -> true
@@ -6558,11 +6558,11 @@ isMap(new WeakMap()); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|src|object|进行匹配的对象|
-|返回值|boolean|如果匹配，返回真|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|src|进行匹配的对象|
+|返回值|如果匹配，返回真|
 
 ```javascript
 isMatch({a: 1, b: 2}, {a: 1}); // -> true
@@ -6594,10 +6594,10 @@ console.log(isMiniProgram); // -> true if running in mini program.
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|ua=navigator.userAgent|string|浏览器用户代理|
-|返回值|boolean|如果是移动端浏览器，返回真|
+|参数名|说明|
+|-----|---|
+|ua=navigator.userAgent|浏览器用户代理|
+|返回值|如果是移动端浏览器，返回真|
 
 ```javascript
 isMobile(navigator.userAgent);
@@ -6614,10 +6614,10 @@ isMobile(navigator.userAgent);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 NaN，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 NaN，返回真|
 
 跟全局 isNaN 不同的是，Undefined 不是 NaN。
 
@@ -6637,10 +6637,10 @@ isNaN(NaN); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是原生函数，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是原生函数，返回真|
 
 ```javascript
 isNative(function () {}); // -> false
@@ -6658,10 +6658,10 @@ isNative(Math.min); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 null 或 undefined，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 null 或 undefined，返回真|
 
 ```javascript
 isNil(null); // -> true
@@ -6698,10 +6698,10 @@ console.log(isNode); // -> true if running in node
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Null 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Null 类型，返回真|
 
 ```javascript
 isNull(null); // -> true
@@ -6718,10 +6718,10 @@ isNull(null); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是数字，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是数字，返回真|
 
 ```javascript
 isNum(5); // -> true
@@ -6740,10 +6740,10 @@ isNum({}); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是数字，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是数字，返回真|
 
 ```javascript
 isNumeric(1); // -> true
@@ -6766,10 +6766,10 @@ isNumeric(NaN); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是对象，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是对象，返回真|
 
 [标准定义](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
 
@@ -6789,10 +6789,10 @@ isObj([]); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|num|number|要检查的数字|
-|返回值|boolean|如果是奇数，返回真|
+|参数名|说明|
+|-----|---|
+|num|要检查的数字|
+|返回值|如果是奇数，返回真|
 
 ```javascript
 isOdd(0); // -> false
@@ -6811,10 +6811,10 @@ isOdd(2); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 plain object，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 plain object，返回真|
 
 ```javascript
 isPlainObj({}); // -> true
@@ -6836,11 +6836,11 @@ isPlainObj(function () {}); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|port|number|TCP 端口|
-|[host]|string|地址|
-|返回值|Promise|如果端口可用，返回真|
+|参数名|说明|
+|-----|---|
+|port|TCP 端口|
+|host|地址|
+|返回值|如果端口可用，返回真|
 
 ```javascript
 isPortFree(3000).then(isFree => {
@@ -6859,10 +6859,10 @@ isPortFree(3000).then(isFree => {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|num|number|要检查的数字|
-|返回值|boolean|如果是质数，返回真|
+|参数名|说明|
+|-----|---|
+|num|要检查的数字|
+|返回值|如果是质数，返回真|
 
 ```javascript
 isPrime(11); // -> true
@@ -6880,10 +6880,10 @@ isPrime(8); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是原始类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是原始类型，返回真|
 
 ```javascript
 isPrimitive(5); // -> true
@@ -6902,10 +6902,10 @@ isPrimitive(false); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是类 promise 对象，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是类 promise 对象，返回真|
 
 ```javascript
 isPromise(new Promise(function () {})); // -> true
@@ -6923,10 +6923,10 @@ isPromise({}); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是正则类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是正则类型，返回真|
 
 ```javascript
 isRegExp(/a/); // -> true
@@ -6943,10 +6943,10 @@ isRegExp(/a/); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|path|string|要检查的路径|
-|返回值|boolean|如果是相对路径，返回真|
+|参数名|说明|
+|-----|---|
+|path|要检查的路径|
+|返回值|如果是相对路径，返回真|
 
 ```javascript
 isRelative('README.md'); // -> true

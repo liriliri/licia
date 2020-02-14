@@ -2,11 +2,11 @@
  *
  * Note: This is not a complete fetch pollyfill.
  *
- * |Name     |Type   |Desc           |
- * |---------|-------|---------------|
- * |url      |string |Request url    |
- * |[options]|object |Request options|
- * |return   |Promise|Request promise|
+ * |Name   |Desc           |
+ * |-------|---------------|
+ * |url    |Request url    |
+ * |options|Request options|
+ * |return |Request promise|
  */
 
 /* example

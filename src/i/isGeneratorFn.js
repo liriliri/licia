@@ -1,9 +1,9 @@
 /* Check if value is a generator function.
  *
- * |Name  |Type   |Desc                                 |
- * |------|-------|-------------------------------------|
- * |val   |*      |Value to check                       |
- * |return|boolean|True if value is a generator function|
+ * |Name  |Desc                                 |
+ * |------|-------------------------------------|
+ * |val   |Value to check                       |
+ * |return|True if value is a generator function|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

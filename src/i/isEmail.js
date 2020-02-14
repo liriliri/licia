@@ -1,9 +1,9 @@
 /* Loosely validate an email address.
  *
- * |Name  |Type   |Desc                                 |
- * |------|-------|-------------------------------------|
- * |val   |string |Value to check                       |
- * |return|boolean|True if value is an email like string|
+ * |Name  |Desc                                 |
+ * |------|-------------------------------------|
+ * |val   |Value to check                       |
+ * |return|True if value is an email like string|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

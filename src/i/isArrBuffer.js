@@ -1,9 +1,9 @@
 /* Check if value is an ArrayBuffer.
  *
- * |Name  |Type   |Desc                           |
- * |------|-------|-------------------------------|
- * |val   |*      |Value to check                 |
- * |return|boolean|True if value is an ArrayBuffer|
+ * |Name  |Desc                           |
+ * |------|-------------------------------|
+ * |val   |Value to check                 |
+ * |return|True if value is an ArrayBuffer|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

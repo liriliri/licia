@@ -1,9 +1,9 @@
 /* Create an object composed of the inverted keys and values of object.
  *
- * |Name  |Type  |Desc               |
- * |------|------|-------------------|
- * |obj   |object|Object to invert   |
- * |return|object|New inverted object|
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |obj   |Object to invert   |
+ * |return|New inverted object|
  *
  * If object contains duplicate values, subsequent values overwrite property assignments of previous values.
  */
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Check whether client is using a mobile browser using ua.
  *
- * |Name                  |Type   |Desc                                 |
- * |----------------------|-------|-------------------------------------|
- * |ua=navigator.userAgent|string |User agent                           |
- * |return                |boolean|True if ua belongs to mobile browsers|
+ * |Name                  |Desc                                 |
+ * |----------------------|-------------------------------------|
+ * |ua=navigator.userAgent|User agent                           |
+ * |return                |True if ua belongs to mobile browsers|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Check if value is an NaN.
  *
- * |Name  |Type   |Desc                   |
- * |------|-------|-----------------------|
- * |val   |*      |Value to check         |
- * |return|boolean|True if value is an NaN|
+ * |Name  |Desc                   |
+ * |------|-----------------------|
+ * |val   |Value to check         |
+ * |return|True if value is an NaN|
  *
  * Undefined is not an NaN, different from global isNaN function.
  */
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

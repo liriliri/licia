@@ -1,11 +1,11 @@
 /* Highlight code.
  *
- * |Name   |Type  |Desc                        |
- * |-------|------|----------------------------|
- * |str    |string|Code string                 |
- * |lang=js|string|Language, js, html or css   |
- * |[style]|object|Keyword highlight style     |
- * |return |string|Highlighted html code string|
+ * |Name   |Desc                        |
+ * |-------|----------------------------|
+ * |str    |Code string                 |
+ * |lang=js|Language, js, html or css   |
+ * |style  |Keyword highlight style     |
+ * |return |Highlighted html code string|
  *
  * Available styles:
  *
@@ -20,7 +20,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.6
  */
 

@@ -1,10 +1,10 @@
 /* Performs an optimized deep comparison between the two objects, to determine if they should be considered equal.
  *
- * |Name  |Type   |Desc                         |
- * |------|-------|-----------------------------|
- * |val   |*      |Value to compare             |
- * |other |*      |Other value to compare       |
- * |return|boolean|True if values are equivalent|
+ * |Name  |Desc                         |
+ * |------|-----------------------------|
+ * |val   |Value to compare             |
+ * |other |Other value to compare       |
+ * |return|True if values are equivalent|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

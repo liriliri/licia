@@ -1,10 +1,10 @@
 /* Check if a TCP port is free.
  *
- * |Name  |Type   |Desc                      |
- * |------|-------|--------------------------|
- * |port  |number |TCP port                  |
- * |[host]|string |Host address              |
- * |return|Promise|True if given port is free|
+ * |Name  |Desc                      |
+ * |------|--------------------------|
+ * |port  |TCP port                  |
+ * |host  |Host address              |
+ * |return|True if given port is free|
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: node
- * test: node
  * since: 1.5.2
  */
 

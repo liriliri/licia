@@ -1,11 +1,11 @@
 /* Create html with JavaScript.
  *
- * |Name      |Type              |Desc           |
- * |----------|------------------|---------------|
- * |tag       |string            |Tag name       |
- * |[attrs]   |object            |Attributes     |
- * |[...child]|string HTMLElement|Children       |
- * |return    |HTMLElement       |Created element|
+ * |Name    |Desc           |
+ * |--------|---------------|
+ * |tag     |Tag name       |
+ * |attrs   |Attributes     |
+ * |...child|Children       |
+ * |return  |Created element|
  */
 
 /* example
@@ -18,7 +18,6 @@
 
 /* module
  * env: browser
- * test: browser
  * since: 1.5.1
  */
 

@@ -1,21 +1,21 @@
 /* Check if element is hidden.
  *
- * |Name   |Type   |Desc                     |
- * |-------|-------|-------------------------|
- * |el     |element|Target element           |
- * |options|object |Check options            |
- * |return |boolean|True if element is hidden|
+ * |Name   |Desc                     |
+ * |-------|-------------------------|
+ * |el     |Target element           |
+ * |options|Check options            |
+ * |return |True if element is hidden|
  *
  * Available options:
  *
- * |Name            |Type   |Desc                         |
- * |----------------|-------|-----------------------------|
- * |display=true    |boolean|Check if it is displayed     |
- * |visibility=false|boolean|Check visibility css property|
- * |opacity=false   |boolean|Check opacity css property   |
- * |size=false      |boolean|Check width and height       |
- * |viewport=false  |boolean|Check if it is in viewport   |
- * |overflow=false  |boolean|Check if hidden in overflow  |
+ * |Name            |Desc                         |
+ * |----------------|-----------------------------|
+ * |display=true    |Check if it is displayed     |
+ * |visibility=false|Check visibility css property|
+ * |opacity=false   |Check opacity css property   |
+ * |size=false      |Check width and height       |
+ * |viewport=false  |Check if it is in viewport   |
+ * |overflow=false  |Check if hidden in overflow  |
  */
 
 /* example

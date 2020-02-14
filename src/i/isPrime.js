@@ -1,9 +1,9 @@
 /* Check if the provided integer is a prime number.
  *
- * |Name  |Type   |Desc                            |
- * |------|-------|--------------------------------|
- * |num   |number |Number to check                 |
- * |return|boolean|True if number is a prime number|
+ * |Name  |Desc                            |
+ * |------|--------------------------------|
+ * |num   |Number to check                 |
+ * |return|True if number is a prime number|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.2.0
  */
 

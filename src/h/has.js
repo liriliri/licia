@@ -1,10 +1,10 @@
 /* Checks if key is a direct property.
  *
- * |Name  |Type   |Desc                            |
- * |------|-------|--------------------------------|
- * |obj   |object |Object to query                 |
- * |key   |string |Path to check                   |
- * |return|boolean|True if key is a direct property|
+ * |Name  |Desc                            |
+ * |------|--------------------------------|
+ * |obj   |Object to query                 |
+ * |key   |Path to check                   |
+ * |return|True if key is a direct property|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

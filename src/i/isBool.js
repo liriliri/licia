@@ -1,9 +1,9 @@
 /* Check if value is a boolean primitive.
  *
- * |Name  |Type   |Desc                      |
- * |------|-------|--------------------------|
- * |val   |*      |Value to check            |
- * |return|boolean|True if value is a boolean|
+ * |Name  |Desc                      |
+ * |------|--------------------------|
+ * |val   |Value to check            |
+ * |return|True if value is a boolean|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

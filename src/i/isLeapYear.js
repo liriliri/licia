@@ -1,9 +1,9 @@
 /* Check if a year is a leap year.
  *
- * |Name  |Type   |Desc                       |
- * |------|-------|---------------------------|
- * |year  |number |Year to check              |
- * |return|boolean|True if year is a leap year|
+ * |Name  |Desc                       |
+ * |------|---------------------------|
+ * |year  |Year to check              |
+ * |return|True if year is a leap year|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

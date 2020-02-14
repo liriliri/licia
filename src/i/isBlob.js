@@ -1,9 +1,9 @@
 /* Check if value is a Blob.
  *
- * |Name  |Type   |Desc                   |
- * |------|-------|-----------------------|
- * |val   |*      |Value to check         |
- * |return|boolean|True if value is a Blob|
+ * |Name  |Desc                   |
+ * |------|-----------------------|
+ * |val   |Value to check         |
+ * |return|True if value is a Blob|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

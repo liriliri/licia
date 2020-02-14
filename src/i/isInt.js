@@ -1,9 +1,9 @@
 /* Checks if value is classified as a Integer.
  *
- * |Name  |Type   |Desc                                 |
- * |------|-------|-------------------------------------|
- * |val   |*      |Value to check                       |
- * |return|boolean|True if value is correctly classified|
+ * |Name  |Desc                                 |
+ * |------|-------------------------------------|
+ * |val   |Value to check                       |
+ * |return|True if value is correctly classified|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

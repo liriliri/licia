@@ -1,9 +1,9 @@
 /* Check if value is classified as a Number primitive or object.
  *
- * |Name  |Type   |Desc                                 |
- * |------|-------|-------------------------------------|
- * |val   |*      |Value to check                       |
- * |return|boolean|True if value is correctly classified|
+ * |Name  |Desc                                 |
+ * |------|-------------------------------------|
+ * |val   |Value to check                       |
+ * |return|True if value is correctly classified|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Check if value is a buffer.
  *
- * |Name  |Type   |Desc                     |
- * |------|-------|-------------------------|
- * |val   |*      |The value to check       |
- * |return|boolean|True if value is a buffer|
+ * |Name  |Desc                     |
+ * |------|-------------------------|
+ * |val   |The value to check       |
+ * |return|True if value is a buffer|
  */
 
 /* example

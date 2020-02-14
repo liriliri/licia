@@ -1,9 +1,9 @@
 /* Check if path appears to be relative.
  *
- * |Name  |Type   |Desc                               |
- * |------|-------|-----------------------------------|
- * |path  |string |Path to check                      |
- * |return|boolean|True if path appears to be relative|
+ * |Name  |Desc                               |
+ * |------|-----------------------------------|
+ * |path  |Path to check                      |
+ * |return|True if path appears to be relative|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

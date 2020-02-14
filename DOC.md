@@ -4608,11 +4608,11 @@ function fetch(
 
 Note: This is not a complete fetch pollyfill.
 
-|Name     |Type   |Desc           |
-|---------|-------|---------------|
-|url      |string |Request url    |
-|[options]|object |Request options|
-|return   |Promise|Request promise|
+|Name   |Desc           |
+|-------|---------------|
+|url    |Request url    |
+|options|Request options|
+|return |Request promise|
 
 ```javascript
 fetch('test.json', {
@@ -5369,12 +5369,12 @@ Create html with JavaScript.
 </pre>
 </details>
 
-|Name      |Type              |Desc           |
-|----------|------------------|---------------|
-|tag       |string            |Tag name       |
-|[attrs]   |object            |Attributes     |
-|[...child]|string HTMLElement|Children       |
-|return    |HTMLElement       |Created element|
+|Name    |Desc           |
+|--------|---------------|
+|tag     |Tag name       |
+|attrs   |Attributes     |
+|...child|Children       |
+|return  |Created element|
 
 ```javascript
 const el = h('div#test.title', {
@@ -5395,11 +5395,11 @@ Checks if key is a direct property.
 </pre>
 </details>
 
-|Name  |Type   |Desc                            |
-|------|-------|--------------------------------|
-|obj   |object |Object to query                 |
-|key   |string |Path to check                   |
-|return|boolean|True if key is a direct property|
+|Name  |Desc                            |
+|------|--------------------------------|
+|obj   |Object to query                 |
+|key   |Path to check                   |
+|return|True if key is a direct property|
 
 ```javascript
 has({one: 1}, 'one'); // -> true
@@ -5416,11 +5416,11 @@ Heap sort implementation.
 </pre>
 </details>
 
-|Name  |Type    |Desc         |
-|------|--------|-------------|
-|arr   |array   |Array to sort|
-|[cmp] |function|Comparator   |
-|return|array   |Sorted array |
+|Name  |Desc         |
+|------|-------------|
+|arr   |Array to sort|
+|cmp   |Comparator   |
+|return|Sorted array |
 
 ```javascript
 heapSort([2, 1]); // -> [1, 2]
@@ -5487,12 +5487,12 @@ function highlight(
 </pre>
 </details>
 
-|Name   |Type  |Desc                        |
-|-------|------|----------------------------|
-|str    |string|Code string                 |
-|lang=js|string|Language, js, html or css   |
-|[style]|object|Keyword highlight style     |
-|return |string|Highlighted html code string|
+|Name   |Desc                        |
+|-------|----------------------------|
+|str    |Code string                 |
+|lang=js|Language, js, html or css   |
+|style  |Keyword highlight style     |
+|return |Highlighted html code string|
 
 Available styles:
 
@@ -5551,10 +5551,10 @@ Convert hsl to rgb.
 </pre>
 </details>
 
-|Name  |Type |Desc      |
-|------|-----|----------|
-|hsl   |array|Hsl values|
-|return|array|Rgb values|
+|Name  |Desc      |
+|------|----------|
+|hsl   |Hsl values|
+|return|Rgb values|
 
 ```javascript
 hslToRgb([165, 59, 50, 0.8]); // -> [52, 203, 165, 0.8]
@@ -5609,10 +5609,10 @@ Return the first argument given.
 </pre>
 </details>
 
-|Name  |Type|Desc       |
-|------|----|-----------|
-|val   |*   |Any value  |
-|return|*   |Given value|
+|Name  |Desc       |
+|------|-----------|
+|val   |Any value  |
+|return|Given value|
 
 ```javascript
 identity('a'); // -> 'a'
@@ -5766,11 +5766,11 @@ Insertion sort implementation.
 </pre>
 </details>
 
-|Name  |Type    |Desc         |
-|------|--------|-------------|
-|arr   |array   |Array to sort|
-|[cmp] |function|Comparator   |
-|return|array   |Sorted array |
+|Name  |Desc         |
+|------|-------------|
+|arr   |Array to sort|
+|cmp   |Comparator   |
+|return|Sorted array |
 
 ```javascript
 insertionSort([2, 1]); // -> [1, 2]
@@ -5869,10 +5869,10 @@ Create an object composed of the inverted keys and values of object.
 </pre>
 </details>
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|obj   |object|Object to invert   |
-|return|object|New inverted object|
+|Name  |Desc               |
+|------|-------------------|
+|obj   |Object to invert   |
+|return|New inverted object|
 
 If object contains duplicate values, subsequent values overwrite property assignments of previous values.
 
@@ -5891,10 +5891,10 @@ Check if an url is absolute.
 </pre>
 </details>
 
-|Name  |Type   |Desc                   |
-|------|-------|-----------------------|
-|url   |string |Url to check           |
-|return|boolean|True if url is absolute|
+|Name  |Desc                   |
+|------|-----------------------|
+|url   |Url to check           |
+|return|True if url is absolute|
 
 ```javascript
 isAbsoluteUrl('http://www.surunzi.com'); // -> true
@@ -5935,10 +5935,10 @@ Check if value is an `Array` object.
 </pre>
 </details>
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
-|val   |*      |Value to check                    |
-|return|boolean|True if value is an `Array` object|
+|Name  |Desc                              |
+|------|----------------------------------|
+|val   |Value to check                    |
+|return|True if value is an `Array` object|
 
 ```javascript
 isArr([]); // -> true
@@ -5956,10 +5956,10 @@ Check if value is an ArrayBuffer.
 </pre>
 </details>
 
-|Name  |Type   |Desc                           |
-|------|-------|-------------------------------|
-|val   |*      |Value to check                 |
-|return|boolean|True if value is an ArrayBuffer|
+|Name  |Desc                           |
+|------|-------------------------------|
+|val   |Value to check                 |
+|return|True if value is an ArrayBuffer|
 
 ```javascript
 isArrBuffer(new ArrayBuffer(8)); // -> true
@@ -5976,10 +5976,10 @@ Check if value is array-like.
 </pre>
 </details>
 
-|Name  |Type   |Desc                       |
-|------|-------|---------------------------|
-|val   |*      |Value to check             |
-|return|boolean|True if value is array like|
+|Name  |Desc                       |
+|------|---------------------------|
+|val   |Value to check             |
+|return|True if value is array like|
 
 Function returns false.
 
@@ -6000,10 +6000,10 @@ Check if value is an async function.
 </pre>
 </details>
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
-|val   |*      |Value to check                    |
-|return|boolean|True if value is an async function|
+|Name  |Desc                              |
+|------|----------------------------------|
+|val   |Value to check                    |
+|return|True if value is an async function|
 
 ```javascript
 isAsyncFn(function * () {}); // -> false
@@ -6022,10 +6022,10 @@ Check if value is a Blob.
 </pre>
 </details>
 
-|Name  |Type   |Desc                   |
-|------|-------|-----------------------|
-|val   |*      |Value to check         |
-|return|boolean|True if value is a Blob|
+|Name  |Desc                   |
+|------|-----------------------|
+|val   |Value to check         |
+|return|True if value is a Blob|
 
 ```javascript
 isBlob(new Blob([])); // -> true;
@@ -6043,10 +6043,10 @@ Check if value is a boolean primitive.
 </pre>
 </details>
 
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
-|val   |*      |Value to check            |
-|return|boolean|True if value is a boolean|
+|Name  |Desc                      |
+|------|--------------------------|
+|val   |Value to check            |
+|return|True if value is a boolean|
 
 ```javascript
 isBool(true); // -> true
@@ -6080,10 +6080,10 @@ Check if value is a buffer.
 </pre>
 </details>
 
-|Name  |Type   |Desc                     |
-|------|-------|-------------------------|
-|val   |*      |The value to check       |
-|return|boolean|True if value is a buffer|
+|Name  |Desc                     |
+|------|-------------------------|
+|val   |The value to check       |
+|return|True if value is a buffer|
 
 ```javascript
 isBuffer(new Buffer(4)); // -> true
@@ -6148,10 +6148,10 @@ Check if a string is a valid data url.
 </pre>
 </details>
 
-|Name  |Type   |Desc                        |
-|------|-------|----------------------------|
-|str   |string |String to check             |
-|return|boolean|True if string is a data url|
+|Name  |Desc                        |
+|------|----------------------------|
+|str   |String to check             |
+|return|True if string is a data url|
 
 ```javascript
 isDataUrl('http://eustia.liriliri.io'); // -> false
@@ -6169,10 +6169,10 @@ Check if value is classified as a Date object.
 </pre>
 </details>
 
-|Name  |Type   |Desc                          |
-|------|-------|------------------------------|
-|val   |*      |value to check                |
-|return|boolean|True if value is a Date object|
+|Name  |Desc                          |
+|------|------------------------------|
+|val   |value to check                |
+|return|True if value is a Date object|
 
 ```javascript
 isDate(new Date()); // -> true
@@ -6209,10 +6209,10 @@ Loosely validate an email address.
 </pre>
 </details>
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
-|val   |string |Value to check                       |
-|return|boolean|True if value is an email like string|
+|Name  |Desc                                 |
+|------|-------------------------------------|
+|val   |Value to check                       |
+|return|True if value is an email like string|
 
 ```javascript
 isEmail('surunzi@foxmail.com'); // -> true
@@ -6251,11 +6251,11 @@ Performs an optimized deep comparison between the two objects, to determine if t
 </pre>
 </details>
 
-|Name  |Type   |Desc                         |
-|------|-------|-----------------------------|
-|val   |*      |Value to compare             |
-|other |*      |Other value to compare       |
-|return|boolean|True if values are equivalent|
+|Name  |Desc                         |
+|------|-----------------------------|
+|val   |Value to compare             |
+|other |Other value to compare       |
+|return|True if values are equivalent|
 
 ```javascript
 isEqual([1, 2, 3], [1, 2, 3]); // -> true
@@ -6272,10 +6272,10 @@ Check if value is an error.
 </pre>
 </details>
 
-|Name  |Type   |Desc                     |
-|------|-------|-------------------------|
-|val   |*      |Value to check           |
-|return|boolean|True if value is an error|
+|Name  |Desc                     |
+|------|-------------------------|
+|val   |Value to check           |
+|return|True if value is an error|
 
 ```javascript
 isErr(new Error()); // -> true
@@ -6292,10 +6292,10 @@ Check if number is even.
 </pre>
 </details>
 
-|Name  |Type   |Desc                  |
-|------|-------|----------------------|
-|num   |number |Number to check       |
-|return|boolean|True if number is even|
+|Name  |Desc                  |
+|------|----------------------|
+|num   |Number to check       |
+|return|True if number is even|
 
 ```javascript
 isEven(0); // -> true
@@ -6314,10 +6314,10 @@ Check if value is a file.
 </pre>
 </details>
 
-|Name  |Type   |Desc                   |
-|------|-------|-----------------------|
-|val   |*      |Value to check         |
-|return|boolean|True if value is a file|
+|Name  |Desc                   |
+|------|-----------------------|
+|val   |Value to check         |
+|return|True if value is a file|
 
 ```javascript
 isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
@@ -6334,10 +6334,10 @@ Check if value is a finite primitive number.
 </pre>
 </details>
 
-|Name  |Type   |Desc                            |
-|------|-------|--------------------------------|
-|val   |*      |Value to check                  |
-|return|boolean|True if value is a finite number|
+|Name  |Desc                            |
+|------|--------------------------------|
+|val   |Value to check                  |
+|return|True if value is a finite number|
 
 ```javascript
 isFinite(3); // -> true
@@ -6355,10 +6355,10 @@ Check if value is a function.
 </pre>
 </details>
 
-|Name  |Type   |Desc                       |
-|------|-------|---------------------------|
-|val   |*      |Value to check             |
-|return|boolean|True if value is a function|
+|Name  |Desc                       |
+|------|---------------------------|
+|val   |Value to check             |
+|return|True if value is a function|
 
 Generator function is also classified as true.
 
@@ -6379,10 +6379,10 @@ Check if value is a generator function.
 </pre>
 </details>
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
-|val   |*      |Value to check                       |
-|return|boolean|True if value is a generator function|
+|Name  |Desc                                 |
+|------|-------------------------------------|
+|val   |Value to check                       |
+|return|True if value is a generator function|
 
 ```javascript
 isGeneratorFn(function * () {}); // -> true
@@ -6407,22 +6407,22 @@ Check if element is hidden.
 </pre>
 </details>
 
-|Name   |Type   |Desc                     |
-|-------|-------|-------------------------|
-|el     |element|Target element           |
-|options|object |Check options            |
-|return |boolean|True if element is hidden|
+|Name   |Desc                     |
+|-------|-------------------------|
+|el     |Target element           |
+|options|Check options            |
+|return |True if element is hidden|
 
 Available options:
 
-|Name            |Type   |Desc                         |
-|----------------|-------|-----------------------------|
-|display=true    |boolean|Check if it is displayed     |
-|visibility=false|boolean|Check visibility css property|
-|opacity=false   |boolean|Check opacity css property   |
-|size=false      |boolean|Check width and height       |
-|viewport=false  |boolean|Check if it is in viewport   |
-|overflow=false  |boolean|Check if hidden in overflow  |
+|Name            |Desc                         |
+|----------------|-----------------------------|
+|display=true    |Check if it is displayed     |
+|visibility=false|Check visibility css property|
+|opacity=false   |Check opacity css property   |
+|size=false      |Check width and height       |
+|viewport=false  |Check if it is in viewport   |
+|overflow=false  |Check if hidden in overflow  |
 
 ```javascript
 isHidden(document.createElement('div')); // -> true
@@ -6439,10 +6439,10 @@ Checks if value is classified as a Integer.
 </pre>
 </details>
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
-|val   |*      |Value to check                       |
-|return|boolean|True if value is correctly classified|
+|Name  |Desc                                 |
+|------|-------------------------------------|
+|val   |Value to check                       |
+|return|True if value is correctly classified|
 
 ```javascript
 isInt(5); // -> true
@@ -6465,10 +6465,10 @@ function isIp(str: string): boolean;</code>
 </pre>
 </details>
 
-|Name  |Type   |Desc                          |
-|------|-------|------------------------------|
-|str   |string |String to check               |
-|return|boolean|True if value is an IP address|
+|Name  |Desc                          |
+|------|------------------------------|
+|str   |String to check               |
+|return|True if value is an IP address|
 
 ### v4
 
@@ -6499,10 +6499,10 @@ Check if value is a valid JSON.
 
 It uses `JSON.parse()` and a `try... catch` block.
 
-|Name  |Type   |Desc                         |
-|------|-------|-----------------------------|
-|val   |string |JSON string                  |
-|return|boolean|True if value is a valid JSON|
+|Name  |Desc                         |
+|------|-----------------------------|
+|val   |JSON string                  |
+|return|True if value is a valid JSON|
 
 ```javascript
 isJson('{"a": 5}'); // -> true
@@ -6520,10 +6520,10 @@ Check if a year is a leap year.
 </pre>
 </details>
 
-|Name  |Type   |Desc                       |
-|------|-------|---------------------------|
-|year  |number |Year to check              |
-|return|boolean|True if year is a leap year|
+|Name  |Desc                       |
+|------|---------------------------|
+|year  |Year to check              |
+|return|True if year is a leap year|
 
 ```javascript
 isLeapYear(2000); // -> true
@@ -6541,10 +6541,10 @@ Check if value is a Map object.
 </pre>
 </details>
 
-|Name  |Type   |Desc                  |
-|------|-------|----------------------|
-|val   |*      |Value to check        |
-|return|boolean|True if value is a Map|
+|Name  |Desc                  |
+|------|----------------------|
+|val   |Value to check        |
+|return|True if value is a Map|
 
 ```javascript
 isMap(new Map()); // -> true
@@ -6562,11 +6562,11 @@ Check if keys and values in src are contained in obj.
 </pre>
 </details>
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
-|obj   |object |Object to inspect                 |
-|src   |object |Object of property values to match|
-|return|boolean|True if object is match           |
+|Name  |Desc                              |
+|------|----------------------------------|
+|obj   |Object to inspect                 |
+|src   |Object of property values to match|
+|return|True if object is match           |
 
 ```javascript
 isMatch({a: 1, b: 2}, {a: 1}); // -> true
@@ -6598,10 +6598,10 @@ Check whether client is using a mobile browser using ua.
 </pre>
 </details>
 
-|Name                  |Type   |Desc                                 |
-|----------------------|-------|-------------------------------------|
-|ua=navigator.userAgent|string |User agent                           |
-|return                |boolean|True if ua belongs to mobile browsers|
+|Name                  |Desc                                 |
+|----------------------|-------------------------------------|
+|ua=navigator.userAgent|User agent                           |
+|return                |True if ua belongs to mobile browsers|
 
 ```javascript
 isMobile(navigator.userAgent);
@@ -6618,10 +6618,10 @@ Check if value is an NaN.
 </pre>
 </details>
 
-|Name  |Type   |Desc                   |
-|------|-------|-----------------------|
-|val   |*      |Value to check         |
-|return|boolean|True if value is an NaN|
+|Name  |Desc                   |
+|------|-----------------------|
+|val   |Value to check         |
+|return|True if value is an NaN|
 
 Undefined is not an NaN, different from global isNaN function.
 
@@ -6641,10 +6641,10 @@ Check if value is a native function.
 </pre>
 </details>
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
-|val   |*      |Value to check                    |
-|return|boolean|True if value is a native function|
+|Name  |Desc                              |
+|------|----------------------------------|
+|val   |Value to check                    |
+|return|True if value is a native function|
 
 ```javascript
 isNative(function () {}); // -> false
@@ -6662,10 +6662,10 @@ Check if value is null or undefined, the same as value == null.
 </pre>
 </details>
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
-|val   |*      |Value to check                    |
-|return|boolean|True if value is null or undefined|
+|Name  |Desc                              |
+|------|----------------------------------|
+|val   |Value to check                    |
+|return|True if value is null or undefined|
 
 ```javascript
 isNil(null); // -> true
@@ -6702,10 +6702,10 @@ Check if value is an Null.
 </pre>
 </details>
 
-|Name  |Type   |Desc                    |
-|------|-------|------------------------|
-|val   |*      |Value to check          |
-|return|boolean|True if value is an Null|
+|Name  |Desc                    |
+|------|------------------------|
+|val   |Value to check          |
+|return|True if value is an Null|
 
 ```javascript
 isNull(null); // -> true
@@ -6722,10 +6722,10 @@ Check if value is classified as a Number primitive or object.
 </pre>
 </details>
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
-|val   |*      |Value to check                       |
-|return|boolean|True if value is correctly classified|
+|Name  |Desc                                 |
+|------|-------------------------------------|
+|val   |Value to check                       |
+|return|True if value is correctly classified|
 
 ```javascript
 isNum(5); // -> true
@@ -6744,10 +6744,10 @@ Check if value is numeric.
 </pre>
 </details>
 
-|Name  |Type   |Desc                    |
-|------|-------|------------------------|
-|val   |*      |Value to check          |
-|return|boolean|True if value is numeric|
+|Name  |Desc                    |
+|------|------------------------|
+|val   |Value to check          |
+|return|True if value is numeric|
 
 ```javascript
 isNumeric(1); // -> true
@@ -6770,10 +6770,10 @@ Check if value is the language type of Object.
 </pre>
 </details>
 
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
-|val   |*      |Value to check            |
-|return|boolean|True if value is an object|
+|Name  |Desc                      |
+|------|--------------------------|
+|val   |Value to check            |
+|return|True if value is an object|
 
 [Language Spec](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
 
@@ -6793,10 +6793,10 @@ Check if number is odd.
 </pre>
 </details>
 
-|Name  |Type   |Desc                 |
-|------|-------|---------------------|
-|num   |number |Number to check      |
-|return|boolean|True if number is odd|
+|Name  |Desc                 |
+|------|---------------------|
+|num   |Number to check      |
+|return|True if number is odd|
 
 ```javascript
 isOdd(0); // -> false
@@ -6815,10 +6815,10 @@ Check if value is an object created by Object constructor.
 </pre>
 </details>
 
-|Name  |Type   |Desc                           |
-|------|-------|-------------------------------|
-|val   |*      |Value to check                 |
-|return|boolean|True if value is a plain object|
+|Name  |Desc                           |
+|------|-------------------------------|
+|val   |Value to check                 |
+|return|True if value is a plain object|
 
 ```javascript
 isPlainObj({}); // -> true
@@ -6840,11 +6840,11 @@ Check if a TCP port is free.
 </pre>
 </details>
 
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
-|port  |number |TCP port                  |
-|[host]|string |Host address              |
-|return|Promise|True if given port is free|
+|Name  |Desc                      |
+|------|--------------------------|
+|port  |TCP port                  |
+|host  |Host address              |
+|return|True if given port is free|
 
 ```javascript
 isPortFree(3000).then(isFree => {
@@ -6863,10 +6863,10 @@ Check if the provided integer is a prime number.
 </pre>
 </details>
 
-|Name  |Type   |Desc                            |
-|------|-------|--------------------------------|
-|num   |number |Number to check                 |
-|return|boolean|True if number is a prime number|
+|Name  |Desc                            |
+|------|--------------------------------|
+|num   |Number to check                 |
+|return|True if number is a prime number|
 
 ```javascript
 isPrime(11); // -> true
@@ -6884,10 +6884,10 @@ Check if value is string, number, boolean or null.
 </pre>
 </details>
 
-|Name  |Type   |Desc                        |
-|------|-------|----------------------------|
-|val   |*      |Value to check              |
-|return|boolean|True if value is a primitive|
+|Name  |Desc                        |
+|------|----------------------------|
+|val   |Value to check              |
+|return|True if value is a primitive|
 
 ```javascript
 isPrimitive(5); // -> true
@@ -6906,10 +6906,10 @@ Check if value looks like a promise.
 </pre>
 </details>
 
-|Name  |Type   |Desc                              |
-|------|-------|----------------------------------|
-|val   |*      |Value to check                    |
-|return|boolean|True if value looks like a promise|
+|Name  |Desc                              |
+|------|----------------------------------|
+|val   |Value to check                    |
+|return|True if value looks like a promise|
 
 ```javascript
 isPromise(new Promise(function () {})); // -> true
@@ -6927,10 +6927,10 @@ Check if value is a regular expression.
 </pre>
 </details>
 
-|Name  |Type   |Desc                                 |
-|------|-------|-------------------------------------|
-|val   |*      |Value to check                       |
-|return|boolean|True if value is a regular expression|
+|Name  |Desc                                 |
+|------|-------------------------------------|
+|val   |Value to check                       |
+|return|True if value is a regular expression|
 
 ```javascript
 isRegExp(/a/); // -> true
@@ -6947,10 +6947,10 @@ Check if path appears to be relative.
 </pre>
 </details>
 
-|Name  |Type   |Desc                               |
-|------|-------|-----------------------------------|
-|path  |string |Path to check                      |
-|return|boolean|True if path appears to be relative|
+|Name  |Desc                               |
+|------|-----------------------------------|
+|path  |Path to check                      |
+|return|True if path appears to be relative|
 
 ```javascript
 isRelative('README.md'); // -> true
