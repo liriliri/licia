@@ -1,9 +1,9 @@
 /* Return a predicate function that checks if attrs are contained in an object.
  *
- * |Name  |Type    |Desc                              |
- * |------|--------|----------------------------------|
- * |attrs |object  |Object of property values to match|
- * |return|function|New predicate function            |
+ * |Name  |Desc                              |
+ * |------|----------------------------------|
+ * |attrs |Object of property values to match|
+ * |return|New predicate function            |
  */
 
 /* example
@@ -18,7 +18,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

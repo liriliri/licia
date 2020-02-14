@@ -1,9 +1,9 @@
 /* Get maximum value of given numbers.
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |...num|number|Numbers to calculate|
- * |return|number|Maximum value       |
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |...num|Numbers to calculate|
+ * |return|Maximum value       |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

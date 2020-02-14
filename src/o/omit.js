@@ -1,10 +1,10 @@
 /* Opposite of pick.
  *
- * |Name  |Type                 |Desc           |
- * |------|---------------------|---------------|
- * |obj   |object               |Source object  |
- * |filter|string array function|Object filter  |
- * |return|object               |Filtered object|
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |obj   |Source object  |
+ * |filter|Object filter  |
+ * |return|Filtered object|
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

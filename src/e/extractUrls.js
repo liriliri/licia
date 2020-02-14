@@ -1,9 +1,9 @@
 /* Extract urls from plain text.
  *
- * |Name  |Type  |Desc           |
- * |------|------|---------------|
- * |str   |string|Text to extract|
- * |return|array |Url list       |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |str   |Text to extract|
+ * |return|Url list       |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

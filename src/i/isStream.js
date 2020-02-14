@@ -1,9 +1,9 @@
 /* Check if value is a Node.js stream.
  *
- * |Name  |Type   |Desc                             |
- * |------|-------|---------------------------------|
- * |val   |*      |Value to check                   |
- * |return|boolean|True if value is a Node.js stream|
+ * |Name  |Desc                             |
+ * |------|---------------------------------|
+ * |val   |Value to check                   |
+ * |return|True if value is a Node.js stream|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: node
- * test: node
  */
 
 /* typescript

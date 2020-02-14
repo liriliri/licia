@@ -1,9 +1,9 @@
 /* Simple FNV-1a implementation.
  *
- * |Name  |Type  |Desc          |
- * |------|------|--------------|
- * |str   |string|String to hash|
- * |return|number|Hast result   |
+ * |Name  |Desc          |
+ * |------|--------------|
+ * |str   |String to hash|
+ * |return|Hast result   |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.10.0
  */
 

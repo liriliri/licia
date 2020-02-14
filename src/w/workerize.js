@@ -1,9 +1,9 @@
 /* Move a stand-alone function to a worker thread.
  *
- * |Name  |Type    |Desc               |
- * |------|--------|-------------------|
- * |fn    |function|Function to turn   |
- * |return|function|Workerized Function|
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |fn    |Function to turn   |
+ * |return|Workerized Function|
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

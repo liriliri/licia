@@ -1,9 +1,9 @@
 /* Detect file type using magic number.
  *
- * |Name  |Type                         |Desc                          |
- * |------|-----------------------------|------------------------------|
- * |input |Buffer ArrayBuffer Uint8Array|File input                    |
- * |return|object null                  |Object containing ext and mime|
+ * |Name  |Desc                          |
+ * |------|------------------------------|
+ * |input |File input                    |
+ * |return|Object containing ext and mime|
  *
  * ### Supported file types
  *
@@ -18,7 +18,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.1
  */
 

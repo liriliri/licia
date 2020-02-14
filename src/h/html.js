@@ -4,19 +4,19 @@
  *
  * Parse html string into js object.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |html  |string|Html string     |
- * |return|array |Parsed js object|
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |html  |Html string     |
+ * |return|Parsed js object|
  *
  * ### stringify
  *
  * Stringify object into an html string.
  *
- * |Name  |Type  |Desc               |
- * |------|------|-------------------|
- * |tree  |array |Object to stringify|
- * |return|string|Html string        |
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |tree  |Object to stringify|
+ * |return|Html string        |
  */
 
 /* example
@@ -27,7 +27,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.6.0
  */
 

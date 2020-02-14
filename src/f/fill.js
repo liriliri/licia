@@ -1,12 +1,12 @@
 /* Fill elements of array with value.
  *
- * |Name          |Type  |Desc                    |
- * |--------------|------|------------------------|
- * |list          |array |Array to fill           |
- * |value         |*     |Value to fill array with|
- * |start=0       |number|Start position          |
- * |end=arr.length|number|End position            |
- * |return        |array |Filled array            |
+ * |Name          |Desc                    |
+ * |--------------|------------------------|
+ * |list          |Array to fill           |
+ * |value         |Value to fill array with|
+ * |start=0       |Start position          |
+ * |end=arr.length|End position            |
+ * |return        |Filled array            |
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

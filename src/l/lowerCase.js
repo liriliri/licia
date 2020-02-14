@@ -1,9 +1,9 @@
 /* Convert string to lower case.
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |str   |string|String to convert |
- * |return|string|Lower cased string|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |str   |String to convert |
+ * |return|Lower cased string|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,10 +1,10 @@
 /* Format string in a printf-like format.
  *
- * |Name     |Type  |Desc                               |
- * |---------|------|-----------------------------------|
- * |str      |string|String to format                   |
- * |...values|*     |Values to replace format specifiers|
- * |return   |string|Formatted string                   |
+ * |Name     |Desc                               |
+ * |---------|-----------------------------------|
+ * |str      |String to format                   |
+ * |...values|Values to replace format specifiers|
+ * |return   |Formatted string                   |
  *
  * ### Format Specifiers
  *
@@ -22,7 +22,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

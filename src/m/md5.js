@@ -1,9 +1,9 @@
 /* MD5 implementation.
  *
- * |Name   |Type        |Desc              |
- * |-------|------------|------------------|
- * |msg    |string array|Message to encrypt|
- * |return |string      |MD5 hash          |
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |msg   |Message to encrypt|
+ * |return|MD5 hash          |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.1.0
  */
 

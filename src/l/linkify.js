@@ -1,10 +1,10 @@
 /* Hyperlink urls in a string.
  *
- * |Name       |Type    |Desc                     |
- * |-----------|--------|-------------------------|
- * |str        |string  |String to hyperlink      |
- * |[hyperlink]|function|Function to hyperlink url|
- * |return     |string  |Result string            |
+ * |Name     |Desc                     |
+ * |---------|-------------------------|
+ * |str      |String to hyperlink      |
+ * |hyperlink|Function to hyperlink url|
+ * |return   |Result string            |
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

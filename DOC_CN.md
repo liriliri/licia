@@ -4365,10 +4365,10 @@ escapeJsStr('\"\n'); // -> '\\"\\\\n'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|目标字符串|
 
 ```javascript
 escapeRegExp('[licia]'); // -> '\\[licia\\]'
@@ -4552,10 +4552,10 @@ extractBlockCmts('\/*licia*\/'); // -> ['licia']
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|文本|
-|返回值|array|url 列表|
+|参数名|说明|
+|-----|---|
+|str|文本|
+|返回值|url 列表|
 
 ```javascript
 const str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
@@ -4687,10 +4687,10 @@ function fileType(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|input|Buffer ArrayBuffer Uint8Array|文件输入|
-|返回值|object null|包括扩展名和 mime 类型的对象|
+|参数名|说明|
+|-----|---|
+|input|文件输入|
+|返回值|包括扩展名和 mime 类型的对象|
 
 ### 支持的文件类型
 
@@ -4718,13 +4718,13 @@ console.log(fileType(file)); // -> { ext: 'jpg', mime: 'image/jpeg' }
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|list|array|源数组|
-|value|*|填充数组的值|
-|start=0|number|起始位置|
-|end=arr.length|number|结束位置，不包括|
-|返回值|array|目标数组|
+|参数名|说明|
+|-----|---|
+|list|源数组|
+|value|填充数组的值|
+|start=0|起始位置|
+|end=arr.length|结束位置，不包括|
+|返回值|目标数组|
 
 ```javascript
 fill([1, 2, 3], '*'); // -> ['*', '*', '*']
@@ -4814,11 +4814,11 @@ find([{
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|目标集合|
-|predicate|function|真值检测函数|
-|返回值|number|第一个符合条件元素的位置|
+|参数名|说明|
+|-----|---|
+|arr|目标集合|
+|predicate|真值检测函数|
+|返回值|第一个符合条件元素的位置|
 
 ```javascript
 findIdx([{
@@ -4847,12 +4847,12 @@ findIdx([{
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|predicate|function|真值检测函数|
-|[ctx]|*|函数上下文|
-|返回值|string|符合条件的键名|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|predicate|真值检测函数|
+|ctx|函数上下文|
+|返回值|符合条件的键名|
 
 ```javascript
 findKey({a: 1, b: 2}, function (val) {
@@ -4958,10 +4958,10 @@ test('test', () => {}, 5, 'test') // Throw error
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function string|目标函数|
-|返回值|array|参数名|
+|参数名|说明|
+|-----|---|
+|fn|目标函数|
+|返回值|参数名|
 
 ```javascript
 fnParams(function (a, b) {}); // -> ['a', 'b']
@@ -4978,10 +4978,10 @@ fnParams(function (a, b) {}); // -> ['a', 'b']
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|目标字符串|
-|返回值|number|哈希结果|
+|参数名|说明|
+|-----|---|
+|str|目标字符串|
+|返回值|哈希结果|
 
 ```javascript
 fnv1a('test'); // -> 2949673445
@@ -4998,11 +4998,11 @@ fnv1a('test'); // -> 2949673445
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|...values|*|替换占位符的值|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|...values|替换占位符的值|
+|返回值|目标字符串|
 
 ### 格式占位符 
 
@@ -5050,10 +5050,10 @@ Object.freeze 的快捷方式。
 
 如果不支持 Object.freeze，使用 Object.defineProperties 进行模拟。
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|返回值|目标对象|
 
 ```javascript
 const a = {b: 1};
@@ -5230,11 +5230,11 @@ fuzzySearch('alpha-test', [{
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|a|number|要计算的数字|
-|b|number|要计算的数字|
-|返回值|number|最大公约数|
+|参数名|说明|
+|-----|---|
+|a|要计算的数字|
+|b|要计算的数字|
+|返回值|最大公约数|
 
 ```javascript
 gcd(121, 44); // -> 11
@@ -5254,11 +5254,11 @@ gcd(121, 44); // -> 11
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|[port]|number array|首选端口|
-|[host]|string|地址|
-|返回值|Promise|有效端口|
+|参数名|说明|
+|-----|---|
+|port|首选端口|
+|host|地址|
+|返回值|有效端口|
 
 如果首选端口无法使用，将会返回一个有效的随机端口。
 
@@ -5440,19 +5440,19 @@ hex 编解码。
 
 将字节数组编码为 hex 字符串。
 
-|参数名|类型|说明|
-|-----|----|---|
-|bytes|array|字节数组|
-|返回值|string|hex 编码的字符串|
+|参数名|说明|
+|-----|---|
+|bytes|字节数组|
+|返回值|hex 编码的字符串|
 
 ### decode
 
 将 hex 字符串解码为字节数组。
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|hex 编码的字符串|
-|返回值|array|字节数组|
+|参数名|说明|
+|-----|---|
+|str|hex 编码的字符串|
+|返回值|字节数组|
 
 ```javascript
 hex.encode([168, 174, 155, 255]); // -> 'a8ae9bff'
@@ -5574,19 +5574,19 @@ HTML 解析器。
 
 将 HTML 字符串转换为 js 对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|html|string|HTML 字符串|
-|返回值|array|js 对象|
+|参数名|说明|
+|-----|---|
+|html|HTML 字符串|
+|返回值|js 对象|
 
 ### stringify
 
 将 js 对象序列化成 HTML 字符串。
 
-|参数名|类型|说明|
-|-----|----|---|
-|tree|array|要序列化的对象|
-|返回值|string|HTML 字符串|
+|参数名|说明|
+|-----|---|
+|tree|要序列化的对象|
+|返回值|HTML 字符串|
 
 ```javascript
 const tree = html.parse('<div id="name">licia</div>');
@@ -5625,12 +5625,12 @@ identity('a'); // -> 'a'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|目标数组|
-|val|*|要查找的值|
-|fromIdx=0|number|查找起始位置|
-|返回值|number|第一次出现的位置，如果没有，返回 -1|
+|参数名|说明|
+|-----|---|
+|arr|目标数组|
+|val|要查找的值|
+|fromIdx=0|查找起始位置|
+|返回值|第一次出现的位置，如果没有，返回 -1|
 
 ```javascript
 idxOf([1, 2, 1, 2], 2, 2); // -> 3
@@ -5669,10 +5669,10 @@ indent('foo\nbar', ' ', 4); // -> '    foo\n    bar'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|Class|function|子类|
-|SuperClass|function|父类|
+|参数名|说明|
+|-----|---|
+|Class|子类|
+|SuperClass|父类|
 
 ```javascript
 function People(name) {
@@ -6978,10 +6978,10 @@ console.log(isRetina); // -> true if high DPR
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Set 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Set 类型，返回真|
 
 ```javascript
 isSet(new Set()); // -> true
@@ -6999,11 +6999,11 @@ isSet(new WeakSet()); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|目标数组|
-|[cmp]|function|比较器|
-|返回值|boolean|如果数组有序，返回真|
+|参数名|说明|
+|-----|---|
+|arr|目标数组|
+|cmp|比较器|
+|返回值|如果数组有序，返回真|
 
 ```javascript
 isSorted([1, 2, 3]); // -> true
@@ -7021,10 +7021,10 @@ isSorted([3, 2, 1]); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是字符串，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是字符串，返回真|
 
 ```javascript
 isStr('licia'); // -> true
@@ -7041,10 +7041,10 @@ isStr('licia'); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Node.js Stream 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Node.js Stream 类型，返回真|
 
 ```javascript
 const stream = require('stream');
@@ -7063,10 +7063,10 @@ isStream(new stream.Stream()); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 Symbol 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 Symbol 类型，返回真|
 
 ```javascript
 isSymbol(Symbol('test')); // -> true
@@ -7083,10 +7083,10 @@ isSymbol(Symbol('test')); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果值是 TypedArray 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果值是 TypedArray 类型，返回真|
 
 ```javascript
 isTypedArr([]); // -> false
@@ -7104,10 +7104,10 @@ isTypedArr(new Uint8Array(8)); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 undefined，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 undefined，返回真|
 
 ```javascript
 isUndef(void 0); // -> true
@@ -7125,10 +7125,10 @@ isUndef(null); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|string|要检查的值|
-|返回值|boolean|如果是有效的 url 地址，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是有效的 url 地址，返回真|
 
 ```javascript
 isUrl('http://www.example.com?foo=bar&param=test'); // -> true
@@ -7145,10 +7145,10 @@ isUrl('http://www.example.com?foo=bar&param=test'); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 WeakMap 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 WeakMap 类型，返回真|
 
 ```javascript
 isWeakMap(new Map()); // -> false
@@ -7166,10 +7166,10 @@ isWeakMap(new WeakMap()); // -> true
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要检查的值|
-|返回值|boolean|如果是 WeakSet 类型，返回真|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 WeakSet 类型，返回真|
 
 ```javascript
 isWeakSet(new Set()); // -> false
@@ -7272,10 +7272,10 @@ jsonp({
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|短横线式字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|短横线式字符串|
 
 ```javascript
 kebabCase('fooBar'); // -> foo-bar
@@ -7326,10 +7326,10 @@ keyCode('enter'); // -> 13
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|返回值|array|所有键名|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|返回值|所有键名|
 
 ```javascript
 keys({a: 1}); // -> ['a']
@@ -7346,9 +7346,9 @@ keys({a: 1}); // -> ['a']
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|pid|number|进程 ID|
+|参数名|说明|
+|-----|---|
+|pid|进程 ID|
 
 ```javascript
 kill(9420);
@@ -7365,10 +7365,10 @@ kill(9420);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|目标数组|
-|返回值|*|数组的最后一个元素|
+|参数名|说明|
+|-----|---|
+|arr|目标数组|
+|返回值|数组的最后一个元素|
 
 ```javascript
 last([1, 2]); // -> 2
@@ -7405,11 +7405,11 @@ _().isNumber(5);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|a|string|字符串 a|
-|b|string|字符串 b|
-|返回值|number|a 和 b 的字符串编辑距离|
+|参数名|说明|
+|-----|---|
+|a|字符串 a|
+|b|字符串 b|
+|返回值|a 和 b 的字符串编辑距离|
 
 ```javascript
 levenshtein('cat', 'cake'); // -> 2
@@ -7426,11 +7426,11 @@ levenshtein('cat', 'cake'); // -> 2
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|[hyperlink]|function|转换超链接函数|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|hyperlink|转换超链接函数|
+|返回值|目标字符串|
 
 ```javascript
 const str = 'Official site: http://eustia.liriliri.io'
@@ -7451,10 +7451,10 @@ linkify(str, function (url) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|src|string|样式文件地址|
-|[cb]|function|加载完回调|
+|参数名|说明|
+|-----|---|
+|src|样式文件地址|
+|cb|加载完回调|
 
 ```javascript
 loadCss('style.css', function (isLoaded) {
@@ -7495,10 +7495,10 @@ loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|src|string|脚本地址|
-|cb|function|加载完回调|
+|参数名|说明|
+|-----|---|
+|src|脚本地址|
+|cb|加载完回调|
 
 ```javascript
 loadJs('main.js', function (isLoaded) {
@@ -7537,10 +7537,10 @@ longest(['a', 'abcde', 'abc']); // -> 'abcde'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|目标字符串|
 
 ```javascript
 lowerCase('TEST'); // -> 'test'
@@ -7557,12 +7557,12 @@ lowerCase('TEST'); // -> 'test'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|len|number|填充长度|
-|[chars]|string|填充字符串|
-|返回值 |string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|len|填充长度|
+|chars|填充字符串|
+|返回值|目标字符串|
 
 ```javascript
 lpad('a', 5); // -> '    a'
@@ -7582,11 +7582,11 @@ lpad('abc', 5, 'ab'); // -> 'ababc'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|chars|string array|删除字符|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|chars|删除字符|
+|返回值|目标字符串|
 
 ```javascript
 ltrim(' abc  '); // -> 'abc  '
@@ -7662,10 +7662,10 @@ mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|attrs|object|要匹配的对象|
-|返回值|function|真值检测函数|
+|参数名|说明|
+|-----|---|
+|attrs|要匹配的对象|
+|返回值|真值检测函数|
 
 ```javascript
 const filter = require('licia/filter');
@@ -7688,10 +7688,10 @@ filter(objects, matcher({a: 4, c: 6 })); // -> [{a: 4, b: 5, c: 6}]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|...num|number|要计算的数字|
-|返回值|number|最大值|
+|参数名|说明|
+|-----|---|
+|...num|要计算的数字|
+|返回值|最大值|
 
 ```javascript
 max(2.3, 1, 4.5, 2); // 4.5
@@ -7708,10 +7708,10 @@ MD5 算法实现。
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|msg|string array|密文|
-|返回值|string|MD5 摘要|
+|参数名|说明|
+|-----|---|
+|msg|密文|
+|返回值|MD5 摘要|
 
 ```javascript
 md5('licia'); // -> 'e59f337d85e9a467f1783fab282a41d0'
@@ -7746,11 +7746,11 @@ localStorage.setItem('test', 'licia');
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|源函数|
-|[hashFn]|function|计算缓存键名函数|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|fn|源函数|
+|hashFn|计算缓存键名函数|
+|返回值|目标函数|
 
 ```javascript
 const fibonacci = memoize(function(n) {
@@ -7851,10 +7851,10 @@ meta.remove(['e', 'f']);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|返回值|array|方法名列表|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|返回值|方法名列表|
 
 ```javascript
 methods(console); // -> ['Console', 'assert', 'dir', ...]
@@ -7901,10 +7901,10 @@ mime('test'); // -> null
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|...num|number|要计算的数字|
-|返回值|number|最小值|
+|参数名|说明|
+|-----|---|
+|...num|要计算的数字|
+|返回值|最小值|
 
 ```javascript
 min(2.3, 1, 4.5, 2); // 1
@@ -8058,17 +8058,17 @@ function ms(num: number): string;</code>
 
 转换时长字符串为毫秒。
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|字符串格式|
-|返回值|number|毫秒|
+|参数名|说明|
+|-----|---|
+|str|字符串格式|
+|返回值|毫秒|
 
 转换毫秒为时长字符串。
 
-|参数名|类型|说明|
-|-----|----|---|
-|num|number|毫秒|
-|返回值|string|字符串格式|
+|参数名|说明|
+|-----|---|
+|num|毫秒|
+|返回值|字符串格式|
 
 ```javascript
 ms('1s'); // -> 1000
@@ -8113,9 +8113,9 @@ function even(n) { return n % 2 === 0 }
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|cb|function|调用函数|
+|参数名|说明|
+|-----|---|
+|cb|调用函数|
 
 如果支持 process.nextTick，则调用它，否则使用 setImmediate 或 setTimeout 进行兼容。
 
@@ -8294,10 +8294,10 @@ Object.prototype.toString 的别名。
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|目标值|
-|返回值|string|字符串表示|
+|参数名|说明|
+|-----|---|
+|val|目标值|
+|返回值|字符串表示|
 
 ```javascript
 objToStr(5); // -> '[object Number]'
@@ -8314,11 +8314,11 @@ objToStr(5); // -> '[object Number]'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|源对象|
-|filter|string array function|对象过滤器|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|obj|源对象|
+|filter|对象过滤器|
+|返回值|目标对象|
 
 ```javascript
 omit({a: 1, b: 2}, 'a'); // -> {b: 2}
@@ -8485,12 +8485,12 @@ orientation.get(); // -> 'landscape'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|len|number|填充长度|
-|chars|string|填充字符串|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|len|填充长度|
+|chars|填充字符串|
+|返回值|目标字符串|
 
 ```javascript
 pad('a', 5); // -> '  a  '
@@ -9770,11 +9770,11 @@ selector.stringify(groups);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|要排序的数组|
-|[cmp]|function|比较器|
-|返回值|array|有序数组|
+|参数名|说明|
+|-----|---|
+|arr|要排序的数组|
+|cmp|比较器|
+|返回值|有序数组|
 
 ```javascript
 shellSort([2, 1]); // -> [1, 2]
@@ -11488,10 +11488,10 @@ wordsToBytes([0x12345678]); // -> [0x12, 0x34, 0x56, 0x78]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|源函数|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|fn|源函数|
+|返回值|目标函数|
 
 ```javascript
 const worker = workerize(function (a, b) {

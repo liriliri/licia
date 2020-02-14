@@ -1,10 +1,10 @@
 /* Shell sort implementation.
  *
- * |Name  |Type    |Desc         |
- * |------|--------|-------------|
- * |arr   |array   |Array to sort|
- * |[cmp] |function|Comparator   |
- * |return|array   |Sorted array |
+ * |Name  |Desc         |
+ * |------|-------------|
+ * |arr   |Array to sort|
+ * |cmp   |Comparator   |
+ * |return|Sorted array |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.0
  */
 

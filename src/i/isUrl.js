@@ -1,9 +1,9 @@
 /* Loosely validate an url.
  *
- * |Name  |Type   |Desc                               |
- * |------|-------|-----------------------------------|
- * |val   |string |Value to check                     |
- * |return|boolean|True if value is an url like string|
+ * |Name  |Desc                               |
+ * |------|-----------------------------------|
+ * |val   |Value to check                     |
+ * |return|True if value is an url like string|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

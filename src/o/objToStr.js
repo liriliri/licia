@@ -1,9 +1,9 @@
 /* Alias of Object.prototype.toString.
  *
- * |Name  |Type  |Desc                                |
- * |------|------|------------------------------------|
- * |val   |*     |Source value                        |
- * |return|string|String representation of given value|
+ * |Name  |Desc                                |
+ * |------|------------------------------------|
+ * |val   |Source value                        |
+ * |return|String representation of given value|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

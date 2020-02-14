@@ -1,11 +1,11 @@
 /* Return the first key where the predicate truth test passes.
  *
- * |Name     |Type    |Desc                          |
- * |---------|--------|------------------------------|
- * |obj      |object  |Object to search              |
- * |predicate|function|Function invoked per iteration|
- * |[ctx]    |*       |Predicate context             |
- * |return   |string  |Key of matched element        |
+ * |Name     |Desc                          |
+ * |---------|------------------------------|
+ * |obj      |Object to search              |
+ * |predicate|Function invoked per iteration|
+ * |ctx      |Predicate context             |
+ * |return   |Key of matched element        |
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

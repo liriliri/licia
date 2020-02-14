@@ -1,10 +1,10 @@
 /* Get an available TCP port.
  *
- * |Name  |Type        |Desc           |
- * |------|------------|---------------|
- * |[port]|number array|Preferred ports|
- * |[host]|string      |Host address   |
- * |return|Promise     |Available port |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |port  |Preferred ports|
+ * |host  |Host address   |
+ * |return|Available port |
  *
  * If preferred ports are not available, a random port will be returned.
  */
@@ -17,7 +17,6 @@
 
 /* module
  * env: node
- * test: node
  * since: 1.1.0
  */
 

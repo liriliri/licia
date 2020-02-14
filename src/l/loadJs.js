@@ -1,9 +1,9 @@
 /* Inject script tag into page with given src value.
  *
- * |Name|Type    |Desc           |
- * |----|--------|---------------|
- * |src |string  |Script source  |
- * |cb  |function|Onload callback|
+ * |Name|Desc           |
+ * |----|---------------|
+ * |src |Script source  |
+ * |cb  |Onload callback|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

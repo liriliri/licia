@@ -1,10 +1,10 @@
 /* Check if an array is sorted.
  *
- * |Name  |Type    |Desc                   |
- * |------|--------|-----------------------|
- * |arr   |array   |Array to check         |
- * |[cmp] |function|Comparator             |
- * |return|boolean |True if array is sorted|
+ * |Name  |Desc                   |
+ * |------|-----------------------|
+ * |arr   |Array to check         |
+ * |cmp   |Comparator             |
+ * |return|True if array is sorted|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

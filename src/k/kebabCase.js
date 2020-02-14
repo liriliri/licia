@@ -1,9 +1,9 @@
 /* Convert string to "kebabCase".
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |str   |string|String to convert |
- * |return|string|Kebab cased string|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |str   |String to convert |
+ * |return|Kebab cased string|
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

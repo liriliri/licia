@@ -1,9 +1,9 @@
 /* Inject link tag into page with given href value.
  *
- * |Name|Type    |Desc           |
- * |----|--------|---------------|
- * |src |string  |Style source   |
- * |[cb]|function|Onload callback|
+ * |Name|Desc           |
+ * |----|---------------|
+ * |src |Style source   |
+ * |cb  |Onload callback|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

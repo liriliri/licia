@@ -4369,10 +4369,10 @@ Escape special chars to be used as literals in RegExp constructors.
 </pre>
 </details>
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|str   |string|String to escape|
-|return|string|Escaped string  |
+|Name  |Desc            |
+|------|----------------|
+|str   |String to escape|
+|return|Escaped string  |
 
 ```javascript
 escapeRegExp('[licia]'); // -> '\\[licia\\]'
@@ -4556,10 +4556,10 @@ Extract urls from plain text.
 </pre>
 </details>
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|str   |string|Text to extract|
-|return|array |Url list       |
+|Name  |Desc           |
+|------|---------------|
+|str   |Text to extract|
+|return|Url list       |
 
 ```javascript
 const str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
@@ -4691,10 +4691,10 @@ function fileType(
 </pre>
 </details>
 
-|Name  |Type                         |Desc                          |
-|------|-----------------------------|------------------------------|
-|input |Buffer ArrayBuffer Uint8Array|File input                    |
-|return|object null                  |Object containing ext and mime|
+|Name  |Desc                          |
+|------|------------------------------|
+|input |File input                    |
+|return|Object containing ext and mime|
 
 ### Supported file types
 
@@ -4722,13 +4722,13 @@ Fill elements of array with value.
 </pre>
 </details>
 
-|Name          |Type  |Desc                    |
-|--------------|------|------------------------|
-|list          |array |Array to fill           |
-|value         |*     |Value to fill array with|
-|start=0       |number|Start position          |
-|end=arr.length|number|End position            |
-|return        |array |Filled array            |
+|Name          |Desc                    |
+|--------------|------------------------|
+|list          |Array to fill           |
+|value         |Value to fill array with|
+|start=0       |Start position          |
+|end=arr.length|End position            |
+|return        |Filled array            |
 
 ```javascript
 fill([1, 2, 3], '*'); // -> ['*', '*', '*']
@@ -4818,11 +4818,11 @@ Return the first index where the predicate truth test passes.
 </pre>
 </details>
 
-|Name     |Type    |Desc                          |
-|---------|--------|------------------------------|
-|arr      |array   |Array to search               |
-|predicate|function|Function invoked per iteration|
-|return   |number  |Index of matched element      |
+|Name     |Desc                          |
+|---------|------------------------------|
+|arr      |Array to search               |
+|predicate|Function invoked per iteration|
+|return   |Index of matched element      |
 
 ```javascript
 findIdx([{
@@ -4851,12 +4851,12 @@ Return the first key where the predicate truth test passes.
 </pre>
 </details>
 
-|Name     |Type    |Desc                          |
-|---------|--------|------------------------------|
-|obj      |object  |Object to search              |
-|predicate|function|Function invoked per iteration|
-|[ctx]    |*       |Predicate context             |
-|return   |string  |Key of matched element        |
+|Name     |Desc                          |
+|---------|------------------------------|
+|obj      |Object to search              |
+|predicate|Function invoked per iteration|
+|ctx      |Predicate context             |
+|return   |Key of matched element        |
 
 ```javascript
 findKey({a: 1, b: 2}, function (val) {
@@ -4962,10 +4962,10 @@ Get a function parameter's names.
 </pre>
 </details>
 
-|Name  |Type           |Desc                      |
-|------|---------------|--------------------------|
-|fn    |function string|Function to get parameters|
-|return|array          |Names                     |
+|Name  |Desc                      |
+|------|--------------------------|
+|fn    |Function to get parameters|
+|return|Names                     |
 
 ```javascript
 fnParams(function (a, b) {}); // -> ['a', 'b']
@@ -4982,10 +4982,10 @@ Simple FNV-1a implementation.
 </pre>
 </details>
 
-|Name  |Type  |Desc          |
-|------|------|--------------|
-|str   |string|String to hash|
-|return|number|Hast result   |
+|Name  |Desc          |
+|------|--------------|
+|str   |String to hash|
+|return|Hast result   |
 
 ```javascript
 fnv1a('test'); // -> 2949673445
@@ -5002,11 +5002,11 @@ Format string in a printf-like format.
 </pre>
 </details>
 
-|Name     |Type  |Desc                               |
-|---------|------|-----------------------------------|
-|str      |string|String to format                   |
-|...values|*     |Values to replace format specifiers|
-|return   |string|Formatted string                   |
+|Name     |Desc                               |
+|---------|-----------------------------------|
+|str      |String to format                   |
+|...values|Values to replace format specifiers|
+|return   |Formatted string                   |
 
 ### Format Specifiers
 
@@ -5054,10 +5054,10 @@ Shortcut for Object.freeze.
 
 Use Object.defineProperties if Object.freeze is not supported.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|obj   |object|Object to freeze|
-|return|object|Object passed in|
+|Name  |Desc            |
+|------|----------------|
+|obj   |Object to freeze|
+|return|Object passed in|
 
 ```javascript
 const a = {b: 1};
@@ -5234,11 +5234,11 @@ Compute the greatest common divisor using Euclid's algorithm.
 </pre>
 </details>
 
-|Name  |Type  |Desc                   |
-|------|------|-----------------------|
-|a     |number|Number to calculate    |
-|b     |number|Number to calculate    |
-|return|number|Greatest common divisor|
+|Name  |Desc                   |
+|------|-----------------------|
+|a     |Number to calculate    |
+|b     |Number to calculate    |
+|return|Greatest common divisor|
 
 ```javascript
 gcd(121, 44); // -> 11
@@ -5258,11 +5258,11 @@ Get an available TCP port.
 </pre>
 </details>
 
-|Name  |Type        |Desc           |
-|------|------------|---------------|
-|[port]|number array|Preferred ports|
-|[host]|string      |Host address   |
-|return|Promise     |Available port |
+|Name  |Desc           |
+|------|---------------|
+|port  |Preferred ports|
+|host  |Host address   |
+|return|Available port |
 
 If preferred ports are not available, a random port will be returned.
 
@@ -5444,19 +5444,19 @@ Hex encoding and decoding.
 
 Turn a byte array into a hex string.
 
-|Name  |Type  |Desc      |
-|------|------|----------|
-|bytes |array |Byte array|
-|return|string|hex string|
+|Name  |Desc      |
+|------|----------|
+|bytes |Byte array|
+|return|hex string|
 
 ### decode
 
 Turn a hex string into a byte array.
 
-|Name  |Type  |Desc      |
-|------|------|----------|
-|str   |string|hex string|
-|return|array |Byte array|
+|Name  |Desc      |
+|------|----------|
+|str   |hex string|
+|return|Byte array|
 
 ```javascript
 hex.encode([168, 174, 155, 255]); // -> 'a8ae9bff'
@@ -5578,19 +5578,19 @@ Html parser and serializer.
 
 Parse html string into js object.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|html  |string|Html string     |
-|return|array |Parsed js object|
+|Name  |Desc            |
+|------|----------------|
+|html  |Html string     |
+|return|Parsed js object|
 
 ### stringify
 
 Stringify object into an html string.
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|tree  |array |Object to stringify|
-|return|string|Html string        |
+|Name  |Desc               |
+|------|-------------------|
+|tree  |Object to stringify|
+|return|Html string        |
 
 ```javascript
 const tree = html.parse('<div id="name">licia</div>');
@@ -5629,12 +5629,12 @@ Get the index at which the first occurrence of value.
 </pre>
 </details>
 
-|Name     |Type  |Desc                |
-|---------|------|--------------------|
-|arr      |array |Array to search     |
-|val      |*     |Value to search for |
-|fromIdx=0|number|Index to search from|
-|return   |number|Value index         |
+|Name     |Desc                |
+|---------|--------------------|
+|arr      |Array to search     |
+|val      |Value to search for |
+|fromIdx=0|Index to search from|
+|return   |Value index         |
 
 ```javascript
 idxOf([1, 2, 1, 2], 2, 2); // -> 3
@@ -5673,10 +5673,10 @@ Inherit the prototype methods from one constructor into another.
 </pre>
 </details>
 
-|Name      |Type    |Desc       |
-|----------|--------|-----------|
-|Class     |function|Child Class|
-|SuperClass|function|Super Class|
+|Name      |Desc       |
+|----------|-----------|
+|Class     |Child Class|
+|SuperClass|Super Class|
 
 ```javascript
 function People(name) {
@@ -6982,10 +6982,10 @@ Check if value is a Set object.
 </pre>
 </details>
 
-|Name  |Type   |Desc                  |
-|------|-------|----------------------|
-|val   |*      |Value to check        |
-|return|boolean|True if value is a Set|
+|Name  |Desc                  |
+|------|----------------------|
+|val   |Value to check        |
+|return|True if value is a Set|
 
 ```javascript
 isSet(new Set()); // -> true
@@ -7003,11 +7003,11 @@ Check if an array is sorted.
 </pre>
 </details>
 
-|Name  |Type    |Desc                   |
-|------|--------|-----------------------|
-|arr   |array   |Array to check         |
-|[cmp] |function|Comparator             |
-|return|boolean |True if array is sorted|
+|Name  |Desc                   |
+|------|-----------------------|
+|arr   |Array to check         |
+|cmp   |Comparator             |
+|return|True if array is sorted|
 
 ```javascript
 isSorted([1, 2, 3]); // -> true
@@ -7025,10 +7025,10 @@ Check if value is a string primitive.
 </pre>
 </details>
 
-|Name  |Type   |Desc                               |
-|------|-------|-----------------------------------|
-|val   |*      |Value to check                     |
-|return|boolean|True if value is a string primitive|
+|Name  |Desc                               |
+|------|-----------------------------------|
+|val   |Value to check                     |
+|return|True if value is a string primitive|
 
 ```javascript
 isStr('licia'); // -> true
@@ -7045,10 +7045,10 @@ Check if value is a Node.js stream.
 </pre>
 </details>
 
-|Name  |Type   |Desc                             |
-|------|-------|---------------------------------|
-|val   |*      |Value to check                   |
-|return|boolean|True if value is a Node.js stream|
+|Name  |Desc                             |
+|------|---------------------------------|
+|val   |Value to check                   |
+|return|True if value is a Node.js stream|
 
 ```javascript
 const stream = require('stream');
@@ -7067,10 +7067,10 @@ Check if value is a symbol.
 </pre>
 </details>
 
-|Name  |Type   |Desc                     |
-|------|-------|-------------------------|
-|val   |*      |Value to check           |
-|return|boolean|True if value is a symbol|
+|Name  |Desc                     |
+|------|-------------------------|
+|val   |Value to check           |
+|return|True if value is a symbol|
 
 ```javascript
 isSymbol(Symbol('test')); // -> true
@@ -7087,10 +7087,10 @@ Check if value is a typed array.
 </pre>
 </details>
 
-|Name  |Type   |Desc                          |
-|------|-------|------------------------------|
-|val   |*      |Value to check                |
-|return|boolean|True if value is a typed array|
+|Name  |Desc                          |
+|------|------------------------------|
+|val   |Value to check                |
+|return|True if value is a typed array|
 
 ```javascript
 isTypedArr([]); // -> false
@@ -7108,10 +7108,10 @@ Check if value is undefined.
 </pre>
 </details>
 
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
-|val   |*      |Value to check            |
-|return|boolean|True if value is undefined|
+|Name  |Desc                      |
+|------|--------------------------|
+|val   |Value to check            |
+|return|True if value is undefined|
 
 ```javascript
 isUndef(void 0); // -> true
@@ -7129,10 +7129,10 @@ Loosely validate an url.
 </pre>
 </details>
 
-|Name  |Type   |Desc                               |
-|------|-------|-----------------------------------|
-|val   |string |Value to check                     |
-|return|boolean|True if value is an url like string|
+|Name  |Desc                               |
+|------|-----------------------------------|
+|val   |Value to check                     |
+|return|True if value is an url like string|
 
 ```javascript
 isUrl('http://www.example.com?foo=bar&param=test'); // -> true
@@ -7149,10 +7149,10 @@ Check if value is a WeakMap object.
 </pre>
 </details>
 
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
-|val   |*      |Value to check            |
-|return|boolean|True if value is a WeakMap|
+|Name  |Desc                      |
+|------|--------------------------|
+|val   |Value to check            |
+|return|True if value is a WeakMap|
 
 ```javascript
 isWeakMap(new Map()); // -> false
@@ -7170,10 +7170,10 @@ Check if value is a WeakSet object.
 </pre>
 </details>
 
-|Name  |Type   |Desc                      |
-|------|-------|--------------------------|
-|val   |*      |Value to check            |
-|return|boolean|True if value is a WeakSet|
+|Name  |Desc                      |
+|------|--------------------------|
+|val   |Value to check            |
+|return|True if value is a WeakSet|
 
 ```javascript
 isWeakSet(new Set()); // -> false
@@ -7276,10 +7276,10 @@ Convert string to "kebabCase".
 </pre>
 </details>
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|str   |string|String to convert |
-|return|string|Kebab cased string|
+|Name  |Desc              |
+|------|------------------|
+|str   |String to convert |
+|return|Kebab cased string|
 
 ```javascript
 kebabCase('fooBar'); // -> foo-bar
@@ -7330,10 +7330,10 @@ Create an array of the own enumerable property names of object.
 </pre>
 </details>
 
-|Name  |Type  |Desc                   |
-|------|------|-----------------------|
-|obj   |object|Object to query        |
-|return|array |Array of property names|
+|Name  |Desc                   |
+|------|-----------------------|
+|obj   |Object to query        |
+|return|Array of property names|
 
 ```javascript
 keys({a: 1}); // -> ['a']
@@ -7350,9 +7350,9 @@ Kill process.
 </pre>
 </details>
 
-|Name|Type|Desc|
-|----|----|----|
-|pid |number|Process ID|
+|Name|Desc|
+|----|----|
+|pid |Process ID|
 
 ```javascript
 kill(9420);
@@ -7369,10 +7369,10 @@ Get the last element of array.
 </pre>
 </details>
 
-|Name  |Type |Desc                     |
-|------|-----|-------------------------|
-|arr   |array|The array to query       |
-|return|*    |The last element of array|
+|Name  |Desc                     |
+|------|-------------------------|
+|arr   |The array to query       |
+|return|The last element of array|
 
 ```javascript
 last([1, 2]); // -> 2
@@ -7409,11 +7409,11 @@ Levenshtein distance implementation.
 </pre>
 </details>
 
-|Name  |Type  |Desc                                |
-|------|------|------------------------------------|
-|a     |string|First string                        |
-|b     |string|Second string                       |
-|return|number|Levenshtein distance between a and b|
+|Name  |Desc                                |
+|------|------------------------------------|
+|a     |First string                        |
+|b     |Second string                       |
+|return|Levenshtein distance between a and b|
 
 ```javascript
 levenshtein('cat', 'cake'); // -> 2
@@ -7430,11 +7430,11 @@ Hyperlink urls in a string.
 </pre>
 </details>
 
-|Name       |Type    |Desc                     |
-|-----------|--------|-------------------------|
-|str        |string  |String to hyperlink      |
-|[hyperlink]|function|Function to hyperlink url|
-|return     |string  |Result string            |
+|Name     |Desc                     |
+|---------|-------------------------|
+|str      |String to hyperlink      |
+|hyperlink|Function to hyperlink url|
+|return   |Result string            |
 
 ```javascript
 const str = 'Official site: http://eustia.liriliri.io'
@@ -7455,10 +7455,10 @@ Inject link tag into page with given href value.
 </pre>
 </details>
 
-|Name|Type    |Desc           |
-|----|--------|---------------|
-|src |string  |Style source   |
-|[cb]|function|Onload callback|
+|Name|Desc           |
+|----|---------------|
+|src |Style source   |
+|cb  |Onload callback|
 
 ```javascript
 loadCss('style.css', function (isLoaded) {
@@ -7499,10 +7499,10 @@ Inject script tag into page with given src value.
 </pre>
 </details>
 
-|Name|Type    |Desc           |
-|----|--------|---------------|
-|src |string  |Script source  |
-|cb  |function|Onload callback|
+|Name|Desc           |
+|----|---------------|
+|src |Script source  |
+|cb  |Onload callback|
 
 ```javascript
 loadJs('main.js', function (isLoaded) {
@@ -7541,10 +7541,10 @@ Convert string to lower case.
 </pre>
 </details>
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|str   |string|String to convert |
-|return|string|Lower cased string|
+|Name  |Desc              |
+|------|------------------|
+|str   |String to convert |
+|return|Lower cased string|
 
 ```javascript
 lowerCase('TEST'); // -> 'test'
@@ -7561,12 +7561,12 @@ Pad string on the left side if it's shorter than length.
 </pre>
 </details>
 
-|Name   |Type  |Desc                  |
-|-------|------|----------------------|
-|str    |string|String to pad         |
-|len    |number|Padding length        |
-|[chars]|string|String used as padding|
-|return |string|Result string         |
+|Name  |Desc                  |
+|------|----------------------|
+|str   |String to pad         |
+|len   |Padding length        |
+|chars |String used as padding|
+|return|Result string         |
 
 ```javascript
 lpad('a', 5); // -> '    a'
@@ -7586,11 +7586,11 @@ Remove chars or white-spaces from beginning of string.
 </pre>
 </details>
 
-|Name   |Type        |Desc              |
-|-------|------------|------------------|
-|str    |string      |String to trim    |
-|[chars]|string array|Characters to trim|
-|return |string      |Trimmed string    |
+|Name  |Desc              |
+|------|------------------|
+|str   |String to trim    |
+|chars |Characters to trim|
+|return|Trimmed string    |
 
 ```javascript
 ltrim(' abc  '); // -> 'abc  '
@@ -7666,10 +7666,10 @@ Return a predicate function that checks if attrs are contained in an object.
 </pre>
 </details>
 
-|Name  |Type    |Desc                              |
-|------|--------|----------------------------------|
-|attrs |object  |Object of property values to match|
-|return|function|New predicate function            |
+|Name  |Desc                              |
+|------|----------------------------------|
+|attrs |Object of property values to match|
+|return|New predicate function            |
 
 ```javascript
 const filter = require('licia/filter');
@@ -7692,10 +7692,10 @@ Get maximum value of given numbers.
 </pre>
 </details>
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|...num|number|Numbers to calculate|
-|return|number|Maximum value       |
+|Name  |Desc                |
+|------|--------------------|
+|...num|Numbers to calculate|
+|return|Maximum value       |
 
 ```javascript
 max(2.3, 1, 4.5, 2); // 4.5
@@ -7712,10 +7712,10 @@ MD5 implementation.
 </pre>
 </details>
 
-|Name   |Type        |Desc              |
-|-------|------------|------------------|
-|msg    |string array|Message to encrypt|
-|return |string      |MD5 hash          |
+|Name  |Desc              |
+|------|------------------|
+|msg   |Message to encrypt|
+|return|MD5 hash          |
 
 ```javascript
 md5('licia'); // -> 'e59f337d85e9a467f1783fab282a41d0'
@@ -7750,11 +7750,11 @@ Memoize a given function by caching the computed result.
 </pre>
 </details>
 
-|Name    |Type    |Desc                                |
-|--------|--------|------------------------------------|
-|fn      |function|Function to have its output memoized|
-|[hashFn]|function|Function to create cache key        |
-|return  |function|New memoized function               |
+|Name  |Desc                                |
+|------|------------------------------------|
+|fn    |Function to have its output memoized|
+|hashFn|Function to create cache key        |
+|return|New memoized function               |
 
 ```javascript
 const fibonacci = memoize(function(n) {
@@ -7855,10 +7855,10 @@ Return a sorted list of the names of every method in an object.
 </pre>
 </details>
 
-|Name  |Type  |Desc                    |
-|------|------|------------------------|
-|obj   |object|Object to check         |
-|return|array |Function names in object|
+|Name  |Desc                    |
+|------|------------------------|
+|obj   |Object to check         |
+|return|Function names in object|
 
 ```javascript
 methods(console); // -> ['Console', 'assert', 'dir', ...]
@@ -7905,10 +7905,10 @@ Get minimum value of given numbers.
 </pre>
 </details>
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|...num|number|Numbers to calculate|
-|return|number|Minimum value       |
+|Name  |Desc                |
+|------|--------------------|
+|...num|Numbers to calculate|
+|return|Minimum value       |
 
 ```javascript
 min(2.3, 1, 4.5, 2); // 1
@@ -8062,17 +8062,17 @@ function ms(num: number): string;</code>
 
 Turn time string into milliseconds.
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
-|str   |string|String format|
-|return|number|Milliseconds |
+|Name  |Desc         |
+|------|-------------|
+|str   |String format|
+|return|Milliseconds |
 
 Turn milliseconds into time string.
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
-|num   |number|Milliseconds |
-|return|string|String format|
+|Name  |Desc         |
+|------|-------------|
+|num   |Milliseconds |
+|return|String format|
 
 ```javascript
 ms('1s'); // -> 1000
@@ -8117,9 +8117,9 @@ Next tick for both node and browser.
 </pre>
 </details>
 
-|Name|Type    |Desc            |
-|----|--------|----------------|
-|cb  |function|Function to call|
+|Name|Desc            |
+|----|----------------|
+|cb  |Function to call|
 
 Use process.nextTick if available.
 
@@ -8300,10 +8300,10 @@ Alias of Object.prototype.toString.
 </pre>
 </details>
 
-|Name  |Type  |Desc                                |
-|------|------|------------------------------------|
-|val   |*     |Source value                        |
-|return|string|String representation of given value|
+|Name  |Desc                                |
+|------|------------------------------------|
+|val   |Source value                        |
+|return|String representation of given value|
 
 ```javascript
 objToStr(5); // -> '[object Number]'
@@ -8320,11 +8320,11 @@ Opposite of pick.
 </pre>
 </details>
 
-|Name  |Type                 |Desc           |
-|------|---------------------|---------------|
-|obj   |object               |Source object  |
-|filter|string array function|Object filter  |
-|return|object               |Filtered object|
+|Name  |Desc           |
+|------|---------------|
+|obj   |Source object  |
+|filter|Object filter  |
+|return|Filtered object|
 
 ```javascript
 omit({a: 1, b: 2}, 'a'); // -> {b: 2}
@@ -8491,12 +8491,12 @@ Pad string on the left and right sides if it's shorter than length.
 </pre>
 </details>
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
-|str   |string|String to pad         |
-|len   |number|Padding length        |
-|chars |string|String used as padding|
-|return|string|Result string         |
+|Name  |Desc                  |
+|------|----------------------|
+|str   |String to pad         |
+|len   |Padding length        |
+|chars |String used as padding|
+|return|Result string         |
 
 ```javascript
 pad('a', 5); // -> '  a  '
@@ -9761,11 +9761,11 @@ Shell sort implementation.
 </pre>
 </details>
 
-|Name  |Type    |Desc         |
-|------|--------|-------------|
-|arr   |array   |Array to sort|
-|[cmp] |function|Comparator   |
-|return|array   |Sorted array |
+|Name  |Desc         |
+|------|-------------|
+|arr   |Array to sort|
+|cmp   |Comparator   |
+|return|Sorted array |
 
 ```javascript
 shellSort([2, 1]); // -> [1, 2]
@@ -11479,10 +11479,10 @@ Move a stand-alone function to a worker thread.
 </pre>
 </details>
 
-|Name  |Type    |Desc               |
-|------|--------|-------------------|
-|fn    |function|Function to turn   |
-|return|function|Workerized Function|
+|Name  |Desc               |
+|------|-------------------|
+|fn    |Function to turn   |
+|return|Workerized Function|
 
 ```javascript
 const worker = workerize(function (a, b) {

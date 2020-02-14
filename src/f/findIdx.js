@@ -1,10 +1,10 @@
 /* Return the first index where the predicate truth test passes.
  *
- * |Name     |Type    |Desc                          |
- * |---------|--------|------------------------------|
- * |arr      |array   |Array to search               |
- * |predicate|function|Function invoked per iteration|
- * |return   |number  |Index of matched element      |
+ * |Name     |Desc                          |
+ * |---------|------------------------------|
+ * |arr      |Array to search               |
+ * |predicate|Function invoked per iteration|
+ * |return   |Index of matched element      |
  */
 
 /* example
@@ -21,7 +21,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -2,10 +2,10 @@
  *
  * Use Object.defineProperties if Object.freeze is not supported.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |obj   |object|Object to freeze|
- * |return|object|Object passed in|
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |obj   |Object to freeze|
+ * |return|Object passed in|
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

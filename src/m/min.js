@@ -1,9 +1,9 @@
 /* Get minimum value of given numbers.
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |...num|number|Numbers to calculate|
- * |return|number|Minimum value       |
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |...num|Numbers to calculate|
+ * |return|Minimum value       |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

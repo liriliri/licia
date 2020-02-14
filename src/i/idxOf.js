@@ -1,11 +1,11 @@
 /* Get the index at which the first occurrence of value.
  *
- * |Name     |Type  |Desc                |
- * |---------|------|--------------------|
- * |arr      |array |Array to search     |
- * |val      |*     |Value to search for |
- * |fromIdx=0|number|Index to search from|
- * |return   |number|Value index         |
+ * |Name     |Desc                |
+ * |---------|--------------------|
+ * |arr      |Array to search     |
+ * |val      |Value to search for |
+ * |fromIdx=0|Index to search from|
+ * |return   |Value index         |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

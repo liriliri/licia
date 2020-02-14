@@ -1,9 +1,9 @@
 /* Get a function parameter's names.
  *
- * |Name  |Type           |Desc                      |
- * |------|---------------|--------------------------|
- * |fn    |function string|Function to get parameters|
- * |return|array          |Names                     |
+ * |Name  |Desc                      |
+ * |------|--------------------------|
+ * |fn    |Function to get parameters|
+ * |return|Names                     |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

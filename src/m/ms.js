@@ -2,17 +2,17 @@
  *
  * Turn time string into milliseconds.
  *
- * |Name  |Type  |Desc         |
- * |------|------|-------------|
- * |str   |string|String format|
- * |return|number|Milliseconds |
+ * |Name  |Desc         |
+ * |------|-------------|
+ * |str   |String format|
+ * |return|Milliseconds |
  *
  * Turn milliseconds into time string.
  *
- * |Name  |Type  |Desc         |
- * |------|------|-------------|
- * |num   |number|Milliseconds |
- * |return|string|String format|
+ * |Name  |Desc         |
+ * |------|-------------|
+ * |num   |Milliseconds |
+ * |return|String format|
  */
 
 /* example
@@ -28,7 +28,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

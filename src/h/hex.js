@@ -4,19 +4,19 @@
  *
  * Turn a byte array into a hex string.
  *
- * |Name  |Type  |Desc      |
- * |------|------|----------|
- * |bytes |array |Byte array|
- * |return|string|hex string|
+ * |Name  |Desc      |
+ * |------|----------|
+ * |bytes |Byte array|
+ * |return|hex string|
  *
  * ### decode
  *
  * Turn a hex string into a byte array.
  *
- * |Name  |Type  |Desc      |
- * |------|------|----------|
- * |str   |string|hex string|
- * |return|array |Byte array|
+ * |Name  |Desc      |
+ * |------|----------|
+ * |str   |hex string|
+ * |return|Byte array|
  */
 
 /* example

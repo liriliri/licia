@@ -1,8 +1,8 @@
 /* Next tick for both node and browser.
  *
- * |Name|Type    |Desc            |
- * |----|--------|----------------|
- * |cb  |function|Function to call|
+ * |Name|Desc            |
+ * |----|----------------|
+ * |cb  |Function to call|
  *
  * Use process.nextTick if available.
  *
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

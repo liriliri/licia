@@ -1,8 +1,8 @@
 /* Kill process.
  *
- * |Name|Type|Desc|
- * |----|----|----|
- * |pid |number|Process ID|
+ * |Name|Desc|
+ * |----|----|
+ * |pid |Process ID|
  */
 
 /* example
@@ -11,7 +11,6 @@
 
 /* module
  * env: node
- * test: node
  * since: 1.4.4
  */
 

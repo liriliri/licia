@@ -1,9 +1,9 @@
 /* Return a sorted list of the names of every method in an object.
  *
- * |Name  |Type  |Desc                    |
- * |------|------|------------------------|
- * |obj   |object|Object to check         |
- * |return|array |Function names in object|
+ * |Name  |Desc                    |
+ * |------|------------------------|
+ * |obj   |Object to check         |
+ * |return|Function names in object|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

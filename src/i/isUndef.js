@@ -1,9 +1,9 @@
 /* Check if value is undefined.
  *
- * |Name  |Type   |Desc                      |
- * |------|-------|--------------------------|
- * |val   |*      |Value to check            |
- * |return|boolean|True if value is undefined|
+ * |Name  |Desc                      |
+ * |------|--------------------------|
+ * |val   |Value to check            |
+ * |return|True if value is undefined|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

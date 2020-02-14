@@ -1,10 +1,10 @@
 /* Memoize a given function by caching the computed result.
  *
- * |Name    |Type    |Desc                                |
- * |--------|--------|------------------------------------|
- * |fn      |function|Function to have its output memoized|
- * |[hashFn]|function|Function to create cache key        |
- * |return  |function|New memoized function               |
+ * |Name  |Desc                                |
+ * |------|------------------------------------|
+ * |fn    |Function to have its output memoized|
+ * |hashFn|Function to create cache key        |
+ * |return|New memoized function               |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

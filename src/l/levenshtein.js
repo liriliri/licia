@@ -1,10 +1,10 @@
 /* Levenshtein distance implementation.
  *
- * |Name  |Type  |Desc                                |
- * |------|------|------------------------------------|
- * |a     |string|First string                        |
- * |b     |string|Second string                       |
- * |return|number|Levenshtein distance between a and b|
+ * |Name  |Desc                                |
+ * |------|------------------------------------|
+ * |a     |First string                        |
+ * |b     |Second string                       |
+ * |return|Levenshtein distance between a and b|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.4.8
  */
 

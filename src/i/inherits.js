@@ -1,9 +1,9 @@
 /* Inherit the prototype methods from one constructor into another.
  *
- * |Name      |Type    |Desc       |
- * |----------|--------|-----------|
- * |Class     |function|Child Class|
- * |SuperClass|function|Super Class|
+ * |Name      |Desc       |
+ * |----------|-----------|
+ * |Class     |Child Class|
+ * |SuperClass|Super Class|
  */
 
 /* example
