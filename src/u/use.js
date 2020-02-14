@@ -1,9 +1,9 @@
 /* Use modules that is created by define.
  *
- * |Name      |Type    |Desc                |
- * |----------|--------|--------------------|
- * |[requires]|array   |Dependencies        |
- * |method    |function|Codes to be executed|
+ * |Name    |Desc                |
+ * |--------|--------------------|
+ * |requires|Dependencies        |
+ * |method  |Codes to be executed|
  */
 
 /* example

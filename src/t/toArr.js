@@ -1,9 +1,9 @@
 /* Convert value to an array.
  *
- * |Name  |Type |Desc            |
- * |------|-----|----------------|
- * |val   |*    |Value to convert|
- * |return|array|Converted array |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |val   |Value to convert|
+ * |return|Converted array |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

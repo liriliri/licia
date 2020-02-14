@@ -1,10 +1,10 @@
 /* Convert string into bytes.
  *
- * |Name         |Type  |Desc              |
- * |-------------|------|------------------|
- * |str          |string|String to convert |
- * |encoding=utf8|string|Encoding of string|
- * |return       |array |Bytes array       |
+ * |Name         |Desc              |
+ * |-------------|------------------|
+ * |str          |String to convert |
+ * |encoding=utf8|Encoding of string|
+ * |return       |Bytes array       |
  *
  * Supported encoding: utf8, hex, base64
  */
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.1.0
  */
 

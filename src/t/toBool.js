@@ -1,9 +1,9 @@
 /* Convert value to a boolean.
  *
- * |Name  |Type   |Desc             |
- * |------|-------|-----------------|
- * |val   |*      |Value to convert |
- * |return|boolean|Converted boolean|
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |val   |Value to convert |
+ * |return|Converted boolean|
  */
 
 /* example
@@ -18,7 +18,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

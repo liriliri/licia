@@ -1,9 +1,9 @@
 /* Convert string to upper case.
  *
- * |Name  |Type  |Desc             |
- * |------|------|-----------------|
- * |str   |string|String to convert|
- * |return|string|Uppercased string|
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |str   |String to convert|
+ * |return|Uppercased string|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Strip ansi codes from a string.
  *
- * |Name  |Type  |Desc           |
- * |------|------|---------------|
- * |str   |string|String to strip|
- * |return|string|Result string  |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |str   |String to strip|
+ * |return|Result string  |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

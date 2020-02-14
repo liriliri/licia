@@ -1,9 +1,9 @@
 /* Compute sum of given numbers.
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |...num|number|Numbers to calculate|
- * |return|number|Sum of numbers      |
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |...num|Numbers to calculate|
+ * |return|Sum of numbers      |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

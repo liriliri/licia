@@ -1,9 +1,9 @@
 /* Convert the first character of string to upper case.
  *
- * |Name  |Type  |Desc             |
- * |------|------|-----------------|
- * |str   |string|String to convert|
- * |return|string|Converted string |
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |str   |String to convert|
+ * |return|Converted string |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

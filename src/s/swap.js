@@ -1,11 +1,11 @@
 /* Swap two items in an array.
  *
- * |Name  |Type  |Desc         |
- * |------|------|-------------|
- * |arr   |array |Array to swap|
- * |a     |number|First index  |
- * |b     |number|Second index |
- * |return|array |Array given  |
+ * |Name  |Desc         |
+ * |------|-------------|
+ * |arr   |Array to swap|
+ * |a     |First index  |
+ * |b     |Second index |
+ * |return|Array given  |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* String hash function using djb2.
  *
- * |Name  |Type  |Desc          |
- * |------|------|--------------|
- * |str   |string|String to hash|
- * |return|number|Hash result   |
+ * |Name  |Desc          |
+ * |------|--------------|
+ * |str   |String to hash|
+ * |return|Hash result   |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

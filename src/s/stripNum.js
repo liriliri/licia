@@ -1,10 +1,10 @@
 /* Strip number to a specified precision.
  *
- * |Name        |Type  |Desc           |
- * |------------|------|---------------|
- * |num         |number|Number to strip|
- * |precision=12|number|Precision      |
- * |return      |number|Result number  |
+ * |Name        |Desc           |
+ * |------------|---------------|
+ * |num         |Number to strip|
+ * |precision=12|Precision      |
+ * |return      |Result number  |
  */
 
 /* example

@@ -1,10 +1,10 @@
 /* Create duplicate-free version of an array.
  *
- * |Name  |Type    |Desc                         |
- * |------|--------|-----------------------------|
- * |arr   |array   |Array to inspect             |
- * |[cmp] |function|Function for comparing values|
- * |return|array   |New duplicate free array     |
+ * |Name  |Desc                         |
+ * |------|-----------------------------|
+ * |arr   |Array to inspect             |
+ * |cmp   |Function for comparing values|
+ * |return|New duplicate free array     |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

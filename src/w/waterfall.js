@@ -1,9 +1,9 @@
 /* Run an array of functions in series.
  *
- * |Name |Type    |Desc                   |
- * |-----|--------|-----------------------|
- * |tasks|array   |Array of functions     |
- * |[cb] |function|Callback once completed|
+ * |Name |Desc                   |
+ * |-----|-----------------------|
+ * |tasks|Array of functions     |
+ * |cb   |Callback once completed|
  */
 
 /* example

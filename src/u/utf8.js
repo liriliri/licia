@@ -4,20 +4,20 @@
  *
  * Turn any UTF-8 decoded string into UTF-8 encoded string.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |str   |string|String to encode|
- * |return|string|Encoded string  |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |str   |String to encode|
+ * |return|Encoded string  |
  *
  * ### decode
  *
  * Turn any UTF-8 encoded string into UTF-8 decoded string.
  *
- * |Name      |Type   |Desc                  |
- * |----------|-------|----------------------|
- * |str       |string |String to decode      |
- * |safe=false|boolean|Suppress error if true|
- * |return    |string |Decoded string        |
+ * |Name      |Desc                  |
+ * |----------|----------------------|
+ * |str       |String to decode      |
+ * |safe=false|Suppress error if true|
+ * |return    |Decoded string        |
  */
 
 /* example

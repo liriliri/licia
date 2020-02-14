@@ -10146,10 +10146,10 @@ String hash function using djb2.
 </pre>
 </details>
 
-|Name  |Type  |Desc          |
-|------|------|--------------|
-|str   |string|String to hash|
-|return|number|Hash result   |
+|Name  |Desc          |
+|------|--------------|
+|str   |String to hash|
+|return|Hash result   |
 
 ```javascript
 strHash('test'); // -> 2090770981
@@ -10169,11 +10169,11 @@ Convert string into bytes.
 </pre>
 </details>
 
-|Name         |Type  |Desc              |
-|-------------|------|------------------|
-|str          |string|String to convert |
-|encoding=utf8|string|Encoding of string|
-|return       |array |Bytes array       |
+|Name         |Desc              |
+|-------------|------------------|
+|str          |String to convert |
+|encoding=utf8|Encoding of string|
+|return       |Bytes array       |
 
 Supported encoding: utf8, hex, base64
 
@@ -10266,10 +10266,10 @@ Strip ansi codes from a string.
 </pre>
 </details>
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|str   |string|String to strip|
-|return|string|Result string  |
+|Name  |Desc           |
+|------|---------------|
+|str   |String to strip|
+|return|Result string  |
 
 ```javascript
 stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
@@ -10286,10 +10286,10 @@ Strip comments from source code.
 </pre>
 </details>
 
-|Name  |Type  |Desc                 |
-|------|------|---------------------|
-|str   |string|Source code          |
-|return|string|Code without comments|
+|Name  |Desc                 |
+|------|---------------------|
+|str   |Source code          |
+|return|Code without comments|
 
 ```javascript
 stripCmt('// comment \n var a = 5; /* comment2\n * comment3\n *\/'); // -> ' var a = 5; '
@@ -10306,10 +10306,10 @@ Strip ansi color codes from a string.
 </pre>
 </details>
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|str   |string|String to strip|
-|return|string|Result string  |
+|Name  |Desc           |
+|------|---------------|
+|str   |String to strip|
+|return|Result string  |
 
 ```javascript
 stripColor('\u001b[31mred\u001b[39m'); // -> 'red'
@@ -10326,10 +10326,10 @@ Strip html tags from a string.
 </pre>
 </details>
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|str   |string|String to strip|
-|return|string|Result string  |
+|Name  |Desc           |
+|------|---------------|
+|str   |String to strip|
+|return|Result string  |
 
 ```javascript
 stripHtmlTag('<p>Hello</p>'); // -> 'Hello'
@@ -10376,11 +10376,11 @@ Strip number to a specified precision.
 </pre>
 </details>
 
-|Name        |Type  |Desc           |
-|------------|------|---------------|
-|num         |number|Number to strip|
-|precision=12|number|Precision      |
-|return      |number|Result number  |
+|Name        |Desc           |
+|------------|---------------|
+|num         |Number to strip|
+|precision=12|Precision      |
+|return      |Result number  |
 
 ```javascript
 stripNum(0.1 + 0.2); // -> 0.3
@@ -10397,10 +10397,10 @@ Compute sum of given numbers.
 </pre>
 </details>
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|...num|number|Numbers to calculate|
-|return|number|Sum of numbers      |
+|Name  |Desc                |
+|------|--------------------|
+|...num|Numbers to calculate|
+|return|Sum of numbers      |
 
 ```javascript
 sum(1, 2, 5); // -> 8
@@ -10417,12 +10417,12 @@ Swap two items in an array.
 </pre>
 </details>
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
-|arr   |array |Array to swap|
-|a     |number|First index  |
-|b     |number|Second index |
-|return|array |Array given  |
+|Name  |Desc         |
+|------|-------------|
+|arr   |Array to swap|
+|a     |First index  |
+|b     |Second index |
+|return|Array given  |
 
 ```javascript
 const arr = [1, 2];
@@ -10468,11 +10468,11 @@ Return a new throttled version of the passed function.
 </pre>
 </details>
 
-|Name  |Type    |Desc                           |
-|------|--------|-------------------------------|
-|fn    |function|Function to throttle           |
-|wait  |number  |Number of milliseconds to delay|
-|return|function|New throttled function         |
+|Name  |Desc                           |
+|------|-------------------------------|
+|fn    |Function to throttle           |
+|wait  |Number of milliseconds to delay|
+|return|New throttled function         |
 
 ```javascript
 const updatePos = throttle(function () {}, 100);
@@ -10631,10 +10631,10 @@ Convert value to an array.
 </pre>
 </details>
 
-|Name  |Type |Desc            |
-|------|-----|----------------|
-|val   |*    |Value to convert|
-|return|array|Converted array |
+|Name  |Desc            |
+|------|----------------|
+|val   |Value to convert|
+|return|Converted array |
 
 ```javascript
 toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
@@ -10681,10 +10681,10 @@ Convert value to a boolean.
 </pre>
 </details>
 
-|Name  |Type   |Desc             |
-|------|-------|-----------------|
-|val   |*      |Value to convert |
-|return|boolean|Converted boolean|
+|Name  |Desc             |
+|------|-----------------|
+|val   |Value to convert |
+|return|Converted boolean|
 
 ```javascript
 toBool(true); // -> true
@@ -10751,10 +10751,10 @@ Convert value to an integer.
 </pre>
 </details>
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|val   |*     |Value to convert |
-|return|number|Converted integer|
+|Name  |Desc             |
+|------|-----------------|
+|val   |Value to convert |
+|return|Converted integer|
 
 ```javascript
 toInt(1.1); // -> 1
@@ -10792,10 +10792,10 @@ Convert function to its source code.
 </pre>
 </details>
 
-|Name  |Type    |Desc               |
-|------|--------|-------------------|
-|fn    |function|Function to convert|
-|return|string  |Source code        |
+|Name  |Desc               |
+|------|-------------------|
+|fn    |Function to convert|
+|return|Source code        |
 
 ```javascript
 toSrc(Math.min); // -> 'function min() { [native code] }'
@@ -10879,11 +10879,11 @@ Remove chars or white-spaces from beginning end of string.
 </pre>
 </details>
 
-|Name  |Type        |Desc              |
-|------|------------|------------------|
-|str   |string      |String to trim    |
-|chars |string array|Characters to trim|
-|return|string      |Trimmed string    |
+|Name  |Desc              |
+|------|------------------|
+|str   |String to trim    |
+|chars |Characters to trim|
+|return|Trimmed string    |
 
 ```javascript
 trim(' abc  '); // -> 'abc'
@@ -10902,10 +10902,10 @@ Run function in a try catch.
 </pre>
 </details>
 
-|Name|Type    |Desc                 |
-|----|--------|---------------------|
-|fn  |function|Function to try catch|
-|[cb]|function|Callback             |
+|Name|Desc                 |
+|----|---------------------|
+|fn  |Function to try catch|
+|cb  |Callback             |
 
 ```javascript
 tryIt(function () {
@@ -10992,19 +10992,19 @@ UCS-2 encoding and decoding.
 
 Create a string using an array of code point values.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|arr   |array |Array of code points|
-|return|string|Encoded string      |
+|Name  |Desc                |
+|------|--------------------|
+|arr   |Array of code points|
+|return|Encoded string      |
 
 ### decode
 
 Create an array of code point values using a string.
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|str   |string|Input string        |
-|return|array |Array of code points|
+|Name  |Desc                |
+|------|--------------------|
+|str   |Input string        |
+|return|Array of code points|
 
 ```javascript
 ucs2.encode([0x61, 0x62, 0x63]); // -> 'abc'
@@ -11042,9 +11042,9 @@ Stop handling.
 
 Add listener for handling errors.
 
-|Name|Type    |Desc          |
-|----|--------|--------------|
-|fn  |function|Error listener|
+|Name|Desc          |
+|----|--------------|
+|fn  |Error listener|
 
 ### rmListener
 
@@ -11072,10 +11072,10 @@ Convert HTML entities back, the inverse of escape.
 </pre>
 </details>
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|str   |string|String to unescape|
-|return|string|unescaped string  |
+|Name  |Desc              |
+|------|------------------|
+|str   |String to unescape|
+|return|Unescaped string  |
 
 ```javascript
 unescape('You &amp; Me'); // -> 'You & Me'
@@ -11092,10 +11092,10 @@ Create an array of unique values, in order, from all given arrays.
 </pre>
 </details>
 
-|Name  |Type |Desc                        |
-|------|-----|----------------------------|
-|...arr|array|Arrays to inspect           |
-|return|array|New array of combined values|
+|Name  |Desc                        |
+|------|----------------------------|
+|...arr|Arrays to inspect           |
+|return|New array of combined values|
 
 ```javascript
 union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
@@ -11112,10 +11112,10 @@ Generate a globally-unique id.
 </pre>
 </details>
 
-|Name    |Type  |Desc              |
-|--------|------|------------------|
-|[prefix]|string|Id prefix         |
-|return  |string|Globally-unique id|
+|Name  |Desc              |
+|------|------------------|
+|prefix|Id prefix         |
+|return|Globally-unique id|
 
 ```javascript
 uniqId('eusita_'); // -> 'eustia_xxx'
@@ -11135,11 +11135,11 @@ Create duplicate-free version of an array.
 </pre>
 </details>
 
-|Name  |Type    |Desc                         |
-|------|--------|-----------------------------|
-|arr   |array   |Array to inspect             |
-|[cmp] |function|Function for comparing values|
-|return|array   |New duplicate free array     |
+|Name  |Desc                         |
+|------|-----------------------------|
+|arr   |Array to inspect             |
+|cmp   |Function for comparing values|
+|return|New duplicate free array     |
 
 ```javascript
 unique([1, 2, 3, 1]); // -> [1, 2, 3]
@@ -11156,11 +11156,11 @@ Make an async function support both promises and callbacks.
 </pre>
 </details>
 
-|Name  |Type    |Desc                            |
-|------|--------|--------------------------------|
-|fn    |function|Async function                  |
-|type  |string  |Source type, promise or callback|
-|return|function|Result function                 |
+|Name  |Desc                            |
+|------|--------------------------------|
+|fn    |Async function                  |
+|type  |Source type, promise or callback|
+|return|Result function                 |
 
 ```javascript
 function callbackFn(str, cb) {
@@ -11187,10 +11187,10 @@ Opposite of zip.
 </pre>
 </details>
 
-|Name  |Type |Desc                                |
-|------|-----|------------------------------------|
-|arr   |array|Array of grouped elements to process|
-|return|array|New array of regrouped elements     |
+|Name  |Desc                                |
+|------|------------------------------------|
+|arr   |Array of grouped elements to process|
+|return|New array of regrouped elements     |
 
 ```javascript
 unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, false]]
@@ -11207,10 +11207,10 @@ Convert string to upper case.
 </pre>
 </details>
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|str   |string|String to convert|
-|return|string|Uppercased string|
+|Name  |Desc             |
+|------|-----------------|
+|str   |String to convert|
+|return|Uppercased string|
 
 ```javascript
 upperCase('test'); // -> 'TEST'
@@ -11227,10 +11227,10 @@ Convert the first character of string to upper case.
 </pre>
 </details>
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|str   |string|String to convert|
-|return|string|Converted string |
+|Name  |Desc             |
+|------|-----------------|
+|str   |String to convert|
+|return|Converted string |
 
 ```javascript
 upperFirst('red'); // -> Red
@@ -11248,10 +11248,10 @@ function use(method: Function): void;</code>
 </pre>
 </details>
 
-|Name      |Type    |Desc                |
-|----------|--------|--------------------|
-|[requires]|array   |Dependencies        |
-|method    |function|Codes to be executed|
+|Name    |Desc                |
+|--------|--------------------|
+|requires|Dependencies        |
+|method  |Codes to be executed|
 
 ```javascript
 // define('A', () => 'A');
@@ -11278,20 +11278,20 @@ UTF-8 encoding and decoding.
 
 Turn any UTF-8 decoded string into UTF-8 encoded string.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|str   |string|String to encode|
-|return|string|Encoded string  |
+|Name  |Desc            |
+|------|----------------|
+|str   |String to encode|
+|return|Encoded string  |
 
 ### decode
 
 Turn any UTF-8 encoded string into UTF-8 decoded string.
 
-|Name      |Type   |Desc                  |
-|----------|-------|----------------------|
-|str       |string |String to decode      |
-|safe=false|boolean|Suppress error if true|
-|return    |string |Decoded string        |
+|Name      |Desc                  |
+|----------|----------------------|
+|str       |String to decode      |
+|safe=false|Suppress error if true|
+|return    |Decoded string        |
 
 ```javascript
 utf8.encode('\uD800\uDC00'); // ->  '\xF0\x90\x80\x80'
@@ -11326,10 +11326,10 @@ Create an array of the own enumerable property values of object.
 </pre>
 </details>
 
-|Name  |Type  |Desc                    |
-|------|------|------------------------|
-|obj   |object|Object to query         |
-|return|array |Array of property values|
+|Name  |Desc                    |
+|------|------------------------|
+|obj   |Object to query         |
+|return|Array of property values|
 
 ```javascript
 values({one: 1, two: 2}); // -> [1, 2]
@@ -11368,19 +11368,19 @@ Variable-length quantity encoding and decoding.
 
 Encode numbers into vlq string.
 
-|Name  |Type        |Desc            |
-|------|------------|----------------|
-|number|number array|Number to encode|
-|return|string      |Encoded string  |
+|Name  |Desc            |
+|------|----------------|
+|number|Number to encode|
+|return|Encoded string  |
 
 ### decode
 
 Decode vlq string into numbers.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|string|string|String to decode|
-|return|array |Decoded numbers |
+|Name  |Desc            |
+|------|----------------|
+|string|String to decode|
+|return|Decoded numbers |
 
 ```javascript
 vlq.encode(123); // -> '2H'
@@ -11404,11 +11404,11 @@ Wait until function returns a truthy value.
 </pre>
 </details>
 
-|Name          |Type    |Desc              |
-|--------------|--------|------------------|
-|condition     |function|Condition function|
-|[timeout=0]   |number  |Timeout           |
-|[interval=250]|number  |Wait interval     |
+|Name        |Desc              |
+|------------|------------------|
+|condition   |Condition function|
+|timeout=0   |Timeout           |
+|interval=250|Wait interval     |
 
 ```javascript
 let a = 5;
@@ -11429,10 +11429,10 @@ Run an array of functions in series.
 </pre>
 </details>
 
-|Name |Type    |Desc                   |
-|-----|--------|-----------------------|
-|tasks|array   |Array of functions     |
-|[cb] |function|Callback once completed|
+|Name |Desc                   |
+|-----|-----------------------|
+|tasks|Array of functions     |
+|cb   |Callback once completed|
 
 ```javascript
 waterfall([
@@ -11459,10 +11459,10 @@ Convert 32-bit words to bytes.
 </pre>
 </details>
 
-|Name  |Type |Desc      |
-|------|-----|----------|
-|words |array|word array|
-|return|array|byte array|
+|Name  |Desc      |
+|------|----------|
+|words |Word array|
+|return|Byte array|
 
 ```javascript
 wordsToBytes([0x12345678]); // -> [0x12, 0x34, 0x56, 0x78]

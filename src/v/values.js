@@ -1,9 +1,9 @@
 /* Create an array of the own enumerable property values of object.
  *
- * |Name  |Type  |Desc                    |
- * |------|------|------------------------|
- * |obj   |object|Object to query         |
- * |return|array |Array of property values|
+ * |Name  |Desc                    |
+ * |------|------------------------|
+ * |obj   |Object to query         |
+ * |return|Array of property values|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

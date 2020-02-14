@@ -4,19 +4,19 @@
  *
  * Create a string using an array of code point values.
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |arr   |array |Array of code points|
- * |return|string|Encoded string      |
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |arr   |Array of code points|
+ * |return|Encoded string      |
  *
  * ### decode
  *
  * Create an array of code point values using a string.
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |str   |string|Input string        |
- * |return|array |Array of code points|
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |str   |Input string        |
+ * |return|Array of code points|
  */
 
 /* example
@@ -28,7 +28,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

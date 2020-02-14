@@ -1,9 +1,9 @@
 /* Strip comments from source code.
  *
- * |Name  |Type  |Desc                 |
- * |------|------|---------------------|
- * |str   |string|Source code          |
- * |return|string|Code without comments|
+ * |Name  |Desc                 |
+ * |------|---------------------|
+ * |str   |Source code          |
+ * |return|Code without comments|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

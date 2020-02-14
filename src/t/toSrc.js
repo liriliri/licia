@@ -1,9 +1,9 @@
 /* Convert function to its source code.
  *
- * |Name  |Type    |Desc               |
- * |------|--------|-------------------|
- * |fn    |function|Function to convert|
- * |return|string  |Source code        |
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |fn    |Function to convert|
+ * |return|Source code        |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

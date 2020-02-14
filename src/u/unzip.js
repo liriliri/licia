@@ -1,9 +1,9 @@
 /* Opposite of zip.
  *
- * |Name  |Type |Desc                                |
- * |------|-----|------------------------------------|
- * |arr   |array|Array of grouped elements to process|
- * |return|array|New array of regrouped elements     |
+ * |Name  |Desc                                |
+ * |------|------------------------------------|
+ * |arr   |Array of grouped elements to process|
+ * |return|New array of regrouped elements     |
  */
 
 /* example

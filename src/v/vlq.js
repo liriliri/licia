@@ -4,19 +4,19 @@
  *
  * Encode numbers into vlq string.
  *
- * |Name  |Type        |Desc            |
- * |------|------------|----------------|
- * |number|number array|Number to encode|
- * |return|string      |Encoded string  |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |number|Number to encode|
+ * |return|Encoded string  |
  *
  * ### decode
  *
  * Decode vlq string into numbers.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |string|string|String to decode|
- * |return|array |Decoded numbers |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |string|String to decode|
+ * |return|Decoded numbers |
  */
 
 /* example

@@ -1,9 +1,9 @@
 /* Convert value to an integer.
  *
- * |Name  |Type  |Desc             |
- * |------|------|-----------------|
- * |val   |*     |Value to convert |
- * |return|number|Converted integer|
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |val   |Value to convert |
+ * |return|Converted integer|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Convert HTML entities back, the inverse of escape.
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |str   |string|String to unescape|
- * |return|string|unescaped string  |
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |str   |String to unescape|
+ * |return|Unescaped string  |
  */
 
 /* example

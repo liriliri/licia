@@ -1,9 +1,9 @@
 /* Convert 32-bit words to bytes.
  *
- * |Name  |Type |Desc      |
- * |------|-----|----------|
- * |words |array|word array|
- * |return|array|byte array|
+ * |Name  |Desc      |
+ * |------|----------|
+ * |words |Word array|
+ * |return|Byte array|
  */
 
 /* example

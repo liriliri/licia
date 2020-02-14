@@ -1,9 +1,9 @@
 /* Generate a globally-unique id.
  *
- * |Name    |Type  |Desc              |
- * |--------|------|------------------|
- * |[prefix]|string|Id prefix         |
- * |return  |string|Globally-unique id|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |prefix|Id prefix         |
+ * |return|Globally-unique id|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

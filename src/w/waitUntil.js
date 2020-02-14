@@ -1,10 +1,10 @@
 /* Wait until function returns a truthy value.
  *
- * |Name          |Type    |Desc              |
- * |--------------|--------|------------------|
- * |condition     |function|Condition function|
- * |[timeout=0]   |number  |Timeout           |
- * |[interval=250]|number  |Wait interval     |
+ * |Name        |Desc              |
+ * |------------|------------------|
+ * |condition   |Condition function|
+ * |timeout=0   |Timeout           |
+ * |interval=250|Wait interval     |
  */
 
 /* example

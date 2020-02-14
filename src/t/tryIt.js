@@ -1,9 +1,9 @@
 /* Run function in a try catch.
  *
- * |Name|Type    |Desc                 |
- * |----|--------|---------------------|
- * |fn  |function|Function to try catch|
- * |[cb]|function|Callback             |
+ * |Name|Desc                 |
+ * |----|---------------------|
+ * |fn  |Function to try catch|
+ * |cb  |Callback             |
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

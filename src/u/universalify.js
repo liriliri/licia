@@ -1,10 +1,10 @@
 /* Make an async function support both promises and callbacks.
  *
- * |Name  |Type    |Desc                            |
- * |------|--------|--------------------------------|
- * |fn    |function|Async function                  |
- * |type  |string  |Source type, promise or callback|
- * |return|function|Result function                 |
+ * |Name  |Desc                            |
+ * |------|--------------------------------|
+ * |fn    |Async function                  |
+ * |type  |Source type, promise or callback|
+ * |return|Result function                 |
  */
 
 /* example
@@ -23,7 +23,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.7.0
  */
 

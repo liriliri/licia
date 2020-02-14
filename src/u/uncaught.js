@@ -12,9 +12,9 @@
  *
  * Add listener for handling errors.
  *
- * |Name|Type    |Desc          |
- * |----|--------|--------------|
- * |fn  |function|Error listener|
+ * |Name|Desc          |
+ * |----|--------------|
+ * |fn  |Error listener|
  *
  * ### rmListener
  *
