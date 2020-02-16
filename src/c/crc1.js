@@ -1,10 +1,10 @@
 /* CRC1 implementation.
  *
- * |Name      |Type        |Desc                |
- * |----------|------------|--------------------|
- * |input     |string array|Data to calculate   |
- * |[previous]|number      |Previous CRC1 result|
- * |return    |number      |CRC1 result         |
+ * |Name      |Desc                |
+ * |----------|--------------------|
+ * |input     |Data to calculate   |
+ * |[previous]|Previous CRC1 result|
+ * |return    |CRC1 result         |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.7
  */
 

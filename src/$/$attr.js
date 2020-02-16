@@ -10,25 +10,25 @@
  *
  * Set one or more attributes for the set of matched elements.
  *
- * |Name   |Type                |Desc                  |
- * |-------|--------------------|----------------------|
- * |element|string array element|Elements to manipulate|
- * |name   |string              |Attribute name        |
- * |value  |string              |Attribute value       |
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |element|Elements to manipulate|
+ * |name   |Attribute name        |
+ * |value  |Attribute value       |
  *
- * |Name      |Type                |Desc                                  |
- * |----------|--------------------|--------------------------------------|
- * |element   |string array element|Elements to manipulate                |
- * |attributes|object              |Object of attribute-value pairs to set|
+ * |Name      |Desc                                  |
+ * |----------|--------------------------------------|
+ * |element   |Elements to manipulate                |
+ * |attributes|Object of attribute-value pairs to set|
  *
  * ### remove
  *
  * Remove an attribute from each element in the set of matched elements.
  *
- * |Name   |Type                |Desc                  |
- * |-------|--------------------|----------------------|
- * |element|string array element|Elements to manipulate|
- * |name   |string              |Attribute name        |
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |element|Elements to manipulate|
+ * |name   |Attribute name        |
  */
 
 /* example

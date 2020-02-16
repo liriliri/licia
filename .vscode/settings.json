@@ -4,6 +4,7 @@
         "Cmts",
         "Combinators",
         "Proto",
+        "Slugified",
         "callbackify",
         "datetime",
         "debounced",

@@ -2,9 +2,9 @@
  *
  * ### constructor
  *
- * |Name |Type         |Desc            |
- * |-----|-------------|----------------|
- * |color|string object|Color to convert|
+ * |Name |Desc            |
+ * |-----|----------------|
+ * |color|Color to convert|
  *
  * ### toRgb
  *
@@ -22,10 +22,10 @@
  *
  * [static] Parse color string into object containing value and model.
  *
- * |Name  |Type  |Desc                             |
- * |------|------|---------------------------------|
- * |color |string|Color string                     |
- * |return|object|Object containing value and model|
+ * |Name  |Desc                             |
+ * |------|---------------------------------|
+ * |color |Color string                     |
+ * |return|Object containing value and model|
  */
 
 /* example
@@ -37,7 +37,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

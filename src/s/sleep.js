@@ -1,8 +1,8 @@
 /* Resolve a promise after a specified timeout.
  *
- * |Name   |Type   |Desc         |
- * |-------|-------|-------------|
- * |timeout|number |Sleep timeout|
+ * |Name   |Desc         |
+ * |-------|-------------|
+ * |timeout|Sleep timeout|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.4.1
  */
 

@@ -1,11 +1,11 @@
 /* Return an array of elements sorted in ascending order by results of running each element through iteratee.
  *
- * |Name               |Type        |Desc                      |
- * |-------------------|------------|--------------------------|
- * |arr                |object array|Collection to iterate over|
- * |[iterator=identity]|function    |Iterator to sort by       |
- * |[ctx]              |*           |Iterator context          |
- * |return             |array       |New sorted array          |
+ * |Name             |Desc                      |
+ * |-----------------|--------------------------|
+ * |arr              |Collection to iterate over|
+ * |iterator=identity|Iterator to sort by       |
+ * |ctx              |Iterator context          |
+ * |return           |New sorted array          |
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

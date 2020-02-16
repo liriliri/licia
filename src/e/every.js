@@ -1,11 +1,11 @@
 /* Check if predicate return truthy for all elements.
  *
- * |Name      |Type        |Desc                                         |
- * |----------|------------|---------------------------------------------|
- * |object    |array object|Collection to iterate over                   |
- * |[iterator]|function    |Function invoked per iteration               |
- * |[context] |*           |Predicate context                            |
- * |return    |boolean     |True if all elements pass the predicate check|
+ * |Name    |Desc                                         |
+ * |--------|---------------------------------------------|
+ * |object  |Collection to iterate over                   |
+ * |iterator|Function invoked per iteration               |
+ * |context |Predicate context                            |
+ * |return  |True if all elements pass the predicate check|
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

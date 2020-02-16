@@ -97,25 +97,25 @@ const $attr: $attr.IAttr;</code>
 
 设置元素集中一个或多个属性的值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|name|string|属性名|
-|value|string|属性值|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|name|属性名|
+|value|属性值|
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|attributes|object|包含多个要设置属性-值对的对象|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|attributes|包含多个要设置属性-值对的对象|
 
 ### remove
 
 对元素集中的所有元素，移除指定的属性。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|name|string|属性名|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|name|属性名|
 
 ```javascript
 $attr('#test', 'attr1', 'test');
@@ -703,9 +703,9 @@ class Color {
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|color|string object|要转换的颜色|
+|参数名|说明|
+|-----|---|
+|color|要转换的颜色|
 
 ### toRgb
 
@@ -723,10 +723,10 @@ class Color {
 
 【静态】将颜色字符串转换为含有值及颜色模型的对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|color|string|颜色字符串|
-|返回值|object|含有值及颜色模型的对象|
+|参数名|说明|
+|-----|---|
+|color|颜色字符串|
+|返回值|含有值及颜色模型的对象|
 
 ```javascript
 Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model: 'rgb'}
@@ -3386,11 +3386,11 @@ CRC1 算法实现。
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|input|string array|信息码|
-|[previous]|number|用于累积计算的 CRC1 校验码|
-|返回值|number|CRC1 校验码|
+|参数名|说明|
+|-----|---|
+|input|信息码|
+|previous|用于累积计算的 CRC1 校验码|
+|返回值|CRC1 校验码|
 
 ```javascript
 crc1('1234567890').toString(16); // -> 'd'
@@ -4212,11 +4212,11 @@ function each&lt;T&gt;(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object array|目标集合|
-|iterator|function|迭代器|
-|[ctx]|*|函数上下文|
+|参数名|说明|
+|-----|---|
+|obj|目标集合|
+|iterator|迭代器|
+|ctx|函数上下文|
 
 ```javascript
 each({'a': 1, 'b': 2}, function (val, key) {});
@@ -4434,12 +4434,12 @@ function every&lt;T&gt;(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|object|array object|目标集合|
-|[iterator]|function|真值检测函数|
-|[context]|*|函数上下文|
-|返回值|boolean|如果都能通过，返回真|
+|参数名|说明|
+|-----|---|
+|object|目标集合|
+|iterator|真值检测函数|
+|context|函数上下文|
+|返回值|如果都能通过，返回真|
 
 ```javascript
 every([2, 4], function (val) {
@@ -9860,9 +9860,9 @@ sizeof({ a: 'b' }); // -> 4
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|timeout|number|暂时时长|
+|参数名|说明|
+|-----|---|
+|timeout|暂停时长|
 
 ```javascript
 ;(async function () {
@@ -9905,11 +9905,11 @@ Slug 化字符串。
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|[replacement]|object|自定义替换|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|replacement|自定义替换|
+|返回值|目标字符串|
 
 ```javascript
 slugify('I ♥ pony'); // -> 'I-love-pony'
@@ -9927,10 +9927,10 @@ slugify('I ♥ pony', {' ': '_'}); // -> 'I_love_pony'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|下划线式字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|下划线式字符串|
 
 ```javascript
 snakeCase('fooBar'); // -> foo_bar
@@ -9982,12 +9982,12 @@ some([2, 5], function (val) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|object array|源集合|
-|[iteratee=identity]|function|排序依据生成函数|
-|[ctx]|*|函数上下文|
-|返回值|array|排序后的数组|
+|参数名|说明|
+|-----|---|
+|arr|源集合|
+|iteratee=identity|排序依据生成函数|
+|ctx|函数上下文|
+|返回值|排序后的数组|
 
 ```javascript
 sortBy([1, 2, 3, 4, 5, 6], function (num) {
@@ -10134,11 +10134,11 @@ stackTrace(); // -> List of CallSite objects
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|目标字符串|
-|prefix|string|字符串前缀|
-|返回值|boolean|如果是前缀，返回真|
+|参数名|说明|
+|-----|---|
+|str|目标字符串|
+|prefix|字符串前缀|
+|返回值|如果是前缀，返回真|
 
 ```javascript
 startWith('ab', 'a'); // -> true

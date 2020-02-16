@@ -1,10 +1,10 @@
 /* Check if string starts with the given target string.
  *
- * |Name  |Type   |Desc                             |
- * |------|-------|---------------------------------|
- * |str   |string |String to search                 |
- * |prefix|string |String prefix                    |
- * |return|boolean|True if string starts with prefix|
+ * |Name  |Desc                             |
+ * |------|---------------------------------|
+ * |str   |String to search                 |
+ * |prefix|String prefix                    |
+ * |return|True if string starts with prefix|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

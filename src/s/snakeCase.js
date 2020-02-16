@@ -1,9 +1,9 @@
 /* Convert string to "snakeCase".
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |str   |string|String to convert |
- * |return|string|Snake cased string|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |str   |String to convert |
+ * |return|Snake cased string|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

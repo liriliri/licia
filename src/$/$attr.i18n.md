@@ -12,22 +12,22 @@
 
 设置元素集中一个或多个属性的值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|name|string|属性名|
-|value|string|属性值|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|name|属性名|
+|value|属性值|
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|attributes|object|包含多个要设置属性-值对的对象|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|attributes|包含多个要设置属性-值对的对象|
 
 ### remove
 
 对元素集中的所有元素，移除指定的属性。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|name|string|属性名|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|name|属性名|

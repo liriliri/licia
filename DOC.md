@@ -99,25 +99,25 @@ Get the value of an attribute for the first element in the set of matched elemen
 
 Set one or more attributes for the set of matched elements.
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|name   |string              |Attribute name        |
-|value  |string              |Attribute value       |
+|Name   |Desc                  |
+|-------|----------------------|
+|element|Elements to manipulate|
+|name   |Attribute name        |
+|value  |Attribute value       |
 
-|Name      |Type                |Desc                                  |
-|----------|--------------------|--------------------------------------|
-|element   |string array element|Elements to manipulate                |
-|attributes|object              |Object of attribute-value pairs to set|
+|Name      |Desc                                  |
+|----------|--------------------------------------|
+|element   |Elements to manipulate                |
+|attributes|Object of attribute-value pairs to set|
 
 ### remove
 
 Remove an attribute from each element in the set of matched elements.
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|name   |string              |Attribute name        |
+|Name   |Desc                  |
+|-------|----------------------|
+|element|Elements to manipulate|
+|name   |Attribute name        |
 
 ```javascript
 $attr('#test', 'attr1', 'test');
@@ -708,9 +708,9 @@ class Color {
 
 ### constructor
 
-|Name |Type         |Desc            |
-|-----|-------------|----------------|
-|color|string object|Color to convert|
+|Name |Desc            |
+|-----|----------------|
+|color|Color to convert|
 
 ### toRgb
 
@@ -728,10 +728,10 @@ Get color hsl string format.
 
 [static] Parse color string into object containing value and model.
 
-|Name  |Type  |Desc                             |
-|------|------|---------------------------------|
-|color |string|Color string                     |
-|return|object|Object containing value and model|
+|Name  |Desc                             |
+|------|---------------------------------|
+|color |Color string                     |
+|return|Object containing value and model|
 
 ```javascript
 Color.parse('rgb(170, 287, 204, 0.5)'); // -> {val: [170, 187, 204, 0.5], model: 'rgb'}
@@ -3391,11 +3391,11 @@ CRC1 implementation.
 </pre>
 </details>
 
-|Name      |Type        |Desc                |
-|----------|------------|--------------------|
-|input     |string array|Data to calculate   |
-|[previous]|number      |Previous CRC1 result|
-|return    |number      |CRC1 result         |
+|Name      |Desc                |
+|----------|--------------------|
+|input     |Data to calculate   |
+|[previous]|Previous CRC1 result|
+|return    |CRC1 result         |
 
 ```javascript
 crc1('1234567890').toString(16); // -> 'd'
@@ -4217,11 +4217,11 @@ function each&lt;T&gt;(
 </pre>
 </details>
 
-|Name    |Type        |Desc                          |
-|--------|------------|------------------------------|
-|obj     |object array|Collection to iterate over    |
-|iterator|function    |Function invoked per iteration|
-|[ctx]   |*           |Function context              |
+|Name    |Desc                          |
+|--------|------------------------------|
+|obj     |Collection to iterate over    |
+|iterator|Function invoked per iteration|
+|ctx     |Function context              |
 
 ```javascript
 each({'a': 1, 'b': 2}, function (val, key) {});
@@ -4438,12 +4438,12 @@ function every&lt;T&gt;(
 </pre>
 </details>
 
-|Name      |Type        |Desc                                         |
-|----------|------------|---------------------------------------------|
-|object    |array object|Collection to iterate over                   |
-|[iterator]|function    |Function invoked per iteration               |
-|[context] |*           |Predicate context                            |
-|return    |boolean     |True if all elements pass the predicate check|
+|Name    |Desc                                         |
+|--------|---------------------------------------------|
+|object  |Collection to iterate over                   |
+|iterator|Function invoked per iteration               |
+|context |Predicate context                            |
+|return  |True if all elements pass the predicate check|
 
 ```javascript
 every([2, 4], function (val) {
@@ -9851,9 +9851,9 @@ Resolve a promise after a specified timeout.
 </pre>
 </details>
 
-|Name   |Type   |Desc         |
-|-------|-------|-------------|
-|timeout|number |Sleep timeout|
+|Name   |Desc         |
+|-------|-------------|
+|timeout|Sleep timeout|
 
 ```javascript
 ;(async function () {
@@ -9896,11 +9896,11 @@ Slugify a string.
 </pre>
 </details>
 
-|Name         |Type  |Desc              |
-|-------------|------|------------------|
-|str          |string|String to slugify |
-|[replacement]|object|Custom replacement|
-|return       |string|Slugified string  |
+|Name       |Desc              |
+|-----------|------------------|
+|str        |String to slugify |
+|replacement|Custom replacement|
+|return     |Slugified string  |
 
 ```javascript
 slugify('I ♥ pony'); // -> 'I-love-pony'
@@ -9918,10 +9918,10 @@ Convert string to "snakeCase".
 </pre>
 </details>
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|str   |string|String to convert |
-|return|string|Snake cased string|
+|Name  |Desc              |
+|------|------------------|
+|str   |String to convert |
+|return|Snake cased string|
 
 ```javascript
 snakeCase('fooBar'); // -> foo_bar
@@ -9973,12 +9973,12 @@ Return an array of elements sorted in ascending order by results of running each
 </pre>
 </details>
 
-|Name               |Type        |Desc                      |
-|-------------------|------------|--------------------------|
-|arr                |object array|Collection to iterate over|
-|[iterator=identity]|function    |Iterator to sort by       |
-|[ctx]              |*           |Iterator context          |
-|return             |array       |New sorted array          |
+|Name             |Desc                      |
+|-----------------|--------------------------|
+|arr              |Collection to iterate over|
+|iterator=identity|Iterator to sort by       |
+|ctx              |Iterator context          |
+|return           |New sorted array          |
 
 ```javascript
 sortBy([1, 2, 3, 4, 5, 6], function (num) {
@@ -10125,11 +10125,11 @@ Check if string starts with the given target string.
 </pre>
 </details>
 
-|Name  |Type   |Desc                             |
-|------|-------|---------------------------------|
-|str   |string |String to search                 |
-|prefix|string |String prefix                    |
-|return|boolean|True if string starts with prefix|
+|Name  |Desc                             |
+|------|---------------------------------|
+|str   |String to search                 |
+|prefix|String prefix                    |
+|return|True if string starts with prefix|
 
 ```javascript
 startWith('ab', 'a'); // -> true

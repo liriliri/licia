@@ -1,10 +1,10 @@
 /* Iterate over elements of collection and invokes iterator for each element.
  *
- * |Name    |Type        |Desc                          |
- * |--------|------------|------------------------------|
- * |obj     |object array|Collection to iterate over    |
- * |iterator|function    |Function invoked per iteration|
- * |[ctx]   |*           |Function context              |
+ * |Name    |Desc                          |
+ * |--------|------------------------------|
+ * |obj     |Collection to iterate over    |
+ * |iterator|Function invoked per iteration|
+ * |ctx     |Function context              |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

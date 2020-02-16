@@ -1,10 +1,10 @@
 /* Slugify a string.
  *
- * |Name         |Type  |Desc              |
- * |-------------|------|------------------|
- * |str          |string|String to slugify |
- * |[replacement]|object|Custom replacement|
- * |return       |string|Slugified string  |
+ * |Name       |Desc              |
+ * |-----------|------------------|
+ * |str        |String to slugify |
+ * |replacement|Custom replacement|
+ * |return     |Slugified string  |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.7.0
  */
 
