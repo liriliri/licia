@@ -2,12 +2,15 @@
 
 [![NPM version][npm-image]][npm-url]
 [![Build status][travis-image]][travis-url]
+[![Test coverage][codecov-image]][codecov-url]
 [![License][license-image]][npm-url]
 
 [npm-image]: https://img.shields.io/npm/v/licia.svg
 [npm-url]: https://npmjs.org/package/licia
 [travis-image]: https://img.shields.io/travis/liriliri/licia.svg
 [travis-url]: https://travis-ci.org/liriliri/licia
+[codecov-image]: https://codecov.io/github/liriliri/licia/coverage.svg?branch=master
+[codecov-url]: https://codecov.io/github/liriliri/licia?branch=master
 [license-image]: https://img.shields.io/npm/l/licia.svg
 
 Licia 是一套在开发中实践积累起来的实用 JavaScript 工具库。该库目前拥有超过 400 个模块，包括 Dom 操作，cookie 设置，类创建，模板函数，日期格式化等实用模块，同时配套有打包工具 Eustia 进行定制化，使JS脚本加载量缩减在 10KB 以下，极大优化移动端页面的加载速度。

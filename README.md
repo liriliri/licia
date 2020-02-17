@@ -4,12 +4,15 @@
 
 [![NPM version][npm-image]][npm-url]
 [![Build status][travis-image]][travis-url]
+[![Test coverage][codecov-image]][codecov-url]
 [![License][license-image]][npm-url]
 
 [npm-image]: https://img.shields.io/npm/v/licia.svg
 [npm-url]: https://npmjs.org/package/licia
 [travis-image]: https://img.shields.io/travis/liriliri/licia.svg
 [travis-url]: https://travis-ci.org/liriliri/licia
+[codecov-image]: https://codecov.io/github/liriliri/licia/coverage.svg?branch=master
+[codecov-url]: https://codecov.io/github/liriliri/licia?branch=master
 [license-image]: https://img.shields.io/npm/l/licia.svg
 
 [Licia](https://licia.liriliri.io/) is a utility library that focus on getting daily works done. Unlike other libraries such as underscore, mout, which strictly separates its functions into several categories like array, string and function etc. licia is just a deadly simple collection of over 400 micro modules dealing problems in different aspects. 
