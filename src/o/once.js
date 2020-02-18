@@ -1,9 +1,9 @@
 /* Create a function that invokes once.
  *
- * |Name  |Type    |Desc                   |
- * |------|--------|-----------------------|
- * |fn    |function|Function to restrict   |
- * |return|function|New restricted function|
+ * |Name  |Desc                   |
+ * |------|-----------------------|
+ * |fn    |Function to restrict   |
+ * |return|New restricted function|
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

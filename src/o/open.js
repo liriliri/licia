@@ -1,9 +1,9 @@
 /* Open stuff like url, files.
  *
- * |Name  |Type        |Desc         |
- * |------|------------|-------------|
- * |target|string      |Stuff to open|
- * |return|ChildProcess|Child process|
+ * |Name  |Desc         |
+ * |------|-------------|
+ * |target|Stuff to open|
+ * |return|Child process|
  */
 
 /* example

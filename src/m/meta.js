@@ -2,29 +2,29 @@
  *
  * Get meta content with given name. If name is omitted, all pairs will be return.
  *
- * |Name  |Type        |Desc        |
- * |------|------------|------------|
- * |[name]|string array|Meta name   |
- * |return|string      |Meta content|
+ * |Name  |Desc        |
+ * |------|------------|
+ * |name  |Meta name   |
+ * |return|Meta content|
  *
  * Set meta content.
  *
- * |Name   |Type  |Desc        |
- * |-------|------|------------|
- * |name   |string|Meta name   |
- * |content|string|Meta content|
+ * |Name   |Desc        |
+ * |-------|------------|
+ * |name   |Meta name   |
+ * |content|Meta content|
  *
- * |Name |Type  |Desc                        |
- * |-----|------|----------------------------|
- * |metas|object|Object of name content pairs|
+ * |Name |Desc                        |
+ * |-----|----------------------------|
+ * |metas|Object of name content pairs|
  *
  * ### remove
  *
  * Remove metas.
  *
- * |Name|Type        |Desc     |
- * |----|------------|---------|
- * |name|string array|Meta name|
+ * |Name|Desc     |
+ * |----|---------|
+ * |name|Meta name|
  */
 
 /* example
@@ -44,7 +44,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

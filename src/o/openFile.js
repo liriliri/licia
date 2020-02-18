@@ -1,16 +1,16 @@
 /* Open file dialog to select file in browser.
  *
- * |Name   |Type   |Desc          |
- * |-------|-------|--------------|
- * |options|object |Dialog options|
- * |return |Promise|Files promise |
+ * |Name   |Desc          |
+ * |-------|--------------|
+ * |options|Dialog options|
+ * |return |Files promise |
  *
  * Available options:
  *
- * |Name          |Type   |Desc                        |
- * |--------------|-------|----------------------------|
- * |accept        |string |File types                  |
- * |multiple=false|boolean|Select multiple files or not|
+ * |Name          |Desc                        |
+ * |--------------|----------------------------|
+ * |accept        |File types                  |
+ * |multiple=false|Select multiple files or not|
  */
 
 /* example
@@ -21,7 +21,6 @@
 
 /* module
  * env: browser
- * test: browser
  * since: 1.3.0
  */
 
