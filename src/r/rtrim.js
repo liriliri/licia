@@ -1,10 +1,10 @@
 /* Remove chars or white-spaces from end of string.
  *
- * |Name   |Type        |Desc              |
- * |-------|------------|------------------|
- * |str    |string      |String to trim    |
- * |[chars]|string array|Characters to trim|
- * |return |string      |Trimmed string    |
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |str   |String to trim    |
+ * |chars |Characters to trim|
+ * |return|Trimmed string    |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

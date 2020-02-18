@@ -1,8 +1,8 @@
 /* Loop through all possible path and domain to remove cookie.
  *
- * |Name|Type  |Desc      |
- * |----|------|----------|
- * |key |string|Cookie key|
+ * |Name|Desc      |
+ * |----|----------|
+ * |key |Cookie key|
  */
 
 /* example
@@ -11,7 +11,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

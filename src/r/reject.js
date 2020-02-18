@@ -1,11 +1,11 @@
 /* Opposite of filter.
  *
- * |Name     |Type    |Desc                                          |
- * |---------|--------|----------------------------------------------|
- * |obj      |array   |Collection to iterate over                    |
- * |predicate|function|Function invoked per iteration                |
- * |[ctx]    |*       |Predicate context                             |
- * |return   |array   |Array of all values that didn't pass predicate|
+ * |Name     |Desc                                          |
+ * |---------|----------------------------------------------|
+ * |obj      |Collection to iterate over                    |
+ * |predicate|Function invoked per iteration                |
+ * |ctx      |Predicate context                             |
+ * |return   |Array of all values that didn't pass predicate|
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

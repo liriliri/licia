@@ -1,17 +1,17 @@
 /* Parse command line argument options, the same as minimist.
  *
- * |Name  |Type  |Desc           |
- * |------|------|---------------|
- * |args  |array |Argument array |
- * |opts  |object|Parse options  |
- * |return|object|Parsed result  |
+ * |Name   |Desc           |
+ * |-------|---------------|
+ * |args   |Argument array |
+ * |options|Parse options  |
+ * |return |Parsed result  |
  *
  * ### options
  *
- * |Name      |Type  |Desc             |
- * |----------|------|-----------------|
- * |names     |object|option names     |
- * |shorthands|object|option shorthands|
+ * |Name      |Desc             |
+ * |----------|-----------------|
+ * |names     |option names     |
+ * |shorthands|option shorthands|
  */
 
 /* example
@@ -34,7 +34,13 @@
  */
 
 /* typescript
- * export declare function parseArgs(names: string[], shorthands: any): any;
+ * export declare function parseArgs(
+ *     args: string[],
+ *     options: {
+ *         names: any,
+ *         shorthands: any
+ *     }
+ * ): any;
  */
 
 _('defaults toNum invert toBool');

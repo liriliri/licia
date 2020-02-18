@@ -4,19 +4,19 @@
  *
  * Parse css selector into js object.
  *
- * |Name    |Type  |Desc            |
- * |--------|------|----------------|
- * |selector|string|Css selector    |
- * |return  |array |Parsed js object|
+ * |Name    |Desc            |
+ * |--------|----------------|
+ * |selector|Css selector    |
+ * |return  |Parsed js object|
  *
  * ### stringify
  *
  * Stringify object into an css selector.
  *
- * |Name  |Type  |Desc               |
- * |------|------|-------------------|
- * |groups|array |Object to stringify|
- * |return|string|Css selector       |
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |groups|Object to stringify|
+ * |return|Css selector       |
  */
 
 /* example

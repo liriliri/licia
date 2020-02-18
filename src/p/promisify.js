@@ -1,10 +1,10 @@
 /* Convert callback based functions into Promises.
  *
- * |Name           |Type    |Desc                                  |
- * |---------------|--------|--------------------------------------|
- * |fn             |function|Callback based function               |
- * |multiArgs=false|boolean |If callback has multiple success value|
- * |return         |function|Result function                       |
+ * |Name           |Desc                                  |
+ * |---------------|--------------------------------------|
+ * |fn             |Callback based function               |
+ * |multiArgs=false|If callback has multiple success value|
+ * |return         |Result function                       |
  *
  * If multiArgs is set to true, the resulting promise will always fulfill with an array of the callback's success values.
  */
@@ -20,7 +20,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

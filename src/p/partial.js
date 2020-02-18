@@ -1,10 +1,10 @@
 /* Partially apply a function by filling in given arguments.
  *
- * |Name       |Type    |Desc                                    |
- * |-----------|--------|----------------------------------------|
- * |fn         |function|Function to partially apply arguments to|
- * |...partials|*       |Arguments to be partially applied       |
- * |return     |function|New partially applied function          |
+ * |Name       |Desc                                    |
+ * |-----------|----------------------------------------|
+ * |fn         |Function to partially apply arguments to|
+ * |...partials|Arguments to be partially applied       |
+ * |return     |New partially applied function          |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

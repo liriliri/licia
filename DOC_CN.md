@@ -1606,10 +1606,10 @@ map.get('1'); // -> 1
 
 元素入列。
 
-|参数名|类型|说明|
-|-----|----|---|
-|item|*|入列元素|
-|返回值|number|当前大小|
+|参数名|说明|
+|-----|---|
+|item|入列元素|
+|返回值|当前大小|
 
 ### dequeue
 
@@ -1623,10 +1623,10 @@ map.get('1'); // -> 1
 
 遍历队列。
 
-|参数名|类型|说明|
-|-----|----|---|
-|iterator|function|调用函数|
-|[ctx]|*|函数上下文|
+|参数名|说明|
+|-----|---|
+|iterator|调用函数|
+|ctx|*|函数上下文|
 
 ### toArr
 
@@ -1690,28 +1690,28 @@ cache.get('test'); // -> 'licia'
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|reducer|function|生成下一个状态的函数|
-|initialState|*|初始状态|
+|参数名|说明|
+|-----|---|
+|reducer|生成下一个状态的函数|
+|initialState|初始状态|
 
 ### subscribe
 
 订阅状态改变事件。
 
-|参数名|类型|说明|
-|-----|----|---|
-|listener|function|回调函数|
-|返回值|function|取消订阅函数|
+|参数名|说明|
+|-----|---|
+|listener|回调函数|
+|返回值|取消订阅函数|
 
 ### dispatch
 
 发出动作。
 
-|参数名|类型|说明|
-|-----|----|---|
-|action|object|描述改变内容的对象|
-|返回值|object|传入对象|
+|参数名|说明|
+|-----|---|
+|action|描述改变内容的对象|
+|返回值|传入对象|
 
 ### getState
 
@@ -1752,25 +1752,25 @@ querySelectorAll 的简单包装类。
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|selector|string|选择器|
+|参数名|说明|
+|-----|---|
+|selector|选择器|
 
 ### find
 
 查找子元素。
 
-|参数名|类型|说明|
-|-----|----|---|
-|selector|string|选择器|
+|参数名|说明|
+|-----|---|
+|selector|选择器|
 
 ### each
 
 遍历匹配的元素。
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|调用函数|
+|参数名|说明|
+|-----|---|
+|fn|调用函数|
 
 ```javascript
 const $test = new Select('#test');
@@ -1796,10 +1796,10 @@ SessionStorage 存储。
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|SessionStorage 存储名|
-|data|object|默认数据|
+|参数名|说明|
+|-----|---|
+|name|SessionStorage 存储名|
+|data|默认数据|
 
 ```javascript
 const store = new SessionStore('licia');
@@ -1837,10 +1837,10 @@ store.set('name', 'licia');
 
 元素入栈。
 
-|参数名|类型|说明|
-|-----|----|---|
-|item|*|入栈元素|
-|返回值|number|当前大小|
+|参数名|说明|
+|-----|---|
+|item|入栈元素|
+|返回值|当前大小|
 
 ### pop
 
@@ -1854,10 +1854,10 @@ store.set('name', 'licia');
 
 遍历栈。
 
-|参数名|类型|说明|
-|-----|----|---|
-|iterator|function|调用函数|
-|[ctx]|*|函数上下文|
+|参数名|说明|
+|-----|---|
+|iterator|调用函数|
+|ctx|函数上下文|
 
 ### toArr
 
@@ -1890,19 +1890,19 @@ stack.pop(); // -> 3
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|initial|string|初始状态|
-|events|object|改变状态的事件|
+|参数名|说明|
+|-----|---|
+|initial|初始状态|
+|events|改变状态的事件|
 
 ### is
 
 检查当前状态是否是指定状态。
 
-|参数名|类型|说明|
-|-----|----|---|
-|value|string|要检查的状态|
-|返回值|boolean|如果是，返回真|
+|参数名|说明|
+|-----|---|
+|value|要检查的状态|
+|返回值|如果是，返回真|
 
 ```javascript
 const state = new State('empty', {
@@ -2775,10 +2775,10 @@ bytesToWords([0x12, 0x34, 0x56, 0x78]); // -> [0x12345678]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|返回 Promise 的函数|
-|返回值|function|使用回调的函数|
+|参数名|说明|
+|-----|---|
+|fn|返回 Promise 的函数|
+|返回值|使用回调的函数|
 
 ```javascript
 function fn() {
@@ -8553,22 +8553,28 @@ parallel([
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function parseArgs(names: string[], shorthands: any): any;</code>
+<code class="language-typescript">function parseArgs(
+    args: string[],
+    options: {
+        names: any,
+        shorthands: any
+    }
+): any;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|args|array|参数数组|
-|opts|object|解析选项|
-|返回值|object|解析结果|
+|参数名|说明|
+|-----|---|
+|args|参数数组|
+|options|解析选项|
+|返回值|解析结果|
 
 ### options
 
-|参数名|类型|说明|
-|-----|----|---|
-|names|object|选项名及类型|
-|shorthands|object|选项名缩写|
+|参数名|说明|
+|-----|---|
+|names|选项名及类型|
+|shorthands|选项名缩写|
 
 ```javascript
 parseArgs(['eustia', '--output', 'util.js', '-w'], {
@@ -8643,11 +8649,11 @@ parseHtml('<div>licia</div>', {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|源函数|
-|...partials|*|局部填充参数|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|fn|源函数|
+|...partials|局部填充参数|
+|返回值|目标函数|
 
 ```javascript
 const sub5 = partial(function (a, b) { return b - a }, 5);
@@ -8710,11 +8716,11 @@ console.log(perfNow() - start);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|object|object|源对象|
-|filter|string array function|对象过滤器|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|object|源对象|
+|filter|对象过滤器|
+|返回值|目标对象|
 
 ```javascript
 pick({a: 1, b: 2}, 'a'); // -> {a: 1}
@@ -8781,10 +8787,9 @@ precision(1.234); // -> 3;
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|url|string|目标 url|
-|返回值|Promise|Promise|
+|参数名|说明|
+|-----|---|
+|url|目标 url|
 
 如果支持，它将使用`<link rel=prefetch>`进行预加载。
 
@@ -8832,11 +8837,11 @@ prefix('color'); // -> 'color'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|源函数|
-|multiArgs=false|boolean|回调是否有多个结果|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|fn|源函数|
+|multiArgs=false|回调是否有多个结果|
+|返回值|目标函数|
 
 如果 multiArgs 设为真，返回的 Promise 会将回调的结果合并成一个数组。
 
@@ -8889,19 +8894,19 @@ property(['a', 'b'])(obj); // -> 1
 
 将 query 字符串解析成对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|query 字符串|
-|返回值|object|query 对象|
+|参数名|说明|
+|-----|---|
+|str|query 字符串|
+|返回值|query 对象|
 
 ### stringify
 
 将对象序列化成 query 字符串。
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|query 对象|
-|返回值|string|query 字符串|
+|参数名|说明|
+|-----|---|
+|obj|query 对象|
+|返回值|query 字符串|
 
 ```javascript
 query.parse('foo=bar&eruda=true'); // -> {foo: 'bar', eruda: 'true'}
@@ -8920,11 +8925,11 @@ query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|要排序的数组|
-|[cmp]|function|比较器|
-|返回值|array|有序数组|
+|参数名|说明|
+|-----|---|
+|arr|要排序的数组|
+|cmp|比较器|
+|返回值|有序数组|
 
 ```javascript
 quickSort([2, 1]); // -> [1, 2]
@@ -8965,12 +8970,12 @@ raf.cancel(id);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|min|number|最小值|
-|max|number|最大值|
-|floating=false|boolean|是否允许浮点数|
-|返回值|number|随机数|
+|参数名|说明|
+|-----|---|
+|min|最小值|
+|max|最大值|
+|floating=false|是否允许浮点数|
+|返回值|随机数|
 
 ```javascript
 random(1, 5); // -> an integer between 0 and 5
@@ -8991,10 +8996,10 @@ random(1.2, 5.2, true); /// -> a floating-point number between 1.2 and 5.2
 
 如果支持，使用 node 的 crypto 模块或浏览器的 crypto 对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|size  |number|Number of bytes to generate |
-|返回值|object|Random bytes of given length|
+|参数名|说明|
+|-----|---|
+|size|字节序列长度|
+|返回值|随机字节序列|
 
 ```javascript
 randomBytes(5); // -> [55, 49, 153, 30, 122]
@@ -9021,20 +9026,20 @@ function randomColor(options: randomColor.IOptions): string | string[];</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|options|object|随机选项|
-|返回值|string array|Random color|
+|参数名|说明|
+|-----|---|
+|options|随机选项|
+|返回值|随机颜色|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|count=1|number|生成数|
-|[hue]|number|色调，取值为 0 - 360|
-|[lightness]|number|亮度，取值为 0 - 1|
-|format=hex|string|颜色格式，hex，hsl 或者 rgb|
-|[seed]|number|随机种子|
+|参数名|说明|
+|-----|---|
+|count=1|生成数|
+|hue|色调，取值为 0 - 360|
+|lightness|亮度，取值为 0 - 1|
+|format=hex|颜色格式，hex，hsl 或者 rgb|
+|seed|随机种子|
 
 ```javascript
 randomColor({
@@ -9053,10 +9058,10 @@ randomColor({
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|size=21|number|id 长度|
-|symbols|string|生成 id 字符，默认为 a-zA-Z0-9_-|
+|参数名|说明|
+|-----|---|
+|size=21|id 长度|
+|symbols|生成 id 字符，默认为 a-zA-Z0-9_-|
 
 ```javascript
 randomId(); // -> 'oKpy4HwU8E6IvU5I03gyQ'
@@ -9095,12 +9100,12 @@ randomItem([1, 2, 3]); // -> 2
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|[start]|number|起始值|
-|end|number|结束值|
-|step=1|number|相邻差|
-|返回值|array|整数数组|
+|参数名|说明|
+|-----|---|
+|start|起始值|
+|end|结束值|
+|step=1|相邻差|
+|返回值|整数数组|
 
 ```javascript
 range(5); // -> [0, 1, 2, 3, 4]
@@ -9235,12 +9240,12 @@ function reject&lt;T&gt;(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|array|要遍历的集合|
-|predicate|function|真值检测函数|
-|[ctx]|*|函数上下文|
-|返回值|array|包含所有未通过真值检测元素的数组|
+|参数名|说明|
+|-----|---|
+|obj|要遍历的集合|
+|predicate|真值检测函数|
+|ctx|函数上下文|
+|返回值|包含所有未通过真值检测元素的数组|
 
 ```javascript
 reject([1, 2, 3, 4, 5], function (val) {
@@ -9265,12 +9270,12 @@ reject([1, 2, 3, 4, 5], function (val) {
 
 与 filter 不同，该模块会改变原数组。
 
-|参数名|类型|说明|
-|-----|----|---|
-|list|array|要遍历的集合|
-|iterator|function|真值检测函数|
-|[context]|*|函数上下文|
-|返回值|array|包含所有删除元素的数组|
+|参数名|说明|
+|-----|---|
+|list|要遍历的集合|
+|iterator|真值检测函数|
+|context|函数上下文|
+|返回值|包含所有删除元素的数组|
 
 ```javascript
 const arr = [1, 2, 3, 4, 5];
@@ -9290,11 +9295,11 @@ console.log(evens); // -> [2, 4]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|n|number|重复次数|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|n|重复次数|
+|返回值|目标字符串|
 
 ```javascript
 repeat('a', 3); // -> 'aaa'
@@ -9313,11 +9318,11 @@ repeat('*', 0); // -> ''
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|function|function|源函数|
-|[startIndex]|number|合并参数起始位置|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|function|源函数|
+|startIndex|合并参数起始位置|
+|返回值|目标函数|
 
 ```javascript
 const paramArr = restArgs(function (rest) { return rest });
@@ -9335,10 +9340,10 @@ paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|源数组|
-|返回值|array|目标数组|
+|参数名|说明|
+|-----|---|
+|arr|源数组|
+|返回值|目标数组|
 
 ```javascript
 reverse([1, 2, 3]); // -> [3, 2, 1]
@@ -9355,10 +9360,10 @@ reverse([1, 2, 3]); // -> [3, 2, 1]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|rgb|array|rgb 值|
-|返回值|array|hsl 值|
+|参数名|说明|
+|-----|---|
+|rgb|rgb 值|
+|返回值|hsl 值|
 
 ```javascript
 rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
@@ -9398,9 +9403,9 @@ ric.cancel(id);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|cookie 名|
+|参数名|说明|
+|-----|---|
+|key|cookie 名|
 
 ```javascript
 rmCookie('test');
@@ -9417,10 +9422,10 @@ rmCookie('test');
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|dir|string|文件夹路径|
-|callback|function|回调|
+|参数名|说明|
+|-----|---|
+|dir|文件夹路径|
+|callback|回调|
 
 ```javascript
 rmdir('/tmp/foo/bar/baz', function (err) {
@@ -9451,12 +9456,12 @@ rmdir('/tmp/foo/bar/baz', function (err) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|len|number|填充长度|
-|chars|string|填充字符|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|len|填充长度|
+|chars|填充字符|
+|返回值|目标字符串|
 
 ```javascript
 rpad('a', 5); // -> 'a    '
@@ -9476,11 +9481,11 @@ rpad('abc', 5, 'ab'); // -> 'abcab'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|[chars]|string array|删除字符|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|chars|删除字符|
+|返回值|目标字符串|
 
 ```javascript
 rtrim(' abc  '); // -> ' abc'
@@ -9510,11 +9515,11 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|path|array string|属性路径|
-|返回值|*|删除值或 undefined|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|path|属性路径|
+|返回值|删除值或 undefined|
 
 ```javascript
 const obj = {a: {aa: {aaa: 1}}};
@@ -9534,11 +9539,11 @@ safeDel(obj, 'a.b'); // -> undefined
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|path|array string|属性路径|
-|返回值|*|属性值或 undefined|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|path|属性路径|
+|返回值|属性值或 undefined|
 
 ```javascript
 const obj = {a: {aa: {aaa: 1}}};
@@ -9560,11 +9565,11 @@ safeGet(obj, 'a.b'); // -> undefined
 
 如果路径的某一层不存在，将会创建一个空对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|path|array string|属性路径|
-|val|*|要设置的值|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|path|属性路径|
+|val|要设置的值|
 
 ```javascript
 const obj = {};
@@ -9584,10 +9589,10 @@ safeSet(obj, 'a.b', 3); // obj = {a: {aa: 2, b: 3}}
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|type='local'|string|模式，local 或 session|
-|返回值|object|指定 storage|
+|参数名|说明|
+|-----|---|
+|type='local'|模式，local 或 session|
+|返回值|指定 storage|
 
 ```javascript
 const localStorage = safeStorage('local');
@@ -9605,11 +9610,11 @@ localStorage.setItem('licia', 'util');
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|array object|目标集合|
-|n|number|样本数量|
-|返回值|array|样本|
+|参数名|说明|
+|-----|---|
+|obj|目标集合|
+|n|样本数量|
+|返回值|样本|
 
 ```javascript
 sample([2, 3, 1], 2); // -> [2, 3]
@@ -9702,11 +9707,11 @@ random(); // -> 68
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|要排序的数组|
-|[cmp]|function|比较器|
-|返回值|array|有序数组|
+|参数名|说明|
+|-----|---|
+|arr|要排序的数组|
+|cmp|比较器|
+|返回值|有序数组|
 
 ```javascript
 selectionSort([2, 1]); // -> [1, 2]
@@ -9736,19 +9741,19 @@ const selector: {
 
 将 CSS 选择器转换为 js 对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|selector|string|CSS 选择器|
-|返回值|array|js 对象|
+|参数名|说明|
+|-----|---|
+|selector|CSS 选择器|
+|返回值|js 对象|
 
 ### stringify
 
 将 js 对象序列化成 CSS 选择器。
 
-|参数名|类型|说明|
-|-----|----|---|
-|groups|array|要序列化的对象|
-|返回值|string|CSS 选择器|
+|参数名|说明|
+|-----|---|
+|groups|要序列化的对象|
+|返回值|CSS 选择器|
 
 ```javascript
 const groups = selector.parse('#test, input.user[name="licia"]');
@@ -9788,10 +9793,10 @@ shellSort([2, 1]); // -> [1, 2]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|源数组|
-|返回值|array|目标数组|
+|参数名|说明|
+|-----|---|
+|arr|源数组|
+|返回值|目标数组|
 
 ```javascript
 shuffle([1, 2, 3]); // -> [3, 1, 2]
@@ -9808,10 +9813,10 @@ shuffle([1, 2, 3]); // -> [3, 1, 2]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|array object|目标集合|
-|返回值|number|集合大小|
+|参数名|说明|
+|-----|---|
+|obj|目标集合|
+|返回值|集合大小|
 
 ```javascript
 size({a: 1, b: 2}); // -> 2
@@ -9829,10 +9834,10 @@ size([1, 2, 3]); // -> 3
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|*|要计算的对象|
-|返回值|number|对象大小，单位是字节|
+|参数名|说明|
+|-----|---|
+|obj|要计算的对象|
+|返回值|对象大小，单位是字节|
 
 一个字符占用 2 字节，布尔值 4 字节，数字 8 字节。
 
@@ -9878,11 +9883,11 @@ sizeof({ a: 'b' }); // -> 4
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|array|array|目标数组|
-|[start=0]|number|起始位置|
-|[end=array.length]|number|结束位置，不包含|
+|参数名|说明|
+|-----|---|
+|array|目标数组|
+|start=0|起始位置|
+|end=array.length|结束位置，不包含|
 
 ```javascript
 slice([1, 2, 3, 4], 1, 2); // -> [2]
@@ -9955,12 +9960,12 @@ function some&lt;T&gt;(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|array object|目标集合|
-|predicate|function|真值检测函数|
-|ctx|*|函数上下文|
-|返回值|boolean|如果有元素通过真值检测，返回真|
+|参数名|说明|
+|-----|---|
+|obj|目标集合|
+|predicate|真值检测函数|
+|ctx|函数上下文|
+|返回值|如果有元素通过真值检测，返回真|
 
 ```javascript
 some([2, 5], function (val) {
@@ -10009,18 +10014,18 @@ sortBy([1, 2, 3, 4, 5, 6], function (num) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|要排序的对象|
-|options|object|排序选项|
-|返回值|object|排序后的对象|
+|参数名|说明|
+|-----|---|
+|obj|要排序的对象|
+|options|排序选项|
+|返回值|排序后的对象|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|deep=false|boolean|是否递归|
-|[comparator]|function|比较器|
+|参数名|说明|
+|-----|---|
+|deep=false|是否递归|
+|comparator|比较器|
 
 ```javascript
 sortKeys({b: {d: 2, c: 1}, a: 0}, {
@@ -10093,10 +10098,10 @@ function splitPath(path: string): splitPath.IPath;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|path|string|目标路径|
-|返回值|object|包含文件夹路径，文件名和扩展名的对象|
+|参数名|说明|
+|-----|---|
+|path|目标路径|
+|返回值|包含文件夹路径，文件名和扩展名的对象|
 
 ```javascript
 splitPath('f:/foo/bar.txt'); // -> {dir: 'f:/foo/', name: 'bar.txt', ext: '.txt'}

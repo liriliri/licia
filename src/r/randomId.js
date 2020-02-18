@@ -1,9 +1,9 @@
 /* A tiny id generator, similar to nanoid.
  *
- * |Name   |Type  |Desc                                                |
- * |-------|------|----------------------------------------------------|
- * |size=21|number|Id size                                             |
- * |symbols|string|Symbols used to generate ids, a-zA-Z0-9_- by default|
+ * |Name   |Desc                                                |
+ * |-------|----------------------------------------------------|
+ * |size=21|Id size                                             |
+ * |symbols|Symbols used to generate ids, a-zA-Z0-9_- by default|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.4.8
  */
 

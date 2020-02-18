@@ -1,9 +1,9 @@
 /* Use storage safely in safari private browsing and older browsers.
  *
- * |Name        |Type  |Desc             |
- * |------------|------|-----------------|
- * |type='local'|string|local or session |
- * |return      |object|Specified storage|
+ * |Name        |Desc             |
+ * |------------|-----------------|
+ * |type='local'|local or session |
+ * |return      |Specified storage|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

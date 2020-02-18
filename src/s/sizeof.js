@@ -1,9 +1,9 @@
 /* Get approximate size of a js object.
  *
- * |Name  |Type  |Desc               |
- * |------|------|-------------------|
- * |obj   |*     |Object to calculate|
- * |return|number|Size in bytes      |
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |obj   |Object to calculate|
+ * |return|Size in bytes      |
  *
  * A char of string is counted as 2 bytes. And 4 bytes for boolean, 8 bytes for number.
  *

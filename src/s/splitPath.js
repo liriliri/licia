@@ -1,9 +1,9 @@
 /* Split path into dir, name and ext.
  *
- * |Name  |Type  |Desc                               |
- * |------|------|-----------------------------------|
- * |path  |string|Path to split                      |
- * |return|object|Object containing dir, name and ext|
+ * |Name  |Desc                               |
+ * |------|-----------------------------------|
+ * |path  |Path to split                      |
+ * |return|Object containing dir, name and ext|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

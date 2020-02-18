@@ -1,10 +1,10 @@
 /* Return a filtered copy of an object.
  *
- * |Name  |Type                 |Desc           |
- * |------|---------------------|---------------|
- * |object|object               |Source object  |
- * |filter|string array function|Object filter  |
- * |return|object               |Filtered object|
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |object|Source object  |
+ * |filter|Object filter  |
+ * |return|Filtered object|
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

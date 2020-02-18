@@ -1,9 +1,9 @@
 /* Reverse array without mutating it.
  *
- * |Name  |Type |Desc           |
- * |------|-----|---------------|
- * |arr   |array|Array to modify|
- * |return|array|Reversed array |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |arr   |Array to modify|
+ * |return|Reversed array |
  */
 
 /* example

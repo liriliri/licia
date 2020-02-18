@@ -1,11 +1,11 @@
 /* Pad string on the right side if it's shorter than length.
  *
- * |Name  |Type  |Desc                  |
- * |------|------|----------------------|
- * |str   |string|String to pad         |
- * |len   |number|Padding length        |
- * |chars |string|String used as padding|
- * |return|string|Result string         |
+ * |Name  |Desc                  |
+ * |------|----------------------|
+ * |str   |String to pad         |
+ * |len   |Padding length        |
+ * |chars |String used as padding|
+ * |return|Result string         |
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

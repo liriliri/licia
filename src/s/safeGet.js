@@ -1,10 +1,10 @@
 /* Get object property, don't throw undefined error.
  *
- * |Name  |Type        |Desc                     |
- * |------|------------|-------------------------|
- * |obj   |object      |Object to query          |
- * |path  |array string|Path of property to get  |
- * |return|*           |Target value or undefined|
+ * |Name  |Desc                     |
+ * |------|-------------------------|
+ * |obj   |Object to query          |
+ * |path  |Path of property to get  |
+ * |return|Target value or undefined|
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

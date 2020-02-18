@@ -1,10 +1,10 @@
 /* Create slice of source array or array-like object.
  *
- * |Name              |Type  |Desc                      |
- * |------------------|------|--------------------------|
- * |array             |array |Array to slice            |
- * |[start=0]         |number|Start position            |
- * |[end=array.length]|number|End position, not included|
+ * |Name            |Desc                      |
+ * |----------------|--------------------------|
+ * |array           |Array to slice            |
+ * |start=0         |Start position            |
+ * |end=array.length|End position, not included|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

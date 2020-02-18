@@ -1,9 +1,9 @@
 /* Get size of object or length of array like object.
  *
- * |Name  |Type        |Desc                 |
- * |------|------------|---------------------|
- * |obj   |array object|Collection to inspect|
- * |return|number      |Collection size      |
+ * |Name  |Desc                 |
+ * |------|---------------------|
+ * |obj   |Collection to inspect|
+ * |return|Collection size      |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

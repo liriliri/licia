@@ -1611,10 +1611,10 @@ Clear the queue.
 
 Add an item to the queue.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|item  |*     |Item to enqueue|
-|return|number|Current size   |
+|Name  |Desc           |
+|------|---------------|
+|item  |Item to enqueue|
+|return|Current size   |
 
 ### dequeue
 
@@ -1628,10 +1628,10 @@ Get the first item without removing it.
 
 Iterate over the queue.
 
-|Name    |Type    |Desc                      |
-|--------|--------|--------------------------|
-|iterator|function|Function invoked iteration|
-|[ctx]   |*       |Function context          |
+|Name    |Desc                      |
+|--------|--------------------------|
+|iterator|Function invoked iteration|
+|ctx     |Function context          |
 
 ### toArr
 
@@ -1695,28 +1695,28 @@ Simplified redux like state container.
 
 ### constructor
 
-|Name        |Type    |Desc                       |
-|------------|--------|---------------------------|
-|reducer     |function|Function returns next state|
-|initialState|*       |Initial state              |
+|Name        |Desc                       |
+|------------|---------------------------|
+|reducer     |Function returns next state|
+|initialState|Initial state              |
 
 ### subscribe
 
 Add a change listener.
 
-|Name    |Type    |Desc                                |
-|--------|--------|------------------------------------|
-|listener|function|Callback to invoke on every dispatch|
-|return  |function|Function to unsubscribe             |
+|Name    |Desc                                |
+|--------|------------------------------------|
+|listener|Callback to invoke on every dispatch|
+|return  |Function to unsubscribe             |
 
 ### dispatch
 
 Dispatch an action.
 
-|Name  |Type  |Desc                       |
-|------|------|---------------------------|
-|action|object|Object representing changes|
-|return|object|Same action object         |
+|Name  |Desc                       |
+|------|---------------------------|
+|action|Object representing changes|
+|return|Same action object         |
 
 ### getState
 
@@ -1757,25 +1757,25 @@ Simple wrapper of querySelectorAll to make dom selection easier.
 
 ### constructor
 
-|Name    |Type  |Desc               |
-|--------|------|-------------------|
-|selector|string|Dom selector string|
+|Name    |Desc               |
+|--------|-------------------|
+|selector|Dom selector string|
 
 ### find
 
 Get desdendants of current matched elements.
 
-|Name    |Type  |Desc               |
-|--------|------|-------------------|
-|selector|string|Dom selector string|
+|Name    |Desc               |
+|--------|-------------------|
+|selector|Dom selector string|
 
 ### each
 
 Iterate over matched elements.
 
-|Name|Type    |Desc                                |
-|----|--------|------------------------------------|
-|fn  |function|Function to execute for each element|
+|Name|Desc                                |
+|----|------------------------------------|
+|fn  |Function to execute for each element|
 
 ```javascript
 const $test = new Select('#test');
@@ -1801,10 +1801,10 @@ Extend from Store.
 
 ### constructor
 
-|Name|Type  |Desc                    |
-|----|------|------------------------|
-|name|string|SessionStorage item name|
-|data|object|Default data            |
+|Name|Desc                    |
+|----|------------------------|
+|name|SessionStorage item name|
+|data|Default data            |
 
 ```javascript
 const store = new SessionStore('licia');
@@ -1842,10 +1842,10 @@ Clear the stack.
 
 Add an item to the stack.
 
-|Name  |Type  |Desc        |
-|------|------|------------|
-|item  |*     |Item to add |
-|return|number|Current size|
+|Name  |Desc        |
+|------|------------|
+|item  |Item to add |
+|return|Current size|
 
 ### pop
 
@@ -1859,10 +1859,10 @@ Get the last item without removing it.
 
 Iterate over the stack.
 
-|Name    |Type    |Desc                      |
-|--------|--------|--------------------------|
-|iterator|function|Function invoked iteration|
-|[ctx]   |*       |Function context          |
+|Name    |Desc                      |
+|--------|--------------------------|
+|iterator|Function invoked iteration|
+|ctx     |Function context          |
 
 ### toArr
 
@@ -1895,19 +1895,19 @@ Extend from Emitter.
 
 ### constructor
 
-|Name   |Type  |Desc                  |
-|-------|------|----------------------|
-|initial|string|Initial state         |
-|events |object|Events to change state|
+|Name   |Desc                  |
+|-------|----------------------|
+|initial|Initial state         |
+|events |Events to change state|
 
 ### is
 
 Check current state.
 
-|Name  |Type   |Desc                                    |
-|------|-------|----------------------------------------|
-|value |string |State to check                          |
-|return|boolean|True if current state equals given value|
+|Name  |Desc                                    |
+|------|----------------------------------------|
+|value |State to check                          |
+|return|True if current state equals given value|
 
 ```javascript
 const state = new State('empty', {
@@ -2780,10 +2780,10 @@ Convert a function that returns a Promise to a function following the error-firs
 </pre>
 </details>
 
-|Name  |Type    |Desc                                            |
-|------|--------|------------------------------------------------|
-|fn    |function|Function that returns a Promise                 |
-|return|function|Function following the error-fist callback style|
+|Name  |Desc                                            |
+|------|------------------------------------------------|
+|fn    |Function that returns a Promise                 |
+|return|Function following the error-fist callback style|
 
 ```javascript
 function fn() {
@@ -8559,22 +8559,28 @@ Parse command line argument options, the same as minimist.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function parseArgs(names: string[], shorthands: any): any;</code>
+<code class="language-typescript">function parseArgs(
+    args: string[],
+    options: {
+        names: any,
+        shorthands: any
+    }
+): any;</code>
 </pre>
 </details>
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|args  |array |Argument array |
-|opts  |object|Parse options  |
-|return|object|Parsed result  |
+|Name   |Desc           |
+|-------|---------------|
+|args   |Argument array |
+|options|Parse options  |
+|return |Parsed result  |
 
 ### options
 
-|Name      |Type  |Desc             |
-|----------|------|-----------------|
-|names     |object|option names     |
-|shorthands|object|option shorthands|
+|Name      |Desc             |
+|----------|-----------------|
+|names     |option names     |
+|shorthands|option shorthands|
 
 ```javascript
 parseArgs(['eustia', '--output', 'util.js', '-w'], {
@@ -8634,11 +8640,11 @@ Partially apply a function by filling in given arguments.
 </pre>
 </details>
 
-|Name       |Type    |Desc                                    |
-|-----------|--------|----------------------------------------|
-|fn         |function|Function to partially apply arguments to|
-|...partials|*       |Arguments to be partially applied       |
-|return     |function|New partially applied function          |
+|Name       |Desc                                    |
+|-----------|----------------------------------------|
+|fn         |Function to partially apply arguments to|
+|...partials|Arguments to be partially applied       |
+|return     |New partially applied function          |
 
 ```javascript
 const sub5 = partial(function (a, b) { return b - a }, 5);
@@ -8701,11 +8707,11 @@ Return a filtered copy of an object.
 </pre>
 </details>
 
-|Name  |Type                 |Desc           |
-|------|---------------------|---------------|
-|object|object               |Source object  |
-|filter|string array function|Object filter  |
-|return|object               |Filtered object|
+|Name  |Desc           |
+|------|---------------|
+|object|Source object  |
+|filter|Object filter  |
+|return|Filtered object|
 
 ```javascript
 pick({a: 1, b: 2}, 'a'); // -> {a: 1}
@@ -8772,10 +8778,9 @@ Fetch a given url.
 </pre>
 </details>
 
-|Name  |Type   |Desc           |
-|------|-------|---------------|
-|url   |string |Url to prefetch|
-|return|Promise|A Promise      |
+|Name  |Desc           |
+|------|---------------|
+|url   |Url to prefetch|
 
 It uses `<link rel=prefetch>` if possible.
 
@@ -8823,11 +8828,11 @@ Convert callback based functions into Promises.
 </pre>
 </details>
 
-|Name           |Type    |Desc                                  |
-|---------------|--------|--------------------------------------|
-|fn             |function|Callback based function               |
-|multiArgs=false|boolean |If callback has multiple success value|
-|return         |function|Result function                       |
+|Name           |Desc                                  |
+|---------------|--------------------------------------|
+|fn             |Callback based function               |
+|multiArgs=false|If callback has multiple success value|
+|return         |Result function                       |
 
 If multiArgs is set to true, the resulting promise will always fulfill with an array of the callback's success values.
 
@@ -8880,19 +8885,19 @@ Parse and stringify url query strings.
 
 Parse a query string into an object.
 
-|Name  |Type  |Desc        |
-|------|------|------------|
-|str   |string|Query string|
-|return|object|Query object|
+|Name  |Desc        |
+|------|------------|
+|str   |Query string|
+|return|Query object|
 
 ### stringify
 
 Stringify an object into a query string.
 
-|Name  |Type  |Desc        |
-|------|------|------------|
-|obj   |object|Query object|
-|return|string|Query string|
+|Name  |Desc        |
+|------|------------|
+|obj   |Query object|
+|return|Query string|
 
 ```javascript
 query.parse('foo=bar&eruda=true'); // -> {foo: 'bar', eruda: 'true'}
@@ -8911,11 +8916,11 @@ Quick sort implementation.
 </pre>
 </details>
 
-|Name  |Type    |Desc         |
-|------|--------|-------------|
-|arr   |array   |Array to sort|
-|[cmp] |function|Comparator   |
-|return|array   |Sorted array |
+|Name  |Desc         |
+|------|-------------|
+|arr   |Array to sort|
+|cmp   |Comparator   |
+|return|Sorted array |
 
 ```javascript
 quickSort([2, 1]); // -> [1, 2]
@@ -8956,12 +8961,12 @@ Produces a random number between min and max(inclusive).
 </pre>
 </details>
 
-|Name          |Type   |Desc                  |
-|--------------|-------|----------------------|
-|min           |number |Minimum possible value|
-|max           |number |Maximum possible value|
-|floating=false|boolean|Float or not          |
-|return        |number |Random number         |
+|Name          |Desc                  |
+|--------------|----------------------|
+|min           |Minimum possible value|
+|max           |Maximum possible value|
+|floating=false|Float or not          |
+|return        |Random number         |
 
 ```javascript
 random(1, 5); // -> an integer between 0 and 5
@@ -8982,10 +8987,10 @@ Random bytes generator.
 
 Use crypto module in node or crypto object in browser if possible.
 
-|Name  |Type  |Desc                        |
-|------|------|----------------------------|
-|size  |number|Number of bytes to generate |
-|return|object|Random bytes of given length|
+|Name  |Desc                        |
+|------|----------------------------|
+|size  |Number of bytes to generate |
+|return|Random bytes of given length|
 
 ```javascript
 randomBytes(5); // -> [55, 49, 153, 30, 122]
@@ -9012,20 +9017,20 @@ function randomColor(options: randomColor.IOptions): string | string[];</code>
 </pre>
 </details>
 
-|Name   |Type        |Desc          |
-|-------|------------|--------------|
-|options|object      |Random options|
-|return |string array|Random color  |
+|Name   |Desc          |
+|-------|--------------|
+|options|Random options|
+|return |Random color  |
 
 Available options:
 
-|Name       |Type  |Desc                             |
-|-----------|------|---------------------------------|
-|count=1    |number|Color number                     |
-|[hue]      |number|Hue, number between 0 and 360    |
-|[lightness]|number|Lightness, number between 0 and 1|
-|format=hex |string|Color format, hex, hsl or rgb    |
-|[seed]     |number|Random color seed                |
+|Name      |Desc                             |
+|----------|---------------------------------|
+|count=1   |Color number                     |
+|hue       |Hue, number between 0 and 360    |
+|lightness |Lightness, number between 0 and 1|
+|format=hex|Color format, hex, hsl or rgb    |
+|seed      |Random color seed                |
 
 ```javascript
 randomColor({
@@ -9044,10 +9049,10 @@ A tiny id generator, similar to nanoid.
 </pre>
 </details>
 
-|Name   |Type  |Desc                                                |
-|-------|------|----------------------------------------------------|
-|size=21|number|Id size                                             |
-|symbols|string|Symbols used to generate ids, a-zA-Z0-9_- by default|
+|Name   |Desc                                                |
+|-------|----------------------------------------------------|
+|size=21|Id size                                             |
+|symbols|Symbols used to generate ids, a-zA-Z0-9_- by default|
 
 ```javascript
 randomId(); // -> 'oKpy4HwU8E6IvU5I03gyQ'
@@ -9086,12 +9091,12 @@ Create flexibly-numbered lists of integers.
 </pre>
 </details>
 
-|Name   |Type  |Desc                              |
-|-------|------|----------------------------------|
-|[start]|number|Start of the range                |
-|end    |number|End of the range                  |
-|step=1 |number|Value to increment or decrement by|
-|return |array |List of integers                  |
+|Name  |Desc                              |
+|------|----------------------------------|
+|start |Start of the range                |
+|end   |End of the range                  |
+|step=1|Value to increment or decrement by|
+|return|List of integers                  |
 
 ```javascript
 range(5); // -> [0, 1, 2, 3, 4]
@@ -9226,12 +9231,12 @@ function reject&lt;T&gt;(
 </pre>
 </details>
 
-|Name     |Type    |Desc                                          |
-|---------|--------|----------------------------------------------|
-|obj      |array   |Collection to iterate over                    |
-|predicate|function|Function invoked per iteration                |
-|[ctx]    |*       |Predicate context                             |
-|return   |array   |Array of all values that didn't pass predicate|
+|Name     |Desc                                          |
+|---------|----------------------------------------------|
+|obj      |Collection to iterate over                    |
+|predicate|Function invoked per iteration                |
+|ctx      |Predicate context                             |
+|return   |Array of all values that didn't pass predicate|
 
 ```javascript
 reject([1, 2, 3, 4, 5], function (val) {
@@ -9256,12 +9261,12 @@ Remove all elements from array that predicate returns truthy for and return an a
 
 Unlike filter, this method mutates array.
 
-|Name     |Type    |Desc                                |
-|---------|--------|------------------------------------|
-|list     |array   |Collection to iterate over          |
-|iterator |function|Function invoked per iteration      |
-|[context]|*       |Predicate context                   |
-|return   |array   |Array of all values that are removed|
+|Name    |Desc                                |
+|--------|------------------------------------|
+|list    |Collection to iterate over          |
+|iterator|Function invoked per iteration      |
+|context |Predicate context                   |
+|return  |Array of all values that are removed|
 
 ```javascript
 const arr = [1, 2, 3, 4, 5];
@@ -9281,11 +9286,11 @@ Repeat string n-times.
 </pre>
 </details>
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|str   |string|String to repeat|
-|n     |number|Repeat times    |
-|return|string|Repeated string |
+|Name  |Desc            |
+|------|----------------|
+|str   |String to repeat|
+|n     |Repeat times    |
+|return|Repeated string |
 
 ```javascript
 repeat('a', 3); // -> 'aaa'
@@ -9304,11 +9309,11 @@ This accumulates the arguments passed into an array, after a given index.
 </pre>
 </details>
 
-|Name        |Type    |Desc                                   |
-|------------|--------|---------------------------------------|
-|function    |function|Function that needs rest parameters    |
-|[startIndex]|number  |The start index to accumulates         |
-|return      |function|Generated function with rest parameters|
+|Name      |Desc                                   |
+|----------|---------------------------------------|
+|function  |Function that needs rest parameters    |
+|startIndex|The start index to accumulates         |
+|return    |Generated function with rest parameters|
 
 ```javascript
 const paramArr = restArgs(function (rest) { return rest });
@@ -9326,10 +9331,10 @@ Reverse array without mutating it.
 </pre>
 </details>
 
-|Name  |Type |Desc           |
-|------|-----|---------------|
-|arr   |array|Array to modify|
-|return|array|Reversed array |
+|Name  |Desc           |
+|------|---------------|
+|arr   |Array to modify|
+|return|Reversed array |
 
 ```javascript
 reverse([1, 2, 3]); // -> [3, 2, 1]
@@ -9346,10 +9351,10 @@ Convert rgb to hsl.
 </pre>
 </details>
 
-|Name  |Type |Desc      |
-|------|-----|----------|
-|rgb   |array|Rgb values|
-|return|array|Hsl values|
+|Name  |Desc      |
+|------|----------|
+|rgb   |Rgb values|
+|return|Hsl values|
 
 ```javascript
 rgbToHsl([52, 203, 165, 0.8]); // -> [165, 59, 50, 0.8]
@@ -9389,9 +9394,9 @@ Loop through all possible path and domain to remove cookie.
 </pre>
 </details>
 
-|Name|Type  |Desc      |
-|----|------|----------|
-|key |string|Cookie key|
+|Name|Desc      |
+|----|----------|
+|key |Cookie key|
 
 ```javascript
 rmCookie('test');
@@ -9408,10 +9413,10 @@ Recursively remove directories.
 </pre>
 </details>
 
-|Name    |Type    |Desc               |
-|--------|--------|-------------------|
-|dir     |string  |Directory to remove|
-|callback|function|Callback           |
+|Name    |Desc               |
+|--------|-------------------|
+|dir     |Directory to remove|
+|callback|Callback           |
 
 ```javascript
 rmdir('/tmp/foo/bar/baz', function (err) {
@@ -9442,12 +9447,12 @@ Pad string on the right side if it's shorter than length.
 </pre>
 </details>
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
-|str   |string|String to pad         |
-|len   |number|Padding length        |
-|chars |string|String used as padding|
-|return|string|Result string         |
+|Name  |Desc                  |
+|------|----------------------|
+|str   |String to pad         |
+|len   |Padding length        |
+|chars |String used as padding|
+|return|Result string         |
 
 ```javascript
 rpad('a', 5); // -> 'a    '
@@ -9467,11 +9472,11 @@ Remove chars or white-spaces from end of string.
 </pre>
 </details>
 
-|Name   |Type        |Desc              |
-|-------|------------|------------------|
-|str    |string      |String to trim    |
-|[chars]|string array|Characters to trim|
-|return |string      |Trimmed string    |
+|Name  |Desc              |
+|------|------------------|
+|str   |String to trim    |
+|chars |Characters to trim|
+|return|Trimmed string    |
 
 ```javascript
 rtrim(' abc  '); // -> ' abc'
@@ -9501,11 +9506,11 @@ Delete object property.
 </pre>
 </details>
 
-|Name  |Type        |Desc                      |
-|------|------------|--------------------------|
-|obj   |object      |Object to query           |
-|path  |array string|Path of property to delete|
-|return|*           |Deleted value or undefined|
+|Name  |Desc                      |
+|------|--------------------------|
+|obj   |Object to query           |
+|path  |Path of property to delete|
+|return|Deleted value or undefined|
 
 ```javascript
 const obj = {a: {aa: {aaa: 1}}};
@@ -9525,11 +9530,11 @@ Get object property, don't throw undefined error.
 </pre>
 </details>
 
-|Name  |Type        |Desc                     |
-|------|------------|-------------------------|
-|obj   |object      |Object to query          |
-|path  |array string|Path of property to get  |
-|return|*           |Target value or undefined|
+|Name  |Desc                     |
+|------|-------------------------|
+|obj   |Object to query          |
+|path  |Path of property to get  |
+|return|Target value or undefined|
 
 ```javascript
 const obj = {a: {aa: {aaa: 1}}};
@@ -9551,11 +9556,11 @@ Set value at path of object.
 
 If a portion of path doesn't exist, it's created.
 
-|Name|Type        |Desc                   |
-|----|------------|-----------------------|
-|obj |object      |Object to modify       |
-|path|array string|Path of property to set|
-|val |*           |Value to set           |
+|Name|Desc                   |
+|----|-----------------------|
+|obj |Object to modify       |
+|path|Path of property to set|
+|val |Value to set           |
 
 ```javascript
 const obj = {};
@@ -9575,10 +9580,10 @@ Use storage safely in safari private browsing and older browsers.
 </pre>
 </details>
 
-|Name        |Type  |Desc             |
-|------------|------|-----------------|
-|type='local'|string|local or session |
-|return      |object|Specified storage|
+|Name        |Desc             |
+|------------|-----------------|
+|type='local'|local or session |
+|return      |Specified storage|
 
 ```javascript
 const localStorage = safeStorage('local');
@@ -9596,11 +9601,11 @@ Sample random values from a collection.
 </pre>
 </details>
 
-|Name  |Type        |Desc                  |
-|------|------------|----------------------|
-|obj   |array object|Collection to sample  |
-|n     |number      |Number of values      |
-|return|array       |Array of sample values|
+|Name  |Desc                  |
+|------|----------------------|
+|obj   |Collection to sample  |
+|n     |Number of values      |
+|return|Array of sample values|
 
 ```javascript
 sample([2, 3, 1], 2); // -> [2, 3]
@@ -9693,11 +9698,11 @@ Selection sort implementation.
 </pre>
 </details>
 
-|Name  |Type    |Desc         |
-|------|--------|-------------|
-|arr   |array   |Array to sort|
-|[cmp] |function|Comparator   |
-|return|array   |Sorted array |
+|Name  |Desc         |
+|------|-------------|
+|arr   |Array to sort|
+|cmp   |Comparator   |
+|return|Sorted array |
 
 ```javascript
 selectionSort([2, 1]); // -> [1, 2]
@@ -9727,19 +9732,19 @@ const selector: {
 
 Parse css selector into js object.
 
-|Name    |Type  |Desc            |
-|--------|------|----------------|
-|selector|string|Css selector    |
-|return  |array |Parsed js object|
+|Name    |Desc            |
+|--------|----------------|
+|selector|Css selector    |
+|return  |Parsed js object|
 
 ### stringify
 
 Stringify object into an css selector.
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|groups|array |Object to stringify|
-|return|string|Css selector       |
+|Name  |Desc               |
+|------|-------------------|
+|groups|Object to stringify|
+|return|Css selector       |
 
 ```javascript
 const groups = selector.parse('#test, input.user[name="licia"]');
@@ -9779,10 +9784,10 @@ Randomize the order of the elements in a given array.
 </pre>
 </details>
 
-|Name  |Type |Desc              |
-|------|-----|------------------|
-|arr   |array|Array to randomize|
-|return|array|Randomized Array  |
+|Name  |Desc              |
+|------|------------------|
+|arr   |Array to randomize|
+|return|Randomized Array  |
 
 ```javascript
 shuffle([1, 2, 3]); // -> [3, 1, 2]
@@ -9799,10 +9804,10 @@ Get size of object or length of array like object.
 </pre>
 </details>
 
-|Name  |Type        |Desc                 |
-|------|------------|---------------------|
-|obj   |array object|Collection to inspect|
-|return|number      |Collection size      |
+|Name  |Desc                 |
+|------|---------------------|
+|obj   |Collection to inspect|
+|return|Collection size      |
 
 ```javascript
 size({a: 1, b: 2}); // -> 2
@@ -9820,10 +9825,10 @@ Get approximate size of a js object.
 </pre>
 </details>
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|obj   |*     |Object to calculate|
-|return|number|Size in bytes      |
+|Name  |Desc               |
+|------|-------------------|
+|obj   |Object to calculate|
+|return|Size in bytes      |
 
 A char of string is counted as 2 bytes. And 4 bytes for boolean, 8 bytes for number.
 
@@ -9869,11 +9874,11 @@ Create slice of source array or array-like object.
 </pre>
 </details>
 
-|Name              |Type  |Desc                      |
-|------------------|------|--------------------------|
-|array             |array |Array to slice            |
-|[start=0]         |number|Start position            |
-|[end=array.length]|number|End position, not included|
+|Name            |Desc                      |
+|----------------|--------------------------|
+|array           |Array to slice            |
+|start=0         |Start position            |
+|end=array.length|End position, not included|
 
 ```javascript
 slice([1, 2, 3, 4], 1, 2); // -> [2]
@@ -9946,12 +9951,12 @@ function some&lt;T&gt;(
 </pre>
 </details>
 
-|Name     |Type        |Desc                                          |
-|---------|------------|----------------------------------------------|
-|obj      |array object|Collection to iterate over                    |
-|predicate|function    |Function to invoked per iteration             |
-|ctx      |*           |Predicate context                             |
-|return   |boolean     |True if any element passes the predicate check|
+|Name     |Desc                                          |
+|---------|----------------------------------------------|
+|obj      |Collection to iterate over                    |
+|predicate|Function to invoked per iteration             |
+|ctx      |Predicate context                             |
+|return   |True if any element passes the predicate check|
 
 ```javascript
 some([2, 5], function (val) {
@@ -10000,18 +10005,18 @@ Sort keys of an object.
 </pre>
 </details>
 
-|Name   |Type  |Desc                   |
-|-------|------|-----------------------|
-|obj    |object|Object to sort         |
-|options|object|Sort options           |
-|return |object|Object with sorted keys|
+|Name   |Desc                   |
+|-------|-----------------------|
+|obj    |Object to sort         |
+|options|Sort options           |
+|return |Object with sorted keys|
 
 Available options:
 
-|Name        |Type    |Desc                 |
-|------------|--------|---------------------|
-|deep=false  |boolean |Sort keys recursively|
-|[comparator]|function|Comparator           |
+|Name      |Desc                 |
+|----------|---------------------|
+|deep=false|Sort keys recursively|
+|comparator|Comparator           |
 
 ```javascript
 sortKeys({b: {d: 2, c: 1}, a: 0}, {
@@ -10084,10 +10089,10 @@ function splitPath(path: string): splitPath.IPath;</code>
 </pre>
 </details>
 
-|Name  |Type  |Desc                               |
-|------|------|-----------------------------------|
-|path  |string|Path to split                      |
-|return|object|Object containing dir, name and ext|
+|Name  |Desc                               |
+|------|-----------------------------------|
+|path  |Path to split                      |
+|return|Object containing dir, name and ext|
 
 ```javascript
 splitPath('f:/foo/bar.txt'); // -> {dir: 'f:/foo/', name: 'bar.txt', ext: '.txt'}

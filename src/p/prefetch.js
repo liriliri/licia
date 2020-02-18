@@ -1,9 +1,8 @@
 /* Fetch a given url.
  *
- * |Name  |Type   |Desc           |
- * |------|-------|---------------|
- * |url   |string |Url to prefetch|
- * |return|Promise|A Promise      |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |url   |Url to prefetch|
  *
  * It uses `<link rel=prefetch>` if possible.
  */
@@ -14,7 +13,6 @@
 
 /* module
  * env: browser
- * test: browser
  * since: 1.4.0
  */
 

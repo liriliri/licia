@@ -1,9 +1,9 @@
 /* Randomize the order of the elements in a given array.
  *
- * |Name  |Type |Desc              |
- * |------|-----|------------------|
- * |arr   |array|Array to randomize|
- * |return|array|Randomized Array  |
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |arr   |Array to randomize|
+ * |return|Randomized Array  |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

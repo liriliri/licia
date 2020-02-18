@@ -2,28 +2,28 @@
  *
  * ### constructor
  *
- * |Name        |Type    |Desc                       |
- * |------------|--------|---------------------------|
- * |reducer     |function|Function returns next state|
- * |initialState|*       |Initial state              |
+ * |Name        |Desc                       |
+ * |------------|---------------------------|
+ * |reducer     |Function returns next state|
+ * |initialState|Initial state              |
  *
  * ### subscribe
  *
  * Add a change listener.
  *
- * |Name    |Type    |Desc                                |
- * |--------|--------|------------------------------------|
- * |listener|function|Callback to invoke on every dispatch|
- * |return  |function|Function to unsubscribe             |
+ * |Name    |Desc                                |
+ * |--------|------------------------------------|
+ * |listener|Callback to invoke on every dispatch|
+ * |return  |Function to unsubscribe             |
  *
  * ### dispatch
  *
  * Dispatch an action.
  *
- * |Name  |Type  |Desc                       |
- * |------|------|---------------------------|
- * |action|object|Object representing changes|
- * |return|object|Same action object         |
+ * |Name  |Desc                       |
+ * |------|---------------------------|
+ * |action|Object representing changes|
+ * |return|Same action object         |
  *
  * ### getState
  *

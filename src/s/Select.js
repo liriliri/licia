@@ -2,25 +2,25 @@
  *
  * ### constructor
  *
- * |Name    |Type  |Desc               |
- * |--------|------|-------------------|
- * |selector|string|Dom selector string|
+ * |Name    |Desc               |
+ * |--------|-------------------|
+ * |selector|Dom selector string|
  *
  * ### find
  *
  * Get desdendants of current matched elements.
  *
- * |Name    |Type  |Desc               |
- * |--------|------|-------------------|
- * |selector|string|Dom selector string|
+ * |Name    |Desc               |
+ * |--------|-------------------|
+ * |selector|Dom selector string|
  *
  * ### each
  *
  * Iterate over matched elements.
  *
- * |Name|Type    |Desc                                |
- * |----|--------|------------------------------------|
- * |fn  |function|Function to execute for each element|
+ * |Name|Desc                                |
+ * |----|------------------------------------|
+ * |fn  |Function to execute for each element|
  */
 
 /* example
@@ -32,7 +32,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

@@ -6,8 +6,8 @@ SessionStorage 存储。
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|SessionStorage 存储名|
-|data|object|默认数据|
+|参数名|说明|
+|-----|---|
+|name|SessionStorage 存储名|
+|data|默认数据|
 

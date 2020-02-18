@@ -1,19 +1,19 @@
 /* Random color generator.
  *
- * |Name   |Type        |Desc          |
- * |-------|------------|--------------|
- * |options|object      |Random options|
- * |return |string array|Random color  |
+ * |Name   |Desc          |
+ * |-------|--------------|
+ * |options|Random options|
+ * |return |Random color  |
  *
  * Available options:
  *
- * |Name       |Type  |Desc                             |
- * |-----------|------|---------------------------------|
- * |count=1    |number|Color number                     |
- * |[hue]      |number|Hue, number between 0 and 360    |
- * |[lightness]|number|Lightness, number between 0 and 1|
- * |format=hex |string|Color format, hex, hsl or rgb    |
- * |[seed]     |number|Random color seed                |
+ * |Name      |Desc                             |
+ * |----------|---------------------------------|
+ * |count=1   |Color number                     |
+ * |hue       |Hue, number between 0 and 360    |
+ * |lightness |Lightness, number between 0 and 1|
+ * |format=hex|Color format, hex, hsl or rgb    |
+ * |seed      |Random color seed                |
  */
 
 /* example

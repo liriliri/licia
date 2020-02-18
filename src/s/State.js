@@ -4,19 +4,19 @@
  *
  * ### constructor
  *
- * |Name   |Type  |Desc                  |
- * |-------|------|----------------------|
- * |initial|string|Initial state         |
- * |events |object|Events to change state|
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |initial|Initial state         |
+ * |events |Events to change state|
  *
  * ### is
  *
  * Check current state.
  *
- * |Name  |Type   |Desc                                    |
- * |------|-------|----------------------------------------|
- * |value |string |State to check                          |
- * |return|boolean|True if current state equals given value|
+ * |Name  |Desc                                    |
+ * |------|----------------------------------------|
+ * |value |State to check                          |
+ * |return|True if current state equals given value|
  */
 
 /* example
@@ -41,7 +41,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

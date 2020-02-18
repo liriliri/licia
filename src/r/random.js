@@ -1,11 +1,11 @@
 /* Produces a random number between min and max(inclusive).
  *
- * |Name          |Type   |Desc                  |
- * |--------------|-------|----------------------|
- * |min           |number |Minimum possible value|
- * |max           |number |Maximum possible value|
- * |floating=false|boolean|Float or not          |
- * |return        |number |Random number         |
+ * |Name          |Desc                  |
+ * |--------------|----------------------|
+ * |min           |Minimum possible value|
+ * |max           |Maximum possible value|
+ * |floating=false|Float or not          |
+ * |return        |Random number         |
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

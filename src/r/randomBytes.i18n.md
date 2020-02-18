@@ -4,8 +4,8 @@
 
 如果支持，使用 node 的 crypto 模块或浏览器的 crypto 对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|size  |number|Number of bytes to generate |
-|返回值|object|Random bytes of given length|
+|参数名|说明|
+|-----|---|
+|size|字节序列长度|
+|返回值|随机字节序列|
 

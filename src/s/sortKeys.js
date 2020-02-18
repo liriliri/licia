@@ -1,17 +1,17 @@
 /* Sort keys of an object.
  *
- * |Name   |Type  |Desc                   |
- * |-------|------|-----------------------|
- * |obj    |object|Object to sort         |
- * |options|object|Sort options           |
- * |return |object|Object with sorted keys|
+ * |Name   |Desc                   |
+ * |-------|-----------------------|
+ * |obj    |Object to sort         |
+ * |options|Sort options           |
+ * |return |Object with sorted keys|
  *
  * Available options:
  *
- * |Name        |Type    |Desc                 |
- * |------------|--------|---------------------|
- * |deep=false  |boolean |Sort keys recursively|
- * |[comparator]|function|Comparator           |
+ * |Name      |Desc                 |
+ * |----------|---------------------|
+ * |deep=false|Sort keys recursively|
+ * |comparator|Comparator           |
  */
 
 /* example

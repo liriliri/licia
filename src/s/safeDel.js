@@ -1,10 +1,10 @@
 /* Delete object property.
  *
- * |Name  |Type        |Desc                      |
- * |------|------------|--------------------------|
- * |obj   |object      |Object to query           |
- * |path  |array string|Path of property to delete|
- * |return|*           |Deleted value or undefined|
+ * |Name  |Desc                      |
+ * |------|--------------------------|
+ * |obj   |Object to query           |
+ * |path  |Path of property to delete|
+ * |return|Deleted value or undefined|
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

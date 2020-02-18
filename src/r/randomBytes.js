@@ -2,10 +2,10 @@
  *
  * Use crypto module in node or crypto object in browser if possible.
  *
- * |Name  |Type  |Desc                        |
- * |------|------|----------------------------|
- * |size  |number|Number of bytes to generate |
- * |return|object|Random bytes of given length|
+ * |Name  |Desc                        |
+ * |------|----------------------------|
+ * |size  |Number of bytes to generate |
+ * |return|Random bytes of given length|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

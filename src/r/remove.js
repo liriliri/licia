@@ -2,12 +2,12 @@
  *
  * Unlike filter, this method mutates array.
  *
- * |Name     |Type    |Desc                                |
- * |---------|--------|------------------------------------|
- * |list     |array   |Collection to iterate over          |
- * |iterator |function|Function invoked per iteration      |
- * |[context]|*       |Predicate context                   |
- * |return   |array   |Array of all values that are removed|
+ * |Name    |Desc                                |
+ * |--------|------------------------------------|
+ * |list    |Collection to iterate over          |
+ * |iterator|Function invoked per iteration      |
+ * |context |Predicate context                   |
+ * |return  |Array of all values that are removed|
  */
 
 /* example
@@ -19,7 +19,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

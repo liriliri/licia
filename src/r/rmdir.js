@@ -1,9 +1,9 @@
 /* Recursively remove directories.
  *
- * |Name    |Type    |Desc               |
- * |--------|--------|-------------------|
- * |dir     |string  |Directory to remove|
- * |callback|function|Callback           |
+ * |Name    |Desc               |
+ * |--------|-------------------|
+ * |dir     |Directory to remove|
+ * |callback|Callback           |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: node
- * test: node
  */
 
 /* typescript

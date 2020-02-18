@@ -4,19 +4,19 @@
  *
  * Parse a query string into an object.
  *
- * |Name  |Type  |Desc        |
- * |------|------|------------|
- * |str   |string|Query string|
- * |return|object|Query object|
+ * |Name  |Desc        |
+ * |------|------------|
+ * |str   |Query string|
+ * |return|Query object|
  *
  * ### stringify
  *
  * Stringify an object into a query string.
  *
- * |Name  |Type  |Desc        |
- * |------|------|------------|
- * |obj   |object|Query object|
- * |return|string|Query string|
+ * |Name  |Desc        |
+ * |------|------------|
+ * |obj   |Query object|
+ * |return|Query string|
  */
 
 /* example
@@ -27,7 +27,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

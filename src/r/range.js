@@ -1,11 +1,11 @@
 /* Create flexibly-numbered lists of integers.
  *
- * |Name   |Type  |Desc                              |
- * |-------|------|----------------------------------|
- * |[start]|number|Start of the range                |
- * |end    |number|End of the range                  |
- * |step=1 |number|Value to increment or decrement by|
- * |return |array |List of integers                  |
+ * |Name  |Desc                              |
+ * |------|----------------------------------|
+ * |start |Start of the range                |
+ * |end   |End of the range                  |
+ * |step=1|Value to increment or decrement by|
+ * |return|List of integers                  |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

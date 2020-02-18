@@ -1,10 +1,10 @@
 /* Sample random values from a collection.
  *
- * |Name  |Type        |Desc                  |
- * |------|------------|----------------------|
- * |obj   |array object|Collection to sample  |
- * |n     |number      |Number of values      |
- * |return|array       |Array of sample values|
+ * |Name  |Desc                  |
+ * |------|----------------------|
+ * |obj   |Collection to sample  |
+ * |n     |Number of values      |
+ * |return|Array of sample values|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

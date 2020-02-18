@@ -1,9 +1,9 @@
 /* Convert rgb to hsl.
  *
- * |Name  |Type |Desc      |
- * |------|-----|----------|
- * |rgb   |array|Rgb values|
- * |return|array|Hsl values|
+ * |Name  |Desc      |
+ * |------|----------|
+ * |rgb   |Rgb values|
+ * |return|Hsl values|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

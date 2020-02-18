@@ -1,9 +1,9 @@
 /* Convert a function that returns a Promise to a function following the error-first callback style.
  *
- * |Name  |Type    |Desc                                            |
- * |------|--------|------------------------------------------------|
- * |fn    |function|Function that returns a Promise                 |
- * |return|function|Function following the error-fist callback style|
+ * |Name  |Desc                                            |
+ * |------|------------------------------------------------|
+ * |fn    |Function that returns a Promise                 |
+ * |return|Function following the error-fist callback style|
  */
 
 /* example
@@ -22,7 +22,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

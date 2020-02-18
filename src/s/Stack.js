@@ -12,10 +12,10 @@
  *
  * Add an item to the stack.
  *
- * |Name  |Type  |Desc        |
- * |------|------|------------|
- * |item  |*     |Item to add |
- * |return|number|Current size|
+ * |Name  |Desc        |
+ * |------|------------|
+ * |item  |Item to add |
+ * |return|Current size|
  *
  * ### pop
  *
@@ -29,10 +29,10 @@
  *
  * Iterate over the stack.
  *
- * |Name    |Type    |Desc                      |
- * |--------|--------|--------------------------|
- * |iterator|function|Function invoked iteration|
- * |[ctx]   |*       |Function context          |
+ * |Name    |Desc                      |
+ * |--------|--------------------------|
+ * |iterator|Function invoked iteration|
+ * |ctx     |Function context          |
  *
  * ### toArr
  *
@@ -49,7 +49,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,10 +1,10 @@
 /* Repeat string n-times.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |str   |string|String to repeat|
- * |n     |number|Repeat times    |
- * |return|string|Repeated string |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |str   |String to repeat|
+ * |n     |Repeat times    |
+ * |return|Repeated string |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

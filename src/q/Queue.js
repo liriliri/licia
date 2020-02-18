@@ -12,10 +12,10 @@
  *
  * Add an item to the queue.
  *
- * |Name  |Type  |Desc           |
- * |------|------|---------------|
- * |item  |*     |Item to enqueue|
- * |return|number|Current size   |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |item  |Item to enqueue|
+ * |return|Current size   |
  *
  * ### dequeue
  *
@@ -29,10 +29,10 @@
  *
  * Iterate over the queue.
  *
- * |Name    |Type    |Desc                      |
- * |--------|--------|--------------------------|
- * |iterator|function|Function invoked iteration|
- * |[ctx]   |*       |Function context          |
+ * |Name    |Desc                      |
+ * |--------|--------------------------|
+ * |iterator|Function invoked iteration|
+ * |ctx     |Function context          |
  *
  * ### toArr
  *
@@ -53,7 +53,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

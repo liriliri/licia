@@ -2,11 +2,11 @@
  *
  * If a portion of path doesn't exist, it's created.
  *
- * |Name|Type        |Desc                   |
- * |----|------------|-----------------------|
- * |obj |object      |Object to modify       |
- * |path|array string|Path of property to set|
- * |val |*           |Value to set           |
+ * |Name|Desc                   |
+ * |----|-----------------------|
+ * |obj |Object to modify       |
+ * |path|Path of property to set|
+ * |val |Value to set           |
  */
 
 /* example
@@ -18,7 +18,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript
