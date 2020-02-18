@@ -4,51 +4,51 @@
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|url=location|string|url 地址|
+|参数名|说明|
+|-----|---|
+|url=location|url 地址|
 
 ### setQuery
 
 设置 query 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|query 名|
-|value|string|query 值|
-|返回值|Url|this|
+|参数名|说明|
+|-----|---|
+|name|query 名|
+|value|query 值|
+|返回值|this|
 
-|参数名|类型|说明|
-|-----|----|---|
-|query|object|query 对象|
-|返回值|Url|this|
+|参数名|说明|
+|-----|---|
+|query|query 对象|
+|返回值|this|
 
 ### rmQuery
 
 移除 query 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string array|query 名|
-|返回值|Url|this|
+|参数名|说明|
+|-----|---|
+|name|query 名|
+|返回值|this|
 
 ### parse
 
 【静态】将 url 解析成对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|url|string|url 地址|
-|返回值|object|url 对象|
+|参数名|说明|
+|-----|---|
+|url|url 地址|
+|返回值|url 对象|
 
 ### stringify
 
 【静态】将 url 对象转换为 url 地址。
 
-|参数名|类型|说明|
-|-----|----|---|
-|url|object|url 对象|
-|返回值|string|url 地址|
+|参数名|说明|
+|-----|---|
+|url|url 对象|
+|返回值|url 地址|
 
 url 对象包含以下属性值：
 

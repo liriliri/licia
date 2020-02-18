@@ -1,21 +1,21 @@
 /* Stringify object into json with types.
  *
- * |Name     |Type  |Desc               |
- * |---------|------|-------------------|
- * |obj      |*     |Object to stringify|
- * |[options]|object|Stringify options  |
- * |return   |string|Stringified object |
+ * |Name   |Desc               |
+ * |-------|-------------------|
+ * |obj    |Object to stringify|
+ * |options|Stringify options  |
+ * |return |Stringified object |
  *
  * Available options:
  *
- * |Name              |Type   |Desc                     |
- * |------------------|-------|-------------------------|
- * |unenumerable=false|boolean|Include unenumerable keys|
- * |symbol=false      |boolean|Include symbol keys      |
- * |accessGetter=false|boolean|Access getter value      |
- * |timeout=0         |number |Timeout of stringify     |
- * |depth=0           |number |Max depth of recursion   |
- * |[ignore]          |array  |Values to ignore         |
+ * |Name              |Desc                     |
+ * |------------------|-------------------------|
+ * |unenumerable=false|Include unenumerable keys|
+ * |symbol=false      |Include symbol keys      |
+ * |accessGetter=false|Access getter value      |
+ * |timeout=0         |Timeout of stringify     |
+ * |depth=0           |Max depth of recursion   |
+ * |ignore            |Values to ignore         |
  *
  * When time is out, all remaining values will all be "Timeout".
  */
@@ -26,7 +26,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.5
  */
 

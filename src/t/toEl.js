@@ -2,10 +2,10 @@
  *
  * There should be only one root element.
  *
- * |Name  |Type   |Desc        |
- * |------|-------|------------|
- * |str   |string |Html string |
- * |return|element|Html element|
+ * |Name  |Desc        |
+ * |------|------------|
+ * |str   |Html string |
+ * |return|Html element|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

@@ -2,11 +2,11 @@
 
 stream Transform 类的简单包装。
 
-|参数名|类型|说明|
-|-----|----|---|
-|opts={}|Object|初始化流选项|
-|transform|function|Transform 实现|
-|[flush]|function|Flush 实现|
+|参数名|说明|
+|-----|---|
+|opts={}|初始化流选项|
+|transform|Transform 实现|
+|flush|Flush 实现|
 
 ### obj
 

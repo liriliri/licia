@@ -4,17 +4,17 @@
  *
  * ### constructor
  *
- * |Name|Type  |Desc           |
- * |----|------|---------------|
- * |obj |object|Values to tween|
+ * |Name|Desc           |
+ * |----|---------------|
+ * |obj |Values to tween|
  *
  * ### to
  *
- * |Name       |Type           |Desc            |
- * |-----------|---------------|----------------|
- * |destination|obj            |Final properties|
- * |duration   |number         |Tween duration  |
- * |ease       |string function|Easing function |
+ * |Name       |Desc            |
+ * |-----------|----------------|
+ * |destination|Final properties|
+ * |duration   |Tween duration  |
+ * |ease       |Easing function |
  *
  * ### play
  *
@@ -32,9 +32,9 @@
  *
  * Update or get animation progress.
  *
- * |Name      |Type  |Desc                  |
- * |----------|------|----------------------|
- * |[progress]|number|Number between 0 and 1|
+ * |Name    |Desc                  |
+ * |--------|----------------------|
+ * |progress|Number between 0 and 1|
  */
 
 /* example
@@ -51,7 +51,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Convert value to a Date.
  *
- * |Name  |Type|Desc            |
- * |------|----|----------------|
- * |val   |*   |Value to convert|
- * |return|Date|Converted Date  |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |val   |Value to convert|
+ * |return|Converted Date  |
  */
 
 /* example

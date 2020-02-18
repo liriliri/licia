@@ -1,10 +1,10 @@
 /* Wrap the function inside a wrapper function, passing it as the first argument.
  *
- * |Name   |Type    |Desc            |
- * |-------|--------|----------------|
- * |fn     |function|Function to wrap|
- * |wrapper|function|Wrapper function|
- * |return |function|New function    |
+ * |Name   |Desc            |
+ * |-------|----------------|
+ * |fn     |Function to wrap|
+ * |wrapper|Wrapper function|
+ * |return |New function    |
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,10 +1,10 @@
 /* Tiny wrapper of stream Transform.
  *
- * |Name     |Type    |Desc                        |
- * |---------|--------|----------------------------|
- * |opts={}  |Object  |Options to initialize stream|
- * |transform|function|Transform implementation    |
- * |[flush]  |function|Flush implementation        |
+ * |Name     |Desc                        |
+ * |---------|----------------------------|
+ * |opts={}  |Options to initialize stream|
+ * |transform|Transform implementation    |
+ * |flush    |Flush implementation        |
  *
  * ### obj
  *
@@ -27,7 +27,6 @@
 
 /* module
  * env: node
- * test: node
  */
 
 /* typescript

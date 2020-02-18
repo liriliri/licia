@@ -1,10 +1,10 @@
 /* Trigger browser events.
  *
- * |Name         |Type   |Desc              |
- * |-------------|-------|------------------|
- * |[el=document]|element|Element to trigger|
- * |type         |string |Event type        |
- * |options      |object |Options           |
+ * |Name       |Desc              |
+ * |-----------|------------------|
+ * |el=document|Element to trigger|
+ * |type       |Event type        |
+ * |options    |Options           |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

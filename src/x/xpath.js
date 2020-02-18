@@ -1,9 +1,9 @@
 /* Select elements using xpath, IE is not supported.
  *
- * |Name  |Type  |Desc           |
- * |------|------|---------------|
- * |xpath |string|Xpath          |
- * |return|array |Target elements|
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |xpath |Xpath          |
+ * |return|Target elements|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: browser
- * test: browser
  * since: 1.10.0
  */
 

@@ -1,9 +1,9 @@
 /* Topological sorting algorithm.
  *
- * |Name  |Type |Desc        |
- * |------|-----|------------|
- * |edges |array|Dependencies|
- * |return|array|Sorted order|
+ * |Name  |Desc        |
+ * |------|------------|
+ * |edges |Dependencies|
+ * |return|Sorted order|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

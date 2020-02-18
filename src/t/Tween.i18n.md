@@ -6,17 +6,17 @@ JavaScript 补间动画库。
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|要补间的对象|
+|参数名|说明|
+|-----|---|
+|obj|要补间的对象|
 
 ### to
 
-|参数名|类型|说明|
-|-----|----|---|
-|destination|obj|目标属性值|
-|duration|number|补间时长|
-|ease|string function|缓动函数|
+|参数名|说明|
+|-----|---|
+|destination|目标属性值|
+|duration|补间时长|
+|ease|缓动函数|
 
 ### play
 
@@ -34,7 +34,7 @@ JavaScript 补间动画库。
 
 设置或获取动画进度。
 
-|参数名|类型|说明|
-|-----|----|---|
-|[progress]|number|介于 0 到 1 之间的数字|
+|参数名|说明|
+|-----|---|
+|progress|介于 0 到 1 之间的数字|
 

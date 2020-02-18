@@ -1,9 +1,9 @@
 /* Use generator like async/await.
  *
- * |Name  |Type             |Desc              |
- * |------|-----------------|------------------|
- * |fn    |GeneratorFunction|Generator function|
- * |return|function         |Result function   |
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |fn    |Generator function|
+ * |return|Result function   |
  */
 
 /* example
@@ -19,7 +19,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.8.0
  */
 

@@ -2,51 +2,51 @@
  *
  * ### constructor
  *
- * |Name        |Type  |Desc      |
- * |------------|------|----------|
- * |url=location|string|Url string|
+ * |Name        |Desc      |
+ * |------------|----------|
+ * |url=location|Url string|
  *
  * ### setQuery
  *
  * Set query value.
  *
- * |Name  |Type  |Desc       |
- * |------|------|-----------|
- * |name  |string|Query name |
- * |value |string|Query value|
- * |return|Url   |this       |
+ * |Name  |Desc       |
+ * |------|-----------|
+ * |name  |Query name |
+ * |value |Query value|
+ * |return|this       |
  *
- * |Name  |Type  |Desc        |
- * |------|------|------------|
- * |query |object|query object|
- * |return|Url   |this        |
+ * |Name  |Desc        |
+ * |------|------------|
+ * |query |query object|
+ * |return|this        |
  *
  * ### rmQuery
  *
  * Remove query value.
  *
- * |Name  |Type        |Desc      |
- * |------|------------|----------|
- * |name  |string array|Query name|
- * |return|Url         |this      |
+ * |Name  |Desc      |
+ * |------|----------|
+ * |name  |Query name|
+ * |return|this      |
  *
  * ### parse
  *
  * [static] Parse url into an object.
  *
- * |Name  |Type  |Desc      |
- * |------|------|----------|
- * |url   |string|Url string|
- * |return|object|Url object|
+ * |Name  |Desc      |
+ * |------|----------|
+ * |url   |Url string|
+ * |return|Url object|
  *
  * ### stringify
  *
  * [static] Stringify url object into a string.
  *
- * |Name  |Type  |Desc      |
- * |------|------|----------|
- * |url   |object|Url object|
- * |return|string|Url string|
+ * |Name  |Desc      |
+ * |------|----------|
+ * |url   |Url object|
+ * |return|Url string|
  *
  * An url object contains the following properties:
  *
@@ -72,7 +72,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

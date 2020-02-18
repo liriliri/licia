@@ -1949,24 +1949,24 @@ state.play('eustia');
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|data|object|初始数据|
+|参数名|说明|
+|-----|---|
+|data|初始数据|
 
 ### set
 
 设置值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|键名|
-|val|*|键值|
+|参数名|说明|
+|-----|---|
+|key|键名|
+|val|键值|
 
 设置多个值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|vals|object|包含多个键值对的对象|
+|参数名|说明|
+|-----|---|
+|vals|包含多个键值对的对象|
 
 该方法被调用时发触发 change 事件。
 
@@ -1974,25 +1974,25 @@ state.play('eustia');
 
 获取值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|键名|
-|返回值|*|键值|
+|参数名|说明|
+|-----|---|
+|key|键名|
+|返回值|键值|
 
 获取多个值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|keys|array|键名列表|
-|返回值|object|包含多个键值对的对象|
+|参数名|说明|
+|-----|---|
+|keys|键名列表|
+|返回值|包含多个键值对的对象|
 
 ### remove
 
 移除值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string array|键名|
+|参数名|说明|
+|-----|---|
+|key|键名|
 
 ### clear
 
@@ -2002,9 +2002,9 @@ state.play('eustia');
 
 遍历数据。
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|遍历函数|
+|参数名|说明|
+|-----|---|
+|fn|遍历函数|
 
 ```javascript
 const store = new Store('test');
@@ -2042,17 +2042,17 @@ JavaScript 补间动画库。
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|要补间的对象|
+|参数名|说明|
+|-----|---|
+|obj|要补间的对象|
 
 ### to
 
-|参数名|类型|说明|
-|-----|----|---|
-|destination|obj|目标属性值|
-|duration|number|补间时长|
-|ease|string function|缓动函数|
+|参数名|说明|
+|-----|---|
+|destination|目标属性值|
+|duration|补间时长|
+|ease|缓动函数|
 
 ### play
 
@@ -2070,9 +2070,9 @@ JavaScript 补间动画库。
 
 设置或获取动画进度。
 
-|参数名|类型|说明|
-|-----|----|---|
-|[progress]|number|介于 0 到 1 之间的数字|
+|参数名|说明|
+|-----|---|
+|progress|介于 0 到 1 之间的数字|
 
 ```javascript
 const pos = {x: 0, y: 0};
@@ -2127,51 +2127,51 @@ class Url {
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|url=location|string|url 地址|
+|参数名|说明|
+|-----|---|
+|url=location|url 地址|
 
 ### setQuery
 
 设置 query 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|query 名|
-|value|string|query 值|
-|返回值|Url|this|
+|参数名|说明|
+|-----|---|
+|name|query 名|
+|value|query 值|
+|返回值|this|
 
-|参数名|类型|说明|
-|-----|----|---|
-|query|object|query 对象|
-|返回值|Url|this|
+|参数名|说明|
+|-----|---|
+|query|query 对象|
+|返回值|this|
 
 ### rmQuery
 
 移除 query 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string array|query 名|
-|返回值|Url|this|
+|参数名|说明|
+|-----|---|
+|name|query 名|
+|返回值|this|
 
 ### parse
 
 【静态】将 url 解析成对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|url|string|url 地址|
-|返回值|object|url 对象|
+|参数名|说明|
+|-----|---|
+|url|url 地址|
+|返回值|url 对象|
 
 ### stringify
 
 【静态】将 url 对象转换为 url 地址。
 
-|参数名|类型|说明|
-|-----|----|---|
-|url|object|url 对象|
-|返回值|string|url 地址|
+|参数名|说明|
+|-----|---|
+|url|url 对象|
+|返回值|url 地址|
 
 url 对象包含以下属性值：
 
@@ -2212,27 +2212,27 @@ url.toString(); // -> 'http://example.com:8080/?foo=bar'
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|options|object|校验配置|
+|参数名|说明|
+|-----|---|
+|options|校验配置|
 
 ### validate
 
 校验对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|返回值|*|校验结果，true 表示通过|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|返回值|校验结果，true 表示通过|
 
 ### addPlugin
 
 【静态】添加插件。
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|插件名|
-|plugin|function|校验函数|
+|参数名|说明|
+|-----|---|
+|name|插件名|
+|plugin|校验函数|
 
 ### 默认插件 
 
@@ -10201,11 +10201,11 @@ JSON 序列化，支持循环引用和函数。
 
 undefined 被当作 null 处理。
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|spaces|number|缩进|
-|返回值|string|序列化后的字符串|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|spaces|缩进|
+|返回值|序列化后的字符串|
 
 ```javascript
 stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
@@ -10238,22 +10238,22 @@ function stringifyAll(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|*|目标对象|
-|[options]|object|序列化选项|
-|返回值|string|序列化后的字符串|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|options|序列化选项|
+|返回值|序列化后的字符串|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|unenumerable=false|boolean|包含不可枚举值|
-|symbol=false|boolean|包含 Symbol 键名|
-|accessGetter=false|boolean|获取 getter 值|
-|timeout=0|number|序列化超时时间|
-|depth=0|number|遍历对象的最大深度|
-|[ignore]|array|忽略的对象|
+|参数名|说明|
+|-----|---|
+|unenumerable=false|包含不可枚举值|
+|symbol=false|包含 Symbol 键名|
+|accessGetter=false|获取 getter 值|
+|timeout=0|序列化超时时间|
+|depth=0|遍历对象的最大深度|
+|ignore|忽略的对象|
 
 超时后，所有未序列化的值都会变成 “Timeout”。
 
@@ -10356,10 +10356,10 @@ function stripIndent(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|目标字符串|
 
 它可以像函数一样调用，也可以当成标签模板使用。
 
@@ -10446,11 +10446,11 @@ swap(arr, 0, 1); // -> [2, 1]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|模板字符串|
-|[util]|object|模板函数|
-|返回值|function|编译后的模板函数|
+|参数名|说明|
+|-----|---|
+|str|模板字符串|
+|util|模板函数|
+|返回值|编译后的模板函数|
 
 ```javascript
 template('Hello <%= name %>!')({name: 'licia'}); // -> 'Hello licia!'
@@ -10534,11 +10534,11 @@ function through(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|opts={}|Object|初始化流选项|
-|transform|function|Transform 实现|
-|[flush]|function|Flush 实现|
+|参数名|说明|
+|-----|---|
+|opts={}|初始化流选项|
+|transform|Transform 实现|
+|flush|Flush 实现|
 
 ### obj
 
@@ -10569,11 +10569,11 @@ fs.createReadStream('in.txt')
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|date|Date|目标日期|
-|[now=new Date]|Date|当时日期|
-|返回值|string|格式化时间表示|
+|参数名|说明|
+|-----|---|
+|date|目标日期|
+|now=new Date|当时日期|
+|返回值|格式化时间表示|
 
 ```javascript
 const now = new Date().getTime();
@@ -10593,10 +10593,10 @@ timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|要计算执行时间的函数|
-|返回值|number|执行时间，单位毫秒|
+|参数名|说明|
+|-----|---|
+|fn|要计算执行时间的函数|
+|返回值|执行时间，单位毫秒|
 
 ```javascript
 timeTaken(function () {
@@ -10615,12 +10615,12 @@ timeTaken(function () {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|n|number|调用次数|
-|fn|function|目标函数|
-|[ctx]|*|函数上下文|
-|返回值|array|结果数组|
+|参数名|说明|
+|-----|---|
+|n|调用次数|
+|fn|目标函数|
+|ctx|函数上下文|
+|返回值|结果数组|
 
 ```javascript
 times(3, String); // -> ['0', '1', '2']
@@ -10660,10 +10660,10 @@ toArr(null); // -> []
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|GeneratorFunction|Generator 函数|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|fn|Generator 函数|
+|返回值|目标函数|
 
 ```javascript
 const sleep = require('licia/sleep');
@@ -10713,10 +10713,10 @@ toBool('false'); // -> false
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要转换的值|
-|返回值|Date|转换后的日期值|
+|参数名|说明|
+|-----|---|
+|val|要转换的值|
+|返回值|转换后的日期值|
 
 ```javascript
 toDate('20180501');
@@ -10737,10 +10737,10 @@ toDate(1525107450849);
 
 必须只有一个根元素。
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|html 字符串|
-|返回值|element|html 元素|
+|参数名|说明|
+|-----|---|
+|str|html 字符串|
+|返回值|html 元素|
 
 ```javascript
 toEl('<div>test</div>');
@@ -10778,10 +10778,10 @@ toInt(undefined); // -> 0
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要转换的值|
-|返回值|number|转换后的数字|
+|参数名|说明|
+|-----|---|
+|val|要转换的值|
+|返回值|转换后的数字|
 
 ```javascript
 toNum('5'); // -> 5
@@ -10819,10 +10819,10 @@ toSrc(function () {}) // -> 'function () { }'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要转换的值|
-|返回值|string|转换后的字符串|
+|参数名|说明|
+|-----|---|
+|val|要转换的值|
+|返回值|转换后的字符串|
 
 ```javascript
 toStr(null); // -> ''
@@ -10842,10 +10842,10 @@ toStr([1, 2, 3]); // -> '1,2,3'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|edges|array|依赖关系|
-|返回值|array|排序后的数组|
+|参数名|说明|
+|-----|---|
+|edges|依赖关系|
+|返回值|排序后的数组|
 
 ```javascript
 topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
@@ -10863,11 +10863,11 @@ function trigger(type: string, options?: any);</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|[el=document]|element|目标元素|
-|type|string|事件类型|
-|options|object|选项|
+|参数名|说明|
+|-----|---|
+|el=document|目标元素|
+|type|事件类型|
+|options|选项|
 
 ```javascript
 trigger(document.getElementById('#test'), 'mouseup');
@@ -11510,11 +11510,11 @@ worker(1, 2).then(function (value) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|要包裹的函数|
-|wrapper|function|包裹函数|
-|返回值 |function|目标函数|
+|参数名|说明|
+|-----|---|
+|fn|要包裹的函数|
+|wrapper|包裹函数|
+|返回值|目标函数|
 
 ```javascript
 const p = wrap(escape, function(fn, text) {
@@ -11551,10 +11551,10 @@ wx.getStorage('test').then(res => {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|xpath|string|Xpath|
-|返回值|array|目标元素集|
+|参数名|说明|
+|-----|---|
+|xpath|Xpath|
+|返回值|目标元素集|
 
 ```javascript
 xpath('//html/body'); // -> [body]

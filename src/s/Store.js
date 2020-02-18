@@ -4,24 +4,24 @@
  *
  * ### constructor
  *
- * |Name|Type  |Desc        |
- * |----|------|------------|
- * |data|object|Initial data|
+ * |Name|Desc        |
+ * |----|------------|
+ * |data|Initial data|
  *
  * ### set
  *
  * Set value.
  *
- * |Name|Type  |Desc        |
- * |----|------|------------|
- * |key |string|Value key   |
- * |val |*     |Value to set|
+ * |Name|Desc        |
+ * |----|------------|
+ * |key |Value key   |
+ * |val |Value to set|
  *
  * Set values.
  *
- * |Name|Type  |Desc           |
- * |----|------|---------------|
- * |vals|object|Key value pairs|
+ * |Name|Desc           |
+ * |----|---------------|
+ * |vals|Key value pairs|
  *
  * This emit a change event whenever is called.
  *
@@ -29,25 +29,25 @@
  *
  * Get value.
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |key   |string|Value key         |
- * |return|*     |Value of given key|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |key   |Value key         |
+ * |return|Value of given key|
  *
  * Get values.
  *
- * |Name  |Type  |Desc           |
- * |------|------|---------------|
- * |keys  |array |Array of keys  |
- * |return|object|Key value pairs|
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |keys  |Array of keys  |
+ * |return|Key value pairs|
  *
  * ### remove
  *
  * Remove value.
  *
- * |Name|Type        |Desc         |
- * |----|------------|-------------|
- * |key |string array|Key to remove|
+ * |Name|Desc         |
+ * |----|-------------|
+ * |key |Key to remove|
  *
  * ### clear
  *
@@ -57,9 +57,9 @@
  *
  * Iterate over values.
  *
- * |Name|Type    |Desc                           |
- * |----|--------|-------------------------------|
- * |fn  |function|Function invoked per interation|
+ * |Name|Desc                          |
+ * |----|------------------------------|
+ * |fn  |Function invoked per iteration|
  */
 
 /* example
@@ -77,7 +77,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

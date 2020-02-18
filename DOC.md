@@ -1954,24 +1954,24 @@ Extend from Emitter.
 
 ### constructor
 
-|Name|Type  |Desc        |
-|----|------|------------|
-|data|object|Initial data|
+|Name|Desc        |
+|----|------------|
+|data|Initial data|
 
 ### set
 
 Set value.
 
-|Name|Type  |Desc        |
-|----|------|------------|
-|key |string|Value key   |
-|val |*     |Value to set|
+|Name|Desc        |
+|----|------------|
+|key |Value key   |
+|val |Value to set|
 
 Set values.
 
-|Name|Type  |Desc           |
-|----|------|---------------|
-|vals|object|Key value pairs|
+|Name|Desc           |
+|----|---------------|
+|vals|Key value pairs|
 
 This emit a change event whenever is called.
 
@@ -1979,25 +1979,25 @@ This emit a change event whenever is called.
 
 Get value.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|key   |string|Value key         |
-|return|*     |Value of given key|
+|Name  |Desc              |
+|------|------------------|
+|key   |Value key         |
+|return|Value of given key|
 
 Get values.
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|keys  |array |Array of keys  |
-|return|object|Key value pairs|
+|Name  |Desc           |
+|------|---------------|
+|keys  |Array of keys  |
+|return|Key value pairs|
 
 ### remove
 
 Remove value.
 
-|Name|Type        |Desc         |
-|----|------------|-------------|
-|key |string array|Key to remove|
+|Name|Desc         |
+|----|-------------|
+|key |Key to remove|
 
 ### clear
 
@@ -2007,9 +2007,9 @@ Clear all data.
 
 Iterate over values.
 
-|Name|Type    |Desc                           |
-|----|--------|-------------------------------|
-|fn  |function|Function invoked per interation|
+|Name|Desc                          |
+|----|------------------------------|
+|fn  |Function invoked per iteration|
 
 ```javascript
 const store = new Store('test');
@@ -2047,17 +2047,17 @@ Extend from Emitter.
 
 ### constructor
 
-|Name|Type  |Desc           |
-|----|------|---------------|
-|obj |object|Values to tween|
+|Name|Desc           |
+|----|---------------|
+|obj |Values to tween|
 
 ### to
 
-|Name       |Type           |Desc            |
-|-----------|---------------|----------------|
-|destination|obj            |Final properties|
-|duration   |number         |Tween duration  |
-|ease       |string function|Easing function |
+|Name       |Desc            |
+|-----------|----------------|
+|destination|Final properties|
+|duration   |Tween duration  |
+|ease       |Easing function |
 
 ### play
 
@@ -2075,9 +2075,9 @@ Get animation paused state.
 
 Update or get animation progress.
 
-|Name      |Type  |Desc                  |
-|----------|------|----------------------|
-|[progress]|number|Number between 0 and 1|
+|Name    |Desc                  |
+|--------|----------------------|
+|progress|Number between 0 and 1|
 
 ```javascript
 const pos = {x: 0, y: 0};
@@ -2132,51 +2132,51 @@ class Url {
 
 ### constructor
 
-|Name        |Type  |Desc      |
-|------------|------|----------|
-|url=location|string|Url string|
+|Name        |Desc      |
+|------------|----------|
+|url=location|Url string|
 
 ### setQuery
 
 Set query value.
 
-|Name  |Type  |Desc       |
-|------|------|-----------|
-|name  |string|Query name |
-|value |string|Query value|
-|return|Url   |this       |
+|Name  |Desc       |
+|------|-----------|
+|name  |Query name |
+|value |Query value|
+|return|this       |
 
-|Name  |Type  |Desc        |
-|------|------|------------|
-|query |object|query object|
-|return|Url   |this        |
+|Name  |Desc        |
+|------|------------|
+|query |query object|
+|return|this        |
 
 ### rmQuery
 
 Remove query value.
 
-|Name  |Type        |Desc      |
-|------|------------|----------|
-|name  |string array|Query name|
-|return|Url         |this      |
+|Name  |Desc      |
+|------|----------|
+|name  |Query name|
+|return|this      |
 
 ### parse
 
 [static] Parse url into an object.
 
-|Name  |Type  |Desc      |
-|------|------|----------|
-|url   |string|Url string|
-|return|object|Url object|
+|Name  |Desc      |
+|------|----------|
+|url   |Url string|
+|return|Url object|
 
 ### stringify
 
 [static] Stringify url object into a string.
 
-|Name  |Type  |Desc      |
-|------|------|----------|
-|url   |object|Url object|
-|return|string|Url string|
+|Name  |Desc      |
+|------|----------|
+|url   |Url object|
+|return|Url string|
 
 An url object contains the following properties:
 
@@ -2217,27 +2217,27 @@ Object values validation.
 
 ### constructor
 
-|Name   |Type  |Desc                    |
-|-------|------|------------------------|
-|options|object|Validation configuration|
+|Name   |Desc                    |
+|-------|------------------------|
+|options|Validation configuration|
 
 ### validate
 
 Validate object.
 
-|Name  |Type  |Desc                            |
-|------|------|--------------------------------|
-|obj   |object|Object to validate              |
-|return|*     |Validation result, true means ok|
+|Name  |Desc                            |
+|------|--------------------------------|
+|obj   |Object to validate              |
+|return|Validation result, true means ok|
 
 ### addPlugin
 
 [static] Add plugin.
 
-|Name  |Type    |Desc              |
-|------|--------|------------------|
-|name  |string  |Plugin name       |
-|plugin|function|Validation handler|
+|Name  |Desc              |
+|------|------------------|
+|name  |Plugin name       |
+|plugin|Validation handler|
 
 ### Default Plugins
 
@@ -10192,11 +10192,11 @@ JSON stringify with support for circular object, function etc.
 
 Undefined is treated as null value.
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|obj   |object|Object to stringify|
-|spaces|number|Indent spaces      |
-|return|string|Stringified object |
+|Name  |Desc               |
+|------|-------------------|
+|obj   |Object to stringify|
+|spaces|Indent spaces      |
+|return|Stringified object |
 
 ```javascript
 stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
@@ -10229,22 +10229,22 @@ function stringifyAll(
 </pre>
 </details>
 
-|Name     |Type  |Desc               |
-|---------|------|-------------------|
-|obj      |*     |Object to stringify|
-|[options]|object|Stringify options  |
-|return   |string|Stringified object |
+|Name   |Desc               |
+|-------|-------------------|
+|obj    |Object to stringify|
+|options|Stringify options  |
+|return |Stringified object |
 
 Available options:
 
-|Name              |Type   |Desc                     |
-|------------------|-------|-------------------------|
-|unenumerable=false|boolean|Include unenumerable keys|
-|symbol=false      |boolean|Include symbol keys      |
-|accessGetter=false|boolean|Access getter value      |
-|timeout=0         |number |Timeout of stringify     |
-|depth=0           |number |Max depth of recursion   |
-|[ignore]          |array  |Values to ignore         |
+|Name              |Desc                     |
+|------------------|-------------------------|
+|unenumerable=false|Include unenumerable keys|
+|symbol=false      |Include symbol keys      |
+|accessGetter=false|Access getter value      |
+|timeout=0         |Timeout of stringify     |
+|depth=0           |Max depth of recursion   |
+|ignore            |Values to ignore         |
 
 When time is out, all remaining values will all be "Timeout".
 
@@ -10347,10 +10347,10 @@ function stripIndent(
 </pre>
 </details>
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|str   |string|String to strip|
-|return|string|Result string  |
+|Name  |Desc           |
+|------|---------------|
+|str   |String to strip|
+|return|Result string  |
 
 It can be used as function or template tag.
 
@@ -10437,11 +10437,11 @@ Compile JavaScript template into function that can be evaluated for rendering.
 </pre>
 </details>
 
-|Name  |Type    |Desc                      |
-|------|--------|--------------------------|
-|str   |string  |Template string           |
-|[util]|object  |Utility functions         |
-|return|function|Compiled template function|
+|Name  |Desc                      |
+|------|--------------------------|
+|str   |Template string           |
+|util  |Utility functions         |
+|return|Compiled template function|
 
 ```javascript
 template('Hello <%= name %>!')({name: 'licia'}); // -> 'Hello licia!'
@@ -10525,11 +10525,11 @@ function through(
 </pre>
 </details>
 
-|Name     |Type    |Desc                        |
-|---------|--------|----------------------------|
-|opts={}  |Object  |Options to initialize stream|
-|transform|function|Transform implementation    |
-|[flush]  |function|Flush implementation        |
+|Name     |Desc                        |
+|---------|----------------------------|
+|opts={}  |Options to initialize stream|
+|transform|Transform implementation    |
+|flush    |Flush implementation        |
 
 ### obj
 
@@ -10560,11 +10560,11 @@ Format datetime with *** time ago statement.
 </pre>
 </details>
 
-|Name          |Type  |Desc                     |
-|--------------|------|-------------------------|
-|date          |Date  |Date to calculate        |
-|[now=new Date]|Date  |Current date             |
-|return        |string|Formatted time ago string|
+|Name        |Desc                     |
+|------------|-------------------------|
+|date        |Date to calculate        |
+|now=new Date|Current date             |
+|return      |Formatted time ago string|
 
 ```javascript
 const now = new Date().getTime();
@@ -10584,10 +10584,10 @@ Get execution time of a function.
 </pre>
 </details>
 
-|Name  |Type    |Desc                    |
-|------|--------|------------------------|
-|fn    |function|Function to measure time|
-|return|number  |Execution time, ms      |
+|Name  |Desc                    |
+|------|------------------------|
+|fn    |Function to measure time|
+|return|Execution time, ms      |
 
 ```javascript
 timeTaken(function () {
@@ -10606,12 +10606,12 @@ Invoke given function n times.
 </pre>
 </details>
 
-|Name  |Type    |Desc                          |
-|------|--------|------------------------------|
-|n     |number  |Times to invoke function      |
-|fn    |function|Function invoked per iteration|
-|[ctx] |*       |Function context              |
-|return|array   |Array of results              |
+|Name  |Desc                          |
+|------|------------------------------|
+|n     |Times to invoke function      |
+|fn    |Function invoked per iteration|
+|ctx   |Function context              |
+|return|Array of results              |
 
 ```javascript
 times(3, String); // -> ['0', '1', '2']
@@ -10651,10 +10651,10 @@ Use generator like async/await.
 </pre>
 </details>
 
-|Name  |Type             |Desc              |
-|------|-----------------|------------------|
-|fn    |GeneratorFunction|Generator function|
-|return|function         |Result function   |
+|Name  |Desc              |
+|------|------------------|
+|fn    |Generator function|
+|return|Result function   |
 
 ```javascript
 const sleep = require('licia/sleep');
@@ -10704,10 +10704,10 @@ Convert value to a Date.
 </pre>
 </details>
 
-|Name  |Type|Desc            |
-|------|----|----------------|
-|val   |*   |Value to convert|
-|return|Date|Converted Date  |
+|Name  |Desc            |
+|------|----------------|
+|val   |Value to convert|
+|return|Converted Date  |
 
 ```javascript
 toDate('20180501');
@@ -10728,10 +10728,10 @@ Convert html string to dom elements.
 
 There should be only one root element.
 
-|Name  |Type   |Desc        |
-|------|-------|------------|
-|str   |string |Html string |
-|return|element|Html element|
+|Name  |Desc        |
+|------|------------|
+|str   |Html string |
+|return|Html element|
 
 ```javascript
 toEl('<div>test</div>');
@@ -10769,10 +10769,10 @@ Convert value to a number.
 </pre>
 </details>
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|val   |*     |Value to process|
-|return|number|Result number   |
+|Name  |Desc            |
+|------|----------------|
+|val   |Value to process|
+|return|Result number   |
 
 ```javascript
 toNum('5'); // -> 5
@@ -10810,10 +10810,10 @@ Convert value to a string.
 </pre>
 </details>
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|val   |*     |Value to convert|
-|return|string|Result string   |
+|Name  |Desc            |
+|------|----------------|
+|val   |Value to convert|
+|return|Result string   |
 
 ```javascript
 toStr(null); // -> ''
@@ -10833,10 +10833,10 @@ Topological sorting algorithm.
 </pre>
 </details>
 
-|Name  |Type |Desc        |
-|------|-----|------------|
-|edges |array|Dependencies|
-|return|array|Sorted order|
+|Name  |Desc        |
+|------|------------|
+|edges |Dependencies|
+|return|Sorted order|
 
 ```javascript
 topoSort([[1, 2], [1, 3], [3, 2]]); // -> [1, 3, 2]
@@ -10854,11 +10854,11 @@ function trigger(type: string, options?: any);</code>
 </pre>
 </details>
 
-|Name         |Type   |Desc              |
-|-------------|-------|------------------|
-|[el=document]|element|Element to trigger|
-|type         |string |Event type        |
-|options      |object |Options           |
+|Name       |Desc              |
+|-----------|------------------|
+|el=document|Element to trigger|
+|type       |Event type        |
+|options    |Options           |
 
 ```javascript
 trigger(document.getElementById('#test'), 'mouseup');
@@ -11501,11 +11501,11 @@ Wrap the function inside a wrapper function, passing it as the first argument.
 </pre>
 </details>
 
-|Name   |Type    |Desc            |
-|-------|--------|----------------|
-|fn     |function|Function to wrap|
-|wrapper|function|Wrapper function|
-|return |function|New function    |
+|Name   |Desc            |
+|-------|----------------|
+|fn     |Function to wrap|
+|wrapper|Wrapper function|
+|return |New function    |
 
 ```javascript
 const p = wrap(escape, function(fn, text) {
@@ -11542,10 +11542,10 @@ Select elements using xpath, IE is not supported.
 </pre>
 </details>
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|xpath |string|Xpath          |
-|return|array |Target elements|
+|Name  |Desc           |
+|------|---------------|
+|xpath |Xpath          |
+|return|Target elements|
 
 ```javascript
 xpath('//html/body'); // -> [body]

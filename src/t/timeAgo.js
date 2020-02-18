@@ -1,10 +1,10 @@
 /* Format datetime with *** time ago statement.
  *
- * |Name          |Type  |Desc                     |
- * |--------------|------|-------------------------|
- * |date          |Date  |Date to calculate        |
- * |[now=new Date]|Date  |Current date             |
- * |return        |string|Formatted time ago string|
+ * |Name        |Desc                     |
+ * |------------|-------------------------|
+ * |date        |Date to calculate        |
+ * |now=new Date|Current date             |
+ * |return      |Formatted time ago string|
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

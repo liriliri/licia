@@ -1,9 +1,9 @@
 /* Get execution time of a function.
  *
- * |Name  |Type    |Desc                    |
- * |------|--------|------------------------|
- * |fn    |function|Function to measure time|
- * |return|number  |Execution time, ms      |
+ * |Name  |Desc                    |
+ * |------|------------------------|
+ * |fn    |Function to measure time|
+ * |return|Execution time, ms      |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

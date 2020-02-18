@@ -2,11 +2,11 @@
  *
  * Undefined is treated as null value.
  *
- * |Name  |Type  |Desc               |
- * |------|------|-------------------|
- * |obj   |object|Object to stringify|
- * |spaces|number|Indent spaces      |
- * |return|string|Stringified object |
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |obj   |Object to stringify|
+ * |spaces|Indent spaces      |
+ * |return|Stringified object |
  */
 
 /* example
@@ -18,7 +18,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

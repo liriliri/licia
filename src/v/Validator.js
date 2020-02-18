@@ -2,27 +2,27 @@
  *
  * ### constructor
  *
- * |Name   |Type  |Desc                    |
- * |-------|------|------------------------|
- * |options|object|Validation configuration|
+ * |Name   |Desc                    |
+ * |-------|------------------------|
+ * |options|Validation configuration|
  *
  * ### validate
  *
  * Validate object.
  *
- * |Name  |Type  |Desc                            |
- * |------|------|--------------------------------|
- * |obj   |object|Object to validate              |
- * |return|*     |Validation result, true means ok|
+ * |Name  |Desc                            |
+ * |------|--------------------------------|
+ * |obj   |Object to validate              |
+ * |return|Validation result, true means ok|
  *
  * ### addPlugin
  *
  * [static] Add plugin.
  *
- * |Name  |Type    |Desc              |
- * |------|--------|------------------|
- * |name  |string  |Plugin name       |
- * |plugin|function|Validation handler|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |name  |Plugin name       |
+ * |plugin|Validation handler|
  *
  * ### Default Plugins
  *
@@ -48,7 +48,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

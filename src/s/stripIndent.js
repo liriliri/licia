@@ -1,9 +1,9 @@
 /* Strip indentation from multi-line strings.
  *
- * |Name  |Type  |Desc           |
- * |------|------|---------------|
- * |str   |string|String to strip|
- * |return|string|Result string  |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |str   |String to strip|
+ * |return|Result string  |
  *
  * It can be used as function or template tag.
  */
@@ -18,7 +18,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.4
  */
 

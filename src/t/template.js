@@ -1,10 +1,10 @@
 /* Compile JavaScript template into function that can be evaluated for rendering.
  *
- * |Name  |Type    |Desc                      |
- * |------|--------|--------------------------|
- * |str   |string  |Template string           |
- * |[util]|object  |Utility functions         |
- * |return|function|Compiled template function|
+ * |Name  |Desc                      |
+ * |------|--------------------------|
+ * |str   |Template string           |
+ * |util  |Utility functions         |
+ * |return|Compiled template function|
  */
 
 /* example

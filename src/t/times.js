@@ -1,11 +1,11 @@
 /* Invoke given function n times.
  *
- * |Name  |Type    |Desc                          |
- * |------|--------|------------------------------|
- * |n     |number  |Times to invoke function      |
- * |fn    |function|Function invoked per iteration|
- * |[ctx] |*       |Function context              |
- * |return|array   |Array of results              |
+ * |Name  |Desc                          |
+ * |------|------------------------------|
+ * |n     |Times to invoke function      |
+ * |fn    |Function invoked per iteration|
+ * |ctx   |Function context              |
+ * |return|Array of results              |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.2.0
  */
 

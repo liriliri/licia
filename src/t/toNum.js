@@ -1,9 +1,9 @@
 /* Convert value to a number.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |val   |*     |Value to process|
- * |return|number|Result number   |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |val   |Value to process|
+ * |return|Result number   |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

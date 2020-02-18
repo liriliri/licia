@@ -1,9 +1,9 @@
 /* Convert value to a string.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |val   |*     |Value to convert|
- * |return|string|Result string   |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |val   |Value to convert|
+ * |return|Result string   |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript
