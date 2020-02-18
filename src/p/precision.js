@@ -1,9 +1,9 @@
 /* Find decimal precision of a given number.
  *
- * |Name  |Type  |Desc           |
- * |------|------|---------------|
- * |num   |number|Number to check|
- * |return|number|Precision      |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |num   |Number to check|
+ * |return|Precision      |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

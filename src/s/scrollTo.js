@@ -1,18 +1,18 @@
 /* Scroll to a target with animation.
  *
- * |Name   |Type                 |Desc          |
- * |-------|---------------------|--------------|
- * |target |element string number|Scroll target |
- * |options|object               |Scroll options|
+ * |Name   |Desc          |
+ * |-------|--------------|
+ * |target |Scroll target |
+ * |options|Scroll options|
  *
  * ### Options
  *
- * |Name     |Type           |Default |Desc                                   |
- * |---------|---------------|--------|---------------------------------------|
- * |tolerance|number         |0       |Tolerance of target to scroll          |
- * |duration |number         |800     |Scroll duration                        |
- * |easing   |string function|outQuart|Easing function                        |
- * |callback |function       |noop    |Function to run once scrolling complete|
+ * |Name           |Desc                                   |
+ * |---------------|---------------------------------------|
+ * |tolerance=0    |Tolerance of target to scroll          |
+ * |duration=800   |Scroll duration                        |
+ * |easing=outQuart|Easing function                        |
+ * |callback=noop  |Function to run once scrolling complete|
  */
 
 /* example
@@ -26,7 +26,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

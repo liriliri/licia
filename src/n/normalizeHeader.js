@@ -1,9 +1,9 @@
 /* Normalize http header name.
  *
- * |Name  |Type  |Desc               |
- * |------|------|-------------------|
- * |header|string|Header to normalize|
- * |return|string|Normalized header  |
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |header|Header to normalize|
+ * |return|Normalized header  |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.2.0
  */
 

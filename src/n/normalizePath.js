@@ -1,9 +1,9 @@
 /* Normalize file path slashes.
  *
- * |Name  |Type  |Desc             |
- * |------|------|-----------------|
- * |path  |string|Path to normalize|
- * |return|string|Normalized path  |
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |path  |Path to normalize|
+ * |return|Normalized path  |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

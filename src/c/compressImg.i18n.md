@@ -2,22 +2,22 @@
 
 使用 canvas 对图像进行压缩。
 
-|参数名|类型|说明|
-|-----|----|---|
-|file|File Blob string|图片文件或 url|
-|[opts]|object|选项|
-|[cb]|function|回调|
+|参数名|说明|
+|-----|---|
+|file|图片文件或 url|
+|opts|选项|
+|cb|回调|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|maxWidth|number|最大宽度|
-|maxHeight|number|最大高度|
-|width|number|输出图片宽度|
-|height|number|输出图片高度|
-|mimeType|string|Mine 类型|
-|quality=0.8|number|图片质量，从 0 到 1|
+|参数名|说明|
+|-----|---|
+|maxWidth|最大宽度|
+|maxHeight|最大高度|
+|width|输出图片宽度|
+|height|输出图片高度|
+|mimeType|Mine 类型|
+|quality=0.8|图片质量，从 0 到 1|
 
 为了保持图片比例，当宽度设置时高度将被忽略。
 

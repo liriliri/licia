@@ -1,21 +1,21 @@
 /* Compress image using canvas.
  *
- * |Name  |Type            |Desc             |
- * |------|----------------|-----------------|
- * |file  |File Blob string|Image file or url|
- * |[opts]|object          |Options          |
- * |[cb]  |function        |Callback         |
+ * |Name|Desc             |
+ * |----|-----------------|
+ * |file|Image file or url|
+ * |opts|Options          |
+ * |cb  |Callback         |
  *
  * Available options:
  *
- * |Name       |Type  |Desc                            |
- * |-----------|------|--------------------------------|
- * |maxWidth   |number|Max width                       |
- * |maxHeight  |number|Max height                      |
- * |width      |number|Output image width              |
- * |height     |number|Output image height             |
- * |mimeType   |string|Mime type                       |
- * |quality=0.8|number|Image quality, range from 0 to 1|
+ * |Name       |Desc                            |
+ * |-----------|--------------------------------|
+ * |maxWidth   |Max width                       |
+ * |maxHeight  |Max height                      |
+ * |width      |Output image width              |
+ * |height     |Output image height             |
+ * |mimeType   |Mime type                       |
+ * |quality=0.8|Image quality, range from 0 to 1|
  *
  * In order to keep image ratio, height will be ignored when width is set.
  *
@@ -33,24 +33,20 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript
- * export declare namespace compressImg {
- *     interface IOptions {
+ * export declare function compressImg(file: File | Blob | string, cb: Function): void;
+ * export declare function compressImg(
+ *     file: File | Blob | string,
+ *     opts?: {
  *         maxWidth?: number;
  *         maxHeight?: number;
  *         width?: number;
  *         height?: number;
  *         mimeType?: string;
  *         quality?: number;
- *     }
- * }
- * export declare function compressImg(file: File | Blob | string, cb: Function): void;
- * export declare function compressImg(
- *     file: File | Blob | string,
- *     opts?: compressImg.IOptions,
+ *     },
  *     cb?: Function
  * ): void;
  */

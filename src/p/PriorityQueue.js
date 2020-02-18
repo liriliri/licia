@@ -6,9 +6,9 @@
  *
  * ### constructor
  *
- * |Name |Type    |Desc      |
- * |-----|--------|----------|
- * |[cmp]|function|Comparator|
+ * |Name |Desc      |
+ * |-----|----------|
+ * |cmp  |Comparator|
  *
  * ### clear
  *
@@ -18,10 +18,10 @@
  *
  * Add an item to the queue.
  *
- * |Name  |Type  |Desc        |
- * |------|------|------------|
- * |item  |*     |Item to add |
- * |return|number|Current size|
+ * |Name  |Desc        |
+ * |------|------------|
+ * |item  |Item to add |
+ * |return|Current size|
  *
  * ### dequeue
  *
@@ -51,7 +51,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.11.0
  */
 

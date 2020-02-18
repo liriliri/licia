@@ -508,27 +508,27 @@ const blob = new Blob([]);
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|size=1024|number|桶数目|
-|k=3|number|哈希函数数目|
+|参数名|说明|
+|-----|---|
+|size=1024|桶数目|
+|k=3|哈希函数数目|
 
 ### add
 
 添加元素。
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|string|要加的值|
+|参数名|说明|
+|-----|---|
+|val|要加的值|
 
 ### test
 
 检测元素是否在过滤器中。
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|string|要检查的值|
-|返回值|boolean|如果可能在返回真，如果绝对不在返回假|
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果可能在返回真，如果绝对不在返回假|
 
 ```javascript
 const bloom = new BloomFilter(256, 3);
@@ -1261,10 +1261,10 @@ LocalStorage 存储。
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|LocalStorage 存储名|
-|data|object|默认数据|
+|参数名|说明|
+|-----|---|
+|name|LocalStorage 存储名|
+|data|默认数据|
 
 ```javascript
 const store = new LocalStore('licia');
@@ -1490,9 +1490,9 @@ observer.disconnect();
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|[cmp]|function|比较器|
+|参数名|说明|
+|-----|---|
+|cmp|比较器|
 
 ### clear
 
@@ -1502,10 +1502,10 @@ observer.disconnect();
 
 元素入列。
 
-|参数名|类型|说明|
-|-----|----|---|
-|item|*|入列元素|
-|返回值|number|当前大小|
+|参数名|说明|
+|-----|---|
+|item|入列元素|
+|返回值|当前大小|
 
 ### dequeue
 
@@ -2755,10 +2755,10 @@ bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
 
 在使用 CryptoJS 时会派上用处。
 
-|参数名|类型|说明|
-|-----|----|---|
-|bytes|array|字节数组|
-|返回值|array|字长数组|
+|参数名|说明|
+|-----|---|
+|bytes|字节数组|
+|返回值|字长数组|
 
 ```javascript
 bytesToWords([0x12, 0x34, 0x56, 0x78]); // -> [0x12345678]
@@ -3126,41 +3126,38 @@ welcome('licia'); // -> 'hi: LICIA!'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">namespace compressImg {
-    interface IOptions {
+<code class="language-typescript">function compressImg(file: File | Blob | string, cb: Function): void;
+function compressImg(
+    file: File | Blob | string,
+    opts?: {
         maxWidth?: number;
         maxHeight?: number;
         width?: number;
         height?: number;
         mimeType?: string;
         quality?: number;
-    }
-}
-function compressImg(file: File | Blob | string, cb: Function): void;
-function compressImg(
-    file: File | Blob | string,
-    opts?: compressImg.IOptions,
+    },
     cb?: Function
 ): void;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|file|File Blob string|图片文件或 url|
-|[opts]|object|选项|
-|[cb]|function|回调|
+|参数名|说明|
+|-----|---|
+|file|图片文件或 url|
+|opts|选项|
+|cb|回调|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|maxWidth|number|最大宽度|
-|maxHeight|number|最大高度|
-|width|number|输出图片宽度|
-|height|number|输出图片高度|
-|mimeType|string|Mine 类型|
-|quality=0.8|number|图片质量，从 0 到 1|
+|参数名|说明|
+|-----|---|
+|maxWidth|最大宽度|
+|maxHeight|最大高度|
+|width|输出图片宽度|
+|height|输出图片高度|
+|mimeType|Mine 类型|
+|quality=0.8|图片质量，从 0 到 1|
 
 为了保持图片比例，当宽度设置时高度将被忽略。
 
@@ -7298,17 +7295,17 @@ function keyCode(code: number): string;</code>
 
 获取键码对应的键名。
 
-|参数名|类型|说明|
-|-----|----|---|
-|code|number|键码|
-|返回值|string|对应的键名|
+|参数名|说明|
+|-----|---|
+|code|键码|
+|返回值|对应的键名|
 
 获取键名对应的键码。
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|键名|
-|返回值|number|对应的键码|
+|参数名|说明|
+|-----|---|
+|name|键名|
+|返回值|对应的键码|
 
 ```javascript
 keyCode(13); // -> 'enter'
@@ -7473,10 +7470,10 @@ loadCss('style.css', function (isLoaded) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|src|string|图片地址|
-|[cb]|function|加载完回调|
+|参数名|说明|
+|-----|---|
+|src|图片地址|
+|cb|加载完回调|
 
 ```javascript
 loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
@@ -7517,10 +7514,10 @@ loadJs('main.js', function (isLoaded) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|目标数组|
-|返回值|*|最长的一项|
+|参数名|说明|
+|-----|---|
+|arr|目标数组|
+|返回值|最长的一项|
 
 ```javascript
 longest(['a', 'abcde', 'abc']); // -> 'abcde'
@@ -7771,11 +7768,11 @@ const fibonacci = memoize(function(n) {
 
 注意：它不改变原数组。
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|要排序的数组|
-|[cmp]|function|比较器|
-|返回值|array|有序数组|
+|参数名|说明|
+|-----|---|
+|arr|要排序的数组|
+|cmp|比较器|
+|返回值|有序数组|
 
 ```javascript
 mergeSort([2, 1]); // -> [1, 2]
@@ -7867,19 +7864,19 @@ methods(console); // -> ['Console', 'assert', 'dir', ...]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function mime(name: string): string | null;</code>
+<code class="language-typescript">function mime(name: string): string | undefined;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|扩展名|
-|返回值|string null|mime 类型|
+|参数名|说明|
+|-----|---|
+|name|扩展名|
+|返回值|mime 类型|
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|mime 类型|
-|返回值|string null|扩展名|
+|参数名|说明|
+|-----|---|
+|name|mime 类型|
+|返回值|扩展名|
 
 该模块只包含常用的文件类型。
 
@@ -8024,19 +8021,19 @@ moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
 
 将文本转换为摩尔斯电码。
 
-|参数名|类型|说明|
-|-----|----|---|
-|txt|string|要编码的文本|
-|返回值|string|摩尔斯电码|
+|参数名|说明|
+|-----|---|
+|txt|要编码的文本|
+|返回值|摩尔斯电码|
 
 ### decode
 
 将摩尔斯电码转换为文本。
 
-|参数名|类型|说明|
-|-----|----|---|
-|morse|string|摩尔斯电码|
-|返回值|string|解码后的文本|
+|参数名|说明|
+|-----|---|
+|morse|摩尔斯电码|
+|返回值|解码后的文本|
 
 ```javascript
 const str = morse.encode('Hello, world.');
@@ -8092,10 +8089,10 @@ ms(60000); // -> '1m'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|predicate|function|源函数|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|predicate|源函数|
+|返回值|目标函数|
 
 ```javascript
 function even(n) { return n % 2 === 0 }
@@ -8151,10 +8148,10 @@ noop(); // Does nothing
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|header|string|源头部名|
-|返回值|string|目标头部名|
+|参数名|说明|
+|-----|---|
+|header|源头部名|
+|返回值|目标头部名|
 
 ```javascript
 normalizeHeader('content-type'); // -> 'Content-Type'
@@ -8172,10 +8169,10 @@ normalizeHeader('etag'); // -> 'ETag'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|path|string|源路径|
-|返回值|string|目标路径|
+|参数名|说明|
+|-----|---|
+|path|源路径|
+|返回值|目标路径|
 
 ```javascript
 normalizePath('\\foo\\bar\\'); // -> '/foo/bar/'
@@ -8202,18 +8199,18 @@ function normalizePhone(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|phone|string|电话号码|
-|options|object|标准化选项|
-|返回值|string|E.164 格式电话号码|
+|参数名|说明|
+|-----|---|
+|phone|电话号码|
+|options|标准化选项|
+|返回值|E.164 格式电话号码|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|countryCode|number|国家代码|
-|trunkPrefix=false|boolean|如果本地格式有长途字冠，设为真|
+|参数名|说明|
+|-----|---|
+|countryCode|国家代码|
+|trunkPrefix=false|如果本地格式有长途字冠，设为真|
 
 ```javascript
 normalizePhone('13512345678', {
@@ -8245,10 +8242,10 @@ function notify(title: string, options?: object): void;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|title|string|通知标题|
-|options|object|通知选项|
+|参数名|说明|
+|-----|---|
+|title|通知标题|
+|options|通知选项|
 
 你可以传入所有在 [Web Notification](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification) 中支持的选项。
 
@@ -8429,10 +8426,10 @@ openFile({multiple: true}).then(fileList => {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|num|number|要转换的数字|
-|返回值|string|目标序数|
+|参数名|说明|
+|-----|---|
+|num|要转换的数字|
+|返回值|目标序数|
 
 ```javascript
 ordinal(1); // -> '1st'
@@ -8511,10 +8508,10 @@ pad('ab', 5, 'ab'); // -> 'ababa'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|返回值|array|键值对数组|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|返回值|键值对数组|
 
 ```javascript
 pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
@@ -8531,10 +8528,10 @@ pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|tasks|array|函数数组|
-|[cb]|function|结束回调|
+|参数名|说明|
+|-----|---|
+|tasks|函数数组|
+|cb|结束回调|
 
 ```javascript
 parallel([
@@ -8621,10 +8618,10 @@ function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
 </pre>
 </details>
 
-|Name   |Type  |Desc         |
-|-------|------|-------------|
-|html   |string|Html to parse|
-|handler|object|Handlers     |
+|Name   |Desc         |
+|-------|-------------|
+|html   |Html to parse|
+|handler|Handlers     |
 
 ```javascript
 parseHtml('<div>licia</div>', {
@@ -8668,10 +8665,10 @@ sub5(20); // -> 15
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|帕斯卡式字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|帕斯卡式字符串|
 
 ```javascript
 pascalCase('fooBar'); // -> FooBar
@@ -8738,11 +8735,11 @@ pick({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object array|目标集合|
-|key|string array|属性路径|
-|返回值|array|指定属性值列表|
+|参数名|说明|
+|-----|---|
+|obj|目标集合|
+|key|属性路径|
+|返回值|指定属性值列表|
 
 ```javascript
 const stooges = [
@@ -8764,10 +8761,10 @@ pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|num|number|要检查的数字|
-|返回值|number|精度|
+|参数名|说明|
+|-----|---|
+|num|要检查的数字|
+|返回值|精度|
 
 ```javascript
 precision(1.234); // -> 3;
@@ -8809,10 +8806,10 @@ function prefix(name: string): string;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|源属性名|
-|返回值|string|目标属性名|
+|参数名|说明|
+|-----|---|
+|name|源属性名|
+|返回值|目标属性名|
 
 ### dash
 
@@ -8863,10 +8860,10 @@ readFile('test.js', 'utf-8').then(function (data) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|path|string array|属性路径|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|path|属性路径|
+|返回值|目标函数|
 
 ```javascript
 const obj = {a: {b: 1}};
@@ -9078,10 +9075,10 @@ randomId(5, 'abc'); // -> 'cbbcb'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|目标数组|
-|返回值|*|随机项|
+|参数名|说明|
+|-----|---|
+|arr|目标数组|
+|返回值|随机项|
 
 ```javascript
 randomItem([1, 2, 3]); // -> 2
@@ -9132,11 +9129,11 @@ RC4 加密，结果表示为 base64 字符串。
 
 RC4 解密，传入 base64 字符串。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|密钥|
-|str|string|源字符串|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|key|密钥|
+|str|源字符串|
+|返回值|目标字符串|
 
 ```javascript
 rc4.encrypt('licia', 'Hello world'); // -> 'j9y2VpSfR3AdNN8='
@@ -9154,9 +9151,9 @@ dom 准备好时调用回调函数，类似于 jQuery 的 ready 方法。
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|回调函数|
+|参数名|说明|
+|-----|---|
+|fn|回调函数|
 
 ```javascript
 ready(function () {
@@ -9186,13 +9183,13 @@ function reduce&lt;T, TResult&gt;(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object array|目标集合|
-|iteratee=identity|function|合并函数|
-|[initial]|*|初始值|
-|[ctx]|*|函数上下文|
-|返回值|*|合并值|
+|参数名|说明|
+|-----|---|
+|obj|目标集合|
+|iteratee=identity|合并函数|
+|initial|初始值|
+|ctx|函数上下文|
+|返回值|合并值|
 
 ```javascript
 reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
@@ -9641,19 +9638,19 @@ function scrollTo(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|target|element string number|滚动目标|
-|options|object|滚动选项|
+|参数名|说明|
+|-----|---|
+|target|滚动目标|
+|options|滚动选项|
 
 ### 选项 
 
-|选项名|类型|默认值|说明|
-|-----|----|-----|----|
-|tolerance|number|0|偏移|
-|duration|number|800|时长|
-|easing|string function|outQuart|缓动函数|
-|callback|function|noop|结束回调|
+|选项名|说明|
+|-----|----|
+|tolerance=0|偏移|
+|duration=800|时长|
+|easing=outQuart|缓动函数|
+|callback=noop|结束回调|
 
 ```javascript
 scrollTo('body', {
@@ -9680,13 +9677,13 @@ scrollTo('body', {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|seed|number|随机种子|
-|min=0|number|最小值|
-|max=1|number|最大值|
-|floating=true|boolean|是否允许浮点数|
-|返回值|function|生成随机数字序列的函数|
+|参数名|说明|
+|-----|---|
+|seed|随机种子|
+|min=0|最小值|
+|max=1|最大值|
+|floating=true|是否允许浮点数|
+|返回值|生成随机数字序列的函数|
 
 ```javascript
 const random = seedRandom(19920719, 0, 100, false);
@@ -10042,10 +10039,10 @@ sortKeys({b: {d: 2, c: 1}, a: 0}, {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|空格式字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|空格式字符串|
 
 ```javascript
 spaceCase('fooBar'); // -> foo bar
@@ -10064,10 +10061,10 @@ spaceCase('foo.bar'); // -> foo bar
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|目标字符串|
-|返回值|array|拆分成的数组|
+|参数名|说明|
+|-----|---|
+|str|目标字符串|
+|返回值|拆分成的数组|
 
 ```javascript
 splitCase('foo-bar'); // -> ['foo', 'bar']

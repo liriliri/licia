@@ -1,9 +1,9 @@
 /* Add ordinal indicator to number.
  *
- * |Name  |Type  |Desc                   |
- * |------|------|-----------------------|
- * |num   |number|Number to add indicator|
- * |return|string|Result ordinal number  |
+ * |Name  |Desc                   |
+ * |------|-----------------------|
+ * |num   |Number to add indicator|
+ * |return|Result ordinal number  |
  */
 
 /* example

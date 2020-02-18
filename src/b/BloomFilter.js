@@ -2,27 +2,27 @@
  *
  * ### constructor
  *
- * |Name     |Type  |Desc                    |
- * |---------|------|------------------------|
- * |size=1024|number|Number of buckets       |
- * |k=3      |number|Number of Hash functions|
+ * |Name     |Desc                    |
+ * |---------|------------------------|
+ * |size=1024|Number of buckets       |
+ * |k=3      |Number of Hash functions|
  *
  * ### add
  *
  * Add an element to the filter.
  *
- * |Name|Type  |Desc        |
- * |----|------|------------|
- * |val |string|Value to add|
+ * |Name|Desc        |
+ * |----|------------|
+ * |val |Value to add|
  *
  * ### test
  *
  * Test if an element is in the filter.
  *
- * |Name  |Type   |Desc                                     |
- * |------|-------|-----------------------------------------|
- * |val   |string |Value to test                            |
- * |return|boolean|True if probably, false if definitely not|
+ * |Name  |Desc                                     |
+ * |------|-----------------------------------------|
+ * |val   |Value to test                            |
+ * |return|True if probably, false if definitely not|
  */
 
 /* example
@@ -36,7 +36,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.10.0
  */
 

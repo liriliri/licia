@@ -1,9 +1,9 @@
 /* Load image with given src.
  *
- * |Name|Type    |Desc           |
- * |----|--------|---------------|
- * |src |string  |Image source   |
- * |[cb]|function|Onload callback|
+ * |Name|Desc           |
+ * |----|---------------|
+ * |src |Image source   |
+ * |cb  |Onload callback|
  */
 
 /* example

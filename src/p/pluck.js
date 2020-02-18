@@ -1,10 +1,10 @@
 /* Extract a list of property values.
  *
- * |Name  |Type        |Desc                           |
- * |------|------------|-------------------------------|
- * |obj   |object array|Collection to iterate over     |
- * |key   |string array|Property path                  |
- * |return|array       |New array of specified property|
+ * |Name  |Desc                           |
+ * |------|-------------------------------|
+ * |obj   |Collection to iterate over     |
+ * |key   |Property path                  |
+ * |return|New array of specified property|
  */
 
 /* example
@@ -18,7 +18,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

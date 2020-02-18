@@ -2,17 +2,17 @@
  *
  * Get key code's name.
  *
- * |Name  |Type  |Desc                  |
- * |------|------|----------------------|
- * |code  |number|Key code              |
- * |return|string|Corresponding key name|
+ * |Name  |Desc                  |
+ * |------|----------------------|
+ * |code  |Key code              |
+ * |return|Corresponding key name|
  *
  * Get key name's code.
  *
- * |Name  |Type  |Desc                  |
- * |------|------|----------------------|
- * |name  |string|Key name              |
- * |return|number|Corresponding key code|
+ * |Name  |Desc                  |
+ * |------|----------------------|
+ * |name  |Key name              |
+ * |return|Corresponding key code|
  */
 
 /* example
@@ -22,7 +22,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

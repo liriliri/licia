@@ -1,12 +1,12 @@
 /* Seeded random number generator.
  *
- * |Name         |Type    |Desc                                          |
- * |-------------|--------|----------------------------------------------|
- * |seed         |number  |Random seed                                   |
- * |min=0        |number  |Min possible value                            |
- * |max=1        |number  |Maximum possible value                        |
- * |floating=true|boolean |Float or not                                  |
- * |return       |function|Function that generates random number sequence|
+ * |Name         |Desc                                          |
+ * |-------------|----------------------------------------------|
+ * |seed         |Random seed                                   |
+ * |min=0        |Min possible value                            |
+ * |max=1        |Maximum possible value                        |
+ * |floating=true|Float or not                                  |
+ * |return       |Function that generates random number sequence|
  */
 
 /* example

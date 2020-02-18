@@ -2,10 +2,10 @@
  *
  * Useful when using CryptoJS.
  *
- * |Name  |Type |Desc      |
- * |------|-----|----------|
- * |bytes |array|Byte array|
- * |return|array|Word array|
+ * |Name  |Desc      |
+ * |------|----------|
+ * |bytes |Byte array|
+ * |return|Word array|
  */
 
 /* example

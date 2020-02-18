@@ -1,9 +1,9 @@
 /* Convert an object into a list of [key, value] pairs.
  *
- * |Name  |Type  |Desc                      |
- * |------|------|--------------------------|
- * |obj   |object|Object to convert         |
- * |return|array |List of [key, value] pairs|
+ * |Name  |Desc                      |
+ * |------|--------------------------|
+ * |obj   |Object to convert         |
+ * |return|List of [key, value] pairs|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

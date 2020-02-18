@@ -4,19 +4,19 @@
  *
  * Turn text into Morse code.
  *
- * |Name  |Type  |Desc          |
- * |------|------|--------------|
- * |txt   |string|Text to encode|
- * |return|string|Morse code    |
+ * |Name  |Desc          |
+ * |------|--------------|
+ * |txt   |Text to encode|
+ * |return|Morse code    |
  *
  * ### decode
  *
  * Decode Morse code into text.
  *
- * |Name  |Type  |Desc          |
- * |------|------|--------------|
- * |morse |string|Morse code    |
- * |return|string|Decoded string|
+ * |Name  |Desc          |
+ * |------|--------------|
+ * |morse |Morse code    |
+ * |return|Decoded string|
  */
 
 /* example

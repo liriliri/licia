@@ -1,9 +1,9 @@
 /* Split different string case to an array.
  *
- * |Name  |Type  |Desc           |
- * |------|------|---------------|
- * |str   |string|String to split|
- * |return|array |Result array   |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |str   |String to split|
+ * |return|Result array   |
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

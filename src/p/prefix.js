@@ -1,9 +1,9 @@
 /* Add vendor prefixes to a CSS attribute.
  *
- * |Name  |Type  |Desc                  |
- * |------|------|----------------------|
- * |name  |string|Property name         |
- * |return|string|Prefixed property name|
+ * |Name  |Desc                  |
+ * |------|----------------------|
+ * |name  |Property name         |
+ * |return|Prefixed property name|
  *
  * ### dash
  *
@@ -18,7 +18,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

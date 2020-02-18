@@ -1,9 +1,9 @@
 /* Get a random item from an array.
  *
- * |Name  |Type |Desc                |
- * |------|-----|--------------------|
- * |arr   |array|Array to get        |
- * |return|*    |Randomly picked item|
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |arr   |Array to get        |
+ * |return|Randomly picked item|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

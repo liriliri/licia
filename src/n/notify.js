@@ -1,9 +1,9 @@
 /* Wrapper for the Web Notifications API.
  *
- * |Name   |Type  |Desc                |
- * |-------|------|--------------------|
- * |title  |string|Notification title  |
- * |options|object|Notification options|
+ * |Name   |Desc                |
+ * |-------|--------------------|
+ * |title  |Notification title  |
+ * |options|Notification options|
  *
  * You can pass exactly the same options supported in the [Web Notification](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification).
  *

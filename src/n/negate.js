@@ -1,9 +1,9 @@
 /* Create a function that negates the result of the predicate function.
  *
- * |Name     |Type    |Desc               |
- * |---------|--------|-------------------|
- * |predicate|function|Predicate to negate|
- * |return   |function|New function       |
+ * |Name     |Desc               |
+ * |---------|-------------------|
+ * |predicate|Predicate to negate|
+ * |return   |New function       |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

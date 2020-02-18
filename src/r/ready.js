@@ -1,8 +1,8 @@
 /* Invoke callback when dom is ready, similar to jQuery ready.
  *
- * |Name|Type    |Desc             |
- * |----|--------|-----------------|
- * |fn  |function|Callback function|
+ * |Name|Desc             |
+ * |----|-----------------|
+ * |fn  |Callback function|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

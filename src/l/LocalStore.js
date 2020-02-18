@@ -4,10 +4,10 @@
  *
  * ### constructor
  *
- * |Name|Type  |Desc                  |
- * |----|------|----------------------|
- * |name|string|LocalStorage item name|
- * |data|object|Default data          |
+ * |Name|Desc                  |
+ * |----|----------------------|
+ * |name|LocalStorage item name|
+ * |data|Default data          |
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Convert string to "spaceCase".
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |str   |string|String to convert |
- * |return|string|Space cased string|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |str   |String to convert |
+ * |return|Space cased string|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

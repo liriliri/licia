@@ -2,10 +2,10 @@
 
 Web Notifications 接口简单包装。
 
-|参数名|类型|说明|
-|-----|----|---|
-|title|string|通知标题|
-|options|object|通知选项|
+|参数名|说明|
+|-----|---|
+|title|通知标题|
+|options|通知选项|
 
 你可以传入所有在 [Web Notification](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification) 中支持的选项。
 

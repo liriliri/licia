@@ -1,12 +1,12 @@
 /* Turn a list of values into a single value.
  *
- * |Name             |Type        |Desc                          |
- * |-----------------|------------|------------------------------|
- * |obj              |object array|Collection to iterate over    |
- * |iterator=identity|function    |Function invoked per iteration|
- * |[initial]        |*           |Initial value                 |
- * |[ctx]            |*           |Function context              |
- * |return           |*           |Accumulated value             |
+ * |Name             |Desc                          |
+ * |-----------------|------------------------------|
+ * |obj              |Collection to iterate over    |
+ * |iterator=identity|Function invoked per iteration|
+ * |initial          |Initial value                 |
+ * |ctx              |Function context              |
+ * |return           |Accumulated value             |
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,9 +1,9 @@
 /* Return a function that will itself return the key property of any passed-in object.
  *
- * |Name  |Type        |Desc                       |
- * |------|------------|---------------------------|
- * |path  |string array|Path of the property to get|
- * |return|function    |New accessor function      |
+ * |Name  |Desc                       |
+ * |------|---------------------------|
+ * |path  |Path of the property to get|
+ * |return|New accessor function      |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,17 +1,17 @@
 /* Normalize phone numbers into E.164 format.
  *
- * |Name   |Type  |Desc              |
- * |-------|------|------------------|
- * |phone  |string|Phone to normalize|
- * |options|object|Normalize options |
- * |return |string|Normalized phone  |
+ * |Name   |Desc              |
+ * |-------|------------------|
+ * |phone  |Phone to normalize|
+ * |options|Normalize options |
+ * |return |Normalized phone  |
  *
  * Available options:
  *
- * |Name             |Type   |Desc                                 |
- * |-----------------|-------|-------------------------------------|
- * |countryCode      |number |Country code                         |
- * |trunkPrefix=false|boolean|True if local format has trunk prefix|
+ * |Name             |Desc                                 |
+ * |-----------------|-------------------------------------|
+ * |countryCode      |Country code                         |
+ * |trunkPrefix=false|True if local format has trunk prefix|
  */
 
 /* example

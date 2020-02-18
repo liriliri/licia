@@ -1,9 +1,9 @@
 /* Simple html parser.
  *
- * |Name   |Type  |Desc         |
- * |-------|------|-------------|
- * |html   |string|Html to parse|
- * |handler|object|Handlers     |
+ * |Name   |Desc         |
+ * |-------|-------------|
+ * |html   |Html to parse|
+ * |handler|Handlers     |
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.6.0
  */
 

@@ -1,14 +1,14 @@
 /* Common mime types.
  *
- * |Name  |Type       |Desc     |
- * |------|-----------|---------|
- * |name  |string     |Extension|
- * |return|string null|Mime type|
+ * |Name  |Desc     |
+ * |------|---------|
+ * |name  |Extension|
+ * |return|Mime type|
  *
- * |Name  |Type       |Desc     |
- * |------|-----------|---------|
- * |name  |string     |Mime type|
- * |return|string null|Extension|
+ * |Name  |Desc     |
+ * |------|---------|
+ * |name  |Mime type|
+ * |return|Extension|
  *
  * It contains only the most common file types.
  */
@@ -27,7 +27,7 @@
  */
 
 /* typescript
- * export declare function mime(name: string): string | null;
+ * export declare function mime(name: string): string | undefined;
  */
 
 _('each');
@@ -103,7 +103,7 @@ each(exts, (ext, mimeType) => {
 });
 
 exports = function(name) {
-    return (isMimeType(name) ? getExt(name) : getType(name)) || null;
+    return (isMimeType(name) ? getExt(name) : getType(name)) || undefined;
 };
 
 function getType(name) {

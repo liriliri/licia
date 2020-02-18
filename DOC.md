@@ -513,27 +513,27 @@ Bloom filter implementation.
 
 ### constructor
 
-|Name     |Type  |Desc                    |
-|---------|------|------------------------|
-|size=1024|number|Number of buckets       |
-|k=3      |number|Number of Hash functions|
+|Name     |Desc                    |
+|---------|------------------------|
+|size=1024|Number of buckets       |
+|k=3      |Number of Hash functions|
 
 ### add
 
 Add an element to the filter.
 
-|Name|Type  |Desc        |
-|----|------|------------|
-|val |string|Value to add|
+|Name|Desc        |
+|----|------------|
+|val |Value to add|
 
 ### test
 
 Test if an element is in the filter.
 
-|Name  |Type   |Desc                                     |
-|------|-------|-----------------------------------------|
-|val   |string |Value to test                            |
-|return|boolean|True if probably, false if definitely not|
+|Name  |Desc                                     |
+|------|-----------------------------------------|
+|val   |Value to test                            |
+|return|True if probably, false if definitely not|
 
 ```javascript
 const bloom = new BloomFilter(256, 3);
@@ -1266,10 +1266,10 @@ Extend from Store.
 
 ### constructor
 
-|Name|Type  |Desc                  |
-|----|------|----------------------|
-|name|string|LocalStorage item name|
-|data|object|Default data          |
+|Name|Desc                  |
+|----|----------------------|
+|name|LocalStorage item name|
+|data|Default data          |
 
 ```javascript
 const store = new LocalStore('licia');
@@ -1495,9 +1495,9 @@ Queue size.
 
 ### constructor
 
-|Name |Type    |Desc      |
-|-----|--------|----------|
-|[cmp]|function|Comparator|
+|Name |Desc      |
+|-----|----------|
+|cmp  |Comparator|
 
 ### clear
 
@@ -1507,10 +1507,10 @@ Clear the queue.
 
 Add an item to the queue.
 
-|Name  |Type  |Desc        |
-|------|------|------------|
-|item  |*     |Item to add |
-|return|number|Current size|
+|Name  |Desc        |
+|------|------------|
+|item  |Item to add |
+|return|Current size|
 
 ### dequeue
 
@@ -2760,10 +2760,10 @@ Convert bytes to 32-bit words.
 
 Useful when using CryptoJS.
 
-|Name  |Type |Desc      |
-|------|-----|----------|
-|bytes |array|Byte array|
-|return|array|Word array|
+|Name  |Desc      |
+|------|----------|
+|bytes |Byte array|
+|return|Word array|
 
 ```javascript
 bytesToWords([0x12, 0x34, 0x56, 0x78]); // -> [0x12345678]
@@ -3131,41 +3131,38 @@ Compress image using canvas.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace compressImg {
-    interface IOptions {
+<code class="language-typescript">function compressImg(file: File | Blob | string, cb: Function): void;
+function compressImg(
+    file: File | Blob | string,
+    opts?: {
         maxWidth?: number;
         maxHeight?: number;
         width?: number;
         height?: number;
         mimeType?: string;
         quality?: number;
-    }
-}
-function compressImg(file: File | Blob | string, cb: Function): void;
-function compressImg(
-    file: File | Blob | string,
-    opts?: compressImg.IOptions,
+    },
     cb?: Function
 ): void;</code>
 </pre>
 </details>
 
-|Name  |Type            |Desc             |
-|------|----------------|-----------------|
-|file  |File Blob string|Image file or url|
-|[opts]|object          |Options          |
-|[cb]  |function        |Callback         |
+|Name|Desc             |
+|----|-----------------|
+|file|Image file or url|
+|opts|Options          |
+|cb  |Callback         |
 
 Available options:
 
-|Name       |Type  |Desc                            |
-|-----------|------|--------------------------------|
-|maxWidth   |number|Max width                       |
-|maxHeight  |number|Max height                      |
-|width      |number|Output image width              |
-|height     |number|Output image height             |
-|mimeType   |string|Mime type                       |
-|quality=0.8|number|Image quality, range from 0 to 1|
+|Name       |Desc                            |
+|-----------|--------------------------------|
+|maxWidth   |Max width                       |
+|maxHeight  |Max height                      |
+|width      |Output image width              |
+|height     |Output image height             |
+|mimeType   |Mime type                       |
+|quality=0.8|Image quality, range from 0 to 1|
 
 In order to keep image ratio, height will be ignored when width is set.
 
@@ -7302,17 +7299,17 @@ function keyCode(code: number): string;</code>
 
 Get key code's name.
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
-|code  |number|Key code              |
-|return|string|Corresponding key name|
+|Name  |Desc                  |
+|------|----------------------|
+|code  |Key code              |
+|return|Corresponding key name|
 
 Get key name's code.
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
-|name  |string|Key name              |
-|return|number|Corresponding key code|
+|Name  |Desc                  |
+|------|----------------------|
+|name  |Key name              |
+|return|Corresponding key code|
 
 ```javascript
 keyCode(13); // -> 'enter'
@@ -7477,10 +7474,10 @@ Load image with given src.
 </pre>
 </details>
 
-|Name|Type    |Desc           |
-|----|--------|---------------|
-|src |string  |Image source   |
-|[cb]|function|Onload callback|
+|Name|Desc           |
+|----|---------------|
+|src |Image source   |
+|cb  |Onload callback|
 
 ```javascript
 loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
@@ -7521,10 +7518,10 @@ Get the longest item in an array.
 </pre>
 </details>
 
-|Name  |Type |Desc            |
-|------|-----|----------------|
-|arr   |array|Array to inspect|
-|return|*    |Longest item    |
+|Name  |Desc            |
+|------|----------------|
+|arr   |Array to inspect|
+|return|Longest item    |
 
 ```javascript
 longest(['a', 'abcde', 'abc']); // -> 'abcde'
@@ -7775,11 +7772,11 @@ Merge sort implementation.
 
 Note: It's not an "in-place" sort.
 
-|Name  |Type    |Desc         |
-|------|--------|-------------|
-|arr   |array   |Array to sort|
-|[cmp] |function|Comparator   |
-|return|array   |Sorted array |
+|Name  |Desc         |
+|------|-------------|
+|arr   |Array to sort|
+|cmp   |Comparator   |
+|return|Sorted array |
 
 ```javascript
 mergeSort([2, 1]); // -> [1, 2]
@@ -7871,19 +7868,19 @@ Common mime types.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function mime(name: string): string | null;</code>
+<code class="language-typescript">function mime(name: string): string | undefined;</code>
 </pre>
 </details>
 
-|Name  |Type       |Desc     |
-|------|-----------|---------|
-|name  |string     |Extension|
-|return|string null|Mime type|
+|Name  |Desc     |
+|------|---------|
+|name  |Extension|
+|return|Mime type|
 
-|Name  |Type       |Desc     |
-|------|-----------|---------|
-|name  |string     |Mime type|
-|return|string null|Extension|
+|Name  |Desc     |
+|------|---------|
+|name  |Mime type|
+|return|Extension|
 
 It contains only the most common file types.
 
@@ -8028,19 +8025,19 @@ Morse code encoding and decoding.
 
 Turn text into Morse code.
 
-|Name  |Type  |Desc          |
-|------|------|--------------|
-|txt   |string|Text to encode|
-|return|string|Morse code    |
+|Name  |Desc          |
+|------|--------------|
+|txt   |Text to encode|
+|return|Morse code    |
 
 ### decode
 
 Decode Morse code into text.
 
-|Name  |Type  |Desc          |
-|------|------|--------------|
-|morse |string|Morse code    |
-|return|string|Decoded string|
+|Name  |Desc          |
+|------|--------------|
+|morse |Morse code    |
+|return|Decoded string|
 
 ```javascript
 const str = morse.encode('Hello, world.');
@@ -8096,10 +8093,10 @@ Create a function that negates the result of the predicate function.
 </pre>
 </details>
 
-|Name     |Type    |Desc               |
-|---------|--------|-------------------|
-|predicate|function|Predicate to negate|
-|return   |function|New function       |
+|Name     |Desc               |
+|---------|-------------------|
+|predicate|Predicate to negate|
+|return   |New function       |
 
 ```javascript
 function even(n) { return n % 2 === 0 }
@@ -8157,10 +8154,10 @@ Normalize http header name.
 </pre>
 </details>
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|header|string|Header to normalize|
-|return|string|Normalized header  |
+|Name  |Desc               |
+|------|-------------------|
+|header|Header to normalize|
+|return|Normalized header  |
 
 ```javascript
 normalizeHeader('content-type'); // -> 'Content-Type'
@@ -8178,10 +8175,10 @@ Normalize file path slashes.
 </pre>
 </details>
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|path  |string|Path to normalize|
-|return|string|Normalized path  |
+|Name  |Desc             |
+|------|-----------------|
+|path  |Path to normalize|
+|return|Normalized path  |
 
 ```javascript
 normalizePath('\\foo\\bar\\'); // -> '/foo/bar/'
@@ -8208,18 +8205,18 @@ function normalizePhone(
 </pre>
 </details>
 
-|Name   |Type  |Desc              |
-|-------|------|------------------|
-|phone  |string|Phone to normalize|
-|options|object|Normalize options |
-|return |string|Normalized phone  |
+|Name   |Desc              |
+|-------|------------------|
+|phone  |Phone to normalize|
+|options|Normalize options |
+|return |Normalized phone  |
 
 Available options:
 
-|Name             |Type   |Desc                                 |
-|-----------------|-------|-------------------------------------|
-|countryCode      |number |Country code                         |
-|trunkPrefix=false|boolean|True if local format has trunk prefix|
+|Name             |Desc                                 |
+|-----------------|-------------------------------------|
+|countryCode      |Country code                         |
+|trunkPrefix=false|True if local format has trunk prefix|
 
 ```javascript
 normalizePhone('13512345678', {
@@ -8251,10 +8248,10 @@ function notify(title: string, options?: object): void;</code>
 </pre>
 </details>
 
-|Name   |Type  |Desc                |
-|-------|------|--------------------|
-|title  |string|Notification title  |
-|options|object|Notification options|
+|Name   |Desc                |
+|-------|--------------------|
+|title  |Notification title  |
+|options|Notification options|
 
 You can pass exactly the same options supported in the [Web Notification](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification).
 
@@ -8435,10 +8432,10 @@ Add ordinal indicator to number.
 </pre>
 </details>
 
-|Name  |Type  |Desc                   |
-|------|------|-----------------------|
-|num   |number|Number to add indicator|
-|return|string|Result ordinal number  |
+|Name  |Desc                   |
+|------|-----------------------|
+|num   |Number to add indicator|
+|return|Result ordinal number  |
 
 ```javascript
 ordinal(1); // -> '1st'
@@ -8517,10 +8514,10 @@ Convert an object into a list of [key, value] pairs.
 </pre>
 </details>
 
-|Name  |Type  |Desc                      |
-|------|------|--------------------------|
-|obj   |object|Object to convert         |
-|return|array |List of [key, value] pairs|
+|Name  |Desc                      |
+|------|--------------------------|
+|obj   |Object to convert         |
+|return|List of [key, value] pairs|
 
 ```javascript
 pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
@@ -8537,10 +8534,10 @@ Run an array of functions in parallel.
 </pre>
 </details>
 
-|Name |Type    |Desc                   |
-|-----|--------|-----------------------|
-|tasks|array   |Array of functions     |
-|[cb] |function|Callback once completed|
+|Name |Desc                   |
+|-----|-----------------------|
+|tasks|Array of functions     |
+|cb   |Callback once completed|
 
 ```javascript
 parallel([
@@ -8612,10 +8609,10 @@ function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
 </pre>
 </details>
 
-|Name   |Type  |Desc         |
-|-------|------|-------------|
-|html   |string|Html to parse|
-|handler|object|Handlers     |
+|Name   |Desc         |
+|-------|-------------|
+|html   |Html to parse|
+|handler|Handlers     |
 
 ```javascript
 parseHtml('<div>licia</div>', {
@@ -8659,10 +8656,10 @@ Convert string to "pascalCase".
 </pre>
 </details>
 
-|Name  |Type  |Desc               |
-|------|------|-------------------|
-|str   |string|String to convert  |
-|return|string|Pascal cased string|
+|Name  |Desc               |
+|------|-------------------|
+|str   |String to convert  |
+|return|Pascal cased string|
 
 ```javascript
 pascalCase('fooBar'); // -> FooBar
@@ -8729,11 +8726,11 @@ Extract a list of property values.
 </pre>
 </details>
 
-|Name  |Type        |Desc                           |
-|------|------------|-------------------------------|
-|obj   |object array|Collection to iterate over     |
-|key   |string array|Property path                  |
-|return|array       |New array of specified property|
+|Name  |Desc                           |
+|------|-------------------------------|
+|obj   |Collection to iterate over     |
+|key   |Property path                  |
+|return|New array of specified property|
 
 ```javascript
 const stooges = [
@@ -8755,10 +8752,10 @@ Find decimal precision of a given number.
 </pre>
 </details>
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|num   |number|Number to check|
-|return|number|Precision      |
+|Name  |Desc           |
+|------|---------------|
+|num   |Number to check|
+|return|Precision      |
 
 ```javascript
 precision(1.234); // -> 3;
@@ -8800,10 +8797,10 @@ function prefix(name: string): string;</code>
 </pre>
 </details>
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
-|name  |string|Property name         |
-|return|string|Prefixed property name|
+|Name  |Desc                  |
+|------|----------------------|
+|name  |Property name         |
+|return|Prefixed property name|
 
 ### dash
 
@@ -8854,10 +8851,10 @@ Return a function that will itself return the key property of any passed-in obje
 </pre>
 </details>
 
-|Name  |Type        |Desc                       |
-|------|------------|---------------------------|
-|path  |string array|Path of the property to get|
-|return|function    |New accessor function      |
+|Name  |Desc                       |
+|------|---------------------------|
+|path  |Path of the property to get|
+|return|New accessor function      |
 
 ```javascript
 const obj = {a: {b: 1}};
@@ -9069,10 +9066,10 @@ Get a random item from an array.
 </pre>
 </details>
 
-|Name  |Type |Desc                |
-|------|-----|--------------------|
-|arr   |array|Array to get        |
-|return|*    |Randomly picked item|
+|Name  |Desc                |
+|------|--------------------|
+|arr   |Array to get        |
+|return|Randomly picked item|
 
 ```javascript
 randomItem([1, 2, 3]); // -> 2
@@ -9123,11 +9120,11 @@ RC4 encryption, result as base64 string.
 
 RC4 decryption, pass base64 string as input.
 
-|Name  |Type  |Desc                            |
-|------|------|--------------------------------|
-|key   |string|Secret key                      |
-|str   |string|String to be encrypted/decrypted|
-|return|string|Encrypted/decrypted string      |
+|Name  |Desc                            |
+|------|--------------------------------|
+|key   |Secret key                      |
+|str   |String to be encrypted/decrypted|
+|return|Encrypted/decrypted string      |
 
 ```javascript
 rc4.encrypt('licia', 'Hello world'); // -> 'j9y2VpSfR3AdNN8='
@@ -9145,9 +9142,9 @@ Invoke callback when dom is ready, similar to jQuery ready.
 </pre>
 </details>
 
-|Name|Type    |Desc             |
-|----|--------|-----------------|
-|fn  |function|Callback function|
+|Name|Desc             |
+|----|-----------------|
+|fn  |Callback function|
 
 ```javascript
 ready(function () {
@@ -9177,13 +9174,13 @@ function reduce&lt;T, TResult&gt;(
 </pre>
 </details>
 
-|Name             |Type        |Desc                          |
-|-----------------|------------|------------------------------|
-|obj              |object array|Collection to iterate over    |
-|iterator=identity|function    |Function invoked per iteration|
-|[initial]        |*           |Initial value                 |
-|[ctx]            |*           |Function context              |
-|return           |*           |Accumulated value             |
+|Name             |Desc                          |
+|-----------------|------------------------------|
+|obj              |Collection to iterate over    |
+|iterator=identity|Function invoked per iteration|
+|initial          |Initial value                 |
+|ctx              |Function context              |
+|return           |Accumulated value             |
 
 ```javascript
 reduce([1, 2, 3], function (sum, n) { return sum + n }, 0); // -> 6
@@ -9632,19 +9629,19 @@ function scrollTo(
 </pre>
 </details>
 
-|Name   |Type                 |Desc          |
-|-------|---------------------|--------------|
-|target |element string number|Scroll target |
-|options|object               |Scroll options|
+|Name   |Desc          |
+|-------|--------------|
+|target |Scroll target |
+|options|Scroll options|
 
 ### Options
 
-|Name     |Type           |Default |Desc                                   |
-|---------|---------------|--------|---------------------------------------|
-|tolerance|number         |0       |Tolerance of target to scroll          |
-|duration |number         |800     |Scroll duration                        |
-|easing   |string function|outQuart|Easing function                        |
-|callback |function       |noop    |Function to run once scrolling complete|
+|Name           |Desc                                   |
+|---------------|---------------------------------------|
+|tolerance=0    |Tolerance of target to scroll          |
+|duration=800   |Scroll duration                        |
+|easing=outQuart|Easing function                        |
+|callback=noop  |Function to run once scrolling complete|
 
 ```javascript
 scrollTo('body', {
@@ -9671,13 +9668,13 @@ Seeded random number generator.
 </pre>
 </details>
 
-|Name         |Type    |Desc                                          |
-|-------------|--------|----------------------------------------------|
-|seed         |number  |Random seed                                   |
-|min=0        |number  |Min possible value                            |
-|max=1        |number  |Maximum possible value                        |
-|floating=true|boolean |Float or not                                  |
-|return       |function|Function that generates random number sequence|
+|Name         |Desc                                          |
+|-------------|----------------------------------------------|
+|seed         |Random seed                                   |
+|min=0        |Min possible value                            |
+|max=1        |Maximum possible value                        |
+|floating=true|Float or not                                  |
+|return       |Function that generates random number sequence|
 
 ```javascript
 const random = seedRandom(19920719, 0, 100, false);
@@ -10033,10 +10030,10 @@ Convert string to "spaceCase".
 </pre>
 </details>
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|str   |string|String to convert |
-|return|string|Space cased string|
+|Name  |Desc              |
+|------|------------------|
+|str   |String to convert |
+|return|Space cased string|
 
 ```javascript
 spaceCase('fooBar'); // -> foo bar
@@ -10055,10 +10052,10 @@ Split different string case to an array.
 </pre>
 </details>
 
-|Name  |Type  |Desc           |
-|------|------|---------------|
-|str   |string|String to split|
-|return|array |Result array   |
+|Name  |Desc           |
+|------|---------------|
+|str   |String to split|
+|return|Result array   |
 
 ```javascript
 splitCase('foo-bar'); // -> ['foo', 'bar']

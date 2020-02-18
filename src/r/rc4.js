@@ -8,11 +8,11 @@
  *
  * RC4 decryption, pass base64 string as input.
  *
- * |Name  |Type  |Desc                            |
- * |------|------|--------------------------------|
- * |key   |string|Secret key                      |
- * |str   |string|String to be encrypted/decrypted|
- * |return|string|Encrypted/decrypted string      |
+ * |Name  |Desc                            |
+ * |------|--------------------------------|
+ * |key   |Secret key                      |
+ * |str   |String to be encrypted/decrypted|
+ * |return|Encrypted/decrypted string      |
  */
 
 /* example
@@ -22,7 +22,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.1.0
  */
 
