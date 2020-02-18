@@ -953,36 +953,36 @@ Hash table implementation.
 
 ### constructor
 
-|Name   |Type  |Desc       |
-|-------|------|-----------|
-|size=32|number|Bucket size|
+|Name   |Desc       |
+|-------|-----------|
+|size=32|Bucket size|
 
 ### set
 
 Set value.
 
-|Name|Type  |Desc        |
-|----|------|------------|
-|key |string|Value key   |
-|val |*     |Value to set|
+|Name|Desc        |
+|----|------------|
+|key |Value key   |
+|val |Value to set|
 
 ### get
 
 Get value.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|key   |string|Value key         |
-|return|*     |Value of given key|
+|Name  |Desc              |
+|------|------------------|
+|key   |Value key         |
+|return|Value of given key|
 
 ### has
 
 Check if has value.
 
-|Name  |Type   |Desc                |
-|------|-------|--------------------|
-|key   |string |Value key           |
-|return|boolean|True if value exists|
+|Name  |Desc                |
+|------|--------------------|
+|key   |Value key           |
+|return|True if value exists|
 
 ### delete
 
@@ -1021,9 +1021,9 @@ Heap size.
 
 ### constructor
 
-|Name |Type    |Desc      |
-|-----|--------|----------|
-|[cmp]|function|Comparator|
+|Name|Desc      |
+|----|----------|
+|cmp |Comparator|
 
 ### clear
 
@@ -1033,10 +1033,10 @@ Clear the heap.
 
 Add an item to the heap.
 
-|Name  |Type  |Desc        |
-|------|------|------------|
-|item  |*     |Item to add |
-|return|number|Current size|
+|Name  |Desc        |
+|------|------------|
+|item  |Item to add |
+|return|Current size|
 
 ### poll
 
@@ -1083,18 +1083,18 @@ Json to json transformer.
 
 ### constructor
 
-|Name     |Type  |Desc                     |
-|---------|------|-------------------------|
-|[data={}]|object|Json object to manipulate|
+|Name   |Desc                     |
+|-------|-------------------------|
+|data={}|Json object to manipulate|
 
 ### set
 
 Set object value.
 
-|Name |Type  |Desc        |
-|-----|------|------------|
-|[key]|string|Object key  |
-|val  |*     |Value to set|
+|Name|Desc        |
+|----|------------|
+|key |Object key  |
+|val |Value to set|
 
 If key is not given, the whole source object is replaced by val.
 
@@ -1102,28 +1102,28 @@ If key is not given, the whole source object is replaced by val.
 
 Get object value.
 
-|Name  |Type  |Desc                           |
-|------|------|-------------------------------|
-|[key] |string|Object key                     |
-|return|*     |Specified value or whole object|
+|Name  |Desc                           |
+|------|-------------------------------|
+|key   |Object key                     |
+|return|Specified value or whole object|
 
 ### remove
 
 Remove object value.
 
-|Name|Type        |Desc                 |
-|----|------------|---------------------|
-|key |array string|Object keys to remove|
+|Name|Desc                 |
+|----|---------------------|
+|key |Object keys to remove|
 
 ### map
 
 Shortcut for array map.
 
-|Name|Type    |Desc                          |
-|----|--------|------------------------------|
-|from|string  |From object path              |
-|to  |string  |Target object path            |
-|fn  |function|Function invoked per iteration|
+|Name|Desc                          |
+|----|------------------------------|
+|from|From object path              |
+|to  |Target object path            |
+|fn  |Function invoked per iteration|
 
 ### filter
 
@@ -1133,11 +1133,11 @@ Shortcut for array filter.
 
 Compute value from several object values.
 
-|Name|Type        |Desc                            |
-|----|------------|--------------------------------|
-|from|array string|Source values                   |
-|to  |string      |Target object path              |
-|fn  |function    |Function to compute target value|
+|Name|Desc                            |
+|----|--------------------------------|
+|from|Source values                   |
+|to  |Target object path              |
+|fn  |Function to compute target value|
 
 ```javascript
 const data = new JsonTransformer({
@@ -1205,10 +1205,10 @@ Last node.
 
 Add an value to the end of the list.
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
-|val   |*     |Value to push|
-|return|number|Current size |
+|Name  |Desc         |
+|------|-------------|
+|val   |Value to push|
+|return|Current size |
 
 ### pop
 
@@ -1230,10 +1230,10 @@ Remove node.
 
 Find node.
 
-|Name  |Type    |Desc                             |
-|------|--------|---------------------------------|
-|fn    |function|Function invoked per iteration   |
-|return|node    |First value that passes predicate|
+|Name  |Desc                             |
+|------|---------------------------------|
+|fn    |Function invoked per iteration   |
+|return|First value that passes predicate|
 
 ### forEach
 
@@ -1301,18 +1301,18 @@ Simple logger with level filter.
 
 ### constructor
 
-|Name       |Type  |Desc        |
-|-----------|------|------------|
-|name       |string|Logger name |
-|level=DEBUG|number|Logger level|
+|Name       |Desc        |
+|-----------|------------|
+|name       |Logger name |
+|level=DEBUG|Logger level|
 
 ### setLevel
 
 Set level.
 
-|Name |Type         |Desc        |
-|-----|-------------|------------|
-|level|number string|Logger level|
+|Name |Desc        |
+|-----|------------|
+|level|Logger level|
 
 ### getLevel
 
@@ -1366,44 +1366,44 @@ Simple LRU cache.
 
 ### constructor
 
-|Name|Type  |Desc              |
-|----|------|------------------|
-|max |number|Max items in cache|
+|Name|Desc              |
+|----|------------------|
+|max |Max items in cache|
 
 ### has
 
 Check if has cache.
 
-|Name  |Type   |Desc                |
-|------|-------|--------------------|
-|key   |string |Cache key           |
-|return|boolean|True if value exists|
+|Name  |Desc                |
+|------|--------------------|
+|key   |Cache key           |
+|return|True if value exists|
 
 ### remove
 
 Remove cache.
 
-|Name  |Type  |Desc     |
-|------|------|---------|
-|key   |string|Cache key|
+|Name  |Desc     |
+|------|---------|
+|key   |Cache key|
 
 ### get
 
 Get cache value.
 
-|Name  |Type  |Desc       |
-|------|------|-----------|
-|key   |string|Cache key  |
-|return|*     |Cache value|
+|Name  |Desc       |
+|------|-----------|
+|key   |Cache key  |
+|return|Cache value|
 
 ### set
 
 Set cache.
 
-|Name  |Type  |Desc       |
-|------|------|-----------|
-|key   |string|Cache key  |
-|val   |*     |Cache value|
+|Name  |Desc       |
+|------|-----------|
+|key   |Cache key  |
+|val   |Cache value|
 
 ### clear
 
@@ -1433,9 +1433,9 @@ Extend from Emitter.
 
 ### constructor
 
-|Name |Type  |Desc       |
-|-----|------|-----------|
-|query|string|Media query|
+|Name |Desc       |
+|-----|-----------|
+|query|Media query|
 
 ### isMatch
 
@@ -5280,10 +5280,10 @@ Get prototype of an object.
 </pre>
 </details>
 
-|Name  |Type|Desc                                         |
-|------|----|---------------------------------------------|
-|obj   |*   |Target object                                |
-|return|*   |Prototype of given object, null if not exists|
+|Name  |Desc                                         |
+|------|---------------------------------------------|
+|obj   |Target object                                |
+|return|Prototype of given object, null if not exists|
 
 ```javascript
 const a = {};
@@ -5301,11 +5301,11 @@ Get url param.
 </pre>
 </details>
 
-|Name        |Type  |Desc            |
-|------------|------|----------------|
-|name        |string|Param name      |
-|url=location|string|Url to get param|
-|return      |string|Param value     |
+|Name        |Desc            |
+|------------|----------------|
+|name        |Param name      |
+|url=location|Url to get param|
+|return      |Param value     |
 
 ```javascript
 getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
@@ -5327,15 +5327,15 @@ function golangify&lt;T, U = Error&gt;(
 </pre>
 </details>
 
-|Name  |Type    |Desc                                      |
-|------|--------|------------------------------------------|
-|fn    |function|Function that returns a Promise           |
-|return|function|Like fn, but resolves with [result, error]|
+|Name  |Desc                                      |
+|------|------------------------------------------|
+|fn    |Function that returns a Promise           |
+|return|Like fn, but resolves with [result, error]|
 
-|Name  |Type   |Desc                                      |
-|------|-------|------------------------------------------|
-|p     |Promise|Promise to transform                      |
-|return|Promise|Promise that resolves with [result, error]|
+|Name  |Desc                                      |
+|------|------------------------------------------|
+|p     |Promise to transform                      |
+|return|Promise that resolves with [result, error]|
 
 ```javascript
 ;(async () => {
@@ -5519,10 +5519,10 @@ Capture keyboard input to trigger given events.
 
 Register keyboard listener.
 
-|Name    |Type    |Desc        |
-|--------|--------|------------|
-|key     |string  |Key string  |
-|listener|function|Key listener|
+|Name    |Desc        |
+|--------|------------|
+|key     |Key string  |
+|listener|Key listener|
 
 ### off
 
@@ -5648,12 +5648,12 @@ Indent each line in a string.
 </pre>
 </details>
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|str   |string|String to indent    |
-|[char]|string|Character to prepend|
-|[len] |number|Indent length       |
-|return|string|Indented string     |
+|Name  |Desc                |
+|------|--------------------|
+|str   |String to indent    |
+|char  |Character to prepend|
+|len   |Indent length       |
+|return|Indented string     |
 
 ```javascript
 indent('foo\nbar', ' ', 4); // -> '    foo\n    bar'
@@ -5716,27 +5716,27 @@ const ini: {
 
 Parse ini string into js object.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|ini   |string|Ini string      |
-|return|object|Parsed js object|
+|Name  |Desc            |
+|------|----------------|
+|ini   |Ini string      |
+|return|Parsed js object|
 
 ### stringify
 
 Stringify object into an ini formatted string.
 
-|Name     |Type  |Desc                |
-|---------|------|--------------------|
-|obj      |*     |Object to stringify |
-|[options]|object|Stringify options   |
-|return   |string|Ini formatted string|
+|Name   |Desc                |
+|-------|--------------------|
+|obj    |Object to stringify |
+|options|Stringify options   |
+|return |Ini formatted string|
 
 Options:
 
-|Name            |Type   |Desc               |
-|----------------|-------|-------------------|
-|[section]       |string |Top section        |
-|whitespace=false|boolean|Whitespace around =|
+|Name            |Desc               |
+|----------------|-------------------|
+|section         |Top section        |
+|whitespace=false|Whitespace around =|
 
 ```javascript
 const config = ini.parse(`
@@ -5813,11 +5813,11 @@ function intersectRange(
 </pre>
 </details>
 
-|Name  |Type  |Desc                 |
-|------|------|---------------------|
-|a     |object|Range a              |
-|b     |object|Range b              |
-|return|object|Intersection if exist|
+|Name  |Desc                 |
+|------|---------------------|
+|a     |Range a              |
+|b     |Range b              |
+|return|Intersection if exist|
 
 ```javascript
 intersectRange({start: 0, end: 12}, {start: 11, end: 13});
@@ -7203,10 +7203,10 @@ Use JSON parse and stringify to clone object.
 </pre>
 </details>
 
-|Name  |Type|Desc          |
-|------|----|--------------|
-|val   |*   |Value to clone|
-|return|*   |Cloned value  |
+|Name  |Desc          |
+|------|--------------|
+|val   |Value to clone|
+|return|Cloned value  |
 
 ```javascript
 jsonClone({ name: 'licia' }); // -> { name: 'licia' }
@@ -7235,22 +7235,22 @@ function jsonp(opts: jsonp.IOptions): void;</code>
 </pre>
 </details>
 
-|Name|Type  |Desc         |
-|----|------|-------------|
-|opts|object|Jsonp Options|
+|Name|Desc         |
+|----|-------------|
+|opts|Jsonp Options|
 
 Available options:
 
-|Name          |Type    |Desc                  |
-|--------------|--------|----------------------|
-|url           |string  |Request url           |
-|data          |object  |Request data          |
-|success       |function|Success callback      |
-|param=callback|string  |Callback param        |
-|[name]        |string  |Callback name         |
-|error         |function|Error callback        |
-|complete      |function|Callback after request|
-|timeout       |number  |Request timeout       |
+|Name          |Desc                  |
+|--------------|----------------------|
+|url           |Request url           |
+|data          |Request data          |
+|success       |Success callback      |
+|param=callback|Callback param        |
+|name          |Callback name         |
+|error         |Error callback        |
+|complete      |Callback after request|
+|timeout       |Request timeout       |
 
 ```javascript
 jsonp({
@@ -7615,12 +7615,12 @@ function map&lt;T, TResult&gt;(
 </pre>
 </details>
 
-|Name     |Type        |Desc                          |
-|---------|------------|------------------------------|
-|object   |array object|Collection to iterate over    |
-|iterator |function    |Function invoked per iteration|
-|[context]|*           |Function context              |
-|return   |array       |New mapped array              |
+|Name    |Desc                          |
+|--------|------------------------------|
+|object  |Collection to iterate over    |
+|iterator|Function invoked per iteration|
+|context |Function context              |
+|return  |New mapped array              |
 
 ```javascript
 map([4, 8], function (n) { return n * n; }); // -> [16, 64]
@@ -7641,12 +7641,12 @@ Map for objects.
 </pre>
 </details>
 
-|Name     |Type    |Desc                          |
-|---------|--------|------------------------------|
-|object   |object  |Object to iterate over        |
-|iterator |function|Function invoked per iteration|
-|[context]|*       |Function context              |
-|return   |object  |New mapped object             |
+|Name    |Desc                          |
+|--------|------------------------------|
+|object  |Object to iterate over        |
+|iterator|Function invoked per iteration|
+|context |Function context              |
+|return  |New mapped object             |
 
 ```javascript
 mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
@@ -7802,29 +7802,29 @@ function meta(pairs: {}): void;</code>
 
 Get meta content with given name. If name is omitted, all pairs will be return.
 
-|Name  |Type        |Desc        |
-|------|------------|------------|
-|[name]|string array|Meta name   |
-|return|string      |Meta content|
+|Name  |Desc        |
+|------|------------|
+|name  |Meta name   |
+|return|Meta content|
 
 Set meta content.
 
-|Name   |Type  |Desc        |
-|-------|------|------------|
-|name   |string|Meta name   |
-|content|string|Meta content|
+|Name   |Desc        |
+|-------|------------|
+|name   |Meta name   |
+|content|Meta content|
 
-|Name |Type  |Desc                        |
-|-----|------|----------------------------|
-|metas|object|Object of name content pairs|
+|Name |Desc                        |
+|-----|----------------------------|
+|metas|Object of name content pairs|
 
 ### remove
 
 Remove metas.
 
-|Name|Type        |Desc     |
-|----|------------|---------|
-|name|string array|Meta name|
+|Name|Desc     |
+|----|---------|
+|name|Meta name|
 
 ```javascript
 // <meta name="a" content="1"/> <meta name="b" content="2"/> <meta name="c" content="3"/>
@@ -7923,11 +7923,11 @@ function mkdir(dir: string, cb?: Function): void;</code>
 </pre>
 </details>
 
-|Name      |Type    |Desc               |
-|----------|--------|-------------------|
-|dir       |string  |Directory to create|
-|mode=0777 |number  |Directory mode     |
-|[callback]|function|Callback           |
+|Name     |Desc               |
+|---------|-------------------|
+|dir      |Directory to create|
+|mode=0777|Directory mode     |
+|callback |Callback           |
 
 ```javascript
 mkdir('/tmp/foo/bar/baz', function (err) {
@@ -8342,10 +8342,10 @@ Create a function that invokes once.
 </pre>
 </details>
 
-|Name  |Type    |Desc                   |
-|------|--------|-----------------------|
-|fn    |function|Function to restrict   |
-|return|function|New restricted function|
+|Name  |Desc                   |
+|------|-----------------------|
+|fn    |Function to restrict   |
+|return|New restricted function|
 
 ```javascript
 function init() {};
@@ -8365,10 +8365,10 @@ Open stuff like url, files.
 </pre>
 </details>
 
-|Name  |Type        |Desc         |
-|------|------------|-------------|
-|target|string      |Stuff to open|
-|return|ChildProcess|Child process|
+|Name  |Desc         |
+|------|-------------|
+|target|Stuff to open|
+|return|Child process|
 
 ```javascript
 open('https://eustia.liriliri.io/');
@@ -8392,17 +8392,17 @@ function openFile(options?: openFile.IOptions): Promise&lt;File[]&gt;;</code>
 </pre>
 </details>
 
-|Name   |Type   |Desc          |
-|-------|-------|--------------|
-|options|object |Dialog options|
-|return |Promise|Files promise |
+|Name   |Desc          |
+|-------|--------------|
+|options|Dialog options|
+|return |Files promise |
 
 Available options:
 
-|Name          |Type   |Desc                        |
-|--------------|-------|----------------------------|
-|accept        |string |File types                  |
-|multiple=false|boolean|Select multiple files or not|
+|Name          |Desc                        |
+|--------------|----------------------------|
+|accept        |File types                  |
+|multiple=false|Select multiple files or not|
 
 ```javascript
 openFile({multiple: true}).then(fileList => {

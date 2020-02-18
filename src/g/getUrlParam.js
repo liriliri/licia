@@ -1,10 +1,10 @@
 /* Get url param.
  *
- * |Name        |Type  |Desc            |
- * |------------|------|----------------|
- * |name        |string|Param name      |
- * |url=location|string|Url to get param|
- * |return      |string|Param value     |
+ * |Name        |Desc            |
+ * |------------|----------------|
+ * |name        |Param name      |
+ * |url=location|Url to get param|
+ * |return      |Param value     |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

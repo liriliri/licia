@@ -2,18 +2,18 @@
  *
  * ### constructor
  *
- * |Name       |Type  |Desc        |
- * |-----------|------|------------|
- * |name       |string|Logger name |
- * |level=DEBUG|number|Logger level|
+ * |Name       |Desc        |
+ * |-----------|------------|
+ * |name       |Logger name |
+ * |level=DEBUG|Logger level|
  *
  * ### setLevel
  *
  * Set level.
  *
- * |Name |Type         |Desc        |
- * |-----|-------------|------------|
- * |level|number string|Logger level|
+ * |Name |Desc        |
+ * |-----|------------|
+ * |level|Logger level|
  *
  * ### getLevel
  *
@@ -50,7 +50,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,11 +1,11 @@
 /* Map for objects.
  *
- * |Name     |Type    |Desc                          |
- * |---------|--------|------------------------------|
- * |object   |object  |Object to iterate over        |
- * |iterator |function|Function invoked per iteration|
- * |[context]|*       |Function context              |
- * |return   |object  |New mapped object             |
+ * |Name    |Desc                          |
+ * |--------|------------------------------|
+ * |object  |Object to iterate over        |
+ * |iterator|Function invoked per iteration|
+ * |context |Function context              |
+ * |return  |New mapped object             |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

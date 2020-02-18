@@ -1,11 +1,11 @@
 /* Create an array of values by running each element in collection through iteratee.
  *
- * |Name     |Type        |Desc                          |
- * |---------|------------|------------------------------|
- * |object   |array object|Collection to iterate over    |
- * |iterator |function    |Function invoked per iteration|
- * |[context]|*           |Function context              |
- * |return   |array       |New mapped array              |
+ * |Name    |Desc                          |
+ * |--------|------------------------------|
+ * |object  |Collection to iterate over    |
+ * |iterator|Function invoked per iteration|
+ * |context |Function context              |
+ * |return  |New mapped array              |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -4,9 +4,9 @@
  *
  * ### constructor
  *
- * |Name |Type  |Desc       |
- * |-----|------|-----------|
- * |query|string|Media query|
+ * |Name |Desc       |
+ * |-----|-----------|
+ * |query|Media query|
  *
  * ### isMatch
  *
@@ -33,7 +33,6 @@
 
 /* module
  * env: browser
- * test: browser
  * since: 1.5.2
  */
 

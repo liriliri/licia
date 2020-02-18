@@ -2,44 +2,44 @@
  *
  * ### constructor
  *
- * |Name|Type  |Desc              |
- * |----|------|------------------|
- * |max |number|Max items in cache|
+ * |Name|Desc              |
+ * |----|------------------|
+ * |max |Max items in cache|
  *
  * ### has
  *
  * Check if has cache.
  *
- * |Name  |Type   |Desc                |
- * |------|-------|--------------------|
- * |key   |string |Cache key           |
- * |return|boolean|True if value exists|
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |key   |Cache key           |
+ * |return|True if value exists|
  *
  * ### remove
  *
  * Remove cache.
  *
- * |Name  |Type  |Desc     |
- * |------|------|---------|
- * |key   |string|Cache key|
+ * |Name  |Desc     |
+ * |------|---------|
+ * |key   |Cache key|
  *
  * ### get
  *
  * Get cache value.
  *
- * |Name  |Type  |Desc       |
- * |------|------|-----------|
- * |key   |string|Cache key  |
- * |return|*     |Cache value|
+ * |Name  |Desc       |
+ * |------|-----------|
+ * |key   |Cache key  |
+ * |return|Cache value|
  *
  * ### set
  *
  * Set cache.
  *
- * |Name  |Type  |Desc       |
- * |------|------|-----------|
- * |key   |string|Cache key  |
- * |val   |*     |Cache value|
+ * |Name  |Desc       |
+ * |------|-----------|
+ * |key   |Cache key  |
+ * |val   |Cache value|
  *
  * ### clear
  *
@@ -54,7 +54,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.4.5
  */
 

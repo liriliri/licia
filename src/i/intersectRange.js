@@ -1,10 +1,10 @@
 /* Intersect two ranges.
  *
- * |Name  |Type  |Desc                 |
- * |------|------|---------------------|
- * |a     |object|Range a              |
- * |b     |object|Range b              |
- * |return|object|Intersection if exist|
+ * |Name  |Desc                 |
+ * |------|---------------------|
+ * |a     |Range a              |
+ * |b     |Range b              |
+ * |return|Intersection if exist|
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

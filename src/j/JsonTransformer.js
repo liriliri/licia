@@ -2,18 +2,18 @@
  *
  * ### constructor
  *
- * |Name     |Type  |Desc                     |
- * |---------|------|-------------------------|
- * |[data={}]|object|Json object to manipulate|
+ * |Name   |Desc                     |
+ * |-------|-------------------------|
+ * |data={}|Json object to manipulate|
  *
  * ### set
  *
  * Set object value.
  *
- * |Name |Type  |Desc        |
- * |-----|------|------------|
- * |[key]|string|Object key  |
- * |val  |*     |Value to set|
+ * |Name|Desc        |
+ * |----|------------|
+ * |key |Object key  |
+ * |val |Value to set|
  *
  * If key is not given, the whole source object is replaced by val.
  *
@@ -21,28 +21,28 @@
  *
  * Get object value.
  *
- * |Name  |Type  |Desc                           |
- * |------|------|-------------------------------|
- * |[key] |string|Object key                     |
- * |return|*     |Specified value or whole object|
+ * |Name  |Desc                           |
+ * |------|-------------------------------|
+ * |key   |Object key                     |
+ * |return|Specified value or whole object|
  *
  * ### remove
  *
  * Remove object value.
  *
- * |Name|Type        |Desc                 |
- * |----|------------|---------------------|
- * |key |array string|Object keys to remove|
+ * |Name|Desc                 |
+ * |----|---------------------|
+ * |key |Object keys to remove|
  *
  * ### map
  *
  * Shortcut for array map.
  *
- * |Name|Type    |Desc                          |
- * |----|--------|------------------------------|
- * |from|string  |From object path              |
- * |to  |string  |Target object path            |
- * |fn  |function|Function invoked per iteration|
+ * |Name|Desc                          |
+ * |----|------------------------------|
+ * |from|From object path              |
+ * |to  |Target object path            |
+ * |fn  |Function invoked per iteration|
  *
  * ### filter
  *
@@ -52,11 +52,11 @@
  *
  * Compute value from several object values.
  *
- * |Name|Type        |Desc                            |
- * |----|------------|--------------------------------|
- * |from|array string|Source values                   |
- * |to  |string      |Target object path              |
- * |fn  |function    |Function to compute target value|
+ * |Name|Desc                            |
+ * |----|--------------------------------|
+ * |from|Source values                   |
+ * |to  |Target object path              |
+ * |fn  |Function to compute target value|
  */
 
 /* example

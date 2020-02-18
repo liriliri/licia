@@ -1,9 +1,9 @@
 /* Use JSON parse and stringify to clone object.
  *
- * |Name  |Type|Desc          |
- * |------|----|--------------|
- * |val   |*   |Value to clone|
- * |return|*   |Cloned value  |
+ * |Name  |Desc          |
+ * |------|--------------|
+ * |val   |Value to clone|
+ * |return|Cloned value  |
  */
 
 /* example

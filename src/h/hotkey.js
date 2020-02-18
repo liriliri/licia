@@ -4,10 +4,10 @@
  *
  * Register keyboard listener.
  *
- * |Name    |Type    |Desc        |
- * |--------|--------|------------|
- * |key     |string  |Key string  |
- * |listener|function|Key listener|
+ * |Name    |Desc        |
+ * |--------|------------|
+ * |key     |Key string  |
+ * |listener|Key listener|
  *
  * ### off
  *

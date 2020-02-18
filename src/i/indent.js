@@ -1,11 +1,11 @@
 /* Indent each line in a string.
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |str   |string|String to indent    |
- * |[char]|string|Character to prepend|
- * |[len] |number|Indent length       |
- * |return|string|Indented string     |
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |str   |String to indent    |
+ * |char  |Character to prepend|
+ * |len   |Indent length       |
+ * |return|Indented string     |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

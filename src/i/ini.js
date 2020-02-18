@@ -4,27 +4,27 @@
  *
  * Parse ini string into js object.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |ini   |string|Ini string      |
- * |return|object|Parsed js object|
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |ini   |Ini string      |
+ * |return|Parsed js object|
  *
  * ### stringify
  *
  * Stringify object into an ini formatted string.
  *
- * |Name     |Type  |Desc                |
- * |---------|------|--------------------|
- * |obj      |*     |Object to stringify |
- * |[options]|object|Stringify options   |
- * |return   |string|Ini formatted string|
+ * |Name   |Desc                |
+ * |-------|--------------------|
+ * |obj    |Object to stringify |
+ * |options|Stringify options   |
+ * |return |Ini formatted string|
  *
  * Options:
  *
- * |Name            |Type   |Desc               |
- * |----------------|-------|-------------------|
- * |[section]       |string |Top section        |
- * |whitespace=false|boolean|Whitespace around =|
+ * |Name            |Desc               |
+ * |----------------|-------------------|
+ * |section         |Top section        |
+ * |whitespace=false|Whitespace around =|
  */
 
 /* example
@@ -43,7 +43,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.4
  */
 

@@ -1,9 +1,9 @@
 /* Get prototype of an object.
  *
- * |Name  |Type|Desc                                         |
- * |------|----|---------------------------------------------|
- * |obj   |*   |Target object                                |
- * |return|*   |Prototype of given object, null if not exists|
+ * |Name  |Desc                                         |
+ * |------|---------------------------------------------|
+ * |obj   |Target object                                |
+ * |return|Prototype of given object, null if not exists|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.5
  */
 

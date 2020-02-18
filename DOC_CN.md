@@ -948,36 +948,36 @@ if (val === importance.CRITICAL) {
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|size=32|number|桶数目|
+|参数名|说明|
+|-----|---|
+|size=32|桶数目|
 
 ### set
 
 设置值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|键名|
-|val|*|键值|
+|参数名|说明|
+|-----|---|
+|key|键名|
+|val|键值|
 
 ### get
 
 获取值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|键名|
-|返回值|*|键值|
+|参数名|说明|
+|-----|---|
+|key|键名|
+|返回值|键值|
 
 ### has
 
 检查是否有指定值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|键名|
-|返回值|boolean|如果值存在，返回真|
+|参数名|说明|
+|-----|---|
+|key|键名|
+|返回值|如果值存在，返回真|
 
 ### delete
 
@@ -1016,9 +1016,9 @@ hashTable.has('name'); // -> false
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|[cmp]|function|比较器|
+|参数名|说明|
+|-----|---|
+|cmp|比较器|
 
 ### clear
 
@@ -1028,10 +1028,10 @@ hashTable.has('name'); // -> false
 
 往堆里添加元素。
 
-|参数名|类型|说明|
-|-----|----|---|
-|item|*|入堆元素|
-|返回值|number|当前大小|
+|参数名|说明|
+|-----|---|
+|item|入堆元素|
+|返回值|当前大小|
 
 ### poll
 
@@ -1078,18 +1078,18 @@ JSON 转换器。
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|[data={}]|object|目标 JSON 对象|
+|参数名|说明|
+|-----|---|
+|data={}|目标 JSON 对象|
 
 ### set
 
 设置属性值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|[key]|string|属性路径|
-|val|*|值|
+|参数名|说明|
+|-----|---|
+|key|属性路径|
+|val|值|
 
 如果属性路径为空，整个对象将被值替换。
 
@@ -1097,28 +1097,28 @@ JSON 转换器。
 
 获取属性值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|[key]|string|属性路径|
-|返回值|*|指定值或整个对象|
+|参数名|说明|
+|-----|---|
+|key|属性路径|
+|返回值|指定值或整个对象|
 
 ### remove
 
 移除属性值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|array string|属性路径|
+|参数名|说明|
+|-----|---|
+|key|属性路径|
 
 ### map
 
 数组 map 的快捷方式。
 
-|参数名|类型|说明|
-|-----|----|---|
-|from|string|源对象路径|
-|to|string|目标对象路径|
-|fn|function|真值检测函数|
+|参数名|说明|
+|-----|---|
+|from|源对象路径|
+|to|目标对象路径|
+|fn|真值检测函数|
 
 ### filter
 
@@ -1128,11 +1128,11 @@ JSON 转换器。
 
 从多个属性值计算新值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|from|array string|源属性路径|
-|to|string|目标属性路径|
-|fn|function|计算函数|
+|参数名|说明|
+|-----|---|
+|from|源属性路径|
+|to|目标属性路径|
+|fn|计算函数|
 
 ```javascript
 const data = new JsonTransformer({
@@ -1200,10 +1200,10 @@ class LinkedList {
 
 向链表尾部添加值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要添加的值|
-|返回值|number|链表大小|
+|参数名|说明|
+|-----|---|
+|val|要添加的值|
+|返回值|链表大小|
 
 ### pop
 
@@ -1225,10 +1225,10 @@ class LinkedList {
 
 查找节点。
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|真值检测函数|
-|返回值|node|第一个通过的节点|
+|参数名|说明|
+|-----|---|
+|fn|真值检测函数|
+|返回值|第一个通过的节点|
 
 ### forEach
 
@@ -1296,18 +1296,18 @@ store.set('name', 'licia');
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|日志名称|
-|level=DEBUG|number|日志级别|
+|参数名|说明|
+|-----|---|
+|name|日志名称|
+|level=DEBUG|日志级别|
 
 ### setLevel
 
 设置日志级别。
 
-|参数名|类型|说明|
-|-----|----|---|
-|level|number string|日志级别|
+|参数名|说明|
+|-----|---|
+|level|日志级别|
 
 ### getLevel
 
@@ -1361,44 +1361,44 @@ logger.on('debug', function (argList) {
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|max|number|最大缓存数|
+|参数名|说明|
+|-----|---|
+|max|最大缓存数|
 
 ### has
 
 检查是否有缓存。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|缓存键名|
-|返回值|boolean|如果有，返回真|
+|参数名|说明|
+|-----|---|
+|key|缓存键名|
+|返回值|如果有，返回真|
 
 ### remove
 
 删除缓存。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|缓存键名|
+|参数名|说明|
+|-----|---|
+|key|缓存键名|
 
 ### get
 
 获取缓存。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|缓存键名|
-|返回值|*|缓存值|
+|参数名|说明|
+|-----|---|
+|key|缓存键名|
+|返回值|缓存值|
 
 ### set
 
 设置缓存。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|缓存键名|
-|val|*|缓存值|
+|参数名|说明|
+|-----|---|
+|key|缓存键名|
+|val|缓存值|
 
 ### clear
 
@@ -1428,9 +1428,9 @@ CSS 媒体查询监听器。
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|query|string|媒体查询字符串|
+|参数名|说明|
+|-----|---|
+|query|媒体查询字符串|
 
 ### isMatch
 
@@ -5276,10 +5276,10 @@ getPort([3000, 3001], '127.0.0.1').then(port => {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|*|目标对象|
-|返回值|*|对象原型，如果不存在，返回 null|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|返回值|对象原型，如果不存在，返回 null|
 
 ```javascript
 const a = {};
@@ -5297,11 +5297,11 @@ getProto(Object.create(a)); // -> a
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|参数名|
-|url=location|string|目标 url|
-|返回值|string|参数值|
+|参数名|说明|
+|-----|---|
+|name|参数名|
+|url=location|目标 url|
+|返回值|参数值|
 
 ```javascript
 getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
@@ -5323,15 +5323,15 @@ function golangify&lt;T, U = Error&gt;(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|返回 Promise 的函数| 
-|返回值|function|同上，但 Promise 的结果形式为 [result, error]|
+|参数名|说明|
+|-----|---|
+|fn|返回 Promise 的函数| 
+|返回值|同上，但 Promise 的结果形式为 [result, error]|
 
-|参数名|类型|说明|
-|-----|----|---|
-|p|Promise|要转换的 Promise|
-|返回值|Promise|目标 Promise，结果形式为 [result, error]|
+|参数名|说明|
+|-----|---|
+|p|要转换的 Promise|
+|返回值|目标 Promise，结果形式为 [result, error]|
 
 ```javascript
 ;(async () => {
@@ -5515,10 +5515,10 @@ highlight('const a = 5;', 'js', {
 
 注册键盘按键监听器。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|按键|
-|listener|function|监听器|
+|参数名|说明|
+|-----|---|
+|key|按键|
+|listener|监听器|
 
 ### off
 
@@ -5644,12 +5644,12 @@ idxOf([1, 2, 1, 2], 2, 2); // -> 3
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|[char]|string|缩进字符|
-|[len]|number|缩进长度|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|char|缩进字符|
+|len|缩进长度|
+|返回值|目标字符串|
 
 ```javascript
 indent('foo\nbar', ' ', 4); // -> '    foo\n    bar'
@@ -5712,27 +5712,27 @@ const ini: {
 
 将 ini 文件转换为 js 对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|ini|string|ini 文件|
-|返回值|object|js 对象|
+|参数名|说明|
+|-----|---|
+|ini|ini 文件|
+|返回值|js 对象|
 
 ### stringify
 
 将 js 对象序列化成 ini 文件格式。
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|*|要序列化的对象|
-|[options]|object|序列化选项|
-|返回值|string|ini 文件|
+|参数名|说明|
+|-----|---|
+|obj|要序列化的对象|
+|options|序列化选项|
+|返回值|ini 文件|
 
 选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|[section]|string|顶部名称|
-|whitespace=false|boolean|是否在 = 周围添加空格|
+|参数名|说明|
+|-----|---|
+|section|顶部名称|
+|whitespace=false|是否在 = 周围添加空格|
 
 ```javascript
 const config = ini.parse(`
@@ -5809,11 +5809,11 @@ function intersectRange(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|a|object|区间 a|
-|b|object|区间 b|
-|返回值|object|如果存在区间交集，返回它|
+|参数名|说明|
+|-----|---|
+|a|区间 a|
+|b|区间 b|
+|返回值|如果存在区间交集，返回它|
 
 ```javascript
 intersectRange({start: 0, end: 12}, {start: 11, end: 13});
@@ -7199,10 +7199,10 @@ console.log(isWindows); // -> true if running on windows
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|val|*|要克隆的值|
-|返回值|*|克隆值|
+|参数名|说明|
+|-----|---|
+|val|要克隆的值|
+|返回值|克隆值|
 
 ```javascript
 jsonClone({ name: 'licia' }); // -> { name: 'licia' }
@@ -7231,22 +7231,22 @@ function jsonp(opts: jsonp.IOptions): void;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|opts|object|jsonp 选项|
+|参数名|说明|
+|-----|---|
+|opts|jsonp 选项|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|url|string|请求地址|
-|data|object|请求数据|
-|success|function|成功回调|
-|param=callback|string|回调参数名|
-|[name]|string|回调函数名|
-|error|function|失败回调|
-|complete|function|结束回调|
-|timeout|number|请求超时|
+|参数名|说明|
+|-----|---|
+|url|请求地址|
+|data|请求数据|
+|success|成功回调|
+|param=callback|回调参数名|
+|name|回调函数名|
+|error|失败回调|
+|complete|结束回调|
+|timeout|请求超时|
 
 ```javascript
 jsonp({
@@ -7611,12 +7611,12 @@ function map&lt;T, TResult&gt;(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|object|array object|源集合|
-|iterator|function|转换函数|
-|[context]|*|函数上下文|
-|返回值|array|目标集合|
+|参数名|说明|
+|-----|---|
+|object|源集合|
+|iterator|转换函数|
+|context|函数上下文|
+|返回值|目标集合|
 
 ```javascript
 map([4, 8], function (n) { return n * n; }); // -> [16, 64]
@@ -7637,12 +7637,12 @@ map([4, 8], function (n) { return n * n; }); // -> [16, 64]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|object|object|源对象|
-|iterator|function|转换函数|
-|[context]|*|函数上下文|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|object|源对象|
+|iterator|转换函数|
+|context|函数上下文|
+|返回值|目标对象|
 
 ```javascript
 mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
@@ -7798,29 +7798,29 @@ function meta(pairs: {}): void;</code>
 
 获取指定 meta 值。如果忽略 meta 名，所有的 meta 键值对都被返回。
 
-|参数名|类型|说明|
-|-----|----|---|
-|[name]|string array|meta 名|
-|返回值|string|meta 值|
+|参数名|说明|
+|-----|---|
+|name|meta 名|
+|返回值|meta 值|
 
 设置 meta 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|meta 名|
-|content|string|meta 值|
+|参数名|说明|
+|-----|---|
+|name|meta 名|
+|content|meta 值|
 
-|参数名|类型|说明|
-|-----|----|---|
-|metas|object|包含所有 meta 键值对的对象|
+|参数名|说明|
+|-----|---|
+|metas|包含所有 meta 键值对的对象|
 
 ### remove
 
 移除指定 meta。
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string array|meta 名|
+|参数名|说明|
+|-----|---|
+|name|meta 名|
 
 ```javascript
 // <meta name="a" content="1"/> <meta name="b" content="2"/> <meta name="c" content="3"/>
@@ -7919,11 +7919,11 @@ function mkdir(dir: string, cb?: Function): void;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|dir|string|文件夹路径|
-|mode=0777|number|文件夹模式|
-|[callback]|function|回调|
+|参数名|说明|
+|-----|---|
+|dir|文件夹路径|
+|mode=0777|文件夹模式|
+|callback|回调|
 
 ```javascript
 mkdir('/tmp/foo/bar/baz', function (err) {
@@ -8336,10 +8336,10 @@ omit({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|源函数|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|fn|源函数|
+|返回值|目标函数|
 
 ```javascript
 function init() {};
@@ -8359,10 +8359,10 @@ initOnce(); // -> init is invoked once
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|target|string|要打开的目标|
-|返回值|ChildProcess|子进程对象|
+|参数名|说明|
+|-----|---|
+|target|要打开的目标|
+|返回值|子进程对象|
 
 ```javascript
 open('https://eustia.liriliri.io/');
@@ -8386,17 +8386,17 @@ function openFile(options?: openFile.IOptions): Promise&lt;File[]&gt;;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|options|object|选项|
-|返回值|Promise|文件列表|
+|参数名|说明|
+|-----|---|
+|options|选项|
+|返回值|文件列表|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|accept|string|文件类型|
-|multiple=false|boolean|是否支持多选|
+|参数名|说明|
+|-----|---|
+|accept|文件类型|
+|multiple=false|是否支持多选|
 
 ```javascript
 openFile({multiple: true}).then(fileList => {

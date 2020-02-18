@@ -1,14 +1,14 @@
 /* Handle errors like golang.
  *
- * |Name  |Type    |Desc                                      |
- * |------|--------|------------------------------------------|
- * |fn    |function|Function that returns a Promise           |
- * |return|function|Like fn, but resolves with [result, error]|
+ * |Name  |Desc                                      |
+ * |------|------------------------------------------|
+ * |fn    |Function that returns a Promise           |
+ * |return|Like fn, but resolves with [result, error]|
  *
- * |Name  |Type   |Desc                                      |
- * |------|-------|------------------------------------------|
- * |p     |Promise|Promise to transform                      |
- * |return|Promise|Promise that resolves with [result, error]|
+ * |Name  |Desc                                      |
+ * |------|------------------------------------------|
+ * |p     |Promise to transform                      |
+ * |return|Promise that resolves with [result, error]|
  */
 
 /* example
@@ -27,7 +27,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.4
  */
 

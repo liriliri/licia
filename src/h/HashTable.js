@@ -2,36 +2,36 @@
  *
  * ### constructor
  *
- * |Name   |Type  |Desc       |
- * |-------|------|-----------|
- * |size=32|number|Bucket size|
+ * |Name   |Desc       |
+ * |-------|-----------|
+ * |size=32|Bucket size|
  *
  * ### set
  *
  * Set value.
  *
- * |Name|Type  |Desc        |
- * |----|------|------------|
- * |key |string|Value key   |
- * |val |*     |Value to set|
+ * |Name|Desc        |
+ * |----|------------|
+ * |key |Value key   |
+ * |val |Value to set|
  *
  * ### get
  *
  * Get value.
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |key   |string|Value key         |
- * |return|*     |Value of given key|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |key   |Value key         |
+ * |return|Value of given key|
  *
  * ### has
  *
  * Check if has value.
  *
- * |Name  |Type   |Desc                |
- * |------|-------|--------------------|
- * |key   |string |Value key           |
- * |return|boolean|True if value exists|
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |key   |Value key           |
+ * |return|True if value exists|
  *
  * ### delete
  *

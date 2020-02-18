@@ -16,10 +16,10 @@
  *
  * Add an value to the end of the list.
  *
- * |Name  |Type  |Desc         |
- * |------|------|-------------|
- * |val   |*     |Value to push|
- * |return|number|Current size |
+ * |Name  |Desc         |
+ * |------|-------------|
+ * |val   |Value to push|
+ * |return|Current size |
  *
  * ### pop
  *
@@ -41,10 +41,10 @@
  *
  * Find node.
  *
- * |Name  |Type    |Desc                             |
- * |------|--------|---------------------------------|
- * |fn    |function|Function invoked per iteration   |
- * |return|node    |First value that passes predicate|
+ * |Name  |Desc                             |
+ * |------|---------------------------------|
+ * |fn    |Function invoked per iteration   |
+ * |return|First value that passes predicate|
  *
  * ### forEach
  *

@@ -1,21 +1,21 @@
 /* A simple jsonp implementation.
  *
- * |Name|Type  |Desc         |
- * |----|------|-------------|
- * |opts|object|Jsonp Options|
+ * |Name|Desc         |
+ * |----|-------------|
+ * |opts|Jsonp Options|
  *
  * Available options:
  *
- * |Name          |Type    |Desc                  |
- * |--------------|--------|----------------------|
- * |url           |string  |Request url           |
- * |data          |object  |Request data          |
- * |success       |function|Success callback      |
- * |param=callback|string  |Callback param        |
- * |[name]        |string  |Callback name         |
- * |error         |function|Error callback        |
- * |complete      |function|Callback after request|
- * |timeout       |number  |Request timeout       |
+ * |Name          |Desc                  |
+ * |--------------|----------------------|
+ * |url           |Request url           |
+ * |data          |Request data          |
+ * |success       |Success callback      |
+ * |param=callback|Callback param        |
+ * |name          |Callback name         |
+ * |error         |Error callback        |
+ * |complete      |Callback after request|
+ * |timeout       |Request timeout       |
  */
 
 /* example
@@ -30,7 +30,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript
