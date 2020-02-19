@@ -19,12 +19,10 @@
  */
 
 /* typescript
- * export declare namespace createUrl {
- *     interface IOptions {
- *         type?: string
- *     }
- * }
- * export declare function createUrl(data: any, options?: createUrl.IOptions): string;
+ * export declare function createUrl(
+ *     data: any,
+ *     options?: { type?: string }
+ * ): string;
  */
 
 _('defaults isBlob isFile Blob toArr');

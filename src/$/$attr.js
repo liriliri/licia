@@ -47,14 +47,17 @@
 
 /* typescript
  * export declare namespace $attr {
- *     interface IAttr {
- *         (element: $safeEls.El, name: string, value: string): void;
- *         (element: $safeEls.El, attributes: { [name: string]: string }): void;
- *         (element: $safeEls.El, name: string): string;
- *         remove(element: $safeEls.El, name: string): void;
- *     }
+ *     function remove(element: $safeEls.El, name: string): void;
  * }
- * export declare const $attr: $attr.IAttr;
+ * export declare function $attr(
+ *     element: $safeEls.El,name: string,
+ *     value: string
+ * ): void;
+ * export declare function $attr(
+ *     element: $safeEls.El,
+ *     attributes: { [name: string]: string }
+ * ): void;
+ * export declare function $attr(element: $safeEls.El, name: string): string;
  */
 
 _('toArr isObj isStr each isUndef $safeEls');

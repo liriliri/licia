@@ -20,13 +20,10 @@
  */
 
 /* typescript
- * export declare namespace detectBrowser {
- *     interface IBrowser {
- *         name: string;
- *         version: number;
- *     }
- * }
- * export declare function detectBrowser(ua?: string): detectBrowser.IBrowser;
+ * export declare function detectBrowser(ua?: string): {
+ *     name: string;
+ *     version: number;
+ * };
  */
 
 _('isBrowser toInt keys');

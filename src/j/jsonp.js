@@ -33,19 +33,16 @@
  */
 
 /* typescript
- * export declare namespace jsonp {
- *     interface IOptions {
- *         url: string;
- *         data?: any;
- *         success?: Function;
- *         param?: string;
- *         name?: string;
- *         error?: Function;
- *         complete?: Function;
- *         timeout?: number;
- *     }
- * }
- * export declare function jsonp(options: jsonp.IOptions): void;
+ * export declare function jsonp(options: {
+ *     url: string;
+ *     data?: any;
+ *     success?: Function;
+ *     param?: string;
+ *     name?: string;
+ *     error?: Function;
+ *     complete?: Function;
+ *     timeout?: number;
+ * }): void;
  */
 
 _('loadJs defaults noop uniqId query');

@@ -57,23 +57,32 @@
 
 /* typescript
  * export declare namespace ajax {
- *     interface IOptions {
- *         type?: string;
- *         url: string;
- *         data?: string | {};
- *         dataType?: string;
- *         contentType?: string;
- *         success?: Function;
- *         error?: Function;
- *         complete?: Function;
- *         timeout?: number;
- *     }
- *     function get(url: string, data: string | {}, success: Function, dataType?: string): XMLHttpRequest;
+ *     function get(
+ *         url: string,
+ *         data: string | {},
+ *         success: Function,
+ *         dataType?: string
+ *     ): XMLHttpRequest;
  *     function get(url: string, success: Function, dataType?: string): XMLHttpRequest;
- *     function post(url: string, data: string | {}, success: Function, dataType?: string): XMLHttpRequest;
+ *     function post(
+ *         url: string,
+ *         data: string | {},
+ *         success: Function,
+ *         dataType?: string
+ *     ): XMLHttpRequest;
  *     function post(url: string, success: Function, dataType?: string): XMLHttpRequest;
  * }
- * export declare function ajax(options: ajax.IOptions): XMLHttpRequest;
+ * export declare function ajax(options: {
+ *     type?: string;
+ *     url: string;
+ *     data?: string | {};
+ *     dataType?: string;
+ *     contentType?: string;
+ *     success?: Function;
+ *     error?: Function;
+ *     complete?: Function;
+ *     timeout?: number;
+ * }): XMLHttpRequest;
  */
 
 _('isFn noop defaults isObj query');

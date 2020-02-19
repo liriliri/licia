@@ -31,16 +31,13 @@
  */
 
 /* typescript
- * export declare namespace fuzzySearch {
- *     interface IOptions {
- *         caseSensitive?: boolean;
- *         key?: string | string[];
- *     }
- * }
  * export declare function fuzzySearch(
  *     needle: string,
  *     haystack: any[],
- *     options?: fuzzySearch.IOptions
+ *     options?: {
+ *         caseSensitive?: boolean;
+ *         key?: string | string[];
+ *     }
  * ): any[];
  */
 

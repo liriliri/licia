@@ -22,15 +22,12 @@
  */
 
 /* typescript
- * export declare namespace fileType {
- *     interface IFileType {
- *         ext: string;
- *         mime: string;
- *     }
- * }
  * export declare function fileType(
  *     input: Buffer | ArrayBuffer | Uint8Array
- * ): fileType.IFileType | undefined;
+ * ): {
+ *     ext: string;
+ *     mime: string;
+ * } | undefined;
  */
 
 _('type mime isFn');

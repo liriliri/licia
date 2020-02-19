@@ -30,8 +30,9 @@
  */
 
 /* typescript
- * export declare namespace stringifyAll {
- *     interface IOptions {
+ * export declare function stringifyAll(
+ *     obj: any,
+ *     options?: {
  *         unenumerable?: boolean;
  *         symbol?: boolean;
  *         accessGetter?: boolean;
@@ -39,10 +40,6 @@
  *         depth?: number;
  *         ignore?: any[];
  *     }
- * }
- * export declare function stringifyAll(
- *     obj: any,
- *     options?: stringifyAll.IOptions
  * ): string;
  */
 

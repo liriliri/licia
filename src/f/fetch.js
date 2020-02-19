@@ -29,18 +29,6 @@
 
 /* typescript
  * export declare namespace fetch {
- *     interface IOptions {
- *         method?: string;
- *         timeout?: number;
- *         headers?: { [name: string]: string };
- *         body?: any;
- *     }
- *     interface IHeaders {
- *         keys(): string[];
- *         entries(): Array<string[]>;
- *         get(name: string): string;
- *         has(name: string): boolean;
- *     }
  *     interface IResult {
  *         ok: boolean;
  *         status: number;
@@ -51,12 +39,22 @@
  *         json(): Promise<any>;
  *         xml(): Promise<Document | null>;
  *         blob(): Promise<Blob>;
- *         headers: IHeaders;
+ *         headers: {
+ *             keys(): string[];
+ *             entries(): Array<string[]>;
+ *             get(name: string): string;
+ *             has(name: string): boolean;
+ *         };
  *     }
  * }
  * export declare function fetch(
  *     url: string,
- *     options?: fetch.IOptions
+ *     options?: {
+ *         method?: string;
+ *         timeout?: number;
+ *         headers?: { [name: string]: string };
+ *         body?: any;
+ *     }
  * ): Promise<fetch.IResult>;
  */
 

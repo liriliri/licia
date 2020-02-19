@@ -24,19 +24,16 @@
  */
 
 /* typescript
- * export declare namespace highlight {
- *     interface IStyle {
+ * export declare function highlight(
+ *     str: string,
+ *     lang?: string,
+ *     style?: {
  *         comment?: string;
  *         string?: string;
  *         number?: string;
  *         keyword?: string;
  *         operator?: string;
  *     }
- * }
- * export declare function highlight(
- *     str: string,
- *     lang?: string,
- *     style?: highlight.IStyle
  * ): string;
  */
 

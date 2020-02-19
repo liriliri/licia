@@ -41,9 +41,7 @@
 
 /* typescript
  * export declare namespace $insert {
- *     interface IInsert {
- *         (element: $safeEls.El, content: string): void;
- *     }
+ *     type IInsert = (element: $safeEls.El, content: string) => void;
  * }
  * export declare const $insert: {
  *     before: $insert.IInsert;

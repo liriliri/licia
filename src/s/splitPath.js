@@ -16,14 +16,11 @@
  */
 
 /* typescript
- * export declare namespace splitPath {
- *     interface IPath {
- *         dir: string;
- *         name: string;
- *         ext: string;
- *     }
- * }
- * export declare function splitPath(path: string): splitPath.IPath;
+ * export declare function splitPath(path: string): {
+ *     dir: string;
+ *     name: string;
+ *     ext: string;
+ * };
  */
 
 exports = function(path) {

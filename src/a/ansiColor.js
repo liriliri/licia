@@ -23,9 +23,7 @@
 
 /* typescript
  * export declare namespace ansiColor {
- *     interface IFn {
- *         (str: string): string;
- *     }
+ *     type IFn = (str: string) => string;
  * }
  * export declare const ansiColor: {
  *     black: ansiColor.IFn;

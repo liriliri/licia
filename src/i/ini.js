@@ -47,15 +47,15 @@
  */
 
 /* typescript
- * export declare namespace ini {
- *     interface IOptions {
- *         section?: string;
- *         whitespace: boolean;
- *     }
- * }
  * export declare const ini: {
  *     parse(ini: string): any;
- *     stringify(obj: any, options?: ini.IOptions): string;
+ *     stringify(
+ *         obj: any,
+ *         options?: {
+ *             section?: string;
+ *             whitespace: boolean;
+ *         }
+ *     ): string;
  * };
  */
 

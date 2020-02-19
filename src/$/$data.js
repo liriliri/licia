@@ -11,14 +11,16 @@
  */
 
 /* typescript
- * export declare namespace $data {
- *     interface IData {
- *         (element: $safeEls.El, name: string, value: string): void;
- *         (element: $safeEls.El, attributes: { [name: string]: string }): void;
- *         (element: $safeEls.El, name: string): string;
- *     }
- * }
- * export declare const $data: $data.IData;
+ * export declare function $data(
+ *     element: $safeEls.El,
+ *     name: string,
+ *     value: string
+ * ): void;
+ * export declare function $data(
+ *     element: $safeEls.El,
+ *     attributes: { [name: string]: string }
+ * ): void;
+ * export declare function $data(element: $safeEls.El, name: string): string;
  */
 
 /* eslint-disable no-unused-vars */

@@ -40,14 +40,9 @@
  */
 
 /* typescript
- * export declare namespace css {
- *     interface IOptions {
- *         indent?: string;
- *     }
- * }
  * export declare const css: {
  *     parse(css: string): object;
- *     stringify(stylesheet: object, options?: css.IOptions): string;
+ *     stringify(stylesheet: object, options?: { indent?: string }): string;
  * }
  */
 

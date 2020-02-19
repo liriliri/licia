@@ -28,17 +28,14 @@
  */
 
 /* typescript
- * export declare namespace randomColor {
- *     interface IOptions {
- *         count?: number;
- *         hue?: number;
- *         lightness?: number;
- *         format?: string;
- *         seed?: number
- *     }
- * }
  * export declare function randomColor(): string;
- * export declare function randomColor(options: randomColor.IOptions): string | string[];
+ * export declare function randomColor(options: {
+ *     count?: number;
+ *     hue?: number;
+ *     lightness?: number;
+ *     format?: string;
+ *     seed?: number
+ * }): string | string[];
  */
 
 _('defaults random Color seedRandom isFn');

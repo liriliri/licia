@@ -33,15 +33,12 @@
  */
 
 /* typescript
- * export declare namespace normalizePhone {
- *     interface IOptions {
+ * export declare function normalizePhone(
+ *     phone: string,
+ *     options: {
  *         countryCode: number;
  *         trunkPrefix?: boolean;
  *     }
- * }
- * export declare function normalizePhone(
- *     phone: string,
- *     options: normalizePhone.IOptions
  * ): string;
  */
 

@@ -48,14 +48,12 @@
  */
 
 /* typescript
- * export declare namespace Emitter {
- *     function mixin(obj: any): any;
- * }
  * export declare class Emitter {
  *     on(event: string, listener: Function): Emitter;
  *     off(event: string, listener: Function): Emitter;
  *     once(event: string, listener: Function): Emitter;
  *     emit(event: string): Emitter;
+ *     static mixin(obj: any): any;
  * }
  */
 

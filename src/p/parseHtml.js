@@ -21,15 +21,15 @@
  */
 
 /* typescript
- * export declare namespace parseHtml {
- *     interface IHandlers {
+ * export declare function parseHtml(
+ *     html: string,
+ *     handlers: {
  *         start?: (tag: string, attrs: any, unary: boolean) => void;
  *         end?: (tag: string) => void;
  *         comment?: (text: string) => void;
  *         text?: (text: string) => void;
  *     }
- * }
- * export declare function parseHtml(html: string, handlers: parseHtml.IHandlers): void;
+ * ): void;
  */
 
 _('last arrToMap startWith lowerCase');
