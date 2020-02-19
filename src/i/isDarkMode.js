@@ -7,6 +7,7 @@
 
 /* module
  * env: browser
+ * since: 1.19.0
  */
 
 /* typescript

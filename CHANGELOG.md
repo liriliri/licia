@@ -1,3 +1,9 @@
+## v1.19.0 (19 Feb 2020)
+
+* add: morse
+* add: isDarkMode
+* fix($property): error when nodes are empty
+
 ## v1.18.0 (31 Jan 2020)
 
 * add: isHidden

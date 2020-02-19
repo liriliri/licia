@@ -2950,6 +2950,7 @@
         "env": [
             "browser"
         ],
+        "since": "1.19.0",
         "test": [
             "browser"
         ]
@@ -4128,6 +4129,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.19.0",
         "test": [
             "node",
             "browser"
