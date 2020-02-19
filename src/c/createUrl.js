@@ -1,10 +1,10 @@
 /* CreateObjectURL wrapper.
  *
- * |Name   |Type                  |Desc                                |
- * |-------|----------------------|------------------------------------|
- * |data   |File Blob string array|Url data                            |
- * |[opts] |object                |Used when data is not a File or Blob|
- * |return |string                |Blob url                            |
+ * |Name  |Desc                                |
+ * |------|------------------------------------|
+ * |data  |Url data                            |
+ * |opts  |Used when data is not a File or Blob|
+ * |return|Blob url                            |
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

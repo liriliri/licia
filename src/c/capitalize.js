@@ -1,9 +1,9 @@
 /* Convert the first character to upper case and the remaining to lower case.
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |str   |string|String to capitalize|
- * |return|string|Capitalized string  |
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |str   |String to capitalize|
+ * |return|Capitalized string  |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

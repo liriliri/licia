@@ -1,10 +1,10 @@
 /* Check if string ends with the given target string.
  *
- * |Name  |Type   |Desc                           |
- * |------|-------|-------------------------------|
- * |str   |string |The string to search           |
- * |suffix|string |String suffix                  |
- * |return|boolean|True if string ends with target|
+ * |Name  |Desc                           |
+ * |------|-------------------------------|
+ * |str   |The string to search           |
+ * |suffix|String suffix                  |
+ * |return|True if string ends with target|
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

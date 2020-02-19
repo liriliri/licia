@@ -1,9 +1,9 @@
 /* Create new object using given object as prototype.
  *
- * |Name   |Type  |Desc                   |
- * |-------|------|-----------------------|
- * |[proto]|object|Prototype of new object|
- * |return |object|Created object         |
+ * |Name  |Desc                   |
+ * |------|-----------------------|
+ * |proto |Prototype of new object|
+ * |return|Created object         |
  */
 
 /* example

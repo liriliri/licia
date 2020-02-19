@@ -2,13 +2,13 @@
  *
  * ### constructor
  *
- * |Name|Type |Desc            |
- * |----|-----|----------------|
- * |arr |array|Array of strings|
+ * |Name|Desc            |
+ * |----|----------------|
+ * |arr |Array of strings|
  *
- * |Name|Type  |Desc                  |
- * |----|------|----------------------|
- * |obj |object|Pairs of key and value|
+ * |Name|Desc                  |
+ * |----|----------------------|
+ * |obj |Pairs of key and value|
  */
 
 /* example
@@ -23,7 +23,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

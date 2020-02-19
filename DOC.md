@@ -149,38 +149,38 @@ Element class manipulations.
 
 Add the specified class(es) to each element in the set of matched elements.
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|names  |string array        |Classes to add        |
+|Name   |Desc                  |
+|-------|----------------------|
+|element|Elements to manipulate|
+|names  |Classes to add        |
 
 ### has
 
 Determine whether any of the matched elements are assigned the given class.
 
-|Name   |Type                |Desc                                 |
-|-------|--------------------|-------------------------------------|
-|element|string array element|Elements to manipulate               |
-|name   |string              |Class name                           |
-|return |boolean             |True if elements has given class name|
+|Name   |Desc                                 |
+|-------|-------------------------------------|
+|element|Elements to manipulate               |
+|name   |Class name                           |
+|return |True if elements has given class name|
 
 ### toggle
 
 Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|name   |string              |Class name to toggle  |
+|Name   |Desc                  |
+|-------|----------------------|
+|element|Elements to manipulate|
+|name   |Class name to toggle  |
 
 ### remove
 
 Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|name   |string              |Class names to remove |
+|Name   |Desc                  |
+|-------|----------------------|
+|element|Elements to manipulate|
+|name   |Class names to remove |
 
 ```javascript
 $class.add('#test', 'class1');
@@ -210,24 +210,24 @@ function $css(
 
 Get the computed style properties for the first element in the set of matched elements.
 
-|Name   |Type                |Desc                      |
-|-------|--------------------|--------------------------|
-|element|string array element|Elements to manipulate    |
-|name   |string              |Property name             |
-|return |string              |Css value of first element|
+|Name   |Desc                      |
+|-------|--------------------------|
+|element|Elements to manipulate    |
+|name   |Property name             |
+|return |Css value of first element|
 
 Set one or more CSS properties for the set of matched elements.
 
-|Name   |Type                |Desc                  |
-|-------|--------------------|----------------------|
-|element|string array element|Elements to manipulate|
-|name   |string              |Property name         |
-|value  |string              |Css value             |
+|Name   |Desc                  |
+|-------|----------------------|
+|element|Elements to manipulate|
+|name   |Property name         |
+|value  |Css value             |
 
-|Name      |Type                |Desc                            |
-|----------|--------------------|--------------------------------|
-|element   |string array element|Elements to manipulate          |
-|properties|object              |Object of css-value pairs to set|
+|Name      |Desc                            |
+|----------|--------------------------------|
+|element   |Elements to manipulate          |
+|properties|Object of css-value pairs to set|
 
 ```javascript
 $css('#test', {
@@ -429,9 +429,9 @@ Remove the set of matched elements from the DOM.
 </pre>
 </details>
 
-|Name   |Type                |Desc              |
-|-------|--------------------|------------------|
-|element|string array element|Elements to delete|
+|Name   |Desc              |
+|-------|------------------|
+|element|Elements to delete|
 
 ```javascript
 $remove('#test');
@@ -451,10 +451,10 @@ function $safeEls(value: $safeEls.El): Element[];</code>
 </pre>
 </details>
 
-|Name  |Type                |Desc             |
-|------|--------------------|-----------------|
-|value |element array string|Value to convert |
-|return|array               |Array of elements|
+|Name  |Desc             |
+|------|-----------------|
+|value |Value to convert |
+|return|Array of elements|
 
 ```javascript
 $safeEls(document.querySelector('.test'));
@@ -473,9 +473,9 @@ Show elements.
 </pre>
 </details>
 
-|Name   |Type                |Desc            |
-|-------|--------------------|----------------|
-|element|string array element|Elements to show|
+|Name   |Desc            |
+|-------|----------------|
+|element|Elements to show|
 
 ```javascript
 $show('#test');
@@ -487,10 +487,10 @@ Use Blob when available, otherwise BlobBuilder.
 
 ### constructor
 
-|Name  |Type  |Desc      |
-|------|------|----------|
-|parts |array |Blob parts|
-|[opts]|object|Options   |
+|Name |Desc      |
+|-----|----------|
+|parts|Blob parts|
+|opts |Options   |
 
 ```javascript
 const blob = new Blob([]);
@@ -564,53 +564,53 @@ Modify object props without caring about letter case.
 
 ### constructor
 
-|Name|Type  |Desc         |
-|----|------|-------------|
-|obj |object|Target object|
+|Name|Desc         |
+|----|-------------|
+|obj |Target object|
 
 ### getKey
 
 Get key with preserved casing.
 
-|Name  |Type  |Desc        |
-|------|------|------------|
-|key   |string|Caseless key|
-|return|string|Object key  |
+|Name  |Desc        |
+|------|------------|
+|key   |Caseless key|
+|return|Object key  |
 
 ### set
 
 Set value.
 
-|Name|Type  |Desc        |
-|----|------|------------|
-|key |string|Caseless key|
-|val |*     |Value to set|
+|Name|Desc        |
+|----|------------|
+|key |Caseless key|
+|val |Value to set|
 
 ### get
 
 Get value.
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|key   |string|Caseless key      |
-|return|*     |Value of given key|
+|Name  |Desc              |
+|------|------------------|
+|key   |Caseless key      |
+|return|Value of given key|
 
 ### remove
 
 Remove value.
 
-|Name|Type  |Desc        |
-|----|------|------------|
-|key |string|Caseless key|
+|Name|Desc        |
+|----|------------|
+|key |Caseless key|
 
 ### has
 
 Determine whether target object has given key.
 
-|Name  |Type   |Desc                 |
-|------|-------|---------------------|
-|key   |string |Caseless key         |
-|return|boolean|True if has given key|
+|Name  |Desc                 |
+|------|---------------------|
+|key   |Caseless key         |
+|return|True if has given key|
 
 ```javascript
 const headers = { 'Content-Type': 'text/javascript' };
@@ -646,11 +646,11 @@ function Class(methods: any, statics?: any): Class.IConstructor;</code>
 </pre>
 </details>
 
-|Name     |Type    |Desc                             |
-|---------|--------|---------------------------------|
-|methods  |object  |Public methods                   |
-|[statics]|object  |Static methods                   |
-|return   |function|Function used to create instances|
+|Name   |Desc                             |
+|-------|---------------------------------|
+|methods|Public methods                   |
+[statics|Static methods                   |
+|return |Function used to create instances|
 
 ```javascript
 const People = Class({
@@ -759,19 +759,19 @@ Object delegation.
 
 ### constructor
 
-|Name  |Type         |Desc             |
-|------|-------------|-----------------|
-|host  |object       |Host object      |
-|target|string object|Delegation target|
+|Name  |Desc             |
+|------|-----------------|
+|host  |Host object      |
+|target|Delegation target|
 
 ### method
 
 Allow method to be accessed on the host object.
 
-|Name       |Type  |Desc              |
-|-----------|------|------------------|
-|name       |string|Host method name  |
-|target=name|string|Target method name|
+|Name       |Desc              |
+|-----------|------------------|
+|name       |Host method name  |
+|target=name|Target method name|
 
 ### getter
 
@@ -870,27 +870,27 @@ Unbind event.
 
 Bind event that trigger once.
 
-|Name    |Type    |Desc          |
-|--------|--------|--------------|
-|event   |string  |Event name    |
-|listener|function|Event listener|
+|Name    |Desc          |
+|--------|--------------|
+|event   |Event name    |
+|listener|Event listener|
 
 ### emit
 
 Emit event.
 
-|Name   |Type  |Desc                        |
-|-------|------|----------------------------|
-|event  |string|Event name                  |
-|...args|*     |Arguments passed to listener|
+|Name   |Desc                        |
+|-------|----------------------------|
+|event  |Event name                  |
+|...args|Arguments passed to listener|
 
 ### mixin
 
 [static] Mixin object class methods.
 
-|Name|Type  |Desc           |
-|----|------|---------------|
-|obj |object|Object to mixin|
+|Name|Desc           |
+|----|---------------|
+|obj |Object to mixin|
 
 ```javascript
 const event = new Emitter();
@@ -916,13 +916,13 @@ Enum type implementation.
 
 ### constructor
 
-|Name|Type |Desc            |
-|----|-----|----------------|
-|arr |array|Array of strings|
+|Name|Desc            |
+|----|----------------|
+|arr |Array of strings|
 
-|Name|Type  |Desc                  |
-|----|------|----------------------|
-|obj |object|Pairs of key and value|
+|Name|Desc                  |
+|----|----------------------|
+|obj |Pairs of key and value|
 
 ```javascript
 const importance = new Enum([
@@ -2550,10 +2550,10 @@ Get average value of given numbers.
 </pre>
 </details>
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|...num|number|Numbers to calculate|
-|return|number|Average value       |
+|Name  |Desc                |
+|------|--------------------|
+|...num|Numbers to calculate|
+|return|Average value       |
 
 ```javascript
 average(5, 3, 1); // -> 3
@@ -2577,19 +2577,19 @@ Basic base64 encoding and decoding.
 
 Turn a byte array into a base64 string.
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
-|bytes |array |Byte array   |
-|return|string|Base64 string|
+|Name  |Desc         |
+|------|-------------|
+|bytes |Byte array   |
+|return|Base64 string|
 
 ### decode
 
 Turn a base64 string into a byte array.
 
-|Name  |Type  |Desc         |
-|------|------|-------------|
-|str   |string|Base64 string|
-|return|array |Byte array   |
+|Name  |Desc         |
+|------|-------------|
+|str   |Base64 string|
+|return|Byte array   |
 
 ```javascript
 base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
@@ -2607,11 +2607,11 @@ Create a function that invokes less than n times.
 </pre>
 </details>
 
-|Name  |Type    |Desc                                            |
-|------|--------|------------------------------------------------|
-|n     |number  |Number of calls at which fn is no longer invoked|
-|fn    |function|Function to restrict                            |
-|return|function|New restricted function                         |
+|Name  |Desc                                            |
+|------|------------------------------------------------|
+|n     |Number of calls at which fn is no longer invoked|
+|fn    |Function to restrict                            |
+|return|New restricted function                         |
 
 Subsequent calls to the created function return the result of the last fn invocation.
 
@@ -2673,12 +2673,12 @@ Create a function bound to a given object.
 </pre>
 </details>
 
-|Name   |Type    |Desc                    |
-|-------|--------|------------------------|
-|fn     |function|Function to bind        |
-|ctx    |*       |This binding of given fn|
-|...rest|*       |Optional arguments      |
-|return |function|New bound function      |
+|Name   |Desc                    |
+|-------|------------------------|
+|fn     |Function to bind        |
+|ctx    |This binding of given fn|
+|...rest|Optional arguments      |
+|return |New bound function      |
 
 ```javascript
 const fn = bind(function (msg) {
@@ -2737,11 +2737,11 @@ Convert bytes to string.
 </pre>
 </details>
 
-|Name         |Type  |Desc              |
-|-------------|------|------------------|
-|str          |array |Bytes array       |
-|encoding=utf8|string|Encoding of string|
-|return       |string|Result string     |
+|Name         |Desc              |
+|-------------|------------------|
+|str          |Bytes array       |
+|encoding=utf8|Encoding of string|
+|return       |Result string     |
 
 ```javascript
 bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
@@ -2810,10 +2810,10 @@ Convert string to "camelCase".
 </pre>
 </details>
 
-|Name  |Type  |Desc              |
-|------|------|------------------|
-|str   |string|String to convert |
-|return|string|Camel cased string|
+|Name  |Desc              |
+|------|------------------|
+|str   |String to convert |
+|return|Camel cased string|
 
 ```javascript
 camelCase('foo-bar'); // -> fooBar
@@ -2833,10 +2833,10 @@ Convert the first character to upper case and the remaining to lower case.
 </pre>
 </details>
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|str   |string|String to capitalize|
-|return|string|Capitalized string  |
+|Name  |Desc                |
+|------|--------------------|
+|str   |String to capitalize|
+|return|Capitalized string  |
 
 ```javascript
 capitalize('rED'); // -> Red
@@ -3320,31 +3320,31 @@ const cookie: cookie.ICookie;</code>
 
 Get cookie value.
 
-|Name  |Type  |Desc                      |
-|------|------|--------------------------|
-|key   |string|Cookie key                |
-|return|string|Corresponding cookie value|
+|Name  |Desc                      |
+|------|--------------------------|
+|key   |Cookie key                |
+|return|Corresponding cookie value|
 
 ### set
 
 Set cookie value.
 
-|Name     |Type   |Desc          |
-|---------|-------|--------------|
-|key      |string |Cookie key    |
-|val      |string |Cookie value  |
-|[options]|object |Cookie options|
-|return   |exports|Module cookie |
+|Name   |Desc          |
+|-------|--------------|
+|key    |Cookie key    |
+|val    |Cookie value  |
+|options|Cookie options|
+|return |Module cookie |
 
 ### remove
 
 Remove cookie value.
 
-|Name     |Type   |Desc          |
-|---------|-------|--------------|
-|key      |string |Cookie key    |
-|[options]|object |Cookie options|
-|return   |exports|Module cookie |
+|Name   |Desc          |
+|-------|--------------|
+|key    |Cookie key    |
+|options|Cookie options|
+|return |Module cookie |
 
 ```javascript
 cookie.set('a', '1', {path: '/'});
@@ -3412,11 +3412,11 @@ CRC16 implementation.
 </pre>
 </details>
 
-|Name      |Type        |Desc                 |
-|----------|------------|---------------------|
-|input     |string array|Data to calculate    |
-|[previous]|number      |Previous CRC16 result|
-|return    |number      |CRC16 result         |
+|Name    |Desc                 |
+|--------|---------------------|
+|input   |Data to calculate    |
+|previous|Previous CRC16 result|
+|return  |CRC16 result         |
 
 ```javascript
 crc16('1234567890').toString(16); // -> 'c57a'
@@ -3436,11 +3436,11 @@ CRC32 implementation.
 </pre>
 </details>
 
-|Name      |Type        |Desc                 |
-|----------|------------|---------------------|
-|input     |string array|Data to calculate    |
-|[previous]|number      |Previous CRC32 result|
-|return    |number      |CRC16 result         |
+|Name    |Desc                 |
+|--------|---------------------|
+|input   |Data to calculate    |
+|previous|Previous CRC32 result|
+|return  |CRC16 result         |
 
 ```javascript
 crc32('1234567890').toString(16); // -> '261daee5'
@@ -3460,11 +3460,11 @@ CRC8 implementation.
 </pre>
 </details>
 
-|Name      |Type        |Desc                |
-|----------|------------|--------------------|
-|input     |string array|Data to calculate   |
-|[previous]|number      |Previous CRC8 result|
-|return    |number      |CRC8 result         |
+|Name    |Desc                |
+|--------|--------------------|
+|input   |Data to calculate   |
+|previous|Previous CRC8 result|
+|return  |CRC8 result         |
 
 ```javascript
 crc8('1234567890').toString(16); // -> '52'
@@ -3481,10 +3481,10 @@ Create new object using given object as prototype.
 </pre>
 </details>
 
-|Name   |Type  |Desc                   |
-|-------|------|-----------------------|
-|[proto]|object|Prototype of new object|
-|return |object|Created object         |
+|Name  |Desc                   |
+|------|-----------------------|
+|proto |Prototype of new object|
+|return|Created object         |
 
 ```javascript
 const obj = create({ a: 1 });
@@ -3502,11 +3502,11 @@ Used to create extend, extendOwn and defaults.
 </pre>
 </details>
 
-|Name    |Type    |Desc                          |
-|--------|--------|------------------------------|
-|keysFn  |function|Function to get object keys   |
-|defaults|boolean |No override when set to true  |
-|return  |function|Result function, extend...    |
+|Name    |Desc                          |
+|--------|------------------------------|
+|keysFn  |Function to get object keys   |
+|defaults|No override when set to true  |
+|return  |Result function, extend...    |
 
 ## createUrl 
 
@@ -3524,11 +3524,11 @@ function createUrl(data: any, options?: createUrl.IOptions): string;</code>
 </pre>
 </details>
 
-|Name   |Type                  |Desc                                |
-|-------|----------------------|------------------------------------|
-|data   |File Blob string array|Url data                            |
-|[opts] |object                |Used when data is not a File or Blob|
-|return |string                |Blob url                            |
+|Name  |Desc                                |
+|------|------------------------------------|
+|data  |Url data                            |
+|opts  |Used when data is not a File or Blob|
+|return|Blob url                            |
 
 ```javascript
 createUrl('test', {type: 'text/plain'}); // -> Blob url
@@ -3562,26 +3562,26 @@ Comments will be stripped.
 
 Parse css into js object.
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|css   |string|Css string      |
-|return|object|Parsed js object|
+|Name  |Desc            |
+|------|----------------|
+|css   |Css string      |
+|return|Parsed js object|
 
 ### stringify
 
 Stringify object into css.
 
-|Name      |Type  |Desc               |
-|----------|------|-------------------|
-|stylesheet|object|Object to stringify|
-|[options] |object|Stringify options  |
-|return    |string|Css string         |
+|Name      |Desc               |
+|----------|-------------------|
+|stylesheet|Object to stringify|
+|options   |Stringify options  |
+|return    |Css string         |
 
 Options:
 
-|Name       |Type  |Desc                 |
-|-----------|------|---------------------|
-|indent='  '|string|String used to indent|
+|Name       |Desc                 |
+|-----------|---------------------|
+|indent='  '|String used to indent|
 
 ```javascript
 const stylesheet = css.parse('.name { background: #000; color: red; }');
@@ -3657,13 +3657,13 @@ function dateFormat(
 </pre>
 </details>
 
-|Name         |Type   |Desc                 |
-|-------------|-------|---------------------|
-|date=new Date|Date   |Date object to format|
-|mask         |string |Format mask          |
-|utc=false    |boolean|UTC or not           |
-|gmt=false    |boolean|GMT or not           |
-|return       |string |Formatted duration   |
+|Name         |Desc                 |
+|-------------|---------------------|
+|date=new Date|Date object to format|
+|mask         |Format mask          |
+|utc=false    |UTC or not           |
+|gmt=false    |GMT or not           |
+|return       |Formatted duration   |
 
 |Mask|Desc                                                             |
 |----|-----------------------------------------------------------------|
@@ -3819,11 +3819,11 @@ function define(name: string, method: Function): void;</code>
 </pre>
 </details>
 
-|Name      |Type    |Desc        |
-|----------|--------|------------|
-|name      |string  |Module name |
-|[requires]|array   |Dependencies|
-|method    |function|Module body |
+|Name    |Desc        |
+|--------|------------|
+|name    |Module name |
+|requires|Dependencies|
+|method  |Module body |
 
 The module won't be executed until it's used by use function.
 
@@ -3852,18 +3852,18 @@ function defineProp&lt;T&gt;(obj: T, descriptor: PropertyDescriptorMap): T;</cod
 </pre>
 </details>
 
-|Name      |Type  |Desc               |
-|----------|------|-------------------|
-|obj       |object|Object to define   |
-|prop      |string|Property path      |
-|descriptor|object|Property descriptor|
-|return    |object|Object itself      |
+|Name      |Desc               |
+|----------|-------------------|
+|obj       |Object to define   |
+|prop      |Property path      |
+|descriptor|Property descriptor|
+|return    |Object itself      |
 
-|Name  |Type  |Desc                |
-|------|------|--------------------|
-|obj   |object|Object to define    |
-|prop  |object|Property descriptors|
-|return|object|Object itself       |
+|Name  |Desc                |
+|------|--------------------|
+|obj   |Object to define    |
+|prop  |Property descriptors|
+|return|Object itself       |
 
 ```javascript
 const obj = {b: {c: 3}, d: 4, e: 5};
@@ -4154,11 +4154,11 @@ Trigger a file download on client side.
 </pre>
 </details>
 
-|Name           |Type                  |Desc            |
-|---------------|----------------------|----------------|
-|data           |Blob File string array|Data to download|
-|name           |string                |File name       |
-|type=text/plain|string                |Data type       |
+|Name           |Desc            |
+|---------------|----------------|
+|data           |Data to download|
+|name           |File name       |
+|type=text/plain|Data type       |
 
 ```javascript
 download('test', 'test.txt');
@@ -4175,11 +4175,11 @@ Simple duration format function.
 </pre>
 </details>
 
-|Name           |Type  |Desc                           |
-|---------------|------|-------------------------------|
-|duration       |number|Duration to format, millisecond|
-|mask='hh:mm:ss'|string|Format mask                    |
-|return         |string|Formatted duration             |
+|Name           |Desc                           |
+|---------------|-------------------------------|
+|duration       |Duration to format, millisecond|
+|mask='hh:mm:ss'|Format mask                    |
+|return         |Formatted duration             |
 
 |Mask|Desc        |
 |----|------------|
@@ -4303,11 +4303,11 @@ Check if string ends with the given target string.
 </pre>
 </details>
 
-|Name  |Type   |Desc                           |
-|------|-------|-------------------------------|
-|str   |string |The string to search           |
-|suffix|string |String suffix                  |
-|return|boolean|True if string ends with target|
+|Name  |Desc                           |
+|------|-------------------------------|
+|str   |The string to search           |
+|suffix|String suffix                  |
+|return|True if string ends with target|
 
 ```javascript
 endWith('ab', 'b'); // -> true
@@ -4324,10 +4324,10 @@ Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' charact
 </pre>
 </details>
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|str   |string|String to escape|
-|return|string|Escaped string  |
+|Name  |Desc            |
+|------|----------------|
+|str   |String to escape|
+|return|Escaped string  |
 
 ```javascript
 escape('You & Me'); // -> 'You &amp; Me'
@@ -4405,10 +4405,10 @@ Execute js in given context.
 </pre>
 </details>
 
-|Name      |Type  |Desc           |
-|----------|------|---------------|
-|js        |string|JavaScript code|
-|ctx=global|object|Context        |
+|Name      |Desc           |
+|----------|---------------|
+|js        |JavaScript code|
+|ctx=global|Context        |
 
 ```javascript
 evalJs('5+2'); // -> 7
@@ -4480,11 +4480,11 @@ Recursive object extending.
 </pre>
 </details>
 
-|Name       |Type  |Desc              |
-|-----------|------|------------------|
-|destination|object|Destination object|
-|...sources |object|Sources objects   |
-|return     |object|Destination object|
+|Name       |Desc              |
+|-----------|------------------|
+|destination|Destination object|
+|...sources |Sources objects   |
+|return     |Destination object|
 
 ```javascript
 extendDeep({
@@ -4512,11 +4512,11 @@ Like extend, but only copies own properties over to the destination object.
 </pre>
 </details>
 
-|Name       |Type  |Desc              |
-|-----------|------|------------------|
-|destination|object|Destination object|
-|...sources |object|Sources objects   |
-|return     |object|Destination object|
+|Name       |Desc              |
+|-----------|------------------|
+|destination|Destination object|
+|...sources |Sources objects   |
+|return     |Destination object|
 
 ```javascript
 extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
@@ -4533,10 +4533,10 @@ Extract block comments from source code.
 </pre>
 </details>
 
-|Name  |Type  |Desc             |
-|------|------|-----------------|
-|str   |string|String to extract|
-|return|array |Block comments   |
+|Name  |Desc             |
+|------|-----------------|
+|str   |String to extract|
+|return|Block comments   |
 
 ```javascript
 extractBlockCmts('\/*licia*\/'); // -> ['licia']
@@ -4752,12 +4752,12 @@ function filter&lt;T&gt;(
 </pre>
 </details>
 
-|Name     |Type    |Desc                                   |
-|---------|--------|---------------------------------------|
-|obj      |array   |Collection to iterate over             |
-|predicate|function|Function invoked per iteration         |
-|[ctx]    |*       |Predicate context                      |
-|return   |array   |Array of all values that pass predicate|
+|Name     |Desc                                   |
+|---------|---------------------------------------|
+|obj      |Collection to iterate over             |
+|predicate|Function invoked per iteration         |
+|ctx      |Predicate context                      |
+|return   |Array of all values that pass predicate|
 
 ```javascript
 filter([1, 2, 3, 4, 5], function (val) {
@@ -4785,12 +4785,12 @@ function find&lt;T&gt;(
 </pre>
 </details>
 
-|Name     |Type        |Desc                             |
-|---------|------------|---------------------------------|
-|object   |array object|Collection to iterate over       |
-|iterator |function    |Function invoked per iteration   |
-|[context]|*           |Predicate context                |
-|return   |*           |First value that passes predicate|
+|Name    |Desc                             |
+|--------|---------------------------------|
+|object  |Collection to iterate over       |
+|iterator|Function invoked per iteration   |
+|context |Predicate context                |
+|return  |First value that passes predicate|
 
 ```javascript
 find([{
@@ -4872,11 +4872,11 @@ Return the last index where the predicate truth test passes.
 </pre>
 </details>
 
-|Name     |Type    |Desc                          |
-|---------|--------|------------------------------|
-|arr      |array   |Array to search               |
-|predicate|function|Function invoked per iteration|
-|return   |number  |Last index of matched element |
+|Name     |Desc                          |
+|---------|------------------------------|
+|arr      |Array to search               |
+|predicate|Function invoked per iteration|
+|return   |Last index of matched element |
 
 ```javascript
 findLastIdx([{
@@ -4904,10 +4904,10 @@ Recursively flatten an array.
 </pre>
 </details>
 
-|Name  |Type |Desc               |
-|------|-----|-------------------|
-|arr   |array|Array to flatten   |
-|return|array|New flattened array|
+|Name  |Desc               |
+|------|-------------------|
+|arr   |Array to flatten   |
+|return|New flattened array|
 
 ```javascript
 flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
@@ -4924,10 +4924,10 @@ Validate function arguments.
 </pre>
 </details>
 
-|Name |Type    |Desc           |
-|-----|--------|---------------|
-|types|array   |Argument types |
-|args |Argument|Argument object|
+|Name |Desc           |
+|-----|---------------|
+|types|Argument types |
+|args |Argument object|
 
 It throws an exception when validation failed.
 
@@ -5029,10 +5029,10 @@ Convert number to fraction.
 </pre>
 </details>
 
-|Name  |Type  |Desc                  |
-|------|------|----------------------|
-|num   |number|Number to convert     |
-|return|string|Corresponding fraction|
+|Name  |Desc                  |
+|------|----------------------|
+|num   |Number to convert     |
+|return|Corresponding fraction|
 
 ```javascript
 fraction(1.2); // -> '6/5'
@@ -5074,10 +5074,10 @@ Recursively use Object.freeze.
 </pre>
 </details>
 
-|Name  |Type  |Desc            |
-|------|------|----------------|
-|obj   |object|Object to freeze|
-|return|object|Object passed in|
+|Name  |Desc            |
+|------|----------------|
+|obj   |Object to freeze|
+|return|Object passed in|
 
 ```javascript
 const a = {b: {c: 1}};
@@ -5140,9 +5140,9 @@ const fullscreen: fullscreen.IFullscreen;</code>
 
 Request fullscreen.
 
-|Name  |Type   |Desc              |
-|------|-------|------------------|
-|[el]  |Element|Fullscreen element|
+|Name  |Desc              |
+|------|------------------|
+|el    |Fullscreen element|
 
 ### exit
 
@@ -5152,9 +5152,9 @@ Exit fullscreen.
 
 Toggle fullscreen.
 
-|Name  |Type   |Desc              |
-|------|-------|------------------|
-|[el]  |Element|Fullscreen element|
+|Name  |Desc              |
+|------|------------------|
+|el    |Fullscreen element|
 
 ### isActive
 
@@ -5196,18 +5196,18 @@ function fuzzySearch(
 </pre>
 </details>
 
-|Name     |Type  |Desc            |
-|---------|------|----------------|
-|needle   |string|String to search|
-|haystacks|array |Search list     |
-|[options]|object|Search options  |
+|Name     |Desc            |
+|---------|----------------|
+|needle   |String to search|
+|haystacks|Search list     |
+|options  |Search options  |
 
 Available options:
 
-|Name               |Type        |Desc                                        |
-|-------------------|------------|--------------------------------------------|
-|caseSensitive=false|boolean     |Whether comparisons should be case sensitive|
-|[key]             |string array|Object key path if item is object            |
+|Name               |Desc                                        |
+|-------------------|--------------------------------------------|
+|caseSensitive=false|Whether comparisons should be case sensitive|
+|key                |Object key path if item is object           |
 
 ```javascript
 fuzzySearch('lic', ['licia', 'll', 'lic']); // -> ['lic', 'licia']

@@ -6,29 +6,29 @@
 
 获取 cookie 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|Cookie 键名|
-|返回值|string|对应的 cookie 值|
+|参数名|说明|
+|-----|---|
+|key|Cookie 键名|
+|返回值|对应的 cookie 值|
 
 ### set
 
 设置 cookie 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|cookie 键名|
-|val|string|cookie 值|
-|[options]|object|cookie 选项|
-|返回值|exports|cookie 模块|
+|参数名|说明|
+|-----|---|
+|key|cookie 键名|
+|val|cookie 值|
+|options|cookie 选项|
+|返回值|cookie 模块|
 
 ### remove
 
 移除 cookie 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|Cookie 键名|
-|[options]|object|Cookie 选项|
-|返回值|exports|cookie 模块|
+|参数名|说明|
+|-----|---|
+|key|Cookie 键名|
+|options|Cookie 选项|
+|返回值|cookie 模块|
 

@@ -4,19 +4,19 @@
  *
  * Turn a byte array into a base64 string.
  *
- * |Name  |Type  |Desc         |
- * |------|------|-------------|
- * |bytes |array |Byte array   |
- * |return|string|Base64 string|
+ * |Name  |Desc         |
+ * |------|-------------|
+ * |bytes |Byte array   |
+ * |return|Base64 string|
  *
  * ### decode
  *
  * Turn a base64 string into a byte array.
  *
- * |Name  |Type  |Desc         |
- * |------|------|-------------|
- * |str   |string|Base64 string|
- * |return|array |Byte array   |
+ * |Name  |Desc         |
+ * |------|-------------|
+ * |str   |Base64 string|
+ * |return|Byte array   |
  */
 
 /* example
@@ -26,7 +26,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -1,12 +1,12 @@
 /* Simple but extremely useful date format function.
  *
- * |Name         |Type   |Desc                 |
- * |-------------|-------|---------------------|
- * |date=new Date|Date   |Date object to format|
- * |mask         |string |Format mask          |
- * |utc=false    |boolean|UTC or not           |
- * |gmt=false    |boolean|GMT or not           |
- * |return       |string |Formatted duration   |
+ * |Name         |Desc                 |
+ * |-------------|---------------------|
+ * |date=new Date|Date object to format|
+ * |mask         |Format mask          |
+ * |utc=false    |UTC or not           |
+ * |gmt=false    |GMT or not           |
+ * |return       |Formatted duration   |
  *
  * |Mask|Desc                                                             |
  * |----|-----------------------------------------------------------------|
@@ -47,7 +47,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

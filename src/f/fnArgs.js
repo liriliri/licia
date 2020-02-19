@@ -1,9 +1,9 @@
 /* Validate function arguments.
  *
- * |Name |Type    |Desc           |
- * |-----|--------|---------------|
- * |types|array   |Argument types |
- * |args |Argument|Argument object|
+ * |Name |Desc           |
+ * |-----|---------------|
+ * |types|Argument types |
+ * |args |Argument object|
  *
  * It throws an exception when validation failed.
  */
@@ -32,7 +32,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.3
  */
 

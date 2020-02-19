@@ -1,10 +1,10 @@
 /* Simple duration format function.
  *
- * |Name           |Type  |Desc                           |
- * |---------------|------|-------------------------------|
- * |duration       |number|Duration to format, millisecond|
- * |mask='hh:mm:ss'|string|Format mask                    |
- * |return         |string|Formatted duration             |
+ * |Name           |Desc                           |
+ * |---------------|-------------------------------|
+ * |duration       |Duration to format, millisecond|
+ * |mask='hh:mm:ss'|Format mask                    |
+ * |return         |Formatted duration             |
  *
  * |Mask|Desc        |
  * |----|------------|

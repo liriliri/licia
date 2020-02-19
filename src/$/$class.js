@@ -4,38 +4,38 @@
  *
  * Add the specified class(es) to each element in the set of matched elements.
  *
- * |Name   |Type                |Desc                  |
- * |-------|--------------------|----------------------|
- * |element|string array element|Elements to manipulate|
- * |names  |string array        |Classes to add        |
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |element|Elements to manipulate|
+ * |names  |Classes to add        |
  *
  * ### has
  *
  * Determine whether any of the matched elements are assigned the given class.
  *
- * |Name   |Type                |Desc                                 |
- * |-------|--------------------|-------------------------------------|
- * |element|string array element|Elements to manipulate               |
- * |name   |string              |Class name                           |
- * |return |boolean             |True if elements has given class name|
+ * |Name   |Desc                                 |
+ * |-------|-------------------------------------|
+ * |element|Elements to manipulate               |
+ * |name   |Class name                           |
+ * |return |True if elements has given class name|
  *
  * ### toggle
  *
  * Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.
  *
- * |Name   |Type                |Desc                  |
- * |-------|--------------------|----------------------|
- * |element|string array element|Elements to manipulate|
- * |name   |string              |Class name to toggle  |
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |element|Elements to manipulate|
+ * |name   |Class name to toggle  |
  *
  * ### remove
  *
  * Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
  *
- * |Name   |Type                |Desc                  |
- * |-------|--------------------|----------------------|
- * |element|string array element|Elements to manipulate|
- * |name   |string              |Class names to remove |
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |element|Elements to manipulate|
+ * |name   |Class names to remove |
  */
 
 /* example
@@ -50,7 +50,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

@@ -1,10 +1,10 @@
 /* Create JavaScript class.
  *
- * |Name     |Type    |Desc                             |
- * |---------|--------|---------------------------------|
- * |methods  |object  |Public methods                   |
- * |[statics]|object  |Static methods                   |
- * |return   |function|Function used to create instances|
+ * |Name   |Desc                             |
+ * |-------|---------------------------------|
+ * |methods|Public methods                   |
+ * [statics|Static methods                   |
+ * |return |Function used to create instances|
  */
 
 /* example

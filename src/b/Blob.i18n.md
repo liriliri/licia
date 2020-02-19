@@ -4,8 +4,8 @@
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|parts|array|Blob 分片|
-|[opts]|object|选项|
+|参数名|说明|
+|-----|---|
+|parts|Blob 分片|
+|opts|选项|
 

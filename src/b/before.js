@@ -1,10 +1,10 @@
 /* Create a function that invokes less than n times.
  *
- * |Name  |Type    |Desc                                            |
- * |------|--------|------------------------------------------------|
- * |n     |number  |Number of calls at which fn is no longer invoked|
- * |fn    |function|Function to restrict                            |
- * |return|function|New restricted function                         |
+ * |Name  |Desc                                            |
+ * |------|------------------------------------------------|
+ * |n     |Number of calls at which fn is no longer invoked|
+ * |fn    |Function to restrict                            |
+ * |return|New restricted function                         |
  *
  * Subsequent calls to the created function return the result of the last fn invocation.
  */
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

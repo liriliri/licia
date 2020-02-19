@@ -1,17 +1,17 @@
 /* Simple fuzzy search.
  *
- * |Name     |Type  |Desc            |
- * |---------|------|----------------|
- * |needle   |string|String to search|
- * |haystacks|array |Search list     |
- * |[options]|object|Search options  |
+ * |Name     |Desc            |
+ * |---------|----------------|
+ * |needle   |String to search|
+ * |haystacks|Search list     |
+ * |options  |Search options  |
  *
  * Available options:
  *
- * |Name               |Type        |Desc                                        |
- * |-------------------|------------|--------------------------------------------|
- * |caseSensitive=false|boolean     |Whether comparisons should be case sensitive|
- * |[key]             |string array|Object key path if item is object            |
+ * |Name               |Desc                                        |
+ * |-------------------|--------------------------------------------|
+ * |caseSensitive=false|Whether comparisons should be case sensitive|
+ * |key                |Object key path if item is object           |
  */
 
 /* example
@@ -27,7 +27,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.0
  */
 

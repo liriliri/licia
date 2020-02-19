@@ -4,9 +4,9 @@
  *
  * Request fullscreen.
  *
- * |Name  |Type   |Desc              |
- * |------|-------|------------------|
- * |[el]  |Element|Fullscreen element|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |el    |Fullscreen element|
  *
  * ### exit
  *
@@ -16,9 +16,9 @@
  *
  * Toggle fullscreen.
  *
- * |Name  |Type   |Desc              |
- * |------|-------|------------------|
- * |[el]  |Element|Fullscreen element|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |el    |Fullscreen element|
  *
  * ### isActive
  *
@@ -42,7 +42,6 @@
 
 /* module
  * env: browser
- * test: browser
  * since: 1.4.0
  */
 

@@ -1,9 +1,9 @@
 /* Recursively flatten an array.
  *
- * |Name  |Type |Desc               |
- * |------|-----|-------------------|
- * |arr   |array|Array to flatten   |
- * |return|array|New flattened array|
+ * |Name  |Desc               |
+ * |------|-------------------|
+ * |arr   |Array to flatten   |
+ * |return|New flattened array|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

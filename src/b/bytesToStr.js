@@ -1,10 +1,10 @@
 /* Convert bytes to string.
  *
- * |Name         |Type  |Desc              |
- * |-------------|------|------------------|
- * |str          |array |Bytes array       |
- * |encoding=utf8|string|Encoding of string|
- * |return       |string|Result string     |
+ * |Name         |Desc              |
+ * |-------------|------------------|
+ * |str          |Bytes array       |
+ * |encoding=utf8|Encoding of string|
+ * |return       |Result string     |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.1.0
  */
 

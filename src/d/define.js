@@ -1,10 +1,10 @@
 /* Define a module, should be used along with use.
  *
- * |Name      |Type    |Desc        |
- * |----------|--------|------------|
- * |name      |string  |Module name |
- * |[requires]|array   |Dependencies|
- * |method    |function|Module body |
+ * |Name    |Desc        |
+ * |--------|------------|
+ * |name    |Module name |
+ * |requires|Dependencies|
+ * |method  |Module body |
  *
  * The module won't be executed until it's used by use function.
  */
@@ -20,7 +20,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

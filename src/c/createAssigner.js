@@ -1,15 +1,14 @@
 /* Used to create extend, extendOwn and defaults.
  *
- * |Name    |Type    |Desc                          |
- * |--------|--------|------------------------------|
- * |keysFn  |function|Function to get object keys   |
- * |defaults|boolean |No override when set to true  |
- * |return  |function|Result function, extend...    |
+ * |Name    |Desc                          |
+ * |--------|------------------------------|
+ * |keysFn  |Function to get object keys   |
+ * |defaults|No override when set to true  |
+ * |return  |Result function, extend...    |
  */
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

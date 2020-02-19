@@ -2,53 +2,53 @@
  *
  * ### constructor
  *
- * |Name|Type  |Desc         |
- * |----|------|-------------|
- * |obj |object|Target object|
+ * |Name|Desc         |
+ * |----|-------------|
+ * |obj |Target object|
  *
  * ### getKey
  *
  * Get key with preserved casing.
  *
- * |Name  |Type  |Desc        |
- * |------|------|------------|
- * |key   |string|Caseless key|
- * |return|string|Object key  |
+ * |Name  |Desc        |
+ * |------|------------|
+ * |key   |Caseless key|
+ * |return|Object key  |
  *
  * ### set
  *
  * Set value.
  *
- * |Name|Type  |Desc        |
- * |----|------|------------|
- * |key |string|Caseless key|
- * |val |*     |Value to set|
+ * |Name|Desc        |
+ * |----|------------|
+ * |key |Caseless key|
+ * |val |Value to set|
  *
  * ### get
  *
  * Get value.
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |key   |string|Caseless key      |
- * |return|*     |Value of given key|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |key   |Caseless key      |
+ * |return|Value of given key|
  *
  * ### remove
  *
  * Remove value.
  *
- * |Name|Type  |Desc        |
- * |----|------|------------|
- * |key |string|Caseless key|
+ * |Name|Desc        |
+ * |----|------------|
+ * |key |Caseless key|
  *
  * ### has
  *
  * Determine whether target object has given key.
  *
- * |Name  |Type   |Desc                 |
- * |------|-------|---------------------|
- * |key   |string |Caseless key         |
- * |return|boolean|True if has given key|
+ * |Name  |Desc                 |
+ * |------|---------------------|
+ * |key   |Caseless key         |
+ * |return|True if has given key|
  */
 
 /* example
@@ -63,7 +63,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.9.0
  */
 

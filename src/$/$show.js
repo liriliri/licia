@@ -1,8 +1,8 @@
 /* Show elements.
  *
- * |Name   |Type                |Desc            |
- * |-------|--------------------|----------------|
- * |element|string array element|Elements to show|
+ * |Name   |Desc            |
+ * |-------|----------------|
+ * |element|Elements to show|
  */
 
 /* example
@@ -11,7 +11,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

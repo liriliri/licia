@@ -1,10 +1,10 @@
 /* Trigger a file download on client side.
  *
- * |Name           |Type                  |Desc            |
- * |---------------|----------------------|----------------|
- * |data           |Blob File string array|Data to download|
- * |name           |string                |File name       |
- * |type=text/plain|string                |Data type       |
+ * |Name           |Desc            |
+ * |---------------|----------------|
+ * |data           |Data to download|
+ * |name           |File name       |
+ * |type=text/plain|Data type       |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

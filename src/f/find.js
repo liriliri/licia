@@ -1,11 +1,11 @@
 /* Find the first value that passes a truth test in a collection.
  *
- * |Name     |Type        |Desc                             |
- * |---------|------------|---------------------------------|
- * |object   |array object|Collection to iterate over       |
- * |iterator |function    |Function invoked per iteration   |
- * |[context]|*           |Predicate context                |
- * |return   |*           |First value that passes predicate|
+ * |Name    |Desc                             |
+ * |--------|---------------------------------|
+ * |object  |Collection to iterate over       |
+ * |iterator|Function invoked per iteration   |
+ * |context |Predicate context                |
+ * |return  |First value that passes predicate|
  */
 
 /* example
@@ -22,7 +22,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

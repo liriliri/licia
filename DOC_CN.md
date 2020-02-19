@@ -147,39 +147,39 @@ $attr('#test', {
 
 对元素集中的所有元素，添加指定的 class。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|names|string array|添加的 class|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|names|添加的 class|
 
 ### has
 
 判断元素集中是否有元素含有指定的 class。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|name|string|class 值|
-|返回值|boolean|如果有，返回真|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|name|class 值|
+|返回值|如果有，返回真|
 
 ### toggle
 
 对于元素集中的每个元素，如果含有指定的 class 就将其删除，反之则添加。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|name|string|class 值|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|name|class 值|
 
 ### remove
 
 对于元素集中的所有元素，移除指定的 class。
 
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|name|string|class 值|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|name|class 值|
 
 ```javascript
 $class.add('#test', 'class1');
@@ -209,24 +209,24 @@ function $css(
 
 获取元素集中第一个元素的指定样式。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|name|string|样式名|
-|返回值|string|样式值|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|name|样式名|
+|返回值|样式值|
 
 设置元素集中一个或多个样式的值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|name|string|样式名|
-|value|string|样式值|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|name|样式名|
+|value|样式值|
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
-|properties|object|包含多个要设置样式-值对的对象|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
+|properties|包含多个要设置样式-值对的对象|
 
 ```javascript
 $css('#test', {
@@ -424,9 +424,9 @@ $property.html('#test'); // -> licia
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
 
 ```javascript
 $remove('#test');
@@ -446,10 +446,10 @@ function $safeEls(value: $safeEls.El): Element[];</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|value|element array string|要转换的值|
-|返回值|array|元素集|
+|参数名|说明|
+|-----|---|
+|value|要转换的值|
+|返回值|元素集|
 
 ```javascript
 $safeEls(document.querySelector('.test'));
@@ -468,9 +468,9 @@ $safeEls('.test'); // -> Array of elements with test class
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|element|string array element|目标元素集|
+|参数名|说明|
+|-----|---|
+|element|目标元素集|
 
 ```javascript
 $show('#test');
@@ -482,10 +482,10 @@ $show('#test');
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|parts|array|Blob 分片|
-|[opts]|object|选项|
+|参数名|说明|
+|-----|---|
+|parts|Blob 分片|
+|opts|选项|
 
 ```javascript
 const blob = new Blob([]);
@@ -559,53 +559,53 @@ bloom.test('Tony Stark'); // -> false
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
 
 ### getKey
 
 获取原始键值。
  
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|不区分大小写的键名|
-|返回值|string|原始键值|
+|参数名|说明|
+|-----|---|
+|key|不区分大小写的键名|
+|返回值|原始键值|
 
 ### set
 
 设置值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|不区分大小写的键名|
-|val|*|要设置的值|
+|参数名|说明|
+|-----|---|
+|key|不区分大小写的键名|
+|val|要设置的值|
 
 ### get
 
 获取值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|不区分大小写的键名|
-|返回值|*|键值|
+|参数名|说明|
+|-----|---|
+|key|不区分大小写的键名|
+|返回值|键值|
 
 ### remove
 
 移除值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|不区分大小写的键名|
+|参数名|说明|
+|-----|---|
+|key|不区分大小写的键名|
 
 ### has
 
 判断是否存在给定的键名。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|不区分大小写的键名|
-|返回值|boolean|如果有，返回真|
+|参数名|说明|
+|-----|---|
+|key|不区分大小写的键名|
+|返回值|如果有，返回真|
 
 ```javascript
 const headers = { 'Content-Type': 'text/javascript' };
@@ -641,11 +641,11 @@ function Class(methods: any, statics?: any): Class.IConstructor;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|methods|object|公有方法|
-|[statics]|object|静态方法|
-|返回值|function|用于创建实例的函数|
+|参数名|说明|
+|-----|---|
+|methods|公有方法|
+|statics|静态方法|
+|返回值|用于创建实例的函数|
 
 ```javascript
 const People = Class({
@@ -754,19 +754,19 @@ color.toHsl(); // -> 'hsl(210, 25%, 73%)'
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|host|object|宿主对象|
-|target|string object|委托目标|
+|参数名|说明|
+|-----|---|
+|host|宿主对象|
+|target|委托目标|
 
 ### method
 
 允许在宿主对象上访问目标方法。
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|宿主方法名|
-|target=name|string|目标方法名|
+|参数名|说明|
+|-----|---|
+|name|宿主方法名|
+|target=name|目标方法名|
 
 ### getter
 
@@ -865,27 +865,27 @@ class Emitter {
 
 绑定只触发一次的事件。
 
-|参数名|类型|说明|
-|-----|----|---|
-|event|string|事件名称|
-|listener|function|事件监听器|
+|参数名|说明|
+|-----|---|
+|event|事件名称|
+|listener|事件监听器|
 
 ### emit
 
 触发事件。
 
-|参数名|类型|说明|
-|-----|----|---|
-|event|string|事件名称|
-|...args|*|传递给监听器的参数|
+|参数名|说明|
+|-----|---|
+|event|事件名称|
+|...args|传递给监听器的参数|
 
 ### mixin
 
 【静态】 将 Emitter 类的方法绑定到指定对象上去。
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj |object|目标对象|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
 
 ```javascript
 const event = new Emitter();
@@ -911,13 +911,13 @@ Enum 类实现。
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|字符串数组|
+|参数名|说明|
+|-----|---|
+|arr|字符串数组|
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|键值对|
+|参数名|说明|
+|-----|---|
+|obj|键值对|
 
 ```javascript
 const importance = new Enum([
@@ -2545,10 +2545,10 @@ atob('SGVsbG8gV29ybGQ='); // -> 'Hello World'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|...num|number|要计算的数字|
-|返回值|number|平均值|
+|参数名|说明|
+|-----|---|
+|...num|要计算的数字|
+|返回值|平均值|
 
 ```javascript
 average(5, 3, 1); // -> 3
@@ -2572,19 +2572,19 @@ base64 编解码。
 
 将字节数组编码为 base64 字符串。
 
-|参数名|类型|说明|
-|-----|----|---|
-|bytes|array|字节数组|
-|返回值|string|base64 编码的字符串|
+|参数名|说明|
+|-----|---|
+|bytes|字节数组|
+|返回值|base64 编码的字符串|
 
 ### decode
 
 将 base64 字符串解码为字节数组。
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|base64 编码的字符串|
-|返回值|array|字节数组|
+|参数名|说明|
+|-----|---|
+|str|base64 编码的字符串|
+|返回值|字节数组|
 
 ```javascript
 base64.encode([168, 174, 155, 255]); // -> 'qK6b/w=='
@@ -2602,11 +2602,11 @@ base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|n|number|调用次数|
-|fn|function|源函数|
-|返回值|function|输出函数|
+|参数名|说明|
+|-----|---|
+|n|调用次数|
+|fn|源函数|
+|返回值|输出函数|
 
 超过 n 次后再次调用函数将直接返回最后一次函数的调用结果。
 
@@ -2668,12 +2668,12 @@ binarySearch(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|fn|function|源函数|
-|ctx|*|绑定对象|
-|...rest|*|可选参数|
-|返回值|function|输出函数|
+|参数名|说明|
+|-----|---|
+|fn|源函数|
+|ctx|绑定对象|
+|...rest|可选参数|
+|返回值|输出函数|
 
 ```javascript
 const fn = bind(function (msg) {
@@ -2732,11 +2732,11 @@ bubbleSort([2, 1]); // -> [1, 2]
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|array|字节数组|
-|encoding=utf8|array|字符串编码|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|字节数组|
+|encoding=utf8|字符串编码|
+|返回值|目标字符串|
 
 ```javascript
 bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
@@ -2805,10 +2805,10 @@ cbFn(function (err, value) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|驼峰式字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|驼峰式字符串|
 
 ```javascript
 camelCase('foo-bar'); // -> fooBar
@@ -2828,10 +2828,10 @@ camelCase('foo.bar'); // -> fooBar
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|目标字符串|
 
 ```javascript
 capitalize('rED'); // -> Red
@@ -3315,31 +3315,31 @@ const cookie: cookie.ICookie;</code>
 
 获取 cookie 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|Cookie 键名|
-|返回值|string|对应的 cookie 值|
+|参数名|说明|
+|-----|---|
+|key|Cookie 键名|
+|返回值|对应的 cookie 值|
 
 ### set
 
 设置 cookie 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|cookie 键名|
-|val|string|cookie 值|
-|[options]|object|cookie 选项|
-|返回值|exports|cookie 模块|
+|参数名|说明|
+|-----|---|
+|key|cookie 键名|
+|val|cookie 值|
+|options|cookie 选项|
+|返回值|cookie 模块|
 
 ### remove
 
 移除 cookie 值。
 
-|参数名|类型|说明|
-|-----|----|---|
-|key|string|Cookie 键名|
-|[options]|object|Cookie 选项|
-|返回值|exports|cookie 模块|
+|参数名|说明|
+|-----|---|
+|key|Cookie 键名|
+|options|Cookie 选项|
+|返回值|cookie 模块|
 
 ```javascript
 cookie.set('a', '1', {path: '/'});
@@ -3407,11 +3407,11 @@ CRC16 算法实现。
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|input|string array|信息码|
-|[previous]|number|用于累积计算的 CRC16 校验码|
-|返回值|number|CRC16 校验码|
+|参数名|说明|
+|-----|---|
+|input|信息码|
+|previous|用于累积计算的 CRC16 校验码|
+|返回值|CRC16 校验码|
 
 ```javascript
 crc16('1234567890').toString(16); // -> 'c57a'
@@ -3431,11 +3431,11 @@ CRC32 算法实现。
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|input|string array|信息码|
-|[previous]|number|用于累积计算的 CRC32 校验码|
-|返回值|number|CRC32 校验码|
+|参数名|说明|
+|-----|---|
+|input|信息码|
+|previous|用于累积计算的 CRC32 校验码|
+|返回值|CRC32 校验码|
 
 ```javascript
 crc32('1234567890').toString(16); // -> '261daee5'
@@ -3455,11 +3455,11 @@ CRC8 算法实现。
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|input|string array|信息码|
-|[previous]|number|用于累积计算的 CRC8 校验码|
-|返回值|number|CRC8 校验码|
+|参数名|说明|
+|-----|---|
+|input|信息码|
+|previous|用于累积计算的 CRC8 校验码|
+|返回值|CRC8 校验码|
 
 ```javascript
 crc8('1234567890').toString(16); // -> '52'
@@ -3476,10 +3476,10 @@ crc8('1234567890').toString(16); // -> '52'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|[proto]|object|新对象原型|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|proto|新对象原型|
+|返回值|目标对象|
 
 ```javascript
 const obj = create({ a: 1 });
@@ -3497,11 +3497,11 @@ console.log(obj.a); // -> 1
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|keysFn|function|获取对象键名的函数|
-|defaults|boolean|设置为真时不对值进行覆盖|
-|返回值|function|目标函数|
+|参数名|说明|
+|-----|---|
+|keysFn|获取对象键名的函数|
+|defaults|设置为真时不对值进行覆盖|
+|返回值|目标函数|
 
 ## createUrl
 
@@ -3519,11 +3519,11 @@ function createUrl(data: any, options?: createUrl.IOptions): string;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|data|File Blob string array|数据| 
-|[opts]|object|当数据不是 File 或者 Blob 对象时使用|
-|返回值|string|Blob 地址|
+|参数名|说明|
+|-----|---|
+|data|数据| 
+|opts|当数据不是 File 或者 Blob 对象时使用|
+|返回值|Blob 地址|
 
 ```javascript
 createUrl('test', {type: 'text/plain'}); // -> Blob url
@@ -3557,26 +3557,26 @@ const css: {
 
 将 CSS 字符串转换为 js 对象。
 
-|参数名|类型|说明|
-|-----|----|---|
-|css|string|CSS 字符串|
-|返回值|object|js 对象|
+|参数名|说明|
+|-----|---|
+|css|CSS 字符串|
+|返回值|js 对象|
 
 ### stringify
 
 将 js 对象序列化成 CSS 字符串。
 
-|参数名|类型|说明|
-|-----|----|---|
-|stylesheet|object|要序列化的对象|
-|[options]|object|序列化选项|
-|返回值|string|CSS 字符串|
+|参数名|说明|
+|-----|---|
+|stylesheet|要序列化的对象|
+|options|序列化选项|
+|返回值|CSS 字符串|
 
 选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|indent='  '|string|缩进|
+|参数名|说明|
+|-----|---|
+|indent='  '|缩进|
 
 ```javascript
 const stylesheet = css.parse('.name { background: #000; color: red; }');
@@ -3652,13 +3652,13 @@ function dateFormat(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|date=new Date|Date|要格式化的日期对象|
-|mask|string|日期掩码|
-|utc=false|boolean|是否是 UTC|
-|gmt=false|boolean|是否是 GMT|
-|返回值|string|格式化日期|
+|参数名|说明|
+|-----|---|
+|date=new Date|要格式化的日期对象|
+|mask|日期掩码|
+|utc=false|是否是 UTC|
+|gmt=false|是否是 GMT|
+|返回值|格式化日期|
 
 |掩码|说明|
 |----|----|
@@ -3814,11 +3814,11 @@ function define(name: string, method: Function): void;</code>
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|模块名|
-|[requires]|array|依赖|
-|method|function|模块主体函数|
+|参数名|说明|
+|-----|---|
+|name|模块名|
+|requires|依赖|
+|method|模块主体函数|
 
 模块主体函数只有被 use 模块使用时才会被执行。
 
@@ -3847,18 +3847,18 @@ function defineProp&lt;T&gt;(obj: T, descriptor: PropertyDescriptorMap): T;</cod
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|要定义的对象|
-|prop|string|属性路径|
-|descriptor|object|属性描述|
-|返回值|object|传入对象|
+|参数名|说明|
+|-----|---|
+|obj|要定义的对象|
+|prop|属性路径|
+|descriptor|属性描述|
+|返回值|传入对象|
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|要定义的对象|
-|prop|object|属性描述|
-|返回值|object|传入对象|
+|参数名|说明|
+|-----|---|
+|obj|要定义的对象|
+|prop|属性描述|
+|返回值|传入对象|
 
 ```javascript
 const obj = {b: {c: 3}, d: 4, e: 5};
@@ -4149,11 +4149,11 @@ dotCase('foo bar'); // -> foo.bar
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|data|Blob File string array|下载的数据|
-|name|string|文件名|
-|type=text/plain|string|数据类型|
+|参数名|说明|
+|-----|---|
+|data|下载的数据|
+|name|文件名|
+|type=text/plain|数据类型|
 
 ```javascript
 download('test', 'test.txt');
@@ -4170,11 +4170,11 @@ download('test', 'test.txt');
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|duration|number|要格式化的时间，单位为毫秒|
-|mask='hh:mm:ss'|string|时间掩码|
-|返回值|string|格式化时间|
+|参数名|说明|
+|-----|---|
+|duration|要格式化的时间，单位为毫秒|
+|mask='hh:mm:ss'|时间掩码|
+|返回值|格式化时间|
 
 |掩码|说明|
 |----|----|
@@ -4298,11 +4298,11 @@ el.addEventListener('touchstart', () => {}, false);
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|目标字符串|
-|suffix|string|字符串后缀|
-|返回值|boolean|如果是后缀，返回真|
+|参数名|说明|
+|-----|---|
+|str|目标字符串|
+|suffix|字符串后缀|
+|返回值|如果是后缀，返回真|
 
 ```javascript
 endWith('ab', 'b'); // -> true
@@ -4320,10 +4320,10 @@ endWith('ab', 'b'); // -> true
 </details>
 
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源字符串|
-|返回值|string|目标字符串|
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|目标字符串|
 
 ```javascript
 escape('You & Me'); // -> 'You &amp; Me'
@@ -4401,10 +4401,10 @@ evalCss('body{background:#08c}');
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|js|string|JavaScript 代码|
-|ctx=global|object|上下文|
+|参数名|说明|
+|-----|---|
+|js|JavaScript 代码|
+|ctx=global|上下文|
 
 ```javascript
 evalJs('5+2'); // -> 7
@@ -4476,11 +4476,11 @@ extend({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|destination|object|目标对象|
-|...sources|object|源对象|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|destination|目标对象|
+|...sources|源对象|
+|返回值|目标对象|
 
 ```javascript
 extendDeep({
@@ -4508,11 +4508,11 @@ extendDeep({
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|*src|object|源对象|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|...sources|源对象|
+|返回值|目标对象|
 
 ```javascript
 extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
@@ -4529,10 +4529,10 @@ extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|str|string|源码|
-|返回值|array|块注释|
+|参数名|说明|
+|-----|---|
+|str|源码|
+|返回值|块注释|
 
 ```javascript
 extractBlockCmts('\/*licia*\/'); // -> ['licia']
@@ -4748,12 +4748,12 @@ function filter&lt;T&gt;(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|array|要遍历的集合|
-|predicate|function|真值检测函数|
-|[ctx]|*|函数上下文|
-|返回值|array|包含所有通过真值检测元素的数组|
+|参数名|说明|
+|-----|---|
+|obj|要遍历的集合|
+|predicate|真值检测函数|
+|ctx|函数上下文|
+|返回值|包含所有通过真值检测元素的数组|
 
 ```javascript
 filter([1, 2, 3, 4, 5], function (val) {
@@ -4781,12 +4781,12 @@ function find&lt;T&gt;(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|object|array object|目标集合|
-|iterator|function|真值检测函数|
-|[context]|*|函数上下文|
-|返回值|*|第一个通过的元素|
+|参数名|说明|
+|-----|---|
+|object|目标集合|
+|iterator|真值检测函数|
+|context|函数上下文|
+|返回值|第一个通过的元素|
 
 ```javascript
 find([{
@@ -4868,11 +4868,11 @@ findKey({a: 1, b: 2}, function (val) {
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|目标集合|
-|predicate|function|真值检测函数|
-|返回值|number|从后往前，第一个符合条件元素的位置|
+|参数名|说明|
+|-----|---|
+|arr|目标集合|
+|predicate|真值检测函数|
+|返回值|从后往前，第一个符合条件元素的位置|
 
 ```javascript
 findLastIdx([{
@@ -4900,10 +4900,10 @@ findLastIdx([{
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|arr|array|源数组|
-|返回值|array|目标数组|
+|参数名|说明|
+|-----|---|
+|arr|源数组|
+|返回值|目标数组|
 
 ```javascript
 flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
@@ -4920,10 +4920,10 @@ flatten(['a', ['b', ['c']], 'd', ['e']]); // -> ['a', 'b', 'c', 'd', 'e']
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|types|array|参数类型|
-|args|Argument|Argument 对象|
+|参数名|说明|
+|-----|---|
+|types|参数类型|
+|args|Argument 对象|
 
 如果检验失败，抛出异常。
 
@@ -5025,10 +5025,10 @@ format('%s_%s', 'foo', 'bar'); // -> 'foo_bar'
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|num|number|数字|
-|返回值|string|对应的分数|
+|参数名|说明|
+|-----|---|
+|num|数字|
+|返回值|对应的分数|
 
 ```javascript
 fraction(1.2); // -> '6/5'
@@ -5070,10 +5070,10 @@ console.log(a); // -> {b: 1}
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|obj|object|目标对象|
-|返回值|object|目标对象|
+|参数名|说明|
+|-----|---|
+|obj|目标对象|
+|返回值|目标对象|
 
 ```javascript
 const a = {b: {c: 1}};
@@ -5136,9 +5136,9 @@ const fullscreen: fullscreen.IFullscreen;</code>
 
 进入全屏。
 
-|参数名|类型|说明|
-|-----|----|---|
-|[el]|Element|全屏元素|
+|参数名|说明|
+|-----|---|
+|el|Element|全屏元素|
 
 ### exit
 
@@ -5148,9 +5148,9 @@ const fullscreen: fullscreen.IFullscreen;</code>
 
 切换全屏。
 
-|参数名|类型|说明|
-|-----|----|---|
-|[el]|Element|全屏元素|
+|参数名|说明|
+|-----|---|
+|el|全屏元素|
 
 ### isActive
 
@@ -5192,18 +5192,18 @@ function fuzzySearch(
 </pre>
 </details>
 
-|参数名|类型|说明|
-|-----|----|---|
-|needle|string|搜索字符串|
-|haystacks|array|搜索集合|
-|[options]|object|搜索选项|
+|参数名|说明|
+|-----|---|
+|needle|搜索字符串|
+|haystacks|搜索集合|
+|options|搜索选项|
 
 可用选项：
 
-|参数名|类型|说明|
-|-----|----|---|
-|caseSensitive=false|boolean|是否大小写敏感|
-|[key]|string array|搜索项是对象时的字符串路径|
+|参数名|说明|
+|-----|---|
+|caseSensitive=false|是否大小写敏感|
+|key|搜索项是对象时的字符串路径|
 
 ```javascript
 fuzzySearch('lic', ['licia', 'll', 'lic']); // -> ['lic', 'licia']

@@ -2,13 +2,13 @@
 
 简单日期格式化。
 
-|参数名|类型|说明|
-|-----|----|---|
-|date=new Date|Date|要格式化的日期对象|
-|mask|string|日期掩码|
-|utc=false|boolean|是否是 UTC|
-|gmt=false|boolean|是否是 GMT|
-|返回值|string|格式化日期|
+|参数名|说明|
+|-----|---|
+|date=new Date|要格式化的日期对象|
+|mask|日期掩码|
+|utc=false|是否是 UTC|
+|gmt=false|是否是 GMT|
+|返回值|格式化日期|
 
 |掩码|说明|
 |----|----|

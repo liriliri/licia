@@ -1,11 +1,11 @@
 /* Iterates over elements of collection, returning an array of all the values that pass a truth test.
  *
- * |Name     |Type    |Desc                                   |
- * |---------|--------|---------------------------------------|
- * |obj      |array   |Collection to iterate over             |
- * |predicate|function|Function invoked per iteration         |
- * |[ctx]    |*       |Predicate context                      |
- * |return   |array   |Array of all values that pass predicate|
+ * |Name     |Desc                                   |
+ * |---------|---------------------------------------|
+ * |obj      |Collection to iterate over             |
+ * |predicate|Function invoked per iteration         |
+ * |ctx      |Predicate context                      |
+ * |return   |Array of all values that pass predicate|
  */
 
 /* example
@@ -16,7 +16,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

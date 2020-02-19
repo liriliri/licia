@@ -2,19 +2,19 @@
  *
  * ### constructor
  *
- * |Name  |Type         |Desc             |
- * |------|-------------|-----------------|
- * |host  |object       |Host object      |
- * |target|string object|Delegation target|
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |host  |Host object      |
+ * |target|Delegation target|
  *
  * ### method
  *
  * Allow method to be accessed on the host object.
  *
- * |Name       |Type  |Desc              |
- * |-----------|------|------------------|
- * |name       |string|Host method name  |
- * |target=name|string|Target method name|
+ * |Name       |Desc              |
+ * |-----------|------------------|
+ * |name       |Host method name  |
+ * |target=name|Target method name|
  *
  * ### getter
  *

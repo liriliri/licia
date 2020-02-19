@@ -1,8 +1,8 @@
 /* Remove the set of matched elements from the DOM.
  *
- * |Name   |Type                |Desc              |
- * |-------|--------------------|------------------|
- * |element|string array element|Elements to delete|
+ * |Name   |Desc              |
+ * |-------|------------------|
+ * |element|Elements to delete|
  */
 
 /* example
@@ -11,7 +11,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

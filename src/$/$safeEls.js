@@ -1,9 +1,9 @@
 /* Convert value into an array, if it's a string, do querySelector.
  *
- * |Name  |Type                |Desc             |
- * |------|--------------------|-----------------|
- * |value |element array string|Value to convert |
- * |return|array               |Array of elements|
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |value |Value to convert |
+ * |return|Array of elements|
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

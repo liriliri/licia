@@ -2,10 +2,10 @@
  *
  * ### constructor
  *
- * |Name  |Type  |Desc      |
- * |------|------|----------|
- * |parts |array |Blob parts|
- * |[opts]|object|Options   |
+ * |Name |Desc      |
+ * |-----|----------|
+ * |parts|Blob parts|
+ * |opts |Options   |
  */
 
 /* example
@@ -14,7 +14,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

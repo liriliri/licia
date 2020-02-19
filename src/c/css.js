@@ -6,26 +6,26 @@
  *
  * Parse css into js object.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |css   |string|Css string      |
- * |return|object|Parsed js object|
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |css   |Css string      |
+ * |return|Parsed js object|
  *
  * ### stringify
  *
  * Stringify object into css.
  *
- * |Name      |Type  |Desc               |
- * |----------|------|-------------------|
- * |stylesheet|object|Object to stringify|
- * |[options] |object|Stringify options  |
- * |return    |string|Css string         |
+ * |Name      |Desc               |
+ * |----------|-------------------|
+ * |stylesheet|Object to stringify|
+ * |options   |Stringify options  |
+ * |return    |Css string         |
  *
  * Options:
  *
- * |Name       |Type  |Desc                 |
- * |-----------|------|---------------------|
- * |indent='  '|string|String used to indent|
+ * |Name       |Desc                 |
+ * |-----------|---------------------|
+ * |indent='  '|String used to indent|
  */
 
 /* example

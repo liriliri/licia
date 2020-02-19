@@ -1,9 +1,9 @@
 /* Extract block comments from source code.
  *
- * |Name  |Type  |Desc             |
- * |------|------|-----------------|
- * |str   |string|String to extract|
- * |return|array |Block comments   |
+ * |Name  |Desc             |
+ * |------|-----------------|
+ * |str   |String to extract|
+ * |return|Block comments   |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

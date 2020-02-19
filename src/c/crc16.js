@@ -1,10 +1,10 @@
 /* CRC16 implementation.
  *
- * |Name      |Type        |Desc                 |
- * |----------|------------|---------------------|
- * |input     |string array|Data to calculate    |
- * |[previous]|number      |Previous CRC16 result|
- * |return    |number      |CRC16 result         |
+ * |Name    |Desc                 |
+ * |--------|---------------------|
+ * |input   |Data to calculate    |
+ * |previous|Previous CRC16 result|
+ * |return  |CRC16 result         |
  */
 
 /* example
@@ -13,7 +13,6 @@
 
 /* module
  * env: all
- * test: all
  * since: 1.5.9
  */
 

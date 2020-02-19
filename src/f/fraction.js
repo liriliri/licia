@@ -1,9 +1,9 @@
 /* Convert number to fraction.
  *
- * |Name  |Type  |Desc                  |
- * |------|------|----------------------|
- * |num   |number|Number to convert     |
- * |return|string|Corresponding fraction|
+ * |Name  |Desc                  |
+ * |------|----------------------|
+ * |num   |Number to convert     |
+ * |return|Corresponding fraction|
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

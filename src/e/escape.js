@@ -1,9 +1,9 @@
 /* Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' characters.
  *
- * |Name  |Type  |Desc            |
- * |------|------|----------------|
- * |str   |string|String to escape|
- * |return|string|Escaped string  |
+ * |Name  |Desc            |
+ * |------|----------------|
+ * |str   |String to escape|
+ * |return|Escaped string  |
  */
 
 /* example

@@ -4,19 +4,19 @@
 
 ### constructor
 
-|参数名|类型|说明|
-|-----|----|---|
-|host|object|宿主对象|
-|target|string object|委托目标|
+|参数名|说明|
+|-----|---|
+|host|宿主对象|
+|target|委托目标|
 
 ### method
 
 允许在宿主对象上访问目标方法。
 
-|参数名|类型|说明|
-|-----|----|---|
-|name|string|宿主方法名|
-|target=name|string|目标方法名|
+|参数名|说明|
+|-----|---|
+|name|宿主方法名|
+|target=name|目标方法名|
 
 ### getter
 

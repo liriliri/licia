@@ -1,9 +1,9 @@
 /* Convert string to "camelCase".
  *
- * |Name  |Type  |Desc              |
- * |------|------|------------------|
- * |str   |string|String to convert |
- * |return|string|Camel cased string|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |str   |String to convert |
+ * |return|Camel cased string|
  */
 
 /* example
@@ -15,7 +15,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

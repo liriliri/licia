@@ -1,17 +1,17 @@
 /* Shortcut for Object.defineProperty(defineProperties).
  *
- * |Name      |Type  |Desc               |
- * |----------|------|-------------------|
- * |obj       |object|Object to define   |
- * |prop      |string|Property path      |
- * |descriptor|object|Property descriptor|
- * |return    |object|Object itself      |
+ * |Name      |Desc               |
+ * |----------|-------------------|
+ * |obj       |Object to define   |
+ * |prop      |Property path      |
+ * |descriptor|Property descriptor|
+ * |return    |Object itself      |
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |obj   |object|Object to define    |
- * |prop  |object|Property descriptors|
- * |return|object|Object itself       |
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |obj   |Object to define    |
+ * |prop  |Property descriptors|
+ * |return|Object itself       |
  */
 
 /* example

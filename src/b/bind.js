@@ -1,11 +1,11 @@
 /* Create a function bound to a given object.
  *
- * |Name   |Type    |Desc                    |
- * |-------|--------|------------------------|
- * |fn     |function|Function to bind        |
- * |ctx    |*       |This binding of given fn|
- * |...rest|*       |Optional arguments      |
- * |return |function|New bound function      |
+ * |Name   |Desc                    |
+ * |-------|------------------------|
+ * |fn     |Function to bind        |
+ * |ctx    |This binding of given fn|
+ * |...rest|Optional arguments      |
+ * |return |New bound function      |
  */
 
 /* example
@@ -17,7 +17,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

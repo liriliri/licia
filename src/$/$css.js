@@ -2,24 +2,24 @@
  *
  * Get the computed style properties for the first element in the set of matched elements.
  *
- * |Name   |Type                |Desc                      |
- * |-------|--------------------|--------------------------|
- * |element|string array element|Elements to manipulate    |
- * |name   |string              |Property name             |
- * |return |string              |Css value of first element|
+ * |Name   |Desc                      |
+ * |-------|--------------------------|
+ * |element|Elements to manipulate    |
+ * |name   |Property name             |
+ * |return |Css value of first element|
  *
  * Set one or more CSS properties for the set of matched elements.
  *
- * |Name   |Type                |Desc                  |
- * |-------|--------------------|----------------------|
- * |element|string array element|Elements to manipulate|
- * |name   |string              |Property name         |
- * |value  |string              |Css value             |
+ * |Name   |Desc                  |
+ * |-------|----------------------|
+ * |element|Elements to manipulate|
+ * |name   |Property name         |
+ * |value  |Css value             |
  *
- * |Name      |Type                |Desc                            |
- * |----------|--------------------|--------------------------------|
- * |element   |string array element|Elements to manipulate          |
- * |properties|object              |Object of css-value pairs to set|
+ * |Name      |Desc                            |
+ * |----------|--------------------------------|
+ * |element   |Elements to manipulate          |
+ * |properties|Object of css-value pairs to set|
  */
 
 /* example
@@ -33,7 +33,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

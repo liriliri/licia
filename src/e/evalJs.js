@@ -1,9 +1,9 @@
 /* Execute js in given context.
  *
- * |Name      |Type  |Desc           |
- * |----------|------|---------------|
- * |js        |string|JavaScript code|
- * |ctx=global|object|Context        |
+ * |Name      |Desc           |
+ * |----------|---------------|
+ * |js        |JavaScript code|
+ * |ctx=global|Context        |
  */
 
 /* example

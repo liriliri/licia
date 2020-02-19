@@ -1,9 +1,9 @@
 /* Get average value of given numbers.
  *
- * |Name  |Type  |Desc                |
- * |------|------|--------------------|
- * |...num|number|Numbers to calculate|
- * |return|number|Average value       |
+ * |Name  |Desc                |
+ * |------|--------------------|
+ * |...num|Numbers to calculate|
+ * |return|Average value       |
  */
 
 /* example
@@ -12,7 +12,6 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript

@@ -4,31 +4,31 @@
  *
  * Get cookie value.
  *
- * |Name  |Type  |Desc                      |
- * |------|------|--------------------------|
- * |key   |string|Cookie key                |
- * |return|string|Corresponding cookie value|
+ * |Name  |Desc                      |
+ * |------|--------------------------|
+ * |key   |Cookie key                |
+ * |return|Corresponding cookie value|
  *
  * ### set
  *
  * Set cookie value.
  *
- * |Name     |Type   |Desc          |
- * |---------|-------|--------------|
- * |key      |string |Cookie key    |
- * |val      |string |Cookie value  |
- * |[options]|object |Cookie options|
- * |return   |exports|Module cookie |
+ * |Name   |Desc          |
+ * |-------|--------------|
+ * |key    |Cookie key    |
+ * |val    |Cookie value  |
+ * |options|Cookie options|
+ * |return |Module cookie |
  *
  * ### remove
  *
  * Remove cookie value.
  *
- * |Name     |Type   |Desc          |
- * |---------|-------|--------------|
- * |key      |string |Cookie key    |
- * |[options]|object |Cookie options|
- * |return   |exports|Module cookie |
+ * |Name   |Desc          |
+ * |-------|--------------|
+ * |key    |Cookie key    |
+ * |options|Cookie options|
+ * |return |Module cookie |
  */
 
 /* example
@@ -39,7 +39,6 @@
 
 /* module
  * env: browser
- * test: browser
  */
 
 /* typescript

@@ -12,27 +12,27 @@
  *
  * Bind event that trigger once.
  *
- * |Name    |Type    |Desc          |
- * |--------|--------|--------------|
- * |event   |string  |Event name    |
- * |listener|function|Event listener|
+ * |Name    |Desc          |
+ * |--------|--------------|
+ * |event   |Event name    |
+ * |listener|Event listener|
  *
  * ### emit
  *
  * Emit event.
  *
- * |Name   |Type  |Desc                        |
- * |-------|------|----------------------------|
- * |event  |string|Event name                  |
- * |...args|*     |Arguments passed to listener|
+ * |Name   |Desc                        |
+ * |-------|----------------------------|
+ * |event  |Event name                  |
+ * |...args|Arguments passed to listener|
  *
  * ### mixin
  *
  * [static] Mixin object class methods.
  *
- * |Name|Type  |Desc           |
- * |----|------|---------------|
- * |obj |object|Object to mixin|
+ * |Name|Desc           |
+ * |----|---------------|
+ * |obj |Object to mixin|
  */
 
 /* example
