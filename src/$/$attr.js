@@ -14,7 +14,7 @@
  * |-------|----------------------|
  * |element|Elements to manipulate|
  * |name   |Attribute name        |
- * |value  |Attribute value       |
+ * |val    |Attribute value       |
  *
  * |Name      |Desc                                  |
  * |----------|--------------------------------------|

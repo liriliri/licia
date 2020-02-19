@@ -103,7 +103,7 @@ Set one or more attributes for the set of matched elements.
 |-------|----------------------|
 |element|Elements to manipulate|
 |name   |Attribute name        |
-|value  |Attribute value       |
+|val    |Attribute value       |
 
 |Name      |Desc                                  |
 |----------|--------------------------------------|
@@ -200,7 +200,7 @@ Element css manipulation.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function $css(element: $safeEls.El, name: string): string;
-function $css(element: $safeEls.El, name: string, value: string): void;
+function $css(element: $safeEls.El, name: string, val: string): void;
 function $css(
     element: $safeEls.El,
     properties: { [name: string]: string }
@@ -222,7 +222,7 @@ Set one or more CSS properties for the set of matched elements.
 |-------|----------------------|
 |element|Elements to manipulate|
 |name   |Property name         |
-|value  |Css value             |
+|val    |Css value             |
 
 |Name      |Desc                            |
 |----------|--------------------------------|
@@ -447,13 +447,13 @@ Convert value into an array, if it's a string, do querySelector.
 <code class="language-typescript">namespace $safeEls {
     type El = Element | Element[] | NodeListOf&lt;Element&gt; | string;
 }
-function $safeEls(value: $safeEls.El): Element[];</code>
+function $safeEls(val: $safeEls.El): Element[];</code>
 </pre>
 </details>
 
 |Name  |Desc             |
 |------|-----------------|
-|value |Value to convert |
+|val   |Value to convert |
 |return|Array of elements|
 
 ```javascript
@@ -487,10 +487,10 @@ Use Blob when available, otherwise BlobBuilder.
 
 ### constructor
 
-|Name |Desc      |
-|-----|----------|
-|parts|Blob parts|
-|opts |Options   |
+|Name   |Desc      |
+|-------|----------|
+|parts  |Blob parts|
+|options|Options   |
 
 ```javascript
 const blob = new Blob([]);
@@ -1906,7 +1906,7 @@ Check current state.
 
 |Name  |Desc                                    |
 |------|----------------------------------------|
-|value |State to check                          |
+|state |State to check                          |
 |return|True if current state equals given value|
 
 ```javascript
@@ -1939,7 +1939,7 @@ Memory storage.
 <code class="language-typescript">class Store extends Emitter {
     constructor(data?: {});
     set(key: string, val: any): void;
-    set(vals: {}): void;
+    set(values: {}): void;
     get(key: string): any;
     get(keys: string[]): {};
     remove(key: string): void;
@@ -1969,9 +1969,9 @@ Set value.
 
 Set values.
 
-|Name|Desc           |
-|----|---------------|
-|vals|Key value pairs|
+|Name  |Desc           |
+|------|---------------|
+|values|Key value pairs|
 
 This emit a change event whenever is called.
 
@@ -2120,7 +2120,7 @@ class Url {
     pathname: string;
     slashes: boolean;
     constructor(url?: string);
-    setQuery(name: string, value: string): Url;
+    setQuery(name: string, val: string): Url;
     setQuery(query: { [name: string]: string }): Url;
     rmQuery(name: string | string[]): Url;
     toString(): string;
@@ -2143,7 +2143,7 @@ Set query value.
 |Name  |Desc       |
 |------|-----------|
 |name  |Query name |
-|value |Query value|
+|val   |Query value|
 |return|this       |
 
 |Name  |Desc        |
@@ -2629,7 +2629,7 @@ Binary search implementation.
 <pre>
 <code class="language-typescript">function binarySearch(
     array: any[],
-    value: any,
+    val: any,
     cmp?: Function
 ): number;</code>
 </pre>
@@ -2638,7 +2638,7 @@ Binary search implementation.
 |Name  |Desc         |
 |------|-------------|
 |array |Sorted array |
-|value |Value to seek|
+|val   |Value to seek|
 |cmp   |Comparator   |
 |return|Value index  |
 
@@ -3134,7 +3134,7 @@ Compress image using canvas.
 <code class="language-typescript">function compressImg(file: File | Blob | string, cb: Function): void;
 function compressImg(
     file: File | Blob | string,
-    opts?: {
+    options?: {
         maxWidth?: number;
         maxHeight?: number;
         width?: number;
@@ -3147,11 +3147,11 @@ function compressImg(
 </pre>
 </details>
 
-|Name|Desc             |
-|----|-----------------|
-|file|Image file or url|
-|opts|Options          |
-|cb  |Callback         |
+|Name   |Desc             |
+|-------|-----------------|
+|file   |Image file or url|
+|options|Options          |
+|cb     |Callback         |
 
 Available options:
 
@@ -3214,7 +3214,7 @@ Check if the value is present in the list.
 |Name  |Desc                                |
 |------|------------------------------------|
 |target|Target object                       |
-|value |Value to check                      |
+|val   |Value to check                      |
 |return|True if value is present in the list|
 
 ```javascript
@@ -3524,11 +3524,11 @@ function createUrl(data: any, options?: createUrl.IOptions): string;</code>
 </pre>
 </details>
 
-|Name  |Desc                                |
-|------|------------------------------------|
-|data  |Url data                            |
-|opts  |Used when data is not a File or Blob|
-|return|Blob url                            |
+|Name   |Desc                                |
+|-------|------------------------------------|
+|data   |Url data                            |
+|options|Used when data is not a File or Blob|
+|return |Blob url                            |
 
 ```javascript
 createUrl('test', {type: 'text/plain'}); // -> Blob url
@@ -4712,7 +4712,7 @@ Fill elements of array with value.
 <pre>
 <code class="language-typescript">function fill(
     list: any[],
-    value: any,
+    val: any,
     start?: number,
     end?: number
 ): any[];</code>
@@ -4722,7 +4722,7 @@ Fill elements of array with value.
 |Name          |Desc                    |
 |--------------|------------------------|
 |list          |Array to fill           |
-|value         |Value to fill array with|
+|val           |Value to fill array with|
 |start=0       |Start position          |
 |end=arr.length|End position            |
 |return        |Filled array            |
@@ -7231,13 +7231,13 @@ A simple jsonp implementation.
         timeout?: number;
     }
 }
-function jsonp(opts: jsonp.IOptions): void;</code>
+function jsonp(options: jsonp.IOptions): void;</code>
 </pre>
 </details>
 
-|Name|Desc         |
-|----|-------------|
-|opts|Jsonp Options|
+|Name   |Desc         |
+|-------|-------------|
+|options|Jsonp Options|
 
 Available options:
 
@@ -7927,7 +7927,7 @@ function mkdir(dir: string, cb?: Function): void;</code>
 |---------|-------------------|
 |dir      |Directory to create|
 |mode=0777|Directory mode     |
-|callback |Callback           |
+|cb       |Callback           |
 
 ```javascript
 mkdir('/tmp/foo/bar/baz', function (err) {
@@ -9413,10 +9413,10 @@ Recursively remove directories.
 </pre>
 </details>
 
-|Name    |Desc               |
-|--------|-------------------|
-|dir     |Directory to remove|
-|callback|Callback           |
+|Name|Desc               |
+|----|-------------------|
+|dir |Directory to remove|
+|cb  |Callback           |
 
 ```javascript
 rmdir('/tmp/foo/bar/baz', function (err) {

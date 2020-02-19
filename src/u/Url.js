@@ -13,7 +13,7 @@
  * |Name  |Desc       |
  * |------|-----------|
  * |name  |Query name |
- * |value |Query value|
+ * |val   |Query value|
  * |return|this       |
  *
  * |Name  |Desc        |
@@ -97,7 +97,7 @@
  *     pathname: string;
  *     slashes: boolean;
  *     constructor(url?: string);
- *     setQuery(name: string, value: string): Url;
+ *     setQuery(name: string, val: string): Url;
  *     setQuery(query: { [name: string]: string }): Url;
  *     rmQuery(name: string | string[]): Url;
  *     toString(): string;

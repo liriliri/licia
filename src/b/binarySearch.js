@@ -3,7 +3,7 @@
  * |Name  |Desc         |
  * |------|-------------|
  * |array |Sorted array |
- * |value |Value to seek|
+ * |val   |Value to seek|
  * |cmp   |Comparator   |
  * |return|Value index  |
  */
@@ -36,7 +36,7 @@
 /* typescript
  * export declare function binarySearch(
  *     array: any[],
- *     value: any,
+ *     val: any,
  *     cmp?: Function
  * ): number;
  */

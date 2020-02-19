@@ -1,10 +1,10 @@
 /* Compress image using canvas.
  *
- * |Name|Desc             |
- * |----|-----------------|
- * |file|Image file or url|
- * |opts|Options          |
- * |cb  |Callback         |
+ * |Name   |Desc             |
+ * |-------|-----------------|
+ * |file   |Image file or url|
+ * |options|Options          |
+ * |cb     |Callback         |
  *
  * Available options:
  *
@@ -39,7 +39,7 @@
  * export declare function compressImg(file: File | Blob | string, cb: Function): void;
  * export declare function compressImg(
  *     file: File | Blob | string,
- *     opts?: {
+ *     options?: {
  *         maxWidth?: number;
  *         maxHeight?: number;
  *         width?: number;
@@ -53,18 +53,18 @@
 
 _('isFn loadImg noop defaults createUrl isStr');
 
-exports = function(file, opts, cb) {
-    if (isFn(opts)) {
-        cb = opts;
-        opts = {};
+exports = function(file, options, cb) {
+    if (isFn(options)) {
+        cb = options;
+        options = {};
     }
 
     cb = cb || noop;
-    opts = opts || {};
-    defaults(opts, defOpts);
-    opts.mimeType = opts.mimeType || file.type;
+    options = options || {};
+    defaults(options, defOptions);
+    options.mimeType = options.mimeType || file.type;
     if (isStr(file)) {
-        opts.isUrl = true;
+        options.isUrl = true;
     } else {
         file = createUrl(file);
     }
@@ -72,11 +72,11 @@ exports = function(file, opts, cb) {
     loadImg(file, function(err, img) {
         if (err) return cb(err);
 
-        compress(img, opts, cb);
+        compress(img, options, cb);
     });
 };
 
-function compress(img, opts, cb) {
+function compress(img, options, cb) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
@@ -84,15 +84,15 @@ function compress(img, opts, cb) {
     let height = img.height;
     const ratio = width / height;
 
-    const maxWidth = opts.maxWidth;
-    const maxHeight = opts.maxHeight;
+    const maxWidth = options.maxWidth;
+    const maxHeight = options.maxHeight;
 
-    if (opts.width || opts.height) {
-        if (opts.width) {
-            width = opts.width;
+    if (options.width || options.height) {
+        if (options.width) {
+            width = options.width;
             height = width / ratio;
-        } else if (opts.height) {
-            height = opts.height;
+        } else if (options.height) {
+            height = options.height;
             width = height * ratio;
         }
     } else {
@@ -114,15 +114,15 @@ function compress(img, opts, cb) {
     canvas.height = height;
 
     ctx.drawImage(img, 0, 0, width, height);
-    if (URL && opts.isUrl) URL.revokeObjectURL(img.src);
+    if (URL && options.isUrl) URL.revokeObjectURL(img.src);
     if (canvas.toBlob) {
         try {
             canvas.toBlob(
                 function(file) {
                     cb(null, file);
                 },
-                opts.mimeType,
-                opts.quality
+                options.mimeType,
+                options.quality
             );
         } catch (e) {
             cb(e);
@@ -132,7 +132,7 @@ function compress(img, opts, cb) {
     }
 }
 
-const defOpts = {
+const defOptions = {
     maxWidth: Infinity,
     maxHeight: Infinity,
     quality: 0.8

@@ -19,9 +19,9 @@
  *
  * Set values.
  *
- * |Name|Desc           |
- * |----|---------------|
- * |vals|Key value pairs|
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |values|Key value pairs|
  *
  * This emit a change event whenever is called.
  *
@@ -83,7 +83,7 @@
  * export declare class Store extends Emitter {
  *     constructor(data?: {});
  *     set(key: string, val: any): void;
- *     set(vals: {}): void;
+ *     set(values: {}): void;
  *     get(key: string): any;
  *     get(keys: string[]): {};
  *     remove(key: string): void;

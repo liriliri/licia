@@ -15,7 +15,7 @@
 |参数名|说明|
 |-----|---|
 |name|query 名|
-|value|query 值|
+|val|query 值|
 |返回值|this|
 
 |参数名|说明|

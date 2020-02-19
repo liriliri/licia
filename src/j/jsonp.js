@@ -1,8 +1,8 @@
 /* A simple jsonp implementation.
  *
- * |Name|Desc         |
- * |----|-------------|
- * |opts|Jsonp Options|
+ * |Name   |Desc         |
+ * |-------|-------------|
+ * |options|Jsonp Options|
  *
  * Available options:
  *
@@ -45,22 +45,22 @@
  *         timeout?: number;
  *     }
  * }
- * export declare function jsonp(opts: jsonp.IOptions): void;
+ * export declare function jsonp(options: jsonp.IOptions): void;
  */
 
 _('loadJs defaults noop uniqId query');
 
-exports = function(opts) {
-    defaults(opts, exports.settings);
+exports = function(options) {
+    defaults(options, exports.settings);
 
-    const name = opts.name || uniqId('jsonp');
-    const param = opts.param;
-    const timeout = opts.timeout;
-    const error = opts.error;
-    const success = opts.success;
-    const complete = opts.complete;
-    let data = opts.data;
-    let url = opts.url;
+    const name = options.name || uniqId('jsonp');
+    const param = options.param;
+    const timeout = options.timeout;
+    const error = options.error;
+    const success = options.success;
+    const complete = options.complete;
+    let data = options.data;
+    let url = options.url;
     let timer;
     let isTimeout = false;
 

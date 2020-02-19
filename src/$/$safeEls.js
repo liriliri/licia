@@ -2,7 +2,7 @@
  *
  * |Name  |Desc             |
  * |------|-----------------|
- * |value |Value to convert |
+ * |val   |Value to convert |
  * |return|Array of elements|
  */
 
@@ -20,7 +20,7 @@
  * export declare namespace $safeEls {
  *     type El = Element | Element[] | NodeListOf<Element> | string;
  * }
- * export declare function $safeEls(value: $safeEls.El): Element[];
+ * export declare function $safeEls(val: $safeEls.El): Element[];
  */
 
 _('isStr toArr Select');

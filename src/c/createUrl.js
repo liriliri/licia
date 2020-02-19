@@ -1,10 +1,10 @@
 /* CreateObjectURL wrapper.
  *
- * |Name  |Desc                                |
- * |------|------------------------------------|
- * |data  |Url data                            |
- * |opts  |Used when data is not a File or Blob|
- * |return|Blob url                            |
+ * |Name   |Desc                                |
+ * |-------|------------------------------------|
+ * |data   |Url data                            |
+ * |options|Used when data is not a File or Blob|
+ * |return |Blob url                            |
  */
 
 /* example
@@ -29,12 +29,12 @@
 
 _('defaults isBlob isFile Blob toArr');
 
-exports = function(data, opts) {
-    opts = opts || {};
-    defaults(opts, defOpts);
+exports = function(data, options) {
+    options = options || {};
+    defaults(options, defOpts);
 
     if (!isBlob(data) && !isFile(data)) {
-        data = new Blob(toArr(data), opts);
+        data = new Blob(toArr(data), options);
     }
 
     return URL.createObjectURL(data);

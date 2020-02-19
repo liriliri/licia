@@ -2,10 +2,10 @@
  *
  * ### constructor
  *
- * |Name |Desc      |
- * |-----|----------|
- * |parts|Blob parts|
- * |opts |Options   |
+ * |Name   |Desc      |
+ * |-------|----------|
+ * |parts  |Blob parts|
+ * |options|Options   |
  */
 
 /* example
@@ -23,8 +23,8 @@ _('root each');
 
 exports =
     root.Blob ||
-    function Blob(parts, opts) {
-        opts = opts || {};
+    function Blob(parts, options) {
+        options = options || {};
 
         const blobBuilder = new BlobBuilder();
 
@@ -32,8 +32,8 @@ exports =
             blobBuilder.append(part);
         });
 
-        return opts.type
-            ? blobBuilder.getBlob(opts.type)
+        return options.type
+            ? blobBuilder.getBlob(options.type)
             : blobBuilder.getBlob();
     };
 

@@ -101,7 +101,7 @@ const $attr: $attr.IAttr;</code>
 |-----|---|
 |element|目标元素集|
 |name|属性名|
-|value|属性值|
+|val|属性值|
 
 |参数名|说明|
 |-----|---|
@@ -175,7 +175,6 @@ $attr('#test', {
 
 对于元素集中的所有元素，移除指定的 class。
 
-
 |参数名|说明|
 |-----|---|
 |element|目标元素集|
@@ -199,7 +198,7 @@ $class.has('#test', 'class1'); // -> true
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function $css(element: $safeEls.El, name: string): string;
-function $css(element: $safeEls.El, name: string, value: string): void;
+function $css(element: $safeEls.El, name: string, val: string): void;
 function $css(
     element: $safeEls.El,
     properties: { [name: string]: string }
@@ -221,7 +220,7 @@ function $css(
 |-----|---|
 |element|目标元素集|
 |name|样式名|
-|value|样式值|
+|val|样式值|
 
 |参数名|说明|
 |-----|---|
@@ -442,13 +441,13 @@ $remove('#test');
 <code class="language-typescript">namespace $safeEls {
     type El = Element | Element[] | NodeListOf&lt;Element&gt; | string;
 }
-function $safeEls(value: $safeEls.El): Element[];</code>
+function $safeEls(val: $safeEls.El): Element[];</code>
 </pre>
 </details>
 
 |参数名|说明|
 |-----|---|
-|value|要转换的值|
+|val|要转换的值|
 |返回值|元素集|
 
 ```javascript
@@ -485,7 +484,7 @@ $show('#test');
 |参数名|说明|
 |-----|---|
 |parts|Blob 分片|
-|opts|选项|
+|options|选项|
 
 ```javascript
 const blob = new Blob([]);
@@ -1901,7 +1900,7 @@ stack.pop(); // -> 3
 
 |参数名|说明|
 |-----|---|
-|value|要检查的状态|
+|state|要检查的状态|
 |返回值|如果是，返回真|
 
 ```javascript
@@ -1934,7 +1933,7 @@ state.play('eustia');
 <code class="language-typescript">class Store extends Emitter {
     constructor(data?: {});
     set(key: string, val: any): void;
-    set(vals: {}): void;
+    set(values: {}): void;
     get(key: string): any;
     get(keys: string[]): {};
     remove(key: string): void;
@@ -1966,7 +1965,7 @@ state.play('eustia');
 
 |参数名|说明|
 |-----|---|
-|vals|包含多个键值对的对象|
+|values|包含多个键值对的对象|
 
 该方法被调用时发触发 change 事件。
 
@@ -2115,7 +2114,7 @@ class Url {
     pathname: string;
     slashes: boolean;
     constructor(url?: string);
-    setQuery(name: string, value: string): Url;
+    setQuery(name: string, val: string): Url;
     setQuery(query: { [name: string]: string }): Url;
     rmQuery(name: string | string[]): Url;
     toString(): string;
@@ -2138,7 +2137,7 @@ class Url {
 |参数名|说明|
 |-----|---|
 |name|query 名|
-|value|query 值|
+|val|query 值|
 |返回值|this|
 
 |参数名|说明|
@@ -2624,7 +2623,7 @@ fn(); // Allow function to be call 4 times at last.
 <pre>
 <code class="language-typescript">function binarySearch(
     array: any[],
-    value: any,
+    val: any,
     cmp?: Function
 ): number;</code>
 </pre>
@@ -2633,7 +2632,7 @@ fn(); // Allow function to be call 4 times at last.
 |参数名|说明|
 |-----|---|
 |array|目标数组|
-|value|要查找的值|
+|val|要查找的值|
 |cmp|比较器|
 |返回值|第一次出现的位置，如果没有，返回 -1|
 
@@ -3129,7 +3128,7 @@ welcome('licia'); // -> 'hi: LICIA!'
 <code class="language-typescript">function compressImg(file: File | Blob | string, cb: Function): void;
 function compressImg(
     file: File | Blob | string,
-    opts?: {
+    options?: {
         maxWidth?: number;
         maxHeight?: number;
         width?: number;
@@ -3145,7 +3144,7 @@ function compressImg(
 |参数名|说明|
 |-----|---|
 |file|图片文件或 url|
-|opts|选项|
+|options|选项|
 |cb|回调|
 
 可用选项：
@@ -3209,7 +3208,7 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 |参数名|说明|
 |-----|---|
 |target|目标对象|
-|value|要检查的值|
+|val|要检查的值|
 |返回值|如果有，返回真|
 
 ```javascript
@@ -3522,7 +3521,7 @@ function createUrl(data: any, options?: createUrl.IOptions): string;</code>
 |参数名|说明|
 |-----|---|
 |data|数据| 
-|opts|当数据不是 File 或者 Blob 对象时使用|
+|options|当数据不是 File 或者 Blob 对象时使用|
 |返回值|Blob 地址|
 
 ```javascript
@@ -4708,7 +4707,7 @@ console.log(fileType(file)); // -> { ext: 'jpg', mime: 'image/jpeg' }
 <pre>
 <code class="language-typescript">function fill(
     list: any[],
-    value: any,
+    val: any,
     start?: number,
     end?: number
 ): any[];</code>
@@ -4718,7 +4717,7 @@ console.log(fileType(file)); // -> { ext: 'jpg', mime: 'image/jpeg' }
 |参数名|说明|
 |-----|---|
 |list|源数组|
-|value|填充数组的值|
+|val|填充数组的值|
 |start=0|起始位置|
 |end=arr.length|结束位置，不包括|
 |返回值|目标数组|
@@ -7227,13 +7226,13 @@ jsonClone({ name: 'licia' }); // -> { name: 'licia' }
         timeout?: number;
     }
 }
-function jsonp(opts: jsonp.IOptions): void;</code>
+function jsonp(options: jsonp.IOptions): void;</code>
 </pre>
 </details>
 
 |参数名|说明|
 |-----|---|
-|opts|jsonp 选项|
+|options|jsonp 选项|
 
 可用选项：
 
@@ -7923,7 +7922,7 @@ function mkdir(dir: string, cb?: Function): void;</code>
 |-----|---|
 |dir|文件夹路径|
 |mode=0777|文件夹模式|
-|callback|回调|
+|cb|回调|
 
 ```javascript
 mkdir('/tmp/foo/bar/baz', function (err) {
@@ -9425,7 +9424,7 @@ rmCookie('test');
 |参数名|说明|
 |-----|---|
 |dir|文件夹路径|
-|callback|回调|
+|cb|回调|
 
 ```javascript
 rmdir('/tmp/foo/bar/baz', function (err) {

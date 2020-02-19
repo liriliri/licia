@@ -14,7 +14,7 @@
  * |-------|----------------------|
  * |element|Elements to manipulate|
  * |name   |Property name         |
- * |value  |Css value             |
+ * |val    |Css value             |
  *
  * |Name      |Desc                            |
  * |----------|--------------------------------|
@@ -37,7 +37,7 @@
 
 /* typescript
  * export declare function $css(element: $safeEls.El, name: string): string;
- * export declare function $css(element: $safeEls.El, name: string, value: string): void;
+ * export declare function $css(element: $safeEls.El, name: string, val: string): void;
  * export declare function $css(
  *     element: $safeEls.El,
  *     properties: { [name: string]: string }

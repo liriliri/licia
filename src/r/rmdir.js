@@ -1,9 +1,9 @@
 /* Recursively remove directories.
  *
- * |Name    |Desc               |
- * |--------|-------------------|
- * |dir     |Directory to remove|
- * |callback|Callback           |
+ * |Name|Desc               |
+ * |----|-------------------|
+ * |dir |Directory to remove|
+ * |cb  |Callback           |
  */
 
 /* example

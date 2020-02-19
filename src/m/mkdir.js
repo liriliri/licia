@@ -4,7 +4,7 @@
  * |---------|-------------------|
  * |dir      |Directory to create|
  * |mode=0777|Directory mode     |
- * |callback |Callback           |
+ * |cb       |Callback           |
  */
 
 /* example

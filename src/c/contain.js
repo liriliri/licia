@@ -3,7 +3,7 @@
  * |Name  |Desc                                |
  * |------|------------------------------------|
  * |target|Target object                       |
- * |value |Value to check                      |
+ * |val   |Value to check                      |
  * |return|True if value is present in the list|
  */
 

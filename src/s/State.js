@@ -15,7 +15,7 @@
  *
  * |Name  |Desc                                    |
  * |------|----------------------------------------|
- * |value |State to check                          |
+ * |state |State to check                          |
  * |return|True if current state equals given value|
  */
 
