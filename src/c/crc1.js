@@ -1,10 +1,10 @@
 /* CRC1 implementation.
  *
- * |Name      |Desc                |
- * |----------|--------------------|
- * |input     |Data to calculate   |
- * |[previous]|Previous CRC1 result|
- * |return    |CRC1 result         |
+ * |Name    |Desc                |
+ * |--------|--------------------|
+ * |input   |Data to calculate   |
+ * |previous|Previous CRC1 result|
+ * |return  |CRC1 result         |
  */
 
 /* example

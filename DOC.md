@@ -78,14 +78,17 @@ Element attribute manipulation.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace $attr {
-    interface IAttr {
-        (element: $safeEls.El, name: string, value: string): void;
-        (element: $safeEls.El, attributes: { [name: string]: string }): void;
-        (element: $safeEls.El, name: string): string;
-        remove(element: $safeEls.El, name: string): void;
-    }
+    function remove(element: $safeEls.El, name: string): void;
 }
-const $attr: $attr.IAttr;</code>
+function $attr(
+    element: $safeEls.El,name: string,
+    value: string
+): void;
+function $attr(
+    element: $safeEls.El,
+    attributes: { [name: string]: string }
+): void;
+function $attr(element: $safeEls.El, name: string): string;</code>
 </pre>
 </details>
 
@@ -245,14 +248,16 @@ Wrapper of $attr, adds data- prefix to keys.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace $data {
-    interface IData {
-        (element: $safeEls.El, name: string, value: string): void;
-        (element: $safeEls.El, attributes: { [name: string]: string }): void;
-        (element: $safeEls.El, name: string): string;
-    }
-}
-const $data: $data.IData;</code>
+<code class="language-typescript">function $data(
+    element: $safeEls.El,
+    name: string,
+    value: string
+): void;
+function $data(
+    element: $safeEls.El,
+    attributes: { [name: string]: string }
+): void;
+function $data(element: $safeEls.El, name: string): string;</code>
 </pre>
 </details>
 
@@ -302,9 +307,7 @@ Insert html on different position.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace $insert {
-    interface IInsert {
-        (element: $safeEls.El, content: string): void;
-    }
+    type IInsert = (element: $safeEls.El, content: string) =&gt; void;
 }
 const $insert: {
     before: $insert.IInsert;
@@ -846,14 +849,12 @@ Event emitter class which provides observer pattern.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace Emitter {
-    function mixin(obj: any): any;
-}
-class Emitter {
+<code class="language-typescript">class Emitter {
     on(event: string, listener: Function): Emitter;
     off(event: string, listener: Function): Emitter;
     once(event: string, listener: Function): Emitter;
     emit(event: string): Emitter;
+    static mixin(obj: any): any;
 }</code>
 </pre>
 </details>
@@ -2314,23 +2315,32 @@ Perform an asynchronous HTTP request.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace ajax {
-    interface IOptions {
-        type?: string;
-        url: string;
-        data?: string | {};
-        dataType?: string;
-        contentType?: string;
-        success?: Function;
-        error?: Function;
-        complete?: Function;
-        timeout?: number;
-    }
-    function get(url: string, data: string | {}, success: Function, dataType?: string): XMLHttpRequest;
+    function get(
+        url: string,
+        data: string | {},
+        success: Function,
+        dataType?: string
+    ): XMLHttpRequest;
     function get(url: string, success: Function, dataType?: string): XMLHttpRequest;
-    function post(url: string, data: string | {}, success: Function, dataType?: string): XMLHttpRequest;
+    function post(
+        url: string,
+        data: string | {},
+        success: Function,
+        dataType?: string
+    ): XMLHttpRequest;
     function post(url: string, success: Function, dataType?: string): XMLHttpRequest;
 }
-function ajax(options: ajax.IOptions): XMLHttpRequest;</code>
+function ajax(options: {
+    type?: string;
+    url: string;
+    data?: string | {};
+    dataType?: string;
+    contentType?: string;
+    success?: Function;
+    error?: Function;
+    complete?: Function;
+    timeout?: number;
+}): XMLHttpRequest;</code>
 </pre>
 </details>
 
@@ -2437,9 +2447,7 @@ Ansi colors.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace ansiColor {
-    interface IFn {
-        (str: string): string;
-    }
+    type IFn = (str: string) =&gt; string;
 }
 const ansiColor: {
     black: ansiColor.IFn;
@@ -3388,11 +3396,11 @@ CRC1 implementation.
 </pre>
 </details>
 
-|Name      |Desc                |
-|----------|--------------------|
-|input     |Data to calculate   |
-|[previous]|Previous CRC1 result|
-|return    |CRC1 result         |
+|Name    |Desc                |
+|--------|--------------------|
+|input   |Data to calculate   |
+|previous|Previous CRC1 result|
+|return  |CRC1 result         |
 
 ```javascript
 crc1('1234567890').toString(16); // -> 'd'
@@ -3515,12 +3523,10 @@ CreateObjectURL wrapper.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace createUrl {
-    interface IOptions {
-        type?: string
-    }
-}
-function createUrl(data: any, options?: createUrl.IOptions): string;</code>
+<code class="language-typescript">function createUrl(
+    data: any,
+    options?: { type?: string }
+): string;</code>
 </pre>
 </details>
 
@@ -3544,14 +3550,9 @@ Css parser and serializer.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace css {
-    interface IOptions {
-        indent?: string;
-    }
-}
-const css: {
+<code class="language-typescript">const css: {
     parse(css: string): object;
-    stringify(stylesheet: object, options?: css.IOptions): string;
+    stringify(stylesheet: object, options?: { indent?: string }): string;
 }</code>
 </pre>
 </details>
@@ -4034,13 +4035,10 @@ Detect browser info using ua.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace detectBrowser {
-    interface IBrowser {
-        name: string;
-        version: number;
-    }
-}
-function detectBrowser(ua?: string): detectBrowser.IBrowser;</code>
+<code class="language-typescript">function detectBrowser(ua?: string): {
+    name: string;
+    version: number;
+};</code>
 </pre>
 </details>
 
@@ -4571,18 +4569,6 @@ Turn XMLHttpRequest into promise like.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace fetch {
-    interface IOptions {
-        method?: string;
-        timeout?: number;
-        headers?: { [name: string]: string };
-        body?: any;
-    }
-    interface IHeaders {
-        keys(): string[];
-        entries(): Array&lt;string[]&gt;;
-        get(name: string): string;
-        has(name: string): boolean;
-    }
     interface IResult {
         ok: boolean;
         status: number;
@@ -4593,12 +4579,22 @@ Turn XMLHttpRequest into promise like.
         json(): Promise&lt;any&gt;;
         xml(): Promise&lt;Document | null&gt;;
         blob(): Promise&lt;Blob&gt;;
-        headers: IHeaders;
+        headers: {
+            keys(): string[];
+            entries(): Array&lt;string[]&gt;;
+            get(name: string): string;
+            has(name: string): boolean;
+        };
     }
 }
 function fetch(
     url: string,
-    options?: fetch.IOptions
+    options?: {
+        method?: string;
+        timeout?: number;
+        headers?: { [name: string]: string };
+        body?: any;
+    }
 ): Promise&lt;fetch.IResult&gt;;</code>
 </pre>
 </details>
@@ -4676,15 +4672,12 @@ Detect file type using magic number.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace fileType {
-    interface IFileType {
-        ext: string;
-        mime: string;
-    }
-}
-function fileType(
+<code class="language-typescript">function fileType(
     input: Buffer | ArrayBuffer | Uint8Array
-): fileType.IFileType | undefined;</code>
+): {
+    ext: string;
+    mime: string;
+} | undefined;</code>
 </pre>
 </details>
 
@@ -5182,16 +5175,13 @@ Simple fuzzy search.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace fuzzySearch {
-    interface IOptions {
+<code class="language-typescript">function fuzzySearch(
+    needle: string,
+    haystack: any[],
+    options?: {
         caseSensitive?: boolean;
         key?: string | string[];
     }
-}
-function fuzzySearch(
-    needle: string,
-    haystack: any[],
-    options?: fuzzySearch.IOptions
 ): any[];</code>
 </pre>
 </details>
@@ -5467,19 +5457,16 @@ Highlight code.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace highlight {
-    interface IStyle {
+<code class="language-typescript">function highlight(
+    str: string,
+    lang?: string,
+    style?: {
         comment?: string;
         string?: string;
         number?: string;
         keyword?: string;
         operator?: string;
     }
-}
-function highlight(
-    str: string,
-    lang?: string,
-    style?: highlight.IStyle
 ): string;</code>
 </pre>
 </details>
@@ -5699,15 +5686,15 @@ Ini parser and serializer.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace ini {
-    interface IOptions {
-        section?: string;
-        whitespace: boolean;
-    }
-}
-const ini: {
+<code class="language-typescript">const ini: {
     parse(ini: string): any;
-    stringify(obj: any, options?: ini.IOptions): string;
+    stringify(
+        obj: any,
+        options?: {
+            section?: string;
+            whitespace: boolean;
+        }
+    ): string;
 };</code>
 </pre>
 </details>
@@ -7219,19 +7206,16 @@ A simple jsonp implementation.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace jsonp {
-    interface IOptions {
-        url: string;
-        data?: any;
-        success?: Function;
-        param?: string;
-        name?: string;
-        error?: Function;
-        complete?: Function;
-        timeout?: number;
-    }
-}
-function jsonp(options: jsonp.IOptions): void;</code>
+<code class="language-typescript">function jsonp(options: {
+    url: string;
+    data?: any;
+    success?: Function;
+    param?: string;
+    name?: string;
+    error?: Function;
+    complete?: Function;
+    timeout?: number;
+}): void;</code>
 </pre>
 </details>
 
@@ -8192,15 +8176,12 @@ Normalize phone numbers into E.164 format.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace normalizePhone {
-    interface IOptions {
+<code class="language-typescript">function normalizePhone(
+    phone: string,
+    options: {
         countryCode: number;
         trunkPrefix?: boolean;
     }
-}
-function normalizePhone(
-    phone: string,
-    options: normalizePhone.IOptions
 ): string;</code>
 </pre>
 </details>
@@ -8381,14 +8362,10 @@ Open file dialog to select file in browser.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace openFile {
-    interface IOptions {
-        accept?: string;
-        multiple?: boolean;
-    }
-}
-
-function openFile(options?: openFile.IOptions): Promise&lt;File[]&gt;;</code>
+<code class="language-typescript">function openFile(options?: {
+    accept?: string;
+    multiple?: boolean;
+}): Promise&lt;File[]&gt;;</code>
 </pre>
 </details>
 
@@ -8603,15 +8580,15 @@ Simple html parser.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace parseHtml {
-    interface IHandlers {
+<code class="language-typescript">function parseHtml(
+    html: string,
+    handlers: {
         start?: (tag: string, attrs: any, unary: boolean) =&gt; void;
         end?: (tag: string) =&gt; void;
         comment?: (text: string) =&gt; void;
         text?: (text: string) =&gt; void;
     }
-}
-function parseHtml(html: string, handlers: parseHtml.IHandlers): void;</code>
+): void;</code>
 </pre>
 </details>
 
@@ -9003,17 +8980,14 @@ Random color generator.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace randomColor {
-    interface IOptions {
-        count?: number;
-        hue?: number;
-        lightness?: number;
-        format?: string;
-        seed?: number
-    }
-}
-function randomColor(): string;
-function randomColor(options: randomColor.IOptions): string | string[];</code>
+<code class="language-typescript">function randomColor(): string;
+function randomColor(options: {
+    count?: number;
+    hue?: number;
+    lightness?: number;
+    format?: string;
+    seed?: number
+}): string | string[];</code>
 </pre>
 </details>
 
@@ -9619,17 +9593,14 @@ Scroll to a target with animation.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace scrollTo {
-    interface IOptions {
+<code class="language-typescript">function scrollTo(
+    target: Element | string | number,
+    options: {
         tolerance?: number;
         duration?: number;
         easing?: string | Function;
         callback?: Function;
     }
-}
-function scrollTo(
-    target: Element | string | number,
-    options: scrollTo.IOptions
 );</code>
 </pre>
 </details>
@@ -10078,14 +10049,11 @@ Split path into dir, name and ext.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace splitPath {
-    interface IPath {
-        dir: string;
-        name: string;
-        ext: string;
-    }
-}
-function splitPath(path: string): splitPath.IPath;</code>
+<code class="language-typescript">function splitPath(path: string): {
+    dir: string;
+    name: string;
+    ext: string;
+};</code>
 </pre>
 </details>
 
@@ -10217,8 +10185,9 @@ Stringify object into json with types.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">namespace stringifyAll {
-    interface IOptions {
+<code class="language-typescript">function stringifyAll(
+    obj: any,
+    options?: {
         unenumerable?: boolean;
         symbol?: boolean;
         accessGetter?: boolean;
@@ -10226,10 +10195,6 @@ Stringify object into json with types.
         depth?: number;
         ignore?: any[];
     }
-}
-function stringifyAll(
-    obj: any,
-    options?: stringifyAll.IOptions
 ): string;</code>
 </pre>
 </details>
