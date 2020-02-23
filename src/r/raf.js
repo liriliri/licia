@@ -18,7 +18,7 @@
 
 /* typescript
  * export declare namespace raf {
- *     function cancel(id: number);
+ *     function cancel(id: number): void;
  * }
  * export declare function raf(cb: Function): number;
  */
