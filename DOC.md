@@ -10858,6 +10858,42 @@ trim('_abc_', '_'); // -> 'abc'
 trim('_abc_', ['a', 'c', '_']); // -> 'b'
 ```
 
+## truncate 
+
+Truncate a string to a specific width.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function truncate(txt: string, width: number, options?: {
+    ellipsis?: string,
+    separator: string
+}): string;</code>
+</pre>
+</details>
+
+|Name   |Desc                 |
+|-------|---------------------|
+|txt    |Text to truncate     |
+|width  |Maximum string length|
+|options|Options object       |
+|return |Truncated string     |
+
+Options:
+
+|Name          |Desc                              |
+|--------------|----------------------------------|
+|ellipsis='...'|String to indicate text is omitted|
+|separator     |Separator pattern to truncate to  |
+
+```javascript
+truncate('ORA ORA ORA ORA ORA ORA', 12); // -> 'ORA ORA O...'
+truncate('ORA ORA ORA ORA ORA ORA', 10, {
+    separator: ' ',
+    ellipsis: '……'
+}); // -> 'ORA ORA……'
+```
+
 ## tryIt 
 
 Run function in a try catch.

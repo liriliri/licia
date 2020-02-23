@@ -10866,6 +10866,42 @@ trim('_abc_', '_'); // -> 'abc'
 trim('_abc_', ['a', 'c', '_']); // -> 'b'
 ```
 
+## truncate
+
+截取字符串，使其长度为指定值。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function truncate(txt: string, width: number, options?: {
+    ellipsis?: string,
+    separator: string
+}): string;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|txt|要截取的字符串|
+|width|最大字符串长度|
+|options|选项|
+|返回值|截取后的字符串|
+
+选项：
+
+|参数名|说明|
+|-----|---|
+|ellipsis='...'|表示截取掉部分的符号|
+|separator|分隔符，尽可能使截取位置在该处|
+
+```javascript
+truncate('ORA ORA ORA ORA ORA ORA', 12); // -> 'ORA ORA O...'
+truncate('ORA ORA ORA ORA ORA ORA', 10, {
+    separator: ' ',
+    ellipsis: '……'
+}); // -> 'ORA ORA……'
+```
+
 ## tryIt
 
 在 try catch 块中运行函数。
