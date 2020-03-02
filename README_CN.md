@@ -1,10 +1,13 @@
 # Licia
 
+[![Join the chat at https://gitter.im/liriliri/licia][gitter-image]][gitter-url]
 [![NPM version][npm-image]][npm-url]
 [![Build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![License][license-image]][npm-url]
 
+[gitter-image]: https://badges.gitter.im/liriliri/licia.svg
+[gitter-url]: https://gitter.im/liriliri/licia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 [npm-image]: https://img.shields.io/npm/v/licia.svg
 [npm-url]: https://npmjs.org/package/licia
 [travis-image]: https://img.shields.io/travis/liriliri/licia.svg
