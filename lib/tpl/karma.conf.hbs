@@ -8,18 +8,23 @@ module.exports = function(config) {
             'karma-chai-plugins',
             'karma-jquery',
             'karma-chrome-launcher',
-            'karma-coverage'
+            'karma-babel-preprocessor',
+            'karma-coverage-istanbul-reporter'
         ],
-        reporters: ['progress', 'coverage'],
-        coverageReporter: {
-            dir: 'coverage',
-            reporters: [
-                {type: 'text'},
-                {type: 'html', subdir: 'karma'}
-            ]
-        },
+        reporters: ['progress', 'coverage-istanbul'],
         preprocessors: {
-            'testUtil/*.js': ['coverage']
+            'testUtil/*.js': ['babel']
+        },
+        coverageIstanbulReporter: {
+            reports: ['html', 'lcovonly', 'text', 'text-summary'],
+            dir: '.licia/coverage/karma'
+        },
+        babelPreprocessor: {
+            options: {
+                plugins: [
+                    'babel-plugin-istanbul'
+                ]
+            }
         },
         port: 9876,
         colors: true,
