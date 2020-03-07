@@ -45,7 +45,7 @@ if (isBrowser) {
         };
     }
 } else if (isNode) {
-    crypto = require('crypto');
+    crypto = eval('require')('crypto');
 
     exports = function(size) {
         return crypto.randomBytes(size);

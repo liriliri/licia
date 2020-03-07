@@ -25,7 +25,7 @@
 _('isNode root memStorage');
 
 if (isNode) {
-    exports = require('util').deprecate;
+    exports = eval('require')('util').deprecate;
 } else {
     const localStorage = root.localStorage || memStorage;
 
