@@ -33,7 +33,7 @@
  *         first(): $;
  *         last(): $;
  *         get(index: number): Element;
- *         eq(index: number): Element;
+ *         eq(index: number): $;
  *         on(event: string, selector: string, handler: Function): $;
  *         on(event: string, handler: Function): $;
  *         off(event: string, selector: string, handler: Function): $;

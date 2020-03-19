@@ -17,7 +17,7 @@ jQuery like style dom manipulator.
         first(): $;
         last(): $;
         get(index: number): Element;
-        eq(index: number): Element;
+        eq(index: number): $;
         on(event: string, selector: string, handler: Function): $;
         on(event: string, handler: Function): $;
         off(event: string, selector: string, handler: Function): $;
@@ -8911,7 +8911,7 @@ Shortcut for requestAnimationFrame.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace raf {
-    function cancel(id: number);
+    function cancel(id: number): void;
 }
 function raf(cb: Function): number;</code>
 </pre>
