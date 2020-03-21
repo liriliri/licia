@@ -62,12 +62,12 @@
  *     enqueue(item: any): number;
  *     dequeue(): any;
  *     peek(): any;
- *     forEach(iterator: Function, context?: any): void;
+ *     forEach(iterator: types.AnyFn, context?: any): void;
  *     toArr(): any[];
  * }
  */
 
-_('Class');
+_('Class types');
 
 exports = Class({
     initialize: function Queue() {

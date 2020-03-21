@@ -20,20 +20,20 @@
  *         element: $safeEls.El,
  *         event: string,
  *         selector: string,
- *         handler: Function
+ *         handler: types.AnyFn
  *     ): void;
- *     on(element: $safeEls.El, event: string, handler: Function): void;
+ *     on(element: $safeEls.El, event: string, handler: types.AnyFn): void;
  *     off(
  *         element: $safeEls.El,
  *         event: string,
  *         selector: string,
- *         handler: Function
+ *         handler: types.AnyFn
  *     ): void;
- *     off(element: $safeEls.El, event: string, handler: Function): void;
+ *     off(element: $safeEls.El, event: string, handler: types.AnyFn): void;
  * };
  */
 
-_('delegate isUndef $safeEls each');
+_('delegate isUndef $safeEls each types');
 
 exports = {
     on: eventFactory('add'),

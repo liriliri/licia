@@ -17,10 +17,10 @@
  */
 
 /* typescript
- * export declare function throttle(fn: Function, wait: number): Function;
+ * export declare function throttle<T extends types.AnyFn>(fn: T, wait: number): T;
  */
 
-_('debounce');
+_('debounce types');
 
 exports = function(fn, wait) {
     return debounce(fn, wait, true);

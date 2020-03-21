@@ -7,10 +7,10 @@
  */
 
 /* typescript
- * export declare function optimizeCb(fn: Function, ctx: any, argCount?: number): Function;
+ * export declare function optimizeCb(fn: types.AnyFn, ctx: any, argCount?: number): types.AnyFn;
  */
 
-_('isUndef');
+_('isUndef types');
 
 exports = function(fn, ctx, argCount) {
     if (isUndef(ctx)) return fn;

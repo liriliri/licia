@@ -17,10 +17,10 @@
  */
 
 /* typescript
- * export declare function curry(fn: Function): Function;
+ * export declare function curry(fn: types.AnyFn): types.AnyFn;
  */
 
-_('toArr');
+_('toArr types');
 
 exports = function(fn) {
     const len = fn.length;

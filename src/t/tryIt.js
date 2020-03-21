@@ -19,10 +19,10 @@
  */
 
 /* typescript
- * export declare function tryIt(fn: Function, cb?: Function): void;
+ * export declare function tryIt(fn: types.AnyFn, cb?: types.AnyFn): void;
  */
 
-_('noop');
+_('noop types');
 
 exports = function(fn, cb) {
     cb = cb || noop;

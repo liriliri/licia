@@ -20,10 +20,10 @@
  * export declare namespace raf {
  *     function cancel(id: number): void;
  * }
- * export declare function raf(cb: Function): number;
+ * export declare function raf(cb: types.AnyFn): number;
  */
 
-_('now isBrowser');
+_('now isBrowser types');
 
 let raf, cancel;
 let lastTime = 0;

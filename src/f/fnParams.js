@@ -15,10 +15,10 @@
  */
 
 /* typescript
- * export declare function fnParams(fn: Function | string): string[];
+ * export declare function fnParams(fn: types.AnyFn | string): string[];
  */
 
-_('toSrc stripCmt startWith isStr');
+_('toSrc stripCmt startWith isStr types');
 
 exports = function(fn) {
     const fnStr = stripCmt(isStr(fn) ? fn : toSrc(fn));

@@ -3,7 +3,7 @@
  * |Name   |Desc                        |
  * |-------|----------------------------|
  * |arr    |Array to inspect            |
- * |...rest|Values to exclude           |
+ * |...args|Values to exclude           |
  * |return |New array of filtered values|
  */
 
@@ -16,13 +16,13 @@
  */
 
 /* typescript
- * export declare function difference(arr: any[], ...rest: any[]): any[];
+ * export declare function difference(arr: any[], ...args: any[]): any[];
  */
 
 _('restArgs flatten filter contain');
 
-exports = restArgs(function(arr, rest) {
-    rest = flatten(rest);
+exports = restArgs(function(arr, args) {
+    rest = flatten(args);
 
     return filter(arr, function(val) {
         return !contain(rest, val);

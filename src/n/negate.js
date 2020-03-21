@@ -16,8 +16,10 @@
  */
 
 /* typescript
- * export declare function negate(predicate: Function): Function;
+ * export declare function negate<T extends types.AnyFn>(predicate: T): T;
  */
+
+_('types');
 
 exports = function(predicate) {
     return function() {

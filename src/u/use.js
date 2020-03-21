@@ -19,11 +19,11 @@
  */
 
 /* typescript
- * export declare function use(requires: string[], method: Function): void;
- * export declare function use(method: Function): void;
+ * export declare function use(requires: string[], method: types.AnyFn): void;
+ * export declare function use(method: types.AnyFn): void;
  */
 
-_('map define has toArr');
+_('map define has toArr types');
 
 exports = function(requires, method) {
     if (method == null) {

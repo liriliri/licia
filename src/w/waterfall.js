@@ -26,10 +26,10 @@
  */
 
 /* typescript
- * export declare function waterfall(tasks: Function[], cb?: Function): void;
+ * export declare function waterfall(tasks: types.AnyFn[], cb?: types.AnyFn): void;
  */
 
-_('noop nextTick restArgs');
+_('noop nextTick restArgs types');
 
 exports = function(tasks, cb) {
     cb = cb || noop;

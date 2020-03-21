@@ -57,7 +57,7 @@
 /* typescript
  * export declare class PriorityQueue {
  *     size: number;
- *     constructor(cmp?: Function);
+ *     constructor(cmp?: types.AnyFn);
  *     clear(): void;
  *     enqueue(item: any): number;
  *     dequeue(): any;
@@ -65,7 +65,7 @@
  * }
  */
 
-_('Class Heap isSorted wrap');
+_('Class Heap isSorted wrap types');
 
 exports = Class({
     initialize: function PriorityQueue(cmp = isSorted.defComparator) {

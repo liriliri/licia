@@ -58,12 +58,12 @@
  *     push(item: any): number;
  *     pop(): any;
  *     peek(): any;
- *     forEach(iterator: Function, context?: any): void;
+ *     forEach(iterator: types.AnyFn, context?: any): void;
  *     toArr(): any[];
  * }
  */
 
-_('Class reverse');
+_('Class reverse types');
 
 exports = Class({
     initialize: function Stack() {

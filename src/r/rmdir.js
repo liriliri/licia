@@ -18,10 +18,10 @@
  */
 
 /* typescript
- * export declare function rmdir(dir: string, cb?: Function): void;
+ * export declare function rmdir(dir: string, cb?: types.AnyFn): void;
  */
 
-_('noop parallel');
+_('noop parallel types');
 
 const fs = require('fs');
 const path = require('path');

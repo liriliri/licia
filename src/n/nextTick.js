@@ -20,8 +20,10 @@
  */
 
 /* typescript
- * export declare function nextTick(cb: Function): void;
+ * export declare function nextTick(cb: types.AnyFn): void;
  */
+
+_('types');
 
 if (typeof process === 'object' && process.nextTick) {
     exports = process.nextTick;

@@ -23,10 +23,10 @@
  */
 
 /* typescript
- * export declare function compose(...fn: Function[]): Function;
+ * export declare function compose(...fn: types.AnyFn[]): types.AnyFn;
  */
 
-_('restArgs');
+_('restArgs types');
 
 exports = restArgs(function(fnList) {
     return function() {

@@ -17,10 +17,10 @@
  */
 
 /* typescript
- * export declare function shellSort(arr: any[], cmp?: Function): any[];
+ * export declare function shellSort(arr: any[], cmp?: types.AnyFn): any[];
  */
 
-_('swap isSorted');
+_('swap isSorted types');
 
 exports = function(arr, cmp = isSorted.defComparator) {
     const len = arr.length;

@@ -7,10 +7,10 @@
  */
 
 /* typescript
- * export declare function safeCb(val?: any, ctx?: any, argCount?: number): Function;
+ * export declare function safeCb(val?: any, ctx?: any, argCount?: number): types.AnyFn;
  */
 
-_('isFn isObj optimizeCb matcher identity');
+_('isFn isObj optimizeCb matcher identity types');
 
 exports = function(val, ctx, argCount) {
     if (val == null) return identity;

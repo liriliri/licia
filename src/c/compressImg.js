@@ -36,7 +36,7 @@
  */
 
 /* typescript
- * export declare function compressImg(file: File | Blob | string, cb: Function): void;
+ * export declare function compressImg(file: File | Blob | string, cb: types.AnyFn): void;
  * export declare function compressImg(
  *     file: File | Blob | string,
  *     options?: {
@@ -47,11 +47,11 @@
  *         mimeType?: string;
  *         quality?: number;
  *     },
- *     cb?: Function
+ *     cb?: types.AnyFn
  * ): void;
  */
 
-_('isFn loadImg noop defaults createUrl isStr');
+_('isFn loadImg noop defaults createUrl isStr types');
 
 exports = function(file, options, cb) {
     if (isFn(options)) {

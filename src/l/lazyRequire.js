@@ -16,8 +16,10 @@
  */
 
 /* typescript
- * export declare function lazyRequire(requireFn: Function): Function;
+ * export declare function lazyRequire(requireFn: types.AnyFn): types.AnyFn;
  */
+
+_('types');
 
 exports = function(requireFn) {
     const cache = {};

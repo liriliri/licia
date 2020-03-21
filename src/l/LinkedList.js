@@ -82,14 +82,14 @@
  *     pop(): any;
  *     unshift(val: any): number;
  *     shift(): any;
- *     find(fn: Function): LinkedList.Node | void;
+ *     find(fn: types.AnyFn): LinkedList.Node | void;
  *     delNode(node: LinkedList.Node): void;
- *     forEach(iterator: Function, ctx?: any);
+ *     forEach(iterator: types.AnyFn, ctx?: any);
  *     toArr(): any[];
  * }
  */
 
-_('Class');
+_('Class types');
 
 exports = Class({
     initialize: function LinkedList() {

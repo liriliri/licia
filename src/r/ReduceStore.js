@@ -55,14 +55,14 @@
 
 /* typescript
  * export declare class ReduceStore {
- *     constructor(reducer: Function, initialState: any);
- *     subscribe(listener: Function): Function;
+ *     constructor(reducer: types.AnyFn, initialState: any);
+ *     subscribe(listener: types.AnyFn): types.AnyFn;
  *     dispatch(action: any): any;
  *     getState(): any;
  * }
  */
 
-_('Class clone remove');
+_('Class clone remove types');
 
 exports = Class({
     initialize: function ReduceStore(reducer, initialState) {

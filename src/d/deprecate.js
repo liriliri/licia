@@ -19,10 +19,10 @@
  */
 
 /* typescript
- * export declare function deprecate(fn: Function, msg: string): Function;
+ * export declare function deprecate(fn: types.AnyFn, msg: string): types.AnyFn;
  */
 
-_('isNode root memStorage');
+_('isNode root memStorage types');
 
 if (isNode) {
     exports = eval('require')('util').deprecate;

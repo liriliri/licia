@@ -17,10 +17,10 @@
  */
 
 /* typescript
- * export declare function timeTaken(fn: Function): number;
+ * export declare function timeTaken(fn: types.AnyFn): number;
  */
 
-_('perfNow');
+_('perfNow types');
 
 exports = function(fn) {
     const start = perfNow();

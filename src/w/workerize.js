@@ -20,10 +20,10 @@
  */
 
 /* typescript
- * export declare function workerize(fn: Function): Function;
+ * export declare function workerize(fn: types.AnyFn): types.AnyFn;
  */
 
-_('Promise restArgs uniqId toSrc createUrl isStr');
+_('Promise restArgs uniqId toSrc createUrl isStr types');
 
 exports = function(fn) {
     const promises = {};

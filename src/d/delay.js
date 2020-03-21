@@ -19,10 +19,10 @@
  */
 
 /* typescript
- * export declare function delay(fn: Function, wait: number, ...args: any[]): void;
+ * export declare function delay(fn: types.AnyFn, wait: number, ...args: any[]): void;
  */
 
-_('restArgs');
+_('restArgs types');
 
 exports = restArgs(function(fn, wait, args) {
     return setTimeout(function() {

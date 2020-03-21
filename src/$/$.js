@@ -26,7 +26,7 @@
  * export declare namespace $ {
  *     class $ extends Select {
  *         find(selector: string): $;
- *         each(fn: Function): $;
+ *         each(fn: types.AnyFn): $;
  *         offset(): $offset.IOffset;
  *         hide(): $;
  *         show(): $;
@@ -34,10 +34,10 @@
  *         last(): $;
  *         get(index: number): Element;
  *         eq(index: number): $;
- *         on(event: string, selector: string, handler: Function): $;
- *         on(event: string, handler: Function): $;
- *         off(event: string, selector: string, handler: Function): $;
- *         off(event: string, handler: Function): $;
+ *         on(event: string, selector: string, handler: types.AnyFn): $;
+ *         on(event: string, handler: types.AnyFn): $;
+ *         off(event: string, selector: string, handler: types.AnyFn): $;
+ *         off(event: string, handler: types.AnyFn): $;
  *         html(): string;
  *         html(value: string): $;
  *         text(): string;
@@ -70,7 +70,7 @@
  */
 
 _(
-    'Select $offset $show $css $attr $property last $remove $data $event $class $insert isUndef isStr'
+    'Select $offset $show $css $attr $property last $remove $data $event $class $insert isUndef isStr types'
 );
 
 exports = selector => new Select(selector);

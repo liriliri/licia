@@ -18,10 +18,10 @@
  */
 
 /* typescript
- * export declare function loadImg(src: string, cb?: Function): void;
+ * export declare function loadImg(src: string, cb?: types.AnyFn): void;
  */
 
-_('noop');
+_('noop types');
 
 exports = function(src, cb) {
     cb = cb || noop;

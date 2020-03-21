@@ -17,10 +17,10 @@
  */
 
 /* typescript
- * export declare function heapSort(arr: any[], cmp?: Function): any[];
+ * export declare function heapSort(arr: any[], cmp?: types.AnyFn): any[];
  */
 
-_('Heap isSorted');
+_('Heap isSorted types');
 
 exports = function(arr, cmp = isSorted.defComparator) {
     const heap = new Heap(cmp);

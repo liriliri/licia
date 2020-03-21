@@ -12,10 +12,10 @@
  */
 
 /* typescript
- * export declare function createAssigner(keysFn: Function, defaults: boolean): Function;
+ * export declare function createAssigner(keysFn: types.AnyFn, defaults: boolean): types.AnyFn;
  */
 
-_('isUndef each');
+_('isUndef each types');
 
 exports = function(keysFn, defaults) {
     return function(obj) {

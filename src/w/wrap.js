@@ -19,10 +19,10 @@
  */
 
 /* typescript
- * export declare function wrap(fn: Function, wrapper: Function): Function;
+ * export declare function wrap(fn: types.AnyFn, wrapper: types.AnyFn): types.AnyFn;
  */
 
-_('partial');
+_('partial types');
 
 exports = function(fn, wrapper) {
     return partial(wrapper, fn);

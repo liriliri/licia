@@ -38,11 +38,11 @@
  * export declare class Select {
  *     constructor(selector: string | Element);
  *     find(selector: string): Select;
- *     each(fn: Function): Select;
+ *     each(fn: types.AnyFn): Select;
  * }
  */
 
-_('Class isStr each');
+_('Class isStr each types');
 
 exports = Class({
     className: 'Select',

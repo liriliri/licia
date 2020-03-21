@@ -20,10 +20,10 @@
  * export declare namespace ric {
  *     function cancel(id: number);
  * }
- * export declare function ric(cb: Function): number;
+ * export declare function ric(cb: types.AnyFn): number;
  */
 
-_('root now');
+_('root now types');
 
 exports =
     root.requestIdleCallback ||

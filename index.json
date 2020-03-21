@@ -14,7 +14,8 @@
             "$class",
             "$insert",
             "isUndef",
-            "isStr"
+            "isStr",
+            "types"
         ],
         "description": "jQuery like style dom manipulator.",
         "env": [
@@ -98,7 +99,8 @@
             "delegate",
             "isUndef",
             "$safeEls",
-            "each"
+            "each",
+            "types"
         ],
         "description": "bind events to certain dom elements.",
         "env": [
@@ -246,7 +248,8 @@
             "toArr",
             "inherits",
             "safeGet",
-            "isMiniProgram"
+            "isMiniProgram",
+            "types"
         ],
         "description": "Create JavaScript class.",
         "env": [
@@ -301,7 +304,8 @@
     "Dispatcher": {
         "dependencies": [
             "Class",
-            "uniqId"
+            "uniqId",
+            "types"
         ],
         "description": "Flux dispatcher.",
         "env": [
@@ -320,7 +324,8 @@
             "has",
             "each",
             "slice",
-            "once"
+            "once",
+            "types"
         ],
         "description": "Event emitter class which provides observer pattern.",
         "env": [
@@ -376,7 +381,8 @@
         "dependencies": [
             "Class",
             "swap",
-            "isSorted"
+            "isSorted",
+            "types"
         ],
         "description": "Heap implementation.",
         "env": [
@@ -400,7 +406,8 @@
             "isFn",
             "safeDel",
             "toArr",
-            "each"
+            "each",
+            "types"
         ],
         "description": "Json to json transformer.",
         "env": [
@@ -415,7 +422,8 @@
     },
     "LinkedList": {
         "dependencies": [
-            "Class"
+            "Class",
+            "types"
         ],
         "description": "Doubly-linked list implementation.",
         "env": [
@@ -516,7 +524,8 @@
             "Class",
             "Heap",
             "isSorted",
-            "wrap"
+            "wrap",
+            "types"
         ],
         "description": "Priority queue implementation.",
         "env": [
@@ -574,7 +583,8 @@
     },
     "Queue": {
         "dependencies": [
-            "Class"
+            "Class",
+            "types"
         ],
         "description": "Queue data structure.",
         "env": [
@@ -609,7 +619,8 @@
         "dependencies": [
             "Class",
             "clone",
-            "remove"
+            "remove",
+            "types"
         ],
         "description": "Simplified redux like state container.",
         "env": [
@@ -626,7 +637,8 @@
         "dependencies": [
             "Class",
             "isStr",
-            "each"
+            "each",
+            "types"
         ],
         "description": "Simple wrapper of querySelectorAll to make dom selection easier.",
         "env": [
@@ -656,7 +668,8 @@
     "Stack": {
         "dependencies": [
             "Class",
-            "reverse"
+            "reverse",
+            "types"
         ],
         "description": "Stack data structure.",
         "env": [
@@ -761,7 +774,8 @@
             "isUndef",
             "isNum",
             "isStr",
-            "isBool"
+            "isBool",
+            "types"
         ],
         "description": "Object values validation.",
         "env": [
@@ -790,7 +804,9 @@
         ]
     },
     "after": {
-        "dependencies": [],
+        "dependencies": [
+            "types"
+        ],
         "description": "Create a function that invokes once it's called n or more times.",
         "env": [
             "node",
@@ -808,7 +824,8 @@
             "noop",
             "defaults",
             "isObj",
-            "query"
+            "query",
+            "types"
         ],
         "description": "Perform an asynchronous HTTP request.",
         "env": [
@@ -905,7 +922,9 @@
         ]
     },
     "before": {
-        "dependencies": [],
+        "dependencies": [
+            "types"
+        ],
         "description": "Create a function that invokes less than n times.",
         "env": [
             "node",
@@ -919,7 +938,8 @@
     },
     "binarySearch": {
         "dependencies": [
-            "isSorted"
+            "isSorted",
+            "types"
         ],
         "description": "Binary search implementation.",
         "env": [
@@ -935,7 +955,8 @@
     },
     "bind": {
         "dependencies": [
-            "restArgs"
+            "restArgs",
+            "types"
         ],
         "description": "Create a function bound to a given object.",
         "env": [
@@ -970,7 +991,8 @@
     "bubbleSort": {
         "dependencies": [
             "swap",
-            "isSorted"
+            "isSorted",
+            "types"
         ],
         "description": "Bubble sort implementation.",
         "env": [
@@ -1017,7 +1039,8 @@
     },
     "callbackify": {
         "dependencies": [
-            "restArgs"
+            "restArgs",
+            "types"
         ],
         "description": "Convert a function that returns a Promise to a function following the error-first callback style.",
         "env": [
@@ -1235,7 +1258,8 @@
     },
     "compose": {
         "dependencies": [
-            "restArgs"
+            "restArgs",
+            "types"
         ],
         "description": "Compose a list of functions.",
         "env": [
@@ -1256,7 +1280,8 @@
             "noop",
             "defaults",
             "createUrl",
-            "isStr"
+            "isStr",
+            "types"
         ],
         "description": "Compress image using canvas.",
         "env": [
@@ -1353,7 +1378,8 @@
         "demo": true,
         "dependencies": [
             "extend",
-            "noop"
+            "noop",
+            "types"
         ],
         "description": "Copy text to clipboard using document.execCommand.",
         "env": [
@@ -1450,7 +1476,8 @@
     "createAssigner": {
         "dependencies": [
             "isUndef",
-            "each"
+            "each",
+            "types"
         ],
         "description": "Used to create extend, extendOwn and defaults.",
         "env": [
@@ -1515,7 +1542,8 @@
     },
     "curry": {
         "dependencies": [
-            "toArr"
+            "toArr",
+            "types"
         ],
         "description": "Function currying.",
         "env": [
@@ -1547,7 +1575,9 @@
         ]
     },
     "debounce": {
-        "dependencies": [],
+        "dependencies": [
+            "types"
+        ],
         "description": "Return a new debounced version of the passed function.",
         "env": [
             "node",
@@ -1627,7 +1657,8 @@
     },
     "define": {
         "dependencies": [
-            "toArr"
+            "toArr",
+            "types"
         ],
         "description": "Define a module, should be used along with use.",
         "env": [
@@ -1689,7 +1720,8 @@
     },
     "delay": {
         "dependencies": [
-            "restArgs"
+            "restArgs",
+            "types"
         ],
         "description": "Invoke function after certain milliseconds.",
         "env": [
@@ -1705,7 +1737,8 @@
     "delegate": {
         "dependencies": [
             "Class",
-            "contain"
+            "contain",
+            "types"
         ],
         "description": "Event delegation.",
         "env": [
@@ -1720,7 +1753,8 @@
         "dependencies": [
             "isNode",
             "root",
-            "memStorage"
+            "memStorage",
+            "types"
         ],
         "description": "Node.js util.deprecate with browser support.",
         "env": [
@@ -2190,7 +2224,8 @@
     },
     "findIdx": {
         "dependencies": [
-            "safeCb"
+            "safeCb",
+            "types"
         ],
         "description": "Return the first index where the predicate truth test passes.",
         "env": [
@@ -2206,7 +2241,8 @@
     "findKey": {
         "dependencies": [
             "safeCb",
-            "keys"
+            "keys",
+            "types"
         ],
         "description": "Return the first key where the predicate truth test passes.",
         "env": [
@@ -2221,7 +2257,8 @@
     },
     "findLastIdx": {
         "dependencies": [
-            "findIdx"
+            "findIdx",
+            "types"
         ],
         "description": "Return the last index where the predicate truth test passes.",
         "env": [
@@ -2274,7 +2311,8 @@
             "toSrc",
             "stripCmt",
             "startWith",
-            "isStr"
+            "isStr",
+            "types"
         ],
         "description": "Get a function parameter's names.",
         "env": [
@@ -2529,7 +2567,8 @@
     "heapSort": {
         "dependencies": [
             "Heap",
-            "isSorted"
+            "isSorted",
+            "types"
         ],
         "description": "Heap sort implementation.",
         "env": [
@@ -2585,7 +2624,8 @@
             "each",
             "unique",
             "trim",
-            "map"
+            "map",
+            "types"
         ],
         "description": "Capture keyboard input to trigger given events.",
         "env": [
@@ -2674,7 +2714,8 @@
     },
     "inherits": {
         "dependencies": [
-            "create"
+            "create",
+            "types"
         ],
         "description": "Inherit the prototype methods from one constructor into another.",
         "env": [
@@ -2712,7 +2753,8 @@
     "insertionSort": {
         "dependencies": [
             "swap",
-            "isSorted"
+            "isSorted",
+            "types"
         ],
         "description": "Insertion sort implementation.",
         "env": [
@@ -3522,7 +3564,9 @@
         ]
     },
     "isSorted": {
-        "dependencies": [],
+        "dependencies": [
+            "types"
+        ],
         "description": "Check if an array is sorted.",
         "env": [
             "node",
@@ -3678,7 +3722,8 @@
             "defaults",
             "noop",
             "uniqId",
-            "query"
+            "query",
+            "types"
         ],
         "description": "A simple jsonp implementation.",
         "env": [
@@ -3762,7 +3807,9 @@
         ]
     },
     "lazyRequire": {
-        "dependencies": [],
+        "dependencies": [
+            "types"
+        ],
         "description": "Require modules lazily.",
         "env": [
             "node"
@@ -3789,7 +3836,8 @@
         "dependencies": [
             "extractUrls",
             "each",
-            "escapeRegExp"
+            "escapeRegExp",
+            "types"
         ],
         "description": "Hyperlink urls in a string.",
         "env": [
@@ -3804,7 +3852,8 @@
     },
     "loadCss": {
         "dependencies": [
-            "noop"
+            "noop",
+            "types"
         ],
         "description": "Inject link tag into page with given href value.",
         "env": [
@@ -3816,7 +3865,8 @@
     },
     "loadImg": {
         "dependencies": [
-            "noop"
+            "noop",
+            "types"
         ],
         "description": "Load image with given src.",
         "env": [
@@ -3827,7 +3877,9 @@
         ]
     },
     "loadJs": {
-        "dependencies": [],
+        "dependencies": [
+            "types"
+        ],
         "description": "Inject script tag into page with given src value.",
         "env": [
             "browser"
@@ -3933,7 +3985,8 @@
     "matcher": {
         "dependencies": [
             "extendOwn",
-            "isMatch"
+            "isMatch",
+            "types"
         ],
         "description": "Return a predicate function that checks if attrs are contained in an object.",
         "env": [
@@ -3996,7 +4049,8 @@
     },
     "memoize": {
         "dependencies": [
-            "has"
+            "has",
+            "types"
         ],
         "description": "Memoize a given function by caching the computed result.",
         "env": [
@@ -4011,7 +4065,8 @@
     },
     "mergeSort": {
         "dependencies": [
-            "isSorted"
+            "isSorted",
+            "types"
         ],
         "description": "Merge sort implementation.",
         "env": [
@@ -4089,7 +4144,8 @@
     "mkdir": {
         "dependencies": [
             "isFn",
-            "noop"
+            "noop",
+            "types"
         ],
         "description": "Recursively create directories.",
         "env": [
@@ -4152,7 +4208,9 @@
         ]
     },
     "negate": {
-        "dependencies": [],
+        "dependencies": [
+            "types"
+        ],
         "description": "Create a function that negates the result of the predicate function.",
         "env": [
             "node",
@@ -4165,7 +4223,9 @@
         ]
     },
     "nextTick": {
-        "dependencies": [],
+        "dependencies": [
+            "types"
+        ],
         "description": "Next tick for both node and browser.",
         "env": [
             "node",
@@ -4296,7 +4356,8 @@
     "once": {
         "dependencies": [
             "partial",
-            "before"
+            "before",
+            "types"
         ],
         "description": "Create a function that invokes once.",
         "env": [
@@ -4334,7 +4395,8 @@
     },
     "optimizeCb": {
         "dependencies": [
-            "isUndef"
+            "isUndef",
+            "types"
         ],
         "description": "Used for function context binding.",
         "env": [
@@ -4410,7 +4472,8 @@
         "dependencies": [
             "noop",
             "each",
-            "nextTick"
+            "nextTick",
+            "types"
         ],
         "description": "Run an array of functions in parallel.",
         "env": [
@@ -4463,7 +4526,8 @@
     "partial": {
         "dependencies": [
             "restArgs",
-            "toArr"
+            "toArr",
+            "types"
         ],
         "description": "Partially apply a function by filling in given arguments.",
         "env": [
@@ -4587,7 +4651,8 @@
         "dependencies": [
             "restArgs",
             "root",
-            "Promise"
+            "Promise",
+            "types"
         ],
         "description": "Convert callback based functions into Promises.",
         "env": [
@@ -4603,7 +4668,8 @@
     "property": {
         "dependencies": [
             "isArr",
-            "safeGet"
+            "safeGet",
+            "types"
         ],
         "description": "Return a function that will itself return the key property of any passed-in object.",
         "env": [
@@ -4642,7 +4708,8 @@
         "benchmark": true,
         "dependencies": [
             "swap",
-            "isSorted"
+            "isSorted",
+            "types"
         ],
         "description": "Quick sort implementation.",
         "env": [
@@ -4658,7 +4725,8 @@
     "raf": {
         "dependencies": [
             "now",
-            "isBrowser"
+            "isBrowser",
+            "types"
         ],
         "description": "Shortcut for requestAnimationFrame.",
         "env": [
@@ -4785,7 +4853,9 @@
         ]
     },
     "ready": {
-        "dependencies": [],
+        "dependencies": [
+            "types"
+        ],
         "description": "Invoke callback when dom is ready, similar to jQuery ready.",
         "env": [
             "browser"
@@ -4878,7 +4948,9 @@
         ]
     },
     "restArgs": {
-        "dependencies": [],
+        "dependencies": [
+            "types"
+        ],
         "description": "This accumulates the arguments passed into an array, after a given index.",
         "env": [
             "node",
@@ -4921,7 +4993,8 @@
     "ric": {
         "dependencies": [
             "root",
-            "now"
+            "now",
+            "types"
         ],
         "description": "Shortcut for requestIdleCallback.",
         "env": [
@@ -4945,7 +5018,8 @@
     "rmdir": {
         "dependencies": [
             "noop",
-            "parallel"
+            "parallel",
+            "types"
         ],
         "description": "Recursively remove directories.",
         "env": [
@@ -5005,7 +5079,8 @@
             "isObj",
             "optimizeCb",
             "matcher",
-            "identity"
+            "identity",
+            "types"
         ],
         "description": "Create callback based on input value.",
         "env": [
@@ -5104,7 +5179,8 @@
             "defaults",
             "noop",
             "isNum",
-            "$offset"
+            "$offset",
+            "types"
         ],
         "description": "Scroll to a target with animation.",
         "env": [
@@ -5131,7 +5207,8 @@
     "selectionSort": {
         "dependencies": [
             "swap",
-            "isSorted"
+            "isSorted",
+            "types"
         ],
         "description": "Selection sort implementation.",
         "env": [
@@ -5166,7 +5243,8 @@
     "shellSort": {
         "dependencies": [
             "swap",
-            "isSorted"
+            "isSorted",
+            "types"
         ],
         "description": "Shell sort implementation.",
         "env": [
@@ -5312,7 +5390,8 @@
             "safeCb",
             "pluck",
             "map",
-            "isUndef"
+            "isUndef",
+            "types"
         ],
         "description": "Return an array of elements sorted in ascending order by results of running each element through iteratee.",
         "env": [
@@ -5331,7 +5410,8 @@
             "defaults",
             "keys",
             "isArr",
-            "isObj"
+            "isObj",
+            "types"
         ],
         "description": "Sort keys of an object.",
         "env": [
@@ -5609,7 +5689,8 @@
         "dependencies": [
             "escape",
             "defaults",
-            "escapeJsStr"
+            "escapeJsStr",
+            "types"
         ],
         "description": "Compile JavaScript template into function that can be evaluated for rendering.",
         "env": [
@@ -5623,7 +5704,8 @@
     },
     "throttle": {
         "dependencies": [
-            "debounce"
+            "debounce",
+            "types"
         ],
         "description": "Return a new throttled version of the passed function.",
         "env": [
@@ -5668,7 +5750,8 @@
     },
     "timeTaken": {
         "dependencies": [
-            "perfNow"
+            "perfNow",
+            "types"
         ],
         "description": "Get execution time of a function.",
         "env": [
@@ -5720,7 +5803,8 @@
             "toArr",
             "isGeneratorFn",
             "isPromise",
-            "toStr"
+            "toStr",
+            "types"
         ],
         "description": "Use generator like async/await.",
         "env": [
@@ -5807,7 +5891,8 @@
     },
     "toSrc": {
         "dependencies": [
-            "isNil"
+            "isNil",
+            "types"
         ],
         "description": "Convert function to its source code.",
         "env": [
@@ -5894,7 +5979,8 @@
     },
     "tryIt": {
         "dependencies": [
-            "noop"
+            "noop",
+            "types"
         ],
         "description": "Run function in a try catch.",
         "env": [
@@ -6026,7 +6112,8 @@
             "promisify",
             "callbackify",
             "last",
-            "isFn"
+            "isFn",
+            "types"
         ],
         "description": "Make an async function support both promises and callbacks.",
         "env": [
@@ -6090,7 +6177,8 @@
             "map",
             "define",
             "has",
-            "toArr"
+            "toArr",
+            "types"
         ],
         "description": "Use modules that is created by define.",
         "env": [
@@ -6184,7 +6272,8 @@
     },
     "waitUntil": {
         "dependencies": [
-            "now"
+            "now",
+            "types"
         ],
         "description": "Wait until function returns a truthy value.",
         "env": [
@@ -6202,7 +6291,8 @@
         "dependencies": [
             "noop",
             "nextTick",
-            "restArgs"
+            "restArgs",
+            "types"
         ],
         "description": "Run an array of functions in series.",
         "env": [
@@ -6237,7 +6327,8 @@
             "uniqId",
             "toSrc",
             "createUrl",
-            "isStr"
+            "isStr",
+            "types"
         ],
         "description": "Move a stand-alone function to a worker thread.",
         "env": [
@@ -6249,7 +6340,8 @@
     },
     "wrap": {
         "dependencies": [
-            "partial"
+            "partial",
+            "types"
         ],
         "description": "Wrap the function inside a wrapper function, passing it as the first argument.",
         "env": [

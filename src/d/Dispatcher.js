@@ -25,14 +25,14 @@
 /* typescript
  * export declare class Dispatcher {
  *     dispatch(payload: any);
- *     register(cb: Function): void;
+ *     register(cb: types.AnyFn): void;
  *     waitFor(ids: string[]): void;
  *     unregister(id: string): void;
  *     isDispatching(): boolean;
  * }
  */
 
-_('Class uniqId');
+_('Class uniqId types');
 
 exports = Class({
     initialize: function Dispatcher() {

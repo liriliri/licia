@@ -18,10 +18,10 @@
  */
 
 /* typescript
- * export declare function mergeSort(arr: any[], cmp?: Function): any[];
+ * export declare function mergeSort(arr: any[], cmp?: types.AnyFn): any[];
  */
 
-_('isSorted');
+_('isSorted types');
 
 exports = function(arr, cmp = isSorted.defComparator) {
     if (arr.length <= 1) return arr;

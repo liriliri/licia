@@ -27,10 +27,10 @@
  */
 
 /* typescript
- * export declare function findLastIdx(arr: any[], predicate: Function): number;
+ * export declare function findLastIdx(arr: any[], predicate: types.AnyFn): number;
  */
 
-_('findIdx');
+_('findIdx types');
 
 exports = function(arr, predicate, ctx) {
     return findIdx(arr, predicate, ctx, -1);

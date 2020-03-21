@@ -24,10 +24,10 @@
  */
 
 /* typescript
- * export declare function template(str: string, util?: any): Function;
+ * export declare function template(str: string, util?: any): types.AnyFn;
  */
 
-_('escape defaults escapeJsStr');
+_('escape defaults escapeJsStr types');
 
 /* global _ */
 const regMatcher = /<%-([\s\S]+?)%>|<%=([\s\S]+?)%>|<%([\s\S]+?)%>|$/g;

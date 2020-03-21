@@ -60,17 +60,17 @@
  *     function get(
  *         url: string,
  *         data: string | {},
- *         success: Function,
+ *         success: types.AnyFn,
  *         dataType?: string
  *     ): XMLHttpRequest;
- *     function get(url: string, success: Function, dataType?: string): XMLHttpRequest;
+ *     function get(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
  *     function post(
  *         url: string,
  *         data: string | {},
- *         success: Function,
+ *         success: types.AnyFn,
  *         dataType?: string
  *     ): XMLHttpRequest;
- *     function post(url: string, success: Function, dataType?: string): XMLHttpRequest;
+ *     function post(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
  * }
  * export declare function ajax(options: {
  *     type?: string;
@@ -78,14 +78,14 @@
  *     data?: string | {};
  *     dataType?: string;
  *     contentType?: string;
- *     success?: Function;
- *     error?: Function;
- *     complete?: Function;
+ *     success?: types.AnyFn;
+ *     error?: types.AnyFn;
+ *     complete?: types.AnyFn;
  *     timeout?: number;
  * }): XMLHttpRequest;
  */
 
-_('isFn noop defaults isObj query');
+_('isFn noop defaults isObj query types');
 
 exports = function(options) {
     defaults(options, exports.setting);

@@ -25,10 +25,10 @@
  */
 
 /* typescript
- * export declare function parallel(tasks: Function[], cb?: Function): void;
+ * export declare function parallel(tasks: types.AnyFn[], cb?: types.AnyFn): void;
  */
 
-_('noop each nextTick');
+_('noop each nextTick types');
 
 exports = function(tasks, cb) {
     cb = cb || noop;

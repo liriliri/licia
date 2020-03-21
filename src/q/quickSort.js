@@ -16,10 +16,10 @@
  */
 
 /* typescript
- * export declare function quickSort(arr: any[], cmp?: Function): any[];
+ * export declare function quickSort(arr: any[], cmp?: types.AnyFn): any[];
  */
 
-_('swap isSorted');
+_('swap isSorted types');
 
 exports = function(arr, cmp = isSorted.defComparator) {
     return quickSort(arr, 0, arr.length - 1, cmp);

@@ -19,11 +19,11 @@
  */
 
 /* typescript
- * export declare function mkdir(dir: string, mode?: number, cb?: Function): void;
- * export declare function mkdir(dir: string, cb?: Function): void;
+ * export declare function mkdir(dir: string, mode?: number, cb?: types.AnyFn): void;
+ * export declare function mkdir(dir: string, cb?: types.AnyFn): void;
  */
 
-_('isFn noop');
+_('isFn noop types');
 
 const fs = require('fs');
 const path = require('path');

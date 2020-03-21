@@ -30,12 +30,12 @@
 
 /* typescript
  * export declare const hotkey: {
- *     on(key: string, listener: Function): void;
- *     off(key: string, listener: Function): void;
+ *     on(key: string, listener: types.AnyFn): void;
+ *     off(key: string, listener: types.AnyFn): void;
  * };
  */
 
-_('Emitter keyCode each unique trim map');
+_('Emitter keyCode each unique trim map types');
 
 exports = {
     on(keys, listener) {

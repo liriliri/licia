@@ -19,8 +19,10 @@
  */
 
 /* typescript
- * export declare function before(n: number, fn: Function): Function;
+ * export declare function before<T extends types.AnyFn>(n: number, fn: T): T;
  */
+
+_('types');
 
 exports = function(n, fn) {
     let memo;

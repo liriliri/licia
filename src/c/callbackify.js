@@ -25,10 +25,10 @@
  */
 
 /* typescript
- * export declare function callbackify(fn: Function): Function;
+ * export declare function callbackify(fn: types.AnyFn): types.AnyFn;
  */
 
-_('restArgs');
+_('restArgs types');
 
 exports = function(fn) {
     return restArgs(function(args) {

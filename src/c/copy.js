@@ -17,10 +17,10 @@
  */
 
 /* typescript
- * export declare function copy(text: string, cb?: Function): void;
+ * export declare function copy(text: string, cb?: types.AnyFn): void;
  */
 
-_('extend noop');
+_('extend noop types');
 
 exports = function(text, cb) {
     cb = cb || noop;

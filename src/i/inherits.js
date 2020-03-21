@@ -28,10 +28,10 @@
  */
 
 /* typescript
- * export declare function inherits(Class: Function, SuperClass: Function): void;
+ * export declare function inherits(Class: types.AnyFn, SuperClass: types.AnyFn): void;
  */
 
-_('create');
+_('create types');
 
 exports = function(Class, SuperClass) {
     Class.prototype = create(SuperClass.prototype);

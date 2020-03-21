@@ -37,11 +37,11 @@
  * export declare function binarySearch(
  *     array: any[],
  *     val: any,
- *     cmp?: Function
+ *     cmp?: types.AnyFn
  * ): number;
  */
 
-_('isSorted');
+_('isSorted types');
 
 exports = function(arr, val, cmp = isSorted.defComparator) {
     let startIdx = 0;

@@ -36,16 +36,16 @@
  * export declare function jsonp(options: {
  *     url: string;
  *     data?: any;
- *     success?: Function;
+ *     success?: types.AnyFn;
  *     param?: string;
  *     name?: string;
- *     error?: Function;
- *     complete?: Function;
+ *     error?: types.AnyFn;
+ *     complete?: types.AnyFn;
  *     timeout?: number;
  * }): void;
  */
 
-_('loadJs defaults noop uniqId query');
+_('loadJs defaults noop uniqId query types');
 
 exports = function(options) {
     defaults(options, exports.settings);

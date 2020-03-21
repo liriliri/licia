@@ -24,10 +24,10 @@
  */
 
 /* typescript
- * export declare function findIdx(arr: any[], predicate: Function): number;
+ * export declare function findIdx(arr: any[], predicate: types.AnyFn): number;
  */
 
-_('safeCb');
+_('safeCb types');
 
 exports = function(arr, predicate, ctx, dir) {
     dir = dir || 1;

@@ -52,7 +52,7 @@
 /* typescript
  * export declare class Heap {
  *     size: number;
- *     constructor(cmp?: Function);
+ *     constructor(cmp?: types.AnyFn);
  *     clear(): void;
  *     add(item: any): number;
  *     poll(): any;
@@ -60,7 +60,7 @@
  * }
  */
 
-_('Class swap isSorted');
+_('Class swap isSorted types');
 
 exports = Class({
     initialize: function Heap(cmp = isSorted.defComparator) {

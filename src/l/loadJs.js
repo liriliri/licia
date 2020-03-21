@@ -17,8 +17,10 @@
  */
 
 /* typescript
- * export declare function loadJs(src: string, cb?: Function): void;
+ * export declare function loadJs(src: string, cb?: types.AnyFn): void;
  */
+
+_('types');
 
 exports = function(src, cb) {
     const script = document.createElement('script');

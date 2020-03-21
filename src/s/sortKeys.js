@@ -30,12 +30,12 @@
  *     obj: object,
  *     options?: {
  *         deep?: boolean,
- *         comparator?: Function
+ *         comparator?: types.AnyFn
  *     }
  * ): object;
  */
 
-_('isSorted defaults keys isArr isObj');
+_('isSorted defaults keys isArr isObj types');
 
 exports = function(obj, options = {}) {
     defaults(options, defOpts);

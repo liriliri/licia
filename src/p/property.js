@@ -17,10 +17,10 @@
  */
 
 /* typescript
- * export declare function property(path: string | string[]): Function;
+ * export declare function property(path: string | string[]): types.AnyFn;
  */
 
-_('isArr safeGet');
+_('isArr safeGet types');
 
 exports = function(path) {
     if (!isArr(path)) return shallowProperty(path);

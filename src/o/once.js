@@ -18,9 +18,9 @@
  */
 
 /* typescript
- * export declare function once(fn: Function): Function;
+ * export declare function once(fn: types.AnyFn): types.AnyFn;
  */
 
-_('partial before');
+_('partial before types');
 
 exports = partial(before, 2);

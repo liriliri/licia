@@ -4,7 +4,7 @@
  * |-------|------------------------|
  * |fn     |Function to bind        |
  * |ctx    |This binding of given fn|
- * |...rest|Optional arguments      |
+ * |...args|Optional arguments      |
  * |return |New bound function      |
  */
 
@@ -20,13 +20,13 @@
  */
 
 /* typescript
- * export declare function bind(fn: Function, ctx: any, ...rest: any[]): Function;
+ * export declare function bind(fn: types.AnyFn, ctx: any, ...args: any[]): types.AnyFn;
  */
 
-_('restArgs');
+_('restArgs types');
 
-exports = restArgs(function(fn, ctx, rest) {
+exports = restArgs(function(fn, ctx, args) {
     return restArgs(function(callArgs) {
-        return fn.apply(ctx, rest.concat(callArgs));
+        return fn.apply(ctx, args.concat(callArgs));
     });
 });

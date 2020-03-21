@@ -23,10 +23,10 @@
  */
 
 /* typescript
- * export declare function toAsync(fn: Function): Function;
+ * export declare function toAsync(fn: types.AnyFn): types.AnyFn;
  */
 
-_('toArr isGeneratorFn isPromise toStr');
+_('toArr isGeneratorFn isPromise toStr types');
 
 // https://github.com/tj/co
 exports = function(fn) {

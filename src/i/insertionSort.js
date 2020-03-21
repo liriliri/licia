@@ -16,10 +16,10 @@
  */
 
 /* typescript
- * export declare function insertionSort(arr: any[], cmp?: Function): any[];
+ * export declare function insertionSort(arr: any[], cmp?: types.AnyFn): any[];
  */
 
-_('swap isSorted');
+_('swap isSorted types');
 
 exports = function(arr, cmp = isSorted.defComparator) {
     for (let i = 1, len = arr.length; i < len; i++) {

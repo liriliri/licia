@@ -16,8 +16,10 @@
  */
 
 /* typescript
- * export declare function ready(fn: Function): void;
+ * export declare function ready(fn: types.AnyFn): void;
  */
+
+_('types');
 
 const fns = [];
 let listener;

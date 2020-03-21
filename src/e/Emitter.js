@@ -49,15 +49,15 @@
 
 /* typescript
  * export declare class Emitter {
- *     on(event: string, listener: Function): Emitter;
- *     off(event: string, listener: Function): Emitter;
- *     once(event: string, listener: Function): Emitter;
+ *     on(event: string, listener: types.AnyFn): Emitter;
+ *     off(event: string, listener: types.AnyFn): Emitter;
+ *     once(event: string, listener: types.AnyFn): Emitter;
  *     emit(event: string): Emitter;
  *     static mixin(obj: any): any;
  * }
  */
 
-_('Class has each slice once');
+_('Class has each slice once types');
 
 exports = Class(
     {

@@ -18,8 +18,10 @@
  */
 
 /* typescript
- * export declare function after(n: number, fn: Function): Function;
+ * export declare function after<T extends types.AnyFn>(n: number, fn: T): T;
  */
+
+_('types');
 
 exports = function(n, fn) {
     return function() {

@@ -10,7 +10,7 @@ jQuery like style dom manipulator.
 <code class="language-typescript">namespace $ {
     class $ extends Select {
         find(selector: string): $;
-        each(fn: Function): $;
+        each(fn: types.AnyFn): $;
         offset(): $offset.IOffset;
         hide(): $;
         show(): $;
@@ -18,10 +18,10 @@ jQuery like style dom manipulator.
         last(): $;
         get(index: number): Element;
         eq(index: number): $;
-        on(event: string, selector: string, handler: Function): $;
-        on(event: string, handler: Function): $;
-        off(event: string, selector: string, handler: Function): $;
-        off(event: string, handler: Function): $;
+        on(event: string, selector: string, handler: types.AnyFn): $;
+        on(event: string, handler: types.AnyFn): $;
+        off(event: string, selector: string, handler: types.AnyFn): $;
+        off(event: string, handler: types.AnyFn): $;
         html(): string;
         html(value: string): $;
         text(): string;
@@ -277,16 +277,16 @@ bind events to certain dom elements.
         element: $safeEls.El,
         event: string,
         selector: string,
-        handler: Function
+        handler: types.AnyFn
     ): void;
-    on(element: $safeEls.El, event: string, handler: Function): void;
+    on(element: $safeEls.El, event: string, handler: types.AnyFn): void;
     off(
         element: $safeEls.El,
         event: string,
         selector: string,
-        handler: Function
+        handler: types.AnyFn
     ): void;
-    off(element: $safeEls.El, event: string, handler: Function): void;
+    off(element: $safeEls.El, event: string, handler: types.AnyFn): void;
 };</code>
 </pre>
 </details>
@@ -639,7 +639,7 @@ Create JavaScript class.
     class IConstructor extends Base {
         constructor(...args: any[]);
         static extend(methods: any, statics: any): IConstructor;
-        static inherits(Class: Function): void;
+        static inherits(Class: types.AnyFn): void;
         static methods(methods: any): IConstructor;
         static statics(statics: any): IConstructor;
         [method: string]: any;
@@ -818,7 +818,7 @@ Flux dispatcher.
 <pre>
 <code class="language-typescript">class Dispatcher {
     dispatch(payload: any);
-    register(cb: Function): void;
+    register(cb: types.AnyFn): void;
     waitFor(ids: string[]): void;
     unregister(id: string): void;
     isDispatching(): boolean;
@@ -850,9 +850,9 @@ Event emitter class which provides observer pattern.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">class Emitter {
-    on(event: string, listener: Function): Emitter;
-    off(event: string, listener: Function): Emitter;
-    once(event: string, listener: Function): Emitter;
+    on(event: string, listener: types.AnyFn): Emitter;
+    off(event: string, listener: types.AnyFn): Emitter;
+    once(event: string, listener: types.AnyFn): Emitter;
     emit(event: string): Emitter;
     static mixin(obj: any): any;
 }</code>
@@ -1007,7 +1007,7 @@ Heap implementation.
 <pre>
 <code class="language-typescript">class Heap {
     size: number;
-    constructor(cmp?: Function);
+    constructor(cmp?: types.AnyFn);
     clear(): void;
     add(item: any): number;
     poll(): any;
@@ -1070,13 +1070,13 @@ Json to json transformer.
     constructor(data: any);
     set(key: string, val: any): JsonTransformer;
     get(key?: string): any;
-    map(from: string, to: string, fn: Function): JsonTransformer;
-    map(from: string, fn: Function): JsonTransformer;
-    filter(from: string, to: string, fn: Function): JsonTransformer;
-    filter(from: string, fn: Function): JsonTransformer;
+    map(from: string, to: string, fn: types.AnyFn): JsonTransformer;
+    map(from: string, fn: types.AnyFn): JsonTransformer;
+    filter(from: string, to: string, fn: types.AnyFn): JsonTransformer;
+    filter(from: string, fn: types.AnyFn): JsonTransformer;
     remove(keys: string | string[]): JsonTransformer;
-    compute(from: string | string[], to: string, fn: Function): JsonTransformer;
-    compute(from: string, fn: Function): JsonTransformer;
+    compute(from: string | string[], to: string, fn: types.AnyFn): JsonTransformer;
+    compute(from: string, fn: types.AnyFn): JsonTransformer;
     toString(): string;
 }</code>
 </pre>
@@ -1182,9 +1182,9 @@ class LinkedList {
     pop(): any;
     unshift(val: any): number;
     shift(): any;
-    find(fn: Function): LinkedList.Node | void;
+    find(fn: types.AnyFn): LinkedList.Node | void;
     delNode(node: LinkedList.Node): void;
-    forEach(iterator: Function, ctx?: any);
+    forEach(iterator: types.AnyFn, ctx?: any);
     toArr(): any[];
 }</code>
 </pre>
@@ -1481,7 +1481,7 @@ Priority queue implementation.
 <pre>
 <code class="language-typescript">class PriorityQueue {
     size: number;
-    constructor(cmp?: Function);
+    constructor(cmp?: types.AnyFn);
     clear(): void;
     enqueue(item: any): number;
     dequeue(): any;
@@ -1594,7 +1594,7 @@ Queue data structure.
     enqueue(item: any): number;
     dequeue(): any;
     peek(): any;
-    forEach(iterator: Function, context?: any): void;
+    forEach(iterator: types.AnyFn, context?: any): void;
     toArr(): any[];
 }</code>
 </pre>
@@ -1686,8 +1686,8 @@ Simplified redux like state container.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">class ReduceStore {
-    constructor(reducer: Function, initialState: any);
-    subscribe(listener: Function): Function;
+    constructor(reducer: types.AnyFn, initialState: any);
+    subscribe(listener: types.AnyFn): types.AnyFn;
     dispatch(action: any): any;
     getState(): any;
 }</code>
@@ -1751,7 +1751,7 @@ Simple wrapper of querySelectorAll to make dom selection easier.
 <code class="language-typescript">class Select {
     constructor(selector: string | Element);
     find(selector: string): Select;
-    each(fn: Function): Select;
+    each(fn: types.AnyFn): Select;
 }</code>
 </pre>
 </details>
@@ -1825,7 +1825,7 @@ Stack data structure.
     push(item: any): number;
     pop(): any;
     peek(): any;
-    forEach(iterator: Function, context?: any): void;
+    forEach(iterator: types.AnyFn, context?: any): void;
     toArr(): any[];
 }</code>
 </pre>
@@ -2211,7 +2211,7 @@ Object values validation.
     constructor(options: { [name: string]: any });
     validate(object: any): string | boolean;
     static plugins: any;
-    static addPlugin(name: string, plugin: Function): void;
+    static addPlugin(name: string, plugin: types.AnyFn): void;
 }</code>
 </pre>
 </details>
@@ -2291,7 +2291,7 @@ Create a function that invokes once it's called n or more times.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function after(n: number, fn: Function): Function;</code>
+<code class="language-typescript">function after&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;</code>
 </pre>
 </details>
 
@@ -2318,17 +2318,17 @@ Perform an asynchronous HTTP request.
     function get(
         url: string,
         data: string | {},
-        success: Function,
+        success: types.AnyFn,
         dataType?: string
     ): XMLHttpRequest;
-    function get(url: string, success: Function, dataType?: string): XMLHttpRequest;
+    function get(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
     function post(
         url: string,
         data: string | {},
-        success: Function,
+        success: types.AnyFn,
         dataType?: string
     ): XMLHttpRequest;
-    function post(url: string, success: Function, dataType?: string): XMLHttpRequest;
+    function post(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
 }
 function ajax(options: {
     type?: string;
@@ -2336,9 +2336,9 @@ function ajax(options: {
     data?: string | {};
     dataType?: string;
     contentType?: string;
-    success?: Function;
-    error?: Function;
-    complete?: Function;
+    success?: types.AnyFn;
+    error?: types.AnyFn;
+    complete?: types.AnyFn;
     timeout?: number;
 }): XMLHttpRequest;</code>
 </pre>
@@ -2611,7 +2611,7 @@ Create a function that invokes less than n times.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function before(n: number, fn: Function): Function;</code>
+<code class="language-typescript">function before&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;</code>
 </pre>
 </details>
 
@@ -2638,7 +2638,7 @@ Binary search implementation.
 <code class="language-typescript">function binarySearch(
     array: any[],
     val: any,
-    cmp?: Function
+    cmp?: types.AnyFn
 ): number;</code>
 </pre>
 </details>
@@ -2677,7 +2677,7 @@ Create a function bound to a given object.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function bind(fn: Function, ctx: any, ...rest: any[]): Function;</code>
+<code class="language-typescript">function bind(fn: types.AnyFn, ctx: any, ...args: any[]): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -2685,7 +2685,7 @@ Create a function bound to a given object.
 |-------|------------------------|
 |fn     |Function to bind        |
 |ctx    |This binding of given fn|
-|...rest|Optional arguments      |
+|...args|Optional arguments      |
 |return |New bound function      |
 
 ```javascript
@@ -2717,7 +2717,7 @@ Bubble sort implementation.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function bubbleSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function bubbleSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -2784,7 +2784,7 @@ Convert a function that returns a Promise to a function following the error-firs
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function callbackify(fn: Function): Function;</code>
+<code class="language-typescript">function callbackify(fn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -3111,7 +3111,7 @@ Compose a list of functions.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function compose(...fn: Function[]): Function;</code>
+<code class="language-typescript">function compose(...fn: types.AnyFn[]): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -3139,7 +3139,7 @@ Compress image using canvas.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function compressImg(file: File | Blob | string, cb: Function): void;
+<code class="language-typescript">function compressImg(file: File | Blob | string, cb: types.AnyFn): void;
 function compressImg(
     file: File | Blob | string,
     options?: {
@@ -3150,7 +3150,7 @@ function compressImg(
         mimeType?: string;
         quality?: number;
     },
-    cb?: Function
+    cb?: types.AnyFn
 ): void;</code>
 </pre>
 </details>
@@ -3367,7 +3367,7 @@ Copy text to clipboard using document.execCommand.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function copy(text: string, cb?: Function): void;</code>
+<code class="language-typescript">function copy(text: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -3506,7 +3506,7 @@ Used to create extend, extendOwn and defaults.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function createAssigner(keysFn: Function, defaults: boolean): Function;</code>
+<code class="language-typescript">function createAssigner(keysFn: types.AnyFn, defaults: boolean): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -3622,7 +3622,7 @@ Function currying.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function curry(fn: Function): Function;</code>
+<code class="language-typescript">function curry(fn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -3709,7 +3709,7 @@ Return a new debounced version of the passed function.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function debounce(fn: Function, wait: number): Function;</code>
+<code class="language-typescript">function debounce&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;</code>
 </pre>
 </details>
 
@@ -3815,8 +3815,8 @@ Define a module, should be used along with use.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function define(name: string, requires: string[], method: Function): void;
-function define(name: string, method: Function): void;</code>
+<code class="language-typescript">function define(name: string, requires: string[], method: types.AnyFn): void;
+function define(name: string, method: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -3950,7 +3950,7 @@ Invoke function after certain milliseconds.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function delay(fn: Function, wait: number, ...args: any[]): void;</code>
+<code class="language-typescript">function delay(fn: types.AnyFn, wait: number, ...args: any[]): void;</code>
 </pre>
 </details>
 
@@ -3975,8 +3975,8 @@ Event delegation.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">const delegate: {
-    add(el: Element, type: string, selector: string, cb: Function): void;
-    remove(el: Element, type: string, selector: string, cb: Function): void;
+    add(el: Element, type: string, selector: string, cb: types.AnyFn): void;
+    remove(el: Element, type: string, selector: string, cb: types.AnyFn): void;
 };</code>
 </pre>
 </details>
@@ -4012,7 +4012,7 @@ Node.js util.deprecate with browser support.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function deprecate(fn: Function, msg: string): Function;</code>
+<code class="language-typescript">function deprecate(fn: types.AnyFn, msg: string): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -4102,14 +4102,14 @@ Create an array of unique array values not included in the other given array.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function difference(arr: any[], ...rest: any[]): any[];</code>
+<code class="language-typescript">function difference(arr: any[], ...args: any[]): any[];</code>
 </pre>
 </details>
 
 |Name   |Desc                        |
 |-------|----------------------------|
 |arr    |Array to inspect            |
-|...rest|Values to exclude           |
+|...args|Values to exclude           |
 |return |New array of filtered values|
 
 ```javascript
@@ -4804,7 +4804,7 @@ Return the first index where the predicate truth test passes.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function findIdx(arr: any[], predicate: Function): number;</code>
+<code class="language-typescript">function findIdx(arr: any[], predicate: types.AnyFn): number;</code>
 </pre>
 </details>
 
@@ -4835,7 +4835,7 @@ Return the first key where the predicate truth test passes.
 <pre>
 <code class="language-typescript">function findKey(
     obj: any,
-    predicate: Function,
+    predicate: types.AnyFn,
     ctx?: any
 ): string | void;</code>
 </pre>
@@ -4861,7 +4861,7 @@ Return the last index where the predicate truth test passes.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function findLastIdx(arr: any[], predicate: Function): number;</code>
+<code class="language-typescript">function findLastIdx(arr: any[], predicate: types.AnyFn): number;</code>
 </pre>
 </details>
 
@@ -4948,7 +4948,7 @@ Get a function parameter's names.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function fnParams(fn: Function | string): string[];</code>
+<code class="language-typescript">function fnParams(fn: types.AnyFn | string): string[];</code>
 </pre>
 </details>
 
@@ -5399,7 +5399,7 @@ Heap sort implementation.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function heapSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function heapSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -5496,8 +5496,8 @@ Capture keyboard input to trigger given events.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">const hotkey: {
-    on(key: string, listener: Function): void;
-    off(key: string, listener: Function): void;
+    on(key: string, listener: types.AnyFn): void;
+    off(key: string, listener: types.AnyFn): void;
 };</code>
 </pre>
 </details>
@@ -5653,7 +5653,7 @@ Inherit the prototype methods from one constructor into another.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function inherits(Class: Function, SuperClass: Function): void;</code>
+<code class="language-typescript">function inherits(Class: types.AnyFn, SuperClass: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -5746,7 +5746,7 @@ Insertion sort implementation.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function insertionSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function insertionSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -6983,7 +6983,7 @@ Check if an array is sorted.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isSorted(arr: any[], cmp?: Function): boolean;</code>
+<code class="language-typescript">function isSorted(arr: any[], cmp?: types.AnyFn): boolean;</code>
 </pre>
 </details>
 
@@ -7209,11 +7209,11 @@ A simple jsonp implementation.
 <code class="language-typescript">function jsonp(options: {
     url: string;
     data?: any;
-    success?: Function;
+    success?: types.AnyFn;
     param?: string;
     name?: string;
-    error?: Function;
-    complete?: Function;
+    error?: types.AnyFn;
+    complete?: types.AnyFn;
     timeout?: number;
 }): void;</code>
 </pre>
@@ -7366,7 +7366,7 @@ Require modules lazily.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function lazyRequire(requireFn: Function): Function;</code>
+<code class="language-typescript">function lazyRequire(requireFn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -7407,7 +7407,7 @@ Hyperlink urls in a string.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function linkify(str: string, hyperlink?: Function): string;</code>
+<code class="language-typescript">function linkify(str: string, hyperlink?: types.AnyFn): string;</code>
 </pre>
 </details>
 
@@ -7432,7 +7432,7 @@ Inject link tag into page with given href value.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function loadCss(src: string, cb?: Function): void;</code>
+<code class="language-typescript">function loadCss(src: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -7454,7 +7454,7 @@ Load image with given src.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function loadImg(src: string, cb?: Function): void;</code>
+<code class="language-typescript">function loadImg(src: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -7476,7 +7476,7 @@ Inject script tag into page with given src value.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function loadJs(src: string, cb?: Function): void;</code>
+<code class="language-typescript">function loadJs(src: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -7643,7 +7643,7 @@ Return a predicate function that checks if attrs are contained in an object.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function matcher(attrs: any): Function;</code>
+<code class="language-typescript">function matcher(attrs: any): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -7727,7 +7727,7 @@ Memoize a given function by caching the computed result.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function memoize(fn: Function, hashFn?: Function): Function;</code>
+<code class="language-typescript">function memoize(fn: types.AnyFn, hashFn?: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -7750,7 +7750,7 @@ Merge sort implementation.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function mergeSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function mergeSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -7902,8 +7902,8 @@ Recursively create directories.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function mkdir(dir: string, mode?: number, cb?: Function): void;
-function mkdir(dir: string, cb?: Function): void;</code>
+<code class="language-typescript">function mkdir(dir: string, mode?: number, cb?: types.AnyFn): void;
+function mkdir(dir: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -8073,7 +8073,7 @@ Create a function that negates the result of the predicate function.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function negate(predicate: Function): Function;</code>
+<code class="language-typescript">function negate&lt;T extends types.AnyFn&gt;(predicate: T): T;</code>
 </pre>
 </details>
 
@@ -8094,7 +8094,7 @@ Next tick for both node and browser.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function nextTick(cb: Function): void;</code>
+<code class="language-typescript">function nextTick(cb: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -8319,7 +8319,7 @@ Create a function that invokes once.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function once(fn: Function): Function;</code>
+<code class="language-typescript">function once(fn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8394,7 +8394,7 @@ Used for function context binding.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function optimizeCb(fn: Function, ctx: any, argCount?: number): Function;</code>
+<code class="language-typescript">function optimizeCb(fn: types.AnyFn, ctx: any, argCount?: number): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8507,7 +8507,7 @@ Run an array of functions in parallel.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function parallel(tasks: Function[], cb?: Function): void;</code>
+<code class="language-typescript">function parallel(tasks: types.AnyFn[], cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -8613,7 +8613,7 @@ Partially apply a function by filling in given arguments.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function partial(fn: Function, ...partials: any[]): Function;</code>
+<code class="language-typescript">function partial(fn: types.AnyFn, ...partials: any[]): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8801,7 +8801,7 @@ Convert callback based functions into Promises.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function promisify(fn: Function, multiArgs?: boolean): Function;</code>
+<code class="language-typescript">function promisify(fn: types.AnyFn, multiArgs?: boolean): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8829,7 +8829,7 @@ Return a function that will itself return the key property of any passed-in obje
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function property(path: string | string[]): Function;</code>
+<code class="language-typescript">function property(path: string | string[]): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8889,7 +8889,7 @@ Quick sort implementation.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function quickSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function quickSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -8913,7 +8913,7 @@ Shortcut for requestAnimationFrame.
 <code class="language-typescript">namespace raf {
     function cancel(id: number): void;
 }
-function raf(cb: Function): number;</code>
+function raf(cb: types.AnyFn): number;</code>
 </pre>
 </details>
 
@@ -9117,7 +9117,7 @@ Invoke callback when dom is ready, similar to jQuery ready.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function ready(fn: Function): void;</code>
+<code class="language-typescript">function ready(fn: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -9279,7 +9279,7 @@ This accumulates the arguments passed into an array, after a given index.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function restArgs(fn: Function, startIndex?: number): Function;</code>
+<code class="language-typescript">function restArgs(fn: types.AnyFn, startIndex?: number): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -9344,7 +9344,7 @@ Shortcut for requestIdleCallback.
 <code class="language-typescript">namespace ric {
     function cancel(id: number);
 }
-function ric(cb: Function): number;</code>
+function ric(cb: types.AnyFn): number;</code>
 </pre>
 </details>
 
@@ -9383,7 +9383,7 @@ Recursively remove directories.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function rmdir(dir: string, cb?: Function): void;</code>
+<code class="language-typescript">function rmdir(dir: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -9465,7 +9465,7 @@ Create callback based on input value.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function safeCb(val?: any, ctx?: any, argCount?: number): Function;</code>
+<code class="language-typescript">function safeCb(val?: any, ctx?: any, argCount?: number): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -9599,7 +9599,7 @@ Scroll to a target with animation.
         tolerance?: number;
         duration?: number;
         easing?: string | Function;
-        callback?: Function;
+        callback?: types.AnyFn;
     }
 );</code>
 </pre>
@@ -9665,7 +9665,7 @@ Selection sort implementation.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function selectionSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function selectionSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -9730,7 +9730,7 @@ Shell sort implementation.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function shellSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function shellSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -9942,7 +9942,7 @@ Return an array of elements sorted in ascending order by results of running each
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function sortBy(arr: any, iterator?: Function, ctx?: any): any[];</code>
+<code class="language-typescript">function sortBy(arr: any, iterator?: types.AnyFn, ctx?: any): any[];</code>
 </pre>
 </details>
 
@@ -9970,7 +9970,7 @@ Sort keys of an object.
     obj: object,
     options?: {
         deep?: boolean,
-        comparator?: Function
+        comparator?: types.AnyFn
     }
 ): object;</code>
 </pre>
@@ -10403,7 +10403,7 @@ Compile JavaScript template into function that can be evaluated for rendering.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function template(str: string, util?: any): Function;</code>
+<code class="language-typescript">function template(str: string, util?: any): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -10431,7 +10431,7 @@ Return a new throttled version of the passed function.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function throttle(fn: Function, wait: number): Function;</code>
+<code class="language-typescript">function throttle&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;</code>
 </pre>
 </details>
 
@@ -10550,7 +10550,7 @@ Get execution time of a function.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function timeTaken(fn: Function): number;</code>
+<code class="language-typescript">function timeTaken(fn: types.AnyFn): number;</code>
 </pre>
 </details>
 
@@ -10617,7 +10617,7 @@ Use generator like async/await.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function toAsync(fn: Function): Function;</code>
+<code class="language-typescript">function toAsync(fn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -10755,7 +10755,7 @@ Convert function to its source code.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function toSrc(fn: Function): string;</code>
+<code class="language-typescript">function toSrc(fn: types.AnyFn): string;</code>
 </pre>
 </details>
 
@@ -10901,7 +10901,7 @@ Run function in a try catch.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function tryIt(fn: Function, cb?: Function): void;</code>
+<code class="language-typescript">function tryIt(fn: types.AnyFn, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -10972,6 +10972,8 @@ Used for typescript definitions only.
     interface MemoObjectIterator&lt;T, TResult&gt; {
         (prev: TResult, curr: T, key: string, list: Dictionary&lt;T&gt;): TResult;
     }
+    type Fn&lt;T&gt; = (...args: any[]) =&gt; T
+    type AnyFn = Fn&lt;any&gt;
 }
 const types: {}</code>
 </pre>
@@ -11155,7 +11157,7 @@ Make an async function support both promises and callbacks.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function universalify(fn: Function, type: string): Function;</code>
+<code class="language-typescript">function universalify(fn: types.AnyFn, type: string): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -11246,8 +11248,8 @@ Use modules that is created by define.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function use(requires: string[], method: Function): void;
-function use(method: Function): void;</code>
+<code class="language-typescript">function use(requires: string[], method: types.AnyFn): void;
+function use(method: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -11400,7 +11402,7 @@ Wait until function returns a truthy value.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function waitUntil(
-    condition: Function,
+    condition: types.AnyFn,
     timeout?: number,
     interval?: number
 ): Promise&lt;any&gt;;</code>
@@ -11428,7 +11430,7 @@ Run an array of functions in series.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function waterfall(tasks: Function[], cb?: Function): void;</code>
+<code class="language-typescript">function waterfall(tasks: types.AnyFn[], cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -11478,7 +11480,7 @@ Move a stand-alone function to a worker thread.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function workerize(fn: Function): Function;</code>
+<code class="language-typescript">function workerize(fn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -11503,7 +11505,7 @@ Wrap the function inside a wrapper function, passing it as the first argument.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function wrap(fn: Function, wrapper: Function): Function;</code>
+<code class="language-typescript">function wrap(fn: types.AnyFn, wrapper: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 

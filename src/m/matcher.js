@@ -21,10 +21,10 @@
  */
 
 /* typescript
- * export declare function matcher(attrs: any): Function;
+ * export declare function matcher(attrs: any): types.AnyFn;
  */
 
-_('extendOwn isMatch');
+_('extendOwn isMatch types');
 
 exports = function(attrs) {
     attrs = extendOwn({}, attrs);

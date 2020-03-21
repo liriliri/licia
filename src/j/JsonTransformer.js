@@ -89,18 +89,18 @@
  *     constructor(data: any);
  *     set(key: string, val: any): JsonTransformer;
  *     get(key?: string): any;
- *     map(from: string, to: string, fn: Function): JsonTransformer;
- *     map(from: string, fn: Function): JsonTransformer;
- *     filter(from: string, to: string, fn: Function): JsonTransformer;
- *     filter(from: string, fn: Function): JsonTransformer;
+ *     map(from: string, to: string, fn: types.AnyFn): JsonTransformer;
+ *     map(from: string, fn: types.AnyFn): JsonTransformer;
+ *     filter(from: string, to: string, fn: types.AnyFn): JsonTransformer;
+ *     filter(from: string, fn: types.AnyFn): JsonTransformer;
  *     remove(keys: string | string[]): JsonTransformer;
- *     compute(from: string | string[], to: string, fn: Function): JsonTransformer;
- *     compute(from: string, fn: Function): JsonTransformer;
+ *     compute(from: string | string[], to: string, fn: types.AnyFn): JsonTransformer;
+ *     compute(from: string, fn: types.AnyFn): JsonTransformer;
  *     toString(): string;
  * }
  */
 
-_('Class safeSet safeGet map filter isFn safeDel toArr each');
+_('Class safeSet safeGet map filter isFn safeDel toArr each types');
 
 exports = Class({
     className: 'JsonTransformer',

@@ -23,13 +23,13 @@
 
 /* typescript
  * export declare function waitUntil(
- *     condition: Function,
+ *     condition: types.AnyFn,
  *     timeout?: number,
  *     interval?: number
  * ): Promise<any>;
  */
 
-_('now');
+_('now types');
 
 exports = function(condition, timeout = 0, interval = 250) {
     function evalCondition() {

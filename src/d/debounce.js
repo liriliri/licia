@@ -17,8 +17,10 @@
  */
 
 /* typescript
- * export declare function debounce<T extends Function>(fn: T, wait: number): T;
+ * export declare function debounce<T extends types.AnyFn>(fn: T, wait: number): T;
  */
+
+_('types');
 
 exports = function(fn, wait, immediate) {
     let timeout;

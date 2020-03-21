@@ -28,6 +28,8 @@
  *     interface MemoObjectIterator<T, TResult> {
  *         (prev: TResult, curr: T, key: string, list: Dictionary<T>): TResult;
  *     }
+ *     type Fn<T> = (...args: any[]) => T
+ *     type AnyFn = Fn<any>
  * }
  * export declare const types: {}
  */

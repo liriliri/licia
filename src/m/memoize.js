@@ -18,10 +18,10 @@
  */
 
 /* typescript
- * export declare function memoize(fn: Function, hashFn?: Function): Function;
+ * export declare function memoize(fn: types.AnyFn, hashFn?: types.AnyFn): types.AnyFn;
  */
 
-_('has');
+_('has types');
 
 exports = function(fn, hashFn) {
     const memoize = function(key) {

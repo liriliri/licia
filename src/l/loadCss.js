@@ -17,10 +17,10 @@
  */
 
 /* typescript
- * export declare function loadCss(src: string, cb?: Function): void;
+ * export declare function loadCss(src: string, cb?: types.AnyFn): void;
  */
 
-_('noop');
+_('noop types');
 
 exports = function(src, cb) {
     cb = cb || noop;

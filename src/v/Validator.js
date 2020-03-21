@@ -55,11 +55,11 @@
  *     constructor(options: { [name: string]: any });
  *     validate(object: any): string | boolean;
  *     static plugins: any;
- *     static addPlugin(name: string, plugin: Function): void;
+ *     static addPlugin(name: string, plugin: types.AnyFn): void;
  * }
  */
 
-_('Class keys safeGet isFn isUndef isNum isStr isBool');
+_('Class keys safeGet isFn isUndef isNum isStr isBool types');
 
 exports = Class(
     {

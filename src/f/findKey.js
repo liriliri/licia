@@ -21,12 +21,12 @@
 /* typescript
  * export declare function findKey(
  *     obj: any,
- *     predicate: Function,
+ *     predicate: types.AnyFn,
  *     ctx?: any
  * ): string | void;
  */
 
-_('safeCb keys');
+_('safeCb keys types');
 
 exports = function(obj, predicate, ctx) {
     predicate = safeCb(predicate, ctx);

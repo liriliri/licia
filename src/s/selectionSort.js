@@ -16,10 +16,10 @@
  */
 
 /* typescript
- * export declare function selectionSort(arr: any[], cmp?: Function): any[];
+ * export declare function selectionSort(arr: any[], cmp?: types.AnyFn): any[];
  */
 
-_('swap isSorted');
+_('swap isSorted types');
 
 exports = function(arr, cmp = isSorted.defComparator) {
     let min;

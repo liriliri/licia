@@ -35,12 +35,12 @@
  *         tolerance?: number;
  *         duration?: number;
  *         easing?: string | Function;
- *         callback?: Function;
+ *         callback?: types.AnyFn;
  *     }
  * );
  */
 
-_('Tween defaults noop isNum $offset');
+_('Tween defaults noop isNum $offset types');
 
 exports = function(target, options) {
     options = options || {};

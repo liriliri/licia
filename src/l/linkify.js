@@ -20,10 +20,10 @@
  */
 
 /* typescript
- * export declare function linkify(str: string, hyperlink?: Function): string;
+ * export declare function linkify(str: string, hyperlink?: types.AnyFn): string;
  */
 
-_('extractUrls each escapeRegExp');
+_('extractUrls each escapeRegExp types');
 
 exports = function(str, hyperlink) {
     hyperlink = hyperlink || defHyperlink;

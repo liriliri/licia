@@ -16,10 +16,10 @@
  */
 
 /* typescript
- * export declare function toSrc(fn: Function): string;
+ * export declare function toSrc(fn: types.AnyFn): string;
  */
 
-_('isNil');
+_('isNil types');
 
 exports = function(fn) {
     if (isNil(fn)) return '';

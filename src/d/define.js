@@ -23,11 +23,11 @@
  */
 
 /* typescript
- * export declare function define(name: string, requires: string[], method: Function): void;
- * export declare function define(name: string, method: Function): void;
+ * export declare function define(name: string, requires: string[], method: types.AnyFn): void;
+ * export declare function define(name: string, method: types.AnyFn): void;
  */
 
-_('toArr');
+_('toArr types');
 
 exports = function(name, requires, method) {
     if (arguments.length === 2) {

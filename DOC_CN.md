@@ -8,7 +8,7 @@
 <code class="language-typescript">namespace $ {
     class $ extends Select {
         find(selector: string): $;
-        each(fn: Function): $;
+        each(fn: types.AnyFn): $;
         offset(): $offset.IOffset;
         hide(): $;
         show(): $;
@@ -16,10 +16,10 @@
         last(): $;
         get(index: number): Element;
         eq(index: number): $;
-        on(event: string, selector: string, handler: Function): $;
-        on(event: string, handler: Function): $;
-        off(event: string, selector: string, handler: Function): $;
-        off(event: string, handler: Function): $;
+        on(event: string, selector: string, handler: types.AnyFn): $;
+        on(event: string, handler: types.AnyFn): $;
+        off(event: string, selector: string, handler: types.AnyFn): $;
+        off(event: string, handler: types.AnyFn): $;
         html(): string;
         html(value: string): $;
         text(): string;
@@ -275,16 +275,16 @@ $data('#test', 'attr1', 'eustia');
         element: $safeEls.El,
         event: string,
         selector: string,
-        handler: Function
+        handler: types.AnyFn
     ): void;
-    on(element: $safeEls.El, event: string, handler: Function): void;
+    on(element: $safeEls.El, event: string, handler: types.AnyFn): void;
     off(
         element: $safeEls.El,
         event: string,
         selector: string,
-        handler: Function
+        handler: types.AnyFn
     ): void;
-    off(element: $safeEls.El, event: string, handler: Function): void;
+    off(element: $safeEls.El, event: string, handler: types.AnyFn): void;
 };</code>
 </pre>
 </details>
@@ -633,7 +633,7 @@ c.has('content-type'); // -> false
     class IConstructor extends Base {
         constructor(...args: any[]);
         static extend(methods: any, statics: any): IConstructor;
-        static inherits(Class: Function): void;
+        static inherits(Class: types.AnyFn): void;
         static methods(methods: any): IConstructor;
         static statics(statics: any): IConstructor;
         [method: string]: any;
@@ -812,7 +812,7 @@ Flux 调度器。
 <pre>
 <code class="language-typescript">class Dispatcher {
     dispatch(payload: any);
-    register(cb: Function): void;
+    register(cb: types.AnyFn): void;
     waitFor(ids: string[]): void;
     unregister(id: string): void;
     isDispatching(): boolean;
@@ -844,9 +844,9 @@ dispatcher.dispatch({
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">class Emitter {
-    on(event: string, listener: Function): Emitter;
-    off(event: string, listener: Function): Emitter;
-    once(event: string, listener: Function): Emitter;
+    on(event: string, listener: types.AnyFn): Emitter;
+    off(event: string, listener: types.AnyFn): Emitter;
+    once(event: string, listener: types.AnyFn): Emitter;
     emit(event: string): Emitter;
     static mixin(obj: any): any;
 }</code>
@@ -1001,7 +1001,7 @@ hashTable.has('name'); // -> false
 <pre>
 <code class="language-typescript">class Heap {
     size: number;
-    constructor(cmp?: Function);
+    constructor(cmp?: types.AnyFn);
     clear(): void;
     add(item: any): number;
     poll(): any;
@@ -1064,13 +1064,13 @@ JSON 转换器。
     constructor(data: any);
     set(key: string, val: any): JsonTransformer;
     get(key?: string): any;
-    map(from: string, to: string, fn: Function): JsonTransformer;
-    map(from: string, fn: Function): JsonTransformer;
-    filter(from: string, to: string, fn: Function): JsonTransformer;
-    filter(from: string, fn: Function): JsonTransformer;
+    map(from: string, to: string, fn: types.AnyFn): JsonTransformer;
+    map(from: string, fn: types.AnyFn): JsonTransformer;
+    filter(from: string, to: string, fn: types.AnyFn): JsonTransformer;
+    filter(from: string, fn: types.AnyFn): JsonTransformer;
     remove(keys: string | string[]): JsonTransformer;
-    compute(from: string | string[], to: string, fn: Function): JsonTransformer;
-    compute(from: string, fn: Function): JsonTransformer;
+    compute(from: string | string[], to: string, fn: types.AnyFn): JsonTransformer;
+    compute(from: string, fn: types.AnyFn): JsonTransformer;
     toString(): string;
 }</code>
 </pre>
@@ -1176,9 +1176,9 @@ class LinkedList {
     pop(): any;
     unshift(val: any): number;
     shift(): any;
-    find(fn: Function): LinkedList.Node | void;
+    find(fn: types.AnyFn): LinkedList.Node | void;
     delNode(node: LinkedList.Node): void;
-    forEach(iterator: Function, ctx?: any);
+    forEach(iterator: types.AnyFn, ctx?: any);
     toArr(): any[];
 }</code>
 </pre>
@@ -1475,7 +1475,7 @@ observer.disconnect();
 <pre>
 <code class="language-typescript">class PriorityQueue {
     size: number;
-    constructor(cmp?: Function);
+    constructor(cmp?: types.AnyFn);
     clear(): void;
     enqueue(item: any): number;
     dequeue(): any;
@@ -1588,7 +1588,7 @@ map.get('1'); // -> 1
     enqueue(item: any): number;
     dequeue(): any;
     peek(): any;
-    forEach(iterator: Function, context?: any): void;
+    forEach(iterator: types.AnyFn, context?: any): void;
     toArr(): any[];
 }</code>
 </pre>
@@ -1680,8 +1680,8 @@ cache.get('test'); // -> 'licia'
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">class ReduceStore {
-    constructor(reducer: Function, initialState: any);
-    subscribe(listener: Function): Function;
+    constructor(reducer: types.AnyFn, initialState: any);
+    subscribe(listener: types.AnyFn): types.AnyFn;
     dispatch(action: any): any;
     getState(): any;
 }</code>
@@ -1745,7 +1745,7 @@ querySelectorAll 的简单包装类。
 <code class="language-typescript">class Select {
     constructor(selector: string | Element);
     find(selector: string): Select;
-    each(fn: Function): Select;
+    each(fn: types.AnyFn): Select;
 }</code>
 </pre>
 </details>
@@ -1819,7 +1819,7 @@ store.set('name', 'licia');
     push(item: any): number;
     pop(): any;
     peek(): any;
-    forEach(iterator: Function, context?: any): void;
+    forEach(iterator: types.AnyFn, context?: any): void;
     toArr(): any[];
 }</code>
 </pre>
@@ -2205,7 +2205,7 @@ url.toString(); // -> 'http://example.com:8080/?foo=bar'
     constructor(options: { [name: string]: any });
     validate(object: any): string | boolean;
     static plugins: any;
-    static addPlugin(name: string, plugin: Function): void;
+    static addPlugin(name: string, plugin: types.AnyFn): void;
 }</code>
 </pre>
 </details>
@@ -2285,7 +2285,7 @@ abbrev('lina', 'luna');
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function after(n: number, fn: Function): Function;</code>
+<code class="language-typescript">function after&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;</code>
 </pre>
 </details>
 
@@ -2312,17 +2312,17 @@ const fn = after(5, function() {
     function get(
         url: string,
         data: string | {},
-        success: Function,
+        success: types.AnyFn,
         dataType?: string
     ): XMLHttpRequest;
-    function get(url: string, success: Function, dataType?: string): XMLHttpRequest;
+    function get(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
     function post(
         url: string,
         data: string | {},
-        success: Function,
+        success: types.AnyFn,
         dataType?: string
     ): XMLHttpRequest;
-    function post(url: string, success: Function, dataType?: string): XMLHttpRequest;
+    function post(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
 }
 function ajax(options: {
     type?: string;
@@ -2330,9 +2330,9 @@ function ajax(options: {
     data?: string | {};
     dataType?: string;
     contentType?: string;
-    success?: Function;
-    error?: Function;
-    complete?: Function;
+    success?: types.AnyFn;
+    error?: types.AnyFn;
+    complete?: types.AnyFn;
     timeout?: number;
 }): XMLHttpRequest;</code>
 </pre>
@@ -2605,7 +2605,7 @@ base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function before(n: number, fn: Function): Function;</code>
+<code class="language-typescript">function before&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;</code>
 </pre>
 </details>
 
@@ -2632,7 +2632,7 @@ fn(); // Allow function to be call 4 times at last.
 <code class="language-typescript">function binarySearch(
     array: any[],
     val: any,
-    cmp?: Function
+    cmp?: types.AnyFn
 ): number;</code>
 </pre>
 </details>
@@ -2671,7 +2671,7 @@ binarySearch(
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function bind(fn: Function, ctx: any, ...rest: any[]): Function;</code>
+<code class="language-typescript">function bind(fn: types.AnyFn, ctx: any, ...args: any[]): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -2679,7 +2679,7 @@ binarySearch(
 |-----|---|
 |fn|源函数|
 |ctx|绑定对象|
-|...rest|可选参数|
+|...args|可选参数|
 |返回值|输出函数|
 
 ```javascript
@@ -2711,7 +2711,7 @@ btoa('Hello World'); // -> 'SGVsbG8gV29ybGQ='
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function bubbleSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function bubbleSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -2778,7 +2778,7 @@ bytesToWords([0x12, 0x34, 0x56, 0x78]); // -> [0x12345678]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function callbackify(fn: Function): Function;</code>
+<code class="language-typescript">function callbackify(fn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -3105,7 +3105,7 @@ compact([0, 1, false, 2, '', 3]); // -> [1, 2, 3]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function compose(...fn: Function[]): Function;</code>
+<code class="language-typescript">function compose(...fn: types.AnyFn[]): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -3133,7 +3133,7 @@ welcome('licia'); // -> 'hi: LICIA!'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function compressImg(file: File | Blob | string, cb: Function): void;
+<code class="language-typescript">function compressImg(file: File | Blob | string, cb: types.AnyFn): void;
 function compressImg(
     file: File | Blob | string,
     options?: {
@@ -3144,7 +3144,7 @@ function compressImg(
         mimeType?: string;
         quality?: number;
     },
-    cb?: Function
+    cb?: types.AnyFn
 ): void;</code>
 </pre>
 </details>
@@ -3361,7 +3361,7 @@ cookie.remove('a');
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function copy(text: string, cb?: Function): void;</code>
+<code class="language-typescript">function copy(text: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -3500,7 +3500,7 @@ console.log(obj.a); // -> 1
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function createAssigner(keysFn: Function, defaults: boolean): Function;</code>
+<code class="language-typescript">function createAssigner(keysFn: types.AnyFn, defaults: boolean): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -3616,7 +3616,7 @@ cssSupports('invalid'); // -> false
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function curry(fn: Function): Function;</code>
+<code class="language-typescript">function curry(fn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -3703,7 +3703,7 @@ dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function debounce(fn: Function, wait: number): Function;</code>
+<code class="language-typescript">function debounce&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;</code>
 </pre>
 </details>
 
@@ -3809,8 +3809,8 @@ defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood',
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function define(name: string, requires: string[], method: Function): void;
-function define(name: string, method: Function): void;</code>
+<code class="language-typescript">function define(name: string, requires: string[], method: types.AnyFn): void;
+function define(name: string, method: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -3944,7 +3944,7 @@ require('licia').a; // -> undefined
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function delay(fn: Function, wait: number, ...args: any[]): void;</code>
+<code class="language-typescript">function delay(fn: types.AnyFn, wait: number, ...args: any[]): void;</code>
 </pre>
 </details>
 
@@ -3969,8 +3969,8 @@ delay(function (text) {
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">const delegate: {
-    add(el: Element, type: string, selector: string, cb: Function): void;
-    remove(el: Element, type: string, selector: string, cb: Function): void;
+    add(el: Element, type: string, selector: string, cb: types.AnyFn): void;
+    remove(el: Element, type: string, selector: string, cb: types.AnyFn): void;
 };</code>
 </pre>
 </details>
@@ -4006,7 +4006,7 @@ Node.js util.deprecate 方法，支持浏览器。
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function deprecate(fn: Function, msg: string): Function;</code>
+<code class="language-typescript">function deprecate(fn: types.AnyFn, msg: string): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -4096,14 +4096,14 @@ if (detectOs() === 'ios') {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function difference(arr: any[], ...rest: any[]): any[];</code>
+<code class="language-typescript">function difference(arr: any[], ...args: any[]): any[];</code>
 </pre>
 </details>
 
 |参数名|说明|
 |-----|---|
 |arr|源数组|
-|...rest|要排除的元素|
+|...args|要排除的元素|
 |返回值|目标数组|
 
 ```javascript
@@ -4799,7 +4799,7 @@ find([{
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function findIdx(arr: any[], predicate: Function): number;</code>
+<code class="language-typescript">function findIdx(arr: any[], predicate: types.AnyFn): number;</code>
 </pre>
 </details>
 
@@ -4830,7 +4830,7 @@ findIdx([{
 <pre>
 <code class="language-typescript">function findKey(
     obj: any,
-    predicate: Function,
+    predicate: types.AnyFn,
     ctx?: any
 ): string | void;</code>
 </pre>
@@ -4856,7 +4856,7 @@ findKey({a: 1, b: 2}, function (val) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function findLastIdx(arr: any[], predicate: Function): number;</code>
+<code class="language-typescript">function findLastIdx(arr: any[], predicate: types.AnyFn): number;</code>
 </pre>
 </details>
 
@@ -4943,7 +4943,7 @@ test('test', () => {}, 5, 'test') // Throw error
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function fnParams(fn: Function | string): string[];</code>
+<code class="language-typescript">function fnParams(fn: types.AnyFn | string): string[];</code>
 </pre>
 </details>
 
@@ -5394,7 +5394,7 @@ has({one: 1}, 'one'); // -> true
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function heapSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function heapSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -5491,8 +5491,8 @@ highlight('const a = 5;', 'js', {
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">const hotkey: {
-    on(key: string, listener: Function): void;
-    off(key: string, listener: Function): void;
+    on(key: string, listener: types.AnyFn): void;
+    off(key: string, listener: types.AnyFn): void;
 };</code>
 </pre>
 </details>
@@ -5648,7 +5648,7 @@ indent('foo\nbar', ' ', 4); // -> '    foo\n    bar'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function inherits(Class: Function, SuperClass: Function): void;</code>
+<code class="language-typescript">function inherits(Class: types.AnyFn, SuperClass: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -5741,7 +5741,7 @@ ini.stringify(config);
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function insertionSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function insertionSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -6978,7 +6978,7 @@ isSet(new WeakSet()); // -> false
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isSorted(arr: any[], cmp?: Function): boolean;</code>
+<code class="language-typescript">function isSorted(arr: any[], cmp?: types.AnyFn): boolean;</code>
 </pre>
 </details>
 
@@ -7204,11 +7204,11 @@ jsonClone({ name: 'licia' }); // -> { name: 'licia' }
 <code class="language-typescript">function jsonp(options: {
     url: string;
     data?: any;
-    success?: Function;
+    success?: types.AnyFn;
     param?: string;
     name?: string;
-    error?: Function;
-    complete?: Function;
+    error?: types.AnyFn;
+    complete?: types.AnyFn;
     timeout?: number;
 }): void;</code>
 </pre>
@@ -7361,7 +7361,7 @@ last([1, 2]); // -> 2
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function lazyRequire(requireFn: Function): Function;</code>
+<code class="language-typescript">function lazyRequire(requireFn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -7402,7 +7402,7 @@ levenshtein('cat', 'cake'); // -> 2
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function linkify(str: string, hyperlink?: Function): string;</code>
+<code class="language-typescript">function linkify(str: string, hyperlink?: types.AnyFn): string;</code>
 </pre>
 </details>
 
@@ -7427,7 +7427,7 @@ linkify(str, function (url) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function loadCss(src: string, cb?: Function): void;</code>
+<code class="language-typescript">function loadCss(src: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -7449,7 +7449,7 @@ loadCss('style.css', function (isLoaded) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function loadImg(src: string, cb?: Function): void;</code>
+<code class="language-typescript">function loadImg(src: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -7471,7 +7471,7 @@ loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function loadJs(src: string, cb?: Function): void;</code>
+<code class="language-typescript">function loadJs(src: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -7638,7 +7638,7 @@ mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function matcher(attrs: any): Function;</code>
+<code class="language-typescript">function matcher(attrs: any): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -7722,7 +7722,7 @@ localStorage.setItem('test', 'licia');
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function memoize(fn: Function, hashFn?: Function): Function;</code>
+<code class="language-typescript">function memoize(fn: types.AnyFn, hashFn?: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -7745,7 +7745,7 @@ const fibonacci = memoize(function(n) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function mergeSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function mergeSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -7897,8 +7897,8 @@ min(2.3, 1, 4.5, 2); // 1
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function mkdir(dir: string, mode?: number, cb?: Function): void;
-function mkdir(dir: string, cb?: Function): void;</code>
+<code class="language-typescript">function mkdir(dir: string, mode?: number, cb?: types.AnyFn): void;
+function mkdir(dir: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -8068,7 +8068,7 @@ ms(60000); // -> '1m'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function negate(predicate: Function): Function;</code>
+<code class="language-typescript">function negate&lt;T extends types.AnyFn&gt;(predicate: T): T;</code>
 </pre>
 </details>
 
@@ -8089,7 +8089,7 @@ function even(n) { return n % 2 === 0 }
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function nextTick(cb: Function): void;</code>
+<code class="language-typescript">function nextTick(cb: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -8312,7 +8312,7 @@ omit({a: 1, b: 2, c: 3, d: 4}, function (val, key) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function once(fn: Function): Function;</code>
+<code class="language-typescript">function once(fn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8387,7 +8387,7 @@ openFile({multiple: true}).then(fileList => {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function optimizeCb(fn: Function, ctx: any, argCount?: number): Function;</code>
+<code class="language-typescript">function optimizeCb(fn: types.AnyFn, ctx: any, argCount?: number): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8500,7 +8500,7 @@ pairs({a: 1, b: 2}); // -> [['a', 1], ['b', 2]]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function parallel(tasks: Function[], cb?: Function): void;</code>
+<code class="language-typescript">function parallel(tasks: types.AnyFn[], cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -8621,7 +8621,7 @@ parseHtml('<div>licia</div>', {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function partial(fn: Function, ...partials: any[]): Function;</code>
+<code class="language-typescript">function partial(fn: types.AnyFn, ...partials: any[]): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8809,7 +8809,7 @@ prefix('color'); // -> 'color'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function promisify(fn: Function, multiArgs?: boolean): Function;</code>
+<code class="language-typescript">function promisify(fn: types.AnyFn, multiArgs?: boolean): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8837,7 +8837,7 @@ readFile('test.js', 'utf-8').then(function (data) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function property(path: string | string[]): Function;</code>
+<code class="language-typescript">function property(path: string | string[]): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8897,7 +8897,7 @@ query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function quickSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function quickSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -8921,7 +8921,7 @@ requestAnimationFrame 快捷方式。
 <code class="language-typescript">namespace raf {
     function cancel(id: number): void;
 }
-function raf(cb: Function): number;</code>
+function raf(cb: types.AnyFn): number;</code>
 </pre>
 </details>
 
@@ -9125,7 +9125,7 @@ dom 准备好时调用回调函数，类似于 jQuery 的 ready 方法。
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function ready(fn: Function): void;</code>
+<code class="language-typescript">function ready(fn: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -9287,7 +9287,7 @@ repeat('*', 0); // -> ''
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function restArgs(fn: Function, startIndex?: number): Function;</code>
+<code class="language-typescript">function restArgs(fn: types.AnyFn, startIndex?: number): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -9352,7 +9352,7 @@ requestIdleCallback 的快捷方式。
 <code class="language-typescript">namespace ric {
     function cancel(id: number);
 }
-function ric(cb: Function): number;</code>
+function ric(cb: types.AnyFn): number;</code>
 </pre>
 </details>
 
@@ -9391,7 +9391,7 @@ rmCookie('test');
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function rmdir(dir: string, cb?: Function): void;</code>
+<code class="language-typescript">function rmdir(dir: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -9473,7 +9473,7 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function safeCb(val?: any, ctx?: any, argCount?: number): Function;</code>
+<code class="language-typescript">function safeCb(val?: any, ctx?: any, argCount?: number): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -9607,7 +9607,7 @@ sample({a: 1, b: 2, c: 3}, 1); // -> [2]
         tolerance?: number;
         duration?: number;
         easing?: string | Function;
-        callback?: Function;
+        callback?: types.AnyFn;
     }
 );</code>
 </pre>
@@ -9673,7 +9673,7 @@ random(); // -> 68
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function selectionSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function selectionSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -9738,7 +9738,7 @@ selector.stringify(groups);
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function shellSort(arr: any[], cmp?: Function): any[];</code>
+<code class="language-typescript">function shellSort(arr: any[], cmp?: types.AnyFn): any[];</code>
 </pre>
 </details>
 
@@ -9950,7 +9950,7 @@ some([2, 5], function (val) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function sortBy(arr: any, iterator?: Function, ctx?: any): any[];</code>
+<code class="language-typescript">function sortBy(arr: any, iterator?: types.AnyFn, ctx?: any): any[];</code>
 </pre>
 </details>
 
@@ -9978,7 +9978,7 @@ sortBy([1, 2, 3, 4, 5, 6], function (num) {
     obj: object,
     options?: {
         deep?: boolean,
-        comparator?: Function
+        comparator?: types.AnyFn
     }
 ): object;</code>
 </pre>
@@ -10411,7 +10411,7 @@ swap(arr, 0, 1); // -> [2, 1]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function template(str: string, util?: any): Function;</code>
+<code class="language-typescript">function template(str: string, util?: any): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -10439,7 +10439,7 @@ template('<p><%= util["upperCase"](name) %></p>', {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function throttle(fn: Function, wait: number): Function;</code>
+<code class="language-typescript">function throttle&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;</code>
 </pre>
 </details>
 
@@ -10558,7 +10558,7 @@ timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function timeTaken(fn: Function): number;</code>
+<code class="language-typescript">function timeTaken(fn: types.AnyFn): number;</code>
 </pre>
 </details>
 
@@ -10625,7 +10625,7 @@ toArr(null); // -> []
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function toAsync(fn: Function): Function;</code>
+<code class="language-typescript">function toAsync(fn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -10763,7 +10763,7 @@ toNum('5'); // -> 5
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function toSrc(fn: Function): string;</code>
+<code class="language-typescript">function toSrc(fn: types.AnyFn): string;</code>
 </pre>
 </details>
 
@@ -10909,7 +10909,7 @@ truncate('ORA ORA ORA ORA ORA ORA', 10, {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function tryIt(fn: Function, cb?: Function): void;</code>
+<code class="language-typescript">function tryIt(fn: types.AnyFn, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -10980,6 +10980,8 @@ type(async function () {}, false); // -> 'AsyncFunction'
     interface MemoObjectIterator&lt;T, TResult&gt; {
         (prev: TResult, curr: T, key: string, list: Dictionary&lt;T&gt;): TResult;
     }
+    type Fn&lt;T&gt; = (...args: any[]) =&gt; T
+    type AnyFn = Fn&lt;any&gt;
 }
 const types: {}</code>
 </pre>
@@ -11163,7 +11165,7 @@ unique([1, 2, 3, 1]); // -> [1, 2, 3]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function universalify(fn: Function, type: string): Function;</code>
+<code class="language-typescript">function universalify(fn: types.AnyFn, type: string): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -11254,8 +11256,8 @@ upperFirst('red'); // -> Red
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function use(requires: string[], method: Function): void;
-function use(method: Function): void;</code>
+<code class="language-typescript">function use(requires: string[], method: types.AnyFn): void;
+function use(method: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -11408,7 +11410,7 @@ vlq.decode('2HwcqxB'); // -> [123, 456, 789]
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function waitUntil(
-    condition: Function,
+    condition: types.AnyFn,
     timeout?: number,
     interval?: number
 ): Promise&lt;any&gt;;</code>
@@ -11436,7 +11438,7 @@ waitUntil(() => a === 10).then(() => {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function waterfall(tasks: Function[], cb?: Function): void;</code>
+<code class="language-typescript">function waterfall(tasks: types.AnyFn[], cb?: types.AnyFn): void;</code>
 </pre>
 </details>
 
@@ -11486,7 +11488,7 @@ wordsToBytes([0x12345678]); // -> [0x12, 0x34, 0x56, 0x78]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function workerize(fn: Function): Function;</code>
+<code class="language-typescript">function workerize(fn: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -11511,7 +11513,7 @@ worker(1, 2).then(function (value) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function wrap(fn: Function, wrapper: Function): Function;</code>
+<code class="language-typescript">function wrap(fn: types.AnyFn, wrapper: types.AnyFn): types.AnyFn;</code>
 </pre>
 </details>
 

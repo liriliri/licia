@@ -17,8 +17,10 @@
  */
 
 /* typescript
- * export declare function isSorted(arr: any[], cmp?: Function): boolean;
+ * export declare function isSorted(arr: any[], cmp?: types.AnyFn): boolean;
  */
+
+_('types');
 
 exports = function(arr, cmp = exports.defComparator) {
     for (let i = 0, len = arr.length; i < len - 1; i++) {
