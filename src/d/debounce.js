@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function debounce(fn: Function, wait: number): Function;
+ * export declare function debounce<T extends Function>(fn: T, wait: number): T;
  */
 
 exports = function(fn, wait, immediate) {
