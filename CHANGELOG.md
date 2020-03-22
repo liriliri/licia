@@ -1,3 +1,9 @@
+## v1.20.0 (22 Mar 2020)
+
+* add: Semaphore
+* add: truncate
+* fix: ignore node require for webpack [#18](https://github.com/liriliri/licia/issues/18)
+
 ## v1.19.0 (19 Feb 2020)
 
 * add: morse
