@@ -24,7 +24,6 @@
  * ): types.Dictionary<TResult>;
  */
 
-/* eslint-disable no-unused-vars */
 _('safeCb keys types');
 
 exports = function(obj, iterator, ctx) {

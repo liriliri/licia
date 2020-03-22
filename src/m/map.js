@@ -29,7 +29,6 @@
  * ): TResult[];
  */
 
-/* eslint-disable no-unused-vars */
 _('safeCb keys isArrLike types');
 
 exports = function(obj, iterator, ctx) {

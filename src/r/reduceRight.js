@@ -19,7 +19,6 @@
  * ): TResult;
  */
 
-/* eslint-disable no-unused-vars */
 _('reduce types');
 
 exports = reduce.create(-1);

@@ -22,9 +22,9 @@
 _('restArgs flatten filter contain');
 
 exports = restArgs(function(arr, args) {
-    rest = flatten(args);
+    args = flatten(args);
 
     return filter(arr, function(val) {
-        return !contain(rest, val);
+        return !contain(args, val);
     });
 });

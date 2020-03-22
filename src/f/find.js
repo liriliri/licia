@@ -37,7 +37,6 @@
  * ): T | undefined;
  */
 
-/* eslint-disable no-unused-vars */
 _('findKey findIdx isArrLike isUndef types');
 
 exports = function(obj, predicate, ctx) {

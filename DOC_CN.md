@@ -1779,6 +1779,49 @@ $test.find('.test').each(function (idx, element) {
 });
 ```
 
+## Semaphore
+
+限制资源同时访问次数。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Semaphore {
+    constructor(counter?: number);
+    wait(fn: () =&gt; void): void;
+    signal(): void;
+}</code>
+</pre>
+</details>
+
+### constructor
+
+|参数名|说明|
+|-----|---|
+|counter=1|初始计数|
+
+### wait
+
+等待计数器大于 0 时，执行函数。
+
+|参数名|说明|
+|-----|---|
+|fn|要执行的函数|
+
+### signal
+
+执行队列中未执行任务。
+
+```javascript
+const sem = new Semaphore(10);
+require('http').createServer((req, res) => {
+    sem.wait(function() {
+		   res.end('.');
+        setTimeout(() => sem.signal(), 500);
+    });
+}).listen(3000);
+```
+
 ## SessionStore
 
 SessionStorage 存储。

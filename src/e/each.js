@@ -28,7 +28,6 @@
  * ): types.Collection<T>;
  */
 
-/* eslint-disable no-unused-vars */
 _('isArrLike keys optimizeCb types');
 
 exports = function(obj, iterator, ctx) {
