@@ -2298,6 +2298,72 @@ validator.validate({test: 1}); // -> 'test should be a string with length 5';
 validator.validate({test: 'licia'}); // -> true
 ```
 
+## Wrr
+
+加权轮询调度算法实现。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Wrr {
+    size: number;
+    set(val: any, weight: number): void;
+    get(val: any): number | void;
+    remove(val: any): void;
+    clear(): void;
+    next(): any;
+}</code>
+</pre>
+</details>
+
+### size
+
+池大小。
+
+### set
+
+设置值和权重，如果值已存在则更新其权重。
+
+|参数名|说明|
+|-----|---|
+|val|要设置的值|
+|weight|值的权重|
+
+### get
+
+获取指定值的权重。
+
+|参数名|说明|
+|-----|---|
+|val|要获取的值|
+|返回值|值的权重|
+
+### remove
+
+移除指定值。
+
+|参数名|说明|
+|-----|---|
+|val|要移除的值|
+
+### next
+
+从池中获取下一个值。
+
+### clear
+
+清除所有值。
+
+```javascript
+const pool = new Wrr();
+pool.set('A', 4);
+pool.set('B', 8);
+pool.set('C', 2);
+pool.next();
+pool.remove('A');
+console.log(pool.size); // -> 2
+```
+
 ## abbrev
 
 计算字符串集的缩写集合。

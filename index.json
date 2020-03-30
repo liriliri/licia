@@ -791,6 +791,27 @@
             "browser"
         ]
     },
+    "Wrr": {
+        "dependencies": [
+            "Class",
+            "extend",
+            "max",
+            "map",
+            "reduce",
+            "gcd",
+            "filter"
+        ],
+        "description": "Weighted Round Robin implementation.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "abbrev": {
         "dependencies": [
             "toArr"
