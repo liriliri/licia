@@ -12,9 +12,9 @@
  */
 
 /* example
- * ;(async () => {
+ * (async () => {
  *     let fnA = golangify(async () => {
- *         throw Error('err')
+ *         throw Error('err');
  *     });
  *     await fnA(); // -> [undefined, Error]
  *     let fnB = golangify(async num => num * 2);

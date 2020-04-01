@@ -8,9 +8,9 @@
  */
 
 /* example
- * intersectRange({start: 0, end: 12}, {start: 11, end: 13});
+ * intersectRange({ start: 0, end: 12 }, { start: 11, end: 13 });
  * // -> {start: 11, end: 12}
- * intersectRange({start: 0, end: 5}, {start: 6, end: 7});
+ * intersectRange({ start: 0, end: 5 }, { start: 6, end: 7 });
  * // -> undefined
  */
 

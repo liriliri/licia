@@ -21,8 +21,8 @@
 /* example
  * jsonp({
  *     url: 'http://example.com',
- *     data: {test: 'true'},
- *     success: function (data) {
+ *     data: { test: 'true' },
+ *     success: function(data) {
  *         // ...
  *     }
  * });

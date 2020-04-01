@@ -7,11 +7,14 @@
  */
 
 /* example
- * tryIt(function () {
- *     // Do something that might cause an error.
- * }, function (err, result) {
- *     if (err) console.log(err);
- * });
+ * tryIt(
+ *     function() {
+ *         // Do something that might cause an error.
+ *     },
+ *     function(err, result) {
+ *         if (err) console.log(err);
+ *     }
+ * );
  */
 
 /* module

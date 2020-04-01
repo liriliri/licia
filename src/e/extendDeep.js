@@ -8,17 +8,20 @@
  */
 
 /* example
- * extendDeep({
- *     name: 'RedHood',
- *     family: {
- *         mother: 'Jane',
- *         father: 'Jack'
+ * extendDeep(
+ *     {
+ *         name: 'RedHood',
+ *         family: {
+ *             mother: 'Jane',
+ *             father: 'Jack'
+ *         }
+ *     },
+ *     {
+ *         family: {
+ *             brother: 'Bruce'
+ *         }
  *     }
- * }, {
- *     family: {
- *         brother: 'Bruce'
- *     }
- * });
+ * );
  * // -> {name: 'RedHood', family: {mother: 'Jane', father: 'Jack', brother: 'Bruce'}}
  */
 

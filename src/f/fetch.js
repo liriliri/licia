@@ -15,11 +15,13 @@
  *     timeout: 3000,
  *     headers: {},
  *     body: ''
- * }).then(function (res) {
- *     return res.json();
- * }).then(function (data) {
- *     console.log(data);
- * });
+ * })
+ *     .then(function(res) {
+ *         return res.json();
+ *     })
+ *     .then(function(data) {
+ *         console.log(data);
+ *     });
  */
 
 /* module

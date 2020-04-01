@@ -4,7 +4,7 @@
  */
 
 /* example
- * const id = ric(function () {
+ * const id = ric(function() {
  *     // Called during a browser's idle periods
  * });
  * ric.cancel(id);

@@ -9,7 +9,9 @@
  */
 
 /* example
- * mapObj({a: 1, b: 2}, function (val, key) { return val + 1 }); // -> {a: 2, b: 3}
+ * mapObj({ a: 1, b: 2 }, function(val, key) {
+ *     return val + 1;
+ * }); // -> {a: 2, b: 3}
  */
 
 /* module

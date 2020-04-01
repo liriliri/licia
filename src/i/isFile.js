@@ -7,7 +7,7 @@
  */
 
 /* example
- * isFile(new File(['test'], "test.txt", {type: "text/plain"})); // -> true
+ * isFile(new File(['test'], 'test.txt', { type: 'text/plain' })); // -> true
  */
 
 /* module

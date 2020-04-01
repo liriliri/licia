@@ -31,21 +31,24 @@
  */
 
 /* example
- * const store = new ReduceStore(function (state, action) {
+ * const store = new ReduceStore(function(state, action) {
  *     switch (action.type) {
- *         case 'INCREMENT': return state + 1;
- *         case 'DECREMENT': return state - 1;
- *         default: return state;
+ *         case 'INCREMENT':
+ *             return state + 1;
+ *         case 'DECREMENT':
+ *             return state - 1;
+ *         default:
+ *             return state;
  *     }
  * }, 0);
  *
- * store.subscribe(function () {
+ * store.subscribe(function() {
  *     console.log(store.getState());
  * });
  *
- * store.dispatch({type: 'INCREMENT'}); // 1
- * store.dispatch({type: 'INCREMENT'}); // 2
- * store.dispatch({type: 'DECREMENT'}); // 1
+ * store.dispatch({ type: 'INCREMENT' }); // 1
+ * store.dispatch({ type: 'INCREMENT' }); // 2
+ * store.dispatch({ type: 'DECREMENT' }); // 1
  */
 
 /* module

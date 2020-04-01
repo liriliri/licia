@@ -34,7 +34,7 @@
 
 /* example
  * const heap = new Heap(function(a, b) {
- *      return b - a;
+ *     return b - a;
  * });
  * heap.add(2);
  * heap.add(1);

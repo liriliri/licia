@@ -9,10 +9,14 @@
  */
 
 /* example
- * const el = h('div#test.title', {
- *     onclick: function () {},
- *     title: 'test'
- * }, 'inner text');
+ * const el = h(
+ *     'div#test.title',
+ *     {
+ *         onclick: function() {},
+ *         title: 'test'
+ *     },
+ *     'inner text'
+ * );
  * document.body.appendChild(el);
  */
 

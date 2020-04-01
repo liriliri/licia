@@ -7,7 +7,7 @@
  */
 
 /* example
- * isPromise(new Promise(function () {})); // -> true
+ * isPromise(new Promise(function() {})); // -> true
  * isPromise({}); // -> false
  */
 

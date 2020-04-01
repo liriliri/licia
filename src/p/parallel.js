@@ -7,16 +7,23 @@
  */
 
 /* example
- * parallel([
- *     function(cb) {
- *         setTimeout(function () { cb(null, 'one') }, 200);
- *     },
- *     function(cb) {
- *         setTimeout(function () { cb(null, 'two') }, 100);
+ * parallel(
+ *     [
+ *         function(cb) {
+ *             setTimeout(function() {
+ *                 cb(null, 'one');
+ *             }, 200);
+ *         },
+ *         function(cb) {
+ *             setTimeout(function() {
+ *                 cb(null, 'two');
+ *             }, 100);
+ *         }
+ *     ],
+ *     function(err, results) {
+ *         // results -> ['one', 'two']
  *     }
- * ], function (err, results) {
- *     // results -> ['one', 'two']
- * });
+ * );
  */
 
 /* module

@@ -6,10 +6,12 @@
 /* example
  * const dispatcher = new Dispatcher();
  *
- * dispatcher.register(function (payload) {
- *    switch (payload.actionType) {
- *        // Do something
- *    }
+ * dispatcher.register(function(payload) {
+ *     switch (
+ *         payload.actionType
+ *         // Do something
+ *     ) {
+ *     }
  * });
  *
  * dispatcher.dispatch({

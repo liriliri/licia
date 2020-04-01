@@ -7,7 +7,8 @@
  */
 
 /* example
- * const str = '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
+ * const str =
+ *     '[Official site: http://eustia.liriliri.io](http://eustia.liriliri.io)';
  * extractUrls(str); // -> ['http://eustia.liriliri.io']
  */
 

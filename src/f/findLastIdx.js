@@ -8,18 +8,25 @@
  */
 
 /* example
- * findLastIdx([{
- *     name: 'john',
- *     age: 24
- * }, {
- *     name: 'jane',
- *     age: 23
- * }, {
- *     name: 'kitty',
- *     age: 24
- * }], function (val) {
- *     return val.age === 24;
- * }); // -> 2
+ * findLastIdx(
+ *     [
+ *         {
+ *             name: 'john',
+ *             age: 24
+ *         },
+ *         {
+ *             name: 'jane',
+ *             age: 23
+ *         },
+ *         {
+ *             name: 'kitty',
+ *             age: 24
+ *         }
+ *     ],
+ *     function(val) {
+ *         return val.age === 24;
+ *     }
+ * ); // -> 2
  */
 
 /* module

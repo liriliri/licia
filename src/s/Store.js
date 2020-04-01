@@ -64,13 +64,13 @@
 
 /* example
  * const store = new Store('test');
- * store.set('user', {name: 'licia'});
+ * store.set('user', { name: 'licia' });
  * store.get('user').name; // -> 'licia'
  * store.clear();
- * store.each(function (val, key) {
+ * store.each(function(val, key) {
  *     // Do something.
  * });
- * store.on('change', function (key, newVal, oldVal) {
+ * store.on('change', function(key, newVal, oldVal) {
  *     // It triggers whenever set is called.
  * });
  */

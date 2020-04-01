@@ -16,13 +16,20 @@
 
 /* example
  * fuzzySearch('lic', ['licia', 'll', 'lic']); // -> ['lic', 'licia']
- * fuzzySearch('alpha-test', [{
- *     name: 'alpha-test-1'
- * }, {
- *     name: 'beta-test'
- * }], {
- *     key: 'name'
- * }); // -> [{ name: 'alpha-test-1' }]
+ * fuzzySearch(
+ *     'alpha-test',
+ *     [
+ *         {
+ *             name: 'alpha-test-1'
+ *         },
+ *         {
+ *             name: 'beta-test'
+ *         }
+ *     ],
+ *     {
+ *         key: 'name'
+ *     }
+ * ); // -> [{ name: 'alpha-test-1' }]
  */
 
 /* module

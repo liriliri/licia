@@ -10,7 +10,7 @@
  * isNumeric(1); // -> true
  * isNumeric('1'); // -> true
  * isNumeric(Number.MAX_VALUE); // -> true
- * isNumeric(0xFF); // -> true
+ * isNumeric(0xff); // -> true
  * isNumeric(''); // -> false
  * isNumeric('1.1.1'); // -> false
  * isNumeric(NaN); // -> false

@@ -33,14 +33,14 @@
  */
 
 /* example
- * const queue = new PriorityQueue(function (a, b) {
+ * const queue = new PriorityQueue(function(a, b) {
  *     if (a.priority > b.priority) return 1;
  *     if (a.priority === b.priority) return -1;
  *     return 0;
  * });
  * queue.enqueue({
  *     priority: 1000,
- *     value: 'apple',
+ *     value: 'apple'
  * });
  * queue.enqueue({
  *     priority: 500,

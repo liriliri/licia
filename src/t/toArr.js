@@ -7,7 +7,7 @@
  */
 
 /* example
- * toArr({a: 1, b: 2}); // -> [{a: 1, b: 2}]
+ * toArr({ a: 1, b: 2 }); // -> [{a: 1, b: 2}]
  * toArr('abc'); // -> ['abc']
  * toArr(1); // -> [1]
  * toArr(null); // -> []

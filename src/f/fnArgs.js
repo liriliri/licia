@@ -10,11 +10,7 @@
 
 /* example
  * function test(a, b, c) {
- *     fnArgs([
- *         'number|string',
- *         '?Function',
- *         '...number',
- *     ], arguments);
+ *     fnArgs(['number|string', '?Function', '...number'], arguments);
  *     // Do something.
  * }
  * // @ts-ignore
@@ -27,7 +23,7 @@
  * // @ts-ignore
  * test('test', 'test'); // Throw error
  * // @ts-ignore
- * test('test', () => {}, 5, 'test') // Throw error
+ * test('test', () => {}, 5, 'test'); // Throw error
  */
 
 /* module

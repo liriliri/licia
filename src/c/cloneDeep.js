@@ -7,7 +7,7 @@
  */
 
 /* example
- * const obj = [{a: 1}, {a: 2}];
+ * const obj = [{ a: 1 }, { a: 2 }];
  * const obj2 = cloneDeep(obj);
  * console.log(obj[0] === obj2[1]); // -> false
  */

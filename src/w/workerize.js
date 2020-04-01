@@ -7,10 +7,10 @@
  */
 
 /* example
- * const worker = workerize(function (a, b) {
+ * const worker = workerize(function(a, b) {
  *     return a + b;
  * });
- * worker(1, 2).then(function (value) {
+ * worker(1, 2).then(function(value) {
  *     console.log(value); // -> 3
  * });
  */

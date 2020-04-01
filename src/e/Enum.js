@@ -13,7 +13,11 @@
 
 /* example
  * const importance = new Enum([
- *     'NONE', 'TRIVIAL', 'REGULAR', 'IMPORTANT', 'CRITICAL'
+ *     'NONE',
+ *     'TRIVIAL',
+ *     'REGULAR',
+ *     'IMPORTANT',
+ *     'CRITICAL'
  * ]);
  * const val = 1;
  * if (val === importance.CRITICAL) {

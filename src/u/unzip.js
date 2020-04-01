@@ -7,7 +7,10 @@
  */
 
 /* example
- * unzip([['a', 1, true], ['b', 2, false]]); // -> [['a', 'b'], [1, 2], [true, false]]
+ * unzip([
+ *     ['a', 1, true],
+ *     ['b', 2, false]
+ * ]); // -> [['a', 'b'], [1, 2], [true, false]]
  */
 
 /* module

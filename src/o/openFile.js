@@ -14,8 +14,8 @@
  */
 
 /* example
- * openFile({multiple: true}).then(fileList => {
- *     console.log(fileList)
+ * openFile({ multiple: true }).then(fileList => {
+ *     console.log(fileList);
  * });
  */
 

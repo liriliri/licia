@@ -8,7 +8,7 @@
  */
 
 /* example
- * isMatch({a: 1, b: 2}, {a: 1}); // -> true
+ * isMatch({ a: 1, b: 2 }, { a: 1 }); // -> true
  */
 
 /* module

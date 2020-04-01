@@ -15,7 +15,7 @@
  */
 
 /* example
- * hotkey.on('k', function () {
+ * hotkey.on('k', function() {
  *     console.log('k is pressed');
  * });
  * function keyDown() {}

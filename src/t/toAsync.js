@@ -9,7 +9,7 @@
 /* example
  * const sleep = require('licia/sleep');
  *
- * const fn = toAsync(function *() {
+ * const fn = toAsync(function*() {
  *     yield sleep(200);
  *     return 'licia';
  * });

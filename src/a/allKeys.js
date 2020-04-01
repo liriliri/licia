@@ -18,9 +18,9 @@
  */
 
 /* example
- * const obj = Object.create({zero: 0});
+ * const obj = Object.create({ zero: 0 });
  * obj.one = 1;
- * allKeys(obj) // -> ['zero', 'one']
+ * allKeys(obj); // -> ['zero', 'one']
  */
 
 /* module

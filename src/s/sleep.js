@@ -6,7 +6,7 @@
  */
 
 /* example
- * ;(async function () {
+ * (async function() {
  *     await sleep(2000);
  * })();
  */

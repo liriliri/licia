@@ -9,15 +9,21 @@
  */
 
 /* example
- * find([{
- *     name: 'john',
- *     age: 24
- * }, {
- *     name: 'jane',
- *     age: 23
- * }], function (val) {
- *     return val.age === 23;
- * }); // -> {name: 'jane', age: 23}
+ * find(
+ *     [
+ *         {
+ *             name: 'john',
+ *             age: 24
+ *         },
+ *         {
+ *             name: 'jane',
+ *             age: 23
+ *         }
+ *     ],
+ *     function(val) {
+ *         return val.age === 23;
+ *     }
+ * ); // -> {name: 'jane', age: 23}
  */
 
 /* module

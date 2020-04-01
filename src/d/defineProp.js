@@ -15,31 +15,31 @@
  */
 
 /* example
- * const obj = {b: {c: 3}, d: 4, e: 5};
+ * const obj = { b: { c: 3 }, d: 4, e: 5 };
  * defineProp(obj, 'a', {
- *     get: function () {
+ *     get: function() {
  *         return this.e * 2;
  *     }
  * });
  * // obj.a is equal to 10
  * defineProp(obj, 'b.c', {
- *     set: (function (val) {
+ *     set: function(val) {
  *         // this is pointed to obj.b
  *         this.e = val;
- *     }).bind(obj)
+ *     }.bind(obj)
  * });
  * obj.b.c = 2;
  * // obj.a is equal to 4
  *
- * const obj2 = {a: 1, b: 2, c: 3};
+ * const obj2 = { a: 1, b: 2, c: 3 };
  * defineProp(obj2, {
  *     a: {
- *         get: function () {
+ *         get: function() {
  *             return this.c;
  *         }
  *     },
  *     b: {
- *         set: function (val) {
+ *         set: function(val) {
  *             this.c = val / 2;
  *         }
  *     }

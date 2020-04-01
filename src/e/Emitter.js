@@ -37,7 +37,9 @@
 
 /* example
  * const event = new Emitter();
- * event.on('test', function () { console.log('test') });
+ * event.on('test', function() {
+ *     console.log('test');
+ * });
  * event.emit('test'); // Logs out 'test'.
  * Emitter.mixin({});
  */

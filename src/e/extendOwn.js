@@ -8,7 +8,7 @@
  */
 
 /* example
- * extendOwn({name: 'RedHood'}, {age: 24}); // -> {name: 'RedHood', age: 24}
+ * extendOwn({ name: 'RedHood' }, { age: 24 }); // -> {name: 'RedHood', age: 24}
  */
 
 /* module

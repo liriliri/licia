@@ -7,7 +7,9 @@
  */
 
 /* example
- * const add = curry(function (a, b) { return a + b });
+ * const add = curry(function(a, b) {
+ *     return a + b;
+ * });
  * const add1 = add(1);
  * add1(2); // -> 3
  */

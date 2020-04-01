@@ -9,9 +9,9 @@
 
 /* example
  * const stooges = [
- *     {name: 'moe', age: 40},
- *     {name: 'larry', age: 50},
- *     {name: 'curly', age: 60}
+ *     { name: 'moe', age: 40 },
+ *     { name: 'larry', age: 50 },
+ *     { name: 'curly', age: 60 }
  * ];
  * pluck(stooges, 'name'); // -> ['moe', 'larry', 'curly']
  */

@@ -12,7 +12,7 @@
  * $btn.html('eustia');
  * $btn.addClass('btn');
  * $btn.show();
- * $btn.on('click', function () {
+ * $btn.on('click', function() {
  *     // Do something...
  * });
  */

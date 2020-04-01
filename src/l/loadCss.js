@@ -7,7 +7,7 @@
  */
 
 /* example
- * loadCss('style.css', function (isLoaded) {
+ * loadCss('style.css', function(isLoaded) {
  *     // Do something...
  * });
  */

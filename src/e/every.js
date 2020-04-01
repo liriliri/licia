@@ -9,7 +9,7 @@
  */
 
 /* example
- * every([2, 4], function (val) {
+ * every([2, 4], function(val) {
  *     return val % 2 === 0;
  * }); // -> false
  */

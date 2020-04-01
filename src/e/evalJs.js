@@ -8,7 +8,7 @@
 
 /* example
  * evalJs('5+2'); // -> 7
- * evalJs('this.a', {a: 2}); // -> 2
+ * evalJs('this.a', { a: 2 }); // -> 2
  */
 
 /* module

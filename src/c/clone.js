@@ -9,7 +9,7 @@
  */
 
 /* example
- * clone({name: 'eustia'}); // -> {name: 'eustia'}
+ * clone({ name: 'eustia' }); // -> {name: 'eustia'}
  */
 
 /* module

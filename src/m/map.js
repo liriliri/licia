@@ -9,7 +9,9 @@
  */
 
 /* example
- * map([4, 8], function (n) { return n * n; }); // -> [16, 64]
+ * map([4, 8], function(n) {
+ *     return n * n;
+ * }); // -> [16, 64]
  */
 
 /* module

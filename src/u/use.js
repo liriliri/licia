@@ -8,7 +8,7 @@
 
 /* example
  * // define('A', () => 'A');
- * use(['A'], function (A) {
+ * use(['A'], function(A) {
  *     console.log(A + 'B'); // -> 'AB'
  * });
  */

@@ -15,9 +15,12 @@
  */
 
 /* example
- * sortKeys({b: {d: 2, c: 1}, a: 0}, {
- *     deep: true
- * }); // -> {a: 0, b: {c: 1, d: 2}}
+ * sortKeys(
+ *     { b: { d: 2, c: 1 }, a: 0 },
+ *     {
+ *         deep: true
+ *     }
+ * ); // -> {a: 0, b: {c: 1, d: 2}}
  */
 
 /* module

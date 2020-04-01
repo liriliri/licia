@@ -5,18 +5,22 @@
 
 /* example
  * function get(url) {
- *     return new Promise(function (resolve, reject) {
+ *     return new Promise(function(resolve, reject) {
  *         const req = new XMLHttpRequest();
  *         req.open('GET', url);
- *         req.onload = function () {
- *             req.status == 200 ? resolve(req.response) : reject(Error(req.statusText));
+ *         req.onload = function() {
+ *             req.status == 200
+ *                 ? resolve(req.response)
+ *                 : reject(Error(req.statusText));
  *         };
- *         req.onerror = function () { reject(Error('Network Error')) };
+ *         req.onerror = function() {
+ *             reject(Error('Network Error'));
+ *         };
  *         req.send();
  *     });
  * }
  *
- * get('test.json').then(function (result) {
+ * get('test.json').then(function(result) {
  *     // Do something...
  * });
  */

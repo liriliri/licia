@@ -10,7 +10,7 @@
  */
 
 /* example
- * nextTick(function () {
+ * nextTick(function() {
  *     // Do something...
  * });
  */

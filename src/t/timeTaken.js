@@ -7,7 +7,7 @@
  */
 
 /* example
- * timeTaken(function () {
+ * timeTaken(function() {
  *     // Do something.
  * }); // -> Time taken to execute given function.
  */

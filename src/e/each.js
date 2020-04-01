@@ -8,7 +8,7 @@
  */
 
 /* example
- * each({'a': 1, 'b': 2}, function (val, key) {});
+ * each({ a: 1, b: 2 }, function(val, key) {});
  */
 
 /* module

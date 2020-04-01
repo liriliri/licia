@@ -9,9 +9,9 @@
 /* example
  * parseHtml('<div>licia</div>', {
  *     start: (tag, attrs, unary) => {},
- *     end: (tag) => {},
- *     comment: (text) => {},
- *     text: (text) => {}
+ *     end: tag => {},
+ *     comment: text => {},
+ *     text: text => {}
  * });
  */
 

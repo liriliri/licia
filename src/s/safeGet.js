@@ -8,7 +8,7 @@
  */
 
 /* example
- * const obj = {a: {aa: {aaa: 1}}};
+ * const obj = { a: { aa: { aaa: 1 } } };
  * safeGet(obj, 'a.aa.aaa'); // -> 1
  * safeGet(obj, ['a', 'aa']); // -> {aaa: 1}
  * safeGet(obj, 'a.b'); // -> undefined

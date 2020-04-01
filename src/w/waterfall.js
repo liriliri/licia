@@ -7,17 +7,20 @@
  */
 
 /* example
- * waterfall([
- *     function (cb) {
- *         cb(null, 'one');
- *     },
- *     function (arg1, cb) {
- *         // arg1 -> 'one'
- *         cb(null, 'done');
+ * waterfall(
+ *     [
+ *         function(cb) {
+ *             cb(null, 'one');
+ *         },
+ *         function(arg1, cb) {
+ *             // arg1 -> 'one'
+ *             cb(null, 'done');
+ *         }
+ *     ],
+ *     function(err, result) {
+ *         // result -> 'done'
  *     }
- * ], function (err, result) {
- *     // result -> 'done'
- * });
+ * );
  */
 
 /* module

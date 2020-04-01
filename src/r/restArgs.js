@@ -8,7 +8,9 @@
  */
 
 /* example
- * const paramArr = restArgs(function (rest) { return rest });
+ * const paramArr = restArgs(function(rest) {
+ *     return rest;
+ * });
  * paramArr(1, 2, 3, 4); // -> [1, 2, 3, 4]
  */
 

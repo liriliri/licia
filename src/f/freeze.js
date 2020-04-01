@@ -9,7 +9,7 @@
  */
 
 /* example
- * const a = {b: 1};
+ * const a = { b: 1 };
  * freeze(a);
  * a.b = 2;
  * console.log(a); // -> {b: 1}

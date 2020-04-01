@@ -7,7 +7,7 @@
  */
 
 /* example
- * function init() {};
+ * function init() {}
  * const initOnce = once(init);
  * initOnce();
  * initOnce(); // -> init is invoked once

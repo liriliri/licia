@@ -21,7 +21,7 @@
 
 /* example
  * query.parse('foo=bar&eruda=true'); // -> {foo: 'bar', eruda: 'true'}
- * query.stringify({foo: 'bar', eruda: 'true'}); // -> 'foo=bar&eruda=true'
+ * query.stringify({ foo: 'bar', eruda: 'true' }); // -> 'foo=bar&eruda=true'
  * query.parse('name=eruda&name=eustia'); // -> {name: ['eruda', 'eustia']}
  */
 

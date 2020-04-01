@@ -7,7 +7,7 @@
  */
 
 /* example
- * loadImg('http://eustia.liriliri.io/img.jpg', function (err, img) {
+ * loadImg('http://eustia.liriliri.io/img.jpg', function(err, img) {
  *     console.log(img.width, img.height);
  * });
  */

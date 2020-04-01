@@ -32,7 +32,7 @@
  */
 
 /* example
- * cookie.set('a', '1', {path: '/'});
+ * cookie.set('a', '1', { path: '/' });
  * cookie.get('a'); // -> '1'
  * cookie.remove('a');
  */

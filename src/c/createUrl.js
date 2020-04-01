@@ -8,7 +8,7 @@
  */
 
 /* example
- * createUrl('test', {type: 'text/plain'}); // -> Blob url
+ * createUrl('test', { type: 'text/plain' }); // -> Blob url
  * createUrl(['test', 'test']);
  * createUrl(new Blob([]));
  * createUrl(new File(['test'], 'test.txt'));

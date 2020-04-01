@@ -10,8 +10,8 @@
  */
 
 /* example
- * stringify({a: function () {}}); // -> '{"a":"[Function function () {}]"}'
- * const obj = {a: 1, b: {}};
+ * stringify({ a: function() {} }); // -> '{"a":"[Function function () {}]"}'
+ * const obj = { a: 1, b: {} };
  * obj.b = obj;
  * stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
  */

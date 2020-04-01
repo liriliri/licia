@@ -18,11 +18,14 @@
 /* example
  * const fs = require('fs');
  * fs.createReadStream('in.txt')
- *     .pipe(through(function (chunk, enc, cb) {
- *         // Do something to chunk
- *         this.push(chunk);
- *         cb();
- *     })).pipe(fs.createWriteStream('out.txt'));
+ *     .pipe(
+ *         through(function(chunk, enc, cb) {
+ *             // Do something to chunk
+ *             this.push(chunk);
+ *             cb();
+ *         })
+ *     )
+ *     .pipe(fs.createWriteStream('out.txt'));
  */
 
 /* module

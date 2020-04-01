@@ -10,10 +10,10 @@
  */
 
 /* example
- * define('A', function () {
+ * define('A', function() {
  *     return 'A';
  * });
- * define('B', ['A'], function (A) {
+ * define('B', ['A'], function(A) {
  *     return 'B' + A;
  * });
  */

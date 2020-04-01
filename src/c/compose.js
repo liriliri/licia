@@ -9,11 +9,14 @@
  */
 
 /* example
- * const welcome = compose(function (name) {
- *     return 'hi: ' + name;
- * }, function (name) {
- *     return name.toUpperCase() + '!';
- * });
+ * const welcome = compose(
+ *     function(name) {
+ *         return 'hi: ' + name;
+ *     },
+ *     function(name) {
+ *         return name.toUpperCase() + '!';
+ *     }
+ * );
  *
  * welcome('licia'); // -> 'hi: LICIA!'
  */

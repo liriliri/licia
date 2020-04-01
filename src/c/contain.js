@@ -9,7 +9,7 @@
 
 /* example
  * contain([1, 2, 3], 1); // -> true
- * contain({a: 1, b: 2}, 1); // -> true
+ * contain({ a: 1, b: 2 }, 1); // -> true
  * contain('abc', 'a'); // -> true
  */
 

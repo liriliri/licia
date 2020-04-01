@@ -9,7 +9,9 @@
 
 /* example
  * function callbackFn(str, cb) {
- *     setTimeout(() => { cb(null, str); }, 10);
+ *     setTimeout(() => {
+ *         cb(null, str);
+ *     }, 10);
  * }
  *
  * const fn = universalify(callbackFn, 'callback');

@@ -9,7 +9,7 @@
  */
 
 /* example
- * some([2, 5], function (val) {
+ * some([2, 5], function(val) {
  *     return val % 2 === 0;
  * }); // -> true
  */

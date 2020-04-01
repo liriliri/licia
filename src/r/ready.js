@@ -6,7 +6,7 @@
  */
 
 /* example
- * ready(function () {
+ * ready(function() {
  *     // It's safe to manipulate dom here.
  * });
  */

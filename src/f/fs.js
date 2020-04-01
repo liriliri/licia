@@ -2,11 +2,13 @@
  */
 
 /* example
- * fs.readFile('test.js').then(function (data) {
- *     // Do something
- * }).catch(function (err) {
- *     // Handle errors
- * });
+ * fs.readFile('test.js')
+ *     .then(function(data) {
+ *         // Do something
+ *     })
+ *     .catch(function(err) {
+ *         // Handle errors
+ *     });
  */
 
 /* module

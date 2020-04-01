@@ -8,14 +8,14 @@
 
 /* example
  * function fn() {
- *     return new Promise(function (resolve, reject) {
+ *     return new Promise(function(resolve, reject) {
  *         // ...
  *     });
  * }
  *
  * const cbFn = callbackify(fn);
  *
- * cbFn(function (err, value) {
+ * cbFn(function(err, value) {
  *     // ...
  * });
  */

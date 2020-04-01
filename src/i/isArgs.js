@@ -7,7 +7,7 @@
  */
 
 /* example
- * (function () {
+ * (function() {
  *     isArgs(arguments); // -> true
  * })();
  */

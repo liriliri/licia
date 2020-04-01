@@ -8,15 +8,21 @@
  */
 
 /* example
- * findIdx([{
- *     name: 'john',
- *     age: 24
- * }, {
- *     name: 'jane',
- *     age: 23
- * }], function (val) {
- *     return val.age === 23;
- * }); // -> 1
+ * findIdx(
+ *     [
+ *         {
+ *             name: 'john',
+ *             age: 24
+ *         },
+ *         {
+ *             name: 'jane',
+ *             age: 23
+ *         }
+ *     ],
+ *     function(val) {
+ *         return val.age === 23;
+ *     }
+ * ); // -> 1
  */
 
 /* module

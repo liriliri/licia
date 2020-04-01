@@ -37,7 +37,7 @@
 /* example
  * ajax({
  *     url: 'http://example.com',
- *     data: {test: 'true'},
+ *     data: { test: 'true' },
  *     error() {},
  *     success(data) {
  *         // ...
@@ -45,7 +45,7 @@
  *     dataType: 'json'
  * });
  *
- * ajax.get('http://example.com', {}, function (data) {
+ * ajax.get('http://example.com', {}, function(data) {
  *     // ...
  * });
  */

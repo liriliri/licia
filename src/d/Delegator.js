@@ -32,15 +32,23 @@
 /* example
  * const host = {
  *     target: {
- *         a() { return 'a'; },
+ *         a() {
+ *             return 'a';
+ *         },
  *         b: 'b',
  *         c: 'c',
  *         d: 'd',
- *         e() { return 'e'; }
+ *         e() {
+ *             return 'e';
+ *         }
  *     }
  * };
  * const delegator = new Delegator(host, 'target');
- * delegator.method('a').getter('b').setter('c').access('d');
+ * delegator
+ *     .method('a')
+ *     .getter('b')
+ *     .setter('c')
+ *     .access('d');
  * // @ts-ignore
  * host.a(); // -> 'a'
  * // @ts-ignore

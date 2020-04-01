@@ -14,7 +14,7 @@
  * sizeof('a'); // -> 2
  * sizeof(8); // -> 8
  * sizeof(false); // -> 4
- * sizeof(function () {}); // -> 0
+ * sizeof(function() {}); // -> 0
  * sizeof({ a: 'b' }); // -> 4
  */
 

@@ -36,8 +36,8 @@
  * $attr('#test', 'attr1'); // -> test
  * $attr.remove('#test', 'attr1');
  * $attr('#test', {
- *     'attr1': 'test',
- *     'attr2': 'test'
+ *     attr1: 'test',
+ *     attr2: 'test'
  * });
  */
 

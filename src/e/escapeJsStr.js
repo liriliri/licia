@@ -9,7 +9,7 @@
  */
 
 /* example
- * escapeJsStr('\"\n'); // -> '\\"\\\\n'
+ * escapeJsStr('"\n'); // -> '\\"\\\\n'
  */
 
 /* module

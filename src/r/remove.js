@@ -12,7 +12,9 @@
 
 /* example
  * const arr = [1, 2, 3, 4, 5];
- * const evens = remove(arr, function (val) { return val % 2 === 0 });
+ * const evens = remove(arr, function(val) {
+ *     return val % 2 === 0;
+ * });
  * console.log(arr); // -> [1, 3, 5]
  * console.log(evens); // -> [2, 4]
  */

@@ -7,7 +7,7 @@
  */
 
 /* example
- * const obj = {a: {b: 1}};
+ * const obj = { a: { b: 1 } };
  * property('a')(obj); // -> {b: 1}
  * property(['a', 'b'])(obj); // -> 1
  */

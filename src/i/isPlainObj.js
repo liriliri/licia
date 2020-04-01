@@ -9,7 +9,7 @@
 /* example
  * isPlainObj({}); // -> true
  * isPlainObj([]); // -> false
- * isPlainObj(function () {}); // -> false
+ * isPlainObj(function() {}); // -> false
  */
 
 /* module

@@ -61,20 +61,27 @@
 
 /* example
  * const data = new JsonTransformer({
- *     books: [{
- *         title: 'Book 1',
- *         price: 5
- *     }, {
- *         title: 'Book 2',
- *         price: 10
- *     }],
+ *     books: [
+ *         {
+ *             title: 'Book 1',
+ *             price: 5
+ *         },
+ *         {
+ *             title: 'Book 2',
+ *             price: 10
+ *         }
+ *     ],
  *     author: {
  *         lastname: 'Su',
  *         firstname: 'RedHood'
  *     }
  * });
- * data.filter('books', function (book) { return book.price > 5 });
- * data.compute('author', function (author) { return author.firstname + author.lastname });
+ * data.filter('books', function(book) {
+ *     return book.price > 5;
+ * });
+ * data.compute('author', function(author) {
+ *     return author.firstname + author.lastname;
+ * });
  * data.set('count', data.get('books').length);
  * data.get(); // -> {books: [{title: 'Book 2', price: 10}], author: 'RedHoodSu', count: 1}
  */

@@ -7,9 +7,9 @@
  */
 
 /* example
- * isAsyncFn(function * () {}); // -> false
- * isAsyncFn(function () {}); // -> false
- * isAsyncFn(async function () {}); // -> true
+ * isAsyncFn(function*() {}); // -> false
+ * isAsyncFn(function() {}); // -> false
+ * isAsyncFn(async function() {}); // -> true
  */
 
 /* module

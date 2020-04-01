@@ -8,7 +8,7 @@
 
 /* example
  * toSrc(Math.min); // -> 'function min() { [native code] }'
- * toSrc(function () {}) // -> 'function () { }'
+ * toSrc(function() {}); // -> 'function () { }'
  */
 
 /* module

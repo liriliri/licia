@@ -8,7 +8,7 @@
  */
 
 /* example
- * const updatePos = throttle(function () {}, 100);
+ * const updatePos = throttle(function() {}, 100);
  * // $(window).scroll(updatePos);
  */
 

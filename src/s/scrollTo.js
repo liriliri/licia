@@ -20,7 +20,7 @@
  *     tolerance: 0,
  *     duration: 800,
  *     easing: 'outQuart',
- *     callback: function () {}
+ *     callback: function() {}
  * });
  */
 

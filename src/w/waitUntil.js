@@ -9,7 +9,7 @@
 
 /* example
  * let a = 5;
- * setTimeout(() => a = 10, 500);
+ * setTimeout(() => (a = 10), 500);
  * waitUntil(() => a === 10).then(() => {
  *     console.log(a); // -> 10
  * });

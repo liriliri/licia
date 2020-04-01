@@ -8,7 +8,7 @@
  */
 
 /* example
- * const obj = {a: {aa: {aaa: 1}}};
+ * const obj = { a: { aa: { aaa: 1 } } };
  * safeDel(obj, 'a.aa.aaa'); // -> 1
  * safeDel(obj, ['a', 'aa']); // -> {}
  * safeDel(obj, 'a.b'); // -> undefined

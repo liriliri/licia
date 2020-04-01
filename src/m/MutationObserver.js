@@ -2,7 +2,7 @@
  */
 
 /* example
- * const observer = new MutationObserver(function (mutations) {
+ * const observer = new MutationObserver(function(mutations) {
  *     // Do something.
  * });
  * observer.observe(document.documentElement);

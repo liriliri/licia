@@ -9,7 +9,7 @@
 
 /* example
  * slugify('I ♥ pony'); // -> 'I-love-pony'
- * slugify('I ♥ pony', {' ': '_'}); // -> 'I_love_pony'
+ * slugify('I ♥ pony', { ' ': '_' }); // -> 'I_love_pony'
  */
 
 /* module

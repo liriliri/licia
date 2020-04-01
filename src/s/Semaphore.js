@@ -21,12 +21,14 @@
 
 /* example
  * const sem = new Semaphore(10);
- * require('http').createServer((req, res) => {
- *     sem.wait(function() {
- *		   res.end('.');
- *         setTimeout(() => sem.signal(), 500);
- *     });
- * }).listen(3000);
+ * require('http')
+ *     .createServer((req, res) => {
+ *         sem.wait(function() {
+ *             res.end('.');
+ *             setTimeout(() => sem.signal(), 500);
+ *         });
+ *     })
+ *     .listen(3000);
  */
 
 /* module

@@ -11,7 +11,7 @@
  *     this._name = name;
  * }
  * People.prototype = {
- *     getName: function () {
+ *     getName: function() {
  *         return this._name;
  *     }
  * };

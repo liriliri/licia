@@ -13,25 +13,33 @@
  *         this.name = name;
  *         this.age = age;
  *     },
- *     introduce: function () {
+ *     introduce: function() {
  *         return 'I am ' + this.name + ', ' + this.age + ' years old.';
  *     }
  * });
  *
- * const Student = People.extend({
- *     initialize: function Student(name, age, school) {
- *         this.callSuper(People, 'initialize', arguments);
+ * const Student = People.extend(
+ *     {
+ *         initialize: function Student(name, age, school) {
+ *             this.callSuper(People, 'initialize', arguments);
  *
- *         this.school = school;
+ *             this.school = school;
+ *         },
+ *         introduce: function() {
+ *             return (
+ *                 this.callSuper(People, 'introduce') +
+ *                 '\n I study at ' +
+ *                 this.school +
+ *                 '.'
+ *             );
+ *         }
  *     },
- *     introduce: function () {
- *         return this.callSuper(People, 'introduce') + '\n I study at ' + this.school + '.';
+ *     {
+ *         is: function(obj) {
+ *             return obj instanceof Student;
+ *         }
  *     }
- * }, {
- *     is: function (obj) {
- *         return obj instanceof Student;
- *     }
- * });
+ * );
  *
  * const a = new Student('allen', 17, 'Hogwarts');
  * a.introduce(); // -> 'I am allen, 17 years old. \n I study at Hogwarts.'

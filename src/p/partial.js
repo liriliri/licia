@@ -8,7 +8,9 @@
  */
 
 /* example
- * const sub5 = partial(function (a, b) { return b - a }, 5);
+ * const sub5 = partial(function(a, b) {
+ *     return b - a;
+ * }, 5);
  * sub5(20); // -> 15
  */
 

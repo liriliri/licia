@@ -30,20 +30,20 @@
  */
 
 /* example
- * Validator.addPlugin('custom', function (val, key, config) {
+ * Validator.addPlugin('custom', function(val, key, config) {
  *     if (typeof val === 'string' && val.length === 5) return true;
  *
  *     return key + ' should be a string with length 5';
  * });
  * const validator = new Validator({
- *     'test': {
+ *     test: {
  *         required: true,
  *         custom: true
  *     }
  * });
  * validator.validate({}); // -> 'test is required'
- * validator.validate({test: 1}); // -> 'test should be a string with length 5';
- * validator.validate({test: 'licia'}); // -> true
+ * validator.validate({ test: 1 }); // -> 'test should be a string with length 5';
+ * validator.validate({ test: 'licia' }); // -> true
  */
 
 /* module

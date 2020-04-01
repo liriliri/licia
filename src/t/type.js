@@ -10,10 +10,10 @@
 /* example
  * type(5); // -> 'number'
  * type({}); // -> 'object'
- * type(function () {}); // -> 'function'
+ * type(function() {}); // -> 'function'
  * type([]); // -> 'array'
  * type([], false); // -> 'Array'
- * type(async function () {}, false); // -> 'AsyncFunction'
+ * type(async function() {}, false); // -> 'AsyncFunction'
  */
 
 /* module

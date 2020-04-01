@@ -7,7 +7,7 @@
  */
 
 /* example
- * fnParams(function (a, b) {}); // -> ['a', 'b']
+ * fnParams(function(a, b) {}); // -> ['a', 'b']
  */
 
 /* module

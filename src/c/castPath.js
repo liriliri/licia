@@ -11,7 +11,7 @@
  * castPath('a.b.c'); // -> ['a', 'b', 'c']
  * castPath(['a']); // -> ['a']
  * castPath('a[0].b'); // -> ['a', '0', 'b']
- * castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
+ * castPath('a.b.c', { 'a.b.c': true }); // -> ['a.b.c']
  */
 
 /* module

@@ -7,7 +7,7 @@
  */
 
 /* example
- * keys({a: 1}); // -> ['a']
+ * keys({ a: 1 }); // -> ['a']
  */
 
 /* module

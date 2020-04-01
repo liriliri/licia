@@ -8,7 +8,7 @@
  */
 
 /* example
- * has({one: 1}, 'one'); // -> true
+ * has({ one: 1 }, 'one'); // -> true
  */
 
 /* module

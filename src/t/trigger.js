@@ -9,7 +9,7 @@
 
 /* example
  * trigger(document.getElementById('#test'), 'mouseup');
- * trigger('keydown', {keyCode: 65});
+ * trigger('keydown', { keyCode: 65 });
  */
 
 /* module

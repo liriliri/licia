@@ -9,7 +9,13 @@
 
 /* example
  * const needPx = arrToMap([
- *     'column-count', 'columns', 'font-weight', 'line-weight', 'opacity', 'z-index', 'zoom'
+ *     'column-count',
+ *     'columns',
+ *     'font-weight',
+ *     'line-weight',
+ *     'opacity',
+ *     'z-index',
+ *     'zoom'
  * ]);
  * const key = 'column-count';
  * let val = '5';

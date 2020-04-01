@@ -7,7 +7,7 @@
  */
 
 /* example
- * const a = {b: {c: 1}};
+ * const a = { b: { c: 1 } };
  * freezeDeep(a);
  * a.b.c = 2;
  * console.log(a); // -> {b: {c: 1}}

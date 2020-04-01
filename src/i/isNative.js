@@ -7,7 +7,7 @@
  */
 
 /* example
- * isNative(function () {}); // -> false
+ * isNative(function() {}); // -> false
  * isNative(Math.min); // -> true
  */
 
