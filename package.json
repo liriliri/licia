@@ -20,7 +20,7 @@
     "demo": "licia test -ad",
     "karma": "karma",
     "mocha": "mocha",
-    "format": "prettier src/$/*.js src/[a-z]/*.{js,html} *.js lib/**/*.js lib/*.js bin/*.js script/*.js --write",
+    "format": "prettier *.js lib/**/*.js lib/*.js bin/*.js script/*.js --write",
     "format:pkg": "prettier .licia/packages/**/*.{js,d.ts} .licia/packages/**/**/*.js --write",
     "test:node": "licia test -as",
     "test:browser": "licia test -bas",

@@ -29,7 +29,14 @@ global.options = options;
 
 const cmd = remain[0];
 
-const LEGAL_COMMANDS = ['test', 'pack', 'update', 'benchmark', 'help'];
+const LEGAL_COMMANDS = [
+    'test',
+    'pack',
+    'update',
+    'benchmark',
+    'help',
+    'format'
+];
 
 (async () => {
     if (!contain(LEGAL_COMMANDS, cmd)) {
