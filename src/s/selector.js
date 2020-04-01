@@ -40,7 +40,7 @@
  * export declare const selector: {
  *     parse(selector: string): Array<selector.IToken[]>;
  *     stringify(selector: Array<selector.IToken[]>): string;
- * }
+ * };
  */
 
 _('trim each identity map');

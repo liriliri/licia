@@ -29,8 +29,8 @@
  * export declare function sortKeys(
  *     obj: object,
  *     options?: {
- *         deep?: boolean,
- *         comparator?: types.AnyFn
+ *         deep?: boolean;
+ *         comparator?: types.AnyFn;
  *     }
  * ): object;
  */

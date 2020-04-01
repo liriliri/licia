@@ -7,7 +7,11 @@
  */
 
 /* typescript
- * export declare function safeCb(val?: any, ctx?: any, argCount?: number): types.AnyFn;
+ * export declare function safeCb(
+ *     val?: any,
+ *     ctx?: any,
+ *     argCount?: number
+ * ): types.AnyFn;
  */
 
 _('isFn isObj optimizeCb matcher identity types');

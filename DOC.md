@@ -81,7 +81,8 @@ Element attribute manipulation.
     function remove(element: $safeEls.El, name: string): void;
 }
 function $attr(
-    element: $safeEls.El,name: string,
+    element: $safeEls.El,
+    name: string,
     value: string
 ): void;
 function $attr(
@@ -203,7 +204,11 @@ Element css manipulation.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function $css(element: $safeEls.El, name: string): string;
-function $css(element: $safeEls.El, name: string, val: string): void;
+function $css(
+    element: $safeEls.El,
+    name: string,
+    val: string
+): void;
 function $css(
     element: $safeEls.El,
     properties: { [name: string]: string }
@@ -1075,7 +1080,11 @@ Json to json transformer.
     filter(from: string, to: string, fn: types.AnyFn): JsonTransformer;
     filter(from: string, fn: types.AnyFn): JsonTransformer;
     remove(keys: string | string[]): JsonTransformer;
-    compute(from: string | string[], to: string, fn: types.AnyFn): JsonTransformer;
+    compute(
+        from: string | string[],
+        to: string,
+        fn: types.AnyFn
+    ): JsonTransformer;
     compute(from: string, fn: types.AnyFn): JsonTransformer;
     toString(): string;
 }</code>
@@ -2430,14 +2439,22 @@ Perform an asynchronous HTTP request.
         success: types.AnyFn,
         dataType?: string
     ): XMLHttpRequest;
-    function get(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
+    function get(
+        url: string,
+        success: types.AnyFn,
+        dataType?: string
+    ): XMLHttpRequest;
     function post(
         url: string,
         data: string | {},
         success: types.AnyFn,
         dataType?: string
     ): XMLHttpRequest;
-    function post(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
+    function post(
+        url: string,
+        success: types.AnyFn,
+        dataType?: string
+    ): XMLHttpRequest;
 }
 function ajax(options: {
     type?: string;
@@ -2593,7 +2610,7 @@ const ansiColor: {
     bgMagentaBright: ansiColor.IFn;
     bgCyanBright: ansiColor.IFn;
     bgWhiteBright: ansiColor.IFn;
-}</code>
+};</code>
 </pre>
 </details>
 
@@ -2786,7 +2803,11 @@ Create a function bound to a given object.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function bind(fn: types.AnyFn, ctx: any, ...args: any[]): types.AnyFn;</code>
+<code class="language-typescript">function bind(
+    fn: types.AnyFn,
+    ctx: any,
+    ...args: any[]
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -2847,10 +2868,7 @@ Convert bytes to string.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function bytesToStr(
-    bytes: number[],
-    encoding?: string
-): string;</code>
+<code class="language-typescript">function bytesToStr(bytes: number[], encoding?: string): string;</code>
 </pre>
 </details>
 
@@ -2990,7 +3008,10 @@ Center align text in a string.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function centerAlign(str: string | string[], width?: number): string;</code>
+<code class="language-typescript">function centerAlign(
+    str: string | string[],
+    width?: number
+): string;</code>
 </pre>
 </details>
 
@@ -3248,7 +3269,10 @@ Compress image using canvas.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function compressImg(file: File | Blob | string, cb: types.AnyFn): void;
+<code class="language-typescript">function compressImg(
+    file: File | Blob | string,
+    cb: types.AnyFn
+): void;
 function compressImg(
     file: File | Blob | string,
     options?: {
@@ -3321,10 +3345,7 @@ Check if the value is present in the list.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function contain(
-    arr: any[] | {} | string,
-    val: any
-): boolean;</code>
+<code class="language-typescript">function contain(arr: any[] | {} | string, val: any): boolean;</code>
 </pre>
 </details>
 
@@ -3615,7 +3636,10 @@ Used to create extend, extendOwn and defaults.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function createAssigner(keysFn: types.AnyFn, defaults: boolean): types.AnyFn;</code>
+<code class="language-typescript">function createAssigner(
+    keysFn: types.AnyFn,
+    defaults: boolean
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -3662,7 +3686,7 @@ Css parser and serializer.
 <code class="language-typescript">const css: {
     parse(css: string): object;
     stringify(stylesheet: object, options?: { indent?: string }): string;
-}</code>
+};</code>
 </pre>
 </details>
 
@@ -3924,7 +3948,11 @@ Define a module, should be used along with use.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function define(name: string, requires: string[], method: types.AnyFn): void;
+<code class="language-typescript">function define(
+    name: string,
+    requires: string[],
+    method: types.AnyFn
+): void;
 function define(name: string, method: types.AnyFn): void;</code>
 </pre>
 </details>
@@ -3958,7 +3986,10 @@ Shortcut for Object.defineProperty(defineProperties).
     prop: string,
     descriptor: PropertyDescriptor
 ): T;
-function defineProp&lt;T&gt;(obj: T, descriptor: PropertyDescriptorMap): T;</code>
+function defineProp&lt;T&gt;(
+    obj: T,
+    descriptor: PropertyDescriptorMap
+): T;</code>
 </pre>
 </details>
 
@@ -4059,7 +4090,11 @@ Invoke function after certain milliseconds.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function delay(fn: types.AnyFn, wait: number, ...args: any[]): void;</code>
+<code class="language-typescript">function delay(
+    fn: types.AnyFn,
+    wait: number,
+    ...args: any[]
+): void;</code>
 </pre>
 </details>
 
@@ -4144,7 +4179,9 @@ Detect browser info using ua.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function detectBrowser(ua?: string): {
+<code class="language-typescript">function detectBrowser(
+    ua?: string
+): {
     name: string;
     version: number;
 };</code>
@@ -4783,10 +4820,12 @@ Detect file type using magic number.
 <pre>
 <code class="language-typescript">function fileType(
     input: Buffer | ArrayBuffer | Uint8Array
-): {
-    ext: string;
-    mime: string;
-} | undefined;</code>
+):
+    | {
+          ext: string;
+          mime: string;
+      }
+    | undefined;</code>
 </pre>
 </details>
 
@@ -5396,7 +5435,10 @@ Get url param.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function getUrlParam(name: string, url?:string): string | undefined;</code>
+<code class="language-typescript">function getUrlParam(
+    name: string,
+    url?: string
+): string | undefined;</code>
 </pre>
 </details>
 
@@ -5740,7 +5782,11 @@ Indent each line in a string.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function indent(str: string, char?: string, len?: number): string;</code>
+<code class="language-typescript">function indent(
+    str: string,
+    char?: string,
+    len?: number
+): string;</code>
 </pre>
 </details>
 
@@ -5762,7 +5808,10 @@ Inherit the prototype methods from one constructor into another.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function inherits(Class: types.AnyFn, SuperClass: types.AnyFn): void;</code>
+<code class="language-typescript">function inherits(
+    Class: types.AnyFn,
+    SuperClass: types.AnyFn
+): void;</code>
 </pre>
 </details>
 
@@ -6489,14 +6538,17 @@ Check if element is hidden.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isHidden(el: Element, options?: {
-    display?: boolean;
-    visibility?: boolean;
-    opacity?: boolean;
-    size?: boolean;
-    viewport?: boolean;
-    overflow?: boolean;
-}): boolean;</code>
+<code class="language-typescript">function isHidden(
+    el: Element,
+    options?: {
+        display?: boolean;
+        visibility?: boolean;
+        opacity?: boolean;
+        size?: boolean;
+        viewport?: boolean;
+        overflow?: boolean;
+    }
+): boolean;</code>
 </pre>
 </details>
 
@@ -7836,7 +7888,10 @@ Memoize a given function by caching the computed result.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function memoize(fn: types.AnyFn, hashFn?: types.AnyFn): types.AnyFn;</code>
+<code class="language-typescript">function memoize(
+    fn: types.AnyFn,
+    hashFn?: types.AnyFn
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8011,7 +8066,11 @@ Recursively create directories.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function mkdir(dir: string, mode?: number, cb?: types.AnyFn): void;
+<code class="language-typescript">function mkdir(
+    dir: string,
+    mode?: number,
+    cb?: types.AnyFn
+): void;
 function mkdir(dir: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
@@ -8037,45 +8096,45 @@ Tiny moment.js like implementation.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace moment {
-   class M {
-       constructor(value: string | Date);
-       format(mask: string): string;
-       isValid(): boolean;
-       isLeapYear(): boolean;
-       isSame(that: M): boolean;
-       valueOf(): number;
-       isBefore(that: M): boolean;
-       isAfter(that: M): boolean;
-       year(): number;
-       year(number): M;
-       month(): number;
-       month(number): M;
-       date(): number;
-       date(number): M;
-       hour(): number;
-       hour(number): M;
-       minute(): number;
-       minute(number): M;
-       second(): number;
-       second(number): M;
-       millisecond(): number;
-       millisecond(number): M;
-       unix(): number;
-       clone(): M;
-       toDate(): Date;
-       toArray(): number[];
-       toJSON(): string;
-       toISOString(): string;
-       toObject(): any;
-       toString(): string;
-       set(unit: string, num: number): M;
-       startOf(unit: string): M;
-       endOf(unit: string): M;
-       daysInMonth(): number;
-       add(num: number, unit: string): M;
-       subtract(num: number, unit: string): M;
-       diff(input: M | string | Date, unit: string, asFloat: boolean): number;
-   }
+    class M {
+        constructor(value: string | Date);
+        format(mask: string): string;
+        isValid(): boolean;
+        isLeapYear(): boolean;
+        isSame(that: M): boolean;
+        valueOf(): number;
+        isBefore(that: M): boolean;
+        isAfter(that: M): boolean;
+        year(): number;
+        year(number): M;
+        month(): number;
+        month(number): M;
+        date(): number;
+        date(number): M;
+        hour(): number;
+        hour(number): M;
+        minute(): number;
+        minute(number): M;
+        second(): number;
+        second(number): M;
+        millisecond(): number;
+        millisecond(number): M;
+        unix(): number;
+        clone(): M;
+        toDate(): Date;
+        toArray(): number[];
+        toJSON(): string;
+        toISOString(): string;
+        toObject(): any;
+        toString(): string;
+        set(unit: string, num: number): M;
+        startOf(unit: string): M;
+        endOf(unit: string): M;
+        daysInMonth(): number;
+        add(num: number, unit: string): M;
+        subtract(num: number, unit: string): M;
+        diff(input: M | string | Date, unit: string, asFloat: boolean): number;
+    }
 }
 function moment(value: string | Date): moment.M;</code>
 </pre>
@@ -8110,7 +8169,7 @@ Morse code encoding and decoding.
 <code class="language-typescript">const morse: {
     encode(txt: string): string;
     decode(morse: string): string;
-}</code>
+};</code>
 </pre>
 </details>
 
@@ -8403,7 +8462,10 @@ Opposite of pick.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function omit(obj: any, filter: string | string[] | Function): any;</code>
+<code class="language-typescript">function omit(
+    obj: any,
+    filter: string | string[] | Function
+): any;</code>
 </pre>
 </details>
 
@@ -8503,7 +8565,11 @@ Used for function context binding.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function optimizeCb(fn: types.AnyFn, ctx: any, argCount?: number): types.AnyFn;</code>
+<code class="language-typescript">function optimizeCb(
+    fn: types.AnyFn,
+    ctx: any,
+    argCount?: number
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8648,8 +8714,8 @@ Parse command line argument options, the same as minimist.
 <code class="language-typescript">function parseArgs(
     args: string[],
     options: {
-        names: any,
-        shorthands: any
+        names: any;
+        shorthands: any;
     }
 ): any;</code>
 </pre>
@@ -8722,7 +8788,10 @@ Partially apply a function by filling in given arguments.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function partial(fn: types.AnyFn, ...partials: any[]): types.AnyFn;</code>
+<code class="language-typescript">function partial(
+    fn: types.AnyFn,
+    ...partials: any[]
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8788,7 +8857,7 @@ Return a filtered copy of an object.
 <pre>
 <code class="language-typescript">function pick(
     object: any,
-    filter: string | string[] | Function,
+    filter: string | string[] | Function
 ): any;</code>
 </pre>
 </details>
@@ -8910,7 +8979,10 @@ Convert callback based functions into Promises.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function promisify(fn: types.AnyFn, multiArgs?: boolean): types.AnyFn;</code>
+<code class="language-typescript">function promisify(
+    fn: types.AnyFn,
+    multiArgs?: boolean
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -9043,7 +9115,11 @@ Produces a random number between min and max(inclusive).
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function random(min: number, max?: number, floating?: boolean): number;</code>
+<code class="language-typescript">function random(
+    min: number,
+    max?: number,
+    floating?: boolean
+): number;</code>
 </pre>
 </details>
 
@@ -9095,7 +9171,7 @@ function randomColor(options: {
     hue?: number;
     lightness?: number;
     format?: string;
-    seed?: number
+    seed?: number;
 }): string | string[];</code>
 </pre>
 </details>
@@ -9170,7 +9246,11 @@ Create flexibly-numbered lists of integers.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function range(start: number, end?: number, step?: number): number[];</code>
+<code class="language-typescript">function range(
+    start: number,
+    end?: number,
+    step?: number
+): number[];</code>
 </pre>
 </details>
 
@@ -9388,7 +9468,10 @@ This accumulates the arguments passed into an array, after a given index.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function restArgs(fn: types.AnyFn, startIndex?: number): types.AnyFn;</code>
+<code class="language-typescript">function restArgs(
+    fn: types.AnyFn,
+    startIndex?: number
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -9574,7 +9657,11 @@ Create callback based on input value.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function safeCb(val?: any, ctx?: any, argCount?: number): types.AnyFn;</code>
+<code class="language-typescript">function safeCb(
+    val?: any,
+    ctx?: any,
+    argCount?: number
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -9633,7 +9720,11 @@ Set value at path of object.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function safeSet(obj: any, path: string | string[], val: any): void;</code>
+<code class="language-typescript">function safeSet(
+    obj: any,
+    path: string | string[],
+    val: any
+): void;</code>
 </pre>
 </details>
 
@@ -9804,7 +9895,7 @@ Css selector parser and serializer.
 const selector: {
     parse(selector: string): Array&lt;selector.IToken[]&gt;;
     stringify(selector: Array&lt;selector.IToken[]&gt;): string;
-}</code>
+};</code>
 </pre>
 </details>
 
@@ -9950,7 +10041,11 @@ Create slice of source array or array-like object.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function slice(array: any[], start?: number, end?: number): any[];</code>
+<code class="language-typescript">function slice(
+    array: any[],
+    start?: number,
+    end?: number
+): any[];</code>
 </pre>
 </details>
 
@@ -10051,7 +10146,11 @@ Return an array of elements sorted in ascending order by results of running each
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function sortBy(arr: any, iterator?: types.AnyFn, ctx?: any): any[];</code>
+<code class="language-typescript">function sortBy(
+    arr: any,
+    iterator?: types.AnyFn,
+    ctx?: any
+): any[];</code>
 </pre>
 </details>
 
@@ -10078,8 +10177,8 @@ Sort keys of an object.
 <code class="language-typescript">function sortKeys(
     obj: object,
     options?: {
-        deep?: boolean,
-        comparator?: types.AnyFn
+        deep?: boolean;
+        comparator?: types.AnyFn;
     }
 ): object;</code>
 </pre>
@@ -10158,7 +10257,9 @@ Split path into dir, name and ext.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function splitPath(path: string): {
+<code class="language-typescript">function splitPath(
+    path: string
+): {
     dir: string;
     name: string;
     ext: string;
@@ -10241,10 +10342,7 @@ Convert string into bytes.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function strToBytes(
-    str: string,
-    encoding?: string
-): number[];</code>
+<code class="language-typescript">function strToBytes(str: string, encoding?: string): number[];</code>
 </pre>
 </details>
 
@@ -10571,7 +10669,8 @@ namespace through {
     type TransformCallback = (err?: any, data?: any) =&gt; void;
     type TransformFunction = (
         this: stream.Transform,
-        chunk: any, enc: string,
+        chunk: any,
+        enc: string,
         callback: TransformCallback
     ) =&gt; void;
     type FlushCallback = (
@@ -10635,7 +10734,10 @@ Format datetime with *** time ago statement.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function timeAgo(date: Date | number, now?: Date | number): string;</code>
+<code class="language-typescript">function timeAgo(
+    date: Date | number,
+    now?: Date | number
+): string;</code>
 </pre>
 </details>
 
@@ -10681,7 +10783,11 @@ Invoke given function n times.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function times&lt;T&gt;(n: number, fn: (n: number) =&gt; T, ctx?: any): T[];</code>
+<code class="language-typescript">function times&lt;T&gt;(
+    n: number,
+    fn: (n: number) =&gt; T,
+    ctx?: any
+): T[];</code>
 </pre>
 </details>
 
@@ -10974,10 +11080,14 @@ Truncate a string to a specific width.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function truncate(txt: string, width: number, options?: {
-    ellipsis?: string,
-    separator: string
-}): string;</code>
+<code class="language-typescript">function truncate(
+    txt: string,
+    width: number,
+    options?: {
+        ellipsis?: string;
+        separator: string;
+    }
+): string;</code>
 </pre>
 </details>
 
@@ -11081,10 +11191,10 @@ Used for typescript definitions only.
     interface MemoObjectIterator&lt;T, TResult&gt; {
         (prev: TResult, curr: T, key: string, list: Dictionary&lt;T&gt;): TResult;
     }
-    type Fn&lt;T&gt; = (...args: any[]) =&gt; T
-    type AnyFn = Fn&lt;any&gt;
+    type Fn&lt;T&gt; = (...args: any[]) =&gt; T;
+    type AnyFn = Fn&lt;any&gt;;
 }
-const types: {}</code>
+const types: {};</code>
 </pre>
 </details>
 
@@ -11266,7 +11376,10 @@ Make an async function support both promises and callbacks.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function universalify(fn: types.AnyFn, type: string): types.AnyFn;</code>
+<code class="language-typescript">function universalify(
+    fn: types.AnyFn,
+    type: string
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -11614,7 +11727,10 @@ Wrap the function inside a wrapper function, passing it as the first argument.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function wrap(fn: types.AnyFn, wrapper: types.AnyFn): types.AnyFn;</code>
+<code class="language-typescript">function wrap(
+    fn: types.AnyFn,
+    wrapper: types.AnyFn
+): types.AnyFn;</code>
 </pre>
 </details>
 

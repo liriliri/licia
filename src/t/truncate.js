@@ -29,10 +29,14 @@
  */
 
 /* typescript
- * export declare function truncate(txt: string, width: number, options?: {
- *     ellipsis?: string,
- *     separator: string
- * }): string;
+ * export declare function truncate(
+ *     txt: string,
+ *     width: number,
+ *     options?: {
+ *         ellipsis?: string;
+ *         separator: string;
+ *     }
+ * ): string;
  */
 
 _('defaults isUndef');

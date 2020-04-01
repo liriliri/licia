@@ -20,7 +20,11 @@
  */
 
 /* typescript
- * export declare function bind(fn: types.AnyFn, ctx: any, ...args: any[]): types.AnyFn;
+ * export declare function bind(
+ *     fn: types.AnyFn,
+ *     ctx: any,
+ *     ...args: any[]
+ * ): types.AnyFn;
  */
 
 _('restArgs types');

@@ -36,7 +36,10 @@
  */
 
 /* typescript
- * export declare function compressImg(file: File | Blob | string, cb: types.AnyFn): void;
+ * export declare function compressImg(
+ *     file: File | Blob | string,
+ *     cb: types.AnyFn
+ * ): void;
  * export declare function compressImg(
  *     file: File | Blob | string,
  *     options?: {

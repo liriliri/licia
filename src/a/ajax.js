@@ -63,14 +63,22 @@
  *         success: types.AnyFn,
  *         dataType?: string
  *     ): XMLHttpRequest;
- *     function get(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
+ *     function get(
+ *         url: string,
+ *         success: types.AnyFn,
+ *         dataType?: string
+ *     ): XMLHttpRequest;
  *     function post(
  *         url: string,
  *         data: string | {},
  *         success: types.AnyFn,
  *         dataType?: string
  *     ): XMLHttpRequest;
- *     function post(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
+ *     function post(
+ *         url: string,
+ *         success: types.AnyFn,
+ *         dataType?: string
+ *     ): XMLHttpRequest;
  * }
  * export declare function ajax(options: {
  *     type?: string;

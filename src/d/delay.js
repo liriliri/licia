@@ -19,7 +19,11 @@
  */
 
 /* typescript
- * export declare function delay(fn: types.AnyFn, wait: number, ...args: any[]): void;
+ * export declare function delay(
+ *     fn: types.AnyFn,
+ *     wait: number,
+ *     ...args: any[]
+ * ): void;
  */
 
 _('restArgs types');

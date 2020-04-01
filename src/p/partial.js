@@ -17,7 +17,10 @@
  */
 
 /* typescript
- * export declare function partial(fn: types.AnyFn, ...partials: any[]): types.AnyFn;
+ * export declare function partial(
+ *     fn: types.AnyFn,
+ *     ...partials: any[]
+ * ): types.AnyFn;
  */
 
 _('restArgs toArr types');

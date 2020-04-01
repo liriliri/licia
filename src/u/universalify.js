@@ -27,7 +27,10 @@
  */
 
 /* typescript
- * export declare function universalify(fn: types.AnyFn, type: string): types.AnyFn;
+ * export declare function universalify(
+ *     fn: types.AnyFn,
+ *     type: string
+ * ): types.AnyFn;
  */
 
 _('promisify callbackify last isFn types');

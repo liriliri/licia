@@ -23,7 +23,11 @@
  */
 
 /* typescript
- * export declare function define(name: string, requires: string[], method: types.AnyFn): void;
+ * export declare function define(
+ *     name: string,
+ *     requires: string[],
+ *     method: types.AnyFn
+ * ): void;
  * export declare function define(name: string, method: types.AnyFn): void;
  */
 

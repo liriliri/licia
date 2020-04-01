@@ -34,7 +34,7 @@
  * export declare const morse: {
  *     encode(txt: string): string;
  *     decode(morse: string): string;
- * }
+ * };
  */
 
 _('upperCase invert');

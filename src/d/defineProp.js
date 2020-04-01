@@ -60,7 +60,10 @@
  *     prop: string,
  *     descriptor: PropertyDescriptor
  * ): T;
- * export declare function defineProp<T>(obj: T, descriptor: PropertyDescriptorMap): T;
+ * export declare function defineProp<T>(
+ *     obj: T,
+ *     descriptor: PropertyDescriptorMap
+ * ): T;
  */
 
 _('castPath isStr isObj each');

@@ -19,7 +19,11 @@
  */
 
 /* typescript
- * export declare function sortBy(arr: any, iterator?: types.AnyFn, ctx?: any): any[];
+ * export declare function sortBy(
+ *     arr: any,
+ *     iterator?: types.AnyFn,
+ *     ctx?: any
+ * ): any[];
  */
 
 _('safeCb pluck map isUndef types');

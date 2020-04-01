@@ -16,7 +16,11 @@
  */
 
 /* typescript
- * export declare function slice(array: any[], start?: number, end?: number): any[];
+ * export declare function slice(
+ *     array: any[],
+ *     start?: number,
+ *     end?: number
+ * ): any[];
  */
 
 exports = function(arr, start, end) {

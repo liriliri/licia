@@ -24,10 +24,12 @@
 /* typescript
  * export declare function fileType(
  *     input: Buffer | ArrayBuffer | Uint8Array
- * ): {
- *     ext: string;
- *     mime: string;
- * } | undefined;
+ * ):
+ *     | {
+ *           ext: string;
+ *           mime: string;
+ *       }
+ *     | undefined;
  */
 
 _('type mime isFn');

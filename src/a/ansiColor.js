@@ -60,7 +60,7 @@
  *     bgMagentaBright: ansiColor.IFn;
  *     bgCyanBright: ansiColor.IFn;
  *     bgWhiteBright: ansiColor.IFn;
- * }
+ * };
  */
 
 exports = {

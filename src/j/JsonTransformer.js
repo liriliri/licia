@@ -94,7 +94,11 @@
  *     filter(from: string, to: string, fn: types.AnyFn): JsonTransformer;
  *     filter(from: string, fn: types.AnyFn): JsonTransformer;
  *     remove(keys: string | string[]): JsonTransformer;
- *     compute(from: string | string[], to: string, fn: types.AnyFn): JsonTransformer;
+ *     compute(
+ *         from: string | string[],
+ *         to: string,
+ *         fn: types.AnyFn
+ *     ): JsonTransformer;
  *     compute(from: string, fn: types.AnyFn): JsonTransformer;
  *     toString(): string;
  * }

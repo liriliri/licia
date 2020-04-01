@@ -39,7 +39,8 @@
  *     type TransformCallback = (err?: any, data?: any) => void;
  *     type TransformFunction = (
  *         this: stream.Transform,
- *         chunk: any, enc: string,
+ *         chunk: any,
+ *         enc: string,
  *         callback: TransformCallback
  *     ) => void;
  *     type FlushCallback = (

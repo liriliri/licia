@@ -34,7 +34,7 @@
  *     hue?: number;
  *     lightness?: number;
  *     format?: string;
- *     seed?: number
+ *     seed?: number;
  * }): string | string[];
  */
 

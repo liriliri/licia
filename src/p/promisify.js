@@ -23,7 +23,10 @@
  */
 
 /* typescript
- * export declare function promisify(fn: types.AnyFn, multiArgs?: boolean): types.AnyFn;
+ * export declare function promisify(
+ *     fn: types.AnyFn,
+ *     multiArgs?: boolean
+ * ): types.AnyFn;
  */
 
 _('restArgs root Promise types');

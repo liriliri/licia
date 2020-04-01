@@ -20,7 +20,10 @@
  */
 
 /* typescript
- * export declare function omit(obj: any, filter: string | string[] | Function): any;
+ * export declare function omit(
+ *     obj: any,
+ *     filter: string | string[] | Function
+ * ): any;
  */
 
 _('pick');

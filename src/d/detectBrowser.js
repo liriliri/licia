@@ -20,7 +20,9 @@
  */
 
 /* typescript
- * export declare function detectBrowser(ua?: string): {
+ * export declare function detectBrowser(
+ *     ua?: string
+ * ): {
  *     name: string;
  *     version: number;
  * };

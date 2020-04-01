@@ -19,7 +19,11 @@
  */
 
 /* typescript
- * export declare function mkdir(dir: string, mode?: number, cb?: types.AnyFn): void;
+ * export declare function mkdir(
+ *     dir: string,
+ *     mode?: number,
+ *     cb?: types.AnyFn
+ * ): void;
  * export declare function mkdir(dir: string, cb?: types.AnyFn): void;
  */
 

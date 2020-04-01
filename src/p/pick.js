@@ -22,7 +22,7 @@
 /* typescript
  * export declare function pick(
  *     object: any,
- *     filter: string | string[] | Function,
+ *     filter: string | string[] | Function
  * ): any;
  */
 

@@ -17,7 +17,10 @@
  */
 
 /* typescript
- * export declare function restArgs(fn: types.AnyFn, startIndex?: number): types.AnyFn;
+ * export declare function restArgs(
+ *     fn: types.AnyFn,
+ *     startIndex?: number
+ * ): types.AnyFn;
  */
 
 _('types');

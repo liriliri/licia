@@ -18,7 +18,11 @@
  */
 
 /* typescript
- * export declare function range(start: number, end?: number, step?: number): number[];
+ * export declare function range(
+ *     start: number,
+ *     end?: number,
+ *     step?: number
+ * ): number[];
  */
 
 exports = function(start, end, step) {

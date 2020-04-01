@@ -19,7 +19,11 @@
  */
 
 /* typescript
- * export declare function random(min: number, max?: number, floating?: boolean): number;
+ * export declare function random(
+ *     min: number,
+ *     max?: number,
+ *     floating?: boolean
+ * ): number;
  */
 
 exports = function(min, max, floating) {

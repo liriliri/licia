@@ -50,7 +50,8 @@
  *     function remove(element: $safeEls.El, name: string): void;
  * }
  * export declare function $attr(
- *     element: $safeEls.El,name: string,
+ *     element: $safeEls.El,
+ *     name: string,
  *     value: string
  * ): void;
  * export declare function $attr(

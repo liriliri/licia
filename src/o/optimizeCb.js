@@ -7,7 +7,11 @@
  */
 
 /* typescript
- * export declare function optimizeCb(fn: types.AnyFn, ctx: any, argCount?: number): types.AnyFn;
+ * export declare function optimizeCb(
+ *     fn: types.AnyFn,
+ *     ctx: any,
+ *     argCount?: number
+ * ): types.AnyFn;
  */
 
 _('isUndef types');

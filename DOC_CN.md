@@ -79,7 +79,8 @@ $btn.on('click', function () {
     function remove(element: $safeEls.El, name: string): void;
 }
 function $attr(
-    element: $safeEls.El,name: string,
+    element: $safeEls.El,
+    name: string,
     value: string
 ): void;
 function $attr(
@@ -201,7 +202,11 @@ $class.has('#test', 'class1'); // -> true
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function $css(element: $safeEls.El, name: string): string;
-function $css(element: $safeEls.El, name: string, val: string): void;
+function $css(
+    element: $safeEls.El,
+    name: string,
+    val: string
+): void;
 function $css(
     element: $safeEls.El,
     properties: { [name: string]: string }
@@ -1069,7 +1074,11 @@ JSON 转换器。
     filter(from: string, to: string, fn: types.AnyFn): JsonTransformer;
     filter(from: string, fn: types.AnyFn): JsonTransformer;
     remove(keys: string | string[]): JsonTransformer;
-    compute(from: string | string[], to: string, fn: types.AnyFn): JsonTransformer;
+    compute(
+        from: string | string[],
+        to: string,
+        fn: types.AnyFn
+    ): JsonTransformer;
     compute(from: string, fn: types.AnyFn): JsonTransformer;
     toString(): string;
 }</code>
@@ -2424,14 +2433,22 @@ const fn = after(5, function() {
         success: types.AnyFn,
         dataType?: string
     ): XMLHttpRequest;
-    function get(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
+    function get(
+        url: string,
+        success: types.AnyFn,
+        dataType?: string
+    ): XMLHttpRequest;
     function post(
         url: string,
         data: string | {},
         success: types.AnyFn,
         dataType?: string
     ): XMLHttpRequest;
-    function post(url: string, success: types.AnyFn, dataType?: string): XMLHttpRequest;
+    function post(
+        url: string,
+        success: types.AnyFn,
+        dataType?: string
+    ): XMLHttpRequest;
 }
 function ajax(options: {
     type?: string;
@@ -2587,7 +2604,7 @@ const ansiColor: {
     bgMagentaBright: ansiColor.IFn;
     bgCyanBright: ansiColor.IFn;
     bgWhiteBright: ansiColor.IFn;
-}</code>
+};</code>
 </pre>
 </details>
 
@@ -2780,7 +2797,11 @@ binarySearch(
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function bind(fn: types.AnyFn, ctx: any, ...args: any[]): types.AnyFn;</code>
+<code class="language-typescript">function bind(
+    fn: types.AnyFn,
+    ctx: any,
+    ...args: any[]
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -2841,10 +2862,7 @@ bubbleSort([2, 1]); // -> [1, 2]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function bytesToStr(
-    bytes: number[],
-    encoding?: string
-): string;</code>
+<code class="language-typescript">function bytesToStr(bytes: number[], encoding?: string): string;</code>
 </pre>
 </details>
 
@@ -2984,7 +3002,10 @@ castPath('a.b.c', {'a.b.c': true}); // -> ['a.b.c']
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function centerAlign(str: string | string[], width?: number): string;</code>
+<code class="language-typescript">function centerAlign(
+    str: string | string[],
+    width?: number
+): string;</code>
 </pre>
 </details>
 
@@ -3242,7 +3263,10 @@ welcome('licia'); // -> 'hi: LICIA!'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function compressImg(file: File | Blob | string, cb: types.AnyFn): void;
+<code class="language-typescript">function compressImg(
+    file: File | Blob | string,
+    cb: types.AnyFn
+): void;
 function compressImg(
     file: File | Blob | string,
     options?: {
@@ -3315,10 +3339,7 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function contain(
-    arr: any[] | {} | string,
-    val: any
-): boolean;</code>
+<code class="language-typescript">function contain(arr: any[] | {} | string, val: any): boolean;</code>
 </pre>
 </details>
 
@@ -3609,7 +3630,10 @@ console.log(obj.a); // -> 1
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function createAssigner(keysFn: types.AnyFn, defaults: boolean): types.AnyFn;</code>
+<code class="language-typescript">function createAssigner(
+    keysFn: types.AnyFn,
+    defaults: boolean
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -3656,7 +3680,7 @@ CSS 解析器。
 <code class="language-typescript">const css: {
     parse(css: string): object;
     stringify(stylesheet: object, options?: { indent?: string }): string;
-}</code>
+};</code>
 </pre>
 </details>
 
@@ -3918,7 +3942,11 @@ defaults({name: 'RedHood'}, {name: 'Unknown', age: 24}); // -> {name: 'RedHood',
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function define(name: string, requires: string[], method: types.AnyFn): void;
+<code class="language-typescript">function define(
+    name: string,
+    requires: string[],
+    method: types.AnyFn
+): void;
 function define(name: string, method: types.AnyFn): void;</code>
 </pre>
 </details>
@@ -3952,7 +3980,10 @@ Object.defineProperty(defineProperties) 的快捷方式。
     prop: string,
     descriptor: PropertyDescriptor
 ): T;
-function defineProp&lt;T&gt;(obj: T, descriptor: PropertyDescriptorMap): T;</code>
+function defineProp&lt;T&gt;(
+    obj: T,
+    descriptor: PropertyDescriptorMap
+): T;</code>
 </pre>
 </details>
 
@@ -4053,7 +4084,11 @@ require('licia').a; // -> undefined
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function delay(fn: types.AnyFn, wait: number, ...args: any[]): void;</code>
+<code class="language-typescript">function delay(
+    fn: types.AnyFn,
+    wait: number,
+    ...args: any[]
+): void;</code>
 </pre>
 </details>
 
@@ -4138,7 +4173,9 @@ obsoleteFn();
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function detectBrowser(ua?: string): {
+<code class="language-typescript">function detectBrowser(
+    ua?: string
+): {
     name: string;
     version: number;
 };</code>
@@ -4778,10 +4815,12 @@ fileSize(1500000000000); // -> '1.36T'
 <pre>
 <code class="language-typescript">function fileType(
     input: Buffer | ArrayBuffer | Uint8Array
-): {
-    ext: string;
-    mime: string;
-} | undefined;</code>
+):
+    | {
+          ext: string;
+          mime: string;
+      }
+    | undefined;</code>
 </pre>
 </details>
 
@@ -5391,7 +5430,10 @@ getProto(Object.create(a)); // -> a
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function getUrlParam(name: string, url?:string): string | undefined;</code>
+<code class="language-typescript">function getUrlParam(
+    name: string,
+    url?: string
+): string | undefined;</code>
 </pre>
 </details>
 
@@ -5735,7 +5777,11 @@ idxOf([1, 2, 1, 2], 2, 2); // -> 3
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function indent(str: string, char?: string, len?: number): string;</code>
+<code class="language-typescript">function indent(
+    str: string,
+    char?: string,
+    len?: number
+): string;</code>
 </pre>
 </details>
 
@@ -5757,7 +5803,10 @@ indent('foo\nbar', ' ', 4); // -> '    foo\n    bar'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function inherits(Class: types.AnyFn, SuperClass: types.AnyFn): void;</code>
+<code class="language-typescript">function inherits(
+    Class: types.AnyFn,
+    SuperClass: types.AnyFn
+): void;</code>
 </pre>
 </details>
 
@@ -6484,14 +6533,17 @@ isGeneratorFn(function () {}); // -> false
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isHidden(el: Element, options?: {
-    display?: boolean;
-    visibility?: boolean;
-    opacity?: boolean;
-    size?: boolean;
-    viewport?: boolean;
-    overflow?: boolean;
-}): boolean;</code>
+<code class="language-typescript">function isHidden(
+    el: Element,
+    options?: {
+        display?: boolean;
+        visibility?: boolean;
+        opacity?: boolean;
+        size?: boolean;
+        viewport?: boolean;
+        overflow?: boolean;
+    }
+): boolean;</code>
 </pre>
 </details>
 
@@ -7831,7 +7883,10 @@ localStorage.setItem('test', 'licia');
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function memoize(fn: types.AnyFn, hashFn?: types.AnyFn): types.AnyFn;</code>
+<code class="language-typescript">function memoize(
+    fn: types.AnyFn,
+    hashFn?: types.AnyFn
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8006,7 +8061,11 @@ min(2.3, 1, 4.5, 2); // 1
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function mkdir(dir: string, mode?: number, cb?: types.AnyFn): void;
+<code class="language-typescript">function mkdir(
+    dir: string,
+    mode?: number,
+    cb?: types.AnyFn
+): void;
 function mkdir(dir: string, cb?: types.AnyFn): void;</code>
 </pre>
 </details>
@@ -8032,45 +8091,45 @@ mkdir('/tmp/foo/bar/baz', function (err) {
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">namespace moment {
-   class M {
-       constructor(value: string | Date);
-       format(mask: string): string;
-       isValid(): boolean;
-       isLeapYear(): boolean;
-       isSame(that: M): boolean;
-       valueOf(): number;
-       isBefore(that: M): boolean;
-       isAfter(that: M): boolean;
-       year(): number;
-       year(number): M;
-       month(): number;
-       month(number): M;
-       date(): number;
-       date(number): M;
-       hour(): number;
-       hour(number): M;
-       minute(): number;
-       minute(number): M;
-       second(): number;
-       second(number): M;
-       millisecond(): number;
-       millisecond(number): M;
-       unix(): number;
-       clone(): M;
-       toDate(): Date;
-       toArray(): number[];
-       toJSON(): string;
-       toISOString(): string;
-       toObject(): any;
-       toString(): string;
-       set(unit: string, num: number): M;
-       startOf(unit: string): M;
-       endOf(unit: string): M;
-       daysInMonth(): number;
-       add(num: number, unit: string): M;
-       subtract(num: number, unit: string): M;
-       diff(input: M | string | Date, unit: string, asFloat: boolean): number;
-   }
+    class M {
+        constructor(value: string | Date);
+        format(mask: string): string;
+        isValid(): boolean;
+        isLeapYear(): boolean;
+        isSame(that: M): boolean;
+        valueOf(): number;
+        isBefore(that: M): boolean;
+        isAfter(that: M): boolean;
+        year(): number;
+        year(number): M;
+        month(): number;
+        month(number): M;
+        date(): number;
+        date(number): M;
+        hour(): number;
+        hour(number): M;
+        minute(): number;
+        minute(number): M;
+        second(): number;
+        second(number): M;
+        millisecond(): number;
+        millisecond(number): M;
+        unix(): number;
+        clone(): M;
+        toDate(): Date;
+        toArray(): number[];
+        toJSON(): string;
+        toISOString(): string;
+        toObject(): any;
+        toString(): string;
+        set(unit: string, num: number): M;
+        startOf(unit: string): M;
+        endOf(unit: string): M;
+        daysInMonth(): number;
+        add(num: number, unit: string): M;
+        subtract(num: number, unit: string): M;
+        diff(input: M | string | Date, unit: string, asFloat: boolean): number;
+    }
 }
 function moment(value: string | Date): moment.M;</code>
 </pre>
@@ -8105,7 +8164,7 @@ moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
 <code class="language-typescript">const morse: {
     encode(txt: string): string;
     decode(morse: string): string;
-}</code>
+};</code>
 </pre>
 </details>
 
@@ -8396,7 +8455,10 @@ objToStr(5); // -> '[object Number]'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function omit(obj: any, filter: string | string[] | Function): any;</code>
+<code class="language-typescript">function omit(
+    obj: any,
+    filter: string | string[] | Function
+): any;</code>
 </pre>
 </details>
 
@@ -8496,7 +8558,11 @@ openFile({multiple: true}).then(fileList => {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function optimizeCb(fn: types.AnyFn, ctx: any, argCount?: number): types.AnyFn;</code>
+<code class="language-typescript">function optimizeCb(
+    fn: types.AnyFn,
+    ctx: any,
+    argCount?: number
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8641,8 +8707,8 @@ parallel([
 <code class="language-typescript">function parseArgs(
     args: string[],
     options: {
-        names: any,
-        shorthands: any
+        names: any;
+        shorthands: any;
     }
 ): any;</code>
 </pre>
@@ -8730,7 +8796,10 @@ parseHtml('<div>licia</div>', {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function partial(fn: types.AnyFn, ...partials: any[]): types.AnyFn;</code>
+<code class="language-typescript">function partial(
+    fn: types.AnyFn,
+    ...partials: any[]
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -8796,7 +8865,7 @@ console.log(perfNow() - start);
 <pre>
 <code class="language-typescript">function pick(
     object: any,
-    filter: string | string[] | Function,
+    filter: string | string[] | Function
 ): any;</code>
 </pre>
 </details>
@@ -8918,7 +8987,10 @@ prefix('color'); // -> 'color'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function promisify(fn: types.AnyFn, multiArgs?: boolean): types.AnyFn;</code>
+<code class="language-typescript">function promisify(
+    fn: types.AnyFn,
+    multiArgs?: boolean
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -9051,7 +9123,11 @@ raf.cancel(id);
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function random(min: number, max?: number, floating?: boolean): number;</code>
+<code class="language-typescript">function random(
+    min: number,
+    max?: number,
+    floating?: boolean
+): number;</code>
 </pre>
 </details>
 
@@ -9103,7 +9179,7 @@ function randomColor(options: {
     hue?: number;
     lightness?: number;
     format?: string;
-    seed?: number
+    seed?: number;
 }): string | string[];</code>
 </pre>
 </details>
@@ -9178,7 +9254,11 @@ randomItem([1, 2, 3]); // -> 2
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function range(start: number, end?: number, step?: number): number[];</code>
+<code class="language-typescript">function range(
+    start: number,
+    end?: number,
+    step?: number
+): number[];</code>
 </pre>
 </details>
 
@@ -9396,7 +9476,10 @@ repeat('*', 0); // -> ''
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function restArgs(fn: types.AnyFn, startIndex?: number): types.AnyFn;</code>
+<code class="language-typescript">function restArgs(
+    fn: types.AnyFn,
+    startIndex?: number
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -9582,7 +9665,11 @@ rtrim('_abc_', ['c', '_']); // -> '_ab'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function safeCb(val?: any, ctx?: any, argCount?: number): types.AnyFn;</code>
+<code class="language-typescript">function safeCb(
+    val?: any,
+    ctx?: any,
+    argCount?: number
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -9641,7 +9728,11 @@ safeGet(obj, 'a.b'); // -> undefined
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function safeSet(obj: any, path: string | string[], val: any): void;</code>
+<code class="language-typescript">function safeSet(
+    obj: any,
+    path: string | string[],
+    val: any
+): void;</code>
 </pre>
 </details>
 
@@ -9812,7 +9903,7 @@ CSS 选择器解析器。
 const selector: {
     parse(selector: string): Array&lt;selector.IToken[]&gt;;
     stringify(selector: Array&lt;selector.IToken[]&gt;): string;
-}</code>
+};</code>
 </pre>
 </details>
 
@@ -9958,7 +10049,11 @@ sizeof({ a: 'b' }); // -> 4
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function slice(array: any[], start?: number, end?: number): any[];</code>
+<code class="language-typescript">function slice(
+    array: any[],
+    start?: number,
+    end?: number
+): any[];</code>
 </pre>
 </details>
 
@@ -10059,7 +10154,11 @@ some([2, 5], function (val) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function sortBy(arr: any, iterator?: types.AnyFn, ctx?: any): any[];</code>
+<code class="language-typescript">function sortBy(
+    arr: any,
+    iterator?: types.AnyFn,
+    ctx?: any
+): any[];</code>
 </pre>
 </details>
 
@@ -10086,8 +10185,8 @@ sortBy([1, 2, 3, 4, 5, 6], function (num) {
 <code class="language-typescript">function sortKeys(
     obj: object,
     options?: {
-        deep?: boolean,
-        comparator?: types.AnyFn
+        deep?: boolean;
+        comparator?: types.AnyFn;
     }
 ): object;</code>
 </pre>
@@ -10166,7 +10265,9 @@ splitCase('foo-Bar'); // -> ['foo', 'bar']
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function splitPath(path: string): {
+<code class="language-typescript">function splitPath(
+    path: string
+): {
     dir: string;
     name: string;
     ext: string;
@@ -10249,10 +10350,7 @@ strHash('test'); // -> 2090770981
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function strToBytes(
-    str: string,
-    encoding?: string
-): number[];</code>
+<code class="language-typescript">function strToBytes(str: string, encoding?: string): number[];</code>
 </pre>
 </details>
 
@@ -10579,7 +10677,8 @@ namespace through {
     type TransformCallback = (err?: any, data?: any) =&gt; void;
     type TransformFunction = (
         this: stream.Transform,
-        chunk: any, enc: string,
+        chunk: any,
+        enc: string,
         callback: TransformCallback
     ) =&gt; void;
     type FlushCallback = (
@@ -10643,7 +10742,10 @@ fs.createReadStream('in.txt')
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function timeAgo(date: Date | number, now?: Date | number): string;</code>
+<code class="language-typescript">function timeAgo(
+    date: Date | number,
+    now?: Date | number
+): string;</code>
 </pre>
 </details>
 
@@ -10689,7 +10791,11 @@ timeTaken(function () {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function times&lt;T&gt;(n: number, fn: (n: number) =&gt; T, ctx?: any): T[];</code>
+<code class="language-typescript">function times&lt;T&gt;(
+    n: number,
+    fn: (n: number) =&gt; T,
+    ctx?: any
+): T[];</code>
 </pre>
 </details>
 
@@ -10982,10 +11088,14 @@ trim('_abc_', ['a', 'c', '_']); // -> 'b'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function truncate(txt: string, width: number, options?: {
-    ellipsis?: string,
-    separator: string
-}): string;</code>
+<code class="language-typescript">function truncate(
+    txt: string,
+    width: number,
+    options?: {
+        ellipsis?: string;
+        separator: string;
+    }
+): string;</code>
 </pre>
 </details>
 
@@ -11089,10 +11199,10 @@ type(async function () {}, false); // -> 'AsyncFunction'
     interface MemoObjectIterator&lt;T, TResult&gt; {
         (prev: TResult, curr: T, key: string, list: Dictionary&lt;T&gt;): TResult;
     }
-    type Fn&lt;T&gt; = (...args: any[]) =&gt; T
-    type AnyFn = Fn&lt;any&gt;
+    type Fn&lt;T&gt; = (...args: any[]) =&gt; T;
+    type AnyFn = Fn&lt;any&gt;;
 }
-const types: {}</code>
+const types: {};</code>
 </pre>
 </details>
 
@@ -11274,7 +11384,10 @@ unique([1, 2, 3, 1]); // -> [1, 2, 3]
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function universalify(fn: types.AnyFn, type: string): types.AnyFn;</code>
+<code class="language-typescript">function universalify(
+    fn: types.AnyFn,
+    type: string
+): types.AnyFn;</code>
 </pre>
 </details>
 
@@ -11622,7 +11735,10 @@ worker(1, 2).then(function (value) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function wrap(fn: types.AnyFn, wrapper: types.AnyFn): types.AnyFn;</code>
+<code class="language-typescript">function wrap(
+    fn: types.AnyFn,
+    wrapper: types.AnyFn
+): types.AnyFn;</code>
 </pre>
 </details>
 
