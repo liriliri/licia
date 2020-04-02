@@ -7,7 +7,7 @@
  */
 
 /* example
- * uniqId('eusita_'); // -> 'eustia_xxx'
+ * uniqId('eustia_'); // -> 'eustia_xxx'
  */
 
 /* module

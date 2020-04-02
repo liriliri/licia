@@ -11493,7 +11493,7 @@ union([2, 1], [4, 2], [1, 2]); // -> [2, 1, 4]
 |返回值|全局唯一 id|
 
 ```javascript
-uniqId('eusita_'); // -> 'eustia_xxx'
+uniqId('eustia_'); // -> 'eustia_xxx'
 ```
 
 ## unique

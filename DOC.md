@@ -11485,7 +11485,7 @@ Generate a globally-unique id.
 |return|Globally-unique id|
 
 ```javascript
-uniqId('eusita_'); // -> 'eustia_xxx'
+uniqId('eustia_'); // -> 'eustia_xxx'
 ```
 
 ## unique 
