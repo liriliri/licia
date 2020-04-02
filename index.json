@@ -2117,7 +2117,8 @@
             "each",
             "defaults",
             "noop",
-            "has"
+            "has",
+            "root"
         ],
         "description": "Turn XMLHttpRequest into promise like.",
         "env": [
@@ -6260,7 +6261,8 @@
             "uniqId",
             "toSrc",
             "createUrl",
-            "isStr"
+            "isStr",
+            "root"
         ],
         "description": "Move a stand-alone function to a worker thread.",
         "env": [

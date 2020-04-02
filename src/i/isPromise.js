@@ -22,5 +22,5 @@
 _('isObj isFn');
 
 exports = function(val) {
-    return isObj(val) && isFn(val.then);
+    return isObj(val) && isFn(val.then) && isFn(val.catch);
 };

@@ -31,32 +31,34 @@ exports = function(fn) {
     const src = [
         toSrc(isPromise),
         'onmessage=(',
-        toSrc(function(fn) {
-            return function(e) {
-                const data = e.data;
-                const id = data[0];
-                const args = data[1];
-                let value;
+        toSrc(
+            /* istanbul ignore next */ function(fn) {
+                return function(e) {
+                    const data = e.data;
+                    const id = data[0];
+                    const args = data[1];
+                    let value;
 
-                try {
-                    value = fn.apply(fn, args);
-                    if (isPromise(value)) {
-                        value.then(
-                            function(value) {
-                                postMessage([id, null, value]);
-                            },
-                            function(err) {
-                                postMessage([id, err.message]);
-                            }
-                        );
-                    } else {
-                        postMessage([id, null, value]);
+                    try {
+                        value = fn.apply(fn, args);
+                        if (isPromise(value)) {
+                            value.then(
+                                function(value) {
+                                    postMessage([id, null, value]);
+                                },
+                                function(err) {
+                                    postMessage([id, err.message]);
+                                }
+                            );
+                        } else {
+                            postMessage([id, null, value]);
+                        }
+                    } catch (e) {
+                        postMessage([id, e.message]);
                     }
-                } catch (e) {
-                    postMessage([id, e.message]);
-                }
-            };
-        }),
+                };
+            }
+        ),
         ')(' + toSrc(fn) + ')'
     ].join('\n');
 
@@ -88,10 +90,12 @@ exports = function(fn) {
     });
 };
 
+/* istanbul ignore next */
 function isPromise(val) {
     return (
         !!val &&
         (typeof val === 'object' || typeof val === 'function') &&
-        typeof val.then === 'function'
+        typeof val.then === 'function' &&
+        typeof val.catch === 'function'
     );
 }
