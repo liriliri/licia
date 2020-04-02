@@ -2114,7 +2114,6 @@
     },
     "fetch": {
         "dependencies": [
-            "Promise",
             "each",
             "defaults",
             "noop",
@@ -2405,7 +2404,6 @@
             "promisify",
             "root",
             "each",
-            "Promise",
             "toArr"
         ],
         "description": "Promised version of node.js fs module.",
@@ -4617,8 +4615,7 @@
     "promisify": {
         "dependencies": [
             "restArgs",
-            "root",
-            "Promise"
+            "root"
         ],
         "description": "Convert callback based functions into Promises.",
         "env": [
@@ -6259,7 +6256,6 @@
     "workerize": {
         "demo": true,
         "dependencies": [
-            "Promise",
             "restArgs",
             "uniqId",
             "toSrc",

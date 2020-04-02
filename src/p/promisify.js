@@ -29,11 +29,11 @@
  * ): types.AnyFn;
  */
 
-_('restArgs root Promise types');
+_('restArgs root types');
 
 exports = function(fn, multiArgs) {
     return restArgs(function(args) {
-        return new exports.Promise(function(resolve, reject) {
+        return new root.Promise(function(resolve, reject) {
             args.push(
                 restArgs(function callback(err, values) {
                     if (err) return reject(err);
@@ -48,5 +48,3 @@ exports = function(fn, multiArgs) {
         });
     });
 };
-
-exports.Promise = root.Promise || Promise;

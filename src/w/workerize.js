@@ -23,7 +23,7 @@
  * export declare function workerize(fn: types.AnyFn): types.AnyFn;
  */
 
-_('Promise restArgs uniqId toSrc createUrl isStr types');
+_('restArgs uniqId toSrc createUrl isStr types root');
 
 exports = function(fn) {
     const promises = {};
@@ -76,7 +76,7 @@ exports = function(fn) {
     return restArgs(function(args) {
         const id = uniqId('workerize');
 
-        return new Promise(function(resolve, reject) {
+        return new root.Promise(function(resolve, reject) {
             promises[id] = function(err, value) {
                 if (err) return reject(err);
 

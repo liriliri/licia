@@ -60,7 +60,9 @@
  * ): Promise<fetch.IResult>;
  */
 
-_('Promise each defaults noop has');
+_('each defaults noop has root');
+
+const Promise = root.Promise;
 
 exports = function(url, options) {
     options = options || {};
