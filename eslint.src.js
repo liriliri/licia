@@ -34,7 +34,8 @@ var globals = {
     _: true,
     util: true,
     expect: true,
-    tests: true
+    tests: true,
+    options: true
 };
 
 each(licia, function(val, key) {

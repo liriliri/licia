@@ -35,7 +35,8 @@ const LEGAL_COMMANDS = [
     'update',
     'benchmark',
     'help',
-    'format'
+    'format',
+    'lint'
 ];
 
 (async () => {
