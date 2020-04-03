@@ -14,7 +14,6 @@
 
 /* module
  * env: all
- * test: manual
  */
 
 /* typescript

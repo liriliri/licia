@@ -876,7 +876,9 @@
             "node"
         ],
         "since": "1.4.1",
-        "test": []
+        "test": [
+            "node"
+        ]
     },
     "arrToMap": {
         "dependencies": [
@@ -5024,6 +5026,7 @@
         "dependencies": [
             "isFn",
             "isObj",
+            "isArr",
             "optimizeCb",
             "matcher",
             "identity",
@@ -5782,7 +5785,10 @@
             "browser",
             "miniprogram"
         ],
-        "test": []
+        "test": [
+            "node",
+            "browser"
+        ]
     },
     "toEl": {
         "dependencies": [],
