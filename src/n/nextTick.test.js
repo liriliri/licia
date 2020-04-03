@@ -1,11 +1,12 @@
-let invoked = false;
+it('basic', done => {
+    let invoked = false;
 
-nextTick(function() {
-    invoked = true;
+    nextTick(() => (invoked = true));
+
+    expect(invoked).to.be.false;
+
+    setTimeout(() => {
+        expect(invoked).to.be.true;
+        done();
+    }, 10);
 });
-
-expect(invoked).to.be.false;
-
-setTimeout(function() {
-    expect(invoked).to.be.true;
-}, 10);

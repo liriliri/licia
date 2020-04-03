@@ -23,9 +23,9 @@
  * export declare function nextTick(cb: types.AnyFn): void;
  */
 
-_('types');
+_('types detectMocha');
 
-if (typeof process === 'object' && process.nextTick) {
+if (typeof process === 'object' && process.nextTick && !detectMocha()) {
     exports = process.nextTick;
 } else if (typeof setImmediate === 'function') {
     exports = function(cb) {
