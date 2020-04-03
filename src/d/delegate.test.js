@@ -9,8 +9,11 @@ after(function() {
     $dom.remove();
 });
 
-it('basic', function() {
-    function click() {}
+it('basic', done => {
+    function click() {
+        done();
+        delegate.remove($dom[0], 'click', '.inner', click);
+    }
     delegate.add($dom[0], 'click', '.inner', click);
-    delegate.remove($dom[0], 'click', '.inner', click);
+    $dom.find('.inner').click();
 });
