@@ -18,9 +18,9 @@
  * export declare function keys(obj: any): string[];
  */
 
-_('has detectMocha');
+_('has');
 
-if (Object.keys && !detectMocha()) {
+if (Object.keys && !LICIA_TEST) {
     exports = Object.keys;
 } else {
     exports = function(obj) {

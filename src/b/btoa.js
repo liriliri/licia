@@ -14,14 +14,14 @@
  * export declare function btoa(str: string): string;
  */
 
-_('root isNode base64 map detectMocha');
+_('root isNode base64 map');
 
 if (isNode) {
     exports = function(str) {
         return new Buffer(str, 'binary').toString('base64');
     };
 } else {
-    if (root.btoa && !detectMocha()) {
+    if (root.btoa && !LICIA_TEST) {
         exports = root.btoa;
     } else {
         exports = function(str) {

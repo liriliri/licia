@@ -1,4 +1,4 @@
-const { each } = require('licia');
+const { keys, extend, arrToMap } = require('licia');
 
 const licia = require('./index.json');
 
@@ -35,12 +35,11 @@ var globals = {
     util: true,
     expect: true,
     tests: true,
-    options: true
+    options: true,
+    LICIA_TEST: true
 };
 
-each(licia, function(val, key) {
-    globals[key] = true;
-});
+extend(globals, arrToMap(keys(licia)));
 
 exports.globals = globals;
 

@@ -14,8 +14,10 @@
  * export declare function now(): number;
  */
 
-exports =
-    Date.now ||
-    function() {
+if (Date.now && !LICIA_TEST) {
+    exports = Date.now;
+} else {
+    exports = function() {
         return new Date().getTime();
     };
+}

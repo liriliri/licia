@@ -18,9 +18,9 @@
  * export declare const PseudoMap: typeof Map;
  */
 
-_('Class root detectMocha defineProp keys each isArr isUndef');
+_('Class root defineProp keys each isArr isUndef');
 
-if (root.Map && !detectMocha()) {
+if (root.Map && !LICIA_TEST) {
     exports = root.Map;
 } else {
     exports = Class({

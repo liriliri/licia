@@ -28,7 +28,7 @@ const ObjectCtr = {}.constructor;
 exports = function(obj) {
     if (!isObj(obj)) return;
 
-    if (getPrototypeOf) return getPrototypeOf(obj);
+    if (getPrototypeOf && !LICIA_TEST) return getPrototypeOf(obj);
 
     const proto = obj.__proto__;
     if (proto || proto === null) return proto;
