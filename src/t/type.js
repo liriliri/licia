@@ -24,18 +24,23 @@
  * export declare function type(val: any, lowerCase?: boolean): string;
  */
 
-_('objToStr isNaN');
+_('objToStr isNaN lowerCase isBuffer');
 
-exports = function(val, lowerCase = true) {
-    if (val === null) return lowerCase ? 'null' : 'Null';
-    if (val === undefined) return lowerCase ? 'undefined' : 'Undefined';
-    if (isNaN(val)) return lowerCase ? 'nan' : 'NaN';
+exports = function(val, lower = true) {
+    let ret;
+    if (val === null) ret = 'Null';
+    if (val === undefined) ret = 'Undefined';
+    if (isNaN(val)) ret = 'NaN';
+    if (isBuffer(val)) ret = 'Buffer';
 
-    const ret = objToStr(val).match(regObj);
+    if (!ret) {
+        ret = objToStr(val).match(regObj);
+        if (ret) ret = ret[1];
+    }
 
     if (!ret) return '';
 
-    return lowerCase ? ret[1].toLowerCase() : ret[1];
+    return lower ? lowerCase(ret) : ret;
 };
 
 const regObj = /^\[object\s+(.*?)]$/;

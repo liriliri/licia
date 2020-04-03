@@ -554,7 +554,6 @@
         "dependencies": [
             "Class",
             "root",
-            "detectMocha",
             "defineProp",
             "keys",
             "each",
@@ -901,8 +900,7 @@
             "root",
             "isNode",
             "base64",
-            "map",
-            "detectMocha"
+            "map"
         ],
         "description": "Use Buffer to emulate atob when running in node.",
         "env": [
@@ -990,8 +988,7 @@
             "root",
             "isNode",
             "base64",
-            "map",
-            "detectMocha"
+            "map"
         ],
         "description": "Use Buffer to emulate btoa when running in node.",
         "env": [
@@ -3753,8 +3750,7 @@
     },
     "keys": {
         "dependencies": [
-            "has",
-            "detectMocha"
+            "has"
         ],
         "description": "Create an array of the own enumerable property names of object.",
         "env": [
@@ -5935,7 +5931,9 @@
     "type": {
         "dependencies": [
             "objToStr",
-            "isNaN"
+            "isNaN",
+            "lowerCase",
+            "isBuffer"
         ],
         "description": "Determine the internal JavaScript [[Class]] of an object.",
         "env": [

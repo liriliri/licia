@@ -27,7 +27,7 @@
  * export declare function sizeof(obj: any): number;
  */
 
-_('isArr keys isBuffer');
+_('isArr keys isBuffer isNull');
 
 // https://stackoverflow.com/questions/4905861/memory-usage-of-different-data-types-in-javascript
 const strSize = 2;
@@ -49,7 +49,7 @@ function sizeof(obj, { values }) {
 
     let size = 0;
 
-    if (t === 'object') {
+    if (t === 'object' && !isNull(obj)) {
         if (values.indexOf(obj) > -1) {
             return 0;
         }

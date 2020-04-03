@@ -9,3 +9,7 @@ tests([
     [undefined, 'undefined'],
     [+'a', 'nan']
 ]);
+
+if (util.isNode) {
+    test([Buffer.from([]), 'buffer']);
+}

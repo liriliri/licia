@@ -24,7 +24,7 @@ _('isObj');
 
 exports = function(proto) {
     if (!isObj(proto)) return {};
-    if (objCreate) return objCreate(proto);
+    if (objCreate && !LICIA_TEST) return objCreate(proto);
     function noop() {}
     noop.prototype = proto;
     return new noop();
