@@ -33,5 +33,8 @@ exports = function(src, cb) {
 
         cb && cb(!isNotLoaded);
     };
+    script.onerror = function() {
+        cb(false);
+    };
     document.body.appendChild(script);
 };

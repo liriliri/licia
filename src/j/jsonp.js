@@ -75,9 +75,12 @@ exports = function(options) {
         window[name] = noop;
     };
 
-    data[param] = name;
-    data = query.stringify(data);
-    url += url.indexOf('?') > -1 ? '&' + data : '?' + data;
+    /* eslint-disable no-constant-condition */
+    if (!LICIA_TEST) {
+        data[param] = name;
+        data = query.stringify(data);
+        url += url.indexOf('?') > -1 ? '&' + data : '?' + data;
+    }
 
     loadJs(url, function(isLoaded) {
         if (isTimeout) return;

@@ -1,3 +1,4 @@
+this.timeout(5000);
 it('basic', done => {
     const childProcess = require('child_process');
 
@@ -9,4 +10,4 @@ it('basic', done => {
     subProcess.on('exit', () => done());
 
     kill(subProcess.pid);
-}, 5000);
+});
