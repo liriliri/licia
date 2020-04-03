@@ -21,8 +21,10 @@
 
 _('objToStr');
 
-exports =
-    Array.isArray ||
-    function(val) {
+if (Array.isArray && !LICIA_TEST) {
+    exports = Array.isArray;
+} else {
+    exports = function(val) {
         return objToStr(val) === '[object Array]';
     };
+}

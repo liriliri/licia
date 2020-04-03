@@ -9,4 +9,4 @@ it('basic', done => {
     subProcess.on('exit', () => done());
 
     kill(subProcess.pid);
-});
+}, 5000);

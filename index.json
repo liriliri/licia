@@ -5026,7 +5026,8 @@
             "isObj",
             "optimizeCb",
             "matcher",
-            "identity"
+            "identity",
+            "property"
         ],
         "description": "Create callback based on input value.",
         "env": [
@@ -5236,7 +5237,8 @@
         "dependencies": [
             "isArr",
             "keys",
-            "isBuffer"
+            "isBuffer",
+            "isNull"
         ],
         "description": "Get approximate size of a js object.",
         "env": [

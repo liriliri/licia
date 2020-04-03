@@ -1,6 +1,17 @@
-expect(insertionSort([3, 2, 1])).to.eql([1, 2, 3]);
-expect(
-    insertionSort([1, 2, 3], function(a, b) {
-        return b - a;
-    })
-).to.eql([3, 2, 1]);
+tests([
+    [
+        [3, 1, 2],
+        [1, 2, 3]
+    ],
+    [
+        [3, 2, 1],
+        [1, 2, 3]
+    ],
+    [
+        [1, 2, 3],
+        function(a, b) {
+            return b - a;
+        },
+        [3, 2, 1]
+    ]
+]);

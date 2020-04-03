@@ -4,6 +4,8 @@ it('basic', () => {
     cache.set('test1', 'licia1');
     cache.set('test2', 'licia2');
     expect(cache.get('test')).to.equal('licia');
+    cache.set('test', 'redhoodsu');
+    expect(cache.get('test')).to.equal('redhoodsu');
     cache.remove('test');
     expect(cache.get('test')).to.be.undefined;
     cache.clear();
