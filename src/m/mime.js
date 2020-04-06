@@ -17,7 +17,7 @@
  * mime('jpg'); // -> 'image/jpeg'
  * mime('bmp'); // -> 'image/bmp'
  * mime('video/mp4'); // -> 'mp4'
- * mime('test'); // -> null
+ * mime('test'); // -> undefined 
  */
 
 /* module
