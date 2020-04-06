@@ -805,6 +805,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.21.0",
         "test": [
             "node",
             "browser"

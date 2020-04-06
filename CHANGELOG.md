@@ -1,3 +1,8 @@
+## v1.21.0 (6 Apr 2020)
+
+* add: Wrr
+* test: increase test coverage to over 95%
+
 ## v1.20.0 (22 Mar 2020)
 
 * add: Semaphore

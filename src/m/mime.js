@@ -17,12 +17,11 @@
  * mime('jpg'); // -> 'image/jpeg'
  * mime('bmp'); // -> 'image/bmp'
  * mime('video/mp4'); // -> 'mp4'
- * mime('test'); // -> undefined 
+ * mime('test'); // -> undefined
  */
 
 /* module
  * env: all
- * test: all
  * since: 1.5.0
  */
 
