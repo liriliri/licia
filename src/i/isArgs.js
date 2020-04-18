@@ -7,9 +7,11 @@
  */
 
 /* example
- * (function() {
- *     isArgs(arguments); // -> true
- * })();
+ * isArgs(
+ *     (function() {
+ *         return arguments;
+ *     })()
+ * ); // -> true
  */
 
 /* module

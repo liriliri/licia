@@ -6160,9 +6160,11 @@ Check if value is classified as an arguments object.
 |return|True if value is an arguments object|
 
 ```javascript
-(function() {
-    isArgs(arguments); // -> true
-})();
+isArgs(
+    (function() {
+        return arguments;
+    })()
+); // -> true
 ```
 
 ## isArr 

@@ -6155,9 +6155,11 @@ isAbsoluteUrl('surunzi.com'); // -> false
 |返回值|如果是参数类型，返回真|
 
 ```javascript
-(function() {
-    isArgs(arguments); // -> true
-})();
+isArgs(
+    (function() {
+        return arguments;
+    })()
+); // -> true
 ```
 
 ## isArr
