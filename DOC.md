@@ -876,7 +876,7 @@ Event emitter class which provides observer pattern.
     on(event: string, listener: types.AnyFn): Emitter;
     off(event: string, listener: types.AnyFn): Emitter;
     once(event: string, listener: types.AnyFn): Emitter;
-    emit(event: string): Emitter;
+    emit(event: string, ...args: any[]): Emitter;
     static mixin(obj: any): any;
 }</code>
 </pre>
@@ -918,10 +918,10 @@ Emit event.
 
 ```javascript
 const event = new Emitter();
-event.on('test', function() {
-    console.log('test');
+event.on('test', function(name) {
+    console.log(name);
 });
-event.emit('test'); // Logs out 'test'.
+event.emit('test', 'licia'); // Logs out 'licia'.
 Emitter.mixin({});
 ```
 
