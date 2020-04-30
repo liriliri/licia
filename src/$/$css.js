@@ -25,7 +25,8 @@
 /* example
  * $css('#test', {
  *     color: '#fff',
- *     background: 'black'
+ *     background: 'black',
+ *     opacity: 0.5
  * });
  * $css('#test', 'display', 'block');
  * $css('#test', 'color'); // -> #fff
@@ -44,11 +45,11 @@
  * ): void;
  * export declare function $css(
  *     element: $safeEls.El,
- *     properties: { [name: string]: string }
+ *     properties: types.PlainObj<string | number>
  * ): void;
  */
 
-_('isStr isObj kebabCase isUndef contain isNum $safeEls prefix each');
+_('isStr isObj kebabCase isUndef contain isNum $safeEls prefix each types');
 
 exports = function(nodes, name, val) {
     nodes = $safeEls(nodes);

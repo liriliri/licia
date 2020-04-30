@@ -28,12 +28,12 @@
 /* typescript
  * export declare function h(
  *     tag: string,
- *     attrs?: { [name: string]: any },
+ *     attrs?: types.PlainObj<any>,
  *     ...child: Array<string | HTMLElement>
  * ): HTMLElement;
  */
 
-_('isEl isStr startWith $class $css each isFn');
+_('isEl isStr startWith $class $css each isFn types');
 
 exports = function(tag, attrs, ...children) {
     if (isEl(attrs) || isStr(attrs)) {

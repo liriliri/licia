@@ -54,13 +54,13 @@
  *     options?: {
  *         method?: string;
  *         timeout?: number;
- *         headers?: { [name: string]: string };
+ *         headers?: types.PlainObj<string>;
  *         body?: any;
  *     }
  * ): Promise<fetch.IResult>;
  */
 
-_('each defaults noop has root');
+_('each defaults noop has root types');
 
 const Promise = root.Promise;
 

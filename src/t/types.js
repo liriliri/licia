@@ -30,6 +30,7 @@
  *     }
  *     type Fn<T> = (...args: any[]) => T;
  *     type AnyFn = Fn<any>;
+ *     type PlainObj<T> = { [name: string]: T };
  * }
  * export declare const types: {};
  */

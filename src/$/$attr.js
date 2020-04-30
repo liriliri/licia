@@ -56,12 +56,12 @@
  * ): void;
  * export declare function $attr(
  *     element: $safeEls.El,
- *     attributes: { [name: string]: string }
+ *     attributes: types.PlainObj<string>
  * ): void;
  * export declare function $attr(element: $safeEls.El, name: string): string;
  */
 
-_('toArr isObj isStr each isUndef $safeEls');
+_('toArr isObj isStr each isUndef $safeEls types');
 
 exports = function(els, name, val) {
     els = $safeEls(els);

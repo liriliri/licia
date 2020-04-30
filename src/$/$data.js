@@ -18,13 +18,13 @@
  * ): void;
  * export declare function $data(
  *     element: $safeEls.El,
- *     attributes: { [name: string]: string }
+ *     attributes: types.PlainObj<string>
  * ): void;
  * export declare function $data(element: $safeEls.El, name: string): string;
  */
 
 /* eslint-disable no-unused-vars */
-_('$attr isStr isObj each $safeEls');
+_('$attr isStr isObj each $safeEls types');
 
 exports = function(nodes, name, val) {
     let dataName = name;

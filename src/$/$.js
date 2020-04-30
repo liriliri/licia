@@ -46,13 +46,13 @@
  *         val(value: string): $;
  *         css(name: string): string;
  *         css(name: string, value: string): $;
- *         css(properties: { [name: string]: string }): $;
+ *         css(properties: types.PlainObj<string | number>): $;
  *         attr(name: string): string;
  *         attr(name: string, value: string): $;
- *         attr(attributes: { [name: string]: string }): $;
+ *         attr(attributes: types.PlainObj<string>): $;
  *         data(name: string): string;
  *         data(name: string, value: string): $;
- *         data(attributes: { [name: string]: string }): $;
+ *         data(attributes: types.PlainObj<string>): $;
  *         rmAttr(name: string): $;
  *         remove(): $;
  *         addClass(name: string | string[]): $;

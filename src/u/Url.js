@@ -98,7 +98,7 @@
  *     slashes: boolean;
  *     constructor(url?: string);
  *     setQuery(name: string, val: string): Url;
- *     setQuery(query: { [name: string]: string }): Url;
+ *     setQuery(query: types.PlainObj<string>): Url;
  *     rmQuery(name: string | string[]): Url;
  *     toString(): string;
  *     static parse(url: string): Url.IUrl;
@@ -106,7 +106,7 @@
  * }
  */
 
-_('Class extend trim query isEmpty each isArr toArr isBrowser isObj');
+_('Class extend trim query isEmpty each isArr toArr isBrowser isObj types');
 
 exports = Class(
     {

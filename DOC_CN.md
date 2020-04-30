@@ -28,13 +28,13 @@
         val(value: string): $;
         css(name: string): string;
         css(name: string, value: string): $;
-        css(properties: { [name: string]: string }): $;
+        css(properties: types.PlainObj&lt;string | number&gt;): $;
         attr(name: string): string;
         attr(name: string, value: string): $;
-        attr(attributes: { [name: string]: string }): $;
+        attr(attributes: types.PlainObj&lt;string&gt;): $;
         data(name: string): string;
         data(name: string, value: string): $;
-        data(attributes: { [name: string]: string }): $;
+        data(attributes: types.PlainObj&lt;string&gt;): $;
         rmAttr(name: string): $;
         remove(): $;
         addClass(name: string | string[]): $;
@@ -85,7 +85,7 @@ function $attr(
 ): void;
 function $attr(
     element: $safeEls.El,
-    attributes: { [name: string]: string }
+    attributes: types.PlainObj&lt;string&gt;
 ): void;
 function $attr(element: $safeEls.El, name: string): string;</code>
 </pre>
@@ -209,7 +209,7 @@ function $css(
 ): void;
 function $css(
     element: $safeEls.El,
-    properties: { [name: string]: string }
+    properties: types.PlainObj&lt;string | number&gt;
 ): void;</code>
 </pre>
 </details>
@@ -238,7 +238,8 @@ function $css(
 ```javascript
 $css('#test', {
     color: '#fff',
-    background: 'black'
+    background: 'black',
+    opacity: 0.5
 });
 $css('#test', 'display', 'block');
 $css('#test', 'color'); // -> #fff
@@ -258,7 +259,7 @@ $css('#test', 'color'); // -> #fff
 ): void;
 function $data(
     element: $safeEls.El,
-    attributes: { [name: string]: string }
+    attributes: types.PlainObj&lt;string&gt;
 ): void;
 function $data(element: $safeEls.El, name: string): string;</code>
 </pre>
@@ -2210,7 +2211,7 @@ class Url {
     slashes: boolean;
     constructor(url?: string);
     setQuery(name: string, val: string): Url;
-    setQuery(query: { [name: string]: string }): Url;
+    setQuery(query: types.PlainObj&lt;string&gt;): Url;
     rmQuery(name: string | string[]): Url;
     toString(): string;
     static parse(url: string): Url.IUrl;
@@ -2296,7 +2297,7 @@ url.toString(); // -> 'http://example.com:8080/?foo=bar'
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">class Validator {
-    constructor(options: { [name: string]: any });
+    constructor(options: types.PlainObj&lt;any&gt;);
     validate(object: any): string | boolean;
     static plugins: any;
     static addPlugin(name: string, plugin: types.AnyFn): void;
@@ -4802,7 +4803,7 @@ function fetch(
     options?: {
         method?: string;
         timeout?: number;
-        headers?: { [name: string]: string };
+        headers?: types.PlainObj&lt;string&gt;;
         body?: any;
     }
 ): Promise&lt;fetch.IResult&gt;;</code>
@@ -5591,7 +5592,7 @@ function golangify&lt;T, U = Error&gt;(
 <pre>
 <code class="language-typescript">function h(
     tag: string,
-    attrs?: { [name: string]: any },
+    attrs?: types.PlainObj&lt;any&gt;,
     ...child: Array&lt;string | HTMLElement&gt;
 ): HTMLElement;</code>
 </pre>
@@ -11346,6 +11347,7 @@ type(async function() {}, false); // -> 'AsyncFunction'
     }
     type Fn&lt;T&gt; = (...args: any[]) =&gt; T;
     type AnyFn = Fn&lt;any&gt;;
+    type PlainObj&lt;T&gt; = { [name: string]: T };
 }
 const types: {};</code>
 </pre>
