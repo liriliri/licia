@@ -1,3 +1,8 @@
+## v1.21.1 (30 Apr 2020)
+
+* fix(Emitter): ts definition
+* fix($): css ts definition
+
 ## v1.21.0 (6 Apr 2020)
 
 * add: Wrr
