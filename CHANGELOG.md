@@ -1,3 +1,8 @@
+## v1.21.2 (2 May 2020)
+
+* fix(parseHtml): empty attribute receives undefined
+* fix(Class): unsafe-eval CSP violation
+
 ## v1.21.1 (30 Apr 2020)
 
 * fix(Emitter): ts definition
