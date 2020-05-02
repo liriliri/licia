@@ -80,25 +80,28 @@ function makeClass(parent, methods, statics) {
         methods.className || safeGet(methods, 'initialize.name') || '';
     delete methods.className;
 
-    let ctor;
-    if (isMiniProgram) {
-        ctor = function() {
-            const args = toArr(arguments);
-            return this.initialize
-                ? this.initialize.apply(this, args) || this
-                : this;
-        };
-    } else {
-        ctor = new Function(
-            'toArr',
-            'return function ' +
-                className +
-                '()' +
-                '{' +
-                'var args = toArr(arguments);' +
-                'return this.initialize ? this.initialize.apply(this, args) || this : this;' +
-                '};'
-        )(toArr);
+    let ctor = function() {
+        const args = toArr(arguments);
+        return this.initialize
+            ? this.initialize.apply(this, args) || this
+            : this;
+    };
+    if (!isMiniProgram) {
+        // unsafe-eval CSP violation
+        try {
+            ctor = new Function(
+                'toArr',
+                'return function ' +
+                    className +
+                    '()' +
+                    '{' +
+                    'var args = toArr(arguments);' +
+                    'return this.initialize ? this.initialize.apply(this, args) || this : this;' +
+                    '};'
+            )(toArr);
+        } catch (e) {
+            /* eslint-disable no-empty */
+        }
     }
 
     inherits(ctor, parent);
