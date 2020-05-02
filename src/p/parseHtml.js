@@ -113,7 +113,7 @@ exports = function(html, handler) {
             const attrs = {};
 
             rest.replace(regAttr, (all, $1, $2, $3, $4) => {
-                attrs[$1] = $2 || $3 || $4;
+                attrs[$1] = $2 || $3 || $4 || '';
             });
 
             handler.start(tagName, attrs, unary);

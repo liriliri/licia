@@ -55,3 +55,9 @@ expect(starts[0]).to.eql({
     }
 });
 expect(last(ends)).to.equal('html');
+
+parseHtml('<div style=""></div>', {
+    start(tag, attrs) {
+        expect(attrs.style).to.equal('');
+    }
+});

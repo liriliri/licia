@@ -5,6 +5,10 @@ expect(html.parse('<div id="name">licia</div>')).to.eql([
     { tag: 'div', attrs: { id: 'name' }, content: ['licia'] }
 ]);
 
+expect(html.parse('<div style=""></div>')).to.eql([
+    { tag: 'div', attrs: { style: '' } }
+]);
+
 const tree = html.parse(htmlStr);
 expect(tree).to.eql([
     '<!doctype html>',
