@@ -31,7 +31,7 @@ const cmd = remain[0];
 
 const LEGAL_COMMANDS = [
     'test',
-    'pack',
+    'build',
     'update',
     'benchmark',
     'help',
