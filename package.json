@@ -77,7 +77,6 @@
     "request": "^2.88.0",
     "sinon": "^7.4.1",
     "typescript": "^3.6.2",
-    "uglify-js": "^3.7.0",
-    "underscore": "^1.9.1"
+    "uglify-js": "^3.7.0"
   }
 }

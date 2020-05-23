@@ -1,3 +1,7 @@
+/* scripts
+ * before: npm i underscore --no-save
+ */
+
 const path = require('path');
 
 const r = lazyRequire(require);
