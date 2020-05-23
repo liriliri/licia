@@ -1,3 +1,7 @@
+/* scripts
+ * before: npm i underscore --no-save
+ */
+
 const underscore = require('underscore');
 
 const obj = { a: 1, b: 2 };
