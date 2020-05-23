@@ -1,3 +1,7 @@
+/* scripts
+ * before: npm i promises-aplus-tests@2.1.2 --no-save
+ */
+
 const adapter = {
     resolved: Promise.resolve,
     rejected: Promise.rejected,
