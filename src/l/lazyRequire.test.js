@@ -1,5 +1,5 @@
 /* scripts
- * before: npm i underscore --no-save
+ * before: npm i --prefix .licia underscore --no-save 
  */
 
 const path = require('path');
@@ -12,7 +12,7 @@ if (!cache) return;
 
 const underscorePath = path.resolve(
     __dirname,
-    '../../node_modules/underscore/underscore.js'
+    '../../.licia/node_modules/underscore/underscore.js'
 );
 expect(cache[underscorePath]).to.be.an('undefined');
 expect(_().isNumber(5)).to.be.true;
