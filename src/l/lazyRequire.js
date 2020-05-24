@@ -12,7 +12,6 @@
 
 /* module
  * env: node
- * test: manual
  */
 
 /* typescript
