@@ -12,7 +12,7 @@
 
 /* module
  * env: node
- * test: node
+ * test: manual 
  */
 
 /* typescript

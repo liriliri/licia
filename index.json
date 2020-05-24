@@ -3798,9 +3798,7 @@
         "env": [
             "node"
         ],
-        "test": [
-            "node"
-        ]
+        "test": []
     },
     "levenshtein": {
         "dependencies": [],
