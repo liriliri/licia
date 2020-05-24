@@ -1,3 +1,7 @@
+/* scripts
+ * before: npm i --prefix .licia sinon
+ */
+
 const sinon = require('sinon');
 
 let requests = [];
