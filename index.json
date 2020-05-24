@@ -851,7 +851,9 @@
         "env": [
             "browser"
         ],
-        "test": []
+        "test": [
+            "node"
+        ]
     },
     "allKeys": {
         "dependencies": [

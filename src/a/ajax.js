@@ -52,7 +52,7 @@
 
 /* module
  * env: browser
- * test: manual
+ * test: node
  */
 
 /* typescript

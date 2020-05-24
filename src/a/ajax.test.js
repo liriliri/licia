@@ -196,10 +196,4 @@ it('timeout', function(done) {
             done();
         }
     });
-
-    const request = requests[0];
-
-    setTimeout(function() {
-        request.respond(200, {}, '');
-    }, 100);
 });
