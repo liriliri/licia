@@ -2126,7 +2126,9 @@
         "env": [
             "browser"
         ],
-        "test": []
+        "test": [
+            "node"
+        ]
     },
     "fibonacci": {
         "dependencies": [
