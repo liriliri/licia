@@ -45,6 +45,15 @@ const LEGAL_COMMANDS = [
         await require('../lib/help')();
     } else {
         remain.splice(0, 1);
-        await require('../lib/' + cmd)();
+        try {
+            await require('../lib/' + cmd)();
+        } catch (e) {
+            if (e.exitCode) {
+                process.exit(e.exitCode);
+            } else {
+                console.error(e);
+                process.exit(1);
+            }
+        }
     }
 })();
