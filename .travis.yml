@@ -6,6 +6,7 @@ addons:
 before_script:
   - npm install -g codecov
 script:
+  - npm i --prefix .licia underscore
   - npm link
   - npm run ci
 after_success:
