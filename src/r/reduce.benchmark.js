@@ -1,5 +1,5 @@
 /* scripts
- * before: npm i underscore --no-save
+ * before: npm i --prefix .licia underscore
  */
 
 const underscore = require('underscore');

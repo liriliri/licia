@@ -8,4 +8,5 @@ before_script:
 script:
   - npm link
   - npm run ci
+after_success:
   - codecov --disable=gcov

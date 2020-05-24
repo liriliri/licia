@@ -1,5 +1,5 @@
 /* scripts
- * before: npm i uuid --no-save
+ * before: npm i --prefix .licia uuid
  */
 
 const nodeUuid = require('uuid').v4;
