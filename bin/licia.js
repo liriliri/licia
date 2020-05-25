@@ -9,7 +9,6 @@ const options = parseArgs(process.argv.slice(2), {
         silent: 'boolean',
         all: 'boolean',
         sauce: 'boolean',
-        demo: 'boolean',
         ts: 'boolean',
         release: 'boolean'
     },
@@ -17,7 +16,6 @@ const options = parseArgs(process.argv.slice(2), {
         browser: 'b',
         silent: 's',
         all: 'a',
-        demo: 'd',
         release: 'r'
     }
 });
@@ -37,6 +35,7 @@ const LEGAL_COMMANDS = [
     'help',
     'format',
     'lint',
+    'demo',
     'spell'
 ];
 
