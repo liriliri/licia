@@ -14,7 +14,6 @@
     "build": "licia build && npm run format:pkg && copyfiles -u 2 .licia/packages/**/* ./node_modules",
     "lint": "eslint -c eslint.src.js lib/**/*.js lib/*.js bin/*.js --fix",
     "lint:release": "eslint -c eslint.release.js .licia/packages/licia-src/*.js --no-ignore",
-    "serveDemo": "nws -p 3000 -d .licia/demo",
     "test": "npm run test:node && npm run test:browser && npm run test:release && npm run test:ts",
     "demo": "licia demo",
     "karma": "karma",
