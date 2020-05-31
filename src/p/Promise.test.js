@@ -1,5 +1,5 @@
 /* scripts
- * before: npm i --prefix .licia promises-aplus-tests@2.1.2 
+ * before: npm i --prefix .licia promises-aplus-tests@2.1.2
  */
 
 const adapter = {

@@ -872,6 +872,7 @@ dispatcher.dispatch({
     off(event: string, listener: types.AnyFn): Emitter;
     once(event: string, listener: types.AnyFn): Emitter;
     emit(event: string, ...args: any[]): Emitter;
+    removeAllListeners(event?: string): Emitter;
     static mixin(obj: any): any;
 }</code>
 </pre>
@@ -902,6 +903,14 @@ dispatcher.dispatch({
 |-----|---|
 |event|事件名称|
 |...args|传递给监听器的参数|
+
+### removeAllListeners
+
+解绑所有事件。
+
+|参数名|说明|
+|-----|---|
+|event|事件名称|
 
 ### mixin
 
@@ -1897,6 +1906,70 @@ SessionStorage 存储。
 ```javascript
 const store = new SessionStore('licia');
 store.set('name', 'licia');
+```
+
+## Socket
+
+WebSocket 类的简单包装。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Socket extends Emitter {
+    constructor(
+        url: string,
+        options?: {
+            protocols?: string | string[];
+            reconnect?: boolean;
+        }
+    );
+    send(message: any): void;
+    close(code?: number, reason?: string): void;
+    connect(): void;
+}</code>
+</pre>
+</details>
+
+继续自 Emitter 类。
+
+### constructor
+
+|参数名|说明|
+|-----|---|
+|url|WebSocket 地址|
+|options|连接选项|
+
+可用选项：
+
+|参数名|说明|
+|-----|---|
+|protocols|协议|
+|reconnect=true|是否尝试重新连接|
+
+### send
+
+发送数据。
+
+|参数名|说明|
+|-----|---|
+|message|要发送的数据|
+
+### close
+
+关闭 WebSocket 连接。
+
+|参数名|说明|
+|-----|---|
+|code|状态码|
+|reason|关闭原因|
+
+### connect
+
+连接 WebSocket，初始化时就会被调用。
+
+```javascript
+const ws = new Socket('ws://localhost:8001');
+ws.on('open', e => ws.send('Hello'));
 ```
 
 ## Stack

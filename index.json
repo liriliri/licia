@@ -669,6 +669,19 @@
             "browser"
         ]
     },
+    "Socket": {
+        "dependencies": [
+            "defaults",
+            "Emitter"
+        ],
+        "description": "Tiny WebSocket wrapper.",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "Stack": {
         "dependencies": [
             "Class",

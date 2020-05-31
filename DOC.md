@@ -878,6 +878,7 @@ Event emitter class which provides observer pattern.
     off(event: string, listener: types.AnyFn): Emitter;
     once(event: string, listener: types.AnyFn): Emitter;
     emit(event: string, ...args: any[]): Emitter;
+    removeAllListeners(event?: string): Emitter;
     static mixin(obj: any): any;
 }</code>
 </pre>
@@ -908,6 +909,14 @@ Emit event.
 |-------|----------------------------|
 |event  |Event name                  |
 |...args|Arguments passed to listener|
+
+### removeAllListeners
+
+Remove all listeners.
+
+|Name |Desc      |
+|-----|----------|
+|event|Event name|
 
 ### mixin
 
@@ -1903,6 +1912,70 @@ Extend from Store.
 ```javascript
 const store = new SessionStore('licia');
 store.set('name', 'licia');
+```
+
+## Socket 
+
+Tiny WebSocket wrapper.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Socket extends Emitter {
+    constructor(
+        url: string,
+        options?: {
+            protocols?: string | string[];
+            reconnect?: boolean;
+        }
+    );
+    send(message: any): void;
+    close(code?: number, reason?: string): void;
+    connect(): void;
+}</code>
+</pre>
+</details>
+
+Extend from Emitter.
+
+### constructor
+
+|Name   |Desc           |
+|-------|---------------|
+|url    |Url to connect |
+|options|Connect options|
+
+Available options:
+
+|Name          |Desc                        |
+|--------------|----------------------------|
+|protocols     |Protocol string             |
+|reconnect=true|Try to reconnect if possible|
+
+### send
+
+Send message.
+
+|Name   |Desc           |
+|-------|---------------|
+|message|Message to send|
+
+### close
+
+Close WebSocket.
+
+|Name  |Desc             |
+|------|-----------------|
+|code  |Status code      |
+|reason|Reason of closing|
+
+### connect
+
+Connect WebSocket, called when initialized.
+
+```javascript
+const ws = new Socket('ws://localhost:8001');
+ws.on('open', e => ws.send('Hello'));
 ```
 
 ## Stack 

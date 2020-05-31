@@ -352,6 +352,7 @@
     "slice",
     "slugify",
     "snakeCase",
+    "Socket",
     "some",
     "sortBy",
     "sortKeys",
