@@ -9,7 +9,7 @@ it('basic', done => {
         expect(e.data).to.equal('Hello');
         ws.close(1000, 'Normal Closure');
     });
-    ws.on('open', e => {
+    ws.on('open', () => {
         ws.send('Hello');
     });
     ws.on('close', e => {
@@ -22,7 +22,7 @@ it('basic', done => {
 it('reconnect', done => {
     const ws = new Socket('ws://localhost:8001');
     let first = true;
-    ws.on('open', e => {
+    ws.on('open', () => {
         if (first) {
             ws.close(3001);
             first = false;
