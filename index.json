@@ -3555,6 +3555,16 @@
             "browser"
         ]
     },
+    "isRunning": {
+        "dependencies": [],
+        "description": "Check if process is running.",
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
+    },
     "isSet": {
         "dependencies": [
             "objToStr"

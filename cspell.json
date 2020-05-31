@@ -218,6 +218,7 @@
     "isRegExp",
     "isRelative",
     "isRetina",
+    "isRunning",
     "isSet",
     "isSorted",
     "isStr",

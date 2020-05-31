@@ -7286,6 +7286,26 @@ isRelative('README.md'); // -> true
 console.log(isRetina); // -> true if high DPR
 ```
 
+## isRunning
+
+检查进程是否运行中。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isRunning(pid: number): boolean;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---
+|pid|进程 id|
+|返回值|如果进程运行中，返回真|
+
+```javascript
+isRunning(123456); // true if running
+```
+
 ## isSet
 
 检查值是否是 Set 类型。

@@ -7291,6 +7291,26 @@ Determine if running on a high DPR device or not.
 console.log(isRetina); // -> true if high DPR
 ```
 
+## isRunning 
+
+Check if process is running.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isRunning(pid: number): boolean;</code>
+</pre>
+</details>
+
+|Name  |Desc                      |
+|------|--------------------------|
+|pid   |Process id                |
+|return|True if process is running|
+
+```javascript
+isRunning(123456); // true if running
+```
+
 ## isSet 
 
 Check if value is a Set object.
