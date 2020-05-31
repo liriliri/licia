@@ -26,6 +26,14 @@
  * |event  |Event name                  |
  * |...args|Arguments passed to listener|
  *
+ * ### removeAllListeners
+ *
+ * Remove all listeners.
+ *
+ * |Name |Desc      |
+ * |-----|----------|
+ * |event|Event name|
+ *
  * ### mixin
  *
  * [static] Mixin object class methods.
@@ -55,6 +63,7 @@
  *     off(event: string, listener: types.AnyFn): Emitter;
  *     once(event: string, listener: types.AnyFn): Emitter;
  *     emit(event: string, ...args: any[]): Emitter;
+ *     removeAllListeners(event?: string): Emitter;
  *     static mixin(obj: any): any;
  * }
  */
@@ -99,6 +108,15 @@ exports = Class(
                 },
                 this
             );
+
+            return this;
+        },
+        removeAllListeners(event) {
+            if (!event) {
+                this._events = {};
+            } else {
+                delete this._events[event];
+            }
 
             return this;
         }

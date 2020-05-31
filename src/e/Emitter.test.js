@@ -16,6 +16,14 @@ it('basic', function() {
     e.emit('add', 1);
     e.emit('add', 1);
     expect(a).to.equal(3);
+    e.on('add', add);
+    e.removeAllListeners();
+    e.emit('add');
+    expect(a).to.equal(3);
+    e.on('add', add);
+    e.removeAllListeners('add');
+    e.emit('add');
+    expect(a).to.equal(3);
 });
 
 it('mixin', function() {
