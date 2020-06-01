@@ -2,7 +2,7 @@
  *
  * |Name         |Desc              |
  * |-------------|------------------|
- * |str          |Bytes array       |
+ * |bytes        |Bytes array       |
  * |encoding=utf8|Encoding of string|
  * |return       |Result string     |
  */
