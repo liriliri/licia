@@ -678,6 +678,7 @@
         "env": [
             "browser"
         ],
+        "since": "1.22.0",
         "test": [
             "browser"
         ]
@@ -3561,6 +3562,7 @@
         "env": [
             "node"
         ],
+        "since": "1.22.0",
         "test": [
             "node"
         ]

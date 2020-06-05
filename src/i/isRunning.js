@@ -12,6 +12,7 @@
 
 /* module
  * env: node
+ * since: 1.22.0
  */
 
 /* typescript

@@ -1,3 +1,9 @@
+## v1.22.0 (5 Jun 2020)
+
+* feat: add Socket
+* feat: add isRunning
+* feat(Emitter): removeAllListeners
+
 ## v1.21.2 (2 May 2020)
 
 * fix(parseHtml): empty attribute receives undefined
