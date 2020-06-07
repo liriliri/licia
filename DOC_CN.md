@@ -10157,6 +10157,28 @@ const groups = selector.parse('#test, input.user[name="licia"]');
 selector.stringify(groups);
 ```
 
+## shebang
+
+获取 shebang 命令。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function shebang(str: string): string | void;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|str|要获取命令的文本|
+|返回值|Shebang 命令|
+
+```javascript
+shebang('#!/usr/bin/env node'); // -> '/usr/bin/env node'
+shebang('#!/bin/bash'); // -> '/bin/bash'
+shebang('node'); // -> undefined
+```
+
 ## shellSort
 
 希尔排序实现。

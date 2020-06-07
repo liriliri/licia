@@ -345,6 +345,7 @@
     "selector",
     "Semaphore",
     "SessionStore",
+    "shebang",
     "shellSort",
     "shuffle",
     "size",

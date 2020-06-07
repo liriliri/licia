@@ -10149,6 +10149,28 @@ const groups = selector.parse('#test, input.user[name="licia"]');
 selector.stringify(groups);
 ```
 
+## shebang 
+
+Get command from a shebang.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function shebang(str: string): string | void;</code>
+</pre>
+</details>
+
+|Name  |Desc                 |
+|------|---------------------|
+|str   |String to get command|
+|return|Shebang command      |
+
+```javascript
+shebang('#!/usr/bin/env node'); // -> '/usr/bin/env node'
+shebang('#!/bin/bash'); // -> '/bin/bash'
+shebang('node'); // -> undefined
+```
+
 ## shellSort 
 
 Shell sort implementation.

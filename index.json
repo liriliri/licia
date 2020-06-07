@@ -5218,6 +5218,21 @@
             "browser"
         ]
     },
+    "shebang": {
+        "dependencies": [
+            "trim"
+        ],
+        "description": "Get command from a shebang.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "shellSort": {
         "dependencies": [
             "swap",
