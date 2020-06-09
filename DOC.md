@@ -9086,6 +9086,34 @@ pick({ a: 1, b: 2, c: 3, d: 4 }, function(val, key) {
 }); // -> {a: 1, c: 3}
 ```
 
+## pipe 
+
+Pipe all streams together.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">import stream = require(&#x27;stream&#x27;);
+function pipe(...streams: stream.Stream[]): void;</code>
+</pre>
+</details>
+
+|Name      |Type           |
+|----------|---------------|
+|...streams|Streams to pipe|
+
+```javascript
+const through = require('licia/through');
+pipe(
+    fs.createReadStream('in.txt'),
+    through(function(chunk, enc, cb) {
+        this.push(chunk);
+        cb();
+    }),
+    fs.createWriteStream('out.txt')
+);
+```
+
 ## pluck 
 
 Extract a list of property values.

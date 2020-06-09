@@ -9094,6 +9094,34 @@ pick({ a: 1, b: 2, c: 3, d: 4 }, function(val, key) {
 }); // -> {a: 1, c: 3}
 ```
 
+## pipe
+
+将所有的 stream 流连接起来。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">import stream = require(&#x27;stream&#x27;);
+function pipe(...streams: stream.Stream[]): void;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|...streams|要连接的 stream 流|
+
+```javascript
+const through = require('licia/through');
+pipe(
+    fs.createReadStream('in.txt'),
+    through(function(chunk, enc, cb) {
+        this.push(chunk);
+        cb();
+    }),
+    fs.createWriteStream('out.txt')
+);
+```
+
 ## pluck
 
 提取数组对象中指定属性值，返回一个数组。

@@ -4584,6 +4584,18 @@
             "browser"
         ]
     },
+    "pipe": {
+        "dependencies": [
+            "reduce"
+        ],
+        "description": "Pipe all streams together.",
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
+    },
     "pluck": {
         "dependencies": [
             "map",

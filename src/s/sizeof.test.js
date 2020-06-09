@@ -16,6 +16,7 @@ it('circular', () => {
 });
 
 it('big object', () => {
+    this.timeout(5000);
     if (isBrowser) {
         expect(sizeof(location)).to.be.above(0);
     } else if (isNode) {
