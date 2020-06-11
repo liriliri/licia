@@ -10646,6 +10646,27 @@ strToBytes('licia'); // -> [108, 105, 99, 105, 97]
 strToBytes('qK6b/w==', 'base64'); // -> [168, 174, 155, 255]
 ```
 
+## strTpl
+
+简单的字符串模板。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function strTpl(str: string, data: types.PlainObj&lt;any&gt;): string;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|str|模板字符串|
+|data|渲染数据|
+|返回值|目标字符串|
+
+```javascript
+strTpl('Hello, {{name.first}}!', { name: { first: 'licia' } }); // -> 'Hello, licia!'
+```
+
 ## stringify
 
 JSON 序列化，支持循环引用和函数。

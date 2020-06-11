@@ -6,6 +6,7 @@
  */
 
 /* example
+ * const fs = require('fs');
  * const through = require('licia/through');
  * pipe(
  *     fs.createReadStream('in.txt'),

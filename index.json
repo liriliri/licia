@@ -5523,6 +5523,22 @@
             "browser"
         ]
     },
+    "strTpl": {
+        "dependencies": [
+            "safeGet",
+            "toStr"
+        ],
+        "description": "Simple string template.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "stringify": {
         "dependencies": [
             "type",

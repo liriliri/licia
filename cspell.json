@@ -377,6 +377,7 @@
     "stripIndent",
     "stripNum",
     "strToBytes",
+    "strTpl",
     "sum",
     "swap",
     "template",
