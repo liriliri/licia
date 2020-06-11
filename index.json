@@ -390,6 +390,26 @@
             "browser"
         ]
     },
+    "I18n": {
+        "dependencies": [
+            "Class",
+            "safeGet",
+            "extend",
+            "strTpl",
+            "isStr",
+            "isFn"
+        ],
+        "description": "Simple internationalization library.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "JsonTransformer": {
         "dependencies": [
             "Class",

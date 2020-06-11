@@ -1098,6 +1098,78 @@ heap.poll(); // -> 5
 console.log(heap.size); // -> 4
 ```
 
+## I18n 
+
+Simple internationalization library.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class I18n {
+    constructor(locale: string, langs: types.PlainObj&lt;any&gt;);
+    set(locale: string, lang: types.PlainObj&lt;any&gt;): void;
+    t(path: string | string[], data?: types.PlainObj&lt;any&gt;): string;
+    locale(locale: string): void;
+}</code>
+</pre>
+</details>
+
+### constructor
+
+|Name  |Desc         |
+|------|-------------|
+|locale|Locale code  |
+|langs |Language data|
+
+### set
+
+Add language or append extra keys to existing language.
+
+|Name  |Desc         |
+|------|-------------|
+|locale|Locale code  |
+|lang  |Language data|
+
+### locale
+
+Set default locale.
+
+|Name  |Desc       |
+|------|-----------|
+|locale|Locale code|
+
+### t
+
+Get translation text.
+
+|Name  |Desc                      |
+|------|--------------------------|
+|path  |Path of translation to get|
+|data  |Data to pass in           |
+|return|Translation text          |
+
+```javascript
+const i18n = new I18n('en', {
+    en: {
+        welcome: 'Hello, {{name}}!',
+        curTime(data) {
+            return 'Current time is ' + data.time;
+        }
+    },
+    cn: {
+        welcome: '你好，{{name}}！'
+    }
+});
+i18n.set('cn', {
+    curTime(data) {
+        return '当前时间是 ' + data.time;
+    }
+});
+i18n.t('welcome', { name: 'licia' }); // -> 'Hello, licia!'
+i18n.locale('cn');
+i18n.t('curTime', { time: '5:47 pm' }); // -> '当前时间是 5:47 pm'
+```
+
 ## JsonTransformer 
 
 Json to json transformer.
@@ -9103,6 +9175,7 @@ function pipe(...streams: stream.Stream[]): void;</code>
 |...streams|Streams to pipe|
 
 ```javascript
+const fs = require('fs');
 const through = require('licia/through');
 pipe(
     fs.createReadStream('in.txt'),
