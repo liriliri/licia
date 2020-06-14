@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>{{modName}}</title>
+    <title><%=modName%></title>
 </head>
 <body>
-    <script src="{{modName}}.js"></script>
+    <script src="<%=modName%>.js"></script>
 </body>
 </html>

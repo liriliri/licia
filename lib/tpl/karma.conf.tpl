@@ -2,7 +2,7 @@ module.exports = function(config) {
     config.set({
         basePath: '',
         frameworks: ['mocha', 'chai', 'chai-jquery', 'jquery-1.8.3'],
-        files: [{{{files}}}],
+        files: [<%=files%>],
         plugins: [
             'karma-mocha',
             'karma-chai-plugins',

@@ -1,4 +1,4 @@
-const tests = function(fn = {{modName}}, { strictEqual = false } = {}) {
+const tests = function(fn = <%=modName%>, { strictEqual = false } = {}) {
     const each = util.each;
     const clone = util.clone;
     const isFn = util.isFn;
@@ -15,14 +15,14 @@ const tests = function(fn = {{modName}}, { strictEqual = false } = {}) {
 
     if (!isFn(fn)) {
         const tests = fn;
-        fn = {{modName}};
+        fn = <%=modName%>;
         return ret(tests);
     }
 
     return ret;
 };
 
-const test = function(fn = {{modName}}, { strictEqual = false } = {}) {
+const test = function(fn = <%=modName%>, { strictEqual = false } = {}) {
     const each = util.each;
     const clone = util.clone;
     const isFn = util.isFn;
@@ -37,7 +37,7 @@ const test = function(fn = {{modName}}, { strictEqual = false } = {}) {
 
     if (!isFn(fn)) {
         const test = fn;
-        fn = {{modName}};
+        fn = <%=modName%>;
         return ret(test);
     }
 
