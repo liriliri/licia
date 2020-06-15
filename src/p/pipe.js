@@ -1,6 +1,6 @@
 /* Pipe all streams together.
  *
- * |Name      |Type           |
+ * |Name      |Desc           |
  * |----------|---------------|
  * |...streams|Streams to pipe|
  */

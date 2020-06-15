@@ -9170,7 +9170,7 @@ function pipe(...streams: stream.Stream[]): void;</code>
 </pre>
 </details>
 
-|Name      |Type           |
+|Name      |Desc           |
 |----------|---------------|
 |...streams|Streams to pipe|
 
