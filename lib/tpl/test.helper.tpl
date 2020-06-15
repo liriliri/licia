@@ -23,7 +23,6 @@ const tests = function(fn = <%=modName%>, { strictEqual = false } = {}) {
 };
 
 const test = function(fn = <%=modName%>, { strictEqual = false } = {}) {
-    const each = util.each;
     const clone = util.clone;
     const isFn = util.isFn;
 
