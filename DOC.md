@@ -9786,6 +9786,32 @@ repeat('ab', 2); // -> 'abab'
 repeat('*', 0); // -> ''
 ```
 
+## replaceAll 
+
+Replace all instance in a string.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function replaceAll(
+    str: string,
+    substr: string,
+    newSubstr: string
+): string;</code>
+</pre>
+</details>
+
+|Name     |Desc                               |
+|---------|-----------------------------------|
+|str      |Source string                      |
+|substr   |String to be replaced              |
+|newSubstr|String to replace substr           |
+|return   |New string with all substr replaced|
+
+```javascript
+replaceAll('hello world goodbye world', 'world', 'licia'); // -> 'hello licia goodbye licia'
+```
+
 ## restArgs 
 
 This accumulates the arguments passed into an array, after a given index.

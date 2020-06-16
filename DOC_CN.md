@@ -9794,6 +9794,32 @@ repeat('ab', 2); // -> 'abab'
 repeat('*', 0); // -> ''
 ```
 
+## replaceAll
+
+替换字符串中所有指定字符串。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function replaceAll(
+    str: string,
+    substr: string,
+    newSubstr: string
+): string;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|substr|被替换的子串|
+|newSubstr|替换的子串|
+|返回值|所有子串被替换后的新字符串|
+
+```javascript
+replaceAll('hello world goodbye world', 'world', 'licia'); // -> 'hello licia goodbye licia'
+```
+
 ## restArgs
 
 将给定序号后的参数合并成一个数组。

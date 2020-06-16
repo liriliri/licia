@@ -325,6 +325,7 @@
     "reject",
     "remove",
     "repeat",
+    "replaceAll",
     "restArgs",
     "reverse",
     "rgbToHsl",

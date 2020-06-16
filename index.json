@@ -4962,6 +4962,21 @@
             "browser"
         ]
     },
+    "replaceAll": {
+        "dependencies": [
+            "escapeRegExp"
+        ],
+        "description": "Replace all instance in a string.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "restArgs": {
         "dependencies": [],
         "description": "This accumulates the arguments passed into an array, after a given index.",
