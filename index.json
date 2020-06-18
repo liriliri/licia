@@ -405,6 +405,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.23.0",
         "test": [
             "node",
             "browser"
@@ -4612,6 +4613,7 @@
         "env": [
             "node"
         ],
+        "since": "1.23.0",
         "test": [
             "node"
         ]
@@ -4972,6 +4974,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.23.0",
         "test": [
             "node",
             "browser"
@@ -5275,6 +5278,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.23.0",
         "test": [
             "node",
             "browser"
@@ -5569,6 +5573,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.23.0",
         "test": [
             "node",
             "browser"

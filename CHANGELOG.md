@@ -1,3 +1,11 @@
+## v1.23.0 (18 Jun 2020)
+
+* feat: add shebang
+* feat: add pipe
+* feat: add strTpl
+* feat: add I18n
+* feat: add replaceAll
+
 ## v1.22.0 (5 Jun 2020)
 
 * feat: add Socket
