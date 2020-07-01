@@ -82,12 +82,13 @@ exports = Class(
             return this;
         },
         off(event, listener) {
-            if (!has(this._events, event)) return;
+            const events = this._events;
+            if (!has(events, event)) return;
 
-            this._events[event].splice(
-                this._events[event].indexOf(listener),
-                1
-            );
+            const idx = events[event].indexOf(listener);
+            if (idx > -1) {
+                events[event].splice(idx, 1);
+            }
 
             return this;
         },

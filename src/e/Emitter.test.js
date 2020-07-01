@@ -1,3 +1,5 @@
+const { expect } = require('chai');
+
 it('basic', function() {
     const e = new Emitter();
     let a = 1;
@@ -40,9 +42,16 @@ it('mixin', function() {
     expect(a).to.equal(3);
 });
 
-it('nonsense off and emit', function() {
+it('nonsense off', function() {
     const e = new Emitter();
 
+    let a = 1;
+    e.on('test', function() {
+        a++;
+    });
     e.emit('test');
+    expect(a).to.equal(2);
     e.off('test', function() {});
+    e.emit('test');
+    expect(a).to.equal(3);
 });
