@@ -1,3 +1,7 @@
+## v1.23.1 (5 Jul 2020)
+
+* fix(Emitter): delete wrong listener when calling off
+
 ## v1.23.0 (18 Jun 2020)
 
 * feat: add shebang
