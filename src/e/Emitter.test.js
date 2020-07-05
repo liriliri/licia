@@ -1,5 +1,3 @@
-const { expect } = require('chai');
-
 it('basic', function() {
     const e = new Emitter();
     let a = 1;
