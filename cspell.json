@@ -261,6 +261,7 @@
     "MediaQuery",
     "memoize",
     "memStorage",
+    "mergeArr",
     "mergeSort",
     "meta",
     "methods",

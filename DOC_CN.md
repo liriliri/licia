@@ -8173,6 +8173,32 @@ const fibonacci = memoize(function(n) {
 });
 ```
 
+## mergeArr
+
+将数组合并到第一个数组里。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function mergeArr&lt;T, U&gt;(
+    first: ArrayLike&lt;T&gt;,
+    ...arrays: ArrayLike&lt;U&gt;[]
+): ArrayLike&lt;T | U&gt;;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|first|要修改的数组|
+|arrays|合并到第一个数组的数组|
+|返回值|第一个数组|
+
+```javascript
+const a = [1, 2];
+mergeArr(a, [3, 4], [5, 6]);
+console.log(a); // -> [1, 2, 3, 4, 5, 6]
+```
+
 ## mergeSort
 
 归并排序实现。

@@ -646,7 +646,8 @@
         "dependencies": [
             "Class",
             "isStr",
-            "each"
+            "each",
+            "mergeArr"
         ],
         "description": "Simple wrapper of querySelectorAll to make dom selection easier.",
         "env": [
@@ -4078,6 +4079,21 @@
             "has"
         ],
         "description": "Memoize a given function by caching the computed result.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
+    "mergeArr": {
+        "dependencies": [
+            "restArgs"
+        ],
+        "description": "Merge the contents of arrays together into the first array.",
         "env": [
             "node",
             "browser",

@@ -42,7 +42,7 @@
  * }
  */
 
-_('Class isStr each types');
+_('Class isStr each types mergeArr');
 
 exports = Class({
     className: 'Select',
@@ -77,14 +77,3 @@ exports = Class({
 });
 
 const rootSelect = new exports(document);
-
-function mergeArr(first, second) {
-    const len = second.length;
-    let i = first.length;
-
-    for (let j = 0; j < len; j++) first[i++] = second[j];
-
-    first.length = i;
-
-    return first;
-}

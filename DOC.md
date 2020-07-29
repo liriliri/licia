@@ -8178,6 +8178,32 @@ const fibonacci = memoize(function(n) {
 });
 ```
 
+## mergeArr 
+
+Merge the contents of arrays together into the first array.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function mergeArr&lt;T, U&gt;(
+    first: ArrayLike&lt;T&gt;,
+    ...arrays: ArrayLike&lt;U&gt;[]
+): ArrayLike&lt;T | U&gt;;</code>
+</pre>
+</details>
+
+|Name  |Desc                                |
+|------|------------------------------------|
+|first |Array to merge                      |
+|arrays|Arrays to merge into the first array|
+|return|First array                         |
+
+```javascript
+const a = [1, 2];
+mergeArr(a, [3, 4], [5, 6]);
+console.log(a); // -> [1, 2, 3, 4, 5, 6]
+```
+
 ## mergeSort 
 
 Merge sort implementation.
