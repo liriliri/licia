@@ -3188,6 +3188,21 @@
             "browser"
         ]
     },
+    "isFullWidth": {
+        "dependencies": [
+            "isInt"
+        ],
+        "description": "Check if character is full width.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "isGeneratorFn": {
         "dependencies": [
             "objToStr"

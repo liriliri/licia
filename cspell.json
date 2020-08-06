@@ -192,6 +192,7 @@
     "isFile",
     "isFinite",
     "isFn",
+    "isFullWidth",
     "isGeneratorFn",
     "isHidden",
     "isInt",

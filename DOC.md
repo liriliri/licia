@@ -6757,6 +6757,29 @@ isFn(function*() {}); // -> true
 isFn(async function() {}); // -> true
 ```
 
+## isFullWidth 
+
+Check if character is full width.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isFullWidth(codePoint: number): boolean;</code>
+</pre>
+</details>
+
+|Name     |Desc                           |
+|---------|-------------------------------|
+|codePoint|Unicode code point             |
+|return   |True if character is full width|
+
+```javascript
+isFullWidth('a'.codePointAt(0)); // -> false
+isFullWidth(','.codePointAt(0)); // -> false
+isFullWidth('我'.codePointAt(0)); // -> true
+isFullWidth('，'.codePointAt(0)); // -> true
+```
+
 ## isGeneratorFn 
 
 Check if value is a generator function.

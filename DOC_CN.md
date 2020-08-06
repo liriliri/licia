@@ -6752,6 +6752,29 @@ isFn(function*() {}); // -> true
 isFn(async function() {}); // -> true
 ```
 
+## isFullWidth
+
+检查值是否是全角字符。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isFullWidth(codePoint: number): boolean;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|codePoint|Unicode 码点|
+|返回值|如果字符是全角，返回真|
+
+```javascript
+isFullWidth('a'.codePointAt(0)); // -> false
+isFullWidth(','.codePointAt(0)); // -> false
+isFullWidth('我'.codePointAt(0)); // -> true
+isFullWidth('，'.codePointAt(0)); // -> true
+```
+
 ## isGeneratorFn
 
 检查值是否是 Generator 函数。
