@@ -10815,6 +10815,27 @@ strToBytes('qK6b/w==', 'base64'); // -> [168, 174, 155, 255]
 strTpl('Hello, {{name.first}}!', { name: { first: 'licia' } }); // -> 'Hello, licia!'
 ```
 
+## strWidth
+
+获取字符串的可见宽度。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function strWidth(str: string): number;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|str|要获取宽度的字符串|
+|返回值|可见宽度|
+
+```javascript
+strWidth('Hello \nworld!'); // -> 12
+strWidth('\u001b[4m你好，世界！\u001b[0m'); // -> 12
+```
+
 ## stringify
 
 JSON 序列化，支持循环引用和函数。

@@ -5610,6 +5610,22 @@
             "browser"
         ]
     },
+    "strWidth": {
+        "dependencies": [
+            "stripAnsi",
+            "isFullWidth"
+        ],
+        "description": "Get string's visual width.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "stringify": {
         "dependencies": [
             "type",
