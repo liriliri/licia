@@ -11072,6 +11072,31 @@ const arr = [1, 2];
 swap(arr, 0, 1); // -> [2, 1]
 ```
 
+## table 
+
+Output table string.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function table(rows: Array&lt;string[]&gt;): string;</code>
+</pre>
+</details>
+
+|Name  |Desc        |
+|------|------------|
+|rows  |Table data  |
+|return|Table string|
+
+```javascript
+table([
+    ['', 'firstName', 'lastName'],
+    ['daughter', 'Emily', 'Smith'],
+    ['father', 'John', 'Smith'],
+    ['mother', 'Jane', 'Smith']
+]);
+```
+
 ## template 
 
 Compile JavaScript template into function that can be evaluated for rendering.

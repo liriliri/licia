@@ -11080,6 +11080,31 @@ const arr = [1, 2];
 swap(arr, 0, 1); // -> [2, 1]
 ```
 
+## table
+
+输出表格字符串。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function table(rows: Array&lt;string[]&gt;): string;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|rows|表格数据|
+|返回值|表格字符串|
+
+```javascript
+table([
+    ['', 'firstName', 'lastName'],
+    ['daughter', 'Emily', 'Smith'],
+    ['father', 'John', 'Smith'],
+    ['mother', 'Jane', 'Smith']
+]);
+```
+
 ## template
 
 将模板字符串编译成函数用于渲染。

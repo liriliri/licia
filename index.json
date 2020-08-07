@@ -5790,6 +5790,25 @@
             "browser"
         ]
     },
+    "table": {
+        "dependencies": [
+            "each",
+            "strWidth",
+            "map",
+            "repeat",
+            "cloneDeep"
+        ],
+        "description": "Output table string.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "template": {
         "dependencies": [
             "escape",
