@@ -3198,6 +3198,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.24.0",
         "test": [
             "node",
             "browser"
@@ -4114,6 +4115,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.24.0",
         "test": [
             "node",
             "browser"
@@ -5621,6 +5623,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.24.0",
         "test": [
             "node",
             "browser"
@@ -5804,6 +5807,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.24.0",
         "test": [
             "node",
             "browser"

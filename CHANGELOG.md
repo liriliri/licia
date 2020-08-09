@@ -1,3 +1,10 @@
+## v1.24.0 (9 Aug 2020)
+
+* feat: add mergeArr
+* feat: add isFullWidth
+* feat: add strWidth
+* feat: add table
+
 ## v1.23.1 (5 Jul 2020)
 
 * fix(Emitter): delete wrong listener when calling off
