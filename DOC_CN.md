@@ -2257,6 +2257,65 @@ store.on('change', function(key, newVal, oldVal) {
 });
 ```
 
+## Trie
+
+字典树数据结构。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Trie {
+    add(word: string): void;
+    remove(word: string): void;
+    has(word: string): boolean;
+    words(prefix: string): string[];
+    clear(): void;
+}</code>
+</pre>
+</details>
+
+### add
+
+添加单词到字典数。
+
+|参数名|说明|
+|-----|---|
+|word|要添加的单词|
+
+### remove
+
+从字典树中移除单词。
+
+### has
+
+检查字典树中是否存在单词。
+
+### words
+
+获取所有带指定前缀的单词。
+
+|参数名|说明|
+|-----|---|
+|prefix|单词前缀|
+|返回值|所有带指定前缀的单词|
+
+### clear
+
+清除字典树中的所有单词。
+
+```javascript
+const trie = new Trie();
+trie.add('carpet');
+trie.add('car');
+trie.add('cat');
+trie.add('cart');
+trie.has('cat'); // -> true
+trie.remove('carpet');
+trie.has('carpet'); // -> false
+trie.words('car'); // -> ['car', 'cart']
+trie.clear();
+```
+
 ## Tween
 
 JavaScript 补间动画库。

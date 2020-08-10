@@ -758,6 +758,22 @@
             "browser"
         ]
     },
+    "Trie": {
+        "dependencies": [
+            "Class",
+            "each"
+        ],
+        "description": "Trie data structure.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "Tween": {
         "demo": true,
         "dependencies": [

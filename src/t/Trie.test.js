@@ -1,0 +1,13 @@
+const trie = new Trie();
+trie.add('carpet');
+trie.add('car');
+trie.add('cat');
+trie.add('cart');
+expect(trie.has('cat')).to.be.true;
+trie.remove('carpet');
+trie.remove('carbon');
+expect(trie.words('carpet')).to.eql([]);
+expect(trie.has('carpet')).to.be.false;
+trie.add('carry');
+expect(trie.words('car')).to.eql(['car', 'cart', 'carry']);
+trie.clear();

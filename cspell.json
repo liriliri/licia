@@ -402,6 +402,7 @@
     "topoSort",
     "toSrc",
     "toStr",
+    "Trie",
     "trigger",
     "trim",
     "truncate",
