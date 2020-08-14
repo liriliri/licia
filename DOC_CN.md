@@ -2628,14 +2628,14 @@ console.log(pool.size); // -> 2
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">function abbrev(
-    ...arr: string[]
+    ...names: string[]
 ): { [abbreviation: string]: string };</code>
 </pre>
 </details>
 
 |参数名|说明|
 |-----|---|
-|...arr|字符串集|
+|names|字符串集|
 |返回值|缩写集合|
 
 ```javascript
@@ -2927,13 +2927,13 @@ atob('SGVsbG8gV29ybGQ='); // -> 'Hello World'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function average(...num: number[]): number;</code>
+<code class="language-typescript">function average(...numbers: number[]): number;</code>
 </pre>
 </details>
 
 |参数名|说明|
 |-----|---|
-|...num|要计算的数字|
+|numbers|要计算的数字|
 |返回值|平均值|
 
 ```javascript
@@ -3062,7 +3062,7 @@ binarySearch(
 |-----|---|
 |fn|源函数|
 |ctx|绑定对象|
-|...args|可选参数|
+|args|可选参数|
 |返回值|输出函数|
 
 ```javascript
@@ -12377,7 +12377,7 @@ xpath('//html/body'); // -> [body]
 
 |参数名|说明|
 |-----|---|
-|...arr|源数组|
+|arr|源数组|
 |返回值|目标数组|
 
 ```javascript

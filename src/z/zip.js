@@ -2,7 +2,7 @@
  *
  * |Name  |Desc                         |
  * |------|-----------------------------|
- * |...arr|Arrays to process            |
+ * |arr   |Arrays to process            |
  * |return|New array of grouped elements|
  */
 

@@ -1,9 +1,9 @@
 /* Get average value of given numbers.
  *
- * |Name  |Desc                |
- * |------|--------------------|
- * |...num|Numbers to calculate|
- * |return|Average value       |
+ * |Name   |Desc                |
+ * |-------|--------------------|
+ * |numbers|Numbers to calculate|
+ * |return |Average value       |
  */
 
 /* example
@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * export declare function average(...num: number[]): number;
+ * export declare function average(...numbers: number[]): number;
  */
 
 exports = function() {

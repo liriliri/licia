@@ -1,11 +1,11 @@
 /* Create a function bound to a given object.
  *
- * |Name   |Desc                    |
- * |-------|------------------------|
- * |fn     |Function to bind        |
- * |ctx    |This binding of given fn|
- * |...args|Optional arguments      |
- * |return |New bound function      |
+ * |Name  |Desc                    |
+ * |------|------------------------|
+ * |fn    |Function to bind        |
+ * |ctx   |This binding of given fn|
+ * |args  |Optional arguments      |
+ * |return|New bound function      |
  */
 
 /* example

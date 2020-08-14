@@ -2634,14 +2634,14 @@ Calculate the set of unique abbreviations for a given set of strings.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">function abbrev(
-    ...arr: string[]
+    ...names: string[]
 ): { [abbreviation: string]: string };</code>
 </pre>
 </details>
 
 |Name  |Desc            |
 |------|----------------|
-|...arr|List of names   |
+|names |List of names   |
 |return|Abbreviation map|
 
 ```javascript
@@ -2933,14 +2933,14 @@ Get average value of given numbers.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function average(...num: number[]): number;</code>
+<code class="language-typescript">function average(...numbers: number[]): number;</code>
 </pre>
 </details>
 
-|Name  |Desc                |
-|------|--------------------|
-|...num|Numbers to calculate|
-|return|Average value       |
+|Name   |Desc                |
+|-------|--------------------|
+|numbers|Numbers to calculate|
+|return |Average value       |
 
 ```javascript
 average(5, 3, 1); // -> 3
@@ -3064,12 +3064,12 @@ Create a function bound to a given object.
 </pre>
 </details>
 
-|Name   |Desc                    |
-|-------|------------------------|
-|fn     |Function to bind        |
-|ctx    |This binding of given fn|
-|...args|Optional arguments      |
-|return |New bound function      |
+|Name  |Desc                    |
+|------|------------------------|
+|fn    |Function to bind        |
+|ctx   |This binding of given fn|
+|args  |Optional arguments      |
+|return|New bound function      |
 
 ```javascript
 const fn = bind(
@@ -12369,7 +12369,7 @@ Merge together the values of each of the arrays with the values at the correspon
 
 |Name  |Desc                         |
 |------|-----------------------------|
-|...arr|Arrays to process            |
+|arr   |Arrays to process            |
 |return|New array of grouped elements|
 
 ```javascript

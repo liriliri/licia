@@ -2,7 +2,7 @@
  *
  * |Name  |Desc            |
  * |------|----------------|
- * |...arr|List of names   |
+ * |names |List of names   |
  * |return|Abbreviation map|
  */
 
@@ -13,27 +13,26 @@
 
 /* module
  * env: all
- * test: all
  */
 
 /* typescript
  * export declare function abbrev(
- *     ...arr: string[]
+ *     ...names: string[]
  * ): { [abbreviation: string]: string };
  */
 
 _('toArr');
 
 exports = function() {
-    let args = toArr(arguments);
-    args = args.sort(nameSort);
+    const args = toArr(arguments);
+    const names = args.sort(nameSort);
 
     const ret = {};
     const idleMap = {};
 
-    for (let i = 0, len = args.length; i < len; i++) {
-        const str = args[i];
-        const nextStr = args[i + 1] || '';
+    for (let i = 0, len = names.length; i < len; i++) {
+        const str = names[i];
+        const nextStr = names[i + 1] || '';
 
         if (str === nextStr) continue;
 
