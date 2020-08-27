@@ -270,6 +270,7 @@
     "min",
     "mkdir",
     "moment",
+    "morphDom",
     "morse",
     "ms",
     "MutationObserver",

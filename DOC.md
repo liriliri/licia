@@ -8538,6 +8538,32 @@ Note: Format uses dateFormat module, so the mask is not quite the same as moment
 moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
 ```
 
+## morphDom 
+
+Morph a dom tree to match a target dom tree.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function morphDom(from: Node, to: Node | string): Node;</code>
+</pre>
+</details>
+
+|Name  |Type              |
+|------|------------------|
+|from  |Node to morph     |
+|to    |Node to be morphed|
+|return|Morphed node      |
+
+```javascript
+const el1 = document.createElement('div');
+el1.className = 'test';
+const el2 = document.createElement('div');
+el2.className = 'licia';
+morphDom(el1, el2);
+console.log(el1.className); // -> 'licia'
+```
+
 ## morse 
 
 Morse code encoding and decoding.

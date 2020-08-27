@@ -8533,6 +8533,32 @@ startOf，endOf，add，subtract，diff
 moment('20180501').format('yyyy-mm-dd'); // -> '2018-05-01'
 ```
 
+## morphDom
+
+将 DOM 树变化成目标 DOM 树。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function morphDom(from: Node, to: Node | string): Node;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|from|原始 DOM 树|
+|to|要变化的 DOM 树|
+|返回值|变化后的 DOM 树|
+
+```javascript
+const el1 = document.createElement('div');
+el1.className = 'test';
+const el2 = document.createElement('div');
+el2.className = 'licia';
+morphDom(el1, el2);
+console.log(el1.className); // -> 'licia'
+```
+
 ## morse
 
 摩尔斯电码编解码。

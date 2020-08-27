@@ -4246,6 +4246,22 @@
         ],
         "test": []
     },
+    "morphDom": {
+        "dependencies": [
+            "toEl",
+            "isStr",
+            "h",
+            "isNull",
+            "each"
+        ],
+        "description": "Morph a dom tree to match a target dom tree.",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "morse": {
         "dependencies": [
             "upperCase",
