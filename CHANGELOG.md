@@ -1,3 +1,8 @@
+## v1.25.0 (31 Aug 2020)
+
+* feat: add Trie
+* feat: add morphDom
+
 ## v1.24.0 (9 Aug 2020)
 
 * feat: add mergeArr
