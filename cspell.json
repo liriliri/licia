@@ -343,6 +343,7 @@
     "safeGet",
     "safeSet",
     "safeStorage",
+    "sameOrigin",
     "sample",
     "scrollTo",
     "seedRandom",

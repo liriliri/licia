@@ -5250,6 +5250,21 @@
             "browser"
         ]
     },
+    "sameOrigin": {
+        "dependencies": [
+            "Url"
+        ],
+        "description": "Check if two urls pass the same origin policy.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "sample": {
         "dependencies": [
             "isArrLike",

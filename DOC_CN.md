@@ -10259,6 +10259,31 @@ const localStorage = safeStorage('local');
 localStorage.setItem('licia', 'util');
 ```
 
+## sameOrigin
+
+检查两个 url 是否同源。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function sameOrigin(url1: string, url2: string): boolean;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|url1|要检查的 url|
+|url2|要检查的 url|
+|返回值|同源，返回真|
+
+```javascript
+const url1 = 'http://example.com/a.html';
+const url2 = 'http://example.com/b.html';
+const url3 = 'http://licia.liriliri.io';
+sameOrigin(url1, url2); // -> true
+sameOrigin(url1, url3); // -> false
+```
+
 ## sample
 
 从集合中随机抽取部分样本。
