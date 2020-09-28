@@ -5593,11 +5593,13 @@
         "dependencies": [],
         "description": "Get CallSite objects in v8.",
         "env": [
-            "node"
+            "node",
+            "browser"
         ],
         "since": "1.5.3",
         "test": [
-            "node"
+            "node",
+            "browser"
         ]
     },
     "startWith": {

@@ -8,7 +8,7 @@
  */
 
 /* module
- * env: node
+ * env: node browser
  * since: 1.5.3
  */
 
