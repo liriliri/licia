@@ -5260,6 +5260,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.26.0",
         "test": [
             "node",
             "browser"

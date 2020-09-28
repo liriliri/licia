@@ -1,3 +1,8 @@
+## v1.26.0 (28 Sep 2020)
+
+* feat: add sameOrigin
+* feat(stackTrace): add browser env
+
 ## v1.25.0 (31 Aug 2020)
 
 * feat: add Trie
