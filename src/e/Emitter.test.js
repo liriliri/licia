@@ -53,3 +53,16 @@ it('nonsense off', function() {
     e.emit('test');
     expect(a).to.equal(3);
 });
+
+it('off in listener', function() {
+    const e = new Emitter();
+
+    function listener() {
+        e.off('test', listener);
+    }
+
+    e.on('test', listener);
+    e.on('test', function() {});
+
+    e.emit('test');
+});

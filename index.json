@@ -320,7 +320,8 @@
             "has",
             "each",
             "slice",
-            "once"
+            "once",
+            "clone"
         ],
         "description": "Event emitter class which provides observer pattern.",
         "env": [

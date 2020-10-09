@@ -67,7 +67,7 @@
  * }
  */
 
-_('Class has each slice once types');
+_('Class has each slice once types clone');
 
 exports = Class(
     {
@@ -101,13 +101,8 @@ exports = Class(
 
             const args = slice(arguments, 1);
 
-            each(
-                this._events[event],
-                function(val) {
-                    val.apply(this, args);
-                },
-                this
-            );
+            const events = clone(this._events[event]);
+            each(events, val => val.apply(this, args), this);
 
             return this;
         },
