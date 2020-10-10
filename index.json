@@ -867,7 +867,7 @@
     },
     "abbrev": {
         "dependencies": [
-            "toArr"
+            "restArgs"
         ],
         "description": "Calculate the set of unique abbreviations for a given set of strings.",
         "env": [

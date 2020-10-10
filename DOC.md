@@ -2633,9 +2633,7 @@ Calculate the set of unique abbreviations for a given set of strings.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function abbrev(
-    ...names: string[]
-): { [abbreviation: string]: string };</code>
+<code class="language-typescript">function abbrev(...names: string[]): types.PlainObj&lt;string&gt;;</code>
 </pre>
 </details>
 

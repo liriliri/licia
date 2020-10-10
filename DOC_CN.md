@@ -2627,9 +2627,7 @@ console.log(pool.size); // -> 2
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function abbrev(
-    ...names: string[]
-): { [abbreviation: string]: string };</code>
+<code class="language-typescript">function abbrev(...names: string[]): types.PlainObj&lt;string&gt;;</code>
 </pre>
 </details>
 

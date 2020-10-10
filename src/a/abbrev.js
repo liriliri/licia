@@ -16,16 +16,13 @@
  */
 
 /* typescript
- * export declare function abbrev(
- *     ...names: string[]
- * ): { [abbreviation: string]: string };
+ * export declare function abbrev(...names: string[]): types.PlainObj<string>;
  */
 
-_('toArr');
+_('types restArgs isSorted');
 
-exports = function() {
-    const args = toArr(arguments);
-    const names = args.sort(nameSort);
+exports = restArgs(function(names) {
+    names = names.sort(isSorted.defComparator);
 
     const ret = {};
     const idleMap = {};
@@ -36,14 +33,15 @@ exports = function() {
 
         if (str === nextStr) continue;
 
-        let start = false,
-            abbrev = '';
+        let start = false;
+        let abbrev = '';
 
         for (let j = 0, strLen = str.length; j < strLen; j++) {
             abbrev += str[j];
 
-            if (!start && (str[j] !== nextStr[j] || j === strLen - 1))
+            if (!start && (str[j] !== nextStr[j] || j === strLen - 1)) {
                 start = true;
+            }
 
             if (!start) {
                 idleMap[abbrev] = str;
@@ -54,8 +52,4 @@ exports = function() {
     }
 
     return ret;
-};
-
-function nameSort(a, b) {
-    return a === b ? 0 : a > b ? 1 : -1;
-}
+});
