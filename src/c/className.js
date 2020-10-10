@@ -1,9 +1,9 @@
 /* Utility for conditionally joining class names.
  *
- * |Name    |Desc              |
- * |--------|------------------|
- * |...class|Class names       |
- * |return  |Joined class names|
+ * |Name  |Desc              |
+ * |------|------------------|
+ * |names |Class names       |
+ * |return|Joined class names|
  */
 
 /* example
@@ -19,7 +19,7 @@
  */
 
 /* typescript
- * export declare function className(...arr: any[]): string;
+ * export declare function className(...names: any[]): string;
  */
 
 _('each isStr isNum isArr isObj');
