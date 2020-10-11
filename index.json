@@ -867,7 +867,8 @@
     },
     "abbrev": {
         "dependencies": [
-            "restArgs"
+            "restArgs",
+            "isSorted"
         ],
         "description": "Calculate the set of unique abbreviations for a given set of strings.",
         "env": [
@@ -6472,6 +6473,25 @@
             "restArgs"
         ],
         "description": "Run an array of functions in series.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
+    "wordWrap": {
+        "dependencies": [
+            "map",
+            "reduce",
+            "concat",
+            "last",
+            "trim"
+        ],
+        "description": "Wrap a string to a given length.",
         "env": [
             "node",
             "browser",

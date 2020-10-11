@@ -3354,13 +3354,13 @@ clamp(2, 5); // -> 2
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function className(...arr: any[]): string;</code>
+<code class="language-typescript">function className(...names: any[]): string;</code>
 </pre>
 </details>
 
 |参数名|说明|
 |-----|---|
-|...class|要合并的 class|
+|names|要合并的 class|
 |返回值|合并后的 class 字符串|
 
 ```javascript
@@ -12302,6 +12302,28 @@ waterfall(
         // result -> 'done'
     }
 );
+```
+
+## wordWrap
+
+按照指定长度对字符串进行折行处理。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function wordWrap(txt: string, width: number): string;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|txt|要折行的字符串|
+|width|最大行宽度|
+|返回值|折行后的字符串|
+
+```javascript
+wordWrap('Licia is a utility library.', 10);
+// -> 'Licia is \na utility \nlibrary.'
 ```
 
 ## wordsToBytes

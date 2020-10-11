@@ -433,6 +433,7 @@
     "waitUntil",
     "waterfall",
     "wordsToBytes",
+    "wordWrap",
     "workerize",
     "wrap",
     "Wrr",

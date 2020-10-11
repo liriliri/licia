@@ -3360,14 +3360,14 @@ Utility for conditionally joining class names.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function className(...arr: any[]): string;</code>
+<code class="language-typescript">function className(...names: any[]): string;</code>
 </pre>
 </details>
 
-|Name    |Desc              |
-|--------|------------------|
-|...class|Class names       |
-|return  |Joined class names|
+|Name  |Desc              |
+|------|------------------|
+|names |Class names       |
+|return|Joined class names|
 
 ```javascript
 className('a', 'b', 'c'); // -> 'a b c'
@@ -12294,6 +12294,28 @@ waterfall(
         // result -> 'done'
     }
 );
+```
+
+## wordWrap 
+
+Wrap a string to a given length.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function wordWrap(txt: string, width: number): string;</code>
+</pre>
+</details>
+
+|Name  |Desc                          |
+|------|------------------------------|
+|txt   |Text to wrap                  |
+|width |Text width                    |
+|return|String wrapped at given length|
+
+```javascript
+wordWrap('Licia is a utility library.', 10);
+// -> 'Licia is \na utility \nlibrary.'
 ```
 
 ## wordsToBytes 
