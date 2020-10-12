@@ -3371,6 +3371,63 @@ className('a', { b: false, c: true }); // -> 'a c'
 className('a', ['b', 'c', { d: true, e: false }]); // -> 'a b c d';
 ```
 
+## cliHelp
+
+输出命令行帮助。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace cliHelp {
+    interface IOption {
+        name: string;
+        shorthand?: string;
+        desc: string;
+    }
+    interface ICommand {
+        name: string;
+        desc: string;
+        usage: string | string[];
+        options?: IOption[];
+    }
+    interface IData {
+        name: string;
+        usage: string | string[];
+        commands: ICommand[];
+    }
+}
+function cliHelp(data: cliHelp.IData | cliHelp.ICommand): string;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|data|帮助数据|
+|返回值|命令行帮助|
+
+```javascript
+const test = {
+    name: 'test',
+    desc: 'Generate test files',
+    usage: ['<module-name> [options]', 'lpad --browser'],
+    options: [
+        {
+            name: 'browser',
+            shorthand: 'b',
+            desc: 'True if test should run in a browser'
+        }
+    ]
+};
+const data = {
+    name: 'licia',
+    usage: '<command> [options]',
+    commands: [test]
+};
+
+cliHelp(data);
+cliHelp(test);
+```
+
 ## clone
 
 对指定对象进行浅复制。

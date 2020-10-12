@@ -59,6 +59,7 @@
     "clamp",
     "Class",
     "className",
+    "cliHelp",
     "clone",
     "cloneDeep",
     "cmpVersion",

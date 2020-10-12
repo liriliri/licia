@@ -1247,6 +1247,28 @@
             "browser"
         ]
     },
+    "cliHelp": {
+        "dependencies": [
+            "template",
+            "each",
+            "rpad",
+            "ansiColor",
+            "toArr",
+            "cloneDeep",
+            "strWidth",
+            "max"
+        ],
+        "description": "Output cli help.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "clone": {
         "dependencies": [
             "isObj",
