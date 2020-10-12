@@ -1,3 +1,9 @@
+## v1.27.0 (12 Oct 2020)
+
+* fix(Emitter): error if off is called in listener
+* feat: add wordWrap
+* feat: add cliHelp
+
 ## v1.26.0 (28 Sep 2020)
 
 * feat: add sameOrigin
