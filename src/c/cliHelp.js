@@ -55,14 +55,14 @@
  * export declare function cliHelp(data: cliHelp.IData | cliHelp.ICommand): string;
  */
 
-_('template each rpad ansiColor toArr cloneDeep strWidth max');
+_('template each map rpad ansiColor toArr cloneDeep strWidth max');
 
 exports = function(data) {
     data = cloneDeep(data);
     data.usage = toArr(data.usage);
 
     if (data.commands) {
-        const cmdNameWidths = each(data.commands, command =>
+        const cmdNameWidths = map(data.commands, command =>
             strWidth(command.name)
         );
         data.maxNameWidth = max.apply(null, cmdNameWidths);
@@ -76,7 +76,7 @@ exports = function(data) {
             '--' +
             option.name;
     });
-    const optNameWidths = each(data.options, option => strWidth(option.name));
+    const optNameWidths = map(data.options, option => strWidth(option.name));
     data.maxNameWidth = max.apply(null, optNameWidths);
 
     return cmdTpl(data);

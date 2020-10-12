@@ -1251,6 +1251,7 @@
         "dependencies": [
             "template",
             "each",
+            "map",
             "rpad",
             "ansiColor",
             "toArr",
