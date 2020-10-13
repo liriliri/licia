@@ -20,11 +20,11 @@
     "mocha": "mocha",
     "format": "prettier *.js lib/**/*.js lib/*.js bin/*.js --write",
     "format:pkg": "prettier .licia/packages/**/*.{js,d.ts} .licia/packages/**/**/*.js --write",
-    "test:node": "licia test -as",
-    "test:browser": "licia test -bas",
+    "test:node": "licia test -s",
+    "test:browser": "licia test -bs",
     "test:release": "licia test -r",
-    "test:sauce": "licia test -bas --sauce",
-    "test:ts": "licia test -as --ts && tsc"
+    "test:sauce": "licia test -bs --sauce",
+    "test:ts": "licia test -s --ts && tsc"
   },
   "repository": {
     "type": "git",
