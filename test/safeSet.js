@@ -1,5 +1,3 @@
-const { expect } = require('chai');
-
 it('basic', function() {
     const obj = {};
     safeSet(obj, 'a.aa.aaa', 1);

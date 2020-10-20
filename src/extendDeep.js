@@ -49,8 +49,9 @@ exports = function(obj) {
                     key === '__proto__' ||
                     key === 'constructor' ||
                     key === 'prototype'
-                )
+                ) {
                     return;
+                }
                 ret[key] = exports(ret[key], obj[key]);
             });
         } else {
