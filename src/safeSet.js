@@ -38,7 +38,11 @@ exports = function(obj, path, val) {
 
     prop = path.shift();
     while (!isUndef(prop)) {
-        if (prop === '__proto__' || prop === 'constructor' || prop === 'prototype') {
+        if (
+            prop === '__proto__' ||
+            prop === 'constructor' ||
+            prop === 'prototype'
+        ) {
             return;
         }
         if (!obj[prop]) obj[prop] = {};

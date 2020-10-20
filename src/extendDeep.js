@@ -45,7 +45,12 @@ exports = function(obj) {
 
         if (isPlainObj(ret) && isPlainObj(obj)) {
             each(obj, function(val, key) {
-                if (key === '__proto__' || key === 'constructor' || key === 'prototype') return;
+                if (
+                    key === '__proto__' ||
+                    key === 'constructor' ||
+                    key === 'prototype'
+                )
+                    return;
                 ret[key] = exports(ret[key], obj[key]);
             });
         } else {
