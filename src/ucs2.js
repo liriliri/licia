@@ -37,10 +37,19 @@
  * };
  */
 
+_('chunk map');
+
 // https://mathiasbynens.be/notes/javascript-encoding
 exports = {
     encode(arr) {
-        return String.fromCodePoint.apply(String, arr);
+        // https://stackoverflow.com/questions/22747068/is-there-a-max-number-of-arguments-javascript-functions-can-accept
+        if (arr.length < 32768) {
+            return String.fromCodePoint.apply(String, arr);
+        }
+
+        return map(chunk(arr, 32767), nums =>
+            String.fromCodePoint.apply(String, nums)
+        ).join('');
     },
     decode(str) {
         const ret = [];
