@@ -1,3 +1,8 @@
+## v1.27.1 (3 Nov 2020)
+
+* fix: Security Fix for Prototype Pollution [#22](https://github.com/liriliri/licia/issues/22)
+* fix(ucs2): encode Maximum call stack size exceeded
+
 ## v1.27.0 (12 Oct 2020)
 
 * fix(Emitter): error if off is called in listener

@@ -6226,7 +6226,10 @@
         "test": []
     },
     "ucs2": {
-        "dependencies": [],
+        "dependencies": [
+            "chunk",
+            "map"
+        ],
         "description": "UCS-2 encoding and decoding.",
         "env": [
             "node",
