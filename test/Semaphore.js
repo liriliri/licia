@@ -12,5 +12,5 @@ it('basic', done => {
     setTimeout(() => {
         expect(num).to.equal(10);
         done();
-    }, 250);
+    }, 500);
 });
