@@ -65,7 +65,7 @@
  *         after(content: string): $;
  *     }
  * }
- * declare function $(selector: string | Element): $.$;
+ * declare function $(selector: string | Element | Document): $.$;
  */
 
 _(
