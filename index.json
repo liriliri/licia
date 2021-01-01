@@ -3100,6 +3100,18 @@
             "browser"
         ]
     },
+    "isDir": {
+        "dependencies": [
+            "root"
+        ],
+        "description": "Check if a path is directory.",
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
+    },
     "isEl": {
         "dependencies": [],
         "description": "Check if value is a DOM element.",

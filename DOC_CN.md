@@ -48,7 +48,7 @@
         after(content: string): $;
     }
 }
-declare function $(selector: string | Element): $.$;</code>
+declare function $(selector: string | Element | Document): $.$;</code>
 </pre>
 </details>
 
@@ -1872,7 +1872,7 @@ querySelectorAll 的简单包装类。
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">class Select {
-    constructor(selector: string | Element);
+    constructor(selector: string | Element | Document);
     find(selector: string): Select;
     each(fn: types.AnyFn): Select;
 }</code>
@@ -6674,6 +6674,26 @@ isDataUrl('data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D'); // -> true
 
 ```javascript
 isDate(new Date()); // -> true
+```
+
+## isDir
+
+检查路径是否是文件夹。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isDir(path: string): Promise&lt;boolean&gt;;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|path|要检查的路径|
+|返回值|如果是文件夹，返回真|
+
+```javascript
+isDir('/foo/bar');
 ```
 
 ## isEl

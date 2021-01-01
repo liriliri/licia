@@ -50,7 +50,7 @@ jQuery like style dom manipulator.
         after(content: string): $;
     }
 }
-declare function $(selector: string | Element): $.$;</code>
+declare function $(selector: string | Element | Document): $.$;</code>
 </pre>
 </details>
 
@@ -1878,7 +1878,7 @@ Simple wrapper of querySelectorAll to make dom selection easier.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">class Select {
-    constructor(selector: string | Element);
+    constructor(selector: string | Element | Document);
     find(selector: string): Select;
     each(fn: types.AnyFn): Select;
 }</code>
@@ -6679,6 +6679,26 @@ Check if value is classified as a Date object.
 
 ```javascript
 isDate(new Date()); // -> true
+```
+
+## isDir 
+
+Check if a path is directory.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isDir(path: string): Promise&lt;boolean&gt;;</code>
+</pre>
+</details>
+
+|Name  |Desc                       |
+|------|---------------------------|
+|path  |Path to check              |
+|return|True if path is a directory|
+
+```javascript
+isDir('/foo/bar');
 ```
 
 ## isEl 

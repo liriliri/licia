@@ -184,6 +184,7 @@
     "isDarkMode",
     "isDataUrl",
     "isDate",
+    "isDir",
     "isEl",
     "isEmail",
     "isEmpty",
