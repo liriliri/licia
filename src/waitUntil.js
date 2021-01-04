@@ -49,7 +49,7 @@ exports = function(condition, timeout = 0, interval = 250) {
                 if (val) {
                     resolve(val);
                 } else if (timeout && elapsed >= timeout) {
-                    reject(Error(`Wait timed out after ${elapsed} ms`));
+                    reject(Error(`Wait timed out after ${timeout} ms`));
                 } else {
                     setTimeout(pollCondition, interval);
                 }
