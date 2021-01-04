@@ -44,10 +44,10 @@ jQuery like style dom manipulator.
         toggleClass(name: string): $;
         hasClass(name: string): boolean;
         parent(): $;
-        append(content: string): $;
-        prepend(content: string): $;
-        before(content: string): $;
-        after(content: string): $;
+        append(content: string | Element): $;
+        prepend(content: string | Element): $;
+        before(content: string | Element): $;
+        after(content: string | Element): $;
     }
 }
 declare function $(selector: string | Element | Document): $.$;</code>
@@ -313,7 +313,7 @@ Insert html on different position.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">namespace $insert {
-    type IInsert = (element: $safeEls.El, content: string) =&gt; void;
+    type IInsert = (element: $safeEls.El, content: string | Element) =&gt; void;
 }
 const $insert: {
     before: $insert.IInsert;
@@ -340,10 +340,10 @@ Insert content to the beginning of elements.
 
 Insert content to the end of elements.
 
-|Name   |Desc                  |
-|-------|----------------------|
-|element|Elements to manipulate|
-|content|Html strings          |
+|Name   |Desc                   |
+|-------|-----------------------|
+|element|Elements to manipulate |
+|content|Html strings or element|
 
 ```javascript
 // <div id="test"><div class="mark"></div></div>

@@ -16,10 +16,10 @@
  *
  * Insert content to the end of elements.
  *
- * |Name   |Desc                  |
- * |-------|----------------------|
- * |element|Elements to manipulate|
- * |content|Html strings          |
+ * |Name   |Desc                   |
+ * |-------|-----------------------|
+ * |element|Elements to manipulate |
+ * |content|Html strings or element|
  */
 
 /* example
@@ -40,7 +40,7 @@
 
 /* typescript
  * export declare namespace $insert {
- *     type IInsert = (element: $safeEls.El, content: string) => void;
+ *     type IInsert = (element: $safeEls.El, content: string | Element) => void;
  * }
  * export declare const $insert: {
  *     before: $insert.IInsert;
@@ -50,7 +50,7 @@
  * };
  */
 
-_('each $safeEls');
+_('each $safeEls isStr');
 
 exports = {
     before: insertFactory('beforebegin'),
@@ -64,7 +64,29 @@ function insertFactory(type) {
         nodes = $safeEls(nodes);
 
         each(nodes, function(node) {
-            node.insertAdjacentHTML(type, val);
+            if (isStr(val)) {
+                node.insertAdjacentHTML(type, val);
+            } else {
+                const parentNode = node.parentNode;
+                switch (type) {
+                    case 'beforebegin':
+                        if (parentNode) {
+                            parentNode.insertBefore(val, node);
+                        }
+                        break;
+                    case 'afterend':
+                        if (parentNode) {
+                            parentNode.insertBefore(val, node.nextSibling);
+                        }
+                        break;
+                    case 'beforeend':
+                        node.appendChild(val);
+                        break;
+                    case 'afterbegin':
+                        node.prepend(val);
+                        break;
+                }
+            }
         });
     };
 }

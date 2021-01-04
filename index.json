@@ -111,7 +111,8 @@
     "$insert": {
         "dependencies": [
             "each",
-            "$safeEls"
+            "$safeEls",
+            "isStr"
         ],
         "description": "Insert html on different position.",
         "env": [

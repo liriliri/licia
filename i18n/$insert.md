@@ -21,5 +21,5 @@
 |参数名|说明|
 |-----|---|
 |element|目标元素集|
-|content|html 字符串|
+|content|html 字符串或元素|
 

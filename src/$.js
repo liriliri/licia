@@ -59,10 +59,10 @@
  *         toggleClass(name: string): $;
  *         hasClass(name: string): boolean;
  *         parent(): $;
- *         append(content: string): $;
- *         prepend(content: string): $;
- *         before(content: string): $;
- *         after(content: string): $;
+ *         append(content: string | Element): $;
+ *         prepend(content: string | Element): $;
+ *         before(content: string | Element): $;
+ *         after(content: string | Element): $;
  *     }
  * }
  * declare function $(selector: string | Element | Document): $.$;

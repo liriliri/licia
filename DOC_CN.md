@@ -42,10 +42,10 @@
         toggleClass(name: string): $;
         hasClass(name: string): boolean;
         parent(): $;
-        append(content: string): $;
-        prepend(content: string): $;
-        before(content: string): $;
-        after(content: string): $;
+        append(content: string | Element): $;
+        prepend(content: string | Element): $;
+        before(content: string | Element): $;
+        after(content: string | Element): $;
     }
 }
 declare function $(selector: string | Element | Document): $.$;</code>
@@ -311,7 +311,7 @@ $event.off('#test', 'click', clickHandler);
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">namespace $insert {
-    type IInsert = (element: $safeEls.El, content: string) =&gt; void;
+    type IInsert = (element: $safeEls.El, content: string | Element) =&gt; void;
 }
 const $insert: {
     before: $insert.IInsert;
@@ -341,7 +341,7 @@ const $insert: {
 |参数名|说明|
 |-----|---|
 |element|目标元素集|
-|content|html 字符串|
+|content|html 字符串或元素|
 
 ```javascript
 // <div id="test"><div class="mark"></div></div>
