@@ -5995,7 +5995,7 @@ comment, string, number, keyword, operator
 ```javascript
 highlight('const a = 5;', 'js', {
     keyword: 'color:#569cd6;'
-}); // -> '<span style="color:#569cd6;">const</span> a <span style="color:#994500;">=</span> <span style="color:#0086b3;">5</span>;'
+}); // -> '<span class="keyword" style="color:#569cd6;">const</span> a <span class="operator" style="color:#994500;">=</span> <span class="number" style="color:#0086b3;">5</span>;'
 ```
 
 ## hotkey 

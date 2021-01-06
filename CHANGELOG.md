@@ -1,3 +1,10 @@
+## v1.28.0 (6 Jan 2020)
+
+* feat: add isDir
+* feat($insert): dom element
+* feat(highlight): add class
+* fix(waitUntil): dynamic error message
+
 ## v1.27.1 (3 Nov 2020)
 
 * fix: Security Fix for Prototype Pollution [#22](https://github.com/liriliri/licia/issues/22)
