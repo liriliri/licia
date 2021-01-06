@@ -15,7 +15,7 @@
 /* example
  * highlight('const a = 5;', 'js', {
  *     keyword: 'color:#569cd6;'
- * }); // -> '<span style="color:#569cd6;">const</span> a <span style="color:#994500;">=</span> <span style="color:#0086b3;">5</span>;'
+ * }); // -> '<span class="keyword" style="color:#569cd6;">const</span> a <span class="operator" style="color:#994500;">=</span> <span class="number" style="color:#0086b3;">5</span>;'
  */
 
 /* module
@@ -94,11 +94,13 @@ exports = function(str, lang = 'js', style = {}) {
     });
 
     each(lang, (val, key) => {
+        const s = style[val.style] ? ` style="${style[val.style]}"` : '';
+
         str = str
             .replace(new RegExp('___end' + key + '___', 'g'), '</span>')
             .replace(
                 new RegExp('___' + key + '___', 'g'),
-                '<span style="' + style[val.style] + '">'
+                `<span class="${val.style}"${s}>`
             );
     });
 
