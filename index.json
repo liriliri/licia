@@ -1263,8 +1263,7 @@
         "description": "Output cli help.",
         "env": [
             "node",
-            "browser",
-            "miniprogram"
+            "browser"
         ],
         "since": "1.27.0",
         "test": [
