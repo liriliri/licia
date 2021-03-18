@@ -693,6 +693,24 @@
             "browser"
         ]
     },
+    "SingleEmitter": {
+        "dependencies": [
+            "Class",
+            "clone",
+            "each",
+            "toArr"
+        ],
+        "description": "Event emitter with single event type.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "Socket": {
         "dependencies": [
             "defaults",
@@ -6257,7 +6275,8 @@
     "uncaught": {
         "demo": true,
         "dependencies": [
-            "isBrowser"
+            "isBrowser",
+            "SingleEmitter"
         ],
         "description": "Handle global uncaught errors and promise rejections.",
         "env": [

@@ -48,9 +48,8 @@
  * };
  */
 
-_('isBrowser');
+_('isBrowser SingleEmitter');
 
-let listeners = [];
 let isOn = false;
 
 exports = {
@@ -59,21 +58,10 @@ exports = {
     },
     stop() {
         isOn = false;
-    },
-    addListener(fn) {
-        listeners.push(fn);
-    },
-    rmListener(fn) {
-        const idx = listeners.indexOf(fn);
-
-        if (idx > -1) {
-            listeners.splice(idx, 1);
-        }
-    },
-    rmAllListeners() {
-        listeners = [];
     }
 };
+
+SingleEmitter.mixin(exports);
 
 if (isBrowser) {
     window.addEventListener('error', event => {
@@ -90,7 +78,5 @@ if (isBrowser) {
 function callListeners(err) {
     if (!isOn) return;
 
-    for (let i = 0, len = listeners.length; i < len; i++) {
-        listeners[i](err);
-    }
+    exports.emit(err);
 }

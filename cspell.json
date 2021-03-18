@@ -357,6 +357,7 @@
     "shebang",
     "shellSort",
     "shuffle",
+    "SingleEmitter",
     "size",
     "sizeof",
     "sleep",
