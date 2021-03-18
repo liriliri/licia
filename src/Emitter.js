@@ -118,7 +118,9 @@ exports = Class(
     },
     {
         mixin(obj) {
-            each(['on', 'off', 'once', 'emit'], function(val) {
+            each(['on', 'off', 'once', 'emit', 'removeAllListeners'], function(
+                val
+            ) {
                 obj[val] = exports.prototype[val];
             });
 

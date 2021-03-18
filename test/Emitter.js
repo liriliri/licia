@@ -38,6 +38,7 @@ it('mixin', function() {
     b.on('add', add);
     b.emit('add', 2);
     expect(a).to.equal(3);
+    b.removeAllListeners();
 });
 
 it('nonsense off', function() {
