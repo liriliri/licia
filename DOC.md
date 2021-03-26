@@ -4099,6 +4099,60 @@ const stylesheet = css.parse('.name { background: #000; color: red; }');
 css.stringify(stylesheet);
 ```
 
+## cssPriority 
+
+Calculate and compare priority of css selector/rule.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace cssPriority {
+    function compare(p1: number[], p2: number[]): number;
+}
+function cssPriority(
+    selector: string,
+    options?: {
+        important?: boolean;
+        inlineStyle?: boolean;
+        position?: number;
+    }
+): number[];</code>
+</pre>
+</details>
+
+|Name    |Type           |
+|--------|---------------|
+|selector|CSS selector   |
+|options |Rule extra info|
+|return  |Priority array |
+
+Priority array contains five number values.
+
+1. Important mark
+2. Inline style
+3. ID selector
+4. Class selectors
+5. Type selectors
+6. Rule position
+
+### compare
+
+Compare priorities.
+
+|Name  |Desc               |
+|------|-------------------|
+|p1    |Priority to compare|
+|p2    |Priority to compare|
+|return|Comparison result  |
+
+```javascript
+cssPriority('a.button > i.icon:before', {
+    important: true,
+    inlineStyle: false,
+    position: 100
+}); // -> [1, 0, 0, 2, 3, 100]
+```
+
 ## cssSupports 
 
 Check if browser supports a given CSS feature.

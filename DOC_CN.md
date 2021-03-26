@@ -4093,6 +4093,60 @@ const stylesheet = css.parse('.name { background: #000; color: red; }');
 css.stringify(stylesheet);
 ```
 
+## cssPriority
+
+计算与比较 CSS 选择器/样式的优先级。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace cssPriority {
+    function compare(p1: number[], p2: number[]): number;
+}
+function cssPriority(
+    selector: string,
+    options?: {
+        important?: boolean;
+        inlineStyle?: boolean;
+        position?: number;
+    }
+): number[];</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|selector|CSS 选择器|
+|options|样式额外信息|
+|返回值|优先级数组|
+
+优先级数组包括六个数字值。
+
+1. important 标识 
+2. 内联样式
+3. ID 选择器
+4. 类选择器
+5. 类型选择器
+6. 样式位置
+
+### compare
+
+比较优先级。
+
+|参数名|说明|
+|-----|---|
+|p1|优先级数组|
+|p2|优先级数组|
+|返回值|比较结果|
+
+```javascript
+cssPriority('a.button > i.icon:before', {
+    important: true,
+    inlineStyle: false,
+    position: 100
+}); // -> [1, 0, 0, 2, 3, 100]
+```
+
 ## cssSupports
 
 检查浏览器是否支持某项 CSS 特性。

@@ -1635,6 +1635,25 @@
             "browser"
         ]
     },
+    "cssPriority": {
+        "dependencies": [
+            "selector",
+            "each",
+            "startWith",
+            "contain",
+            "cmpVersion"
+        ],
+        "description": "Calculate and compare priority of css selector/rule.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "cssSupports": {
         "dependencies": [
             "memoize",
