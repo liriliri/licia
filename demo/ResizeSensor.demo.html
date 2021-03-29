@@ -1,0 +1,55 @@
+<require>ResizeSensor $ evalCss</require>
+
+<style>
+    body,
+    html {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    body {
+        box-sizing: border-box;
+        padding-top: 50px;
+    }
+    #test {
+        background: #dae3e8;
+        margin: 0 auto;
+        width: 50%;
+        height: 20%;
+        border-radius: 5px;
+        line-height: 100%;
+        display: table;
+    }
+    #text {
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        line-height: 1.5em;
+    }
+</style>
+
+<template id="bodyTpl">
+    <div id="test">
+        <div id="text"></div>
+    </div>
+</template>
+
+<script>
+    evalCss(style);
+    $('body').html(bodyTpl);
+
+    const target = document.getElementById('test');
+    const $target = $(target);
+    const $text = $('#text');
+    let changeCount = 0;
+    function renderSize() {
+        const { width, height } = $target.offset();
+
+        $text.html(changeCount + ' changes. ' + width + 'px/' + height + 'px');
+        changeCount++;
+    }
+    renderSize();
+    const sensor = new ResizeSensor(target);
+    sensor.addListener(renderSize);
+</script>

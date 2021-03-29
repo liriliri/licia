@@ -1870,6 +1870,38 @@ store.dispatch({ type: 'INCREMENT' }); // 2
 store.dispatch({ type: 'DECREMENT' }); // 1
 ```
 
+## ResizeSensor 
+
+Detect if element's size has changed.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class ResizeSensor extends SingleEmitter {
+    constructor(el: HTMLElement);
+    destroy(): void;
+}</code>
+</pre>
+</details>
+
+### constructor
+
+|Name   |Desc                   |
+|-------|-----------------------|
+|element|Element to monitor size|
+
+### destroy
+
+Stop monitoring resize event.
+
+```javascript
+const target = document.getElementById('test');
+const sensor = new ResizeSensor(target);
+sensor.addListener(function() {
+    // Trigger if element's size changed.
+});
+```
+
 ## Select 
 
 Simple wrapper of querySelectorAll to make dom selection easier.
@@ -11843,7 +11875,7 @@ function trigger(type: string, options?: any);</code>
 |options    |Options           |
 
 ```javascript
-trigger(document.getElementById('#test'), 'mouseup');
+trigger(document.getElementById('test'), 'mouseup');
 trigger('keydown', { keyCode: 65 });
 ```
 

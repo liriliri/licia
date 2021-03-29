@@ -8,7 +8,7 @@
  */
 
 /* example
- * trigger(document.getElementById('#test'), 'mouseup');
+ * trigger(document.getElementById('test'), 'mouseup');
  * trigger('keydown', { keyCode: 65 });
  */
 

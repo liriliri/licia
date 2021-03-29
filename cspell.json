@@ -332,6 +332,7 @@
     "remove",
     "repeat",
     "replaceAll",
+    "ResizeSensor",
     "restArgs",
     "reverse",
     "rgbToHsl",

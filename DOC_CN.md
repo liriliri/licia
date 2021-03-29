@@ -1864,6 +1864,38 @@ store.dispatch({ type: 'INCREMENT' }); // 2
 store.dispatch({ type: 'DECREMENT' }); // 1
 ```
 
+## ResizeSensor
+
+检查元素的大小是否发生变化。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class ResizeSensor extends SingleEmitter {
+    constructor(el: HTMLElement);
+    destroy(): void;
+}</code>
+</pre>
+</details>
+
+### constructor
+
+|参数名|说明|
+|-----|---|
+|element|要监听大小的元素|
+
+### destroy
+
+停止监听大小变化事件。
+
+```javascript
+const target = document.getElementById('test');
+const sensor = new ResizeSensor(target);
+sensor.addListener(function() {
+    // Trigger if element's size changed.
+});
+```
+
 ## Select
 
 querySelectorAll 的简单包装类。
@@ -11851,7 +11883,7 @@ function trigger(type: string, options?: any);</code>
 |options|选项|
 
 ```javascript
-trigger(document.getElementById('#test'), 'mouseup');
+trigger(document.getElementById('test'), 'mouseup');
 trigger('keydown', { keyCode: 65 });
 ```
 

@@ -644,6 +644,25 @@
             "browser"
         ]
     },
+    "ResizeSensor": {
+        "demo": true,
+        "dependencies": [
+            "SingleEmitter",
+            "h",
+            "$event",
+            "$css",
+            "contain",
+            "extend",
+            "root"
+        ],
+        "description": "Detect if element's size has changed.",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "Select": {
         "dependencies": [
             "Class",
