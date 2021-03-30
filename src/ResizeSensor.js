@@ -21,6 +21,7 @@
 
 /* module
  * env: browser
+ * since: 1.29.0
  */
 
 /* typescript
