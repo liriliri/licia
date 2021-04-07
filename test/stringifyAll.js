@@ -1,3 +1,5 @@
+const toStr = util.toStr;
+
 function transform(obj, options = {}) {
     return JSON.parse(stringifyAll(obj, options));
 }
@@ -126,4 +128,53 @@ it('ignore', () => {
     const b = {};
     obj = transform({ b }, { ignore: [b] });
     expect(obj.enumerable.b).to.be.undefined;
+});
+
+it('parse', () => {
+    function transform(obj, options = {}) {
+        return stringifyAll.parse(stringifyAll(obj, options));
+    }
+    function Student(name) {
+        this.name = name;
+    }
+    Student.prototype.introduce = function() {
+        console.log('My name is ' + this.name);
+    };
+    let obj = {
+        number: 1,
+        boolean: false,
+        null: null,
+        string: 'str',
+        nan: NaN,
+        inifinity: Number.POSITIVE_INFINITY,
+        negativeInifinity: Number.NEGATIVE_INFINITY,
+        undefined: undefined,
+        // prettier-ignore
+        fn: function sum(a, b) { return a + b; },
+        regexp: /test/gi,
+        student: new Student('licia')
+    };
+    obj.circular = obj;
+    Object.defineProperty(obj, 'unenumerable', {
+        value: 'unenumerable',
+        enumerable: false
+    });
+    obj = transform(obj, {
+        unenumerable: true
+    });
+    expect(obj.number).to.equal(1);
+    expect(obj.boolean).to.equal(false);
+    expect(obj.null).to.equal(null);
+    expect(obj.string).to.equal('str');
+    expect(isNaN(obj.nan)).to.be.true;
+    expect(obj.inifinity).to.equal(Number.POSITIVE_INFINITY);
+    expect(obj.negativeInifinity).to.equal(Number.NEGATIVE_INFINITY);
+    expect(obj.undefined).to.equal(undefined);
+    expect(toStr(obj.fn)).to.equal('function sum(a, b) { return a + b; }');
+    expect(toStr(obj.regexp)).to.equal('/test/gi');
+    expect(Object.getOwnPropertyDescriptor(obj, 'unenumerable').enumerable).to
+        .be.false;
+    expect(obj.student.name).to.equal('licia');
+    expect(obj.student.introduce).to.be.a('function');
+    expect(obj.circular).to.equal(obj);
 });

@@ -2,10 +2,21 @@
 
 <script>
     function log(obj, options = {}) {
-        console.log(JSON.parse(stringifyAll(obj, options)));
+        const str = stringifyAll(obj, options);
+        console.log(JSON.parse(str));
+        console.log(stringifyAll.parse(str));
     }
     log(
         {},
+        {
+            ignore: [Object.prototype]
+        }
+    );
+    log(
+        {
+            location: location,
+            navigator: navigator
+        },
         {
             ignore: [Object.prototype]
         }

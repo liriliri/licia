@@ -11197,7 +11197,10 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function stringifyAll(
+<code class="language-typescript">namespace stringifyAll {
+    function parse(str: string): any;
+}
+function stringifyAll(
     obj: any,
     options?: {
         unenumerable?: boolean;
@@ -11213,7 +11216,7 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 
 |参数名|说明|
 |-----|---|
-|obj|目标对象|
+|obj|源对象|
 |options|序列化选项|
 |返回值|序列化后的字符串|
 
@@ -11229,6 +11232,15 @@ stringify(obj); // -> '{"a":1,"b":"[Circular ~]"}'
 |ignore|忽略的对象|
 
 超时后，所有未序列化的值都会变成 “Timeout”。
+
+### parse
+
+将字符串反序列化回对象。
+
+|参数名|说明|
+|-----|---|
+|obj|序列化后的字符串|
+|返回值|目标对象|
 
 ```javascript
 stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function",...}'

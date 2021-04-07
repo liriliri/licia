@@ -5814,7 +5814,16 @@
             "filter",
             "now",
             "allKeys",
-            "contain"
+            "contain",
+            "isObj",
+            "isMiniProgram",
+            "create",
+            "startWith",
+            "safeSet",
+            "defineProp",
+            "pick",
+            "getProto",
+            "isArrLike"
         ],
         "description": "Stringify object into json with types.",
         "env": [

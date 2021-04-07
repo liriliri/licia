@@ -18,6 +18,15 @@
  * |ignore            |Values to ignore         |
  *
  * When time is out, all remaining values will all be "Timeout".
+ *
+ * ### parse
+ *
+ * Parse result string back to object.
+ *
+ * |Name  |Type           |
+ * |------|---------------|
+ * |obj   |String to parse|
+ * |return|Result object  |
  */
 
 /* example
@@ -30,6 +39,9 @@
  */
 
 /* typescript
+ * export declare namespace stringifyAll {
+ *     function parse(str: string): any;
+ * }
  * export declare function stringifyAll(
  *     obj: any,
  *     options?: {
@@ -44,7 +56,7 @@
  */
 
 _(
-    'escapeJsStr type toStr endWith toSrc keys each Class getProto difference extend isPromise filter now allKeys contain'
+    'escapeJsStr type toStr endWith toSrc keys each Class getProto difference extend isPromise filter now allKeys contain isObj isMiniProgram create startWith safeSet defineProp pick isArrLike'
 );
 
 exports = function(
@@ -251,7 +263,7 @@ function escapeJsonStr(str) {
 
 const Visitor = Class({
     initialize() {
-        this.id = 0;
+        this.id = 1;
         this.visited = [];
     },
     set(val) {
@@ -277,3 +289,161 @@ const Visitor = Class({
         return false;
     }
 });
+
+exports.parse = function(str) {
+    const map = {};
+    const obj = parse(JSON.parse(str), { map });
+    correctReference(map);
+    return obj;
+};
+
+function correctReference(map) {
+    each(map, obj => {
+        const enumerableKeys = keys(obj);
+        for (let i = 0, len = enumerableKeys.length; i < len; i++) {
+            const key = enumerableKeys[i];
+            if (isObj(obj[key])) {
+                const reference = obj[key].reference;
+                if (reference && map[reference]) {
+                    obj[key] = map[reference];
+                }
+            }
+        }
+        const proto = getProto(obj);
+        if (proto && proto.reference) {
+            if (map[proto.reference]) {
+                Object.setPrototypeOf(obj, map[proto.reference]);
+            }
+        }
+    });
+}
+
+function parse(obj, options) {
+    const { map } = options;
+    if (!isObj(obj)) {
+        return obj;
+    }
+
+    const { id, type, value, proto, reference } = obj;
+    let { enumerable, unenumerable } = obj;
+    if (reference) {
+        return obj;
+    }
+    if (type === 'Number') {
+        if (value === 'Infinity') {
+            return Number.POSITIVE_INFINITY;
+        } else if (value === '-Infinity') {
+            return Number.NEGATIVE_INFINITY;
+        }
+
+        return NaN;
+    } else if (type === 'Undefined') {
+        return undefined;
+    }
+
+    let newObj;
+    if (type === 'Function') {
+        newObj = function() {};
+        newObj.toString = function() {
+            return value;
+        };
+        if (proto) {
+            Object.setPrototypeOf(newObj, parse(proto, options));
+        }
+    } else if (type === 'RegExp') {
+        newObj = strToRegExp(value);
+    } else {
+        if (type !== 'Object') {
+            let Fn;
+            if (!isMiniProgram) {
+                Fn = new Function(type, '');
+            } else {
+                Fn = function() {};
+            }
+            if (proto) {
+                Fn.prototype = parse(proto, options);
+            }
+            newObj = new Fn();
+        } else {
+            if (proto) {
+                newObj = create(parse(proto, options));
+            } else {
+                newObj = create(null);
+            }
+        }
+    }
+
+    const defineProps = {};
+    if (enumerable) {
+        let len;
+        if (isArrLike(enumerable)) {
+            len = enumerable.length;
+            delete enumerable.length;
+        }
+        enumerable = pick(enumerable, (value, key) => {
+            return !handleGetterSetter(enumerable, value, key);
+        });
+        each(enumerable, (value, key) => {
+            const defineProp = defineProps[key] || {};
+            if (!defineProp.get) {
+                newObj[key] = parse(value, options);
+            }
+        });
+        if (len) {
+            newObj.length = len;
+        }
+    }
+    if (unenumerable) {
+        unenumerable = pick(unenumerable, (value, key) => {
+            return !handleGetterSetter(unenumerable, value, key);
+        });
+        each(unenumerable, (value, key) => {
+            const defineProp = defineProps[key] || {};
+            if (!defineProp.get) {
+                value = parse(value, options);
+                if (isObj(value) && value.reference) {
+                    const reference = value.reference;
+                    value = function() {
+                        return map[reference];
+                    };
+                    defineProp.get = value;
+                } else {
+                    defineProp.value = value;
+                }
+            }
+            defineProp.enumerable = false;
+            defineProps[key] = defineProp;
+        });
+    }
+    defineProp(newObj, defineProps);
+    function handleGetterSetter(obj, val, key) {
+        key = toStr(key);
+        let isGetterAndSetter = false;
+        each(['get', 'set'], function(type) {
+            if (startWith(key, type + ' ')) {
+                const realKey = key.replace(type + ' ', '');
+                if (obj[realKey]) {
+                    val = parse(val, options);
+                    if (val === 'Timeout') {
+                        val = retTimeout;
+                    }
+                    safeSet(defineProps, [realKey, type], val);
+                    isGetterAndSetter = true;
+                }
+            }
+        });
+        return isGetterAndSetter;
+    }
+
+    map[id] = newObj;
+    return newObj;
+}
+
+function retTimeout() {
+    return 'Timeout';
+}
+
+function strToRegExp(str) {
+    const lastSlash = str.lastIndexOf('/');
+    return new RegExp(str.slice(1, lastSlash), str.slice(lastSlash + 1));
+}

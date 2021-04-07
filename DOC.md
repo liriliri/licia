@@ -11189,7 +11189,10 @@ Stringify object into json with types.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function stringifyAll(
+<code class="language-typescript">namespace stringifyAll {
+    function parse(str: string): any;
+}
+function stringifyAll(
     obj: any,
     options?: {
         unenumerable?: boolean;
@@ -11221,6 +11224,15 @@ Available options:
 |ignore            |Values to ignore         |
 
 When time is out, all remaining values will all be "Timeout".
+
+### parse
+
+Parse result string back to object.
+
+|Name  |Type           |
+|------|---------------|
+|obj   |String to parse|
+|return|Result object  |
 
 ```javascript
 stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"Function",...}'
