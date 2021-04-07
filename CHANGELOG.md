@@ -1,3 +1,11 @@
+## v1.29.0 (30 Mar 2020)
+
+* feat: add ResizeSensor
+* feat: add cssPriority
+* feat: add SingleEmitter
+* fix(cliHelp): no miniprogram env
+* fix(Emitter): mixin removeAllListeners missing
+
 ## v1.28.0 (6 Jan 2020)
 
 * feat: add isDir
