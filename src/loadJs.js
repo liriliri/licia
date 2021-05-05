@@ -1,15 +1,17 @@
 /* Inject script tag into page with given src value.
  *
- * |Name|Desc           |
- * |----|---------------|
- * |src |Script source  |
- * |cb  |Onload callback|
+ * |Name       |Desc           |
+ * |-----------|---------------|
+ * |src        |Script source  |
+ * |cb         |Onload callback|
+ * |async=false|async or not   |
+ * |defer=false|defered or not |
  */
 
 /* example
  * loadJs('main.js', function(isLoaded) {
  *     // Do something...
- * });
+ * }, true, false);
  */
 
 /* module
@@ -17,14 +19,16 @@
  */
 
 /* typescript
- * export declare function loadJs(src: string, cb?: types.AnyFn): void;
+ * export declare function loadJs(src: string, cb?: types.AnyFn, async?: boolean, defer?: boolean): void;
  */
 
 _('types');
 
-exports = function(src, cb) {
+exports = function(src, cb, async, defer) {
     const script = document.createElement('script');
     script.src = src;
+    script.async = async;
+    script.defer = defer;
     script.onload = function() {
         const isNotLoaded =
             script.readyState &&

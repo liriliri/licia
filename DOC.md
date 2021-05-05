@@ -8204,19 +8204,21 @@ Inject script tag into page with given src value.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function loadJs(src: string, cb?: types.AnyFn): void;</code>
+<code class="language-typescript">function loadJs(src: string, cb?: types.AnyFn, async?: boolean, defer?: boolean): void;</code>
 </pre>
 </details>
 
-|Name|Desc           |
-|----|---------------|
-|src |Script source  |
-|cb  |Onload callback|
+|Name       |Desc           |
+|-----------|---------------|
+|src        |Script source  |
+|cb         |Onload callback|
+|async=false|async or not   |
+|defer=false|defered or not |
 
 ```javascript
 loadJs('main.js', function(isLoaded) {
     // Do something...
-});
+}, true, false);
 ```
 
 ## longest 

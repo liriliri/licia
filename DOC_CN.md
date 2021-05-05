@@ -8199,7 +8199,7 @@ loadImg('http://eustia.liriliri.io/img.jpg', function(err, img) {
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function loadJs(src: string, cb?: types.AnyFn): void;</code>
+<code class="language-typescript">function loadJs(src: string, cb?: types.AnyFn, async?: boolean, defer?: boolean): void;</code>
 </pre>
 </details>
 
@@ -8211,7 +8211,7 @@ loadImg('http://eustia.liriliri.io/img.jpg', function(err, img) {
 ```javascript
 loadJs('main.js', function(isLoaded) {
     // Do something...
-});
+}, true, false);
 ```
 
 ## longest
