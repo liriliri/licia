@@ -4395,6 +4395,22 @@
             "browser"
         ]
     },
+    "naturalSort": {
+        "dependencies": [
+            "startWith",
+            "root"
+        ],
+        "description": "Sort strings in natural order.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "negate": {
         "dependencies": [],
         "description": "Create a function that negates the result of the predicate function.",
@@ -5825,7 +5841,6 @@
             "safeSet",
             "defineProp",
             "pick",
-            "getProto",
             "isArrLike"
         ],
         "description": "Stringify object into json with types.",

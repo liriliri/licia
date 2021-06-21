@@ -1,5 +1,5 @@
 /* scripts
- * before: npm i --prefix .licia underscore
+ * before: npm i --prefix .licia underscore@1.12.1
  */
 
 const path = require('path');

@@ -8857,6 +8857,27 @@ ms(1500); // -> '1.5s'
 ms(60000); // -> '1m'
 ```
 
+## naturalSort 
+
+Sort strings in natural order.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function naturalSort(arr: string[]): string[];</code>
+</pre>
+</details>
+
+|Name  |Desc            |
+|------|----------------|
+|arr   |Array of strings|
+|return|Sorted array    |
+
+```javascript
+naturalSort(['img12', 'img11', '$img', '_img', '1', '2', '12']);
+// -> ['1', '2', '12', '$img', 'img11', 'img12', '_img']
+```
+
 ## negate 
 
 Create a function that negates the result of the predicate function.
