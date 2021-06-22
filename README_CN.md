@@ -12,8 +12,8 @@
 [gitter-url]: https://gitter.im/liriliri/licia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 [npm-image]: https://img.shields.io/npm/v/licia?style=flat-square 
 [npm-url]: https://npmjs.org/package/licia
-[travis-image]: https://img.shields.io/travis/liriliri/licia?style=flat-square
-[travis-url]: https://travis-ci.org/liriliri/licia
+[travis-image]: https://img.shields.io/travis/com/liriliri/licia?style=flat-square
+[travis-url]: https://travis-ci.com/liriliri/licia
 [codecov-image]: https://img.shields.io/codecov/c/github/liriliri/licia?style=flat-square
 [codecov-url]: https://codecov.io/github/liriliri/licia?branch=master
 [license-image]: https://img.shields.io/npm/l/licia?style=flat-square
