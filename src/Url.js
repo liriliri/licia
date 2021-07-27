@@ -97,8 +97,8 @@
  *     pathname: string;
  *     slashes: boolean;
  *     constructor(url?: string);
- *     setQuery(name: string, val: string): Url;
- *     setQuery(query: types.PlainObj<string>): Url;
+ *     setQuery(name: string, val: string | number): Url;
+ *     setQuery(query: types.PlainObj<string | number>): Url;
  *     rmQuery(name: string | string[]): Url;
  *     toString(): string;
  *     static parse(url: string): Url.IUrl;
@@ -106,7 +106,9 @@
  * }
  */
 
-_('Class extend trim query isEmpty each isArr toArr isBrowser isObj types');
+_(
+    'Class extend trim query isEmpty each isArr toArr isBrowser isObj types toStr'
+);
 
 exports = Class(
     {
@@ -120,10 +122,10 @@ exports = Class(
 
             if (isObj(name)) {
                 each(name, function(val, key) {
-                    query[key] = val;
+                    query[key] = toStr(val);
                 });
             } else {
-                query[name] = val;
+                query[name] = toStr(val);
             }
 
             return this;

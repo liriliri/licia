@@ -34,11 +34,11 @@ it('manipulate query', function() {
     url.setQuery('foo', 'bar');
     expect(url.query.foo).to.equal('bar');
     url.setQuery({
-        eruda: 'false',
+        eruda: 1,
         foo: 'bar2'
     });
     expect(url.query).to.eql({
-        eruda: 'false',
+        eruda: '1',
         foo: 'bar2'
     });
     url.rmQuery('eruda');
