@@ -2509,8 +2509,8 @@ class Url {
     pathname: string;
     slashes: boolean;
     constructor(url?: string);
-    setQuery(name: string, val: string): Url;
-    setQuery(query: types.PlainObj&lt;string&gt;): Url;
+    setQuery(name: string, val: string | number): Url;
+    setQuery(query: types.PlainObj&lt;string | number&gt;): Url;
     rmQuery(name: string | string[]): Url;
     toString(): string;
     static parse(url: string): Url.IUrl;
@@ -6766,6 +6766,29 @@ isClose(1, 1.0000000001); // -> true
 isClose(1, 2); // -> false
 isClose(1, 1.2, 0.3); // -> true
 isClose(1, 1.2, 0.1, 0.3); // -> true
+```
+
+## isCyclic 
+
+Detect cyclic object reference.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isCyclic(val: any): boolean;</code>
+</pre>
+</details>
+
+|Name  |Desc                   |
+|------|-----------------------|
+|val   |Value to detect        |
+|return|True if value is cyclic|
+
+```javascript
+isCyclic({}); // -> false
+const obj = { a: 1 };
+obj.b = obj;
+isCyclic(obj); // -> true
 ```
 
 ## isDarkMode 

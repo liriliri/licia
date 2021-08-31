@@ -849,7 +849,8 @@
             "isArr",
             "toArr",
             "isBrowser",
-            "isObj"
+            "isObj",
+            "toStr"
         ],
         "description": "Simple url manipulator.",
         "env": [
@@ -3106,6 +3107,24 @@
             "isNum"
         ],
         "description": "Check if values are close(almost equal) to each other.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
+    "isCyclic": {
+        "benchmark": true,
+        "dependencies": [
+            "Class",
+            "keys",
+            "isObj"
+        ],
+        "description": "Detect cyclic object reference.",
         "env": [
             "node",
             "browser",

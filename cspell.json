@@ -182,6 +182,7 @@
     "isBrowser",
     "isBuffer",
     "isClose",
+    "isCyclic",
     "isDarkMode",
     "isDataUrl",
     "isDate",

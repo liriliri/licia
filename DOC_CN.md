@@ -2503,8 +2503,8 @@ class Url {
     pathname: string;
     slashes: boolean;
     constructor(url?: string);
-    setQuery(name: string, val: string): Url;
-    setQuery(query: types.PlainObj&lt;string&gt;): Url;
+    setQuery(name: string, val: string | number): Url;
+    setQuery(query: types.PlainObj&lt;string | number&gt;): Url;
     rmQuery(name: string | string[]): Url;
     toString(): string;
     static parse(url: string): Url.IUrl;
@@ -6761,6 +6761,29 @@ isClose(1, 1.0000000001); // -> true
 isClose(1, 2); // -> false
 isClose(1, 1.2, 0.3); // -> true
 isClose(1, 1.2, 0.1, 0.3); // -> true
+```
+
+## isCyclic
+
+检查值是否存在循环引用。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isCyclic(val: any): boolean;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果存在循环引用，返回真|
+
+```javascript
+isCyclic({}); // -> false
+const obj = { a: 1 };
+obj.b = obj;
+isCyclic(obj); // -> true
 ```
 
 ## isDarkMode
