@@ -46,6 +46,7 @@
 /* module
  * env: browser
  * since: 1.22.0
+ * test: manual
  */
 
 /* typescript

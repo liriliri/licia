@@ -11,8 +11,16 @@ tests([
         {
             keyword: '',
             number: '',
-            operator: '',
+            operator: ''
         },
         '<span class="keyword">&lt;script&gt;</span><span class="keyword">const</span> a <span class="operator">=</span> <span class="number">5</span>;<span class="keyword">&lt;/script&gt;</span>'
+    ],
+    [
+        '<style></style>',
+        'html',
+        {
+            keyword: ''
+        },
+        '<span class="keyword">&lt;style&gt;</span><span class="keyword">&lt;/style&gt;</span>'
     ]
 ]);
