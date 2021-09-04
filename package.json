@@ -49,8 +49,6 @@
     "@babel/plugin-transform-template-literals": "^7.4.4",
     "@types/node": "^12.7.2",
     "babel-plugin-istanbul": "^6.0.0",
-    "beautify-benchmark": "^0.2.4",
-    "benchmark": "^2.1.4",
     "chai": "^4.2.0",
     "copyfiles": "^2.1.1",
     "cspell": "^4.0.55",
