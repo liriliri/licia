@@ -10,11 +10,11 @@ function sum(sum, n) {
     return sum + n;
 }
 
-suite
-    .add('underscore', function() {
+benchmark({
+    underscore() {
         underscore.reduce(arr, sum);
-    })
-    .add('licia', function() {
+    },
+    licia() {
         reduce(arr, sum);
-    })
-    .run();
+    }
+});

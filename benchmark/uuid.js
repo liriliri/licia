@@ -4,11 +4,11 @@
 
 const nodeUuid = require('uuid').v4;
 
-suite
-    .add('node uuid', function() {
+benchmark({
+    'node uuid': function() {
         nodeUuid();
-    })
-    .add('licia', function() {
+    },
+    licia() {
         uuid();
-    })
-    .run();
+    }
+});

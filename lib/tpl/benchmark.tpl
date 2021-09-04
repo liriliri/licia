@@ -1,18 +1,17 @@
-const benchmark = require('benchmark');
-const benchmarks = require('beautify-benchmark');
-
-const util = require('./<%=modName%>.util.js');
+const util = require('./<%=modName%>.util');
 
 const <%=modName%> = util.<%=modName%>;
-const suite = new benchmark.Suite();
+const Benchmark = util.Benchmark;
+const map = util.map;
+    
+console.log('<%=modName%> benchmark');
 
-suite.on('start', function () {
-    console.log('<%=modName%> benchmark');
-}).on('cycle', function (event) {
-    benchmarks.add(event.target);
-}).on('complete', function () {
-    benchmarks.log();
-});
+function benchmark(benches) {
+    benches = map(benches, (bench, key) => {
+        return new Benchmark(bench, { name: key });
+    });
+    Benchmark.all(benches).then(results => console.log(String(results)))
+}
 
 <%=data%>
 

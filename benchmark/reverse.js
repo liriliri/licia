@@ -1,13 +1,15 @@
 const random = util.random;
 
-suite
-    .add('vanilla', () =>
+benchmark({
+    vanilla() {
         randomArr(10000)
             .slice()
-            .reverse()
-    )
-    .add('reverse', () => reverse(randomArr(10000)))
-    .run();
+            .reverse();
+    },
+    reverse() {
+        reverse(randomArr(10000));
+    }
+});
 
 function randomArr(len) {
     const arr = new Array(len);

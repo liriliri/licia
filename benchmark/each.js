@@ -9,13 +9,13 @@ const arr = [1, 2, 3];
 
 function noop() {}
 
-suite
-    .add('underscore', function() {
+benchmark({
+    underscore() {
         underscore.each(obj, noop);
         underscore.each(arr, noop);
-    })
-    .add('licia', function() {
+    },
+    licia() {
         each(obj, noop);
         each(arr, noop);
-    })
-    .run();
+    }
+});

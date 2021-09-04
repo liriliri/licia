@@ -14,14 +14,14 @@ for (let i = 0; i < max2; i++) {
 const lru = new Lru(max);
 const quickLru = new QuickLru(max);
 
-suite
-    .add('Lru', () => {
+benchmark({
+    Lru() {
         test(lru);
-    })
-    .add('QuickLru', () => {
+    },
+    QuickLru() {
         test(quickLru);
-    })
-    .run();
+    }
+});
 
 function test(lru) {
     for (let i = 0; i < max; i++) {

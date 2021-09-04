@@ -30,7 +30,7 @@
  */
 
 /* module
- * env: node browser 
+ * env: node browser
  * since: 1.27.0
  */
 

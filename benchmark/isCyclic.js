@@ -22,11 +22,11 @@ const obj = {
 
 const isCircular = require('is-circular');
 
-suite
-    .add('is-circular', function() {
+benchmark({
+    'is-circular': function() {
         isCircular(obj);
-    })
-    .add('licia', function() {
+    },
+    licia() {
         isCyclic(obj);
-    })
-    .run();
+    }
+});
