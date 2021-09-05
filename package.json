@@ -1,6 +1,6 @@
 {
   "name": "licia",
-  "version": "1.29.0",
+  "version": "1.30.0",
   "description": "Useful utility collection with zero dependencies",
   "bin": {
     "licia": "./bin/licia.js"
@@ -18,7 +18,7 @@
     "demo": "licia demo",
     "karma": "karma",
     "mocha": "mocha",
-    "format": "prettier *.js lib/**/*.js lib/*.js bin/*.js --write",
+    "format": "prettier *.js lib/**/*.js lib/*.js bin/*.js --write && licia format",
     "format:pkg": "prettier .licia/packages/**/*.{js,d.ts} .licia/packages/**/**/*.js --write",
     "test:node": "licia test -s",
     "test:browser": "licia test -bs",

@@ -1,4 +1,12 @@
-## v1.29.0 (30 Mar 2020)
+## v1.30.0 (5 Sep 2021)
+
+* feat: add naturalSort
+* feat: add isCyclic
+* feat: add Benchmark
+* feat(stringifyAll): parse
+* fix(highlight): error when style tag empty
+
+## v1.29.0 (30 Mar 2021)
 
 * feat: add ResizeSensor
 * feat: add cssPriority
@@ -6,7 +14,7 @@
 * fix(cliHelp): no miniprogram env
 * fix(Emitter): mixin removeAllListeners missing
 
-## v1.28.0 (6 Jan 2020)
+## v1.28.0 (6 Jan 2021)
 
 * feat: add isDir
 * feat($insert): dom element
