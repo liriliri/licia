@@ -34,6 +34,7 @@ var globals = {
     _: true,
     util: true,
     expect: true,
+    benchmark: true,
     tests: true,
     options: true,
     LICIA_TEST: true

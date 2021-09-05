@@ -188,6 +188,31 @@
             "browser"
         ]
     },
+    "Benchmark": {
+        "dependencies": [
+            "Class",
+            "defaults",
+            "Promise",
+            "perfNow",
+            "delay",
+            "average",
+            "reduce",
+            "each",
+            "map",
+            "table",
+            "toStr"
+        ],
+        "description": "JavaScript Benchmark.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "Blob": {
         "dependencies": [
             "root",

@@ -484,6 +484,96 @@ $safeEls('.test'); // -> Array of elements with test class
 $show('#test');
 ```
 
+## Benchmark
+
+JavaScript 基准测试。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace Benchmark {
+    interface IOptions {
+        minTime?: number;
+        maxTime?: number;
+        minSamples?: number;
+        delay?: number;
+        name?: string;
+    }
+    interface IResult {
+        name: string;
+        mean: number;
+        variance: number;
+        deviation: number;
+        sem: number;
+        moe: number;
+        rme: number;
+        hz: number;
+        sample: number[];
+    }
+}
+class Benchmark {
+    constructor(fn: types.anyFn, options?: Benchmark.IOptions);
+    run(): Promise&lt;Benchmark.IResult&gt;;
+    static all(
+        benches: Array&lt;types.anyFn | Benchmark&gt;,
+        options?: Benchmark.IOptions
+    ): Promise;
+}</code>
+</pre>
+</details>
+
+### constructor
+
+|参数名|说明|
+|-----|---|
+|fn|要测试的代码|
+|options|测试选项|
+
+可用选项：
+
+|参数名|说明|
+|-----|---|
+|minTime=50|用于减少误差的时间|
+|maxTime=5000|测试运行最大时间|
+|minSamples=5|最小样本数量|
+|delay=5|测试周期间隔|
+|name|测试名称|
+
+### run
+
+运行基准测试，返回 promise。
+
+### all
+
+[static] 运行多个基准测试。
+
+```javascript
+const benchmark = new Benchmark(
+    function test() {
+        !!'Hello World!'.match(/o/);
+    },
+    {
+        maxTime: 1500
+    }
+);
+benchmark.run().then(result => {
+    console.log(String(result));
+});
+Benchmark.all([
+    function regExp() {
+        /o/.test('Hello World!');
+    },
+    function indexOf() {
+        'Hello World!'.indexOf('o') > -1;
+    },
+    function match() {
+        !!'Hello World!'.match(/o/);
+    }
+]).then(results => {
+    console.log(String(results));
+});
+```
+
 ## Blob
 
 如果支持 Blob，直接返回 Blob，否则使用 BlobBuilder 进行兼容。

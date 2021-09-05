@@ -490,6 +490,96 @@ Show elements.
 $show('#test');
 ```
 
+## Benchmark 
+
+JavaScript Benchmark.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">namespace Benchmark {
+    interface IOptions {
+        minTime?: number;
+        maxTime?: number;
+        minSamples?: number;
+        delay?: number;
+        name?: string;
+    }
+    interface IResult {
+        name: string;
+        mean: number;
+        variance: number;
+        deviation: number;
+        sem: number;
+        moe: number;
+        rme: number;
+        hz: number;
+        sample: number[];
+    }
+}
+class Benchmark {
+    constructor(fn: types.anyFn, options?: Benchmark.IOptions);
+    run(): Promise&lt;Benchmark.IResult&gt;;
+    static all(
+        benches: Array&lt;types.anyFn | Benchmark&gt;,
+        options?: Benchmark.IOptions
+    ): Promise;
+}</code>
+</pre>
+</details>
+
+### constructor
+
+|Name   |Desc                  |
+|-------|----------------------|
+|fn     |Code for speed testing|
+|options|Benchmark options     |
+
+Available options:
+
+|Name        |Desc                              |
+|------------|----------------------------------|
+|minTime=50  |Time needed to reduce uncertainty |
+|maxTime=5000|Maximum time for running benchmark|
+|minSamples=5|Minimum sample size               |
+|delay=5     |Delay between test cycles         |
+|name        |Benchmark name                    |
+
+### run
+
+Run benchmark, returns a promise.
+
+### all
+
+[static] Run some benchmarks.
+
+```javascript
+const benchmark = new Benchmark(
+    function test() {
+        !!'Hello World!'.match(/o/);
+    },
+    {
+        maxTime: 1500
+    }
+);
+benchmark.run().then(result => {
+    console.log(String(result));
+});
+Benchmark.all([
+    function regExp() {
+        /o/.test('Hello World!');
+    },
+    function indexOf() {
+        'Hello World!'.indexOf('o') > -1;
+    },
+    function match() {
+        !!'Hello World!'.match(/o/);
+    }
+]).then(results => {
+    console.log(String(results));
+});
+```
+
 ## Blob 
 
 Use Blob when available, otherwise BlobBuilder.
