@@ -1,14 +1,15 @@
-/* Sort strings in natural order.
+/* Sort values in natural order.
  *
- * |Name  |Desc            |
- * |------|----------------|
- * |arr   |Array of strings|
- * |return|Sorted array    |
+ * |Name  |Desc           |
+ * |------|---------------|
+ * |arr   |Array of values|
+ * |return|Sorted array   |
  */
 
 /* example
  * naturalSort(['img12', 'img11', '$img', '_img', '1', '2', '12']);
  * // -> ['1', '2', '12', '$img', 'img11', 'img12', '_img']
+ * naturalSort([2, '1', 13]); // -> ['1', 2, 13]
  */
 
 /* module
@@ -17,10 +18,10 @@
  */
 
 /* typescript
- * export declare function naturalSort(arr: string[]): string[];
+ * export declare function naturalSort<T extends any[]>(arr: T): T;
  */
 
-_('startWith root');
+_('startWith root toStr');
 
 exports = function(arr) {
     return arr.sort(naturalOrderComparator);
@@ -28,6 +29,8 @@ exports = function(arr) {
 
 // https://github.com/ChromeDevTools/devtools-frontend
 function naturalOrderComparator(a, b) {
+    a = toStr(a);
+    b = toStr(b);
     if (startWith(a, '_') && !startWith(b, '_')) {
         return 1;
     }

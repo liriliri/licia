@@ -8994,23 +8994,24 @@ ms(60000); // -> '1m'
 
 ## naturalSort 
 
-Sort strings in natural order.
+Sort values in natural order.
 
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function naturalSort(arr: string[]): string[];</code>
+<code class="language-typescript">function naturalSort&lt;T extends Array&gt;(arr: T): T;</code>
 </pre>
 </details>
 
-|Name  |Desc            |
-|------|----------------|
-|arr   |Array of strings|
-|return|Sorted array    |
+|Name  |Desc           |
+|------|---------------|
+|arr   |Array of values|
+|return|Sorted array   |
 
 ```javascript
 naturalSort(['img12', 'img11', '$img', '_img', '1', '2', '12']);
 // -> ['1', '2', '12', '$img', 'img11', 'img12', '_img']
+naturalSort([2, '1', 13]); // -> ['1', 2, 13]
 ```
 
 ## negate 

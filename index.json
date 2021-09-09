@@ -425,7 +425,7 @@
             "camelCase",
             "LinkedList",
             "isStr",
-            "contain"
+            "each"
         ],
         "description": "V8 heap snapshot manipulator.",
         "env": [
@@ -4459,9 +4459,10 @@
     "naturalSort": {
         "dependencies": [
             "startWith",
-            "root"
+            "root",
+            "toStr"
         ],
-        "description": "Sort strings in natural order.",
+        "description": "Sort values in natural order.",
         "env": [
             "node",
             "browser",

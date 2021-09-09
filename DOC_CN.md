@@ -8989,23 +8989,24 @@ ms(60000); // -> '1m'
 
 ## naturalSort
 
-以自然顺序排序字符串。
+以自然顺序排序数组。
 
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function naturalSort(arr: string[]): string[];</code>
+<code class="language-typescript">function naturalSort&lt;T extends Array&gt;(arr: T): T;</code>
 </pre>
 </details>
 
 |参数名|说明|
 |-----|---|
-|arr|要排序的字符串数组|
+|arr|要排序的数组|
 |返回值|有序数组|
 
 ```javascript
 naturalSort(['img12', 'img11', '$img', '_img', '1', '2', '12']);
 // -> ['1', '2', '12', '$img', 'img11', 'img12', '_img']
+naturalSort([2, '1', 13]); // -> ['1', 2, 13]
 ```
 
 ## negate
