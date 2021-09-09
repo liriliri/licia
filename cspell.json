@@ -155,6 +155,7 @@
     "has",
     "HashTable",
     "Heap",
+    "HeapSnapshot",
     "heapSort",
     "hex",
     "highlight",

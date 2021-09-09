@@ -208,6 +208,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.30.0",
         "test": [
             "node",
             "browser"
@@ -416,6 +417,23 @@
             "node",
             "browser"
         ]
+    },
+    "HeapSnapshot": {
+        "dependencies": [
+            "Class",
+            "toBool",
+            "camelCase",
+            "LinkedList",
+            "isStr",
+            "contain"
+        ],
+        "description": "V8 heap snapshot manipulator.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": []
     },
     "I18n": {
         "dependencies": [
@@ -3153,6 +3171,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.30.0",
         "test": [
             "node",
             "browser"
@@ -4448,6 +4467,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.30.0",
         "test": [
             "node",
             "browser"

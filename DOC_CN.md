@@ -512,12 +512,12 @@ JavaScript 基准测试。
     }
 }
 class Benchmark {
-    constructor(fn: types.anyFn, options?: Benchmark.IOptions);
+    constructor(fn: types.AnyFn, options?: Benchmark.IOptions);
     run(): Promise&lt;Benchmark.IResult&gt;;
     static all(
-        benches: Array&lt;types.anyFn | Benchmark&gt;,
+        benches: Array&lt;types.AnyFn | Benchmark&gt;,
         options?: Benchmark.IOptions
-    ): Promise;
+    ): Promise&lt;Benchmark.IResult[]&gt;;
 }</code>
 </pre>
 </details>
@@ -1180,6 +1180,28 @@ heap.add(4);
 heap.add(5);
 heap.poll(); // -> 5
 console.log(heap.size); // -> 4
+```
+
+## HeapSnapshot
+
+V8 内存快照操作库。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class HeapSnapshot {
+    nodes: LinkedList;
+    edges: LinkedList;
+    constructor(profile: any);
+}</code>
+</pre>
+</details>
+
+```javascript
+const fs = require('fs');
+const data = fs.readFileSync('path/to/heapsnapshot', 'utf8');
+const heapSnapshot = new HeapSnapshot(data);
+heapSnapshot.statics();
 ```
 
 ## I18n
