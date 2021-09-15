@@ -1,3 +1,7 @@
+/* scripts
+ * before: npm i --prefix .licia underscore@1.12.1
+ */
+
 const path = require('path');
 
 const fs = util.fs;
@@ -20,4 +24,10 @@ it('basic', async function() {
     delRequireCache(p);
     expect(require(p).a).to.be.undefined;
     await fs.unlink(path.resolve(__dirname, p));
+});
+
+it('node_modules', function() {
+    require('underscore').a = 5;
+    delRequireCache('underscore');
+    expect(require('underscore').a).to.be.undefined;
 });

@@ -22,7 +22,7 @@
  * }
  */
 
-_('Class toBool camelCase LinkedList isStr each');
+_('Class toBool camelCase LinkedList isStr each map');
 
 exports = Class({
     initialize: function HeapSnapshot(profile) {
@@ -35,9 +35,9 @@ exports = Class({
 
         const snapshot = profile.snapshot;
         const meta = snapshot.meta;
-        this.nodeFields = meta.node_fields;
+        this.nodeFields = map(meta.node_fields, camelCase);
         this.nodeTypes = meta.node_types[this.nodeFields.indexOf('type')];
-        this.edgeFields = meta.edge_fields;
+        this.edgeFields = map(meta.edge_fields, camelCase);
         this.edgeTypes = meta.edge_types[this.edgeFields.indexOf('type')];
 
         this._init(profile);
@@ -121,7 +121,7 @@ const Node = Class({
                     val = nodeTypes[val];
                     break;
             }
-            this[camelCase(field)] = val;
+            this[field] = val;
         });
     }
 });
@@ -138,17 +138,17 @@ const Edge = Class({
         each(edgeFields, (field, idx) => {
             let val = fields[idx];
             switch (field) {
-                case 'name_or_index':
+                case 'nameOrIndex':
                     val = strings[val];
                     break;
                 case 'type':
                     val = edgeTypes[val];
                     break;
-                case 'to_node':
+                case 'toNode':
                     val = nodeMap[val];
                     break;
             }
-            this[camelCase(field)] = val;
+            this[field] = val;
         });
     }
 });

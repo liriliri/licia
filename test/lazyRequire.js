@@ -4,6 +4,8 @@
 
 const path = require('path');
 
+util.delRequireCache('underscore');
+
 const r = lazyRequire(require);
 const _ = r('underscore');
 

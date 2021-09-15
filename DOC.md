@@ -1199,6 +1199,7 @@ V8 heap snapshot manipulator.
     nodes: LinkedList;
     edges: LinkedList;
     constructor(profile: any);
+    getStatistics(): any;
 }</code>
 </pre>
 </details>
@@ -1207,7 +1208,7 @@ V8 heap snapshot manipulator.
 const fs = require('fs');
 const data = fs.readFileSync('path/to/heapsnapshot', 'utf8');
 const heapSnapshot = new HeapSnapshot(data);
-heapSnapshot.statics();
+heapSnapshot.getStatistics();
 ```
 
 ## I18n 
@@ -8222,6 +8223,28 @@ Get the last element of array.
 last([1, 2]); // -> 2
 ```
 
+## lazyImport 
+
+Import modules lazily, Proxy is used.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function lazyImport&lt;T&gt;(
+    importFn: (moduleId: string) =&gt; T,
+    dirname?: string
+): (moduleId: string) =&gt; T;</code>
+</pre>
+</details>
+
+```javascript
+const r = lazyImport(require);
+
+const _ = r('underscore');
+
+_.isNumber(5);
+```
+
 ## lazyRequire 
 
 Require modules lazily.
@@ -8999,7 +9022,7 @@ Sort values in natural order.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function naturalSort&lt;T extends Array&gt;(arr: T): T;</code>
+<code class="language-typescript">function naturalSort&lt;T extends any[]&gt;(arr: T): T;</code>
 </pre>
 </details>
 

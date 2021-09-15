@@ -246,6 +246,7 @@
     "keys",
     "kill",
     "last",
+    "lazyImport",
     "lazyRequire",
     "levenshtein",
     "LinkedList",

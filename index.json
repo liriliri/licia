@@ -425,7 +425,8 @@
             "camelCase",
             "LinkedList",
             "isStr",
-            "each"
+            "each",
+            "map"
         ],
         "description": "V8 heap snapshot manipulator.",
         "env": [
@@ -4033,6 +4034,20 @@
         "test": [
             "node",
             "browser"
+        ]
+    },
+    "lazyImport": {
+        "dependencies": [
+            "stackTrace",
+            "splitPath",
+            "startWith"
+        ],
+        "description": "Import modules lazily, Proxy is used.",
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
         ]
     },
     "lazyRequire": {

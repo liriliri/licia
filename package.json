@@ -11,7 +11,7 @@
     "ci": "licia lint && npm run lint && npm run build && npm run es5 && npm run lint:release && npm test",
     "update": "licia update",
     "es5": "node ./lib/es5",
-    "build": "licia build && npm run format:pkg && copyfiles -u 2 .licia/packages/**/* ./node_modules",
+    "build": "licia build && npm run format:pkg && copyfiles -u 2 .licia/packages/licia/* node_modules",
     "lint": "eslint -c eslint.src.js lib/**/*.js lib/*.js bin/*.js --fix",
     "lint:release": "eslint -c eslint.release.js .licia/packages/licia-src/*.js --no-ignore",
     "test": "npm run test:node && npm run test:browser && npm run test:release && npm run test:ts",
@@ -22,7 +22,7 @@
     "format:pkg": "prettier .licia/packages/**/*.{js,d.ts} .licia/packages/**/**/*.js --write",
     "test:node": "licia test -s",
     "test:browser": "licia test -bs",
-    "test:release": "licia test -r",
+    "test:release": "copyfiles -u 2 .licia/packages/licia/* .licia/node_modules && licia test -r",
     "test:sauce": "licia test -bs --sauce",
     "test:ts": "licia test -s --ts && tsc"
   },
