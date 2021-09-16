@@ -37,7 +37,7 @@
  * }
  */
 
-_('Class toBool camelCase LinkedList isStr each map contain');
+_('Class toBool camelCase LinkedList isStr each map');
 
 exports = Class({
     initialize: function HeapSnapshot(profile) {
