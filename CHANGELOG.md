@@ -1,3 +1,9 @@
+## v1.31.0 (16 Sep 2021)
+
+* feat: add HeapSnapshot
+* feat: add lazyImport
+* feat(naturalSort): support any type
+
 ## v1.30.0 (5 Sep 2021)
 
 * feat: add naturalSort

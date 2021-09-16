@@ -434,7 +434,10 @@
             "browser",
             "miniprogram"
         ],
-        "test": []
+        "since": "1.31.0",
+        "test": [
+            "node"
+        ]
     },
     "I18n": {
         "dependencies": [
@@ -4055,6 +4058,7 @@
         "env": [
             "node"
         ],
+        "since": "1.31.0",
         "test": [
             "node"
         ]

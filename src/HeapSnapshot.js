@@ -26,7 +26,8 @@
 
 /* module
  * env: all
- * test: manual
+ * test: node
+ * since: 1.31.0
  */
 
 /* typescript
