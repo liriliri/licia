@@ -23,14 +23,3 @@ it('basic', function() {
     expect(heapSnapshot.nodes.size).to.equal(31506);
     expect(heapSnapshot.edges.size).to.equal(119302);
 });
-
-it('statistics', function() {
-    expect(heapSnapshot.getStatistics()).to.include({
-        code: 0,
-        strings: 0,
-        jsArrays: 0,
-        typeArrays: 0,
-        systemObjects: 0,
-        total: 0
-    });
-});

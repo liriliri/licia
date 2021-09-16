@@ -1,11 +1,27 @@
 /* V8 heap snapshot manipulator.
+ *
+ * ### constructor
+ *
+ * |Name   |Desc            |
+ * |-------|----------------|
+ * |profile|Profile to parse|
+ *
+ * ### nodes
+ *
+ * Parsed nodes.
+ *
+ * ### edges
+ *
+ * Parsed edges.
  */
 
 /* example
  * const fs = require('fs');
  * const data = fs.readFileSync('path/to/heapsnapshot', 'utf8');
  * const heapSnapshot = new HeapSnapshot(data);
- * heapSnapshot.getStatistics();
+ * let totalSize = 0;
+ * heapSnapshot.nodes.forEach(node => (totalSize += node.selfSize));
+ * console.log(totalSize);
  */
 
 /* module
@@ -18,11 +34,10 @@
  *     nodes: LinkedList;
  *     edges: LinkedList;
  *     constructor(profile: any);
- *     getStatistics(): any;
  * }
  */
 
-_('Class toBool camelCase LinkedList isStr each map');
+_('Class toBool camelCase LinkedList isStr each map contain');
 
 exports = Class({
     initialize: function HeapSnapshot(profile) {
@@ -41,33 +56,6 @@ exports = Class({
         this.edgeTypes = meta.edge_types[this.edgeFields.indexOf('type')];
 
         this._init(profile);
-    },
-    getStatistics() {
-        const total = 0;
-        const jsArrays = 0;
-        const typeArrays = 0;
-        const code = 0;
-        const strings = 0;
-        const systemObjects = 0;
-
-        /* this.nodes.forEach(node => {
-            const { type, selfSize } = node;
-            if (type === 'code') {
-                code += selfSize;
-            } else if (contain(['string', 'concatenated string', 'sliced string'], type)) {
-                strings += selfSize;
-            }
-            total += selfSize;
-        }); */
-
-        return {
-            code,
-            strings,
-            jsArrays,
-            typeArrays,
-            systemObjects,
-            total
-        };
     },
     _init(profile) {
         const { nodes, edges, strings } = profile;

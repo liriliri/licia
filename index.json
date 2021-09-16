@@ -426,7 +426,8 @@
             "LinkedList",
             "isStr",
             "each",
-            "map"
+            "map",
+            "contain"
         ],
         "description": "V8 heap snapshot manipulator.",
         "env": [

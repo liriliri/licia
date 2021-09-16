@@ -1193,16 +1193,31 @@ V8 内存快照操作库。
     nodes: LinkedList;
     edges: LinkedList;
     constructor(profile: any);
-    getStatistics(): any;
 }</code>
 </pre>
 </details>
+
+### constructor
+
+|参数名|说明|
+|-----|---|
+|profile|要解析的内存快照|
+
+### nodes
+
+解析后的节点信息。
+
+### edges
+
+解析后的边信息。
 
 ```javascript
 const fs = require('fs');
 const data = fs.readFileSync('path/to/heapsnapshot', 'utf8');
 const heapSnapshot = new HeapSnapshot(data);
-heapSnapshot.getStatistics();
+let totalSize = 0;
+heapSnapshot.nodes.forEach(node => (totalSize += node.selfSize));
+console.log(totalSize);
 ```
 
 ## I18n
