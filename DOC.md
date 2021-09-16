@@ -8252,6 +8252,12 @@ Import modules lazily, Proxy is used.
 </pre>
 </details>
 
+|Name    |Desc                             |
+|--------|---------------------------------|
+|importFn|Actual function to require module|
+|dirname |Current file folder              |
+|return  |New function to require module   |
+
 ```javascript
 const r = lazyImport(require);
 
@@ -8267,7 +8273,9 @@ Require modules lazily.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function lazyRequire(requireFn: types.AnyFn): types.AnyFn;</code>
+<code class="language-typescript">function lazyRequire&lt;T&gt;(
+    requireFn: (moduleId: string) =&gt; T
+): (moduleId: string) =&gt; T;</code>
 </pre>
 </details>
 

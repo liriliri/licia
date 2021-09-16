@@ -8247,6 +8247,12 @@ last([1, 2]); // -> 2
 </pre>
 </details>
 
+|参数名|说明|
+|-----|---|
+|importFn|实际引入模块的方法|
+|dirname|当前脚本所在目录|
+|返回值|用于引入模块的新方法|
+
 ```javascript
 const r = lazyImport(require);
 
@@ -8262,7 +8268,9 @@ _.isNumber(5);
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function lazyRequire(requireFn: types.AnyFn): types.AnyFn;</code>
+<code class="language-typescript">function lazyRequire&lt;T&gt;(
+    requireFn: (moduleId: string) =&gt; T
+): (moduleId: string) =&gt; T;</code>
 </pre>
 </details>
 

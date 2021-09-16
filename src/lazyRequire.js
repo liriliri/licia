@@ -15,7 +15,9 @@
  */
 
 /* typescript
- * export declare function lazyRequire(requireFn: types.AnyFn): types.AnyFn;
+ * export declare function lazyRequire<T>(
+ *     requireFn: (moduleId: string) => T
+ * ): (moduleId: string) => T;
  */
 
 _('types');

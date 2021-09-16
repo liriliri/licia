@@ -426,8 +426,7 @@
             "LinkedList",
             "isStr",
             "each",
-            "map",
-            "contain"
+            "map"
         ],
         "description": "V8 heap snapshot manipulator.",
         "env": [
@@ -4041,7 +4040,16 @@
         "dependencies": [
             "stackTrace",
             "splitPath",
-            "startWith"
+            "startWith",
+            "defineProp",
+            "isStr",
+            "has",
+            "objToStr",
+            "unique",
+            "concat",
+            "keys",
+            "isArr",
+            "toBool"
         ],
         "description": "Import modules lazily, Proxy is used.",
         "env": [
