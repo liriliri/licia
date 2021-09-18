@@ -26,7 +26,7 @@ exports = function(str, chars) {
         if (str.trimRight) {
             return str.trimRight();
         }
-        chars = ' ';
+        chars = ' \r\n\t\f\v';
     }
 
     let end = str.length - 1;
