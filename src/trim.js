@@ -24,7 +24,7 @@
 _('ltrim rtrim');
 
 exports = function(str, chars) {
-    if (str.trim) {
+    if (chars == null && str.trim) {
         return str.trim();
     }
 
