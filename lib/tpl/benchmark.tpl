@@ -10,7 +10,7 @@ function benchmark(benches) {
     benches = map(benches, (bench, key) => {
         return new Benchmark(bench, { name: key });
     });
-    Benchmark.all(benches).then(results => console.log(String(results)))
+    Benchmark.all(benches).then(results => console.log(String(results))).catch(e => console.error(e));
 }
 
 <%=data%>

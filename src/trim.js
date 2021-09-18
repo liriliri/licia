@@ -23,10 +23,10 @@
 
 _('ltrim rtrim');
 
-const regSpace = /^\s+|\s+$/g;
-
 exports = function(str, chars) {
-    if (chars == null) return str.replace(regSpace, '');
+    if (str.trim) {
+        return str.trim();
+    }
 
     return ltrim(rtrim(str, chars), chars);
 };

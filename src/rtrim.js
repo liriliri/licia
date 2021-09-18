@@ -21,10 +21,13 @@
  * export declare function rtrim(str: string, chars?: string | string[]): string;
  */
 
-const regSpace = /\s+$/;
-
 exports = function(str, chars) {
-    if (chars == null) return str.replace(regSpace, '');
+    if (chars == null) {
+        if (str.trimRight) {
+            return str.trimRight();
+        }
+        chars = ' ';
+    }
 
     let end = str.length - 1;
     const charLen = chars.length;

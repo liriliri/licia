@@ -24,7 +24,12 @@
 const regSpace = /^\s+/;
 
 exports = function(str, chars) {
-    if (chars == null) return str.replace(regSpace, '');
+    if (chars == null) {
+        if (str.trimLeft) {
+            return str.trimLeft();
+        }
+        return str.replace(regSpace, '');
+    }
 
     let start = 0;
     const len = str.length;
