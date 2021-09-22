@@ -62,7 +62,7 @@ exports = Class({
         const { nodes, edges, strings } = profile;
         const { nodeFields, edgeFields } = this;
 
-        const curEdgeIdx = 0;
+        let curEdgeIdx = 0;
         const nodeFieldCount = nodeFields.length;
         const edgeFieldCount = edgeFields.length;
 
@@ -76,15 +76,13 @@ exports = Class({
         this.nodes.forEach(node => {
             const edgeCount = node.edgeCount;
             delete node.edgeCount;
-            for (
-                let i = curEdgeIdx;
-                i < curEdgeIdx + edgeCount * edgeFieldCount;
-                i += edgeFieldCount
-            ) {
+            const maxEdgeIdx = curEdgeIdx + edgeCount * edgeFieldCount;
+            for (let i = curEdgeIdx; i < maxEdgeIdx; i += edgeFieldCount) {
                 const edge = new Edge(this, node);
                 edge.init(edges.slice(i, i + edgeFieldCount), strings, nodeMap);
                 this.edges.push(edge);
             }
+            curEdgeIdx = maxEdgeIdx;
         });
     }
 });

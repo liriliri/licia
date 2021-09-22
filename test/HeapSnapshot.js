@@ -3,7 +3,6 @@ const path = require('path');
 
 const fs = util.fs;
 const promisify = util.promisify;
-const vlq = util.vlq;
 const gunzip = promisify(zlib.gunzip);
 
 const samplePath = path.resolve(process.cwd(), 'test/HeapSnapshot.gz');
@@ -14,12 +13,25 @@ before(async function() {
     data = await gunzip(data);
     data = data.toString('utf8');
     data = JSON.parse(data);
-    data.nodes = vlq.decode(data.nodes);
-    data.edges = vlq.decode(data.edges);
     heapSnapshot = new HeapSnapshot(data);
 });
 
 it('basic', function() {
-    expect(heapSnapshot.nodes.size).to.equal(31506);
-    expect(heapSnapshot.edges.size).to.equal(119302);
+    const { nodes, edges } = heapSnapshot;
+    expect(nodes.size).to.equal(31506);
+    expect(edges.size).to.equal(119302);
+    const lastNode = nodes.tail.value;
+    expect(lastNode).to.include({
+        type: 'native',
+        id: 2295779520,
+        name: 'InternalNode',
+        selfSize: 0,
+        traceNodeId: 0,
+        detachedness: false
+    });
+    const lastEdge = edges.tail.value;
+    expect(lastEdge).to.include({
+        type: 'element',
+        nameOrIndex: ''
+    });
 });
