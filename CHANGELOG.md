@@ -1,3 +1,9 @@
+## v1.31.1 (22 Sep 2021)
+
+* fix(HeapSnapshot): correct edge
+* fix(safeSet): prototype pollution [#25](https://github.com/liriliri/licia/issues/25)
+* perf(trim): [#25](https://github.com/liriliri/licia/issues/25)
+
 ## v1.31.0 (16 Sep 2021)
 
 * feat: add HeapSnapshot

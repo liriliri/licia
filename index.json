@@ -5430,7 +5430,10 @@
     "safeSet": {
         "dependencies": [
             "castPath",
-            "isUndef"
+            "isUndef",
+            "toStr",
+            "isSymbol",
+            "isStr"
         ],
         "description": "Set value at path of object.",
         "env": [
@@ -6337,6 +6340,7 @@
         ]
     },
     "trim": {
+        "benchmark": true,
         "dependencies": [
             "ltrim",
             "rtrim"
