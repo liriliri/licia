@@ -28,7 +28,7 @@
  * ): void;
  */
 
-_('castPath isUndef');
+_('castPath isUndef toStr isSymbol isStr');
 
 exports = function(obj, path, val) {
     path = castPath(path, obj);
@@ -38,6 +38,10 @@ exports = function(obj, path, val) {
 
     prop = path.shift();
     while (!isUndef(prop)) {
+        // #25
+        if (!isStr(prop) && !isSymbol(prop)) {
+            prop = toStr(prop);
+        }
         if (
             prop === '__proto__' ||
             prop === 'constructor' ||

@@ -17,4 +17,7 @@ it('prototype pollution', function() {
 
     safeSet({}, 'constructor.prototype.oops', 'It works!');
     expect(a.oops).to.not.equal('It works!');
+
+    safeSet({}, [['__proto__'], 'oops'], 'It works!');
+    expect(a.oops).to.not.equal('It works!');
 });
