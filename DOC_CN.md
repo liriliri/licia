@@ -1222,7 +1222,7 @@ console.log(totalSize);
 
 ## I18n
 
-Simple internationalization library.
+简单国际化库。
 
 <details>
 <summary>类型定义</summary>
@@ -1238,37 +1238,37 @@ Simple internationalization library.
 
 ### constructor
 
-|Name  |Desc         |
-|------|-------------|
-|locale|Locale code  |
-|langs |Language data|
+|参数名|说明|
+|-----|---|
+|locale|地区代码|
+|langs|语言数据|
 
 ### set
 
-Add language or append extra keys to existing language.
+添加语言或者向已有的语言新增键值。
 
-|Name  |Desc         |
-|------|-------------|
-|locale|Locale code  |
-|lang  |Language data|
+|参数名|说明|
+|-----|---|
+|locale|地区代码|
+|lang|语言数据|
 
 ### locale
 
-Set default locale.
+设置当前地区。
 
-|Name  |Desc       |
-|------|-----------|
-|locale|Locale code|
+|参数名|说明|
+|-----|---|
+|locale|地区代码|
 
 ### t
 
-Get translation text.
+获取翻译文本。
 
-|Name  |Desc                      |
-|------|--------------------------|
-|path  |Path of translation to get|
-|data  |Data to pass in           |
-|return|Translation text          |
+|参数名|说明|
+|-----|---|
+|path|要获取文本的键值|
+|data|要传递的数据|
+|返回值|翻译文本|
 
 ```javascript
 const i18n = new I18n('en', {
@@ -9578,7 +9578,7 @@ parseArgs(['eustia', '--output', 'util.js', '-w'], {
 
 ## parseHtml
 
-Simple html parser.
+HTML 解析器。
 
 <details>
 <summary>类型定义</summary>
@@ -9595,25 +9595,10 @@ Simple html parser.
 </pre>
 </details>
 
-<details>
-<summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function parseHtml(
-    html: string,
-    handlers: {
-        start?: (tag: string, attrs: any, unary: boolean) =&gt; void;
-        end?: (tag: string) =&gt; void;
-        comment?: (text: string) =&gt; void;
-        text?: (text: string) =&gt; void;
-    }
-): void;</code>
-</pre>
-</details>
-
-|Name   |Desc         |
-|-------|-------------|
-|html   |Html to parse|
-|handler|Handlers     |
+|参数名|说明|
+|-----|---|
+|html|要解析的 HTML|
+|handler|处理函数|
 
 ```javascript
 parseHtml('<div>licia</div>', {
