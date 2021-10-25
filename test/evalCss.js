@@ -10,7 +10,8 @@ after(function() {
 });
 
 it('basic', function() {
-    evalCss('#evalCss {width: 200px; height: 200px}');
+    const style = evalCss('#evalCss {width: 200px; height: 200px}');
     expect($dom.css('width')).to.equal('200px');
     expect($dom.css('height')).to.equal('200px');
+    jQuery(style).remove();
 });

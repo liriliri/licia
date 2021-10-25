@@ -5122,13 +5122,14 @@ Load css into page.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function evalCss(css: string): void;</code>
+<code class="language-typescript">function evalCss(css: string): HTMLStyleElement;</code>
 </pre>
 </details>
 
-|Name|Desc    |
-|----|--------|
-|css |Css code|
+|Name  |Desc         |
+|------|-------------|
+|css   |Css code     |
+|return|Style element|
 
 ```javascript
 evalCss('body{background:#08c}');

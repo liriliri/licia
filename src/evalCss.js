@@ -1,8 +1,9 @@
 /* Load css into page.
  *
- * |Name|Desc    |
- * |----|--------|
- * |css |Css code|
+ * |Name  |Desc         |
+ * |------|-------------|
+ * |css   |Css code     |
+ * |return|Style element|
  */
 
 /* example
@@ -14,7 +15,7 @@
  */
 
 /* typescript
- * export declare function evalCss(css: string): void;
+ * export declare function evalCss(css: string): HTMLStyleElement;
  */
 
 exports = function(css) {
@@ -22,4 +23,5 @@ exports = function(css) {
     style.textContent = css;
     style.type = 'text/css';
     document.head.appendChild(style);
+    return style;
 };

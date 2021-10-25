@@ -5117,13 +5117,14 @@ escapeRegExp('[licia]'); // -> '\\[licia\\]'
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function evalCss(css: string): void;</code>
+<code class="language-typescript">function evalCss(css: string): HTMLStyleElement;</code>
 </pre>
 </details>
 
 |参数名|说明|
 |-----|---|
 |css|css 代码|
+|返回值|style 节点|
 
 ```javascript
 evalCss('body{background:#08c}');
