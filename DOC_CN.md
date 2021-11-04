@@ -1058,6 +1058,29 @@ if (val === importance.CRITICAL) {
 }
 ```
 
+## FileStore
+
+### constructor
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class FileStore extends Store {
+    constructor(path: string, data?: any);
+}</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|path|存储文件路径|
+|data|默认数据|
+
+```javascript
+const store = new FileStore('path/to/file');
+store.set('name', 'licia');
+```
+
 ## HashTable
 
 哈希表实现。

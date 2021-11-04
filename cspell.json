@@ -128,6 +128,7 @@
     "fetch",
     "fibonacci",
     "fileSize",
+    "FileStore",
     "fileType",
     "fill",
     "filter",

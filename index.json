@@ -380,6 +380,24 @@
             "browser"
         ]
     },
+    "FileStore": {
+        "dependencies": [
+            "Store",
+            "isEmpty",
+            "debounce",
+            "stringify",
+            "isObj",
+            "defaults",
+            "noop"
+        ],
+        "description": "File storage.",
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
+    },
     "HashTable": {
         "dependencies": [
             "Class",

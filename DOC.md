@@ -1064,6 +1064,31 @@ if (val === importance.CRITICAL) {
 }
 ```
 
+## FileStore 
+
+File storage.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class FileStore extends Store {
+    constructor(path: string, data?: any);
+}</code>
+</pre>
+</details>
+
+### constructor
+
+|Name|Desc              |
+|----|------------------|
+|path|File path to store|
+|data|Default data      |
+
+```javascript
+const store = new FileStore('path/to/file');
+store.set('name', 'licia');
+```
+
 ## HashTable 
 
 Hash table implementation.
