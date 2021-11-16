@@ -1058,6 +1058,40 @@ if (val === importance.CRITICAL) {
 }
 ```
 
+## FileBlobStore
+
+二进制文件存储。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class FileBlobStore extends Emitter {
+    constructor(path: string, data: types.PlainObj&lt;Buffer&gt;);
+    set(key: string, buf: Buffer): void;
+    set(values: types.PlainObj&lt;Buffer&gt;): void;
+    get(key: string): Buffer | void;
+    get(keys: string[]): types.PlainObj&lt;Buffer&gt;;
+    remove(key: string): void;
+    remove(keys: string[]): void;
+    clear(): void;
+    each(fn: (val: Buffer, key: string) =&gt; void): void;
+    save(): void;
+}</code>
+</pre>
+</details>
+
+API 基本与 Store 模块一致，主要不同点是只接收 Buffer 类型。
+
+### save
+
+保存内容到磁盘。
+
+```javascript
+const store = new FileBlobStore('path/to/file');
+store.set('name', Buffer.from('licia'));
+process.on('exit', () => store.save());
+```
+
 ## FileStore
 
 ### constructor

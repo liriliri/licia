@@ -1064,6 +1064,40 @@ if (val === importance.CRITICAL) {
 }
 ```
 
+## FileBlobStore 
+
+Binary file storage.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class FileBlobStore extends Emitter {
+    constructor(path: string, data: types.PlainObj&lt;Buffer&gt;);
+    set(key: string, buf: Buffer): void;
+    set(values: types.PlainObj&lt;Buffer&gt;): void;
+    get(key: string): Buffer | void;
+    get(keys: string[]): types.PlainObj&lt;Buffer&gt;;
+    remove(key: string): void;
+    remove(keys: string[]): void;
+    clear(): void;
+    each(fn: (val: Buffer, key: string) =&gt; void): void;
+    save(): void;
+}</code>
+</pre>
+</details>
+
+Most api is the same as Store module, except only buffer is accepted.
+
+### save
+
+Save data to disk.
+
+```javascript
+const store = new FileBlobStore('path/to/file');
+store.set('name', Buffer.from('licia'));
+process.on('exit', () => store.save());
+```
+
 ## FileStore 
 
 File storage.

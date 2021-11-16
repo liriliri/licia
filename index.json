@@ -380,6 +380,26 @@
             "browser"
         ]
     },
+    "FileBlobStore": {
+        "dependencies": [
+            "Class",
+            "isStr",
+            "isObj",
+            "each",
+            "Emitter",
+            "toArr",
+            "unique",
+            "concat",
+            "keys"
+        ],
+        "description": "Binary file storage.",
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
+    },
     "FileStore": {
         "dependencies": [
             "Store",

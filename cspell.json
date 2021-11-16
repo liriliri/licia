@@ -127,6 +127,7 @@
     "extractUrls",
     "fetch",
     "fibonacci",
+    "FileBlobStore",
     "fileSize",
     "FileStore",
     "fileType",
