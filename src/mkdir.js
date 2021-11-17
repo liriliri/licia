@@ -5,6 +5,10 @@
  * |dir      |Directory to create|
  * |mode=0777|Directory mode     |
  * |cb       |Callback           |
+ *
+ * ### sync
+ *
+ * Synchronous version.
  */
 
 /* example
@@ -12,6 +16,7 @@
  *     if (err) console.log(err);
  *     else console.log('Done');
  * });
+ * mkdir.sync('/tmp/foo2/bar/baz');
  */
 
 /* module
@@ -45,20 +50,39 @@ exports = function(p, mode, cb) {
     fs.mkdir(p, mode, function(err) {
         if (!err) return cb();
 
-        switch (err.code) {
-            case 'ENOENT':
-                exports(path.dirname(p), mode, function(err) {
-                    if (err) return cb(err);
+        if (err.code === 'ENOENT') {
+            exports(path.dirname(p), mode, function(err) {
+                if (err) return cb(err);
 
-                    exports(p, mode, cb);
-                });
-                break;
-            default:
-                fs.stat(p, function(errStat, stat) {
-                    if (errStat || !stat.isDirectory()) return cb(errStat);
+                exports(p, mode, cb);
+            });
+        } else {
+            fs.stat(p, function(errStat, stat) {
+                if (errStat || !stat.isDirectory()) return cb(errStat);
 
-                    cb();
-                });
+                cb();
+            });
         }
     });
+};
+
+exports.sync = function(p, mode = _0777) {
+    p = path.resolve(p);
+
+    try {
+        fs.mkdirSync(p, mode);
+    } catch (err) {
+        if (err.code === 'ENOENT') {
+            exports.sync(path.dirname(p), mode);
+            exports.sync(p, mode);
+        } else {
+            try {
+                if (!fs.statSync(p).isDirectory()) {
+                    throw err;
+                }
+            } catch (_) {
+                throw err;
+            }
+        }
+    }
 };
