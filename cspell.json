@@ -49,6 +49,7 @@
     "bubbleSort",
     "bytesToStr",
     "bytesToWords",
+    "cacheRequire",
     "callbackify",
     "camelCase",
     "capitalize",

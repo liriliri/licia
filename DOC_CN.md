@@ -1066,7 +1066,7 @@ if (val === importance.CRITICAL) {
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">class FileBlobStore extends Emitter {
-    constructor(path: string, data: types.PlainObj&lt;Buffer&gt;);
+    constructor(path: string, data?: types.PlainObj&lt;Buffer&gt;);
     set(key: string, buf: Buffer): void;
     set(values: types.PlainObj&lt;Buffer&gt;): void;
     get(key: string): Buffer | void;
@@ -3425,6 +3425,41 @@ bytesToStr([108, 105, 99, 105, 97]); // -> 'licia'
 
 ```javascript
 bytesToWords([0x12, 0x34, 0x56, 0x78]); // -> [0x12345678]
+```
+
+## cacheRequire
+
+缓存模块加载，提高应用启动速度。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function cacheRequire(options?: {
+    dir?: string;
+    requirePath?: boolean;
+    code?: boolean;
+    compileCache?: boolean;
+}): void;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|options|缓存选项|
+
+可用选项：
+
+|参数名|说明|
+|-----|---|
+|dir|缓存文件夹|
+|requirePath=true|Whether require path should be cached|
+|code=false|Whether js code should be cached|
+|compileCache=true|Whether compile cache should be used|
+
+```javascript
+cacheRequire({
+    dir: 'path/to/cache/dir'
+});
 ```
 
 ## callbackify
@@ -8897,7 +8932,10 @@ min(2.3, 1, 4.5, 2); // 1
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function mkdir(
+<code class="language-typescript">namespace mkdir {
+    function sync(dir: string, mode?: number): void;
+}
+function mkdir(
     dir: string,
     mode?: number,
     cb?: types.AnyFn
@@ -8912,11 +8950,16 @@ function mkdir(dir: string, cb?: types.AnyFn): void;</code>
 |mode=0777|文件夹模式|
 |cb|回调|
 
+### sync
+
+同步版本。
+
 ```javascript
 mkdir('/tmp/foo/bar/baz', function(err) {
     if (err) console.log(err);
     else console.log('Done');
 });
+mkdir.sync('/tmp/foo2/bar/baz');
 ```
 
 ## moment

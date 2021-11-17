@@ -1072,7 +1072,7 @@ Binary file storage.
 <summary>Type Definition</summary>
 <pre>
 <code class="language-typescript">class FileBlobStore extends Emitter {
-    constructor(path: string, data: types.PlainObj&lt;Buffer&gt;);
+    constructor(path: string, data?: types.PlainObj&lt;Buffer&gt;);
     set(key: string, buf: Buffer): void;
     set(values: types.PlainObj&lt;Buffer&gt;): void;
     get(key: string): Buffer | void;
@@ -3433,6 +3433,41 @@ Useful when using CryptoJS.
 
 ```javascript
 bytesToWords([0x12, 0x34, 0x56, 0x78]); // -> [0x12345678]
+```
+
+## cacheRequire 
+
+Cache everything in module require to speed up app load.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function cacheRequire(options?: {
+    dir?: string;
+    requirePath?: boolean;
+    code?: boolean;
+    compileCache?: boolean;
+}): void;</code>
+</pre>
+</details>
+
+|Name   |Desc         |
+|-------|-------------|
+|options|Cache options|
+
+Available options:
+
+|Name             |Desc                                 |
+|-----------------|-------------------------------------|
+|dir              |Cache dir                            |
+|requirePath=true |Whether require path should be cached|
+|code=false       |Whether js code should be cached     |
+|compileCache=true|Whether compile cache should be used |
+
+```javascript
+cacheRequire({
+    dir: 'path/to/cache/dir'
+});
 ```
 
 ## callbackify 
@@ -8904,7 +8939,10 @@ Recursively create directories.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function mkdir(
+<code class="language-typescript">namespace mkdir {
+    function sync(dir: string, mode?: number): void;
+}
+function mkdir(
     dir: string,
     mode?: number,
     cb?: types.AnyFn
@@ -8919,11 +8957,16 @@ function mkdir(dir: string, cb?: types.AnyFn): void;</code>
 |mode=0777|Directory mode     |
 |cb       |Callback           |
 
+### sync
+
+Synchronous version.
+
 ```javascript
 mkdir('/tmp/foo/bar/baz', function(err) {
     if (err) console.log(err);
     else console.log('Done');
 });
+mkdir.sync('/tmp/foo2/bar/baz');
 ```
 
 ## moment 

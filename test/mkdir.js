@@ -14,9 +14,9 @@ it('basic', function(done) {
 });
 
 it('sync', function() {
-    try {
+    if (fs.existsSync(__dirname + '/mkdirSyncTest')) {
         fs.unlinkSync(__dirname + '/mkdirSyncTest');
-    } catch (e) {}
+    }
     mkdir.sync(__dirname + '/mkdirSyncTest/1/2/3');
     expect(fs.existsSync(__dirname + '/mkdirSyncTest/1/2/3')).to.be.true;
 });

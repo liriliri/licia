@@ -382,7 +382,6 @@
     },
     "FileBlobStore": {
         "dependencies": [
-            "Class",
             "isStr",
             "isObj",
             "each",
@@ -1232,6 +1231,22 @@
             "node",
             "browser"
         ]
+    },
+    "cacheRequire": {
+        "benchmark": true,
+        "dependencies": [
+            "defaults",
+            "md5",
+            "safeGet",
+            "FileStore",
+            "FileBlobStore",
+            "mkdir"
+        ],
+        "description": "Cache everything in module require to speed up app load.",
+        "env": [
+            "node"
+        ],
+        "test": []
     },
     "callbackify": {
         "dependencies": [

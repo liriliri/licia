@@ -24,6 +24,9 @@
  */
 
 /* typescript
+ * export declare namespace mkdir {
+ *     function sync(dir: string, mode?: number): void;
+ * }
  * export declare function mkdir(
  *     dir: string,
  *     mode?: number,
