@@ -1983,6 +1983,45 @@ cache.set('test', 'licia');
 cache.get('test'); // -> 'licia'
 ```
 
+## Readiness
+
+任务就绪回调管理。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Readiness {
+    signal(tasks: string | string[]): void;
+    ready(tasks: string | string[], fn: types.AnyFn): void;
+}</code>
+</pre>
+</details>
+
+### signal
+
+设置任务为就绪状态。
+
+|参数名|说明|
+|-----|---|
+|tasks|就绪任务|
+
+### ready
+
+注册任务就绪回调。
+
+|参数名|说明|
+|-----|---|
+|tasks|要监听的任务|
+|fn|任务就绪时触发的回调函数|
+
+```javascript
+const readiness = new Readiness();
+readiness.ready('serverCreated', function() {
+    // Do something.
+});
+readiness.signal('serverCreated');
+```
+
 ## ReduceStore
 
 简单类 redux 状态管理。
@@ -2248,7 +2287,7 @@ store.set('name', 'licia');
 
 ```javascript
 const event = new SingleEmitter();
-event.addListener(function() {
+event.addListener(function(name) {
     console.log(name);
 });
 event.emit('licia'); // Logs out 'licia'.

@@ -711,6 +711,24 @@
             "browser"
         ]
     },
+    "Readiness": {
+        "dependencies": [
+            "Class",
+            "toArr",
+            "root",
+            "map"
+        ],
+        "description": "Readiness manager.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "ReduceStore": {
         "dependencies": [
             "Class",

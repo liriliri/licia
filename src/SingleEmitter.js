@@ -35,7 +35,7 @@
 
 /* example
  * const event = new SingleEmitter();
- * event.addListener(function() {
+ * event.addListener(function(name) {
  *     console.log(name);
  * });
  * event.emit('licia'); // Logs out 'licia'.

@@ -1991,6 +1991,45 @@ cache.set('test', 'licia');
 cache.get('test'); // -> 'licia'
 ```
 
+## Readiness 
+
+Readiness manager.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Readiness {
+    signal(tasks: string | string[]): void;
+    ready(tasks: string | string[], fn: types.AnyFn): void;
+}</code>
+</pre>
+</details>
+
+### signal
+
+Signal task is ready.
+
+|Name |Desc       |
+|-----|-----------|
+|tasks|Ready tasks|
+
+### ready
+
+Register ready callback.
+
+|Name |Desc                                  |
+|-----|--------------------------------------|
+|tasks|Tasks to listen                       |
+|fn   |Callback to trigger if tasks are ready|
+
+```javascript
+const readiness = new Readiness();
+readiness.ready('serverCreated', function() {
+    // Do something.
+});
+readiness.signal('serverCreated');
+```
+
 ## ReduceStore 
 
 Simplified redux like state container.
@@ -2256,7 +2295,7 @@ Call listeners.
 
 ```javascript
 const event = new SingleEmitter();
-event.addListener(function() {
+event.addListener(function(name) {
     console.log(name);
 });
 event.emit('licia'); // Logs out 'licia'.
