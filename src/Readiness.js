@@ -39,6 +39,7 @@
 
 /* module
  * env: all
+ * since: 1.32.0
  */
 
 /* typescript

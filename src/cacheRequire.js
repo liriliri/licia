@@ -23,6 +23,7 @@
 /* module
  * env: node
  * test: manual
+ * since: 1.32.0
  */
 
 /* typescript

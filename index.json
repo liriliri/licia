@@ -395,6 +395,7 @@
         "env": [
             "node"
         ],
+        "since": "1.32.0",
         "test": [
             "node"
         ]
@@ -413,6 +414,7 @@
         "env": [
             "node"
         ],
+        "since": "1.32.0",
         "test": [
             "node"
         ]
@@ -726,6 +728,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.32.0",
         "test": [
             "node",
             "browser"
@@ -1266,6 +1269,7 @@
         "env": [
             "node"
         ],
+        "since": "1.32.0",
         "test": []
     },
     "callbackify": {

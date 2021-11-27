@@ -1,3 +1,11 @@
+## v1.32.0 (27 Nov 2021)
+
+* feat: add FileStore
+* feat: add FileBlobStore
+* feat: add cacheRequire
+* feat: add Readiness
+* feat(evalCss): return style node
+
 ## v1.31.1 (22 Sep 2021)
 
 * fix(HeapSnapshot): correct edge
