@@ -8,8 +8,10 @@ it('basic', function(done) {
     setTimeout(function() {
         count = 1;
         readiness.signal('countInitialized');
-    });
-    readiness.ready(['countInitialized', 'expectCalled'], function() {
+    }, 0);
+    expect(readiness.isReady('expectCalled')).to.be.false;
+    readiness.ready(['countInitialized', 'expectCalled']).then(function() {
+        expect(readiness.isReady('expectCalled')).to.be.true;
         done();
     });
 });

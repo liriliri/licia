@@ -1992,7 +1992,8 @@ cache.get('test'); // -> 'licia'
 <pre>
 <code class="language-typescript">class Readiness {
     signal(tasks: string | string[]): void;
-    ready(tasks: string | string[], fn: types.AnyFn): void;
+    isReady(tasks: string | string[]): boolean;
+    ready(tasks: string | string[], fn?: types.AnyFn): Promise&lt;void&gt;;
 }</code>
 </pre>
 </details>
@@ -2013,6 +2014,16 @@ cache.get('test'); // -> 'licia'
 |-----|---|
 |tasks|要监听的任务|
 |fn|任务就绪时触发的回调函数|
+|返回值|任务就绪时 resolve 的 Promise|
+
+### isReady
+
+检查任务是否准备就绪。
+
+|参数名|说明|
+|-----|---|
+|tasks|要检查的任务|
+|返回值|任务准备就绪，返回真|
 
 ```javascript
 const readiness = new Readiness();
@@ -2020,6 +2031,7 @@ readiness.ready('serverCreated', function() {
     // Do something.
 });
 readiness.signal('serverCreated');
+readiness.isReady('serverCreated'); // -> true
 ```
 
 ## ReduceStore

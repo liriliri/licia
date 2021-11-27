@@ -12,10 +12,20 @@
  *
  * Register ready callback.
  *
- * |Name |Desc                                  |
- * |-----|--------------------------------------|
- * |tasks|Tasks to listen                       |
- * |fn   |Callback to trigger if tasks are ready|
+ * |Name  |Desc                                    |
+ * |------|----------------------------------------|
+ * |tasks |Tasks to listen                         |
+ * |fn    |Callback to trigger if tasks are ready  |
+ * |return|Promise that will be resolved when ready|
+ *
+ * ### isReady
+ *
+ * Check if tasks are ready.
+ *
+ * |Name  |Desc                       |
+ * |------|---------------------------|
+ * |tasks |Tasks to check             |
+ * |return|True if all tasks are ready|
  */
 
 /* example
@@ -24,6 +34,7 @@
  *     // Do something.
  * });
  * readiness.signal('serverCreated');
+ * readiness.isReady('serverCreated'); // -> true
  */
 
 /* module
@@ -33,37 +44,54 @@
 /* typescript
  * export declare class Readiness {
  *     signal(tasks: string | string[]): void;
- *     ready(tasks: string | string[], fn: types.AnyFn): void;
+ *     isReady(tasks: string | string[]): boolean;
+ *     ready(tasks: string | string[], fn?: types.AnyFn): Promise<void>;
  * }
  */
 
-_('Class types toArr each map');
+_('Class types toArr each map noop some');
 
 exports = Class({
     initialize: function Readiness() {
         this._promises = {};
         this._resolves = {};
+        this._states = {};
     },
     signal(tasks) {
-        each(this._getPromises(toArr(tasks)), val => val.resolve());
+        const states = this._states;
+
+        each(this._getPromises(toArr(tasks)), val => {
+            if (!val.state) {
+                states[val.task] = true;
+                val.resolve();
+            }
+        });
     },
-    ready(tasks, fn) {
-        Promise.all(
+    isReady(tasks) {
+        return !some(this._getPromises(toArr(tasks)), val => !val.state);
+    },
+    ready(tasks, fn = noop) {
+        return Promise.all(
             map(this._getPromises(toArr(tasks)), val => val.promise)
         ).then(fn);
     },
-    _getPromises(events) {
+    _getPromises(tasks) {
         const promises = this._promises;
         const resolves = this._resolves;
-        return map(events, event => {
-            if (!promises[event]) {
-                promises[event] = new Promise(resolve => {
-                    resolves[event] = resolve;
+        const states = this._states;
+
+        return map(tasks, task => {
+            if (!promises[task]) {
+                promises[task] = new Promise(resolve => {
+                    resolves[task] = resolve;
+                    states[task] = false;
                 });
             }
             return {
-                promise: promises[event],
-                resolve: resolves[event]
+                task,
+                promise: promises[task],
+                resolve: resolves[task],
+                state: states[task]
             };
         });
     }

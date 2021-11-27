@@ -715,8 +715,10 @@
         "dependencies": [
             "Class",
             "toArr",
-            "root",
-            "map"
+            "each",
+            "map",
+            "noop",
+            "some"
         ],
         "description": "Readiness manager.",
         "env": [
