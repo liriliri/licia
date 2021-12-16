@@ -43,7 +43,7 @@
 
 _('isStr base64 isArrBuffer isArr isBuffer type lowerCase');
 
-function exports(bin, t) {
+exports = function(bin, t) {
     let result;
     t = lowerCase(t);
 
@@ -84,7 +84,7 @@ function exports(bin, t) {
     }
 
     return result;
-}
+};
 
 exports.blobToArrBuffer = function(blob) {
     return new Promise((resolve, reject) => {
