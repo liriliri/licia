@@ -45,7 +45,8 @@ var uuid = require('licia/uuid');
 console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 ```
 
-你也可以直接使用在线工具进行自定义工具库的生成，请[点此](https://licia.liriliri.io/builder.html)查看使用。
+
+需要 es 模块版本以支持 tree-shaking，可以使用 [licia-es](https://www.npmjs.com/package/licia-es)。你也可以直接使用在线工具进行自定义工具库的生成，请[点此](https://licia.liriliri.io/builder.html)查看使用。
 
 ## 在小程序中使用
 

@@ -53,7 +53,7 @@ const uuid = require('licia/uuid');
 console.log(uuid()); // -> 0e3b84af-f911-4a55-b78a-cedf6f0bd815
 ```
 
-There is also an online tool to build a customized utility library, check [here](https://licia.liriliri.io/builder.html).
+Looking for Licia modules written in ES6 or smaller bundle sizes? Check out [licia-es](https://www.npmjs.com/package/licia-es). There is also an online tool to build a customized utility library, check [here](https://licia.liriliri.io/builder.html).
 
 ## Contribution
 
