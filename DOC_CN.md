@@ -2582,6 +2582,64 @@ store.on('change', function(key, newVal, oldVal) {
 });
 ```
 
+## Trace
+
+解析、处理和生成 Chrome Trace 格式数据。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">namespace Trace {
+    interface IEvent {
+        name: string;
+        cat: string;
+        ph: string;
+        ts: number;
+        pid: number;
+        tid: number;
+        args: any;
+    }
+    class Process {
+        constructor(id);
+        id(): string;
+        name(): string;
+        addEvent(IEvent): void;
+        rmEvent(IEvent): void;
+        getThread(id: number): Thread;
+        rmThread(id: number): void;
+        threads(): Thread[];
+        toJSON(): IEvent[];
+    }
+    class Thread {
+        constructor(id, pid);
+        id(): string;
+        name(): string;
+        addEvent(IEvent): void;
+        rmEvent(IEvent): void;
+        events(): IEvent[];
+        toJSON(): IEvent[];
+    }
+}
+class Trace {
+    constructor(events: Trace.IEvent[]);
+    addEvent(event: Trace.IEvent);
+    rmEvent(event: Trace.IEvent);
+    getProcess(id: number): Trace.Process;
+    rmProcess(id: number): void;
+    processes(): Trace.Process[];
+    toJSON(): Trace.IEvent[];
+}</code>
+</pre>
+</details>
+
+```javascript
+const fs = require('fs');
+const data = fs.readFileSync('path/to/trace', 'utf8');
+const trace = new Trace(JSON.parse(data));
+trace.rmProcess(627);
+fs.writeFileSync('path/to/trace', JSON.stringify(trace.toJSON()), 'utf8');
+```
+
 ## Trie
 
 字典树数据结构。
@@ -10587,7 +10645,7 @@ requestIdleCallback 的快捷方式。
 <summary>类型定义</summary>
 <pre>
 <code class="language-typescript">namespace ric {
-    function cancel(id: number);
+    function cancel(id: number): void;
 }
 function ric(cb: types.AnyFn): number;</code>
 </pre>

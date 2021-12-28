@@ -418,6 +418,7 @@
     "topoSort",
     "toSrc",
     "toStr",
+    "Trace",
     "Trie",
     "trigger",
     "trim",

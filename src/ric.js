@@ -18,7 +18,7 @@
 
 /* typescript
  * export declare namespace ric {
- *     function cancel(id: number);
+ *     function cancel(id: number): void;
  * }
  * export declare function ric(cb: types.AnyFn): number;
  */

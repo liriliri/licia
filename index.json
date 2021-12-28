@@ -904,6 +904,22 @@
             "browser"
         ]
     },
+    "Trace": {
+        "dependencies": [
+            "Class",
+            "each",
+            "map"
+        ],
+        "description": "Parse, manipulate and generate chrome tracing data.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node"
+        ]
+    },
     "Trie": {
         "dependencies": [
             "Class",
