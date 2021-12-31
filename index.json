@@ -920,6 +920,31 @@
             "node"
         ]
     },
+    "Tracing": {
+        "dependencies": [
+            "Class",
+            "Trace",
+            "perfNow",
+            "extend",
+            "isNode",
+            "Stack",
+            "map",
+            "trim",
+            "isEmpty",
+            "intersect",
+            "convertBase"
+        ],
+        "description": "Easily create chrome tracing data.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "Trie": {
         "dependencies": [
             "Class",

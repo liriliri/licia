@@ -6,7 +6,12 @@
  * const data = fs.readFileSync('path/to/trace', 'utf8');
  * const trace = new Trace(JSON.parse(data));
  * trace.rmProcess(627);
- * fs.writeFileSync('path/to/trace', JSON.stringify(trace.toJSON()), 'utf8');
+ * fs.writeFileSync(
+ *     'path/to/trace',
+ *     JSON.stringify(trace.toJSON()),
+ *     'utf8',
+ *     function() {}
+ * );
  */
 
 /* module
@@ -24,6 +29,7 @@
  *         pid: number;
  *         tid: number;
  *         args: any;
+ *         [key: string]: any;
  *     }
  *     class Process {
  *         constructor(id);

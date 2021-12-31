@@ -8,6 +8,7 @@ const contain = util.contain;
 const gunzip = promisify(zlib.gunzip);
 
 const samplePath = path.resolve(process.cwd(), 'test/Trace.gz');
+const outputPath = path.resolve(process.cwd(), '.licia/test/Trace.json');
 
 let data, trace;
 
@@ -17,6 +18,16 @@ before(async function() {
     data = data.toString('utf8');
     data = JSON.parse(data);
     trace = new Trace(data.traceEvents);
+});
+
+after(async function() {
+    await fs.writeFile(
+        outputPath,
+        JSON.stringify({
+            traceEvents: trace.toJSON()
+        }),
+        'utf8'
+    );
 });
 
 it('basic', function() {

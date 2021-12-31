@@ -2598,6 +2598,7 @@ store.on('change', function(key, newVal, oldVal) {
         pid: number;
         tid: number;
         args: any;
+        [key: string]: any;
     }
     class Process {
         constructor(id);
@@ -2637,7 +2638,117 @@ const fs = require('fs');
 const data = fs.readFileSync('path/to/trace', 'utf8');
 const trace = new Trace(JSON.parse(data));
 trace.rmProcess(627);
-fs.writeFileSync('path/to/trace', JSON.stringify(trace.toJSON()), 'utf8');
+fs.writeFileSync(
+    'path/to/trace',
+    JSON.stringify(trace.toJSON()),
+    'utf8',
+    function() {}
+);
+```
+
+## Tracing
+
+创建 chrome trace 格式数据。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">class Tracing {
+    constructor(options?: {
+        pid?: number;
+        tid?: number;
+        processName?: string;
+        threadName?: string;
+    });
+    start(cat?: string): void;
+    stop(): Trace.IEvent[];
+    metadata(name: string, args: any): void;
+    begin(cat: string, name: string, args?: any): void;
+    end(args?: any): void;
+    beginWithId(cat: string, name: string, id?: string, args?: any): string;
+    endWithId(id: string, args?: any): void;
+    instant(
+        cat: string,
+        name: string,
+        scope?: &#x27;g&#x27; | &#x27;p&#x27; | &#x27;t&#x27;,
+        args?: any
+    ): void;
+    id(): string;
+}</code>
+</pre>
+</details>
+
+### constructor
+
+|参数名|说明|
+|-----|---|
+|options|录制选项|
+
+可用选项：
+
+|参数名|说明|
+|-----|---|
+|pid|进程 id|
+|tid|线程 id|
+|processName|进程名称|
+|threadName|线程名称|
+
+### start
+
+开始录制。
+
+|参数名|说明|
+|-----|---|
+|cat|开启类别|
+
+### stop
+
+停止录制并获取事件列表。
+
+### begin
+
+记录开始事件。
+
+
+|参数名|说明|
+|-----|---|
+|cat|事件类别|
+|name|事件名称|
+|args|参数|
+
+### end
+
+记录结束事件。
+
+### beginWithId
+
+记录开始事件，需要传入一个唯一 id。
+
+### endWithId
+
+记录结束事件，需要传入一个唯一 id。
+
+### instant
+
+记录 instant 事件。
+
+### id
+
+获取一个唯一 id。
+
+```javascript
+const fs = require('fs');
+const tracing = new Tracing();
+tracing.start();
+tracing.begin('cat', 'name');
+// Do something...
+tracing.end();
+fs.writeFileSync(
+    'path/to/trace',
+    JSON.stringify(tracing.stop()),
+    'utf8',
+    function() {}
+);
 ```
 
 ## Trie

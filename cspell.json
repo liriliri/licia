@@ -419,6 +419,7 @@
     "toSrc",
     "toStr",
     "Trace",
+    "Tracing",
     "Trie",
     "trigger",
     "trim",

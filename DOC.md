@@ -2606,6 +2606,7 @@ Parse, manipulate and generate chrome tracing data.
         pid: number;
         tid: number;
         args: any;
+        [key: string]: any;
     }
     class Process {
         constructor(id);
@@ -2645,7 +2646,116 @@ const fs = require('fs');
 const data = fs.readFileSync('path/to/trace', 'utf8');
 const trace = new Trace(JSON.parse(data));
 trace.rmProcess(627);
-fs.writeFileSync('path/to/trace', JSON.stringify(trace.toJSON()), 'utf8');
+fs.writeFileSync(
+    'path/to/trace',
+    JSON.stringify(trace.toJSON()),
+    'utf8',
+    function() {}
+);
+```
+
+## Tracing 
+
+Easily create chrome tracing data.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">class Tracing {
+    constructor(options?: {
+        pid?: number;
+        tid?: number;
+        processName?: string;
+        threadName?: string;
+    });
+    start(cat?: string): void;
+    stop(): Trace.IEvent[];
+    metadata(name: string, args: any): void;
+    begin(cat: string, name: string, args?: any): void;
+    end(args?: any): void;
+    beginWithId(cat: string, name: string, id?: string, args?: any): string;
+    endWithId(id: string, args?: any): void;
+    instant(
+        cat: string,
+        name: string,
+        scope?: &#x27;g&#x27; | &#x27;p&#x27; | &#x27;t&#x27;,
+        args?: any
+    ): void;
+    id(): string;
+}</code>
+</pre>
+</details>
+
+### constructor
+
+|Name   |Desc           |
+|-------|---------------|
+|options|Tracing options|
+
+Available options:
+
+|Name       |Desc        |
+|-----------|------------|
+|pid        |Process id  |
+|tid        |Thread id   |
+|processName|Process name|
+|threadName |Thread name |
+
+### start
+
+Start recording.
+
+|Name|Desc              |
+|----|------------------|
+|cat |Enabled categories|
+
+### stop
+
+Stop recording and get result events.
+
+### begin
+
+Record begin event.
+
+|Name|Desc            |
+|----|----------------|
+|cat |Event categories|
+|name|Event name      |
+|args|Arguments       |
+
+### end
+
+Record end event.
+
+### beginWithId
+
+Record begin event, and an unique id is required.
+
+### endWithId
+
+Record end event, and an unique id is required.
+
+### instant
+
+Record instant event.
+
+### id
+
+Get an unique id.
+
+```javascript
+const fs = require('fs');
+const tracing = new Tracing();
+tracing.start();
+tracing.begin('cat', 'name');
+// Do something...
+tracing.end();
+fs.writeFileSync(
+    'path/to/trace',
+    JSON.stringify(tracing.stop()),
+    'utf8',
+    function() {}
+);
 ```
 
 ## Trie 
