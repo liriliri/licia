@@ -1,3 +1,8 @@
+## v1.33.0 (2 Jan 2022)
+
+* feat: add Trace
+* feat: add Tracing
+
 ## v1.32.0 (27 Nov 2021)
 
 * feat: add FileStore

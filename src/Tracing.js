@@ -76,6 +76,7 @@
 /* module
  * env: all
  * test: all
+ * since: 1.33.0
  */
 
 /* typescript
