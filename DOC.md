@@ -2673,8 +2673,8 @@ Easily create chrome tracing data.
     metadata(name: string, args: any): void;
     begin(cat: string, name: string, args?: any): void;
     end(args?: any): void;
-    beginWithId(cat: string, name: string, id?: string, args?: any): string;
-    endWithId(id: string, args?: any): void;
+    asyncBegin(cat: string, name: string, id?: string, args?: any): string;
+    asyncEnd(id: string, args?: any): void;
     instant(
         cat: string,
         name: string,
@@ -2727,13 +2727,13 @@ Record begin event.
 
 Record end event.
 
-### beginWithId
+### asyncBegin
 
-Record begin event, and an unique id is required.
+Record async begin event.
 
-### endWithId
+### asyncEnd
 
-Record end event, and an unique id is required.
+Record async end event.
 
 ### instant
 

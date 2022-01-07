@@ -30,9 +30,9 @@ if (isNode) {
 }
 
 it('basic', function(done) {
-    const traceId = tracing.beginWithId('async', 'timeout 20');
+    const traceId = tracing.asyncBegin('async', 'timeout 20');
     setTimeout(function() {
-        tracing.endWithId(traceId);
+        tracing.asyncEnd(traceId);
         done();
     }, 20);
 

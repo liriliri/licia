@@ -2665,8 +2665,8 @@ fs.writeFileSync(
     metadata(name: string, args: any): void;
     begin(cat: string, name: string, args?: any): void;
     end(args?: any): void;
-    beginWithId(cat: string, name: string, id?: string, args?: any): string;
-    endWithId(id: string, args?: any): void;
+    asyncBegin(cat: string, name: string, id?: string, args?: any): string;
+    asyncEnd(id: string, args?: any): void;
     instant(
         cat: string,
         name: string,
@@ -2709,7 +2709,6 @@ fs.writeFileSync(
 
 记录开始事件。
 
-
 |参数名|说明|
 |-----|---|
 |cat|事件类别|
@@ -2720,13 +2719,13 @@ fs.writeFileSync(
 
 记录结束事件。
 
-### beginWithId
+### asyncBegin 
 
-记录开始事件，需要传入一个唯一 id。
+记录异步开始事件。
 
-### endWithId
+### asyncEnd
 
-记录结束事件，需要传入一个唯一 id。
+记录异步结束事件。
 
 ### instant
 

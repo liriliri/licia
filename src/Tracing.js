@@ -41,13 +41,13 @@
  *
  * Record end event.
  *
- * ### beginWithId
+ * ### asyncBegin
  *
- * Record begin event, and an unique id is required.
+ * Record async begin event.
  *
- * ### endWithId
+ * ### asyncEnd
  *
- * Record end event, and an unique id is required.
+ * Record async end event.
  *
  * ### instant
  *
@@ -92,8 +92,8 @@
  *     metadata(name: string, args: any): void;
  *     begin(cat: string, name: string, args?: any): void;
  *     end(args?: any): void;
- *     beginWithId(cat: string, name: string, id?: string, args?: any): string;
- *     endWithId(id: string, args?: any): void;
+ *     asyncBegin(cat: string, name: string, id?: string, args?: any): string;
+ *     asyncEnd(id: string, args?: any): void;
  *     instant(
  *         cat: string,
  *         name: string,
@@ -132,7 +132,6 @@ exports = Class({
         this._tid = tid;
         this._processName = processName;
         this._threadName = threadName;
-        this._traceEventStack = new Stack();
     },
     start(cat = '') {
         this._targetCat = processCat(cat);
@@ -140,7 +139,7 @@ exports = Class({
             this._targetCat.push('__metadata');
         }
         this._traceEventStack = new Stack();
-        this._traceEventMap = {};
+        this._asyncEventMap = {};
         this._trace = new Trace();
 
         this.metadata(
@@ -164,6 +163,10 @@ exports = Class({
         );
     },
     stop() {
+        delete this._targetCat;
+        delete this._traceEventStack;
+        delete this._asyncEventMap;
+
         const trace = this._trace;
         delete this._trace;
         return trace.toJSON();
@@ -172,6 +175,9 @@ exports = Class({
         this._addEvent('__metadata', name, Phase.Metadata, args, extra);
     },
     begin(cat, name, args = {}) {
+        if (!this._traceEventStack) {
+            return;
+        }
         this._traceEventStack.push({
             cat,
             name,
@@ -180,6 +186,9 @@ exports = Class({
         });
     },
     end(args) {
+        if (!this._traceEventStack) {
+            return;
+        }
         const beginEvent = this._traceEventStack.pop();
         if (!beginEvent) {
             return;
@@ -191,26 +200,32 @@ exports = Class({
             ts
         });
     },
-    beginWithId(cat, name, id = this.id(), args = {}) {
-        this._traceEventMap[id] = {
+    asyncBegin(cat, name, id = this.id(), args = {}) {
+        if (!this._asyncEventMap) {
+            return id;
+        }
+        this._asyncEventMap[id] = {
             cat,
             name
         };
-        this._addEvent(cat, name, Phase.Begin, args, {
+        this._addEvent(cat, name, Phase.AsyncBegin, args, {
             id
         });
 
         return id;
     },
-    endWithId(id, args = {}) {
-        const traceBeginEvent = this._traceEventMap[id];
-        if (!traceBeginEvent) {
+    asyncEnd(id, args = {}) {
+        if (!this._asyncEventMap) {
+            return;
+        }
+        const asyncBeginEvent = this._asyncEventMap[id];
+        if (!asyncBeginEvent) {
             return;
         }
 
-        const { cat, name } = traceBeginEvent;
-        delete this._traceEventMap[id];
-        this._addEvent(cat, name, Phase.End, args, {
+        const { cat, name } = asyncBeginEvent;
+        delete this._asyncEventMap[id];
+        this._addEvent(cat, name, Phase.AsyncEnd, args, {
             id
         });
     },
@@ -257,6 +272,8 @@ const Phase = {
     End: 'E',
     Complete: 'X',
     Instant: 'I',
+    AsyncBegin: 'S',
+    AsyncEnd: 'F',
     Metadata: 'M'
 };
 
