@@ -208,7 +208,7 @@ exports = Class({
             cat,
             name
         };
-        this._addEvent(cat, name, Phase.AsyncBegin, args, {
+        this._addEvent(cat, name, Phase.NestableAsyncBegin, args, {
             id
         });
 
@@ -225,7 +225,7 @@ exports = Class({
 
         const { cat, name } = asyncBeginEvent;
         delete this._asyncEventMap[id];
-        this._addEvent(cat, name, Phase.AsyncEnd, args, {
+        this._addEvent(cat, name, Phase.NestableAsyncEnd, args, {
             id
         });
     },
@@ -272,8 +272,8 @@ const Phase = {
     End: 'E',
     Complete: 'X',
     Instant: 'I',
-    AsyncBegin: 'S',
-    AsyncEnd: 'F',
+    NestableAsyncBegin: 'b',
+    NestableAsyncEnd: 'e',
     Metadata: 'M'
 };
 
