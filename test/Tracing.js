@@ -49,6 +49,9 @@ it('basic', function(done) {
     tracing.end();
 
     tracing.instant('instant', 'finishTest', 'g');
+
+    expect(() => tracing.end()).to.throw();
+    expect(() => tracing.asyncEnd()).to.throw();
 });
 
 it('category', function() {
@@ -74,7 +77,5 @@ it('not start', function() {
     const traceId = tracing.asyncBegin('pause', 'do nothing');
     tracing.asyncEnd(traceId);
     tracing.instant('pause', 'do nothing');
-    expect(function() {
-        tracing.stop();
-    }).to.throw();
+    expect(() => tracing.stop()).to.throw();
 });
