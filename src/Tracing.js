@@ -163,11 +163,14 @@ exports = Class({
         );
     },
     stop() {
+        const trace = this._trace;
+        if (!trace) {
+            throw Error('Need to call start first');
+        }
         delete this._targetCat;
         delete this._traceEventStack;
         delete this._asyncEventMap;
 
-        const trace = this._trace;
         delete this._trace;
         return trace.toJSON();
     },
@@ -191,7 +194,7 @@ exports = Class({
         }
         const beginEvent = this._traceEventStack.pop();
         if (!beginEvent) {
-            return;
+            throw Error('Need to call begin first');
         }
         const { cat, name, ts } = beginEvent;
         args = extend(beginEvent.args, args);
@@ -220,7 +223,7 @@ exports = Class({
         }
         const asyncBeginEvent = this._asyncEventMap[id];
         if (!asyncBeginEvent) {
-            return;
+            throw Error('Need to call async begin first');
         }
 
         const { cat, name } = asyncBeginEvent;
