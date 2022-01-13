@@ -1,3 +1,8 @@
+## v1.34.0 (13 Jan 2022)
+
+* feat: add hookFn
+* fix(Tracing): async api
+
 ## v1.33.0 (2 Jan 2022)
 
 * feat: add Trace
