@@ -162,6 +162,7 @@
     "heapSort",
     "hex",
     "highlight",
+    "hookFn",
     "hotkey",
     "hslToRgb",
     "html",

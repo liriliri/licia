@@ -6576,6 +6576,61 @@ highlight('const a = 5;', 'js', {
 }); // -> '<span class="keyword" style="color:#569cd6;">const</span> a <span class="operator" style="color:#994500;">=</span> <span class="number" style="color:#0086b3;">5</span>;'
 ```
 
+## hookFn
+
+监听，修改函数参数和结果。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function hookFn&lt;T&gt;(
+    fn: T,
+    options: {
+        before?: types.AnyFn;
+        after?: types.AnyFn;
+        error?: types.AnyFn;
+    }
+): T;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|fn|要监听修改的函数|
+|options|监听选项|
+|返回值|包装后的函数|
+
+可用选项：
+
+|参数名|说明|
+|-----|---|
+|before|参数处理函数|
+|after|结果处理函数|
+|error|异常处理函数|
+
+```javascript
+let sum = function(a, b) {
+    if (a > 100) {
+        throw Error('a is bigger than 100');
+    }
+    return a + b;
+};
+let totalSum = 0;
+sum = hookFn(sum, {
+    before(a, b) {
+        return [+a, +b];
+    },
+    after(result) {
+        totalSum += result;
+        return totalSum;
+    },
+    error() {
+        return totalSum;
+    }
+});
+sum('2', '5'); // -> 7
+```
+
 ## hotkey
 
 监听键盘触发对应的事件。

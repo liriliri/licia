@@ -6583,6 +6583,61 @@ highlight('const a = 5;', 'js', {
 }); // -> '<span class="keyword" style="color:#569cd6;">const</span> a <span class="operator" style="color:#994500;">=</span> <span class="number" style="color:#0086b3;">5</span>;'
 ```
 
+## hookFn 
+
+Monitor, change function arguments and result.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function hookFn&lt;T&gt;(
+    fn: T,
+    options: {
+        before?: types.AnyFn;
+        after?: types.AnyFn;
+        error?: types.AnyFn;
+    }
+): T;</code>
+</pre>
+</details>
+
+|Name   |Desc            |
+|-------|----------------|
+|fn     |Function to hook|
+|options|Hook options    |
+|return |Hooked function |
+
+Available options:
+
+|Name  |Desc             |
+|------|-----------------|
+|before|Arguments handler|
+|after |Result handler   |
+|error |Error handler    |
+
+```javascript
+let sum = function(a, b) {
+    if (a > 100) {
+        throw Error('a is bigger than 100');
+    }
+    return a + b;
+};
+let totalSum = 0;
+sum = hookFn(sum, {
+    before(a, b) {
+        return [+a, +b];
+    },
+    after(result) {
+        totalSum += result;
+        return totalSum;
+    },
+    error() {
+        return totalSum;
+    }
+});
+sum('2', '5'); // -> 7
+```
+
 ## hotkey 
 
 Capture keyboard input to trigger given events.

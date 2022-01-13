@@ -2917,6 +2917,25 @@
             "browser"
         ]
     },
+    "hookFn": {
+        "dependencies": [
+            "noop",
+            "defaults",
+            "toArr",
+            "isArr",
+            "isErr"
+        ],
+        "description": "Monitor, change function arguments and result.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "hotkey": {
         "demo": true,
         "dependencies": [
