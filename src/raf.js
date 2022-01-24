@@ -39,6 +39,11 @@ if (isBrowser) {
             window[vendors[i] + 'CancelAnimationFrame'] ||
             window[vendors[i] + 'CancelRequestAnimationFrame'];
     }
+
+    if (raf) {
+        raf = raf.bind(window);
+        cancel = cancel.bind(window);
+    }
 }
 
 raf =

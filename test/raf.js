@@ -1,20 +1,6 @@
-const isBrowser = util.isBrowser;
-
-it('borwser', function() {
-    if (!isBrowser) return;
-
-    const windowRaf = window.requestAnimationFrame;
-    if (windowRaf) expect(raf).to.equal(windowRaf);
-});
-
-it('node', function(done) {
-    if (isBrowser) {
-        done();
-        return;
-    }
-
-    let count = 0,
-        id;
+it('basic', function(done) {
+    let count = 0;
+    let id;
 
     function update() {
         count++;
