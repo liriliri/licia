@@ -3,7 +3,7 @@
 # Licia
 
 [![NPM version][npm-image]][npm-url]
-[![Build status][travis-image]][travis-url]
+[![Build status][ci-image]][ci-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![Size][size-image]][npm-url]
 [![License][license-image]][npm-url]
@@ -14,8 +14,8 @@
 [gitter-url]: https://gitter.im/liriliri/licia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 [npm-image]: https://img.shields.io/npm/v/licia?style=flat-square 
 [npm-url]: https://npmjs.org/package/licia
-[travis-image]: https://img.shields.io/travis/com/liriliri/licia?style=flat-square
-[travis-url]: https://app.travis-ci.com/liriliri/licia 
+[ci-image]: https://img.shields.io/github/workflow/status/liriliri/licia/CI?style=flat-square
+[ci-url]: https://github.com/liriliri/licia/actions/workflows/main.yml
 [codecov-image]: https://img.shields.io/codecov/c/github/liriliri/licia?style=flat-square
 [codecov-url]: https://codecov.io/github/liriliri/licia?branch=master
 [license-image]: https://img.shields.io/npm/l/licia?style=flat-square
