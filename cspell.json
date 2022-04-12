@@ -193,6 +193,7 @@
     "isDataUrl",
     "isDate",
     "isDir",
+    "isDocker",
     "isEl",
     "isEmail",
     "isEmpty",

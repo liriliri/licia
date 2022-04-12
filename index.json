@@ -3377,6 +3377,19 @@
             "node"
         ]
     },
+    "isDocker": {
+        "dependencies": [
+            "memoize",
+            "contain"
+        ],
+        "description": "Check if the process is running inside a docker container.",
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
+    },
     "isEl": {
         "dependencies": [],
         "description": "Check if value is a DOM element.",

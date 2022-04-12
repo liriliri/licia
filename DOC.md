@@ -7364,6 +7364,21 @@ Check if a path is directory.
 isDir('/foo/bar');
 ```
 
+## isDocker 
+
+Check if the process is running inside a docker container.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isDocker(): boolean;</code>
+</pre>
+</details>
+
+```javascript
+console.log(isDocker()); // -> true if running inside a docker container.
+```
+
 ## isEl 
 
 Check if value is a DOM element.

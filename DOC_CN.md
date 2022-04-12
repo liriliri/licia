@@ -7357,6 +7357,21 @@ isDate(new Date()); // -> true
 isDir('/foo/bar');
 ```
 
+## isDocker
+
+检测进程是否运行在 docker 容器内。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isDocker(): boolean;</code>
+</pre>
+</details>
+
+```javascript
+console.log(isDocker()); // -> true if running inside a docker container.
+```
+
 ## isEl
 
 检查值是否是 DOM 元素。
