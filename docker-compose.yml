@@ -1,0 +1,9 @@
+services:
+  test:
+    image: node:12.22.12
+    volumes:
+      - ./:/licia
+    working_dir: /licia
+    environment:
+      - MOD_NAME
+    command: ./node_modules/.bin/mocha .licia/test/${MOD_NAME}

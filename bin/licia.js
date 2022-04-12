@@ -6,6 +6,7 @@ const { contain, parseArgs } = require('licia');
 const options = parseArgs(process.argv.slice(2), {
     names: {
         browser: 'boolean',
+        docker: 'boolean',
         silent: 'boolean',
         all: 'boolean',
         sauce: 'boolean',
@@ -14,6 +15,7 @@ const options = parseArgs(process.argv.slice(2), {
     },
     shorthands: {
         browser: 'b',
+        docker: 'd',
         silent: 's',
         all: 'a',
         release: 'r'
