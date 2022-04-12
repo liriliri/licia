@@ -8,11 +8,8 @@ it('basic', function() {
     expect(prefix('-o-color')).to.equal('color');
     expect(prefix('-webkit-color')).to.equal('color');
     expect(prefix('color')).to.equal('color');
-
-    expect(prefix('text-emphasis')).to.equal('WebkitTextEmphasis');
 });
 
 it('dash', function() {
-    expect(prefix.dash('text-emphasis')).to.equal('-webkit-text-emphasis');
     expect(prefix.dash('color')).to.equal('color');
 });
