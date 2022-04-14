@@ -35,10 +35,12 @@ const cpu = {
         let usage = 0;
 
         if (isV2()) {
+            // microseconds
             const data = parseKeyValue(read('cpu.stat'));
             usage = toNum(data['usage_usec']);
         } else {
-            usage = toNum(read('cpuacct/cpuacct.usage'));
+            // nanoseconds
+            usage = Math.round(toNum(read('cpuacct/cpuacct.usage')) * 1000);
         }
 
         return {
