@@ -1393,6 +1393,19 @@
             "browser"
         ]
     },
+    "cgroup": {
+        "dependencies": [
+            "memoize",
+            "each",
+            "trim",
+            "toNum"
+        ],
+        "description": "Read cgroup metrics inside container.",
+        "env": [
+            "node"
+        ],
+        "test": []
+    },
     "char": {
         "dependencies": [],
         "description": "Return string representing a character whose Unicode code point is the given integer.",

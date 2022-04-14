@@ -3804,6 +3804,28 @@ centerAlign('test\nlines', 8); // -> '  test\n lines'
 centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
 ```
 
+## cgroup
+
+在容器内读取 cgroup 信息。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const cgroup: {
+    cpu: {
+        stat(): {
+            usage: number;
+        };
+    };
+    version(): number;
+};</code>
+</pre>
+</details>
+
+```javascript
+cgroup.cpu.stat();
+```
+
 ## char
 
 根据指定的整数返回 unicode 编码为该整数的字符。

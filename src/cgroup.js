@@ -1,9 +1,24 @@
 /* Read cgroup metrics inside container.
  */
 
+/* example
+ * cgroup.cpu.stat();
+ */
+
 /* module
  * env: node
  * test: manual
+ */
+
+/* typescript
+ * export declare const cgroup: {
+ *     cpu: {
+ *         stat(): {
+ *             usage: number;
+ *         };
+ *     };
+ *     version(): number;
+ * };
  */
 
 _('memoize each trim toNum');
@@ -13,19 +28,16 @@ const fs = require('fs');
 const cpu = {
     stat() {
         let usage = 0;
-        let user = 0;
-        let system = 0;
+
         if (isV2()) {
             const data = parseKeyValue(read('cpu.stat'));
             usage = toNum(data['usage_usec']);
-            user = toNum(data['user_usec']);
-            system = toNum(data['system_usec']);
+        } else {
+            usage = toNum(read('cpuacct/cpuacct.usage'));
         }
 
         return {
-            usage,
-            user,
-            system
+            usage
         };
     }
 };

@@ -3812,6 +3812,28 @@ centerAlign('test\nlines', 8); // -> '  test\n lines'
 centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
 ```
 
+## cgroup 
+
+Read cgroup metrics inside container.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const cgroup: {
+    cpu: {
+        stat(): {
+            usage: number;
+        };
+    };
+    version(): number;
+};</code>
+</pre>
+</details>
+
+```javascript
+cgroup.cpu.stat();
+```
+
 ## char 
 
 Return string representing a character whose Unicode code point is the given integer.
