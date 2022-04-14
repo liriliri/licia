@@ -17,7 +17,7 @@
  * };
  */
 
-_('cgroup perfNow nextTick memoize');
+_('cgroup perfNow sleep memoize');
 
 const cpuNum = memoize(function() {
     return cgroup.cpuset.cpus().effective.length;
@@ -26,12 +26,12 @@ const cpuNum = memoize(function() {
 exports = {
     cpuNum,
     cpuUsage() {
-        const now = perfNow() * 1000000;
+        const now = perfNow() * 1000;
         const usage = cgroup.cpu.stat().usage;
         return new Promise(resolve => {
-            nextTick(() => {
+            sleep(50).then(() => {
                 const delta = cgroup.cpu.stat().usage - usage;
-                const totalTime = perfNow() * 1000000 - now;
+                const totalTime = perfNow() * 1000 - now;
                 resolve(delta / totalTime);
             });
         });
