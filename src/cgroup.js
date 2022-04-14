@@ -17,11 +17,16 @@
  *             usage: number;
  *         };
  *     };
+ *     cpuset: {
+ *         cpus(): {
+ *             effective: number[];
+ *         };
+ *     };
  *     version(): number;
  * };
  */
 
-_('memoize each trim toNum');
+_('memoize each trim toNum contain concat range');
 
 const fs = require('fs');
 
@@ -42,6 +47,20 @@ const cpu = {
     }
 };
 
+const cpuset = {
+    cpus() {
+        let effective = [];
+
+        if (isV2()) {
+            effective = parseRange(read('cpuset.cpus.effective'));
+        }
+
+        return {
+            effective
+        };
+    }
+};
+
 const isV2 = memoize(function() {
     return fs.existsSync(resolve('cgroup.controllers'));
 });
@@ -50,6 +69,9 @@ function read(p) {
     return fs.readFileSync(resolve(p), 'utf8');
 }
 
+/* a 1
+ * b 2
+ */
 function parseKeyValue(data) {
     const ret = {};
 
@@ -64,12 +86,29 @@ function parseKeyValue(data) {
     return ret;
 }
 
+/* 1-2,4-5 */
+function parseRange(data) {
+    let ret = [];
+
+    each(data.split(','), r => {
+        if (!contain(r, '-')) {
+            ret.push(toNum(r));
+        } else {
+            r = r.split('-');
+            ret = concat(ret, range(toNum(r[0]), toNum(r[1]) + 1));
+        }
+    });
+
+    return ret;
+}
+
 function resolve(p) {
     return `/sys/fs/cgroup/${p}`;
 }
 
 exports = {
     cpu,
+    cpuset,
     version() {
         return isV2() ? 2 : 1;
     }
