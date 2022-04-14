@@ -40,7 +40,7 @@ const cpu = {
             usage = toNum(data['usage_usec']);
         } else {
             // nanoseconds
-            usage = Math.round(toNum(read('cpuacct/cpuacct.usage')) * 1000);
+            usage = Math.round(toNum(read('cpuacct/cpuacct.usage')) / 1000);
         }
 
         return {
