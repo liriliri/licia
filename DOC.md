@@ -3824,6 +3824,7 @@ Read cgroup metrics inside container.
         stat(): {
             usage: number;
         };
+        max(): number;
     };
     cpuset: {
         cpus(): {
