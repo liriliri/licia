@@ -50,10 +50,13 @@ const cpu = {
 const cpuset = {
     cpus() {
         let effective = [];
+        let p = 'cpuset/cpuset.effective_cpus';
 
         if (isV2()) {
-            effective = parseRange(read('cpuset.cpus.effective'));
+            p = 'cpuset.cpus.effective';
         }
+
+        effective = parseRange(read(p));
 
         return {
             effective
