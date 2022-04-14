@@ -3817,6 +3817,11 @@ centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
             usage: number;
         };
     };
+    cpuset: {
+        cpus(): {
+            effective: number[];
+        };
+    };
     version(): number;
 };</code>
 </pre>
@@ -4222,6 +4227,24 @@ concat([1, 2], [3], [4, 5]); // -> [1, 2, 3, 4, 5]
 contain([1, 2, 3], 1); // -> true
 contain({ a: 1, b: 2 }, 1); // -> true
 contain('abc', 'a'); // -> true
+```
+
+## container
+
+在容器内读取容器信息。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const container: {
+    cpuNum(): number;
+    cpuLoad(): number;
+};</code>
+</pre>
+</details>
+
+```javascript
+container.cpuNum();
 ```
 
 ## convertBase

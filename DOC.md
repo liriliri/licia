@@ -3825,6 +3825,11 @@ Read cgroup metrics inside container.
             usage: number;
         };
     };
+    cpuset: {
+        cpus(): {
+            effective: number[];
+        };
+    };
     version(): number;
 };</code>
 </pre>
@@ -4230,6 +4235,24 @@ Check if the value is present in the list.
 contain([1, 2, 3], 1); // -> true
 contain({ a: 1, b: 2 }, 1); // -> true
 contain('abc', 'a'); // -> true
+```
+
+## container 
+
+Get container stats inside container.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const container: {
+    cpuNum(): number;
+    cpuLoad(): number;
+};</code>
+</pre>
+</details>
+
+```javascript
+container.cpuNum();
 ```
 
 ## convertBase 

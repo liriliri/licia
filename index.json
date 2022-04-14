@@ -1398,7 +1398,10 @@
             "memoize",
             "each",
             "trim",
-            "toNum"
+            "toNum",
+            "contain",
+            "concat",
+            "range"
         ],
         "description": "Read cgroup metrics inside container.",
         "env": [
@@ -1634,6 +1637,19 @@
             "node",
             "browser"
         ]
+    },
+    "container": {
+        "dependencies": [
+            "cgroup",
+            "perfNow",
+            "nextTick",
+            "memoize"
+        ],
+        "description": "Get container stats inside container.",
+        "env": [
+            "node"
+        ],
+        "test": []
     },
     "convertBase": {
         "dependencies": [],

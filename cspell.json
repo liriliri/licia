@@ -73,6 +73,7 @@
     "compressImg",
     "concat",
     "contain",
+    "container",
     "convertBase",
     "convertBin",
     "cookie",
