@@ -28,10 +28,12 @@ exports = {
     cpuUsage() {
         const now = perfNow() * 1000000;
         const usage = cgroup.cpu.stat().usage;
-        return new Promise((resolve, reject) => {
-            const delta = cgroup.cpu.stat().usage - usage;
-            const totalTime = perfNow() * 1000000 - now;
-            resolve(delta / totalTime);
+        return new Promise(resolve => {
+            nextTick(() => {
+                const delta = cgroup.cpu.stat().usage - usage;
+                const totalTime = perfNow() * 1000000 - now;
+                resolve(delta / totalTime);
+            });
         });
     }
 };
