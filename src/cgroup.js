@@ -16,6 +16,7 @@
  *         stat(): {
  *             usage: number;
  *         };
+ *         max(): number;
  *     };
  *     cpuset: {
  *         cpus(): {
@@ -26,7 +27,7 @@
  * };
  */
 
-_('memoize each trim toNum contain concat range');
+_('memoize each trim toNum contain concat range startWith');
 
 const fs = require('fs');
 
@@ -46,6 +47,21 @@ const cpu = {
         return {
             usage
         };
+    },
+    max() {
+        let max = Infinity;
+
+        if (isV2()) {
+            let data = read('cpu.max');
+            if (!startWith(data, 'max')) {
+                data = data.split(' ');
+                const quota = toNum(data[0]);
+                const period = toNum(data[1]);
+                max = quota / period;
+            }
+        }
+
+        return max;
     }
 };
 
@@ -83,7 +99,7 @@ function parseKeyValue(data) {
     each(data.split('\n'), line => {
         line = trim(line);
         if (line) {
-            line = line.split(/\s+/);
+            line = line.split(' ');
             ret[line[0]] = line[1];
         }
     });

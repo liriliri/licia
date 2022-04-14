@@ -7,3 +7,8 @@ services:
     environment:
       - MOD_NAME
     command: ./node_modules/.bin/mocha .licia/test/${MOD_NAME}
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 200M
