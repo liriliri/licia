@@ -4247,7 +4247,8 @@ Get container stats inside container.
 <pre>
 <code class="language-typescript">const container: {
     cpuNum(): number;
-    cpuLoad(): number;
+    cpuUsage(period?: number): number;
+    cpuLoad(period?: number): number;
 };</code>
 </pre>
 </details>

@@ -1,3 +1,10 @@
+## v1.35.0 (15 Apr 2022)
+
+* feat: add isDocker
+* feat: add cgroup
+* feat: add container
+* fix(raf): illegal invocation
+
 ## v1.34.0 (13 Jan 2022)
 
 * feat: add hookFn

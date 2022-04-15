@@ -1408,6 +1408,7 @@
         "env": [
             "node"
         ],
+        "since": "1.35.0",
         "test": []
     },
     "char": {
@@ -1644,7 +1645,10 @@
             "cgroup",
             "perfNow",
             "sleep",
-            "memoize"
+            "memoize",
+            "each",
+            "isEmpty",
+            "sum"
         ],
         "description": "Get container stats inside container.",
         "env": [
@@ -3416,6 +3420,7 @@
         "env": [
             "node"
         ],
+        "since": "1.35.0",
         "test": [
             "node"
         ]

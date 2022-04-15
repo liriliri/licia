@@ -8,6 +8,7 @@
 /* module
  * env: node
  * test: manual
+ * since: 1.35.0
  */
 
 /* typescript
