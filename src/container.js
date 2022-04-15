@@ -17,7 +17,9 @@
  * };
  */
 
-_('cgroup perfNow sleep memoize');
+_('cgroup perfNow sleep memoize each isEmpty sum');
+
+const os = require('os');
 
 const cpuNum = memoize(function() {
     return cgroup.cpuset.cpus().effective.length;
@@ -49,7 +51,68 @@ function cpuUsage(period = 0) {
     });
 }
 
+function cpuLoad(period = 0) {
+    const cpus = cgroup.cpuset.cpus().effective;
+
+    return Promise.all([cpuUsage(period), realCpuLoads(cpus, period)]).then(
+        res => {
+            const realCpuLoads = res[1];
+            let cpuLoad = sum.apply(null, realCpuLoads) / cpus.length;
+
+            const max = cgroup.cpu.max();
+            if (max !== Infinity) {
+                const cpuUsage = res[0];
+                const quotaLoad = cpuUsage / max;
+                if (quotaLoad > cpuLoad) {
+                    cpuLoad = quotaLoad;
+                }
+            }
+
+            return cpuLoad;
+        }
+    );
+}
+
+let lastAllCpus = [];
+
+function realCpuLoads(cpus, period = 0) {
+    const cpuLoads = [];
+    if (!period && isEmpty(lastAllCpus)) {
+        period = DEFAULT_PERIOD;
+    }
+    let allCpus = lastAllCpus;
+    if (period) {
+        allCpus = os.cpus();
+    }
+
+    return new Promise(function(resolve) {
+        sleep(period).then(() => {
+            lastAllCpus = os.cpus();
+            each(cpus, (cpu, idx) => {
+                cpuLoads[idx] = calculateCpuLoad(
+                    allCpus[cpu],
+                    lastAllCpus[cpu]
+                );
+            });
+            resolve(cpuLoads);
+        });
+    });
+}
+
+function calculateCpuLoad(lastCpu, cpu) {
+    lastTimes = lastCpu.times;
+    times = cpu.times;
+    const lastLoad =
+        lastTimes.user + lastTimes.sys + lastTimes.nice + lastTimes.irq;
+    const lastTick = lastLoad + lastTimes.idle;
+    const load = times.user + times.sys + times.nice + times.irq;
+    const tick = load + times.idle;
+
+    return (load - lastLoad) / (tick - lastTick);
+}
+
 exports = {
     cpuNum,
-    cpuUsage
+    cpuUsage,
+    cpuLoad
 };
