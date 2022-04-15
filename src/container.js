@@ -13,6 +13,7 @@
 /* typescript
  * export declare const container: {
  *     cpuNum(): number;
+ *     cpuUsage(period?: number): number;
  *     cpuLoad(period?: number): number;
  * };
  */
@@ -100,8 +101,8 @@ function realCpuLoads(cpus, period = 0) {
 }
 
 function calculateCpuLoad(lastCpu, cpu) {
-    lastTimes = lastCpu.times;
-    times = cpu.times;
+    const lastTimes = lastCpu.times;
+    const times = cpu.times;
     const lastLoad =
         lastTimes.user + lastTimes.sys + lastTimes.nice + lastTimes.irq;
     const lastTick = lastLoad + lastTimes.idle;
