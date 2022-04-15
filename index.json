@@ -1401,7 +1401,8 @@
             "toNum",
             "contain",
             "concat",
-            "range"
+            "range",
+            "startWith"
         ],
         "description": "Read cgroup metrics inside container.",
         "env": [
@@ -1642,7 +1643,7 @@
         "dependencies": [
             "cgroup",
             "perfNow",
-            "nextTick",
+            "sleep",
             "memoize"
         ],
         "description": "Get container stats inside container.",

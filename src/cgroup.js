@@ -59,6 +59,12 @@ const cpu = {
                 const period = toNum(data[1]);
                 max = quota / period;
             }
+        } else {
+            const quota = toNum(read('cpu/cpu.cfs_quota_us'));
+            if (quota !== -1) {
+                const period = toNum(read('cpu/cpu.cfs_period_us'));
+                max = quota / period;
+            }
         }
 
         return max;

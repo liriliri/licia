@@ -3816,6 +3816,7 @@ centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
         stat(): {
             usage: number;
         };
+        max(): number;
     };
     cpuset: {
         cpus(): {
