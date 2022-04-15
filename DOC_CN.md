@@ -4239,8 +4239,8 @@ contain('abc', 'a'); // -> true
 <pre>
 <code class="language-typescript">const container: {
     cpuNum(): number;
-    cpuUsage(period?: number): number;
-    cpuLoad(period?: number): number;
+    cpuUsage(period?: number): Promise&lt;number&gt;;
+    cpuLoad(period?: number): Promise&lt;number&gt;;
 };</code>
 </pre>
 </details>

@@ -13,8 +13,8 @@
 /* typescript
  * export declare const container: {
  *     cpuNum(): number;
- *     cpuUsage(period?: number): number;
- *     cpuLoad(period?: number): number;
+ *     cpuUsage(period?: number): Promise<number>;
+ *     cpuLoad(period?: number): Promise<number>;
  * };
  */
 
