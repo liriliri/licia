@@ -1,3 +1,7 @@
+## v1.35.1 (18 Apr 2022)
+
+* fix(container): cpuLoad return NaN
+
 ## v1.35.0 (15 Apr 2022)
 
 * feat: add isDocker
