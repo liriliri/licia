@@ -18,7 +18,7 @@
  * };
  */
 
-_('cgroup perfNow sleep memoize each isEmpty sum');
+_('cgroup perfNow sleep memoize each isEmpty sum isNaN');
 
 const os = require('os');
 
@@ -52,6 +52,8 @@ function cpuUsage(period = 0) {
     });
 }
 
+let lastCpuLoad = 0;
+
 function cpuLoad(period = 0) {
     const cpus = cgroup.cpuset.cpus().effective;
 
@@ -69,6 +71,10 @@ function cpuLoad(period = 0) {
                 }
             }
 
+            if (isNaN(cpuLoad)) {
+                return lastCpuLoad;
+            }
+            lastCpuLoad = cpuLoad;
             return cpuLoad;
         }
     );
