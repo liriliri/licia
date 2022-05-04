@@ -1648,7 +1648,8 @@
             "memoize",
             "each",
             "isEmpty",
-            "sum"
+            "sum",
+            "isNaN"
         ],
         "description": "Get container stats inside container.",
         "env": [
