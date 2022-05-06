@@ -1,8 +1,13 @@
 name: CI
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'lib/**/*'
+      - 'src/**/*'
+      - 'test/**/*'
 
 jobs:
   ci:
