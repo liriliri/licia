@@ -5807,6 +5807,26 @@ const file = fs.readFileSync('path/to/file');
 console.log(fileType(file)); // -> { ext: 'jpg', mime: 'image/jpeg' }
 ```
 
+## fileUrl 
+
+Convert a file path to a file URL.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function fileUrl(path: string): string;</code>
+</pre>
+</details>
+
+|Name  |Desc     |
+|------|---------|
+|path  |File path|
+|return|File URL |
+
+```javascript
+fileUrl('c:\\foo\\bar'); // -> 'file:///c:/foo/bar'
+```
+
 ## fill 
 
 Fill elements of array with value.

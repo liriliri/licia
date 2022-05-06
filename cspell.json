@@ -134,6 +134,7 @@
     "fileSize",
     "FileStore",
     "fileType",
+    "fileUrl",
     "fill",
     "filter",
     "find",

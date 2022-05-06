@@ -5800,6 +5800,26 @@ const file = fs.readFileSync('path/to/file');
 console.log(fileType(file)); // -> { ext: 'jpg', mime: 'image/jpeg' }
 ```
 
+## fileUrl
+
+将文件路径转换为文件协议 URL。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function fileUrl(path: string): string;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|path|文件路径|
+|返回值|文件协议 URL|
+
+```javascript
+fileUrl('c:\\foo\\bar'); // -> 'file:///c:/foo/bar'
+```
+
 ## fill
 
 在数组指定位置填充指定值。
