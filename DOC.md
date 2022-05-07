@@ -12248,8 +12248,9 @@ Format datetime with *** time ago statement.
 
 ```javascript
 const now = new Date().getTime();
-timeAgo(now - 1000 * 6); // -> right now
-timeAgo(now + 1000 * 15); // -> in 15 minutes
+timeAgo(now - 1000 * 6); // -> just now
+timeAgo(now - 1000 * 15); // -> 15 seconds ago
+timeAgo(now + 1000 * 60 * 15); // -> in 15 minutes
 timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
 ```
 
