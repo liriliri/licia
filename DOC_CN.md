@@ -12529,8 +12529,8 @@ topoSort([
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function trigger(el: Element, type: string, options?: any);
-function trigger(type: string, options?: any);</code>
+<code class="language-typescript">function trigger(el: Element | Document, type: string, options?: any): void;
+function trigger(type: string, options?: any): void;</code>
 </pre>
 </details>
 
