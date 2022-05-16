@@ -134,7 +134,7 @@ exports = function(options) {
 
     if (type === 'GET') {
         data = query.stringify(data);
-        url += url.indexOf('?') > -1 ? '&' + data : '?' + data;
+        if (data) url += url.indexOf('?') > -1 ? '&' + data : '?' + data;
     } else if (options.contentType === 'application/x-www-form-urlencoded') {
         if (isObj(data)) data = query.stringify(data);
     } else if (options.contentType === 'application/json') {
