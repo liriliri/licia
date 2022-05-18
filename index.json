@@ -1655,6 +1655,7 @@
         "env": [
             "node"
         ],
+        "since": "1.35.0",
         "test": []
     },
     "convertBase": {
@@ -2525,6 +2526,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.36.0",
         "test": [
             "node",
             "browser"

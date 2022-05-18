@@ -1,3 +1,9 @@
+## v1.36.0 (18 May 2022)
+
+* feat: add fileUrl
+* fix(trigger): typescript definition
+* fix(ajax): Add query parameters if they are necessary [#27](https://github.com/liriliri/licia/issues/27)
+
 ## v1.35.1 (18 Apr 2022)
 
 * fix(container): cpuLoad return NaN
