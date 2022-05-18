@@ -27,7 +27,7 @@ jobs:
           npm publish
           cd ../licia-es
           npm publish
-          cd ../eusita-module
+          cd ../eustia-module
           npm publish
           cd ../miniprogram-licia
           npm publish
