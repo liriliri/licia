@@ -19,7 +19,7 @@
  * export declare function md5(msg: string | number[]): string;
  */
 
-_('isStr strToBytes hex bytesToWords wordsToBytes');
+_('isStr strToBytes hex bytesToWords wordsToBytes isNode isArr');
 
 // https://github.com/pvorb/node-md5
 exports = function(msg) {
@@ -157,4 +157,17 @@ function endian(n) {
 
 function rotl(n, b) {
     return (n << b) | (n >>> (32 - b));
+}
+
+if (isNode) {
+    let crypto = eval('require')('crypto');
+
+    exports = function(msg) {
+        if (isArr(msg)) {
+            msg = Buffer.from(msg);
+        }
+        const hash = crypto.createHash('md5');
+        hash.update(msg);
+        return hash.digest('hex');
+    };
 }

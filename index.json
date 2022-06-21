@@ -4466,12 +4466,15 @@
         ]
     },
     "md5": {
+        "benchmark": true,
         "dependencies": [
             "isStr",
             "strToBytes",
             "hex",
             "bytesToWords",
-            "wordsToBytes"
+            "wordsToBytes",
+            "isNode",
+            "isArr"
         ],
         "description": "MD5 implementation.",
         "env": [
