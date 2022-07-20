@@ -4253,6 +4253,8 @@ Get container stats inside container.
     cpuNum(): number;
     cpuUsage(period?: number): Promise&lt;number&gt;;
     cpuLoad(period?: number): Promise&lt;number&gt;;
+    memUsage(): number;
+    memLoad(): number;
 };</code>
 </pre>
 </details>

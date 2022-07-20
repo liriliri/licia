@@ -16,6 +16,8 @@
  *     cpuNum(): number;
  *     cpuUsage(period?: number): Promise<number>;
  *     cpuLoad(period?: number): Promise<number>;
+ *     memUsage(): number;
+ *     memLoad(): number;
  * };
  */
 
@@ -119,8 +121,23 @@ function calculateCpuLoad(lastCpu, cpu) {
     return (load - lastLoad) / (tick - lastTick);
 }
 
+function memUsage() {
+    return cgroup.memory.current();
+}
+
+function memLoad() {
+    let max = os.totalmem();
+    let cgroupMax = cgroup.memory.max();
+    if (cgroupMax < max) {
+        max = cgroupMax;
+    }
+    return memUsage() / max;
+}
+
 exports = {
     cpuNum,
     cpuUsage,
-    cpuLoad
+    cpuLoad,
+    memUsage,
+    memLoad
 };

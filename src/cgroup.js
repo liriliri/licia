@@ -102,18 +102,19 @@ const memory = {
             if (data !== 'max') {
                 max = toNum(data);
             }
+        } else {
+            max = toNum(read('memory/memory.limit_in_bytes'));
         }
 
         return max;
     },
     current() {
-        let current = 0;
-
+        let p = 'memory/memory.usage_in_bytes';
         if (isV2()) {
-            current = toNum(read('memory.current'));
+            p = 'memory.current';
         }
 
-        return current;
+        return toNum(read(p));
     }
 };
 
