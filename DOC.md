@@ -3831,6 +3831,10 @@ Read cgroup metrics inside container.
             effective: number[];
         };
     };
+    memory: {
+        max(): number;
+        current(): number;
+    };
     version(): number;
 };</code>
 </pre>

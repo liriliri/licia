@@ -3823,6 +3823,10 @@ centerAlign(['test', 'lines'], 8); // -> '  test\n lines'
             effective: number[];
         };
     };
+    memory: {
+        max(): number;
+        current(): number;
+    };
     version(): number;
 };</code>
 </pre>

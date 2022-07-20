@@ -24,6 +24,10 @@
  *             effective: number[];
  *         };
  *     };
+ *     memory: {
+ *         max(): number;
+ *         current(): number;
+ *     };
  *     version(): number;
  * };
  */
@@ -89,6 +93,30 @@ const cpuset = {
     }
 };
 
+const memory = {
+    max() {
+        let max = Infinity;
+
+        if (isV2()) {
+            let data = read('memory.max');
+            if (data !== 'max') {
+                max = toNum(data);
+            }
+        }
+
+        return max;
+    },
+    current() {
+        let current = 0;
+
+        if (isV2()) {
+            current = toNum(read('memory.current'));
+        }
+
+        return current;
+    }
+};
+
 const isV2 = memoize(function() {
     return fs.existsSync(resolve('cgroup.controllers'));
 });
@@ -137,6 +165,7 @@ function resolve(p) {
 exports = {
     cpu,
     cpuset,
+    memory,
     version() {
         return isV2() ? 2 : 1;
     }
