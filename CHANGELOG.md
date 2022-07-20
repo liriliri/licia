@@ -1,3 +1,9 @@
+## v1.37.0 (20 Jul 2022)
+
+* feat(container): memUsage, memLoad
+* feat(cgroup): memory
+* perf(md5): use crypto if possible
+
 ## v1.36.0 (18 May 2022)
 
 * feat: add fileUrl
