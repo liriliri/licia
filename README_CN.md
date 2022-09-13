@@ -6,7 +6,6 @@
 [![Size][size-image]][npm-url]
 [![License][license-image]][npm-url]
 [![Join the chat at https://gitter.im/liriliri/licia][gitter-image]][gitter-url]
-[![Donate][donate-image]][paypal-url]
 
 [gitter-image]: https://img.shields.io/gitter/room/liriliri/licia?style=flat-square
 [gitter-url]: https://gitter.im/liriliri/licia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
@@ -17,13 +16,11 @@
 [codecov-image]: https://img.shields.io/codecov/c/github/liriliri/licia?style=flat-square
 [codecov-url]: https://codecov.io/github/liriliri/licia?branch=master
 [license-image]: https://img.shields.io/npm/l/licia?style=flat-square
-[donate-image]: https://img.shields.io/badge/$-donate-0070ba.svg?style=flat-square
-[paypal-url]: https://www.paypal.com/paypalme/surunzi
 [size-image]: https://img.shields.io/bundlephobia/minzip/licia?style=flat-square
 
 Licia 是一套在开发中实践积累起来的实用 JavaScript 工具库。该库目前拥有超过 400 个模块，包括 Dom 操作，cookie 设置，类创建，模板函数，日期格式化等实用模块，同时配套有打包工具 Eustia 进行定制化，使JS脚本加载量缩减在 10KB 以下，极大优化移动端页面的加载速度。
 
-目前拥有的所有模块可[点此](https://licia.liriliri.io/module_cn.html)查看。
+目前拥有的所有模块可[点此](https://licia.liriliri.io/docs_cn.html)查看。
 
 ## 开发背景
 
