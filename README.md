@@ -13,7 +13,7 @@
 [gitter-url]: https://gitter.im/liriliri/licia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 [npm-image]: https://img.shields.io/npm/v/licia?style=flat-square 
 [npm-url]: https://npmjs.org/package/licia
-[ci-image]: https://img.shields.io/github/workflow/status/liriliri/licia/CI?style=flat-square
+[ci-image]: https://img.shields.io/github/actions/workflow/status/liriliri/licia/main.yml?branch=master&style=flat-square
 [ci-url]: https://github.com/liriliri/licia/actions/workflows/main.yml
 [codecov-image]: https://img.shields.io/codecov/c/github/liriliri/licia?style=flat-square
 [codecov-url]: https://codecov.io/github/liriliri/licia?branch=master
