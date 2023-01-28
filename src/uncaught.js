@@ -65,7 +65,14 @@ SingleEmitter.mixin(exports);
 
 if (isBrowser) {
     window.addEventListener('error', event => {
-        callListeners(event.error);
+        if (event.error) {
+            callListeners(event.error);
+        } else if (event.message) {
+            // errors from worker
+            const e = new Error(event.message);
+            e.stack = `Error: ${event.message} \n at ${event.filename}:${event.lineno}:${event.colno}`;
+            callListeners(e);
+        }
     });
     window.addEventListener('unhandledrejection', e => {
         callListeners(e.reason);

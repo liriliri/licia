@@ -1,3 +1,7 @@
+## v1.37.1 (28 Jan 2023)
+
+* fix(uncaught): worker error null
+
 ## v1.37.0 (20 Jul 2022)
 
 * feat(container): memUsage, memLoad
