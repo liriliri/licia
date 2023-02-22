@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function isWeakMap(val: any): boolean;
+ * export declare function isWeakMap(val: any): val is WeakMap;
  */
 
 _('objToStr');

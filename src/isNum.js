@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function isNum(val: any): boolean;
+ * export declare function isNum(val: any): val is number;
  */
 
 _('objToStr');

@@ -17,7 +17,7 @@
  */
 
 /* typescript
- * export declare function isBool(val: any): boolean;
+ * export declare function isBool(val: any): val is boolean;
  */
 
 exports = function(val) {

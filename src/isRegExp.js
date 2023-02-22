@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * export declare function isRegExp(val: any): boolean;
+ * export declare function isRegExp(val: any): val is RegExp;
  */
 
 _('objToStr');

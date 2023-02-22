@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function isSymbol(val: any): boolean;
+ * export declare function isSymbol(val: any): val is symbol;
  */
 
 exports = function(val) {

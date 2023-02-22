@@ -17,7 +17,11 @@
  */
 
 /* typescript
- * export declare function trigger(el: Element | Document, type: string, options?: any): void;
+ * export declare function trigger(
+ *     el: Element | Document,
+ *     type: string,
+ *     options?: any
+ * ): void;
  * export declare function trigger(type: string, options?: any): void;
  */
 

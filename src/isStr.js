@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * export declare function isStr(val: any): boolean;
+ * export declare function isStr(val: any): val is string;
  */
 
 _('objToStr');

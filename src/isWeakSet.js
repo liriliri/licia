@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function isWeakSet(val: any): boolean;
+ * export declare function isWeakSet(val: any): val is WeakSet;
  */
 
 _('objToStr');

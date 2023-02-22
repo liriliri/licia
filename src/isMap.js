@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function isMap(val: any): boolean;
+ * export declare function isMap(val: any): val is Map;
  */
 
 _('objToStr');

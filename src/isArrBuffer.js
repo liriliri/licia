@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * export declare function isArrBuffer(val: any): boolean;
+ * export declare function isArrBuffer(val: any): val is ArrayBuffer;
  */
 
 _('objToStr');

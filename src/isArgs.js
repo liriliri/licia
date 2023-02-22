@@ -19,7 +19,7 @@
  */
 
 /* typescript
- * export declare function isArgs(val: any): boolean;
+ * export declare function isArgs(val: any): val is IArguments;
  */
 
 _('objToStr');

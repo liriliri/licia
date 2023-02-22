@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function isSet(val: any): boolean;
+ * export declare function isSet(val: any): val is Set;
  */
 
 _('objToStr');

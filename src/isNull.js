@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * export declare function isNull(val: any): boolean;
+ * export declare function isNull(val: any): val is null;
  */
 
 exports = function(val) {

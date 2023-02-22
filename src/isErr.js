@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * export declare function isErr(val: any): boolean;
+ * export declare function isErr(val: any): val is Error;
  */
 
 _('objToStr');

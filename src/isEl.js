@@ -15,7 +15,7 @@
  */
 
 /* typescript
- * export declare function isEl(val: any): boolean;
+ * export declare function isEl(val: any): val is Element;
  */
 
 exports = function(val) {

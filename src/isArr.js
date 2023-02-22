@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function isArr(val: any): boolean;
+ * export declare function isArr(val: any): val is any[];
  */
 
 _('objToStr');

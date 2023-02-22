@@ -19,7 +19,7 @@
  */
 
 /* typescript
- * export declare function isFn(val: any): boolean;
+ * export declare function isFn(val: any): val is Function;
  */
 
 _('objToStr');
