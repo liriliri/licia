@@ -1726,6 +1726,7 @@ CSS 媒体查询监听器。
 <pre>
 <code class="language-typescript">class MediaQuery extends Emitter {
     constructor(query: string);
+    setQuery(query: string): void;
     isMatch(): boolean;
 }</code>
 </pre>
@@ -1738,6 +1739,10 @@ CSS 媒体查询监听器。
 |参数名|说明|
 |-----|---|
 |query|媒体查询字符串|
+
+### setQuery
+
+更新查询字符串。
 
 ### isMatch
 
@@ -7116,7 +7121,7 @@ isAbsoluteUrl('surunzi.com'); // -> false
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isArgs(val: any): boolean;</code>
+<code class="language-typescript">function isArgs(val: any): val is IArguments;</code>
 </pre>
 </details>
 
@@ -7140,7 +7145,7 @@ isArgs(
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isArr(val: any): boolean;</code>
+<code class="language-typescript">function isArr(val: any): val is any[];</code>
 </pre>
 </details>
 
@@ -7161,7 +7166,7 @@ isArr({}); // -> false
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isArrBuffer(val: any): boolean;</code>
+<code class="language-typescript">function isArrBuffer(val: any): val is ArrayBuffer;</code>
 </pre>
 </details>
 
@@ -7248,7 +7253,7 @@ isBlob([]); // -> false
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isBool(val: any): boolean;</code>
+<code class="language-typescript">function isBool(val: any): val is boolean;</code>
 </pre>
 </details>
 
@@ -7452,7 +7457,7 @@ console.log(isDocker()); // -> true if running inside a docker container.
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isEl(val: any): boolean;</code>
+<code class="language-typescript">function isEl(val: any): val is Element;</code>
 </pre>
 </details>
 
@@ -7535,7 +7540,7 @@ isEqual([1, 2, 3], [1, 2, 3]); // -> true
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isErr(val: any): boolean;</code>
+<code class="language-typescript">function isErr(val: any): val is Error;</code>
 </pre>
 </details>
 
@@ -7618,7 +7623,7 @@ isFinite(Infinity); // -> false
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isFn(val: any): boolean;</code>
+<code class="language-typescript">function isFn(val: any): val is Function;</code>
 </pre>
 </details>
 
@@ -7991,7 +7996,7 @@ console.log(isNode); // -> true if running in node
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isNull(val: any): boolean;</code>
+<code class="language-typescript">function isNull(val: any): val is null;</code>
 </pre>
 </details>
 
@@ -8011,7 +8016,7 @@ isNull(null); // -> true
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isNum(val: any): boolean;</code>
+<code class="language-typescript">function isNum(val: any): val is number;</code>
 </pre>
 </details>
 
@@ -8216,7 +8221,7 @@ isPromise({}); // -> false
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isRegExp(val: any): boolean;</code>
+<code class="language-typescript">function isRegExp(val: any): val is RegExp;</code>
 </pre>
 </details>
 
@@ -8334,7 +8339,7 @@ isSorted([3, 2, 1]); // -> false
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isStr(val: any): boolean;</code>
+<code class="language-typescript">function isStr(val: any): val is string;</code>
 </pre>
 </details>
 
@@ -8376,7 +8381,7 @@ isStream(new stream.Stream()); // -> true
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isSymbol(val: any): boolean;</code>
+<code class="language-typescript">function isSymbol(val: any): val is symbol;</code>
 </pre>
 </details>
 
@@ -8417,7 +8422,7 @@ isTypedArr(new Uint8Array(8)); // -> true
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function isUndef(val: any): boolean;</code>
+<code class="language-typescript">function isUndef(val: any): val is undefined;</code>
 </pre>
 </details>
 
@@ -12535,7 +12540,11 @@ topoSort([
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">function trigger(el: Element | Document, type: string, options?: any): void;
+<code class="language-typescript">function trigger(
+    el: Element | Document,
+    type: string,
+    options?: any
+): void;
 function trigger(type: string, options?: any): void;</code>
 </pre>
 </details>

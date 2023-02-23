@@ -1734,6 +1734,7 @@ CSS media query listener.
 <pre>
 <code class="language-typescript">class MediaQuery extends Emitter {
     constructor(query: string);
+    setQuery(query: string): void;
     isMatch(): boolean;
 }</code>
 </pre>
@@ -1746,6 +1747,10 @@ Extend from Emitter.
 |Name |Desc       |
 |-----|-----------|
 |query|Media query|
+
+### setQuery
+
+Update query.
 
 ### isMatch
 
@@ -7123,7 +7128,7 @@ Check if value is classified as an arguments object.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isArgs(val: any): boolean;</code>
+<code class="language-typescript">function isArgs(val: any): val is IArguments;</code>
 </pre>
 </details>
 
@@ -7147,7 +7152,7 @@ Check if value is an `Array` object.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isArr(val: any): boolean;</code>
+<code class="language-typescript">function isArr(val: any): val is any[];</code>
 </pre>
 </details>
 
@@ -7168,7 +7173,7 @@ Check if value is an ArrayBuffer.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isArrBuffer(val: any): boolean;</code>
+<code class="language-typescript">function isArrBuffer(val: any): val is ArrayBuffer;</code>
 </pre>
 </details>
 
@@ -7255,7 +7260,7 @@ Check if value is a boolean primitive.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isBool(val: any): boolean;</code>
+<code class="language-typescript">function isBool(val: any): val is boolean;</code>
 </pre>
 </details>
 
@@ -7459,7 +7464,7 @@ Check if value is a DOM element.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isEl(val: any): boolean;</code>
+<code class="language-typescript">function isEl(val: any): val is Element;</code>
 </pre>
 </details>
 
@@ -7542,7 +7547,7 @@ Check if value is an error.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isErr(val: any): boolean;</code>
+<code class="language-typescript">function isErr(val: any): val is Error;</code>
 </pre>
 </details>
 
@@ -7625,7 +7630,7 @@ Check if value is a function.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isFn(val: any): boolean;</code>
+<code class="language-typescript">function isFn(val: any): val is Function;</code>
 </pre>
 </details>
 
@@ -7998,7 +8003,7 @@ Check if value is an Null.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isNull(val: any): boolean;</code>
+<code class="language-typescript">function isNull(val: any): val is null;</code>
 </pre>
 </details>
 
@@ -8018,7 +8023,7 @@ Check if value is classified as a Number primitive or object.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isNum(val: any): boolean;</code>
+<code class="language-typescript">function isNum(val: any): val is number;</code>
 </pre>
 </details>
 
@@ -8223,7 +8228,7 @@ Check if value is a regular expression.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isRegExp(val: any): boolean;</code>
+<code class="language-typescript">function isRegExp(val: any): val is RegExp;</code>
 </pre>
 </details>
 
@@ -8341,7 +8346,7 @@ Check if value is a string primitive.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isStr(val: any): boolean;</code>
+<code class="language-typescript">function isStr(val: any): val is string;</code>
 </pre>
 </details>
 
@@ -8383,7 +8388,7 @@ Check if value is a symbol.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isSymbol(val: any): boolean;</code>
+<code class="language-typescript">function isSymbol(val: any): val is symbol;</code>
 </pre>
 </details>
 
@@ -8424,7 +8429,7 @@ Check if value is undefined.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function isUndef(val: any): boolean;</code>
+<code class="language-typescript">function isUndef(val: any): val is undefined;</code>
 </pre>
 </details>
 
@@ -12544,7 +12549,11 @@ Trigger browser events.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">function trigger(el: Element | Document, type: string, options?: any): void;
+<code class="language-typescript">function trigger(
+    el: Element | Document,
+    type: string,
+    options?: any
+): void;
 function trigger(type: string, options?: any): void;</code>
 </pre>
 </details>

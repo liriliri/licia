@@ -8,6 +8,10 @@
  * |-----|-----------|
  * |query|Media query|
  *
+ * ### setQuery
+ *
+ * Update query.
+ *
  * ### isMatch
  *
  * Return true if given media query matches.
@@ -39,6 +43,7 @@
 /* typescript
  * export declare class MediaQuery extends Emitter {
  *     constructor(query: string);
+ *     setQuery(query: string): void;
  *     isMatch(): boolean;
  * }
  */
@@ -50,11 +55,18 @@ exports = Emitter.extend({
     initialize(query) {
         this.callSuper(Emitter, 'initialize');
 
+        this._listener = () => {
+            this.emit(this.isMatch() ? 'match' : 'unmatch');
+        };
+        this.setQuery(query);
+    },
+    setQuery(query) {
+        if (this._mql) {
+            this._mql.removeListener(this._listener);
+        }
         this._mql = window.matchMedia(query);
 
-        this._mql.addListener(() => {
-            this.emit(this.isMatch() ? 'match' : 'unmatch');
-        });
+        this._mql.addListener(this._listener);
     },
     isMatch() {
         return this._mql.matches;

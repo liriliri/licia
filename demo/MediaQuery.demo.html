@@ -2,6 +2,7 @@
 
 <script>
     const mediaQuery = new MediaQuery('screen and (max-width: 1000px)');
+    mediaQuery.setQuery('screen and (max-width: 500px)');
     mediaQuery.on('match', () => console.log('match'));
     mediaQuery.on('unmatch', () => console.log('unmatch'));
 </script>
