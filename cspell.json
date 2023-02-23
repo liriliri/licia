@@ -396,6 +396,7 @@
     "stringify",
     "stringifyAll",
     "stripAnsi",
+    "stripBom",
     "stripCmt",
     "stripColor",
     "stripHtmlTag",

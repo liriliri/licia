@@ -11922,6 +11922,26 @@ stringifyAll(function test() {}); // -> '{"value":"function test() {}","type":"F
 stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
 ```
 
+## stripBom
+
+清除 UTF-8 BOM。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function stripBom(str: string): string;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|str|源字符串|
+|返回值|目标字符串|
+
+```javascript
+stripBom('\uFEFFlicia'); // -> 'licia'
+```
+
 ## stripCmt
 
 清除源码中的注释。

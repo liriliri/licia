@@ -11931,6 +11931,26 @@ Strip ansi codes from a string.
 stripAnsi('\u001b[4mcake\u001b[0m'); // -> 'cake'
 ```
 
+## stripBom 
+
+Strip UTF-8 byte order mark.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function stripBom(str: string): string;</code>
+</pre>
+</details>
+
+|Name  |Desc           |
+|------|---------------|
+|str   |String to strip|
+|return|Result string  |
+
+```javascript
+stripBom('\uFEFFlicia'); // -> 'licia'
+```
+
 ## stripCmt 
 
 Strip comments from source code.

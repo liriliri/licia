@@ -6171,6 +6171,19 @@
             "browser"
         ]
     },
+    "stripBom": {
+        "dependencies": [],
+        "description": "Strip UTF-8 byte order mark.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "stripCmt": {
         "dependencies": [],
         "description": "Strip comments from source code.",
