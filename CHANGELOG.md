@@ -1,3 +1,9 @@
+## v1.38.0 (25 Feb 2023)
+
+* feat: add stripBom
+* feat(MediaQuery): support setQuery
+* fix: is function ts types
+
 ## v1.37.1 (28 Jan 2023)
 
 * fix(uncaught): worker error null
