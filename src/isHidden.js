@@ -57,11 +57,31 @@ exports = function(
         overflow = false
     } = {}
 ) {
+    const computedStyle = getComputedStyle(el);
+
     if (display) {
-        return el.offsetParent === null;
+        const tagName = el.tagName;
+        if (
+            tagName === 'BODY' ||
+            tagName === 'HTML' ||
+            computedStyle.position === 'fixed'
+        ) {
+            if (computedStyle.display === 'none') {
+                return true;
+            } else {
+                let cur = el;
+                while ((cur = cur.parentElement)) {
+                    const computedStyle = getComputedStyle(cur);
+                    if (computedStyle.display === 'none') {
+                        return true;
+                    }
+                }
+            }
+        } else if (el.offsetParent === null) {
+            return true;
+        }
     }
 
-    const computedStyle = getComputedStyle(el);
     if (visibility && computedStyle.visibility === 'hidden') {
         return true;
     }

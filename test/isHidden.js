@@ -31,7 +31,16 @@ it('display', function() {
     const $display = $dom.find('.display');
     expect(isHidden($display.get(0), options)).to.be.true;
     $display.append('<div class="inner"></div>');
-    expect(isHidden($display.find('.inner').get(0), options)).to.be.true;
+    const $inner = $display.find('.inner');
+    expect(isHidden($inner.get(0), options)).to.be.true;
+
+    // position: fixed
+    $inner.css('position', 'fixed');
+    expect(isHidden($inner.get(0), options)).to.be.true;
+    $display.css('display', 'block');
+    expect(isHidden($inner.get(0), options)).to.be.false;
+    $inner.css('display', 'none');
+    expect(isHidden($inner.get(0), options)).to.be.true;
 });
 
 it('visibility', function() {
