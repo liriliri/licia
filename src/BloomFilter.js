@@ -76,7 +76,6 @@ exports = Class({
             ret[i] = (a + b * i) % size;
         }
 
-        console.log(ret);
         return ret;
     }
 });
