@@ -1,3 +1,7 @@
+## v1.38.1 (19 Apr 2023)
+
+* fix(isHidden): position fixed always return true
+
 ## v1.38.0 (25 Feb 2023)
 
 * feat: add stripBom
