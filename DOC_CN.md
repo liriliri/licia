@@ -639,7 +639,7 @@ bloom.test('Tony Stark'); // -> false
 
 ## Caseless
 
-修复对象的属性值时，无需关心键值的大小写情况。
+修改对象的属性值时，无需关心键值的大小写情况。
 
 <details>
 <summary>类型定义</summary>
@@ -6287,7 +6287,7 @@ const fullscreen: fullscreen.IFullscreen;</code>
 
 |参数名|说明|
 |-----|---|
-|el|Element|全屏元素|
+|el|全屏元素|
 
 ### exit
 
