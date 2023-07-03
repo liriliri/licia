@@ -1,3 +1,7 @@
+## v1.38.2 (4 Jul 2023)
+
+* fix(remove): loop through undefined values
+
 ## v1.38.1 (19 Apr 2023)
 
 * fix(isHidden): position fixed always return true

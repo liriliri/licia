@@ -42,11 +42,12 @@ exports = function(arr, iterator, ctx) {
     const len = arr.length;
 
     while (++i < len) {
-        const val = arr[i];
+        const realIdx = i - ret.length;
+        const val = arr[realIdx];
 
         if (iterator(val, i, arr)) {
             ret.push(val);
-            arr.splice(i, 1);
+            arr.splice(realIdx, 1);
         }
     }
 
