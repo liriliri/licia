@@ -4034,6 +4034,20 @@
             "browser"
         ]
     },
+    "isStrBlank": {
+        "benchmark": true,
+        "dependencies": [],
+        "description": "Check if string is blank.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "isStream": {
         "dependencies": [
             "isObj",

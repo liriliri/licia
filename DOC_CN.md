@@ -8352,6 +8352,29 @@ isSorted([3, 2, 1]); // -> false
 isStr('licia'); // -> true
 ```
 
+## isStrBlank
+
+检查字符串是否为空。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function isStrBlank(str: string): boolean;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|str|要检查的字符串|
+|返回值|如果字符串为空，返回真|
+
+```javascript
+isStrBlank('licia'); // -> false
+isStrBlank(''); // -> true
+isStrBlank('    '); // -> true
+isStrBlank('\r\n '); // -> true
+```
+
 ## isStream
 
 检查值是否是 Node.js Stream 类型。

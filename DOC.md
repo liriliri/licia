@@ -8359,6 +8359,29 @@ Check if value is a string primitive.
 isStr('licia'); // -> true
 ```
 
+## isStrBlank 
+
+Check if string is blank.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function isStrBlank(str: string): boolean;</code>
+</pre>
+</details>
+
+|Name  |Desc                   |
+|------|-----------------------|
+|str   |String to check        |
+|return|True if string is blank|
+
+```javascript
+isStrBlank('licia'); // -> false
+isStrBlank(''); // -> true
+isStrBlank('    '); // -> true
+isStrBlank('\r\n '); // -> true
+```
+
 ## isStream 
 
 Check if value is a Node.js stream.
