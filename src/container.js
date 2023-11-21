@@ -127,7 +127,7 @@ function memUsage() {
 
 function memLoad() {
     let max = os.totalmem();
-    let cgroupMax = cgroup.memory.max();
+    const cgroupMax = cgroup.memory.max();
     if (cgroupMax < max) {
         max = cgroupMax;
     }

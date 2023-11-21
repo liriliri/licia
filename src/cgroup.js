@@ -98,7 +98,7 @@ const memory = {
         let max = Infinity;
 
         if (isV2()) {
-            let data = read('memory.max');
+            const data = read('memory.max');
             if (data !== 'max') {
                 max = toNum(data);
             }

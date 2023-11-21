@@ -160,7 +160,7 @@ function rotl(n, b) {
 }
 
 if (isNode) {
-    let crypto = eval('require')('crypto');
+    const crypto = eval('require')('crypto');
 
     exports = function(msg) {
         if (isArr(msg)) {
