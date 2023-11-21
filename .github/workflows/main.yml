@@ -26,6 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g codecov
-    - run: npm link
+    - run: npm i && npm link
     - run: npm run ci
     - run: codecov --disable=gcov

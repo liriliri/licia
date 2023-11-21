@@ -19,7 +19,7 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Build licia
-        run: npm link && npm run build
+        run: npm i && npm link && npm run build
       - name: Publish package on NPM
         working-directory: .licia/packages
         run: |
