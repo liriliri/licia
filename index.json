@@ -4043,6 +4043,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.39.0",
         "test": [
             "node",
             "browser"
@@ -4264,6 +4265,7 @@
             "stackTrace",
             "splitPath",
             "startWith",
+            "endWith",
             "defineProp",
             "isStr",
             "has",

@@ -1,3 +1,7 @@
+## v1.39.0 (21 Nov 2023)
+
+* feat: add isStrBlank
+
 ## v1.38.2 (4 Jul 2023)
 
 * fix(remove): loop through undefined values
