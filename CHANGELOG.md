@@ -1,3 +1,7 @@
+## v1.39.1 (21 Nov 2023)
+
+* fix: lazyImport 
+
 ## v1.39.0 (21 Nov 2023)
 
 * feat: add isStrBlank

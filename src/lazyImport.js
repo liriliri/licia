@@ -45,10 +45,10 @@ exports = function(importFn, dirname) {
         const { cache } = importFn;
         if (cache) {
             if (cache[moduleId]) {
-                return cache[moduleId];
+                return importFn(moduleId);
             }
             if (!endWith(moduleId, '.js') && cache[`${moduleId}.js`]) {
-                return cache[`${moduleId}.js`];
+                return importFn(`${moduleId}.js`);
             }
         }
 

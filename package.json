@@ -1,6 +1,6 @@
 {
   "name": "licia",
-  "version": "1.39.0",
+  "version": "1.39.1",
   "description": "Useful utility collection with zero dependencies",
   "bin": {
     "licia": "./bin/licia.js"
