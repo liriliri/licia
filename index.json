@@ -2997,7 +2997,8 @@
             "each",
             "unique",
             "trim",
-            "map"
+            "map",
+            "isFn"
         ],
         "description": "Capture keyboard input to trigger given events.",
         "env": [

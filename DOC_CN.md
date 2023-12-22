@@ -6716,8 +6716,15 @@ sum('2', '5'); // -> 7
 <details>
 <summary>类型定义</summary>
 <pre>
-<code class="language-typescript">const hotkey: {
+<code class="language-typescript">namespace hotkey {
+    interface IOptions {
+        element?: HTMLElement;
+    }
+}
+const hotkey: {
+    on(key: string, options: hotkey.IOptions, listener: types.AnyFn): void;
     on(key: string, listener: types.AnyFn): void;
+    off(key: string, options: hotkey.IOptions, listener: types.AnyFn): void;
     off(key: string, listener: types.AnyFn): void;
 };</code>
 </pre>
@@ -6737,9 +6744,16 @@ sum('2', '5'); // -> 7
 注销监听器。
 
 ```javascript
-hotkey.on('k', function() {
-    console.log('k is pressed');
-});
+const container = document.getElementById('container');
+hotkey.on(
+    'k',
+    {
+        element: container
+    },
+    function() {
+        console.log('k is pressed');
+    }
+);
 function keyDown() {}
 hotkey.on('shift+a, shift+b', keyDown);
 hotkey.off('shift+a', keyDown);

@@ -1,3 +1,7 @@
+## v1.39.2 (22 Dec 2023)
+
+* feat(hotkey): support element option
+
 ## v1.39.1 (21 Nov 2023)
 
 * fix: lazyImport 

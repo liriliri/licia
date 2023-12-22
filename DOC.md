@@ -6723,8 +6723,15 @@ Capture keyboard input to trigger given events.
 <details>
 <summary>Type Definition</summary>
 <pre>
-<code class="language-typescript">const hotkey: {
+<code class="language-typescript">namespace hotkey {
+    interface IOptions {
+        element?: HTMLElement;
+    }
+}
+const hotkey: {
+    on(key: string, options: hotkey.IOptions, listener: types.AnyFn): void;
     on(key: string, listener: types.AnyFn): void;
+    off(key: string, options: hotkey.IOptions, listener: types.AnyFn): void;
     off(key: string, listener: types.AnyFn): void;
 };</code>
 </pre>
@@ -6744,9 +6751,16 @@ Register keyboard listener.
 Unregister keyboard listener.
 
 ```javascript
-hotkey.on('k', function() {
-    console.log('k is pressed');
-});
+const container = document.getElementById('container');
+hotkey.on(
+    'k',
+    {
+        element: container
+    },
+    function() {
+        console.log('k is pressed');
+    }
+);
 function keyDown() {}
 hotkey.on('shift+a, shift+b', keyDown);
 hotkey.off('shift+a', keyDown);
