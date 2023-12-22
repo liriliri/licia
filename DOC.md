@@ -6741,10 +6741,17 @@ const hotkey: {
 
 Register keyboard listener.
 
-|Name    |Desc        |
-|--------|------------|
-|key     |Key string  |
-|listener|Key listener|
+|Name    |Desc          |
+|--------|--------------|
+|key     |Key string    |
+|options |Hotkey options|
+|listener|Key listener  |
+
+Options:
+
+|Name            |Desc          |
+|----------------|--------------|
+|element=document|Target element|
 
 ### off
 

@@ -6737,7 +6737,14 @@ const hotkey: {
 |参数名|说明|
 |-----|---|
 |key|按键|
+|options|选项|
 |listener|监听器|
+
+选项：
+
+|参数名|说明|
+|-----|---|
+|element=document|目标元素|
 
 ### off
 
