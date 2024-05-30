@@ -12301,6 +12301,26 @@ fs.createReadStream('in.txt')
     .pipe(fs.createWriteStream('out.txt'));
 ```
 
+## tildify 
+
+Convert absolute path to tilde path.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">function tildify(path: string): string;</code>
+</pre>
+</details>
+
+|Name  |Desc           |
+|------|---------------|
+|path  |Path to convert|
+|return|Tilde path     |
+
+```javascript
+tildify('/home/surunzi/dev'); // -> '~/dev'
+```
+
 ## timeAgo 
 
 Format datetime with *** time ago statement.

@@ -6366,6 +6366,18 @@
             "node"
         ]
     },
+    "tildify": {
+        "dependencies": [
+            "startWith"
+        ],
+        "description": "Convert absolute path to tilde path.",
+        "env": [
+            "node"
+        ],
+        "test": [
+            "node"
+        ]
+    },
     "timeAgo": {
         "dependencies": [
             "isDate",

@@ -12292,6 +12292,26 @@ fs.createReadStream('in.txt')
     .pipe(fs.createWriteStream('out.txt'));
 ```
 
+## tildify
+
+将绝对路径转换为波浪线路径。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">function tildify(path: string): string;</code>
+</pre>
+</details>
+
+|参数名|说明|
+|-----|---|
+|path|要转换的路径|
+|返回值|波浪线路径|
+
+```javascript
+tildify('/home/surunzi/dev'); // -> '~/dev'
+```
+
 ## timeAgo
 
 将时间格式化成多久之前的形式。
