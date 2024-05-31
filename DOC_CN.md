@@ -7849,6 +7849,21 @@ isLeapYear(2000); // -> true
 isLeapYear(2002); // -> false
 ```
 
+## isMac
+
+检测是否运行在 mac 操作系统上。
+
+<details>
+<summary>类型定义</summary>
+<pre>
+<code class="language-typescript">const isMac: boolean;</code>
+</pre>
+</details>
+
+```javascript
+console.log(isMac); // -> true if running on mac
+```
+
 ## isMap
 
 检查值是否是 Map 对象。

@@ -1,1 +1,1 @@
-expect(isDarkMode()).to.be.a.boolean;
+expect(isDarkMode()).to.be.a('boolean');

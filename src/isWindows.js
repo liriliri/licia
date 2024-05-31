@@ -6,18 +6,13 @@
  */
 
 /* module
- * env: node
+ * env: all 
  */
 
 /* typescript
  * export declare const isWindows: boolean;
  */
 
-exports = false;
+_('detectOs');
 
-if (typeof process !== 'undefined') {
-    exports =
-        process.platform === 'win32' ||
-        process.env.OSTYPE === 'cygwin' ||
-        process.env.OSTYPE === 'msys';
-}
+exports = detectOs() === 'windows';

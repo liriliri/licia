@@ -7856,6 +7856,21 @@ isLeapYear(2000); // -> true
 isLeapYear(2002); // -> false
 ```
 
+## isMac 
+
+Check if platform is mac.
+
+<details>
+<summary>Type Definition</summary>
+<pre>
+<code class="language-typescript">const isMac: boolean;</code>
+</pre>
+</details>
+
+```javascript
+console.log(isMac); // -> true if running on mac
+```
+
 ## isMap 
 
 Check if value is a Map object.

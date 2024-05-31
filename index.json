@@ -2147,7 +2147,8 @@
     },
     "detectOs": {
         "dependencies": [
-            "isBrowser"
+            "isBrowser",
+            "isNode"
         ],
         "description": "Detect operating system using ua.",
         "env": [
@@ -3674,6 +3675,21 @@
             "browser"
         ]
     },
+    "isMac": {
+        "dependencies": [
+            "detectOs"
+        ],
+        "description": "Check if platform is mac.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "isMap": {
         "dependencies": [
             "objToStr"
@@ -4150,13 +4166,18 @@
         ]
     },
     "isWindows": {
-        "dependencies": [],
+        "dependencies": [
+            "detectOs"
+        ],
         "description": "Check if platform is windows.",
         "env": [
-            "node"
+            "node",
+            "browser",
+            "miniprogram"
         ],
         "test": [
-            "node"
+            "node",
+            "browser"
         ]
     },
     "jsonClone": {

@@ -213,6 +213,7 @@
     "isIp",
     "isJson",
     "isLeapYear",
+    "isMac",
     "isMap",
     "isMatch",
     "isMiniProgram",
