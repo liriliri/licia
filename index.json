@@ -3685,6 +3685,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.40.0",
         "test": [
             "node",
             "browser"
@@ -6395,6 +6396,7 @@
         "env": [
             "node"
         ],
+        "since": "1.40.0",
         "test": [
             "node"
         ]

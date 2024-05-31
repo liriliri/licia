@@ -1,3 +1,8 @@
+## v1.40.0 (31 May 2024)
+
+* feat: add tildify
+* feat: add isMac
+
 ## v1.39.2 (22 Dec 2023)
 
 * feat(hotkey): support element option
