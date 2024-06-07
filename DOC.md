@@ -6,8 +6,9 @@ jQuery like style dom manipulator.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace $ {
+
+```typescript
+namespace $ {
     class $ extends Select {
         find(selector: string): $;
         each(fn: types.AnyFn): $;
@@ -50,8 +51,9 @@ jQuery like style dom manipulator.
         after(content: string | Element): $;
     }
 }
-declare function $(selector: string | Element | Document): $.$;</code>
-</pre>
+declare function $(selector: string | Element | Document): $.$;
+```
+
 </details>
 
 ### Available methods
@@ -76,8 +78,9 @@ Element attribute manipulation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace $attr {
+
+```typescript
+namespace $attr {
     function remove(element: $safeEls.El, name: string): void;
 }
 function $attr(
@@ -89,8 +92,9 @@ function $attr(
     element: $safeEls.El,
     attributes: types.PlainObj&lt;string&gt;
 ): void;
-function $attr(element: $safeEls.El, name: string): string;</code>
-</pre>
+function $attr(element: $safeEls.El, name: string): string;
+```
+
 </details>
 
 Get the value of an attribute for the first element in the set of matched elements.
@@ -139,14 +143,16 @@ Element class manipulations.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const $class: {
+
+```typescript
+const $class: {
     add(element: $safeEls.El, name: string | string[]): void;
     has(element: $safeEls.El, name: string): boolean;
     toggle(element: $safeEls.El, name: string): void;
     remove(element: $safeEls.El, name: string): void;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### add
@@ -202,8 +208,9 @@ Element css manipulation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function $css(element: $safeEls.El, name: string): string;
+
+```typescript
+function $css(element: $safeEls.El, name: string): string;
 function $css(
     element: $safeEls.El,
     name: string,
@@ -212,8 +219,9 @@ function $css(
 function $css(
     element: $safeEls.El,
     properties: types.PlainObj&lt;string | number&gt;
-): void;</code>
-</pre>
+): void;
+```
+
 </details>
 
 Get the computed style properties for the first element in the set of matched elements.
@@ -253,8 +261,9 @@ Wrapper of $attr, adds data- prefix to keys.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function $data(
+
+```typescript
+function $data(
     element: $safeEls.El,
     name: string,
     value: string
@@ -263,8 +272,9 @@ function $data(
     element: $safeEls.El,
     attributes: types.PlainObj&lt;string&gt;
 ): void;
-function $data(element: $safeEls.El, name: string): string;</code>
-</pre>
+function $data(element: $safeEls.El, name: string): string;
+```
+
 </details>
 
 ```javascript
@@ -277,8 +287,9 @@ bind events to certain dom elements.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const $event: {
+
+```typescript
+const $event: {
     on(
         element: $safeEls.El,
         event: string,
@@ -293,8 +304,9 @@ bind events to certain dom elements.
         handler: types.AnyFn
     ): void;
     off(element: $safeEls.El, event: string, handler: types.AnyFn): void;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ```javascript
@@ -311,8 +323,9 @@ Insert html on different position.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace $insert {
+
+```typescript
+namespace $insert {
     type IInsert = (element: $safeEls.El, content: string | Element) =&gt; void;
 }
 const $insert: {
@@ -320,8 +333,9 @@ const $insert: {
     after: $insert.IInsert;
     append: $insert.IInsert;
     prepend: $insert.IInsert;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### before
@@ -363,8 +377,9 @@ Get the position of the element in document.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace $offset {
+
+```typescript
+namespace $offset {
     interface IOffset {
         left: number;
         top: number;
@@ -372,8 +387,9 @@ Get the position of the element in document.
         height: number;
     }
 }
-function $offset(element: $safeEls.El): $offset.IOffset;</code>
-</pre>
+function $offset(element: $safeEls.El): $offset.IOffset;
+```
+
 </details>
 
 |Name   |Desc                  |
@@ -391,8 +407,9 @@ Element property html, text, val getter and setter.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace $property {
+
+```typescript
+namespace $property {
     interface IProperty {
         (element: $safeEls.El, value: string): void;
         (element: $safeEls.El): string;
@@ -402,8 +419,9 @@ const $property: {
     html: $property.IProperty;
     val: $property.IProperty;
     text: $property.IProperty;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### html
@@ -433,9 +451,11 @@ Remove the set of matched elements from the DOM.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function $remove(element: $safeEls.El);</code>
-</pre>
+
+```typescript
+function $remove(element: $safeEls.El);
+```
+
 </details>
 
 |Name   |Desc              |
@@ -452,12 +472,14 @@ Convert value into an array, if it's a string, do querySelector.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace $safeEls {
+
+```typescript
+namespace $safeEls {
     type El = Element | Element[] | NodeListOf&lt;Element&gt; | string;
 }
-function $safeEls(val: $safeEls.El): Element[];</code>
-</pre>
+function $safeEls(val: $safeEls.El): Element[];
+```
+
 </details>
 
 |Name  |Desc             |
@@ -477,9 +499,11 @@ Show elements.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function $show(element: $safeEls.El): void;</code>
-</pre>
+
+```typescript
+function $show(element: $safeEls.El): void;
+```
+
 </details>
 
 |Name   |Desc            |
@@ -496,8 +520,9 @@ JavaScript Benchmark.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace Benchmark {
+
+```typescript
+namespace Benchmark {
     interface IOptions {
         minTime?: number;
         maxTime?: number;
@@ -524,8 +549,9 @@ class Benchmark {
         benches: Array&lt;types.AnyFn | Benchmark&gt;,
         options?: Benchmark.IOptions
     ): Promise&lt;Benchmark.IResult[]&gt;;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -601,13 +627,15 @@ Bloom filter implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class BloomFilter {
+
+```typescript
+class BloomFilter {
     constructor(size?: number, k?: number);
     add(val: string): void;
     test(val: string): boolean;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -649,16 +677,18 @@ Modify object props without caring about letter case.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Caseless {
+
+```typescript
+class Caseless {
     constructor(obj: any);
     getKey(key: string): string | void;
     set(key: string, val: any): void;
     get(key: string): any;
     remove(key: string): void;
     has(key: string): boolean;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -727,8 +757,9 @@ Create JavaScript class.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace Class {
+
+```typescript
+namespace Class {
     class Base {
         toString(): string;
     }
@@ -741,8 +772,9 @@ Create JavaScript class.
         [method: string]: any;
     }
 }
-function Class(methods: any, statics?: any): Class.IConstructor;</code>
-</pre>
+function Class(methods: any, statics?: any): Class.IConstructor;
+```
+
 </details>
 
 |Name   |Desc                             |
@@ -796,8 +828,9 @@ Color converter.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace Color {
+
+```typescript
+namespace Color {
     interface IColor {
         val: number[];
         model: string;
@@ -809,8 +842,9 @@ class Color {
     toHex(): string;
     toHsl(): string;
     static parse(colorStr: string): Color.IColor;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -853,15 +887,17 @@ Object delegation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Delegator {
+
+```typescript
+class Delegator {
     constructor(host: object, target: object | string);
     method(name: string, target?: string): Delegator;
     getter(name: string, target?: string): Delegator;
     setter(name: string, target?: string): Delegator;
     access(name: string, target?: string): Delegator;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -927,15 +963,17 @@ Flux dispatcher.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Dispatcher {
+
+```typescript
+class Dispatcher {
     dispatch(payload: any);
     register(cb: types.AnyFn): void;
     waitFor(ids: string[]): void;
     unregister(id: string): void;
     isDispatching(): boolean;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 [Related docs](https://facebook.github.io/flux/docs/dispatcher.html)
@@ -962,16 +1000,18 @@ Event emitter class which provides observer pattern.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Emitter {
+
+```typescript
+class Emitter {
     on(event: string, listener: types.AnyFn): Emitter;
     off(event: string, listener: types.AnyFn): Emitter;
     once(event: string, listener: types.AnyFn): Emitter;
     emit(event: string, ...args: any[]): Emitter;
     removeAllListeners(event?: string): Emitter;
     static mixin(obj: any): any;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### on
@@ -1031,13 +1071,15 @@ Enum type implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Enum {
+
+```typescript
+class Enum {
     size: number;
     constructor(map: string[] | { [member: string]: any });
     [key: string]: any;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -1070,8 +1112,9 @@ Binary file storage.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class FileBlobStore extends Emitter {
+
+```typescript
+class FileBlobStore extends Emitter {
     constructor(path: string, data?: types.PlainObj&lt;Buffer&gt;);
     set(key: string, buf: Buffer): void;
     set(values: types.PlainObj&lt;Buffer&gt;): void;
@@ -1082,8 +1125,9 @@ Binary file storage.
     clear(): void;
     each(fn: (val: Buffer, key: string) =&gt; void): void;
     save(): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 Most api is the same as Store module, except only buffer is accepted.
@@ -1104,11 +1148,13 @@ File storage.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class FileStore extends Store {
+
+```typescript
+class FileStore extends Store {
     constructor(path: string, data?: any);
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -1129,15 +1175,17 @@ Hash table implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class HashTable {
+
+```typescript
+class HashTable {
     constructor(size?: number);
     set(key: string, val: any): void;
     get(key: string): any;
     has(key: string): boolean;
     delete(key: string): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -1192,16 +1240,18 @@ Heap implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Heap {
+
+```typescript
+class Heap {
     size: number;
     constructor(cmp?: types.AnyFn);
     clear(): void;
     add(item: any): number;
     poll(): any;
     peek(): any;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### size
@@ -1253,13 +1303,15 @@ V8 heap snapshot manipulator.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class HeapSnapshot {
+
+```typescript
+class HeapSnapshot {
     nodes: LinkedList;
     edges: LinkedList;
     constructor(profile: any);
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -1291,14 +1343,16 @@ Simple internationalization library.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class I18n {
+
+```typescript
+class I18n {
     constructor(locale: string, langs: types.PlainObj&lt;any&gt;);
     set(locale: string, lang: types.PlainObj&lt;any&gt;): void;
     t(path: string | string[], data?: types.PlainObj&lt;any&gt;): string;
     locale(locale: string): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -1363,8 +1417,9 @@ Json to json transformer.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class JsonTransformer {
+
+```typescript
+class JsonTransformer {
     constructor(data: any);
     set(key: string, val: any): JsonTransformer;
     get(key?: string): any;
@@ -1380,8 +1435,9 @@ Json to json transformer.
     ): JsonTransformer;
     compute(from: string, fn: types.AnyFn): JsonTransformer;
     toString(): string;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -1475,8 +1531,9 @@ Doubly-linked list implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace LinkedList {
+
+```typescript
+namespace LinkedList {
     class Node {
         value: any;
         prev: Node | null;
@@ -1495,8 +1552,9 @@ class LinkedList {
     delNode(node: LinkedList.Node): void;
     forEach(iterator: types.AnyFn, ctx?: any);
     toArr(): any[];
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### size
@@ -1565,11 +1623,13 @@ LocalStorage wrapper.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class LocalStore extends Store {
+
+```typescript
+class LocalStore extends Store {
     constructor(name: string, data?: {});
-}</code>
-</pre>
+}
+```
+
 </details>
 
 Extend from Store.
@@ -1592,8 +1652,9 @@ Simple logger with level filter.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Logger extends Emitter {
+
+```typescript
+class Logger extends Emitter {
     name: string;
     formatter(type: string, argList: any[]): any[];
     constructor(name: string, level?: string | number);
@@ -1605,8 +1666,9 @@ Simple logger with level filter.
     warn(...args: any[]): Logger;
     error(...args: any[]): Logger;
     static level: Enum;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -1662,16 +1724,18 @@ Simple LRU cache.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Lru {
+
+```typescript
+class Lru {
     constructor(max: number);
     has(key: string): boolean;
     remove(key: string): void;
     get(key: string): any;
     set(key: string, val: any): void;
     clear(): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -1731,13 +1795,15 @@ CSS media query listener.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class MediaQuery extends Emitter {
+
+```typescript
+class MediaQuery extends Emitter {
     constructor(query: string);
     setQuery(query: string): void;
     isMatch(): boolean;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 Extend from Emitter.
@@ -1792,16 +1858,18 @@ Priority queue implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class PriorityQueue {
+
+```typescript
+class PriorityQueue {
     size: number;
     constructor(cmp?: types.AnyFn);
     clear(): void;
     enqueue(item: any): number;
     dequeue(): any;
     peek(): any;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### size
@@ -1886,9 +1954,11 @@ Like es6 Map, without iterators.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const PseudoMap: typeof Map;</code>
-</pre>
+
+```typescript
+const PseudoMap: typeof Map;
+```
+
 </details>
 
 It supports only string keys, and uses Map if exists.
@@ -1905,8 +1975,9 @@ Queue data structure.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Queue {
+
+```typescript
+class Queue {
     size: number;
     clear(): void;
     enqueue(item: any): number;
@@ -1914,8 +1985,9 @@ Queue data structure.
     peek(): any;
     forEach(iterator: types.AnyFn, context?: any): void;
     toArr(): any[];
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### size
@@ -1974,16 +2046,18 @@ LRU implementation without linked list.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class QuickLru {
+
+```typescript
+class QuickLru {
     constructor(max: number);
     has(key: string): boolean;
     remove(key: string): void;
     get(key: string): any;
     set(key: string, val: any): void;
     clear(): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 Inspired by the [hashlru algorithm](https://github.com/dominictarr/hashlru#algorithm).
@@ -2002,13 +2076,15 @@ Readiness manager.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Readiness {
+
+```typescript
+class Readiness {
     signal(tasks: string | string[]): void;
     isReady(tasks: string | string[]): boolean;
     ready(tasks: string | string[], fn?: types.AnyFn): Promise&lt;void&gt;;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### signal
@@ -2053,14 +2129,16 @@ Simplified redux like state container.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class ReduceStore {
+
+```typescript
+class ReduceStore {
     constructor(reducer: types.AnyFn, initialState: any);
     subscribe(listener: types.AnyFn): types.AnyFn;
     dispatch(action: any): any;
     getState(): any;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -2119,12 +2197,14 @@ Detect if element's size has changed.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class ResizeSensor extends SingleEmitter {
+
+```typescript
+class ResizeSensor extends SingleEmitter {
     constructor(el: HTMLElement);
     destroy(): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -2151,13 +2231,15 @@ Simple wrapper of querySelectorAll to make dom selection easier.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Select {
+
+```typescript
+class Select {
     constructor(selector: string | Element | Document);
     find(selector: string): Select;
     each(fn: types.AnyFn): Select;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -2195,13 +2277,15 @@ Limit simultaneous access to a resource.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Semaphore {
+
+```typescript
+class Semaphore {
     constructor(counter?: number);
     wait(fn: () =&gt; void): void;
     signal(): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -2240,11 +2324,13 @@ SessionStorage wrapper.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class SessionStore extends Store {
+
+```typescript
+class SessionStore extends Store {
     constructor(name: string, data?: any);
-}</code>
-</pre>
+}
+```
+
 </details>
 
 Extend from Store.
@@ -2267,15 +2353,17 @@ Event emitter with single event type.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class SingleEmitter {
+
+```typescript
+class SingleEmitter {
     addListener(listener: types.AnyFn): void;
     rmListener(listener: types.AnyFn): void;
     emit(...args: any[]): void;
     rmAllListeners(): void;
     static mixin(obj: any): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### addListener
@@ -2324,8 +2412,9 @@ Tiny WebSocket wrapper.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Socket extends Emitter {
+
+```typescript
+class Socket extends Emitter {
     constructor(
         url: string,
         options?: {
@@ -2336,8 +2425,9 @@ Tiny WebSocket wrapper.
     send(message: any): void;
     close(code?: number, reason?: string): void;
     connect(): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 Extend from Emitter.
@@ -2388,8 +2478,9 @@ Stack data structure.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Stack {
+
+```typescript
+class Stack {
     size: number;
     clear(): void;
     push(item: any): number;
@@ -2397,8 +2488,9 @@ Stack data structure.
     peek(): any;
     forEach(iterator: types.AnyFn, context?: any): void;
     toArr(): any[];
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### size
@@ -2453,13 +2545,15 @@ Simple state machine.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class State extends Emitter {
+
+```typescript
+class State extends Emitter {
     constructor(initial: string, events: any);
     is(state: string): boolean;
     [event: string]: any;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 Extend from Emitter.
@@ -2506,8 +2600,9 @@ Memory storage.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Store extends Emitter {
+
+```typescript
+class Store extends Emitter {
     constructor(data?: {});
     set(key: string, val: any): void;
     set(values: {}): void;
@@ -2517,8 +2612,9 @@ Memory storage.
     remove(keys: string[]): void;
     clear(): void;
     each(fn: (...args: any[]) =&gt; void): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 Extend from Emitter.
@@ -2601,8 +2697,9 @@ Parse, manipulate and generate chrome tracing data.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace Trace {
+
+```typescript
+namespace Trace {
     interface IEvent {
         name: string;
         cat: string;
@@ -2642,8 +2739,9 @@ class Trace {
     rmProcess(id: number): void;
     processes(): Trace.Process[];
     toJSON(): Trace.IEvent[];
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ```javascript
@@ -2665,8 +2763,9 @@ Easily create chrome tracing data.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Tracing {
+
+```typescript
+class Tracing {
     constructor(options?: {
         pid?: number;
         tid?: number;
@@ -2687,8 +2786,9 @@ Easily create chrome tracing data.
         args?: any
     ): void;
     id(): string;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -2769,15 +2869,17 @@ Trie data structure.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Trie {
+
+```typescript
+class Trie {
     add(word: string): void;
     remove(word: string): void;
     has(word: string): boolean;
     words(prefix: string): string[];
     clear(): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### add
@@ -2828,8 +2930,9 @@ Tween engine for JavaScript animations.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Tween extends Emitter {
+
+```typescript
+class Tween extends Emitter {
     constructor(target: any);
     to(props: any, duration?: number, ease?: string | Function): Tween;
     progress(): number;
@@ -2837,8 +2940,9 @@ Tween engine for JavaScript animations.
     play(): Tween;
     pause(): Tween;
     paused(): boolean;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 Extend from Emitter.
@@ -2897,8 +3001,9 @@ Simple url manipulator.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace Url {
+
+```typescript
+namespace Url {
     interface IUrl {
         protocol: string;
         auth: string;
@@ -2926,8 +3031,9 @@ class Url {
     toString(): string;
     static parse(url: string): Url.IUrl;
     static stringify(object: Url.IUrl): string;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -3005,14 +3111,16 @@ Object values validation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Validator {
+
+```typescript
+class Validator {
     constructor(options: types.PlainObj&lt;any&gt;);
     validate(object: any): string | boolean;
     static plugins: any;
     static addPlugin(name: string, plugin: types.AnyFn): void;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### constructor
@@ -3066,16 +3174,18 @@ Weighted Round Robin implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">class Wrr {
+
+```typescript
+class Wrr {
     size: number;
     set(val: any, weight: number): void;
     get(val: any): number | void;
     remove(val: any): void;
     clear(): void;
     next(): any;
-}</code>
-</pre>
+}
+```
+
 </details>
 
 ### size
@@ -3132,9 +3242,11 @@ Calculate the set of unique abbreviations for a given set of strings.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function abbrev(...names: string[]): types.PlainObj&lt;string&gt;;</code>
-</pre>
+
+```typescript
+function abbrev(...names: string[]): types.PlainObj&lt;string&gt;;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -3153,9 +3265,11 @@ Create a function that invokes once it's called n or more times.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function after&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;</code>
-</pre>
+
+```typescript
+function after&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;
+```
+
 </details>
 
 |Name  |Desc                          |
@@ -3176,8 +3290,9 @@ Perform an asynchronous HTTP request.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace ajax {
+
+```typescript
+namespace ajax {
     function get(
         url: string,
         data: string | {},
@@ -3211,8 +3326,9 @@ function ajax(options: {
     error?: types.AnyFn;
     complete?: types.AnyFn;
     timeout?: number;
-}): XMLHttpRequest;</code>
-</pre>
+}): XMLHttpRequest;
+```
+
 </details>
 
 |Name   |Desc        |
@@ -3270,8 +3386,9 @@ Retrieve all the names of object's own and inherited properties.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace allKeys {
+
+```typescript
+namespace allKeys {
     interface IOptions {
         prototype?: boolean;
         unenumerable?: boolean;
@@ -3284,8 +3401,9 @@ function allKeys(
 function allKeys(
     obj: any,
     options?: ({ symbol: false } &amp; allKeys.IOptions) | allKeys.IOptions
-): string[];</code>
-</pre>
+): string[];
+```
+
 </details>
 
 |Name   |Desc                       |
@@ -3316,8 +3434,9 @@ Ansi colors.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace ansiColor {
+
+```typescript
+namespace ansiColor {
     type IFn = (str: string) =&gt; string;
 }
 const ansiColor: {
@@ -3355,8 +3474,9 @@ const ansiColor: {
     bgMagentaBright: ansiColor.IFn;
     bgCyanBright: ansiColor.IFn;
     bgWhiteBright: ansiColor.IFn;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### Available colors
@@ -3379,12 +3499,14 @@ Make an object map using array of strings.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function arrToMap&lt;T&gt;(
+
+```typescript
+function arrToMap&lt;T&gt;(
     arr: string[],
     val?: T
-): { [key: string]: T };</code>
-</pre>
+): { [key: string]: T };
+```
+
 </details>
 
 |Name    |Desc            |
@@ -3415,9 +3537,11 @@ Use Buffer to emulate atob when running in node.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function atob(str: string): string;</code>
-</pre>
+
+```typescript
+function atob(str: string): string;
+```
+
 </details>
 
 ```javascript
@@ -3430,9 +3554,11 @@ Get average value of given numbers.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function average(...numbers: number[]): number;</code>
-</pre>
+
+```typescript
+function average(...numbers: number[]): number;
+```
+
 </details>
 
 |Name   |Desc                |
@@ -3450,12 +3576,14 @@ Basic base64 encoding and decoding.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const base64: {
+
+```typescript
+const base64: {
     encode(bytes: number[]): string;
     decode(str: string): number[];
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### encode
@@ -3487,9 +3615,11 @@ Create a function that invokes less than n times.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function before&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;</code>
-</pre>
+
+```typescript
+function before&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;
+```
+
 </details>
 
 |Name  |Desc                                            |
@@ -3511,13 +3641,15 @@ Binary search implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function binarySearch(
+
+```typescript
+function binarySearch(
     array: any[],
     val: any,
     cmp?: types.AnyFn
-): number;</code>
-</pre>
+): number;
+```
+
 </details>
 
 |Name  |Desc         |
@@ -3553,13 +3685,15 @@ Create a function bound to a given object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function bind(
+
+```typescript
+function bind(
     fn: types.AnyFn,
     ctx: any,
     ...args: any[]
-): types.AnyFn;</code>
-</pre>
+): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc                    |
@@ -3586,9 +3720,11 @@ Use Buffer to emulate btoa when running in node.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function btoa(str: string): string;</code>
-</pre>
+
+```typescript
+function btoa(str: string): string;
+```
+
 </details>
 
 ```javascript
@@ -3601,9 +3737,11 @@ Bubble sort implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function bubbleSort(arr: any[], cmp?: types.AnyFn): any[];</code>
-</pre>
+
+```typescript
+function bubbleSort(arr: any[], cmp?: types.AnyFn): any[];
+```
+
 </details>
 
 |Name  |Desc         |
@@ -3622,9 +3760,11 @@ Convert bytes to string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function bytesToStr(bytes: number[], encoding?: string): string;</code>
-</pre>
+
+```typescript
+function bytesToStr(bytes: number[], encoding?: string): string;
+```
+
 </details>
 
 |Name         |Desc              |
@@ -3643,9 +3783,11 @@ Convert bytes to 32-bit words.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function bytesToWords(bytes: number[]): number[];</code>
-</pre>
+
+```typescript
+function bytesToWords(bytes: number[]): number[];
+```
+
 </details>
 
 Useful when using CryptoJS.
@@ -3665,14 +3807,16 @@ Cache everything in module require to speed up app load.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function cacheRequire(options?: {
+
+```typescript
+function cacheRequire(options?: {
     dir?: string;
     requirePath?: boolean;
     code?: boolean;
     compileCache?: boolean;
-}): void;</code>
-</pre>
+}): void;
+```
+
 </details>
 
 |Name   |Desc         |
@@ -3700,9 +3844,11 @@ Convert a function that returns a Promise to a function following the error-firs
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function callbackify(fn: types.AnyFn): types.AnyFn;</code>
-</pre>
+
+```typescript
+function callbackify(fn: types.AnyFn): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc                                            |
@@ -3730,9 +3876,11 @@ Convert string to "camelCase".
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function camelCase(str: string): string;</code>
-</pre>
+
+```typescript
+function camelCase(str: string): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -3753,9 +3901,11 @@ Convert the first character to upper case and the remaining to lower case.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function capitalize(str: string): string;</code>
-</pre>
+
+```typescript
+function capitalize(str: string): string;
+```
+
 </details>
 
 |Name  |Desc                |
@@ -3773,9 +3923,11 @@ Cast value into a property path array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function castPath(path: string | string[], obj?: any): string[];</code>
-</pre>
+
+```typescript
+function castPath(path: string | string[], obj?: any): string[];
+```
+
 </details>
 
 |Name  |Desc               |
@@ -3797,12 +3949,14 @@ Center align text in a string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function centerAlign(
+
+```typescript
+function centerAlign(
     str: string | string[],
     width?: number
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name  |Desc                    |
@@ -3823,8 +3977,9 @@ Read cgroup metrics inside container.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const cgroup: {
+
+```typescript
+const cgroup: {
     cpu: {
         stat(): {
             usage: number;
@@ -3841,8 +3996,9 @@ Read cgroup metrics inside container.
         current(): number;
     };
     version(): number;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ```javascript
@@ -3855,9 +4011,11 @@ Return string representing a character whose Unicode code point is the given int
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function char(num: number): string;</code>
-</pre>
+
+```typescript
+function char(num: number): string;
+```
+
 </details>
 
 |Name  |Desc                                  |
@@ -3876,9 +4034,11 @@ Split array into groups the length of given size.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function chunk(arr: any[], size?: number): Array&lt;any[]&gt;;</code>
-</pre>
+
+```typescript
+function chunk(arr: any[], size?: number): Array&lt;any[]&gt;;
+```
+
 </details>
 
 |Name  |Desc                |
@@ -3899,10 +4059,12 @@ Clamp number within the inclusive lower and upper bounds.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function clamp(n: number, lower: number, upper: number): number;
-function clamp(n: number, upper: number): number;</code>
-</pre>
+
+```typescript
+function clamp(n: number, lower: number, upper: number): number;
+function clamp(n: number, upper: number): number;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -3926,9 +4088,11 @@ Utility for conditionally joining class names.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function className(...names: any[]): string;</code>
-</pre>
+
+```typescript
+function className(...names: any[]): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -3950,8 +4114,9 @@ Output cli help.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace cliHelp {
+
+```typescript
+namespace cliHelp {
     interface IOption {
         name: string;
         shorthand?: string;
@@ -3969,8 +4134,9 @@ Output cli help.
         commands: ICommand[];
     }
 }
-function cliHelp(data: cliHelp.IData | cliHelp.ICommand): string;</code>
-</pre>
+function cliHelp(data: cliHelp.IData | cliHelp.ICommand): string;
+```
+
 </details>
 
 |Name  |Desc     |
@@ -4007,9 +4173,11 @@ Create a shallow-copied clone of the provided plain object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function clone&lt;T&gt;(val: T): T;</code>
-</pre>
+
+```typescript
+function clone&lt;T&gt;(val: T): T;
+```
+
 </details>
 
 Any nested objects or arrays will be copied by reference, not duplicated.
@@ -4029,9 +4197,11 @@ Recursively clone value.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function cloneDeep&lt;T&gt;(val: T): T;</code>
-</pre>
+
+```typescript
+function cloneDeep&lt;T&gt;(val: T): T;
+```
+
 </details>
 
 |Name  |Desc             |
@@ -4051,9 +4221,11 @@ Compare version strings.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function cmpVersion(v1: string, v2: string): number;</code>
-</pre>
+
+```typescript
+function cmpVersion(v1: string, v2: string): number;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -4076,9 +4248,11 @@ Create an array by using one array for keys and another for its values.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function combine(keys: string[], values: any[]): any;</code>
-</pre>
+
+```typescript
+function combine(keys: string[], values: any[]): any;
+```
+
 </details>
 
 |Name  |Desc             |
@@ -4097,9 +4271,11 @@ Return a copy of the array with all falsy values removed.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function compact(arr: any[]): any[];</code>
-</pre>
+
+```typescript
+function compact(arr: any[]): any[];
+```
+
 </details>
 
 The values false, null, 0, "", undefined, and NaN are falsey.
@@ -4119,9 +4295,11 @@ Compose a list of functions.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function compose(...fn: types.AnyFn[]): types.AnyFn;</code>
-</pre>
+
+```typescript
+function compose(...fn: types.AnyFn[]): types.AnyFn;
+```
+
 </details>
 
 Each function consumes the return value of the function that follows.
@@ -4150,8 +4328,9 @@ Compress image using canvas.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function compressImg(
+
+```typescript
+function compressImg(
     file: File | Blob | string,
     cb: types.AnyFn
 ): void;
@@ -4166,8 +4345,9 @@ function compressImg(
         quality?: number;
     },
     cb?: types.AnyFn
-): void;</code>
-</pre>
+): void;
+```
+
 </details>
 
 |Name   |Desc             |
@@ -4210,9 +4390,11 @@ Concat multiple arrays into a single array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function concat(...args: Array&lt;any[]&gt;): any[];</code>
-</pre>
+
+```typescript
+function concat(...args: Array&lt;any[]&gt;): any[];
+```
+
 </details>
 
 |Name  |Desc              |
@@ -4230,9 +4412,11 @@ Check if the value is present in the list.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function contain(arr: any[] | {} | string, val: any): boolean;</code>
-</pre>
+
+```typescript
+function contain(arr: any[] | {} | string, val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                                |
@@ -4253,15 +4437,17 @@ Get container stats inside container.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const container: {
+
+```typescript
+const container: {
     cpuNum(): number;
     cpuUsage(period?: number): Promise&lt;number&gt;;
     cpuLoad(period?: number): Promise&lt;number&gt;;
     memUsage(): number;
     memLoad(): number;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ```javascript
@@ -4274,13 +4460,15 @@ Convert base of a number.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function convertBase(
+
+```typescript
+function convertBase(
     num: number | string,
     from: number,
     to: number
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name  |Desc             |
@@ -4301,12 +4489,14 @@ Convert binary data type.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace convertBin {
+
+```typescript
+namespace convertBin {
     function blobToArrBuffer(blob: any): Promise&lt;ArrayBuffer&gt;;
 }
-function convertBin(bin: any, type: string): any;</code>
-</pre>
+function convertBin(bin: any, type: string): any;
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -4343,8 +4533,9 @@ Simple api for handling browser cookies.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace cookie {
+
+```typescript
+namespace cookie {
     interface IOptions {
         path?: string;
         expires?: number;
@@ -4357,8 +4548,9 @@ Simple api for handling browser cookies.
         remove(key: string, options?: cookie.IOptions): ICookie;
     }
 }
-const cookie: cookie.ICookie;</code>
-</pre>
+const cookie: cookie.ICookie;
+```
+
 </details>
 
 ### get
@@ -4403,9 +4595,11 @@ Copy text to clipboard using document.execCommand.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function copy(text: string, cb?: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function copy(text: string, cb?: types.AnyFn): void;
+```
+
 </details>
 
 |Name|Desc             |
@@ -4425,12 +4619,14 @@ CRC1 implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function crc1(
+
+```typescript
+function crc1(
     input: string | number[],
     previous?: number
-): number;</code>
-</pre>
+): number;
+```
+
 </details>
 
 |Name    |Desc                |
@@ -4449,12 +4645,14 @@ CRC16 implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function crc16(
+
+```typescript
+function crc16(
     input: string | number[],
     previous?: number
-): number;</code>
-</pre>
+): number;
+```
+
 </details>
 
 |Name    |Desc                 |
@@ -4473,12 +4671,14 @@ CRC32 implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function crc32(
+
+```typescript
+function crc32(
     input: string | number[],
     previous?: number
-): number;</code>
-</pre>
+): number;
+```
+
 </details>
 
 |Name    |Desc                 |
@@ -4497,12 +4697,14 @@ CRC8 implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function crc8(
+
+```typescript
+function crc8(
     input: string | number[],
     previous?: number
-): number;</code>
-</pre>
+): number;
+```
+
 </details>
 
 |Name    |Desc                |
@@ -4521,9 +4723,11 @@ Create new object using given object as prototype.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function create(proto?: object): any;</code>
-</pre>
+
+```typescript
+function create(proto?: object): any;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -4542,12 +4746,14 @@ Used to create extend, extendOwn and defaults.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function createAssigner(
+
+```typescript
+function createAssigner(
     keysFn: types.AnyFn,
     defaults: boolean
-): types.AnyFn;</code>
-</pre>
+): types.AnyFn;
+```
+
 </details>
 
 |Name    |Desc                          |
@@ -4562,12 +4768,14 @@ CreateObjectURL wrapper.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function createUrl(
+
+```typescript
+function createUrl(
     data: any,
     options?: { type?: string }
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name   |Desc                                |
@@ -4589,12 +4797,14 @@ Css parser and serializer.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const css: {
+
+```typescript
+const css: {
     parse(css: string): object;
     stringify(stylesheet: object, options?: { indent?: string }): string;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 Comments will be stripped.
@@ -4636,8 +4846,9 @@ Calculate and compare priority of css selector/rule.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace cssPriority {
+
+```typescript
+namespace cssPriority {
     function compare(p1: number[], p2: number[]): number;
 }
 function cssPriority(
@@ -4647,8 +4858,9 @@ function cssPriority(
         inlineStyle?: boolean;
         position?: number;
     }
-): number[];</code>
-</pre>
+): number[];
+```
+
 </details>
 
 |Name    |Type           |
@@ -4690,9 +4902,11 @@ Check if browser supports a given CSS feature.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function cssSupports(name: string, val?: string): boolean;</code>
-</pre>
+
+```typescript
+function cssSupports(name: string, val?: string): boolean;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -4715,9 +4929,11 @@ Function currying.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function curry(fn: types.AnyFn): types.AnyFn;</code>
-</pre>
+
+```typescript
+function curry(fn: types.AnyFn): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc                |
@@ -4739,8 +4955,9 @@ Simple but extremely useful date format function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function dateFormat(
+
+```typescript
+function dateFormat(
     date: Date,
     mask: string,
     utc?: boolean,
@@ -4750,8 +4967,9 @@ function dateFormat(
     mask: string,
     utc?: boolean,
     gmt?: boolean
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name         |Desc                 |
@@ -4804,9 +5022,11 @@ Return a new debounced version of the passed function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function debounce&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;</code>
-</pre>
+
+```typescript
+function debounce&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;
+```
+
 </details>
 
 |Name  |Desc                           |
@@ -4826,9 +5046,11 @@ A tiny JavaScript debugging utility.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function debug(name: string): any;</code>
-</pre>
+
+```typescript
+function debug(name: string): any;
+```
+
 </details>
 
 |Name  |Desc                           |
@@ -4848,9 +5070,11 @@ Convert Latin-1 Supplement and Latin Extended-A letters to basic Latin letters a
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function deburr(str: string): string;</code>
-</pre>
+
+```typescript
+function deburr(str: string): string;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -4868,9 +5092,11 @@ Better decodeURIComponent that does not throw if input is invalid.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function decodeUriComponent(str: string): string;</code>
-</pre>
+
+```typescript
+function decodeUriComponent(str: string): string;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -4889,9 +5115,11 @@ Fill in undefined properties in object with the first value present in the follo
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function defaults(obj: any, ...src: any[]): any;</code>
-</pre>
+
+```typescript
+function defaults(obj: any, ...src: any[]): any;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -4910,14 +5138,16 @@ Define a module, should be used along with use.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function define(
+
+```typescript
+function define(
     name: string,
     requires: string[],
     method: types.AnyFn
 ): void;
-function define(name: string, method: types.AnyFn): void;</code>
-</pre>
+function define(name: string, method: types.AnyFn): void;
+```
+
 </details>
 
 |Name    |Desc        |
@@ -4943,8 +5173,9 @@ Shortcut for Object.defineProperty(defineProperties).
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function defineProp&lt;T&gt;(
+
+```typescript
+function defineProp&lt;T&gt;(
     obj: T,
     prop: string,
     descriptor: PropertyDescriptor
@@ -4952,8 +5183,9 @@ Shortcut for Object.defineProperty(defineProperties).
 function defineProp&lt;T&gt;(
     obj: T,
     descriptor: PropertyDescriptorMap
-): T;</code>
-</pre>
+): T;
+```
+
 </details>
 
 |Name      |Desc               |
@@ -5010,9 +5242,11 @@ Return the first argument that is not undefined.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function defined(...args: any[]): any;</code>
-</pre>
+
+```typescript
+function defined(...args: any[]): any;
+```
+
 </details>
 
 |Name   |Desc                  |
@@ -5030,9 +5264,11 @@ Delete node.js require cache.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function delRequireCache(id: string): void;</code>
-</pre>
+
+```typescript
+function delRequireCache(id: string): void;
+```
+
 </details>
 
 |Name|Desc               |
@@ -5052,13 +5288,15 @@ Invoke function after certain milliseconds.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function delay(
+
+```typescript
+function delay(
     fn: types.AnyFn,
     wait: number,
     ...args: any[]
-): void;</code>
-</pre>
+): void;
+```
+
 </details>
 
 |Name   |Desc                                      |
@@ -5084,12 +5322,14 @@ Event delegation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const delegate: {
+
+```typescript
+const delegate: {
     add(el: Element, type: string, selector: string, cb: types.AnyFn): void;
     remove(el: Element, type: string, selector: string, cb: types.AnyFn): void;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### add
@@ -5122,9 +5362,11 @@ Node.js util.deprecate with browser support.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function deprecate(fn: types.AnyFn, msg: string): types.AnyFn;</code>
-</pre>
+
+```typescript
+function deprecate(fn: types.AnyFn, msg: string): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc                     |
@@ -5145,14 +5387,16 @@ Detect browser info using ua.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function detectBrowser(
+
+```typescript
+function detectBrowser(
     ua?: string
 ): {
     name: string;
     version: number;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 |Name                  |Desc                              |
@@ -5175,9 +5419,11 @@ Detect if mocha is running.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function detectMocha(): boolean;</code>
-</pre>
+
+```typescript
+function detectMocha(): boolean;
+```
+
 </details>
 
 ```javascript
@@ -5190,9 +5436,11 @@ Detect operating system using ua.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function detectOs(ua?: string): string;</code>
-</pre>
+
+```typescript
+function detectOs(ua?: string): string;
+```
+
 </details>
 
 |Name                  |Desc                 |
@@ -5214,9 +5462,11 @@ Create an array of unique array values not included in the other given array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function difference(arr: any[], ...args: any[]): any[];</code>
-</pre>
+
+```typescript
+function difference(arr: any[], ...args: any[]): any[];
+```
+
 </details>
 
 |Name   |Desc                        |
@@ -5235,9 +5485,11 @@ Convert string to "dotCase".
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function dotCase(str: string): string;</code>
-</pre>
+
+```typescript
+function dotCase(str: string): string;
+```
+
 </details>
 
 |Name  |Desc             |
@@ -5256,13 +5508,15 @@ Trigger a file download on client side.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function download(
+
+```typescript
+function download(
     data: Blob | File | string | any[],
     name: string,
     type?: string
-): void;</code>
-</pre>
+): void;
+```
+
 </details>
 
 |Name           |Desc            |
@@ -5281,9 +5535,11 @@ Simple duration format function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function durationFormat(duration: number, mask?: string): string;</code>
-</pre>
+
+```typescript
+function durationFormat(duration: number, mask?: string): string;
+```
+
 </details>
 
 |Name           |Desc                           |
@@ -5311,8 +5567,9 @@ Iterate over elements of collection and invokes iterator for each element.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function each&lt;T&gt;(
+
+```typescript
+function each&lt;T&gt;(
     list: types.List&lt;T&gt;,
     iterator: types.ListIterator&lt;T, void&gt;,
     ctx?: any
@@ -5321,8 +5578,9 @@ function each&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, void&gt;,
     ctx?: any
-): types.Collection&lt;T&gt;;</code>
-</pre>
+): types.Collection&lt;T&gt;;
+```
+
 </details>
 
 |Name    |Desc                          |
@@ -5341,8 +5599,9 @@ Easing functions adapted from http://jqueryui.com/ .
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const easing: {
+
+```typescript
+const easing: {
     linear(percent: number): number;
     inQuad(percent: number): number;
     outQuad(percent: number): number;
@@ -5368,8 +5627,9 @@ Easing functions adapted from http://jqueryui.com/ .
     outInBack(percent: number): number;
     inBounce(percent: number): number;
     outBounce(percent: number): number;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 |Name   |Desc                  |
@@ -5388,9 +5648,11 @@ Emulate touch events on desktop browsers.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function emulateTouch(el: Element): void;</code>
-</pre>
+
+```typescript
+function emulateTouch(el: Element): void;
+```
+
 </details>
 
 |Name|Desc          |
@@ -5409,9 +5671,11 @@ Check if string ends with the given target string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function endWith(str: string, suffix: string): boolean;</code>
-</pre>
+
+```typescript
+function endWith(str: string, suffix: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                           |
@@ -5430,9 +5694,11 @@ Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' charact
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function escape(str: string): string;</code>
-</pre>
+
+```typescript
+function escape(str: string): string;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -5450,9 +5716,11 @@ Escape string to be a valid JavaScript string literal between quotes.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function escapeJsStr(str: string): string;</code>
-</pre>
+
+```typescript
+function escapeJsStr(str: string): string;
+```
+
 </details>
 
 http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4
@@ -5472,9 +5740,11 @@ Escape special chars to be used as literals in RegExp constructors.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function escapeRegExp(str: string): string;</code>
-</pre>
+
+```typescript
+function escapeRegExp(str: string): string;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -5492,9 +5762,11 @@ Load css into page.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function evalCss(css: string): HTMLStyleElement;</code>
-</pre>
+
+```typescript
+function evalCss(css: string): HTMLStyleElement;
+```
+
 </details>
 
 |Name  |Desc         |
@@ -5512,9 +5784,11 @@ Execute js in given context.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function evalJs(js: string, ctx?: any): void;</code>
-</pre>
+
+```typescript
+function evalJs(js: string, ctx?: any): void;
+```
+
 </details>
 
 |Name      |Desc           |
@@ -5533,8 +5807,9 @@ Check if predicate return truthy for all elements.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function every&lt;T&gt;(
+
+```typescript
+function every&lt;T&gt;(
     object: types.List&lt;T&gt;,
     iterator?: types.ListIterator&lt;T, boolean&gt;,
     context?: any
@@ -5543,8 +5818,9 @@ function every&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator?: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
-): boolean;</code>
-</pre>
+): boolean;
+```
+
 </details>
 
 |Name    |Desc                                         |
@@ -5566,9 +5842,11 @@ Copy all of the properties in the source objects over to the destination object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function extend(destination: any, ...sources: any[]): any;</code>
-</pre>
+
+```typescript
+function extend(destination: any, ...sources: any[]): any;
+```
+
 </details>
 
 |Name       |Desc              |
@@ -5587,9 +5865,11 @@ Recursive object extending.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function extendDeep(destination: any, ...sources: any[]): any;</code>
-</pre>
+
+```typescript
+function extendDeep(destination: any, ...sources: any[]): any;
+```
+
 </details>
 
 |Name       |Desc              |
@@ -5622,9 +5902,11 @@ Like extend, but only copies own properties over to the destination object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function extendOwn(destination: any, ...sources: any[]): any;</code>
-</pre>
+
+```typescript
+function extendOwn(destination: any, ...sources: any[]): any;
+```
+
 </details>
 
 |Name       |Desc              |
@@ -5643,9 +5925,11 @@ Extract block comments from source code.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function extractBlockCmts(str: string): string[];</code>
-</pre>
+
+```typescript
+function extractBlockCmts(str: string): string[];
+```
+
 </details>
 
 |Name  |Desc             |
@@ -5663,9 +5947,11 @@ Extract urls from plain text.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function extractUrls(str: string): string[];</code>
-</pre>
+
+```typescript
+function extractUrls(str: string): string[];
+```
+
 </details>
 
 |Name  |Desc           |
@@ -5685,8 +5971,9 @@ Turn XMLHttpRequest into promise like.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace fetch {
+
+```typescript
+namespace fetch {
     interface IResult {
         ok: boolean;
         status: number;
@@ -5713,8 +6000,9 @@ function fetch(
         headers?: types.PlainObj&lt;string&gt;;
         body?: any;
     }
-): Promise&lt;fetch.IResult&gt;;</code>
-</pre>
+): Promise&lt;fetch.IResult&gt;;
+```
+
 </details>
 
 Note: This is not a complete fetch pollyfill.
@@ -5746,9 +6034,11 @@ Calculate fibonacci number.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function fibonacci(n: number): number;</code>
-</pre>
+
+```typescript
+function fibonacci(n: number): number;
+```
+
 </details>
 
 |Name  |Desc                       |
@@ -5767,9 +6057,11 @@ Turn bytes into human readable file size.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function fileSize(bytes: number): string;</code>
-</pre>
+
+```typescript
+function fileSize(bytes: number): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -5791,16 +6083,18 @@ Detect file type using magic number.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function fileType(
+
+```typescript
+function fileType(
     input: Buffer | ArrayBuffer | Uint8Array
 ):
     | {
           ext: string;
           mime: string;
       }
-    | undefined;</code>
-</pre>
+    | undefined;
+```
+
 </details>
 
 |Name  |Desc                          |
@@ -5824,9 +6118,11 @@ Convert a file path to a file URL.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function fileUrl(path: string): string;</code>
-</pre>
+
+```typescript
+function fileUrl(path: string): string;
+```
+
 </details>
 
 |Name  |Desc     |
@@ -5844,14 +6140,16 @@ Fill elements of array with value.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function fill(
+
+```typescript
+function fill(
     list: any[],
     val: any,
     start?: number,
     end?: number
-): any[];</code>
-</pre>
+): any[];
+```
+
 </details>
 
 |Name          |Desc                    |
@@ -5873,8 +6171,9 @@ Iterates over elements of collection, returning an array of all the values that 
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function filter&lt;T&gt;(
+
+```typescript
+function filter&lt;T&gt;(
     list: types.List&lt;T&gt;,
     iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
@@ -5883,8 +6182,9 @@ function filter&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
-): T[];</code>
-</pre>
+): T[];
+```
+
 </details>
 
 |Name     |Desc                                   |
@@ -5906,8 +6206,9 @@ Find the first value that passes a truth test in a collection.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function find&lt;T&gt;(
+
+```typescript
+function find&lt;T&gt;(
     object: types.List&lt;T&gt;,
     iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
@@ -5916,8 +6217,9 @@ function find&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
-): T | undefined;</code>
-</pre>
+): T | undefined;
+```
+
 </details>
 
 |Name    |Desc                             |
@@ -5951,9 +6253,11 @@ Return the first index where the predicate truth test passes.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function findIdx(arr: any[], predicate: types.AnyFn): number;</code>
-</pre>
+
+```typescript
+function findIdx(arr: any[], predicate: types.AnyFn): number;
+```
+
 </details>
 
 |Name     |Desc                          |
@@ -5986,13 +6290,15 @@ Return the first key where the predicate truth test passes.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function findKey(
+
+```typescript
+function findKey(
     obj: any,
     predicate: types.AnyFn,
     ctx?: any
-): string | void;</code>
-</pre>
+): string | void;
+```
+
 </details>
 
 |Name     |Desc                          |
@@ -6014,9 +6320,11 @@ Return the last index where the predicate truth test passes.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function findLastIdx(arr: any[], predicate: types.AnyFn): number;</code>
-</pre>
+
+```typescript
+function findLastIdx(arr: any[], predicate: types.AnyFn): number;
+```
+
 </details>
 
 |Name     |Desc                          |
@@ -6053,9 +6361,11 @@ Recursively flatten an array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function flatten(arr: any[]): any[];</code>
-</pre>
+
+```typescript
+function flatten(arr: any[]): any[];
+```
+
 </details>
 
 |Name  |Desc               |
@@ -6073,9 +6383,11 @@ Validate function arguments.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function fnArgs(types: string[], args: any): void;</code>
-</pre>
+
+```typescript
+function fnArgs(types: string[], args: any): void;
+```
+
 </details>
 
 |Name |Desc           |
@@ -6104,9 +6416,11 @@ Get a function parameter's names.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function fnParams(fn: types.AnyFn | string): string[];</code>
-</pre>
+
+```typescript
+function fnParams(fn: types.AnyFn | string): string[];
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -6124,9 +6438,11 @@ Simple FNV-1a implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function fnv1a(str: string): number;</code>
-</pre>
+
+```typescript
+function fnv1a(str: string): number;
+```
+
 </details>
 
 |Name  |Desc          |
@@ -6144,9 +6460,11 @@ Format string in a printf-like format.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function format(str: string, ...values: any[]): string;</code>
-</pre>
+
+```typescript
+function format(str: string, ...values: any[]): string;
+```
+
 </details>
 
 |Name     |Desc                               |
@@ -6174,9 +6492,11 @@ Convert number to fraction.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function fraction(num: number): string;</code>
-</pre>
+
+```typescript
+function fraction(num: number): string;
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -6194,9 +6514,11 @@ Shortcut for Object.freeze.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function freeze&lt;T&gt;(obj: T): T;</code>
-</pre>
+
+```typescript
+function freeze&lt;T&gt;(obj: T): T;
+```
+
 </details>
 
 Use Object.defineProperties if Object.freeze is not supported.
@@ -6219,9 +6541,11 @@ Recursively use Object.freeze.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function freezeDeep&lt;T&gt;(obj: T): T;</code>
-</pre>
+
+```typescript
+function freezeDeep&lt;T&gt;(obj: T): T;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -6242,8 +6566,9 @@ Promised version of node.js fs module.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const fs: {
+
+```typescript
+const fs: {
     readFile(path: string, encoding: string): Promise&lt;string&gt;;
     readFile(path: string): Promise&lt;Buffer&gt;;
     exists(path: string): Promise&lt;boolean&gt;;
@@ -6253,8 +6578,9 @@ Promised version of node.js fs module.
     readdir(path: string): Promise&lt;string[]&gt;;
     rmdir(path: string): Promise&lt;void&gt;;
     [key: string]: any;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ```javascript
@@ -6273,8 +6599,9 @@ Fullscreen api wrapper.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace fullscreen {
+
+```typescript
+namespace fullscreen {
     interface IFullscreen extends Emitter {
         request(el?: Element): void;
         exit(): void;
@@ -6284,8 +6611,9 @@ Fullscreen api wrapper.
         isEnabled(): boolean;
     }
 }
-const fullscreen: fullscreen.IFullscreen;</code>
-</pre>
+const fullscreen: fullscreen.IFullscreen;
+```
+
 </details>
 
 ### request
@@ -6333,16 +6661,18 @@ Simple fuzzy search.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function fuzzySearch(
+
+```typescript
+function fuzzySearch(
     needle: string,
     haystack: any[],
     options?: {
         caseSensitive?: boolean;
         key?: string | string[];
     }
-): any[];</code>
-</pre>
+): any[];
+```
+
 </details>
 
 |Name     |Desc            |
@@ -6382,9 +6712,11 @@ Compute the greatest common divisor using Euclid's algorithm.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function gcd(a: number, b: number): number;</code>
-</pre>
+
+```typescript
+function gcd(a: number, b: number): number;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -6403,12 +6735,14 @@ Get an available TCP port.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function getPort(
+
+```typescript
+function getPort(
     port?: number | number[],
     host?: string
-): Promise&lt;number&gt;;</code>
-</pre>
+): Promise&lt;number&gt;;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -6431,9 +6765,11 @@ Get prototype of an object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function getProto(obj: any): any;</code>
-</pre>
+
+```typescript
+function getProto(obj: any): any;
+```
+
 </details>
 
 |Name  |Desc                                         |
@@ -6452,12 +6788,14 @@ Get url param.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function getUrlParam(
+
+```typescript
+function getUrlParam(
     name: string,
     url?: string
-): string | undefined;</code>
-</pre>
+): string | undefined;
+```
+
 </details>
 
 |Name        |Desc            |
@@ -6476,14 +6814,16 @@ Handle errors like golang.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function golangify&lt;T, U = Error&gt;(
+
+```typescript
+function golangify&lt;T, U = Error&gt;(
     fn: (...args: any[]) =&gt; Promise&lt;T&gt;
 ): (...args: any[]) =&gt; Promise&lt;[T | undefined, U | null]&gt;;
 function golangify&lt;T, U = Error&gt;(
     p: Promise&lt;T&gt;
-): Promise&lt;[T | undefined, U | null]&gt;;</code>
-</pre>
+): Promise&lt;[T | undefined, U | null]&gt;;
+```
+
 </details>
 
 |Name  |Desc                                      |
@@ -6516,13 +6856,15 @@ Create html with JavaScript.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function h(
+
+```typescript
+function h(
     tag: string,
     attrs?: types.PlainObj&lt;any&gt;,
     ...child: Array&lt;string | HTMLElement&gt;
-): HTMLElement;</code>
-</pre>
+): HTMLElement;
+```
+
 </details>
 
 |Name    |Desc           |
@@ -6550,9 +6892,11 @@ Checks if key is a direct property.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function has(obj: {}, key: string): boolean;</code>
-</pre>
+
+```typescript
+function has(obj: {}, key: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                            |
@@ -6571,9 +6915,11 @@ Heap sort implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function heapSort(arr: any[], cmp?: types.AnyFn): any[];</code>
-</pre>
+
+```typescript
+function heapSort(arr: any[], cmp?: types.AnyFn): any[];
+```
+
 </details>
 
 |Name  |Desc         |
@@ -6592,12 +6938,14 @@ Hex encoding and decoding.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const hex: {
+
+```typescript
+const hex: {
     encode(bytes: number[]): string;
     decode(str: string): number[];
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### encode
@@ -6629,8 +6977,9 @@ Highlight code.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function highlight(
+
+```typescript
+function highlight(
     str: string,
     lang?: string,
     style?: {
@@ -6640,8 +6989,9 @@ Highlight code.
         keyword?: string;
         operator?: string;
     }
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name   |Desc                        |
@@ -6667,16 +7017,18 @@ Monitor, change function arguments and result.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function hookFn&lt;T&gt;(
+
+```typescript
+function hookFn&lt;T&gt;(
     fn: T,
     options: {
         before?: types.AnyFn;
         after?: types.AnyFn;
         error?: types.AnyFn;
     }
-): T;</code>
-</pre>
+): T;
+```
+
 </details>
 
 |Name   |Desc            |
@@ -6722,8 +7074,9 @@ Capture keyboard input to trigger given events.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace hotkey {
+
+```typescript
+namespace hotkey {
     interface IOptions {
         element?: HTMLElement;
     }
@@ -6733,8 +7086,9 @@ const hotkey: {
     on(key: string, listener: types.AnyFn): void;
     off(key: string, options: hotkey.IOptions, listener: types.AnyFn): void;
     off(key: string, listener: types.AnyFn): void;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### on
@@ -6779,9 +7133,11 @@ Convert hsl to rgb.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function hslToRgb(hsl: number[]): number[];</code>
-</pre>
+
+```typescript
+function hslToRgb(hsl: number[]): number[];
+```
+
 </details>
 
 |Name  |Desc      |
@@ -6799,12 +7155,14 @@ Html parser and serializer.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const html: {
+
+```typescript
+const html: {
     parse(html: string): any[];
     stringify(tree: any[]): string;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### parse
@@ -6837,9 +7195,11 @@ Return the first argument given.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function identity&lt;T&gt;(val: T): T;</code>
-</pre>
+
+```typescript
+function identity&lt;T&gt;(val: T): T;
+```
+
 </details>
 
 |Name  |Desc       |
@@ -6857,9 +7217,11 @@ Get the index at which the first occurrence of value.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function idxOf(arr: any[], val: any, fromIdx?: number): number;</code>
-</pre>
+
+```typescript
+function idxOf(arr: any[], val: any, fromIdx?: number): number;
+```
+
 </details>
 
 |Name     |Desc                |
@@ -6879,13 +7241,15 @@ Indent each line in a string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function indent(
+
+```typescript
+function indent(
     str: string,
     char?: string,
     len?: number
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name  |Desc                |
@@ -6905,12 +7269,14 @@ Inherit the prototype methods from one constructor into another.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function inherits(
+
+```typescript
+function inherits(
     Class: types.AnyFn,
     SuperClass: types.AnyFn
-): void;</code>
-</pre>
+): void;
+```
+
 </details>
 
 |Name      |Desc       |
@@ -6941,8 +7307,9 @@ Ini parser and serializer.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const ini: {
+
+```typescript
+const ini: {
     parse(ini: string): any;
     stringify(
         obj: any,
@@ -6951,8 +7318,9 @@ Ini parser and serializer.
             whitespace: boolean;
         }
     ): string;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### parse
@@ -7001,9 +7369,11 @@ Insertion sort implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function insertionSort(arr: any[], cmp?: types.AnyFn): any[];</code>
-</pre>
+
+```typescript
+function insertionSort(arr: any[], cmp?: types.AnyFn): any[];
+```
+
 </details>
 
 |Name  |Desc         |
@@ -7022,9 +7392,11 @@ Compute the list of values that are the intersection of all the arrays.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function intersect(...arr: Array&lt;any[]&gt;): any[];</code>
-</pre>
+
+```typescript
+function intersect(...arr: Array&lt;any[]&gt;): any[];
+```
+
 </details>
 
 |Name  |Desc                          |
@@ -7042,8 +7414,9 @@ Intersect two ranges.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace intersectRange {
+
+```typescript
+namespace intersectRange {
     interface IRange {
         start: number;
         end: number;
@@ -7052,8 +7425,9 @@ Intersect two ranges.
 function intersectRange(
     a: intersectRange.IRange,
     b: intersectRange.IRange
-): intersectRange.IRange | void;</code>
-</pre>
+): intersectRange.IRange | void;
+```
+
 </details>
 
 |Name  |Desc                 |
@@ -7075,8 +7449,9 @@ Facebook's invariant.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function invariant(
+
+```typescript
+function invariant(
     condition: boolean,
     format?: string,
     a?: string,
@@ -7085,8 +7460,9 @@ Facebook's invariant.
     d?: string,
     e?: string,
     f?: string
-): void;</code>
-</pre>
+): void;
+```
+
 </details>
 
 [Related docs](https://github.com/zertosh/invariant)
@@ -7104,9 +7480,11 @@ Create an object composed of the inverted keys and values of object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function invert(obj: any): any;</code>
-</pre>
+
+```typescript
+function invert(obj: any): any;
+```
+
 </details>
 
 |Name  |Desc               |
@@ -7126,9 +7504,11 @@ Check if an url is absolute.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isAbsoluteUrl(url: string): boolean;</code>
-</pre>
+
+```typescript
+function isAbsoluteUrl(url: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -7148,9 +7528,11 @@ Check if value is classified as an arguments object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isArgs(val: any): val is IArguments;</code>
-</pre>
+
+```typescript
+function isArgs(val: any): val is IArguments;
+```
+
 </details>
 
 |Name  |Desc                                |
@@ -7172,9 +7554,11 @@ Check if value is an `Array` object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isArr(val: any): val is any[];</code>
-</pre>
+
+```typescript
+function isArr(val: any): val is any[];
+```
+
 </details>
 
 |Name  |Desc                              |
@@ -7193,9 +7577,11 @@ Check if value is an ArrayBuffer.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isArrBuffer(val: any): val is ArrayBuffer;</code>
-</pre>
+
+```typescript
+function isArrBuffer(val: any): val is ArrayBuffer;
+```
+
 </details>
 
 |Name  |Desc                           |
@@ -7213,9 +7599,11 @@ Check if value is array-like.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isArrLike(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isArrLike(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                       |
@@ -7237,9 +7625,11 @@ Check if value is an async function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isAsyncFn(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isAsyncFn(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                              |
@@ -7259,9 +7649,11 @@ Check if value is a Blob.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isBlob(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isBlob(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -7280,9 +7672,11 @@ Check if value is a boolean primitive.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isBool(val: any): val is boolean;</code>
-</pre>
+
+```typescript
+function isBool(val: any): val is boolean;
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -7302,9 +7696,11 @@ Check if running in a browser.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const isBrowser: boolean;</code>
-</pre>
+
+```typescript
+const isBrowser: boolean;
+```
+
 </details>
 
 ```javascript
@@ -7317,9 +7713,11 @@ Check if value is a buffer.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isBuffer(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isBuffer(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                     |
@@ -7337,14 +7735,16 @@ Check if values are close(almost equal) to each other.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isClose(
+
+```typescript
+function isClose(
     a: number,
     b: number,
     relTol?: number,
     absTol?: number
-): boolean;</code>
-</pre>
+): boolean;
+```
+
 </details>
 
 `abs(a-b) <= max(relTol * max(abs(a), abs(b)), absTol)`
@@ -7370,9 +7770,11 @@ Detect cyclic object reference.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isCyclic(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isCyclic(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -7393,9 +7795,11 @@ Detect dark mode.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isDarkMode(): boolean;</code>
-</pre>
+
+```typescript
+function isDarkMode(): boolean;
+```
+
 </details>
 
 ```javascript
@@ -7408,9 +7812,11 @@ Check if a string is a valid data url.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isDataUrl(str: string): boolean;</code>
-</pre>
+
+```typescript
+function isDataUrl(str: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                        |
@@ -7429,9 +7835,11 @@ Check if value is classified as a Date object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isDate(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isDate(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                          |
@@ -7449,9 +7857,11 @@ Check if a path is directory.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isDir(path: string): Promise&lt;boolean&gt;;</code>
-</pre>
+
+```typescript
+function isDir(path: string): Promise&lt;boolean&gt;;
+```
+
 </details>
 
 |Name  |Desc                       |
@@ -7469,9 +7879,11 @@ Check if the process is running inside a docker container.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isDocker(): boolean;</code>
-</pre>
+
+```typescript
+function isDocker(): boolean;
+```
+
 </details>
 
 ```javascript
@@ -7484,9 +7896,11 @@ Check if value is a DOM element.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isEl(val: any): val is Element;</code>
-</pre>
+
+```typescript
+function isEl(val: any): val is Element;
+```
+
 </details>
 
 |Name  |Desc                          |
@@ -7504,9 +7918,11 @@ Loosely validate an email address.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isEmail(val: string): boolean;</code>
-</pre>
+
+```typescript
+function isEmail(val: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                                 |
@@ -7524,9 +7940,11 @@ Check if value is an empty object or array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isEmpty(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isEmpty(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -7546,9 +7964,11 @@ Performs an optimized deep comparison between the two objects, to determine if t
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isEqual(val: any, other: any): boolean;</code>
-</pre>
+
+```typescript
+function isEqual(val: any, other: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                         |
@@ -7567,9 +7987,11 @@ Check if value is an error.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isErr(val: any): val is Error;</code>
-</pre>
+
+```typescript
+function isErr(val: any): val is Error;
+```
+
 </details>
 
 |Name  |Desc                     |
@@ -7587,9 +8009,11 @@ Check if number is even.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isEven(num: number): boolean;</code>
-</pre>
+
+```typescript
+function isEven(num: number): boolean;
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -7609,9 +8033,11 @@ Check if value is a file.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isFile(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isFile(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -7629,9 +8055,11 @@ Check if value is a finite primitive number.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isFinite(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isFinite(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                            |
@@ -7650,9 +8078,11 @@ Check if value is a function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isFn(val: any): val is Function;</code>
-</pre>
+
+```typescript
+function isFn(val: any): val is Function;
+```
+
 </details>
 
 |Name  |Desc                       |
@@ -7674,9 +8104,11 @@ Check if character is full width.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isFullWidth(codePoint: number): boolean;</code>
-</pre>
+
+```typescript
+function isFullWidth(codePoint: number): boolean;
+```
+
 </details>
 
 |Name     |Desc                           |
@@ -7697,9 +8129,11 @@ Check if value is a generator function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isGeneratorFn(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isGeneratorFn(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                                 |
@@ -7718,8 +8152,9 @@ Check if element is hidden.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isHidden(
+
+```typescript
+function isHidden(
     el: Element,
     options?: {
         display?: boolean;
@@ -7729,8 +8164,9 @@ Check if element is hidden.
         viewport?: boolean;
         overflow?: boolean;
     }
-): boolean;</code>
-</pre>
+): boolean;
+```
+
 </details>
 
 |Name   |Desc                     |
@@ -7760,9 +8196,11 @@ Checks if value is classified as a Integer.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isInt(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isInt(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                                 |
@@ -7782,13 +8220,15 @@ Check if value is an IP address.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace isIp {
+
+```typescript
+namespace isIp {
     function v4(str: string): boolean;
     function v6(str: string): boolean;
 }
-function isIp(str: string): boolean;</code>
-</pre>
+function isIp(str: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                          |
@@ -7818,9 +8258,11 @@ Check if value is a valid JSON.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isJson(val: string): boolean;</code>
-</pre>
+
+```typescript
+function isJson(val: string): boolean;
+```
+
 </details>
 
 It uses `JSON.parse()` and a `try... catch` block.
@@ -7841,9 +8283,11 @@ Check if a year is a leap year.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isLeapYear(year: number): boolean;</code>
-</pre>
+
+```typescript
+function isLeapYear(year: number): boolean;
+```
+
 </details>
 
 |Name  |Desc                       |
@@ -7862,9 +8306,11 @@ Check if platform is mac.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const isMac: boolean;</code>
-</pre>
+
+```typescript
+const isMac: boolean;
+```
+
 </details>
 
 ```javascript
@@ -7877,9 +8323,11 @@ Check if value is a Map object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isMap(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isMap(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -7898,9 +8346,11 @@ Check if keys and values in src are contained in obj.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isMatch(obj: any, src: any): boolean;</code>
-</pre>
+
+```typescript
+function isMatch(obj: any, src: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                              |
@@ -7919,9 +8369,11 @@ Check if running in wechat mini program.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const isMiniProgram: boolean;</code>
-</pre>
+
+```typescript
+const isMiniProgram: boolean;
+```
+
 </details>
 
 ```javascript
@@ -7934,9 +8386,11 @@ Check whether client is using a mobile browser using ua.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isMobile(ua?: string): boolean;</code>
-</pre>
+
+```typescript
+function isMobile(ua?: string): boolean;
+```
+
 </details>
 
 |Name                  |Desc                                 |
@@ -7954,9 +8408,11 @@ Check if value is an NaN.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isNaN(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isNaN(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -7977,9 +8433,11 @@ Check if value is a native function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isNative(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isNative(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                              |
@@ -7998,9 +8456,11 @@ Check if value is null or undefined, the same as value == null.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isNil(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isNil(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                              |
@@ -8023,9 +8483,11 @@ Check if running in node.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const isNode: boolean;</code>
-</pre>
+
+```typescript
+const isNode: boolean;
+```
+
 </details>
 
 ```javascript
@@ -8038,9 +8500,11 @@ Check if value is an Null.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isNull(val: any): val is null;</code>
-</pre>
+
+```typescript
+function isNull(val: any): val is null;
+```
+
 </details>
 
 |Name  |Desc                    |
@@ -8058,9 +8522,11 @@ Check if value is classified as a Number primitive or object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isNum(val: any): val is number;</code>
-</pre>
+
+```typescript
+function isNum(val: any): val is number;
+```
+
 </details>
 
 |Name  |Desc                                 |
@@ -8080,9 +8546,11 @@ Check if value is numeric.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isNumeric(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isNumeric(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                    |
@@ -8106,9 +8574,11 @@ Check if value is the language type of Object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isObj(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isObj(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -8129,9 +8599,11 @@ Check if number is odd.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isOdd(num: number): boolean;</code>
-</pre>
+
+```typescript
+function isOdd(num: number): boolean;
+```
+
 </details>
 
 |Name  |Desc                 |
@@ -8151,9 +8623,11 @@ Check if value is an object created by Object constructor.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isPlainObj(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isPlainObj(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                           |
@@ -8173,12 +8647,14 @@ Check if a TCP port is free.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isPortFree(
+
+```typescript
+function isPortFree(
     port: number,
     host?: string
-): Promise&lt;boolean&gt;;</code>
-</pre>
+): Promise&lt;boolean&gt;;
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -8199,9 +8675,11 @@ Check if the provided integer is a prime number.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isPrime(num: number): boolean;</code>
-</pre>
+
+```typescript
+function isPrime(num: number): boolean;
+```
+
 </details>
 
 |Name  |Desc                            |
@@ -8220,9 +8698,11 @@ Check if value is string, number, boolean or null.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isPrimitive(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isPrimitive(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                        |
@@ -8242,9 +8722,11 @@ Check if value looks like a promise.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isPromise(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isPromise(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                              |
@@ -8263,9 +8745,11 @@ Check if value is a regular expression.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isRegExp(val: any): val is RegExp;</code>
-</pre>
+
+```typescript
+function isRegExp(val: any): val is RegExp;
+```
+
 </details>
 
 |Name  |Desc                                 |
@@ -8283,9 +8767,11 @@ Check if path appears to be relative.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isRelative(path: string): boolean;</code>
-</pre>
+
+```typescript
+function isRelative(path: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                               |
@@ -8303,9 +8789,11 @@ Determine if running on a high DPR device or not.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const isRetina: boolean;</code>
-</pre>
+
+```typescript
+const isRetina: boolean;
+```
+
 </details>
 
 ```javascript
@@ -8318,9 +8806,11 @@ Check if process is running.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isRunning(pid: number): boolean;</code>
-</pre>
+
+```typescript
+function isRunning(pid: number): boolean;
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -8338,9 +8828,11 @@ Check if value is a Set object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isSet(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isSet(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -8359,9 +8851,11 @@ Check if an array is sorted.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isSorted(arr: any[], cmp?: types.AnyFn): boolean;</code>
-</pre>
+
+```typescript
+function isSorted(arr: any[], cmp?: types.AnyFn): boolean;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -8381,9 +8875,11 @@ Check if value is a string primitive.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isStr(val: any): val is string;</code>
-</pre>
+
+```typescript
+function isStr(val: any): val is string;
+```
+
 </details>
 
 |Name  |Desc                               |
@@ -8401,9 +8897,11 @@ Check if string is blank.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isStrBlank(str: string): boolean;</code>
-</pre>
+
+```typescript
+function isStrBlank(str: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -8424,9 +8922,11 @@ Check if value is a Node.js stream.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isStream(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isStream(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                             |
@@ -8446,9 +8946,11 @@ Check if value is a symbol.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isSymbol(val: any): val is symbol;</code>
-</pre>
+
+```typescript
+function isSymbol(val: any): val is symbol;
+```
+
 </details>
 
 |Name  |Desc                     |
@@ -8466,9 +8968,11 @@ Check if value is a typed array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isTypedArr(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isTypedArr(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                          |
@@ -8487,9 +8991,11 @@ Check if value is undefined.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isUndef(val: any): val is undefined;</code>
-</pre>
+
+```typescript
+function isUndef(val: any): val is undefined;
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -8508,9 +9014,11 @@ Loosely validate an url.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isUrl(val: string): boolean;</code>
-</pre>
+
+```typescript
+function isUrl(val: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                               |
@@ -8528,9 +9036,11 @@ Check if value is a WeakMap object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isWeakMap(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isWeakMap(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -8549,9 +9059,11 @@ Check if value is a WeakSet object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function isWeakSet(val: any): boolean;</code>
-</pre>
+
+```typescript
+function isWeakSet(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -8570,9 +9082,11 @@ Check if platform is windows.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const isWindows: boolean;</code>
-</pre>
+
+```typescript
+const isWindows: boolean;
+```
+
 </details>
 
 ```javascript
@@ -8585,9 +9099,11 @@ Use JSON parse and stringify to clone object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function jsonClone&lt;T&gt;(val: T): T;</code>
-</pre>
+
+```typescript
+function jsonClone&lt;T&gt;(val: T): T;
+```
+
 </details>
 
 |Name  |Desc          |
@@ -8605,8 +9121,9 @@ A simple jsonp implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function jsonp(options: {
+
+```typescript
+function jsonp(options: {
     url: string;
     data?: any;
     success?: types.AnyFn;
@@ -8615,8 +9132,9 @@ A simple jsonp implementation.
     error?: types.AnyFn;
     complete?: types.AnyFn;
     timeout?: number;
-}): void;</code>
-</pre>
+}): void;
+```
+
 </details>
 
 |Name   |Desc         |
@@ -8652,9 +9170,11 @@ Convert string to "kebabCase".
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function kebabCase(str: string): string;</code>
-</pre>
+
+```typescript
+function kebabCase(str: string): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -8675,10 +9195,12 @@ Key codes and key names conversion.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function keyCode(name: string): number;
-function keyCode(code: number): string;</code>
-</pre>
+
+```typescript
+function keyCode(name: string): number;
+function keyCode(code: number): string;
+```
+
 </details>
 
 Get key code's name.
@@ -8706,9 +9228,11 @@ Create an array of the own enumerable property names of object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function keys(obj: any): string[];</code>
-</pre>
+
+```typescript
+function keys(obj: any): string[];
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -8726,9 +9250,11 @@ Kill process.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function kill(pid: number): void;</code>
-</pre>
+
+```typescript
+function kill(pid: number): void;
+```
+
 </details>
 
 |Name|Desc|
@@ -8745,9 +9271,11 @@ Get the last element of array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function last(arr: any[]): any;</code>
-</pre>
+
+```typescript
+function last(arr: any[]): any;
+```
+
 </details>
 
 |Name  |Desc                     |
@@ -8765,12 +9293,14 @@ Import modules lazily, Proxy is used.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function lazyImport&lt;T&gt;(
+
+```typescript
+function lazyImport&lt;T&gt;(
     importFn: (moduleId: string) =&gt; T,
     dirname?: string
-): (moduleId: string) =&gt; T;</code>
-</pre>
+): (moduleId: string) =&gt; T;
+```
+
 </details>
 
 |Name    |Desc                             |
@@ -8793,11 +9323,13 @@ Require modules lazily.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function lazyRequire&lt;T&gt;(
+
+```typescript
+function lazyRequire&lt;T&gt;(
     requireFn: (moduleId: string) =&gt; T
-): (moduleId: string) =&gt; T;</code>
-</pre>
+): (moduleId: string) =&gt; T;
+```
+
 </details>
 
 ```javascript
@@ -8815,9 +9347,11 @@ Levenshtein distance implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function levenshtein(a: string, b: string): number;</code>
-</pre>
+
+```typescript
+function levenshtein(a: string, b: string): number;
+```
+
 </details>
 
 |Name  |Desc                                |
@@ -8836,9 +9370,11 @@ Hyperlink urls in a string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function linkify(str: string, hyperlink?: types.AnyFn): string;</code>
-</pre>
+
+```typescript
+function linkify(str: string, hyperlink?: types.AnyFn): string;
+```
+
 </details>
 
 |Name     |Desc                     |
@@ -8861,9 +9397,11 @@ Inject link tag into page with given href value.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function loadCss(src: string, cb?: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function loadCss(src: string, cb?: types.AnyFn): void;
+```
+
 </details>
 
 |Name|Desc           |
@@ -8883,9 +9421,11 @@ Load image with given src.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function loadImg(src: string, cb?: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function loadImg(src: string, cb?: types.AnyFn): void;
+```
+
 </details>
 
 |Name|Desc           |
@@ -8905,9 +9445,11 @@ Inject script tag into page with given src value.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function loadJs(src: string, cb?: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function loadJs(src: string, cb?: types.AnyFn): void;
+```
+
 </details>
 
 |Name|Desc           |
@@ -8927,9 +9469,11 @@ Get the longest item in an array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function longest(arr: string[]): string;</code>
-</pre>
+
+```typescript
+function longest(arr: string[]): string;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -8947,9 +9491,11 @@ Convert string to lower case.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function lowerCase(str: string): string;</code>
-</pre>
+
+```typescript
+function lowerCase(str: string): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -8967,9 +9513,11 @@ Pad string on the left side if it's shorter than length.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function lpad(str: string, len: number, chars?: string): string;</code>
-</pre>
+
+```typescript
+function lpad(str: string, len: number, chars?: string): string;
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -8992,9 +9540,11 @@ Remove chars or white-spaces from beginning of string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function ltrim(str: string, chars?: string | string[]): string;</code>
-</pre>
+
+```typescript
+function ltrim(str: string, chars?: string | string[]): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -9015,8 +9565,9 @@ Create an array of values by running each element in collection through iteratee
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function map&lt;T, TResult&gt;(
+
+```typescript
+function map&lt;T, TResult&gt;(
     list: types.List&lt;T&gt;,
     iterator: types.ListIterator&lt;T, TResult&gt;,
     context?: any
@@ -9025,8 +9576,9 @@ function map&lt;T, TResult&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, TResult&gt;,
     context?: any
-): TResult[];</code>
-</pre>
+): TResult[];
+```
+
 </details>
 
 |Name    |Desc                          |
@@ -9048,13 +9600,15 @@ Map for objects.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function mapObj&lt;T, TResult&gt;(
+
+```typescript
+function mapObj&lt;T, TResult&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, TResult&gt;,
     context?: any
-): types.Dictionary&lt;TResult&gt;;</code>
-</pre>
+): types.Dictionary&lt;TResult&gt;;
+```
+
 </details>
 
 |Name    |Desc                          |
@@ -9076,9 +9630,11 @@ Return a predicate function that checks if attrs are contained in an object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function matcher(attrs: any): types.AnyFn;</code>
-</pre>
+
+```typescript
+function matcher(attrs: any): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc                              |
@@ -9102,9 +9658,11 @@ Get maximum value of given numbers.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function max(...num: number[]): number;</code>
-</pre>
+
+```typescript
+function max(...num: number[]): number;
+```
+
 </details>
 
 |Name  |Desc                |
@@ -9122,9 +9680,11 @@ MD5 implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function md5(msg: string | number[]): string;</code>
-</pre>
+
+```typescript
+function md5(msg: string | number[]): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -9142,9 +9702,11 @@ Memory-backed implementation of the Web Storage API.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const memStorage: typeof window.localStorage;</code>
-</pre>
+
+```typescript
+const memStorage: typeof window.localStorage;
+```
+
 </details>
 
 A replacement for environments where localStorage or sessionStorage is not available.
@@ -9160,12 +9722,14 @@ Memoize a given function by caching the computed result.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function memoize(
+
+```typescript
+function memoize(
     fn: types.AnyFn,
     hashFn?: types.AnyFn
-): types.AnyFn;</code>
-</pre>
+): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc                                |
@@ -9186,12 +9750,14 @@ Merge the contents of arrays together into the first array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function mergeArr&lt;T, U&gt;(
+
+```typescript
+function mergeArr&lt;T, U&gt;(
     first: ArrayLike&lt;T&gt;,
     ...arrays: ArrayLike&lt;U&gt;[]
-): ArrayLike&lt;T | U&gt;;</code>
-</pre>
+): ArrayLike&lt;T | U&gt;;
+```
+
 </details>
 
 |Name  |Desc                                |
@@ -9212,9 +9778,11 @@ Merge sort implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function mergeSort(arr: any[], cmp?: types.AnyFn): any[];</code>
-</pre>
+
+```typescript
+function mergeSort(arr: any[], cmp?: types.AnyFn): any[];
+```
+
 </details>
 
 Note: It's not an "in-place" sort.
@@ -9235,16 +9803,18 @@ Document meta manipulation, turn name and content into key value pairs.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace meta {
+
+```typescript
+namespace meta {
     function remove(nameList: string | string[]): void;
 }
 function meta(): {};
 function meta(key: string): string;
 function meta(keys: string[]): {};
 function meta(key, value): void;
-function meta(pairs: {}): void;</code>
-</pre>
+function meta(pairs: {}): void;
+```
+
 </details>
 
 Get meta content with given name. If name is omitted, all pairs will be return.
@@ -9294,9 +9864,11 @@ Return a sorted list of the names of every method in an object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function methods(obj: any): string[];</code>
-</pre>
+
+```typescript
+function methods(obj: any): string[];
+```
+
 </details>
 
 |Name  |Desc                    |
@@ -9314,9 +9886,11 @@ Common mime types.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function mime(name: string): string | undefined;</code>
-</pre>
+
+```typescript
+function mime(name: string): string | undefined;
+```
+
 </details>
 
 |Name  |Desc     |
@@ -9344,9 +9918,11 @@ Get minimum value of given numbers.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function min(...num: number[]): number;</code>
-</pre>
+
+```typescript
+function min(...num: number[]): number;
+```
+
 </details>
 
 |Name  |Desc                |
@@ -9364,8 +9940,9 @@ Recursively create directories.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace mkdir {
+
+```typescript
+namespace mkdir {
     function sync(dir: string, mode?: number): void;
 }
 function mkdir(
@@ -9373,8 +9950,9 @@ function mkdir(
     mode?: number,
     cb?: types.AnyFn
 ): void;
-function mkdir(dir: string, cb?: types.AnyFn): void;</code>
-</pre>
+function mkdir(dir: string, cb?: types.AnyFn): void;
+```
+
 </details>
 
 |Name     |Desc               |
@@ -9401,8 +9979,9 @@ Tiny moment.js like implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace moment {
+
+```typescript
+namespace moment {
     class M {
         constructor(value: string | Date);
         format(mask: string): string;
@@ -9443,8 +10022,9 @@ Tiny moment.js like implementation.
         diff(input: M | string | Date, unit: string, asFloat: boolean): number;
     }
 }
-function moment(value: string | Date): moment.M;</code>
-</pre>
+function moment(value: string | Date): moment.M;
+```
+
 </details>
 
 It only supports a subset of moment.js api.
@@ -9472,9 +10052,11 @@ Morph a dom tree to match a target dom tree.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function morphDom(from: Node, to: Node | string): Node;</code>
-</pre>
+
+```typescript
+function morphDom(from: Node, to: Node | string): Node;
+```
+
 </details>
 
 |Name  |Type              |
@@ -9498,12 +10080,14 @@ Morse code encoding and decoding.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const morse: {
+
+```typescript
+const morse: {
     encode(txt: string): string;
     decode(morse: string): string;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### encode
@@ -9536,10 +10120,12 @@ Convert time string formats to milliseconds.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function ms(str: string): number;
-function ms(num: number): string;</code>
-</pre>
+
+```typescript
+function ms(str: string): number;
+function ms(num: number): string;
+```
+
 </details>
 
 Turn time string into milliseconds.
@@ -9573,9 +10159,11 @@ Sort values in natural order.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function naturalSort&lt;T extends any[]&gt;(arr: T): T;</code>
-</pre>
+
+```typescript
+function naturalSort&lt;T extends any[]&gt;(arr: T): T;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -9595,9 +10183,11 @@ Create a function that negates the result of the predicate function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function negate&lt;T extends types.AnyFn&gt;(predicate: T): T;</code>
-</pre>
+
+```typescript
+function negate&lt;T extends types.AnyFn&gt;(predicate: T): T;
+```
+
 </details>
 
 |Name     |Desc               |
@@ -9618,9 +10208,11 @@ Next tick for both node and browser.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function nextTick(cb: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function nextTick(cb: types.AnyFn): void;
+```
+
 </details>
 
 |Name|Desc            |
@@ -9643,9 +10235,11 @@ A no-operation function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function noop(): void;</code>
-</pre>
+
+```typescript
+function noop(): void;
+```
+
 </details>
 
 ```javascript
@@ -9658,9 +10252,11 @@ Normalize http header name.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function normalizeHeader(header: string): string;</code>
-</pre>
+
+```typescript
+function normalizeHeader(header: string): string;
+```
+
 </details>
 
 |Name  |Desc               |
@@ -9679,9 +10275,11 @@ Normalize file path slashes.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function normalizePath(path: string): string;</code>
-</pre>
+
+```typescript
+function normalizePath(path: string): string;
+```
+
 </details>
 
 |Name  |Desc             |
@@ -9700,15 +10298,17 @@ Normalize phone numbers into E.164 format.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function normalizePhone(
+
+```typescript
+function normalizePhone(
     phone: string,
     options: {
         countryCode: number;
         trunkPrefix?: boolean;
     }
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name   |Desc              |
@@ -9743,15 +10343,17 @@ Wrapper for the Web Notifications API.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace notify {
+
+```typescript
+namespace notify {
     class Notification extends Emitter {
         constructor(title: string, options?: object);
         show(): void;
     }
 }
-function notify(title: string, options?: object): void;</code>
-</pre>
+function notify(title: string, options?: object): void;
+```
+
 </details>
 
 |Name   |Desc                |
@@ -9783,9 +10385,11 @@ Gets the number of milliseconds that have elapsed since the Unix epoch.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function now(): number;</code>
-</pre>
+
+```typescript
+function now(): number;
+```
+
 </details>
 
 ```javascript
@@ -9798,9 +10402,11 @@ Alias of Object.prototype.toString.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function objToStr(val: any): string;</code>
-</pre>
+
+```typescript
+function objToStr(val: any): string;
+```
+
 </details>
 
 |Name  |Desc                                |
@@ -9818,12 +10424,14 @@ Opposite of pick.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function omit(
+
+```typescript
+function omit(
     obj: any,
     filter: string | string[] | Function
-): any;</code>
-</pre>
+): any;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -9846,9 +10454,11 @@ Create a function that invokes once.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function once(fn: types.AnyFn): types.AnyFn;</code>
-</pre>
+
+```typescript
+function once(fn: types.AnyFn): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -9869,9 +10479,11 @@ Open stuff like url, files.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function open(target: string): any;</code>
-</pre>
+
+```typescript
+function open(target: string): any;
+```
+
 </details>
 
 |Name  |Desc         |
@@ -9889,12 +10501,14 @@ Open file dialog to select file in browser.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function openFile(options?: {
+
+```typescript
+function openFile(options?: {
     accept?: string;
     multiple?: boolean;
-}): Promise&lt;File[]&gt;;</code>
-</pre>
+}): Promise&lt;File[]&gt;;
+```
+
 </details>
 
 |Name   |Desc          |
@@ -9921,13 +10535,15 @@ Used for function context binding.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function optimizeCb(
+
+```typescript
+function optimizeCb(
     fn: types.AnyFn,
     ctx: any,
     argCount?: number
-): types.AnyFn;</code>
-</pre>
+): types.AnyFn;
+```
+
 </details>
 
 ## ordinal 
@@ -9936,9 +10552,11 @@ Add ordinal indicator to number.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function ordinal(num: number): string;</code>
-</pre>
+
+```typescript
+function ordinal(num: number): string;
+```
+
 </details>
 
 |Name  |Desc                   |
@@ -9957,14 +10575,16 @@ Screen orientation helper.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace orientation {
+
+```typescript
+namespace orientation {
     interface IOrientation extends Emitter {
         get(): string;
     }
 }
-const orientation: orientation.IOrientation;</code>
-</pre>
+const orientation: orientation.IOrientation;
+```
+
 </details>
 
 ### on
@@ -9992,9 +10612,11 @@ Pad string on the left and right sides if it's shorter than length.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function pad(str: string, len: number, chars?: string): string;</code>
-</pre>
+
+```typescript
+function pad(str: string, len: number, chars?: string): string;
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -10018,9 +10640,11 @@ Convert an object into a list of [key, value] pairs.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function pairs(obj: any): Array&lt;any[]&gt;;</code>
-</pre>
+
+```typescript
+function pairs(obj: any): Array&lt;any[]&gt;;
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -10038,9 +10662,11 @@ Run an array of functions in parallel.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function parallel(tasks: types.AnyFn[], cb?: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function parallel(tasks: types.AnyFn[], cb?: types.AnyFn): void;
+```
+
 </details>
 
 |Name |Desc                   |
@@ -10074,15 +10700,17 @@ Parse command line argument options, the same as minimist.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function parseArgs(
+
+```typescript
+function parseArgs(
     args: string[],
     options: {
         names: any;
         shorthands: any;
     }
-): any;</code>
-</pre>
+): any;
+```
+
 </details>
 
 |Name   |Desc           |
@@ -10118,8 +10746,9 @@ Simple html parser.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function parseHtml(
+
+```typescript
+function parseHtml(
     html: string,
     handlers: {
         start?: (tag: string, attrs: any, unary: boolean) =&gt; void;
@@ -10127,8 +10756,9 @@ Simple html parser.
         comment?: (text: string) =&gt; void;
         text?: (text: string) =&gt; void;
     }
-): void;</code>
-</pre>
+): void;
+```
+
 </details>
 
 |Name   |Desc         |
@@ -10151,12 +10781,14 @@ Partially apply a function by filling in given arguments.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function partial(
+
+```typescript
+function partial(
     fn: types.AnyFn,
     ...partials: any[]
-): types.AnyFn;</code>
-</pre>
+): types.AnyFn;
+```
+
 </details>
 
 |Name       |Desc                                    |
@@ -10178,9 +10810,11 @@ Convert string to "pascalCase".
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function pascalCase(str: string): string;</code>
-</pre>
+
+```typescript
+function pascalCase(str: string): string;
+```
+
 </details>
 
 |Name  |Desc               |
@@ -10201,9 +10835,11 @@ High resolution time up to microsecond precision.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function perfNow(): number;</code>
-</pre>
+
+```typescript
+function perfNow(): number;
+```
+
 </details>
 
 ```javascript
@@ -10220,12 +10856,14 @@ Return a filtered copy of an object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function pick(
+
+```typescript
+function pick(
     object: any,
     filter: string | string[] | Function
-): any;</code>
-</pre>
+): any;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -10248,10 +10886,12 @@ Pipe all streams together.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">import stream = require(&#x27;stream&#x27;);
-function pipe(...streams: stream.Stream[]): void;</code>
-</pre>
+
+```typescript
+import stream = require(&#x27;stream&#x27;);
+function pipe(...streams: stream.Stream[]): void;
+```
+
 </details>
 
 |Name      |Desc           |
@@ -10277,9 +10917,11 @@ Extract a list of property values.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function pluck(object: any, key: string | string[]): any[];</code>
-</pre>
+
+```typescript
+function pluck(object: any, key: string | string[]): any[];
+```
+
 </details>
 
 |Name  |Desc                           |
@@ -10303,9 +10945,11 @@ Find decimal precision of a given number.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function precision(num: number): number;</code>
-</pre>
+
+```typescript
+function precision(num: number): number;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -10323,9 +10967,11 @@ Fetch a given url.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function prefetch(url: string): Promise&lt;void&gt;;</code>
-</pre>
+
+```typescript
+function prefetch(url: string): Promise&lt;void&gt;;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -10344,12 +10990,14 @@ Add vendor prefixes to a CSS attribute.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace prefix {
+
+```typescript
+namespace prefix {
     function dash(name: string): string;
 }
-function prefix(name: string): string;</code>
-</pre>
+function prefix(name: string): string;
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -10373,12 +11021,14 @@ Convert callback based functions into Promises.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function promisify(
+
+```typescript
+function promisify(
     fn: types.AnyFn,
     multiArgs?: boolean
-): types.AnyFn;</code>
-</pre>
+): types.AnyFn;
+```
+
 </details>
 
 |Name           |Desc                                  |
@@ -10404,9 +11054,11 @@ Return a function that will itself return the key property of any passed-in obje
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function property(path: string | string[]): types.AnyFn;</code>
-</pre>
+
+```typescript
+function property(path: string | string[]): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc                       |
@@ -10426,12 +11078,14 @@ Parse and stringify url query strings.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const query: {
+
+```typescript
+const query: {
     parse(str: string): any;
     stringify(object: any): string;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### parse
@@ -10464,9 +11118,11 @@ Quick sort implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function quickSort(arr: any[], cmp?: types.AnyFn): any[];</code>
-</pre>
+
+```typescript
+function quickSort(arr: any[], cmp?: types.AnyFn): any[];
+```
+
 </details>
 
 |Name  |Desc         |
@@ -10485,12 +11141,14 @@ Shortcut for requestAnimationFrame.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace raf {
+
+```typescript
+namespace raf {
     function cancel(id: number): void;
 }
-function raf(cb: types.AnyFn): number;</code>
-</pre>
+function raf(cb: types.AnyFn): number;
+```
+
 </details>
 
 Use setTimeout if native requestAnimationFrame is not supported.
@@ -10509,13 +11167,15 @@ Produces a random number between min and max(inclusive).
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function random(
+
+```typescript
+function random(
     min: number,
     max?: number,
     floating?: boolean
-): number;</code>
-</pre>
+): number;
+```
+
 </details>
 
 |Name          |Desc                  |
@@ -10537,9 +11197,11 @@ Random bytes generator.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function randomBytes(size: number): Uint8Array;</code>
-</pre>
+
+```typescript
+function randomBytes(size: number): Uint8Array;
+```
+
 </details>
 
 Use crypto module in node or crypto object in browser if possible.
@@ -10559,16 +11221,18 @@ Random color generator.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function randomColor(): string;
+
+```typescript
+function randomColor(): string;
 function randomColor(options: {
     count?: number;
     hue?: number;
     lightness?: number;
     format?: string;
     seed?: number;
-}): string | string[];</code>
-</pre>
+}): string | string[];
+```
+
 </details>
 
 |Name   |Desc          |
@@ -10598,9 +11262,11 @@ A tiny id generator, similar to nanoid.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function randomId(size?: number, symbols?: string): string;</code>
-</pre>
+
+```typescript
+function randomId(size?: number, symbols?: string): string;
+```
+
 </details>
 
 |Name   |Desc                                                |
@@ -10620,9 +11286,11 @@ Get a random item from an array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function randomItem(arr: any[]): any;</code>
-</pre>
+
+```typescript
+function randomItem(arr: any[]): any;
+```
+
 </details>
 
 |Name  |Desc                |
@@ -10640,13 +11308,15 @@ Create flexibly-numbered lists of integers.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function range(
+
+```typescript
+function range(
     start: number,
     end?: number,
     step?: number
-): number[];</code>
-</pre>
+): number[];
+```
+
 </details>
 
 |Name  |Desc                              |
@@ -10667,12 +11337,14 @@ RC4 symmetric encryption implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const rc4: {
+
+```typescript
+const rc4: {
     encrypt(key: string, str: string): string;
     decrypt(key: string, str: string): string;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### encrypt
@@ -10700,9 +11372,11 @@ Invoke callback when dom is ready, similar to jQuery ready.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function ready(fn: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function ready(fn: types.AnyFn): void;
+```
+
 </details>
 
 |Name|Desc             |
@@ -10721,8 +11395,9 @@ Turn a list of values into a single value.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function reduce&lt;T, TResult&gt;(
+
+```typescript
+function reduce&lt;T, TResult&gt;(
     list: types.List&lt;T&gt;,
     iterator: types.MemoIterator&lt;T, TResult&gt;,
     memo?: TResult,
@@ -10733,8 +11408,9 @@ function reduce&lt;T, TResult&gt;(
     iterator: types.MemoObjectIterator&lt;T, TResult&gt;,
     memo?: TResult,
     context?: any
-): TResult;</code>
-</pre>
+): TResult;
+```
+
 </details>
 
 |Name             |Desc                          |
@@ -10761,14 +11437,16 @@ Right-associative version of reduce.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function reduceRight&lt;T, TResult&gt;(
+
+```typescript
+function reduceRight&lt;T, TResult&gt;(
     list: types.Collection&lt;T&gt;,
     iterator: types.MemoIterator&lt;T, TResult&gt;,
     memo?: TResult,
     context?: any
-): TResult;</code>
-</pre>
+): TResult;
+```
+
 </details>
 
 ```javascript
@@ -10787,8 +11465,9 @@ Opposite of filter.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function reject&lt;T&gt;(
+
+```typescript
+function reject&lt;T&gt;(
     list: types.List&lt;T&gt;,
     iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
@@ -10797,8 +11476,9 @@ function reject&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
-): T[];</code>
-</pre>
+): T[];
+```
+
 </details>
 
 |Name     |Desc                                          |
@@ -10820,13 +11500,15 @@ Remove all elements from array that predicate returns truthy for and return an a
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function remove&lt;T, TResult&gt;(
+
+```typescript
+function remove&lt;T, TResult&gt;(
     list: types.List&lt;T&gt;,
     iterator: types.ListIterator&lt;T, boolean&gt;,
     context?: any
-): TResult[];</code>
-</pre>
+): TResult[];
+```
+
 </details>
 
 Unlike filter, this method mutates array.
@@ -10853,9 +11535,11 @@ Repeat string n-times.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function repeat(str: string, n: number): string;</code>
-</pre>
+
+```typescript
+function repeat(str: string, n: number): string;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -10876,13 +11560,15 @@ Replace all instance in a string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function replaceAll(
+
+```typescript
+function replaceAll(
     str: string,
     substr: string,
     newSubstr: string
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name     |Desc                               |
@@ -10902,12 +11588,14 @@ This accumulates the arguments passed into an array, after a given index.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function restArgs(
+
+```typescript
+function restArgs(
     fn: types.AnyFn,
     startIndex?: number
-): types.AnyFn;</code>
-</pre>
+): types.AnyFn;
+```
+
 </details>
 
 |Name      |Desc                                   |
@@ -10929,9 +11617,11 @@ Reverse array without mutating it.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function reverse(arr: any[]): any[];</code>
-</pre>
+
+```typescript
+function reverse(arr: any[]): any[];
+```
+
 </details>
 
 |Name  |Desc           |
@@ -10949,9 +11639,11 @@ Convert rgb to hsl.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function rgbToHsl(rgb: number[]): number[];</code>
-</pre>
+
+```typescript
+function rgbToHsl(rgb: number[]): number[];
+```
+
 </details>
 
 |Name  |Desc      |
@@ -10969,12 +11661,14 @@ Shortcut for requestIdleCallback.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace ric {
+
+```typescript
+namespace ric {
     function cancel(id: number): void;
 }
-function ric(cb: types.AnyFn): number;</code>
-</pre>
+function ric(cb: types.AnyFn): number;
+```
+
 </details>
 
 Use setTimeout if requestIdleCallback is not supported.
@@ -10992,9 +11686,11 @@ Loop through all possible path and domain to remove cookie.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function rmCookie(key: string): void;</code>
-</pre>
+
+```typescript
+function rmCookie(key: string): void;
+```
+
 </details>
 
 |Name|Desc      |
@@ -11011,9 +11707,11 @@ Recursively remove directories.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function rmdir(dir: string, cb?: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function rmdir(dir: string, cb?: types.AnyFn): void;
+```
+
 </details>
 
 |Name|Desc               |
@@ -11034,9 +11732,11 @@ Root object reference, `global` in nodeJs, `window` in browser.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const root: any;</code>
-</pre>
+
+```typescript
+const root: any;
+```
+
 </details>
 
 ## rpad 
@@ -11045,9 +11745,11 @@ Pad string on the right side if it's shorter than length.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function rpad(str: string, len: number, chars?: string): string;</code>
-</pre>
+
+```typescript
+function rpad(str: string, len: number, chars?: string): string;
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -11070,9 +11772,11 @@ Remove chars or white-spaces from end of string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function rtrim(str: string, chars?: string | string[]): string;</code>
-</pre>
+
+```typescript
+function rtrim(str: string, chars?: string | string[]): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -11093,13 +11797,15 @@ Create callback based on input value.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function safeCb(
+
+```typescript
+function safeCb(
     val?: any,
     ctx?: any,
     argCount?: number
-): types.AnyFn;</code>
-</pre>
+): types.AnyFn;
+```
+
 </details>
 
 ## safeDel 
@@ -11108,9 +11814,11 @@ Delete object property.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function safeDel(obj: any, path: string | string[]): any;</code>
-</pre>
+
+```typescript
+function safeDel(obj: any, path: string | string[]): any;
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -11132,9 +11840,11 @@ Get object property, don't throw undefined error.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function safeGet(obj: any, path: string | string[]): any;</code>
-</pre>
+
+```typescript
+function safeGet(obj: any, path: string | string[]): any;
+```
+
 </details>
 
 |Name  |Desc                     |
@@ -11156,13 +11866,15 @@ Set value at path of object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function safeSet(
+
+```typescript
+function safeSet(
     obj: any,
     path: string | string[],
     val: any
-): void;</code>
-</pre>
+): void;
+```
+
 </details>
 
 If a portion of path doesn't exist, it's created.
@@ -11186,9 +11898,11 @@ Use storage safely in safari private browsing and older browsers.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function safeStorage(type?: string): typeof window.localStorage;</code>
-</pre>
+
+```typescript
+function safeStorage(type?: string): typeof window.localStorage;
+```
+
 </details>
 
 |Name        |Desc             |
@@ -11207,9 +11921,11 @@ Check if two urls pass the same origin policy.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function sameOrigin(url1: string, url2: string): boolean;</code>
-</pre>
+
+```typescript
+function sameOrigin(url1: string, url2: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                                |
@@ -11232,9 +11948,11 @@ Sample random values from a collection.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function sample(obj: any, n: number): any[];</code>
-</pre>
+
+```typescript
+function sample(obj: any, n: number): any[];
+```
+
 </details>
 
 |Name  |Desc                  |
@@ -11254,8 +11972,9 @@ Scroll to a target with animation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function scrollTo(
+
+```typescript
+function scrollTo(
     target: Element | string | number,
     options: {
         tolerance?: number;
@@ -11263,8 +11982,9 @@ Scroll to a target with animation.
         easing?: string | Function;
         callback?: types.AnyFn;
     }
-);</code>
-</pre>
+);
+```
+
 </details>
 
 |Name   |Desc          |
@@ -11296,14 +12016,16 @@ Seeded random number generator.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function seedRandom(
+
+```typescript
+function seedRandom(
     seed: number,
     min?: number,
     max?: number,
     floating?: boolean
-): () =&gt; number;</code>
-</pre>
+): () =&gt; number;
+```
+
 </details>
 
 |Name         |Desc                                          |
@@ -11326,9 +12048,11 @@ Selection sort implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function selectionSort(arr: any[], cmp?: types.AnyFn): any[];</code>
-</pre>
+
+```typescript
+function selectionSort(arr: any[], cmp?: types.AnyFn): any[];
+```
+
 </details>
 
 |Name  |Desc         |
@@ -11347,8 +12071,9 @@ Css selector parser and serializer.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace selector {
+
+```typescript
+namespace selector {
     interface IToken {
         type: string;
         value: string;
@@ -11357,8 +12082,9 @@ Css selector parser and serializer.
 const selector: {
     parse(selector: string): Array&lt;selector.IToken[]&gt;;
     stringify(selector: Array&lt;selector.IToken[]&gt;): string;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### parse
@@ -11391,9 +12117,11 @@ Get command from a shebang.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function shebang(str: string): string | void;</code>
-</pre>
+
+```typescript
+function shebang(str: string): string | void;
+```
+
 </details>
 
 |Name  |Desc                 |
@@ -11413,9 +12141,11 @@ Shell sort implementation.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function shellSort(arr: any[], cmp?: types.AnyFn): any[];</code>
-</pre>
+
+```typescript
+function shellSort(arr: any[], cmp?: types.AnyFn): any[];
+```
+
 </details>
 
 |Name  |Desc         |
@@ -11434,9 +12164,11 @@ Randomize the order of the elements in a given array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function shuffle(arr: any[]): any[];</code>
-</pre>
+
+```typescript
+function shuffle(arr: any[]): any[];
+```
+
 </details>
 
 |Name  |Desc              |
@@ -11454,9 +12186,11 @@ Get size of object or length of array like object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function size(obj: any): number;</code>
-</pre>
+
+```typescript
+function size(obj: any): number;
+```
+
 </details>
 
 |Name  |Desc                 |
@@ -11475,9 +12209,11 @@ Get approximate size of a js object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function sizeof(obj: any): number;</code>
-</pre>
+
+```typescript
+function sizeof(obj: any): number;
+```
+
 </details>
 
 |Name  |Desc               |
@@ -11503,9 +12239,11 @@ Resolve a promise after a specified timeout.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function sleep(timeout: number): Promise&lt;void&gt;;</code>
-</pre>
+
+```typescript
+function sleep(timeout: number): Promise&lt;void&gt;;
+```
+
 </details>
 
 |Name   |Desc         |
@@ -11524,13 +12262,15 @@ Create slice of source array or array-like object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function slice(
+
+```typescript
+function slice(
     array: any[],
     start?: number,
     end?: number
-): any[];</code>
-</pre>
+): any[];
+```
+
 </details>
 
 |Name            |Desc                      |
@@ -11549,12 +12289,14 @@ Slugify a string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function slugify(
+
+```typescript
+function slugify(
     str: string,
     replacement?: { [index: string]: string }
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name       |Desc              |
@@ -11574,9 +12316,11 @@ Convert string to "snakeCase".
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function snakeCase(str: string): string;</code>
-</pre>
+
+```typescript
+function snakeCase(str: string): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -11596,8 +12340,9 @@ Check if predicate return truthy for any element.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function some&lt;T&gt;(
+
+```typescript
+function some&lt;T&gt;(
     list: types.List&lt;T&gt;,
     iterator?: types.ListIterator&lt;T, boolean&gt;,
     context?: any
@@ -11606,8 +12351,9 @@ function some&lt;T&gt;(
     object: types.Dictionary&lt;T&gt;,
     iterator?: types.ObjectIterator&lt;T, boolean&gt;,
     context?: any
-): boolean;</code>
-</pre>
+): boolean;
+```
+
 </details>
 
 |Name     |Desc                                          |
@@ -11629,13 +12375,15 @@ Return an array of elements sorted in ascending order by results of running each
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function sortBy(
+
+```typescript
+function sortBy(
     arr: any,
     iterator?: types.AnyFn,
     ctx?: any
-): any[];</code>
-</pre>
+): any[];
+```
+
 </details>
 
 |Name             |Desc                      |
@@ -11657,15 +12405,17 @@ Sort keys of an object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function sortKeys(
+
+```typescript
+function sortKeys(
     obj: object,
     options?: {
         deep?: boolean;
         comparator?: types.AnyFn;
     }
-): object;</code>
-</pre>
+): object;
+```
+
 </details>
 
 |Name   |Desc                   |
@@ -11696,9 +12446,11 @@ Convert string to "spaceCase".
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function spaceCase(str: string): string;</code>
-</pre>
+
+```typescript
+function spaceCase(str: string): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -11718,9 +12470,11 @@ Split different string case to an array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function splitCase(str: string): string[];</code>
-</pre>
+
+```typescript
+function splitCase(str: string): string[];
+```
+
 </details>
 
 |Name  |Desc           |
@@ -11743,15 +12497,17 @@ Split path into dir, name and ext.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function splitPath(
+
+```typescript
+function splitPath(
     path: string
 ): {
     dir: string;
     name: string;
     ext: string;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 |Name  |Desc                               |
@@ -11770,9 +12526,11 @@ Get CallSite objects in v8.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function stackTrace(): any[];</code>
-</pre>
+
+```typescript
+function stackTrace(): any[];
+```
+
 </details>
 
 [Stack trace API](https://v8.dev/docs/stack-trace-api)
@@ -11787,9 +12545,11 @@ Check if string starts with the given target string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function startWith(str: string, prefix: string): boolean;</code>
-</pre>
+
+```typescript
+function startWith(str: string, prefix: string): boolean;
+```
+
 </details>
 
 |Name  |Desc                             |
@@ -11808,9 +12568,11 @@ String hash function using djb2.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function strHash(str: string): number;</code>
-</pre>
+
+```typescript
+function strHash(str: string): number;
+```
+
 </details>
 
 |Name  |Desc          |
@@ -11828,9 +12590,11 @@ Convert string into bytes.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function strToBytes(str: string, encoding?: string): number[];</code>
-</pre>
+
+```typescript
+function strToBytes(str: string, encoding?: string): number[];
+```
+
 </details>
 
 |Name         |Desc              |
@@ -11852,9 +12616,11 @@ Simple string template.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function strTpl(str: string, data: types.PlainObj&lt;any&gt;): string;</code>
-</pre>
+
+```typescript
+function strTpl(str: string, data: types.PlainObj&lt;any&gt;): string;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -11873,9 +12639,11 @@ Get string's visual width.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function strWidth(str: string): number;</code>
-</pre>
+
+```typescript
+function strWidth(str: string): number;
+```
+
 </details>
 
 |Name  |Desc               |
@@ -11894,9 +12662,11 @@ JSON stringify with support for circular object, function etc.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function stringify(obj: any, spaces?: number): string;</code>
-</pre>
+
+```typescript
+function stringify(obj: any, spaces?: number): string;
+```
+
 </details>
 
 Undefined is treated as null value.
@@ -11920,8 +12690,9 @@ Stringify object into json with types.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace stringifyAll {
+
+```typescript
+namespace stringifyAll {
     function parse(str: string): any;
 }
 function stringifyAll(
@@ -11934,8 +12705,9 @@ function stringifyAll(
         depth?: number;
         ignore?: any[];
     }
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name   |Desc               |
@@ -11976,9 +12748,11 @@ Strip ansi codes from a string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function stripAnsi(str: string): string;</code>
-</pre>
+
+```typescript
+function stripAnsi(str: string): string;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -11996,9 +12770,11 @@ Strip UTF-8 byte order mark.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function stripBom(str: string): string;</code>
-</pre>
+
+```typescript
+function stripBom(str: string): string;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -12016,9 +12792,11 @@ Strip comments from source code.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function stripCmt(str: string): string;</code>
-</pre>
+
+```typescript
+function stripCmt(str: string): string;
+```
+
 </details>
 
 |Name  |Desc                 |
@@ -12036,9 +12814,11 @@ Strip ansi color codes from a string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function stripColor(str: string): string;</code>
-</pre>
+
+```typescript
+function stripColor(str: string): string;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -12056,9 +12836,11 @@ Strip html tags from a string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function stripHtmlTag(str: string): string;</code>
-</pre>
+
+```typescript
+function stripHtmlTag(str: string): string;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -12076,13 +12858,15 @@ Strip indentation from multi-line strings.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function stripIndent(str: string): string;
+
+```typescript
+function stripIndent(str: string): string;
 function stripIndent(
     literals: TemplateStringsArray,
     ...placeholders: any[]
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -12106,9 +12890,11 @@ Strip number to a specified precision.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function stripNum(num: number, precision?: number): number;</code>
-</pre>
+
+```typescript
+function stripNum(num: number, precision?: number): number;
+```
+
 </details>
 
 |Name        |Desc           |
@@ -12127,9 +12913,11 @@ Compute sum of given numbers.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function sum(...num: number[]): number;</code>
-</pre>
+
+```typescript
+function sum(...num: number[]): number;
+```
+
 </details>
 
 |Name  |Desc                |
@@ -12147,9 +12935,11 @@ Swap two items in an array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function swap(arr: any[], a: number, b: number): any[];</code>
-</pre>
+
+```typescript
+function swap(arr: any[], a: number, b: number): any[];
+```
+
 </details>
 
 |Name  |Desc         |
@@ -12170,9 +12960,11 @@ Output table string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function table(rows: Array&lt;string[]&gt;): string;</code>
-</pre>
+
+```typescript
+function table(rows: Array&lt;string[]&gt;): string;
+```
+
 </details>
 
 |Name  |Desc        |
@@ -12195,9 +12987,11 @@ Compile JavaScript template into function that can be evaluated for rendering.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function template(str: string, util?: any): types.AnyFn;</code>
-</pre>
+
+```typescript
+function template(str: string, util?: any): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc                      |
@@ -12223,9 +13017,11 @@ Return a new throttled version of the passed function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function throttle&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;</code>
-</pre>
+
+```typescript
+function throttle&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;
+```
+
 </details>
 
 |Name  |Desc                           |
@@ -12245,8 +13041,9 @@ Tiny wrapper of stream Transform.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">import stream = require(&#x27;stream&#x27;);
+
+```typescript
+import stream = require(&#x27;stream&#x27;);
 namespace through {
     interface ThroughConstructor extends stream.Transform {
         new (opts?: stream.DuplexOptions): stream.Transform;
@@ -12285,8 +13082,9 @@ function through(
     opts?: stream.DuplexOptions,
     transform?: through.TransformFunction,
     flush?: through.FlushCallback
-): stream.Transform;</code>
-</pre>
+): stream.Transform;
+```
+
 </details>
 
 |Name     |Desc                        |
@@ -12322,9 +13120,11 @@ Convert absolute path to tilde path.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function tildify(path: string): string;</code>
-</pre>
+
+```typescript
+function tildify(path: string): string;
+```
+
 </details>
 
 |Name  |Desc           |
@@ -12342,12 +13142,14 @@ Format datetime with *** time ago statement.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function timeAgo(
+
+```typescript
+function timeAgo(
     date: Date | number,
     now?: Date | number
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name        |Desc                     |
@@ -12370,9 +13172,11 @@ Get execution time of a function.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function timeTaken(fn: types.AnyFn): number;</code>
-</pre>
+
+```typescript
+function timeTaken(fn: types.AnyFn): number;
+```
+
 </details>
 
 |Name  |Desc                    |
@@ -12392,13 +13196,15 @@ Invoke given function n times.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function times&lt;T&gt;(
+
+```typescript
+function times&lt;T&gt;(
     n: number,
     fn: (n: number) =&gt; T,
     ctx?: any
-): T[];</code>
-</pre>
+): T[];
+```
+
 </details>
 
 |Name  |Desc                          |
@@ -12418,9 +13224,11 @@ Convert value to an array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function toArr(val: any): any[];</code>
-</pre>
+
+```typescript
+function toArr(val: any): any[];
+```
+
 </details>
 
 |Name  |Desc            |
@@ -12441,9 +13249,11 @@ Use generator like async/await.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function toAsync(fn: types.AnyFn): types.AnyFn;</code>
-</pre>
+
+```typescript
+function toAsync(fn: types.AnyFn): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -12468,9 +13278,11 @@ Convert value to a boolean.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function toBool(val: any): boolean;</code>
-</pre>
+
+```typescript
+function toBool(val: any): boolean;
+```
+
 </details>
 
 |Name  |Desc             |
@@ -12494,9 +13306,11 @@ Convert value to a Date.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function toDate(val: any): Date;</code>
-</pre>
+
+```typescript
+function toDate(val: any): Date;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -12516,9 +13330,11 @@ Convert html string to dom elements.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function toEl(str: string): Element;</code>
-</pre>
+
+```typescript
+function toEl(str: string): Element;
+```
+
 </details>
 
 There should be only one root element.
@@ -12538,9 +13354,11 @@ Convert value to an integer.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function toInt(val: any): number;</code>
-</pre>
+
+```typescript
+function toInt(val: any): number;
+```
+
 </details>
 
 |Name  |Desc             |
@@ -12559,9 +13377,11 @@ Convert value to a number.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function toNum(val: any): number;</code>
-</pre>
+
+```typescript
+function toNum(val: any): number;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -12579,9 +13399,11 @@ Convert function to its source code.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function toSrc(fn: types.AnyFn): string;</code>
-</pre>
+
+```typescript
+function toSrc(fn: types.AnyFn): string;
+```
+
 </details>
 
 |Name  |Desc               |
@@ -12600,9 +13422,11 @@ Convert value to a string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function toStr(val: any): string;</code>
-</pre>
+
+```typescript
+function toStr(val: any): string;
+```
+
 </details>
 
 |Name  |Desc            |
@@ -12623,9 +13447,11 @@ Topological sorting algorithm.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function topoSort(edges: any[]): any[];</code>
-</pre>
+
+```typescript
+function topoSort(edges: any[]): any[];
+```
+
 </details>
 
 |Name  |Desc        |
@@ -12647,14 +13473,16 @@ Trigger browser events.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function trigger(
+
+```typescript
+function trigger(
     el: Element | Document,
     type: string,
     options?: any
 ): void;
-function trigger(type: string, options?: any): void;</code>
-</pre>
+function trigger(type: string, options?: any): void;
+```
+
 </details>
 
 |Name       |Desc              |
@@ -12674,9 +13502,11 @@ Remove chars or white-spaces from beginning end of string.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function trim(str: string, chars?: string | string[]): string;</code>
-</pre>
+
+```typescript
+function trim(str: string, chars?: string | string[]): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -12697,16 +13527,18 @@ Truncate a string to a specific width.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function truncate(
+
+```typescript
+function truncate(
     txt: string,
     width: number,
     options?: {
         ellipsis?: string;
         separator: string;
     }
-): string;</code>
-</pre>
+): string;
+```
+
 </details>
 
 |Name   |Desc                 |
@@ -12737,9 +13569,11 @@ Run function in a try catch.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function tryIt(fn: types.AnyFn, cb?: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function tryIt(fn: types.AnyFn, cb?: types.AnyFn): void;
+```
+
 </details>
 
 |Name|Desc                 |
@@ -12764,9 +13598,11 @@ Determine the internal JavaScript [[Class]] of an object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function type(val: any, lowerCase?: boolean): string;</code>
-</pre>
+
+```typescript
+function type(val: any, lowerCase?: boolean): string;
+```
+
 </details>
 
 |Name          |Desc             |
@@ -12790,8 +13626,9 @@ Used for typescript definitions only.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">namespace types {
+
+```typescript
+namespace types {
     interface Collection&lt;T&gt; {}
     interface List&lt;T&gt; extends Collection&lt;T&gt; {
         [index: number]: T;
@@ -12816,8 +13653,9 @@ Used for typescript definitions only.
     type AnyFn = Fn&lt;any&gt;;
     type PlainObj&lt;T&gt; = { [name: string]: T };
 }
-const types: {};</code>
-</pre>
+const types: {};
+```
+
 </details>
 
 ## ucs2 
@@ -12826,12 +13664,14 @@ UCS-2 encoding and decoding.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const ucs2: {
+
+```typescript
+const ucs2: {
     encode(arr: number[]): string;
     decode(str: string): number[];
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### encode
@@ -12865,15 +13705,17 @@ Handle global uncaught errors and promise rejections.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const uncaught: {
+
+```typescript
+const uncaught: {
     start(): void;
     stop(): void;
     addListener(fn: (err: Error) =&gt; void): void;
     rmListener(fn: (err: Error) =&gt; void): void;
     rmAllListeners(): void;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### start
@@ -12913,9 +13755,11 @@ Convert HTML entities back, the inverse of escape.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function unescape(str: string): string;</code>
-</pre>
+
+```typescript
+function unescape(str: string): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -12933,9 +13777,11 @@ Create an array of unique values, in order, from all given arrays.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function union(...arr: Array&lt;any[]&gt;): any[];</code>
-</pre>
+
+```typescript
+function union(...arr: Array&lt;any[]&gt;): any[];
+```
+
 </details>
 
 |Name  |Desc                        |
@@ -12953,9 +13799,11 @@ Generate a globally-unique id.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function uniqId(prefix?: string): string;</code>
-</pre>
+
+```typescript
+function uniqId(prefix?: string): string;
+```
+
 </details>
 
 |Name  |Desc              |
@@ -12973,12 +13821,14 @@ Create duplicate-free version of an array.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function unique(
+
+```typescript
+function unique(
     arr: any[],
     cmp?: (a: any, b: any) =&gt; boolean | number
-): any[];</code>
-</pre>
+): any[];
+```
+
 </details>
 
 |Name  |Desc                         |
@@ -12997,12 +13847,14 @@ Make an async function support both promises and callbacks.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function universalify(
+
+```typescript
+function universalify(
     fn: types.AnyFn,
     type: string
-): types.AnyFn;</code>
-</pre>
+): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc                            |
@@ -13033,9 +13885,11 @@ Opposite of zip.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">declare function unzip(arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;</code>
-</pre>
+
+```typescript
+declare function unzip(arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;
+```
+
 </details>
 
 |Name  |Desc                                |
@@ -13056,9 +13910,11 @@ Convert string to upper case.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function upperCase(str: string): string;</code>
-</pre>
+
+```typescript
+function upperCase(str: string): string;
+```
+
 </details>
 
 |Name  |Desc             |
@@ -13076,9 +13932,11 @@ Convert the first character of string to upper case.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function upperFirst(str: string): string;</code>
-</pre>
+
+```typescript
+function upperFirst(str: string): string;
+```
+
 </details>
 
 |Name  |Desc             |
@@ -13096,10 +13954,12 @@ Use modules that is created by define.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function use(requires: string[], method: types.AnyFn): void;
-function use(method: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function use(requires: string[], method: types.AnyFn): void;
+function use(method: types.AnyFn): void;
+```
+
 </details>
 
 |Name    |Desc                |
@@ -13120,12 +13980,14 @@ UTF-8 encoding and decoding.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const utf8: {
+
+```typescript
+const utf8: {
     encode(str: string): string;
     decode(str: string, safe?: boolean): string;
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### encode
@@ -13158,9 +14020,11 @@ RFC4122 version 4 compliant uuid generator.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function uuid(): string;</code>
-</pre>
+
+```typescript
+function uuid(): string;
+```
+
 </details>
 
 Check [RFC4122 4.4](http://www.ietf.org/rfc/rfc4122.txt) for reference.
@@ -13175,9 +14039,11 @@ Create an array of the own enumerable property values of object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function values(obj: any): any[];</code>
-</pre>
+
+```typescript
+function values(obj: any): any[];
+```
+
 </details>
 
 |Name  |Desc                    |
@@ -13195,9 +14061,11 @@ Get viewport scale.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function viewportScale(): number;</code>
-</pre>
+
+```typescript
+function viewportScale(): number;
+```
+
 </details>
 
 ```javascript
@@ -13210,12 +14078,14 @@ Variable-length quantity encoding and decoding.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const vlq: {
+
+```typescript
+const vlq: {
     encode(number: number | number[]): string;
     decode(string: string): number[];
-};</code>
-</pre>
+};
+```
+
 </details>
 
 ### encode
@@ -13249,13 +14119,15 @@ Wait until function returns a truthy value.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function waitUntil(
+
+```typescript
+function waitUntil(
     condition: types.AnyFn,
     timeout?: number,
     interval?: number
-): Promise&lt;any&gt;;</code>
-</pre>
+): Promise&lt;any&gt;;
+```
+
 </details>
 
 |Name        |Desc              |
@@ -13278,9 +14150,11 @@ Run an array of functions in series.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function waterfall(tasks: types.AnyFn[], cb?: types.AnyFn): void;</code>
-</pre>
+
+```typescript
+function waterfall(tasks: types.AnyFn[], cb?: types.AnyFn): void;
+```
+
 </details>
 
 |Name |Desc                   |
@@ -13311,9 +14185,11 @@ Wrap a string to a given length.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function wordWrap(txt: string, width: number): string;</code>
-</pre>
+
+```typescript
+function wordWrap(txt: string, width: number): string;
+```
+
 </details>
 
 |Name  |Desc                          |
@@ -13333,9 +14209,11 @@ Convert 32-bit words to bytes.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function wordsToBytes(words: number[]): number[];</code>
-</pre>
+
+```typescript
+function wordsToBytes(words: number[]): number[];
+```
+
 </details>
 
 |Name  |Desc      |
@@ -13353,9 +14231,11 @@ Move a stand-alone function to a worker thread.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function workerize(fn: types.AnyFn): types.AnyFn;</code>
-</pre>
+
+```typescript
+function workerize(fn: types.AnyFn): types.AnyFn;
+```
+
 </details>
 
 |Name  |Desc               |
@@ -13378,12 +14258,14 @@ Wrap the function inside a wrapper function, passing it as the first argument.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function wrap(
+
+```typescript
+function wrap(
     fn: types.AnyFn,
     wrapper: types.AnyFn
-): types.AnyFn;</code>
-</pre>
+): types.AnyFn;
+```
+
 </details>
 
 |Name   |Desc            |
@@ -13405,9 +14287,11 @@ Promised version of mini program wx object.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">const wx: any;</code>
-</pre>
+
+```typescript
+const wx: any;
+```
+
 </details>
 
 ```javascript
@@ -13422,9 +14306,11 @@ Select elements using xpath, IE is not supported.
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function xpath(xpath: string): HTMLElement[];</code>
-</pre>
+
+```typescript
+function xpath(xpath: string): HTMLElement[];
+```
+
 </details>
 
 |Name  |Desc           |
@@ -13442,9 +14328,11 @@ Merge together the values of each of the arrays with the values at the correspon
 
 <details>
 <summary>Type Definition</summary>
-<pre>
-<code class="language-typescript">function zip(...arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;</code>
-</pre>
+
+```typescript
+function zip(...arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;
+```
+
 </details>
 
 |Name  |Desc                         |

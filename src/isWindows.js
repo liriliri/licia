@@ -6,7 +6,7 @@
  */
 
 /* module
- * env: all 
+ * env: all
  */
 
 /* typescript

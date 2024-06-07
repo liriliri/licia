@@ -9,9 +9,9 @@
  * |key     |Key string    |
  * |options |Hotkey options|
  * |listener|Key listener  |
- * 
+ *
  * Options:
- * 
+ *
  * |Name            |Desc          |
  * |----------------|--------------|
  * |element=document|Target element|
