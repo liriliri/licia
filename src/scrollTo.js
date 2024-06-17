@@ -5,7 +5,7 @@
  * |target |Scroll target |
  * |options|Scroll options|
  *
- * ### Options
+ * ### options
  *
  * |Name           |Desc                                   |
  * |---------------|---------------------------------------|

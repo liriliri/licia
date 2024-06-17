@@ -89,6 +89,7 @@
     "cssPriority",
     "cssSupports",
     "curry",
+    "dataUrl",
     "dateFormat",
     "debounce",
     "debug",

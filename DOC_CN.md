@@ -4941,6 +4941,60 @@ const add1 = add(1);
 add1(2); // -> 3
 ```
 
+## dataUrl
+
+解析序列化 Data URL。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+const dataUrl: {
+    parse(
+        dataUrl: string
+    ): { data: string; mime: string; charset: string; base64: boolean } | null;
+    stringify(
+        data: any,
+        mime: string,
+        options?: { base64?: boolean; charset?: string }
+    ): string;
+};
+```
+
+</details>
+
+### parse
+
+解析 Data URL。
+
+|参数名|说明|
+|-----|---|
+|dataUrl|Data URL 字符串|
+|返回值|解析后的对象|
+
+### stringify
+
+将数据转化为 Data URL。
+
+|参数名|说明|
+|-----|---|
+|data|要转化的数据|
+|mime|mime 类型|
+|options|Stringify options|
+|返回值|Data url string  |
+
+### 选项
+
+|选项名|说明|
+|-----|---|
+|base64=true|是否是 base64 编码|
+|charset|字符集|
+
+```javascript
+dataUrl.parse('data:,Hello%2C%20World%21'); // -> {data: 'Hello, World!', mime: 'text/plain', charset: '', base64: false}
+dataUrl.stringify('Hello, World!', 'text/plain'); // -> 'data:,Hello%2C%20World%21'
+```
+
 ## dateFormat
 
 简单日期格式化。
@@ -10710,9 +10764,9 @@ function parseArgs(
 |options|解析选项|
 |返回值|解析结果|
 
-### options
+### 选项
 
-|参数名|说明|
+|选项名|说明|
 |-----|---|
 |names|选项名及类型|
 |shorthands|选项名缩写|

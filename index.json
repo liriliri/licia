@@ -1907,6 +1907,29 @@
             "browser"
         ]
     },
+    "dataUrl": {
+        "dependencies": [
+            "isDataUrl",
+            "trim",
+            "endWith",
+            "startWith",
+            "contain",
+            "decodeUriComponent",
+            "defaults",
+            "isStr",
+            "convertBin"
+        ],
+        "description": "Parse and stringify data urls.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "dateFormat": {
         "dependencies": [
             "isStr",
