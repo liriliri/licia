@@ -1,13 +1,22 @@
-[中文](README_CN.md)
+<div align="center">
+  <a href="https://licia.liriliri.io/" target="_blank">
+    <img src="https://licia.liriliri.io/icon.png" style="width:400px;height:400px;border-radius:25%;box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);">
+  </a>
+</div>
 
-# Licia
+<h1 align="center">Licia</h1>
+
+<div align="center">
+
+Useful utility collection with zero dependencies.
 
 [![NPM version][npm-image]][npm-url]
 [![Build status][ci-image]][ci-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![Size][size-image]][npm-url]
 [![License][license-image]][npm-url]
-[![Join the chat at https://gitter.im/liriliri/licia][gitter-image]][gitter-url]
+
+</div>
 
 [gitter-image]: https://img.shields.io/gitter/room/liriliri/licia?style=flat-square
 [gitter-url]: https://gitter.im/liriliri/licia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
@@ -19,6 +28,7 @@
 [codecov-url]: https://codecov.io/github/liriliri/licia?branch=master
 [license-image]: https://img.shields.io/npm/l/licia?style=flat-square
 [size-image]: https://img.shields.io/bundlephobia/minzip/licia?style=flat-square
+
 
 [Licia](https://licia.liriliri.io/) is a utility library that focus on getting daily works done. Unlike other libraries such as underscore, mout, which strictly separates its functions into several categories like array, string and function etc. licia is just a deadly simple collection of over 400 micro modules dealing problems in different aspects. 
 

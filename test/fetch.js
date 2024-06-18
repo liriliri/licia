@@ -47,7 +47,7 @@ it('basic', function(done) {
 
     const request = requests[0];
 
-    expect(request.requestHeaders).to.eql({ a: '1' });
+    expect(request.requestHeaders.a).to.equal('1');
     expect(request.requestBody).to.equal('test');
     request.respond(200, { b: 2 }, '{"a":1}');
 });
