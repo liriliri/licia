@@ -1925,6 +1925,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.41.0",
         "test": [
             "node",
             "browser"

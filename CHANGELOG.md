@@ -1,3 +1,7 @@
+## v1.41.0 (18 Jun 2024)
+
+* feat: add dataUrl
+
 ## v1.40.0 (31 May 2024)
 
 * feat: add tildify
