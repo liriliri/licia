@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://licia.liriliri.io/" target="_blank">
-    <img src="https://licia.liriliri.io/icon.png" style="width:400px;height:400px;border-radius:25%;box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);">
+    <img src="https://licia.liriliri.io/icon.png" width="400">
   </a>
 </div>
 
