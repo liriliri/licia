@@ -29,3 +29,5 @@ jobs:
     - run: npm i && npm link
     - run: npm run ci
     - run: codecov --disable=gcov
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
