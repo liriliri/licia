@@ -31,13 +31,13 @@ namespace $ {
         val(value: string): $;
         css(name: string): string;
         css(name: string, value: string): $;
-        css(properties: types.PlainObj&lt;string | number&gt;): $;
+        css(properties: types.PlainObj<string | number>): $;
         attr(name: string): string;
         attr(name: string, value: string): $;
-        attr(attributes: types.PlainObj&lt;string&gt;): $;
+        attr(attributes: types.PlainObj<string>): $;
         data(name: string): string;
         data(name: string, value: string): $;
-        data(attributes: types.PlainObj&lt;string&gt;): $;
+        data(attributes: types.PlainObj<string>): $;
         rmAttr(name: string): $;
         remove(): $;
         addClass(name: string | string[]): $;
@@ -90,7 +90,7 @@ function $attr(
 ): void;
 function $attr(
     element: $safeEls.El,
-    attributes: types.PlainObj&lt;string&gt;
+    attributes: types.PlainObj<string>
 ): void;
 function $attr(element: $safeEls.El, name: string): string;
 ```
@@ -218,7 +218,7 @@ function $css(
 ): void;
 function $css(
     element: $safeEls.El,
-    properties: types.PlainObj&lt;string | number&gt;
+    properties: types.PlainObj<string | number>
 ): void;
 ```
 
@@ -270,7 +270,7 @@ function $data(
 ): void;
 function $data(
     element: $safeEls.El,
-    attributes: types.PlainObj&lt;string&gt;
+    attributes: types.PlainObj<string>
 ): void;
 function $data(element: $safeEls.El, name: string): string;
 ```
@@ -326,7 +326,7 @@ Insert html on different position.
 
 ```typescript
 namespace $insert {
-    type IInsert = (element: $safeEls.El, content: string | Element) =&gt; void;
+    type IInsert = (element: $safeEls.El, content: string | Element) => void;
 }
 const $insert: {
     before: $insert.IInsert;
@@ -475,7 +475,7 @@ Convert value into an array, if it's a string, do querySelector.
 
 ```typescript
 namespace $safeEls {
-    type El = Element | Element[] | NodeListOf&lt;Element&gt; | string;
+    type El = Element | Element[] | NodeListOf<Element> | string;
 }
 function $safeEls(val: $safeEls.El): Element[];
 ```
@@ -544,11 +544,11 @@ namespace Benchmark {
 }
 class Benchmark {
     constructor(fn: types.AnyFn, options?: Benchmark.IOptions);
-    run(): Promise&lt;Benchmark.IResult&gt;;
+    run(): Promise<Benchmark.IResult>;
     static all(
-        benches: Array&lt;types.AnyFn | Benchmark&gt;,
+        benches: Array<types.AnyFn | Benchmark>,
         options?: Benchmark.IOptions
-    ): Promise&lt;Benchmark.IResult[]&gt;;
+    ): Promise<Benchmark.IResult[]>;
 }
 ```
 
@@ -1115,15 +1115,15 @@ Binary file storage.
 
 ```typescript
 class FileBlobStore extends Emitter {
-    constructor(path: string, data?: types.PlainObj&lt;Buffer&gt;);
+    constructor(path: string, data?: types.PlainObj<Buffer>);
     set(key: string, buf: Buffer): void;
-    set(values: types.PlainObj&lt;Buffer&gt;): void;
+    set(values: types.PlainObj<Buffer>): void;
     get(key: string): Buffer | void;
-    get(keys: string[]): types.PlainObj&lt;Buffer&gt;;
+    get(keys: string[]): types.PlainObj<Buffer>;
     remove(key: string): void;
     remove(keys: string[]): void;
     clear(): void;
-    each(fn: (val: Buffer, key: string) =&gt; void): void;
+    each(fn: (val: Buffer, key: string) => void): void;
     save(): void;
 }
 ```
@@ -1346,9 +1346,9 @@ Simple internationalization library.
 
 ```typescript
 class I18n {
-    constructor(locale: string, langs: types.PlainObj&lt;any&gt;);
-    set(locale: string, lang: types.PlainObj&lt;any&gt;): void;
-    t(path: string | string[], data?: types.PlainObj&lt;any&gt;): string;
+    constructor(locale: string, langs: types.PlainObj<any>);
+    set(locale: string, lang: types.PlainObj<any>): void;
+    t(path: string | string[], data?: types.PlainObj<any>): string;
     locale(locale: string): void;
 }
 ```
@@ -2081,7 +2081,7 @@ Readiness manager.
 class Readiness {
     signal(tasks: string | string[]): void;
     isReady(tasks: string | string[]): boolean;
-    ready(tasks: string | string[], fn?: types.AnyFn): Promise&lt;void&gt;;
+    ready(tasks: string | string[], fn?: types.AnyFn): Promise<void>;
 }
 ```
 
@@ -2281,7 +2281,7 @@ Limit simultaneous access to a resource.
 ```typescript
 class Semaphore {
     constructor(counter?: number);
-    wait(fn: () =&gt; void): void;
+    wait(fn: () => void): void;
     signal(): void;
 }
 ```
@@ -2611,7 +2611,7 @@ class Store extends Emitter {
     remove(key: string): void;
     remove(keys: string[]): void;
     clear(): void;
-    each(fn: (...args: any[]) =&gt; void): void;
+    each(fn: (...args: any[]) => void): void;
 }
 ```
 
@@ -2782,7 +2782,7 @@ class Tracing {
     instant(
         cat: string,
         name: string,
-        scope?: &#x27;g&#x27; | &#x27;p&#x27; | &#x27;t&#x27;,
+        scope?: 'g' | 'p' | 't',
         args?: any
     ): void;
     id(): string;
@@ -3026,7 +3026,7 @@ class Url {
     slashes: boolean;
     constructor(url?: string);
     setQuery(name: string, val: string | number): Url;
-    setQuery(query: types.PlainObj&lt;string | number&gt;): Url;
+    setQuery(query: types.PlainObj<string | number>): Url;
     rmQuery(name: string | string[]): Url;
     toString(): string;
     static parse(url: string): Url.IUrl;
@@ -3114,7 +3114,7 @@ Object values validation.
 
 ```typescript
 class Validator {
-    constructor(options: types.PlainObj&lt;any&gt;);
+    constructor(options: types.PlainObj<any>);
     validate(object: any): string | boolean;
     static plugins: any;
     static addPlugin(name: string, plugin: types.AnyFn): void;
@@ -3244,7 +3244,7 @@ Calculate the set of unique abbreviations for a given set of strings.
 <summary>Type Definition</summary>
 
 ```typescript
-function abbrev(...names: string[]): types.PlainObj&lt;string&gt;;
+function abbrev(...names: string[]): types.PlainObj<string>;
 ```
 
 </details>
@@ -3267,7 +3267,7 @@ Create a function that invokes once it's called n or more times.
 <summary>Type Definition</summary>
 
 ```typescript
-function after&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;
+function after<T extends types.AnyFn>(n: number, fn: T): T;
 ```
 
 </details>
@@ -3396,11 +3396,11 @@ namespace allKeys {
 }
 function allKeys(
     obj: any,
-    options: { symbol: true } &amp; allKeys.IOptions
-): Array&lt;string | Symbol&gt;;
+    options: { symbol: true } & allKeys.IOptions
+): Array<string | Symbol>;
 function allKeys(
     obj: any,
-    options?: ({ symbol: false } &amp; allKeys.IOptions) | allKeys.IOptions
+    options?: ({ symbol: false } & allKeys.IOptions) | allKeys.IOptions
 ): string[];
 ```
 
@@ -3437,7 +3437,7 @@ Ansi colors.
 
 ```typescript
 namespace ansiColor {
-    type IFn = (str: string) =&gt; string;
+    type IFn = (str: string) => string;
 }
 const ansiColor: {
     black: ansiColor.IFn;
@@ -3501,7 +3501,7 @@ Make an object map using array of strings.
 <summary>Type Definition</summary>
 
 ```typescript
-function arrToMap&lt;T&gt;(
+function arrToMap<T>(
     arr: string[],
     val?: T
 ): { [key: string]: T };
@@ -3617,7 +3617,7 @@ Create a function that invokes less than n times.
 <summary>Type Definition</summary>
 
 ```typescript
-function before&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;
+function before<T extends types.AnyFn>(n: number, fn: T): T;
 ```
 
 </details>
@@ -4036,7 +4036,7 @@ Split array into groups the length of given size.
 <summary>Type Definition</summary>
 
 ```typescript
-function chunk(arr: any[], size?: number): Array&lt;any[]&gt;;
+function chunk(arr: any[], size?: number): Array<any[]>;
 ```
 
 </details>
@@ -4175,7 +4175,7 @@ Create a shallow-copied clone of the provided plain object.
 <summary>Type Definition</summary>
 
 ```typescript
-function clone&lt;T&gt;(val: T): T;
+function clone<T>(val: T): T;
 ```
 
 </details>
@@ -4199,7 +4199,7 @@ Recursively clone value.
 <summary>Type Definition</summary>
 
 ```typescript
-function cloneDeep&lt;T&gt;(val: T): T;
+function cloneDeep<T>(val: T): T;
 ```
 
 </details>
@@ -4392,7 +4392,7 @@ Concat multiple arrays into a single array.
 <summary>Type Definition</summary>
 
 ```typescript
-function concat(...args: Array&lt;any[]&gt;): any[];
+function concat(...args: Array<any[]>): any[];
 ```
 
 </details>
@@ -4441,8 +4441,8 @@ Get container stats inside container.
 ```typescript
 const container: {
     cpuNum(): number;
-    cpuUsage(period?: number): Promise&lt;number&gt;;
-    cpuLoad(period?: number): Promise&lt;number&gt;;
+    cpuUsage(period?: number): Promise<number>;
+    cpuLoad(period?: number): Promise<number>;
     memUsage(): number;
     memLoad(): number;
 };
@@ -4492,7 +4492,7 @@ Convert binary data type.
 
 ```typescript
 namespace convertBin {
-    function blobToArrBuffer(blob: any): Promise&lt;ArrayBuffer&gt;;
+    function blobToArrBuffer(blob: any): Promise<ArrayBuffer>;
 }
 function convertBin(bin: any, type: string): any;
 ```
@@ -5078,7 +5078,7 @@ Return a new debounced version of the passed function.
 <summary>Type Definition</summary>
 
 ```typescript
-function debounce&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;
+function debounce<T extends types.AnyFn>(fn: T, wait: number): T;
 ```
 
 </details>
@@ -5229,12 +5229,12 @@ Shortcut for Object.defineProperty(defineProperties).
 <summary>Type Definition</summary>
 
 ```typescript
-function defineProp&lt;T&gt;(
+function defineProp<T>(
     obj: T,
     prop: string,
     descriptor: PropertyDescriptor
 ): T;
-function defineProp&lt;T&gt;(
+function defineProp<T>(
     obj: T,
     descriptor: PropertyDescriptorMap
 ): T;
@@ -5623,16 +5623,16 @@ Iterate over elements of collection and invokes iterator for each element.
 <summary>Type Definition</summary>
 
 ```typescript
-function each&lt;T&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, void&gt;,
+function each<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, void>,
     ctx?: any
-): types.List&lt;T&gt;;
-function each&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, void&gt;,
+): types.List<T>;
+function each<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, void>,
     ctx?: any
-): types.Collection&lt;T&gt;;
+): types.Collection<T>;
 ```
 
 </details>
@@ -5863,14 +5863,14 @@ Check if predicate return truthy for all elements.
 <summary>Type Definition</summary>
 
 ```typescript
-function every&lt;T&gt;(
-    object: types.List&lt;T&gt;,
-    iterator?: types.ListIterator&lt;T, boolean&gt;,
+function every<T>(
+    object: types.List<T>,
+    iterator?: types.ListIterator<T, boolean>,
     context?: any
 ): boolean;
-function every&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator?: types.ObjectIterator&lt;T, boolean&gt;,
+function every<T>(
+    object: types.Dictionary<T>,
+    iterator?: types.ObjectIterator<T, boolean>,
     context?: any
 ): boolean;
 ```
@@ -6034,13 +6034,13 @@ namespace fetch {
         statusText: string;
         url: string;
         clone(): IResult;
-        text(): Promise&lt;string&gt;;
-        json(): Promise&lt;any&gt;;
-        xml(): Promise&lt;Document | null&gt;;
-        blob(): Promise&lt;Blob&gt;;
+        text(): Promise<string>;
+        json(): Promise<any>;
+        xml(): Promise<Document | null>;
+        blob(): Promise<Blob>;
         headers: {
             keys(): string[];
-            entries(): Array&lt;string[]&gt;;
+            entries(): Array<string[]>;
             get(name: string): string;
             has(name: string): boolean;
         };
@@ -6051,10 +6051,10 @@ function fetch(
     options?: {
         method?: string;
         timeout?: number;
-        headers?: types.PlainObj&lt;string&gt;;
+        headers?: types.PlainObj<string>;
         body?: any;
     }
-): Promise&lt;fetch.IResult&gt;;
+): Promise<fetch.IResult>;
 ```
 
 </details>
@@ -6227,14 +6227,14 @@ Iterates over elements of collection, returning an array of all the values that 
 <summary>Type Definition</summary>
 
 ```typescript
-function filter&lt;T&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, boolean&gt;,
+function filter<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
     context?: any
 ): T[];
-function filter&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, boolean&gt;,
+function filter<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
     context?: any
 ): T[];
 ```
@@ -6262,14 +6262,14 @@ Find the first value that passes a truth test in a collection.
 <summary>Type Definition</summary>
 
 ```typescript
-function find&lt;T&gt;(
-    object: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, boolean&gt;,
+function find<T>(
+    object: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
     context?: any
 ): T | undefined;
-function find&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, boolean&gt;,
+function find<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
     context?: any
 ): T | undefined;
 ```
@@ -6570,7 +6570,7 @@ Shortcut for Object.freeze.
 <summary>Type Definition</summary>
 
 ```typescript
-function freeze&lt;T&gt;(obj: T): T;
+function freeze<T>(obj: T): T;
 ```
 
 </details>
@@ -6597,7 +6597,7 @@ Recursively use Object.freeze.
 <summary>Type Definition</summary>
 
 ```typescript
-function freezeDeep&lt;T&gt;(obj: T): T;
+function freezeDeep<T>(obj: T): T;
 ```
 
 </details>
@@ -6623,14 +6623,14 @@ Promised version of node.js fs module.
 
 ```typescript
 const fs: {
-    readFile(path: string, encoding: string): Promise&lt;string&gt;;
-    readFile(path: string): Promise&lt;Buffer&gt;;
-    exists(path: string): Promise&lt;boolean&gt;;
-    unlink(path: string): Promise&lt;void&gt;;
-    writeFile(path: string, data: string, options?: string): Promise&lt;void&gt;;
-    writeFile(path: string, data: Buffer): Promise&lt;void&gt;;
-    readdir(path: string): Promise&lt;string[]&gt;;
-    rmdir(path: string): Promise&lt;void&gt;;
+    readFile(path: string, encoding: string): Promise<string>;
+    readFile(path: string): Promise<Buffer>;
+    exists(path: string): Promise<boolean>;
+    unlink(path: string): Promise<void>;
+    writeFile(path: string, data: string, options?: string): Promise<void>;
+    writeFile(path: string, data: Buffer): Promise<void>;
+    readdir(path: string): Promise<string[]>;
+    rmdir(path: string): Promise<void>;
     [key: string]: any;
 };
 ```
@@ -6794,7 +6794,7 @@ Get an available TCP port.
 function getPort(
     port?: number | number[],
     host?: string
-): Promise&lt;number&gt;;
+): Promise<number>;
 ```
 
 </details>
@@ -6870,12 +6870,12 @@ Handle errors like golang.
 <summary>Type Definition</summary>
 
 ```typescript
-function golangify&lt;T, U = Error&gt;(
-    fn: (...args: any[]) =&gt; Promise&lt;T&gt;
-): (...args: any[]) =&gt; Promise&lt;[T | undefined, U | null]&gt;;
-function golangify&lt;T, U = Error&gt;(
-    p: Promise&lt;T&gt;
-): Promise&lt;[T | undefined, U | null]&gt;;
+function golangify<T, U = Error>(
+    fn: (...args: any[]) => Promise<T>
+): (...args: any[]) => Promise<[T | undefined, U | null]>;
+function golangify<T, U = Error>(
+    p: Promise<T>
+): Promise<[T | undefined, U | null]>;
 ```
 
 </details>
@@ -6914,8 +6914,8 @@ Create html with JavaScript.
 ```typescript
 function h(
     tag: string,
-    attrs?: types.PlainObj&lt;any&gt;,
-    ...child: Array&lt;string | HTMLElement&gt;
+    attrs?: types.PlainObj<any>,
+    ...child: Array<string | HTMLElement>
 ): HTMLElement;
 ```
 
@@ -7073,7 +7073,7 @@ Monitor, change function arguments and result.
 <summary>Type Definition</summary>
 
 ```typescript
-function hookFn&lt;T&gt;(
+function hookFn<T>(
     fn: T,
     options: {
         before?: types.AnyFn;
@@ -7251,7 +7251,7 @@ Return the first argument given.
 <summary>Type Definition</summary>
 
 ```typescript
-function identity&lt;T&gt;(val: T): T;
+function identity<T>(val: T): T;
 ```
 
 </details>
@@ -7448,7 +7448,7 @@ Compute the list of values that are the intersection of all the arrays.
 <summary>Type Definition</summary>
 
 ```typescript
-function intersect(...arr: Array&lt;any[]&gt;): any[];
+function intersect(...arr: Array<any[]>): any[];
 ```
 
 </details>
@@ -7913,7 +7913,7 @@ Check if a path is directory.
 <summary>Type Definition</summary>
 
 ```typescript
-function isDir(path: string): Promise&lt;boolean&gt;;
+function isDir(path: string): Promise<boolean>;
 ```
 
 </details>
@@ -8706,7 +8706,7 @@ Check if a TCP port is free.
 function isPortFree(
     port: number,
     host?: string
-): Promise&lt;boolean&gt;;
+): Promise<boolean>;
 ```
 
 </details>
@@ -9155,7 +9155,7 @@ Use JSON parse and stringify to clone object.
 <summary>Type Definition</summary>
 
 ```typescript
-function jsonClone&lt;T&gt;(val: T): T;
+function jsonClone<T>(val: T): T;
 ```
 
 </details>
@@ -9349,10 +9349,10 @@ Import modules lazily, Proxy is used.
 <summary>Type Definition</summary>
 
 ```typescript
-function lazyImport&lt;T&gt;(
-    importFn: (moduleId: string) =&gt; T,
+function lazyImport<T>(
+    importFn: (moduleId: string) => T,
     dirname?: string
-): (moduleId: string) =&gt; T;
+): (moduleId: string) => T;
 ```
 
 </details>
@@ -9379,9 +9379,9 @@ Require modules lazily.
 <summary>Type Definition</summary>
 
 ```typescript
-function lazyRequire&lt;T&gt;(
-    requireFn: (moduleId: string) =&gt; T
-): (moduleId: string) =&gt; T;
+function lazyRequire<T>(
+    requireFn: (moduleId: string) => T
+): (moduleId: string) => T;
 ```
 
 </details>
@@ -9621,14 +9621,14 @@ Create an array of values by running each element in collection through iteratee
 <summary>Type Definition</summary>
 
 ```typescript
-function map&lt;T, TResult&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, TResult&gt;,
+function map<T, TResult>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, TResult>,
     context?: any
 ): TResult[];
-function map&lt;T, TResult&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, TResult&gt;,
+function map<T, TResult>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, TResult>,
     context?: any
 ): TResult[];
 ```
@@ -9656,11 +9656,11 @@ Map for objects.
 <summary>Type Definition</summary>
 
 ```typescript
-function mapObj&lt;T, TResult&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, TResult&gt;,
+function mapObj<T, TResult>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, TResult>,
     context?: any
-): types.Dictionary&lt;TResult&gt;;
+): types.Dictionary<TResult>;
 ```
 
 </details>
@@ -9806,10 +9806,10 @@ Merge the contents of arrays together into the first array.
 <summary>Type Definition</summary>
 
 ```typescript
-function mergeArr&lt;T, U&gt;(
-    first: ArrayLike&lt;T&gt;,
-    ...arrays: ArrayLike&lt;U&gt;[]
-): ArrayLike&lt;T | U&gt;;
+function mergeArr<T, U>(
+    first: ArrayLike<T>,
+    ...arrays: ArrayLike<U>[]
+): ArrayLike<T | U>;
 ```
 
 </details>
@@ -10215,7 +10215,7 @@ Sort values in natural order.
 <summary>Type Definition</summary>
 
 ```typescript
-function naturalSort&lt;T extends any[]&gt;(arr: T): T;
+function naturalSort<T extends any[]>(arr: T): T;
 ```
 
 </details>
@@ -10239,7 +10239,7 @@ Create a function that negates the result of the predicate function.
 <summary>Type Definition</summary>
 
 ```typescript
-function negate&lt;T extends types.AnyFn&gt;(predicate: T): T;
+function negate<T extends types.AnyFn>(predicate: T): T;
 ```
 
 </details>
@@ -10560,7 +10560,7 @@ Open file dialog to select file in browser.
 function openFile(options?: {
     accept?: string;
     multiple?: boolean;
-}): Promise&lt;File[]&gt;;
+}): Promise<File[]>;
 ```
 
 </details>
@@ -10696,7 +10696,7 @@ Convert an object into a list of [key, value] pairs.
 <summary>Type Definition</summary>
 
 ```typescript
-function pairs(obj: any): Array&lt;any[]&gt;;
+function pairs(obj: any): Array<any[]>;
 ```
 
 </details>
@@ -10805,10 +10805,10 @@ Simple html parser.
 function parseHtml(
     html: string,
     handlers: {
-        start?: (tag: string, attrs: any, unary: boolean) =&gt; void;
-        end?: (tag: string) =&gt; void;
-        comment?: (text: string) =&gt; void;
-        text?: (text: string) =&gt; void;
+        start?: (tag: string, attrs: any, unary: boolean) => void;
+        end?: (tag: string) => void;
+        comment?: (text: string) => void;
+        text?: (text: string) => void;
     }
 ): void;
 ```
@@ -10942,7 +10942,7 @@ Pipe all streams together.
 <summary>Type Definition</summary>
 
 ```typescript
-import stream = require(&#x27;stream&#x27;);
+import stream = require('stream');
 function pipe(...streams: stream.Stream[]): void;
 ```
 
@@ -11023,7 +11023,7 @@ Fetch a given url.
 <summary>Type Definition</summary>
 
 ```typescript
-function prefetch(url: string): Promise&lt;void&gt;;
+function prefetch(url: string): Promise<void>;
 ```
 
 </details>
@@ -11451,15 +11451,15 @@ Turn a list of values into a single value.
 <summary>Type Definition</summary>
 
 ```typescript
-function reduce&lt;T, TResult&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.MemoIterator&lt;T, TResult&gt;,
+function reduce<T, TResult>(
+    list: types.List<T>,
+    iterator: types.MemoIterator<T, TResult>,
     memo?: TResult,
     context?: any
 ): TResult;
-function reduce&lt;T, TResult&gt;(
-    list: types.Dictionary&lt;T&gt;,
-    iterator: types.MemoObjectIterator&lt;T, TResult&gt;,
+function reduce<T, TResult>(
+    list: types.Dictionary<T>,
+    iterator: types.MemoObjectIterator<T, TResult>,
     memo?: TResult,
     context?: any
 ): TResult;
@@ -11493,9 +11493,9 @@ Right-associative version of reduce.
 <summary>Type Definition</summary>
 
 ```typescript
-function reduceRight&lt;T, TResult&gt;(
-    list: types.Collection&lt;T&gt;,
-    iterator: types.MemoIterator&lt;T, TResult&gt;,
+function reduceRight<T, TResult>(
+    list: types.Collection<T>,
+    iterator: types.MemoIterator<T, TResult>,
     memo?: TResult,
     context?: any
 ): TResult;
@@ -11521,14 +11521,14 @@ Opposite of filter.
 <summary>Type Definition</summary>
 
 ```typescript
-function reject&lt;T&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, boolean&gt;,
+function reject<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
     context?: any
 ): T[];
-function reject&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, boolean&gt;,
+function reject<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
     context?: any
 ): T[];
 ```
@@ -11556,9 +11556,9 @@ Remove all elements from array that predicate returns truthy for and return an a
 <summary>Type Definition</summary>
 
 ```typescript
-function remove&lt;T, TResult&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, boolean&gt;,
+function remove<T, TResult>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
     context?: any
 ): TResult[];
 ```
@@ -12077,7 +12077,7 @@ function seedRandom(
     min?: number,
     max?: number,
     floating?: boolean
-): () =&gt; number;
+): () => number;
 ```
 
 </details>
@@ -12134,8 +12134,8 @@ namespace selector {
     }
 }
 const selector: {
-    parse(selector: string): Array&lt;selector.IToken[]&gt;;
-    stringify(selector: Array&lt;selector.IToken[]&gt;): string;
+    parse(selector: string): Array<selector.IToken[]>;
+    stringify(selector: Array<selector.IToken[]>): string;
 };
 ```
 
@@ -12295,7 +12295,7 @@ Resolve a promise after a specified timeout.
 <summary>Type Definition</summary>
 
 ```typescript
-function sleep(timeout: number): Promise&lt;void&gt;;
+function sleep(timeout: number): Promise<void>;
 ```
 
 </details>
@@ -12396,14 +12396,14 @@ Check if predicate return truthy for any element.
 <summary>Type Definition</summary>
 
 ```typescript
-function some&lt;T&gt;(
-    list: types.List&lt;T&gt;,
-    iterator?: types.ListIterator&lt;T, boolean&gt;,
+function some<T>(
+    list: types.List<T>,
+    iterator?: types.ListIterator<T, boolean>,
     context?: any
 ): boolean;
-function some&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator?: types.ObjectIterator&lt;T, boolean&gt;,
+function some<T>(
+    object: types.Dictionary<T>,
+    iterator?: types.ObjectIterator<T, boolean>,
     context?: any
 ): boolean;
 ```
@@ -12672,7 +12672,7 @@ Simple string template.
 <summary>Type Definition</summary>
 
 ```typescript
-function strTpl(str: string, data: types.PlainObj&lt;any&gt;): string;
+function strTpl(str: string, data: types.PlainObj<any>): string;
 ```
 
 </details>
@@ -13016,7 +13016,7 @@ Output table string.
 <summary>Type Definition</summary>
 
 ```typescript
-function table(rows: Array&lt;string[]&gt;): string;
+function table(rows: Array<string[]>): string;
 ```
 
 </details>
@@ -13073,7 +13073,7 @@ Return a new throttled version of the passed function.
 <summary>Type Definition</summary>
 
 ```typescript
-function throttle&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;
+function throttle<T extends types.AnyFn>(fn: T, wait: number): T;
 ```
 
 </details>
@@ -13097,23 +13097,23 @@ Tiny wrapper of stream Transform.
 <summary>Type Definition</summary>
 
 ```typescript
-import stream = require(&#x27;stream&#x27;);
+import stream = require('stream');
 namespace through {
     interface ThroughConstructor extends stream.Transform {
         new (opts?: stream.DuplexOptions): stream.Transform;
         (opts?: stream.DuplexOptions): stream.Transform;
     }
-    type TransformCallback = (err?: any, data?: any) =&gt; void;
+    type TransformCallback = (err?: any, data?: any) => void;
     type TransformFunction = (
         this: stream.Transform,
         chunk: any,
         enc: string,
         callback: TransformCallback
-    ) =&gt; void;
+    ) => void;
     type FlushCallback = (
         this: stream.Transform,
-        flushCallback: () =&gt; void
-    ) =&gt; void;
+        flushCallback: () => void
+    ) => void;
     function obj(
         transform?: TransformFunction,
         flush?: FlushCallback
@@ -13252,9 +13252,9 @@ Invoke given function n times.
 <summary>Type Definition</summary>
 
 ```typescript
-function times&lt;T&gt;(
+function times<T>(
     n: number,
-    fn: (n: number) =&gt; T,
+    fn: (n: number) => T,
     ctx?: any
 ): T[];
 ```
@@ -13683,29 +13683,29 @@ Used for typescript definitions only.
 
 ```typescript
 namespace types {
-    interface Collection&lt;T&gt; {}
-    interface List&lt;T&gt; extends Collection&lt;T&gt; {
+    interface Collection<T> {}
+    interface List<T> extends Collection<T> {
         [index: number]: T;
         length: number;
     }
-    interface ListIterator&lt;T, TResult&gt; {
-        (value: T, index: number, list: List&lt;T&gt;): TResult;
+    interface ListIterator<T, TResult> {
+        (value: T, index: number, list: List<T>): TResult;
     }
-    interface Dictionary&lt;T&gt; extends Collection&lt;T&gt; {
+    interface Dictionary<T> extends Collection<T> {
         [index: string]: T;
     }
-    interface ObjectIterator&lt;T, TResult&gt; {
-        (element: T, key: string, list: Dictionary&lt;T&gt;): TResult;
+    interface ObjectIterator<T, TResult> {
+        (element: T, key: string, list: Dictionary<T>): TResult;
     }
-    interface MemoIterator&lt;T, TResult&gt; {
-        (prev: TResult, curr: T, index: number, list: List&lt;T&gt;): TResult;
+    interface MemoIterator<T, TResult> {
+        (prev: TResult, curr: T, index: number, list: List<T>): TResult;
     }
-    interface MemoObjectIterator&lt;T, TResult&gt; {
-        (prev: TResult, curr: T, key: string, list: Dictionary&lt;T&gt;): TResult;
+    interface MemoObjectIterator<T, TResult> {
+        (prev: TResult, curr: T, key: string, list: Dictionary<T>): TResult;
     }
-    type Fn&lt;T&gt; = (...args: any[]) =&gt; T;
-    type AnyFn = Fn&lt;any&gt;;
-    type PlainObj&lt;T&gt; = { [name: string]: T };
+    type Fn<T> = (...args: any[]) => T;
+    type AnyFn = Fn<any>;
+    type PlainObj<T> = { [name: string]: T };
 }
 const types: {};
 ```
@@ -13764,8 +13764,8 @@ Handle global uncaught errors and promise rejections.
 const uncaught: {
     start(): void;
     stop(): void;
-    addListener(fn: (err: Error) =&gt; void): void;
-    rmListener(fn: (err: Error) =&gt; void): void;
+    addListener(fn: (err: Error) => void): void;
+    rmListener(fn: (err: Error) => void): void;
     rmAllListeners(): void;
 };
 ```
@@ -13833,7 +13833,7 @@ Create an array of unique values, in order, from all given arrays.
 <summary>Type Definition</summary>
 
 ```typescript
-function union(...arr: Array&lt;any[]&gt;): any[];
+function union(...arr: Array<any[]>): any[];
 ```
 
 </details>
@@ -13879,7 +13879,7 @@ Create duplicate-free version of an array.
 ```typescript
 function unique(
     arr: any[],
-    cmp?: (a: any, b: any) =&gt; boolean | number
+    cmp?: (a: any, b: any) => boolean | number
 ): any[];
 ```
 
@@ -13941,7 +13941,7 @@ Opposite of zip.
 <summary>Type Definition</summary>
 
 ```typescript
-declare function unzip(arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;
+declare function unzip(arr: Array<any[]>): Array<any[]>;
 ```
 
 </details>
@@ -14179,7 +14179,7 @@ function waitUntil(
     condition: types.AnyFn,
     timeout?: number,
     interval?: number
-): Promise&lt;any&gt;;
+): Promise<any>;
 ```
 
 </details>
@@ -14384,7 +14384,7 @@ Merge together the values of each of the arrays with the values at the correspon
 <summary>Type Definition</summary>
 
 ```typescript
-function zip(...arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;
+function zip(...arr: Array<any[]>): Array<any[]>;
 ```
 
 </details>

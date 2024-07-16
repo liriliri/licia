@@ -29,13 +29,13 @@ namespace $ {
         val(value: string): $;
         css(name: string): string;
         css(name: string, value: string): $;
-        css(properties: types.PlainObj&lt;string | number&gt;): $;
+        css(properties: types.PlainObj<string | number>): $;
         attr(name: string): string;
         attr(name: string, value: string): $;
-        attr(attributes: types.PlainObj&lt;string&gt;): $;
+        attr(attributes: types.PlainObj<string>): $;
         data(name: string): string;
         data(name: string, value: string): $;
-        data(attributes: types.PlainObj&lt;string&gt;): $;
+        data(attributes: types.PlainObj<string>): $;
         rmAttr(name: string): $;
         remove(): $;
         addClass(name: string | string[]): $;
@@ -88,7 +88,7 @@ function $attr(
 ): void;
 function $attr(
     element: $safeEls.El,
-    attributes: types.PlainObj&lt;string&gt;
+    attributes: types.PlainObj<string>
 ): void;
 function $attr(element: $safeEls.El, name: string): string;
 ```
@@ -216,7 +216,7 @@ function $css(
 ): void;
 function $css(
     element: $safeEls.El,
-    properties: types.PlainObj&lt;string | number&gt;
+    properties: types.PlainObj<string | number>
 ): void;
 ```
 
@@ -268,7 +268,7 @@ function $data(
 ): void;
 function $data(
     element: $safeEls.El,
-    attributes: types.PlainObj&lt;string&gt;
+    attributes: types.PlainObj<string>
 ): void;
 function $data(element: $safeEls.El, name: string): string;
 ```
@@ -324,7 +324,7 @@ $event.off('#test', 'click', clickHandler);
 
 ```typescript
 namespace $insert {
-    type IInsert = (element: $safeEls.El, content: string | Element) =&gt; void;
+    type IInsert = (element: $safeEls.El, content: string | Element) => void;
 }
 const $insert: {
     before: $insert.IInsert;
@@ -469,7 +469,7 @@ $remove('#test');
 
 ```typescript
 namespace $safeEls {
-    type El = Element | Element[] | NodeListOf&lt;Element&gt; | string;
+    type El = Element | Element[] | NodeListOf<Element> | string;
 }
 function $safeEls(val: $safeEls.El): Element[];
 ```
@@ -538,11 +538,11 @@ namespace Benchmark {
 }
 class Benchmark {
     constructor(fn: types.AnyFn, options?: Benchmark.IOptions);
-    run(): Promise&lt;Benchmark.IResult&gt;;
+    run(): Promise<Benchmark.IResult>;
     static all(
-        benches: Array&lt;types.AnyFn | Benchmark&gt;,
+        benches: Array<types.AnyFn | Benchmark>,
         options?: Benchmark.IOptions
-    ): Promise&lt;Benchmark.IResult[]&gt;;
+    ): Promise<Benchmark.IResult[]>;
 }
 ```
 
@@ -1109,15 +1109,15 @@ if (val === importance.CRITICAL) {
 
 ```typescript
 class FileBlobStore extends Emitter {
-    constructor(path: string, data?: types.PlainObj&lt;Buffer&gt;);
+    constructor(path: string, data?: types.PlainObj<Buffer>);
     set(key: string, buf: Buffer): void;
-    set(values: types.PlainObj&lt;Buffer&gt;): void;
+    set(values: types.PlainObj<Buffer>): void;
     get(key: string): Buffer | void;
-    get(keys: string[]): types.PlainObj&lt;Buffer&gt;;
+    get(keys: string[]): types.PlainObj<Buffer>;
     remove(key: string): void;
     remove(keys: string[]): void;
     clear(): void;
-    each(fn: (val: Buffer, key: string) =&gt; void): void;
+    each(fn: (val: Buffer, key: string) => void): void;
     save(): void;
 }
 ```
@@ -1338,9 +1338,9 @@ console.log(totalSize);
 
 ```typescript
 class I18n {
-    constructor(locale: string, langs: types.PlainObj&lt;any&gt;);
-    set(locale: string, lang: types.PlainObj&lt;any&gt;): void;
-    t(path: string | string[], data?: types.PlainObj&lt;any&gt;): string;
+    constructor(locale: string, langs: types.PlainObj<any>);
+    set(locale: string, lang: types.PlainObj<any>): void;
+    t(path: string | string[], data?: types.PlainObj<any>): string;
     locale(locale: string): void;
 }
 ```
@@ -2073,7 +2073,7 @@ cache.get('test'); // -> 'licia'
 class Readiness {
     signal(tasks: string | string[]): void;
     isReady(tasks: string | string[]): boolean;
-    ready(tasks: string | string[], fn?: types.AnyFn): Promise&lt;void&gt;;
+    ready(tasks: string | string[], fn?: types.AnyFn): Promise<void>;
 }
 ```
 
@@ -2273,7 +2273,7 @@ $test.find('.test').each(function(idx, element) {
 ```typescript
 class Semaphore {
     constructor(counter?: number);
-    wait(fn: () =&gt; void): void;
+    wait(fn: () => void): void;
     signal(): void;
 }
 ```
@@ -2603,7 +2603,7 @@ class Store extends Emitter {
     remove(key: string): void;
     remove(keys: string[]): void;
     clear(): void;
-    each(fn: (...args: any[]) =&gt; void): void;
+    each(fn: (...args: any[]) => void): void;
 }
 ```
 
@@ -2774,7 +2774,7 @@ class Tracing {
     instant(
         cat: string,
         name: string,
-        scope?: &#x27;g&#x27; | &#x27;p&#x27; | &#x27;t&#x27;,
+        scope?: 'g' | 'p' | 't',
         args?: any
     ): void;
     id(): string;
@@ -3018,7 +3018,7 @@ class Url {
     slashes: boolean;
     constructor(url?: string);
     setQuery(name: string, val: string | number): Url;
-    setQuery(query: types.PlainObj&lt;string | number&gt;): Url;
+    setQuery(query: types.PlainObj<string | number>): Url;
     rmQuery(name: string | string[]): Url;
     toString(): string;
     static parse(url: string): Url.IUrl;
@@ -3106,7 +3106,7 @@ url.toString(); // -> 'http://example.com:8080/?foo=bar'
 
 ```typescript
 class Validator {
-    constructor(options: types.PlainObj&lt;any&gt;);
+    constructor(options: types.PlainObj<any>);
     validate(object: any): string | boolean;
     static plugins: any;
     static addPlugin(name: string, plugin: types.AnyFn): void;
@@ -3236,7 +3236,7 @@ console.log(pool.size); // -> 2
 <summary>类型定义</summary>
 
 ```typescript
-function abbrev(...names: string[]): types.PlainObj&lt;string&gt;;
+function abbrev(...names: string[]): types.PlainObj<string>;
 ```
 
 </details>
@@ -3259,7 +3259,7 @@ abbrev('lina', 'luna');
 <summary>类型定义</summary>
 
 ```typescript
-function after&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;
+function after<T extends types.AnyFn>(n: number, fn: T): T;
 ```
 
 </details>
@@ -3388,11 +3388,11 @@ namespace allKeys {
 }
 function allKeys(
     obj: any,
-    options: { symbol: true } &amp; allKeys.IOptions
-): Array&lt;string | Symbol&gt;;
+    options: { symbol: true } & allKeys.IOptions
+): Array<string | Symbol>;
 function allKeys(
     obj: any,
-    options?: ({ symbol: false } &amp; allKeys.IOptions) | allKeys.IOptions
+    options?: ({ symbol: false } & allKeys.IOptions) | allKeys.IOptions
 ): string[];
 ```
 
@@ -3429,7 +3429,7 @@ allKeys(obj); // -> ['zero', 'one']
 
 ```typescript
 namespace ansiColor {
-    type IFn = (str: string) =&gt; string;
+    type IFn = (str: string) => string;
 }
 const ansiColor: {
     black: ansiColor.IFn;
@@ -3493,7 +3493,7 @@ ansiColor.red('Warning');
 <summary>类型定义</summary>
 
 ```typescript
-function arrToMap&lt;T&gt;(
+function arrToMap<T>(
     arr: string[],
     val?: T
 ): { [key: string]: T };
@@ -3609,7 +3609,7 @@ base64.decode('qK6b/w=='); // -> [168, 174, 155, 255]
 <summary>类型定义</summary>
 
 ```typescript
-function before&lt;T extends types.AnyFn&gt;(n: number, fn: T): T;
+function before<T extends types.AnyFn>(n: number, fn: T): T;
 ```
 
 </details>
@@ -4028,7 +4028,7 @@ char(97); // -> 'a'
 <summary>类型定义</summary>
 
 ```typescript
-function chunk(arr: any[], size?: number): Array&lt;any[]&gt;;
+function chunk(arr: any[], size?: number): Array<any[]>;
 ```
 
 </details>
@@ -4167,7 +4167,7 @@ cliHelp(test);
 <summary>类型定义</summary>
 
 ```typescript
-function clone&lt;T&gt;(val: T): T;
+function clone<T>(val: T): T;
 ```
 
 </details>
@@ -4191,7 +4191,7 @@ clone({ name: 'eustia' }); // -> {name: 'eustia'}
 <summary>类型定义</summary>
 
 ```typescript
-function cloneDeep&lt;T&gt;(val: T): T;
+function cloneDeep<T>(val: T): T;
 ```
 
 </details>
@@ -4384,7 +4384,7 @@ compressImg(
 <summary>类型定义</summary>
 
 ```typescript
-function concat(...args: Array&lt;any[]&gt;): any[];
+function concat(...args: Array<any[]>): any[];
 ```
 
 </details>
@@ -4433,8 +4433,8 @@ contain('abc', 'a'); // -> true
 ```typescript
 const container: {
     cpuNum(): number;
-    cpuUsage(period?: number): Promise&lt;number&gt;;
-    cpuLoad(period?: number): Promise&lt;number&gt;;
+    cpuUsage(period?: number): Promise<number>;
+    cpuLoad(period?: number): Promise<number>;
     memUsage(): number;
     memLoad(): number;
 };
@@ -4484,7 +4484,7 @@ convertBase('ff', 16, 2); // -> '11111111'
 
 ```typescript
 namespace convertBin {
-    function blobToArrBuffer(blob: any): Promise&lt;ArrayBuffer&gt;;
+    function blobToArrBuffer(blob: any): Promise<ArrayBuffer>;
 }
 function convertBin(bin: any, type: string): any;
 ```
@@ -5070,7 +5070,7 @@ dateFormat(new Date(), 'yyyy-mm-dd'); // -> 2016-11-19
 <summary>类型定义</summary>
 
 ```typescript
-function debounce&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;
+function debounce<T extends types.AnyFn>(fn: T, wait: number): T;
 ```
 
 </details>
@@ -5221,12 +5221,12 @@ Object.defineProperty(defineProperties) 的快捷方式。
 <summary>类型定义</summary>
 
 ```typescript
-function defineProp&lt;T&gt;(
+function defineProp<T>(
     obj: T,
     prop: string,
     descriptor: PropertyDescriptor
 ): T;
-function defineProp&lt;T&gt;(
+function defineProp<T>(
     obj: T,
     descriptor: PropertyDescriptorMap
 ): T;
@@ -5615,16 +5615,16 @@ durationFormat(12345678, 'h:m:s:l'); // -> '3:25:45:678'
 <summary>类型定义</summary>
 
 ```typescript
-function each&lt;T&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, void&gt;,
+function each<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, void>,
     ctx?: any
-): types.List&lt;T&gt;;
-function each&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, void&gt;,
+): types.List<T>;
+function each<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, void>,
     ctx?: any
-): types.Collection&lt;T&gt;;
+): types.Collection<T>;
 ```
 
 </details>
@@ -5856,14 +5856,14 @@ evalJs('this.a', { a: 2 }); // -> 2
 <summary>类型定义</summary>
 
 ```typescript
-function every&lt;T&gt;(
-    object: types.List&lt;T&gt;,
-    iterator?: types.ListIterator&lt;T, boolean&gt;,
+function every<T>(
+    object: types.List<T>,
+    iterator?: types.ListIterator<T, boolean>,
     context?: any
 ): boolean;
-function every&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator?: types.ObjectIterator&lt;T, boolean&gt;,
+function every<T>(
+    object: types.Dictionary<T>,
+    iterator?: types.ObjectIterator<T, boolean>,
     context?: any
 ): boolean;
 ```
@@ -6027,13 +6027,13 @@ namespace fetch {
         statusText: string;
         url: string;
         clone(): IResult;
-        text(): Promise&lt;string&gt;;
-        json(): Promise&lt;any&gt;;
-        xml(): Promise&lt;Document | null&gt;;
-        blob(): Promise&lt;Blob&gt;;
+        text(): Promise<string>;
+        json(): Promise<any>;
+        xml(): Promise<Document | null>;
+        blob(): Promise<Blob>;
         headers: {
             keys(): string[];
-            entries(): Array&lt;string[]&gt;;
+            entries(): Array<string[]>;
             get(name: string): string;
             has(name: string): boolean;
         };
@@ -6044,10 +6044,10 @@ function fetch(
     options?: {
         method?: string;
         timeout?: number;
-        headers?: types.PlainObj&lt;string&gt;;
+        headers?: types.PlainObj<string>;
         body?: any;
     }
-): Promise&lt;fetch.IResult&gt;;
+): Promise<fetch.IResult>;
 ```
 
 </details>
@@ -6220,14 +6220,14 @@ fill([1, 2, 3], '*', 1, 2); // -> [1, '*', 3]
 <summary>类型定义</summary>
 
 ```typescript
-function filter&lt;T&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, boolean&gt;,
+function filter<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
     context?: any
 ): T[];
-function filter&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, boolean&gt;,
+function filter<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
     context?: any
 ): T[];
 ```
@@ -6255,14 +6255,14 @@ filter([1, 2, 3, 4, 5], function(val) {
 <summary>类型定义</summary>
 
 ```typescript
-function find&lt;T&gt;(
-    object: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, boolean&gt;,
+function find<T>(
+    object: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
     context?: any
 ): T | undefined;
-function find&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, boolean&gt;,
+function find<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
     context?: any
 ): T | undefined;
 ```
@@ -6563,7 +6563,7 @@ Object.freeze 的快捷方式。
 <summary>类型定义</summary>
 
 ```typescript
-function freeze&lt;T&gt;(obj: T): T;
+function freeze<T>(obj: T): T;
 ```
 
 </details>
@@ -6590,7 +6590,7 @@ console.log(a); // -> {b: 1}
 <summary>类型定义</summary>
 
 ```typescript
-function freezeDeep&lt;T&gt;(obj: T): T;
+function freezeDeep<T>(obj: T): T;
 ```
 
 </details>
@@ -6616,14 +6616,14 @@ node.js fs 模块的 promise 版本。
 
 ```typescript
 const fs: {
-    readFile(path: string, encoding: string): Promise&lt;string&gt;;
-    readFile(path: string): Promise&lt;Buffer&gt;;
-    exists(path: string): Promise&lt;boolean&gt;;
-    unlink(path: string): Promise&lt;void&gt;;
-    writeFile(path: string, data: string, options?: string): Promise&lt;void&gt;;
-    writeFile(path: string, data: Buffer): Promise&lt;void&gt;;
-    readdir(path: string): Promise&lt;string[]&gt;;
-    rmdir(path: string): Promise&lt;void&gt;;
+    readFile(path: string, encoding: string): Promise<string>;
+    readFile(path: string): Promise<Buffer>;
+    exists(path: string): Promise<boolean>;
+    unlink(path: string): Promise<void>;
+    writeFile(path: string, data: string, options?: string): Promise<void>;
+    writeFile(path: string, data: Buffer): Promise<void>;
+    readdir(path: string): Promise<string[]>;
+    rmdir(path: string): Promise<void>;
     [key: string]: any;
 };
 ```
@@ -6787,7 +6787,7 @@ gcd(121, 44); // -> 11
 function getPort(
     port?: number | number[],
     host?: string
-): Promise&lt;number&gt;;
+): Promise<number>;
 ```
 
 </details>
@@ -6863,12 +6863,12 @@ getUrlParam('test', 'http://example.com/?test=true'); // -> 'true'
 <summary>类型定义</summary>
 
 ```typescript
-function golangify&lt;T, U = Error&gt;(
-    fn: (...args: any[]) =&gt; Promise&lt;T&gt;
-): (...args: any[]) =&gt; Promise&lt;[T | undefined, U | null]&gt;;
-function golangify&lt;T, U = Error&gt;(
-    p: Promise&lt;T&gt;
-): Promise&lt;[T | undefined, U | null]&gt;;
+function golangify<T, U = Error>(
+    fn: (...args: any[]) => Promise<T>
+): (...args: any[]) => Promise<[T | undefined, U | null]>;
+function golangify<T, U = Error>(
+    p: Promise<T>
+): Promise<[T | undefined, U | null]>;
 ```
 
 </details>
@@ -6907,8 +6907,8 @@ function golangify&lt;T, U = Error&gt;(
 ```typescript
 function h(
     tag: string,
-    attrs?: types.PlainObj&lt;any&gt;,
-    ...child: Array&lt;string | HTMLElement&gt;
+    attrs?: types.PlainObj<any>,
+    ...child: Array<string | HTMLElement>
 ): HTMLElement;
 ```
 
@@ -7066,7 +7066,7 @@ highlight('const a = 5;', 'js', {
 <summary>类型定义</summary>
 
 ```typescript
-function hookFn&lt;T&gt;(
+function hookFn<T>(
     fn: T,
     options: {
         before?: types.AnyFn;
@@ -7244,7 +7244,7 @@ html.stringify(tree);
 <summary>类型定义</summary>
 
 ```typescript
-function identity&lt;T&gt;(val: T): T;
+function identity<T>(val: T): T;
 ```
 
 </details>
@@ -7441,7 +7441,7 @@ insertionSort([2, 1]); // -> [1, 2]
 <summary>类型定义</summary>
 
 ```typescript
-function intersect(...arr: Array&lt;any[]&gt;): any[];
+function intersect(...arr: Array<any[]>): any[];
 ```
 
 </details>
@@ -7906,7 +7906,7 @@ isDate(new Date()); // -> true
 <summary>类型定义</summary>
 
 ```typescript
-function isDir(path: string): Promise&lt;boolean&gt;;
+function isDir(path: string): Promise<boolean>;
 ```
 
 </details>
@@ -8699,7 +8699,7 @@ isPlainObj(function() {}); // -> false
 function isPortFree(
     port: number,
     host?: string
-): Promise&lt;boolean&gt;;
+): Promise<boolean>;
 ```
 
 </details>
@@ -9148,7 +9148,7 @@ console.log(isWindows); // -> true if running on windows
 <summary>类型定义</summary>
 
 ```typescript
-function jsonClone&lt;T&gt;(val: T): T;
+function jsonClone<T>(val: T): T;
 ```
 
 </details>
@@ -9342,10 +9342,10 @@ last([1, 2]); // -> 2
 <summary>类型定义</summary>
 
 ```typescript
-function lazyImport&lt;T&gt;(
-    importFn: (moduleId: string) =&gt; T,
+function lazyImport<T>(
+    importFn: (moduleId: string) => T,
     dirname?: string
-): (moduleId: string) =&gt; T;
+): (moduleId: string) => T;
 ```
 
 </details>
@@ -9372,9 +9372,9 @@ _.isNumber(5);
 <summary>类型定义</summary>
 
 ```typescript
-function lazyRequire&lt;T&gt;(
-    requireFn: (moduleId: string) =&gt; T
-): (moduleId: string) =&gt; T;
+function lazyRequire<T>(
+    requireFn: (moduleId: string) => T
+): (moduleId: string) => T;
 ```
 
 </details>
@@ -9614,14 +9614,14 @@ ltrim('_abc_', ['a', '_']); // -> 'bc_'
 <summary>类型定义</summary>
 
 ```typescript
-function map&lt;T, TResult&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, TResult&gt;,
+function map<T, TResult>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, TResult>,
     context?: any
 ): TResult[];
-function map&lt;T, TResult&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, TResult&gt;,
+function map<T, TResult>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, TResult>,
     context?: any
 ): TResult[];
 ```
@@ -9649,11 +9649,11 @@ map([4, 8], function(n) {
 <summary>类型定义</summary>
 
 ```typescript
-function mapObj&lt;T, TResult&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, TResult&gt;,
+function mapObj<T, TResult>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, TResult>,
     context?: any
-): types.Dictionary&lt;TResult&gt;;
+): types.Dictionary<TResult>;
 ```
 
 </details>
@@ -9799,10 +9799,10 @@ const fibonacci = memoize(function(n) {
 <summary>类型定义</summary>
 
 ```typescript
-function mergeArr&lt;T, U&gt;(
-    first: ArrayLike&lt;T&gt;,
-    ...arrays: ArrayLike&lt;U&gt;[]
-): ArrayLike&lt;T | U&gt;;
+function mergeArr<T, U>(
+    first: ArrayLike<T>,
+    ...arrays: ArrayLike<U>[]
+): ArrayLike<T | U>;
 ```
 
 </details>
@@ -10208,7 +10208,7 @@ ms(60000); // -> '1m'
 <summary>类型定义</summary>
 
 ```typescript
-function naturalSort&lt;T extends any[]&gt;(arr: T): T;
+function naturalSort<T extends any[]>(arr: T): T;
 ```
 
 </details>
@@ -10232,7 +10232,7 @@ naturalSort([2, '1', 13]); // -> ['1', 2, 13]
 <summary>类型定义</summary>
 
 ```typescript
-function negate&lt;T extends types.AnyFn&gt;(predicate: T): T;
+function negate<T extends types.AnyFn>(predicate: T): T;
 ```
 
 </details>
@@ -10551,7 +10551,7 @@ open('https://eustia.liriliri.io/');
 function openFile(options?: {
     accept?: string;
     multiple?: boolean;
-}): Promise&lt;File[]&gt;;
+}): Promise<File[]>;
 ```
 
 </details>
@@ -10687,7 +10687,7 @@ pad('ab', 5, 'ab'); // -> 'ababa'
 <summary>类型定义</summary>
 
 ```typescript
-function pairs(obj: any): Array&lt;any[]&gt;;
+function pairs(obj: any): Array<any[]>;
 ```
 
 </details>
@@ -10796,10 +10796,10 @@ HTML 解析器。
 function parseHtml(
     html: string,
     handlers: {
-        start?: (tag: string, attrs: any, unary: boolean) =&gt; void;
-        end?: (tag: string) =&gt; void;
-        comment?: (text: string) =&gt; void;
-        text?: (text: string) =&gt; void;
+        start?: (tag: string, attrs: any, unary: boolean) => void;
+        end?: (tag: string) => void;
+        comment?: (text: string) => void;
+        text?: (text: string) => void;
     }
 ): void;
 ```
@@ -10933,7 +10933,7 @@ pick({ a: 1, b: 2, c: 3, d: 4 }, function(val, key) {
 <summary>类型定义</summary>
 
 ```typescript
-import stream = require(&#x27;stream&#x27;);
+import stream = require('stream');
 function pipe(...streams: stream.Stream[]): void;
 ```
 
@@ -11014,7 +11014,7 @@ precision(1.234); // -> 3;
 <summary>类型定义</summary>
 
 ```typescript
-function prefetch(url: string): Promise&lt;void&gt;;
+function prefetch(url: string): Promise<void>;
 ```
 
 </details>
@@ -11442,15 +11442,15 @@ ready(function() {
 <summary>类型定义</summary>
 
 ```typescript
-function reduce&lt;T, TResult&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.MemoIterator&lt;T, TResult&gt;,
+function reduce<T, TResult>(
+    list: types.List<T>,
+    iterator: types.MemoIterator<T, TResult>,
     memo?: TResult,
     context?: any
 ): TResult;
-function reduce&lt;T, TResult&gt;(
-    list: types.Dictionary&lt;T&gt;,
-    iterator: types.MemoObjectIterator&lt;T, TResult&gt;,
+function reduce<T, TResult>(
+    list: types.Dictionary<T>,
+    iterator: types.MemoObjectIterator<T, TResult>,
     memo?: TResult,
     context?: any
 ): TResult;
@@ -11484,9 +11484,9 @@ reduce(
 <summary>类型定义</summary>
 
 ```typescript
-function reduceRight&lt;T, TResult&gt;(
-    list: types.Collection&lt;T&gt;,
-    iterator: types.MemoIterator&lt;T, TResult&gt;,
+function reduceRight<T, TResult>(
+    list: types.Collection<T>,
+    iterator: types.MemoIterator<T, TResult>,
     memo?: TResult,
     context?: any
 ): TResult;
@@ -11512,14 +11512,14 @@ reduceRight(
 <summary>类型定义</summary>
 
 ```typescript
-function reject&lt;T&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, boolean&gt;,
+function reject<T>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
     context?: any
 ): T[];
-function reject&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator: types.ObjectIterator&lt;T, boolean&gt;,
+function reject<T>(
+    object: types.Dictionary<T>,
+    iterator: types.ObjectIterator<T, boolean>,
     context?: any
 ): T[];
 ```
@@ -11547,9 +11547,9 @@ reject([1, 2, 3, 4, 5], function(val) {
 <summary>类型定义</summary>
 
 ```typescript
-function remove&lt;T, TResult&gt;(
-    list: types.List&lt;T&gt;,
-    iterator: types.ListIterator&lt;T, boolean&gt;,
+function remove<T, TResult>(
+    list: types.List<T>,
+    iterator: types.ListIterator<T, boolean>,
     context?: any
 ): TResult[];
 ```
@@ -12068,7 +12068,7 @@ function seedRandom(
     min?: number,
     max?: number,
     floating?: boolean
-): () =&gt; number;
+): () => number;
 ```
 
 </details>
@@ -12125,8 +12125,8 @@ namespace selector {
     }
 }
 const selector: {
-    parse(selector: string): Array&lt;selector.IToken[]&gt;;
-    stringify(selector: Array&lt;selector.IToken[]&gt;): string;
+    parse(selector: string): Array<selector.IToken[]>;
+    stringify(selector: Array<selector.IToken[]>): string;
 };
 ```
 
@@ -12286,7 +12286,7 @@ sizeof({ a: 'b' }); // -> 4
 <summary>类型定义</summary>
 
 ```typescript
-function sleep(timeout: number): Promise&lt;void&gt;;
+function sleep(timeout: number): Promise<void>;
 ```
 
 </details>
@@ -12387,14 +12387,14 @@ snakeCase('foo.bar'); // -> foo_bar
 <summary>类型定义</summary>
 
 ```typescript
-function some&lt;T&gt;(
-    list: types.List&lt;T&gt;,
-    iterator?: types.ListIterator&lt;T, boolean&gt;,
+function some<T>(
+    list: types.List<T>,
+    iterator?: types.ListIterator<T, boolean>,
     context?: any
 ): boolean;
-function some&lt;T&gt;(
-    object: types.Dictionary&lt;T&gt;,
-    iterator?: types.ObjectIterator&lt;T, boolean&gt;,
+function some<T>(
+    object: types.Dictionary<T>,
+    iterator?: types.ObjectIterator<T, boolean>,
     context?: any
 ): boolean;
 ```
@@ -12663,7 +12663,7 @@ strToBytes('qK6b/w==', 'base64'); // -> [168, 174, 155, 255]
 <summary>类型定义</summary>
 
 ```typescript
-function strTpl(str: string, data: types.PlainObj&lt;any&gt;): string;
+function strTpl(str: string, data: types.PlainObj<any>): string;
 ```
 
 </details>
@@ -13007,7 +13007,7 @@ swap(arr, 0, 1); // -> [2, 1]
 <summary>类型定义</summary>
 
 ```typescript
-function table(rows: Array&lt;string[]&gt;): string;
+function table(rows: Array<string[]>): string;
 ```
 
 </details>
@@ -13064,7 +13064,7 @@ template('<p><%= util["upperCase"](name) %></p>', {
 <summary>类型定义</summary>
 
 ```typescript
-function throttle&lt;T extends types.AnyFn&gt;(fn: T, wait: number): T;
+function throttle<T extends types.AnyFn>(fn: T, wait: number): T;
 ```
 
 </details>
@@ -13088,23 +13088,23 @@ stream Transform 类的简单包装。
 <summary>类型定义</summary>
 
 ```typescript
-import stream = require(&#x27;stream&#x27;);
+import stream = require('stream');
 namespace through {
     interface ThroughConstructor extends stream.Transform {
         new (opts?: stream.DuplexOptions): stream.Transform;
         (opts?: stream.DuplexOptions): stream.Transform;
     }
-    type TransformCallback = (err?: any, data?: any) =&gt; void;
+    type TransformCallback = (err?: any, data?: any) => void;
     type TransformFunction = (
         this: stream.Transform,
         chunk: any,
         enc: string,
         callback: TransformCallback
-    ) =&gt; void;
+    ) => void;
     type FlushCallback = (
         this: stream.Transform,
-        flushCallback: () =&gt; void
-    ) =&gt; void;
+        flushCallback: () => void
+    ) => void;
     function obj(
         transform?: TransformFunction,
         flush?: FlushCallback
@@ -13243,9 +13243,9 @@ timeTaken(function() {
 <summary>类型定义</summary>
 
 ```typescript
-function times&lt;T&gt;(
+function times<T>(
     n: number,
-    fn: (n: number) =&gt; T,
+    fn: (n: number) => T,
     ctx?: any
 ): T[];
 ```
@@ -13674,29 +13674,29 @@ type(async function() {}, false); // -> 'AsyncFunction'
 
 ```typescript
 namespace types {
-    interface Collection&lt;T&gt; {}
-    interface List&lt;T&gt; extends Collection&lt;T&gt; {
+    interface Collection<T> {}
+    interface List<T> extends Collection<T> {
         [index: number]: T;
         length: number;
     }
-    interface ListIterator&lt;T, TResult&gt; {
-        (value: T, index: number, list: List&lt;T&gt;): TResult;
+    interface ListIterator<T, TResult> {
+        (value: T, index: number, list: List<T>): TResult;
     }
-    interface Dictionary&lt;T&gt; extends Collection&lt;T&gt; {
+    interface Dictionary<T> extends Collection<T> {
         [index: string]: T;
     }
-    interface ObjectIterator&lt;T, TResult&gt; {
-        (element: T, key: string, list: Dictionary&lt;T&gt;): TResult;
+    interface ObjectIterator<T, TResult> {
+        (element: T, key: string, list: Dictionary<T>): TResult;
     }
-    interface MemoIterator&lt;T, TResult&gt; {
-        (prev: TResult, curr: T, index: number, list: List&lt;T&gt;): TResult;
+    interface MemoIterator<T, TResult> {
+        (prev: TResult, curr: T, index: number, list: List<T>): TResult;
     }
-    interface MemoObjectIterator&lt;T, TResult&gt; {
-        (prev: TResult, curr: T, key: string, list: Dictionary&lt;T&gt;): TResult;
+    interface MemoObjectIterator<T, TResult> {
+        (prev: TResult, curr: T, key: string, list: Dictionary<T>): TResult;
     }
-    type Fn&lt;T&gt; = (...args: any[]) =&gt; T;
-    type AnyFn = Fn&lt;any&gt;;
-    type PlainObj&lt;T&gt; = { [name: string]: T };
+    type Fn<T> = (...args: any[]) => T;
+    type AnyFn = Fn<any>;
+    type PlainObj<T> = { [name: string]: T };
 }
 const types: {};
 ```
@@ -13755,8 +13755,8 @@ ucs2.decode('𝌆').length; // -> 1
 const uncaught: {
     start(): void;
     stop(): void;
-    addListener(fn: (err: Error) =&gt; void): void;
-    rmListener(fn: (err: Error) =&gt; void): void;
+    addListener(fn: (err: Error) => void): void;
+    rmListener(fn: (err: Error) => void): void;
     rmAllListeners(): void;
 };
 ```
@@ -13824,7 +13824,7 @@ unescape('You &amp; Me'); // -> 'You & Me'
 <summary>类型定义</summary>
 
 ```typescript
-function union(...arr: Array&lt;any[]&gt;): any[];
+function union(...arr: Array<any[]>): any[];
 ```
 
 </details>
@@ -13870,7 +13870,7 @@ uniqId('eustia_'); // -> 'eustia_xxx'
 ```typescript
 function unique(
     arr: any[],
-    cmp?: (a: any, b: any) =&gt; boolean | number
+    cmp?: (a: any, b: any) => boolean | number
 ): any[];
 ```
 
@@ -13932,7 +13932,7 @@ fn('licia').then(result => {
 <summary>类型定义</summary>
 
 ```typescript
-declare function unzip(arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;
+declare function unzip(arr: Array<any[]>): Array<any[]>;
 ```
 
 </details>
@@ -14170,7 +14170,7 @@ function waitUntil(
     condition: types.AnyFn,
     timeout?: number,
     interval?: number
-): Promise&lt;any&gt;;
+): Promise<any>;
 ```
 
 </details>
@@ -14375,7 +14375,7 @@ xpath('//html/body'); // -> [body]
 <summary>类型定义</summary>
 
 ```typescript
-function zip(...arr: Array&lt;any[]&gt;): Array&lt;any[]&gt;;
+function zip(...arr: Array<any[]>): Array<any[]>;
 ```
 
 </details>
