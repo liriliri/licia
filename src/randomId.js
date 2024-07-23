@@ -30,7 +30,7 @@ exports = function(size = 21, symbols = defSymbols) {
     let id = '';
 
     const len = symbols.length;
-    const bytes = randomBytes(21);
+    const bytes = randomBytes(size);
     while (0 < size--) {
         id += symbols[bytes[size] % len];
     }

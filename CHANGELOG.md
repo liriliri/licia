@@ -1,3 +1,7 @@
+## v1.41.1 (23 Jul 2024)
+
+* fix: randomId size over 21 error [#33](https://github.com/liriliri/licia/issues/33)
+
 ## v1.41.0 (18 Jun 2024)
 
 * feat: add dataUrl
