@@ -745,6 +745,78 @@ c.remove('content-type');
 c.has('content-type'); // -> false
 ```
 
+## Channel
+
+可以相互连接的消息通道。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+class Channel extends Emitter {
+    send(msg: any): void;
+    connect(channel: Channel): void;
+    disconnect(channel: Channel): void;
+    isConnected(channel: Channel): boolean;
+    destroy(): void;
+}
+```
+
+</details>
+
+### send
+
+发送消息给所有连接的通道。
+
+|参数名|说明|
+|-----|---|
+|msg|要发送的消息|
+
+### connect
+
+连接到指定通道。
+
+|参数名|说明|
+|-----|---|
+|channel|要连接的通道|
+
+### disconnect
+
+断开与指定通道的连接。
+
+|参数名|说明|
+|-----|---|
+|channel|要断开的通道|
+
+### isConnected
+
+检查两个通道是否连接。
+
+|参数名|说明|
+|-----|---|
+|channel|目标通道|
+|返回值|是否连接|
+
+### destroy
+
+销毁通道，断开所有连接的通道。
+
+```javascript
+const channelA = new Channel();
+const channelB = new Channel();
+channelA.connect(channelB);
+channelB.on('message', msg => {
+    console.log(msg); // -> 'hello'
+});
+channelA.send('hello');
+channelA.on('message', msg => {
+    console.log(msg); // -> 'world'
+});
+channelB.send('world');
+channelA.isConnected(channelB); // -> true
+channelB.isConnected(channelA); // -> true
+```
+
 ## Class
 
 创建 JavaScript 类。

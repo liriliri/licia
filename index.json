@@ -266,6 +266,24 @@
             "browser"
         ]
     },
+    "Channel": {
+        "dependencies": [
+            "Emitter",
+            "each",
+            "remove",
+            "some"
+        ],
+        "description": "Interconnectable Message channel.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "Class": {
         "demo": true,
         "dependencies": [
