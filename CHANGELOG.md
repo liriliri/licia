@@ -1,3 +1,8 @@
+## v1.42.0 (20 Sep 2024)
+
+* feat: add Channel
+* feat: add pointerEvent
+
 ## v1.41.1 (23 Jul 2024)
 
 * fix: randomId size over 21 error [#33](https://github.com/liriliri/licia/issues/33)
