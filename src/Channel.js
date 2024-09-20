@@ -101,7 +101,7 @@ exports = Emitter.extend({
     },
     isConnected(connection) {
         if (connection === this) {
-            throw new Error('Connection cannot be connected to itself.');
+            throw new Error('Channel cannot be connected to itself.');
         }
 
         return some(this._connections, item => item === connection);

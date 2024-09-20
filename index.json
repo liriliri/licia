@@ -5196,6 +5196,18 @@
             "browser"
         ]
     },
+    "pointerEvent": {
+        "dependencies": [
+            "root"
+        ],
+        "description": "Get the pointer event name, use touch and mouse events as a fallback if not supported.",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "precision": {
         "dependencies": [],
         "description": "Find decimal precision of a given number.",
