@@ -21,5 +21,11 @@
 _('objToStr');
 
 exports = function(val) {
-    return objToStr(val) === '[object Error]';
+    switch (objToStr(val)) {
+        case '[object Error]':
+        case '[object DOMException]':
+            return true;
+        default:
+            return val instanceof Error;
+    }
 };
