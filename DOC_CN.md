@@ -8964,6 +8964,28 @@ isSet(new Set()); // -> true
 isSet(new WeakSet()); // -> false
 ```
 
+## isShadowRoot
+
+检查值是否是 ShadowRoot 对象。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+function isShadowRoot(val: any): val is ShadowRoot;
+```
+
+</details>
+
+|参数名|说明|
+|-----|---|
+|val|要检查的值|
+|返回值|如果是 ShadowRoot，返回真|
+
+```javascript
+isShadowRoot(document.body); // -> false
+```
+
 ## isSorted
 
 检查数组是否有序。

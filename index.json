@@ -4067,6 +4067,16 @@
             "browser"
         ]
     },
+    "isShadowRoot": {
+        "dependencies": [],
+        "description": "Check if value is a ShadowRoot object.",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "isSorted": {
         "dependencies": [],
         "description": "Check if an array is sorted.",

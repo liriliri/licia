@@ -239,6 +239,7 @@
     "isRetina",
     "isRunning",
     "isSet",
+    "isShadowRoot",
     "isSorted",
     "isStr",
     "isStrBlank",
