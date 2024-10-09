@@ -1,3 +1,8 @@
+## v1.43.0 (9 Oct 2024)
+
+* feat: add isShadowRoot
+* fix(isErr): DOMException return false
+
 ## v1.42.0 (20 Sep 2024)
 
 * feat: add Channel
