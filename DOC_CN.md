@@ -12341,6 +12341,41 @@ function shuffle(arr: any[]): any[];
 shuffle([1, 2, 3]); // -> [3, 1, 2]
 ```
 
+## singleton
+
+确保一个异步函数返回前只运行一个实例。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+function singleton<F extends types.Fn<Promise<any>>>(
+    fn: F,
+    hashFn?: types.AnyFn
+): F;
+```
+
+</details>
+
+|参数名|说明|
+|-----|---|
+|fn|要限制的函数|
+|hashFn|计算缓存键名函数|
+|返回值|单例运行函数|
+
+```javascript
+const fetch = singleton(async function fetch(id) {});
+const f1 = fetch(1);
+const f2 = fetch(1);
+const f3 = fetch(2);
+console.log(f1 === f2); // -> true
+console.log(f1 === f3); // -> false
+
+await f1;
+const f4 = fetch(1);
+console.log(f1 === f4); // -> false
+```
+
 ## size
 
 获取对象的大小或类数组元素的长度。

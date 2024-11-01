@@ -380,6 +380,7 @@
     "shellSort",
     "shuffle",
     "SingleEmitter",
+    "singleton",
     "size",
     "sizeof",
     "sleep",

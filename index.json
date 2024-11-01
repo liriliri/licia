@@ -5922,6 +5922,21 @@
             "browser"
         ]
     },
+    "singleton": {
+        "dependencies": [
+            "has"
+        ],
+        "description": "Ensure an async function is only called once before it resolves.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "size": {
         "dependencies": [
             "isArrLike",
