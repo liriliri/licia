@@ -15,9 +15,10 @@
  * console.log(f1 === f2); // -> true
  * console.log(f1 === f3); // -> false
  *
- * await f1;
- * const f4 = fetch(1);
- * console.log(f1 === f4); // -> false
+ * f1.then(() => {
+ *     const f4 = fetch(1);
+ *     console.log(f1 === f4); // -> false
+ * });
  */
 
 /* module
