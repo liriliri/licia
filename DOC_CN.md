@@ -13208,6 +13208,43 @@ template('<p><%= util["upperCase"](name) %></p>', {
 })({ name: 'licia' }); // -> '<p>LICIA</p>'
 ```
 
+## theme
+
+主题工具库。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+namespace theme {
+    interface ITheme extends Emitter {
+        get(): string;
+    }
+}
+const theme: theme.ITheme;
+```
+
+</details>
+
+### on
+
+绑定 change 事件。
+
+### off
+
+解绑 change 事件。
+
+### get
+
+获取当前主题（light 或 dark）。
+
+```javascript
+theme.on('change', function(theme) {
+    console.log(theme); // -> 'dark'
+});
+theme.get(); // -> 'light'
+```
+
 ## throttle
 
 返回函数的节流阀版本。

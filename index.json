@@ -6441,6 +6441,19 @@
             "browser"
         ]
     },
+    "theme": {
+        "dependencies": [
+            "Emitter",
+            "MediaQuery"
+        ],
+        "description": "Theme helper.",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "throttle": {
         "dependencies": [
             "debounce"
