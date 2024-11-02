@@ -5932,6 +5932,7 @@
             "browser",
             "miniprogram"
         ],
+        "since": "1.44.0",
         "test": [
             "node",
             "browser"
@@ -6450,6 +6451,7 @@
         "env": [
             "browser"
         ],
+        "since": "1.44.0",
         "test": [
             "browser"
         ]

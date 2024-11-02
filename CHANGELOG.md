@@ -1,3 +1,8 @@
+## v1.44.0 (2 Nov 2024)
+
+* feat: add singleton
+* feat: add theme
+
 ## v1.43.0 (9 Oct 2024)
 
 * feat: add isShadowRoot
