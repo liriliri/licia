@@ -18,7 +18,13 @@
  */
 
 /* typescript
- * export declare function naturalSort<T extends any[]>(arr: T): T;
+ * export declare namespace naturalSort {
+ *     interface INaturalSort {
+ *         <T extends any[]>(arr: T): T;
+ *         comparator(a: any, b: any): number;
+ *     }
+ * }
+ * export declare const naturalSort: naturalSort.INaturalSort;
  */
 
 _('startWith root toStr');
@@ -26,6 +32,8 @@ _('startWith root toStr');
 exports = function(arr) {
     return arr.sort(naturalOrderComparator);
 };
+
+exports.comparator = naturalOrderComparator;
 
 // https://github.com/ChromeDevTools/devtools-frontend
 function naturalOrderComparator(a, b) {
