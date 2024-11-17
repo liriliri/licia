@@ -10302,7 +10302,13 @@ ms(60000); // -> '1m'
 <summary>类型定义</summary>
 
 ```typescript
-function naturalSort<T extends any[]>(arr: T): T;
+namespace naturalSort {
+    interface INaturalSort {
+        <T extends any[]>(arr: T): T;
+        comparator(a: any, b: any): number;
+    }
+}
+const naturalSort: naturalSort.INaturalSort;
 ```
 
 </details>
@@ -13159,7 +13165,32 @@ swap(arr, 0, 1); // -> [2, 1]
 <summary>类型定义</summary>
 
 ```typescript
-function table(rows: Array<string[]>): string;
+namespace table {
+    interface IOptions {
+        border?: {
+            topBody?: string;
+            topJoin?: string;
+            topLeft?: string;
+            topRight?: string;
+            bottomBody?: string;
+            bottomJoin?: string;
+            bottomLeft?: string;
+            bottomRight?: string;
+            bodyLeft?: string;
+            bodyRight?: string;
+            bodyJoin?: string;
+            joinBody?: string;
+            joinLeft?: string;
+            joinRight?: string;
+            joinJoin?: string;
+        };
+    }
+    function parse(table: string, options?: IOptions): Array<string[]>;
+}
+function table(
+    rows: Array<string[]>,
+    options?: table.IOptions
+): string;
 ```
 
 </details>
@@ -13167,6 +13198,7 @@ function table(rows: Array<string[]>): string;
 |参数名|说明|
 |-----|---|
 |rows|表格数据|
+|options|选项|
 |返回值|表格字符串|
 
 ```javascript

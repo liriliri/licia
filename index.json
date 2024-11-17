@@ -6412,7 +6412,8 @@
             "strWidth",
             "map",
             "repeat",
-            "cloneDeep"
+            "cloneDeep",
+            "defaults"
         ],
         "description": "Output table string.",
         "env": [

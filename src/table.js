@@ -1,9 +1,10 @@
 /* Output table string.
  *
- * |Name  |Desc        |
- * |------|------------|
- * |rows  |Table data  |
- * |return|Table string|
+ * |Name   |Desc         |
+ * |-------|-------------|
+ * |rows   |Table data   |
+ * |options|Table options|
+ * |return |Table string |
  */
 
 /* example
@@ -21,16 +22,40 @@
  */
 
 /* typescript
- * export declare function table(rows: Array<string[]>): string;
+ * export declare namespace table {
+ *     interface IOptions {
+ *         border?: {
+ *             topBody?: string;
+ *             topJoin?: string;
+ *             topLeft?: string;
+ *             topRight?: string;
+ *             bottomBody?: string;
+ *             bottomJoin?: string;
+ *             bottomLeft?: string;
+ *             bottomRight?: string;
+ *             bodyLeft?: string;
+ *             bodyRight?: string;
+ *             bodyJoin?: string;
+ *             joinBody?: string;
+ *             joinLeft?: string;
+ *             joinRight?: string;
+ *             joinJoin?: string;
+ *         };
+ *     }
+ *     function parse(table: string, options?: IOptions): Array<string[]>;
+ * }
+ * export declare function table(
+ *     rows: Array<string[]>,
+ *     options?: table.IOptions
+ * ): string;
  */
 
-_('each strWidth map repeat cloneDeep');
+_('each strWidth map repeat cloneDeep defaults');
 
-exports = function(rows) {
+exports = function(rows, options = {}) {
     rows = cloneDeep(rows);
-    const options = {
-        border: defBorder
-    };
+    options.border = options.border || {};
+    defaults(options.border, defBorder);
 
     options.columns = getColumns(rows);
     padData(rows, options);

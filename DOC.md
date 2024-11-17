@@ -10309,7 +10309,13 @@ Sort values in natural order.
 <summary>Type Definition</summary>
 
 ```typescript
-function naturalSort<T extends any[]>(arr: T): T;
+namespace naturalSort {
+    interface INaturalSort {
+        <T extends any[]>(arr: T): T;
+        comparator(a: any, b: any): number;
+    }
+}
+const naturalSort: naturalSort.INaturalSort;
 ```
 
 </details>
@@ -13168,15 +13174,41 @@ Output table string.
 <summary>Type Definition</summary>
 
 ```typescript
-function table(rows: Array<string[]>): string;
+namespace table {
+    interface IOptions {
+        border?: {
+            topBody?: string;
+            topJoin?: string;
+            topLeft?: string;
+            topRight?: string;
+            bottomBody?: string;
+            bottomJoin?: string;
+            bottomLeft?: string;
+            bottomRight?: string;
+            bodyLeft?: string;
+            bodyRight?: string;
+            bodyJoin?: string;
+            joinBody?: string;
+            joinLeft?: string;
+            joinRight?: string;
+            joinJoin?: string;
+        };
+    }
+    function parse(table: string, options?: IOptions): Array<string[]>;
+}
+function table(
+    rows: Array<string[]>,
+    options?: table.IOptions
+): string;
 ```
 
 </details>
 
-|Name  |Desc        |
-|------|------------|
-|rows  |Table data  |
-|return|Table string|
+|Name   |Desc         |
+|-------|-------------|
+|rows   |Table data   |
+|options|Table options|
+|return |Table string |
 
 ```javascript
 table([
