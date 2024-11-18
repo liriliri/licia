@@ -60,7 +60,7 @@
  * ): string;
  */
 
-_('each strWidth map repeat cloneDeep defaults trim rtrim filter last');
+_('each strWidth map repeat cloneDeep defaults trim rtrim filter');
 
 exports = function(rows, options = {}) {
     rows = cloneDeep(rows);

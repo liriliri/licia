@@ -1,3 +1,7 @@
+## v1.45.0 (18 Nov 2024)
+
+* feat(table): parse table string
+
 ## v1.44.0 (2 Nov 2024)
 
 * feat: add singleton
