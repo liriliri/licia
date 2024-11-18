@@ -13210,6 +13210,16 @@ function table(
 |options|Table options|
 |return |Table string |
 
+### parse
+
+Parse table string back to object.
+
+|Name   |Type         |
+|-------|-------------|
+|table  |Table string |
+|options|Table options|
+|return |Table data   |
+
 ```javascript
 table([
     ['', 'firstName', 'lastName'],

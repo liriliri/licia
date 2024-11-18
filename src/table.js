@@ -5,6 +5,16 @@
  * |rows   |Table data   |
  * |options|Table options|
  * |return |Table string |
+ *
+ * ### parse
+ *
+ * Parse table string back to object.
+ *
+ * |Name   |Type         |
+ * |-------|-------------|
+ * |table  |Table string |
+ * |options|Table options|
+ * |return |Table data   |
  */
 
 /* example
@@ -50,7 +60,7 @@
  * ): string;
  */
 
-_('each strWidth map repeat cloneDeep defaults');
+_('each strWidth map repeat cloneDeep defaults trim rtrim filter last');
 
 exports = function(rows, options = {}) {
     rows = cloneDeep(rows);
@@ -156,6 +166,114 @@ function renderBorder(type, options) {
     }
 
     return ret;
+}
+
+exports.parse = function(table, options = {}) {
+    options.border = options.border || {};
+    defaults(options.border, defBorder);
+    const lines = splitLines(table, options.border);
+
+    return parseLines(lines, options);
+};
+
+function splitLines(table, border) {
+    const lines = table.split(/\n/);
+    const trimLines = [];
+    let chars = ' ';
+    each(border, val => (chars += val));
+    each(lines, (line, idx) => {
+        line = trim(line);
+        line = trim(line, chars);
+        trimLines[idx] = line;
+    });
+
+    return filter(lines, (line, idx) => trimLines[idx] !== '');
+}
+
+function parseLines(lines, options) {
+    const { border } = options;
+
+    let maxLen = 0;
+    each(lines, line => {
+        const len = strWidth(line);
+        if (len > maxLen) {
+            maxLen = len;
+        }
+    });
+    lines = map(lines, line => line + repeat(' ', maxLen - strWidth(line)));
+
+    let start = -1;
+    let end = -1;
+    const firstLine = lines[0];
+    if (border.bodyLeft) {
+        start = firstLine.indexOf(border.bodyLeft);
+    }
+    if (border.bodyRight) {
+        end = firstLine.lastIndexOf(border.bodyRight);
+    }
+    lines = map(lines, line => {
+        if (start > -1) {
+            if (end > -1) {
+                line = line.slice(start + 1, end);
+            } else {
+                line = line.slice(start + 1);
+            }
+        }
+        return line;
+    });
+    maxLen = lines[0].length;
+
+    const rows = [];
+    const rowCount = lines.length;
+    let column = [];
+    for (let i = 0; i < maxLen; i++) {
+        let isSeparator = true;
+        let isFakeColumn = false;
+
+        for (let r = 0; r < rowCount; r++) {
+            column[r] = column[r] || '';
+            const c = lines[r][i] || '';
+            if (c !== border.bodyJoin) {
+                isSeparator = false;
+            }
+            column[r] += lines[r][i];
+        }
+
+        if (isSeparator || i === maxLen - 1) {
+            let emptyLineCount = 0;
+            each(column, data => {
+                data = rtrim(data, ' ' + border.bodyJoin);
+                if (data === '') {
+                    emptyLineCount++;
+                }
+            });
+            if (emptyLineCount >= rowCount - 1) {
+                isFakeColumn = true;
+            }
+            if (isSeparator) {
+                column = map(column, data => data.slice(0, data.length - 1));
+            }
+
+            column = map(column, data => trim(data));
+            for (let r = 0; r < rowCount; r++) {
+                const row = rows[r] || [];
+                const data = column[r];
+
+                if (isFakeColumn) {
+                    if (row.length !== 0 && data) {
+                        row[row.length - 1] += border.bodyJoin + data;
+                    }
+                } else {
+                    row.push(data);
+                }
+
+                rows[r] = row;
+            }
+            column = [];
+        }
+    }
+
+    return rows;
 }
 
 const defBorder = {

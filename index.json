@@ -6413,7 +6413,11 @@
             "map",
             "repeat",
             "cloneDeep",
-            "defaults"
+            "defaults",
+            "trim",
+            "rtrim",
+            "filter",
+            "last"
         ],
         "description": "Output table string.",
         "env": [

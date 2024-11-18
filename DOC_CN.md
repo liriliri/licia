@@ -13198,8 +13198,16 @@ function table(
 |参数名|说明|
 |-----|---|
 |rows|表格数据|
-|options|选项|
+|options|表格选项|
 |返回值|表格字符串|
+
+### parse
+
+|参数名|说明|
+|-----|---|
+|table|表格字符串|
+|options|表格选项|
+|返回值|表格数据|
 
 ```javascript
 table([
