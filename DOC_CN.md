@@ -6179,6 +6179,7 @@ fibonacci(3); // -> 2
 
 ```typescript
 function fileSize(bytes: number): string;
+function fileSize(size: string): number;
 ```
 
 </details>
@@ -6187,6 +6188,13 @@ function fileSize(bytes: number): string;
 |-----|---|
 |bytes|文件字节大小|
 |返回值|易于阅读的文件大小|
+
+将易于阅读的文件大小转换为字节数。
+
+|参数名|说明|
+|-----|---|
+|size|易于阅读的文件大小|
+|返回值|文件字节大小|
 
 ```javascript
 fileSize(5); // -> '5'

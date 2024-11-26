@@ -2530,7 +2530,10 @@
         ]
     },
     "fileSize": {
-        "dependencies": [],
+        "dependencies": [
+            "isStr",
+            "toNum"
+        ],
         "description": "Turn bytes into human readable file size.",
         "env": [
             "node",
@@ -6416,8 +6419,7 @@
             "defaults",
             "trim",
             "rtrim",
-            "filter",
-            "last"
+            "filter"
         ],
         "description": "Output table string.",
         "env": [

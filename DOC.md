@@ -6186,6 +6186,7 @@ Turn bytes into human readable file size.
 
 ```typescript
 function fileSize(bytes: number): string;
+function fileSize(size: string): number;
 ```
 
 </details>
@@ -6194,6 +6195,13 @@ function fileSize(bytes: number): string;
 |------|------------------|
 |bytes |File bytes        |
 |return|Readable file size|
+
+Turn human readable file size into bytes.
+
+|Name  |Desc              |
+|------|------------------|
+|size  |Readable file size|
+|return|File bytes        |
 
 ```javascript
 fileSize(5); // -> '5'
