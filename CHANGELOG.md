@@ -1,3 +1,8 @@
+## v1.46.0 (27 Nov 2024)
+
+* feat: add dpr
+* feat(fileSize): turn back to bytes
+
 ## v1.45.0 (18 Nov 2024)
 
 * feat(table): parse table string
