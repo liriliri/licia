@@ -5647,6 +5647,43 @@ function download(
 download('test', 'test.txt');
 ```
 
+## dpr
+
+设备像素比工具库。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+namespace dpr {
+    interface IDpr extends Emitter {
+        get(): number;
+    }
+}
+const dpr: dpr.IDpr;
+```
+
+</details>
+
+### on
+
+绑定 change 事件。
+
+### off
+
+解绑 change 事件。
+
+### get
+
+获取当前设备像素比。
+
+```javascript
+dpr.on('change', function(dpr) {
+    console.log(dpr); // -> 2
+});
+dpr.get(); // -> 1
+```
+
 ## durationFormat
 
 简单时间格式化。

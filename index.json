@@ -2250,6 +2250,20 @@
             "browser"
         ]
     },
+    "dpr": {
+        "demo": true,
+        "dependencies": [
+            "Emitter",
+            "MediaQuery"
+        ],
+        "description": "Device pixel ratio helper.",
+        "env": [
+            "browser"
+        ],
+        "test": [
+            "browser"
+        ]
+    },
     "durationFormat": {
         "dependencies": [
             "toInt",
