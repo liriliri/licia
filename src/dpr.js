@@ -54,5 +54,4 @@ function change() {
     exports.emit('change', dpr);
 }
 
-m.on('match', change);
 m.on('unmatch', change);
