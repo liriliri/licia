@@ -2260,6 +2260,7 @@
         "env": [
             "browser"
         ],
+        "since": "1.46.0",
         "test": [
             "browser"
         ]
