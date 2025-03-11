@@ -8,6 +8,7 @@
 
 /* module
  * env: all
+ * since: 1.47.0
  */
 
 /* typescript

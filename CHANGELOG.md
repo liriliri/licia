@@ -1,3 +1,8 @@
+## v1.47.0 (11 Mar 2025)
+
+* feat: add dataView
+* fix(extend): ts definition
+
 ## v1.46.0 (27 Nov 2024)
 
 * feat: add dpr
