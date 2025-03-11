@@ -1950,6 +1950,19 @@
             "browser"
         ]
     },
+    "dataView": {
+        "dependencies": [],
+        "description": "Like DataView, but without creating a new object.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "dateFormat": {
         "dependencies": [
             "isStr",

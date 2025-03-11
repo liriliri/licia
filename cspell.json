@@ -91,6 +91,7 @@
     "cssSupports",
     "curry",
     "dataUrl",
+    "dataView",
     "dateFormat",
     "debounce",
     "debug",

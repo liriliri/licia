@@ -5067,6 +5067,48 @@ dataUrl.parse('data:,Hello%2C%20World%21'); // -> {data: 'Hello, World!', mime: 
 dataUrl.stringify('Hello, World!', 'text/plain'); // -> 'data:,Hello%2C%20World%21'
 ```
 
+## dataView
+
+跟 DataView 相似，但不需要创建对象。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+const dataView: {
+    getInt8(buf: Uint8Array, offset: number): number;
+    getInt16(buf: Uint8Array, offset: number, le?: boolean): number;
+    setInt16(buf: Uint8Array, offset: number, val: number, le?: boolean): void;
+    getUint16(buf: Uint8Array, offset: number, le?: boolean): number;
+    setUint16(buf: Uint8Array, offset: number, val: number, le?: boolean): void;
+    getInt32(buf: Uint8Array, offset: number, le?: boolean): number;
+    setInt32(buf: Uint8Array, offset: number, val: number, le?: boolean): void;
+    getUint32(buf: Uint8Array, offset: number, le?: boolean): number;
+    setUint32(buf: Uint8Array, offset: number, val: number, le?: boolean): void;
+    getBigInt64(buf: Uint8Array, offset: number, le?: boolean): bigint;
+    setBigInt64(
+        buf: Uint8Array,
+        offset: number,
+        val: bigint,
+        le?: boolean
+    ): void;
+    getBigUint64(buf: Uint8Array, offset: number, le?: boolean): bigint;
+    setBigUint64(
+        buf: Uint8Array,
+        offset: number,
+        val: bigint,
+        le?: boolean
+    ): void;
+};
+```
+
+</details>
+
+```javascript
+const buf = new Uint8Array([0x80]);
+dataView.getInt8(buf, 0); // -> -128
+```
+
 ## dateFormat
 
 简单日期格式化。
@@ -6000,6 +6042,18 @@ every([2, 4], function(val) {
 <summary>类型定义</summary>
 
 ```typescript
+function extend<T, T1>(destination: T, source1: T1): T & T1;
+function extend<T, T1, T2>(
+    destination: T,
+    source1: T1,
+    source2: T2
+): T & T1 & T2;
+function extend<T, T1, T2, T3>(
+    destination: T,
+    source1: T1,
+    source2: T2,
+    source3: T3
+): T & T1 & T2 & T3;
 function extend(destination: any, ...sources: any[]): any;
 ```
 
