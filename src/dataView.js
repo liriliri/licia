@@ -22,20 +22,6 @@
  *     setInt32(buf: Uint8Array, offset: number, val: number, le?: boolean): void;
  *     getUint32(buf: Uint8Array, offset: number, le?: boolean): number;
  *     setUint32(buf: Uint8Array, offset: number, val: number, le?: boolean): void;
- *     getBigInt64(buf: Uint8Array, offset: number, le?: boolean): bigint;
- *     setBigInt64(
- *         buf: Uint8Array,
- *         offset: number,
- *         val: bigint,
- *         le?: boolean
- *     ): void;
- *     getBigUint64(buf: Uint8Array, offset: number, le?: boolean): bigint;
- *     setBigUint64(
- *         buf: Uint8Array,
- *         offset: number,
- *         val: bigint,
- *         le?: boolean
- *     ): void;
  * };
  */
 
