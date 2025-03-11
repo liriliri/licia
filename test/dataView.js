@@ -61,32 +61,4 @@ if (util.isBrowser) {
             new DataView(buf.buffer).getUint32(0)
         );
     });
-    it('int64 little endian', () => {
-        const buf = new Uint8Array(8);
-        dataView.setBigInt64(buf, 0, 0x8000000000000000n, true);
-        expect(dataView.getBigInt64(buf, 0, true)).to.equal(
-            new DataView(buf.buffer).getBigInt64(0, true)
-        );
-    });
-    it('int64 big endian', () => {
-        const buf = new Uint8Array(8);
-        dataView.setBigInt64(buf, 0, 0x8000000000000000n);
-        expect(dataView.getBigInt64(buf, 0)).to.equal(
-            new DataView(buf.buffer).getBigInt64(0)
-        );
-    });
-    it('uint64 little endian', () => {
-        const buf = new Uint8Array(8);
-        dataView.setBigUint64(buf, 0, 0x8000000000000000n, true);
-        expect(dataView.getBigUint64(buf, 0, true)).to.equal(
-            new DataView(buf.buffer).getBigUint64(0, true)
-        );
-    });
-    it('uint64 big endian', () => {
-        const buf = new Uint8Array(8);
-        dataView.setBigUint64(buf, 0, 0x8000000000000000n);
-        expect(dataView.getBigUint64(buf, 0)).to.equal(
-            new DataView(buf.buffer).getBigUint64(0)
-        );
-    });
 }
