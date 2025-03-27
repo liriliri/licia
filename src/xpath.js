@@ -99,7 +99,7 @@ function xPathValue(node, optimized) {
             ownValue = node.localName;
             break;
         case Node.ATTRIBUTE_NODE:
-            ownValue = '@' + node.nodeName();
+            ownValue = '@' + node.nodeName;
             break;
         case Node.TEXT_NODE:
         case Node.CDATA_SECTION_NODE:
