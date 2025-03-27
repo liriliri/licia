@@ -1,5 +1,5 @@
 /* scripts
- * before: npm i --prefix .licia sinon
+ * before: npm i --prefix .licia sinon@19.0.5
  */
 
 const sinon = require('sinon');
