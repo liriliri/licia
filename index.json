@@ -7193,8 +7193,11 @@
         "test": []
     },
     "xpath": {
-        "dependencies": [],
-        "description": "Select elements using xpath, IE is not supported.",
+        "dependencies": [
+            "isStr",
+            "Class"
+        ],
+        "description": "Select elements using xpath or get element xpath, IE is not supported.",
         "env": [
             "browser"
         ],

@@ -1,3 +1,7 @@
+## v1.48.0 (27 Mar 2025)
+
+* feat(xpath): get element xpath
+
 ## v1.47.0 (11 Mar 2025)
 
 * feat: add dataView
