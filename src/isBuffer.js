@@ -7,7 +7,7 @@
  */
 
 /* example
- * isBuffer(new Buffer(4)); // -> true
+ * isBuffer(Buffer.alloc(4)); // -> true
  */
 
 /* module

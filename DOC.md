@@ -7937,7 +7937,7 @@ function isBuffer(val: any): boolean;
 |return|True if value is a buffer|
 
 ```javascript
-isBuffer(new Buffer(4)); // -> true
+isBuffer(Buffer.alloc(4)); // -> true
 ```
 
 ## isClose 

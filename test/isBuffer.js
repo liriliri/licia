@@ -1,5 +1,5 @@
 it('true', function() {
-    expect(isBuffer(new Buffer(4))).to.be.true;
+    expect(isBuffer(Buffer.alloc(4))).to.be.true;
     expect(isBuffer({ _isBuffer: true })).to.be.true;
 });
 

@@ -26,6 +26,6 @@ it('big object', () => {
 
 if (isNode) {
     it('buffer', () => {
-        expect(sizeof(new Buffer(10))).to.equal(10);
+        expect(sizeof(Buffer.alloc(10))).to.equal(10);
     });
 }

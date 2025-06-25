@@ -17,7 +17,7 @@ _('root isNode base64 map');
 
 if (isNode) {
     exports = function(str) {
-        return new Buffer(str, 'base64').toString('binary');
+        return Buffer.from(str, 'base64').toString('binary');
     };
 } else {
     if (root.atob && !LICIA_TEST) {
