@@ -1,3 +1,7 @@
+## v1.48.1 (11 May 2026)
+
+* fix: ts types
+
 ## v1.48.0 (27 Mar 2025)
 
 * feat(xpath): get element xpath

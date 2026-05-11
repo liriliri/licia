@@ -2676,9 +2676,9 @@ Memory storage.
 ```typescript
 class Store extends Emitter {
     constructor(data?: {});
-    set(key: string, val: any): void;
+    set<T>(key: string, val: T): void;
     set(values: {}): void;
-    get(key: string): any;
+    get<T = any>(key: string): T;
     get(keys: string[]): {};
     remove(key: string): void;
     remove(keys: string[]): void;
@@ -3651,7 +3651,7 @@ Basic base64 encoding and decoding.
 
 ```typescript
 const base64: {
-    encode(bytes: number[]): string;
+    encode(bytes: number[] | Uint8Array): string;
     decode(str: string): number[];
 };
 ```
@@ -4486,7 +4486,10 @@ Check if the value is present in the list.
 <summary>Type Definition</summary>
 
 ```typescript
-function contain(arr: any[] | {} | string, val: any): boolean;
+function contain(
+    arr: readonly any[] | {} | string,
+    val: any
+): boolean;
 ```
 
 </details>
@@ -6466,7 +6469,10 @@ Return the first index where the predicate truth test passes.
 <summary>Type Definition</summary>
 
 ```typescript
-function findIdx(arr: any[], predicate: types.AnyFn): number;
+function findIdx<T>(
+    arr: T[],
+    predicate: (val: T, idx: number, arr: T[]) => boolean
+): number;
 ```
 
 </details>
@@ -6507,7 +6513,7 @@ function findKey(
     obj: any,
     predicate: types.AnyFn,
     ctx?: any
-): string | void;
+): string | undefined;
 ```
 
 </details>
@@ -9915,7 +9921,7 @@ MD5 implementation.
 <summary>Type Definition</summary>
 
 ```typescript
-function md5(msg: string | number[]): string;
+function md5(msg: string | number[] | Uint8Array): string;
 ```
 
 </details>
@@ -11342,7 +11348,7 @@ Parse and stringify url query strings.
 
 ```typescript
 const query: {
-    parse(str: string): any;
+    parse(str: string): Record<string, string | string[]>;
     stringify(object: any): string;
 };
 ```
@@ -12674,11 +12680,11 @@ Return an array of elements sorted in ascending order by results of running each
 <summary>Type Definition</summary>
 
 ```typescript
-function sortBy(
-    arr: any,
+function sortBy<T>(
+    arr: T[],
     iterator?: types.AnyFn,
     ctx?: any
-): any[];
+): T[];
 ```
 
 </details>
