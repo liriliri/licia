@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
+          node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Build licia
         run: npm i && npm link && npm run build
