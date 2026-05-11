@@ -16,7 +16,7 @@
  */
 
 /* typescript
- * export declare function md5(msg: string | number[]): string;
+ * export declare function md5(msg: string | number[] | Uint8Array): string;
  */
 
 _('isStr strToBytes hex bytesToWords wordsToBytes isNode isArr');

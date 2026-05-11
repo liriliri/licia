@@ -31,7 +31,7 @@
 
 /* typescript
  * export declare const query: {
- *     parse(str: string): any;
+ *     parse(str: string): Record<string, string | string[]>;
  *     stringify(object: any): string;
  * };
  */

@@ -82,9 +82,9 @@
 /* typescript
  * export declare class Store extends Emitter {
  *     constructor(data?: {});
- *     set(key: string, val: any): void;
+ *     set<T>(key: string, val: T): void;
  *     set(values: {}): void;
- *     get(key: string): any;
+ *     get<T = any>(key: string): T;
  *     get(keys: string[]): {};
  *     remove(key: string): void;
  *     remove(keys: string[]): void;

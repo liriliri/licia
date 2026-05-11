@@ -23,7 +23,7 @@
  *     obj: any,
  *     predicate: types.AnyFn,
  *     ctx?: any
- * ): string | void;
+ * ): string | undefined;
  */
 
 _('safeCb keys types');
