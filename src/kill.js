@@ -18,19 +18,28 @@
  * export declare function kill(pid: number): void;
  */
 
-_('isWindows');
+_('isWindows isInt toNum');
 
 const childProcess = require('child_process');
 
 exports = function(pid) {
     try {
-        let cmd = '';
-        if (isWindows) {
-            cmd = `taskkill /pid ${pid} /T /F`;
-        } else {
-            cmd = `kill ${pid} -9`;
+        pid = toNum(pid);
+        if (!isInt(pid) || pid <= 0) {
+            throw new TypeError('Invalid pid');
         }
-        childProcess.execSync(cmd);
+
+        if (isWindows) {
+            childProcess.spawnSync(
+                'taskkill',
+                ['/pid', String(pid), '/T', '/F'],
+                {
+                    stdio: 'ignore'
+                }
+            );
+        } else {
+            process.kill(pid, 'SIGKILL');
+        }
     } catch (e) {
         /* eslint-disable no-empty */
     }
