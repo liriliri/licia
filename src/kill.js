@@ -24,13 +24,13 @@ const childProcess = require('child_process');
 
 exports = function(pid) {
     try {
-        let cmd = '';
         if (isWindows) {
-            cmd = `taskkill /pid ${pid} /T /F`;
+            childProcess.spawnSync('taskkill', ['/pid', pid, '/T', '/F'], {
+                stdio: 'ignore'
+            });
         } else {
-            cmd = `kill ${pid} -9`;
+            process.kill(pid, 'SIGKILL');
         }
-        childProcess.execSync(cmd);
     } catch (e) {
         /* eslint-disable no-empty */
     }
