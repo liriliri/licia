@@ -24,11 +24,11 @@
  */
 
 /* typescript
- * export declare function remove<T, TResult>(
+ * export declare function remove<T>(
  *     list: types.List<T>,
  *     iterator: types.ListIterator<T, boolean>,
  *     context?: any
- * ): TResult[];
+ * ): T[];
  */
 
 _('safeCb types');

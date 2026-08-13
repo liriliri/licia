@@ -1690,7 +1690,7 @@ LocalStorage 存储。
 
 ```typescript
 class LocalStore extends Store {
-    constructor(name: string, data?: {});
+    constructor(name: string, data?: Record<string, any>);
 }
 ```
 
@@ -2667,15 +2667,15 @@ state.play('eustia');
 
 ```typescript
 class Store extends Emitter {
-    constructor(data?: {});
+    constructor(data?: Record<string, any>);
     set<T>(key: string, val: T): void;
-    set(values: {}): void;
+    set(values: Record<string, any>): void;
     get<T = any>(key: string): T;
-    get(keys: string[]): {};
+    get(keys: string[]): Record<string, any>;
     remove(key: string): void;
     remove(keys: string[]): void;
     clear(): void;
-    each(fn: (...args: any[]) => void): void;
+    each(fn: (val: any, key: string) => void): void;
 }
 ```
 
@@ -2743,7 +2743,7 @@ class Store extends Emitter {
 |fn|遍历函数|
 
 ```javascript
-const store = new Store('test');
+const store = new Store();
 store.set('user', { name: 'licia' });
 store.get('user').name; // -> 'licia'
 store.clear();
@@ -3643,7 +3643,7 @@ base64 编解码。
 
 ```typescript
 const base64: {
-    encode(bytes: number[] | Uint8Array): string;
+    encode(bytes: number[] | Uint8Array | ArrayBufferView): string;
     decode(str: string): number[];
 };
 ```
@@ -3826,7 +3826,10 @@ bubbleSort([2, 1]); // -> [1, 2]
 <summary>类型定义</summary>
 
 ```typescript
-function bytesToStr(bytes: number[], encoding?: string): string;
+function bytesToStr(
+    bytes: number[] | Uint8Array | ArrayBufferView,
+    encoding?: 'utf8' | 'hex' | 'base64' | string
+): string;
 ```
 
 </details>
@@ -4154,7 +4157,17 @@ clamp(2, 5); // -> 2
 <summary>类型定义</summary>
 
 ```typescript
-function className(...names: any[]): string;
+function className(
+    ...names: Array<
+        | string
+        | number
+        | boolean
+        | null
+        | undefined
+        | { [key: string]: any }
+        | Array<any>
+    >
+): string;
 ```
 
 </details>
@@ -4559,8 +4572,38 @@ convertBase('ff', 16, 2); // -> '11111111'
 
 ```typescript
 namespace convertBin {
-    function blobToArrBuffer(blob: any): Promise<ArrayBuffer>;
+    type Source =
+        | string
+        | number[]
+        | ArrayBuffer
+        | ArrayBufferView
+        | Uint8Array;
+    function blobToArrBuffer(blob: Blob): Promise<ArrayBuffer>;
 }
+function convertBin(
+    bin: convertBin.Source,
+    type: 'Uint8Array' | 'uint8array'
+): Uint8Array;
+function convertBin(
+    bin: convertBin.Source,
+    type: 'Array' | 'array'
+): number[];
+function convertBin(
+    bin: convertBin.Source,
+    type: 'ArrayBuffer' | 'arraybuffer'
+): ArrayBuffer;
+function convertBin(
+    bin: convertBin.Source,
+    type: 'base64'
+): string;
+function convertBin(
+    bin: convertBin.Source,
+    type: 'Blob' | 'blob'
+): Blob;
+function convertBin(
+    bin: convertBin.Source,
+    type: 'Buffer' | 'buffer'
+): any;
 function convertBin(bin: any, type: string): any;
 ```
 
@@ -5029,7 +5072,7 @@ const dataUrl: {
         dataUrl: string
     ): { data: string; mime: string; charset: string; base64: boolean } | null;
     stringify(
-        data: any,
+        data: string | number[] | Uint8Array | ArrayBuffer | ArrayBufferView,
         mime: string,
         options?: { base64?: boolean; charset?: string }
     ): string;
@@ -5266,6 +5309,18 @@ decodeUriComponent('%E0%A4%A'); // -> '\xE0\xA4%A'
 <summary>类型定义</summary>
 
 ```typescript
+function defaults<T, T1>(obj: T, source1: T1): T & T1;
+function defaults<T, T1, T2>(
+    obj: T,
+    source1: T1,
+    source2: T2
+): T & T1 & T2;
+function defaults<T, T1, T2, T3>(
+    obj: T,
+    source1: T1,
+    source2: T2,
+    source3: T3
+): T & T1 & T2 & T3;
 function defaults(obj: any, ...src: any[]): any;
 ```
 
@@ -7151,7 +7206,7 @@ hex 编解码。
 
 ```typescript
 const hex: {
-    encode(bytes: number[]): string;
+    encode(bytes: number[] | Uint8Array | ArrayBufferView): string;
     decode(str: string): number[];
 };
 ```
@@ -11155,6 +11210,10 @@ pipe(
 <summary>类型定义</summary>
 
 ```typescript
+function pluck<T, K extends keyof T>(
+    list: types.List<T>,
+    key: K
+): T[K][];
 function pluck(object: any, key: string | string[]): any[];
 ```
 
@@ -11281,10 +11340,14 @@ prefix('color'); // -> 'color'
 <summary>类型定义</summary>
 
 ```typescript
+function promisify<TArgs extends any[], TResult>(
+    fn: (...args: [...TArgs, (err: any, result: TResult) => void]) => any,
+    multiArgs?: false
+): (...args: TArgs) => Promise<TResult>;
 function promisify(
     fn: types.AnyFn,
     multiArgs?: boolean
-): types.AnyFn;
+): (...args: any[]) => Promise<any>;
 ```
 
 </details>
@@ -11760,11 +11823,11 @@ reject([1, 2, 3, 4, 5], function(val) {
 <summary>类型定义</summary>
 
 ```typescript
-function remove<T, TResult>(
+function remove<T>(
     list: types.List<T>,
     iterator: types.ListIterator<T, boolean>,
     context?: any
-): TResult[];
+): T[];
 ```
 
 </details>
@@ -12695,7 +12758,7 @@ some([2, 5], function(val) {
 ```typescript
 function sortBy<T>(
     arr: T[],
-    iterator?: types.AnyFn,
+    iterator?: keyof T | ((item: T, index: number, list: T[]) => any),
     ctx?: any
 ): T[];
 ```
@@ -12908,7 +12971,10 @@ strHash('test'); // -> 2090770981
 <summary>类型定义</summary>
 
 ```typescript
-function strToBytes(str: string, encoding?: string): number[];
+function strToBytes(
+    str: string,
+    encoding?: 'utf8' | 'hex' | 'base64' | string
+): number[];
 ```
 
 </details>
@@ -13531,10 +13597,13 @@ tildify('/home/surunzi/dev'); // -> '~/dev'
 <summary>类型定义</summary>
 
 ```typescript
-function timeAgo(
-    date: Date | number,
-    now?: Date | number
-): string;
+namespace timeAgo {
+    interface ITimeAgo {
+        (date: Date | number, now?: Date | number): string;
+        i18n: string[][];
+    }
+}
+const timeAgo: timeAgo.ITimeAgo;
 ```
 
 </details>
@@ -13551,6 +13620,24 @@ timeAgo(now - 1000 * 6); // -> just now
 timeAgo(now - 1000 * 15); // -> 15 seconds ago
 timeAgo(now + 1000 * 60 * 15); // -> in 15 minutes
 timeAgo(now - 1000 * 60 * 60 * 5, now); // -> 5 hours ago
+// Replace i18n to support other languages.
+timeAgo.i18n = [
+    ['刚刚', '马上'],
+    ['%s 秒前', '%s 秒后'],
+    ['1 分钟前', '1 分钟后'],
+    ['%s 分钟前', '%s 分钟后'],
+    ['1 小时前', '1 小时后'],
+    ['%s 小时前', '%s 小时后'],
+    ['1 天前', '1 天后'],
+    ['%s 天前', '%s 天后'],
+    ['1 周前', '1 周后'],
+    ['%s 周前', '%s 周后'],
+    ['1 个月前', '1 个月后'],
+    ['%s 个月前', '%s 个月后'],
+    ['1 年前', '1 年后'],
+    ['%s 年前', '%s 年后']
+];
+timeAgo(now - 1000 * 15); // -> 15 秒前
 ```
 
 ## timeTaken
@@ -13613,7 +13700,11 @@ times(3, String); // -> ['0', '1', '2']
 <summary>类型定义</summary>
 
 ```typescript
-function toArr(val: any): any[];
+function toArr(val: null | undefined): any[];
+function toArr(val: string): string[];
+function toArr<T>(val: T[]): T[];
+function toArr<T>(val: ArrayLike<T>): T[];
+function toArr<T>(val: T): T[];
 ```
 
 </details>
@@ -14508,11 +14599,11 @@ vlq.decode('2HwcqxB'); // -> [123, 456, 789]
 <summary>类型定义</summary>
 
 ```typescript
-function waitUntil(
-    condition: types.AnyFn,
+function waitUntil<T>(
+    condition: () => T | PromiseLike<T>,
     timeout?: number,
     interval?: number
-): Promise<any>;
+): Promise<T>;
 ```
 
 </details>

@@ -31,7 +31,7 @@
 
 /* typescript
  * export declare const hex: {
- *     encode(bytes: number[]): string;
+ *     encode(bytes: number[] | Uint8Array | ArrayBufferView): string;
  *     decode(str: string): number[];
  * };
  */

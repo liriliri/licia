@@ -19,7 +19,17 @@
  */
 
 /* typescript
- * export declare function className(...names: any[]): string;
+ * export declare function className(
+ *     ...names: Array<
+ *         | string
+ *         | number
+ *         | boolean
+ *         | null
+ *         | undefined
+ *         | { [key: string]: any }
+ *         | Array<any>
+ *     >
+ * ): string;
  */
 
 _('each isStr isNum isArr isObj');

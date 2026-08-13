@@ -63,7 +63,7 @@
  */
 
 /* example
- * const store = new Store('test');
+ * const store = new Store();
  * store.set('user', { name: 'licia' });
  * store.get('user').name; // -> 'licia'
  * store.clear();
@@ -81,15 +81,15 @@
 
 /* typescript
  * export declare class Store extends Emitter {
- *     constructor(data?: {});
+ *     constructor(data?: Record<string, any>);
  *     set<T>(key: string, val: T): void;
- *     set(values: {}): void;
+ *     set(values: Record<string, any>): void;
  *     get<T = any>(key: string): T;
- *     get(keys: string[]): {};
+ *     get(keys: string[]): Record<string, any>;
  *     remove(key: string): void;
  *     remove(keys: string[]): void;
  *     clear(): void;
- *     each(fn: (...args: any[]) => void): void;
+ *     each(fn: (val: any, key: string) => void): void;
  * }
  */
 

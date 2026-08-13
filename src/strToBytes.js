@@ -20,7 +20,10 @@
  */
 
 /* typescript
- * export declare function strToBytes(str: string, encoding?: string): number[];
+ * export declare function strToBytes(
+ *     str: string,
+ *     encoding?: 'utf8' | 'hex' | 'base64' | string
+ * ): number[];
  */
 
 _('utf8 hex base64');

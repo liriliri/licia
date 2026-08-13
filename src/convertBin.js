@@ -36,8 +36,38 @@
 
 /* typescript
  * export declare namespace convertBin {
- *     function blobToArrBuffer(blob: any): Promise<ArrayBuffer>;
+ *     type Source =
+ *         | string
+ *         | number[]
+ *         | ArrayBuffer
+ *         | ArrayBufferView
+ *         | Uint8Array;
+ *     function blobToArrBuffer(blob: Blob): Promise<ArrayBuffer>;
  * }
+ * export declare function convertBin(
+ *     bin: convertBin.Source,
+ *     type: 'Uint8Array' | 'uint8array'
+ * ): Uint8Array;
+ * export declare function convertBin(
+ *     bin: convertBin.Source,
+ *     type: 'Array' | 'array'
+ * ): number[];
+ * export declare function convertBin(
+ *     bin: convertBin.Source,
+ *     type: 'ArrayBuffer' | 'arraybuffer'
+ * ): ArrayBuffer;
+ * export declare function convertBin(
+ *     bin: convertBin.Source,
+ *     type: 'base64'
+ * ): string;
+ * export declare function convertBin(
+ *     bin: convertBin.Source,
+ *     type: 'Blob' | 'blob'
+ * ): Blob;
+ * export declare function convertBin(
+ *     bin: convertBin.Source,
+ *     type: 'Buffer' | 'buffer'
+ * ): any;
  * export declare function convertBin(bin: any, type: string): any;
  */
 

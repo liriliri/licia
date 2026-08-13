@@ -21,14 +21,14 @@
  */
 
 /* typescript
- * export declare function waitUntil(
- *     condition: types.AnyFn,
+ * export declare function waitUntil<T>(
+ *     condition: () => T | PromiseLike<T>,
  *     timeout?: number,
  *     interval?: number
- * ): Promise<any>;
+ * ): Promise<T>;
  */
 
-_('now types');
+_('now');
 
 exports = function(condition, timeout = 0, interval = 250) {
     function evalCondition() {

@@ -1,5 +1,5 @@
 ---
-name: create-module
+name: create
 description: >-
   Create a new Licia utility module following project conventions. Use when
   adding a new module, scaffolding src/test/i18n/benchmark files, or when the

@@ -17,7 +17,10 @@
  */
 
 /* typescript
- * export declare function bytesToStr(bytes: number[], encoding?: string): string;
+ * export declare function bytesToStr(
+ *     bytes: number[] | Uint8Array | ArrayBufferView,
+ *     encoding?: 'utf8' | 'hex' | 'base64' | string
+ * ): string;
  */
 
 _('utf8 hex base64');

@@ -30,7 +30,7 @@
 
 /* typescript
  * export declare const base64: {
- *     encode(bytes: number[] | Uint8Array): string;
+ *     encode(bytes: number[] | Uint8Array | ArrayBufferView): string;
  *     decode(str: string): number[];
  * };
  */

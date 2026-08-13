@@ -21,7 +21,7 @@
 
 /* typescript
  * export declare class LocalStore extends Store {
- *     constructor(name: string, data?: {});
+ *     constructor(name: string, data?: Record<string, any>);
  * }
  */
 

@@ -21,10 +21,14 @@
  */
 
 /* typescript
+ * export declare function pluck<T, K extends keyof T>(
+ *     list: types.List<T>,
+ *     key: K
+ * ): T[K][];
  * export declare function pluck(object: any, key: string | string[]): any[];
  */
 
-_('map property');
+_('map property types');
 
 exports = function(obj, key) {
     return map(obj, property(key));

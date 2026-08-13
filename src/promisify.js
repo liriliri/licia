@@ -23,10 +23,14 @@
  */
 
 /* typescript
+ * export declare function promisify<TArgs extends any[], TResult>(
+ *     fn: (...args: [...TArgs, (err: any, result: TResult) => void]) => any,
+ *     multiArgs?: false
+ * ): (...args: TArgs) => Promise<TResult>;
  * export declare function promisify(
  *     fn: types.AnyFn,
  *     multiArgs?: boolean
- * ): types.AnyFn;
+ * ): (...args: any[]) => Promise<any>;
  */
 
 _('restArgs root types');
