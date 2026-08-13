@@ -378,6 +378,7 @@
     "selector",
     "Semaphore",
     "SessionStore",
+    "sha1",
     "shebang",
     "shellSort",
     "shuffle",

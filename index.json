@@ -5906,6 +5906,29 @@
             "browser"
         ]
     },
+    "sha1": {
+        "benchmark": true,
+        "dependencies": [
+            "isStr",
+            "strToBytes",
+            "hex",
+            "bytesToWords",
+            "wordsToBytes",
+            "isNode",
+            "isArr"
+        ],
+        "description": "SHA1 implementation.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "since": "1.49.0",
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "shebang": {
         "dependencies": [
             "trim"

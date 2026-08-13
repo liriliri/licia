@@ -12369,6 +12369,28 @@ const groups = selector.parse('#test, input.user[name="licia"]');
 selector.stringify(groups);
 ```
 
+## sha1
+
+SHA1 算法实现。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+function sha1(msg: string | number[] | Uint8Array): string;
+```
+
+</details>
+
+|参数名|说明|
+|-----|---|
+|msg|密文|
+|返回值|SHA1 摘要|
+
+```javascript
+sha1('licia'); // -> 'bf29b6b1e26689ce4fbb320df1ee534216b579d5'
+```
+
 ## shebang
 
 获取 shebang 命令。
