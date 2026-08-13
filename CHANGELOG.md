@@ -1,6 +1,7 @@
 ## v1.49.0 (13 Aug 2026)
 
 * feat: add sha1
+* fix(kill): avoid shell execution
 * fix: ts types
 
 ## v1.48.1 (11 May 2026)
