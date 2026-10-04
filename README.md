@@ -13,7 +13,6 @@ Useful utility collection with zero dependencies.
 [![NPM version][npm-image]][npm-url]
 [![Build status][ci-image]][ci-url]
 [![Test coverage][codecov-image]][codecov-url]
-[![Size][size-image]][npm-url]
 [![License][license-image]][npm-url]
 
 </div>
@@ -27,7 +26,6 @@ Useful utility collection with zero dependencies.
 [codecov-image]: https://img.shields.io/codecov/c/github/liriliri/licia?style=flat-square
 [codecov-url]: https://codecov.io/github/liriliri/licia?branch=master
 [license-image]: https://img.shields.io/npm/l/licia?style=flat-square
-[size-image]: https://img.shields.io/bundlephobia/minzip/licia?style=flat-square
 
 
 [Licia](https://licia.liriliri.io/) is a utility library that focus on getting daily works done. Unlike other libraries such as underscore, mout, which strictly separates its functions into several categories like array, string and function etc. licia is just a deadly simple collection of over 400 micro modules dealing problems in different aspects. 
