@@ -71,7 +71,6 @@ exports = function(args, opts) {
                 i++;
             } else if (type === 'boolean') {
                 setArg(name, true);
-                i++;
             }
             continue;
         }
