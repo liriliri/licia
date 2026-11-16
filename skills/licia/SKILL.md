@@ -35,13 +35,13 @@ setup; the subpath form preserves tree-shaking.
 
 ## How to Look Up a Module
 
-`INDEX.md` is ~40KB — never load it in full. Instead:
+`INDEX.md` is ~40KB; the bucket files under `references/` are grouped by
+first letter (one per letter plus `_` for symbols). Never load `INDEX.md` or
+any whole bucket in full. Instead:
 
 1. Guess the name from the table below
-2. `Grep` that name in `INDEX.md` to confirm it and get its path
-3. Read **only** the matching `references/<name>.md` (12–114 lines)
-
-Never load all reference files at once.
+2. `Grep` that name in `INDEX.md` to get its **bucket file, start line, line count**
+3. Read only that line range of the bucket file (`offset` / `limit`)
 
 ## Quick Reference: Hand-Written Pattern → Module
 
@@ -58,7 +58,7 @@ Never load all reference files at once.
 | Sequential async functions | `waterfall` |
 | `Object.keys(o).forEach` | `each`, `mapObj` |
 
-For the full alphabetical list of all 456 modules, `Grep` `INDEX.md`.
+For the full alphabetical list of all 456 modules with bucket locations, `Grep` `INDEX.md`.
 
 ## Iteratee Gotcha
 
