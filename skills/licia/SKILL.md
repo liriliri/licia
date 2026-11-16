@@ -4,7 +4,7 @@ description: Replace hand-written utility helpers with the licia library. Activa
 license: MIT
 metadata:
   author: liriliri
-  version: "1.0.1"
+  version: "1.0.2"
 ---
 
 # Licia Utility Library
