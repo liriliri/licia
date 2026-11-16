@@ -35,13 +35,32 @@ setup; the subpath form preserves tree-shaking.
 
 ## How to Look Up a Module
 
-`INDEX.md` is ~40KB; the bucket files under `references/` are grouped by
-first letter (one per letter plus `_` for symbols). Never load `INDEX.md` or
-any whole bucket in full. Instead:
+`INDEX.md` is a Markdown table with **one row per module**, and each row
+already contains everything needed:
 
-1. Guess the name from the table below
-2. `Grep` that name in `INDEX.md` to get its **bucket file, start line, line count**
-3. Read only that line range of the bucket file (`offset` / `limit`)
+```
+| `clamp` | Clamp number within the inclusive lower and upper bounds. | `references/c.md` | 537 | 29 |
+```
+
+Columns: name, description, bucket file, start line, line count. The bucket
+files under `references/` are grouped by first letter (one per
+letter plus `_` for symbols).
+
+Prefer `Grep` on `INDEX.md` — a matched row is the complete record, so no
+second lookup is needed:
+
+```
+Grep "last element" INDEX.md        # capability keyword, when you don't know the name
+Grep "empty" INDEX.md               # also: path, clone, random, string, ...
+Grep '`clamp`' INDEX.md             # when you know or guessed the name
+```
+
+Then `Read` the bucket with `offset` = the row's **Start line** and `limit` =
+its **Lines**. These are columns *inside* the matched row — not the line number
+Grep reported for that row.
+
+`INDEX.md` is the single source of truth for the full alphabetical name list —
+there is no separate name list in this skill.
 
 ## Quick Reference: Hand-Written Pattern → Module
 
@@ -57,8 +76,6 @@ any whole bucket in full. Instead:
 | `JSON.parse(JSON.stringify(x))` | `cloneDeep` |
 | Sequential async functions | `waterfall` |
 | `Object.keys(o).forEach` | `each`, `mapObj` |
-
-For the full alphabetical list of all 456 modules with bucket locations, `Grep` `INDEX.md`.
 
 ## Iteratee Gotcha
 

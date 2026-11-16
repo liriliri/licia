@@ -1,8 +1,11 @@
 # Licia Module Index
 
-Modules are grouped by first letter into 26 files under `references/`.
-Grep here for the module name, then read only the given line range of
-its bucket file. Never load a whole bucket or all buckets at once.
+One row per module; columns are name, description, bucket file,
+start line and line count. Modules are grouped by first letter into
+26 files under `references/`.
+
+Grep a capability keyword (or a module name) here, then Read the given
+line range of its bucket file.
 
 | Module | Description | Bucket | Start line | Lines |
 | --- | --- | --- | --- | --- |
