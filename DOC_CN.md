@@ -12689,6 +12689,100 @@ slugify('I ♥ pony'); // -> 'I-love-pony'
 slugify('I ♥ pony', { ' ': '_' }); // -> 'I_love_pony'
 ```
 
+## sm3
+
+SM3 算法实现，兼容国密标准。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+function sm3(
+    msg: string | number[] | Uint8Array,
+    options?: {
+        mode?: string;
+        key: string | number[] | Uint8Array;
+    }
+): string;
+```
+
+</details>
+
+|参数名|说明|
+|-----|---|
+|msg|密文|
+|options|选项，`mode` 默认为 `hmac`|
+|返回值|SM3 摘要|
+
+### 选项
+
+|参数名|说明|
+|-----|---|
+|mode|摘要模式，目前仅支持 `hmac`|
+|key|HMAC 密钥，字符串会被当作十六进制字符串处理|
+
+```javascript
+sm3('licia'); // -> '33b901397725075d898a5508b2f0f3c3016d280a8c1658b7d172ba258cdfb150'
+```
+
+## sm4
+
+SM4 算法实现，兼容国密标准。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+const sm4: {
+    encrypt(
+        data: string | number[] | Uint8Array,
+        key: string | number[] | Uint8Array,
+        options?: {
+            mode?: string;
+            iv?: string | number[] | Uint8Array;
+            padding?: string;
+            output?: string;
+        }
+    ): string | number[];
+    decrypt(
+        data: string | number[] | Uint8Array,
+        key: string | number[] | Uint8Array,
+        options?: {
+            mode?: string;
+            iv?: string | number[] | Uint8Array;
+            padding?: string;
+            output?: string;
+        }
+    ): string | number[];
+};
+```
+
+</details>
+
+|参数名|说明|
+|-----|---|
+|data|待加密/解密的数据，字符串加密时按 utf8 处理，解密时按 hex 处理|
+|key|密钥，16 字节，字符串会被当作十六进制字符串处理|
+|options|选项|
+|返回值|加密/解密后的数据|
+
+### 选项
+
+|参数名|说明|
+|-----|---|
+|mode|分组密码工作模式，`ecb` 或 `cbc`|
+|iv|初始向量，`cbc` 模式必填，字符串会被当作十六进制字符串处理|
+|padding|填充模式，`pkcs#7` 或 `none`|
+|output|输出类型，`string` 或 `array`|
+
+```javascript
+sm4.encrypt('licia', '0123456789abcdeffedcba9876543210'); // -> '291c47f32f9aec055ac80310acd84260'
+sm4.decrypt(
+    '291c47f32f9aec055ac80310acd84260',
+    '0123456789abcdeffedcba9876543210'
+); // -> 'licia'
+```
+
 ## snakeCase
 
 转换字符串为下划线式。

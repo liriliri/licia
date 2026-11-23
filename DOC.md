@@ -12698,6 +12698,108 @@ slugify('I ♥ pony'); // -> 'I-love-pony'
 slugify('I ♥ pony', { ' ': '_' }); // -> 'I_love_pony'
 ```
 
+## sm3 
+
+SM3 implementation.
+
+<details>
+<summary>Type Definition</summary>
+
+```typescript
+function sm3(
+    msg: string | number[] | Uint8Array,
+    options?: {
+        mode?: string;
+        key: string | number[] | Uint8Array;
+    }
+): string;
+```
+
+</details>
+
+|Name   |Desc                                |
+|-------|------------------------------------|
+|msg    |Message to encrypt                  |
+|options|Options, `mode` is `hmac` by default|
+|return |SM3 hash                            |
+
+### Options
+
+|Name|Desc                                       |
+|----|-------------------------------------------|
+|mode|Hash mode, only `hmac` is supported        |
+|key |HMAC key, string is treated as a hex string|
+
+```javascript
+sm3('licia'); // -> '33b901397725075d898a5508b2f0f3c3016d280a8c1658b7d172ba258cdfb150'
+```
+
+## sm4 
+
+SM4 implementation.
+
+<details>
+<summary>Type Definition</summary>
+
+```typescript
+const sm4: {
+    encrypt(
+        data: string | number[] | Uint8Array,
+        key: string | number[] | Uint8Array,
+        options?: {
+            mode?: string;
+            iv?: string | number[] | Uint8Array;
+            padding?: string;
+            output?: string;
+        }
+    ): string | number[];
+    decrypt(
+        data: string | number[] | Uint8Array,
+        key: string | number[] | Uint8Array,
+        options?: {
+            mode?: string;
+            iv?: string | number[] | Uint8Array;
+            padding?: string;
+            output?: string;
+        }
+    ): string | number[];
+};
+```
+
+</details>
+
+### encrypt
+
+SM4 encryption, result as hex string.
+
+### decrypt
+
+SM4 decryption, pass hex string as input.
+
+|Name   |Desc                           |
+|-------|-------------------------------|
+|data   |Data to be encrypted/decrypted |
+|key    |Secret key, 16 bytes           |
+|options|Options                        |
+|return |Encrypted/decrypted data       |
+
+### Options
+
+|Name    |Desc                                      |
+|--------|------------------------------------------|
+|mode    |Block cipher mode, `ecb` or `cbc`         |
+|iv      |Initialization vector, required by `cbc` |
+|padding |Padding mode, `pkcs#7` or `none`          |
+|output  |Output type, `string` or `array`          |
+
+```javascript
+sm4.encrypt('licia', '0123456789abcdeffedcba9876543210'); // -> '291c47f32f9aec055ac80310acd84260'
+sm4.decrypt(
+    '291c47f32f9aec055ac80310acd84260',
+    '0123456789abcdeffedcba9876543210'
+); // -> 'licia'
+```
+
 ## snakeCase 
 
 Convert string to "snakeCase".

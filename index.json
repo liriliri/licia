@@ -6073,6 +6073,55 @@
             "browser"
         ]
     },
+    "sm3": {
+        "benchmark": true,
+        "dependencies": [
+            "isStr",
+            "isArr",
+            "isTypedArr",
+            "strToBytes",
+            "hex",
+            "bytesToWords",
+            "wordsToBytes",
+            "isNode"
+        ],
+        "description": "SM3 implementation.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "since": "1.50.0",
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
+    "sm4": {
+        "benchmark": true,
+        "dependencies": [
+            "isStr",
+            "isArr",
+            "isTypedArr",
+            "strToBytes",
+            "bytesToStr",
+            "hex",
+            "bytesToWords",
+            "wordsToBytes",
+            "isNode"
+        ],
+        "description": "SM4 implementation.",
+        "env": [
+            "node",
+            "browser",
+            "miniprogram"
+        ],
+        "since": "1.50.0",
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "snakeCase": {
         "dependencies": [
             "splitCase"

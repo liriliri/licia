@@ -384,30 +384,32 @@ line range of its bucket file.
 | `sleep` | Resolve a promise after a specified timeout. | `references/s.md` | 969 | 23 |
 | `slice` | Create slice of source array or array-like object. | `references/s.md` | 992 | 27 |
 | `slugify` | Slugify a string. | `references/s.md` | 1019 | 27 |
-| `snakeCase` | Convert string to "snakeCase". | `references/s.md` | 1046 | 24 |
-| `some` | Check if predicate return truthy for any element. | `references/s.md` | 1070 | 35 |
-| `sortBy` | Return an array of elements sorted in ascending order by results of running each element through iteratee. | `references/s.md` | 1105 | 30 |
-| `sortKeys` | Sort keys of an object. | `references/s.md` | 1135 | 41 |
-| `spaceCase` | Convert string to "spaceCase". | `references/s.md` | 1176 | 24 |
-| `splitCase` | Split different string case to an array. | `references/s.md` | 1200 | 27 |
-| `splitPath` | Split path into dir, name and ext. | `references/s.md` | 1227 | 29 |
-| `stackTrace` | Get CallSite objects in v8. | `references/s.md` | 1256 | 19 |
-| `startWith` | Check if string starts with the given target string. | `references/s.md` | 1275 | 23 |
-| `strHash` | String hash function using djb2. | `references/s.md` | 1298 | 22 |
-| `strToBytes` | Convert string into bytes. | `references/s.md` | 1320 | 29 |
-| `strTpl` | Simple string template. | `references/s.md` | 1349 | 23 |
-| `strWidth` | Get string's visual width. | `references/s.md` | 1372 | 23 |
-| `stringify` | JSON stringify with support for circular object, function etc. | `references/s.md` | 1395 | 28 |
-| `stringifyAll` | Stringify object into json with types. | `references/s.md` | 1423 | 58 |
-| `stripAnsi` | Strip ansi codes from a string. | `references/s.md` | 1481 | 22 |
-| `stripBom` | Strip UTF-8 byte order mark. | `references/s.md` | 1503 | 22 |
-| `stripCmt` | Strip comments from source code. | `references/s.md` | 1525 | 22 |
-| `stripColor` | Strip ansi color codes from a string. | `references/s.md` | 1547 | 22 |
-| `stripHtmlTag` | Strip html tags from a string. | `references/s.md` | 1569 | 22 |
-| `stripIndent` | Strip indentation from multi-line strings. | `references/s.md` | 1591 | 32 |
-| `stripNum` | Strip number to a specified precision. | `references/s.md` | 1623 | 23 |
-| `sum` | Compute sum of given numbers. | `references/s.md` | 1646 | 22 |
-| `swap` | Swap two items in an array. | `references/s.md` | 1668 | 25 |
+| `sm3` | SM3 implementation. | `references/s.md` | 1046 | 36 |
+| `sm4` | SM4 implementation. | `references/s.md` | 1082 | 66 |
+| `snakeCase` | Convert string to "snakeCase". | `references/s.md` | 1148 | 24 |
+| `some` | Check if predicate return truthy for any element. | `references/s.md` | 1172 | 35 |
+| `sortBy` | Return an array of elements sorted in ascending order by results of running each element through iteratee. | `references/s.md` | 1207 | 30 |
+| `sortKeys` | Sort keys of an object. | `references/s.md` | 1237 | 41 |
+| `spaceCase` | Convert string to "spaceCase". | `references/s.md` | 1278 | 24 |
+| `splitCase` | Split different string case to an array. | `references/s.md` | 1302 | 27 |
+| `splitPath` | Split path into dir, name and ext. | `references/s.md` | 1329 | 29 |
+| `stackTrace` | Get CallSite objects in v8. | `references/s.md` | 1358 | 19 |
+| `startWith` | Check if string starts with the given target string. | `references/s.md` | 1377 | 23 |
+| `strHash` | String hash function using djb2. | `references/s.md` | 1400 | 22 |
+| `strToBytes` | Convert string into bytes. | `references/s.md` | 1422 | 29 |
+| `strTpl` | Simple string template. | `references/s.md` | 1451 | 23 |
+| `strWidth` | Get string's visual width. | `references/s.md` | 1474 | 23 |
+| `stringify` | JSON stringify with support for circular object, function etc. | `references/s.md` | 1497 | 28 |
+| `stringifyAll` | Stringify object into json with types. | `references/s.md` | 1525 | 58 |
+| `stripAnsi` | Strip ansi codes from a string. | `references/s.md` | 1583 | 22 |
+| `stripBom` | Strip UTF-8 byte order mark. | `references/s.md` | 1605 | 22 |
+| `stripCmt` | Strip comments from source code. | `references/s.md` | 1627 | 22 |
+| `stripColor` | Strip ansi color codes from a string. | `references/s.md` | 1649 | 22 |
+| `stripHtmlTag` | Strip html tags from a string. | `references/s.md` | 1671 | 22 |
+| `stripIndent` | Strip indentation from multi-line strings. | `references/s.md` | 1693 | 32 |
+| `stripNum` | Strip number to a specified precision. | `references/s.md` | 1725 | 23 |
+| `sum` | Compute sum of given numbers. | `references/s.md` | 1748 | 22 |
+| `swap` | Swap two items in an array. | `references/s.md` | 1770 | 25 |
 | `Trace` | Parse, manipulate and generate chrome tracing data. | `references/t.md` | 3 | 66 |
 | `Tracing` | Easily create chrome tracing data. | `references/t.md` | 69 | 106 |
 | `Trie` | Trie data structure. | `references/t.md` | 175 | 61 |

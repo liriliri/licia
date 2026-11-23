@@ -389,6 +389,8 @@
     "sleep",
     "slice",
     "slugify",
+    "sm3",
+    "sm4",
     "snakeCase",
     "Socket",
     "some",
