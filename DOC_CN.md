@@ -11687,6 +11687,120 @@ rc4.encrypt('licia', 'Hello world'); // -> 'j9y2VpSfR3AdNN8='
 rc4.decrypt('licia', 'j9y2VpSfR3AdNN8='); // -> 'Hello world'
 ```
 
+## reactive
+
+响应式数据与副作用。
+
+<details>
+<summary>类型定义</summary>
+
+```typescript
+function reactive<T extends object>(target: T): T;
+namespace reactive {
+    interface IEffectOptions {
+        scheduler?: () => void;
+        lazy?: boolean;
+    }
+    interface IEffectRunner {
+        (): any;
+        deps: any[];
+        active: boolean;
+        scheduler?: () => void;
+        stop(): void;
+    }
+    type IWatchSource = (() => any) | object;
+    interface IWatchOptions {
+        immediate?: boolean;
+        deep?: boolean;
+    }
+    function effect(fn: () => any, options?: IEffectOptions): IEffectRunner;
+    function watch(
+        source: IWatchSource,
+        cb: (val: any, oldVal: any) => void,
+        options?: IWatchOptions
+    ): () => void;
+    function computed<T>(getter: () => T): { value: T };
+    function isReactive(target: any): boolean;
+    function toRaw<T>(target: T): T;
+}
+```
+
+</details>
+
+### reactive
+
+创建深度响应式代理，嵌套对象在访问时才被包装。
+
+|参数名|说明|
+|-----|---|
+|target|要包装的对象|
+|返回值|响应式代理|
+
+### isReactive
+
+检查值是否为响应式代理。
+
+|参数名|说明|
+|-----|---|
+|target|要检查的值|
+|返回值|如果是代理，返回真|
+
+### toRaw
+
+获取响应式代理对应的原始对象。
+
+|参数名|说明|
+|-----|---|
+|target|响应式代理|
+|返回值|原始对象|
+
+### effect
+
+执行函数，当它读取的响应式数据变化时自动重新执行。
+
+调用返回值的 stop 方法可以停止自动执行。
+
+|参数名|说明|
+|-----|---|
+|fn|要执行的函数|
+|options|effect 配置|
+|返回值|effect runner|
+
+### watch
+
+监听响应式数据的变化。
+
+|参数名|说明|
+|-----|---|
+|source|取值函数或响应式对象|
+|cb|变化回调|
+|options|watch 配置|
+|返回值|停止监听的函数|
+
+### computed
+
+创建惰性求值的派生值。
+
+|参数名|说明|
+|-----|---|
+|getter|取值函数|
+|返回值|带 value 属性的计算结果|
+
+```javascript
+const state = reactive({ count: 0 });
+
+reactive.watch(
+    function() {
+        return state.count;
+    },
+    function(count) {
+        console.log(count);
+    }
+);
+
+state.count++;
+```
+
 ## ready
 
 dom 准备好时调用回调函数，类似于 jQuery 的 ready 方法。

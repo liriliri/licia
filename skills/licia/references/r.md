@@ -386,6 +386,120 @@ rc4.encrypt('licia', 'Hello world'); // -> 'j9y2VpSfR3AdNN8='
 rc4.decrypt('licia', 'j9y2VpSfR3AdNN8='); // -> 'Hello world'
 ```
 
+## reactive
+
+Reactive state and side effects.
+
+<details>
+<summary>Type Definition</summary>
+
+```typescript
+function reactive<T extends object>(target: T): T;
+namespace reactive {
+    interface IEffectOptions {
+        scheduler?: () => void;
+        lazy?: boolean;
+    }
+    interface IEffectRunner {
+        (): any;
+        deps: any[];
+        active: boolean;
+        scheduler?: () => void;
+        stop(): void;
+    }
+    type IWatchSource = (() => any) | object;
+    interface IWatchOptions {
+        immediate?: boolean;
+        deep?: boolean;
+    }
+    function effect(fn: () => any, options?: IEffectOptions): IEffectRunner;
+    function watch(
+        source: IWatchSource,
+        cb: (val: any, oldVal: any) => void,
+        options?: IWatchOptions
+    ): () => void;
+    function computed<T>(getter: () => T): { value: T };
+    function isReactive(target: any): boolean;
+    function toRaw<T>(target: T): T;
+}
+```
+
+</details>
+
+### reactive
+
+Create a deep reactive proxy of the given object, nested objects are
+wrapped lazily when they are accessed.
+
+|Name  |Desc           |
+|------|---------------|
+|target|Object to wrap |
+|return|Reactive proxy |
+
+### isReactive
+
+Check whether the value is a reactive proxy.
+
+|Name  |Desc                  |
+|------|----------------------|
+|target|Value to check        |
+|return|True if it is a proxy |
+
+### toRaw
+
+Get the original object behind a reactive proxy.
+
+|Name  |Desc           |
+|------|---------------|
+|target|Reactive proxy |
+|return|Original object|
+
+### effect
+
+Run the given function and re-run it automatically when the reactive data
+it reads changes.
+
+|Name    |Desc           |
+|--------|---------------|
+|fn      |Function to run|
+|options |Effect options |
+|return  |Effect runner  |
+
+### watch
+
+Watch reactive data and call the callback when it changes.
+
+|Name   |Desc                      |
+|--------|--------------------------|
+|source |Getter or reactive object |
+|cb     |Callback function         |
+|options|Watch options             |
+|return |Function to stop watching |
+
+### computed
+
+Create a lazily evaluated derived value.
+
+|Name   |Desc            |
+|-------|----------------|
+|getter |Getter function |
+|return |Computed value  |
+
+```javascript
+const state = reactive({ count: 0 });
+
+reactive.watch(
+    function() {
+        return state.count;
+    },
+    function(count) {
+        console.log(count);
+    }
+);
+
+state.count++;
+```
+
 ## ready
 
 Invoke callback when dom is ready, similar to jQuery ready.

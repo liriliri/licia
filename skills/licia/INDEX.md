@@ -335,6 +335,7 @@ instructions live in SKILL.md.
 | `randomItem` | Get a random item from an array. |
 | `range` | Create flexibly-numbered lists of integers. |
 | `rc4` | RC4 symmetric encryption implementation. |
+| `reactive` | Reactive state and side effects. |
 | `ready` | Invoke callback when dom is ready, similar to jQuery ready. |
 | `reduce` | Turn a list of values into a single value. |
 | `reduceRight` | Right-associative version of reduce. |

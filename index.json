@@ -5494,6 +5494,24 @@
             "browser"
         ]
     },
+    "reactive": {
+        "dependencies": [
+            "isFn",
+            "isArr",
+            "isPlainObj",
+            "has"
+        ],
+        "description": "Reactive state and side effects.",
+        "env": [
+            "node",
+            "browser"
+        ],
+        "since": "1.50.0",
+        "test": [
+            "node",
+            "browser"
+        ]
+    },
     "ready": {
         "dependencies": [],
         "description": "Invoke callback when dom is ready, similar to jQuery ready.",
@@ -6083,7 +6101,8 @@
             "hex",
             "bytesToWords",
             "wordsToBytes",
-            "isNode"
+            "isNode",
+            "mergeArr"
         ],
         "description": "SM3 implementation.",
         "env": [

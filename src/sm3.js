@@ -33,7 +33,9 @@
  * ): string;
  */
 
-_('isStr isArr isTypedArr strToBytes hex bytesToWords wordsToBytes isNode');
+_(
+    'isStr isArr isTypedArr strToBytes hex bytesToWords wordsToBytes isNode mergeArr'
+);
 
 const BLOCK_SIZE = 64;
 
@@ -77,7 +79,10 @@ function digest(bytes) {
     const msg = bytes.slice();
     msg.push(0x80);
     while (msg.length % BLOCK_SIZE !== BLOCK_SIZE - 8) msg.push(0);
-    msg.push(...wordsToBytes([Math.floor(bitLen / 0x100000000), bitLen >>> 0]));
+    mergeArr(
+        msg,
+        wordsToBytes([Math.floor(bitLen / 0x100000000), bitLen >>> 0])
+    );
 
     const words = bytesToWords(msg);
     const v = IV.slice();
