@@ -325,6 +325,28 @@
             "browser"
         ]
     },
+    "Component": {
+        "demo": true,
+        "dependencies": [
+            "Emitter",
+            "$",
+            "$event",
+            "each",
+            "extend",
+            "bind",
+            "isStr",
+            "isFn",
+            "isUndef"
+        ],
+        "description": "Imperative UI component base class, inspired by Backbone.View.",
+        "env": [
+            "browser"
+        ],
+        "since": "1.50.0",
+        "test": [
+            "browser"
+        ]
+    },
     "Delegator": {
         "dependencies": [
             "Class",

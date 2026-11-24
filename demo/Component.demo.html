@@ -1,0 +1,394 @@
+<require>Component $ evalCss</require>
+
+<style>
+    body {
+        font: 14px/1.5 Helvetica, Arial, sans-serif;
+        max-width: 480px;
+        margin: 40px auto;
+        padding: 0 16px;
+        color: #333;
+        background: #fafafa;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .todoapp {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 16px;
+    }
+
+    .todoapp h1 {
+        margin: 0 0 12px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .new-todo {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .main {
+        margin-top: 12px;
+    }
+
+    .toggle-all {
+        margin-right: 8px;
+    }
+
+    .todo-list {
+        margin: 8px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .todo-list li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 0;
+        border-top: 1px solid #eee;
+    }
+
+    .todo-list li.completed label {
+        color: #999;
+        text-decoration: line-through;
+    }
+
+    .todo-list li .view {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .todo-list li label {
+        flex: 1;
+        cursor: pointer;
+        overflow-wrap: break-word;
+    }
+
+    .todo-list li .edit {
+        display: none;
+        flex: 1;
+        padding: 6px 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .todo-list li.editing .view {
+        display: none;
+    }
+
+    .todo-list li.editing .edit {
+        display: block;
+    }
+
+    .todo-list li .destroy {
+        border: 0;
+        background: none;
+        color: #999;
+        font-size: 18px;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    .todo-list li .destroy:hover {
+        color: #c00;
+    }
+
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #eee;
+        color: #666;
+        font-size: 13px;
+    }
+
+    .todo-count {
+        margin-right: auto;
+    }
+
+    .filters {
+        display: flex;
+        gap: 4px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .filters a {
+        padding: 2px 6px;
+        color: inherit;
+        text-decoration: none;
+        border: 1px solid transparent;
+        border-radius: 3px;
+    }
+
+    .filters a.selected,
+    .filters a:hover {
+        border-color: #ccc;
+    }
+
+    .clear-completed {
+        border: 0;
+        background: none;
+        color: #666;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .clear-completed:hover {
+        text-decoration: underline;
+    }
+
+    .info {
+        margin-top: 16px;
+        color: #888;
+        font-size: 12px;
+        text-align: center;
+    }
+</style>
+
+<template id="bodyTpl">
+    <div id="todo"></div>
+    <footer class="info">Double-click to edit · licia Component</footer>
+</template>
+
+<script>
+    evalCss(style);
+    $('body').html(bodyTpl);
+
+    function escapeHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    const TodoApp = Component.extend({
+        defaults: {
+            filter: 'all'
+        },
+        option: {
+            filter() {
+                this._render();
+            }
+        },
+        events: {
+            'submit .new-todo-form': 'onSubmit',
+            'change .toggle-all': 'onToggleAll',
+            'change .toggle': 'onToggle',
+            'dblclick .todo-list label': 'onEdit',
+            'keydown .edit': 'onEditKey',
+            'blur .edit': 'onEditBlur',
+            'click .destroy': 'onDestroy',
+            'click .filters a': 'onFilter',
+            'click .clear-completed': 'onClearCompleted'
+        },
+        initialize(container, options) {
+            this.callSuper(Component, 'initialize', [container, options]);
+
+            this._items = [];
+            this._id = 0;
+            this._editingId = null;
+
+            this.html(
+                '<section class="todoapp">' +
+                    '<header class="header">' +
+                    '<h1>todos</h1>' +
+                    '<form class="new-todo-form">' +
+                    '<input class="new-todo" placeholder="What needs to be done?" autofocus />' +
+                    '</form>' +
+                    '</header>' +
+                    '<section class="main hidden">' +
+                    '<label><input class="toggle-all" type="checkbox" /> Mark all</label>' +
+                    '<ul class="todo-list"></ul>' +
+                    '</section>' +
+                    '<footer class="footer hidden">' +
+                    '<span class="todo-count"></span>' +
+                    '<ul class="filters">' +
+                    '<li><a href="#" data-filter="all">All</a></li>' +
+                    '<li><a href="#" data-filter="active">Active</a></li>' +
+                    '<li><a href="#" data-filter="completed">Completed</a></li>' +
+                    '</ul>' +
+                    '<button class="clear-completed hidden">Clear completed</button>' +
+                    '</footer>' +
+                    '</section>'
+            );
+        },
+        onSubmit(e) {
+            e.preventDefault();
+            const $input = this.find('.new-todo');
+            const text = ($input.val() || '').trim();
+            if (!text) return;
+            this._items.push({
+                id: ++this._id,
+                text: text,
+                completed: false
+            });
+            $input.val('');
+            this._render();
+        },
+        onToggleAll(e) {
+            const checked = e.curTarget.checked;
+            this._items.forEach(function(item) {
+                item.completed = checked;
+            });
+            this._render();
+        },
+        onToggle(e) {
+            const id = +this._itemId(e.curTarget);
+            this._items.forEach(function(item) {
+                if (item.id === id) item.completed = !item.completed;
+            });
+            this._render();
+        },
+        onEdit(e) {
+            const id = +this._itemId(e.curTarget);
+            this._editingId = id;
+            this._render();
+            const input = this.find('li.editing .edit').get(0);
+            if (input) {
+                input.focus();
+                input.setSelectionRange(input.value.length, input.value.length);
+            }
+        },
+        onEditKey(e) {
+            const key = e.origEvent.key;
+            if (key === 'Enter') {
+                e.preventDefault();
+                this._commitEdit(e.curTarget);
+            } else if (key === 'Escape') {
+                e.preventDefault();
+                this._editingId = null;
+                this._render();
+            }
+        },
+        onEditBlur(e) {
+            if (this._editingId == null) return;
+            this._commitEdit(e.curTarget);
+        },
+        onDestroy(e) {
+            const id = +this._itemId(e.curTarget);
+            this._items = this._items.filter(function(item) {
+                return item.id !== id;
+            });
+            if (this._editingId === id) this._editingId = null;
+            this._render();
+        },
+        onFilter(e) {
+            e.preventDefault();
+            this.set('filter', $(e.curTarget).data('filter') || 'all');
+        },
+        onClearCompleted() {
+            this._items = this._items.filter(function(item) {
+                return !item.completed;
+            });
+            this._render();
+        },
+        _itemId(el) {
+            const li = el.closest('li');
+            return li ? $(li).data('id') : '';
+        },
+        _commitEdit(input) {
+            const id = this._editingId;
+            if (id == null) return;
+            const text = (input.value || '').trim();
+            if (!text) {
+                this._items = this._items.filter(function(item) {
+                    return item.id !== id;
+                });
+            } else {
+                this._items.forEach(function(item) {
+                    if (item.id === id) item.text = text;
+                });
+            }
+            this._editingId = null;
+            this._render();
+        },
+        _visibleItems() {
+            const filter = this.get('filter');
+            return this._items.filter(function(item) {
+                if (filter === 'active') return !item.completed;
+                if (filter === 'completed') return item.completed;
+                return true;
+            });
+        },
+        _render() {
+            const self = this;
+            const items = this._items;
+            const visible = this._visibleItems();
+            const active = items.filter(function(item) {
+                return !item.completed;
+            }).length;
+            const completed = items.length - active;
+            const filter = this.get('filter');
+
+            this.find('.main')[items.length ? 'rmClass' : 'addClass']('hidden');
+            this.find('.footer')[items.length ? 'rmClass' : 'addClass'](
+                'hidden'
+            );
+            this.find('.clear-completed')[completed ? 'rmClass' : 'addClass'](
+                'hidden'
+            );
+
+            const toggleAll = this.find('.toggle-all').get(0);
+            if (toggleAll) {
+                toggleAll.checked = items.length > 0 && active === 0;
+            }
+
+            this.find('.todo-count').text(active + ' left');
+
+            this.find('.filters a').each(function() {
+                const $a = $(this);
+                $a[$a.data('filter') === filter ? 'addClass' : 'rmClass'](
+                    'selected'
+                );
+            });
+
+            let html = '';
+            visible.forEach(function(item) {
+                const editing = self._editingId === item.id;
+                html +=
+                    '<li class="' +
+                    (item.completed ? 'completed' : '') +
+                    (editing ? ' editing' : '') +
+                    '" data-id="' +
+                    item.id +
+                    '">' +
+                    '<div class="view">' +
+                    '<input class="toggle" type="checkbox"' +
+                    (item.completed ? ' checked' : '') +
+                    ' />' +
+                    '<label>' +
+                    escapeHtml(item.text) +
+                    '</label>' +
+                    '<button class="destroy" type="button">×</button>' +
+                    '</div>' +
+                    '<input class="edit" value="' +
+                    escapeHtml(item.text) +
+                    '" />' +
+                    '</li>';
+            });
+            this.find('.todo-list').html(html);
+        }
+    });
+
+    new TodoApp(document.getElementById('todo'));
+</script>

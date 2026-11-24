@@ -43,50 +43,42 @@ function parse(html) {
     const ret = [];
     const stack = new Stack();
 
+    function append(node) {
+        if (!stack.size) {
+            ret.push(node);
+            return;
+        }
+
+        const lastNode = stack.peek();
+        if (!isArr(lastNode.content)) {
+            lastNode.content = [];
+        }
+        lastNode.content.push(node);
+    }
+
     parseHtml(html, {
-        start(tag, attrs) {
+        start(tag, attrs, unary) {
             attrs = mapObj(attrs, val => unescapeQuote(val));
-            stack.push({
+            const node = {
                 tag,
                 attrs
-            });
+            };
+
+            if (unary) {
+                append(node);
+                return;
+            }
+
+            stack.push(node);
         },
         end() {
-            const node = stack.pop();
-
-            if (!stack.size) {
-                ret.push(node);
-                return;
-            }
-
-            const lastNode = stack.peek();
-            if (!isArr(lastNode.content)) {
-                lastNode.content = [];
-            }
-
-            lastNode.content.push(node);
+            append(stack.pop());
         },
         comment(text) {
-            const comment = `<!--${text}-->`;
-            const lastNode = stack.peek();
-
-            if (!lastNode) {
-                ret.push(comment);
-                return;
-            }
-
-            if (!lastNode.content) lastNode.content = [];
-            lastNode.content.push(comment);
+            append(`<!--${text}-->`);
         },
         text(text) {
-            const lastNode = stack.peek();
-            if (!lastNode) {
-                ret.push(text);
-                return;
-            }
-
-            if (!lastNode.content) lastNode.content = [];
-            lastNode.content.push(text);
+            append(text);
         }
     });
 

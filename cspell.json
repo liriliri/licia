@@ -70,6 +70,7 @@
     "Color",
     "combine",
     "compact",
+    "Component",
     "compose",
     "compressImg",
     "concat",

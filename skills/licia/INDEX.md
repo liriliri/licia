@@ -40,6 +40,7 @@ instructions live in SKILL.md.
 | `Channel` | Interconnectable Message channel. |
 | `Class` | Create JavaScript class. |
 | `Color` | Color converter. |
+| `Component` | Imperative UI component base class, inspired by Backbone.View. |
 | `cacheRequire` | Cache everything in module require to speed up app load. |
 | `callbackify` | Convert a function that returns a Promise to a function following the error-first callback style. |
 | `camelCase` | Convert string to "camelCase". |

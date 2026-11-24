@@ -39,3 +39,21 @@ expect(tree).to.eql([
 ]);
 
 expect(html.stringify(tree)).to.equal(htmlStr);
+
+expect(html.parse('<img class="icon" />')).to.eql([
+    { tag: 'img', attrs: { class: 'icon' } }
+]);
+expect(html.parse('<bbb />')).to.eql([{ tag: 'bbb', attrs: {} }]);
+expect(
+    html.parse('<div><img src="a.png"/><bbb class="x"/><span>y</span></div>')
+).to.eql([
+    {
+        tag: 'div',
+        attrs: {},
+        content: [
+            { tag: 'img', attrs: { src: 'a.png' } },
+            { tag: 'bbb', attrs: { class: 'x' } },
+            { tag: 'span', attrs: {}, content: ['y'] }
+        ]
+    }
+]);
