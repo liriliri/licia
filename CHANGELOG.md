@@ -1,3 +1,10 @@
+## v1.50.0 (28 Nov 2026)
+
+* feat: add sm3 and sm4
+* feat: add reactive
+* feat: add Component
+* fix: preserve options after boolean flags [#44](https://github.com/liriliri/licia/issues/44)
+
 ## v1.49.0 (13 Aug 2026)
 
 * feat: add sha1
