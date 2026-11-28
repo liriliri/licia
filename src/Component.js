@@ -148,12 +148,14 @@
  *                 '<button class="inc">+</button>' +
  *                 '<span class="badge"></span>'
  *         );
+ *         // @ts-ignore
  *         this._badge = new Badge(this.find('.badge').get(0), {
  *             count: this.get('value')
  *         });
  *     }
  *     onValue = val => {
  *         this.find('.val').text(String(val));
+ *         // @ts-ignore
  *         if (this._badge) this._badge.set('count', val);
  *     };
  *     onDisabled = val => {
@@ -168,6 +170,7 @@
  *         this.set('value', this.get('value') - 1);
  *     };
  *     destroy() {
+ *         // @ts-ignore
  *         this._badge.destroy();
  *         super.destroy();
  *     }
