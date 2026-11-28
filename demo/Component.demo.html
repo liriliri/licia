@@ -211,7 +211,7 @@
             this._id = 0;
             this._editingId = null;
 
-            this.html(
+            this.setHtml(
                 '<section class="todoapp">' +
                     '<header class="header">' +
                     '<h1>todos</h1>' +
@@ -297,7 +297,7 @@
         };
         onFilter = e => {
             e.preventDefault();
-            this.set('filter', $(e.curTarget).data('filter') || 'all');
+            this.setOption('filter', $(e.curTarget).data('filter') || 'all');
         };
         onClearCompleted = () => {
             this._items = this._items.filter(function(item) {
@@ -326,7 +326,7 @@
             this._render();
         }
         _visibleItems() {
-            const filter = this.get('filter');
+            const filter = this.getOption('filter');
             return this._items.filter(function(item) {
                 if (filter === 'active') return !item.completed;
                 if (filter === 'completed') return item.completed;
@@ -341,7 +341,7 @@
                 return !item.completed;
             }).length;
             const completed = items.length - active;
-            const filter = this.get('filter');
+            const filter = this.getOption('filter');
 
             this.find('.main')[items.length ? 'rmClass' : 'addClass']('hidden');
             this.find('.footer')[items.length ? 'rmClass' : 'addClass'](

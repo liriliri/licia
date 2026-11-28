@@ -4,7 +4,7 @@
 
 继承自 Emitter 类。负责选项与声明式 DOM 事件，不接管渲染——由子类自行构建和更新 DOM。
 
-在子类构造函数中调用 `setup()` 声明 `defaults`、`option`、`events`。`html()` 更新 DOM 后会自动执行 `option` 处理函数。
+在子类构造函数中调用 `setup()` 声明 `defaults`、`option`、`events`。`setHtml()` 更新 DOM 后会自动执行 `option` 处理函数。
 
 ### constructor
 
@@ -34,9 +34,9 @@
 
 DOM 事件表：`'click .inc': this.inc`。处理函数按原样使用，需自行绑定 `this`（例如 class field 箭头函数）。
 
-### set
+### setOption
 
-设置选项。值变化时触发 `change`，并执行 `option` 处理函数。
+设置选项。值变化时触发 `changeOption`，并执行 `option` 处理函数。
 
 |参数名|说明|
 |-----|---|
@@ -49,21 +49,20 @@ DOM 事件表：`'click .inc': this.inc`。处理函数按原样使用，需自�
 |-----|---|
 |options|键值对|
 
-### get
+### getOption
 
 |参数名|说明|
 |-----|---|
 |name|选项名|
 |返回值|选项值|
 
-### html
+### setHtml
 
-获取或设置容器 HTML。设置时会执行全部 `option` 处理函数。
+设置容器 HTML。设置时会执行全部 `option` 处理函数。
 
 |参数名|说明|
 |-----|---|
 |html|HTML 字符串|
-|返回值|this 或当前 HTML|
 
 ### find
 
@@ -90,9 +89,9 @@ DOM 事件表：`'click .inc': this.inc`。处理函数按原样使用，需自�
 
 ### 事件
 
-#### change
+#### changeOption
 
-通过 `set` 修改选项时触发。
+通过 `setOption` 修改选项时触发。
 
 #### destroy
 

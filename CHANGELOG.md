@@ -1,3 +1,8 @@
+## v1.50.1 (28 Nov 2026)
+
+* fix(Component): rename option change event to changeOption
+* fix(Component): rename set / get to setOption / getOption
+
 ## v1.50.0 (28 Nov 2026)
 
 * feat: add sm3 and sm4

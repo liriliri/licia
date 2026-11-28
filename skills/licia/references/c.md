@@ -303,11 +303,10 @@ class Component extends Emitter {
         },
         options?: any
     ): Component;
-    set(name: string, val?: any): Component;
-    set(options: types.PlainObj<any>): Component;
-    get(name: string): any;
-    html(): string;
-    html(html: string): Component;
+    setOption(name: string, val?: any): Component;
+    setOption(options: types.PlainObj<any>): Component;
+    getOption(name: string): any;
+    setHtml(html: string): Component;
     find(selector: string): $.$;
     listen(type: string, handler: types.AnyFn): Component;
     listen(type: string, selector: string, handler: types.AnyFn): Component;
@@ -322,7 +321,7 @@ take ownership of rendering — subclasses build and update the DOM
 themselves.
 
 Call `setup()` in the subclass constructor to declare `defaults`, `option`
-and `events`. `html()` applies `option` handlers after updating the DOM.
+and `events`. `setHtml()` applies `option` handlers after updating the DOM.
 
 ### constructor
 
@@ -354,9 +353,9 @@ Map of option change handlers. Keys are option names; values are functions
 DOM events hash: `'click .inc': this.inc`. Handlers are used as-is; bind
 `this` yourself (e.g. class field arrows).
 
-### set
+### setOption
 
-Set option value. Emits `change` when value changes and runs `option`
+Set option value. Emits `changeOption` when value changes and runs `option`
 handlers.
 
 |Name|Desc         |
@@ -370,21 +369,20 @@ Set multiple options.
 |-------|---------------|
 |options|Key value pairs|
 
-### get
+### getOption
 
 |Name  |Desc               |
 |------|-------------------|
 |name  |Option name        |
 |return|Value of the option|
 
-### html
+### setHtml
 
-Get or set container HTML. When setting, runs all `option` handlers.
+Set container HTML. Runs all `option` handlers.
 
-|Name  |Desc        |
-|------|------------|
-|html  |Html string |
-|return|This or html|
+|Name|Desc        |
+|----|------------|
+|html|Html string |
 
 ### find
 
@@ -413,9 +411,9 @@ listeners.
 
 ### Events
 
-#### change
+#### changeOption
 
-Triggered when an option value changes via `set`.
+Triggered when an option value changes via `setOption`.
 
 #### destroy
 
@@ -434,7 +432,7 @@ class Badge extends Component {
             },
             options
         );
-        this.html('<span class="count"></span>');
+        this.setHtml('<span class="count"></span>');
     }
     onCount = val => {
         this.find('.count').text(String(val));
@@ -458,30 +456,30 @@ class Counter extends Component {
             },
             options
         );
-        this.html(
+        this.setHtml(
             '<button class="dec">-</button>' +
                 '<span class="val"></span>' +
                 '<button class="inc">+</button>' +
                 '<span class="badge"></span>'
         );
         this._badge = new Badge(this.find('.badge').get(0), {
-            count: this.get('value')
+            count: this.getOption('value')
         });
     }
     onValue = val => {
         this.find('.val').text(String(val));
-        if (this._badge) this._badge.set('count', val);
+        if (this._badge) this._badge.setOption('count', val);
     };
     onDisabled = val => {
         this.$container[val ? 'addClass' : 'rmClass']('disabled');
     };
     inc = () => {
-        if (this.get('disabled')) return;
-        this.set('value', this.get('value') + 1);
+        if (this.getOption('disabled')) return;
+        this.setOption('value', this.getOption('value') + 1);
     };
     dec = () => {
-        if (this.get('disabled')) return;
-        this.set('value', this.get('value') - 1);
+        if (this.getOption('disabled')) return;
+        this.setOption('value', this.getOption('value') - 1);
     };
     destroy() {
         this._badge.destroy();
@@ -490,8 +488,8 @@ class Counter extends Component {
 }
 
 const counter = new Counter(document.getElementById('counter'), { value: 1 });
-counter.on('change', (name, val) => console.log(name, val));
-counter.set('disabled', true);
+counter.on('changeOption', (name, val) => console.log(name, val));
+counter.setOption('disabled', true);
 counter.destroy();
 ```
 

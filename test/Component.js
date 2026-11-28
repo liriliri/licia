@@ -1,4 +1,4 @@
-it('set get and html sync', function() {
+it('setOption getOption and setHtml sync', function() {
     const container = document.createElement('div');
     let fromOption;
     let changed;
@@ -15,7 +15,7 @@ it('set get and html sync', function() {
                 },
                 options
             );
-            this.html('<div></div>');
+            this.setHtml('<div></div>');
         }
         onA = (val, oldVal) => {
             fromOption = [val, oldVal];
@@ -23,19 +23,19 @@ it('set get and html sync', function() {
     }
 
     const component = new Comp(container, { a: 1 });
-    expect(component.get('a')).to.equal(1);
-    expect(component.get('b')).to.equal(2);
+    expect(component.getOption('a')).to.equal(1);
+    expect(component.getOption('b')).to.equal(2);
     expect(fromOption).to.eql([1, undefined]);
 
-    component.on('change', function(name, val, oldVal) {
+    component.on('changeOption', function(name, val, oldVal) {
         changed = [name, val, oldVal];
     });
-    component.set('a', 1);
+    component.setOption('a', 1);
     expect(changed).to.be.undefined;
-    component.set('a', 3);
+    component.setOption('a', 3);
     expect(changed).to.eql(['a', 3, 1]);
     expect(fromOption).to.eql([3, 1]);
-    component.set({ b: 4 });
+    component.setOption({ b: 4 });
     expect(changed).to.eql(['b', 4, 2]);
 
     component.destroy();
@@ -55,12 +55,12 @@ it('defaults function', function() {
                 },
                 options
             );
-            this.html('<span class="label"></span>');
+            this.setHtml('<span class="label"></span>');
         }
     }
 
     const component = new Comp(container, { n: 2 });
-    expect(component.get('n')).to.equal(2);
+    expect(component.getOption('n')).to.equal(2);
     expect(component.find('.label').length).to.equal(1);
 
     component.destroy();
@@ -84,7 +84,7 @@ it('events hash', function() {
             );
             this.clicked = 0;
             this.rootClicked = 0;
-            this.html('<button class="go">go</button>');
+            this.setHtml('<button class="go">go</button>');
         }
         onGo = () => {
             this.clicked++;
@@ -108,7 +108,7 @@ it('listen', function() {
     document.body.appendChild(container);
 
     const component = new Component(container);
-    component.html('<button class="ok">ok</button>');
+    component.setHtml('<button class="ok">ok</button>');
 
     let count = 0;
     component.listen('click', '.ok', function() {
@@ -136,7 +136,7 @@ it('counter', function() {
                 },
                 options
             );
-            this.html('<span class="count"></span>');
+            this.setHtml('<span class="count"></span>');
         }
         onCount = val => {
             this.find('.count').text(String(val));
@@ -160,30 +160,30 @@ it('counter', function() {
                 },
                 options
             );
-            this.html(
+            this.setHtml(
                 '<button class="dec">-</button>' +
                     '<span class="val"></span>' +
                     '<button class="inc">+</button>' +
                     '<span class="badge"></span>'
             );
             this._badge = new Badge(this.find('.badge').get(0), {
-                count: this.get('value')
+                count: this.getOption('value')
             });
         }
         onValue = val => {
             this.find('.val').text(String(val));
-            if (this._badge) this._badge.set('count', val);
+            if (this._badge) this._badge.setOption('count', val);
         };
         onDisabled = val => {
             this.$container[val ? 'addClass' : 'rmClass']('disabled');
         };
         inc = () => {
-            if (this.get('disabled')) return;
-            this.set('value', this.get('value') + 1);
+            if (this.getOption('disabled')) return;
+            this.setOption('value', this.getOption('value') + 1);
         };
         dec = () => {
-            if (this.get('disabled')) return;
-            this.set('value', this.get('value') - 1);
+            if (this.getOption('disabled')) return;
+            this.setOption('value', this.getOption('value') - 1);
         };
         destroy() {
             this._badge.destroy();
@@ -194,20 +194,20 @@ it('counter', function() {
     const container = document.createElement('div');
     document.body.appendChild(container);
     const counter = new Counter(container, { value: 1 });
-    expect(counter.get('value')).to.equal(1);
+    expect(counter.getOption('value')).to.equal(1);
     expect(counter.find('.val').text()).to.equal('1');
     expect(counter._badge.find('.count').text()).to.equal('1');
 
     let changed;
-    counter.on('change', function(name, val) {
+    counter.on('changeOption', function(name, val) {
         changed = [name, val];
     });
     container.querySelector('.inc').click();
-    expect(counter.get('value')).to.equal(2);
+    expect(counter.getOption('value')).to.equal(2);
     expect(changed).to.eql(['value', 2]);
     expect(counter._badge.find('.count').text()).to.equal('2');
 
-    counter.set('disabled', true);
+    counter.setOption('disabled', true);
     expect(counter.$container.hasClass('disabled')).to.be.true;
 
     counter.destroy();
