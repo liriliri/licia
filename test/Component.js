@@ -3,25 +3,31 @@ it('set get and html sync', function() {
     let fromOption;
     let changed;
 
-    const Comp = Component.extend({
-        defaults: { a: 0, b: 2 },
-        option: {
-            a(val, oldVal) {
-                fromOption = [val, oldVal];
-            }
-        },
-        initialize(container, options) {
-            this.callSuper(Component, 'initialize', [container, options]);
+    class Comp extends Component {
+        constructor(container, options) {
+            super(container);
+            this.setup(
+                {
+                    defaults: { a: 0, b: 2 },
+                    option: {
+                        a: this.onA
+                    }
+                },
+                options
+            );
             this.html('<div></div>');
         }
-    });
+        onA = (val, oldVal) => {
+            fromOption = [val, oldVal];
+        };
+    }
 
     const component = new Comp(container, { a: 1 });
     expect(component.get('a')).to.equal(1);
     expect(component.get('b')).to.equal(2);
     expect(fromOption).to.eql([1, undefined]);
 
-    component.on('changeOption', function(name, val, oldVal) {
+    component.on('change', function(name, val, oldVal) {
         changed = [name, val, oldVal];
     });
     component.set('a', 1);
@@ -37,15 +43,21 @@ it('set get and html sync', function() {
 
 it('defaults function', function() {
     const container = document.createElement('div');
-    const Comp = Component.extend({
-        defaults() {
-            return { n: 1 };
-        },
-        initialize(container, options) {
-            this.callSuper(Component, 'initialize', [container, options]);
+
+    class Comp extends Component {
+        constructor(container, options) {
+            super(container);
+            this.setup(
+                {
+                    defaults() {
+                        return { n: 1 };
+                    }
+                },
+                options
+            );
             this.html('<span class="label"></span>');
         }
-    });
+    }
 
     const component = new Comp(container, { n: 2 });
     expect(component.get('n')).to.equal(2);
@@ -58,24 +70,29 @@ it('events hash', function() {
     const container = document.createElement('div');
     document.body.appendChild(container);
 
-    const Comp = Component.extend({
-        events: {
-            'click .go': 'onGo',
-            click: 'onRoot'
-        },
-        initialize(container, options) {
-            this.callSuper(Component, 'initialize', [container, options]);
-            this.html('<button class="go">go</button>');
+    class Comp extends Component {
+        constructor(container, options) {
+            super(container);
+            this.setup(
+                {
+                    events: {
+                        'click .go': this.onGo,
+                        click: this.onRoot
+                    }
+                },
+                options
+            );
             this.clicked = 0;
             this.rootClicked = 0;
-        },
-        onGo() {
-            this.clicked++;
-        },
-        onRoot() {
-            this.rootClicked++;
+            this.html('<button class="go">go</button>');
         }
-    });
+        onGo = () => {
+            this.clicked++;
+        };
+        onRoot = () => {
+            this.rootClicked++;
+        };
+    }
 
     const component = new Comp(container);
     container.querySelector('button').click();
@@ -106,37 +123,43 @@ it('listen', function() {
     document.body.removeChild(container);
 });
 
-it('extend counter', function() {
-    const Badge = Component.extend({
-        defaults: { count: 0 },
-        option: {
-            count(val) {
-                this.find('.count').text(String(val));
-            }
-        },
-        initialize(container, options) {
-            this.callSuper(Component, 'initialize', [container, options]);
+it('counter', function() {
+    class Badge extends Component {
+        constructor(container, options) {
+            super(container);
+            this.setup(
+                {
+                    defaults: { count: 0 },
+                    option: {
+                        count: this.onCount
+                    }
+                },
+                options
+            );
             this.html('<span class="count"></span>');
         }
-    });
+        onCount = val => {
+            this.find('.count').text(String(val));
+        };
+    }
 
-    const Counter = Component.extend({
-        defaults: { value: 0, disabled: false },
-        option: {
-            value(val) {
-                this.find('.val').text(String(val));
-                if (this._badge) this._badge.set('count', val);
-            },
-            disabled(val) {
-                this.$container[val ? 'addClass' : 'rmClass']('disabled');
-            }
-        },
-        events: {
-            'click .inc': 'inc',
-            'click .dec': 'dec'
-        },
-        initialize(container, options) {
-            this.callSuper(Component, 'initialize', [container, options]);
+    class Counter extends Component {
+        constructor(container, options) {
+            super(container);
+            this.setup(
+                {
+                    defaults: { value: 0, disabled: false },
+                    option: {
+                        value: this.onValue,
+                        disabled: this.onDisabled
+                    },
+                    events: {
+                        'click .inc': this.inc,
+                        'click .dec': this.dec
+                    }
+                },
+                options
+            );
             this.html(
                 '<button class="dec">-</button>' +
                     '<span class="val"></span>' +
@@ -146,22 +169,27 @@ it('extend counter', function() {
             this._badge = new Badge(this.find('.badge').get(0), {
                 count: this.get('value')
             });
-        },
-        destroy() {
-            this._badge.destroy();
-            this.callSuper(Component, 'destroy');
-        },
-        inc() {
+        }
+        onValue = val => {
+            this.find('.val').text(String(val));
+            if (this._badge) this._badge.set('count', val);
+        };
+        onDisabled = val => {
+            this.$container[val ? 'addClass' : 'rmClass']('disabled');
+        };
+        inc = () => {
             if (this.get('disabled')) return;
             this.set('value', this.get('value') + 1);
-            this.emit('change', this.get('value'));
-        },
-        dec() {
+        };
+        dec = () => {
             if (this.get('disabled')) return;
             this.set('value', this.get('value') - 1);
-            this.emit('change', this.get('value'));
+        };
+        destroy() {
+            this._badge.destroy();
+            super.destroy();
         }
-    });
+    }
 
     const container = document.createElement('div');
     document.body.appendChild(container);
@@ -170,13 +198,13 @@ it('extend counter', function() {
     expect(counter.find('.val').text()).to.equal('1');
     expect(counter._badge.find('.count').text()).to.equal('1');
 
-    let changed = 0;
-    counter.on('change', function(val) {
-        changed = val;
+    let changed;
+    counter.on('change', function(name, val) {
+        changed = [name, val];
     });
     container.querySelector('.inc').click();
     expect(counter.get('value')).to.equal(2);
-    expect(changed).to.equal(2);
+    expect(changed).to.eql(['value', 2]);
     expect(counter._badge.find('.count').text()).to.equal('2');
 
     counter.set('disabled', true);

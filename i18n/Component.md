@@ -4,30 +4,39 @@
 
 继承自 Emitter 类。负责选项与声明式 DOM 事件，不接管渲染——由子类自行构建和更新 DOM。
 
-在子类原型上声明 `defaults`、`option`、`events`。`html()` 更新 DOM 后会自动执行 `option` 处理函数。
+在子类构造函数中调用 `setup()` 声明 `defaults`、`option`、`events`。`html()` 更新 DOM 后会自动执行 `option` 处理函数。
 
 ### constructor
 
 |参数名|说明|
 |-----|---|
 |container|挂载元素|
+
+### setup
+
+配置默认选项、选项处理函数与 DOM 事件，并应用传入选项。
+
+|参数名|说明|
+|-----|---|
+|config|`defaults`、`option`、`events`|
 |options|组件选项|
+|返回值|this|
 
-### defaults
+#### defaults
 
-原型上的默认选项。也可以是返回对象的函数。
+默认选项。也可以是返回对象的函数。
 
-### option
+#### option
 
-原型上的选项变更处理映射。键为选项名，值为方法名或函数 `(val, oldVal)`。
+选项变更处理映射。键为选项名，值为函数 `(val, oldVal)`。
 
-### events
+#### events
 
-原型上的 DOM 事件表，Backbone 风格：`'click .inc': 'inc'`。
+DOM 事件表：`'click .inc': this.inc`。处理函数按原样使用，需自行绑定 `this`（例如 class field 箭头函数）。
 
 ### set
 
-设置选项。值变化时触发 `changeOption`，并执行 `option` 处理函数。
+设置选项。值变化时触发 `change`，并执行 `option` 处理函数。
 
 |参数名|说明|
 |-----|---|
@@ -81,7 +90,7 @@
 
 ### 事件
 
-#### changeOption
+#### change
 
 通过 `set` 修改选项时触发。
 

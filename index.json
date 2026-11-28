@@ -333,7 +333,6 @@
             "$event",
             "each",
             "extend",
-            "bind",
             "isStr",
             "isFn",
             "isUndef"

@@ -181,28 +181,31 @@
             .replace(/"/g, '&quot;');
     }
 
-    const TodoApp = Component.extend({
-        defaults: {
-            filter: 'all'
-        },
-        option: {
-            filter() {
-                this._render();
-            }
-        },
-        events: {
-            'submit .new-todo-form': 'onSubmit',
-            'change .toggle-all': 'onToggleAll',
-            'change .toggle': 'onToggle',
-            'dblclick .todo-list label': 'onEdit',
-            'keydown .edit': 'onEditKey',
-            'blur .edit': 'onEditBlur',
-            'click .destroy': 'onDestroy',
-            'click .filters a': 'onFilter',
-            'click .clear-completed': 'onClearCompleted'
-        },
-        initialize(container, options) {
-            this.callSuper(Component, 'initialize', [container, options]);
+    class TodoApp extends Component {
+        constructor(container, options) {
+            super(container);
+            this.setup(
+                {
+                    defaults: {
+                        filter: 'all'
+                    },
+                    option: {
+                        filter: this._render
+                    },
+                    events: {
+                        'submit .new-todo-form': this.onSubmit,
+                        'change .toggle-all': this.onToggleAll,
+                        'change .toggle': this.onToggle,
+                        'dblclick .todo-list label': this.onEdit,
+                        'keydown .edit': this.onEditKey,
+                        'blur .edit': this.onEditBlur,
+                        'click .destroy': this.onDestroy,
+                        'click .filters a': this.onFilter,
+                        'click .clear-completed': this.onClearCompleted
+                    }
+                },
+                options
+            );
 
             this._items = [];
             this._id = 0;
@@ -231,8 +234,8 @@
                     '</footer>' +
                     '</section>'
             );
-        },
-        onSubmit(e) {
+        }
+        onSubmit = e => {
             e.preventDefault();
             const $input = this.find('.new-todo');
             const text = ($input.val() || '').trim();
@@ -244,22 +247,22 @@
             });
             $input.val('');
             this._render();
-        },
-        onToggleAll(e) {
+        };
+        onToggleAll = e => {
             const checked = e.curTarget.checked;
             this._items.forEach(function(item) {
                 item.completed = checked;
             });
             this._render();
-        },
-        onToggle(e) {
+        };
+        onToggle = e => {
             const id = +this._itemId(e.curTarget);
             this._items.forEach(function(item) {
                 if (item.id === id) item.completed = !item.completed;
             });
             this._render();
-        },
-        onEdit(e) {
+        };
+        onEdit = e => {
             const id = +this._itemId(e.curTarget);
             this._editingId = id;
             this._render();
@@ -268,8 +271,8 @@
                 input.focus();
                 input.setSelectionRange(input.value.length, input.value.length);
             }
-        },
-        onEditKey(e) {
+        };
+        onEditKey = e => {
             const key = e.origEvent.key;
             if (key === 'Enter') {
                 e.preventDefault();
@@ -279,33 +282,33 @@
                 this._editingId = null;
                 this._render();
             }
-        },
-        onEditBlur(e) {
+        };
+        onEditBlur = e => {
             if (this._editingId == null) return;
             this._commitEdit(e.curTarget);
-        },
-        onDestroy(e) {
+        };
+        onDestroy = e => {
             const id = +this._itemId(e.curTarget);
             this._items = this._items.filter(function(item) {
                 return item.id !== id;
             });
             if (this._editingId === id) this._editingId = null;
             this._render();
-        },
-        onFilter(e) {
+        };
+        onFilter = e => {
             e.preventDefault();
             this.set('filter', $(e.curTarget).data('filter') || 'all');
-        },
-        onClearCompleted() {
+        };
+        onClearCompleted = () => {
             this._items = this._items.filter(function(item) {
                 return !item.completed;
             });
             this._render();
-        },
+        };
         _itemId(el) {
             const li = el.closest('li');
             return li ? $(li).data('id') : '';
-        },
+        }
         _commitEdit(input) {
             const id = this._editingId;
             if (id == null) return;
@@ -321,7 +324,7 @@
             }
             this._editingId = null;
             this._render();
-        },
+        }
         _visibleItems() {
             const filter = this.get('filter');
             return this._items.filter(function(item) {
@@ -329,8 +332,8 @@
                 if (filter === 'completed') return item.completed;
                 return true;
             });
-        },
-        _render() {
+        }
+        _render = () => {
             const self = this;
             const items = this._items;
             const visible = this._visibleItems();
@@ -387,8 +390,8 @@
                     '</li>';
             });
             this.find('.todo-list').html(html);
-        }
-    });
+        };
+    }
 
     new TodoApp(document.getElementById('todo'));
 </script>

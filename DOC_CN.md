@@ -959,10 +959,15 @@ class Component extends Emitter {
     container: HTMLElement;
     $container: $.$;
     options: any;
-    defaults?: any | (() => any);
-    option?: types.PlainObj<string | ((val: any, oldVal: any) => void)>;
-    events?: types.PlainObj<string | types.AnyFn>;
-    constructor(container: Element, options?: any);
+    constructor(container: Element);
+    setup(
+        config?: {
+            defaults?: any | (() => any);
+            option?: types.PlainObj<(val: any, oldVal?: any) => void>;
+            events?: types.PlainObj<types.AnyFn>;
+        },
+        options?: any
+    ): Component;
     set(name: string, val?: any): Component;
     set(options: types.PlainObj<any>): Component;
     get(name: string): any;
@@ -979,30 +984,39 @@ class Component extends Emitter {
 
 继承自 Emitter 类。负责选项与声明式 DOM 事件，不接管渲染——由子类自行构建和更新 DOM。
 
-在子类原型上声明 `defaults`、`option`、`events`。`html()` 更新 DOM 后会自动执行 `option` 处理函数。
+在子类构造函数中调用 `setup()` 声明 `defaults`、`option`、`events`。`html()` 更新 DOM 后会自动执行 `option` 处理函数。
 
 ### constructor
 
 |参数名|说明|
 |-----|---|
 |container|挂载元素|
+
+### setup
+
+配置默认选项、选项处理函数与 DOM 事件，并应用传入选项。
+
+|参数名|说明|
+|-----|---|
+|config|`defaults`、`option`、`events`|
 |options|组件选项|
+|返回值|this|
 
-### defaults
+#### defaults
 
-原型上的默认选项。也可以是返回对象的函数。
+默认选项。也可以是返回对象的函数。
 
-### option
+#### option
 
-原型上的选项变更处理映射。键为选项名，值为方法名或函数 `(val, oldVal)`。
+选项变更处理映射。键为选项名，值为函数 `(val, oldVal)`。
 
-### events
+#### events
 
-原型上的 DOM 事件表，Backbone 风格：`'click .inc': 'inc'`。
+DOM 事件表：`'click .inc': this.inc`。处理函数按原样使用，需自行绑定 `this`（例如 class field 箭头函数）。
 
 ### set
 
-设置选项。值变化时触发 `changeOption`，并执行 `option` 处理函数。
+设置选项。值变化时触发 `change`，并执行 `option` 处理函数。
 
 |参数名|说明|
 |-----|---|
@@ -1056,7 +1070,7 @@ class Component extends Emitter {
 
 ### 事件
 
-#### changeOption
+#### change
 
 通过 `set` 修改选项时触发。
 
@@ -1065,36 +1079,42 @@ class Component extends Emitter {
 组件销毁时触发。
 
 ```javascript
-const Badge = Component.extend({
-    defaults: { count: 0 },
-    option: {
-        count(val) {
-            this.find('.count').text(String(val));
-        }
-    },
-    initialize(container, options) {
-        this.callSuper(Component, 'initialize', [container, options]);
+class Badge extends Component {
+    constructor(container, options) {
+        super(container);
+        this.setup(
+            {
+                defaults: { count: 0 },
+                option: {
+                    count: this.onCount
+                }
+            },
+            options
+        );
         this.html('<span class="count"></span>');
     }
-});
+    onCount = val => {
+        this.find('.count').text(String(val));
+    };
+}
 
-const Counter = Component.extend({
-    defaults: { value: 0, disabled: false },
-    option: {
-        value(val) {
-            this.find('.val').text(String(val));
-            if (this._badge) this._badge.set('count', val);
-        },
-        disabled(val) {
-            this.$container[val ? 'addClass' : 'rmClass']('disabled');
-        }
-    },
-    events: {
-        'click .inc': 'inc',
-        'click .dec': 'dec'
-    },
-    initialize(container, options) {
-        this.callSuper(Component, 'initialize', [container, options]);
+class Counter extends Component {
+    constructor(container, options) {
+        super(container);
+        this.setup(
+            {
+                defaults: { value: 0, disabled: false },
+                option: {
+                    value: this.onValue,
+                    disabled: this.onDisabled
+                },
+                events: {
+                    'click .inc': this.inc,
+                    'click .dec': this.dec
+                }
+            },
+            options
+        );
         this.html(
             '<button class="dec">-</button>' +
                 '<span class="val"></span>' +
@@ -1104,25 +1124,30 @@ const Counter = Component.extend({
         this._badge = new Badge(this.find('.badge').get(0), {
             count: this.get('value')
         });
-    },
-    destroy() {
-        this._badge.destroy();
-        this.callSuper(Component, 'destroy');
-    },
-    inc() {
+    }
+    onValue = val => {
+        this.find('.val').text(String(val));
+        if (this._badge) this._badge.set('count', val);
+    };
+    onDisabled = val => {
+        this.$container[val ? 'addClass' : 'rmClass']('disabled');
+    };
+    inc = () => {
         if (this.get('disabled')) return;
         this.set('value', this.get('value') + 1);
-        this.emit('change', this.get('value'));
-    },
-    dec() {
+    };
+    dec = () => {
         if (this.get('disabled')) return;
         this.set('value', this.get('value') - 1);
-        this.emit('change', this.get('value'));
+    };
+    destroy() {
+        this._badge.destroy();
+        super.destroy();
     }
-});
+}
 
 const counter = new Counter(document.getElementById('counter'), { value: 1 });
-counter.on('change', val => console.log(val));
+counter.on('change', (name, val) => console.log(name, val));
 counter.set('disabled', true);
 counter.destroy();
 ```

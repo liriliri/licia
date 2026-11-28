@@ -4,32 +4,42 @@
  * take ownership of rendering — subclasses build and update the DOM
  * themselves.
  *
- * Declare `defaults`, `option` and `events` on the subclass prototype.
- * `html()` applies `option` handlers after updating the DOM.
+ * Call `setup()` in the subclass constructor to declare `defaults`, `option`
+ * and `events`. `html()` applies `option` handlers after updating the DOM.
  *
  * ### constructor
  *
  * |Name     |Desc               |
  * |---------|-------------------|
  * |container|Element to mount on|
- * |options  |Component options  |
  *
- * ### defaults
+ * ### setup
  *
- * Prototype default option values. Can also be a function returning an object.
+ * Configure defaults, option handlers and DOM events, then apply options.
  *
- * ### option
+ * |Name   |Desc                             |
+ * |-------|---------------------------------|
+ * |config |`defaults`, `option` and `events`|
+ * |options|Component options                |
+ * |return |This                             |
  *
- * Prototype map of option change handlers. Keys are option names; values are
- * method names or functions `(val, oldVal)`.
+ * #### defaults
  *
- * ### events
+ * Default option values. Can also be a function returning an object.
  *
- * Prototype DOM events hash, Backbone style: `'click .inc': 'inc'`.
+ * #### option
+ *
+ * Map of option change handlers. Keys are option names; values are functions
+ * `(val, oldVal)`.
+ *
+ * #### events
+ *
+ * DOM events hash: `'click .inc': this.inc`. Handlers are used as-is; bind
+ * `this` yourself (e.g. class field arrows).
  *
  * ### set
  *
- * Set option value. Emits `changeOption` when value changes and runs `option`
+ * Set option value. Emits `change` when value changes and runs `option`
  * handlers.
  *
  * |Name|Desc         |
@@ -86,7 +96,7 @@
  *
  * ### Events
  *
- * #### changeOption
+ * #### change
  *
  * Triggered when an option value changes via `set`.
  *
@@ -96,36 +106,42 @@
  */
 
 /* example
- * const Badge = Component.extend({
- *     defaults: { count: 0 },
- *     option: {
- *         count(val) {
- *             this.find('.count').text(String(val));
- *         }
- *     },
- *     initialize(container, options) {
- *         this.callSuper(Component, 'initialize', [container, options]);
+ * class Badge extends Component {
+ *     constructor(container, options) {
+ *         super(container);
+ *         this.setup(
+ *             {
+ *                 defaults: { count: 0 },
+ *                 option: {
+ *                     count: this.onCount
+ *                 }
+ *             },
+ *             options
+ *         );
  *         this.html('<span class="count"></span>');
  *     }
- * });
+ *     onCount = val => {
+ *         this.find('.count').text(String(val));
+ *     };
+ * }
  *
- * const Counter = Component.extend({
- *     defaults: { value: 0, disabled: false },
- *     option: {
- *         value(val) {
- *             this.find('.val').text(String(val));
- *             if (this._badge) this._badge.set('count', val);
- *         },
- *         disabled(val) {
- *             this.$container[val ? 'addClass' : 'rmClass']('disabled');
- *         }
- *     },
- *     events: {
- *         'click .inc': 'inc',
- *         'click .dec': 'dec'
- *     },
- *     initialize(container, options) {
- *         this.callSuper(Component, 'initialize', [container, options]);
+ * class Counter extends Component {
+ *     constructor(container, options) {
+ *         super(container);
+ *         this.setup(
+ *             {
+ *                 defaults: { value: 0, disabled: false },
+ *                 option: {
+ *                     value: this.onValue,
+ *                     disabled: this.onDisabled
+ *                 },
+ *                 events: {
+ *                     'click .inc': this.inc,
+ *                     'click .dec': this.dec
+ *                 }
+ *             },
+ *             options
+ *         );
  *         this.html(
  *             '<button class="dec">-</button>' +
  *                 '<span class="val"></span>' +
@@ -135,25 +151,30 @@
  *         this._badge = new Badge(this.find('.badge').get(0), {
  *             count: this.get('value')
  *         });
- *     },
- *     destroy() {
- *         this._badge.destroy();
- *         this.callSuper(Component, 'destroy');
- *     },
- *     inc() {
+ *     }
+ *     onValue = val => {
+ *         this.find('.val').text(String(val));
+ *         if (this._badge) this._badge.set('count', val);
+ *     };
+ *     onDisabled = val => {
+ *         this.$container[val ? 'addClass' : 'rmClass']('disabled');
+ *     };
+ *     inc = () => {
  *         if (this.get('disabled')) return;
  *         this.set('value', this.get('value') + 1);
- *         this.emit('change', this.get('value'));
- *     },
- *     dec() {
+ *     };
+ *     dec = () => {
  *         if (this.get('disabled')) return;
  *         this.set('value', this.get('value') - 1);
- *         this.emit('change', this.get('value'));
+ *     };
+ *     destroy() {
+ *         this._badge.destroy();
+ *         super.destroy();
  *     }
- * });
+ * }
  *
  * const counter = new Counter(document.getElementById('counter'), { value: 1 });
- * counter.on('change', val => console.log(val));
+ * counter.on('change', (name, val) => console.log(name, val));
  * counter.set('disabled', true);
  * counter.destroy();
  */
@@ -168,10 +189,15 @@
  *     container: HTMLElement;
  *     $container: $.$;
  *     options: any;
- *     defaults?: any | (() => any);
- *     option?: types.PlainObj<string | ((val: any, oldVal: any) => void)>;
- *     events?: types.PlainObj<string | types.AnyFn>;
- *     constructor(container: Element, options?: any);
+ *     constructor(container: Element);
+ *     setup(
+ *         config?: {
+ *             defaults?: any | (() => any);
+ *             option?: types.PlainObj<(val: any, oldVal?: any) => void>;
+ *             events?: types.PlainObj<types.AnyFn>;
+ *         },
+ *         options?: any
+ *     ): Component;
  *     set(name: string, val?: any): Component;
  *     set(options: types.PlainObj<any>): Component;
  *     get(name: string): any;
@@ -184,20 +210,26 @@
  * }
  */
 
-_('Emitter $ $event each extend bind isStr isFn isUndef types');
+_('Emitter $ $event each extend isStr isFn isUndef types');
 
 exports = Emitter.extend({
     className: 'Component',
-    initialize(container, options = {}) {
+    initialize(container) {
         this.callSuper(Emitter, 'initialize');
 
         this.container = container;
         this.$container = $(container);
         this._listeners = [];
+        this.options = {};
+    },
+    setup(config = {}, options = {}) {
+        const { defaults, option, events } = config;
 
-        this.options = extend({}, getDefaults(this), options);
+        this.option = option;
+        this.options = extend({}, getDefaults(defaults, this), options);
+        this._bindEvents(events);
 
-        this._bindEvents();
+        return this;
     },
     set(name, val) {
         let newOptions = {};
@@ -214,7 +246,7 @@ exports = Emitter.extend({
             if (val === oldVal) {
                 return;
             }
-            this.emit('changeOption', name, val, oldVal);
+            this.emit('change', name, val, oldVal);
             this._dispatchOption(name, val, oldVal);
         });
 
@@ -267,31 +299,24 @@ exports = Emitter.extend({
             this._dispatchOption(name, val, undefined);
         });
     },
-    _bindEvents() {
-        const events = this.events;
+    _bindEvents(events) {
         if (!events) {
             return;
         }
 
         each(events, (handler, key) => {
-            const match = key.match(/^(\S+)\s*(.*)$/);
-            const type = match[1];
-            const selector = match[2] || undefined;
-            let fn = handler;
-
-            if (isStr(fn)) {
-                fn = this[fn];
-            }
-            if (!isFn(fn)) {
+            if (!isFn(handler)) {
                 return;
             }
 
-            fn = bind(fn, this);
+            const match = key.match(/^(\S+)\s*(.*)$/);
+            const type = match[1];
+            const selector = match[2] || undefined;
 
             if (selector) {
-                this.listen(type, selector, fn);
+                this.listen(type, selector, handler);
             } else {
-                this.listen(type, fn);
+                this.listen(type, handler);
             }
         });
     },
@@ -302,19 +327,16 @@ exports = Emitter.extend({
         }
 
         const handler = handlers[name];
-        if (isStr(handler)) {
-            this[handler](val, oldVal);
-        } else if (isFn(handler)) {
-            handler.call(this, val, oldVal);
+        if (isFn(handler)) {
+            handler(val, oldVal);
         }
     }
 });
 
-function getDefaults(comp) {
-    const defs = comp.defaults;
-    if (isFn(defs)) {
-        return defs.call(comp) || {};
+function getDefaults(defaults, comp) {
+    if (isFn(defaults)) {
+        return defaults.call(comp) || {};
     }
 
-    return defs || {};
+    return defaults || {};
 }
